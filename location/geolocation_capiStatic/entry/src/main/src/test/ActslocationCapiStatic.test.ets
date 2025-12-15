@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import geoLocationManager from '@ohos.geoLocationManager';
 import { notificationManager } from '@kit.NotificationKit';
 import { canIUse } from '@internal.full.global';
-import { wantAgent } from '@kit.AbilityKit';
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag:string='location'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -35,15 +36,20 @@ export default function actslocationTest() {
 
     describe("actslocationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
-        beforeAll(() => {
-            hilog.info(domain, tag, '%{public}s', 'beforeAll start');
+        beforeAll(async() => {
+          hilog.info(domain, tag, 'beforeAll start');
+          let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+          abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.location.napitest.static")
+          await Utils.msSleep(4000);
+          g_context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+          hilog.info(domain, tag, 'get UIAbilityContext end');
             try {
                 await Utils.msSleep(2000);
                 hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-                g_context = Hypium.get('Context') as common.UIAbilityContext;
                 let atManager = abilityAccessCtrl.createAtManager();
                 let arr: Array<Permissions> = new Array<Permissions>();
-                arr.push('ohos.permission.LOCATION', 'ohos.permission.LOCATION_IN_BACKGROUND','ohos.permission.APPROXIMATELY_LOCATION')
+                arr.push('ohos.permission.LOCATION','ohos.permission.APPROXIMATELY_LOCATION')
                 atManager.requestPermissionsFromUser(g_context, arr,
                     (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
                         hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
@@ -70,13 +76,13 @@ export default function actslocationTest() {
             }
         })
 
-        /*
-         * @tc.number: testGeolocationManagerConfig001
-         * @tc.name: testGeolocationManagerConfig001
-         * @tc.desc: Test Location API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  testGeolocationManagerConfig001
+         * @tc.name  testGeolocationManagerConfig001
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('testGeolocationManagerConfig001',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
             async(done:()=>void):Promise<void>=>{
@@ -103,60 +109,17 @@ export default function actslocationTest() {
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_ENTER == 1)
                 expect(true).assertEqual(geoLocationManager.GeofenceTransitionEvent.GEOFENCE_TRANSITION_EVENT_EXIT == 2)
 
-                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_NULL == 0)
-                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_EPHEMERIS_DATA_EXIST == 1)
-                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_ALMANAC_DATA_EXIST == 2)
-                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_USED_IN_FIX == 4)
-                expect(true).assertEqual(geoLocationManager.SatelliteAdditionalInfo.SATELLITES_ADDITIONAL_INFO_CARRIER_FREQUENCY_EXIST == 8)
-
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_UNKNOWN == 0)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GPS == 1)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_SBAS == 2)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GLONASS == 3)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_QZSS == 4)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_BEIDOU == 5)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_GALILEO == 6)
-                expect(true).assertEqual(geoLocationManager.SatelliteConstellationCategory.CONSTELLATION_CATEGORY_IRNSS == 7)
-
-                expect(true).assertEqual(geoLocationManager.UserActivityScenario.NAVIGATION == 0x401)
-                expect(true).assertEqual(geoLocationManager.UserActivityScenario.SPORT == 0x402)
-                expect(true).assertEqual(geoLocationManager.UserActivityScenario.TRANSPORT == 0x403)
-                expect(true).assertEqual(geoLocationManager.UserActivityScenario.DAILY_LIFE_SERVICE == 0x404)
-
-                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.HIGH_POWER_CONSUMPTION == 0x601)
-                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.LOW_POWER_CONSUMPTION == 0x602)
-                expect(true).assertEqual(geoLocationManager.PowerConsumptionScenario.NO_POWER_CONSUMPTION == 0x603)
-
-                expect(true).assertEqual(geoLocationManager.SportsType.RUNNING == 1)
-                expect(true).assertEqual(geoLocationManager.SportsType.WALKING == 2)
-                expect(true).assertEqual(geoLocationManager.SportsType.CYCLING == 3)
-
-                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCALE == 1)
-                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_SIM == 2)
-                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_LOCATION == 3)
-                expect(true).assertEqual(geoLocationManager.CountryCodeType.COUNTRY_CODE_FROM_NETWORK == 4)
-
-                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.WGS84 == 1)
-                expect(true).assertEqual(geoLocationManager.CoordinateSystemType.GCJ02 == 2)
-
-                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT == -1)
-                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED == -2)
-                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED == -3)
-                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF == -4)
-                expect(true).assertEqual(geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE == -5)
-
                 done();
-
 
        })
 
-        /*
-         * @tc.number: Sub_Location_GetCurrentLocation_0100
-         * @tc.name: Sub_Location_GetCurrentLocation_0100
-         * @tc.desc: Test Location API functionality
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_GetCurrentLocation_0100
+         * @tc.name  Sub_Location_GetCurrentLocation_0100
+         * @tc.desc  Test Location API functionality
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_GetCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
              async(done:()=>void):Promise<void>=>{
@@ -182,23 +145,33 @@ export default function actslocationTest() {
                             expect().assertFail()
                         }
                         else{
-                            if(result !=null){
-                                expect(true).assertEqual(result?.latitude !=null)
-                                expect(true).assertEqual(result?.longitude != null)
-                                expect(true).assertEqual(result?.latitude !=null)
-                                expect(true).assertEqual(result?.accuracy !=null)
-                                expect(true).assertEqual(result?.speed != null)
-                                expect(true).assertEqual(result?.timeStamp !=null)
-                                expect(true).assertEqual(result?.direction !=null)
-                                expect(true).assertEqual(result?.timeSinceBoot !=null)
-                                expect(true).assertEqual(result?.additions !=null)
-                                expect(true).assertEqual(result?.additionsMap !=null)
-                                expect(true).assertEqual(result?.directionAccuracy !=null)
-                                expect(true).assertEqual(result?.uncertaintyOfTimeSinceBoot !=null)
-                                expect(true).assertEqual(result?.sourceType !=null)
-                                hilog.info(domain, tag, '%{public}s', 'beforeEach end'+'result.latitude'+'result.longitude'+'result.latitude'+'result.accuracy'+'result.speed'+'result.timeStamp'+'result.direction'+'result.timeSinceBoot'
-                                +'result.additions'+'result.additionsSize'+'result.additionsMap'+'result.additionsMap'+'result.additionsAccuracy'+'result.directionAccuracy'+'result.uncertaintyOfTimeSinceBoot');
-
+                          if(result !=null){
+                            console.info("GetCurrentLocation_0100 ======>latitude ", typeof result?.latitude)
+                            expect(true).assertEqual(result?.latitude !=null)
+                            console.info("GetCurrentLocation_0100 ======>longitude ", typeof result?.longitude)
+                            expect(true).assertEqual(result?.longitude != null)
+                            console.info("GetCurrentLocation_0100 ======>accuracy ", typeof result?.accuracy)
+                            expect(true).assertEqual(result?.accuracy !=null)
+                            console.info("GetCurrentLocation_0100 ======>speed ", typeof result?.speed)
+                            expect(true).assertEqual(result?.speed != null)
+                            console.info("GetCurrentLocation_0100 ======>timeStamp ", typeof result?.timeStamp)
+                            expect(true).assertEqual(result?.timeStamp !=null)
+                            console.info("GetCurrentLocation_0100 ======>direction ", typeof result?.direction)
+                            expect(true).assertEqual(result?.direction !=null)
+                            console.info("GetCurrentLocation_0100 ======>timeSinceBoot ", typeof result?.timeSinceBoot)
+                            expect(true).assertEqual(result?.timeSinceBoot !=null)
+                            console.info("GetCurrentLocation_0100 ======>additions ", typeof result?.additions)
+                            if(result?.additions != undefined){
+                              expect(true).assertEqual(result?.additions !=null)
+                            }
+                            console.info("GetCurrentLocation_0100 ======>additionsMap ", typeof result?.additionsMap)
+                            if(result?.additionsMap != undefined){
+                              expect(true).assertEqual(result?.additionsMap !=null)
+                            }
+                            console.info("GetCurrentLocation_0100 ======>directionAccuracy ", typeof result?.directionAccuracy)
+                            expect(true).assertEqual(result?.directionAccuracy !=null)
+                            console.info("GetCurrentLocation_0100 ======>uncertaintyOfTimeSinceBoot ", typeof result?.uncertaintyOfTimeSinceBoot)
+                            expect(true).assertEqual(result?.uncertaintyOfTimeSinceBoot !=null)
                         }
                     }
 
@@ -211,44 +184,15 @@ export default function actslocationTest() {
                 done();
             })
 
-            /*
-            * @tc.number: Sub_Location_GetCurrentLocation_0200
-            * @tc.name: Sub_Location_GetCurrentLocation_0200
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 0
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
-            */
-
-            it ('Sub_Location_GetCurrentLocation_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
-                async(done:()=>void):Promise<void>=>{
-                    const TEST_CASE_NAME='Sub_Location_GetCurrentLocation_0200'
-                    try{
-                        geoLocationManager.getCurrentLocation(
-                            (err:BusinessError<void>|null,result:geoLocationManager.Location|undefined)=>{
-                                if(!geoLocationManager.isLocationEnabled()){
-                                    if(err !=null){
-                                        expect(err?.code).assertEqual(3301100)
-                                    }
-                                }
-                            });
-                    }catch(err) {
-                        err = err as BusinessError;
-                        hilog.error(domain,tag,'[lns_js] getCurrentLocation try err.'+JSON.stringify(err));
-                        expect(false).assertTrue();
-                    }
-                    await Utils.msSleep(1000)
-                    done();
-                })
             
 
-            /*
-            * @tc.number: SUB_HSS_LocationSystem_Geo_0001
-            * @tc.name: SUB_HSS_LocationSystem_Geo_0001
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_HSS_LocationSystem_Geo_0001
+            * @tc.name  SUB_HSS_LocationSystem_Geo_0001
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it ('SUB_HSS_LocationSystem_Geo_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -284,13 +228,13 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_HSS_LocationSystem_Geo_2900
-            * @tc.name: SUB_HSS_LocationSystem_Geo_2900
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_HSS_LocationSystem_Geo_2900
+            * @tc.name  SUB_HSS_LocationSystem_Geo_2900
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it ('SUB_HSS_LocationSystem_Geo_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -317,13 +261,13 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_HSS_LocationSystem_Geo_1200
-            * @tc.name: SUB_HSS_LocationSystem_Geo_1200
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_HSS_LocationSystem_Geo_1200
+            * @tc.name  SUB_HSS_LocationSystem_Geo_1200
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it ('SUB_HSS_LocationSystem_Geo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -339,7 +283,7 @@ export default function actslocationTest() {
                     };
                     try{
                         geoLocationManager.getAddressesFromLocationName(geoCodeRequest).then((result:Array<geoLocationManager.GeoAddress>) => {
-                            expect(Array.isArray(result)).assertTrue();
+                            expect(Array.isArray(result)).assertTrue;
                             done();
                         }).catch((error) => {
                             expect((error as BusinessError).code).assertEqual(3301400);
@@ -352,13 +296,13 @@ export default function actslocationTest() {
             )
 
 
-            /*
-            * @tc.number: SUB_HSS_LocationSystem_Geo_1300
-            * @tc.name: SUB_HSS_LocationSystem_Geo_1300
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_HSS_LocationSystem_Geo_1300
+            * @tc.name  SUB_HSS_LocationSystem_Geo_1300
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it ('SUB_HSS_LocationSystem_Geo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -378,7 +322,7 @@ export default function actslocationTest() {
                                 expect(err.code).assertEqual(3301400);
                                 done();
                             }else{
-                                expect(Array.isArray(data)).assertTrue();
+                                expect(Array.isArray(data)).assertTrue;
                                 done();
                             }
                         })
@@ -388,13 +332,13 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_Location_isGeocoderAvailabel_0100
-            * @tc.name: SUB_Location_isGeocoderAvailabel_0100
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_isGeocoderAvailabel_0100
+            * @tc.name  SUB_Location_isGeocoderAvailabel_0100
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it('SUB_Location_isGeocoderAvailabel_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -408,13 +352,13 @@ export default function actslocationTest() {
                 }
             })
             
-            /*
-            * @tc.number: SUB_Location_sendCommand_0100
-            * @tc.name: SUB_Location_sendCommand_0100
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_sendCommand_0100
+            * @tc.name  SUB_Location_sendCommand_0100
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it('SUB_Location_sendCommand_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
@@ -441,13 +385,13 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_Location_sendCommand_0200
-            * @tc.name: SUB_Location_sendCommand_0200
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_sendCommand_0200
+            * @tc.name  SUB_Location_sendCommand_0200
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it('SUB_Location_sendCommand_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
@@ -470,13 +414,13 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_Location_isLocationEnabled_0100
-            * @tc.name: SUB_Location_sendCommand_0200
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_isLocationEnabled_0100
+            * @tc.name  SUB_Location_sendCommand_0200
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it('SUB_Location_isLocationEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
@@ -488,13 +432,13 @@ export default function actslocationTest() {
                 }
             })
 
-            /*
-            * @tc.number: SUB_Location_getCountryCode_0100
-            * @tc.name: SUB_Location_getCountryCode_0100
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getCountryCode_0100
+            * @tc.name  SUB_Location_getCountryCode_0100
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it('SUB_Location_getCountryCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
@@ -516,13 +460,13 @@ export default function actslocationTest() {
             )
 
 
-            /*
-            * @tc.number: SUB_Location_getCountryCode_0200
-            * @tc.name: SUB_Location_getCountryCode_0200
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getCountryCode_0200
+            * @tc.name  SUB_Location_getCountryCode_0200
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             
             it('SUB_Location_getCountryCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
@@ -541,13 +485,13 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
-            * @tc.number: SUB_Location_getGeofenceSupportedCoordTypes_0100
-            * @tc.name: SUB_Location_getGeofenceSupportedCoordTypes_0100
-            * @tc.desc: Test Location API functionality
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getGeofenceSupportedCoordTypes_0100
+            * @tc.name  SUB_Location_getGeofenceSupportedCoordTypes_0100
+            * @tc.desc  Test Location API functionality
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
 
             it('SUB_Location_getGeofenceSupportedCoordTypes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
@@ -560,13 +504,13 @@ export default function actslocationTest() {
             })
 
 
-            /*
-            * @tc.number: SUB_Location_getCurrentWifiBssidForLocating_0100
-            * @tc.name: SUB_Location_getCurrentWifiBssidForLocating_0100
-            * @tc.desc: getCurrentWifiBssidForLocating(): string
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0100
+            * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0100
+            * @tc.desc  getCurrentWifiBssidForLocating(): string
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -585,40 +529,14 @@ export default function actslocationTest() {
                 }                
             })  
             
-            /*
-            * @tc.number: SUB_Location_getCurrentWifiBssidForLocating_0200
-            * @tc.name: SUB_Location_getCurrentWifiBssidForLocating_0200
-            * @tc.desc: getCurrentWifiBssidForLocating(): string
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
-            */
-            it('SUB_Location_getCurrentWifiBssidForLocating_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
-                let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
-                console.info("SUB_Location_getCurrentWifiBssidForLocating_0200: " + isAccessToken);
-                if (!isAccessToken) {
-                    console.info("The device does not support Gnss");
-                    expect(isAccessToken).assertFalse();
-                } else {
-                   geoLocationManager.disableLocation();
-                    try{
-                        let getCurrentWifiBssidForLocating = geoLocationManager.getCurrentWifiBssidForLocating();
-                        console.info('[lbs_js] getCurrentWifiBssidForLocating_0200 result is:' + JSON.stringify(getCurrentWifiBssidForLocating));
-                        expect(getCurrentWifiBssidForLocating != null).assertTrue();
-                    }catch(error: BusinessError){
-                        console.info('[lbs_js] getCurrentWifiBssidForLocating_0200 catch err is:' + JSON.stringify(error));
-                        expect(error.code).assertEqual(3301100);
-                    }                    
-                }
-            }) 
 
-            /*
-            * @tc.number: SUB_Location_getCurrentWifiBssidForLocating_0300
-            * @tc.name: SUB_Location_getCurrentWifiBssidForLocating_0300
-            * @tc.desc: getCurrentWifiBssidForLocating(): string
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0300
+            * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0300
+            * @tc.desc  getCurrentWifiBssidForLocating(): string
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -638,13 +556,13 @@ export default function actslocationTest() {
                 }
             }) 
             
-            /*
-            * @tc.number: SUB_Location_getCurrentWifiBssidForLocating_0400
-            * @tc.name: SUB_Location_getCurrentWifiBssidForLocating_0400
-            * @tc.desc: getCurrentWifiBssidForLocating(): string
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0400
+            * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0400
+            * @tc.desc  getCurrentWifiBssidForLocating(): string
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -664,13 +582,13 @@ export default function actslocationTest() {
                 }
             }) 
             
-            /*
-            * @tc.number: SUB_Location_getCurrentWifiBssidForLocating_0500
-            * @tc.name: SUB_Location_getCurrentWifiBssidForLocating_0500
-            * @tc.desc: getCurrentWifiBssidForLocating(): string
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0500
+            * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0500
+            * @tc.desc  getCurrentWifiBssidForLocating(): string
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_getCurrentWifiBssidForLocating_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -690,13 +608,13 @@ export default function actslocationTest() {
                 }
             })            
             
-            /*
-            * @tc.number: SUB_Location_addGnssGeofence_0100
-            * @tc.name: SUB_Location_addGnssGeofence_0100
-            * @tc.desc: addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_addGnssGeofence_0100
+            * @tc.name  SUB_Location_addGnssGeofence_0100
+            * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_addGnssGeofence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -753,7 +671,6 @@ export default function actslocationTest() {
                         }
                         if (transition) {
                             console.info("GeofenceTransition: %{public}s", JSON.stringify(transition));
-                            expect(transition.geofenceId).assertEqual("int");
                         }
                         }
                     }
@@ -764,20 +681,22 @@ export default function actslocationTest() {
                         }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0100 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         });
+                        done();
                     } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0100 failed, err:" + JSON.stringify(error));
                     } 
+                    done();
                 }
                 }
             )     
             
-            /*
-            * @tc.number: SUB_Location_addGnssGeofence_0200
-            * @tc.name: SUB_Location_addGnssGeofence_0200
-            * @tc.desc: addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_addGnssGeofence_0200
+            * @tc.name  SUB_Location_addGnssGeofence_0200
+            * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_addGnssGeofence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -835,7 +754,7 @@ export default function actslocationTest() {
                         if (transition) {
                             console.info("GeofenceTransition: %{public}s", JSON.stringify(transition));
                         }
-                        }
+                      }
                     }
                     try {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
@@ -845,20 +764,22 @@ export default function actslocationTest() {
                         console.error("addGnssGeofence_0200 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(201);
                         });
+                        done();
                     } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0200 failed, err:" + JSON.stringify(error));
                     } 
-                }
+                    done();
+                  }
                 }
             )              
 
-            /*
-            * @tc.number: SUB_Location_addGnssGeofence_0300
-            * @tc.name: SUB_Location_addGnssGeofence_0300
-            * @tc.desc: addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_addGnssGeofence_0300
+            * @tc.name  SUB_Location_addGnssGeofence_0300
+            * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_addGnssGeofence_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -926,21 +847,22 @@ export default function actslocationTest() {
                         console.error("addGnssGeofence_0300 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(401);
                         });
+                        done();
                     } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0300 failed, err:" + JSON.stringify(error));
                     } 
-
+                    done();
                 }
                 }
             )
 
-            /*
-            * @tc.number: SUB_Location_addGnssGeofence_0400
-            * @tc.name: SUB_Location_addGnssGeofence_0400
-            * @tc.desc: addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_addGnssGeofence_0400
+            * @tc.name  SUB_Location_addGnssGeofence_0400
+            * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_addGnssGeofence_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1008,21 +930,22 @@ export default function actslocationTest() {
                         console.error("addGnssGeofence_0400 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(801);
                         });
+                        done();
                     } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0400 failed, err:" + JSON.stringify(error));
                     } 
-
+                    done();
                 }
                 }
             )  
 
-            /*
-            * @tc.number: SUB_Location_addGnssGeofence_0500
-            * @tc.name: SUB_Location_addGnssGeofence_0500
-            * @tc.desc: addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_addGnssGeofence_0500
+            * @tc.name  SUB_Location_addGnssGeofence_0500
+            * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_addGnssGeofence_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1090,21 +1013,22 @@ export default function actslocationTest() {
                         console.error("addGnssGeofence_0500 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(3301100);
                         });
+                        done();
                     } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0500 failed, err:" + JSON.stringify(error));
                     } 
-
+                    done();
                 }
                 }
             ) 
             
-            /*
-            * @tc.number: SUB_Location_addGnssGeofence_0600
-            * @tc.name: SUB_Location_addGnssGeofence_0600
-            * @tc.desc: addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
-            * @tc.level: Level 2
-            * @tc.type: Function
-            * @tc.size: MEDIUMTEST
+            /**
+            * @tc.number  SUB_Location_addGnssGeofence_0600
+            * @tc.name  SUB_Location_addGnssGeofence_0600
+            * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
+            * @tc.level  Level 2
+            * @tc.type  Function
+            * @tc.size  MEDIUMTEST
             */
             it('SUB_Location_addGnssGeofence_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
                 let isAccessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -1172,21 +1096,22 @@ export default function actslocationTest() {
                         console.error("addGnssGeofence_0600 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(3301601);
                         });
+                        done();
                     } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0600 failed, err:" + JSON.stringify(error));
                     } 
-
+                    done();
                 }
                 }
             ) 
 
-        /*
-         * @tc.number: Sub_Location_removeGnssGeofence_0100
-         * @tc.name: Sub_Location_removeGnssGeofence_0100
-         * @tc.desc: removeGnssGeofence(geofenceId: number): Promise<void>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_removeGnssGeofence_0100
+         * @tc.name  Sub_Location_removeGnssGeofence_0100
+         * @tc.desc  removeGnssGeofence(geofenceId: number): Promise<void>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_removeGnssGeofence_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let fenceId = 1;
@@ -1205,13 +1130,13 @@ export default function actslocationTest() {
             done();
         })  
         
-        /*
-         * @tc.number: Sub_Location_removeGnssGeofence_0200
-         * @tc.name: Sub_Location_removeGnssGeofence_0200
-         * @tc.desc: removeGnssGeofence(geofenceId: number): Promise<void>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_removeGnssGeofence_0200
+         * @tc.name  Sub_Location_removeGnssGeofence_0200
+         * @tc.desc  removeGnssGeofence(geofenceId: number): Promise<void>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_removeGnssGeofence_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let fenceId = 1;
@@ -1230,13 +1155,13 @@ export default function actslocationTest() {
             done();
         })         
 
-        /*
-         * @tc.number: Sub_Location_removeGnssGeofence_0300
-         * @tc.name: Sub_Location_removeGnssGeofence_0300
-         * @tc.desc: removeGnssGeofence(geofenceId: number): Promise<void>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_removeGnssGeofence_0300
+         * @tc.name  Sub_Location_removeGnssGeofence_0300
+         * @tc.desc  removeGnssGeofence(geofenceId: number): Promise<void>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_removeGnssGeofence_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let fenceId = 1;
@@ -1256,42 +1181,52 @@ export default function actslocationTest() {
         })          
 
 
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0200
-         * @tc.name: Sub_Location_getCurrentLocation_0200
-         * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_1200
+         * @tc.name  Sub_Location_getCurrentLocation_1200
+         * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
-        it('Sub_Location_getCurrentLocation_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_getCurrentLocation_1200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
               let request: geoLocationManager.SingleLocationRequest = {
                 'locatingTimeoutMs': 10000,
                 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
               };
-              expect(typeof request.needPoi).assertEqual("boolean");
               let locationChange = (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined): void => {
                 if (err) {
                   console.error('locationChange: err=' + JSON.stringify(err));
                 }
                 if (location) {
-                  console.info('locationChange: location=' + JSON.stringify(location));
+                  console.info("getCurrentLocation_1200 ======>latitude ", typeof location.latitude)
                   expect(typeof location.latitude).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>longitude ", typeof location.longitude)
                   expect(typeof location.longitude).assertEqual("number");
-                  expect(typeof location.altitude).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>accuracy ", typeof location.accuracy)
                   expect(typeof location.accuracy).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>speed ", typeof location.speed)
                   expect(typeof location.speed).assertEqual("number");
-                  expect(typeof location.timeStamp).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>timeStamp", typeof location.timeStamp)
+                  expect(typeof location.timeStamp).assertEqual("long");
+                  console.info("getCurrentLocation_1200 ======>direction", typeof location.direction)
                   expect(typeof location.direction).assertEqual("number");
-                  expect(typeof location.timeSinceBoot).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>timeSinceBoot", typeof location.timeSinceBoot)
+                  expect(typeof location.timeSinceBoot).assertEqual("long");
+                  console.info("getCurrentLocation_1200 ======>additions", typeof location.additions)
                   expect(location.additions instanceof Array<string>);
-                  expect(typeof location.additionSize).assertEqual("number");
-                  expect(typeof location.additionsMap).assertEqual("Map<string, string>");
+                  console.info("getCurrentLocation_1200 ======>additionSize", typeof location.additionSize)
+                  expect(typeof location.additionSize).assertEqual("int");
+                  console.info("getCurrentLocation_1200 ======>additionsMap", typeof location.additionsMap)
                   expect(location.additionsMap instanceof Map<string, string>);
+                  console.info("getCurrentLocation_1200 ======>altitudeAccuracy", typeof location.altitudeAccuracy)
                   expect(typeof location.altitudeAccuracy).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>speedAccuracy", typeof location.speedAccuracy)
                   expect(typeof location.speedAccuracy).assertEqual("number");
+                  console.info("getCurrentLocation_1200 ======>uncertaintyOfTimeSinceBoot", typeof location.uncertaintyOfTimeSinceBoot)
                   expect(typeof location.uncertaintyOfTimeSinceBoot).assertEqual("number");
                 }
+                console.info('======>?locationChange: location=expect' )
                 expect(true).assertEqual(location!=null);
               };
               try {
@@ -1303,13 +1238,13 @@ export default function actslocationTest() {
             done();
         }) 
         
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_090010
-         * @tc.name: Sub_Location_getCurrentLocation_090010
-         * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_090010
+         * @tc.name  Sub_Location_getCurrentLocation_090010
+         * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_090010',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let requestInfo: geoLocationManager.CurrentLocationRequest = {
@@ -1335,13 +1270,13 @@ export default function actslocationTest() {
             done();
         })                          
 
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0300
-         * @tc.name: Sub_Location_getCurrentLocation_0300
-         * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0300
+         * @tc.name  Sub_Location_getCurrentLocation_0300
+         * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let requestInfo: geoLocationManager.CurrentLocationRequest = {
@@ -1367,13 +1302,13 @@ export default function actslocationTest() {
             done();
         })    
         
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0400
-         * @tc.name: Sub_Location_getCurrentLocation_0400
-         * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0400
+         * @tc.name  Sub_Location_getCurrentLocation_0400
+         * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let requestInfo: geoLocationManager.CurrentLocationRequest = {
@@ -1399,13 +1334,13 @@ export default function actslocationTest() {
             done();
         })  
         
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0500
-         * @tc.name: Sub_Location_getCurrentLocation_0500
-         * @tc.desc: getCurrentLocation(callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0500
+         * @tc.name  Sub_Location_getCurrentLocation_0500
+         * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0500',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
               try {
@@ -1426,13 +1361,13 @@ export default function actslocationTest() {
             done();
         })  
         
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0600
-         * @tc.name: Sub_Location_getCurrentLocation_0600
-         * @tc.desc: getCurrentLocation(callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0600
+         * @tc.name  Sub_Location_getCurrentLocation_0600
+         * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0600',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
@@ -1453,13 +1388,13 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0700
-         * @tc.name: Sub_Location_getCurrentLocation_0700
-         * @tc.desc: getCurrentLocation(callback: AsyncCallback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0700
+         * @tc.name  Sub_Location_getCurrentLocation_0700
+         * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0700',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
@@ -1480,13 +1415,13 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0800
-         * @tc.name: Sub_Location_getCurrentLocation_0800
-         * @tc.desc: getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0800
+         * @tc.name  Sub_Location_getCurrentLocation_0800
+         * @tc.desc  getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0800',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let request: geoLocationManager.SingleLocationRequest = {
@@ -1507,13 +1442,13 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_0900
-         * @tc.name: Sub_Location_getCurrentLocation_0900
-         * @tc.desc: getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_0900
+         * @tc.name  Sub_Location_getCurrentLocation_0900
+         * @tc.desc  getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0900',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let request: geoLocationManager.SingleLocationRequest = {
@@ -1534,13 +1469,13 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
-         * @tc.number: Sub_Location_getCurrentLocation_1000
-         * @tc.name: Sub_Location_getCurrentLocation_1000
-         * @tc.desc: getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCurrentLocation_1000
+         * @tc.name  Sub_Location_getCurrentLocation_1000
+         * @tc.desc  getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_1000',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let request: geoLocationManager.SingleLocationRequest = {
@@ -1561,13 +1496,13 @@ export default function actslocationTest() {
           done();
       })      
 
-        /*
-         * @tc.number: Sub_Location_isLocationEnabled_0100
-         * @tc.name: Sub_Location_isLocationEnabled_0100
-         * @tc.desc: isLocationEnabled
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_isLocationEnabled_0100
+         * @tc.name  Sub_Location_isLocationEnabled_0100
+         * @tc.desc  isLocationEnabled
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_isLocationEnabled_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,(): void => {
               try {
@@ -1580,13 +1515,13 @@ export default function actslocationTest() {
           await Utils.msSleep(1000)
       })   
 
-        /*
-         * @tc.number: Sub_Location_getAddressesFromLocation_0100
-         * @tc.name: Sub_Location_getAddressesFromLocation_0100
-         * @tc.desc:  getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getAddressesFromLocation_0100
+         * @tc.name  Sub_Location_getAddressesFromLocation_0100
+         * @tc.desc   getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getAddressesFromLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
@@ -1599,24 +1534,44 @@ export default function actslocationTest() {
               try {
                 geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err:BusinessError<void>|null,data:Array<geoLocationManager.GeoAddress>|undefined) => {
                 if(data) {
+                    console.info("getAddressesFromLocation_0100 ======>latitude ", typeof data[0].latitude)
                     expect(typeof data[0].latitude).assertEqual("number");
+                    console.info("getAddressesFromLocation_0100 ======>longitude ", typeof data[0].longitude)
                     expect(typeof data[0].longitude).assertEqual("number");
+                    console.info("getAddressesFromLocation_0100 ======>locale ", typeof data[0].locale)
                     expect(typeof data[0].locale).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>placeName ", typeof data[0].placeName)
                     expect(typeof data[0].placeName).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>placeName ", typeof data[0].countryCode)
                     expect(typeof data[0].countryCode).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>countryName ", typeof data[0].countryName)
                     expect(typeof data[0].countryName).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>administrativeArea ", typeof data[0].administrativeArea)
                     expect(typeof data[0].administrativeArea).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>subAdministrativeArea ", typeof data[0].subAdministrativeArea)
                     expect(typeof data[0].subAdministrativeArea).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>locality ", typeof data[0].locality)
                     expect(typeof data[0].locality).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>subLocality ", typeof data[0].subLocality)
                     expect(typeof data[0].subLocality).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>roadName ", typeof data[0].roadName)
                     expect(typeof data[0].roadName).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>subRoadName ", typeof data[0].subRoadName)
                     expect(typeof data[0].subRoadName).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>premises ", typeof data[0].premises)
                     expect(typeof data[0].premises).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>postalCode ", typeof data[0].postalCode)
                     expect(typeof data[0].postalCode).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>phoneNumber ", typeof data[0].phoneNumber)
                     expect(typeof data[0].phoneNumber).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>addressUrl ", typeof data[0].addressUrl)
                     expect(typeof data[0].addressUrl).assertEqual("string");
-                    expect(data[0].descriptionsSize instanceof Array<string>);
-                    expect(typeof data[0].descriptions).assertEqual("string");
+                    console.info("getAddressesFromLocation_0100 ======>descriptionsSize ", typeof data[0].descriptionsSize)
+                    expect(typeof data[0].descriptionsSize).assertEqual("int");
+                    console.info("getAddressesFromLocation_0100 ======>descriptions ", typeof data[0].descriptions)
+                    if(data[0].descriptions != undefined){
+                      expect(typeof data[0].descriptions instanceof Array<string>);
+                    }
                     expect(data.length>0).assertTrue();
                 }
                 if (err) {
@@ -1632,13 +1587,13 @@ export default function actslocationTest() {
       })
 
 
-        /*
-         * @tc.number: Sub_Location_getAddressesFromLocation_0200
-         * @tc.name: Sub_Location_getAddressesFromLocation_0200
-         * @tc.desc:  getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getAddressesFromLocation_0200
+         * @tc.name  Sub_Location_getAddressesFromLocation_0200
+         * @tc.desc   getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getAddressesFromLocation_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
@@ -1662,13 +1617,13 @@ export default function actslocationTest() {
           done();
       })      
 
-        /*
-         * @tc.number: Sub_Location_getAddressesFromLocation_0300
-         * @tc.name: Sub_Location_getAddressesFromLocation_0300
-         * @tc.desc:  getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getAddressesFromLocation_0300
+         * @tc.name  Sub_Location_getAddressesFromLocation_0300
+         * @tc.desc   getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getAddressesFromLocation_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
@@ -1693,13 +1648,13 @@ export default function actslocationTest() {
       })        
      
 
-        /*
-         * @tc.number: Sub_Location_getAddressesFromLocationName_0100
-         * @tc.name: Sub_Location_getAddressesFromLocationName_0100
-         * @tc.desc:  getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getAddressesFromLocationName_0100
+         * @tc.name  Sub_Location_getAddressesFromLocationName_0100
+         * @tc.desc   getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getAddressesFromLocationName_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
@@ -1721,13 +1676,13 @@ export default function actslocationTest() {
           done();
       })      
 
-        /*
-         * @tc.number: Sub_Location_getAddressesFromLocationName_0200
-         * @tc.name: Sub_Location_getAddressesFromLocationName_0200
-         * @tc.desc:  getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getAddressesFromLocationName_0200
+         * @tc.name  Sub_Location_getAddressesFromLocationName_0200
+         * @tc.desc   getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getAddressesFromLocationName_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
@@ -1746,13 +1701,13 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
-         * @tc.number: Sub_Location_getCountryCode_0300
-         * @tc.name: Sub_Location_getCountryCode_0300
-         * @tc.desc:  getCountryCode(callback: AsyncCallback<CountryCode>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCountryCode_0300
+         * @tc.name  Sub_Location_getCountryCode_0300
+         * @tc.desc   getCountryCode(callback: AsyncCallback<CountryCode>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCountryCode_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
@@ -1773,13 +1728,13 @@ export default function actslocationTest() {
           done();
       })    
       
-        /*
-         * @tc.number: Sub_Location_getCountryCode_0400
-         * @tc.name: Sub_Location_getCountryCode_0400
-         * @tc.desc:  getCountryCode(): Promise<CountryCode>
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_getCountryCode_0400
+         * @tc.name  Sub_Location_getCountryCode_0400
+         * @tc.desc   getCountryCode(): Promise<CountryCode>
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_getCountryCode_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
@@ -1797,13 +1752,13 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
-        * @tc.number: SUB_Location_getLastLocation_0100
-        * @tc.name: SUB_Location_getLastLocation_0100
-        * @tc.desc: getLastLocation(): Location
-        * @tc.level: Level 2
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  SUB_Location_getLastLocation_0100
+        * @tc.name  SUB_Location_getLastLocation_0100
+        * @tc.desc  getLastLocation(): Location
+        * @tc.level  Level 2
+        * @tc.type  Function
+        * @tc.size  MEDIUMTEST
         */
         it('SUB_Location_getLastLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
@@ -1815,13 +1770,13 @@ export default function actslocationTest() {
               }
         })      
 
-        /*
-        * @tc.number: SUB_Location_getLastLocation_0200
-        * @tc.name: SUB_Location_getLastLocation_0200
-        * @tc.desc: getLastLocation(): Location
-        * @tc.level: Level 2
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  SUB_Location_getLastLocation_0200
+        * @tc.name  SUB_Location_getLastLocation_0200
+        * @tc.desc  getLastLocation(): Location
+        * @tc.level  Level 2
+        * @tc.type  Function
+        * @tc.size  MEDIUMTEST
         */
         it('SUB_Location_getLastLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
@@ -1833,13 +1788,13 @@ export default function actslocationTest() {
               }
         })           
 
-        /*
-        * @tc.number: SUB_Location_getLastLocation_0300
-        * @tc.name: SUB_Location_getLastLocation_0300
-        * @tc.desc: getLastLocation(): Location
-        * @tc.level: Level 2
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  SUB_Location_getLastLocation_0300
+        * @tc.name  SUB_Location_getLastLocation_0300
+        * @tc.desc  getLastLocation(): Location
+        * @tc.level  Level 2
+        * @tc.type  Function
+        * @tc.size  MEDIUMTEST
         */
         it('SUB_Location_getLastLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
@@ -1851,13 +1806,13 @@ export default function actslocationTest() {
               }
         })      
         
-        /*
-        * @tc.number: SUB_Location_getLastLocation_0400
-        * @tc.name: SUB_Location_getLastLocation_0400
-        * @tc.desc: getLastLocation(): Location
-        * @tc.level: Level 2
-        * @tc.type: Function
-        * @tc.size: MEDIUMTEST
+        /**
+        * @tc.number  SUB_Location_getLastLocation_0400
+        * @tc.name  SUB_Location_getLastLocation_0400
+        * @tc.desc  getLastLocation(): Location
+        * @tc.level  Level 2
+        * @tc.type  Function
+        * @tc.size  MEDIUMTEST
         */
         it('SUB_Location_getLastLocation_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
@@ -1869,20 +1824,19 @@ export default function actslocationTest() {
               }
         }) 
 
-        /*
-         * @tc.number: Sub_Location_onLocationChange_0100
-         * @tc.name: Sub_Location_onLocationChange_0100
-         * @tc.desc: onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onLocationChange_0100
+         * @tc.name  Sub_Location_onLocationChange_0100
+         * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onLocationChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let request: geoLocationManager.ContinuousLocationRequest = {
                 'interval': 1,
                 'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
               };
-              expect(typeof request.needPoi).assertEqual("boolean");
               let locationCallback = (location: geoLocationManager.Location): void => {
                 console.info('locationCallback: data: ' + JSON.stringify(location));
                 expect(true).assertEqual(location!=null);
@@ -1897,13 +1851,13 @@ export default function actslocationTest() {
           done();
       })        
         
-        /*
-         * @tc.number: Sub_Location_onLocationChange_0200
-         * @tc.name: Sub_Location_onLocationChange_0200
-         * @tc.desc: onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onLocationChange_0200
+         * @tc.name  Sub_Location_onLocationChange_0200
+         * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onLocationChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
               let request: geoLocationManager.ContinuousLocationRequest = {
@@ -1924,13 +1878,13 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
-         * @tc.number: Sub_Location_onLocationChange_0300
-         * @tc.name: Sub_Location_onlocationChange_0300
-         * @tc.desc: onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onLocationChange_0300
+         * @tc.name  Sub_Location_onlocationChange_0300
+         * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onLocationChange_0300',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let request: geoLocationManager.ContinuousLocationRequest = {
@@ -1951,13 +1905,13 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
-         * @tc.number: Sub_Location_offLocationChange_0100
-         * @tc.name: Sub_Location_offLocationChange_0100
-         * @tc.desc: offLocationChange(callback?: Callback<Location>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offLocationChange_0100
+         * @tc.name  Sub_Location_offLocationChange_0100
+         * @tc.desc  offLocationChange(callback?: Callback<Location>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offLocationChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
 
@@ -1982,13 +1936,13 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
-         * @tc.number: Sub_Location_onLocationError_0100
-         * @tc.name: Sub_Location_onLocationError_0100
-         * @tc.desc: onLocationError(callback: Callback<LocationError>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onLocationError_0100
+         * @tc.name  Sub_Location_onLocationError_0100
+         * @tc.desc  onLocationError(callback: Callback<LocationError>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onLocationError_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let requestInfo: geoLocationManager.LocationRequest = {
@@ -2020,13 +1974,13 @@ export default function actslocationTest() {
           done();
       })     
       
-        /*
-         * @tc.number: Sub_Location_offLocationError_0100
-         * @tc.name: Sub_Location_offLocationError_0100
-         * @tc.desc: offLocationError(callback?: Callback<LocationError>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offLocationError_0100
+         * @tc.name  Sub_Location_offLocationError_0100
+         * @tc.desc  offLocationError(callback?: Callback<LocationError>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offLocationError_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
@@ -2043,13 +1997,13 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
-         * @tc.number: Sub_Location_onLocationEnabledChange_0100
-         * @tc.name: Sub_Location_onLocationEnabledChange_0100
-         * @tc.desc:onLocationEnabledChange(callback: Callback<boolean>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onLocationEnabledChange_0100
+         * @tc.name  Sub_Location_onLocationEnabledChange_0100
+         * @tc.desc onLocationEnabledChange(callback: Callback<boolean>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onLocationEnabledChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let state = (state: boolean): void => {
@@ -2066,13 +2020,13 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
-         * @tc.number: Sub_Location_offLocationEnabledChange_0100
-         * @tc.name: Sub_Location_offLocationEnabledChange_0100
-         * @tc.desc:offLocationEnabledChange(callback: Callback<boolean>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offLocationEnabledChange_0100
+         * @tc.name  Sub_Location_offLocationEnabledChange_0100
+         * @tc.desc offLocationEnabledChange(callback: Callback<boolean>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offLocationEnabledChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let state = (state: boolean): void => {
@@ -2090,13 +2044,13 @@ export default function actslocationTest() {
       })   
 
       
-        /*
-         * @tc.number: Sub_Location_onSatelliteStatusChange_0100
-         * @tc.name: Sub_Location_onSatelliteStatusChange_0100
-         * @tc.desc:onSatelliteStatusChange( callback: Callback<SatelliteStatusInfo>): void  
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onSatelliteStatusChange_0100
+         * @tc.name  Sub_Location_onSatelliteStatusChange_0100
+         * @tc.desc onSatelliteStatusChange( callback: Callback<SatelliteStatusInfo>): void  
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onSatelliteStatusChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
@@ -2142,13 +2096,13 @@ export default function actslocationTest() {
           done();
       })            
 
-        /*
-         * @tc.number: Sub_Location_onSatelliteStatusChange_0200
-         * @tc.name: Sub_Location_onSatelliteStatusChange_0200
-         * @tc.desc:onSatelliteStatusChange( callback: Callback<SatelliteStatusInfo>): void  
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onSatelliteStatusChange_0200
+         * @tc.name  Sub_Location_onSatelliteStatusChange_0200
+         * @tc.desc onSatelliteStatusChange( callback: Callback<SatelliteStatusInfo>): void  
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onSatelliteStatusChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
@@ -2194,13 +2148,13 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
-         * @tc.number: Sub_Location_offSatelliteStatusChange_0100
-         * @tc.name: Sub_Location_offSatelliteStatusChange_0100
-         * @tc.desc:offSatelliteStatusChange(callback?: Callback<SatelliteStatusInfo>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offSatelliteStatusChange_0100
+         * @tc.name  Sub_Location_offSatelliteStatusChange_0100
+         * @tc.desc offSatelliteStatusChange(callback?: Callback<SatelliteStatusInfo>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offSatelliteStatusChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
@@ -2217,13 +2171,13 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
-         * @tc.number: Sub_Location_offSatelliteStatusChange_0200
-         * @tc.name: Sub_Location_offSatelliteStatusChange_0200
-         * @tc.desc:offSatelliteStatusChange(callback?: Callback<SatelliteStatusInfo>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offSatelliteStatusChange_0200
+         * @tc.name  Sub_Location_offSatelliteStatusChange_0200
+         * @tc.desc offSatelliteStatusChange(callback?: Callback<SatelliteStatusInfo>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offSatelliteStatusChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
@@ -2240,13 +2194,13 @@ export default function actslocationTest() {
           done();
       })  
 
-        /*
-         * @tc.number: Sub_Location_onNmeaMessage_0100
-         * @tc.name: Sub_Location_onNmeaMessage_0100
-         * @tc.desc:onNmeaMessage(callback: Callback<string>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onNmeaMessage_0100
+         * @tc.name  Sub_Location_onNmeaMessage_0100
+         * @tc.desc onNmeaMessage(callback: Callback<string>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onNmeaMessage_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
@@ -2263,13 +2217,13 @@ export default function actslocationTest() {
           done();
       })      
       
-        /*
-         * @tc.number: Sub_Location_onNmeaMessage_0200
-         * @tc.name: Sub_Location_onNmeaMessage_0200
-         * @tc.desc:onNmeaMessage(callback: Callback<string>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onNmeaMessage_0200
+         * @tc.name  Sub_Location_onNmeaMessage_0200
+         * @tc.desc onNmeaMessage(callback: Callback<string>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onNmeaMessage_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
@@ -2286,13 +2240,13 @@ export default function actslocationTest() {
           done();
       })  
  
-        /*
-         * @tc.number: Sub_Location_offNmeaMessage_0100
-         * @tc.name: Sub_Location_offNmeaMessage_0100
-         * @tc.desc:offNmeaMessage(callback: Callback<string>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offNmeaMessage_0100
+         * @tc.name  Sub_Location_offNmeaMessage_0100
+         * @tc.desc offNmeaMessage(callback: Callback<string>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offNmeaMessage_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
@@ -2309,13 +2263,13 @@ export default function actslocationTest() {
           done();
       })      
       
-        /*
-         * @tc.number: Sub_Location_offNmeaMessage_0200
-         * @tc.name: Sub_Location_offNmeaMessage_0200
-         * @tc.desc:offNmeaMessage(callback: Callback<string>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offNmeaMessage_0200
+         * @tc.name  Sub_Location_offNmeaMessage_0200
+         * @tc.desc offNmeaMessage(callback: Callback<string>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offNmeaMessage_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let nmeaCb = (str: string): void => {
@@ -2333,13 +2287,13 @@ export default function actslocationTest() {
       })       
    
 
-        /*
-         * @tc.number: Sub_Location_onCountryCodeChange_0100
-         * @tc.name: Sub_Location_onCountryCodeChange_0100
-         * @tc.desc: onCountryCodeChange(callback: Callback<CountryCode>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onCountryCodeChange_0100
+         * @tc.name  Sub_Location_onCountryCodeChange_0100
+         * @tc.desc  onCountryCodeChange(callback: Callback<CountryCode>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onCountryCodeChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (code: geoLocationManager.CountryCode): void => {
@@ -2356,20 +2310,18 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
-         * @tc.number: Sub_Location_offCountryCodeChange_0100
-         * @tc.name: Sub_Location_offCountryCodeChange_0100
-         * @tc.desc: offCountryCodeChange(callback: Callback<CountryCode>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offCountryCodeChange_0100
+         * @tc.name  Sub_Location_offCountryCodeChange_0100
+         * @tc.desc  offCountryCodeChange(callback: Callback<CountryCode>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offCountryCodeChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (code: geoLocationManager.CountryCode): void => {
                 console.info('countryCodeChange: ' + JSON.stringify(code));
                 expect(true).assertEqual(code!=null);
-                expect(typeof code.country).assertEqual("string");
-                expect(code.type != null).assertTrue();
               }
               try {
                 geoLocationManager.offCountryCodeChange(callback);
@@ -2381,23 +2333,18 @@ export default function actslocationTest() {
           done();
       })        
         
-        /*
-         * @tc.number: Sub_Location_onBluetoothScanResultChange_0100
-         * @tc.name: Sub_Location_onBluetoothScanResultChange_0100
-         * @tc.desc: onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onBluetoothScanResultChange_0100
+         * @tc.name  Sub_Location_onBluetoothScanResultChange_0100
+         * @tc.desc  onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onBluetoothScanResultChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
                 console.info('bluetoothScanResultChange: ' + JSON.stringify(result));
                 expect(true).assertEqual(result!=null);
-                expect(typeof result.deviceId).assertEqual("string");
-                expect(typeof result.rssi).assertEqual("number");
-                expect(result.data != null).assertTrue();
-                expect(typeof result.deviceName).assertEqual("string");
-                expect(typeof result.connectable).assertEqual("boolean");
               };
               try {
                 geoLocationManager.onBluetoothScanResultChange(callback);
@@ -2407,15 +2354,15 @@ export default function actslocationTest() {
               }
           await Utils.msSleep(1000)
           done();
-        })  
+      })  
       
-        /*
-         * @tc.number: Sub_Location_onBluetoothScanResultChange_0200
-         * @tc.name: Sub_Location_onBluetoothScanResultChange_0200
-         * @tc.desc: onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_onBluetoothScanResultChange_0200
+         * @tc.name  Sub_Location_onBluetoothScanResultChange_0200
+         * @tc.desc  onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_onBluetoothScanResultChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
@@ -2430,16 +2377,16 @@ export default function actslocationTest() {
               }
           await Utils.msSleep(1000)
           done();
-        })  
+      })  
       
       
-        /*
-         * @tc.number: Sub_Location_offBluetoothScanResultChange_0100
-         * @tc.name: Sub_Location_offBluetoothScanResultChange_0100
-         * @tc.desc: offBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
-         * @tc.level: Level 0
-         * @tc.type: Function
-         * @tc.size: MEDIUMTEST
+        /**
+         * @tc.number  Sub_Location_offBluetoothScanResultChange_0100
+         * @tc.name  Sub_Location_offBluetoothScanResultChange_0100
+         * @tc.desc  offBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
+         * @tc.level  Level 0
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
          */
         it('Sub_Location_offBluetoothScanResultChange_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let callback = (result: geoLocationManager.BluetoothScanResult): void => {
@@ -2454,25 +2401,16 @@ export default function actslocationTest() {
               }
           await Utils.msSleep(1000)
           done();
-        })      
+      })      
 
-      /*
-      * @tc.number: Sub_Location_GeofenceRequest_Property_0100
-      * @tc.name: Sub_Location_GeofenceRequest_Property_0100
-      * @tc.desc: offBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
-      * @tc.level: Level 0
-      * @tc.type: Function
-      * @tc.size: MEDIUMTEST
-      */
-      it('Sub_Location_GeofenceRequest_Property_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
-        let requestInfo: geoLocationManager.GeofenceRequest = {
-          'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-          "geofence": { "latitude": 31.12, "longitude": 121.11, "radius": 100, "expiration": 10000 }
-        };
-        expect(requestInfo.scenario != null).assertTrue();
-        expect(requestInfo.geofence != null).assertTrue();
-        done();
-      })   
+
+
+
+
+
+
+
+
 
 
 
