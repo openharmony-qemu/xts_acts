@@ -20,11 +20,13 @@ import adminManager from '@ohos.enterprise.adminManager';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
+import { inputMethod } from '@kit.IMEKit';
 
 const ITEM_SCREEN_OFF: string = 'screenOff';
 const ITEM_POWER_POLICY: string = 'powerPolicy';
 const ITEM_DATE_TIME: string = 'dateTime';
 const ITEM_EYE_COMFORT: string = 'eyeComfort';
+const ITEM_DEFAULT_INPUT_METHOD: string = 'defaultInputMethod';
 
 export default function deviceSettingsTest() {
   describe('deviceSettings_test', () => {
@@ -683,6 +685,106 @@ export default function deviceSettingsTest() {
         expect(error.code == 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_2001
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2001
+     * @tc.desc   test deviceSettings setValue without active admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_2001", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, 'com.example.inputmethod');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_2002
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2002
+     * @tc.desc   test deviceSettings setValue with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_2002", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, 'com.example.inputmethod');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_2003
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2003
+     * @tc.desc   test deviceSettings setValue without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_2003", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.setValue(null, ITEM_DEFAULT_INPUT_METHOD, 'com.example.inputmethod');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_2004
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2004
+     * @tc.desc   test deviceSettings setValue with error param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_2004", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, 'com.example.inputmethod');
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_value_2005
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_VALUE_JS_2005
+     * @tc.desc   test deviceSettings setValue with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_value_2005", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName = inputMethod.getCurrentInputMethod().name;
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, bundleName);
+        expect(true).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFWANT);
       }
       done();
     });

@@ -20,6 +20,7 @@ import adminManager from '@ohos.enterprise.adminManager';
 import telephonyManager from '@ohos.enterprise.telephonyManager';
 import restrictions from '@ohos.enterprise.restrictions';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import call from '@ohos.telephony.call';
 
 const PARAM_DISABLE_SLOT0: string = "persist.edm.disable_slot_0";
 const PARAM_DISABLE_SLOT1: string = "persist.edm.disable_slot_1";
@@ -36,6 +37,7 @@ export default function telephonyManagerTest() {
     testAddIncomingCallPolicyNumbers();
     testRemoveIncomingCallPolicyNumbers();
     testGetIncomingCallPolicyNumbers();
+    testHangupCalling();
   })
 }
 
@@ -1358,6 +1360,89 @@ function testRemoveIncomingCallPolicyNumbers() {
       expect(error.code == 801 || error.code == 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testHangupCalling() {
+  /**
+   * @tc.name   test_hang_up_calling_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0100
+   * @tc.desc   test telephonyManager hangupCalling without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      telephonyManager.hangupCalling(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001 || error.code == 801).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_hang_up_calling_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0101
+   * @tc.desc   test telephonyManager hangupCalling with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0101", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      telephonyManager.hangupCalling(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_hang_up_calling_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0102
+   * @tc.desc   test telephonyManager hangupCalling with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0102", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.hangupCalling(INVALID_WANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_hang_up_calling_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0103
+   * @tc.desc   test telephonyManager hangupCalling with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0103", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      telephonyManager.hangupCalling(SELFWANT);
+      expect(call.hasCallSync()).assertFalse();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
