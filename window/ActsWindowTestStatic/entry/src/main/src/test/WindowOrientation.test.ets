@@ -64,12 +64,9 @@ export default function WindowOrientationTest() {
 
 
         /**
-         * @tc.name   testWindowOrientation_Enum_Value_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1090
-         * @tc.desc   To test the enum value of Orientation.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1090
+         * @tc.name			testWindowOrientation_Enum_Value_static_0100
+         * @tc.desc			To test the enum value of Orientation.
          */
         it('testWindowOrientation_Enum_Value_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = 'setOutsideTouchable_Test_004_static_0100';
@@ -101,12 +98,12 @@ export default function WindowOrientationTest() {
             }
         })
         /**
-         * @tc.name   testRectChangeReason_enum_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0050
-         * @tc.desc   Test the function value of RectChangeReason
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0050
+         * @tc.name        testRectChangeReason_enum_static_0100
+         * @tc.desc        Test the function value of RectChangeReason
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it("testRectChangeReason_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr:string = "testRectChangeReason_enum_static_0100";
@@ -134,13 +131,13 @@ export default function WindowOrientationTest() {
             }
         })
 
-        /**
-         * @tc.name   testSetPreferredOrientation_WinAbnormal_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
-         * @tc.desc   Set the display direction property of the window
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+/**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2840
+         * @tc.name        testSetPreferredOrientation_WinAbnormal_Promise_static_0100
+         * @tc.desc        Set the display direction property of the window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetPreferredOrientation_WinAbnormal_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string  = 'testSetPreferredOrientation_WinAbnormal_Promise_static_0100';
@@ -169,12 +166,12 @@ export default function WindowOrientationTest() {
             }
         })
         /**
-         * @tc.name   testSetPreferredOrientation_WinAbnormal_Call_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
-         * @tc.desc   Set the display direction property of the window
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2850
+         * @tc.name        testSetPreferredOrientation_WinAbnormal_Call_static_0200
+         * @tc.desc        Set the display direction property of the window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetPreferredOrientation_WinAbnormal_Call_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string  = 'testSetPreferredOrientation_WinAbnormal_Call_static_0200';
@@ -207,12 +204,12 @@ export default function WindowOrientationTest() {
         })
 
         /**
-         * @tc.name   test_RotationChange_static_0100
-         * @tc.number SUB_BASIC_WMS_RotationChange_0200
-         * @tc.desc   test_RotationChange_0200
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_RotationChange_0200
+         * @tc.name        test_RotationChange_static_0100
+         * @tc.desc        test_RotationChange_0200
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('test_RotationChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_static_0100';
@@ -231,12 +228,12 @@ export default function WindowOrientationTest() {
             }
         });
         /**
-         * @tc.name   test_RotationChange_static_0200
-         * @tc.number SUB_BASIC_WMS_RotationChange_0400
-         * @tc.desc   test_RotationChange_static_0200
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_RotationChange_0400
+         * @tc.name        test_RotationChange_static_0200
+         * @tc.desc        test_RotationChange_static_0200
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('test_RotationChange_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_static_0200';
@@ -317,12 +314,12 @@ export default function WindowOrientationTest() {
             }
         });
         /**
-         * @tc.name   test_RotationChange_801_static_0300
-         * @tc.number SUB_BASIC_WMS_RotationChange_801_0100
-         * @tc.desc   test_RotationChange_801_static_0300
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_RotationChange_801_0100
+         * @tc.name        test_RotationChange_801_static_0300
+         * @tc.desc        test_RotationChange_801_static_0300
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 1
          */
         it('test_RotationChange_801_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_801_static_0300';
@@ -355,12 +352,12 @@ export default function WindowOrientationTest() {
         });
 
         /**
-         * @tc.name   test_RotationChange_801_static_0400
-         * @tc.number SUB_BASIC_WMS_RotationChange_801_0200
-         * @tc.desc   test_RotationChange_801_static_0400
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_RotationChange_801_0200
+         * @tc.name        test_RotationChange_801_static_0400
+         * @tc.desc        test_RotationChange_801_static_0400
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 1
          */
         it('test_RotationChange_801_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChange_801_static_0400';
@@ -391,12 +388,12 @@ export default function WindowOrientationTest() {
         });
 
         /**
-         * @tc.name   test_RotationChangeType_static_0100
-         * @tc.number SUB_BASIC_WMS_RotationChange_Type_0100
-         * @tc.desc   test_RotationChangeType_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.number      SUB_BASIC_WMS_RotationChange_Type_0100
+         * @tc.name        test_RotationChangeType_static_0100
+         * @tc.desc        test_RotationChangeType_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 1
          */
         it('test_RotationChangeType_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'test_RotationChangeType_static_0100';
@@ -408,7 +405,33 @@ export default function WindowOrientationTest() {
             expect(window.RectType.RELATIVE_TO_PARENT_WINDOW).assertEqual(1);
             done();
         });
-
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_4290
+         * @tc.name       testGetPreferredOrientation_WindowAbnormal_static
+         * @tc.desc       Sets the display direction property of the window
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testGetPreferredOrientation_WindowAbnormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetPreferredOrientation_WindowAbnormal_static';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin');
+            let windowClass: window.Window = await windowStage.createSubWindow('testGetPreferredOrientation_WindowAbnormal')
+            hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+            expect(!!windowClass).assertTrue();
+            await windowClass.destroyWindow();
+            try {
+                let currentOrientation = windowClass.getPreferredOrientation();
+                expect(false).assertTrue();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag,`Failed to get window orientation. Cause code: ${exception.code}, message: ${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        })
 
 
 

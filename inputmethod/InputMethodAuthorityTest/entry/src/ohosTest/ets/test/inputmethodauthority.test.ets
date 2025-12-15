@@ -630,5 +630,62 @@ export default function inputMethodAuthorityJSUnit() {
       };
     });
 
+    /**
+     * @tc.name   Sub_InputMethod_IMF_EasyConn_0900
+     * @tc.number Sub_InputMethod_IMF_EasyConn_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_EasyConn_0900', Level.LEVEL3, async (done: Function) => {
+      try{
+        let flage:boolean = true;
+        let attachmentDidFailCallback: Callback<inputMethod.AttachFailureReason> =
+          (reason: inputMethod.AttachFailureReason): void => {
+            flage = false;
+            console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 Attachment failed with reason: ${reason}.`);
+            if (reason === inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED) {
+              console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 Failure reason is CALLER_NOT_FOCUSED.`);
+            }
+          };
+        inputMethod.onAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 onAttachmentDidFail success`);
+        inputMethod.offAttachmentDidFail(attachmentDidFailCallback);
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 offAttachmentDidFail success`);
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          expect(flage).assertTrue();
+          console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 setTimeout offAttachmentDidFail success`);
+          done();
+        }, 500)
+      } catch (err){
+        console.info(`====>Sub_InputMethod_IMF_EasyConn_0900 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_EasyConn_0910
+     * @tc.number Sub_InputMethod_IMF_EasyConn_0910
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_EasyConn_0910', Level.LEVEL3, async (done: Function) => {
+      let caller_not_focused = inputMethod.AttachFailureReason.CALLER_NOT_FOCUSED;
+      console.info("====>Sub_InputMethod_IMF_EasyConn_0910 caller_not_focused: " + caller_not_focused);
+      expect(caller_not_focused).assertEqual(0);
+      let ime_abnormal = inputMethod.AttachFailureReason.IME_ABNORMAL;
+      console.info("====>Sub_InputMethod_IMF_EasyConn_0910 ime_abnormal: " + ime_abnormal);
+      expect(ime_abnormal).assertEqual(1);
+      let service_abnormal = inputMethod.AttachFailureReason.SERVICE_ABNORMAL;
+      console.info("====>Sub_InputMethod_IMF_EasyConn_0910 service_abnormal: " + service_abnormal);
+      expect(service_abnormal).assertEqual(2);
+      done();
+    });
+
   });
 };

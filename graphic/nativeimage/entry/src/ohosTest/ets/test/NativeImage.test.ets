@@ -1438,5 +1438,148 @@ export default function nativeImageTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+      /**
+       * @tc.name   testNativeImageIsReleasedNull
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3800
+       * @tc.desc   test OH_NativeImage_IsReleased
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeImageIsReleasedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageIsReleasedNull();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageIsReleasedNull1
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3801
+       * @tc.desc   test OH_NativeImage_IsReleased
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeImageIsReleasedNull1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageIsReleasedNull1();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageIsReleasedNormal0
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3802
+       * @tc.desc   test OH_NativeImage_IsReleased
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testNativeImageIsReleasedNormal0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageIsReleasedNormal0();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageIsReleasedNormal1
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3803
+       * @tc.desc   test OH_NativeImage_IsReleased
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testNativeImageIsReleasedNormal1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageIsReleasedNormal1();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageReleasedNull
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3804
+       * @tc.desc   test OH_NativeImage_Release
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeImageReleasedNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageReleasedNull();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageReleasedNormal
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3805
+       * @tc.desc   test OH_NativeImage_Release
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testNativeImageReleasedNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageReleasedNormal();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageReleasedNormal1
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3806
+       * @tc.desc   test OH_NativeImage_Release
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testNativeImageReleasedNormal1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+          let result: Array<number> = nativeimage.oHNativeImageReleasedNormal1();
+          expect(result[0]).assertEqual(0);
+          expect(result[1]).assertEqual(0);
+          expect(result[2]).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageIsReleasedCalls
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3807
+       * @tc.desc   test OH_NativeImage_IsReleased
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeImageIsReleasedCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageIsReleasedCalls();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageReleasedCalls
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3808
+       * @tc.desc   test OH_NativeImage_Release
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeImageReleasedCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageReleasedCalls();
+          expect(result).assertEqual(0);
+          done();
+        });
+      /**
+       * @tc.name   testNativeImageReleaseAbnormal
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3809
+       * @tc.desc   test OH_NativeImage_IsReleased OH_NativeImage_Release
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeImageReleaseAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeImageReleaseAbnormal();
+          expect(result).assertEqual(0);
+          done();
+        });
   })
 }

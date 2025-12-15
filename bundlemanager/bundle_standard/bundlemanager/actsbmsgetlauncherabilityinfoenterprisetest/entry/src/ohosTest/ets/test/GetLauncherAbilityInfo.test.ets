@@ -177,6 +177,8 @@ export default function actsGetLauncherAbilityInfoTest() {
       try {
         let abilityInfos: Array<launcherBundleManager.LauncherAbilityInfo> =
           launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME17700001, userId);
+        hilog.info(DOMAIN, "Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200",
+          `${JSON.stringify(abilityInfos)}`);
         expect().assertFail();
         done();
       }

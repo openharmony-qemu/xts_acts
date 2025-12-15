@@ -2748,7 +2748,7 @@ export default function displayTest() {
       let caseName = 'testOnBrightnessInfoChange_0100';
       try {
         let windowClass = windowStage.getMainWindowSync();
-        await windowClass.setWindowBrightness(0);
+        await windowClass.setWindowBrightness(1);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
@@ -2826,7 +2826,7 @@ export default function displayTest() {
       let caseName = 'testOnBrightnessInfoChange_0200';
       try {
         let windowClass = await windowStage.getMainWindow();
-        await windowClass.setWindowBrightness(0);
+        await windowClass.setWindowBrightness(1);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
         let callback1Triggered = false;
@@ -2983,6 +2983,25 @@ export default function displayTest() {
         }
       }
     });
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_GET_DISPLAY_BYID_0100
+     * @tc.name    testGetDisplayById__1
+     * @tc.desc    getDisplayByIdSync入参传入-1
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testGetDisplayById__1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testGetDisplayById__1';
+      try {
+        let displayClass = display.getDisplayByIdSync(-1);
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(e.code).assertEqual(401);
+        expect(e.message).assertEqual('Parameter error.[display][getDisplayByIdSync]msg: displayid is invalid, less than 0');
+        done();
+      }
+    })
 
   })
 }

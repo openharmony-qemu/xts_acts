@@ -25,12 +25,12 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ActsSetMissionWindowIconStaticTest() {
   describe('ActsSetMissionWindowIconStaticTest', () => {
     beforeEach(() => {
-      console.info('beforeAll start');
+      console.info('beforeEach start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.setmissionicon.static")
       await Utils.msSleep(5000);
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
-      console.info('beforeAll end');
+      console.info('beforeEach end');
     })
 
     /**
@@ -39,12 +39,13 @@ export default function ActsSetMissionWindowIconStaticTest() {
      * @tc.desc    test setMissionWindowIcon interface success
      * @tc.size    Large-scaleTest
      * @tc.type    Interface
-     * @tc.level   Level 3
+     * @tc.level   Level 0
      */
-    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100';
-        hilog.info(0x0000, TEST_CASE_NAME, `start`);
+        const testTag = 'testTag';
+        hilog.info(0x0000, testTag, `${TEST_CASE_NAME}start`);
         let imagePixelMap: image.PixelMap;
         let color = new ArrayBuffer(50 * 50 * 4);
         let bufferArr = new Uint8Array(color);
@@ -57,21 +58,22 @@ export default function ActsSetMissionWindowIconStaticTest() {
         image.createPixelMap(color, {
           editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 50, width: 50 }
         }).then((data) => {
+          hilog.info(0x0000, testTag, `${TEST_CASE_NAME}data:${JSON.stringify(data)}`);
           imagePixelMap = data;
           testAbilityContext.setMissionWindowIcon(imagePixelMap)
-              .then((idata) => {
-                expect(idata).assertEqual(undefined);
-                console.info('idata'+idata);
-                console.info('setMissionWindowIcon succeed');
-                done();
-              })
-              .catch((err: BusinessError):void => {
-                console.error(`setMissionWindowIcon failed, code is ${err.code}, message is ${err.message}`);
-                expect(err.code).assertEqual(801);
-                done();
-              });
-        }).catch((err: BusinessError):void => {
-          console.error(`createPixelMap failed, code is ${err.code}, message is ${err.message}`);
+            .then((idata) => {
+              hilog.info(0x0000, testTag, `${TEST_CASE_NAME}'setMissionWindowIcon succeed')`);
+              hilog.info(0x0000, testTag, `${TEST_CASE_NAME}'data'+JSON.stringify(idata)`);
+              expect(JSON.stringify(idata)).assertEqual('0')
+              done();
+            })
+            .catch((err: BusinessError): void => {
+              console.error(`${TEST_CASE_NAME}setMissionWindowIcon failed, code is ${err.code}, message is ${err.message}`);
+              expect(err.code).assertEqual(801);
+              done();
+            });
+        }).catch((err: BusinessError): void => {
+          console.error(`${TEST_CASE_NAME}createPixelMap failed, code is ${err.code}, message is ${err.message}`);
           expect().assertFail();
           done();
         });

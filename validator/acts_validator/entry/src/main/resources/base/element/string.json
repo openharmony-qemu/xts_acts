@@ -59,6 +59,10 @@
     {
       "name": "EntryAbility_desc",
       "value": "description"
+    },
+    {
+      "name": "ziyuan",
+      "value": "播报resource自定义文本"
     }
   ]
 }
