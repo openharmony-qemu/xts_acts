@@ -13,21 +13,21 @@
  * limitations under the License.
  */
 
-import { ColorMetrics, LengthMetrics,RenderNode, FrameNode, NodeController, edgeWidths,borderRadiuses } from '@kit.ArkUI';
+import { ColorMetrics, LengthMetrics, RenderNode, FrameNode, NodeController, edgeWidths, borderRadiuses, edgeColors } from '@kit.ArkUI';
 
 const renderNode = new RenderNode();
 renderNode.frame = { x: 0, y: 0, width: 120, height: 30 };
 renderNode.backgroundColor = 0XFF00FF00;
 renderNode.borderWidth = edgeWidths(0);
 renderNode.borderRadius = borderRadiuses(0);
-renderNode.borderColor = { left: 0xFF0000FF, top: 0xFF0000FF, right: 0xFF0000FF, bottom: 0xFF0000FF };
+renderNode.borderColor = edgeColors(0xffffffff);
 
 const renderNode1 = new RenderNode();
 renderNode1.frame = { x: 0, y: 0, width: 150, height: 30 };
 renderNode1.backgroundColor = 0XFF00FF00;
 renderNode1.borderWidth = edgeWidths(-1);
 renderNode1.borderRadius = borderRadiuses(-1);
-renderNode1.borderColor = { left: 0xFF0000FF, top: 0xFF0000FF, right: 0xFF0000FF, bottom: 0xFF0000FF };
+renderNode.borderColor = edgeColors(0xffffffff+1);
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
