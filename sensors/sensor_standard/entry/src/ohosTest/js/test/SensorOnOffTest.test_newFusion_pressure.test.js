@@ -106,14 +106,14 @@ describe("SensorJsTest_sensor_65", function () {
                 done();
             }, 500);
         } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest012 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(false).assertTrue();
-          } else {
-            expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
-          }
-          done();
+            let e: BusinessError = error as BusinessError;
+            hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest012 failed error.code: ${e.code} , error.message: ${e.message}`);
+            if (Available) {
+                expect(false).assertTrue();
+            } else {
+                expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
+            }
+            done();
         }
     })
 
@@ -140,13 +140,13 @@ describe("SensorJsTest_sensor_65", function () {
             expect(true).assertTrue();
             done();
         } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest018 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(false).assertTrue();
-          } else {
-            expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
-          }
+            let e: BusinessError = error as BusinessError;
+            hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest018 failed error.code: ${e.code} , error.message: ${e.message}`);
+            if (Available) {
+                expect(false).assertTrue();
+            } else {
+                expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
+            }
             done();
         }
     })
