@@ -50,8 +50,6 @@ export default function curvesJsunit() {
      */
     it('curvesJsunit_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('curvesJsunit_0010 START');
-      let driver = Driver.create();
-      await driver.delayMs(1000);
       expect(Curve.Linear).assertEqual('linear');
       expect(Curve.Ease).assertEqual('ease');
       expect(Curve.EaseIn).assertEqual('ease-in');
