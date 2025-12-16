@@ -24,6 +24,30 @@ namespace {
 const uint32_t MAX_NAME_LENGTH = 1024;
 }
 
+napi_value StartSelfUIAbilityWithPidPermissionDenied(napi_env env, napi_callback_info info)
+{
+    AbilityBase_Element element;
+    int32_t pid = 123;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapinopermissiontest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_PERMISSION_DENIED) {
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    } else if (errCode == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 napi_value StartSelfUIAbilityPermissionDenied(napi_env env, napi_callback_info info)
 {
     AbilityBase_Element element;

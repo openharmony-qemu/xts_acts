@@ -138,5 +138,13 @@ napi_value AbilityRuntimeErrorCodeUpperLimitReachedCode(napi_env env, napi_callb
 napi_value AbilityRuntimeErrorAppInstanceKeyNotSupportCode(napi_env env, napi_callback_info info);
 napi_value ApplicationContextGetVersionCodeNoError(napi_env env, napi_callback_info info);
 napi_value ApplicationContextGetVersionCodeParamInvalid(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled(napi_env env, napi_callback_info info);
 
 #endif //ACTSCAPISTARTSELFUIABILITYTEST20_ACTSCAPISTARTSELFUIABILITYTEST20TEST_H
