@@ -833,6 +833,7 @@ async function checkHasUnsupportedX509CrlCallback(flag: string): Promise<boolean
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
+  return new Promise<boolean>((resolve, reject) => {});
 }
 
 async function createX509CRLInstanceWithSerialNumberCallback(): Promise<cert.X509CRL> {
