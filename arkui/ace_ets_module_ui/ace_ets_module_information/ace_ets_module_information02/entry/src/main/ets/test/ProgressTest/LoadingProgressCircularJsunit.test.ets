@@ -90,5 +90,44 @@ export default function LoadingProgressCircularJsunit() {
       console.info("[testloadingProgressOrbital0001] margin value :" + JSON.parse(strJson).$attrs.margin);
       done();
     });
+
+    /**
+     * @tc.name   testLoadingProgressStyle001
+     * @tc.number SUB_ACE_BASIC_ETS_API_LOADING_PROGRESS_STYLE_001
+     * @tc.desc   testLoadingProgressStyle enum default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadingProgressStyle001', Level.LEVEL3, async (done: Function) => {
+      expect(LoadingProgressStyle.Default).assertEqual(1)
+      done();
+    });
+
+    /**
+     * @tc.name   testLoadingProgressStyle002
+     * @tc.number SUB_ACE_BASIC_ETS_API_LOADING_PROGRESS_STYLE_002
+     * @tc.desc   testLoadingProgressStyle enum Circular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadingProgressStyle002', Level.LEVEL3, async (done: Function) => {
+      expect(LoadingProgressStyle.Circular).assertEqual(2)
+      done();
+    });
+
+    /**
+     * @tc.name   testLoadingProgressStyle003
+     * @tc.number SUB_ACE_BASIC_ETS_API_LOADING_PROGRESS_STYLE_003
+     * @tc.desc   testLoadingProgressStyle enum Orbital
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testLoadingProgressStyle003', Level.LEVEL3, async (done: Function) => {
+      expect(LoadingProgressStyle.Orbital).assertEqual(3)
+      done();
+    });
   })
 }
