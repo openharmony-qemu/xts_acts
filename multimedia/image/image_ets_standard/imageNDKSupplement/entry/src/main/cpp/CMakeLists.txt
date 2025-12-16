@@ -32,8 +32,7 @@ add_library(imageEffect SHARED
     ImageSourceNativeCreateTest.cpp
     InitNativePixelMapTest.cpp
     ImagePackerCreateTest.cpp
-    ImagePixelMapTest.cpp
-    ImageInitImageNativeSuppTest.cpp)
+    ImagePixelMapTest.cpp)
 
 find_library(
     # Sets the name of the path variable.
