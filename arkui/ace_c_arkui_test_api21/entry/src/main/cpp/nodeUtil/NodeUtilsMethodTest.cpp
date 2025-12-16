@@ -19,6 +19,19 @@
 
 static ArkUI_NativeNodeAPI_1 *g_nodeAPI = nullptr;
 
+#define NUMBER_106103 106103
+#define NUMBER_106104 106104
+#define NUMBER_106105 106105
+#define NUMBER_106206 106206
+
+#define NUMBER_106207 106207
+#define NUMBER_106208 106208
+#define NUMBER_106209 106209
+#define NUMBER_106210 106210
+#define NUMBER_106406 106406
+#define NUMBER_106407 106407
+#define NUMBER_106408 106408
+
 namespace ArkUICapiTest {
 
 static napi_value TestMethodReturnValue001(napi_env env, napi_callback_info info)
