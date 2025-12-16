@@ -198,6 +198,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(3000);
               expect(callbackIndex).assertEqual(1);
               await pipController?.stopPiP();
+              await sleep(3000);
               pipController?.off('activeStatusChange');
               done();
             }).catch((err:BusinessError) => {
@@ -288,6 +289,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               expect(callbackIndex1).assertEqual(1);
               expect(callbackIndex2).assertEqual(1);
               await pipController?.stopPiP();
+              await sleep(3000);
               pipController?.off('activeStatusChange');
               done();
             }).catch((err:BusinessError) => {
@@ -370,6 +372,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(3000);
               expect(callbackIndex).assertEqual(0);
               await pipController?.stopPiP();
+              await sleep(3000);
               done();
             }).catch((err:BusinessError) => {
               console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
@@ -451,6 +454,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(3000);
               expect(callbackIndex).assertEqual(0);
               await pipController?.stopPiP();
+              await sleep(3000);
               done();
             }).catch((err:BusinessError) => {
               console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
@@ -5025,6 +5029,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             expect(data != null).assertTrue();
             await pipController.startPiP();
             await pipController.stopPiP();
+            await sleep(5000);
             done();
           }).catch((err:BusinessError) => {
             console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
