@@ -13,14 +13,35 @@
  * limitations under the License.
  */
 import sensor from '@ohos.sensor'
-
+import hilog from '@ohos.hilog'
+import { BusinessError } from '@ohos.base';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 
 export default function SensorJsTest_sensor_65() {
 describe("SensorJsTest_sensor_65", function () {
+
+    const PARAMETER_ERROR_CODE = 401
+    let sensorList: Array<sensor.Sensor> | undefined = undefined
+    let Available = false;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         expect(typeof (data.value)).assertEqual("number");
+    }
+
+    let isAvailable = async (data: sensor.SensorId): Promise<void>=> {
+      if (sensorList != undefined) {
+        const targetSensor = sensorList?.filter((sensors:sensor.Sensor) => sensors.sensorId === data)
+        hilog.info(0x0000, 'testTag', `isAvailable : ${targetSensor},length : ${targetSensor?.length}`);
+        if (targetSensor?.length != 0) {
+          Available = true
+          hilog.info(0x0000, 'testTag', `Available : ${Available}`);
+        } else {
+          Available = false
+          hilog.info(0x0000, 'testTag', `Available : ${Available}`);
+        }
+      } else {
+        hilog.info(0x0000, 'testTag', `sensorList : ${sensorList}`);
+      }
     }
 
     beforeAll(function () {
@@ -28,6 +49,18 @@ describe("SensorJsTest_sensor_65", function () {
         /*
          * @tc.setup: setup invoked before all testcases
          */
+        try {
+            sensor.getSensorList((err: BusinessError<void> | null, data: Array<sensor.Sensor> | undefined) => {
+                hilog.info(0x0000, 'testTag',  `beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
+                sensorList = data
+                done();
+            });
+            hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
+            done();
+        } catch (error: BusinessError) {
+            hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
+            done();
+        }
         console.info('beforeAll called')
     })
 
@@ -55,8 +88,6 @@ describe("SensorJsTest_sensor_65", function () {
         console.info('afterEach called')
     })
 
-    const PARAMETER_ERROR_CODE = 401
-
     /**
      * @tc.name   newFusion_Pressure_SensorJsTest012
      * @tc.number SUB_SensorsSystem_Fusion_Pressure_JSTest_0120
@@ -67,21 +98,23 @@ describe("SensorJsTest_sensor_65", function () {
      */
     it("newFusion_Pressure_SensorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newFusion_Pressure_SensorJsTest012--------');
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         try {
             sensor.on(sensor.SensorId.FUSION_PRESSURE, callback);
-        } catch (error) {
-            console.info("newFusion_Pressure_SensorJsTest012 error:" + error);
-            if(error.code == PARAMETER_ERROR_CODE || error.code == SENSOR_NO_SUPPORT_CODE) {
+            setTimeout(() => {
                 expect(true).assertTrue();
-            } else {
-                expect(false).assertTrue();
-            }
-            done();
+                done();
+            }, 500);
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest012 failed error.code: ${e.code} , error.message: ${e.message}`);
+          if (Available) {
+            expect(false).assertTrue();
+          } else {
+            expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
+          }
+          done();
         }
-         setTimeout(() => {
-            expect(true).assertTrue();
-            done();
-        }, 500);
     })
 
     /**
@@ -94,27 +127,28 @@ describe("SensorJsTest_sensor_65", function () {
      */
     it("newFusion_Pressure_SensorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('--------newFusion_Pressure_SensorJsTest018--------');
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         function onSensorCallback(data) {
             console.info('newFusion_Pressure_SensorJsTest018  on error');
             expect(typeof (data.value)).assertEqual("number");
         }
         try {
-           sensor.on(sensor.SensorId.FUSION_PRESSURE, onSensorCallback);
-        } catch (error) {
-            console.info("newFusion_Pressure_SensorJsTest018 error:" + error);
-            if(error.code == PARAMETER_ERROR_CODE || error.code == SENSOR_NO_SUPPORT_CODE) {
-                expect(true).assertTrue();
-            } else {
-                expect(false).assertTrue();
-            }
-            done();
-        }
-        setTimeout(() => {
+            sensor.on(sensor.SensorId.FUSION_PRESSURE, onSensorCallback);
             console.info('-------------------newFusion_Pressure_SensorJsTest018 off in------------');
             sensor.off(sensor.SensorId.FUSION_PRESSURE);
             console.info('-------------------newFusion_Pressure_SensorJsTest018 off end-----------');
+            expect(true).assertTrue();
             done();
-        }, 1000);
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest018 failed error.code: ${e.code} , error.message: ${e.message}`);
+          if (Available) {
+            expect(false).assertTrue();
+          } else {
+            expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
+          }
+            done();
+        }
     })
 })
 }
