@@ -36,6 +36,9 @@ export default function systemManagerTest() {
     testRemoveDisallowedNearLinkProtocols();
     testSetInstallLocalEnterpriseAppEnabled();
     testGetInstallLocalEnterpriseAppEnabled();
+    testSetKeyEventPolicy();
+    testRemoveKeyEventPoliicy();
+    testGetKeyEventPolicy();
   })
 }
 
@@ -1515,6 +1518,312 @@ function testGetInstallLocalEnterpriseAppEnabled() {
       expect(isDisallow).assertFalse();
     } catch (error) {
       expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetKeyEventPolicy() {
+  /**
+   * @tc.name   test_set_key_event_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0001
+   * @tc.desc   test systemManager setKeyEventPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode: 1, keyPolicy: 1},
+        {keyCode: 18, keyPolicy: 1}
+      ]
+      systemManager.setKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_key_event_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0002
+   * @tc.desc   test systemManager setKeyEventPolicy without normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode: 1, keyPolicy: 1},
+        {keyCode: 18, keyPolicy: 1}
+      ]
+      systemManager.setKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_key_event_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0003
+   * @tc.desc   test systemManager setKeyEventPolicy without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode: 1, keyPolicy: 1},
+        {keyCode: 18, keyPolicy: 1}
+      ]
+      systemManager.setKeyEventPolicy(INVALID_WANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_key_event_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0004
+   * @tc.desc   test systemManager setKeyEventPolicy without parameter is incorrect
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode: 0, keyPolicy: 1},
+      ]
+      systemManager.setKeyEventPolicy(INVALID_WANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_key_event_policy_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0005
+   * @tc.desc   test systemManager setKeyEventPolicy without parameter conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode: 1, keyPolicy: 1},
+        {keyCode: 1, keyPolicy: 0}
+      ]
+      systemManager.setKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200010).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveKeyEventPolicy() {
+  /**
+   * @tc.name   test_remove_key_event_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICY_JS_0001
+   * @tc.desc   test systemManager removeKeyEventPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      let keyCodes: Array<number> = [1]
+      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_key_event_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICY_JS_0002
+   * @tc.desc   test systemManager removeKeyEventPolicy without normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_key_event_policy_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let keyCodes: Array<number> = [1]
+      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_key_event_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICY_JS_0003
+   * @tc.desc   test systemManager removeKeyEventPolicy without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_key_event_policy_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyCodes: Array<number> = [1]
+      systemManager.removeKeyEventPolicy(INVALID_WANT, keyCodes);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_key_event_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICY_JS_0004
+   * @tc.desc   test systemManager removeKeyEventPolicy without parameter is incorrect
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_key_event_policy_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyCodes: Array<number> = [0]
+      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetKeyEventPolicy() {
+  /**
+   * @tc.name   test_get_key_event_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICY_JS_0001
+   * @tc.desc   test systemManager getKeyEventPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = []
+      systemManager.getKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_key_event_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICY_JS_0002
+   * @tc.desc   test systemManager getKeyEventPolicy without normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policy_0002", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = []
+      systemManager.getKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_key_event_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICY_JS_0003
+   * @tc.desc   test systemManager setKeyEventPolicy without invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policy_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = []
+      systemManager.getKeyEventPolicy(INVALID_WANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_key_event_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICY_JS_0004
+   * @tc.desc   test systemManager setKeyEventPolicy without super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policy_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode: 1, keyPolicy: 1},
+        {keyCode: 18, keyPolicy: 1}
+      ]
+      let keyInstances: Array<systemManager.keyPolicyInstance> = []
+      let keyCodes: Array<number> = [1]
+      systemManager.setKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      systemManager.getKeyEventPolicy(SELFWANT, keyInstances);
+      expect(keyInstances.length == 2).assertTrue();
+      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
+      expect(keyInstances.length == 1).assertTrue();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

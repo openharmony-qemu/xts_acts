@@ -36,6 +36,9 @@ export default function systemManagerTest() {
     testRemoveDisallowedNearLinkProtocols();
     testSetInstallLocalEnterpriseAppEnabled();
     testGetInstallLocalEnterpriseAppEnabled();
+    testSetKeyEventPolicy();
+    testRemoveKeyEventPolicy();
+    testGetKeyEventPolicy();
   })
 }
 
@@ -373,3 +376,79 @@ function testGetInstallLocalEnterpriseAppEnabled() {
     done();
   });
 }
+
+function testSetKeyEventPolicy() {
+  /**
+   * @tc.name   test_set_key_event_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0001
+   * @tc.desc   test systemManager setKeyEventPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+        {keyCode:1, keyPolicy:1},
+        {keyCode:18, keyPolicy:1}
+      ]
+      systemManager.setKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveKeyEventPolicy() {
+  /**
+   * @tc.name   test_remove_key_event_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICY_JS_0001
+   * @tc.desc   test systemManager removeKeyEventPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let keyCodes: Array<number> = [1, 18]
+      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetKeyEventPolicy() {
+  /**
+   * @tc.name   test_get_key_event_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICY_JS_0001
+   * @tc.desc   test systemManager getKeyEventPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = []
+      systemManager.getKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
