@@ -119,16 +119,15 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getSignatureInfo_static_04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
-      bundle.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA).then((data: BundleInfo) => {
+      try{
         let datas = bundle.getSignatureInfo(0);
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }catch(err: BusinessError){
         hilog.error(domain, tag, `Sub_Bms_Framework_getSignatureInfo_static_04 catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(201);
         done();
-      });
+      };
     })
 
     /**
