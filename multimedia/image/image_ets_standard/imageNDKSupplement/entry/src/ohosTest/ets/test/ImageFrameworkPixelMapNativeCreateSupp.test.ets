@@ -26,7 +26,6 @@ const CASE_INDEX_1 = 1
 const CASE_INDEX_2 = 2;
 const CASE_INDEX_3 = 3;
 const CASE_INDEX_4 = 4;
-
 const TAG = 'imageFrameworkPixelMapNativeCreateSuppXts';
 
 export default function imageFrameworkPixelMapNativeCreateSuppTest() {

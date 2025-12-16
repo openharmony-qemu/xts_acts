@@ -145,7 +145,7 @@ napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env
         errCode = OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing(
             srcPixelmap, &dstPixelmap, scaleX, scaleY,
             OH_PixelmapNative_AntiAliasingLevel::OH_PixelmapNative_AntiAliasing_HIGH);
-        break; 
+        break;  
         case CASE_INDEX_2:
         errCode = OH_PixelmapNative_CreateScaledPixelMapWithAntiAliasing(
             nullptr, &dstPixelmap, scaleX, scaleY,

@@ -35,7 +35,6 @@ add_library(imageEffect SHARED
     ImagePixelMapTest.cpp
     ImageInitImageNativeSuppTest.cpp)
 
-
 find_library(
     # Sets the name of the path variable.
     EGL-lib

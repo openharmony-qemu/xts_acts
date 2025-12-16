@@ -17,7 +17,6 @@
 #define OHIMAGEEFFECTNDK_IMAGEFRAMEWORKPIXELMAPNATIVECREATESUPP_H
 
 #include "napi/native_api.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif

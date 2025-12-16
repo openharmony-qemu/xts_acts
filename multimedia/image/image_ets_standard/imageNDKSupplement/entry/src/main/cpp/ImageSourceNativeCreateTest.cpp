@@ -33,7 +33,6 @@
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
-
 #define OH_EFFECT_BRIGHTNESS_FILTER "Brightness"
 #define OH_EFFECT_CONTRAST_FILTER "Contrast"
 #define OH_EFFECT_CROP_FILTER "Crop"

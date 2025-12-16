@@ -43,7 +43,6 @@
 #define CUSTOM_FILTER "CustomCrop"
 #define IMAGE_NullString "" 
 
-
 #define CASE_INDEX_1 1
 #define CASE_INDEX_2 2
 #define CASE_INDEX_3 3
