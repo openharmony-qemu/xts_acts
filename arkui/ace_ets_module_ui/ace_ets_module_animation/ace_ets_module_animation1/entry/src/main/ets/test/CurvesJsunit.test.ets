@@ -55,7 +55,7 @@ export default function curvesJsunit() {
       expect(Curve.EaseIn).assertEqual('ease-in');
       expect(Curve.EaseOut).assertEqual('ease-out');
       expect(Curve.EaseInOut).assertEqual('ease-in-out');
-      expect(Curve.FastOutSlowIn).assertEqual('fase-out-slow-in');
+      expect(Curve.FastOutSlowIn).assertEqual('fast-out-slow-in');
       expect(Curve.LinearOutSlowIn).assertEqual('linear-out-slow-in');
       expect(Curve.FastOutLinearIn).assertEqual('fast-out-linear-in');
       expect(Curve.ExtremeDeceleration).assertEqual('extreme-deceleration');
