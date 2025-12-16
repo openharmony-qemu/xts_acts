@@ -25,6 +25,7 @@ group("testfwk") {
   } else {
     deps = [
       "perftest:ActsPerfTestTest",
+      "perftestStatic:ActsPerfTestTestStatic",  
       "perftestScene:ActsPerfTestScene",
       "uitest:ActsUiTest",
       "uitestScene:ActsUiTestScene",
@@ -39,6 +40,8 @@ group("testfwk") {
     deps += [
       "uitestScene:ActsUiTestScene",
       "uitest_pc:ActsUiPCTest",
+      "uitest_pc_static:ActsUiPCStaticTest",
+  
     ]
   }
 }

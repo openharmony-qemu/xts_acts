@@ -14,7 +14,9 @@
  */
 
 import getIdTest from './getIdTest/getId.test';
+import getIdUndefinedTest from './getIdTest/getIdTest.test';
 
 export default function testsuite() {
   getIdTest();
+  getIdUndefinedTest();
 }

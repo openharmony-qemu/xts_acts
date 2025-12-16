@@ -23,6 +23,8 @@ import repeatAniGrid from './Grid/repeatAniGrid.test';
 import GridNodeTest from './Grid/gridNode.test';
 import GridItemNodeTest from './Grid/gridItemNode.test';
 import nodeTypeGrid from './Grid/nodeTypeGrid.test';
+import cachedGridMin from './Grid/cachedGridMin.test';
+import cachedShowGridMin from './Grid/cachedShowGridMin.test';
 import cachedShowGrid from './Grid/cachedShowGrid.test';
 import setGridEvent from './Grid/setGridEvent.test';
 import LazyVGridLayout from './LazyVGridLayout/LazyVGridLayout.test';
@@ -37,6 +39,7 @@ import GridContentSize from './Grid/GridContentSize.test';
 import GridFillPolicy from './Grid/GridFillPolicy.test';
 import gridOffsetRes from './Grid/gridOffsetRes.test';
 import gridContentOffset from './Grid/gridContentOffset.test';
+import GridFillPolicyModifier from './Grid/GridFillPolicyModifier.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -49,6 +52,8 @@ export default function testsuite() {
   GridNodeTest()
   GridItemNodeTest()
   nodeTypeGrid()
+  cachedGridMin()
+  cachedShowGridMin()
   cachedShowGrid()
   setGridEvent()
   LazyVGridLayout()
@@ -63,4 +68,5 @@ export default function testsuite() {
   GridFillPolicy()
   gridOffsetRes()
   gridContentOffset()
+  GridFillPolicyModifier();
 }

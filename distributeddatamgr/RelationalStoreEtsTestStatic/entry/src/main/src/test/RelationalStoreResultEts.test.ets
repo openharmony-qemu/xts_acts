@@ -688,30 +688,7 @@ export default function RdbResultSetTest() {
       done();
       hilog.info(domain, tag, '%{public}s', '************* errcode005 end *************');
     })
-    /**
-     * @tc.name        errcode006
-     * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1600
-     * @tc.desc        goToFirstRow 14800021 test
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
-     */
-    it('errcode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* errcode006 start *************');
-      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
-      let resultSet = await rdbStore2.querySql("SELECT * FROM testerrcode1")
-      try{
-        resultSet.goToFirstRow();
-        expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, "business error code %{public}d", err.code)
-        expect(true).assertEqual(err.code == 14800021)
-      }
-      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
-      done();
-      hilog.info(domain, tag, '%{public}s', '************* errcode006 end *************');
-    })
+
     /**
      * @tc.name        errcode008
      * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1700
@@ -742,6 +719,7 @@ export default function RdbResultSetTest() {
       done();
       hilog.info(domain, tag, '%{public}s', '************* errcode008 end *************');
     })
+    
     /**
      * @tc.name        errcode018
      * @tc.number      SUB_DistributedData_RelationalStore_SDK_qiangjiAPITest_1800

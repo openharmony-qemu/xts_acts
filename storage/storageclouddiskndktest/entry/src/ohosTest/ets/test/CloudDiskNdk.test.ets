@@ -23,12 +23,13 @@ export default function CloudDiskNdkTest(){
   describe('CloudDiskNdkTest',async () => {
 
     /**
-     * @tc.name   CloudDisk_RegisterSyncFolder_001
      * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0100
-     * @tc.desc   Test RegisterSyncFolder() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_RegisterSyncFolder_001
+     * @tc.desc Test RegisterSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_RegisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -46,12 +47,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_UnregisterSyncFolder_001
      * @tc.number SUB_BASIC_FM_CloudDisk_UnregisterSyncFolder_0100
-     * @tc.desc   Test UnregisterSyncFolder() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_UnregisterSyncFolder_001
+     * @tc.desc Test UnregisterSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_UnregisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -69,12 +71,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_ActiveSyncFolder_001
      * @tc.number SUB_BASIC_FM_CloudDisk_ActiveSyncFolder_0100
-     * @tc.desc   Test ActiveSyncFolder() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_ActiveSyncFolder_001
+     * @tc.desc Test ActiveSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_ActiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -92,12 +95,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_DeactiveSyncFolder_001
      * @tc.number SUB_BASIC_FM_CloudDisk_DeactiveSyncFolder_0100
-     * @tc.desc   Test DeactiveSyncFolder() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_DeactiveSyncFolder_001
+     * @tc.desc Test DeactiveSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_DeactiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -115,12 +119,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_GetSyncFolders_001
      * @tc.number SUB_BASIC_FM_CloudDisk_GetSyncFolders_0100
-     * @tc.desc   Test GetSyncFolders() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_GetSyncFolders_001
+     * @tc.desc Test GetSyncFolders() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_GetSyncFolders_001', Level.LEVEL0, async (done: Function) => {
       let ret = clouddisk.GetSyncFolders();
@@ -136,12 +141,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_UpdateCustomAlias_001
      * @tc.number SUB_BASIC_FM_CloudDisk_UpdateCustomAlias_0100
-     * @tc.desc   Test UpdateCustomAlias() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_UpdateCustomAlias_001
+     * @tc.desc Test UpdateCustomAlias() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_UpdateCustomAlias_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -159,12 +165,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_RegisterSyncFolderChanges_001
      * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolderChanges_0100
-     * @tc.desc   Test RegisterSyncFolderChanges() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_RegisterSyncFolderChanges_001
+     * @tc.desc Test RegisterSyncFolderChanges() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_RegisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -182,12 +189,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_UnregisterSyncFolderChanges_001
      * @tc.number SUB_BASIC_FM_CloudDisk_UnregisterSyncFolderChanges_0100
-     * @tc.desc   Test UnregisterSyncFolderChanges() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_UnregisterSyncFolderChanges_001
+     * @tc.desc Test UnregisterSyncFolderChanges() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_UnregisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -205,12 +213,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_GetSyncFolderChanges_001
      * @tc.number SUB_BASIC_FM_CloudDisk_GetSyncFolderChanges_0100
-     * @tc.desc   Test GetSyncFolderChanges() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_GetSyncFolderChanges_001
+     * @tc.desc Test GetSyncFolderChanges() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_GetSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -228,12 +237,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_SetFileSyncStates_001
      * @tc.number SUB_BASIC_FM_CloudDisk_SetFileSyncStates_0100
-     * @tc.desc   Test SetFileSyncStates() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_SetFileSyncStates_001
+     * @tc.desc Test SetFileSyncStates() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_SetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
@@ -251,12 +261,13 @@ export default function CloudDiskNdkTest(){
     });
 
     /**
-     * @tc.name   CloudDisk_GetFileSyncStates_001
      * @tc.number SUB_BASIC_FM_CloudDisk_GetFileSyncStates_0100
-     * @tc.desc   Test GetFileSyncStates() interfaces
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.name CloudDisk_GetFileSyncStates_001
+     * @tc.desc Test GetFileSyncStates() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
      */
     it('CloudDisk_GetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";

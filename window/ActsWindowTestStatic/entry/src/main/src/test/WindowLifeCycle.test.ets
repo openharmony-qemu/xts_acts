@@ -79,6 +79,7 @@ export default function WindowLifeCycleTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
+        let windowclassArr:Array<window.Window>;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
@@ -94,7 +95,18 @@ export default function WindowLifeCycleTest() {
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
             hilog.info(domain, tag, '%{public}s', 'getANI context = ' + JSON.stringify(context));
-
+            try{
+                windowclassArr = await windowStage.getSubWindow();
+                hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
+                if(windowclassArr.length!=0){
+                    for(let i = 0;i<windowclassArr.length;i++){
+                        await windowclassArr[i].destroyWindow();
+                        hilog.info(domain, tag,`brforeAll destroyWindow windowclassArr ${i} success`);
+                    }
+                }
+            }catch (err) {
+                hilog.error(domain, tag,`brforeAll destroyWindow failed`+ err);
+            }
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(0x0000, '[ANI]',`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -104,12 +116,64 @@ export default function WindowLifeCycleTest() {
             //hilog.info(0x0000, '[ANI]',`beforeAll isPCStatus: `+ isPCStatus);
         })
         /**
-         * @tc.name   testGetLastWindow_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0100
-         * @tc.desc   Get the final show window
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number     SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0100
+         * @tc.name       testgetSubWindow0_promise_static
+         * @tc.desc       Test the function value of getSubWindow
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testgetSubWindow0_promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_promise_static';
+            try {
+                let windowclass:Array<window.Window> = await windowStage.getSubWindow();
+                console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                expect(windowclass.length).assertEqual(0)
+                done();
+            } catch (e) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number     SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0200
+         * @tc.name       testgetSubWindow0_callback_static
+         * @tc.desc       Test the function value of getSubWindow
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testgetSubWindow0_callback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_callback_static';
+            let windowclass:Array<window.Window>|undefined;
+            try {
+                windowStage.getSubWindow((err: BusinessError<void>|null, data: Array<window.Window>|undefined) => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        console.error(caseName + ` Failed to obtain the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }else{
+                        windowclass = data;
+                        console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                        expect(windowclass!.length).assertEqual(0)
+                        done();
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0100
+         * @tc.name        testGetLastWindow_Promise_static_0100
+         * @tc.desc        Get the final show window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testGetLastWindow_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetLastWindow_Promise_static_0100';
@@ -135,12 +199,12 @@ export default function WindowLifeCycleTest() {
             ;
         })
         /**
-         * @tc.name   testGetLastWindow_Callback_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0200
-         * @tc.desc   Get the final show window
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0200
+         * @tc.name        testGetLastWindow_Callback_static_0200
+         * @tc.desc        Get the final show window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testGetLastWindow_Callback_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetLastWindow_Callback_static_0200';
@@ -167,12 +231,12 @@ export default function WindowLifeCycleTest() {
             ;
         })
         /**
-         * @tc.name   testLoadContent_Callback_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0100
-         * @tc.desc   The page does not exist
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0100
+         * @tc.name        testLoadContent_Callback_static_0100
+         * @tc.desc        The page does not exist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testLoadContent_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testLoadContent_Callback_static_0100';
@@ -196,12 +260,12 @@ export default function WindowLifeCycleTest() {
             });
         })
         /**
-         * @tc.name   testLoadContent_Callback_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0200
-         * @tc.desc   The window is destroy
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0200
+         * @tc.name        testLoadContent_Callback_static_0200
+         * @tc.desc        The window is destroy
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testLoadContent_Callback_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testLoadContent_Callback_static_0200';
@@ -233,12 +297,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testLoadContent_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0300
-         * @tc.desc   The page does not exist
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0300
+         * @tc.name        testLoadContent_Promise_static_0100
+         * @tc.desc        The page does not exist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testLoadContent_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testLoadContent_Promise_static_0100';
@@ -257,12 +321,12 @@ export default function WindowLifeCycleTest() {
             });
         })
         /**
-         * @tc.name   testLoadContent_Promise_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0400
-         * @tc.desc   The window is destroy
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0400
+         * @tc.name        testLoadContent_Promise_static_0200
+         * @tc.desc        The window is destroy
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testLoadContent_Promise_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testLoadContent_Promise_static_0200';
@@ -291,12 +355,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testWindowStage_LoadContent_Callback_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0500
-         * @tc.desc   The page does not exist
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0500
+         * @tc.name        testWindowStage_LoadContent_Callback_static_0100
+         * @tc.desc        The page does not exist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowStage_LoadContent_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowStage_LoadContent_Callback_static_0100';
@@ -318,12 +382,12 @@ export default function WindowLifeCycleTest() {
             });
         })
         /**
-         * @tc.name   testWindowStage_LoadContent_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0600
-         * @tc.desc   The page does not exist
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0600
+         * @tc.name        testWindowStage_LoadContent_Promise_static_0100
+         * @tc.desc        The page does not exist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowStage_LoadContent_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowStage_LoadContent_Promise_static_0100';
@@ -342,12 +406,12 @@ export default function WindowLifeCycleTest() {
         })
 
         /**
-         * @tc.name   testWindowStage_LoadContent_Promise_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0700
-         * @tc.desc   The page does not exist
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_LOADCONTENT_API_0700
+         * @tc.name        testWindowStage_LoadContent_Promise_static_0200
+         * @tc.desc        The page does not exist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowStage_LoadContent_Promise_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowStage_LoadContent_Promise_static_0200';
@@ -367,12 +431,12 @@ export default function WindowLifeCycleTest() {
 
 
         /**
-         * @tc.name   testGetUIContext_Instances_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETUICONTEXT_API_0100
-         * @tc.desc   Get the UIContext instance.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL4
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETUICONTEXT_API_0100
+         * @tc.name        testGetUIContext_Instances_static_0100
+         * @tc.desc        Get the UIContext instance.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('testGetUIContext_Instances_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let caseName: string = 'testGetUIContext_Instances_static_0100';
@@ -394,12 +458,12 @@ export default function WindowLifeCycleTest() {
 
         })
         /**
-         * @tc.name   testGetUIContext_WindowStateAbnormal_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETUICONTEXT_API_0200
-         * @tc.desc   Get the UIContext instance
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETUICONTEXT_API_0200
+         * @tc.name        testGetUIContext_WindowStateAbnormal_static_0200
+         * @tc.desc        Get the UIContext instance
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testGetUIContext_WindowStateAbnormal_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testGetUIContext_WindowStateAbnormal_static_0200';
@@ -420,12 +484,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testWindowOffWindowEvent_RepeatOff_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0100
-         * @tc.desc   Disable the monitoring of window life cycle changes
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0100
+         * @tc.name        testWindowOffWindowEvent_RepeatOff_static_0100
+         * @tc.desc        Disable the monitoring of window life cycle changes
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testWindowOffWindowEvent_RepeatOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowOffWindowEvent_RepeatOff_static_0100';
@@ -475,12 +539,12 @@ export default function WindowLifeCycleTest() {
         });
 
         /**
-         * @tc.name   test_WindowEventType_enum_static_0100
-         * @tc.number SUB_BASIC_WMS_WINDOW_EVENT_TYPE_0100
-         * @tc.desc   test_WindowEventType_enum_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_WINDOW_EVENT_TYPE_0100
+         * @tc.name        test_WindowEventType_enum_static_0100
+         * @tc.desc        test_WindowEventType_enum_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it("test_WindowEventType_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr : string = "test_WindowEventType_enum_static_0100";
@@ -500,12 +564,12 @@ export default function WindowLifeCycleTest() {
             }
         });
         /**
-         * @tc.name   test_WindowStatusType_enum_static_0100
-         * @tc.number SUB_BASIC_WMS_WINDOW_STATUS_TYPE_0100
-         * @tc.desc   test_WindowStatusType_enum_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_WINDOW_STATUS_TYPE_0100
+         * @tc.name        test_WindowStatusType_enum_static_0100
+         * @tc.desc        test_WindowStatusType_enum_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it("test_WindowStatusType_enum_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let msgStr : string = "test_WindowStatusType_enum_static_0100";
@@ -526,12 +590,12 @@ export default function WindowLifeCycleTest() {
             }
         });
         /**
-         * @tc.name   testEnumWindow_windowType_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_WINDOWTYPE_API_0100
-         * @tc.desc   window type enumeration
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_WINDOWTYPE_API_0100
+         * @tc.name        testEnumWindow_windowType_static_0100
+         * @tc.desc        window type enumeration
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testEnumWindow_windowType_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             hilog.info(0x0000, '[ANI]','testEnumWindow_windowType_static_0100 test the enum value of windowType begin');
@@ -550,12 +614,12 @@ export default function WindowLifeCycleTest() {
         });
 
         /**
-         * @tc.name   testEnumWindowStageEventTypeReName_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
-         * @tc.desc   To test the enum value of WindowStageEventType.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
+         * @tc.name        testEnumWindowStageEventTypeReName_static_0100
+         * @tc.desc        To test the enum value of WindowStageEventType.
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('testEnumWindowStageEventTypeReName_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> =>  {
             hilog.info(0x0000, '[ANI]','test the enum value of WindowStageEventType begin');
@@ -574,12 +638,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testWindowStage_GetMainWIndow_Callback_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETMAINWINDOW_API_0100
-         * @tc.desc   testWindowStage_GetMainWIndow_Callback_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETMAINWINDOW_API_0100
+         * @tc.name        testWindowStage_GetMainWIndow_Callback_static_0100
+         * @tc.desc        testWindowStage_GetMainWIndow_Callback_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testWindowStage_GetMainWIndow_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowStage_GetMainWIndow_Callback_static_0100';
@@ -598,12 +662,12 @@ export default function WindowLifeCycleTest() {
             });
         })
         /**
-         * @tc.name   testWindowStage_GetMainWIndow_Promise_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETMAINWINDOW_API_0200
-         * @tc.desc   testWindowStage_GetMainWIndow_Promise_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETMAINWINDOW_API_0200
+         * @tc.name        testWindowStage_GetMainWIndow_Promise_static_0100
+         * @tc.desc        testWindowStage_GetMainWIndow_Promise_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
          */
         it('testWindowStage_GetMainWIndow_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName:string = 'testWindowStage_GetMainWIndow_Promise_static_0100';
@@ -620,13 +684,13 @@ export default function WindowLifeCycleTest() {
                 done();
             });
         })
-        /**
-         * @tc.name   testSetUIContent_WindowStateAbnormal_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0100
-         * @tc.desc   Load the specific page content for the current window
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+/**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0100
+         * @tc.name        testSetUIContent_WindowStateAbnormal_static_0100
+         * @tc.desc        Load the specific page content for the current window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetUIContent_WindowStateAbnormal_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string  = 'testSetUIContent_WindowStateAbnormal_static_0100';
@@ -654,12 +718,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testSetUIContent_WindowStateAbnormal_static_0200
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0200
-         * @tc.desc   Load the specific page content for the current window
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0200
+         * @tc.name        testSetUIContent_WindowStateAbnormal_static_0200
+         * @tc.desc        Load the specific page content for the current window
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testSetUIContent_WindowStateAbnormal_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string  = 'testSetUIContent_WindowStateAbnormal_static_0200';
@@ -691,12 +755,12 @@ export default function WindowLifeCycleTest() {
         })
 
         /**
-         * @tc.name   testSetUIContent_Not_Existent_Parameter_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0300
-         * @tc.desc   Verify the scene of loading the page with illegal values
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL4
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0300
+         * @tc.name        testSetUIContent_Not_Existent_Parameter_static_0300
+         * @tc.desc        Verify the scene of loading the page with illegal values
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('testSetUIContent_Not_Existent_Parameter_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let msgStr:string  = 'testSetUIContent_Not_Existent_Parameter_static_0300'
@@ -725,12 +789,12 @@ export default function WindowLifeCycleTest() {
             ;
         })
         /**
-         * @tc.name   testSetUIContentTestCallback1_static_0400
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0400
-         * @tc.desc   Verify the scenario of loading an existing page
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL4
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_SETUICONTENT_JS_API_0400
+         * @tc.name        testSetUIContentTestCallback1_static_0400
+         * @tc.desc        Verify the scenario of loading an existing page
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level4
          */
         it('testSetUIContentTestCallback1_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: () => void): Promise<void> => {
             let msgStr:string  = 'testSetUIContentTestCallback1_static_0400'
@@ -765,12 +829,12 @@ export default function WindowLifeCycleTest() {
             ;
         })
         /**
-         * @tc.name   test_findWindow_notExist_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0200
-         * @tc.desc   test_findWindow_notExist
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0200
+         * @tc.name        test_findWindow_notExist_static_0100
+         * @tc.desc        test_findWindow_notExist
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it('test_findWindow_notExist_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = 'test_findWindow_notExist_static_0100';
@@ -789,12 +853,12 @@ export default function WindowLifeCycleTest() {
             };
         });
         /**
-         * @tc.name   testIsWindowShowingErrCode1300002_static_0100
-         * @tc.number testIsWindowShowingErrCode1300006_0100
-         * @tc.desc   testIsWindowShowingErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testIsWindowShowingErrCode1300006_0100
+         * @tc.name         testIsWindowShowingErrCode1300002_static_0100
+         * @tc.desc         testIsWindowShowingErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testIsWindowShowingErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testIsWindowShowingErrCode1300002_static_0100";
@@ -818,12 +882,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testOnNoInteractionDetectedErrCode1300002_static_0100
-         * @tc.number testOnNoInteractionDetectedErrCode1300002_0100
-         * @tc.desc   testOnNoInteractionDetectedErrCode1300002_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnNoInteractionDetectedErrCode1300002_0100
+         * @tc.name         testOnNoInteractionDetectedErrCode1300002_static_0100
+         * @tc.desc         testOnNoInteractionDetectedErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnNoInteractionDetectedErrCode1300002_static_0100', Level.LEVEL3,async (done: () => void): Promise<void>   => {
             let caseName:string = "testOnNoInteractionDetectedErrCode1300002_static_0100";
@@ -855,12 +919,12 @@ export default function WindowLifeCycleTest() {
 
         })
         /**
-         * @tc.name   testOffNoInteractionDetectedErrCode1300002_static_0200
-         * @tc.number testOffNoInteractionDetectedErrCode1300002_0100
-         * @tc.desc   testOffNoInteractionDetectedErrCode1300002_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOffNoInteractionDetectedErrCode1300002_0100
+         * @tc.name         testOffNoInteractionDetectedErrCode1300002_static_0200
+         * @tc.desc         testOffNoInteractionDetectedErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffNoInteractionDetectedErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void>   => {
             let caseName:string = "testOffNoInteractionDetectedErrCode1300002_static_0200";
@@ -892,13 +956,13 @@ export default function WindowLifeCycleTest() {
         })
 
         
-        /**
-         * @tc.name   testNoInteractionDetected_OnMainWindow_static_0100
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
-         * @tc.desc   Enables this window to not listen for interactive events within a specified timeout period
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
+/**
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_WINDOWEVENT_JS_API_0090
+         * @tc.name        testNoInteractionDetected_OnMainWindow_static_0100
+         * @tc.desc        Enables this window to not listen for interactive events within a specified timeout period
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('testNoInteractionDetected_OnMainWindow_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName:string = 'testNoInteractionDetected_OnMainWindow_static_0100';
@@ -929,12 +993,12 @@ export default function WindowLifeCycleTest() {
             await  Utils.msSleep(800)
         })
         /**
-         * @tc.name   testNoInteractionDetected_on_Function_Callback_static_0300
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
-         * @tc.desc   window type noInteractionDetected
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3980
+         * @tc.name        testNoInteractionDetected_on_Function_Callback_static_0300
+         * @tc.desc        window type noInteractionDetected
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("testNoInteractionDetected_on_Function_Callback_static_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3,  async (done: () => void): Promise<void>  =>{
             let msgStr:string = "testNoInteractionDetected_on_Function_Callback_static_0300";
@@ -961,12 +1025,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   tetestNoInteractionDetected_off_Function_Callback_static_0400
-         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
-         * @tc.desc   window type noInteractionDetected
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3990
+         * @tc.name        tetestNoInteractionDetected_off_Function_Callback_static_0400
+         * @tc.desc        window type noInteractionDetected
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level3
          */
         it("tetestNoInteractionDetected_off_Function_Callback_static_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void>  =>{
             let msgStr:string = "tetestNoInteractionDetected_off_Function_Callback_static_0400";
@@ -996,12 +1060,12 @@ export default function WindowLifeCycleTest() {
 
 
         /**
-         * @tc.name   testOnSubWindowCloseErrCode1300002_static_0100
-         * @tc.number testOnSubWindowCloseErrCode1300002_0100
-         * @tc.desc   testOnSubWindowCloseErrCode1300002_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnSubWindowCloseErrCode1300002_0100
+         * @tc.name         testOnSubWindowCloseErrCode1300002_static_0100
+         * @tc.desc         testOnSubWindowCloseErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnSubWindowCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOnSubWindowCloseErrCode1300002_static_0100";
@@ -1033,12 +1097,12 @@ export default function WindowLifeCycleTest() {
             
         })
         /**
-         * @tc.name   testOffSubWindowCloseErrCode1300002_static_0200
-         * @tc.number testOffSubWindowCloseErrCode1300002_0100
-         * @tc.desc   testOffSubWindowCloseErrCode1300002_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOffSubWindowCloseErrCode1300002_0100
+         * @tc.name         testOffSubWindowCloseErrCode1300002_static_0200
+         * @tc.desc         testOffSubWindowCloseErrCode1300002_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffSubWindowCloseErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOffSubWindowCloseErrCode1300002_static_0200";
@@ -1071,12 +1135,12 @@ export default function WindowLifeCycleTest() {
         })
 
         /**
-         * @tc.name   testOnSubWindowCloseErrCode1300004_static_0300
-         * @tc.number testOnSubWindowCloseErrCode1300004_0100
-         * @tc.desc   testOnSubWindowCloseErrCode1300004_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnSubWindowCloseErrCode1300004_0100
+         * @tc.name         testOnSubWindowCloseErrCode1300004_static_0300
+         * @tc.desc         testOnSubWindowCloseErrCode1300004_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnSubWindowCloseErrCode1300004_static_0300', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName:string = "testOnSubWindowCloseErrCode1300004_static_0300";
@@ -1108,16 +1172,138 @@ export default function WindowLifeCycleTest() {
             });
 
         })
-        
+        /**
+         * @tc.number      testOnWindowWillCloseErrCode1300002_0100
+         * @tc.name        testOnWindowWillCloseErrCode1300002_static_0100
+         * @tc.desc        testOnWindowWillCloseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testOnWindowWillCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnWindowWillCloseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testOnWindowWillCloseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.onWindowWillClose (() => {
+                    console.info(msgStr +  'on windowWillClose callback');
+                    return new Promise<boolean>((resolve, reject) => {
+                        // 是否关闭该窗口
+                        let result: boolean = true;
+                        resolve(result);
+                    });
+                });
+                hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
+                expect(false).assertTrue();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowWillClose. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
 
-                /**
-                 * @tc.name   testCreateWindowCallbackErrCode1300006_static_0100
-                 * @tc.number testCreateWindowCallbackErrCode1300006_0100
-                 * @tc.desc   testCreateWindowCallbackErrCode1300006_static_0100
-                 * @tc.type   FUNCTION
-                 * @tc.size   MEDIUMTEST
-                 * @tc.level  LEVEL3
-                 */
+        /**
+         * @tc.number      testOffWindowWillCloseErrCode1300002_0100
+         * @tc.name        testOffWindowWillCloseErrCode1300002_static_0100
+         * @tc.desc        testOffWindowWillCloseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testOffWindowWillCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOffWindowWillCloseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]',msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window = await windowStage.createSubWindow('testOffWindowWillCloseErrCode1300002_static_0100')
+                hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag,msgStr + 'window.destroy success');
+                tempWnd.offWindowWillClose();
+                hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
+                expect(false).assertTrue();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                if (exception.code != 801) {
+                    hilog.error(0x0000, '[ANI]',msgStr + 'Failed to off_windowWillClose. Cause code:' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(1300002);
+                } else {
+                    hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                    expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_OnWindowWillClose_1300004_static_0300
+         * @tc.name        testonWindowWillClose1300004_static
+         * @tc.desc        testonWindowWillClose1300004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testonWindowWillClose1300004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testonWindowWillClose1300004_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "test",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let windowClass:window.Window = await window.createWindow(config);
+            const callback = () => {
+                return new Promise<boolean>((resolve, reject) => {
+                    // 是否关闭该窗口
+                    let result: boolean = true;
+                    resolve(result);
+                });
+            }
+            try {
+                windowClass.onWindowWillClose(callback);
+                hilog.info(domain, tag,msgStr  + 'Succeeded on windowWillClose ');
+                expect(false).assertFail();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
+                await windowClass.destroyWindow();
+                if(e.code == 801){
+                    done();
+                }else {
+                    expect(e.code).assertEqual(1300004);
+                    done()
+                }
+            }
+
+        })
+
+        /**
+                  * @tc.number       testCreateWindowCallbackErrCode1300006_0100
+                  * @tc.name         testCreateWindowCallbackErrCode1300006_static_0100
+                  * @tc.desc         testCreateWindowCallbackErrCode1300006_static_0100
+                  * @tc.size         MediumTest
+                  * @tc.type         Function
+                  * @tc.level        Level 3
+                  */
                 it('testCreateWindowCallbackErrCode1300006_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
                     let caseName : string = "testCreateWindowCallbackErrCode1300006_static_0100";
                     let msgStr : string = 'jsunittest ' + caseName + ' ';
@@ -1147,12 +1333,12 @@ export default function WindowLifeCycleTest() {
                     }
                 })
                 /**
-                 * @tc.name   testCreateWindowPromiseErrCode1300006_static_0100
-                 * @tc.number testCreateWindowPromiseErrCode1300006_0100
-                 * @tc.desc   testCreateWindowPromiseErrCode1300006_static_0100
-                 * @tc.type   FUNCTION
-                 * @tc.size   MEDIUMTEST
-                 * @tc.level  LEVEL3
+                 * @tc.number       testCreateWindowPromiseErrCode1300006_0100
+                 * @tc.name         testCreateWindowPromiseErrCode1300006_static_0100
+                 * @tc.desc         testCreateWindowPromiseErrCode1300006_static_0100
+                 * @tc.size         MediumTest
+                 * @tc.type         Function
+                 * @tc.level        Level 3
                  */
                 it('testCreateWindowPromiseErrCode1300006_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
                     let caseName : string = "testCreateWindowPromiseErrCode1300006_static_0100";
@@ -1179,12 +1365,12 @@ export default function WindowLifeCycleTest() {
                     }
                 })
                 /**
-                 * @tc.name   testCreateWindowCallbackErrCode1300002_static_0200
-                 * @tc.number testCreateWindowCallbackErrCode1300002_0200
-                 * @tc.desc   testCreateWindowCallbackErrCode1300002_static_0200
-                 * @tc.type   FUNCTION
-                 * @tc.size   MEDIUMTEST
-                 * @tc.level  LEVEL3
+                 * @tc.number       testCreateWindowCallbackErrCode1300002_0200
+                 * @tc.name         testCreateWindowCallbackErrCode1300002_static_0200
+                 * @tc.desc         testCreateWindowCallbackErrCode1300002_static_0200
+                 * @tc.size         MediumTest
+                 * @tc.type         Function
+                 * @tc.level        Level 3
                  */
                 it('testCreateWindowCallbackErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
                     let caseName : string = "testCreateWindowCallbackErrCode1300002_static_0200";
@@ -1220,12 +1406,12 @@ export default function WindowLifeCycleTest() {
                     }
                 })
                 /**
-                 * @tc.name   testCreateWindowPromiseErrCode1300002_static_0200
-                 * @tc.number testCreateWindowPromiseErrCode1300002_0200
-                 * @tc.desc   testCreateWindowPromiseErrCode1300002_static_0200
-                 * @tc.type   FUNCTION
-                 * @tc.size   MEDIUMTEST
-                 * @tc.level  LEVEL3
+                 * @tc.number       testCreateWindowPromiseErrCode1300002_0200
+                 * @tc.name         testCreateWindowPromiseErrCode1300002_static_0200
+                 * @tc.desc         testCreateWindowPromiseErrCode1300002_static_0200
+                 * @tc.size         MediumTest
+                 * @tc.type         Function
+                 * @tc.level        Level 3
                  */
                 it('testCreateWindowPromiseErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
                     let caseName : string = "testCreateWindowPromiseErrCode1300002_static_0200";
@@ -1265,12 +1451,12 @@ export default function WindowLifeCycleTest() {
                 })
 
         /**
-         * @tc.name   testCreateSubWindow_Callback_static_0100
-         * @tc.number testCreateSubWindow_Callback_static_0100
-         * @tc.desc   testCreateSubWindow_Callback_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      testCreateSubWindow_Callback_static_0100
+         * @tc.name        testCreateSubWindow_Callback_static_0100
+         * @tc.desc        testCreateSubWindow_Callback_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testCreateSubWindow_Callback_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = 'testCreateSubWindow_Callback';
@@ -1297,12 +1483,12 @@ export default function WindowLifeCycleTest() {
             }
         })
         /**
-         * @tc.name   testCreateSubWindow_Promise_static_0100
-         * @tc.number testCreateSubWindow_Promise_static_0100
-         * @tc.desc   testCreateSubWindow_Promise_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number      testCreateSubWindow_Promise_static_0100
+         * @tc.name        testCreateSubWindow_Promise_static_0100
+         * @tc.desc        testCreateSubWindow_Promise_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
          */
         it('testCreateSubWindow_Promise_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string  = 'testCreateSubWindow_Promise';
@@ -1328,12 +1514,12 @@ export default function WindowLifeCycleTest() {
         })
 
         /**
-         * @tc.name   testOnWindowStageEventErrCode1300002_static_0100
-         * @tc.number testOnWindowStageEventErrCode1300002_static_0100
-         * @tc.desc   testOnWindowStageEventErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnWindowStageEventErrCode1300002_static_0100
+         * @tc.name         testOnWindowStageEventErrCode1300002_static_0100
+         * @tc.desc         testOnWindowStageEventErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnWindowStageEventErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnWindowStageEventErrCode1300002_static_0100";
@@ -1357,12 +1543,12 @@ export default function WindowLifeCycleTest() {
 
 
         /**
-         * @tc.name   testOffWindowStageEventErrCode1300002_static_0100
-         * @tc.number testOffWindowStageEventErrCode1300002_static_0100
-         * @tc.desc   testOffWindowStageEventErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOffWindowStageEventErrCode1300002_static_0100
+         * @tc.name         testOffWindowStageEventErrCode1300002_static_0100
+         * @tc.desc         testOffWindowStageEventErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffWindowStageEventErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffWindowStageEventErrCode1300002_static_0100";
@@ -1381,6 +1567,423 @@ export default function WindowLifeCycleTest() {
                 hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call off windowStageEvent. Cause:' + JSON.stringify(e));
                 expect(e!.code).assertEqual(1300002);
                 done()
+            }
+        })
+        /**
+         * @tc.number      testOnWindowStageCloseErrCode1300002_static_0100
+         * @tc.name        testOnWindowStageCloseErrCode1300002_static_0100
+         * @tc.desc        testOnWindowStageCloseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testOnWindowStageCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOnWindowStageCloseErrCode1300002_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowStageStart : window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                    return true;
+                };
+                windowStageStart.onWindowStageClose(callback);
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageClose.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number      testOff_windowStageCloseErrCode1300002_static_0100
+         * @tc.name        testOff_windowStageCloseErrCode1300002_static_0100
+         * @tc.desc        testOff_windowStageCloseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testOff_windowStageCloseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testOff_windowStageCloseErrCode1300002_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let windowStageStart : window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                    return true;
+                };
+                windowStageStart.offWindowStageClose(callback);
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageClose.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call off windowStageClose. Cause:' + JSON.stringify(e));
+                expect(e!.code).assertEqual(1300002);
+                done()
+            }
+        })
+        /**
+         * @tc.number      testGetWindowStatusErrCode1300002_static_0100
+         * @tc.name        testGetWindowStatusErrCode1300002_static_0100
+         * @tc.desc        testGetWindowStatusErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetWindowStatusErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testGetWindowStatusErrCode1300002_static_0100";
+            let msgStr : string  = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testGetWindowStatusErrCode1300002_static_0100')
+                .then((data : window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await data!.destroyWindow();
+                    try {
+                        let windowStatusType : window.WindowStatusType = data!.getWindowStatus();
+                        hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling getWindowStatus.');
+                        expect(false).assertTrue();
+                        done()
+                    } catch (e) {
+                        e = e as BusinessError;
+                        hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call getWindowStatus. Cause:' + JSON.stringify(e));
+                        expect(e!.code).assertEqual(1300002);
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                });
+
+        })
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_API_REMOVE_STARTING_WINDOW_static_0100
+         * @tc.name      testRemoveStartingWindow_Promise_static
+         * @tc.desc      testRemoveStartingWindow_Promise_static
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it("testRemoveStartingWindow_Promise_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testRemoveStartingWindow_Promise_static";
+            hilog.info(domain, tag,msgStr + "begin");
+            try {
+                windowStage.removeStartingWindow().then(() => {
+                    hilog.info(domain, tag,'Succeeded in removing starting window.');
+                    expect(true).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,`Failed to remove starting window. Cause code: ${err.code}, message: ${err.message}`);
+                    if (err.code != 801) {
+                        hilog.error(domain, tag,msgStr + 'Failed testRemoveStartingWindow_Promise. Cause:' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        hilog.info(domain, tag,msgStr + 'The device not support SystemCapability.Window.SessionManager');
+                        expect(err.code).assertEqual(801);
+                        done();
+                    }
+                });
+
+            } catch (error) {
+                error = error as BusinessError;
+                hilog.info(domain, tag,msgStr + 'Failed to testRemoveStartingWindow_Promise. Cause: ' + JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+            }
+        });
+
+        /**
+         * @tc.number     testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.name       testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.desc       testRemoveStartingWindowPromiseErrCode1300002_static_0100
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('testRemoveStartingWindowPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testRemoveStartingWindowPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                windowStageStart.removeStartingWindow().then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling removeStartingWindow.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call removeStartingWindow. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message!=null).assertTrue();
+                    done()
+                });
+
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.number      testMinimizePromiseErrCode1300002_static_0100
+         * @tc.name        testMinimizePromiseErrCode1300002_static_0100
+         * @tc.desc        testMinimizePromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMinimizePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testMinimizePromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let subWin: window.Window;
+            windowStage.createSubWindow('testMinimizePromiseErrCode1300002_SubWindow_Promise')
+                .then((data:window.Window) => {
+                    subWin = data;
+                    expect(!!subWin).assertTrue();
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
+                    await subWin.destroyWindow();
+                    try {
+                        subWin.minimize().then(() => {
+                            hilog.info(domain, tag,msgStr + 'Succeeded in calling minimize.');
+                            expect(false).assertTrue();
+                            done()
+                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
+                            if(err.code == 801){
+                                done();
+                            }else{
+                                expect(err.code).assertEqual(1300002);
+                                expect(err.message!=null).assertTrue();
+                                done()
+                            }
+                        });
+        
+                    } catch (exception) {
+                        exception = exception as BusinessError;
+                        hilog.error(domain, tag,msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
+                        expect(false).assertTrue();
+                        done()
+                    }
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                });
+        
+        })
+/**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_3910
+         * @tc.name       testCreateSubWindowWithOptions_Function_Promise_static
+         * @tc.desc       Test the function value of createSubWindowWithOptions
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level0
+         */
+        it('testCreateSubWindowWithOptions_Function_Promise_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testCreateSubWindowWithOptions_Function_Promise_static";
+            hilog.info(domain, tag,msgStr + " begin");
+            let windowClass: window.Window;
+            hilog.info(domain, tag,msgStr + " try begin")
+            let options: window.SubWindowOptions = {
+                title: 'title',
+                decorEnabled: true,
+                isModal: false,
+                maximizeSupported: false,
+                zLevel:11,
+                outlineEnabled:false
+            };
+            windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_Function_Promise_static', options)
+                .then((data:window.Window) => {
+                    windowClass = data;
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    windowClass.destroyWindow();
+                    expect(true).assertTrue();
+                    done();
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    if (err.code != 1300002) {
+                        hilog.error(domain, tag,msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        hilog.info(domain, tag,msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(domain, tag,msgStr + JSON.stringify(err))
+                        expect(err.code).assertEqual(1300002);
+                        done();
+                    }
+                });
+        })
+
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_static_0400
+         * @tc.name       testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static
+         * @tc.desc       testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level3
+         */
+        it('testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static";
+            hilog.info(domain, tag,msgStr + " begin");
+            let windowClass: window.Window;
+            hilog.info(domain, tag,msgStr + " try begin")
+            let options: window.SubWindowOptions = {
+                title: 'title',
+                decorEnabled: true,
+                isModal: true,
+                modalityType: window.ModalityType.APPLICATION_MODALITY
+            };
+            try {
+                windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static', options)
+                    .then((data:window.Window) => {
+                        windowClass = data;
+                        hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                        windowClass.destroyWindow();
+                        expect(true).assertTrue();
+                        done();
+                    })
+                    .catch((error: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+                        if (error.code == 1300002) {
+                            done();
+                        } else {
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag,msgStr + ',error code:' + error.code);
+                if(error.code==801){
+                    hilog.info(domain, tag,msgStr + 'The device not support APPLICATION_MODALITY');
+                    done();
+                }else{
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+
+        })
+        /**
+         * @tc.number      testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.name        testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.desc        testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let param: window.SubWindowOptions = {
+                title: "aa",
+                decorEnabled: true
+            }
+            let subWin: window.Window = await windowStage.createSubWindow('testCreateSubWindowWithOptionsPromiseErrCode1300002_SubWindow_Promise_static')
+            await (subWin! as window.Window).destroyWindow();
+            try {
+
+                (subWin! as window.Window).createSubWindowWithOptions("name", param).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+                    expect(false).assertTrue();
+                    done();
+                }).then((data) => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call createSubWindowWithOptions. Cause: ' + JSON.stringify(err));
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300002);
+                        expect(err.message!=null).assertTrue();
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number      testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.name        testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.desc        testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let subWindowClass: window.Window;
+            try {
+                subWindowClass = await window.createWindow(config);
+                expect(!!subWindowClass).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'window.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            try {
+                let param: window.SubWindowOptions = {
+                    title: "aa", decorEnabled: true
+                }
+                subWindowClass!.createSubWindowWithOptions("bb", param).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+                    expect(false).assertTrue();
+                    done()
+                }).then((data) => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    expect(false).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
+                    await subWindowClass.destroyWindow();
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300004);
+                        expect(err.message!=null).assertTrue();
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed to set the call createSubWindowWithOptions. Cause:' +
+                JSON.stringify(exception));
+                if (exception.code === undefined) {
+                    hilog.info(domain, tag,msgStr + '此设备不支持createSubWindowWithOptions能力.');
+                    done()
+                } else {
+                    expect(exception.code).assertEqual(1300004);
+                    expect(exception.message!=null).assertTrue();
+                    done()
+                }
+
             }
         })
 

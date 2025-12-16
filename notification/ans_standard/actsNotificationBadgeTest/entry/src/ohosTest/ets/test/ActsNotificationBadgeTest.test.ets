@@ -38,14 +38,11 @@ export default function ActsNotificationBadgeTest() {
           await sleep(1000);
           await button1.click();
           await sleep(1000);
-          done()
         } else {
           console.info('null button1');
-          done()
         }
-      await notificationManager.requestEnableNotification(ctx).then(() => {
+      notificationManager.requestEnableNotification(ctx).then(() => {
         console.info(`${TAG} requestEnableNotification succeeded`);
-        done()
       }).catch((err: Error) => {
         console.info(`${TAG} requestEnableNotification err: `+ JSON.stringify(err));
         expect(err).assertNull()
@@ -53,14 +50,14 @@ export default function ActsNotificationBadgeTest() {
       });
       await sleep(1500)
       let button = await driver.findComponent(ON.text('允许'));
-      console.info(`button is ${JSON.stringify(button)}`);
+      console.info(`${TAG} button is ${JSON.stringify(button)}`);
       if (button !== null) {
-        await sleep(1500);
+        await sleep(1000);
         await button.click();
-        await sleep(500);
+        await sleep(1000);
         done()
       } else {
-        console.info('null button');
+        console.info('${TAG} null button');
         expect(button).assertContain('允许')
         done()
       }

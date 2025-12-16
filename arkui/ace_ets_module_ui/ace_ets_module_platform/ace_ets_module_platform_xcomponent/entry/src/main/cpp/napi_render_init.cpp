@@ -16,6 +16,7 @@
 #include "common/common.h"
 #include "XComponent/XComponentSurfaceConfigTest.h"
 #include "XComponent/XComponentKeyMouseEventTest.h"
+#include "XComponent/NodeXComponentTest.h"
 
 namespace NativeXComponentSample {
 
@@ -86,7 +87,33 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestGetTouchPointErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetTouchPointErrorCode_02,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterUIInputEventCallbackErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestRegisterUIInputEventCallbackErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterUIInputEventCallbackErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestRegisterUIInputEventCallbackErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterOnTouchInterceptCallbackErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestRegisterOnTouchInterceptCallbackErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterOnTouchInterceptCallbackErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestRegisterOnTouchInterceptCallbackErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetNativeAccessibilityProviderErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetNativeAccessibilityProviderErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetNativeAccessibilityProviderErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetNativeAccessibilityProviderErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
 
+        {"TestAttachNativeRootNodeErrorCode001", nullptr, NodeXComponentTest::TestAttachNativeRootNodeErrorCode001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestAttachNativeRootNodeErrorCode002", nullptr, NodeXComponentTest::TestAttachNativeRootNodeErrorCode002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetNativeXComponentReturnNull", nullptr, NodeXComponentTest::TestGetNativeXComponentReturnNull,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSurfaceHolderCreateReturnNull", nullptr, NodeXComponentTest::TestSurfaceHolderCreateReturnNull,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSurfaceHolderGetUserDataReturnNull", nullptr, NodeXComponentTest::TestSurfaceHolderGetUserDataReturnNull,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSurfaceCallbackCreateReturnNull", nullptr, NodeXComponentTest::TestSurfaceCallbackCreateReturnNull,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestXComponentGetNativeWindowReturnNull", nullptr, NodeXComponentTest::TestXComponentGetNativeWindowReturnNull,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

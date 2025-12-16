@@ -2501,6 +2501,112 @@ export default function windowTitleBarTest() {
         done();
       }
     })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0100
+     * @tc.name    testSetWindowDecorHeight_36
+     * @tc.desc    SetWindowDecorHeight入参36
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetWindowDecorHeight_36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowDecorHeight_36';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let mainWindow =  windowStage.getMainWindowSync();
+      try {
+        mainWindow.setWindowDecorHeight(36);
+        console.info(caseName+ ' Succeeded in setting the height');
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+          expect(e.code).assertEqual(401);
+          expect(e.message).assertEqual('Parameter error.[window][setWindowDecorHeight]msg: Height should greater than 37 or smaller than 112.');
+          done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0200
+     * @tc.name    testSetWindowDecorHeight_37
+     * @tc.desc    SetWindowDecorHeight入参37
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetWindowDecorHeight_37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowDecorHeight_37';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let mainWindow =  windowStage.getMainWindowSync();
+      try {
+        mainWindow.setWindowDecorHeight(37);
+        console.info(caseName+ ' Succeeded in setting the height');
+        expect(true).assertTrue();
+        done();
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(!isSupport){
+          expect(e.code).assertEqual(801);
+          expect(e.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowDecorHeight]msg: Set window decor height failed.');
+          done()
+        }else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0300
+     * @tc.name    testSetWindowDecorHeight_112
+     * @tc.desc    SetWindowDecorHeight入参112
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetWindowDecorHeight_112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowDecorHeight_112';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let mainWindow =  windowStage.getMainWindowSync();
+      try {
+        mainWindow.setWindowDecorHeight(112);
+        console.info(caseName+ ' Succeeded in setting the height');
+        expect(true).assertTrue();
+        done();
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        if(!isSupport){
+          expect(e.code).assertEqual(801);
+          expect(e.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setWindowDecorHeight]msg: Set window decor height failed.');
+          done()
+        }else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0400
+     * @tc.name    testSetWindowDecorHeight_113
+     * @tc.desc    SetWindowDecorHeight入参113
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetWindowDecorHeight_113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowDecorHeight_113';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let mainWindow =  windowStage.getMainWindowSync();
+      try {
+        mainWindow.setWindowDecorHeight(113);
+        console.info(caseName+ ' Succeeded in setting the height');
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(e.code).assertEqual(401);
+        expect(e.message).assertEqual('Parameter error.[window][setWindowDecorHeight]msg: Height should greater than 37 or smaller than 112.');
+        done();
+      }
+    })
 
   })
 }

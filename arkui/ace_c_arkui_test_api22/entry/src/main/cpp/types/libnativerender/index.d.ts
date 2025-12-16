@@ -57,3 +57,13 @@ export const customKeyboardTest: (a: string) => void;
 export const animationControllerTest: (a: string) => void;
 
 export const GridFillPolicyTest: (a: string) => void;
+
+export const gridOnScrollIndexTest: (a: string) => void;
+
+export const gridOnDidScrollTest: (a: string) => void;
+
+export const gridOnScrollBarUpdateTest: (a: string) => void;
+
+export const gridOnWillScrollTest: (a: string) => void;
+
+export const clipShapeTest: (a: string) => void;

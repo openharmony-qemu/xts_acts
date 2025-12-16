@@ -18,8 +18,12 @@ import componentSnapshot from './componentSnapshot/componentSnapshot.test';
 import SnapshotOptions_region from './SnapshotOptions_region/SnapshotOptions_region.test';
 import APIcomponentSnapshotGetSync from './componentSnapshot/APIcomponentSnapshotGetSync.test';
 import APIUIContextGetSync from './componentSnapshot/APIUIContextGetSync.test';
-import UIContextComponentSnapshot from './UIContext/UIContextComponentSnapshot.test'
-import ComponentSnapshotSync from './componentSnapshot/componentSnapshotSync.test'
+import UIContextComponentSnapshot from './UIContext/UIContextComponentSnapshot.test';
+import ComponentSnapshotSync from './componentSnapshot/componentSnapshotSync.test';
+import createFromBuilderTest from "./componentSnapshotCreateFromBuilder/createFromBuilder.test";
+import createFromBuilderCallbackTest from "./componentSnapshotCreateFromBuilder/createFromBuilderCallback.test";
+import createFromComponent from "./componentSnapshotCreateFromBuilder/createFromComponent.test";
+import errorCreateFromBuilderTest from "./componentSnapshotCreateFromBuilder/errorCreateFromBuilder.test";
 
 export default function testsuite() {
   SnapshotOptions_region();
@@ -27,6 +31,10 @@ export default function testsuite() {
   componentSnapshot();
   APIcomponentSnapshotGetSync();
   APIUIContextGetSync();
-  UIContextComponentSnapshot()
-  ComponentSnapshotSync()
+  UIContextComponentSnapshot();
+  ComponentSnapshotSync();
+  createFromBuilderCallbackTest();
+  createFromBuilderTest();
+  createFromComponent();
+  errorCreateFromBuilderTest();
 }

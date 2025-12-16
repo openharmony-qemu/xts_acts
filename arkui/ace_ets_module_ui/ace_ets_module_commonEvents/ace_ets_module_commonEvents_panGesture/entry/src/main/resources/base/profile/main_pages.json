@@ -16,6 +16,7 @@
         "MainAbility/pages/PanGesture/Gesture1",
         "MainAbility/pages/PanGesture/panGestureOnOff",
         "MainAbility/pages/PanGesture/panGestureDistance",
-        "MainAbility/pages/PanGesture/observer"
+        "MainAbility/pages/PanGesture/observer",
+        "MainAbility/pages/PanGesture/setDistance"
     ]
 }

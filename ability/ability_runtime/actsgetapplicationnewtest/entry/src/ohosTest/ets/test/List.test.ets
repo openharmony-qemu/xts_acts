@@ -14,7 +14,9 @@
  */
 
 import abilityTest from './Ability.test';
+import AbilityGetPreLoadTypeTest from './AbilityGetPreLoadType.test';
 
 export default function testsuite() {
   abilityTest();
+  AbilityGetPreLoadTypeTest();
 }

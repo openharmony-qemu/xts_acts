@@ -239,7 +239,8 @@ export default function windowLayoutTest() {
       windowStage.createSubWindowWithOptions('testStartMoving_0200', options).then(async (data) => {
         windowClass = data
         await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-        windowClass.resize(1000, 1200)
+        windowClass.resize(1000, 1200);
+        windowClass.moveWindowToAsync(200,300);
         await windowClass.showWindow()
         await sleep(1000)
         let driver = Driver.create();
@@ -299,7 +300,8 @@ export default function windowLayoutTest() {
         mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
           windowClass = data
           await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-          windowClass.resize(1000, 1200)
+          windowClass.resize(1000, 1200);
+          windowClass.moveWindowToAsync(200,300);
           await windowClass.showWindow()
           await sleep(1000)
           let driver = Driver.create();

@@ -4,12 +4,14 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Driver.HID.Extension",
-                    "SystemCapability.Driver.ExternalDevice",
-                    "SystemCapability.Driver.USB.Extension",
-                    "SystemCapability.Driver.DDK.Extension",
-                    "SystemCapability.Driver.UsbSerial.Extension",
-                    "SystemCapability.Driver.SCSI.Extension"
+                    "SystemCapability.Ability.AbilityRuntime.Core",
+                    "SystemCapability.Ability.AbilityRuntime.FAModel",
+                    "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+                    "SystemCapability.Ability.AbilityRuntime.Mission",
+                    "SystemCapability.Ability.AbilityRuntime.QuickFix",
+                    "SystemCapability.Ability.AbilityTools.AbilityAssistant",
+                    "SystemCapability.Ability.AppStartup",
+                    "SystemCapability.Ability.AppExtension.PhotoEditorExtension"
                 ]
             }
         ]

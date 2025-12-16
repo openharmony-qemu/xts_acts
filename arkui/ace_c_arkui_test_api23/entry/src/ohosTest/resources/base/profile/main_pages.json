@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/XTSIndex",
+    "MainAbility/pages/testgesture",
+    "MainAbility/pages/containerPicker/ContainerPickerOnChangeTest",
+    "MainAbility/pages/containerPicker/ContainerPickerOnScrollStopTest"
+  ]
+}

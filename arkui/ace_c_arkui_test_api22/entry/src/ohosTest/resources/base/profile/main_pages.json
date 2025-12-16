@@ -19,6 +19,11 @@
     "MainAbility/pages/imageSpanTest/ImageSpanTest",
     "MainAbility/pages/customKeyboard/CustomKeyboardTest",
     "MainAbility/pages/image/animationControllerTest",
-    "MainAbility/pages/grid/GridFillPolicyTest"
+    "MainAbility/pages/grid/GridFillPolicyTest",
+    "MainAbility/pages/grid/GridOnWillScrollTest",
+    "MainAbility/pages/grid/GridOnScrollBarUpdateTest",
+    "MainAbility/pages/grid/GridOnDidScrollTest",
+    "MainAbility/pages/grid/GridOnScrollIndexTest",
+    "MainAbility/pages/clipShape/ClipShapeTest"
   ]
 }

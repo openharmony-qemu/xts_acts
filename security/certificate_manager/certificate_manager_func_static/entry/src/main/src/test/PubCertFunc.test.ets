@@ -238,6 +238,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED).assertEqual(29700004);
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY).assertEqual(29700005);
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED).assertEqual(29700006);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NO_AVAILABLE_CERTIFICATE).assertEqual(29700007);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_MAIN).assertEqual(1);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE).assertEqual(2);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL).assertEqual(3);

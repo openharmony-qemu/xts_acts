@@ -63,12 +63,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.name   testOnKeyboardDidShowErrCode1300002_static_0100
-         * @tc.number testOnKeyboardDidShowErrCode1300002_0100
-         * @tc.desc   testOnKeyboardDidShowErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnKeyboardDidShowErrCode1300002_0100
+         * @tc.name         testOnKeyboardDidShowErrCode1300002_static_0100
+         * @tc.desc         testOnKeyboardDidShowErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnKeyboardDidShowErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidShowErrCode1300002_static_0100";
@@ -103,12 +103,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.name   testOffKeyboardDidShowErrCode1300002_static_0100
-         * @tc.number testOffKeyboardDidShowErrCode1300002_0100
-         * @tc.desc   testOffKeyboardDidShowErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOffKeyboardDidShowErrCode1300002_0100
+         * @tc.name         testOffKeyboardDidShowErrCode1300002_static_0100
+         * @tc.desc         testOffKeyboardDidShowErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffKeyboardDidShowErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardDidShowErrCode1300002_static_0100";
@@ -143,12 +143,12 @@ export default function WindowKeyBoardTest() {
 
 
         /**
-         * @tc.name   testOnKeyboardDidHideErrCode1300002_static_0100
-         * @tc.number testOnKeyboardDidHideErrCode1300002_0100
-         * @tc.desc   testOnKeyboardDidHideErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnKeyboardDidHideErrCode1300002_0100
+         * @tc.name         testOnKeyboardDidHideErrCode1300002_static_0100
+         * @tc.desc         testOnKeyboardDidHideErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardDidHideErrCode1300002_static_0100";
@@ -182,12 +182,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.name   testOffKeyboardDidHideErrCode1300002_static_0100
-         * @tc.number testOffKeyboardDidHideErrCode1300002_0100
-         * @tc.desc   testOffKeyboardDidHideErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOffKeyboardDidHideErrCode1300002_0100
+         * @tc.name         testOffKeyboardDidHideErrCode1300002_static_0100
+         * @tc.desc         testOffKeyboardDidHideErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffKeyboardDidHideErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardDidShowErrCode1300002_static_0100";
@@ -221,12 +221,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.name   testOnKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.number testOnKeyboardHeightChangeErrCode1300002_0100
-         * @tc.desc   testOnKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOnKeyboardHeightChangeErrCode1300002_0100
+         * @tc.name         testOnKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.desc         testOnKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOnKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOnKeyboardHeightChangeErrCode1300002_static_0100";
@@ -252,12 +252,12 @@ export default function WindowKeyBoardTest() {
         })
 
         /**
-         * @tc.name   testOffKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.number testOffKeyboardHeightChangeErrCode1300002_0100
-         * @tc.desc   testOffKeyboardHeightChangeErrCode1300002_static_0100
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
+         * @tc.number       testOffKeyboardHeightChangeErrCode1300002_0100
+         * @tc.name         testOffKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.desc         testOffKeyboardHeightChangeErrCode1300002_static_0100
+         * @tc.size         MediumTest
+         * @tc.type         Function
+         * @tc.level        Level 3
          */
         it('testOffKeyboardHeightChangeErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName : string = "testOffKeyboardHeightChangeErrCode1300002_static_0100";
@@ -278,6 +278,42 @@ export default function WindowKeyBoardTest() {
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number      testKeepKeyboardOnFocusErrCode1300002_0100
+         * @tc.name        testKeepKeyboardOnFocusErrCode1300002_0100
+         * @tc.desc        testKeepKeyboardOnFocusErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testKeepKeyboardOnFocusErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testKeepKeyboardOnFocusErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                err = err as BusinessError;
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.keepKeyboardOnFocus(true);
+                console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
                 done()
             }
         })
