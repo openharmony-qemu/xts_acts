@@ -50,6 +50,7 @@ import ImageLoaderTest from './ImageLoaderTest/ImageLoader.test';
 import getUIContextApi01 from './ImageGetUIContext/getUIContextApi01.test';
 import getUIContextApi02 from './ImageGetUIContext/getUIContextApi02.test';
 import getUIContextApi03 from './ImageGetUIContext/getUIContextApi03.test';
+import BorderImageTest from './BorderImageTest/BorderImage.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -90,4 +91,5 @@ export default function testsuite() {
   ImageMatrixTest();
   ImageHdrBrightnessTest();
   ImageLoaderTest();
+  BorderImageTest();
 }
