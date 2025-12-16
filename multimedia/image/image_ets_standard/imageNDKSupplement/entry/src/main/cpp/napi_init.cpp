@@ -89,16 +89,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelMapGetImageInfoTest", PixelMapGetImageInfoTest),
     DESCRIPTOR("PixelMapAccessPixelsTest", PixelMapAccessPixelsTest),
     DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),
-    DESCRIPTOR("OHImageInitImageNativeSupp", OHImageInitImageNativeSupp),
-    DESCRIPTOR("OHPackingOptionsCreateSupp", OHPackingOptionsCreateSupp),
-    DESCRIPTOR("OHPictureMetadataGetPropertyWithNullSupp", OHPictureMetadataGetPropertyWithNullSupp),
-    DESCRIPTOR("OHPixelmapNativeGetMetadataSupp", OHPixelmapNativeGetMetadataSupp),
-    DESCRIPTOR("OHPixelmapNativeSetMetadataSupp", OHPixelmapNativeSetMetadataSupp),
-    DESCRIPTOR("OHConvertPixelmapNativeFromNapiSupp", OHConvertPixelmapNativeFromNapiSupp),
-    DESCRIPTOR("OHPictureNativeGetMetadataSupp", OHPictureNativeGetMetadataSupp),
-    DESCRIPTOR("OHAuxiliaryPictureNativeWritePixelsSupp", OHAuxiliaryPictureNativeWritePixelsSupp),
-    DESCRIPTOR("OHAuxiliaryPictureNativeReadPixelsSupp", OHAuxiliaryPictureNativeReadPixelsSupp),
-    DESCRIPTOR("OHAuxiliaryPictureNativeSetMetadataSupp", OHAuxiliaryPictureNativeSetMetadataSupp),
+
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
