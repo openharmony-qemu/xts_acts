@@ -45,7 +45,7 @@ describe("SensorJsTest_sensor_65", function () {
       }
     }
 
-    beforeAll(function () {
+    beforeAll(function (done) {
 
         /*
          * @tc.setup: setup invoked before all testcases
