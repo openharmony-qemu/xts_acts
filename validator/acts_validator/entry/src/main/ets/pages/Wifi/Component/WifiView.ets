@@ -22,7 +22,7 @@ const WIFI_SEC_TYPE_OPEN: wifi.WifiSecurityType = 1;
 
 @Component
 export struct WifiView {
-  private wifi: wifi.WifiScanInfo | null = null;
+  @State wifi: wifi.WifiScanInfo | null = null;
   private securityString: string = '加密';
   @State isLock: boolean = true;
 
