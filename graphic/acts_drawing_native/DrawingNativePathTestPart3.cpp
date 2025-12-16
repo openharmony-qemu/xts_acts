@@ -21,7 +21,6 @@
 #include "drawing_matrix.h"
 #include "drawing_path.h"
 #include "drawing_path_effect.h"
-#include "drawing_path_iterator.h"
 #include "drawing_pen.h"
 #include "drawing_point.h"
 #include "drawing_rect.h"
