@@ -1420,7 +1420,7 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixRectStaysRectNull, Function | S
 
 /**
  * @tc.name   testMatrixRectStaysRectMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2801
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2802
  * @tc.desc   test for testMatrixRectStaysRectMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

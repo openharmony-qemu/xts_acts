@@ -74,7 +74,7 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorDestroyNormal, Function | S
 
 /**
  * @tc.name   testPathIteratorDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5101
  * @tc.desc   test for testPathIteratorDestroyNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -112,7 +112,7 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorHasNextNormal, Function | S
     for (int i = 0; i < verbSize; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorHasNext(pathIterator, &hasNext);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-        OH_Drawing_PathIteratorNext(pathIterator, point2d, pointSize, i * offsetSize, &verb); 
+        OH_Drawing_PathIteratorNext(pathIterator, point2d, pointSize, i * offsetSize, &verb);
         EXPECT_EQ(hasNext, verb == (OH_Drawing_PathIteratorVerb::DONE ? false : true));
     }
     OH_Drawing_PathIteratorDestroy(pathIterator);
