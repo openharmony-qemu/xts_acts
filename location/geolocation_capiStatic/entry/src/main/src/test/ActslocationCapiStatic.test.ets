@@ -409,7 +409,7 @@ export default function actslocationTest() {
 
             /**
             * @tc.number  SUB_Location_isLocationEnabled_0100
-            * @tc.name  SUB_Location_sendCommand_0200
+            * @tc.name  SUB_Location_isLocationEnabled_0100
             * @tc.desc  Test Location API functionality
             * @tc.level  Level 2
             * @tc.type  Function
@@ -1869,7 +1869,7 @@ export default function actslocationTest() {
       
         /**
          * @tc.number  Sub_Location_onLocationChange_0300
-         * @tc.name  Sub_Location_onlocationChange_0300
+         * @tc.name  Sub_Location_onLocationChange_0300
          * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
          * @tc.level  Level 0
          * @tc.type  Function
