@@ -172,10 +172,10 @@ export default function EnumValueTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       console.info('[EnumValueTest_0500] CIRCLE is:' + AccessibilityRoleType.CIRCLE);
-      expect(AccessibilityRoleType.CIRCLE).assertEqual(14);
+      expect(AccessibilityRoleType.CIRCLE).assertEqual(15);
 
       console.info('[EnumValueTest_0500] COLUMN_SPLIT is:' + AccessibilityRoleType.COLUMN_SPLIT);
-      expect(AccessibilityRoleType.COLUMN_SPLIT).assertEqual(15);
+      expect(AccessibilityRoleType.COLUMN_SPLIT).assertEqual(16);
 
       console.info('[EnumValueTest_0500] COLUMN is:' + AccessibilityRoleType.COLUMN);
       expect(AccessibilityRoleType.COLUMN).assertEqual(17);
@@ -698,20 +698,20 @@ export default function EnumValueTest() {
       console.info('EnumValueTest_2200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      console.info('[EnumValueTest_2200] SIDEBAR_CONTAINER is:' + AccessibilityRoleType.SIDEBAR_CONTAINER);
-      expect(AccessibilityRoleType.SIDEBAR_CONTAINER).assertEqual(100);
+      console.info('[EnumValueTest_2200] STEPPER_ITEM is:' + AccessibilityRoleType.STEPPER_ITEM);
+      expect(AccessibilityRoleType.STEPPER_ITEM).assertEqual(100);
 
-      console.info('[EnumValueTest_2200] SLIDER is:' + AccessibilityRoleType.SLIDER);
-      expect(AccessibilityRoleType.SLIDER).assertEqual(101);
+      console.info('[EnumValueTest_2200] SWIPER is:' + AccessibilityRoleType.SWIPER);
+      expect(AccessibilityRoleType.SWIPER).assertEqual(101);
 
-      console.info('[EnumValueTest_2200] SPAN is:' + AccessibilityRoleType.SPAN);
-      expect(AccessibilityRoleType.SPAN).assertEqual(102);
+      console.info('[EnumValueTest_2200] SWIPER_INDICATOR is:' + AccessibilityRoleType.SWIPER_INDICATOR);
+      expect(AccessibilityRoleType.SWIPER_INDICATOR).assertEqual(102);
 
-      console.info('[EnumValueTest_2200] STACK is:' + AccessibilityRoleType.STACK);
-      expect(AccessibilityRoleType.STACK).assertEqual(103);
+      console.info('[EnumValueTest_2200] SWITCH is:' + AccessibilityRoleType.SWITCH);
+      expect(AccessibilityRoleType.SWITCH).assertEqual(103);
 
-      console.info('[EnumValueTest_2200] STEPPER is:' + AccessibilityRoleType.STEPPER);
-      expect(AccessibilityRoleType.STEPPER).assertEqual(104);
+      console.info('[EnumValueTest_2200] SYMBOL_GLYPH is:' + AccessibilityRoleType.SYMBOL_GLYPH);
+      expect(AccessibilityRoleType.SYMBOL_GLYPH).assertEqual(104);
 
       console.info('[EnumValueTest_2200] END');
       done();
