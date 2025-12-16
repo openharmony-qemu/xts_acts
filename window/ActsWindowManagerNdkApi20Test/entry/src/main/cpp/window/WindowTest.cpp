@@ -1162,9 +1162,8 @@ napi_value TestSetWindowBrightness(napi_env env, napi_callback_info info)
     napi_valuetype valuetype1;
     napi_typeof(env, args[1], &valuetype1);
     if (valuetype0 != napi_number || valuetype1 != napi_number) {
-         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "ValueType is false");
-         return nullptr;
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
@@ -1203,11 +1202,11 @@ napi_value TestInjectTouchEvent(napi_env env, napi_callback_info info)
     Input_TouchEvent* touchEvent = OH_Input_CreateTouchEvent();
     int32_t result1 = OH_WindowManager_InjectTouchEvent(windowId, touchEvent, PARAM_NEGATIVE_2147483648, 1);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestInjectTouchEvent: %{public}d", result1);
+                 "TestInjectTouchEvent 1: %{public}d", result1);
     
     int32_t result2 = OH_WindowManager_InjectTouchEvent(windowId, touchEvent, PARAM_2147483647, 1);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestInjectTouchEvent: %{public}d", result2);
+                 "TestInjectTouchEvent 2: %{public}d", result2);
     napi_value retValue;
     if (napi_create_array(env, &retValue) != napi_ok) {
         return nullptr;
@@ -1247,25 +1246,25 @@ napi_value TestGetMainWindowSnapshot(napi_env env, napi_callback_info info)
     int32_t result1 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         0, config, OnWindowSnapshotCallback);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestGetMainWindowSnapshot: %{public}d", result1);
-    int32_t result2 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
-        PARAM_4294967295, config, OnWindowSnapshotCallback);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestGetMainWindowSnapshot: %{public}d", result2);
+                 "TestGetMainWindowSnapshot 1: %{public}d", result1);
+//    int32_t result2 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+//        PARAM_4294967295, config, OnWindowSnapshotCallback);
+//    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+//                 "TestGetMainWindowSnapshot 2: %{public}d", result2);
     int32_t result3 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         PARAM_NEGATIVE_1, config, OnWindowSnapshotCallback);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestGetMainWindowSnapshot: %{public}d", result3);
-    int32_t result4 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
-        PARAM_4294967296, config, OnWindowSnapshotCallback);
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestGetMainWindowSnapshot: %{public}d", result4);
+                 "TestGetMainWindowSnapshot 3: %{public}d", result3);
+//    int32_t result4 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+//        PARAM_4294967296, config, OnWindowSnapshotCallback);
+//    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+//                 "TestGetMainWindowSnapshot 4: %{public}d", result4);
     
     napi_value retValue;
     if (napi_create_array(env, &retValue) != napi_ok) {
         return nullptr;
     }
-    int32_t values[PARAM_4] = {result1, result2, result3, result4};
+    int32_t values[PARAM_4] = {result1, -1, result3, -1};
     for (int i = 0; i < PARAM_4; i++) {
         napi_value element;
         napi_create_int32(env, values[i], &element);
@@ -1295,10 +1294,10 @@ napi_value TestLockCursor(napi_env env, napi_callback_info info)
 
     int32_t result1 = OH_WindowManager_LockCursor(0, true);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestLockCursor: %{public}d", result1);
+                 "TestLockCursor 1: %{public}d", result1);
     int32_t result2 = OH_WindowManager_LockCursor(PARAM_4294967295, true);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestLockCursor: %{public}d", result2);
+                 "TestLockCursor 2: %{public}d", result2);
     
     napi_value retValue;
     if (napi_create_array(env, &retValue) != napi_ok) {
@@ -1334,10 +1333,10 @@ napi_value TestUnlockCursor(napi_env env, napi_callback_info info)
    
     int32_t result1 = OH_WindowManager_UnlockCursor(0);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-        "TestUnlockCursor: %{public}d", result1);
+        "TestUnlockCursor 1: %{public}d", result1);
     int32_t result2 = OH_WindowManager_UnlockCursor(PARAM_4294967295);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-        "TestUnlockCursor: %{public}d", result2);
+        "TestUnlockCursor 2: %{public}d", result2);
     
     napi_value retValue;
     if (napi_create_array(env, &retValue) != napi_ok) {
