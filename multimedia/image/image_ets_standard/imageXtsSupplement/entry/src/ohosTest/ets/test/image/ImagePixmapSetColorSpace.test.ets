@@ -52,12 +52,12 @@ export default function ImagePixmapSetColorSpaceTest() {
       console.info(TAG, 'afterAll case.');
     });
     /**
-     * @tc.number    : SUB_PIXELMAP_SET_COLOR_SPACE_0100
-     * @tc.name      : SUB_PIXELMAP_SET_COLOR_SPACE_0100
-     * @tc.desc      : PixelMap_setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PIXELMAP_SET_COLOR_SPACE_0100
+     * @tc.name       SUB_PIXELMAP_SET_COLOR_SPACE_0100
+     * @tc.desc       PixelMap_setColorSpace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_PIXELMAP_SET_COLOR_SPACE_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PIXELMAP_SET_COLOR_SPACE_0100';
@@ -76,12 +76,12 @@ export default function ImagePixmapSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_PIXELMAP_SET_COLOR_SPACE_0200
-     * @tc.name      : SUB_PIXELMAP_SET_COLOR_SPACE_0200
-     * @tc.desc      : PixelMap_setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PIXELMAP_SET_COLOR_SPACE_0200
+     * @tc.name       SUB_PIXELMAP_SET_COLOR_SPACE_0200
+     * @tc.desc       PixelMap_setColorSpace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_PIXELMAP_SET_COLOR_SPACE_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PIXELMAP_SET_COLOR_SPACE_0200';
@@ -100,12 +100,12 @@ export default function ImagePixmapSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_PIXELMAP_APPLY_COLOR_SPACE_0100
-     * @tc.name      : SUB_PIXELMAP_APPLY_COLOR_SPACE_0100
-     * @tc.desc      : PixelMap_setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PIXELMAP_APPLY_COLOR_SPACE_0100
+     * @tc.name       SUB_PIXELMAP_APPLY_COLOR_SPACE_0100
+     * @tc.desc       PixelMap_setColorSpace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_PIXELMAP_APPLY_COLOR_SPACE_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PIXELMAP_APPLY_COLOR_SPACE_0100';
@@ -125,12 +125,12 @@ export default function ImagePixmapSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_PIXELMAP_APPLY_COLOR_SPACE_0200
-     * @tc.name      : SUB_PIXELMAP_APPLY_COLOR_SPACE_0200
-     * @tc.desc      : PixelMap_setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PIXELMAP_APPLY_COLOR_SPACE_0200
+     * @tc.name       SUB_PIXELMAP_APPLY_COLOR_SPACE_0200
+     * @tc.desc       PixelMap_setColorSpace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_PIXELMAP_APPLY_COLOR_SPACE_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PIXELMAP_APPLY_COLOR_SPACE_0200';
@@ -149,12 +149,12 @@ export default function ImagePixmapSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0100
-     * @tc.name      : SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0100
-     * @tc.desc      : PixelMap_setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0100
+     * @tc.name       SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0100
+     * @tc.desc       PixelMap_setColorSpace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0100';
@@ -181,12 +181,12 @@ export default function ImagePixmapSetColorSpaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0200
-     * @tc.name      : SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0200
-     * @tc.desc      : PixelMap_setColorSpace
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number     SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0200
+     * @tc.name       SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0200
+     * @tc.desc       PixelMap_setColorSpace
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
      */
     it('SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_PIXELMAP_APPLY_COLOR_SPACE_CALLBACK_0200';
