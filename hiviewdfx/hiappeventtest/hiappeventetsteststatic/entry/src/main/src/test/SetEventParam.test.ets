@@ -800,10 +800,10 @@ export default function setEventParamTest() {
       let holder = hiAppEvent.addWatcher({
         name: "watcher1",
       });
-      hiAppEvent.removeWatcher({name:"watcher1"})
       let eventPkg = holder.takeNext();
       console.log('testHiAppEventSetPam23 done');
       expect(eventPkg).assertNull()
+      hiAppEvent.removeWatcher({name:"watcher1"});
       done();
     });
   })
