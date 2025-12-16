@@ -51,7 +51,7 @@ ohos_moduletest_suite("ActsDrawingNativeTest") {
     "DrawingNativePathTest.cpp",
     "DrawingNativePathTestPart2.cpp",
     "DrawingNativePathTestPart3.cpp",
-	"DrawingNativePathTestPart4.cpp",
+	"DrawingNativePathIteratorTest.cpp",
     "DrawingNativePenTest.cpp",
     "DrawingNativePixelMapTest.cpp",
     "DrawingNativePointTest.cpp",

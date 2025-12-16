@@ -31,33 +31,111 @@ using namespace testing::ext;
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
-class DrawingNativePathPart3Test : public testing::Test {
+class DrawingNativePathIteratorTest : public testing::Test {
     protected:
     // 在每个测试用例执行前调用
     void SetUp() override
     {
         // 设置代码
-        std::cout << "DrawingNativePathPart3Test Setup code called before each test case." << std::endl;
+        std::cout << "DrawingNativePathIteratorTest Setup code called before each test case." << std::endl;
         OH_Drawing_ErrorCodeReset();
-        std::cout << "DrawingNativePathPart3Test errorCodeReset before each test case." << std::endl;
+        std::cout << "DrawingNativePathIteratorTest errorCodeReset before each test case." << std::endl;
     }
     void TearDown() override
     {
-        std::cout << "DrawingNativePathPart3Test Setup code called after each test case." << std::endl;
+        std::cout << "DrawingNativePathIteratorTest Setup code called after each test case." << std::endl;
         OH_Drawing_ErrorCodeReset();
-        std::cout << "DrawingNativePathPart3Test errorCodeReset after each test case." << std::endl;
+        std::cout << "DrawingNativePathIteratorTest errorCodeReset after each test case." << std::endl;
     }
 };
 
 /**
+ * @tc.name   testPathIteratorCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATORITERATOR_0100
+ * @tc.desc   test for testPathIteratorCreateNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorCreateNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 5, 5);
+    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
+    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
+    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathClose(path);
+    OH_Drawing_PathIterator *pathIterator = nullptr;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_NE(pathIterator, nullptr);
+    OH_Drawing_PathIteratorDestroy(pathIterator);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathIteratorCreateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0101
+ * @tc.desc   test for testPathIteratorCreateNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorCreateNull, Function | SmallTest | Level3) {
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 5, 5);
+    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
+    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
+    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathClose(path);
+    OH_Drawing_PathIterator *pathIterator = nullptr;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(nullptr, &pathIterator);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(pathIterator, nullptr);
+    errorCode = OH_Drawing_PathIteratorCreate(path, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(pathIterator, nullptr);
+    OH_Drawing_PathIteratorDestroy(pathIterator);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathIteratorCreateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0102
+ * @tc.desc   test for testPathIteratorCreateMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorCreateMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 5, 5);
+    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
+    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
+    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathClose(path);
+    OH_Drawing_PathIterator *pathIterator = nullptr;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_NE(pathIterator, nullptr);
+        errorCode = OH_Drawing_PathIteratorDestroy(pathIterator);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
  * @tc.name   testPathIteratorDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0200
  * @tc.desc   test for testPathIteratorDestroyNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorDestroyNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
@@ -74,26 +152,26 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorDestroyNormal, Function | S
 
 /**
  * @tc.name   testPathIteratorDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0201
  * @tc.desc   test for testPathIteratorDestroyNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorDestroyNull, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorDestroyNull, Function | SmallTest | Level3) {
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorDestroy(nullptr);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
 }
 
 /**
  * @tc.name   testPathIteratorHasNextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0300
  * @tc.desc   test for testPathIteratorHasNextNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorHasNextNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorHasNextNormal, Function | SmallTest | Level0) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
@@ -121,13 +199,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorHasNextNormal, Function | S
 
 /**
  * @tc.name   testPathIteratorHasNextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0301
  * @tc.desc   test for testPathIteratorHasNextNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorHasNextNull, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorHasNextNull, Function | SmallTest | Level3) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
@@ -150,13 +228,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorHasNextNull, Function | Sma
 
 /**
  * @tc.name   testPathIteratorNextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0400
  * @tc.desc   test for testPathIteratorNextNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorNextNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorNextNormal, Function | SmallTest | Level0) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
@@ -183,13 +261,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorNextNormal, Function | Smal
 
 /**
  * @tc.name   testPathIteratorNextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5301
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0401
  * @tc.desc   test for testPathIteratorNextNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorNextNull, Function | SmallTest | Level3) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorNextNull, Function | SmallTest | Level3) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
@@ -225,13 +303,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorNextNull, Function | SmallT
 
 /**
  * @tc.name   testPathIteratorPeekNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0500
  * @tc.desc   test for testPathIteratorPeekNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorPeekNormal, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorPeekNormal, Function | SmallTest | Level0) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
@@ -258,13 +336,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIteratorPeekNormal, Function | Smal
 
 /**
  * @tc.name   testPathIteratorPeekNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5401
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATHITERATOR_0501
  * @tc.desc   test for testPathIteratorPeekNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
-HWTEST_F(DrawingNativePathPart3Test, testPathIteratorPeekNull, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorPeekNull, Function | SmallTest | Level0) {
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
     OH_Drawing_PathLineTo(path, 5, 5);
