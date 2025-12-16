@@ -118,7 +118,7 @@ describe("SensorJsTest_sensor_65", function () {
     })
 
     /**
-     * @tc.name   newWear_Detection_SensorJsTest018
+     * @tc.name   newFusion_Pressure_SensorJsTest018
      * @tc.number SUB_SensorsSystem_Fusion_Pressure_JSTest_0180
      * @tc.desc   Verification results of the incorrect parameters of the test interface
      * @tc.type   FUNCTION
