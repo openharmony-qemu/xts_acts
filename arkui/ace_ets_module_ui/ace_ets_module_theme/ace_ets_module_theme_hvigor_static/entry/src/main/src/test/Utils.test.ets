@@ -30,15 +30,14 @@ export function sleep(count: int): Promise<int> {
 
 export function fillMap<T>(map: Map<string, T>, keys: string[], values: T[]) {
   keys.forEach((item, index) => {
-    let RealIndex: Int = index.toInt()
-    const value: T = values[RealIndex];
+    const value: T = values[index];
     map.set(item, value);
   })
 }
 
-export interface DataClass {
-  text: string;
-  token: ResourceColor;
+export class DataClass {
+  text: string = '';
+  token: ResourceColor = '';
 }
 
 export function setBaseTokens(data: DataClass[], theme: Theme) {

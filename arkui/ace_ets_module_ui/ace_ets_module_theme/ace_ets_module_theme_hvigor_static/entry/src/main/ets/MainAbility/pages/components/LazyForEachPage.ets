@@ -39,7 +39,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { AppStorage, State, StorageLink } from '@ohos.arkui.stateManagement'
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const lazyForEachThemeProperty: string = `LazyForEachThemeProperty`;
 
@@ -134,7 +134,7 @@ export const dataWithThemeGroupKey: string = 'LazyForEachDataWithThemeGroupKey';
 @Entry
 @Component
 struct LazyForEachPage {
-  @StorageLink(lazyForEachThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
+  @StoragePropRef(lazyForEachThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
   count: int = 0
   dataSystem: MyDataSource = new MyDataSource()
   dataWithTheme: MyDataSource = new MyDataSource()
@@ -148,10 +148,10 @@ struct LazyForEachPage {
       this.dataSystemGroup.pushData('Item_System_' + i)
       this.dataWithThemeGroup.pushData('Item_WithTheme_Group' + i)
     }
-    AppStorage.setOrCreate(dataSystemKey, this.dataSystem)
-    AppStorage.setOrCreate(dataWithThemeKey, this.dataWithTheme)
-    AppStorage.setOrCreate(dataSystemGroupKey, this.dataSystemGroup)
-    AppStorage.setOrCreate(dataWithThemeGroupKey, this.dataWithThemeGroup)
+    AppStorage.setOrCreate<MyDataSource | undefined>(dataSystemKey, this.dataSystem)
+    AppStorage.setOrCreate<MyDataSource | undefined>(dataWithThemeKey, this.dataWithTheme)
+    AppStorage.setOrCreate<MyDataSource | undefined>(dataSystemGroupKey, this.dataSystemGroup)
+    AppStorage.setOrCreate<MyDataSource | undefined>(dataWithThemeGroupKey, this.dataWithThemeGroup)
   }
 
   build() {

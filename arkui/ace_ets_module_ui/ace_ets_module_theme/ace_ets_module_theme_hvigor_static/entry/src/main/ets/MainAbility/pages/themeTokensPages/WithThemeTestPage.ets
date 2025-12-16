@@ -32,7 +32,7 @@ import {
   VerticalAlign,
   WithTheme
 } from '@ohos.arkui.component'
-import { State, StorageLink } from '@ohos.arkui.stateManagement'
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { brownCustomTheme, greenCustomTheme } from '../../themes/CustomTheme1';
 import { CustomButton } from '../customComponents/CustomButton';
 import { CustomColorsDark } from '../customComponents/CustomColorsDark';
@@ -52,10 +52,11 @@ export const postfixDark = 'Dark';
 @Component
 struct WithThemeTestPage {
   @State message: string = 'Custom Component Theme Test';
-  @StorageLink(withThemeProperty) localTheme: CustomTheme | undefined
+  @StoragePropRef(withThemeProperty) localTheme: CustomTheme | undefined = greenCustomTheme
 
   build() {
     WithTheme({ theme: this.localTheme }) {
+      Text('hahahhahahha')
       Row() {
         CustomButton({
           btnText: this.message

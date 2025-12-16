@@ -52,7 +52,7 @@ export const colorTheme: string = 'theme';
 
 @Component
 export struct CustomColorList {
-  @State data: Array<DataClass> = new Array<DataClass>();
+  data: DataClass[] = [] as DataClass[];
 
   onWillApplyTheme(theme: Theme) {
     setBaseTokens(this.data, theme);

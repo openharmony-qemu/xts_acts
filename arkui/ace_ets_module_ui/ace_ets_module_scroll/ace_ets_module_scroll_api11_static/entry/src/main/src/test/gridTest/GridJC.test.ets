@@ -121,8 +121,8 @@ export default function ActsGridTest() {
           let strJson = inspector.getInspectorByKey('ArkUX_Grid_List_Swiper_0220');
           console.info('ArkUX_Grid_List_Swiper_static_0220 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Grid_List_Swiper_static_0220 obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate')).assertEqual("null");
-          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsTemplate')).assertEqual("null");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('columnsTemplate')).assertEqual("");
+          expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('rowsTemplate')).assertEqual("");
           console.info('ArkUX_Grid_List_Swiper_static_0220 END ');
         } catch (err) {
           expect().assertFail()

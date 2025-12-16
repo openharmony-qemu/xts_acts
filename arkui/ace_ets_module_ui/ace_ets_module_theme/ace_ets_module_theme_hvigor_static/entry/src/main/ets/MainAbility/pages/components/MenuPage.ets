@@ -37,7 +37,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { State, StorageLink } from '@ohos.arkui.stateManagement'
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const menuThemeProperty: string = `MenuThemeProperty`;
 
@@ -52,7 +52,7 @@ export class MenuKeys {
 @Component
 struct ManuPage {
   private count: number = 0;
-  @StorageLink(menuThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(menuThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   @State select: boolean = true;
 
   build() {

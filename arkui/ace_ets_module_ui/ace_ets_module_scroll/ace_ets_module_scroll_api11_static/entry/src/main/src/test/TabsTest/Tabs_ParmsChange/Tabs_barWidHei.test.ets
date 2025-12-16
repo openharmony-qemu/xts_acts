@@ -50,10 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function Tabs_barWidHei() {
   describe('Tabs_barWidHei', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("Tabs_barWidHei beforeEach start");
@@ -86,12 +83,6 @@ export default function Tabs_barWidHei() {
         name: 'currentIndex', value: 0
       });
     });
-
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
 
     /*
        * @tc.number   testTabsBarWidToNegative_static_01

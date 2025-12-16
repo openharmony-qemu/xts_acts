@@ -74,27 +74,27 @@ export default function textPickerThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TextPickerPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(textPickerThemeProperty);
-            themeSet = AppStorage.get<boolean>(textPickerThemeSetProperty);
+            localTheme = AppStorage.get<CustomTheme>(`TextPickerThemeProperty`);
+            themeSet = AppStorage.get<boolean>(`TextPickerThemeSetProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
-      AppStorage.setOrCreate(textPickerThemeSetProperty, themeSet)
+      AppStorage.setOrCreate<boolean | undefined>(`TextPickerThemeSetProperty`, themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(textPickerThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(`TextPickerThemeProperty`))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(textPickerThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`TextPickerThemeProperty`, greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(textPickerThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`TextPickerThemeProperty`, redCustomTheme);
         }
       }
       localTheme =
-        AppStorage.get<boolean>(textPickerThemeSetProperty) ? AppStorage.get<CustomTheme>(textPickerThemeProperty) :
+        AppStorage.get<boolean>(`TextPickerThemeSetProperty`) ? AppStorage.get<CustomTheme>(`TextPickerThemeProperty`) :
           undefined;
       changeTheme = false;
     })

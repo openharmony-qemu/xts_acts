@@ -37,7 +37,7 @@ import {
 } from '@ohos.arkui.component'
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const radioThemeProperty: string = `RadioThemeProperty`;
 
@@ -53,8 +53,8 @@ export class RadioKeys {
 @Entry
 @Component
 struct RadioPage {
-  @StorageLink(radioThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(radioThemeSetProperty) themeSet: boolean | undefined = true;
+  @StoragePropRef(radioThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(radioThemeSetProperty) themeSet: boolean | undefined = true;
 
   build() {
     Column() {

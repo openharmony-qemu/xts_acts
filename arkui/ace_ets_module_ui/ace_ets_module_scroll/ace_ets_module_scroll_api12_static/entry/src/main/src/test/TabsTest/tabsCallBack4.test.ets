@@ -35,10 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function tabsCallBack4() {
   describe('tabsCallBack4', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("tabsCallBack4 beforeEach start");
@@ -62,15 +59,11 @@ export default function tabsCallBack4() {
       console.info("tabsCallBack4 beforeEach end");
     });
 
-
-
     afterEach(async () => {
       await CommonFunc.sleep(500);
       console.info("tabsCallBack4 after each called");
     });
 
-    
-      
   /*
      * @tc.number   tabsCallBack4_static_0100
      * @tc.name     tabsCallBack4_static_0100

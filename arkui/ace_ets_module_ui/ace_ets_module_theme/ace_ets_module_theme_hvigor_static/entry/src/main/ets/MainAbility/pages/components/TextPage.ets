@@ -34,7 +34,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const textThemeProperty = 'TextThemeProperty';
 
@@ -46,7 +46,7 @@ export class TextKeys {
 @Entry
 @Component
 struct TextPage {
-  @StorageLink(textThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(textThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   textController: TextController = new TextController();
   timeZoneOffset: number = 1;
 

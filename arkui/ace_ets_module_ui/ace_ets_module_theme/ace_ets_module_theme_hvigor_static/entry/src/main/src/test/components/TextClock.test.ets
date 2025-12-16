@@ -54,7 +54,6 @@ export default function textClockThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     })
 
     beforeEach(() => {
@@ -66,28 +65,28 @@ export default function textClockThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TextClockPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(textClockThemeProperty);
-            themeSet = AppStorage.get<boolean>(textClockThemeSetProperty)
+            localTheme = AppStorage.get<CustomTheme>('TextClockThemeProperty');
+            themeSet = AppStorage.get<boolean>(`TextClockThemeSetProperty`)
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
       if (changeTheme) {
-        if ((AppStorage.get(textClockThemeProperty) as CustomTheme | undefined | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>('TextClockThemeProperty'))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(textClockThemeProperty, greenCustomTheme)
+          AppStorage.setOrCreate<CustomTheme>('TextClockThemeProperty', greenCustomTheme)
         } else {
-          AppStorage.setOrCreate(textClockThemeProperty, redCustomTheme)
+          AppStorage.setOrCreate<CustomTheme>('TextClockThemeProperty', redCustomTheme)
         }
         changeTheme = false
       }
-      AppStorage.setOrCreate(textClockThemeSetProperty, themeSet);
+      AppStorage.setOrCreate<boolean | undefined>(`TextClockThemeSetProperty`, themeSet);
       localTheme =
-        AppStorage.get<boolean>(textClockThemeSetProperty) ? AppStorage.get<CustomTheme>(textClockThemeProperty) :
+        AppStorage.get<boolean>(`TextClockThemeSetProperty`) ? AppStorage.get<CustomTheme>('TextClockThemeProperty') :
           undefined
     })
 

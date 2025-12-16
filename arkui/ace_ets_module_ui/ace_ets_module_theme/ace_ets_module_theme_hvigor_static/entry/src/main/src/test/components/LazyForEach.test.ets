@@ -50,7 +50,6 @@ export default function lazyForEachTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     })
 
     beforeEach(() => {
@@ -62,15 +61,15 @@ export default function lazyForEachTest() {
         const pages: router.RouterState = routerInstance.getState()
         if (pages?.name !== `LazyForEachPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(lazyForEachThemeProperty)
+            localTheme = AppStorage.get<CustomTheme>(`LazyForEachThemeProperty`)
             console.info(`${SUITE} router.pushUrl success`)
           })
         }
-        colorValues = AppStorage.get(colorValuesKey)
-        dataSystem = AppStorage.get(dataSystemKey)
-        dataWithTheme = AppStorage.get(dataWithThemeKey)
-        dataSystemGroup = AppStorage.get(dataSystemGroupKey)
-        dataWithThemeGroup = AppStorage.get(dataWithThemeGroupKey)
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
+        dataSystem = AppStorage.get<MyDataSource | undefined>('LazyForEachDataSystemKey')
+        dataWithTheme = AppStorage.get<MyDataSource | undefined>('LazyForEachDataWithThemeKey')
+        dataSystemGroup = AppStorage.get<MyDataSource | undefined>('LazyForEachDataSystemGroupKey')
+        dataWithThemeGroup = AppStorage.get<MyDataSource | undefined>('LazyForEachDataWithThemeGroupKey')
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err))
       }
@@ -78,13 +77,13 @@ export default function lazyForEachTest() {
       if (!changeTheme) {
         return
       }
-      if ((AppStorage.get(lazyForEachThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`LazyForEachThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(lazyForEachThemeProperty, greenCustomTheme)
+        AppStorage.setOrCreate<CustomTheme>(`LazyForEachThemeProperty`, greenCustomTheme)
       } else {
-        AppStorage.setOrCreate(lazyForEachThemeProperty, redCustomTheme)
+        AppStorage.setOrCreate<CustomTheme>(`LazyForEachThemeProperty`, redCustomTheme)
       }
-      localTheme = AppStorage.get<CustomTheme>(lazyForEachThemeProperty)
+      localTheme = AppStorage.get<CustomTheme>(`LazyForEachThemeProperty`)
       changeTheme = false
     })
 

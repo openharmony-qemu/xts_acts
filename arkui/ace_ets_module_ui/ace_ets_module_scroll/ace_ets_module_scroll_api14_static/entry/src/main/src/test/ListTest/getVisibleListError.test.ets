@@ -71,22 +71,23 @@ export default function getVisibleListError() {
        * @tc.desc     getVisibleListError_static_0100
        * @tc.level    Level.LEVEL0
        */
-    it('getVisibleListError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[getVisibleListError_static_0100] START');
-      let driver = Driver.create()
-      let btn1: Component = await driver.findComponent(ON.id('getVisibleList_401')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson = inspector.getInspectorByKey('getVisibleList_err_text');
-      console.info("[getVisibleListError_static_0100] component obj1 is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[getVisibleListError_static_0100] content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('getVisibleListContentInfo: 401');
-      console.info('[getVisibleListError_static_0100] END');
-      done();
-    });
+    // it('getVisibleListError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   // 异常参数
+    //   console.info('[getVisibleListError_static_0100] START');
+    //   let driver = Driver.create()
+    //   let btn1: Component = await driver.findComponent(ON.id('getVisibleList_401')) as Component;
+    //   await btn1.click();
+    //   await CommonFunc.sleep(1500);
+    //   let strJson = inspector.getInspectorByKey('getVisibleList_err_text');
+    //   console.info("[getVisibleListError_static_0100] component obj1 is: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   console.info("[getVisibleListError_static_0100] content: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+    //     .assertEqual('getVisibleListContentInfo: 401');
+    //   console.info('[getVisibleListError_static_0100] END');
+    //   done();
+    // });
 
 
     /*

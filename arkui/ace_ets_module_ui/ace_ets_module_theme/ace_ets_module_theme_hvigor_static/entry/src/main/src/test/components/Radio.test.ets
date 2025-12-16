@@ -56,7 +56,6 @@ export default function RadioThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -68,27 +67,27 @@ export default function RadioThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `RadioPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(radioThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`RadioThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
-      AppStorage.setOrCreate(radioThemeSetProperty, themeSet)
+      AppStorage.setOrCreate(`RadioThemeSetProperty`, themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(radioThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(`RadioThemeProperty`))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(radioThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`RadioThemeProperty`, greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(radioThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`RadioThemeProperty`, redCustomTheme);
         }
         changeTheme = false;
       }
       localTheme =
-        AppStorage.get<boolean>(radioThemeSetProperty) ? AppStorage.get<CustomTheme>(radioThemeProperty) : undefined;
+        AppStorage.get<boolean>(`RadioThemeSetProperty`) ? AppStorage.get<CustomTheme>(`RadioThemeProperty`) : undefined;
     });
 
     
@@ -151,7 +150,8 @@ function checkWithTheme(localTheme: CustomTheme | undefined, key: string, custom
   colorValues: Map<string, string> | undefined) {
   const RadioJSON = inspector.getInspectorByKey(key);
   const attrsRadio = JSON.parseJsonElement(RadioJSON).getElement('$attrs');
-  const style = attrsRadio.getElement('radioStyle');
+  const style = JSON.parseJsonElement(attrsRadio.getString('radioStyle'));
+  console.log('radioStyle: ' + style )
   const checkedBackgroundColor: string =
     style.getString('checkedBackgroundColor').toString().toUpperCase() ?? EMPTY_ATTR;
   const checkCheckedBackgroundColor: string =

@@ -107,12 +107,10 @@ struct ListExample {
   }
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
+    if (eventData != null && eventData.data) {
       console.info("edgeEffect page state change called:" + JSON.stringify(eventData));
-      const edgeEffect = (eventData.data as ESObject).getPropertySafe('edgeEffect')
-      if (!(edgeEffect.isNull() || edgeEffect.isUndefined())) {
-        this.edgeEffect = edgeEffect.toStaticObject() as EdgeEffect;
-      }
+      const data = eventData.data as Record<String, undefined | null | Object>
+      this.edgeEffect = data!['edgeEffect'] as EdgeEffect;
     }
   }
 }

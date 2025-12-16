@@ -35,7 +35,7 @@ import {
 } from '@ohos.arkui.component'
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink, StorageProp } from '@ohos.arkui.stateManagement'
+import { StorageLink, StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const timePickerThemeProperty: string = `timePickerThemeProperty`;
 
@@ -53,9 +53,9 @@ export class TimePickerKeys {
 @Entry
 @Component
 struct TimePickerPage {
-  @StorageProp(timePickerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(timePickerIsMilitaryProperty) isMilitary: boolean = false;
-  @StorageLink(timePickerThemeSetProperty) themeSet: boolean = true
+  @StoragePropRef(timePickerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(timePickerIsMilitaryProperty) isMilitary: boolean = false;
+  @StoragePropRef(timePickerThemeSetProperty) themeSet: boolean = true
 
   build() {
     Scroll() {

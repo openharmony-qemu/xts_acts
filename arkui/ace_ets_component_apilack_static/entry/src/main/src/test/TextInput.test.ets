@@ -119,7 +119,7 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextInput');
-      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("20.00vp");
+      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("20.00fp");
       console.info("[testtextInputOnEditChange0003] fontSize value :" + obj.getElement('$attrs').getString('fontSize'));
 
     });

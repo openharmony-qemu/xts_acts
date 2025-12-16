@@ -43,10 +43,7 @@ export default function listDividerOptions() {
   describe('listDividerOptions', () => {
     beforeAll(() => {
       console.info("listDividerOptions beforeEach start");
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
-      
     });
 
     beforeEach(async (): Promise<void> => {

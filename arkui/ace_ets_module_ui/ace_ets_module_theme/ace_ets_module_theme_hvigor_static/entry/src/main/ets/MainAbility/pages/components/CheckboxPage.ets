@@ -36,7 +36,7 @@ import {
 } from '@ohos.arkui.component'
 import { CustomTheme } from '@ohos.arkui.theme';
 import { redCustomTheme } from '../../themes/CustomTheme1';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const checkBoxThemeProperty = 'CheckBoxThemeProperty';
 
@@ -50,7 +50,7 @@ export class CheckBoxKeys {
 @Entry
 @Component
 struct CheckboxPage {
-  @StorageLink(checkBoxThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(checkBoxThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   count: number = 0;
   isSelected: boolean[] = [true];
   groups: string[] = [`Group0`, `Group1`];

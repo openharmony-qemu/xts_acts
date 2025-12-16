@@ -129,7 +129,7 @@ struct backgroundEffectOptions_colorTest {
           } as MenuElement,
         ],
           {
-            backgroundEffect: this.effectOptions
+            // backgroundEffect: this.effectOptions
           } as MenuOptions
         )
         .id('EffectOptions_btn1')

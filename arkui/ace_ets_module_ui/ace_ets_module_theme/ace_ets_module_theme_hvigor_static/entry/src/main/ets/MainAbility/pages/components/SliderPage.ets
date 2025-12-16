@@ -36,7 +36,7 @@ import {
   WithTheme
 } from '@ohos.arkui.component'
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
-import { State, StorageLink } from '@ohos.arkui.stateManagement'
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
 
 export const sliderThemeProperty: string = `SliderThemeProperty`;
@@ -65,8 +65,8 @@ export class SliderKeys {
 @Entry
 @Component
 struct SliderThemePage {
-  @StorageLink(sliderThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(sliderThemeSetProperty) themeSet: boolean | undefined = true
+  @StoragePropRef(sliderThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(sliderThemeSetProperty) themeSet: boolean | undefined = true
   count: int = 0;
   @State val1: number = 50;
   @State val2: number = 50;

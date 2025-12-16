@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 import { systemTheme } from '../../../ets/MainAbility/pages/themeTokensPages/SystemThemeTestPage';
 import { frameTime, sleep } from '../Utils.test'
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
-import { checkColorTokens } from '../../../ets/MainAbility/themes/checkSystemTokens/CheckColorTokens.ets';
+import { checkColorTokens, ColorsValues } from '../../../ets/MainAbility/themes/checkSystemTokens/CheckColorTokens.ets';
 import { colorTheme } from '../../../ets/MainAbility/pages/customComponents/CustomColorList';
 import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { fillMap } from '../Utils.test';
@@ -43,7 +43,6 @@ export default function systemThemeTest() {
   describe('ActsSystemTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -56,11 +55,12 @@ export default function systemThemeTest() {
         if (pages?.name !== "SystemThemeTestPage") {
           routerInstance.pushUrl(options).then(() => {
             themeLocal = systemTheme;
-            console.info(`${SUITE} router.pushUrl success`);
+            console.info(`${SUITE} SystemThemeTestPage router.pushUrl success`);
           })
+          await UtilsTest.msSleep(2000)
         }
-        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey)
-        
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues')
+        console.log('test colorValues test' + colorValues)
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -71,13 +71,13 @@ export default function systemThemeTest() {
       router.back()
     });
 
-    
-        
-        /*
-     * @tc.number   ActsSystemThemeColors_static_0100
-     * @tc.name     ActsSystemThemeColors_static_0100
-     * @tc.desc     ActsSystemThemeColors_static_0100
-     * @tc.level    Level.LEVEL2
+    /**
+     * @tc.number    : ActsSystemThemeColors_static_0100
+     * @tc.name      : ActsSystemThemeColors_static_0100
+     * @tc.desc      : Check system light / dark theme colors values
+     * @tc.level     ：Level 2
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
      */
     it('ActsSystemThemeColors_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = 'ActsSystemThemeColors_static_0100';
@@ -94,29 +94,35 @@ export default function systemThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
       done();
     });
-    
-        
-        /*
-     * @tc.number   ActsSystemThemeColors_static_0200
-     * @tc.name     ActsSystemThemeColors_static_0200
-     * @tc.desc     ActsSystemThemeColors_static_0200
-     * @tc.level    Level.LEVEL2
+    /**
+     * @tc.number    ：ActsSystemThemeColors_static_0200
+     * @tc.name      ：ActsSystemThemeColors_static_0200
+     * @tc.desc      : Check system light / dark theme tokens values
+     * @tc.level     : Level 2
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
      */
     it('ActsSystemThemeColors_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = 'ActsSystemThemeColors_0200';
       const checkKeys: string[] = Object.keys(checkColorTokens);
-      const checkValues = (Object.values(checkColorTokens) as Object as string[]);
+      console.log('test checkKeys 11 ' + JSON.stringify(checkKeys))
+      const checkValues = (Object.values(checkColorTokens as ColorsValues) as object as string[]);
+      console.log('test checkKeys 22 ' + JSON.stringify(checkValues))
       const themeKeys: string[] = themeLocal?.colors === undefined ?
-        [] : Object.keys(themeLocal!.colors!);
+        [] : Object.keys(themeLocal!.colors);
+      console.log('test checkKeys 33 ' + JSON.stringify(themeKeys))
       const themeValues: Resource[] = themeLocal?.colors === undefined ?
-        [] : (Object.values(themeLocal!.colors!) as Object as Resource[]);
+        [] : (Object.values(themeLocal!.colors) as object as Resource[]);
+      console.log('test checkKeys 44 ' + JSON.stringify(themeValues))
       const checkMap: Map<string, string> = new Map<string, string>();
       const themeMap: Map<string, Resource> = new Map<string, Resource>();
       fillMap<string>(checkMap, checkKeys, checkValues);
       fillMap<Resource>(themeMap, themeKeys, themeValues);
+      console.log('test checkKeys 55 ' + JSON.stringify(themeValues[0].params) ?? '')
       themeMap.forEach(((value, key) => {
         let themeToken = (value as Resource)?.params?.[0] ?? "";
         const checkToken = checkMap.get(key);
+        console.log('checkToken: ' + checkToken + '  themeToken: ' + themeToken);
         expect(themeToken).assertEqual(checkToken);
       }));
       console.info(`${SUITE} ${CASE} END`);

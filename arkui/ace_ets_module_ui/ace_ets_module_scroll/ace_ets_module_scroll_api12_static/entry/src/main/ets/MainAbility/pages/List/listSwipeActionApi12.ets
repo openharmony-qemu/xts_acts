@@ -40,6 +40,33 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
+import {
+  Entry,
+  Component,
+  List,
+  ColumnOptions,
+  ListItem,
+  Text,
+  Column,
+  Button,
+  Margin,
+  ForEach,
+  ClickEvent,
+  Color,
+  Axis,
+  BarState,
+  Builder,
+  Row,
+  FlexAlign,
+  TextAlign,
+  animateTo,
+  SwipeEdgeEffect,
+  SwipeActionState,
+  TransitionEffect,
+  Curve
+} from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct ListItemApi12 {

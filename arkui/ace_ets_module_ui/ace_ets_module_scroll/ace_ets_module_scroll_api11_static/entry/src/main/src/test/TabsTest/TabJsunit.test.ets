@@ -46,10 +46,7 @@ export default function tabJsunit() {
   describe('tabTest', () => {
 
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {

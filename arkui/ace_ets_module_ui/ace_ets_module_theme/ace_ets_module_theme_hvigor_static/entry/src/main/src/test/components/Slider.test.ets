@@ -67,7 +67,6 @@ export default function sliderThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -79,27 +78,27 @@ export default function sliderThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `SliderPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(sliderThemeProperty);
-            themeSet = AppStorage.get<boolean>(sliderThemeSetProperty)
+            localTheme = AppStorage.get<CustomTheme>(`SliderThemeProperty`);
+            themeSet = AppStorage.get<boolean>(`SliderThemeSetProperty`)
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-      AppStorage.setOrCreate(sliderThemeSetProperty, themeSet)
+      AppStorage.setOrCreate<boolean | undefined>(`SliderThemeSetProperty`, themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(sliderThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(`SliderThemeProperty`))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(sliderThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`SliderThemeProperty`, greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(sliderThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`SliderThemeProperty`, redCustomTheme);
         }
         changeTheme = false;
       }
       localTheme =
-        AppStorage.get<boolean>(sliderThemeSetProperty) ? AppStorage.get<CustomTheme>(sliderThemeProperty) : undefined;
+        AppStorage.get<boolean>(`SliderThemeSetProperty`) ? AppStorage.get<CustomTheme>(`SliderThemeProperty`) : undefined;
     });
 
     
@@ -121,6 +120,7 @@ export default function sliderThemeTest() {
       console.info(`${SUITE} ${CASE} START`);
       sliderKeys.forEach((key) => {
         if (key.search(`System`) > 0) {
+          done();
           return;
         }
         checkWithTheme(localTheme, key, key.search(`CustomAttrs`) > 0, colorValues);

@@ -118,7 +118,7 @@ export default function textAreaOnCutJsunit() {
       console.info("[testtextAreaOnCut0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('TextArea');
-      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("20.00vp");
+      expect(obj.getElement('$attrs').getString('fontSize')).assertEqual("20.00fp");
       console.info("[testtextAreaOnCut0003] fontSize value :" + obj.getElement('$attrs').getString('fontSize'));
 
     });

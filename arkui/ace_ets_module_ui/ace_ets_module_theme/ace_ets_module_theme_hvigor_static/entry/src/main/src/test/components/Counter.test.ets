@@ -67,27 +67,27 @@ export default function counterThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `CounterPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(counterThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>('counterThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey)
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
-      AppStorage.setOrCreate(counterThemeSetProperty, themeSet)
+      AppStorage.setOrCreate<boolean | undefined>('counterThemeSetProperty', themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(counterThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>('counterThemeProperty'))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(counterThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>('counterThemeProperty', greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(counterThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>('counterThemeProperty', redCustomTheme);
         }
         changeTheme = false;
       }
       localTheme =
-        AppStorage.get<boolean>(counterThemeSetProperty) ? AppStorage.get<CustomTheme>(counterThemeProperty) :
+        AppStorage.get<boolean>('counterThemeSetProperty') ? AppStorage.get<CustomTheme>('counterThemeProperty') :
           undefined;
     })
 

@@ -60,7 +60,7 @@ export default function menuFontsizeModifierTest() {
         // closePopupTest.clear();
         let pages = closePopupTest.getState();
         console.info('get menuFontsizeModifier state pages:' + JSON.stringify(pages));
-        if (!('MainAbility/pages/Menu/menuFontsizeModifier' == pages.name)) {
+        if (!('menuFontsizeModifier' == pages.name)) {
           console.info('get menuFontsizeModifier pages.name:' + JSON.stringify(pages.name));
           closePopupTest.pushUrl(options);
           await CommonFunc.sleep(2000);

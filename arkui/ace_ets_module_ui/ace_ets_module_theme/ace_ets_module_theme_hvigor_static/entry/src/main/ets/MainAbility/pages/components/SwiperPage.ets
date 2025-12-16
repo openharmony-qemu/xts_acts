@@ -39,7 +39,7 @@ import {
   TextAlign,
   WithTheme
 } from '@ohos.arkui.component'
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const swiperThemeProperty = 'SwiperThemeProperty';
 
@@ -53,7 +53,7 @@ export class SwiperKeys {
 @Entry
 @Component
 struct SwiperPage {
-  @StorageLink(swiperThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(swiperThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   value: string = 'Text';
   data: Array<string> = new Array<string>('1', '2', '3', '4', '5');
 

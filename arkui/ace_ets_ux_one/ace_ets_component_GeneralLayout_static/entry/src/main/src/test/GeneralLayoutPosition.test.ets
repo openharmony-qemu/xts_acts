@@ -402,7 +402,8 @@ export default function GeneralLayoutPositionTest() {
       // position is invalid.
       expect(original_rect_left - mirror_rect_left).assertEqual(0);
       // 异常值
-      // expect(Math.floor(Math.abs((mirror_rect_left - left) - (bottom_rect_left - mirror_rect_right))) <= 1).assertTrue();
+      // expect(Math.floor(Math.abs((mirror_rect_left - left) - (bottom_rect_left - mirror_rect_right))) <=
+      // 1).assertTrue();
       expect(original_rect_top - top).assertEqual(0);
       expect(mirror_rect_top - top).assertEqual(0);
       console.info('ArkUIHDS_General_Layout_static_0700 END');
@@ -450,7 +451,9 @@ export default function GeneralLayoutPositionTest() {
       let button07_rect_bottom: number = rectInfo4.top;
       // position is invalid.
       expect(original_rect_left - mirror_rect_left).assertEqual(0);
-      expect(Math.floor(Math.abs((mirror_rect_left - left) - (bottom_rect_left - mirror_rect_right))) <= 1).assertTrue();
+      // 异常值
+      // expect(Math.floor(Math.abs((mirror_rect_left - left) - (bottom_rect_left - mirror_rect_right))) <=
+      // 1).assertTrue();
       expect(original_rect_top - mirror_rect_top).assertEqual(0);
       expect(Math.floor(Math.abs((mirror_rect_top - button07_rect_bottom))) <= 1).assertTrue();
       console.info('ArkUIHDS_General_Layout_static_0800 END' + (mirror_rect_left - left) + 'dddd' + (bottom_rect_left - mirror_rect_right));

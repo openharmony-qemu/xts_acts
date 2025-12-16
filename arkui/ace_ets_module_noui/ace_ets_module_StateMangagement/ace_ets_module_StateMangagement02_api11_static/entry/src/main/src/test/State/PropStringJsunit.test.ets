@@ -81,11 +81,6 @@ export default function PropStringJsunit() {
       console.info("PropStringJsunit beforeEach end");
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
     /*
      * @tc.number   PropStringJsunit_static_0200
      * @tc.name     PropStringJsunit_static_0200

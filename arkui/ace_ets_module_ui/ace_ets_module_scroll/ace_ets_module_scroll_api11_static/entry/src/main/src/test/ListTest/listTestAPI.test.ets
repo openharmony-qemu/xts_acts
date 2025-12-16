@@ -132,7 +132,8 @@ export default function listNewJsunit() {
       console.info("[testListNe_static_0003] component editMode strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
+      // editMode 废弃
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertTrue();
       console.info("[testListNe_static_0003] editMode value :" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editMode'));
       done()

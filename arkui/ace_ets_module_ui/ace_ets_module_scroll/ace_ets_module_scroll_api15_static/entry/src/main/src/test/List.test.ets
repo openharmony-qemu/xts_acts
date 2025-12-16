@@ -32,7 +32,7 @@ export default function testsuite() {
   tabsModeTest();
   swiperPageMode()
   tabsPageMode()
-  getAttributeScroll()  // typeNode没有getAttribute和bindController方法， 开发回复不支持，非问题 2
+  // getAttributeScroll()  // typeNode没有getAttribute和bindController方法， 开发回复不支持，非问题 2
   showDotIndicator()
   SwiperChangeIndexTest();
 }

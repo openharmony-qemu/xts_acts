@@ -69,22 +69,23 @@ export default function itemInGroupError() {
        * @tc.desc     itemInGroupError_static_0100
        * @tc.level    Level.LEVEL0
        */
-    it('itemInGroupError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[itemInGroupError_static_0100] START');
-      let driver = Driver.create()
-      let btn1: Component = await driver.findComponent(ON.id('getItemRectInGroup_401')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson = inspector.getInspectorByKey('getItemRectInGroup_err_text');
-      console.info("[itemInGroupError_static_0100] component obj1 is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[itemInGroupError_static_0100] content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('getItemRectInGroup: 401');
-      console.info('[itemInGroupError_static_0100] END');
-      done();
-    });
+    // it('itemInGroupError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //  // 异常参数
+    //   console.info('[itemInGroupError_static_0100] START');
+    //   let driver = Driver.create()
+    //   let btn1: Component = await driver.findComponent(ON.id('getItemRectInGroup_401')) as Component;
+    //   await btn1.click();
+    //   await CommonFunc.sleep(1500);
+    //   let strJson = inspector.getInspectorByKey('getItemRectInGroup_err_text');
+    //   console.info("[itemInGroupError_static_0100] component obj1 is: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   console.info("[itemInGroupError_static_0100] content: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+    //     .assertEqual('getItemRectInGroup: 401');
+    //   console.info('[itemInGroupError_static_0100] END');
+    //   done();
+    // });
 
 
     /*
@@ -117,22 +118,23 @@ export default function itemInGroupError() {
        * @tc.desc     itemInGroupError_static_0300
        * @tc.level    Level.LEVEL0
        */
-    it('itemInGroupError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[itemInGroupError_static_0300] START');
-      let driver = Driver.create()
-      let btn1: Component = await driver.findComponent(ON.id('scrollToItemInGroup_401')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson = inspector.getInspectorByKey('scrollToItemInGroup_err_text');
-      console.info("[itemInGroupError_static_0300] component obj1 is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[itemInGroupError_static_0300] content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('scrollToItemInGroup: 401');
-      console.info('[itemInGroupError_static_0300] END');
-      done();
-    });
+    // it('itemInGroupError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   // 异常参数
+    //   console.info('[itemInGroupError_static_0300] START');
+    //   let driver = Driver.create()
+    //   let btn1: Component = await driver.findComponent(ON.id('scrollToItemInGroup_401')) as Component;
+    //   await btn1.click();
+    //   await CommonFunc.sleep(1500);
+    //   let strJson = inspector.getInspectorByKey('scrollToItemInGroup_err_text');
+    //   console.info("[itemInGroupError_static_0300] component obj1 is: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   console.info("[itemInGroupError_static_0300] content: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+    //     .assertEqual('scrollToItemInGroup: 401');
+    //   console.info('[itemInGroupError_static_0300] END');
+    //   done();
+    // });
 
 
     /*

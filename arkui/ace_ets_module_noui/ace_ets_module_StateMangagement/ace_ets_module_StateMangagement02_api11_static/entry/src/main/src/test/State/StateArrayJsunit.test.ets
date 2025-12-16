@@ -90,11 +90,6 @@ export default function StateArrayJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
     /*
      * @tc.number   StateArrayJsunit_static_0100
      * @tc.name     StateArrayJsunit_static_0100

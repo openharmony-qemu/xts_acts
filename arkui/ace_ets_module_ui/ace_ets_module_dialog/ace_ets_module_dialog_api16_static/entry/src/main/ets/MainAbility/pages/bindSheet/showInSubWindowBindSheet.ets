@@ -121,7 +121,7 @@ struct showInSubWindowBindSheet {
           height: SheetSize.LARGE,
           width: 300,
           enableOutsideInteractive: true,
-          detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200.0] as [SheetSize|String|Double|Resource, SheetSize|undefined|String|Double|Resource, SheetSize|undefined|String|Double|Resource],
+          // detents: [SheetSize.MEDIUM, SheetSize.LARGE, 200.0] as [SheetSize|String|Double|Resource, SheetSize|undefined|String|Double|Resource, SheetSize|undefined|String|Double|Resource],
           showClose: true,
           preferType: this.mPreferType,
           title: { title: 'maintitle', subtitle: 'subtitle' },

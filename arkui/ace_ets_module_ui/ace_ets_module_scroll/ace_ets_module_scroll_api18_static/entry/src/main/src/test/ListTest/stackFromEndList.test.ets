@@ -67,10 +67,6 @@ export default function stackFromEndList() {
       }
       console.info("stackFromEndList beforeEach end");
     });
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
     
     /*
      * @tc.number   stackFromEndList_static_0100

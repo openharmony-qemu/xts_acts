@@ -153,9 +153,9 @@ export default function testsuite() {
   nestedScrollSwiper()
   offsetRemain()
   finishTransSwiper()
-  preloadErrorTabs()  // 401  1
+  preloadErrorTabs()  // preloadItems引起APP Died （注释）  1
   childrenSizeError()
-  flingError()        // this.scroller.fling(undefined) undefined 异常值 1
+  flingError()        // this.scroller.fling(undefined) 注释 异常值 1
   symbolTabs()   // 使用BottomTabBarStyle，tabs不显示 1
   TabsAp1() // 新问题
   ScrollApi1()

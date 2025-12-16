@@ -70,7 +70,7 @@ export default function RelativeGuideLine4() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RelativeGuideLine4 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/RelativeContainer/RelativeGuideLine4" == pages.name)) {
+        if (!("RelativeGuideLine4" == pages.name)) {
           console.info("get RelativeGuideLine4 pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl({url:"MainAbility/pages/RelativeContainer/RelativeGuideLine4"});

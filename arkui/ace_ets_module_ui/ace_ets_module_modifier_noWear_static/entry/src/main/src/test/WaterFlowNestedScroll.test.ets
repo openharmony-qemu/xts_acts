@@ -49,9 +49,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 export default function waterFlowNestedScrollJsunit() {
   describe('waterFlow_NestedScrollTest', () => {
     beforeAll(() => {
-      
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlowNestedScroll beforeEach start");

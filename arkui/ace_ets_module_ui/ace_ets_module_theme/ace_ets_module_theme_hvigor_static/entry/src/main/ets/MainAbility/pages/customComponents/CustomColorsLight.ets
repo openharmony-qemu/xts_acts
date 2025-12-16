@@ -53,7 +53,7 @@ export let customButtonLightTheme: Theme | undefined;
 
 @Component
 export struct CustomColorsLight {
-  @State data: Array<DataClass> = new Array<DataClass>();
+  data: Array<DataClass> = new Array<DataClass>();
 
   onWillApplyTheme(theme: Theme) {
     customButtonLightTheme = theme;

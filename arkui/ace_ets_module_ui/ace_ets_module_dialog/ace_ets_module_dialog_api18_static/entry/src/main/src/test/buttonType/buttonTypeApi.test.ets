@@ -34,10 +34,7 @@ export default function buttonTypeTest() {
   describe('ActsbuttonTypeTest', () => {
 
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      
     })
 
     beforeEach(async () => {

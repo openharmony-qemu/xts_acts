@@ -33,12 +33,12 @@ import getDialogControllerTest from './dialog/getDialogControllerTest.test';
 import DialogOptions from './promptActionTest/DialogOptions.test';
 
 export default function testsuite() {
+    bindMenuHapticFeedbackMode()
     isVisible()
     getDialogControllerTest()
     DialogOptions()
     buttonType()
     overlayManagerTest()
-    customDialogLevelOrder()
     closeToastTest()
     closeDialogTest()
     showDialogLevelOrder()
@@ -46,9 +46,9 @@ export default function testsuite() {
     openCustomDialogWithConOrder()
     presentCustomDialogOrder()
     alertDialogLevelOrder()
-    bindMenuHapticFeedbackMode()
-    bindTips1Test()
-    bindTips2Test()
     bindContextMenuHapticFeedbackMode()
     previewBorderRadius()
+    bindTips1Test()
+    bindTips2Test() // 1
+    customDialogLevelOrder() // 4
 }

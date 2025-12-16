@@ -49,7 +49,7 @@ import { colorsForCheck } from '../../../ets/MainAbility/pages/themeTokensPages/
 
 export default function withThemeTest() {
   const SUITE: string = 'WithTheme';
-  let themeLocal: CustomTheme | undefined;
+  let themeLocal: Theme | undefined;
   let themeLocalNested: Theme | undefined;
   let themeLocalSystem: Theme | undefined;
   let themeLocalLight: Theme | undefined;
@@ -59,44 +59,47 @@ export default function withThemeTest() {
   describe('ActsWithThemeTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     })
 
     beforeEach(() => {
+      if (changeTheme) {
+        if ((AppStorage.get<CustomTheme>(withThemeProperty))?.colors?.fontEmphasize
+          == redCustomTheme?.colors?.fontEmphasize) {
+          console.info(`withThemeProperty set greenCustomTheme`);
+          AppStorage.setOrCreate<CustomTheme>(withThemeProperty, greenCustomTheme);
+        } else {
+          console.info(`withThemeProperty set redCustomTheme`);
+          AppStorage.setOrCreate<CustomTheme>(withThemeProperty, redCustomTheme);
+        }
+        changeTheme = false;
+      }
+
       try {
         const options: router.RouterOptions = {
           url: "MainAbility/pages/themeTokensPages/WithThemeTestPage",
         };
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
-        if (pages?.name !== "MainAbility/pages/themeTokensPages/WithThemeTestPage") {
+        if (pages?.name !== "WithThemeTestPage") {
           routerInstance.pushUrl(options).then(() => {
+            console.info(`${SUITE} router.pushUrl success 01`);
             themeLocal = customButtonTheme;
             themeLocalNested = customButtonNestedTheme;
             themeLocalSystem = customButtonSystemTheme;
             themeLocalLight = customButtonLightTheme;
             themeLocalDark = customButtonDarkTheme;
-            console.info(`${SUITE} router.pushUrl success`);
+            console.info(`${SUITE} router.pushUrl success 02`);
           });
           await UtilsTest.msSleep(2000)
         }
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-
-      if (changeTheme) {
-        if ((AppStorage.get(withThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
-          == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(withThemeProperty, greenCustomTheme);
-        } else {
-          AppStorage.setOrCreate(withThemeProperty, redCustomTheme);
-        }
-        changeTheme = false;
-      }
     });
 
     afterAll(() => {
-      // ThemeControl.setDefaultTheme(undefined);
+      ThemeControl.setDefaultTheme(undefined);
       const router = AppStorage.get<Router>("router") as Router
       router.back()
     });
@@ -174,7 +177,7 @@ export default function withThemeTest() {
     it('ActsWithThemeColors_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = 'ActsWithThemeColors_static_0300';
       console.info(`${SUITE} ${CASE} START`);
-      await sleep(frameTime);
+      await sleep(2000);
       themeLocal = customButtonTheme;
       const checkKeys: string[] = Object.keys(redThemeColors);
       const checkValues :string[] = (Object.values(redThemeColors) as Object as string[]);

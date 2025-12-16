@@ -192,7 +192,8 @@ it('ProgressJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise
       let strJson = inspector.getInspectorByKey('pro1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ProgressJsunit_static_0400] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('color')).assertEqual('#FF808080');
+      // 和1.1区别，设置了蓝色却和别的色值比较
+      expect(obj.getElement('$attrs').getString('color')).assertEqual('#FF0000FF');
       await CommonFunc.sleep(1000);
       console.info('[ProgressJsunit_static_0400] END');
       done();

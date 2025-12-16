@@ -37,10 +37,7 @@ export default function DialogOptions() {
   describe('DialogOptions', () => {
 
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      
     })
 
     beforeEach(async () => {
@@ -50,7 +47,7 @@ export default function DialogOptions() {
       }
       try {
         const DialogOptions = AppStorage.get<Router>("router") as Router
-        // DialogOptions.clear();
+        DialogOptions.clear();
         let pages:router.RouterState = DialogOptions.getState();
         console.info("get DialogOptions state pages: " + JSON.stringify(pages));
         if (!("DialogOptions" == pages.name)) {

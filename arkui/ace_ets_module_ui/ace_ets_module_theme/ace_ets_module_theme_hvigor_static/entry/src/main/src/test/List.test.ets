@@ -51,7 +51,7 @@ export default function testsuite() {
   // global tests
   setDefaultThemeTest();
   systemThemeTest();
-  withThemeTest();
+  withThemeTest(); // 有问题
   // components
   alphabetIndexerThemeTest();
   badgeThemeTest();

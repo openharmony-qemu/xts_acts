@@ -70,9 +70,7 @@ class MyProvideObject {
 
 @Component
 struct ConsumeArrayObjectChild {
-  @Consume message: Array<MyProvideObject> = new Array<MyProvideObject>(new MyProvideObject(1, 'MyProvideObject1'),
-    new MyProvideObject(2, 'MyProvideObject2'),
-    new MyProvideObject(3, 'MyProvideObject3'))
+  @Consume message: Array<MyProvideObject>
 
   build() {
     Column() {

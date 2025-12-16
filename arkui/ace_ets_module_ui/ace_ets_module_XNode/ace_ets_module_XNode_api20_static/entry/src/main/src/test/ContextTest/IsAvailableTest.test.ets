@@ -62,9 +62,6 @@ export default function IsAvailableTest() {
       await CommonFunc.sleep(1000);
       console.info("IsAvailableTest after each called");
     });
-
-    
-        
         /*
      * @tc.number   IsAvailableTest_static_0100
      * @tc.name     IsAvailableTest_static_0100

@@ -47,22 +47,19 @@ class Params {
 @ComponentV2
 struct MyComponent {
 
-  getDialogController(){
-    return new promptAction.DialogController()
-  }
-
   build() {
     Column() {
       Button('Close Dialog')
         .onClick((e: ClickEvent) => {
-          let ctrl: PromptActionDialogController = this.getDialogController();
+          let ctrl: PromptActionDialogController | undefined = this.getDialogController();
           if (ctrl != undefined) {
-            ctrl.close();
+            ctrl!.close();
           }
         })
     }
   }
 }
+
 @Builder
 function buildText(params: Params) {
   Column() {

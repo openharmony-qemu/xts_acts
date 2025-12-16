@@ -74,15 +74,7 @@ struct StateArrayObject {
   @State message: Array<MyObject> = new Array<MyObject>(new MyObject(1, 'Object 1'),
   new MyObject(2, 'Object 2'),
   new MyObject(3, 'Object 3'))
-  aboutToAppear() {
-    let uiContext = this.getUIContext();
-    try {
-      let router = uiContext.getRouter();
-      AppStorage.setOrCreate<Router>('StateArrayObject', router);
-    } catch (error: Error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Row() {
       Column() {

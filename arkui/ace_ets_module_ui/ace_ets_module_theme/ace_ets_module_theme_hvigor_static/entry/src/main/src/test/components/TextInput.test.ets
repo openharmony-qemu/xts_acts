@@ -60,7 +60,6 @@ export default function textInputThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     })
 
     beforeEach(() => {
@@ -72,32 +71,32 @@ export default function textInputThemeTest() {
         const pages: router.RouterState = routerInstance.getState()
         if (pages?.name !== `TextInputPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(textInputThemeProperty)
-            themeSet = AppStorage.get<boolean>(textInputThemeSetProperty)
+            localTheme = AppStorage.get<CustomTheme>(`TextInputThemeProperty`)
+            themeSet = AppStorage.get<boolean>(`TextInputThemeSetProperty`)
             console.info(`${SUITE} router.pushUrl success`)
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err))
       }
 
       if (changeTheme) {
-        if ((AppStorage.get(textInputThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(`TextInputThemeProperty`))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(textInputThemeProperty, greenCustomTheme)
+          AppStorage.setOrCreate<CustomTheme>(`TextInputThemeProperty`, greenCustomTheme)
         } else {
-          AppStorage.setOrCreate(textInputThemeProperty, redCustomTheme)
+          AppStorage.setOrCreate<CustomTheme>(`TextInputThemeProperty`, redCustomTheme)
         }
         changeTheme = false
       }
       if (themeSet) {
-        AppStorage.setOrCreate(textInputThemeSetProperty, true)
+        AppStorage.setOrCreate<boolean>(`TextInputThemeSetProperty`, true)
       } else {
-        AppStorage.setOrCreate(textInputThemeSetProperty, false)
+        AppStorage.setOrCreate<boolean>(`TextInputThemeSetProperty`, false)
       }
-      localTheme = AppStorage.get<boolean>(textInputThemeSetProperty) ?
-      AppStorage.get<CustomTheme>(textInputThemeProperty) : undefined
+      localTheme = AppStorage.get<boolean>(`TextInputThemeSetProperty`) ?
+      AppStorage.get<CustomTheme>(`TextInputThemeProperty`) : undefined
     })
 
     afterEach(async () => {
@@ -111,11 +110,13 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} START`)
       textInputKeys.forEach((key) => {
         if (key.search(`WithTheme`) > 0) {
+          done()
           return
         }
         checkWithTheme(undefined, key, key.search(`CustomAttrs`) > 0, colorValues)
       })
       console.info(`${SUITE} ${CASE} END`)
+      done()
     })
     
     it(`ActsTextInputThemeColors_static_0200`, Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -123,12 +124,14 @@ export default function textInputThemeTest() {
       console.info(`${SUITE} ${CASE} START`)
       textInputKeys.forEach((key) => {
         if (key.search(`System`) > 0) {
+          done()
           return
         }
         checkWithTheme(localTheme, key, key.search(`CustomAttrs`) > 0, colorValues)
       })
       changeTheme = true
       console.info(`${SUITE} ${CASE} END`)
+      done()
     })
     
     it(`ActsTextInputThemeColors_static_0300`, Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -142,6 +145,7 @@ export default function textInputThemeTest() {
       })
       themeSet = false
       console.info(`${SUITE} ${CASE} END`)
+      done()
     })
     
     it(`ActsTextInputThemeColors_static_0400`, Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -153,6 +157,7 @@ export default function textInputThemeTest() {
       })
       changeTheme = true
       console.info(`${SUITE} ${CASE} END`)
+      done()
     })
   })
 }

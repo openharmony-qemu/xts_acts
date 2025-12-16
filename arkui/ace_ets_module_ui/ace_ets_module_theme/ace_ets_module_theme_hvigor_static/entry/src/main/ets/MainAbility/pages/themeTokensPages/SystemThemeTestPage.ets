@@ -46,8 +46,8 @@ export let systemTheme: Theme | undefined;
 @Component
 struct SystemThemeTestPage {
   onWillApplyTheme(theme: Theme) {
-    console.log('xyb111')
     systemTheme = theme;
+    console.log('test systemTheme ' + JSON.stringify(theme.colors));
   }
 
   build() {

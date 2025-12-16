@@ -52,7 +52,6 @@ struct preloadItemsErrorTabsExample {
       Button('preload items: [-1]')
         .id('preloadItems_btn_401')
         .onClick((e: ClickEvent) => {
-          console.info('xyb: preloadItems [-1] start');
           this.controller.preloadItems([-1])
             .then(() => {
               console.info('preloadItems [-1] success.')
