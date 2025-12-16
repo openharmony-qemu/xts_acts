@@ -26,6 +26,7 @@ describe("SensorJsTest_sensor_65", function () {
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         expect(typeof (data.value)).assertEqual("number");
+        done()
     }
 
     let isAvailable = async (data) => {
