@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import avSession from '@ohos.multimedia.avsession';
 import featureAbility from '@ohos.ability.featureAbility';
-import { AVCastPickerState } from '@ohos.multimedia.avCastPickerParam';
+import { AVCastPickerState, AVCastPickerStyle } from '@ohos.multimedia.avCastPickerParam';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 
@@ -293,6 +293,36 @@ export default function abilityTest() {
         console.info('${TAG}: avCastPicker resetCommunicationDevice successfully');
       }).catch((err: BusinessError) => {
         console.info(`${TAG}: avCastPicker resetCommunicationDevice failed with err: ${err.code}, ${err.message}`);
+        expect(false).assertTrue();
+      })
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0900
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0900
+     * @tc.desc   test interface select(option) with menuPosition involved
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let menuPosition:avSession.MenuPosition = {
+        x:200,
+        y:600,
+        width:40,
+        height:40
+      }
+      let avCastPickerOptions : avSession.AVCastPickerOptions = {
+        sessionType: 'voice_call',
+        pickerStyle: AVCastPickerStyle.STYLE_MENU,
+        menuPosition: menuPosition
+      }
+      let avCastPicker = new avSession.AVCastPickerHelper(context);
+      await avCastPicker.select(avCastPickerOptions).then(() => {
+        console.info('${TAG}: avCastPicker select successfully');
+      }).catch((err: BusinessError) => {
+        console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
         expect(false).assertTrue();
       })
       done();
