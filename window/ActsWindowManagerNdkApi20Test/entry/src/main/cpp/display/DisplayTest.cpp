@@ -47,7 +47,7 @@ napi_value CaptureScreenPixelmapNoPermission(napi_env env, napi_callback_info in
 napi_value TestCaptureScreenPixelmapBoundaryValue(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    OH_PixelmapNative* pixelMap = (OH_PixelmapNative*)malloc(sizeof(OH_PixelmapNative*));
+    OH_PixelmapNative* pixelMap = nullptr;
     int32_t result = OH_NativeDisplayManager_CaptureScreenPixelmap(PARAM_4294967294, &pixelMap);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Display",
                  "TestCaptureScreenPixelmapBoundaryValue 1: %{public}d", result);
@@ -71,8 +71,7 @@ napi_value TestCaptureScreenPixelmapBoundaryValue(napi_env env, napi_callback_in
 napi_value TestCreateDisplayByIdBoundaryValue(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    NativeDisplayManager_DisplayInfo* displayInfo =
-        (NativeDisplayManager_DisplayInfo*)malloc(sizeof(NativeDisplayManager_DisplayInfo*));
+    NativeDisplayManager_DisplayInfo *displayInfo = nullptr;
     int32_t result = OH_NativeDisplayManager_CreateDisplayById(0, &displayInfo);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Display",
                  "TestCreateDisplayByIdBoundaryValue 1: %{public}d", result);
@@ -118,7 +117,7 @@ napi_value TestUnregisterAvailableAreaChangeListenerBoundaryValue(napi_env env, 
 napi_value TestCreateAvailableAreaBoundaryValue(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    NativeDisplayManager_Rect* availableArea = (NativeDisplayManager_Rect*)malloc(sizeof(NativeDisplayManager_Rect*));
+    NativeDisplayManager_Rect* availableArea = nullptr;
     int32_t result = OH_NativeDisplayManager_CreateAvailableArea(PARAM_18446744073709551614, &availableArea);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Display",
                  "TestCreateAvailableAreaBoundaryValue 1: %{public}d", result);

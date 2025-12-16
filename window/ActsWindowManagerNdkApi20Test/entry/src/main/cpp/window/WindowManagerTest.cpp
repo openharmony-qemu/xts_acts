@@ -287,7 +287,7 @@ static void InitPushDisplay2(napi_property_descriptor* desc)
         XL("testUnregisterDisplayRemoveListenerBoundaryValue",
             Display::TestUnregisterDisplayRemoveListenerBoundaryValue),
         XL("testGetDisplaySourceModeBoundaryValue",
-            Display::TestGetDisplaySourceModeBoundaryValue), 
+            Display::TestGetDisplaySourceModeBoundaryValue),
         XL("testGetDisplayPositionBoundaryValue",
             Display::TestGetDisplayPositionBoundaryValue),
     };

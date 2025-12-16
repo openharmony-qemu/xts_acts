@@ -1060,7 +1060,7 @@ napi_value TestLockCursorwithoutPermission(napi_env env, napi_callback_info info
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     if (argc != PARAM_1) {
@@ -1131,7 +1131,7 @@ napi_value TestUnLockCursorwithoutPermission(napi_env env, napi_callback_info in
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     int32_t windowId;
@@ -1156,7 +1156,7 @@ napi_value TestSetWindowBrightness(napi_env env, napi_callback_info info)
     }
     size_t argc = PARAM_2;
     napi_value args[PARAM_2] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     napi_valuetype valuetype1;
@@ -1190,13 +1190,12 @@ napi_value TestInjectTouchEvent(napi_env env, napi_callback_info info)
     }
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     if (valuetype0 != napi_number) {
-         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "ValueType is false");
-         return nullptr;
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
@@ -1231,13 +1230,12 @@ napi_value TestGetMainWindowSnapshot(napi_env env, napi_callback_info info)
     }
     size_t argc = PARAM_1;
     napi_value args[PARAM_1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     if (valuetype0 != napi_number) {
-         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "ValueType is false");
-         return nullptr;
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
@@ -1285,13 +1283,12 @@ napi_value TestLockCursor(napi_env env, napi_callback_info info)
     }
     size_t argc = PARAM_1;
     napi_value args[PARAM_1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     if (valuetype0 != napi_number) {
-         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "ValueType is false");
-         return nullptr;
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
@@ -1325,23 +1322,22 @@ napi_value TestUnlockCursor(napi_env env, napi_callback_info info)
     }
     size_t argc = PARAM_1;
     napi_value args[PARAM_1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args,nullptr,nullptr);
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
     if (valuetype0 != napi_number) {
-         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "ValueType is false");
-         return nullptr;
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
    
     int32_t result1 = OH_WindowManager_UnlockCursor(0);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestUnlockCursor: %{public}d", result1);
+        "TestUnlockCursor: %{public}d", result1);
     int32_t result2 = OH_WindowManager_UnlockCursor(PARAM_4294967295);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "TestUnlockCursor: %{public}d", result2);
+        "TestUnlockCursor: %{public}d", result2);
     
     napi_value retValue;
     if (napi_create_array(env, &retValue) != napi_ok) {
