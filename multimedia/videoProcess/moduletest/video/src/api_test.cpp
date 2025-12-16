@@ -1215,8 +1215,9 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0550, TestSize.Level0)
     int32_t metadataMode = VIDEO_METADATA_GENERATOR_CONTRAST_MODE;
     OH_AVFormat_SetIntValue(format, VIDEO_METADATA_GENERATOR_STYLE_CONTROL, metadataMode);
     ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
+    OH_VideoProcessing_Destroy(videoProcessor);
     OH_AVFormat_Destroy(format);
-    ASSERT_EQ(ret, 0);
+    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
 }
 
 /**
@@ -1241,6 +1242,7 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0560, TestSize.Level0)
     OH_AVFormat_SetIntValue(format, VIDEO_METADATA_GENERATOR_STYLE_CONTROL, metadataMode);
     ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
     OH_AVFormat_Destroy(format);
-    ASSERT_EQ(ret, 0);
+    OH_VideoProcessing_Destroy(videoProcessor);
+    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
 }
 }
