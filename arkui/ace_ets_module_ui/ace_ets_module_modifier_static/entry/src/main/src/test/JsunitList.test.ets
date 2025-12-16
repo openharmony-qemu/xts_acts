@@ -86,70 +86,71 @@ import textInputJsunit from './TextInput.test';
 import gridNestedScrollJsunit from './GridNestedScroll.test';
 import listNestedScrollJsunit from './ListNestedScroll.test';
 import scrollEnablePagingJsunit from "./ScrollEnablePaging.test"
-
+//529
 export default function testsuite() {
 
   gridNestedScrollJsunit(); // pass 1
-  common9Jsunit(); // pass 50 fail 2
-  common1Jsunit(); //pass 36 fail 6
+  common9Jsunit(); // pass 51 fail 1
+  common1Jsunit(); //pass 37 fail 6
   shortcutKeyJsunit(); // pass 1
   geometryTransitionJsunit(); // pass 1
   motionPathJsunit(); // pass 1
   sharedTransitionJsunit(); // pass 1
   transitionJsunit(); // pass 1
   columnJsunit(); // pass 3
-  rowJsunit(); // pass 2 fail 1(onchange 未修改)
-  blankJsunit(); // pass 1 fail 1(onchange 未修改)
-  dividerJsunit(); // pass 4 fail 1(onchange 未修改)
-  gridColJsunit(); // pass 4 fail 1(onchange 未修改)
+  rowJsunit(); // pass 3
+  blankJsunit(); // pass 2 fail 1 (onchange 未修改)
+  dividerJsunit(); // pass 5
+  gridColJsunit(); // pass 5
   gridRowJsunit(); // pass 2
   navDestinationJsunit(); // pass 2
   navigationJsunit() // pass 12 fail 1 (onchange 未修改)
-  // // navigatorJsunit(); //  fail 5 废弃
-  // // navRouterJsunit(); // fail 2 废弃
-  stackJsunit(); // pass 1 fail 1(onchange 未修改)
+  stackJsunit(); // pass 2
   // // tabsFirstJsunit(); // fail 5 编译失败  Cannot find imported element 'TabsModifier'
-  gridJsunit(); // pass 18 fail 1(onchange 未修改)
+  gridJsunit(); // pass 19
   //
-  gridItemJsunit(); // pass 6 fail 1(onchange 未修改)
-  listJsunit(); // pass 17 fail 1// .editMode属性 废弃
+  gridItemJsunit(); // pass 7
+  listJsunit(); // pass 17
   listNestedScrollJsunit();  // pass 1
-  listItemJsunit();  // pass 2 fail 1(onchange 未修改)
-  listItemGroupJsunit(); // pass 1 fail 1(onchange 未修改)
+  listItemJsunit();  // pass 3
+
+
+
+  listItemGroupJsunit(); // pass 2
   scrollNestedScrollJsunit(); // pass 1
   scrollJsunit(); // pass 10
   swiperJsunit(); // pass 18
-  buttonJsunit();// pass 16 fail 1(onchange 未修改)
-  checkboxJsunit(); // pass 4 fail 1 (onchange 未修改)
-  checkBoxGroupJsunit(); // pass 4 fail 1 (onchange 未修改)
+  buttonJsunit();// pass 17
+  checkboxJsunit(); // pass 5
+  checkBoxGroupJsunit(); // pass 5
   counterJsunit(); // pass 3
-  datePickerJsunit(); // pass 4 fail 1 (onchange 未修改)
-  radioJsunit(); // pass 2 fail 1 (onchange 未修改)
-  ratingJsunit(); // pass 3 fail 1 (onchange 未修改)
-  sliderJsunit(); // pass 13 fail 1 (onchange 未修改)
-  textpickerJsunit(); // pass 6 fail 1 (onchange 未修改)
-  timepickerJsunit(); // pass 4 fail 1 (onchange 未修改)
+  datePickerJsunit(); // pass 5
+  radioJsunit(); // pass 2 // fail 1 (onchange 未修改)
+  ratingJsunit(); // pass 4
+  sliderJsunit(); // pass 13 // fail 1 (onchange 未修改)
+  textpickerJsunit(); // pass 7
+  timepickerJsunit(); // pass 5
   toggleJsunit();  // pass 3
-  imageSpanJsunit();// pass 2 fail 1 (onchange 未修改)
+  imageSpanJsunit();// pass 3
   patternLockJsunit(); // pass 9
   // // richEditorJsunit(); //fail 2 Cannot find imported element 'RichEditorModifier'
-  searchJsunit();// pass 12 fail 1 (onchange 未修改)
+  searchJsunit();// pass 12 // fail 1 (onchange 未修改)
   spanJsunit(); //pass 11，
-  textJsunit(); // pass 22 fail 1 (onchange 未修改)
-  textAreaJsunit(); //pass 17 fail 1 (onchange 未修改)
-  textInputJsunit();//pass 25  fail 1 (onchange 未修改)
+  textJsunit(); // pass 22 // fail 1 (onchange 未修改)
+  textAreaJsunit(); //pass 17 // fail 1 (onchange 未修改)
+  textInputJsunit();//pass 25 // fail 1 (onchange 未修改)
   //
   imageJsunit();  // pass 15
   imageAnimatorJsunit(); // pass 8
   videoJsunit(); // pass 6
-  dataPanelJsunit(); // pass 5 fail 1(onchange 未修改)
+  dataPanelJsunit(); // pass 6
   gaugeJsunit();  //pass 9
   loadingProgressJsunit(); // pass 3
-  marqueeJsunit(); // pass 5 fail 1 (onchange 未修改)
-  progressJsunit(); // pass 3 fail 1 (onchange 未修改)
-  qrCodeJsunitJsunit(); // pass 3 fail 1(onchange 未修改)
+  marqueeJsunit(); // pass 6
+  progressJsunit(); // pass 4 fail 1
+  qrCodeJsunitJsunit(); // pass 3
   textClockJsunit(); // pass 7
-  textTimerJsunit(); // pass 6 fail 1(onchange 未修改)
+  textTimerJsunit(); // pass 7
 
   lineJsunit(); // pass 3
   pathJsunit(); // pass 2
@@ -159,10 +160,8 @@ export default function testsuite() {
   rectJsunit(); // pass 4
   shapeJsunit(); // pass 14
   // alphabetIndexerJsunit(); //fail 18  Cannot find imported element 'AlphabetIndexerModifier'
-  // formComponentJsunit(); //fail 6 Cannot find imported element 'FormComponentModifier' 废弃
-  hyperLinkJsunit(); // pass 1 fail 1(onchange 未修改)
-  menuItemJsunit(); // pass 6 fail 1(onchange 未修改)
-  menuJsunit(); // pass 3 fail 1(onchange 未修改)
-  // panelJsunit(); // fail 11 废弃
+  hyperLinkJsunit(); // pass 2
+  menuItemJsunit(); // pass 7
+  menuJsunit(); // pass 4
   scrollEnablePagingJsunit() // pass 1
 }

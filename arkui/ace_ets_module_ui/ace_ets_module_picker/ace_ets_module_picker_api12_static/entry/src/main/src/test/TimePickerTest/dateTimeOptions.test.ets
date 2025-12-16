@@ -80,7 +80,7 @@ export default function dateTimeOptions() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[dateTimeOptions_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
       console.info("[dateTimeOptions_static_0100] content: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"second":"numeric","minute":"2-digit","hour":"numeric"}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"hour":"numeric","minute":"2-digit","second":"numeric"}');
       console.info('[dateTimeOptions_static_0100] END');
       done();
     });

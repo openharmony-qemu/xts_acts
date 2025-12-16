@@ -467,10 +467,12 @@ export default function TextAreaSelectTest() {
       await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('TextAreaSelect_TextArea_3', 10, "")
       await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TextAreaSelect_Button_14', 10, "")
       await driver.delayMs(waitUiReadyMs)
+      await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('TextAreaSelect_TextArea_3');
-
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('caretPosition')).assertEqual("10");
       await driver.delayMs(waitUiReadyMs)
 

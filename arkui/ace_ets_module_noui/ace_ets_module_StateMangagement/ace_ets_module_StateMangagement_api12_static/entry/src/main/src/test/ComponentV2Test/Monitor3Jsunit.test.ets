@@ -64,10 +64,10 @@ export default function Monitor3Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Monitor3Jsunit state pages:" + JSON.stringify(pages));
         if (!("Monitor3" == pages.name)) {
+          routerInstance.clear();
           console.info("get Monitor3Jsunit pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

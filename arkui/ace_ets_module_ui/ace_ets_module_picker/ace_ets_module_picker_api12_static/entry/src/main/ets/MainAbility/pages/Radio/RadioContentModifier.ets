@@ -32,10 +32,12 @@ class MyRadioStyle implements ContentModifier<RadioConfiguration> {
       .id('RadioContentModifier_btn')
       .backgroundColor(0xAABBCC)
       .onClick((E:ClickEvent)=>{
+        console.log("========================================= " + config.checked)
         if (config.checked) {
           config.triggerChange(false)
         } else {
           config.triggerChange(true)
+          console.log("========================================= config.triggerChange(true)" + config.checked)
         }
       })
   }

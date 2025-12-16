@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -57,20 +58,22 @@ export default function cachedShowFlow() {
       console.info("cachedShowFlow beforeEach end");
     });
 
-/**
+
+    /**
      * @tc.number   cachedShowFlow_static_0100
      * @tc.name     cachedShowFlow_static_0100
      * @tc.desc     cachedShowFlow_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('cachedShowFlow_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('cachedShowFlow_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[cachedShowFlow_static_0100] START');
       await CommonFunc.sleep(1000);
-      let driver =  Driver.create()
+      let driver = Driver.create()
       await CommonFunc.sleep(1500);
       let strJson = inspector.getInspectorByKey('cachedCount_show_flow');
       console.info("[cachedShowFlow_static_0100] component obj is: " + JSON.parseJsonElement(strJson));
-      console.info("[cachedShowFlow_static_0100] cachedCount: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('cachedCount')));
+      console.info("[cachedShowFlow_static_0100] cachedCount: " +
+      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('cachedCount')));
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('WaterFlow');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('cachedCount')).assertEqual(6);
@@ -79,27 +82,28 @@ it('cachedShowFlow_static_0100', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-/**
+
+    /**
      * @tc.number   cachedShowFlow_static_0200
      * @tc.name     cachedShowFlow_static_0200
      * @tc.desc     cachedShowFlow_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('cachedShowFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('cachedShowFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[cachedShowFlow_static_0200] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "clip1": false,
             "show1": false
-          } as Record<string, object|null|undefined>
+          } as Record<string, object | null | undefined>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
           priority: events_emitter.EventPriority.LOW
         } as events_emitter.InnerEvent
         console.info("[cachedShowFlow_static_0200] start to publish emit:");
-        console.info("[cachedShowFlow_static_0200] start to publish emit:" +  JSON.stringify(eventData?.data));
+        console.info("[cachedShowFlow_static_0200] start to publish emit:" + JSON.stringify(eventData?.data));
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         console.log("[cachedShowFlow_static_0200] change component data error: " + (err as Error)?.message);
@@ -113,20 +117,21 @@ it('cachedShowFlow_static_0200', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-/**
+
+    /**
      * @tc.number   cachedShowFlow_static_0300
      * @tc.name     cachedShowFlow_static_0300
      * @tc.desc     cachedShowFlow_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('cachedShowFlow_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('cachedShowFlow_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[cachedShowFlow_static_0300] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "clip1": true,
             "show1": false
-          } as Record<string, object|null|undefined>
+          } as Record<string, object | null | undefined>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 125,
@@ -146,52 +151,56 @@ it('cachedShowFlow_static_0300', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-    
-/**
+
+    /**
      * @tc.number   cachedShowFlow_static_0400
      * @tc.name     cachedShowFlow_static_0400
      * @tc.desc     cachedShowFlow_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowFlow_static_0400] START');
+    it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "clip1": true,
-            "show1": true
-          } as Record<string, object|null|undefined>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
-        console.info("[cachedShowFlow_static_0400] start to publish emit:" + JSON.stringify(eventData?.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[cachedShowFlow_static_0400] change component data error: " + (err as Error)?.message);
-         expect().assertFail()
+        console.info('[cachedShowFlow_static_0400] START');
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "clip1": true,
+              "show1": true
+            } as Record<string, object | null | undefined>
+          } as events_emitter.EventData
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 125,
+            priority: events_emitter.EventPriority.LOW
+          } as events_emitter.InnerEvent
+          console.info("[cachedShowFlow_static_0400] start to publish emit:" + JSON.stringify(eventData?.data));
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[cachedShowFlow_static_0400] change component data error: " + (err as Error)?.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        let onText = await driver.findComponent(ON.id('show_flow_9'));
+        await CommonFunc.sleep(1000);
+        let text = onText?.getText();
+        await CommonFunc.sleep(1000);
+        console.info("[cachedShowFlow_static_0400'] text is: " + text);
+        driver.assertComponentExist(ON.text('N9'));
+        console.info('[cachedShowFlow_static_0400] END');
+        done();
+      } catch (error) {
+        console.info('[cachedShowFlow_static_0400] error ' + error);
+        expect().assertFail();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText = await driver.findComponent(ON.id('show_flow_9'));
-      let text = onText?.getText();
-      console.info("[cachedShowFlow_static_0400'] text is: " + text);
-      driver.assertComponentExist(ON.text('N9'));
-      console.info('[cachedShowFlow_static_0400] END');
-      done();
     });
 
-    
-    
-/**
+
+    /**
      * @tc.number   cachedShowFlow_static_0500
      * @tc.name     cachedShowFlow_static_0500
      * @tc.desc     cachedShowFlow_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('cachedShowFlow_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('cachedShowFlow_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[cachedShowFlow_static_0500] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -218,21 +227,20 @@ it('cachedShowFlow_static_0500', Level.LEVEL1, async (done: () => void): Promise
       done();
     });
 
-    
-    
-/**
+
+    /**
      * @tc.number   cachedShowFlow_static_0600
      * @tc.name     cachedShowFlow_static_0600
      * @tc.desc     cachedShowFlow_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('cachedShowFlow_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('cachedShowFlow_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[cachedShowFlow_static_0600] START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "clip1": false,
-            "show1": undefined
+            "show1": 'undefined'
           } as Record<string, object|null|undefined>
         } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {

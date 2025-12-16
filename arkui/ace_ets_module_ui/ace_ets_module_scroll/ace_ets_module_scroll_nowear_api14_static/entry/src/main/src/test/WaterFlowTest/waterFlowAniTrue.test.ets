@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,8 +62,7 @@ export default function waterFlowAniTrue() {
     });
 
     
-    
-/**
+    /**
      * @tc.number   waterFlowAniTrue_static_0100
      * @tc.name     waterFlowAniTrue_static_0100
      * @tc.desc     waterFlowAniTrue_static_0100

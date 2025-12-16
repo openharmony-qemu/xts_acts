@@ -95,22 +95,27 @@ export default function RepeatTest0010() {
       let driver: Driver = Driver.create();
       let btn: Component|null = await driver.findComponent(ON.id('toIndex[2]'));
       await CommonFunc.sleep(1000);
+      console.info('[RepeatTest0010_static_001] findComponent toIndex[2] ');
       await (btn?.click() as Promise<void>);
+      console.info('[RepeatTest0010_static_001] toIndex[2] click');
       await CommonFunc.sleep(1000);
       let com1 = await driver.findComponent(ON.id('repeat0010_1'))
       let text_1 = ''
       if (com1) {
         text_1 = await com1.getText();
+        console.info('[RepeatTest0010_static_001] toIndex[2] com1.getText()');
       }
       let com2 = await driver.findComponent(ON.id('repeat0010_2'))
       let text_2 = ''
       if (com2) {
         text_2 = await com2.getText()
+        console.info('[RepeatTest0010_static_001] toIndex[2] com2.getText()');
       }
       let display_status1 = await driver.findComponent(ON.id('display_status'))
       let display_status = ''
       if (display_status1) {
         display_status = await display_status1.getText()
+        console.info('[RepeatTest0010_static_001] toIndex[2] display_status1.getText()');
       }
       console.info("[RepeatTest0010_static_001] component text_1: " + text_1 + "text2:" + text_2 + "display_status: " +
         display_status);

@@ -771,17 +771,13 @@ export default function common1Jsunit() {
     it('Common1Static046', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Common1Static046] START');
       let driver = Driver.create();
-      console.log("==================================111 ");
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await UtilsTest.msSleep(2000)
-      console.log("================================== " + button);
       await button.click();
-      console.log("================================== click");
       await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('common1');
       let objNew = JSON.parseJsonElement(strJsonNew);
       await UtilsTest.msSleep(1000)
-      // console.info("[Common1Static046] component Common1Static046 is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs')));
       expect(objNew.getElement('$attrs').getDouble('zIndex')).assertEqual(5);
       done();
     });

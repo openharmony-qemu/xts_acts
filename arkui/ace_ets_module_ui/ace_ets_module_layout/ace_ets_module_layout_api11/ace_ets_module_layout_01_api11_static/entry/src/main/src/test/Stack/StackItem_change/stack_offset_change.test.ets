@@ -202,11 +202,8 @@ export default function Stack_Offset_Change() {
      */
     it('testStackOffsetChangeWithAlignmentStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackOffsetChangeWithAlignmentStart_static] START');
-      // globalThis.value.message.notify({
-      //   name: 'addAlignContent', value: Alignment.Start
-      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
-        name: 'addAlignContent', value: Alignment.TopEnd
+        name: 'addAlignContent', value: Alignment.Start
       });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Stack_Offset_Change_01');
@@ -247,9 +244,6 @@ export default function Stack_Offset_Change() {
      */
     it('testStackOffsetChangeWithAlignmentCenter_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackOffsetChangeWithAlignmentCenter_static] START');
-      // globalThis.value.message.notify({
-      //   name: 'addAlignContent', value: Alignment.Center
-      // });
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Center
       });

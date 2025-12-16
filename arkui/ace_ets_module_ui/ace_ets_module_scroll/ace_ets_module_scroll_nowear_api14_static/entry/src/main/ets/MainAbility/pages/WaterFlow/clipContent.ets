@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -144,7 +145,7 @@ struct clipContentWaterFlowDemo {
         console.info('HHH scrollFrameBegin offset: ' + offset + ' state: ' + state.toString())
         return { offsetRemain: offset }
       })
-      .onScrollIndex((first: int, last: int) => {
+      .onScrollIndex((first: Int, last: Int) => {
         console.info('HHH-' + 'first:' + first + '、last:' + last)
       })
 

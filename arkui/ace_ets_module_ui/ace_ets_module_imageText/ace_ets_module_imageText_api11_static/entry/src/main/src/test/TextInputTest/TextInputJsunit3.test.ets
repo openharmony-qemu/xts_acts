@@ -49,10 +49,11 @@ export default function textInputJsunit3() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+
         let pages:router.RouterState = routerInstance.getState();
         console.info("get appInfoTest_four_12 state pages:" + JSON.stringify(pages));
         if (!("textInput3" == pages.name)) {
+          routerInstance.clear();
           console.info("get appInfoTest_four_12 pages.name:" + '');
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

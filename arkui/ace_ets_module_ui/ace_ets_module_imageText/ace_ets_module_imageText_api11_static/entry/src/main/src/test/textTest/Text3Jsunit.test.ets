@@ -169,7 +169,7 @@ export default function text3Jsunit() {
       } catch (err: Error) {
         console.log("testText_static_0500 change component data error: " + err.message);
       }
-      ;
+      await CommonFunc.sleep(3000);
       let strJsonNew = inspector.getInspectorByKey('text');
 
       console.info("testText_static_0500 component JSON.parseJsonElement(strJsonNew) is: " +

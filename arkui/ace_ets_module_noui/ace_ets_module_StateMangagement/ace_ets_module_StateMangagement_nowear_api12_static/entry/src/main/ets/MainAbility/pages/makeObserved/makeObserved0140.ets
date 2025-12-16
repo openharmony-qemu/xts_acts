@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { UIUtils } from '@kit.ArkUI';
+
 import {
   DataReloadOperation,
   DataOperationType,
@@ -42,7 +42,7 @@ import {
   ColumnOptions,WaterFlowSections,Scroller,SectionOptions
 } from '@ohos.arkui.component'
 import { State, Link, PropRef, Local } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage,UIUtils } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 

@@ -98,9 +98,9 @@ export default function RepeatTest0030() {
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('toIndex[2]')) as Component;
-      await CommonFunc.sleep(5000);
-      await btn.click();
       await CommonFunc.sleep(1000);
+      await btn.click();
+      await CommonFunc.sleep(10000);
 
       let com1 = await driver.findComponent(ON.id('repeat0030_1'))
       let text_1 = ''

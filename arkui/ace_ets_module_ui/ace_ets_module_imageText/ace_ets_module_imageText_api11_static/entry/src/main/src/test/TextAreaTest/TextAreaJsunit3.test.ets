@@ -51,14 +51,14 @@ export default function textAreaJsunit3() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get appInfoTest_four_10 state pages:" + JSON.stringify(pages));
         if (!("textArea3" == pages.name)) {
+          routerInstance.clear();
           console.info("get appInfoTest_four_10 pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push appInfoTest_four_10 page result:" + JSON.stringify(result));
         }

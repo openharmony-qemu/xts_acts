@@ -440,7 +440,7 @@ export default function common9Jsunit() {
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_backgroundImage] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundImage')).assertEqual("resource:///16777261.png, ImageRepeat.X");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundImage')).assertEqual("resource:///16777255.png, ImageRepeat.X");
       console.info('[common_static_backgroundImage] END');
       done();
     });
@@ -725,8 +725,8 @@ export default function common9Jsunit() {
       let strJson = inspector.getInspectorByKey('rowModifier');
 
       console.info("[common_static_responseRegion] JSON.parseJsonElement(strJson) is : " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      expect(JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('responseRegion')[0]))
-        .assertEqual(  "{\"x\":\"0.00vp\",\"y\":\"0.00vp\",\"width\":\"50.00%\",\"height\":\"100.00%\"}");
+      expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('responseRegion')[0]))
+        .assertEqual(  '"{\\"x\\":\\"0.00vp\\",\\"y\\":\\"0.00vp\\",\\"width\\":\\"50.00%\\",\\"height\\":\\"100.00%\\"}"');
       console.info('[common_static_responseRegion] END');
       done();
     });

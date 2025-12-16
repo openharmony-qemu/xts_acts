@@ -34,7 +34,8 @@ import {
   BarState,
   Alignment,
   Margin,
-  Reusable
+  Reusable,
+  ReuseObject
 } from '@ohos.arkui.component'
 import {
   State,
@@ -152,7 +153,8 @@ struct ChildItem0427 {
     return this.item;
   }
 
-  aboutToReuse(param: ESObject): void {
+  aboutToReuse(param: ReuseObject): void {
+    console.log("======================================== aboutToReuse");
     this.reuseCount++;
   }
 

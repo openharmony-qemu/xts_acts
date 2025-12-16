@@ -53,6 +53,7 @@ function imageComparisonAssert(left: double, top: double) {
     let properties: window.WindowProperties = windowClass.getWindowProperties();
     theWinTop = properties.windowRect.top + top as long
     theWinLeft = properties.windowRect.left + left + uiContext!.vp2px(10) as long
+    console.log("===================================== theWinTop " + theWinTop + " theWinLeft " + theWinLeft)
   } catch (exception) {
     console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
   }
@@ -72,9 +73,9 @@ function imageComparisonAssert(left: double, top: double) {
     "displayId": 0
   };
   try {
-    screenshot.save(screenshotOptions, (err: BusinessError|null, data: image.PixelMap|undefined) => {
+    screenshot.save(screenshotOptions, (err, data: image.PixelMap|undefined) => {
       if (err) {
-        console.log('Failed to save screenshot. Code: ' + JSON.stringify(err));
+        console.log('Failed to save screenshot. Code: ' + err);
         isTrue = false;
       }
       else {
@@ -100,7 +101,7 @@ function imageComparisonAssert(left: double, top: double) {
       }
     });
   } catch (exception) {
-    console.error('Failed to save screenshot. Code: ' + JSON.stringify(exception));
+    console.error('Failed to save screenshot. exception: ' + exception);
     isTrue = false;
   }
   ;

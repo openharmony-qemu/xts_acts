@@ -35,6 +35,8 @@ import {
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
+
 class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
@@ -163,8 +165,8 @@ export default class StringDataSource extends BasicDataSource implements DataAdd
 struct RepeatLazyForEachString {
   @Local dataList: Array<string> = new Array<string>();
   @Local dataSource: Array<StringDataSource> = [
-    new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource,
-    new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource,new StringDataSource
+    new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource(),
+    new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource(),new StringDataSource()
   ]
 
   aboutToAppear(): void {

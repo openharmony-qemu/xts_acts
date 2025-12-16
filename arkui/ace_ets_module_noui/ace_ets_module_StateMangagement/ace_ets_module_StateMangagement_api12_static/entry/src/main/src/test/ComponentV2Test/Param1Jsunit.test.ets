@@ -64,12 +64,12 @@ export default function Param1Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+
         let pages = routerInstance.getState();
         console.info("get Param1Jsunit state pages:" + JSON.stringify(pages));
-        if (!("Param1Jsunit" == pages.name)) {
+        if (!("Param1" == pages.name)) {
           console.info("get Param1Jsunit pages.name:" + JSON.stringify(pages.name));
-
+          routerInstance.clear();
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
 

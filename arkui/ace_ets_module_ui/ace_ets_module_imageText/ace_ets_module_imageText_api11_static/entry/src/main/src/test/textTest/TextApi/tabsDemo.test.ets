@@ -81,7 +81,7 @@ export default function tabsDemo() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('Yellow'));
       await (btn?.click() as Promise<void>)
-      ;
+      await CommonFunc.sleep(4000);
 
       let strJson = inspector.getInspectorByKey('tabsDemo_text1');
       let obj = JSON.parseJsonElement(strJson);

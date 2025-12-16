@@ -129,7 +129,8 @@ it('makeObserved0140Test_01', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info("MR031[makeObserved0140Test_static_01]: " + item.key + ' : ' + item.value);
         console.info("MR031[makeObserved0140Test_static_01]: " + textJsonObj!.getString('$rect'));
         console.info("MR031[makeObserved0140Test_static_01]: " + parseInt(textJsonObj!.getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1)));
-        expect(parseInt(textJsonObj!.getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1))).assertLarger(item.value);
+        const result:double = parseInt(textJsonObj!.getString('$rect').match(new RegExp('\\[\\d+', 'g'))![0]!.slice(1))
+        expect(result).assertLarger(item.value);
       }
       console.info('makeObserved0140Test_static_01 END');
       done()

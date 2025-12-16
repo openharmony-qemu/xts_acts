@@ -1,4 +1,5 @@
-/*
+'use static';
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +63,9 @@ export default function promptShowDialogJsunit() {
   describe('promptShowDialogTest', () => {
     beforeAll(() => {
       console.info("promptShowDialogTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("promptShowDialogTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

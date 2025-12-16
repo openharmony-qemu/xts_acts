@@ -50,7 +50,7 @@ export default function TextStyle2() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextStyle2 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextStyle2" == pages.name)) {
           console.info("get TextStyle2 pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

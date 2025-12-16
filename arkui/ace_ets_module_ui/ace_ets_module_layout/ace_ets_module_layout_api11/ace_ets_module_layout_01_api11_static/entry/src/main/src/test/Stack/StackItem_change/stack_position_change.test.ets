@@ -45,12 +45,12 @@ export default function Stack_Position_Change() {
       };
       try {
         const routerInstance = AppStorage.get<Router>("router")
-        routerInstance?.clear();
+        // routerInstance?.clear();
         let pages = routerInstance?.getState();
         console.info("get Stack_Position_Change state pages:" + JSON.stringify(pages));
         if (!("stack_position_change" == pages?.name)) {
           console.info("get Stack_Position_Change pages.name:" + JSON.stringify(pages?.name));
-          routerInstance?.pushUrl(options);
+          routerInstance?.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

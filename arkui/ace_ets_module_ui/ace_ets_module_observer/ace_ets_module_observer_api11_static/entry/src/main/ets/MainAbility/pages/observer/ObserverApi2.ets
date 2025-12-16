@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +31,7 @@ struct ObserverApi2Test {
       Button('getText')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          this.text1 = AppStorage.get<string>('Observer_HIDE') as string + AppStorage.get<string>('Observer_APPEAR') as string + AppStorage.get<string>('Observer_SHOW') as string + ''
+          this.text1 = '' + AppStorage.get<string>('Observer_HIDE') + AppStorage.get<string>('Observer_APPEAR') + AppStorage.get<string>('Observer_SHOW')
         })
         .id('ObserverApi2_getText')
 

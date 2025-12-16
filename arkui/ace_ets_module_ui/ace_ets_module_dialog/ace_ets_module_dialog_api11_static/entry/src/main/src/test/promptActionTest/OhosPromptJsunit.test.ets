@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,9 +61,9 @@ export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
     beforeAll(() => {
       console.info("appInfoTest_four_3 beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("appInfoTest_four_3 beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -108,7 +109,8 @@ export default function ohosPromptJsunit() {
       await Utils.sleep(1000)
       let callback = (eventData: emitter.EventData) => {
         console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['matrix1']).assertEqual("[100, 10]")
+        await Utils.sleep(500)
+        expect(((eventData.data) as Record<String,undefined|null|Object>)['matrix1']).assertEqual("[100, 10]")
       }
       let innerEvent: emitter.InnerEvent = {
         eventId: 142,

@@ -96,14 +96,14 @@ export default function LazyForEachAdd() {
       let btn = await (driver.findComponent(ON.id('addButton')) as Promise<Component>);
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(4000);
 
       let strJson = inspector.getInspectorByKey('repeat_add10');
       let obj= JSON.parseJsonElement(strJson);
       console.info("[LazyForEachAdd_static_001] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Item10');
       console.info('[LazyForEachAdd_static_001] END');
-
+      await CommonFunc.sleep(4000);
       let strJson1 = inspector.getInspectorByKey('lazyForeach_add10');
       let obj1= JSON.parseJsonElement(strJson1);
       console.info("[LazyForEachAdd_static_001] component obj1 is: " + JSON.stringify(obj1));

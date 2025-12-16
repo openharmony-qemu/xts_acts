@@ -67,7 +67,7 @@ class ClassMakeObserved03001 {
     this._age = age
   }
 }
-
+@Observed
 class ClassMakeObserved03002 {
   private _id: number
 

@@ -87,7 +87,7 @@ it('bindSheetKeyboardAvoidMode_static_0100', Level.LEVEL0, async (done: () => vo
       done();
     });
 
-    
+
     /*
      * @tc.number   bindSheetKeyboardAvoidMode_static_0200
      * @tc.name     bindSheetKeyboardAvoidMode_static_0200
@@ -117,7 +117,7 @@ it('bindSheetKeyboardAvoidMode_static_0200', Level.LEVEL0, async (done: () => vo
       done();
     });
 
-    
+
     /*
      * @tc.number   bindSheetKeyboardAvoidMode_static_0300
      * @tc.name     bindSheetKeyboardAvoidMode_static_0300
@@ -149,7 +149,7 @@ it('bindSheetKeyboardAvoidMode_static_0300', Level.LEVEL0, async (done: () => vo
       console.info('[bindSheetKeyboardAvoidMode_static_0300] END');
       done();
     });
-    
+
     /*
      * @tc.number   bindSheetKeyboardAvoidMode_static_0400
      * @tc.name     bindSheetKeyboardAvoidMode_static_0400
