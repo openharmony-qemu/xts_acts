@@ -19,13 +19,13 @@ struct BorderImage {
     Row() {
       Column({ space: 20 }) {
         Row() {
-          Text('This is borderImage.').textAlign(TextAlign.Center).fontSize(50)
+          Text('This is borderImage.').textAlign(TextAlign.Center).fontSize(20)
         }
         .id('borderImage')
         .borderImage({
           source: $r('app.media.icon'),
           slice: { top: 10, bottom: 10, left: 10, right: 10 },
-          width: { top: "10px", bottom: "10px", left: "10px", right: "10px" },
+          width: { top: 10, bottom: 10, left: 10, right: 10 },
           outset: 20,
           repeat: RepeatMode.Round,
           fill: false
