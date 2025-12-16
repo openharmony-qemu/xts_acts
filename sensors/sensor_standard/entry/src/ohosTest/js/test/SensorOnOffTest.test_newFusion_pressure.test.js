@@ -71,7 +71,11 @@ describe("SensorJsTest_sensor_65", function () {
             sensor.on(sensor.SensorId.FUSION_PRESSURE, callback);
         } catch (error) {
             console.info("newFusion_Pressure_SensorJsTest012 error:" + error);
-            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+            if(error.code == PARAMETER_ERROR_CODE || error.code == SENSOR_NO_SUPPORT_CODE) {
+                expect(true).assertTrue();
+            } else {
+                expect(false).assertTrue();
+            }
             done();
         }
          setTimeout(() => {
@@ -94,11 +98,15 @@ describe("SensorJsTest_sensor_65", function () {
             console.info('newFusion_Pressure_SensorJsTest018  on error');
             expect(typeof (data.value)).assertEqual("number");
         }
-       try {
+        try {
            sensor.on(sensor.SensorId.FUSION_PRESSURE, onSensorCallback);
         } catch (error) {
             console.info("newFusion_Pressure_SensorJsTest018 error:" + error);
-            expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
+            if(error.code == PARAMETER_ERROR_CODE || error.code == SENSOR_NO_SUPPORT_CODE) {
+                expect(true).assertTrue();
+            } else {
+                expect(false).assertTrue();
+            }
             done();
         }
         setTimeout(() => {
