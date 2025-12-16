@@ -675,5 +675,146 @@ export default function HidebugJsTest() {
             }
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1400 Test end*************');
         });
+
+
+        /**
+        * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_1900
+        * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_1900
+        * @tc.desc   startJsCpuProfiling/stopJsCpuProfiling
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_1900 Test start*************');
+            try {
+                let timestamp = Date.now();
+                let filename = "cpuprofiler_" + timestamp.toString();
+                hidebug.startJsCpuProfiling(filename);
+                for (let i = 0; i < 3; i++) {
+                    hidebug.getSharedDirty();
+                }
+                hidebug.stopJsCpuProfiling();
+                let path = "/proc/self/root/data/storage/el2/base/files/" + filename + ".json";
+                let data = fileIo.readTextSync(path);
+                if (data.includes("napi")) {
+                    expect(true).assertTrue();
+                } else {
+                    expect(false).assertTrue();
+                }
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_1900 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_1900 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2000
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2000
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2000 Test start*************');
+            let path: string = "/data/storage/el2/base/files/serviceInfo1.txt";
+            let file = fileIo.openSync(path, 0o102);
+            let serviceId: int = 10
+            let args: Array<string> = new Array<string>("allInfo");
+            try {
+                hidebug.getServiceDump(serviceId, file.fd, args)
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2000 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            fileIo.closeSync(file.fd);
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2000 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2100
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2100
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                let appThreadCpuUsage = hidebug.getAppThreadCpuUsage();
+                console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > length =: ${appThreadCpuUsage.length}`)
+                expect(appThreadCpuUsage.length > 0).assertTrue();
+                for (let ii = 0; ii < appThreadCpuUsage.length; ii++) {
+                    console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > threadId =: ${appThreadCpuUsage[ii].threadId}`)
+                    console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > cpuUsage =: ${appThreadCpuUsage[ii].cpuUsage}`)
+                    expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
+                }
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2100 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2200
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2200
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                let result = hidebug.isDebugState();
+                expect(result).assertFalse();
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2200 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2100 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2300
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2300
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                let result = hidebug.isDebugState();
+                expect(result).assertFalse();
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2300 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2300 Test end*************');
+        })
+
+
+        
+
+
+
+
+
+
+
+
     })
 }

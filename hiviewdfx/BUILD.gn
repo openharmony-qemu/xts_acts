@@ -22,6 +22,7 @@ group("hiviewdfxtestacts") {
       "bytracetest:ActsBytraceJsTest",
       "errormangertest/errormangertest:ActsErrormangerTest",
       "faultlogtest/faultloggerndktest:ActsFaultExTest",
+      "faultlogtest/faultloggerndkteststatic:ActsFaultExStaticTest",
       "hiappeventtest/hiappeventapmtest:ActsHiAppEventJsTest",
       "hiappeventtest/hiappeventcpptest:ActsHiAppEventCPPTest",
       "hiappeventtest/hiappeventjstest:ActsHiAppeventTest",
