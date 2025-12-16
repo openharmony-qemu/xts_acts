@@ -26,6 +26,7 @@ const STOPPED = 4;
 const ABOUT_TO_RESTORE = 5;
 const ERROR = 6;
 const WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED = 801;
+const WINDOW_MANAGER_ERRORCODE_INVALID_PARAM = 401;
 const WINDOW_MANAGER_ERRORCODE_PIP_DESTROY_FAILED = 130011;
 const WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL = 1300012;
 const WINDOW_MANAGER_ERRORCODE_PIP_CREATE_FAILED = 1300013;
@@ -1146,5 +1147,583 @@ export default function WindowPipTest() {
         done()
       }
     })
+
+    /**
+     * @tc.name   testSetPipMainWindowIdBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_SetPipMainWindowId_0100
+     * @tc.desc   testSetPipMainWindowIdBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPipMainWindowIdBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetPipMainWindowIdBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testSetPipMainWindowIdBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testSetPipRectBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_SetPipRect_0100
+     * @tc.desc   testSetPipRectBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPipRectBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetPipRectBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testSetPipRectBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[2]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testSetPipControlGroupBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_SetPipControlGroup_0100
+     * @tc.desc   testSetPipControlGroupBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPipControlGroupBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetPipControlGroupBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testSetPipControlGroupBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[2]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testDeletePipBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_DeletePip_0100
+     * @tc.desc   testDeletePipBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDeletePipBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testDeletePipBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testDeletePipBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+   
+    /**
+     * @tc.name   testStartPipBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_StartPip_0100
+     * @tc.desc   testStartPipBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testStartPipBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testStartPipBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testStartPipBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testStopPipBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_StopPip_0100
+     * @tc.desc   testStopPipBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testStopPipBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testStopPipBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testStopPipBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUpdatePipContentSizeBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UpdatePipContentSize_0100
+     * @tc.desc   testUpdatePipContentSizeBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUpdatePipContentSizeBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUpdatePipContentSizeBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUpdatePipContentSizeBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUpdatePipControlStatusBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UpdatePipControlStatus_0100
+     * @tc.desc   testUpdatePipControlStatusBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUpdatePipControlStatusBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUpdatePipControlStatusBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUpdatePipControlStatusBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testSetPipControlEnabledBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_SetPipControlEnabled_0100
+     * @tc.desc   testSetPipControlEnabledBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPipControlEnabledBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetPipControlEnabledBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testSetPipControlEnabledBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testSetPipInitialSurfaceRectBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_SetPipInitialSurfaceRect_0100
+     * @tc.desc   testSetPipInitialSurfaceRectBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetPipInitialSurfaceRectBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetPipInitialSurfaceRectBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testSetPipInitialSurfaceRectBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnsetPipInitialSurfaceRectBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnsetPipInitialSurfaceRect_0100
+     * @tc.desc   testUnsetPipInitialSurfaceRectBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnsetPipInitialSurfaceRectBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnsetPipInitialSurfaceRectBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnsetPipInitialSurfaceRectBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testRegisterStartPipCallbackBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_RegisterStartPipCallback_0100
+     * @tc.desc   testRegisterStartPipCallbackBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegisterStartPipCallbackBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testRegisterStartPipCallbackBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testRegisterStartPipCallbackBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnregisterStartPipCallbackBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterStartPipCallback_0100
+     * @tc.desc   testUnregisterStartPipCallbackBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterStartPipCallbackBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterStartPipCallbackBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterStartPipCallbackBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnregisterAllStartPipCallbacksBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterAllStartPipCallbacks_0100
+     * @tc.desc   testUnregisterAllStartPipCallbacksBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterAllStartPipCallbacksBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterAllStartPipCallbacksBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterAllStartPipCallbacksBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testRegisterLifecycleListenerBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_RegisterLifecycleListener_0100
+     * @tc.desc   testRegisterLifecycleListenerBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegisterLifecycleListenerBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testRegisterLifecycleListenerBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testRegisterLifecycleListenerBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testUnregisterLifecycleListenerBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterLifecycleListener_0100
+     * @tc.desc   testUnregisterLifecycleListenerBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterLifecycleListenerBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterLifecycleListenerBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterLifecycleListenerBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUnregisterAllLifecycleListenersBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterAllLifecycleListeners_0100
+     * @tc.desc   testUnregisterAllLifecycleListenersBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterAllLifecycleListenersBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterAllLifecycleListenersBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterAllLifecycleListenersBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testRegisterControlEventListenerBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_RegisterControlEventListener_0100
+     * @tc.desc   testRegisterControlEventListenerBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegisterControlEventListenerBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testRegisterControlEventListenerBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testRegisterControlEventListenerBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUnregisterControlEventListenerBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterControlEventListener_0100
+     * @tc.desc   testUnregisterControlEventListenerBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterControlEventListenerBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterControlEventListenerBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterControlEventListenerBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUnregisterAllControlEventListenersBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterAllControlEventListeners_0100
+     * @tc.desc   testUnregisterAllControlEventListenersBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterAllControlEventListenersBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterAllControlEventListenersBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterAllControlEventListenersBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testRegisterResizeListenerBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_RegisterResizeListener_0100
+     * @tc.desc   testRegisterResizeListenerBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegisterResizeListenerBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testRegisterResizeListenerBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testRegisterResizeListenerBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUnregisterResizeListenerBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterResizeListener_0100
+     * @tc.desc   testUnregisterResizeListenerBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterResizeListenerBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterResizeListenerBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterResizeListenerBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+    
+    /**
+     * @tc.name   testUnregisterAllResizeListenersBoundaryValue
+     * @tc.number SUB_WINDOW_MANAGER_OH_PICTUREINPICTURE_UnregisterAllResizeListeners_0100
+     * @tc.desc   testUnregisterAllResizeListenersBoundaryValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUnregisterAllResizeListenersBoundaryValue', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUnregisterAllResizeListenersBoundaryValue'
+      try {
+        console.info(`====>${caseName} start<====`);
+        let Result: Array<number> = windowndkapi20.testUnregisterAllResizeListenersBoundaryValue();
+        console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>${caseName} catch err: ` + err);
+        expect().assertFail()
+        done()
+      }
+    })
+
   })
 }
