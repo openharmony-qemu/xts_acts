@@ -21,16 +21,16 @@ export default function SensorJsTest_sensor_65() {
 describe("SensorJsTest_sensor_65", function () {
 
     const PARAMETER_ERROR_CODE = 401
-    let sensorList: Array<sensor.Sensor> | undefined = undefined
+    let sensorList = undefined
     let Available = false;
     function callback(data) {
         console.info("callback" + JSON.stringify(data));
         expect(typeof (data.value)).assertEqual("number");
     }
 
-    let isAvailable = async (data: sensor.SensorId): Promise<void>=> {
+    let isAvailable = async (data) => {
       if (sensorList != undefined) {
-        const targetSensor = sensorList?.filter((sensors:sensor.Sensor) => sensors.sensorId === data)
+        const targetSensor = sensorList?.filter((sensors) => sensors.sensorId === data)
         hilog.info(0x0000, 'testTag', `isAvailable : ${targetSensor},length : ${targetSensor?.length}`);
         if (targetSensor?.length != 0) {
           Available = true
@@ -50,14 +50,14 @@ describe("SensorJsTest_sensor_65", function () {
          * @tc.setup: setup invoked before all testcases
          */
         try {
-            sensor.getSensorList((err: BusinessError<void> | null, data: Array<sensor.Sensor> | undefined) => {
+            sensor.getSensorList((err, data) => {
                 hilog.info(0x0000, 'testTag',  `beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
                 sensorList = data
                 done();
             });
             hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
             done();
-        } catch (error: BusinessError) {
+        } catch (error) {
             hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
             done();
         }
@@ -106,8 +106,7 @@ describe("SensorJsTest_sensor_65", function () {
                 done();
             }, 500);
         } catch (error) {
-            let e: BusinessError = error as BusinessError;
-            hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest012 failed error.code: ${e.code} , error.message: ${e.message}`);
+            hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest012 failed error.code: ${error.code} , error.message: ${error.message}`);
             if (Available) {
                 expect(false).assertTrue();
             } else {
@@ -140,8 +139,7 @@ describe("SensorJsTest_sensor_65", function () {
             expect(true).assertTrue();
             done();
         } catch (error) {
-            let e: BusinessError = error as BusinessError;
-            hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest018 failed error.code: ${e.code} , error.message: ${e.message}`);
+            hilog.info(0x0000, 'testTag', `newFusion_Pressure_SensorJsTest018 failed error.code: ${error.code} , error.message: ${error.message}`);
             if (Available) {
                 expect(false).assertTrue();
             } else {
