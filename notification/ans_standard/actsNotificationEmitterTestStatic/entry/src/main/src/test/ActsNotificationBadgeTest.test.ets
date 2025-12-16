@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index"
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
@@ -42,14 +42,11 @@ export default function ActsNotificationEmitterTest() {
     })
 
     beforeEach(() => {
-      console.info(`${TAG} beforeEach START`)
+      console.info(`${TAG} afterEach START`)
       emitter.off('eventid')
       emitter.off('eventids')
       await Utils.msSleep(500)
-      console.info(`${TAG} beforeEach END`)
-    })
-    afterEach(()=>{
-      await Utils.msSleep(500)
+      console.info(`${TAG} afterEach END`)
     })
 
     /**
@@ -89,8 +86,8 @@ export default function ActsNotificationEmitterTest() {
         }
         try {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit success');
+          await Utils.msSleep(500)
           emitter.emit(eventId11, option11, eventData)
-          done()
         } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
             JSON.stringify(err));
@@ -726,8 +723,8 @@ export default function ActsNotificationEmitterTest() {
         }
         try {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit success');
+          await Utils.msSleep(500)
           emitter.emit(eventId78, option78, data178)
-          done()
         } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
             JSON.stringify(err));
@@ -823,7 +820,6 @@ export default function ActsNotificationEmitterTest() {
           })
           await Utils.msSleep(500)
           emitter.emit('eventid');
-          done()
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
             JSON.stringify(e));
@@ -889,7 +885,6 @@ export default function ActsNotificationEmitterTest() {
           })
           await Utils.msSleep(500)
           emitter.emit('eventid', eventData);
-          done()
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
             JSON.stringify(e));
@@ -926,9 +921,7 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", oncallback1);
-          await Utils.msSleep(500)
           emitter.onEventData("eventid", oncallback2);
-          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
@@ -1000,9 +993,7 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", oncallback1);
-          await Utils.msSleep(500)
           emitter.onEventData("eventid", oncallback2);
-          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
