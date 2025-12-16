@@ -133,14 +133,14 @@ export default function hitraceNdkTest() {
     });
 
     /**
-     * @tc.name   testoHHiTraceIsIdValid1
-     * @tc.number testoHHiTraceIsIdValid1
-     * @tc.desc   testoHHiTraceIsIdValid1
+     * @tc.name   testoHHiTraceIsIdValidstatic1
+     * @tc.number testoHHiTraceIsIdValidstatic1
+     * @tc.desc   testoHHiTraceIsIdValidstatic1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testoHHiTraceIsIdValid2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testoHHiTraceIsIdValidstatic1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         hiTraceChain.clearId()
         let result1 = hitracendk.oHHiTraceIsFlagEnabled()
         expect(result1).assertFalse()
@@ -148,14 +148,14 @@ export default function hitraceNdkTest() {
     });
 
     /**
-     * @tc.name   testoHHiTraceIsIdValid1
-     * @tc.number testoHHiTraceIsIdValid1
-     * @tc.desc   testoHHiTraceIsIdValid1
+     * @tc.name   testoHHiTraceIsIdValidstatic2
+     * @tc.number testoHHiTraceIsIdValidstatic2
+     * @tc.desc   testoHHiTraceIsIdValidstatic2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testoHHiTraceIsIdValid3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testoHHiTraceIsIdValidstatic2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hiTraceChain.clearId()
         let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.DEFAULT);
         let result1 = hitracendk.oHHiTraceIsTraceEnabled()
@@ -165,14 +165,14 @@ export default function hitraceNdkTest() {
     });
 
      /**
-     * @tc.name   testoHHiTraceIsIdValid2
-     * @tc.number testoHHiTraceIsIdValid2
-     * @tc.desc   testoHHiTraceIsIdValid2
+     * @tc.name   testoHHiTraceIsIdValidstatic3
+     * @tc.number testoHHiTraceIsIdValidstatic3
+     * @tc.desc   testoHHiTraceIsIdValidstatic3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testoHHiTraceIsIdValid4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testoHHiTraceIsIdValidstatic3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         hiTraceChain.clearId()
         let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.DEFAULT);
         let result = hitracendk.oHHiTraceIsIdValid(); 
@@ -182,14 +182,14 @@ export default function hitraceNdkTest() {
     });
 
      /**
-     * @tc.name   testoHHiTraceIsIdValid2
-     * @tc.number testoHHiTraceIsIdValid2
-     * @tc.desc   testoHHiTraceIsIdValid2
+     * @tc.name   testoHHiTraceIsIdValidstatic4
+     * @tc.number testoHHiTraceIsIdValidstatic4
+     * @tc.desc   testoHHiTraceIsIdValidstatic4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testoHHiTraceIsIdValid5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testoHHiTraceIsIdValidstatic4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         hiTraceChain.clearId()
         let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.DEFAULT|hiTraceChain.HiTraceFlag.INCLUDE_ASYNC);
         let result1 = hitracendk.oHHiTraceIsFlagEnabled()
