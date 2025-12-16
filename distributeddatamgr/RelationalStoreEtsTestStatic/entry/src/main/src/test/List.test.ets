@@ -64,6 +64,8 @@ import rdbErrorCode14801002 from "./RdbErrorCode14801002.test";
 import RDBErrorCode18Test from "./RDBErrorCode18Test.test";
 import RDBErrorCode21Test from "./RDBErrorCode21Test.test";
 
+import CallbackTest from "./CallbackTest.test";
+
 export default function testsuite() {
   RelationStoreRdbStoreTest();
   RelationalStoreEnumTest();
@@ -90,9 +92,10 @@ export default function testsuite() {
   
   relationalStoreInterfaceTest(); 
   RelationalStoreBackupRestoreWithFAContextJsunit();
-  VectorStore(); 
-  RelationalStoreCloudCursor(); 
-  RdbStoreAttachEtsunit(); 
+  RelationalStorePredicatesJsunit();
+  VectorStore();
+  RelationalStoreCloudCursor();
+  RdbStoreAttachEtsunit();
   RelationStoreSqlExecTimeTest();
   
   rdbErrorCode14800010(); 
@@ -105,11 +108,13 @@ export default function testsuite() {
   rdbErrorCode14800016();
   rdbErrorCode14801001(); 
   rdbErrorCode14800012();
-
+  rdbErrorCode14800014();
   rdbErrorCode14800011();
   rdbErrorCode14800032();
   rdbErrorCode14800033();
   rdbErrorCode801();
   RDBErrorCode18Test();
   RDBErrorCode21Test();
+
+  CallbackTest();
 }
