@@ -60,12 +60,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
   describe("certFrameworkCertAllowDownloadInterCaTestUnit", (): void => {
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0100
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0100
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0100
-     * @tc.desc 不支持HTTPS
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   不支持HTTPS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -97,12 +97,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0200
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0200
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0200
-     * @tc.desc 开启下载中间证书能力，4级证书链缺失第3本和根证书，信任证书仅包含根证书，URL为页面，不是可下载的url
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，4级证书链缺失第3本和根证书，信任证书仅包含根证书，URL为页面，不是可下载的url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -134,12 +134,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0300
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0300
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0300
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包含根证书，http 重定向 https 问题
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包含根证书，http 重定向 https 问题
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -169,12 +169,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0400
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0400
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0400
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包含根证书，证书来源gitCode
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包含根证书，证书来源gitCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -205,12 +205,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0500
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0500
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0500
-     * @tc.desc 开启下载中间证书能力，4级证书链缺失第3本和根证书，信任证书仅包含根证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，4级证书链缺失第3本和根证书，信任证书仅包含根证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -235,12 +235,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0600
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0600
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0600
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包中间证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包中间证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -272,12 +272,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0700
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0700
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0700
-     * @tc.desc 开启下载中间证书能力，2级证书链缺失根证书，信任证书仅包根证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，2级证书链缺失根证书，信任证书仅包根证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -308,12 +308,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0800
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0800
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0800
-     * @tc.desc 开启下载中间证书能力，4级证书链缺失根证书，信任证书仅包含第3本
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，4级证书链缺失根证书，信任证书仅包含第3本
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -345,12 +345,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0900
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0900
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0900
-     * @tc.desc 开启下载中间证书能力，4级证书链缺失根证书，信任证书包含根和第3本
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，4级证书链缺失根证书，信任证书包含根和第3本
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_0900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -386,12 +386,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1000
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1000
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1000
-     * @tc.desc 开启下载中间证书能力，4级证书链缺失2、3证书，信任证书包含根
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，4级证书链缺失2、3证书，信任证书包含根
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -422,12 +422,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1100
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1100
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1100
-     * @tc.desc 开启下载中间证书能力，4级证书链缺失2、4证书，信任证书包含根和第3本
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，4级证书链缺失2、4证书，信任证书包含根和第3本
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -465,12 +465,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1200
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1200
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1200
-     * @tc.desc 开启下载中间证书能力，7级证书链缺失2、3、4、5、6证书，信任证书包含根
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，7级证书链缺失2、3、4、5、6证书，信任证书包含根
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -501,12 +501,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1300
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1300
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1300
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书AIA扩展含多个有效url，信任证书包含根
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书AIA扩展含多个有效url，信任证书包含根
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -537,12 +537,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1400
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1400
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1400
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书AIA扩展含1个有效url和一个无效url，信任证书包含根
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书AIA扩展含1个有效url和一个无效url，信任证书包含根
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -573,12 +573,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1500
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1500
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1500
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书AIA扩展含1个url格式为pem，信任证书包含根
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书AIA扩展含1个url格式为pem，信任证书包含根
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -608,12 +608,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1600
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1600
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1600
-     * @tc.desc 开启下载中间证书能力，自签名证书，没有叶子证书，信任证书包含本身
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，自签名证书，没有叶子证书，信任证书包含本身
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -642,12 +642,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1700
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1700
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1700
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书含AIA扩展但不含颁发者，信任证书包含本身
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书含AIA扩展但不含颁发者，信任证书包含本身
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1800
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1800
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1800
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书含无效AIA扩展，信任证书包含本身
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书含无效AIA扩展，信任证书包含本身
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -712,12 +712,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1900
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1900
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1900
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书不含AIA扩展，信任证书包含本身
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书不含AIA扩展，信任证书包含本身
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_1900",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -747,12 +747,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2000
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2000
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2000
-     * @tc.desc 开启下载中间证书能力，3级证书链缺失中间证书，叶子证书不含AIA扩展，信任证书包含本身
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，3级证书链缺失中间证书，叶子证书不含AIA扩展，信任证书包含本身
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2000",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -782,12 +782,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2100
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2100
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2100
-     * @tc.desc 开启下载中间证书能力，8级证书链缺失2、3、4、5、6、7证书，信任证书包含根证书，最大下载5次
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   开启下载中间证书能力，8级证书链缺失2、3、4、5、6、7证书，信任证书包含根证书，最大下载5次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -817,12 +817,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2200
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2200
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2200
-     * @tc.desc 不开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包中间证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   不开启下载中间证书能力，3级证书链缺失中间证书，信任证书仅包中间证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -852,12 +852,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300
-     * @tc.desc 不开启下载中间证书能力，3级证书链缺失过期的中间证书，信任证书仅包中间证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   不开启下载中间证书能力，3级证书链缺失过期的中间证书，信任证书仅包中间证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -888,12 +888,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400
-     * @tc.desc 不开启下载中间证书能力，3级证书链缺失未生效的中间证书，信任证书仅包中间证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   不开启下载中间证书能力，3级证书链缺失未生效的中间证书，信任证书仅包中间证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -924,12 +924,12 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500
      * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500
-     * @tc.name SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500
-     * @tc.desc 不开启下载中间证书能力，含多本叶子证书，3级证书链缺失未生效的中间证书，第二本叶子证书过期，信任证书仅包中间证书
-     * @tc.size MediumTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   不开启下载中间证书能力，含多本叶子证书，3级证书链缺失未生效的中间证书，第二本叶子证书过期，信任证书仅包中间证书
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
