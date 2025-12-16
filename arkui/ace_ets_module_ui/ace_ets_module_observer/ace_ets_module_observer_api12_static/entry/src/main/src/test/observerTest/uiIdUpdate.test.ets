@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -33,9 +33,9 @@ export default function uiIdUpdate() {
   describe('uiIdUpdate', () => {
     beforeAll(() => {
       console.info("uiIdUpdate beforeEach start");
-      
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("uiIdUpdate beforeEach start");

@@ -101,8 +101,8 @@ export default function positionTest() {
       left: parentWidth * 0.2,
       top: parentHeight * 0.1
     }
-  }
-    ,{
+  },
+    {
       describe: 'SetResource',
       setValue: {
         x: $r('app.float.200vp'), y: $r('app.float.100vp')
@@ -121,7 +121,7 @@ export default function positionTest() {
   describe('PositionTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.position.nowear.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     // Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
@@ -136,8 +136,8 @@ export default function positionTest() {
         data.testValue.expectValue.left = Number(uiContext!.vp2px(parentWidth)) * 0.2
       }
       if (data.testValue.describe == "SetResource" ){
-        data.testValue.expectValue.top = Number(uiContext!.vp2px(200))
-        data.testValue.expectValue.left = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.top = Number(uiContext!.vp2px(100))
+        data.testValue.expectValue.left = Number(uiContext!.vp2px(200))
       }
 
       //Obtain the region information of the reference component.

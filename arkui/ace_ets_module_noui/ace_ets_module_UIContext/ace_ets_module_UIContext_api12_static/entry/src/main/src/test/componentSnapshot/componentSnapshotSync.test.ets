@@ -26,9 +26,9 @@ export default function componentSnapshotSync() {
   describe('componentSnapshotSync', () => {
     beforeAll(() => {
       console.info("componentSnapshotSync beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -71,9 +71,11 @@ it('componentSnapshotSync_0100', Level.LEVEL0, async (done: () => void): Promise
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('gPromise'));
+      await CommonFunc.sleep(2000);
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strcontent = inspector.getInspectorByKey('ERRORcODE');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
       console.info('componentSnapshotSync_0100 component obj is: ' + obj);

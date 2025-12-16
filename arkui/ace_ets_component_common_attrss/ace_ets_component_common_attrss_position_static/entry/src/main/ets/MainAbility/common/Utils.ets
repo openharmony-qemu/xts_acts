@@ -128,28 +128,17 @@ static async pushPage(obj: PageConfig) {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
+      let pageParams = JSON.parseJsonElement(JSON.stringify(router.getParams()));
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      if (pageParams && pageParams.tryGetElement('view') && obj.targetView != pageParams.getElement('view').getString('targetView')) {
+        console.info('get ' + obj.pageName + ' params: ' + JSON.stringifyJsonElement(pageParams));
+        console.info('pageParams.view.targetView: ' + pageParams.getElement('view').getString('targetView'));
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
-      if (!(obj.pageName == pages.name)) {
+      if (obj.pageName != pages.name || obj.targetView != pageParams.getElement('view').getString('targetView')) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
@@ -157,7 +146,7 @@ static async pushPage(obj: PageConfig) {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(500);
+        await Utils.sleep(2000);
         console.info('push ' + obj.pageName);
       }
     } catch (err) {
@@ -171,7 +160,7 @@ static async pushPage(obj: PageConfig) {
       router.back()
     }
     AttrsManager.unRegisterDataChange();
-    await Utils.sleep(500);
+    await Utils.sleep(1000);
     router.clear();
   }
 

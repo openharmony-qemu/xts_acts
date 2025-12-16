@@ -32,7 +32,10 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
+  FontWeight,
   ButtonType,
+  ClickEvent,
+  Margin,
   FontWeight
 } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';

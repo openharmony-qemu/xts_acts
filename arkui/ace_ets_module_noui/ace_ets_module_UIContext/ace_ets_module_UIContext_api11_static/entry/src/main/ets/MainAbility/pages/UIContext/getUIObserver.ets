@@ -35,11 +35,8 @@ struct NavRouterExample {
   aboutToAppear() {
     let context:UIContext | undefined = this.getUIContext()
     if(context!=undefined){
-      console.log("=================================== 1");
       let contextObserver = context.getUIObserver();
-      console.log("=================================== 2");
-      contextObserver.onNavDestinationUpdate((e)=>{
-        console.log("=================================== 3");
+      contextObserver.onNavDestinationUpdate((e)=>{  
         this.showFlag = '30'
       });
     }

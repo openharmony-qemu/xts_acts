@@ -27,7 +27,7 @@ import {
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
   targetView: string
@@ -45,7 +45,7 @@ interface RouterParamOptions {
 @Component
 struct OnDisAppearPage {
   @State changeDisAppear: string = '';
-  @StorageProp("_isShow") _isShow: boolean = true;
+  @StoragePropRef("_isShow") _isShow: boolean = true;
   @State targetView: string = ''
   @State targetGroupView: string = ''
   @State componentKey: string = ''
@@ -96,6 +96,7 @@ struct OnDisAppearPage {
     instance.height(this.targetHeight)
     instance.key(this.componentKey)
     instance.onDisAppear(() => {
+      console.log('++++++++++++++onDisAppear')
       this.changeDisAppear = 'changeDisAppear'
     })
   }

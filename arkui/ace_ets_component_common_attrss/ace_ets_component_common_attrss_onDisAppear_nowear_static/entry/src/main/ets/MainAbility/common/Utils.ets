@@ -83,7 +83,7 @@ export class PageConfig {
   containerView?: string;
 
 }
-let viewPage:string=''
+
 export default class Utils {
   public static instance: Utils = new Utils();
 
@@ -121,18 +121,7 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
@@ -144,8 +133,7 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(500);
-        console.info('push ' + obj.pageName);
+        await Utils.sleep(2000);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -154,10 +142,10 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('MainAbility/pages/index/Index' == router.getState().name)) {//正确写法'Index' == router.getState().name
+    if (!('Index' == router.getState().name)) {//正确写法'Index' == router.getState().name
       router.back()
     }
-    await Utils.sleep(500);
+    await Utils.sleep(1000);
     router.clear();
   }
 

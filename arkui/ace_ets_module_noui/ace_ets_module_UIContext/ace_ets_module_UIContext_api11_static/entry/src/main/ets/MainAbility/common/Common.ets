@@ -26,13 +26,11 @@ export default class CommonFunc {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(time: number) {
-    return new Promise<string>((resolve: (value: string) => void) => {
+  static async sleep(count:int) : Promise<int> {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
-      }, time.toInt())
-    }).then(() => {
-      console.info(`sleep ${time} over...`)
+        resolve(0)
+      }, count)
     })
   }
 
@@ -44,8 +42,7 @@ export default class CommonFunc {
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-      "windowRect Top: " +
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
     AppStorage.get<number>("winTop"));
     CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
     CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
@@ -67,17 +64,12 @@ export default class CommonFunc {
     let rectInfo: Array<Array<number>> =
       JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-      "windowRect Top: " +
+    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
     AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left =
-      Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_top =
-      Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
-    CommonFunc.rect_right =
-      Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
-    CommonFunc.rect_bottom =
-      Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    CommonFunc.rect_left = Number(Number(rectInfo[0][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
+    CommonFunc.rect_top = Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
+    CommonFunc.rect_right = Number(Number(rectInfo[1][0] ?? 0) + Number(AppStorage.get<number>("winLeft") ?? 0));
+    CommonFunc.rect_bottom = Number(Number(rectInfo[1][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
     return CommonFunc.rect_value = {
       "left": CommonFunc.rect_left,
       "top": CommonFunc.rect_top,

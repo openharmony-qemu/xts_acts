@@ -23,22 +23,22 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-// class ToggleColors implements CustomColors {
-//   iconPrimary = '#FFFFFFFF';
-//   iconOnPrimary = '#FFD53032'
-//   iconSecondary = "#FF00541F"
-//   iconTertiary = '#FFD00000'
-//   iconFourth = '#1111FF11'
-//   iconEmphasize = '#44FF2222' //高亮图标颜色
-//   iconSubEmphasize = '#7efca7b1' //高亮辅助图标颜色
-//   iconOnSecondary = '#FFD00000' //二级图标反转颜色
-//   iconOnTertiary = '#33FF1111' //三级图标反转颜色，用于彩色背景。
-//   iconOnFourth = '#ffa9cfa8'
-//   backgroundPrimary = '#ff5f66a9'
-//   backgroundSecondary = '#ff6b146a'
-//   backgroundTertiary = '#ffc396c2'
-//   backgroundFourth = '#609d9370'
-// }
+class ToggleColors implements CustomColors {
+  iconPrimary?:string = '#FFFFFFFF';
+  iconOnPrimary?:string = '#FFD53032'
+  iconSecondary?:string = "#FF00541F"
+  iconTertiary?:string = '#FFD00000'
+  iconFourth?:string = '#1111FF11'
+  iconEmphasize?:string = '#44FF2222' //高亮图标颜色
+  iconSubEmphasize?:string = '#7efca7b1' //高亮辅助图标颜色
+  iconOnSecondary?:string = '#FFD00000' //二级图标反转颜色
+  iconOnTertiary?:string = '#33FF1111' //三级图标反转颜色，用于彩色背景。
+  iconOnFourth?:string = '#ffa9cfa8'
+  backgroundPrimary?:string = '#ff5f66a9'
+  backgroundSecondary?:string = '#ff6b146a'
+  backgroundTertiary?:string = '#ffc396c2'
+  backgroundFourth?:string = '#609d9370'
+}
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
@@ -55,7 +55,7 @@ struct themeTogglePage {
   themeNames: string[] = ['System', 'Custom (green)'];
   themeArray: Array<CustomTheme | undefined> = new Array<CustomTheme|undefined>(
     undefined, // System
-    // new PageCustomTheme(new ToggleColors()),
+    new PageCustomTheme(new ToggleColors()),
   )
   @State themeIndex: number = 0;
 

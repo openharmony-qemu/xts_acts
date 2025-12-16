@@ -156,7 +156,7 @@ class MyNodeControllerGet extends NodeController {
   }
 
   getUserConfigBorderWidth(){
-    let userConfigBorderWidth = this.frameNode?.getUserConfigBorderWidth();
+    let userConfigBorderWidth = this.frameNode?.getUserConfigBorderWidth();//SDK12.11 获取的值和预期不符期望20 实际是0
     console.log(TEST_TAG + JSON.stringify(userConfigBorderWidth));
     return "" + JSON.stringify(userConfigBorderWidth)
   }
@@ -277,6 +277,7 @@ struct GetAttrsFrameNode {
         .onClick((e:ClickEvent)=>{
           if(this.uiContext && this.node){
             this.getData = "" + JSON.stringify(this.node?.getPositionToParent())
+            console.log('++++++++++++++',JSON.stringify(this.node?.getPositionToParent()))
           }
         })
       Button("getMeasuredSize").id("getMeasuredSize").height('5%')

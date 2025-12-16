@@ -29,32 +29,12 @@ struct TimePickerPage {
   @State hour: number = 10
   @State minute: number = 0
   @State mode: boolean = true
-  messageManager: MessageManager<boolean|Date|number> = new MessageManager<boolean|Date|number>()
-  @State enableCascade: boolean | undefined | null = true
+  messageManager: MessageManager= new MessageManager()
+  @State enableCascade: boolean | undefined = true
 
   onPageShow() {
     console.info('TimePicker onPageShow')
-    
-    
-    
-    
-    AppStorage.setOrCreate<MessageManager<boolean|Date|number>>('messageManager', this.messageManager )
-    let callback: Callback<boolean|Date|number> = (message: Message<boolean|Date|number> ) => {
-      console.error('message = ' + message.name + '--' + message.value)
-      if (message.name == 'isMilitaryTime') {
-        this.isMilitaryTime = message.value as boolean
-      }
-      if (message.name == 'selectedTime') {
-        this.selectedTime = message.value as Date
-      }
-      if (message.name == 'hour') {
-        this.hour = message.value as number
-      }
-      if (message.name == 'minute') {
-        this.minute = message.value as number
-      }
-    }
-    this.messageManager.registerCallback(callback)
+    AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager )
   }
 
   build() {
@@ -106,13 +86,13 @@ struct TimePickerPage {
       }
 
       Row() {
-        Button('切换enableCascade值-null')
+        Button('切换enableCascade值-undefined')
           .width('5%')
           .height('5%')
           .margin({ top: 5 } as Margin)
           .id('timePicker-null')
           .onClick((e:ClickEvent) => {
-            this.enableCascade = null
+            this.enableCascade = undefined
 
           })
 
@@ -133,14 +113,14 @@ struct TimePickerPage {
         .key('timePicker')
         .width('100%')
         .height('50%')
-        // .enableCascade(this.enableCascade) //给enableCascade传的值的类型有boolean | undefined | null，但SDK不支持
-        // .useMilitaryTime(this.isMilitaryTime)
-        // .onChange((value: TimePickerResult) => {
-        //   this.hour = value.hour
-        //   this.minute = value.minute
-        //   this.selectedTime.setHours(value.hour, value.minute)
-        //   console.info('select current date is: ' + JSON.stringify(value))
-        // })
+        .enableCascade(this.enableCascade)
+        .useMilitaryTime(this.isMilitaryTime)
+        .onChange((value: TimePickerResult) => {
+          this.hour = value.hour
+          this.minute = value.minute
+          this.selectedTime.setHours(value.hour, value.minute)
+          console.info('select current date is: ' + JSON.stringify(value))
+        })
       Text('hour:' + this.hour).fontSize(20).margin(10).key('hour')
       Text('minute:' + this.minute).fontSize(20).margin(10).key('minute')
       Text('24hour:false')

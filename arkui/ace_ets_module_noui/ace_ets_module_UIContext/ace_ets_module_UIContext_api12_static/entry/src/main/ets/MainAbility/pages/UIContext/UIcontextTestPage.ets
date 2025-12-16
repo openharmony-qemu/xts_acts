@@ -28,7 +28,7 @@ struct TestPage {
   uiContext:UIContext = this.getUIContext();
   @State windowName :string = ""
   aboutToAppear() {
-    this.windowName = this.getUIContext().getWindowName()!;  //获取的结果是static0，期望的是UIContext120
+    this.windowName = this.getUIContext().getWindowName()!;
     console.error('WindowName ' + this.windowName);
     const currWindow = window.findWindow(this.windowName);
     const windowProperties = currWindow.getWindowProperties();

@@ -26,9 +26,9 @@ export default function UIContextComponentSnapshotJsunit() {
   describe('UIContextComponentSnapshotTest', () => {
     beforeAll(() => {
       console.info("UIContextComponentSnapshotTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.example.myapplication.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.example.myapplication.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
       console.info('UIContextComponentSnapshotTest beforeEach start');

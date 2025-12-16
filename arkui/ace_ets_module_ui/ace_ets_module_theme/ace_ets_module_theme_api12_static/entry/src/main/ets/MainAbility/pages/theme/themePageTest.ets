@@ -23,23 +23,23 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-// class GreenColors implements CustomColors {
-//   fontPrimary = '#ff049404';
-//   fontEmphasize = '#FF00541F';
-//   fontOnPrimary = '#FFFFFFFF';
-//   compBackgroundTertiary = '#1111FF11';
-//   backgroundEmphasize = '#FF00541F';
-//   compEmphasizeSecondary = '#3322FF22';
-// }
-//
-// class RedColors implements CustomColors {
-//   fontPrimary = '#fff32b3c';
-//   fontEmphasize = '#FFD53032';
-//   fontOnPrimary = '#FFFFFFFF';
-//   compBackgroundTertiary = '#44FF2222';
-//   backgroundEmphasize = '#FFD00000';
-//   compEmphasizeSecondary = '#33FF1111';
-// }
+class GreenColors implements CustomColors {
+  fontPrimary?:string = '#ff049404';
+  fontEmphasize?:string = '#FF00541F';
+  fontOnPrimary?:string = '#FFFFFFFF';
+  compBackgroundTertiary?:string = '#1111FF11';
+  backgroundEmphasize?:string = '#FF00541F';
+  compEmphasizeSecondary?:string = '#3322FF22';
+}
+
+class RedColors implements CustomColors {
+  fontPrimary?:string = '#fff32b3c';
+  fontEmphasize?:string = '#FFD53032';
+  fontOnPrimary?:string = '#FFFFFFFF';
+  compBackgroundTertiary?:string = '#44FF2222';
+  backgroundEmphasize?:string = '#FFD00000';
+  compEmphasizeSecondary?:string = '#33FF1111';
+}
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
@@ -56,8 +56,8 @@ struct themePage {
   themeNames: Array<string> = new Array<string>('System', 'Custom (green)', 'Custom (red)');
   themeArray: Array<CustomTheme | undefined> = new Array<CustomTheme|undefined>(
     undefined, // System
-    // new PageCustomTheme(new GreenColors()),
-    // new PageCustomTheme(new RedColors())
+    new PageCustomTheme(new GreenColors()),
+    new PageCustomTheme(new RedColors())
   )
   @State themeIndex: number = 0;
 
@@ -69,6 +69,7 @@ struct themePage {
         Button(`切换theme配色：${this.themeNames[this.themeIndex as Int]}`)
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themePage.themeCount;
+            console.log('++++++++++++++++this.themeIndex',this.themeIndex)
           }).key('themeClick')
 
         // 系统默认按钮配色
@@ -92,7 +93,7 @@ struct themePage {
           Button('Button.style(EMP..ED) with Custom Theme')
             .buttonStyle(ButtonStyleMode.EMPHASIZED)
           Button('Button.style(TEXTUAL) with Custom Theme')
-            .buttonStyle(ButtonStyleMode.TEXTUAL).key("bt")
+            .buttonStyle(ButtonStyleMode.TEXTUAL).key("bt") //获取的颜色不对#FF00541F，实际#FF007DFF
         }
         .width('100%')
       }

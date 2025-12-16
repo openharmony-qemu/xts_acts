@@ -43,7 +43,7 @@ export default function paddingTest2() {
     'Select',
     'Stepper',
     'StepperItem',
-    // 'Web'  // app died
+    // 'Web'  // 外领域 app died
   )
 
   //Called from the parent class when setting the background color.
@@ -98,7 +98,7 @@ export default function paddingTest2() {
   describe('PaddingBaseLengthTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

@@ -36,9 +36,9 @@ export default function APINodeContentTest() {
 
     beforeAll(() => {
       console.info("APINodeContentTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNodeNoWear.api12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNodeNoWear.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -55,7 +55,7 @@ export default function APINodeContentTest() {
           console.info("get APINodeContentTest pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push APINodeContentTest page result:" + JSON.stringify(result));
         }
@@ -129,7 +129,7 @@ export default function APINodeContentTest() {
       let strJson: string = inspector.getInspectorByKey('APINodeContent_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APINodeContentTest_static_0200] component obj is 1 : ", obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');  //取值是1，断言是0.
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
       await CommonFunc.sleep(500);
       let button4 = await driver.findComponent(ON.id('APINodeContent_Button_AddToSlot'));
       console.log('+++++++++++++++++++++++++++++++9')
@@ -149,7 +149,7 @@ export default function APINodeContentTest() {
       let strJson2 = inspector.getInspectorByKey('APINodeContent_Text') ;
       let obj2 = JSON.parseJsonElement(strJson)
       console.info("[APINodeContentTest_static_0200] component obj is 2 : ", obj2.getElement('$attrs').getString('content'));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('2');  //取值是1，断言是2
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('2');  //值是2，取到的是0
       console.info('[APINodeContentTest_static_0200] END');
       done();
     });

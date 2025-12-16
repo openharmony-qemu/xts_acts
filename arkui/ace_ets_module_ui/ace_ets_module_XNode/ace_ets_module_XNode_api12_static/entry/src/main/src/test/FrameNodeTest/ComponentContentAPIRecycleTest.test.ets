@@ -33,9 +33,9 @@ export default function ComponentContentAPIRecycleTest() {
   describe('ComponentContentAPIRecycleTest', () => {
     beforeAll(() => {
       console.info("ComponentContentAPIRecycleTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ComponentContentAPIRecycleTest beforeEach start");

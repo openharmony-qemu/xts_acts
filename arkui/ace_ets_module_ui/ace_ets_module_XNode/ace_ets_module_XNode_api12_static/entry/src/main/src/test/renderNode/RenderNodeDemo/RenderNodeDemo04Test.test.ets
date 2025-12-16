@@ -25,9 +25,9 @@ export default function RenderNodeDemo04Test() {
   describe('RenderNodeDemo04Test', () => {
     beforeAll(() => {
       console.info("RenderNodeDemo04Test beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () : Promise<void> => {
       console.info("RenderNodeDemo04Test beforeEach start");

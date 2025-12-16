@@ -32,7 +32,7 @@ export default function getDragController() {
       console.info("getDragController beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("getDragController beforeEach start");

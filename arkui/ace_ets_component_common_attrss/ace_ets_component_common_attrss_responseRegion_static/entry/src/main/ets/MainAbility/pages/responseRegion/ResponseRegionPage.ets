@@ -62,6 +62,8 @@ struct ResponseRegionPage {
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+      console.log('++++this.componentKey',this.componentKey)
+      console.log('++++this.referenceComponentKey',this.referenceComponentKey)
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
@@ -86,6 +88,7 @@ struct ResponseRegionPage {
     instance.onClick((event: ClickEvent) => {
       console.info('[ResponseRegionPage] ' + this.targetView + ' onClick called at' + event.timestamp);
       this.eventCallBackStr += 'onClick, '
+      console.log("====================================== instance.onClick " + this.eventCallBackStr);
     })
     instance.key(this.componentKey)
   }

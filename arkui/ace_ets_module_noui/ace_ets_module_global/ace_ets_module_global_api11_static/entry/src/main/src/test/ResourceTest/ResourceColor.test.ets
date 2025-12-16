@@ -40,9 +40,9 @@ export default function ResourceColor() {
   describe('ResourceColor', () => {
     beforeAll(() => {
       console.info("ResourceColor beforeAll start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -55,11 +55,11 @@ export default function ResourceColor() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ResourceColor state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/Resource/ResourceColor" == pages.name)) { //ResourceColor" == pages.name
+        if (!("ResourceColor" == pages.name)) { //ResourceColor" == pages.name
           console.info("get ResourceColor pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(5000);
           // console.info("push ResourceColor page result:" + JSON.stringify(result));
         }
@@ -107,14 +107,14 @@ export default function ResourceColor() {
       console.info('ResourceColor_0200 START');
       let driver = Driver.create();
       // await CommonFunc.sleep(10000);
-      await UtilsTest.msSleep(1000)
-      console.log('+++++++++++++++++++++++++++1')
+  await UtilsTest.msSleep(2000)
+  console.log('+++++++++++++++++++++++++++1')
       let button = await driver.findComponent(ON.id('ResourceColor'));
       console.log('+++++++++++++++++++++++++++2', button)
       await (button?.click() as Promise<void>);
       console.log('+++++++++++++++++++++++++++3')
       // await CommonFunc.sleep(10000);
-      await UtilsTest.msSleep(1000)
+  await UtilsTest.msSleep(2000)
       let strJson = inspector.getInspectorByKey('color');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceColor_0200] component obj is: " + JSON.stringify(obj));

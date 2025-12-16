@@ -16,5 +16,5 @@
 import ButtonTypeTest from './ButtonType/ButtonTypeTest.test';
 
 export default function testsuite() {
-    ButtonTypeTest()
+    ButtonTypeTest() //SDK11.25 pass 1
  }

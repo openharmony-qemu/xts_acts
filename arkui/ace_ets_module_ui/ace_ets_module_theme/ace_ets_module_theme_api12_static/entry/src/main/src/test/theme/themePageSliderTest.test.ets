@@ -26,9 +26,9 @@ export default function themePageSliderTest() {
   describe('themePageSliderTest', () => {
     beforeAll(() => {
       console.info("themePageSliderTest beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.theme.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -43,11 +43,11 @@ export default function themePageSliderTest() {
         console.info("get themePageSliderTest state pages:" + JSON.stringify(pages));
         if (!("themePageSliderTest" == pages.name)) {
           console.info("get themePageSliderTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push themePageSliderTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push themePageSliderTest page error:" + err);

@@ -33,7 +33,7 @@ export default function atomicServiceBarTest() {
     beforeAll(() => {
       console.info("atomicServiceBarTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

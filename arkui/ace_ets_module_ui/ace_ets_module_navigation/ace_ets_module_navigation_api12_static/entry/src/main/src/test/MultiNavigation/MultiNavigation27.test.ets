@@ -31,9 +31,9 @@ export default function MultiNavigation27() {
   describe('MultiNavigation27', () => {
     beforeAll(() => {
 
-      
-      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
+      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

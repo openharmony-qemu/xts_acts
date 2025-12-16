@@ -36,7 +36,7 @@ export default function onVisibleAreaChangeTest() {
   //Component to be tested
   // let supportView: Array<string> = new Array<string>(
   let supportView: string[] = [
-    // 'AlphabetIndexer',
+    'AlphabetIndexer',
     // 'Blank',
     // 'Button',
     // 'Checkbox',
@@ -60,7 +60,7 @@ export default function onVisibleAreaChangeTest() {
     // 'ScrollBar',
     // 'Search',
     // 'Gauge', //
-    'RichText',   //
+    // 'RichText',   //
   ]
 
   //Custom params.
@@ -159,6 +159,7 @@ export default function onVisibleAreaChangeTest() {
       console.info('[' + data.caseTag + '] targetRectBefore.bottom: ' + targetRectBefore.bottom);
       console.info('[' + data.caseTag + '] targetRectLeave.bottom: ' + targetRectLeave.bottom);
       console.info('[' + data.caseTag + '] targetRectEnter.bottom: ' + targetRectEnter.bottom);
+      console.info('[' + data.caseTag + '] targetRectBefore.bottom ' +targetRectBefore.bottom,' - targetRectLeave.bottom'+targetRectLeave.bottom, ' = ','data.testValue.expectValue.yOffSetMoveLength = ',uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.yOffSetMoveLength: ' + uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength));
       expect(Math.abs((targetRectBefore.bottom - targetRectLeave.bottom) - uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();
       expect(Math.abs(((targetRectEnter.bottom - targetRectLeave.bottom)) - uiContext!.vp2px(data.testValue.expectValue.yOffSetMoveLength)) <= 1).assertTrue();

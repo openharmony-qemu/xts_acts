@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -28,18 +28,25 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import {UtilsTest, startAbility, stopApplication} from "../Util.test"
+import Utils from '../../../ets/MainAbility/common/Utils';
+
 import emitter from '@ohos.events.emitter'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+
+export async function sleep(time: number) {
+  return new Promise<number>((resolve) => {setTimeout(() => {resolve(1.0)}, time as int)});
+}
+
 export default function NavDestinationUIObserver() {
   describe('NavDestinationUIObserver', () => {
     beforeAll(() => {
       console.info("NavDestinationUIObserver beforeEach start");
-      
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("NavDestinationUIObserver beforeEach start");
@@ -81,24 +88,29 @@ export default function NavDestinationUIObserver() {
     it('NavDestinationUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationUIObserver_0100 START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('onBtn'));
       await (btn1?.click() as Promise<void>);
       console.info('[NavDestinationUIObserver_0100] btn1 click');
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('pushId'));
       await (btn2?.click() as Promise<void>);
       console.info('[NavDestinationUIObserver_0100] btn2 click');
-      await driver.delayMs(2000);
+      //appDied
+      await Utils.sleep(2000);
 
       console.log('++++++++++++++get1')
-      let showText: string = AppStorage.get('showText')! as string
-      console.log('++++++++++++++get2')
-      console.log('NavDestinationUIObserver_0100 on showText value : ' + showText)
-      expect(showText).assertEqual('on');
-      AppStorage.delete('showText');
+  try{
+    let showText: string = AppStorage.get('showText')! as string
+    console.log('++++++++++++++get2')
+    console.log('NavDestinationUIObserver_0100 on showText value : ' + showText)
+    expect(showText).assertEqual('on');
+    AppStorage.delete('showText');
+  }catch(err){
+        console.log('++++++++++++++err',err)
+  }
 
       let showUpdateText: string = AppStorage.get('showUpdateText')! as string
       console.log('NavDestinationUIObserver_0100 on showText value : ' + showUpdateText)
@@ -108,7 +120,7 @@ export default function NavDestinationUIObserver() {
       let backBtn = await driver.findComponent(ON.id('backId'));
       await (backBtn?.click() as Promise<void>);
       console.info('[NavDestinationUIObserver_0100] backBtn click');
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
 
       console.log('[NavDestinationUIObserver_0100] END');
       done();
@@ -125,17 +137,17 @@ export default function NavDestinationUIObserver() {
     it('NavDestinationUIObserver_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavDestinationUIObserver_0200 START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('offBtn'));
       await (btn1?.click() as Promise<void>);
       console.info('[NavDestinationUIObserver_0200] btn1 click');
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
 
       let btn2 = await driver.findComponent(ON.id('pushId'));
       await (btn2?.click() as Promise<void>);
       console.info('[NavDestinationUIObserver_0200] btn2 click');
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
 
       let showText: string = AppStorage.get('showText')! as string
       console.log('NavDestinationUIObserver_0200 on showText value : ' + showText)

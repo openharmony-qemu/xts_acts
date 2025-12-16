@@ -32,11 +32,8 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  // MutableState,
-  // stateOf,
-  // observableProxy,
   AppStorage,
-  StorageProp
+  StoragePropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Color,Padding } from '@ohos.arkui.component'
@@ -54,7 +51,7 @@ interface RouterParamOptions {
 struct paddingPage {
   //Use for Grid.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>
-  @StorageProp('_padding') _padding: Padding|String|number = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
+  @StoragePropRef('_padding') _padding: Padding|String|number = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink

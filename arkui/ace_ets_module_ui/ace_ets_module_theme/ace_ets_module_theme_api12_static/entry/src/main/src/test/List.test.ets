@@ -21,10 +21,10 @@ import themePageSliderTest from "./theme/themePageSliderTest.test";
 import APIFontPrimaryTest from "./theme/APIFontPrimaryTest.test";
 import themePageListTest from "./theme/themePageListTest.test";
 export default function testsuite() {
-  APIFontPrimaryTest();//run: 15, Failure: 2, Pass: 13
-  // themePageTest(); //WithTheme
-  // themePageToggleTest(); //WithTheme
-  // themePageSliderTest(); //WithTheme
-  // themePageListTest(); //WithTheme
+  // APIFontPrimaryTest();// SDK11.28 Pass: 15
+  themePageTest(); //SDK11.28 95行 获取的颜色不对#FF00541F，实际#FF007DFF
+  // themePageToggleTest(); //SDK12.5 pass 1
+  // themePageSliderTest(); //SDK12.5 pass 1
+  // themePageListTest(); //SDK12.5 pass 1
   
 }

@@ -23,23 +23,23 @@ import {
   Text, Button, FontWeight, ClickEvent, Margin, Color, ForEach, BarState, ListItem, TextAlign,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-// class GreenColors implements CustomColors {
-//   fontPrimary = '#ff049404';
-//   fontEmphasize = '#FF00541F';
-//   fontOnPrimary = '#FFFFFFFF';
-//   interactiveHover = "#ffa2272b"
-//   interactivePressed = "#ff2b692b"
-//   interactiveFocus = "#ffa45454"
-// }
-//
-// class RedColors implements CustomColors {
-//   fontPrimary = '#fff32b3c';
-//   fontEmphasize = '#FFD53032';
-//   fontOnPrimary = '#FFFFFFFF';
-//   compBackgroundTertiary = '#44FF2222';
-//   backgroundEmphasize = '#FFD00000';
-//   compEmphasizeSecondary = '#33FF1111';
-// }
+class GreenColors implements CustomColors {
+  fontPrimary?:string = '#ff049404';
+  fontEmphasize?:string = '#FF00541F';
+  fontOnPrimary?:string = '#FFFFFFFF';
+  interactiveHover?:string = "#ffa2272b"
+  interactivePressed?:string = "#ff2b692b"
+  interactiveFocus?:string = "#ffa45454"
+}
+
+class RedColors implements CustomColors {
+  fontPrimary?:string = '#fff32b3c';
+  fontEmphasize?:string = '#FFD53032';
+  fontOnPrimary?:string = '#FFFFFFFF';
+  compBackgroundTertiary?:string = '#44FF2222';
+  backgroundEmphasize?:string = '#FFD00000';
+  compEmphasizeSecondary?:string = '#33FF1111';
+}
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
@@ -57,8 +57,8 @@ struct themePageList {
   themeNames: Array<string> = new Array<string>('System', 'Custom (green)', 'Custom (red)');
   themeArray: Array<CustomTheme | undefined> = new Array<CustomTheme|undefined>(
     undefined, // System
-    // new PageCustomTheme(new GreenColors()),
-    // new PageCustomTheme(new RedColors())
+    new PageCustomTheme(new GreenColors()),
+    new PageCustomTheme(new RedColors())
   )
   @State themeIndex: number = 0;
 
@@ -92,8 +92,7 @@ struct themePageList {
         top: '50vp'
       } as Margin)
 
-      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) {
-        // WithTheme作用域
+      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) { // WithTheme作用域
         Column({ space: '8vp' } as ColumnOptions) {
           Text(`使用WithTheme`).key('themeText')
           List({ space: 20, initialIndex: 0 }) {

@@ -27,7 +27,7 @@ import {
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
-import { State, AppStorage, StorageProp } from '@ohos.arkui.stateManagement'
+import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 interface ViewOption {
   targetView: string
@@ -45,7 +45,7 @@ interface RouterParamOptions {
 @Component
 struct OnDisAppearPage {
   @State changeDisAppear: string = '';
-  @StorageProp("_isShow") _isShow: boolean = true;
+  @StoragePropRef("_isShow") _isShow: boolean = true;
   @State targetView: string = ''
   @State targetGroupView: string = ''
   @State componentKey: string = ''
@@ -69,9 +69,6 @@ struct OnDisAppearPage {
   }
   onPageShow() {
     console.info('OnDisAppearPage show called ')
-    // attrsManager.registerDataChange((value: SetValue) => {
-    //   this._isShow = value.isShow
-    // })
     AppStorage.setOrCreate<boolean>('_isShow', true)
 
     try {
@@ -99,6 +96,7 @@ struct OnDisAppearPage {
     instance.height(this.targetHeight)
     instance.key(this.componentKey)
     instance.onDisAppear(() => {
+      console.log('+++++++++++++++onDisAppear',this.componentKey)
       this.changeDisAppear = 'changeDisAppear'
     })
   }
@@ -139,7 +137,7 @@ struct OnDisAppearPage {
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 75 })
-            .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+            .colors([['0x317AF7', 1], ['0x5BA854', 1], ['0xE08C3A', 1], ['0x9C554B', 1]])
             .backgroundColor(Color.Pink)
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'Image') {
@@ -273,9 +271,9 @@ struct OnDisAppearPage {
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
-            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            style: { color: '0xFFFFFF', fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
           } as BadgeParamWithNumber) {
-            Button('message').backgroundColor(0x317aff)
+            Button('message').backgroundColor('0x317aff')
           }
           .backgroundColor(Color.Pink)
           .applyStyles(this.commonStyle)
@@ -285,8 +283,8 @@ struct OnDisAppearPage {
             .applyStyles(this.commonStyle)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
-            Text('1').backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-            Text('2').backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
+            Text('1').backgroundColor('0xF5DEB3').textAlign(TextAlign.Center)
+            Text('2').backgroundColor('0xD2B48C').textAlign(TextAlign.Center)
           }
           .backgroundColor(Color.Pink)
           .applyStyles(this.commonStyle)

@@ -85,6 +85,7 @@ struct PositionPage {
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Position>('_position', (routerParamOptions.view.testValue as TestValue).setValue as Position)
+      this._position =  (routerParamOptions.view.testValue as TestValue).setValue as Position
       // console.log('=============== pageValue'+(routerParamOptions.view.testValue as TestValue).setValue)
       // console.log('=============== pageValue_x'+((routerParamOptions.view.testValue as TestValue).setValue as Position).x)
       // console.log('=============== pageValue_y'+((routerParamOptions.view.testValue as TestValue).setValue as Position).y)
@@ -94,6 +95,8 @@ struct PositionPage {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
+      console.log('+++++++this.parentComponentKey',this.parentComponentKey)
+
     } catch (error: Error) {
       console.log(' routerParamOptions error ' + error);
     }
@@ -174,6 +177,7 @@ struct PositionPage {
             referenceComponentKey: this.referenceComponentKey
           })
         } else if (this.targetView == 'TabContent') {
+          console.log('+++++++this.referenceComponentKey',this.referenceComponentKey)
           Tabs() {
             TabContent() {
               Text('TabContent Test')
@@ -196,6 +200,7 @@ struct PositionPage {
           .width(this.parentWidth)
           .height(this.parentHeight)
           .key(this.parentComponentKey)
+          .borderWidth(0).padding(0).margin(0)
         } else if (this.targetView == 'ColumnSplit') {
           Column() {
             Text('The secant line can be dragged').fontSize(9)

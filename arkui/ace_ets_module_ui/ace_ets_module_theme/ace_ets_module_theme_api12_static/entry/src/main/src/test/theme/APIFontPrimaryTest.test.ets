@@ -26,9 +26,9 @@ export default function APIFontPrimaryTest() {
   describe('APIFontPrimaryTest', () => {
     beforeAll(() => {
       console.info("APIFontPrimaryTest beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.theme.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -71,6 +71,8 @@ it('APIFontPrimaryTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await Utils.sleep(1000);
       let button = await driver.findComponent(ON.id('APIFontPrimary_Button'));
+      await Utils.sleep(1000);
+      console.log("++++++++++++++APIFontPrimaryTest_static_0100button " + button);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('APIFontPrimary_Text02');

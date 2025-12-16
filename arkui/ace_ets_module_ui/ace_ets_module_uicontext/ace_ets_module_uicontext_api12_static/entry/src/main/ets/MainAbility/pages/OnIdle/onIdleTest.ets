@@ -34,7 +34,7 @@ class IdleCallback extends FrameCallback {
     super()
   }
 
-  onIdle(idleTimeInNano: number): void {
+  onIdle(idleTimeInNano: number): void { //未执行
     this.link!.set('OnIdle')
   }
 }

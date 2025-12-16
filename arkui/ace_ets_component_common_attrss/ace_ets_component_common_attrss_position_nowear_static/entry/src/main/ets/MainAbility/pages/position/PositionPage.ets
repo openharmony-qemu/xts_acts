@@ -27,118 +27,17 @@ import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams } from '../../common/Utils';
 import router from '@ohos.router'
 import {
-  Entry,
-  Component,
-  LineJoinStyle,
-  $r,
-  AlignRuleOption,
-  Row,
-  Button,
-  Margin,
-  IDataSource,
-  DataChangeListener,
-  SwiperController,
-  Column,
-  ColumnOptions,
-  ClickEvent,
-  RowOptions,
-  LazyForEach,
-  Text,
-  FlexAlign,
-  TextCase,
-  TextDecorationType,
-  Resource,
-  VerticalAlign,
-  HorizontalAlign,
-  RelativeContainer,
-  Color,
-  Scroller,
-  Menu,
-  ScrollBar,
-  TextTimer,
-  ColumnSplit,
-  RowSplit,
-  Refresh,
-  Shape,
-  Rect,
-  Path,
-  Polygon,
-  Polyline,
-  Line,
-  Ellipse,
-  Circle,
-  WaterFlow,
-  Tabs,
-  Swiper,
-  Stack,
-  SideBarContainer,
-  Scroll,
-  List,
-  GridRow,
-  Grid,
-  Flex,
-  Counter,
-  Badge,
-  Toggle,
-  TimePicker,
-  TextPicker,
-  TextInput,
-  TextClock,
-  TextArea,
-  Slider,
-  Search,
-  Rating,
-  QRCode,
-  Progress,
-  AlphabetIndexer,
-  ImageAnimator,
-  Image,
-  Navigation,
-  Marquee,
-  LoadingProgress,
-  Gauge,
-  Divider,
-  DatePicker,
-  DataPanel,
-  CheckboxGroup,
-  Checkbox,
-  Select,
-  Radio,
-  MenuItem,
-  ProgressType,
-  ToggleType,
-  ForEach,
-  GridRowDirection,
-  BarState,
-  SideBarContainerType,
-  TextAlign,
-  GridItem,
-  BadgeStyle,
-  BadgeParamWithString,
-  GutterOption,
-  BreakPoints,
-  BreakpointsReference,
-  GridCol,
-  GridColOptions,
-  GridColColumnOption,
-  MenuItemOptions,
-  Position,
-  TabContent,
-  Axis,
-  ListItem,
-  FlowItem,
-  FlexDirection,
-  MenuItemGroup,
-  Blank,
-  DataPanelType,
-  SliderStyle,
-  RectOptions,
-  CommonMethod,
-  applyStyles,
-  Builder
+  Entry,Component,LineJoinStyle,$r,AlignRuleOption,Row,Button,Margin,IDataSource,DataChangeListener,SwiperController,Column,ColumnOptions,ClickEvent,
+  RowOptions,LazyForEach,Text,FlexAlign,TextCase,TextDecorationType,Resource,VerticalAlign,HorizontalAlign,RelativeContainer,Color,Scroller,
+  Menu,ScrollBar,TextTimer,ColumnSplit,RowSplit,Refresh,Shape,Rect,Path,Polygon,Polyline,Line,Ellipse,Circle,
+  WaterFlow,Tabs,Swiper,Stack,SideBarContainer,Scroll,List,GridRow,Grid,Flex,Counter,Badge,Toggle,TimePicker,TextPicker,TextInput,TextClock,TextArea,
+  Slider,Search,Rating,QRCode,Progress,AlphabetIndexer,ImageAnimator,Image,Navigation,Marquee,LoadingProgress,Gauge,Divider,DatePicker,DataPanel,CheckboxGroup,Checkbox,
+  Select,Radio,MenuItem,ProgressType,ToggleType,ForEach,GridRowDirection,BarState,SideBarContainerType,TextAlign,GridItem,BadgeStyle,BadgeParamWithString,GutterOption,BreakPoints,BreakpointsReference,
+  GridCol,GridColOptions,GridColColumnOption,ColumnOptions,MenuItemOptions,Position,TabContent,Axis,ListItem,FlowItem,FlexDirection,MenuItemGroup,Blank,DataPanelType,SliderStyle,
+  RectOptions,CommonMethod,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { SetValue, TestValue } from '../../common/Utils';
 
@@ -161,7 +60,7 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct PositionPage {
-  @StorageProp('_position') _position: Position = { x: 0, y: 0 } as Position;
+  @StoragePropRef('_position') _position: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0
@@ -193,8 +92,7 @@ struct PositionPage {
       // console.info('[wll]xp'+routerParamOptions.view.testValue.setValue.y)
       // console.info('[wll]y'+routerParamOptions.view.testValue.setValue.xp)
       // console.info('[wll]yp'+routerParamOptions.view.testValue.setValue.yp)
-      AppStorage.setOrCreate<Position>('_position',
-        (routerParamOptions.view.testValue as TestValue).setValue as Position)
+      AppStorage.setOrCreate<Position>('_position', (routerParamOptions.view.testValue as TestValue).setValue as Position)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
@@ -223,8 +121,7 @@ struct PositionPage {
         if (this.targetView == 'MenuItem') {
           Row() {
             Menu() {
-              MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                .applyStyles(this.commonStyle)
+              MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions).applyStyles(this.commonStyle)
               MenuItem({ startIcon: $r('app.media.icon'), content: 'referenceComponent' } as MenuItemOptions)
                 .key(this.referenceComponentKey)
             }
@@ -369,20 +266,10 @@ struct PositionPage {
           GridRow({
             columns: 5,
             gutter: { x: 5, y: 10 } as GutterOption,
-            breakpoints: {
-              value: ['400vp', '600vp', '800vp'],
-              reference: BreakpointsReference.WindowSize
-            } as BreakPoints,
+            breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
             direction: GridRowDirection.Row
           }) {
-            GridCol({
-              span: {
-                xs: 1,
-                sm: 2,
-                md: 3,
-                lg: 4
-              } as GridColColumnOption
-            }) {
+            GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption } ) {
               Row()
                 .width('100%')
                 .height('20vp')
@@ -391,14 +278,7 @@ struct PositionPage {
             .borderWidth(2)
             .applyStyles(this.commonStyle)
 
-            GridCol({
-              span: {
-                xs: 1,
-                sm: 2,
-                md: 3,
-                lg: 4
-              } as GridColColumnOption
-            }) {
+            GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }) {
               Row()
                 .width('100%')
                 .height('20vp')
@@ -598,22 +478,12 @@ struct PositionPage {
               GridRow({
                 columns: 5,
                 gutter: { x: 5, y: 10 } as GutterOption,
-                breakpoints: {
-                  value: ['400vp', '600vp', '800vp'],
-                  reference: BreakpointsReference.WindowSize
-                } as BreakPoints,
+                breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
                 direction: GridRowDirection.Row
               }) {
                 ForEach(new Array<Color>(Color.Red, Color.Orange, Color.Yellow, Color.Green,
                   Color.Pink, Color.Grey, Color.Blue, Color.Brown), (color: Color) => {
-                  GridCol({
-                    span: {
-                      xs: 1,
-                      sm: 2,
-                      md: 3,
-                      lg: 4
-                    } as GridColColumnOption
-                  }) {
+                  GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption }) {
                     Row()
                       .width('100%')
                       .height('20vp')
@@ -796,12 +666,7 @@ struct PositionPage {
               }
               .width(300)
               .height(200)
-              .viewPort({
-                x: -20,
-                y: -5,
-                width: 310,
-                height: 90
-              })
+              .viewPort({ x: -20, y: -5, width: 310, height: 90 })
               .fill(0x317AF7)
               .stroke(0xEE8443)
               .strokeWidth(10)

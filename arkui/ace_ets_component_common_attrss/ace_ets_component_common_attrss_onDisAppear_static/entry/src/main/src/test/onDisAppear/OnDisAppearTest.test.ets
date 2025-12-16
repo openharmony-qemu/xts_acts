@@ -83,8 +83,8 @@ export default function onDisAppearTest() {
    'Rect',
    'Shape',
     'Counter',
-  'Navigator',  // 引入失敗  推荐使用 Navigation  ——————已有Navigation，删除处理
-  'Gauge', // died
+    'Gauge', // died
+  // 'Navigator',  // 引入失敗  推荐使用 Navigation  ——————已有Navigation，删除处理
   )
 
   //Custom params.
@@ -117,9 +117,9 @@ export default function onDisAppearTest() {
   describe('OnDisAppearTest', () => {
     beforeAll(() => {
       
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
       //Set value

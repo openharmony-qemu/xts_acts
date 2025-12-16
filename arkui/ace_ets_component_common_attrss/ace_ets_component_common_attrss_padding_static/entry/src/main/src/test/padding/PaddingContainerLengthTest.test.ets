@@ -41,20 +41,20 @@ export default function PaddingContainerLengthTest() {
   let supportView: Array<string> = new Array<string>(
     'GridRow',
     'List',
-    // 'TabContent',
-    // 'Flex',
-    // 'GridCol',
-    // 'ListItemGroup',
-    // 'Column',
-    // 'Grid',
-    // 'GridItem',
-    // 'Navigator',
-    // 'Refresh',
-    // 'Row',
-    // 'Scroll',
-    // 'Stack',
-    // 'Swiper',
-    // 'Badge',  //other // 組件問題
+    'TabContent',
+    'Flex',
+    'GridCol',
+    'ListItemGroup',
+    'Column',
+    'Grid',
+    'GridItem',
+    'Refresh',
+    'Row',
+    'Scroll',
+    'Stack',
+    'Swiper',
+    // 'Navigator',// SDK12.2 appDied
+    'Badge',  //other // 組件問題
   )
 
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
@@ -144,7 +144,7 @@ export default function PaddingContainerLengthTest() {
     beforeAll(() => {
 
       // await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      // 
+      // await UtilsTest.msSleep(4000)
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.

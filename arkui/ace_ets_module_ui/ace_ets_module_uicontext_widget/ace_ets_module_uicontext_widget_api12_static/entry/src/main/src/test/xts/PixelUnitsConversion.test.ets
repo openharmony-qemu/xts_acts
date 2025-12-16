@@ -36,9 +36,9 @@ export default function PixelUnitsConversionJsunit() {
   describe('PixelUnitsConversionTest', () => {
     beforeAll(() => {
       console.info("PixelUnitsConversionTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.example.myapplication.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.example.myapplication.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
       console.info('PixelUnitsConversionTest beforeEach start');
@@ -52,7 +52,7 @@ export default function PixelUnitsConversionJsunit() {
         console.info('get PixelUnitsConversion state pages:' + JSON.stringify(pages));
         if (!('PixelUnitsConversion' == pages.name)) {
           console.info('get PixelUnitsConversion state pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await Utils.sleep(2000);
         }

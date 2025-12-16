@@ -15,17 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {
-  Driver,
-  Component,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
@@ -38,17 +28,17 @@ import Utils from "../../../ets/MainAbility/common/Utils"
 let emitKey = "emitUserAgent"
 
 export default function webJsunit() {
-  describe("ActsAceWebDevTest1", () => {
-    // beforeEach(async () => {
-    //     await Utils.sleep(2000)
-    //     console.info("web beforeEach start")
-    // })
-    beforeAll(() => {
-      console.info("ActsAceWebDevTest1 beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")
-      
-    });
+    describe("ActsAceWebDevTest1", () => {
+        // beforeEach(async () => {
+        //     await Utils.sleep(2000)
+        //     console.info("web beforeEach start")
+        // })
+        beforeAll(() => {
+            console.info("ActsAceWebDevTest1 beforeAll start");
+            await UtilsTest.msSleep(4000)
+            await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")
+            await UtilsTest.msSleep(4000)
+        });
 
     beforeEach(async (): Promise<void> => {
       console.info("ActsAceWebDevTest1 beforeEach start");

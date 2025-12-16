@@ -20,8 +20,8 @@ import getUIObserver from './UIContext/getUIObserver.test'
 import mediaQueryOffJsunit from './mediaqueryTest/mediaQuery.test'
 
 export default function testsuite() {
-  // getDragController(); //  sdk11.13 获取不到组件
-  // atomicServiceBarTest();  // test页76 getAtomicServiceBar appDied  api22 SR20250717371939（6个用例）
-  getUIObserver(); // getUIObserver.on 导致白屏
-  // mediaQueryOffJsunit(); // onChange appDied 11.17
+  getDragController(); //  SDK12.3 pass1
+  mediaQueryOffJsunit(); // SDK12.2 Pass: 11
+  atomicServiceBarTest();  // api22 SR20250717371939（6个用例）
+  getUIObserver(); // SDK12.2 appDied
 }

@@ -19,7 +19,7 @@ import accessibilitySelectedTypeTest from './chip/accessibilitySelectedTypeTest.
 import onScrollStopTest from './textPicker/onScrollStopTest.test';
 import maxFontScaleTest from './segmentButton/maxFontScaleTest.test'
 export default function testsuite() {
-  // accessibilitySelectedTypeTest()   //11.25.SDK上没有chip，B018交付
-  // onScrollStopTest()  //SDK11.25  Pass: 2
+  onScrollStopTest()  //SDK11.25  Pass: 2
   maxFontScaleTest()  //11.25.SDK上 编译问题
+  accessibilitySelectedTypeTest()   //11.25.SDK上没有chip，B018交付
 }
