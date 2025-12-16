@@ -4,9 +4,9 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Communcation.NFC.Tag",
-                    "SystemCapability.Communcation.NFC.Core",
-                    "SystemCapability.Communcation.SecureElement"
+                    "SystemCapability.Communication.NFC.Tag",
+                    "SystemCapability.Communication.NFC.Core",
+                    "SystemCapability.Communication.SecureElement"
                 ]
             }
         ]
