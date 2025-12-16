@@ -1883,7 +1883,7 @@ napi_value ApplicationContextGetVersionCodeParamInvalid(napi_env env, napi_callb
     return nullptr;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1904,7 +1904,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1922,7 +1922,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1941,7 +1941,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1959,7 +1959,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1977,7 +1977,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1996,7 +1996,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -2015,7 +2015,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey()
     return napiRet;
 }
 
-napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
     AbilityBase_Element element;
