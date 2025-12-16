@@ -17,7 +17,6 @@ interface PackingOption_format {
   format: string;
 }
 
-
 interface PackingOption_quality {
   quality: number;
 }
@@ -40,6 +39,13 @@ export const OHEffectFilterGetValueSupp: (a: number) => number;
 export const OHEffectFilterRegisterSupp: (a: number) => number;
 export const OHEffectFilterLookupFilterInfoSupp: (a: number) => number;
 export const OHEffectFilterReleaseSupp: (a: number) => number;
+export const OHEffectFilterRenderSupp: (a: number) => number;
+export const OHEffectFilterRenderWithTextureIdSupp: (a: number) => number;
+export const OHPixelmapNativeCreateScaledPixelMapSupp: (a: number) => number;
+export const OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp: (a: number) => number;
+export const OHPixelmapNativeTranslateSupp: (a: number) => number;
+export const OHImageSourceNativeCreateFromUriSupp: (a: number) => number;
+export const OHImageSourceNativeCreateFromFdSupp: (a: number) => number;
 export const OHImageAlphaTypeSupp: (a: number) => number;
 export const OHImageErrorCodeSupp: (a: number) => number;
 export const OHImageScaleModeSupp: (a: number) => number;
@@ -76,3 +82,13 @@ export const OHImageEffectGetFilterSupp: (a: number) => number;
 export const OHImageEffectSetInputPictureSupp: (a: number) => number;
 export const OHImageEffectSetOutputPictureSupp: (a: number) => number;
 export const OHImageEffectReleaseSupp:(a: number) => number;
+export const OHImageInitImageNativeSupp: () => undefined;
+export const OHPictureMetadataGetPropertyWithNullSupp: (a: number) => number;
+export const OHPackingOptionsCreateSupp: (a: number) => number;
+export const OHPixelmapNativeGetMetadataSupp: (a: number) => number;
+export const OHPixelmapNativeSetMetadataSupp: (a: number) => number;
+export const OHConvertPixelmapNativeFromNapiSupp: (a: number) => number;
+export const OHPictureNativeGetMetadataSupp: (a: number) => number;
+export const OHAuxiliaryPictureNativeWritePixelsSupp: (a: number) => number;
+export const OHAuxiliaryPictureNativeReadPixelsSupp: (a: number) => number;
+export const OHAuxiliaryPictureNativeSetMetadataSupp: (a: number) => number;
