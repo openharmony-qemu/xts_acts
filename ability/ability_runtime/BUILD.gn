@@ -98,6 +98,7 @@ group("ability_runtime") {
       "actsshareacquiresharedata:ActsShareAcquireShareData",
       "actsshellcommandfunctionalitytest:actsshellcommandfunctionalitytest",
       "actsspecifiedprocess:actsspecifiedprocess",
+      "actsspecifiedprocessstatic:actsspecifiedprocessstatic",
       "actsstartAndTerminatetest:ActsStartAndTerminate",
       "actsstartabilityforresult:actsstartabilityforresulttest",
       "actsstartabilitygetdisplayidtest:actsstartabilitygetdisplayidtest",
