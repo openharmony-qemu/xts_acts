@@ -26,7 +26,6 @@
 #include "ActScapiStartSelfUiAbilityTest20Test.h"
 
 std::promise<int> *g_promiseStartProcess = nullptr;
-static AbilityRuntime_ErrorCode errCodeReturn = ABILITY_RUNTIME_ERROR_CODE_NO_ERROR;
 napi_value DestroyChildProcessConfigsParamInvalid(napi_env env, napi_callback_info info)
 {
     Ability_ChildProcessConfigs *configs = nullptr;
@@ -1884,7 +1883,7 @@ napi_value ApplicationContextGetVersionCodeParamInvalid(napi_env env, napi_callb
     return nullptr;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupportThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1895,30 +1894,35 @@ static void StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupportThread
     OH_AbilityBase_SetWantBoolParam(want, "ohos.extra.param.key.createAppInstance", true);
     OH_AbilityBase_SetWantCharParam(want, "ohos.extra.param.key.appInstance", "app_instance_0");
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_APP_INSTANCE_KEY_NOT_SUPPORTED
-        || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_APP_INSTANCE_KEY_NOT_SUPPORTED
+        || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsNoErrorThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
-    errCodeReturn = ABILITY_RUNTIME_ERROR_CODE_NO_ERROR;
     element.abilityName = const_cast<char *>("EntryAbility");
     element.bundleName = const_cast<char *>("com.acts.actscapistartselfuiabilitytest20test");
     element.moduleName = const_cast<char *>("entry");
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED || ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
     }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReachedThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1928,14 +1932,16 @@ static void StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReachedThread()
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     OH_AbilityBase_SetWantBoolParam(want, "ohos.extra.param.key.createAppInstance", true);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_UPPER_LIMIT_REACHED || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_UPPER_LIMIT_REACHED || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
-
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbilityThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1944,13 +1950,16 @@ static void StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbilityThread()
     element.moduleName = const_cast<char *>("entry");
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NO_SUCH_ABILITY || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_SUCH_ABILITY || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsCodeCrossAppThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1959,13 +1968,16 @@ static void StartSelfUIAbilityWithPidWithStartOptionsCodeCrossAppThread()
     element.moduleName = const_cast<char *>("entry");
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_CROSS_APP || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_CROSS_APP || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsCodeInternalThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1975,13 +1987,16 @@ static void StartSelfUIAbilityWithPidWithStartOptionsCodeInternalThread()
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     OH_AbilityBase_AddWantFd(want, "fd", -1);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_INTERNAL || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_INTERNAL || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKeyThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -1991,14 +2006,16 @@ static void StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKeyThread
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     OH_AbilityBase_SetWantCharParam(want, "ohos.extra.param.key.appInstance", "app_instance_0_Error");
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_INVALID_APP_INSTANCE_KEY || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_INVALID_APP_INSTANCE_KEY || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
-
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
-static void StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabledThread()
+napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled()
 {
     int32_t pid = -1;
     AbilityBase_Element element;
@@ -2007,88 +2024,11 @@ static void StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabledTh
     element.moduleName = const_cast<char *>("entry");
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    errCodeReturn = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
-    if (errCodeReturn == ABILITY_RUNTIME_ERROR_VISIBILITY_SETTING_DISABLED || errCodeReturn == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+    if (ret == ABILITY_RUNTIME_ERROR_VISIBILITY_SETTING_DISABLED || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
     }
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupportThread);
-    thread.detach();
-    sleep(3);
     napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsNoError(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsNoErrorThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReachedThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbilityThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsCodeCrossAppThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsCodeInternal(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsCodeInternalThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKeyThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
-    return napiRet;
-}
-
-napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled(napi_env env, napi_callback_info info)
-{
-    std::thread thread(StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabledThread);
-    thread.detach();
-    sleep(3);
-    napi_value napiRet;
-    napi_create_int32(env, errCodeReturn, &napiRet);
+    napi_create_int32(env, ret, &napiRet);
     return napiRet;
 }
