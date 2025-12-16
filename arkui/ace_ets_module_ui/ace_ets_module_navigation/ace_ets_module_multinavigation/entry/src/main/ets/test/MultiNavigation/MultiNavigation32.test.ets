@@ -76,5 +76,22 @@ export default function MultiNavigation32() {
       done();
     });
 
+    /**
+     * @tc.name   MultiNavigation32_0200
+     * @tc.number MultiNavigation32_0200
+     * @tc.desc   Test Enumerated value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MultiNavigation32_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('MultiNavigation32_0200 START');
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      expect(SplitPolicy.FULL_PAGE).assertEqual(2);
+      console.log('[MultiNavigation32_0200] END');
+      done();
+    });
+
   })
 }
