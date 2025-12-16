@@ -194,7 +194,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it ('SUB_HSS_LocationSystem_Geo_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
                 async (done: () => void): Promise<void> => {
                     let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
@@ -236,7 +235,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it ('SUB_HSS_LocationSystem_Geo_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
                 async (done: () => void): Promise<void> => {
                     let reverseGeocodeRequest: geoLocationManager.ReverseGeoCodeRequest = {
@@ -269,7 +267,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it ('SUB_HSS_LocationSystem_Geo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
                 async (done: () => void): Promise<void> => {
                     let geoCodeRequest: geoLocationManager.GeoCodeRequest = {
@@ -304,7 +301,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it ('SUB_HSS_LocationSystem_Geo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
                 async (done: () => void): Promise<void> => {
                     let geoCodeRequest: geoLocationManager.GeoCodeRequest = {
@@ -340,7 +336,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it('SUB_Location_isGeocoderAvailabel_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
                 try{
                     let geocoderAvailable = geoLocationManager.isGeocoderAvailable();
@@ -360,7 +355,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it('SUB_Location_sendCommand_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
                 async (done:() => void): Promise<void> => {
                     let locationCommand: geoLocationManager.LocationCommand ={
@@ -393,7 +387,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it('SUB_Location_sendCommand_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
                 async (done:() => void): Promise<void> => {
                     let locationCommand: geoLocationManager.LocationCommand ={
@@ -422,7 +415,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it('SUB_Location_isLocationEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 try{
                     let location = geoLocationManager.isLocationEnabled();
@@ -440,7 +432,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it('SUB_Location_getCountryCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
                 async (done: () => void): Promise<void> => {
                     try{
@@ -468,7 +459,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-            
             it('SUB_Location_getCountryCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
                 async (done: () => void): Promise<void> => {
                     try{
@@ -493,7 +483,6 @@ export default function actslocationTest() {
             * @tc.type  Function
             * @tc.size  MEDIUMTEST
             */
-
             it('SUB_Location_getGeofenceSupportedCoordTypes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
                 try{
                     let supportedCoordTypes: Array<geoLocationManager.CoordinateSystemType> = geoLocationManager.getGeofenceSupportedCoordTypes();
