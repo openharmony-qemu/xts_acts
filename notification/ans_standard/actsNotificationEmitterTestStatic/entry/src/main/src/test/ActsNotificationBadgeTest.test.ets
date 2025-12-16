@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "../../../hypium/index"
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from "../../../hypium/index"
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
@@ -42,11 +42,14 @@ export default function ActsNotificationEmitterTest() {
     })
 
     beforeEach(() => {
-      console.info(`${TAG} afterEach START`)
+      console.info(`${TAG} beforeEach START`)
       emitter.off('eventid')
       emitter.off('eventids')
       await Utils.msSleep(500)
-      console.info(`${TAG} afterEach END`)
+      console.info(`${TAG} beforeEach END`)
+    })
+    afterEach(()=> {
+      await Utils.msSleep(500)
     })
 
     /**
@@ -921,7 +924,9 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", oncallback1);
+          await Utils.msSleep(500)
           emitter.onEventData("eventid", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
@@ -993,7 +998,9 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", oncallback1);
+          await Utils.msSleep(500)
           emitter.onEventData("eventid", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
         } catch (e) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s',
@@ -1037,6 +1044,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", eventData);
           emitter.emit("eventids", eventData);
         } catch (e) {
@@ -1087,6 +1095,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data1);
           emitter.emit("eventids", data2);
         } catch (e) {
@@ -1136,6 +1145,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data1);
           emitter.emit("eventids", data2);
         } catch (e) {
@@ -1189,6 +1199,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data2);
           emitter.emit("eventids", data1);
         } catch (e) {
@@ -1244,6 +1255,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data1);
           emitter.emit("eventids", data2);
         } catch (e) {
@@ -1310,6 +1322,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data1);
           emitter.emit("eventids", data2);
         } catch (e) {
@@ -1366,6 +1379,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data1);
           emitter.emit("eventids", data2);
         } catch (e) {
@@ -1421,6 +1435,7 @@ export default function ActsNotificationEmitterTest() {
         try {
           emitter.onEventData("eventid", oncallback1);
           emitter.onEventData("eventids", oncallback2);
+          await Utils.msSleep(500)
           emitter.emit("eventid", data1);
           emitter.emit("eventids", data2);
         } catch (e) {
