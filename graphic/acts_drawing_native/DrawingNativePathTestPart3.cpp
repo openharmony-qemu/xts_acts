@@ -21,6 +21,7 @@
 #include "drawing_matrix.h"
 #include "drawing_path.h"
 #include "drawing_path_effect.h"
+#include "drawing_path_iterator.h"
 #include "drawing_pen.h"
 #include "drawing_point.h"
 #include "drawing_rect.h"
@@ -1872,6 +1873,84 @@ HWTEST_F(DrawingNativePathPart3Test, testPathToggleInverseFillTypeCalls, Functio
         EXPECT_EQ(isInverseFillType, (i % 2 == 0));
     }
     // 6. 销毁路径对象，释放内存资源，避免内存泄漏
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathIteratorCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5000
+ * @tc.desc   test for testPathIteratorCreateNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIteratorCreateNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 5, 5);
+    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
+    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
+    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathClose(path);
+    OH_Drawing_PathIterator *pathIterator = nullptr;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_NE(pathIterator, nullptr);
+    OH_Drawing_PathIteratorDestroy(pathIterator);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathIteratorCreateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5001
+ * @tc.desc   test for testPathIteratorCreateNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIteratorCreateNull, Function | SmallTest | Level3) {
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 5, 5);
+    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
+    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
+    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathClose(path);
+    OH_Drawing_PathIterator *pathIterator = nullptr;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(nullptr, &pathIterator);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(pathIterator, nullptr);
+    errorCode = OH_Drawing_PathIteratorCreate(path, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(pathIterator, nullptr);
+    OH_Drawing_PathIteratorDestroy(pathIterator);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathIteratorCreateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_5002
+ * @tc.desc   test for testPathIteratorCreateMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIteratorCreateMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 5, 5);
+    OH_Drawing_PathQuadTo(path, 10, 50, 100, 100);
+    OH_Drawing_PathConicTo(path, 150, 200, 250, 350, 0.5);
+    OH_Drawing_PathCubicTo(path, 350, 450, 450, 550, 550, 650);
+    OH_Drawing_PathClose(path);
+    OH_Drawing_PathIterator *pathIterator = nullptr;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_NE(pathIterator, nullptr);
+        errorCode = OH_Drawing_PathIteratorDestroy(pathIterator);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
     OH_Drawing_PathDestroy(path);
 }
 } // namespace Drawing

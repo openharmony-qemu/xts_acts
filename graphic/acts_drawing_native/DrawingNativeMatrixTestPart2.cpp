@@ -1146,6 +1146,417 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPerConcatCalls, Function | Smal
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_MatrixDestroy(other);
 }
+
+/**
+ * @tc.name   testMatrixIsAffineNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2600
+ * @tc.desc   test for testMatrixIsAffineNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixIsAffineNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    bool isAffine = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isAffine, true);
+
+    matrix = OH_Drawing_MatrixCreateRotation(45, 0, 0);
+    errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isAffine, true);
+
+    matrix = OH_Drawing_MatrixCreateScale(1, 1, 100, 100);
+    errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isAffine, true);
+
+    matrix = OH_Drawing_MatrixCreateTranslation(200, 200);
+    errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isAffine, true);
+
+    OH_Drawing_MatrixSetMatrix(matrix, 1, 2, 3, 4, 5, 6, -1, 0, 1);
+    errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isAffine, false);
+
+    OH_Drawing_MatrixSetMatrix(matrix, 1, 2, 3, 4, 5, 6, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isAffine, true);
+    OH_Drawing_MatrixDestroy(matrix);
+}
+
+/**
+ * @tc.name   testMatrixIsAffineNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2601
+ * @tc.desc   test for testMatrixIsAffineNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixIsAffineNull, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    bool isAffine = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixIsAffine(nullptr, &isAffine);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isAffine, false);
+    errorCode = OH_Drawing_MatrixIsAffine(matrix, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isAffine, false);
+    OH_Drawing_MatrixDestroy(matrix);
+}
+
+/**
+ * @tc.name   testMatrixIsAffineMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2602
+ * @tc.desc   test for testMatrixIsAffineMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixIsAffineMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    bool isAffine = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixIsAffine(matrix, &isAffine);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isAffine, true);
+    }
+    OH_Drawing_MatrixDestroy(matrix);
+}
+
+/**
+ * @tc.name   testMatrixPreSkewNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2700
+ * @tc.desc   test for testMatrixPreSkewNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPreSkewNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
+    EXPECT_NE(result, nullptr);
+    
+    OH_Drawing_MatrixSetMatrix(result, 1, 2, -10, 3, 1, -12, 0, 0, 1);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    bool ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+
+    matrix = OH_Drawing_MatrixCreateRotation(90, 0, 0);
+    OH_Drawing_MatrixSetMatrix(result, -3, -1, 12, 1, 2, -10, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+
+    matrix = OH_Drawing_MatrixCreateScale(1, 1, 0, 0);
+    OH_Drawing_MatrixSetMatrix(result, 1, 2, -10, 3, 1, -12, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+
+    matrix = OH_Drawing_MatrixCreateTranslation(50, 50);
+    OH_Drawing_MatrixSetMatrix(result, 1, 2, 40, 3, 1, 38, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(result);
+}
+
+/**
+ * @tc.name   testMatrixPreSkewNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2701
+ * @tc.desc   test for testMatrixPreSkewNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPreSkewNull, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix1, nullptr);
+    OH_Drawing_Matrix *matrix2 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix2, nullptr);
+    OH_Drawing_Matrix *matrix3 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix3, nullptr);
+    OH_Drawing_Matrix *matrix4 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix4, nullptr);
+    OH_Drawing_Matrix *matrix5 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix5, nullptr);
+    OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
+    EXPECT_NE(result, nullptr);
+    
+    OH_Drawing_MatrixSetMatrix(result, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(nullptr, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    bool ret = OH_Drawing_MatrixIsEqual(matrix1, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 1, 0, 0, 3, 1, -12, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix2, 0, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix2, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 1, 2, -10, 0, 1, 0, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix3, 2, 0, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix3, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 1, 2, -10, 3, 1, 0, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix4, 2, 3, 0, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix4, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 1, 2, 0, 3, 1, -12, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixPreSkew(matrix5, 2, 3, 4, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix5, result);
+    EXPECT_EQ(ret, true);
+    OH_Drawing_MatrixDestroy(matrix1);
+    OH_Drawing_MatrixDestroy(matrix2);
+    OH_Drawing_MatrixDestroy(matrix3);
+    OH_Drawing_MatrixDestroy(matrix4);
+    OH_Drawing_MatrixDestroy(matrix5);
+    OH_Drawing_MatrixDestroy(result);
+}
+
+/**
+ * @tc.name   testMatrixPreSkewMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2702
+ * @tc.desc   test for testMatrixPreSkewMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPreSkewMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
+    EXPECT_NE(result, nullptr);
+    OH_Drawing_MatrixSetMatrix(result, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixPreSkew(matrix, 0, 0, 0, 0);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        bool ret = OH_Drawing_MatrixIsEqual(matrix, result);
+        EXPECT_EQ(ret, true);
+    }
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(result);
+}
+
+/**
+ * @tc.name   testMatrixRectStaysRectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2800
+ * @tc.desc   test for testMatrixRectStaysRectNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixRectStaysRectNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    OH_Drawing_MatrixPreScale(matrix, 2, 3, 4, 5);
+    bool isRectStaysRect = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRectStaysRect, true);
+
+    OH_Drawing_MatrixPreSkew(matrix, 2, 3, 4, 5);
+    errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRectStaysRect, false);
+
+    matrix = OH_Drawing_MatrixCreateRotation(90, 0, 0);
+    errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRectStaysRect, true);
+
+    matrix = OH_Drawing_MatrixCreateScale(1, 1, 0, 0);
+    errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRectStaysRect, true);
+
+    matrix = OH_Drawing_MatrixCreateTranslation(50, 50);
+    errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRectStaysRect, true);
+    OH_Drawing_MatrixDestroy(matrix);
+}
+
+/**
+ * @tc.name   testMatrixRectStaysRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2801
+ * @tc.desc   test for testMatrixRectStaysRectNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixRectStaysRectNull, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    bool isRectStaysRect = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixRectStaysRect(nullptr, &isRectStaysRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isRectStaysRect, false);
+    errorCode = OH_Drawing_MatrixRectStaysRect(matrix, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isRectStaysRect, false);
+    OH_Drawing_MatrixDestroy(matrix);
+}
+
+/**
+ * @tc.name   testMatrixRectStaysRectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2801
+ * @tc.desc   test for testMatrixRectStaysRectMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixRectStaysRectMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    bool isRectStaysRect = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixRectStaysRect(matrix, &isRectStaysRect);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isRectStaysRect, true);
+    }
+    OH_Drawing_MatrixDestroy(matrix);
+}
+
+/**
+ * @tc.name   testMatrixSetSinCosNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2900
+ * @tc.desc   test for testMatrixSetSinCosNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetSinCosNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
+    EXPECT_NE(result, nullptr);
+    
+    OH_Drawing_MatrixSetMatrix(result, 3, -2, 2, 2, 3, -18, 0, 0, 1);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    bool ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+
+    matrix = OH_Drawing_MatrixCreateRotation(90, 0, 0);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+
+    matrix = OH_Drawing_MatrixCreateScale(1, 1, 0, 0);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+
+    matrix = OH_Drawing_MatrixCreateTranslation(50, 50);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix, result);
+    EXPECT_EQ(ret, true);
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(result);
+}
+
+/**
+ * @tc.name   testMatrixSetSinCosNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2901
+ * @tc.desc   test for testMatrixSetSinCosNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetSinCosNull, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix1 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix1, nullptr);
+    OH_Drawing_Matrix *matrix2 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix2, nullptr);
+    OH_Drawing_Matrix *matrix3 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix3, nullptr);
+    OH_Drawing_Matrix *matrix4 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix4, nullptr);
+    OH_Drawing_Matrix *matrix5 = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix5, nullptr);
+    OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
+    EXPECT_NE(result, nullptr);
+    
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(nullptr, 2, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    bool ret = OH_Drawing_MatrixIsEqual(matrix1, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 3, 0, -8, 0, 3, -10, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix2, 0, 3, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix2, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 0, -2, 14, 2, 0, -3, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix3, 2, 0, 4, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix3, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 3, -2, 10, 2, 3, -10, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix4, 2, 3, 0, 5);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix4, result);
+    EXPECT_EQ(ret, true);
+
+    OH_Drawing_MatrixSetMatrix(result, 3, -2, -8, 2, 3, -8, 0, 0, 1);
+    errorCode = OH_Drawing_MatrixSetSinCos(matrix5, 2, 3, 4, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    ret = OH_Drawing_MatrixIsEqual(matrix5, result);
+    EXPECT_EQ(ret, true);
+    OH_Drawing_MatrixDestroy(matrix1);
+    OH_Drawing_MatrixDestroy(matrix2);
+    OH_Drawing_MatrixDestroy(matrix3);
+    OH_Drawing_MatrixDestroy(matrix4);
+    OH_Drawing_MatrixDestroy(matrix5);
+    OH_Drawing_MatrixDestroy(result);
+}
+
+/**
+ * @tc.name   testMatrixSetSinCosMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2902
+ * @tc.desc   test for testMatrixSetSinCosMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetSinCosMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    OH_Drawing_Matrix *result = OH_Drawing_MatrixCreate();
+    EXPECT_NE(result, nullptr);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_MatrixSetSinCos(matrix, 0, 0, 0, 0);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(result);
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
