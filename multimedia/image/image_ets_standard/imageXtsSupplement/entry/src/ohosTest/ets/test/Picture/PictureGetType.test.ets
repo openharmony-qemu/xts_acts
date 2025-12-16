@@ -31,7 +31,7 @@ async function getAuxiliaryTypeTest(done: Function, testName: string, pathUri: s
 ) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(300000000);
+    let array = new ArrayBuffer(20000000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     console.info(TAG, testName, `path: ${path}`);
     const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);

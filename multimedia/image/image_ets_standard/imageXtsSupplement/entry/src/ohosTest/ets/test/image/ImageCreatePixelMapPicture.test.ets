@@ -62,8 +62,8 @@ export default function ImageCreatePixelMapPicture() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_002
+     * @tc.number     SUB_IMAGE_CREATE_PIXELMAP_002
+     * @tc.name       SUB_IMAGE_CREATE_PIXELMAP_002
      * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
      * @tc.size       MEDIUM
      * @tc.type       Function
@@ -94,6 +94,7 @@ export default function ImageCreatePixelMapPicture() {
         done();
       }
     })
+
     /**
      * @tc.number     SUB_IMAGE_CREATE_PIXELMAP_003
      * @tc.name       SUB_IMAGE_CREATE_PIXELMAP_003
@@ -127,6 +128,7 @@ export default function ImageCreatePixelMapPicture() {
         done();
       }
     })
+
     /**
      * @tc.number     SUB_IMAGE_CREATE_PIXELMAP_004
      * @tc.name       SUB_IMAGE_CREATE_PIXELMAP_004
@@ -160,6 +162,7 @@ export default function ImageCreatePixelMapPicture() {
         done();
       }
     })
+
     /**
      * @tc.number     SUB_IMAGE_CREATE_PIXELMAP_005
      * @tc.name       SUB_IMAGE_CREATE_PIXELMAP_005
@@ -193,9 +196,10 @@ export default function ImageCreatePixelMapPicture() {
         done();
       }
     })
+
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_006
+     * @tc.number     SUB_IMAGE_CREATE_PIXELMAP_006
+     * @tc.name       SUB_IMAGE_CREATE_PIXELMAP_006
      * @tc.desc       ImageSourceCreatePixelMapList cover pixelMapList.length>0
      * @tc.size       MEDIUM
      * @tc.type       Function

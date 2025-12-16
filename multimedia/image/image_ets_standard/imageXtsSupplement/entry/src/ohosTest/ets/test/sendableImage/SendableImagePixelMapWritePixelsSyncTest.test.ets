@@ -44,7 +44,6 @@ export default function sendableWritePixelsSyncTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-
     it('PIXEL_MAP_WRITE_PIXELS_SYNC_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_SYNC_001';
       try {
@@ -73,7 +72,6 @@ export default function sendableWritePixelsSyncTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-
     it('PIXEL_MAP_WRITE_PIXELS_SYNC_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_SYNC_002';
       try {
@@ -93,6 +91,7 @@ export default function sendableWritePixelsSyncTest() {
         done();
       }
     });
+
     /**
      * @tc.number     PIXEL_MAP_WRITE_PIXELS_SYNC_003
      * @tc.name       PIXEL_MAP_WRITE_PIXELS_SYNC_003
@@ -101,7 +100,6 @@ export default function sendableWritePixelsSyncTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-
     it('PIXEL_MAP_WRITE_PIXELS_SYNC_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_WRITE_PIXELS_SYNC_003';
       try {

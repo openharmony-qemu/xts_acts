@@ -26,7 +26,7 @@ async function setMetadataPromiseTest(done: Function, testName: string, pathUri:
   metadataType: image.MetadataType,callback: (errCode?: number) => void) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(300000000);
+    let array = new ArrayBuffer(3000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     console.info(TAG, testName, `path: ${path}`);
     const fd = await fs.open(path);
@@ -69,7 +69,7 @@ async function getMetadataPromiseTest(done: Function, testName: string, pathUri:
   try {
 
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(300000000);
+    let array = new ArrayBuffer(3000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     console.info(TAG, testName, `path: ${path}`);
     const fd = await fs.open(path);

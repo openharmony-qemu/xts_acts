@@ -38,15 +38,14 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
-
-
+    
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0001
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0001
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0001
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0001
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0001';
@@ -73,12 +72,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0002
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0002
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0002
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0002
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0002';
@@ -105,12 +104,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0003
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0003
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0003
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0003
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0003';
@@ -137,12 +136,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0004
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0004
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0004
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0004
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0004';
@@ -169,12 +168,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0005
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0005
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0005
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0005
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0005';
@@ -206,12 +205,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0006
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0006
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0006
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0006
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0006';
@@ -238,12 +237,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0007
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0007
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0007
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0007
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0007';
@@ -270,12 +269,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0008
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0008
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0008
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0008
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0008';
@@ -302,12 +301,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0009
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0009
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0009
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0009
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0009';
@@ -334,12 +333,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0010
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0010
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0010
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0010
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0010';
@@ -371,12 +370,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0011
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0011
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0011
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0011
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0011';
@@ -403,12 +402,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0012
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0012
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0012
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0012
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0012';
@@ -435,12 +434,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0013
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0013
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0013
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0013
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0013';
@@ -467,12 +466,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0014
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0014
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0014
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0014
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0014';
@@ -499,12 +498,12 @@ export default function imagePackerPackToFileFromPixelmapSequenceTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0015
-     * @tc.name      : imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0015
-     * @tc.desc      : imagePacker_packToFileFromPixelmapSequence
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0015
+     * @tc.name    imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0015
+     * @tc.desc    imagePacker_packToFileFromPixelmapSequence
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0015', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToFileFromPixelmapSequence_abnormal_promise_0015';

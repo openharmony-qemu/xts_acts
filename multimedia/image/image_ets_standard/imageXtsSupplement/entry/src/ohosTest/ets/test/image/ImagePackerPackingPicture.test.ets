@@ -62,12 +62,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_001
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_001
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_001
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_001
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_001';
@@ -97,12 +97,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_002
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_002
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_002
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_002
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_002';
@@ -131,12 +131,12 @@ export default function imagePackerPackingPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_003
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_003
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_003
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_003
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_003';
@@ -166,12 +166,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_004
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_004
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_004
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_004
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_004';
@@ -195,12 +195,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_005
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_005
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_005
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_005
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_005';
@@ -224,12 +224,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_006
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_006
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_006
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_006
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_006';
@@ -252,12 +252,12 @@ export default function imagePackerPackingPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_007
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_007
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_007
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_007
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_007';
@@ -287,12 +287,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_008
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_008
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_008
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_008
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_008';
@@ -321,12 +321,12 @@ export default function imagePackerPackingPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_009
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_009
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_009
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_009
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_009';
@@ -356,12 +356,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_010
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_010
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_010
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_010
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_010';
@@ -385,12 +385,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_011
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_011
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_011
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_011
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_011';
@@ -414,12 +414,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_012
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_012
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_012
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_012
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_012';
@@ -442,12 +442,12 @@ export default function imagePackerPackingPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_013
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_013
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_013
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_013
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_013';
@@ -477,12 +477,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_014
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_014
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_014
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_014
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_014';
@@ -511,12 +511,12 @@ export default function imagePackerPackingPictureTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_015
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_015
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_015
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_015
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_015';
@@ -546,12 +546,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_016
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_016
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_016
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_016
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_016';
@@ -575,12 +575,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_017
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_017
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_017
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_017
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_017';
@@ -604,12 +604,12 @@ export default function imagePackerPackingPictureTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACKING_PROMISE_018
-     * @tc.name      : IMAGE_PACKER_PACKING_PROMISE_018
-     * @tc.desc      : imagePacker_packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number  IMAGE_PACKER_PACKING_PROMISE_018
+     * @tc.name    IMAGE_PACKER_PACKING_PROMISE_018
+     * @tc.desc    imagePacker_packing
+     * @tc.size    MEDIUM
+     * @tc.type    Function
+     * @tc.level   Level 0
      */
     it('IMAGE_PACKER_PACKING_PROMISE_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_PACKER_PACKING_PROMISE_018';

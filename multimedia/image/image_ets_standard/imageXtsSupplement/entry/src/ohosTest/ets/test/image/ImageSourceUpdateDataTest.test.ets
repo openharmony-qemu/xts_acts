@@ -88,7 +88,6 @@ export default function UpdateDataTest() {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-
     it('MUTI_MEDIA_IMAGE_KIT_OVERWRITE_NULL_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_OVERWRITE_NULL_001';
       AppStorage.setOrCreate('key', null);
@@ -117,6 +116,7 @@ export default function UpdateDataTest() {
         done();
       });
     })
+
     /**
      * @tc.number    MUTI_MEDIA_IMAGE_KIT_OVERWRITE_NULL_003
      * @tc.name      MUTI_MEDIA_IMAGE_KIT_OVERWRITE_NULL_003

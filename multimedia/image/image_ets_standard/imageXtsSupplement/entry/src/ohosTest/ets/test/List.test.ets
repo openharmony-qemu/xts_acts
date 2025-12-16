@@ -114,6 +114,8 @@ import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCre
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
+import ImageGetComponentSupp from './image/ImageGetComponentSupp.test';
+import ImageCreatePixelMapFromParcelSupp from './image/ImageCreatePixelMapFromParcel.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
 import getImagePropertiesTest from './image/ImageSourceGetImagePropertiesTest.test';
 import getPropertiesTest from './image/MetaDataGetPropertiesTest.test';
@@ -134,14 +136,13 @@ import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.tes
 import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
-import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
-
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
 import ImageSourceCreatePixelMapUsingAllocatorTest from './image/ImageSourceCreatePixelMapUsingAllocator.test';
 import ImagePixmapSetColorSpaceTest from './image/ImagePixmapSetColorSpace.test';
 import GetImagePropertyJPGNullTest from './image/GetImagePropertyJPGNull.test';
 import GetImagePropertyPNGNullTest from './image/GetImagePropertyPNGNull.test';
+import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultipliedPixelMap.test';
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -237,6 +238,8 @@ export default function testsuite() {
   PictureGetMetadataFirstParameters();
   CreatePixelMapUsingAllocatorAndSync();
   ImageCreateIncrementalSourceSupp();
+  ImageGetComponentSupp();
+  ImageCreatePixelMapFromParcelSupp();
   modifyImagePropertyValueTest();
   sendableCreatePixelMapSyncTest();
   imagePackerPackToFileTest();
@@ -267,4 +270,5 @@ export default function testsuite() {
   ImagePixmapSetColorSpaceTest();
   GetImagePropertyJPGNullTest();
   GetImagePropertyPNGNullTest();
+  createUnpremultipliedPixelMapSyncTest();
 }

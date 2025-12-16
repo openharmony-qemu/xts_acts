@@ -44,7 +44,6 @@ export default function sendableReadPixelsTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-
     it('PIXEL_MAP_READ_PIXELS_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_001';
       try {
@@ -64,6 +63,7 @@ export default function sendableReadPixelsTest() {
         done();
       }
     });
+
     /**
      * @tc.number     PIXEL_MAP_READ_PIXELS_002
      * @tc.name       PIXEL_MAP_READ_PIXELS_002
@@ -72,7 +72,6 @@ export default function sendableReadPixelsTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-
     it('PIXEL_MAP_READ_PIXELS_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_002';
       try {
@@ -92,6 +91,7 @@ export default function sendableReadPixelsTest() {
         done();
       }
     });
+
     /**
      * @tc.number     PIXEL_MAP_READ_PIXELS_003
      * @tc.name       PIXEL_MAP_READ_PIXELS_003
@@ -100,7 +100,6 @@ export default function sendableReadPixelsTest() {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-
     it('PIXEL_MAP_READ_PIXELS_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PIXEL_MAP_READ_PIXELS_003';
       try {
