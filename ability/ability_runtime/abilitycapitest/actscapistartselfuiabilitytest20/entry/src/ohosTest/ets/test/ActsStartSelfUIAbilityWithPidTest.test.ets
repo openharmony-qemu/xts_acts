@@ -16,11 +16,13 @@
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import AbilityKitTest from 'libentry.so'
 import taskpool from '@ohos.taskpool';
+import hilog from '@ohos.hilog';
 
 const ABILITY_ERR_OK = 0;
+const TAG = 'testTag';
 
 @Concurrent
-function StartSelfUIAbilityWithPidResult0200(casesName: string): number {
+function StartSelfUIAbilityWithPidResult(casesName: string): number {
   let result = -1;
   if(casesName == "StartSelfUIAbilityWithPidResult_0200"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoError();
@@ -67,7 +69,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0200");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
@@ -101,14 +103,14 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0300");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
               done();
               return;
             }
-            if(result == 16000078){
+            if(value == 16000078){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(16000078).assertEqual(value);
               done();
@@ -141,14 +143,14 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0300");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
               done();
               return;
             }
-            if(result == 16000078){
+            if(value == 16000078){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(16000078).assertEqual(value);
               done();
@@ -180,7 +182,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0400");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
@@ -213,7 +215,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0500");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
@@ -246,7 +248,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0600");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
@@ -279,14 +281,14 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0700");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
               done();
               return;
             }
-            if(result == 16000078){
+            if(value == 16000078){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(16000078).assertEqual(value);
               done();
@@ -318,7 +320,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
           console.info(`====>${LOG_NAME} start====`);
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0800");
           await taskpool.execute(task1).then((value: Object) => {
-            hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
               console.info(`====>${LOG_NAME} result: ` + value);
               expect(801).assertEqual(value);
