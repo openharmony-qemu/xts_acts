@@ -16,5 +16,9 @@ export const add: (a: number, b: number) => number;
 
 export const nativeWebInit: (webName: string) => void;
 
+export const nativeWebInitFalse: () => boolean;
+
+export const nativeWebInitTrue: (webName: string) => boolean;
+
 export const setScrollCallback: (callback: (result: string) => void) => void;
 
