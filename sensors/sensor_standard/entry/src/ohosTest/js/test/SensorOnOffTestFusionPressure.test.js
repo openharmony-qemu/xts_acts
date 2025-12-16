@@ -111,7 +111,7 @@ describe("SensorJsTest_sensor_65", function () {
             if (Available) {
                 expect(false).assertTrue();
             } else {
-                expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
+                expect(error.code == PARAMETER_ERROR_CODE).assertTrue();
             }
             done();
         }
@@ -144,7 +144,7 @@ describe("SensorJsTest_sensor_65", function () {
             if (Available) {
                 expect(false).assertTrue();
             } else {
-                expect(e.code == PARAMETER_ERROR_CODE).assertTrue();
+                expect(error.code == PARAMETER_ERROR_CODE).assertTrue();
             }
             done();
         }
