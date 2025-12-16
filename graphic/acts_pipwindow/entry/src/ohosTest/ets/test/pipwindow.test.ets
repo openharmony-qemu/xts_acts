@@ -4756,7 +4756,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               expect(data != null).assertTrue();
               pipController.on('activeStatusChange', callback);
               await pipController.startPiP();
-              await sleep(3000)
+              await sleep(1000)
               let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
               console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
               await sleep(1000)
@@ -4771,6 +4771,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               expect(callbackIndex).assertEqual(1);
               await pipController?.stopPiP();
               pipController?.off('activeStatusChange');
+              await sleep(5000);
               done();
             }).catch((err:BusinessError) => {
               console.log(`${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
@@ -4862,6 +4863,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               expect(callbackIndex2).assertEqual(1);
               await pipController?.stopPiP();
               pipController?.off('activeStatusChange');
+              await sleep(5000);
               done();
             }).catch((err:BusinessError) => {
               console.log(`${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
@@ -4944,6 +4946,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(3000);
               expect(callbackIndex).assertEqual(0);
               await pipController?.stopPiP();
+              await sleep(5000);
               done();
             }).catch((err:BusinessError) => {
               console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
@@ -5026,6 +5029,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               await sleep(3000);
               expect(callbackIndex).assertEqual(0);
               await pipController?.stopPiP();
+              await sleep(5000);
               done();
             }).catch((err:BusinessError) => {
               console.log(`${tag} ${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));

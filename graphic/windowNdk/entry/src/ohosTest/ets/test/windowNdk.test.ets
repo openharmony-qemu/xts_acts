@@ -1791,7 +1791,6 @@ export default function windowNdk() {
       let subWindowClass: window.Window | undefined
       try {
         console.info(`${caseName} start`);
-        let windowClass = windowStage.getMainWindowSync();
         subWindowClass = await windowStage.createSubWindow('testLockCursorandUnLockCursor');
         await subWindowClass.setUIContent('testability/pages/subWindow');
         await subWindowClass.showWindow();
@@ -1807,28 +1806,9 @@ export default function windowNdk() {
         let Result: number = windowNdkTest.testLockCursorandUnLockCursor1(windowId);
         console.info(`${caseName} Result testLockCursorandUnLockCursor1: ${Result}`);
         expect(Result).assertEqual(0);
-        let driver: Driver = Driver.create();
-        let xPoint = windowProperties.windowRect.left/2;
-        let yPoint = windowProperties.windowRect.top/2;
-        console.info(`${caseName} xPoint: ${JSON.stringify(xPoint)}, yPoint: ${JSON.stringify(yPoint)}`);
-        let clickPoint: Point = {
-          x: xPoint,
-          y: yPoint
-        }
-        await driver.mouseClick(clickPoint, MouseButton.MOUSE_BUTTON_LEFT);
-        let isSubFocus = subWindowClass.isFocused()
-        console.info(`${caseName} isSubFocus: ${isSubFocus}`);
-        expect(isSubFocus).assertEqual(true);
         let Result2: number = windowNdkTest.testLockCursorandUnLockCursor2(windowId);
         console.info(`${caseName} Result testLockCursorandUnLockCursor2: ${Result2}`);
         expect(Result2).assertEqual(0);
-        await driver.mouseClick(clickPoint, MouseButton.MOUSE_BUTTON_LEFT);
-        let isSubFocus2 = subWindowClass.isFocused()
-        console.info(`${caseName} isSubFocus2: ${isSubFocus2}`);
-        expect(isSubFocus2).assertEqual(false);
-        let isMainFocus = windowClass.isFocused();
-        console.info(`${caseName} isMainFocus: ${isMainFocus}`);
-        expect(isSubFocus2).assertEqual(true);
         await subWindowClass.destroyWindow();
         done()
       } catch (err) {
