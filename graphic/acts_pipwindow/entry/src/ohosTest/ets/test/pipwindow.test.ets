@@ -86,6 +86,7 @@ async function isPipWindowSupport(context1: common.BaseContext){
         await pipController.startPiP();
         await  sleep(300)
         await pipController.stopPiP();
+        await sleep(3000);
         if (isPipWindowSupport) {
           return true;
         }else{
