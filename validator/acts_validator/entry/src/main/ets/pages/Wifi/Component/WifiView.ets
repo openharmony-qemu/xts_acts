@@ -45,6 +45,7 @@ export struct WifiView {
           if (this.wifi.ssid) {
             Text(this.wifi.ssid)
               .fontSize(20)
+              .fontColor(Color.Gray)
               .width('100%')
           }
         }
