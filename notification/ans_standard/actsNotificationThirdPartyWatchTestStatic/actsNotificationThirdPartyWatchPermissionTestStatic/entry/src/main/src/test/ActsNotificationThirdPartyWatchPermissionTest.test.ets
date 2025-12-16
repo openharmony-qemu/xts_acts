@@ -70,7 +70,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "openSubscriptionSettings";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
+          await notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
@@ -102,7 +102,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "unsubscribe";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
-          notificationExtensionSubscription.unsubscribe().then(() => {
+          await notificationExtensionSubscription.unsubscribe().then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
@@ -133,7 +133,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "getSubscribeInfo";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
-          notificationExtensionSubscription.getSubscribeInfo()
+          await notificationExtensionSubscription.getSubscribeInfo()
             .then((data: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[]) => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
               expect().assertFail();
@@ -166,7 +166,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "getAllSubscriptionBundles";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
-          notificationExtensionSubscription.getAllSubscriptionBundles()
+          await notificationExtensionSubscription.getAllSubscriptionBundles()
             .then((data: notificationExtensionSubscription.BundleOption[]) => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
               expect().assertFail();
@@ -199,7 +199,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         let NAME = "isUserGranted";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
-          notificationExtensionSubscription.isUserGranted().then((data: boolean) => {
+          await notificationExtensionSubscription.isUserGranted().then((data: boolean) => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
             expect().assertFail();
             done();
@@ -233,7 +233,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
         };
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
-          notificationExtensionSubscription.getUserGrantedState(targetBundle).then((data: boolean) => {
+          await notificationExtensionSubscription.getUserGrantedState(targetBundle).then((data: boolean) => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
             expect().assertFail();
             done();
@@ -268,7 +268,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
 
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
-          notificationExtensionSubscription.setUserGrantedState(targetBundle, true).then(() => {
+          await notificationExtensionSubscription.setUserGrantedState(targetBundle, true).then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success.`);
             expect().assertFail();
             done();
@@ -300,7 +300,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
 
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          notificationExtensionSubscription.getUserGrantedEnabledBundles().then(() => {
+          await notificationExtensionSubscription.getUserGrantedEnabledBundles().then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
@@ -335,7 +335,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
 
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          notificationExtensionSubscription.getUserGrantedEnabledBundles(wearableBundle).then(() => {
+          await notificationExtensionSubscription.getUserGrantedEnabledBundles(wearableBundle).then(() => {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
@@ -377,7 +377,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             enabledBundles.push(createBundleWithoutUid(app.bundle));
           }
           let enabled: boolean = true;
-          notificationExtensionSubscription.setUserGrantedBundleState(targetBundle, enabledBundles, enabled)
+          await notificationExtensionSubscription.setUserGrantedBundleState(targetBundle, enabledBundles, enabled)
             .then(() => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               expect().assertFail();

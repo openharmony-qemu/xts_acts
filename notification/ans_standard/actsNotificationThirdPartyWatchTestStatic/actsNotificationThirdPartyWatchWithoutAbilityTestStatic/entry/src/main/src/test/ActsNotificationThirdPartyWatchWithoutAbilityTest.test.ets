@@ -63,7 +63,7 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
         let NAME = "openSubscriptionSettings";
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          notificationExtensionSubscription.openSubscriptionSettings(context)
+          await notificationExtensionSubscription.openSubscriptionSettings(context)
             .then(() => {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               expect().assertFail();
