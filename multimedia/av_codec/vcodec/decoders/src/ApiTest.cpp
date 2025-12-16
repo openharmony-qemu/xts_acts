@@ -175,7 +175,7 @@ static bool CheckLevelsForProfile(int32_t profile, int32_t level)
 
 static bool CheckWmv3Profile(int32_t profile)
 {
-    if (profile == WVC3_PROFILE_SIMPLE ||
+    if (profile == WMV3_PROFILE_SIMPLE ||
         profile == WMV3_PROFILE_MAIN) {
         return true;
     } else {
