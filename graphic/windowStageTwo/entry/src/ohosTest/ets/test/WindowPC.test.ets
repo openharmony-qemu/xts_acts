@@ -2088,6 +2088,7 @@ export default function windowPCTest() {
         await promise.then(async (data) => {
           const subWindowClass = data;
           subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
+          subWindowClass.moveWindowToAsync(0,200);
           subWindowClass.showWindow();
           await sleep(1000);
           subWindowClass.on('windowWillClose', callback);
@@ -2156,6 +2157,7 @@ export default function windowPCTest() {
         await promise.then(async (data) => {
           const subWindowClass = data;
           subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
+          subWindowClass.moveWindowToAsync(0,200);
           subWindowClass.showWindow();
           await sleep(1000);
           subWindowClass.on('windowWillClose', callback);
@@ -2367,6 +2369,7 @@ export default function windowPCTest() {
           promise.then(async (data) => {
             const subWindowClass = data;
             subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
+            subWindowClass.moveWindowToAsync(0,200);
             subWindowClass.showWindow();
             await sleep(1000);
             subWindowClass.on("subWindowClose", callback);
@@ -2439,6 +2442,7 @@ export default function windowPCTest() {
           promise.then(async (data) => {
             const subWindowClass = data;
             subWindowClass.setUIContent('testability/pages/WindowTest/StartMoving');
+            subWindowClass.moveWindowToAsync(0,200);
             subWindowClass.showWindow();
             await sleep(1000);
             subWindowClass.on("subWindowClose", callback);
@@ -3182,6 +3186,7 @@ export default function windowPCTest() {
         await sleep(200);
         await subWindowClass.setUIContent("testability/pages/WindowTest/StartMoving4");
         await sleep(200);
+        subWindowClass.moveWindowToAsync(0,200);
         await subWindowClass.showWindow();
         await sleep(1000);
         let subWindowId = subWindowClass.getWindowProperties().id;
