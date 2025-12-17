@@ -170,6 +170,30 @@ export default function AVScreenCaptureRecorderTest() {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0200 end')
       done();
     })
+
+     /**
+      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0301
+      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0301
+      * @tc.desc    AvScreenCaptureRecorder
+      *               : 04.AvScreenCaptureRecorder
+      * @tc.size    MediumTest
+      * @tc.type    Performance test
+      * @tc.level   Level 1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0301 start')
+      try {
+        let id: int = 0;
+        let resultStr: string = await media.getAVScreenCaptureConfigurableParameters(id)
+        expect(resultStr).assertEqual("");
+      } catch (error: BusinessError) {
+        console.error(`getAVScreenCaptureConfigurableParameters error, error code: ${error.code}`);
+        console.error(`getAVScreenCaptureConfigurableParameters error, error message: ${error.message}`);
+        expect(error.code).assertEqual(202);
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0201 end')
+      done();
+    })
   })
 }
 
