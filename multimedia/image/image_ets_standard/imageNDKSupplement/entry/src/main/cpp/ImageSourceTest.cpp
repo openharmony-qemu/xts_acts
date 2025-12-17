@@ -19,7 +19,6 @@
 #include <multimedia/image_framework/image_source_mdk.h>
 #include <CommonUtilsTest.h>
 #include "ImageSourceTest.h"
-//#include "utils/common.h"
 #define DEFAULT_VALUE 1.0
 #define FIRST_MIDDLE_VALUE 0.5
 #define SECOND_MIDDLE_VALUE 2.0
@@ -65,8 +64,7 @@ napi_value ImageSourceCreatTest(napi_env env, napi_callback_info info)
     ops.pixelFormat = 0;
     ops.size.height = 0;
     ops.size.width = 0;
-    int32_t res;
-    res = OH_ImageSource_Create(env, src, &ops, &imageSource);
+    int32_t res = OH_ImageSource_Create(env, src, &ops, &imageSource);
     napi_value ret;
     napi_create_int32(env, res, &ret);
     return ret;
@@ -83,8 +81,7 @@ napi_value ImageSourceGetSupportedFormatsTest(napi_env env, napi_callback_info i
     char* format = nullptr;
     size_t size = 0;
     };
-    int32_t res;
-    res = OH_ImageSource_GetSupportedFormats(nullptr);
+    int32_t res = OH_ImageSource_GetSupportedFormats(nullptr);
     napi_value ret;
     napi_create_int32(env, res, &ret);
     return ret;
@@ -102,8 +99,7 @@ napi_value ImageSourceCreateIncrementalTest(napi_env env, napi_callback_info inf
     ops.pixelFormat = 0;
     ops.size.height = 0;
     ops.size.width = 0;
-    int32_t res;
-    res = OH_ImageSource_CreateIncremental(env, nullptr, &ops, nullptr);
+    int32_t res = OH_ImageSource_CreateIncremental(env, nullptr, &ops, nullptr);
     napi_value ret;
     napi_create_int32(env, res, &ret);
     return ret;

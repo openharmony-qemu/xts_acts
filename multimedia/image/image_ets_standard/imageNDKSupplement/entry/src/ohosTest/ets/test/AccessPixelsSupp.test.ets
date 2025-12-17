@@ -42,7 +42,7 @@ export default function AccessPixelsSuppTest() {
      * @tc.type     Function
      * @tc.level    Level 1
      */
-    it('SUB_IMAGE_ACCESS_PIXELS_SUPP_0100', Level.LEVEL0, () => {
+    it('SUB_IMAGE_ACCESS_PIXELS_SUPP_0001', Level.LEVEL0, () => {
       console.info(TAG,'Start',);
       let result: number = testNapi.TestAccessPixels(0);
       console.info(TAG,'Success',JSON.stringify(result));

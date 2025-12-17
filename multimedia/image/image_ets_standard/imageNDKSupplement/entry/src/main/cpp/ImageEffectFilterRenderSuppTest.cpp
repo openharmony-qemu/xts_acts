@@ -41,7 +41,7 @@
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
-#define IMAGE_NULLSTRING "" 
+#define IMAGE_NULLSTRING ""
 
 #define CASE_INDEX_1 1
 #define CASE_INDEX_2 2
@@ -84,9 +84,8 @@ ImageEffect_FilterDelegate getFilterDelegate()
     filterDelegate.setValue = [](OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value) {
         return true;
     };
-    filterDelegate.render = [](OH_EffectFilter *filter, OH_EffectBufferInfo *info, OH_EffectFilterDelegate_PushData pushData) {
-        return true;
-    };
+    filterDelegate.render = [](OH_EffectFilter *filter, OH_EffectBufferInfo *info,
+                               OH_EffectFilterDelegate_PushData pushData) { return true; };
     filterDelegate.save = [](OH_EffectFilter *filter, char **info) {
         return true;
     };

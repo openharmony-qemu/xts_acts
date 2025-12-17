@@ -36,6 +36,14 @@
 #define CASE_INDEX_4 4
 #define CASE_INDEX_5 5
 #define CASE_INDEX_6 6
+
+#define OPTION_WIDTH_SMALL 4
+#define OPTION_HEIGHT_SMALL 6
+#define OPTION_PIXEL_FORMAT_SMALL 3
+#define OPTION_ALPHA_ZERO 0
+#define OPTION_SET_WIDTH 6
+#define OPTION_SET_HEIGHT 4
+
 namespace {
     constexpr size_t SIZE_ZERO = 0;
     constexpr size_t SIZE_ONE = 1;
@@ -57,24 +65,25 @@ typedef struct {
     uint32_t height;
 };
 static std::string outImagePath;
-napi_value CreatePixelMapSuppTest(napi_env env, napi_callback_info info) {
+napi_value CreatePixelMapSuppTest(napi_env env, napi_callback_info info)
+{
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
 
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 3;
-    createOps.alphaType = 0;
+    createOps.width = OPTION_WIDTH_SMALL;
+    createOps.height = OPTION_HEIGHT_SMALL;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT_SMALL;
+    createOps.alphaType = OPTION_ALPHA_ZERO;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
 
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
     int32_t res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
     free(buff);
@@ -96,8 +105,7 @@ napi_value TestAccessPixels(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
     
     void* addrPtr = nullptr;
-    int32_t res;
-    res = OHOS::Media::OH_AccessPixels(env, CreatePixelMapSuppTest( env,  info), &addrPtr);
+    int32_t res = OHOS::Media::OH_AccessPixels(env, CreatePixelMapSuppTest(env, info), &addrPtr);
     napi_value ret;
     napi_create_int32(env, res, &ret);
     return ret;
@@ -114,8 +122,7 @@ napi_value TestUnAccessPixels(napi_env env, napi_callback_info info)
 
     napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
     
-    int32_t res;
-    res = OHOS::Media::OH_UnAccessPixels(env, CreatePixelMapSuppTest( env,  info));
+    int32_t res = OHOS::Media::OH_UnAccessPixels(env, CreatePixelMapSuppTest(env, info));
     napi_value ret;
     napi_create_int32(env, res, &ret);
     return ret;
@@ -140,7 +147,8 @@ napi_value PixelmapNativeGetNativeBuffer(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value TestImageScale(napi_env env, napi_callback_info info) {
+napi_value TestImageScale(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -155,8 +163,8 @@ napi_value TestImageScale(napi_env env, napi_callback_info info) {
     OH_Pixelmap_InitializationOptions *createOpts;
     OH_PixelmapInitializationOptions_Create(&createOpts);
 
-    OH_PixelmapInitializationOptions_SetWidth(createOpts, 6);
-    OH_PixelmapInitializationOptions_SetHeight(createOpts, 4);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_SET_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_SET_HEIGHT);
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *srcPixelmap = nullptr;
@@ -181,7 +189,7 @@ napi_value TestImageScale(napi_env env, napi_callback_info info) {
     if (dstPixelmap != nullptr) {
         OH_PixelmapNative_Release(dstPixelmap);
     }
-    if (srcPixelmap != nullptr && srcPixelmap != dstPixelmap) { 
+    if (srcPixelmap != nullptr && srcPixelmap != dstPixelmap) {
         OH_PixelmapNative_Release(srcPixelmap);
     }
     OH_PixelmapInitializationOptions_Release(createOpts);
@@ -192,7 +200,8 @@ napi_value TestImageScale(napi_env env, napi_callback_info info) {
 
 Image_PositionArea* ImagePositionArea_Create(uint32_t regionX, uint32_t regionY,
                                              uint32_t regionWidth, uint32_t regionHeight,
-                                             uint32_t srcImageWidth, uint32_t srcImageHeight) {
+                                             uint32_t srcImageWidth, uint32_t srcImageHeight)
+{
     if (regionX + regionWidth > srcImageWidth || regionY + regionHeight > srcImageHeight ||
         regionWidth == 0 || regionHeight == 0) {
         std::cerr << "ImagePositionArea_Create: invalid region (out of bounds or zero size)" << std::endl;
@@ -227,7 +236,8 @@ Image_PositionArea* ImagePositionArea_Create(uint32_t regionX, uint32_t regionY,
     return area;
 }
 
-void ImagePositionArea_Destroy(Image_PositionArea* area) {
+void ImagePositionArea_Destroy(Image_PositionArea* area)
+{
     if (area == nullptr) {
         return;
     }
@@ -237,7 +247,8 @@ void ImagePositionArea_Destroy(Image_PositionArea* area) {
     }
     free(area);
 }
-OH_PixelmapNative* OH_PixelmapNative_CreateBGRA(uint32_t width, uint32_t height) {
+OH_PixelmapNative* OH_PixelmapNative_CreateBGRA(uint32_t width, uint32_t height)
+{
     if (width == 0 || height == 0) {
         std::cerr << "OH_PixelmapNative_CreateBGRA: width/height is zero" << std::endl;
         return nullptr;
@@ -251,8 +262,8 @@ OH_PixelmapNative* OH_PixelmapNative_CreateBGRA(uint32_t width, uint32_t height)
     OH_Pixelmap_InitializationOptions *createOpts;
     OH_PixelmapInitializationOptions_Create(&createOpts);
 
-    OH_PixelmapInitializationOptions_SetWidth(createOpts, 6);
-    OH_PixelmapInitializationOptions_SetHeight(createOpts, 4);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_SET_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_SET_HEIGHT);
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_BGRA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelmap = nullptr;
@@ -260,19 +271,18 @@ OH_PixelmapNative* OH_PixelmapNative_CreateBGRA(uint32_t width, uint32_t height)
     
     return pixelmap;
 }
-Image_ErrorCode PixelmapNativeWritePixelsToArea() {
+Image_ErrorCode PixelmapNativeWritePixelsToArea()
+{
     OH_PixelmapNative *pixelmap = OH_PixelmapNative_CreateBGRA(1080, 1920);
-    
     Image_PositionArea *area = ImagePositionArea_Create(10, 10, 100, 200, 1080, 1920);
-    
     Image_ErrorCode result = OH_PixelmapNative_WritePixelsToArea(pixelmap, area);
     
     ImagePositionArea_Destroy(area);
     result = IMAGE_SUCCESS;
-
     return result;
 }
-int main() {
+int main()
+{
     Image_ErrorCode result = PixelmapNativeWritePixelsToArea();
     if (result == IMAGE_SUCCESS) {
         std::cout << "OH_PixelmapNative_WritePixelsToArea: success (return IMAGE_SUCCESS)" << std::endl;
@@ -282,7 +292,8 @@ int main() {
     return 0;
 }
 
-napi_value PixelmapNativeWritePixelsToArea(napi_env env, napi_callback_info info) {
+napi_value PixelmapNativeWritePixelsToArea(napi_env env, napi_callback_info info)
+{
     
     Image_ErrorCode result = PixelmapNativeWritePixelsToArea();
     

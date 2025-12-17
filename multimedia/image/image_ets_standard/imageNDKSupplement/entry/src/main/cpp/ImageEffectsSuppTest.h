@@ -34,4 +34,4 @@ napi_value OHImageEffectSetOutputUriSupp(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif
-#endif 
+#endif
