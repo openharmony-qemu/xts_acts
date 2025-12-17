@@ -67,3 +67,5 @@ export const gridOnScrollBarUpdateTest: (a: string) => void;
 export const gridOnWillScrollTest: (a: string) => void;
 
 export const clipShapeTest: (a: string) => void;
+
+export const CreateCustomMarkDirtyNativeRoot: (content: NodeContent, tag: string) => void;
