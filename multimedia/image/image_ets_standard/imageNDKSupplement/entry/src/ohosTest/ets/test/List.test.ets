@@ -27,6 +27,8 @@ import OHImagePixelMapCreateTest from './ImagePixelMapCreateTest.test';
 import OHImagePackerCreateTest from './OHImagePackerCreateTest.test';
 import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
+import AccessPixelsSuppTest from './AccessPixelsSupp.test';
+import ImageSourceSuppTest from './ImageSourceSupp.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -44,4 +46,6 @@ export default function testsuite() {
   OHImagePackerCreateTest()
   OHImagePixelMapCreateTest();
   ImageEffectsSuppTest();
+  AccessPixelsSuppTest();
+  ImageSourceSuppTest();
 }

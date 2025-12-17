@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImagePixelMapTest.h"
 #include "napi/native_api.h"
@@ -30,6 +31,7 @@
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImageEffectsSuppTest.h"
+#include "ImageSourceTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -102,6 +104,16 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectSetOutputPixelmapSupp", OHImageEffectSetOutputPixelmapSupp),
     DESCRIPTOR("OHImageEffectSetInputUriSupp", OHImageEffectSetInputUriSupp),
     DESCRIPTOR("OHImageEffectSetOutputUriSupp", OHImageEffectSetOutputUriSupp),
+    DESCRIPTOR("TestAccessPixels", TestAccessPixels),
+    DESCRIPTOR("TestUnAccessPixels", TestUnAccessPixels),
+    DESCRIPTOR("ImageSourceCreatTest", ImageSourceCreatTest),
+    DESCRIPTOR("ImageSourceGetSupportedFormatsTest", ImageSourceGetSupportedFormatsTest),
+    DESCRIPTOR("ImageSourceCreateIncrementalTest", ImageSourceCreateIncrementalTest),
+    DESCRIPTOR("ImageSourceInitNativeSuppTest", ImageSourceInitNativeSuppTest),
+    DESCRIPTOR("PixelmapNativeGetNativeBuffer", PixelmapNativeGetNativeBuffer),
+    DESCRIPTOR("TestImageScale", TestImageScale),
+    DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
+    DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
