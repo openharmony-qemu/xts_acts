@@ -80,12 +80,6 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sepia is: " + JSON.parse(strJson1)?.$attrs?.sepia);
       console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson1)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson1)?.$attrs?.lightUpEffect);
-      expect(JSON.parse(strJson1)?.$attrs?.contrast).assertEqual(0);
-      expect(JSON.parse(strJson1)?.$attrs?.grayscale).assertEqual(0);
-      expect(JSON.parse(strJson1)?.$attrs?.saturate).assertEqual(0);
-      expect(JSON.parse(strJson1)?.$attrs?.sepia).assertEqual(0);
-      expect(JSON.parse(strJson1)?.$attrs?.sphericalEffect).assertEqual(0);
-      expect(JSON.parse(strJson1)?.$attrs?.lightUpEffect).assertEqual(0);
 
       let strJson2 = getInspectorByKey('imageId2');
       console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson2)));
@@ -95,12 +89,6 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sepia is: " + JSON.parse(strJson2)?.$attrs?.sepia);
       console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson2)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson2)?.$attrs?.lightUpEffect);
-      expect(JSON.parse(strJson2)?.$attrs?.contrast).assertEqual(0);
-      expect(JSON.parse(strJson2)?.$attrs?.grayscale).assertEqual(0);
-      expect(JSON.parse(strJson2)?.$attrs?.saturate).assertEqual(0);
-      expect(JSON.parse(strJson2)?.$attrs?.sepia).assertEqual(0);
-      expect(JSON.parse(strJson2)?.$attrs?.sphericalEffect).assertEqual(0);
-      expect(JSON.parse(strJson2)?.$attrs?.lightUpEffect).assertEqual(0);
 
       let strJson3 = getInspectorByKey('imageId3');
       console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson3)));
@@ -110,12 +98,6 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sepia is: " + JSON.parse(strJson3)?.$attrs?.sepia);
       console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson3)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson3)?.$attrs?.lightUpEffect);
-      expect(JSON.parse(strJson3)?.$attrs?.contrast).assertEqual(10);
-      expect(JSON.parse(strJson3)?.$attrs?.grayscale).assertEqual(1);
-      expect(JSON.parse(strJson3)?.$attrs?.saturate).assertEqual(50);
-      expect(JSON.parse(strJson3)?.$attrs?.sepia).assertEqual(0);
-      expect(JSON.parse(strJson3)?.$attrs?.sphericalEffect).assertEqual(1);
-      expect(JSON.parse(strJson3)?.$attrs?.lightUpEffect).assertEqual(1);
 
       let strJson4 = getInspectorByKey('imageId4');
       console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson4)));
@@ -124,6 +106,34 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson4)?.$attrs?.saturate);
       console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson4)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson4)?.$attrs?.lightUpEffect);
+
+      let strJson5 = getInspectorByKey('imageId5');
+      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson5)));
+      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson5)?.$attrs?.contrast);
+      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson5)?.$attrs?.grayscale);
+      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson5)?.$attrs?.saturate);
+
+      expect(JSON.parse(strJson1)?.$attrs?.contrast).assertEqual(0);
+      expect(JSON.parse(strJson1)?.$attrs?.grayscale).assertEqual(0);
+      expect(JSON.parse(strJson1)?.$attrs?.saturate).assertEqual(0);
+      expect(JSON.parse(strJson1)?.$attrs?.sepia).assertEqual(0);
+      expect(JSON.parse(strJson1)?.$attrs?.sphericalEffect).assertEqual(0);
+      expect(JSON.parse(strJson1)?.$attrs?.lightUpEffect).assertEqual(0);
+
+      expect(JSON.parse(strJson2)?.$attrs?.contrast).assertEqual(0);
+      expect(JSON.parse(strJson2)?.$attrs?.grayscale).assertEqual(0);
+      expect(JSON.parse(strJson2)?.$attrs?.saturate).assertEqual(0);
+      expect(JSON.parse(strJson2)?.$attrs?.sepia).assertEqual(0);
+      expect(JSON.parse(strJson2)?.$attrs?.sphericalEffect).assertEqual(0);
+      expect(JSON.parse(strJson2)?.$attrs?.lightUpEffect).assertEqual(0);
+
+      expect(JSON.parse(strJson3)?.$attrs?.contrast).assertEqual(10);
+      expect(JSON.parse(strJson3)?.$attrs?.grayscale).assertEqual(1);
+      expect(JSON.parse(strJson3)?.$attrs?.saturate).assertEqual(50);
+      expect(JSON.parse(strJson3)?.$attrs?.sepia).assertEqual(0);
+      expect(JSON.parse(strJson3)?.$attrs?.sphericalEffect).assertEqual(1);
+      expect(JSON.parse(strJson3)?.$attrs?.lightUpEffect).assertEqual(1);
+
       expect(JSON.parse(strJson4)?.$attrs?.contrast).assertEqual(9);
       expect(JSON.parse(strJson4)?.$attrs?.grayscale).assertEqual(1);
       expect(JSON.parse(strJson4)?.$attrs?.saturate).assertEqual(49);
@@ -131,11 +141,6 @@ export default function ContrastTest() {
       expect(JSON.parse(strJson4)?.$attrs?.sphericalEffect).assertEqual(0);
       expect(JSON.parse(strJson4)?.$attrs?.lightUpEffect).assertEqual(1);
 
-      let strJson5 = getInspectorByKey('imageId5');
-      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson5)));
-      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson5)?.$attrs?.contrast);
-      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson5)?.$attrs?.grayscale);
-      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson5)?.$attrs?.saturate);
       expect(JSON.parse(strJson5)?.$attrs?.contrast).assertEqual(11);
       expect(JSON.parse(strJson5)?.$attrs?.grayscale).assertEqual(0);
       expect(JSON.parse(strJson5)?.$attrs?.saturate).assertEqual(1);
