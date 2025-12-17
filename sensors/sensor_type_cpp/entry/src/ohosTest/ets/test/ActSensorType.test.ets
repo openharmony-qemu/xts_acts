@@ -1185,7 +1185,7 @@ export default function sensorTypeNdkTest() {
      */
     it('SUB_Sensor_NDK_Sensor_Result_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
-        let result: number = sensor.Sensor_Result_0100();
+        let result: number = sensor.sensor_Result_0100();
         console.info(`====>SUB_Sensor_NDK_Sensor_Result_0100 result: ${result}`);
         expect(result == 1).assertTrue()
         done();
