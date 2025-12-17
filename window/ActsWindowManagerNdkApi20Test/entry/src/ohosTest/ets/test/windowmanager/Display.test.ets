@@ -22,6 +22,7 @@ const DISPLAY_MANAGER_ERROR_NO_PERMISSION = 201;
 const DISPLAY_MANAGER_ERROR_INVALID_PARAM = 401;
 const DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED = 801;
 const DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL = 1400003;
+const DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM = 1400004;
 
 export default function DisplayTest() {
   describe('DisplayTest', () => {
@@ -80,13 +81,20 @@ export default function DisplayTest() {
      */
     it('testCaptureScreenPixelmapBoundaryValue', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testCaptureScreenPixelmapBoundaryValue'
+      let caseName = 'testCaptureScreenPixelmapBoundaryValue';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
       try {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testCaptureScreenPixelmapBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        if (isSupport) {
+          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+          expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        } else {
+          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
+          expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
+        }
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -110,9 +118,9 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testCreateDisplayByIdBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-        // expect(Result[2]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
+        expect(Result[2]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -136,7 +144,7 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testUnregisterAvailableAreaChangeListenerBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -160,8 +168,8 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testCreateAvailableAreaBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+        expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -185,7 +193,7 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testUnregisterDisplayAddListenerBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -209,7 +217,7 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testUnregisterDisplayRemoveListenerBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -233,8 +241,8 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testGetDisplaySourceModeBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+        expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);
@@ -258,8 +266,8 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testGetDisplayPositionBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
+        expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_ILLEGAL_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + err);

@@ -1244,6 +1244,8 @@ export default function WindowTest() {
     it('testGetMainWindowSnapshot', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetMainWindowSnapshot';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
       try {
         console.info(`====>${caseName} start<====`);
         let windowClass = windowStage.getMainWindowSync();
@@ -1251,7 +1253,11 @@ export default function WindowTest() {
         console.info(`====>${caseName} windowId: ${windowId}`);
         let Result: Array<number> = windowndkapi20.testGetMainWindowSnapshot(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
+        if (isSupport) {
+          expect(Result[0]).assertEqual(OK);
+        } else {
+          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
+        }
         // expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
         // expect(Result[2]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
         // expect(Result[3]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
@@ -1281,8 +1287,8 @@ export default function WindowTest() {
         console.info(`====>${caseName} windowId: ${windowId}`);
         let Result: Array<number> = windowndkapi20.testLockCursor(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
@@ -1309,8 +1315,8 @@ export default function WindowTest() {
         console.info(`====>${caseName} windowId: ${windowId}`);
         let Result: Array<number> = windowndkapi20.testUnlockCursor(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        // expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
-        // expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
