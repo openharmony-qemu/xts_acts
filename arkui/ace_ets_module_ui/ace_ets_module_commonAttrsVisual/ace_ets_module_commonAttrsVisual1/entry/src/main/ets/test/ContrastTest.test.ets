@@ -71,7 +71,7 @@ export default function ContrastTest() {
     it('ContrastTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ContrastTest_0100 START');
       let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('imageContrastId1');
       console.info("[ContrastTest_0100] obj1 is: " + JSON.stringify(JSON.parse(strJson1)));
       console.info("[ContrastTest_0100] contrast1 is: " + JSON.parse(strJson1)?.$attrs?.contrast);
