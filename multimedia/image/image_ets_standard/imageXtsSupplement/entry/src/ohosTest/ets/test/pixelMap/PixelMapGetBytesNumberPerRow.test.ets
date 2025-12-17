@@ -40,7 +40,7 @@ async function getBytesNumberPerRowTest(done: Function, testName: string, array:
 }
 
 async function getArrayBufferByUri(testContext: common.UIAbilityContext, pathUri: string): Promise<ArrayBuffer> {
-  let array = new ArrayBuffer(300000000);
+  let array = new ArrayBuffer(3000);
   let path = `file://${testContext.filesDir}/${pathUri}`;
   const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
   let readLength = await fs.read(fd.fd, array);
