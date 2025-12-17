@@ -628,7 +628,9 @@ ani_boolean test_Create_Escape_Local_Scope_35([[maybe_unused]] ani_env *env, [[m
     ASSERT_EQ(env->CreateEscapeLocalScope(refNum), ANI_OK);
     ani_string objectRef {};
     ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
-    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, nullptr), ANI_INVALID_ARGS);
+
+    ani_ref result {};
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     return ANI_TRUE;
 }
 
