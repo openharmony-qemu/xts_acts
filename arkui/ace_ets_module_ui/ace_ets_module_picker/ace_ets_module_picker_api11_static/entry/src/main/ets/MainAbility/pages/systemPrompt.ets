@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import prompt from '@system.prompt';
 import promptAction from '@ohos.promptAction'
-import { ShowDialogSuccessResponse } from '@system.prompt';
 import { Entry, Component, Column, Text, Rating, Margin, Button, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 @Entry

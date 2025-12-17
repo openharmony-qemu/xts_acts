@@ -15,7 +15,7 @@
  */
 import hilog from '@ohos.hilog';
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, Image, TextPicker, Button, ClickEvent } from '@ohos.arkui.component';
+import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, TextPickerDialogOptions,Image, TextPicker, Button, ClickEvent } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -127,7 +127,7 @@ struct TextPickerSec {
               onChange: (value: TextPickerResult) => {
                 console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
               }
-            })
+            } as TextPickerDialogOptions)
           })
       }
       .width('100%')

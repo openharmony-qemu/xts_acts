@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,$rawfile,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
+  Entry,Component,$r,$rawfile,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,TransitionEffect,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,Padding, TransitionType, TransitionEffect,Date,NavigationCommonTitle,NavDestinationCommonTitle
@@ -65,7 +65,7 @@ struct TransitionExample {
           } catch (err) {
             console.info("transitionTest_0200 emit action state err: " + JSON.stringify((err as BusinessError).message))
           }
-          animateTo({ duration: 3000 }, () => {
+          this.getUIContext()?.animateTo({ duration: 3000 }, () => {
             this.btn1 = !this.btn1
             if (this.btn1) {
               this.show = "hide"

@@ -32,8 +32,7 @@ struct pageA {
         }).id('skip_B')
 
         Text('' + this.getUIContext().getRouter().getState().name).id('pageA_name')
-        // Text('' + this.getUIContext().getRouter().getLength()).id('pageA_length')
-        Text('' ).id('pageA_length')
+        Text('' + this.getUIContext().getRouter().getLength()).id('pageA_length')
       }
       .width('100%')
     }

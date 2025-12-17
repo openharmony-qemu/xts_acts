@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,NavPathInfo,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,NavPathInfo,
   NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,NavigationTransitionProxy,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, NavContentInfo,NavigationOperation,NavigationAnimatedTransition
@@ -48,17 +48,17 @@ struct navigationApi1{
     CustomTransition.getInstance().registerNavParam('Index',(isPush:boolean, onFinish: ()=> void, isexit:boolean, isPop:boolean) => {
       if (isexit && isPop == false) {
         this.opacity1 = 0
-        animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
+        this.getUIContext()?.animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
           this.opacity1 = 1
         })
       }else if (isPush && isPop == false){
         this.opacity1 = 0
-        animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
+        this.getUIContext()?.animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
           this.opacity1 = 1
         })
       }else if (isPop){
         this.opacity1 = 0
-        animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
+        this.getUIContext()?.animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
           this.opacity1 = 1
         })
       }
@@ -131,17 +131,17 @@ export  struct  pageOne{
     CustomTransition.getInstance().registerNavParam('Index',(isPush:boolean, onFinish: ()=> void, isexit:boolean, isPop:boolean) => {
       if (isexit && isPop == false) {
         this.opacity1 = 0
-        animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
+        this.getUIContext()?.animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
           this.opacity1 = 1
         })
       }else if (isPush && isPop == false){
         this.opacity1 = 0
-        animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
+        this.getUIContext()?.animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
           this.opacity1 = 1
         })
       }else if (isPop){
         this.opacity1 = 0
-        animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
+        this.getUIContext()?.animateTo({duration: durationOne, onFinish:onFinish} as AnimateParam, () => {
           this.opacity1 = 1
         })
       }
