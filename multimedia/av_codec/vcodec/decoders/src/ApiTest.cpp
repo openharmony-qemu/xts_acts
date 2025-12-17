@@ -568,8 +568,7 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0011, TestSize.Level1)
  * @tc.level  LEVEL1
  */
 HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0012, TestSize.Level1)
-{   
-
+{
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3,
     false, SOFTWARE);
     if (capability != nullptr) {
