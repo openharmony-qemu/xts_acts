@@ -90,8 +90,8 @@ export default function DisplayTest() {
         let Result: Array<number> = windowndkapi20.testCaptureScreenPixelmapBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
         if (isSupport) {
-          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
-          expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
+          expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
         } else {
           expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
           expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);

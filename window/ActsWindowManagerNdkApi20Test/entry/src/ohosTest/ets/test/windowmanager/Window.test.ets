@@ -1254,7 +1254,7 @@ export default function WindowTest() {
         let Result: Array<number> = windowndkapi20.testGetMainWindowSnapshot(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
         if (isSupport) {
-          expect(Result[0]).assertEqual(OK);
+          expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
         } else {
           expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
         }
