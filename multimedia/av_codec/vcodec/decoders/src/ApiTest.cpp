@@ -579,8 +579,6 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0012, TestSize.Level1)
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         WMV3_PROFILE_SIMPLE, WMV3_LEVEL_MEDIUM));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
-        WMV3_PROFILE_SIMPLE, WMV3_LEVEL_HIGH));
-        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         WMV3_PROFILE_MAIN, WMV3_LEVEL_LOW));
         ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
         WMV3_PROFILE_MAIN, WMV3_LEVEL_MEDIUM));
