@@ -217,10 +217,10 @@ static napi_value SetFileSyncStates(napi_env env, napi_callback_info info)
 
     char* path1 = "/storage/Users/currentUser/111.txt";
     char* path2 = "/storage/Users/currentUser/222.txt";
-    char* path2 = "/storage/Users/currentUser/333.txt";
-    char* path2 = "/storage/Users/currentUser/444.txt";
-    char* path2 = "/storage/Users/currentUser/555.txt";
-    char* path2 = "/storage/Users/currentUser/666.txt";
+    char* path3 = "/storage/Users/currentUser/333.txt";
+    char* path4 = "/storage/Users/currentUser/444.txt";
+    char* path5 = "/storage/Users/currentUser/555.txt";
+    char* path6 = "/storage/Users/currentUser/666.txt";
     CloudDisk_FileSyncState fileSyncStates[] = {
         {
             {
