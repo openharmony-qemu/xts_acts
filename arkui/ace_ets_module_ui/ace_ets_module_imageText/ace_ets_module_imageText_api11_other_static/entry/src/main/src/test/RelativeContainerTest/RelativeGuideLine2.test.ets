@@ -58,9 +58,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function RelativeGuideLine2() {
   describe('RelativeGuideLine2', () => {
     beforeAll(async () => {
-      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -70,7 +68,7 @@ export default function RelativeGuideLine2() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get RelativeGuideLine2 state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/RelativeContainer/RelativeGuideLine2" == pages.name)) {
+        if (!("RelativeGuideLine2" == pages.name)) {
           console.info("get RelativeGuideLine2 pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl({url:"MainAbility/pages/RelativeContainer/RelativeGuideLine2"});

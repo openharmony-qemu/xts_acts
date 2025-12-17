@@ -57,7 +57,7 @@ export default function timePickerThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
+
     })
 
     beforeEach(() => {
@@ -69,27 +69,27 @@ export default function timePickerThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TimePickerPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(timePickerThemeProperty);
-            themeSet = AppStorage.get<boolean>(timePickerThemeSetProperty)
+            localTheme = AppStorage.get<CustomTheme>(`timePickerThemeProperty`);
+            themeSet = AppStorage.get<boolean>(`timePickerThemeSetProperty`)
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
-      AppStorage.setOrCreate(timePickerThemeSetProperty, themeSet)
+      AppStorage.setOrCreate(`timePickerThemeSetProperty`, themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(timePickerThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(`timePickerThemeProperty`))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(timePickerThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`timePickerThemeProperty`, greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(timePickerThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`timePickerThemeProperty`, redCustomTheme);
         }
       }
       localTheme =
-        AppStorage.get<boolean>(timePickerThemeSetProperty) ? AppStorage.get<CustomTheme>(timePickerThemeProperty) :
+        AppStorage.get<boolean>(`timePickerThemeSetProperty`) ? AppStorage.get<CustomTheme>(`timePickerThemeProperty`) :
           undefined;
       changeTheme = false;
     });
@@ -144,7 +144,7 @@ export default function timePickerThemeTest() {
         checkWithTheme(undefined, key, key.search(`CustomAttrs`) > 0, colorValues)
       })
       themeSet = true
-      AppStorage.setOrCreate(timePickerIsMilitaryProperty, true);
+      AppStorage.setOrCreate(`timePickerIsMilitaryProperty`, true);
       console.info(`${SUITE} ${CASE} END`)
       done();
     });
@@ -186,7 +186,7 @@ export default function timePickerThemeTest() {
         }
       })
       themeSet = false
-      AppStorage.setOrCreate(timePickerIsMilitaryProperty, false)
+      AppStorage.setOrCreate(`timePickerIsMilitaryProperty`, false)
       console.info(`${SUITE} ${CASE} END`)
       done();
     });
@@ -199,7 +199,7 @@ export default function timePickerThemeTest() {
         checkWithTheme(undefined, key, key.search(`CustomAttrs`) > 0, colorValues)
       })
       themeSet = false
-      AppStorage.setOrCreate(timePickerIsMilitaryProperty, false)
+      AppStorage.setOrCreate<boolean>(`timePickerIsMilitaryProperty`, false)
       console.info(`${SUITE} ${CASE} END`)
       done();
     });

@@ -37,7 +37,7 @@ import {
   Axis,AlertDialogParamWithButtons,$r,DialogAlignment,DialogButtonStyle,DialogAlignment,
   Margin,TransitionEffect,FlexAlign,TransitionEdge,AlertDialogParamWithConfirm,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TipsOptions
 } from '@ohos.arkui.component';
 import {
   State,
@@ -58,7 +58,7 @@ struct bindTips2 {
           disappearingTime: undefined,
           appearingTimeWithContinuousOperation: undefined,
           disappearingTimeWithContinuousOperation: undefined,
-        })
+        } as TipsOptions)
     }
   }
 }

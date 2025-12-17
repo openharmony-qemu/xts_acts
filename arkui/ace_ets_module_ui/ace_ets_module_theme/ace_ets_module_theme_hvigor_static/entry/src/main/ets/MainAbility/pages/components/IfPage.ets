@@ -32,7 +32,7 @@ import {
   Text,
   WithTheme
 } from '@ohos.arkui.component'
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
 
 export const ifThemeProperty: string = `IfThemeProperty`;
@@ -49,8 +49,8 @@ export class IfKeys {
 @Entry
 @Component
 struct IfPage {
-  @StorageLink(ifThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
-  @StorageLink(ifArgumentProperty) argument: boolean = true
+  @StoragePropRef(ifThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
+  @StoragePropRef(ifArgumentProperty) argument: boolean = true
 
   build() {
     Column() {

@@ -41,12 +41,14 @@ export default function setDefaultThemeTest() {
   const SUITE: string = 'SetDefaultTheme';
   let themeLocal: CustomTheme | undefined = undefined;
   let changeTheme: boolean = false;
+  // 1.1是导入的 导入会引发运行时错误
+  const defaultThemeProperty: string = 'DefaultThemeProperty';
 
   describe('ActsSetDefaultThemeTest', () => {
     beforeAll(async () => {
       console.info('ActsSetDefaultThemeTest startAbility');
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     })
     beforeEach(() => {
       try {
@@ -55,27 +57,25 @@ export default function setDefaultThemeTest() {
         };
         const routerInstance = AppStorage.get<Router>("router") as Router
         const pages: router.RouterState = routerInstance.getState();
-        if (pages?.name !== "MainAbility/pages/themeTokensPages/SetDefaultThemeTestPage") {
+        if (pages?.name !== "SetDefaultThemeTestPage") {
           routerInstance.pushUrl(options).then(() => {
             themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           });
-          
+          await UtilsTest.msSleep(4000)
         }
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-
-      if (changeTheme) {
-        // if ((AppStorage.get<CustomTheme>(defaultThemeProperty))?.colors?.fontEmphasize
-        //   == redCustomTheme?.colors?.fontEmphasize) {
-        //   ThemeControl.setDefaultTheme(greenCustomTheme);
-        // } else {
-          ThemeControl.setDefaultTheme(redCustomTheme);
-        // }
-        // themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
-        // changeTheme = false;
+      if (!changeTheme) return;
+      if ((AppStorage.get<CustomTheme>(defaultThemeProperty as string))?.colors?.fontEmphasize
+        == redCustomTheme?.colors?.fontEmphasize) {
+        ThemeControl.setDefaultTheme(greenCustomTheme);
+      } else {
+        ThemeControl.setDefaultTheme(redCustomTheme);
       }
+      themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
+      changeTheme = false;
     })
 
     afterAll(() => {
@@ -83,13 +83,13 @@ export default function setDefaultThemeTest() {
       router.back()
     });
 
-    
-        
-        /*
-     * @tc.number   ActsSetDefaultThemeColors_static_0100
-     * @tc.name     ActsSetDefaultThemeColors_static_0100
-     * @tc.desc     ActsSetDefaultThemeColors_static_0100
-     * @tc.level    Level.LEVEL2
+    /**
+     * @tc.number    : ActsSetDefaultThemeColors_static_0100
+     * @tc.name      : ActsSetDefaultThemeColors_static_0100
+     * @tc.desc      : Check initial theme values use API setDefaultTheme
+     * @tc.level     : Level 2
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
      */
     it('ActsSetDefaultThemeColors_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = 'ActsSetDefaultThemeColors_0100';
@@ -113,13 +113,13 @@ export default function setDefaultThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
       done();
     });
-    
-        
-        /*
-     * @tc.number   ActsSetDefaultThemeColors_static_0200
-     * @tc.name     ActsSetDefaultThemeColors_static_0200
-     * @tc.desc     ActsSetDefaultThemeColors_static_0200
-     * @tc.level    Level.LEVEL2
+    /**
+     * @tc.number    : ActsSetDefaultThemeColors_static_0200
+     * @tc.name      : ActsSetDefaultThemeColors_static_0200
+     * @tc.desc      : Check changed theme values using API setDefaultTheme
+     * @tc.level     : Level 2
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
      */
     it('ActsSetDefaultThemeColors_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const CASE: string = 'ActsSetDefaultThemeColors_0200';
@@ -127,18 +127,18 @@ export default function setDefaultThemeTest() {
       const checkValues = (Object.values(greenThemeColors) as Object as string[]);
       const themeKeys: string[] = themeLocal?.colors === undefined ?
         [] : Object.keys(themeLocal!.colors!);
-      const themeValues: string[] = themeLocal?.colors === undefined ?
-        [] : (Object.values(themeLocal!.colors!) as Object as string[]);
+      const themeValues: Resource[] = themeLocal?.colors === undefined ?
+        [] : (Object.values(themeLocal!.colors!) as Object as Resource[]);
       const checkMap: Map<string, string> = new Map<string, string>();
-      const themeMap: Map<string, string> = new Map<string, string>();
+      const themeMap: Map<string, Resource> = new Map<string, Resource>();
       fillMap<string>(checkMap, checkKeys, checkValues);
-      fillMap<string>(themeMap, themeKeys, themeValues);
+      fillMap<Resource>(themeMap, themeKeys, themeValues);
+      console.log('test DefaultTheme themeMap : ' + JSON.stringify(themeMap))
+      console.log('test DefaultTheme checkMap : ' + JSON.stringify(checkMap))
       themeMap.forEach(((value, key) => {
-        let themeToken: string;
-        themeToken = value;
+        let themeToken = (value as Resource)?.params?.[0] ?? "";
         const checkToken = checkMap.get(key);
         expect(themeToken).assertEqual(checkToken);
-        changeTheme = true;
       }));
       console.info(`${SUITE} ${CASE} END`);
       done();

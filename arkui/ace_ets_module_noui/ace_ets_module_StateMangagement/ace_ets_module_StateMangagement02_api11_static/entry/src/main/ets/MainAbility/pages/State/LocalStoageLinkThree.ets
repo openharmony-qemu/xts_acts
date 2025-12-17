@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   Entry,
   Column,
@@ -66,14 +67,14 @@ struct MyNavigationTestStack {
   @Provide({ alias:'pageInfo' }) pageInfo: NavPathStack = new NavPathStack();
   @Builder
   PageMap(name: string) {
-    if (name === 'pageOne') {
-      // 传递不同的LocalStorage实例
-      pageOneStack()
-    } else if (name === 'pageTwo') {
-      pageTwoStack()
-    } else if (name === 'pageThree') {
-      pageThreeStack()
-    }
+    // if (name === 'pageOne') {
+    //   // 传递不同的LocalStorage实例
+    //   pageOneStack({}, localStorageA)
+    // } else if (name === 'pageTwo') {
+    //   pageTwoStack({}, localStorageB)
+    // } else if (name === 'pageThree') {
+    //   pageThreeStack({}, localStorageC)
+    // }
   }
 
   build() {
@@ -90,7 +91,7 @@ struct MyNavigationTestStack {
             .id('navButton')
         }
       }.title('NavIndex')
-      .navDestination(() => {this.PageMap})
+      .navDestination(this.PageMap)
       .mode(NavigationMode.Stack)
       .borderWidth(1)
     }

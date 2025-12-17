@@ -57,10 +57,7 @@ function sleep(time: number) {
 export default function listItemJsunit() {
   describe('listItemTest', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -125,14 +122,15 @@ export default function listItemJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringifyJsonElement(obj));
       console.log(JSON.stringifyJsonElement(obj.getElement('$type')))
-      expect(obj.getElement('$type')).assertEqual('ListItem')
+      expect(obj.getString('$type')).assertEqual('ListItem')
       console.log(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')))
       console.log('ListItem2‘s sticky is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sticky')))
       console.log('ListItem2‘s editable is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editable')))
       await sleep(1)
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual('Sticky.Normal')
+      // 废弃 sticky
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual('Sticky.Normal')
       console.info('++++++++++++++++ ListItem TestCase 2 End ++++++++++++++++');
       done();
     });
@@ -150,14 +148,15 @@ export default function listItemJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringifyJsonElement(obj));
       console.log(JSON.stringifyJsonElement(obj.getElement('$type')))
-      expect(obj.getElement('$type')).assertEqual('ListItem')
+      expect(obj.getString('$type')).assertEqual('ListItem')
       console.log(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')))
       console.log('ListItem3‘s sticky is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sticky')))
       console.log('ListItem3‘s editable is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editable')))
       await sleep(1)
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual('Sticky.Opacity')
+      // 废弃 sticky
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual('Sticky.Opacity')
       console.info('++++++++++++++++ ListItem TestCase 3 End ++++++++++++++++');
       done();
     });
@@ -175,14 +174,15 @@ export default function listItemJsunit() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("get inspector value is: " + JSON.stringifyJsonElement(obj));
       console.log(JSON.stringifyJsonElement(obj.getElement('$type')))
-      expect(obj.getElement('$type')).assertEqual('ListItem')
+      expect(obj.getString('$type')).assertEqual('ListItem')
       console.log(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')))
       console.log('ListItem4‘s sticky is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sticky')))
       console.log('ListItem4‘s editable is ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('editable')))
       await sleep(1)
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual('Sticky.Opacity')
+      // 废弃 sticky
+      // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('sticky')).assertEqual('Sticky.Opacity')
       console.info('++++++++++++++++ ListItem TestCase 4 End ++++++++++++++++');
       done();
     });

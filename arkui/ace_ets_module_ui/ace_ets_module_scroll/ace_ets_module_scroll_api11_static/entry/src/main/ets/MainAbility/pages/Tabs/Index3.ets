@@ -59,7 +59,7 @@ struct TabsExample {
   @State endMarginRes: Resource = $r("app.string.Divider_End_Margin")
   @State dividerColor: Color = Color.Red
   @State overflowFlag: boolean = false
-  @State selfIndicatorColor: Color = Color.Red
+  @State selfIndicatorColor: Color | string = Color.Red
   @State selfIndicatorHeight: number = 10
   @State selfIndicatorWidth: number = 30
   @State selfIndicatorBorderRadius: number = 5
@@ -128,7 +128,11 @@ struct TabsExample {
       }
 
       if (data['selfIndicatorColor'] != null) {
-        this.selfIndicatorColor = data['selfIndicatorColor'] as Color;
+        if (data['selfIndicatorColor'] instanceof string) {
+          this.selfIndicatorColor = data['selfIndicatorColor'] as string;
+        } else {
+          this.selfIndicatorColor = data['selfIndicatorColor'] as Color;
+        }
       }
 
       if (data['selfIndicatorHeight'] != null) {

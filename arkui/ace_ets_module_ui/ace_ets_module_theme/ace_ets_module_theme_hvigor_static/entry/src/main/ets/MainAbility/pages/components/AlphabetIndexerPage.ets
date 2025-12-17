@@ -34,7 +34,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const alphabetIndexerThemeProperty: string = `AlphabetIndexerThemeProperty`;
 
@@ -46,7 +46,7 @@ export class AlphabetIndexerKeys {
 @Entry
 @Component
 struct AlphabetIndexerPage {
-  @StorageLink(alphabetIndexerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
+  @StoragePropRef(alphabetIndexerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
   isCustomTheme: boolean = false;
   private values: Array<string> = new Array<string>(
     'a', 'b', 'c', 'd', 'i', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -60,7 +60,7 @@ struct AlphabetIndexerPage {
         selected: 1
       })
         .key(AlphabetIndexerKeys.alphabetIndexerSystem)
-      WithTheme({ theme: this.localTheme }) {
+      WithTheme({ theme: redCustomTheme }) {
         Column() {
           AlphabetIndexer({
             arrayValue: this.values,

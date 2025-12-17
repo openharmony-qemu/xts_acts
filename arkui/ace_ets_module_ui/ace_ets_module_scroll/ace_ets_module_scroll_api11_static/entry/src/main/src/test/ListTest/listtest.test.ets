@@ -47,10 +47,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function listtestIdleJsunit() {
   describe('listtestIdleTest', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
     });
 
     beforeEach(async (): Promise<void> => {

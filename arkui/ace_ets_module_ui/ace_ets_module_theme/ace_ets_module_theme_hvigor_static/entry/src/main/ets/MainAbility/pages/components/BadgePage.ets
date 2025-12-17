@@ -38,7 +38,7 @@ import {
   Text,
   WithTheme
 } from '@ohos.arkui.component'
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
 import { redCustomTheme } from '../../themes/CustomTheme1';
 
@@ -52,7 +52,7 @@ export class BadgeKeys {
 @Entry
 @Component
 struct BadgePage {
-  @StorageLink(badgeThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(badgeThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
 
   build() {
     Column() {

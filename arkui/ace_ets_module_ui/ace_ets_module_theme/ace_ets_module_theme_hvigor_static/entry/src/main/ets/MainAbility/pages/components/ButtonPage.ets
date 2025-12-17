@@ -35,7 +35,7 @@ import {
   Text,
   WithTheme
 } from '@ohos.arkui.component'
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
 
 export const buttonThemeProperty = 'ButtonThemeProperty';
@@ -70,7 +70,7 @@ export class ButtonKeys {
 @Entry
 @Component
 struct ButtonPage {
-  @StorageLink(buttonThemeProperty) localTheme: CustomTheme | undefined
+  @StoragePropRef(buttonThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   count: int = 0;
 
   build() {

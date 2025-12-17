@@ -47,7 +47,7 @@ export default function outlineColorTest() {
     beforeAll(() => {
       console.info("outlineColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api20.static", "EntryAbility")
-      
+      await Utils.sleep(4000);
     });
 
     beforeEach(async () => {
@@ -69,12 +69,6 @@ export default function outlineColorTest() {
       }
       console.info('outlineColorTest beforeEach end');
     });
-
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
 
     /*
     * @tc.number   bindmenu_static_001

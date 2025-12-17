@@ -53,9 +53,7 @@ export default function Storage38Jsunit() {
   describe('Storage38Jsunit', () => {
     beforeAll(() => {
       console.info("Storage38Jsunit beforeEach start");
-      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      
     });
 
     beforeEach(async (): Promise<void> => {

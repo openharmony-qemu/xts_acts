@@ -54,8 +54,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 AppStorage.clear()
 let storage139: LocalStorage = new LocalStorage({"PropA":47} as Record<string, number>)
 let storage39: LocalStorage = new LocalStorage();
-storage39.setOrCreate<number>('PropA',47);
-storage39.setOrCreate<number>('PropB',1);
+storage39.set<number>('PropA',47);
+storage39.set<number>('PropB',1);
 
 const get_storage39 = (): LocalStorage => storage39
 
@@ -68,7 +68,6 @@ struct LocalStorage39 {
   @State value1: string = 'Init'
   @State value2: string = 'Init'
   @State keys1: string = 'Init'
-
 
   build() {
     Column() {
@@ -87,7 +86,7 @@ struct LocalStorage39 {
         .height('5%')
         .key('button2')
         .onClick(() => {
-          this.value1 = storage39.get<number>("PropA")+""
+          this.value1 = storage39.get<number>("PropA") + ""
         })
 
       Text(`get PropE：${this.value2}`).key('getText2').height('5%')
@@ -95,7 +94,7 @@ struct LocalStorage39 {
         .height('5%')
         .key('button3')
         .onClick(() => {
-          this.value2 = storage39.get<number>("PropE")+""
+          this.value2 = storage39.get<number>("PropE") + ""
         })
 
       //Size获取LocalStorage中存在键值对的个数

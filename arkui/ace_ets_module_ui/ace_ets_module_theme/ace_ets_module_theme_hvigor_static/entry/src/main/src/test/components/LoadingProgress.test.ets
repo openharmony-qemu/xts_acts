@@ -44,7 +44,6 @@ export default function loadingProgressThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     })
 
     beforeEach(() => {
@@ -56,11 +55,11 @@ export default function loadingProgressThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `LoadingProgressPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(loadingProgressThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>('LoadingProgressThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -68,13 +67,13 @@ export default function loadingProgressThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(loadingProgressThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>('LoadingProgressThemeProperty'))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(loadingProgressThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('LoadingProgressThemeProperty', greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(loadingProgressThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('LoadingProgressThemeProperty', redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(loadingProgressThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>('LoadingProgressThemeProperty');
       changeTheme = false;
     });
 

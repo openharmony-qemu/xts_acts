@@ -114,6 +114,22 @@ import offsetAlignEnd from './ListTest/contentOffset/offsetAlignEnd.test';
 import offsetAlignStart from './ListTest/contentOffset/offsetAlignStart.test';
 
 export default function testsuite() {
+  Tabs_itemPadMar();
+  Tabs_itemSize();
+  tabs_IndexTest();
+  tabs_PadMarTest();
+  tabs_WidHeiTest();
+  Tabs_barMode();
+  Tabs_barPosition();
+  Tabs_barWidHei();
+  Tabs_scrollable();
+  scroll_ScrollFrictionTest();
+  edgeEffectJsunit();
+  ScrollToIndexForGridJsunit01();
+  ScrollToIndexForGridJsunit02();
+  ScrollToIndexForGridJsunit03();
+  listNewJsunit();
+
   listJsunit(); // editMode废弃（注释）  3
   ListDeleteTest();
   ListSwipeTest();
@@ -131,21 +147,10 @@ export default function testsuite() {
   ScrollTest();
   tabs();  // 很多
   tabsSec();
-  tabsThird();  // emit + tabs.padding 187
+  tabsThird();  // 56
   ActsAlphabetIndexerUxTest();
   RefreshTest();
   ScrollTest2();
-  Tabs_itemPadMar();
-  Tabs_itemSize();
-  tabs_IndexTest();
-  tabs_PadMarTest();
-  tabs_WidHeiTest();
-  Tabs_barMode();
-  Tabs_barPosition();
-  Tabs_barWidHei();
-  Tabs_scrollable();
-  scroll_ScrollFrictionTest();
-  edgeEffectJsunit();
   scrollbarJsunit();
   alphabetIndexerJsunit();
   gridIndexTest1();
@@ -157,7 +162,7 @@ export default function testsuite() {
   ActsGridTest();
   gridScrollbarUpdateTest();
   List07Test();
-  listUxTest();  // scrollSnapAlign 异常参数问题 27
+  listUxTest();  // scrollSnapAlign 异常参数问题 1
 
   tabsOnContentWillChangeJsunitTest();
   tabsOnContentWillChangeIndex3JsunitTest();
@@ -175,9 +180,6 @@ export default function testsuite() {
 
   GridTest();
   patternLock();
-  ScrollToIndexForGridJsunit01();
-  ScrollToIndexForGridJsunit02();
-  ScrollToIndexForGridJsunit03();
   ApiCommponentAddJsunit();
   ScrollBarJsunit();
   scrollCodeJsunit();
@@ -190,13 +192,12 @@ export default function testsuite() {
   alphabetIndexerOnSelectJsunit();
   gridMaxCountJsunit();
   gridItemOnSelectJsunit();
-  listNewJsunit();
   list_itemOnSelectJsunit();
   scrollOnScrollBeginJsunit();
   stackAlignContentJsunit();
   tabsBarPositionJsunit();
   scrollBarJsunitt();
-  listItemJsunit2(); // sticky | editMode  4
+  // listItemJsunit2(); // sticky | editMode 废弃  4
   gridColTest();
   conSizeGroup1();
   conSizeGroup2();

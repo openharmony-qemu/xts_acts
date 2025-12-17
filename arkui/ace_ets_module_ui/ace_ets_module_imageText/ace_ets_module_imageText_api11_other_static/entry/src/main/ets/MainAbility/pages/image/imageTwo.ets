@@ -55,25 +55,29 @@ import { UIContext } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct ImageExample2 {
-  @State renderMode: ImageRenderMode = ImageRenderMode.Original
+  @State renderMode: ImageRenderMode | undefined = ImageRenderMode.Original
   @State widthS: number = 75;
   @State heightS: number = 75
-  @State interpolation: ImageInterpolation = ImageInterpolation.None
+  @State interpolation: ImageInterpolation | undefined = ImageInterpolation.None
   @State fillColor: ResourceColor = Color.Red
   @State copyOption: CopyOptions = CopyOptions.None
   @State is_draggable: boolean = false
-  messageManager: MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean> = new MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>()
+  messageManager: MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined> = new MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>()
   messageManagerResourceColor: MessageManager<ResourceColor> = new MessageManager<ResourceColor>()
 
   onPageShow() {
     console.info('Image2 onPageShow')
-    AppStorage.setOrCreate<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>>("messageManager", this.messageManager);
+    AppStorage.setOrCreate<MessageManager<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>>("messageManager", this.messageManager);
     AppStorage.setOrCreate<MessageManager<ResourceColor>>("messageManagerResourceColor", this.messageManagerResourceColor);
     // 此段代码导致unknow 注释
-    let callback: Callback<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean> = (message: Message<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean>) => {
+    let callback: Callback<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined> = (message: Message<ImageRenderMode | number | ImageInterpolation | Color | CopyOptions | boolean | undefined>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'renderMode') {
-        this.renderMode = message.value as ImageRenderMode
+        if (message.value) {
+          this.renderMode = message.value as ImageRenderMode
+        } else {
+          this.renderMode = undefined
+        }
       }
       if (message.name == 'widthS') {
         this.widthS = message.value as Double
@@ -83,7 +87,11 @@ struct ImageExample2 {
       }
       if (message.name == 'interpolation') {
         console.log('ImageInterpolation==============' + message.value)
-        this.interpolation = message.value as ImageInterpolation
+        if (message.value) {
+          this.interpolation = message.value as ImageInterpolation
+        } else {
+          this.interpolation = undefined
+        }
       }
       if (message.name == 'draggable') {
         this.is_draggable = message.value as Boolean

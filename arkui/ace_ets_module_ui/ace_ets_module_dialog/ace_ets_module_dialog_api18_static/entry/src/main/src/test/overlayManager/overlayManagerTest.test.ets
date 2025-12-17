@@ -35,10 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function overlayManagerTest() {
   describe('overlayManagerTest', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      
     })
 
     beforeEach(async () => {

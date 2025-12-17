@@ -36,7 +36,7 @@ import {
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
 
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const counterThemeProperty = 'counterThemeProperty';
 
@@ -52,8 +52,8 @@ export class CounterKeys {
 @Entry
 @Component
 struct CounterPage {
-  @StorageLink(counterThemeProperty) customTheme: CustomTheme | undefined = redCustomTheme
-  @StorageLink(counterThemeSetProperty) themeSet: boolean | undefined = true
+  @StoragePropRef(counterThemeProperty) customTheme: CustomTheme | undefined = redCustomTheme
+  @StoragePropRef(counterThemeSetProperty) themeSet: boolean | undefined = true
   value: number = 0;
 
   build() {

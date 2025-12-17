@@ -36,7 +36,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const patternLockThemeProperty: string = 'PatternLockThemeProperty';
 
@@ -48,7 +48,7 @@ export class PatternLockKeys {
 @Entry
 @Component
 struct PatternLockPage {
-  @StorageLink(patternLockThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(patternLockThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   patternLockController: PatternLockController = new PatternLockController();
   timeZoneOffset: number = 1;
 

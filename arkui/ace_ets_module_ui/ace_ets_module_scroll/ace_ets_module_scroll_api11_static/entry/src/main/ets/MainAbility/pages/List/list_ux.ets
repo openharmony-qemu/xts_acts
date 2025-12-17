@@ -81,7 +81,7 @@ struct listUx {
             }
             .key("ArkUXII_List_style_0300")
 
-            ListItem({ style: null! }) {
+            ListItem({ style: undefined }) {
               Text("ListItemGroupStyle.CARD与null")
                 .fontSize(10)
                 .width('100%')
@@ -89,7 +89,7 @@ struct listUx {
             }
             .key("ArkUXII_List_style_0400")
 
-            ListItem({ style: undefined! }) {
+            ListItem({ style: undefined }) {
               Text("ListItemGroupStyle.CARD与undefined")
                 .fontSize(10)
                 .width('100%')
@@ -125,7 +125,7 @@ struct listUx {
           }
           .key("ArkUXII_List_style_0800")
 
-          ListItemGroup({ style: null! }) {
+          ListItemGroup({ style: undefined }) {
             ListItem({ style: ListItemStyle.CARD }) {
               Text("null与ListItemStyle.CARD")
                 .fontSize(10)
@@ -135,7 +135,7 @@ struct listUx {
           }
           .key("ArkUXII_List_style_0900")
 
-          ListItemGroup({ style: undefined! }) {
+          ListItemGroup({ style: undefined }) {
             ListItem({ style: ListItemStyle.CARD }) {
               Text("undefined与ListItemStyle.CARD")
                 .fontSize(10)
@@ -218,16 +218,19 @@ struct listUx {
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_0500")
+
         // .scrollSnapAlign(null)
         //
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_0600")
+
         // .scrollSnapAlign(ScrollSnapAlign[""])
         //
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_0700")
+
         // .scrollSnapAlign(undefined)
 
         List() {
@@ -237,6 +240,7 @@ struct listUx {
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_0900")
+
         // .scrollSnapAlign(ScrollSnapAlign[""])
 
         List() {
@@ -267,16 +271,19 @@ struct listUx {
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_1400")
+
         // .scrollSnapAlign(0)
         //
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_1500")
+
         // .scrollSnapAlign(1)
         //
         List() {
         }
         .key("ArkUX_Stage_List_LimitAnimation_1600")
+
         // .scrollSnapAlign(6)
       }
       .width('100%')

@@ -36,7 +36,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const dividerThemeProperty: string = `DividerThemeProperty`;
 
@@ -49,8 +49,8 @@ export class DividerKeys {
 @Entry
 @Component
 struct DividerPage {
-  @StorageLink(dividerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(dividerThemeProperty) redTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(dividerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(dividerThemeProperty) redTheme: CustomTheme | undefined = redCustomTheme;
   buttonWidth: number = 200;
 
   build() {

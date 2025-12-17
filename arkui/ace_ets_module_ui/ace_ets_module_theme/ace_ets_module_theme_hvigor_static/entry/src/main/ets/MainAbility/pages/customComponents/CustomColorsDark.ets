@@ -55,7 +55,7 @@ export let customButtonDarkTheme: Theme | undefined;
 
 @Component
 export struct CustomColorsDark {
-  @State data: Array<DataClass> = new Array<DataClass>();
+  data: Array<DataClass> = new Array<DataClass>();
 
   onWillApplyTheme(theme: Theme) {
     customButtonDarkTheme = theme;

@@ -57,7 +57,7 @@ export default function ifThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `IfPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(ifThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`IfThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
@@ -69,13 +69,13 @@ export default function ifThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(ifThemeProperty) as CustomTheme | undefined)?.colors?.backgroundEmphasize
+      if ((AppStorage.get<CustomTheme>(`IfThemeProperty`))?.colors?.backgroundEmphasize
         == redCustomTheme?.colors?.backgroundEmphasize) {
-        AppStorage.setOrCreate(ifThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`IfThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(ifThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`IfThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(ifThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`IfThemeProperty`);
       changeTheme = false;
     });
 
@@ -83,7 +83,7 @@ export default function ifThemeTest() {
     it(`ActsIfThemeColors_static_0100`, Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsIfThemeColors_static_0100`;
       console.info(`${SUITE} ${CASE} START`);
-      AppStorage.setOrCreate<boolean>(ifArgumentProperty, true);
+      AppStorage.setOrCreate<boolean>(`IfArgumentProperty`, true);
       await sleep(frameTime);
       {
         const buttonJson = inspector.getInspectorByKey(IfKeys.ifSystem);
@@ -94,7 +94,7 @@ export default function ifThemeTest() {
         expect(backgroundColor).assertEqual(checkBackgroundColor);
       }
 
-      AppStorage.setOrCreate<boolean>(ifArgumentProperty, false);
+      AppStorage.setOrCreate<boolean>(`IfArgumentProperty`, false);
       await sleep(frameTime);
       {
         const buttonJson = inspector.getInspectorByKey(IfKeys.elseSystem);
@@ -112,7 +112,7 @@ export default function ifThemeTest() {
       const CASE: string = `ActsIfThemeColors_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
 
-      AppStorage.setOrCreate<boolean>(ifArgumentProperty, true)
+      AppStorage.setOrCreate<boolean>(`IfArgumentProperty`, true)
       await sleep(frameTime);
       {
         const ifJSON = inspector.getInspectorByKey(IfKeys.ifWithTheme);
@@ -123,7 +123,7 @@ export default function ifThemeTest() {
         expect(backgroundColor).assertEqual(checkBackgroundColor);
       }
 
-      AppStorage.setOrCreate<boolean>(ifArgumentProperty, false)
+      AppStorage.setOrCreate<boolean>(`IfArgumentProperty`, false)
       await sleep(frameTime);
       {
         const ifJSON = inspector.getInspectorByKey(IfKeys.elseWithTheme);
@@ -142,7 +142,7 @@ export default function ifThemeTest() {
       const CASE: string = `ActsIfThemeColors_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
 
-      AppStorage.setOrCreate<boolean>(ifArgumentProperty, true)
+      AppStorage.setOrCreate<boolean>(`IfArgumentProperty`, true)
       await sleep(frameTime);
       {
         const ifJSON = inspector.getInspectorByKey(IfKeys.ifWithTheme);
@@ -153,7 +153,7 @@ export default function ifThemeTest() {
         expect(backgroundColor).assertEqual(checkBackgroundColor);
       }
 
-      AppStorage.setOrCreate<boolean>(ifArgumentProperty, false)
+      AppStorage.setOrCreate<boolean>(`IfArgumentProperty`, false)
       await sleep(frameTime);
       {
         const ifJSON = inspector.getInspectorByKey(IfKeys.elseWithTheme);

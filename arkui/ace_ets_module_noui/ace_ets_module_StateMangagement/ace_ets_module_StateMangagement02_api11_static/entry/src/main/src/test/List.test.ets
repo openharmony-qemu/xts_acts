@@ -91,37 +91,37 @@ export default function testsuite() {
   WatchTest();
   StateArrayBoolean();
   StateArrayNumber();
-  StateArrayObject();
+  StateArrayObject();  // 3
   StateMap();
   StateSet();
   PropArrayBoolean();
   PropArrayNumber();
-  PropArrayObject();
+  PropArrayObject();  //  2
   PropMap();
   PropSet();
-  //
+
   ProvideArrayBoolean();
   ProvideArrayNumber();
-  ProvideArrayObject();
+  ProvideArrayObject(); // 3
   ProvideMap();
   ProvideSet();
   LinkArrayBoolean();
   LinkArrayNumber();
-  LinkArrayObject();
+  LinkArrayObject(); // 3
   LinkMap();
   LinkSet();
-  ObjectLinkMap(); // @ObjectLink 修饰集合， 取值为初始值  3
-  ObjectLinkSet(); // @ObjectLink 修饰集合， 取值为初始值  2
+  ObjectLinkMap(); // @ObjectLink 修饰集合， 取值为初始值  4
+  ObjectLinkSet(); // @ObjectLink 修饰集合， 取值为初始值  3
   stateManagementDARKJsunit();
   stateManagementGetSharedJsunit();
   //
   LocalStoageLinkOneJsunit();
-  LocalStoageLinkTwoJsunit();  // JSON.stringify   1
+  LocalStoageLinkTwoJsunit();
   LocalStoageLinkThreeJsunit(); // // 0702不合入,只能切master分支
   LocalStoagePropFourJsunit();
-  LocalStoagePropTwoJsunit();  // JSON.stringify  1
-  LocalStorage39Jsunit();  // JSON.stringify(Object.keys(storage39))取值有问题 1       PropA：47 equals get PropA：1  1
-  ProvideJsunit();  
+  LocalStoagePropTwoJsunit();
+  LocalStorage39Jsunit();  // 1
+  ProvideJsunit();
   Storage11Jsunit();
   Storage35Jsunit();
   Storage36Jsunit();
@@ -134,21 +134,21 @@ export default function testsuite() {
   StorageProp25Jsunit();
   StorageProp26Jsunit();
   StateNumberJsunit();
-  StateArrayJsunit();
+  StateArrayJsunit();   // 7
   StateClassObjectJsunit();
   StateComponentJsunit();
   StateDate1Jsunit();
   StateDate2Jsunit();
-  LinkDataJsunit();   
+  LinkDataJsunit();  // 1
   LinkClassArrJsunit();
   LinkSonJsunit();
   ObjectLinkFirJsunit();
   ObjectLinkSecJsunit();
   ObjectLinkFarJsunit();
-  ObjectLinkSplJsunit();  
+  ObjectLinkSplJsunit();
   ObjectLinkCanJsunit();
   ObjectLinkNusJsunit();
-  ObjectLinkArrayJsunit();
+  ObjectLinkArrayJsunit();  // 7
   CombinationState2Jsunit();
   CombinationState3Jsunit();
   CombinationState6Jsunit();
@@ -156,8 +156,8 @@ export default function testsuite() {
   CombinationState8Jsunit();
   PropArrayJsunit();
   PropBooleanJsunit();
-  PropClassObjectJsunit(); 
-  PropDate2Jsunit(); 
+  PropClassObjectJsunit();
+  PropDate2Jsunit();
   PropEnumJsunit();
   PropInit1Jsunit();
   PropNumberJsunit();

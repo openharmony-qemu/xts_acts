@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   Entry,
   Column,
@@ -50,7 +51,7 @@ import {
   LocalStorageLink
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, UIUtils } from '@ohos.arkui.stateManagement';
 
 AppStorage.clear()
 
@@ -92,7 +93,7 @@ struct LocalStoagePropTwo {
 
   build() {
     Column() {
-      Text(`Prop1:${JSON.stringify(storage220.get<Model2>('Prop1'))}, Prop2:${storage220.get<number>('Prop2')}, Prop3:${storage220.get<boolean>('Prop3')}, Prop4:${storage220.get<string>('Prop4')}, Prop5:${storage220.get<He2>('Prop5')}, Prop6:${JSON.stringify(storage220.get<ValuePropTwoType>('Prop6'))}, Prop7:${JSON.stringify(storage220.get<Array<Model2>>('Prop7'))}, Prop8:${JSON.stringify(storage220.get<Array<number>>('Prop8'))}, Prop9:${JSON.stringify(storage220.get<Array<boolean>>('Prop9'))}, Prop10:${JSON.stringify(storage220.get<Array<string>>('Prop10'))}, Prop11:${JSON.stringify(storage220.get<Array<He2>>('Prop11'))}, Prop12:${JSON.stringify(storage220.get<Array<object>>('Prop12'))}`)
+      Text(`Prop1:${JSON.stringify(storage220.get<Model2>('Prop1'))}, Prop2:${storage220.get<number>('Prop2')}, Prop3:${storage220.get<boolean>('Prop3')}, Prop4:${storage220.get<string>('Prop4')}, Prop5:${storage220.get<He2>('Prop5')}, Prop6:${JSON.stringify(UIUtils.getTarget(storage220.get<ValuePropTwoType>('Prop6')))}, Prop7:${JSON.stringify(storage220.get<Array<Model2>>('Prop7'))}, Prop8:${JSON.stringify(storage220.get<Array<number>>('Prop8'))}, Prop9:${JSON.stringify(storage220.get<Array<boolean>>('Prop9'))}, Prop10:${JSON.stringify(storage220.get<Array<string>>('Prop10'))}, Prop11:${JSON.stringify(storage220.get<Array<He2>>('Prop11'))}, Prop12:${JSON.stringify(UIUtils.getTarget(storage220.get<Array<object>>('Prop12')))}`)
         .key('text_getValue4').height('5%')
     }
   }

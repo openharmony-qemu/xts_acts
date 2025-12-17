@@ -50,7 +50,6 @@ export default function forEachTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -62,15 +61,15 @@ export default function forEachTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `ForEachPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(forEachThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`forEachThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
-        dataSystem = AppStorage.get<DataForeach[]>(dataSystemKey);
-        dataSystemGroup = AppStorage.get<DataForeach[]>(dataSystemGroupKey);
-        dataWithTheme = AppStorage.get<DataForeach[]>(dataWithThemeKey);
-        dataWithThemeGroup = AppStorage.get<DataForeach[]>(dataWithThemeGroupKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
+        dataSystem = AppStorage.get<DataForeach[]>('ForEachDataSystemKey');
+        dataSystemGroup = AppStorage.get<DataForeach[]>('ForEachDataSystemGroupKey');
+        dataWithTheme = AppStorage.get<DataForeach[]>('ForEachDataWithThemeKey');
+        dataWithThemeGroup = AppStorage.get<DataForeach[]>('ForEachDataWithThemeGroupKey');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -78,13 +77,13 @@ export default function forEachTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(forEachThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`forEachThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(forEachThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`forEachThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(forEachThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`forEachThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(forEachThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`forEachThemeProperty`);
       changeTheme = false;
     });
 

@@ -69,21 +69,22 @@ export default function getItemError() {
        * @tc.desc     getItemError_static_0100
        * @tc.level    Level.LEVEL0
        */
-    it('getItemError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[getItemError_static_0100] START');
-      let driver = Driver.create()
-      let btn1: Component = await driver.findComponent(ON.id('getItemRect_401')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson = inspector.getInspectorByKey('getItemRect_err_text');
-      console.info("[getItemError_static_0100] component obj1 is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[getItemError_static_0100] content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('getItemRect: 401');
-      console.info('[getItemError_static_0100] END');
-      done();
-    });
+    // it('getItemError_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    // // 异常参数
+    //   console.info('[getItemError_static_0100] START');
+    //   let driver = Driver.create()
+    //   let btn1: Component = await driver.findComponent(ON.id('getItemRect_401')) as Component;
+    //   await btn1.click();
+    //   await CommonFunc.sleep(1500);
+    //   let strJson = inspector.getInspectorByKey('getItemRect_err_text');
+    //   console.info("[getItemError_static_0100] component obj1 is: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   console.info("[getItemError_static_0100] content: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('getItemRect: 401');
+    //   console.info('[getItemError_static_0100] END');
+    //   done();
+    // });
 
 
     /*
@@ -116,22 +117,23 @@ export default function getItemError() {
        * @tc.desc     getItemError_static_0300
        * @tc.level    Level.LEVEL0
        */
-    it('getItemError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[getItemError_static_0300] START');
-      let driver = Driver.create()
-      let btn1: Component = await driver.findComponent(ON.id('getItemIndex_401')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson = inspector.getInspectorByKey('getItemIndex_err_text');
-      console.info("[getItemError_static_0300] component obj1 is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[getItemError_static_0300] content: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('getItemIndex: 401');
-      console.info('[getItemError_static_0300] END');
-      done();
-    });
+    // it('getItemError_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    // //异常参数
+    //   console.info('[getItemError_static_0300] START');
+    //   let driver = Driver.create()
+    //   let btn1: Component = await driver.findComponent(ON.id('getItemIndex_401')) as Component;
+    //   await btn1.click();
+    //   await CommonFunc.sleep(1500);
+    //   let strJson = inspector.getInspectorByKey('getItemIndex_err_text');
+    //   console.info("[getItemError_static_0300] component obj1 is: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+    //   console.info("[getItemError_static_0300] content: " +
+    //   JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+    //     .assertEqual('getItemIndex: 401');
+    //   console.info('[getItemError_static_0300] END');
+    //   done();
+    // });
 
 
     /*

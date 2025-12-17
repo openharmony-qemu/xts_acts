@@ -66,17 +66,17 @@ export default function testsuite() {
   ellipseNeJsunit()
   featureAbilityStartAbilityJsunit()
   gestureSetDirectionJsunit()
-  globalJsunit() // sendMouseEvent 1
+  globalJsunit()
   gridMaxCountJsunit()
   gridItemOnSelectJsunit()
   inspectorJsunit()
   lineNeJsunit()
-  listNewJsunit()  // editMode 1
-  list_itemOnSelectJsunit() // editable 1
-  mediaQueryOffJsunit()   
-  navigatorTargetJsunit()  // navigator 废弃 1
+  listNewJsunit()
+  list_itemOnSelectJsunit()
+  mediaQueryOffJsunit()
+  navigatorTargetJsunit()
   pageRouteTest()
-  panelBackgroundMaskJsunit() // Panel 组件废弃 1
+  panelBackgroundMaskJsunit()
   pathNewTest()
   polygonNewJsunit()
   polyLineNeJsunit()

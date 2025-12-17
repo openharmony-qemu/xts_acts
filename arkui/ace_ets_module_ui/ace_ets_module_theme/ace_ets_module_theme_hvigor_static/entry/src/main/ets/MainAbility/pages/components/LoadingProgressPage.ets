@@ -34,7 +34,7 @@ import {
 } from '@ohos.arkui.component'
 import { CustomTheme } from '@ohos.arkui.theme';
 import { redCustomTheme } from '../../themes/CustomTheme1';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const loadingProgressThemeProperty = 'LoadingProgressThemeProperty';
 
@@ -46,7 +46,7 @@ export class LoadingProgressKeys {
 @Entry
 @Component
 struct LoadingProgressPage {
-  @StorageLink(loadingProgressThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(loadingProgressThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
 
   build() {
     Column() {

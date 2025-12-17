@@ -34,7 +34,7 @@ import {
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const qrCodeThemeProperty: string = 'QRCodeThemeProperty';
 
@@ -46,7 +46,7 @@ export class QRCodeKeys {
 @Entry
 @Component
 struct QRCodePage {
-  @StorageLink(qrCodeThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(qrCodeThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   value: string = 'Text';
 
   build() {

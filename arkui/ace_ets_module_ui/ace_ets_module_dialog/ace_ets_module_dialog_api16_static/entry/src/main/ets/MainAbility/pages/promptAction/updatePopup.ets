@@ -51,7 +51,7 @@ class Params {
   }
 }
 @Builder
-function buildText(param?: Params) {
+function buildText() {
   Column() {
     Text('popup').fontSize(24)
   }.width(100).height(50).padding(5)
@@ -76,6 +76,7 @@ struct Index {
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
           let targetId = frameNode?.getFirstChild()?.getUniqueId().toInt();
           promptAction.openPopup(contentNode, { id: targetId! })
+
           setTimeout(() => {
             promptAction.updatePopup(contentNode, { radius: 0 })
               .then(() => {

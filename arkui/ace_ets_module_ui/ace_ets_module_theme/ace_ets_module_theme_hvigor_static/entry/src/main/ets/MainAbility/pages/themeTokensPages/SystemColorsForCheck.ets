@@ -49,11 +49,13 @@ export struct SystemColorsFromResources {
 
   aboutToAppear() {
     Colors.colors.forEach((it: string, key: string) => {
+      console.log('check it: ' + it + '  key: ' + key )
       this.data.push({
         text: key,
         token: $r(it)
       } as DataClass);
     });
+    console.log('check data: ' + JSON.stringify(this.data) )
   }
 
   build() {

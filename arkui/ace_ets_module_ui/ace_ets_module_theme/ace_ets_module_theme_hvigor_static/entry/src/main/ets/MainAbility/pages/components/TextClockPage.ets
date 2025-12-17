@@ -37,7 +37,7 @@ import {
 } from '@ohos.arkui.component'
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const textClockThemeProperty = 'TextClockThemeProperty';
 
@@ -55,8 +55,8 @@ export class TextClockKeys {
 @Entry
 @Component
 struct TextClockPage {
-  @StorageLink(textClockThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(textClockThemeSetProperty) themeSet: boolean = true
+  @StoragePropRef(textClockThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(textClockThemeSetProperty) themeSet: boolean = true
   textClockController: TextClockController = new TextClockController();
   timeZoneOffset: number = 1;
 

@@ -33,7 +33,7 @@ import {
   WithTheme
 } from '@ohos.arkui.component'
 import { redCustomTheme } from '../../themes/CustomTheme1';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 import { CustomTheme } from '@ohos.arkui.theme';
 
 export const searchThemeProperty: string = `SearchThemeProperty`;
@@ -46,7 +46,7 @@ export class SearchKeys {
 @Entry
 @Component
 struct SearchPage {
-  @StorageLink(searchThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
+  @StoragePropRef(searchThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
 
   build() {
     Column() {

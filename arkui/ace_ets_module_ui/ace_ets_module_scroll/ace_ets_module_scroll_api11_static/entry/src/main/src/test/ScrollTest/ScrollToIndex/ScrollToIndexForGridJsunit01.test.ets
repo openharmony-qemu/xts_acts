@@ -71,12 +71,6 @@ export default function ScrollToIndexForGridJsunit01() {
       }
     });
 
-    afterAll(() => {
-      const router = AppStorage.get<Router>("router") as Router
-      router.back()
-    });
-
-
     /*
        * @tc.number   ScrollToIndexForGridJsunit01_static_0100
        * @tc.name     ScrollToIndexForGridJsunit01_static_0100

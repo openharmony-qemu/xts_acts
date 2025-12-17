@@ -34,12 +34,10 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
 export default function tabs() {
+  let count: number = 0
   describe('ActsAceTabsTest', () => {
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -65,7 +63,7 @@ export default function tabs() {
     })
 
     afterEach(async (): Promise<void> => {
-      console.info("tabs afterEach start");
+      console.info("tabs afterEach start " + count++);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -233,7 +231,7 @@ export default function tabs() {
        */
     it('ArkUI_Tabs_Divider_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_Tabs_Divider_static_0600 start");
-
+      await Utils.sleep(2000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1948,7 +1946,7 @@ export default function tabs() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Tabs_SubTabBorderRadius_0700] subTabBorderRadius:" +
       obj.getElement('$attrs').getElement('tabBar').getElement('board').getElement('borderRadius'));
-      expect(obj.getElement('$attrs').getElement('tabBar').getElement('board').getElement('borderRadius'))
+      expect(obj.getElement('$attrs').getElement('tabBar').getElement('board').getString('borderRadius'))
         .assertEqual("20.00vp");
       expect(obj.getElement('$attrs').getElement('tabBar').getString('selectedMode')).assertEqual("SelectedMode.BOARD");
       done();

@@ -30,13 +30,13 @@ export default function testsuite() {
   iconTabs()
   onSelectedTabs()
   preloadSwiper() // preloadItems 捕获错误码 1
-  selectedSwiper() 
-  SwiperIndicatorDistanceTest() // // bottom不能传值null (关于异常值断言已注释) 1
-  barBackground()
-  setGridEvent()  // UIGridEvent尚未支持  1
-  setListEvent()  // UIListEvent尚未支持  1
-  setScrollEvent()  // UIScrollEvent尚未支持 1
+  selectedSwiper()
+  SwiperIndicatorDistanceTest()
+  // setGridEvent()  // UIGridEvent尚未支持  1
+  // setListEvent()  // UIListEvent尚未支持  1
+  // setScrollEvent()  // UIScrollEvent尚未支持 1
   listDividerOptions()
   stackFromEndList()
   LazyVGridLayout()
+  barBackground()  // 2
 }

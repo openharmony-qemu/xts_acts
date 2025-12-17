@@ -13,8 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, Placement, Color, MenuElement} from '@ohos.arkui.component'
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  Placement,
+  Color,
+  MenuElement,
+  MenuOptions
+} from '@ohos.arkui.component'
 
 @Entry
 @Component
@@ -39,6 +57,7 @@ struct bindMenuoutlineColorTest {
       }
     } as MenuElement
   ];
+
   build() {
     Row() {
       Column() {
@@ -51,9 +70,9 @@ struct bindMenuoutlineColorTest {
             title: 'BindMenuTest',
             showInSubWindow: true,
             placement: Placement.BottomRight,
-            outlineWidth:8,
-            outlineColor:Color.Red
-          })
+            outlineWidth: 8,
+            outlineColor: Color.Red
+          } as MenuOptions)
       }
     }
     .height('100%')

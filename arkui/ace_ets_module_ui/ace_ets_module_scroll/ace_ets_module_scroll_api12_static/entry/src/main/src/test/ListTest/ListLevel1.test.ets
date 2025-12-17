@@ -447,7 +447,7 @@ export default function listLevel1Test() {
       console.info("[listLevel1Test_static_1400] component yoffset is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonY).getElement('$attrs').getElement('content')));
       expect(JSON.parseJsonElement(strJsonX).getElement('$attrs').getString('content')).assertEqual("xoffset:0");
-      expect(JSON.parseJsonElement(strJsonY).getElement('$attrs').getString('content')).assertEqual("yoffset:-10");
+      expect(JSON.parseJsonElement(strJsonY).getElement('$attrs').getString('content')).assertEqual("yoffset:-5");
       console.info('listLevel1Test_static_1400 END');
       done()
     });

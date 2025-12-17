@@ -46,7 +46,7 @@ import {
 } from '@ohos.arkui.component'
 import { brownCustomTheme, redCustomTheme } from '../../themes/CustomTheme1';
 import { CustomTheme } from '@ohos.arkui.theme';
-import { StorageLink } from '@ohos.arkui.stateManagement'
+import { StoragePropRef } from '@ohos.arkui.stateManagement'
 
 export const scrollThemeProperty = 'ScrollThemeProperty'
 
@@ -77,8 +77,8 @@ export class ScrollKeys {
 @Entry
 @Component
 struct ScrollPage {
-  @StorageLink(scrollThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
-  @StorageLink(scrollThemeSetProperty) themeSet: boolean | undefined = true
+  @StoragePropRef(scrollThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme
+  @StoragePropRef(scrollThemeSetProperty) themeSet: boolean | undefined = true
   horizontalScrollerSystem: Scroller = new Scroller()
   verticalScrollerSystem: Scroller = new Scroller()
   horizontalScrollerSystemCustomAttrs: Scroller = new Scroller()

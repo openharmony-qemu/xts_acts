@@ -53,7 +53,6 @@ export default function LinkDataJsunit() {
   describe('LinkDataJsunit', () => {
     beforeAll(() => {
       console.info("LinkDataJsunit beforeEach start");
-      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
       
     });

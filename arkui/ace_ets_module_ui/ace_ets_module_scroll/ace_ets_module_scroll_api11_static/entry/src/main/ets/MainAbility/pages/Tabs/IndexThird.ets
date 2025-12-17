@@ -50,63 +50,66 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct TabsExampleThird {
   private controller: TabsController = new TabsController()
-  @State barGridAlignMarginNumber: number = 0
+  @State barGridAlignMarginNumber: number | undefined = 0
   @State barGridAlignMarginString: FP = '0.00fp'
-  @State barGridAlignGutterNumber: number = 0
+  @State barGridAlignGutterNumber: number | undefined = 0
   @State barGridAlignGutterString: FP = '0.00fp'
-  @State barGridAlignSmNumber: number = 0
-  @State barGridAlignMdNumber: number = 0
-  @State barGridAlignLgNumber: number = 0
+  @State barGridAlignSmNumber: number | undefined = 0
+  @State barGridAlignMdNumber: number | undefined = 0
+  @State barGridAlignLgNumber: number | undefined = 0
   @State barHeightString: string = '0.00vp'
   @State barModeMode: BarMode = BarMode.Fixed
   @State barModeMarginString: FP = '0.00fp'
-  @State barModeMarginNumber: number = 0
-  @State barModeNonScrollableLayoutStyle: LayoutStyle = LayoutStyle.ALWAYS_CENTER
-  @State subTabBarStylePaddingNumber: number = 0
+  @State barModeMarginNumber: number | undefined = 0
+  @State barModeNonScrollableLayoutStyle: LayoutStyle | undefined = LayoutStyle.ALWAYS_CENTER
+  @State subTabBarStylePaddingNumber: number | undefined = 0
   @State subTabBarStylePaddingString: FP = '0.00fp'
-  @State bottomTabBarStylePaddingNumber: number = 0
+  @State bottomTabBarStylePaddingNumber: number | undefined = 0
   @State bottomTabBarStylePaddingString: FP = '0.00fp'
-  @State subTabBarStylePaddingTopNumber: number = 0
-  @State subTabBarStylePaddingBottomNumber: number = 0
-  @State subTabBarStylePaddingLeftNumber: number = 0
-  @State subTabBarStylePaddingRightNumber: number = 0
-  @State subTabBarStylePaddingTopString: string = '0.00vp'
-  @State subTabBarStylePaddingBottomString: string = '0.00vp'
-  @State subTabBarStylePaddingLeftString: string = '0.00vp'
-  @State subTabBarStylePaddingRightString: string = '0.00vp'
-  @State bottomTabBarStylePaddingTopNumber: number = 0
-  @State bottomTabBarStylePaddingBottomNumber: number = 0
-  @State bottomTabBarStylePaddingLeftNumber: number = 0
-  @State bottomTabBarStylePaddingRightNumber: number = 0
-  @State bottomTabBarStylePaddingTopString: string = '0.00vp'
-  @State bottomTabBarStylePaddingBottomString: string = '0.00vp'
-  @State bottomTabBarStylePaddingLeftString: string = '0.00vp'
-  @State bottomTabBarStylePaddingRightString: string = '0.00vp'
+  @State subTabBarStylePaddingTopNumber: number | undefined = 0
+  @State subTabBarStylePaddingBottomNumber: number | undefined = 0
+  @State subTabBarStylePaddingLeftNumber: number | undefined = 0
+  @State subTabBarStylePaddingRightNumber: number | undefined = 0
+  @State subTabBarStylePaddingTopString: string | undefined = '0.00vp'
+  @State subTabBarStylePaddingBottomString: string | undefined = '0.00vp'
+  @State subTabBarStylePaddingLeftString: string | undefined = '0.00vp'
+  @State subTabBarStylePaddingRightString: string | undefined = '0.00vp'
+  @State bottomTabBarStylePaddingTopNumber: number | undefined = 0
+  @State bottomTabBarStylePaddingBottomNumber: number | undefined = 0
+  @State bottomTabBarStylePaddingLeftNumber: number | undefined = 0
+  @State bottomTabBarStylePaddingRightNumber: number | undefined = 0
+  @State bottomTabBarStylePaddingTopString: string | undefined = '0.00vp'
+  @State bottomTabBarStylePaddingBottomString: string | undefined = '0.00vp'
+  @State bottomTabBarStylePaddingLeftString: string | undefined = '0.00vp'
+  @State bottomTabBarStylePaddingRightString: string | undefined = '0.00vp'
   @State bottomTabBarStyleVerticalAlign: VerticalAlign = VerticalAlign.Center
   @State bottomTabBarStyleLayoutMode: LayoutMode = LayoutMode.VERTICAL
   @State bottomTabBarStyleSymmetricExtensible: boolean = false
-  @State bottomTabBarStyleLabelStyleOverflow: TextOverflow = TextOverflow.Ellipsis
-  @State bottomTabBarStyleLabelStyleMaxLines: number = 0
-  @State bottomTabBarStyleLabelStyleMinFontSizeNumber: number = 0
+  @State bottomTabBarStyleLabelStyleOverflow: TextOverflow | undefined = TextOverflow.Ellipsis
+  @State bottomTabBarStyleLabelStyleMaxLines: number | undefined = 0
+  @State bottomTabBarStyleLabelStyleMinFontSizeNumber: number | undefined = 0
   @State bottomTabBarStyleLabelStyleMinFontSizeString: string = '0.00vp'
-  @State bottomTabBarStyleLabelStyleMaxFontSizeNumber: number = 0
+  @State bottomTabBarStyleLabelStyleMaxFontSizeNumber: number | undefined = 0
   @State bottomTabBarStyleLabelStyleMaxFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleHeightAdaptivePolicy: TextHeightAdaptivePolicy =
     TextHeightAdaptivePolicy.MAX_LINES_FIRST
-  @State bottomTabBarStyleLabelStyleFontSizeNumber: number = 0
+  @State bottomTabBarStyleLabelStyleFontSizeNumber: number | undefined = 0
   @State bottomTabBarStyleLabelStyleFontSizeString: string = '0.00vp'
   @State bottomTabBarStyleLabelStyleFontWeight: FontWeight = FontWeight.Normal
-  @State bottomTabBarStyleLabelStyleFontWeightNumber: number = 0
-  @State bottomTabBarStyleLabelStyleFontWeightString: string = '0.00vp'
-  @State bottomTabBarStyleLabelStyleFontFamilyString: string = '0.00vp'
-  @State bottomTabBarStyleLabelStyleFontStyle: FontStyle = FontStyle.Normal
+  @State bottomTabBarStyleLabelStyleFontWeightNumber: number | undefined = 0
+  @State bottomTabBarStyleLabelStyleFontWeightString: string | undefined = '0.00vp'
+  @State bottomTabBarStyleLabelStyleFontFamilyString: string | undefined = '0.00vp'
+  @State bottomTabBarStyleLabelStyleFontStyle: FontStyle | undefined = FontStyle.Normal
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("tabs page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
       const data = eventData.data as Record<String,undefined|null|Object>;
-      if (data['barGridAlignMarginNumber'] != null && data['barGridAlignMarginNumber'] != 'null' &&
-        data['barGridAlignMarginNumber'] != 'undefined') {
-        this.barGridAlignMarginNumber = data['barGridAlignMarginNumber'] as number;
+      if (data.has('barGridAlignMarginNumber') ) {
+        if (data['barGridAlignMarginNumber']) {
+          this.barGridAlignMarginNumber = data['barGridAlignMarginNumber'] as number;
+        } else {
+          this.barGridAlignMarginNumber = undefined
+        }
       }
 
       if (data['barGridAlignMarginString'] != null && data['barGridAlignMarginString'] != 'null' &&
@@ -114,9 +117,12 @@ struct TabsExampleThird {
         this.barGridAlignMarginString = data['barGridAlignMarginString'] as string;
       }
 
-      if (data['barGridAlignGutterNumber'] != null && data['barGridAlignGutterNumber'] != 'null' &&
-        data['barGridAlignGutterNumber'] != 'undefined') {
-        this.barGridAlignGutterNumber = data['barGridAlignGutterNumber'] as number;
+      if (data.has('barGridAlignGutterNumber')) {
+        if (data['barGridAlignGutterNumber']) {
+          this.barGridAlignGutterNumber = data['barGridAlignGutterNumber'] as number;
+        } else {
+          this.barGridAlignGutterNumber = undefined
+        }
       }
 
       if (data['barGridAlignGutterString'] != null && data['barGridAlignGutterString'] != 'null' &&
@@ -124,19 +130,28 @@ struct TabsExampleThird {
         this.barGridAlignGutterString = data['barGridAlignGutterString'] as string;
       }
 
-      if (data['barGridAlignSmNumber'] != null && data['barGridAlignSmNumber'] != 'null' &&
-        data['barGridAlignSmNumber'] != 'undefined') {
-        this.barGridAlignSmNumber = data['barGridAlignSmNumber'] as number;
+      if (data.has('barGridAlignSmNumber')) {
+        if (data['barGridAlignSmNumber']) {
+          this.barGridAlignSmNumber = data['barGridAlignSmNumber'] as number;
+        } else {
+          this.barGridAlignSmNumber = undefined;
+        }
       }
 
-      if (data['barGridAlignMdNumber'] != null && data['barGridAlignMdNumber'] != 'null' &&
-        data['barGridAlignMdNumber'] != 'undefined') {
-        this.barGridAlignMdNumber = data['barGridAlignMdNumber'] as number;
+      if (data.has('barGridAlignMdNumber')) {
+        if (data['barGridAlignMdNumber']) {
+          this.barGridAlignMdNumber = data['barGridAlignMdNumber'] as number;
+        } else {
+          this.barGridAlignMdNumber = undefined
+        }
       }
 
-      if (data['barGridAlignLgNumber'] != null && data['barGridAlignLgNumber'] != 'null' &&
-        data['barGridAlignLgNumber'] != 'undefined') {
-        this.barGridAlignLgNumber = data['barGridAlignLgNumber'] as number;
+      if (data.has('barGridAlignLgNumber') != null) {
+        if (data['barGridAlignLgNumber']) {
+          this.barGridAlignLgNumber = data['barGridAlignLgNumber'] as number;
+        } else {
+          this.barGridAlignLgNumber = undefined
+        }
       }
 
       if (data['barHeightString'] != null && data['barHeightString'] != 'null' &&
@@ -153,19 +168,28 @@ struct TabsExampleThird {
         this.barModeMarginString = data['barModeMarginString'] as string;
       }
 
-      if (data['barModeMarginNumber'] != null && data['barModeMarginNumber'] != 'null' &&
-        data['barModeMarginNumber'] != 'undefined') {
-        this.barModeMarginNumber = data['barModeMarginNumber'] as number;
+      if (data.has('barModeMarginNumber')) {
+        if (data['barModeMarginNumber']) {
+          this.barModeMarginNumber = data['barModeMarginNumber'] as number;
+        } else {
+          this.barModeMarginNumber = undefined;
+        }
       }
 
-      if (data['barModeNonScrollableLayoutStyle'] != null && data['barModeNonScrollableLayoutStyle'] != 'null' &&
-        data['barModeNonScrollableLayoutStyle'] != 'undefined') {
-        this.barModeNonScrollableLayoutStyle = data['barModeNonScrollableLayoutStyle'] as LayoutStyle;
+      if (data.has('barModeNonScrollableLayoutStyle')) {
+        if (data['barModeNonScrollableLayoutStyle']) {
+          this.barModeNonScrollableLayoutStyle = data['barModeNonScrollableLayoutStyle'] as LayoutStyle;
+        } else {
+          this.barModeNonScrollableLayoutStyle = undefined
+        }
       }
 
-      if (data['subTabBarStylePaddingNumber'] != null && data['subTabBarStylePaddingNumber'] != 'null' &&
-        data['subTabBarStylePaddingNumber'] != 'undefined') {
-        this.subTabBarStylePaddingNumber = data['subTabBarStylePaddingNumber'] as number;
+      if (data.has('subTabBarStylePaddingNumber') ) {
+        if (data['subTabBarStylePaddingNumber']) {
+          this.subTabBarStylePaddingNumber = data['subTabBarStylePaddingNumber'] as number;
+        } else {
+          this.subTabBarStylePaddingNumber = undefined
+        }
       }
 
       if (data['subTabBarStylePaddingString'] != null && data['subTabBarStylePaddingString'] != 'null' &&
@@ -173,9 +197,12 @@ struct TabsExampleThird {
         this.subTabBarStylePaddingString = data['subTabBarStylePaddingString'] as string;
       }
 
-      if (data['bottomTabBarStylePaddingNumber'] != null && data['bottomTabBarStylePaddingNumber'] != 'null' &&
-        data['bottomTabBarStylePaddingNumber'] != 'undefined') {
-        this.bottomTabBarStylePaddingNumber = data['bottomTabBarStylePaddingNumber'] as number;
+      if (data.has('bottomTabBarStylePaddingNumber')) {
+        if (data['bottomTabBarStylePaddingNumber']) {
+          this.bottomTabBarStylePaddingNumber = data['bottomTabBarStylePaddingNumber'] as number;
+        } else {
+          this.bottomTabBarStylePaddingNumber = undefined;
+        }
       }
 
       if (data['bottomTabBarStylePaddingString'] != null && data['bottomTabBarStylePaddingString'] != 'null' &&
@@ -183,98 +210,150 @@ struct TabsExampleThird {
         this.bottomTabBarStylePaddingString = data['bottomTabBarStylePaddingString'] as string;
       }
 
-      if (data['subTabBarStylePaddingTopNumber'] != null && data['subTabBarStylePaddingTopNumber'] != 'null' &&
-        data['subTabBarStylePaddingTopNumber'] != 'undefined') {
-        this.subTabBarStylePaddingTopNumber = data['subTabBarStylePaddingTopNumber'] as number;
+      if (data.has('subTabBarStylePaddingTopNumber')) {
+        if (data['subTabBarStylePaddingTopNumber']) {
+          this.subTabBarStylePaddingTopNumber = data['subTabBarStylePaddingTopNumber'] as number;
+        } else {
+          this.subTabBarStylePaddingTopNumber = undefined
+        }
       }
 
-      if (data['subTabBarStylePaddingBottomNumber'] != null && data['subTabBarStylePaddingBottomNumber'] != 'null' &&
-        data['subTabBarStylePaddingBottomNumber'] != 'undefined') {
-        this.subTabBarStylePaddingBottomNumber = data['subTabBarStylePaddingBottomNumber'] as number;
+      if (data.has('subTabBarStylePaddingBottomNumber')) {
+        if (data['subTabBarStylePaddingBottomNumber']) {
+          this.subTabBarStylePaddingBottomNumber = data['subTabBarStylePaddingBottomNumber'] as number;
+        } else {
+          this.subTabBarStylePaddingBottomNumber = undefined
+        }
       }
 
-      if (data['subTabBarStylePaddingLeftNumber'] != null && data['subTabBarStylePaddingLeftNumber'] != 'null' &&
-        data['subTabBarStylePaddingLeftNumber'] != 'undefined') {
-        this.subTabBarStylePaddingLeftNumber = data['subTabBarStylePaddingLeftNumber'] as number;
+      if (data.has('subTabBarStylePaddingLeftNumber')) {
+        if (data['subTabBarStylePaddingLeftNumber']) {
+          this.subTabBarStylePaddingLeftNumber = data['subTabBarStylePaddingLeftNumber'] as number;
+        } else {
+          this.subTabBarStylePaddingLeftNumber = undefined
+        }
       }
 
-      if (data['subTabBarStylePaddingRightNumber'] != null && data['subTabBarStylePaddingRightNumber'] != 'null' &&
-        data['subTabBarStylePaddingRightNumber'] != 'undefined') {
-        this.subTabBarStylePaddingRightNumber = data['subTabBarStylePaddingRightNumber'] as number;
+      if (data.has('subTabBarStylePaddingRightNumber')) {
+        if (data['subTabBarStylePaddingRightNumber']) {
+          this.subTabBarStylePaddingRightNumber = data['subTabBarStylePaddingRightNumber'] as number;
+        } else {
+          this.subTabBarStylePaddingRightNumber = undefined;
+        }
       }
 
-      if (data['subTabBarStylePaddingTopString'] != null && data['subTabBarStylePaddingTopString'] != 'null' &&
-        data['subTabBarStylePaddingTopString'] != 'undefined') {
-        this.subTabBarStylePaddingTopString = data['subTabBarStylePaddingTopString'] as string;
+      if (data.has('subTabBarStylePaddingTopString')) {
+        if (data['subTabBarStylePaddingTopString']) {
+          this.subTabBarStylePaddingTopString = data['subTabBarStylePaddingTopString'] as string;
+        } else {
+          this.subTabBarStylePaddingTopString = undefined;
+        }
       }
 
-      if (data['subTabBarStylePaddingBottomString'] != null && data['subTabBarStylePaddingBottomString'] != 'null' &&
-        data['subTabBarStylePaddingBottomString'] != 'undefined') {
-        this.subTabBarStylePaddingBottomString = data['subTabBarStylePaddingBottomString'] as string;
+      if (data.has('subTabBarStylePaddingBottomString')) {
+        if (data['subTabBarStylePaddingBottomString']) {
+          this.subTabBarStylePaddingBottomString = data['subTabBarStylePaddingBottomString'] as string;
+        } else {
+          this.subTabBarStylePaddingBottomString = undefined;
+        }
       }
 
-      if (data['subTabBarStylePaddingLeftString'] != null && data['subTabBarStylePaddingLeftString'] != 'null' &&
-        data['subTabBarStylePaddingLeftString'] != 'undefined') {
-        this.subTabBarStylePaddingLeftString = data['subTabBarStylePaddingLeftString'] as string;
+      if (data.has('subTabBarStylePaddingLeftString')) {
+        if (data['subTabBarStylePaddingLeftString']) {
+          this.subTabBarStylePaddingLeftString = data['subTabBarStylePaddingLeftString'] as string;
+        } else {
+          this.subTabBarStylePaddingLeftString = undefined;
+        }
       }
 
-      if (data['subTabBarStylePaddingRightString'] != null && data['subTabBarStylePaddingRightString'] != 'null' &&
-        data['subTabBarStylePaddingRightString'] != 'undefined') {
-        this.subTabBarStylePaddingRightString = data['subTabBarStylePaddingRightString'] as string;
+      if (data.has('subTabBarStylePaddingRightString')) {
+        if (data['subTabBarStylePaddingRightString']) {
+          this.subTabBarStylePaddingRightString = data['subTabBarStylePaddingRightString'] as string;
+        } else {
+          this.subTabBarStylePaddingRightString = undefined;
+        }
       }
 
-      if (data['bottomTabBarStylePaddingTopNumber'] != null && data['bottomTabBarStylePaddingTopNumber'] != 'null' &&
-        data['bottomTabBarStylePaddingTopNumber'] != 'undefined') {
-        this.bottomTabBarStylePaddingTopNumber = data['bottomTabBarStylePaddingTopNumber'] as number;
+      if (data.has('bottomTabBarStylePaddingTopNumber')) {
+        if (data['bottomTabBarStylePaddingTopNumber']) {
+          this.bottomTabBarStylePaddingTopNumber = data['bottomTabBarStylePaddingTopNumber'] as number;
+        } else {
+          this.bottomTabBarStylePaddingTopNumber = undefined
+        }
       }
 
-      if (data['bottomTabBarStylePaddingBottomNumber'] != null &&
-        data['bottomTabBarStylePaddingBottomNumber'] != 'null' &&
-        data['bottomTabBarStylePaddingBottomNumber'] != 'undefined') {
-        this.bottomTabBarStylePaddingBottomNumber = data['bottomTabBarStylePaddingBottomNumber'] as number;
+      if (data.has('bottomTabBarStylePaddingBottomNumber') ) {
+        if (data['bottomTabBarStylePaddingBottomNumber']) {
+          this.bottomTabBarStylePaddingBottomNumber = data['bottomTabBarStylePaddingBottomNumber'] as number;
+        } else {
+          this.bottomTabBarStylePaddingBottomNumber = undefined
+        }
+
       }
 
-      if (data['bottomTabBarStylePaddingLeftNumber'] != null && data['bottomTabBarStylePaddingLeftNumber'] != 'null' &&
-        data['bottomTabBarStylePaddingLeftNumber'] != 'undefined') {
-        this.bottomTabBarStylePaddingLeftNumber = data['bottomTabBarStylePaddingLeftNumber'] as number;
+      if (data.has('bottomTabBarStylePaddingLeftNumber') ) {
+        if (data['bottomTabBarStylePaddingLeftNumber']) {
+          this.bottomTabBarStylePaddingLeftNumber = data['bottomTabBarStylePaddingLeftNumber'] as number;
+        } else {
+          this.bottomTabBarStylePaddingLeftNumber = undefined
+        }
       }
 
-      if (data['bottomTabBarStylePaddingRightNumber'] != null &&
-        data['bottomTabBarStylePaddingRightNumber'] != 'null' &&
-        data['bottomTabBarStylePaddingRightNumber'] != 'undefined') {
-        this.bottomTabBarStylePaddingRightNumber = data['bottomTabBarStylePaddingRightNumber'] as number;
+      if (data.has('bottomTabBarStylePaddingRightNumber')) {
+        if (data['bottomTabBarStylePaddingRightNumber']) {
+          this.bottomTabBarStylePaddingRightNumber = data['bottomTabBarStylePaddingRightNumber'] as number;
+        } else {
+          this.bottomTabBarStylePaddingRightNumber = undefined;
+        }
+
       }
 
-      if (data['bottomTabBarStylePaddingTopString'] != null && data['bottomTabBarStylePaddingTopString'] != 'null' &&
-        data['bottomTabBarStylePaddingTopString'] != 'undefined') {
-        this.bottomTabBarStylePaddingTopString = data['bottomTabBarStylePaddingTopString'] as string;
+      if (data.has('bottomTabBarStylePaddingTopString')) {
+        if (data['bottomTabBarStylePaddingTopString']) {
+          this.bottomTabBarStylePaddingTopString = data['bottomTabBarStylePaddingTopString'] as string;
+        } else {
+          this.bottomTabBarStylePaddingTopString = undefined;
+        }
       }
 
-      if (data['bottomTabBarStylePaddingBottomString'] != null &&
-        data['bottomTabBarStylePaddingBottomString'] != 'null' &&
-        data['bottomTabBarStylePaddingBottomString'] != 'undefined') {
-        this.bottomTabBarStylePaddingBottomString = data['bottomTabBarStylePaddingBottomString'] as string;
+      if (data.has('bottomTabBarStylePaddingBottomString')) {
+        if (data['bottomTabBarStylePaddingBottomString']) {
+          this.bottomTabBarStylePaddingBottomString = data['bottomTabBarStylePaddingBottomString'] as string;
+        } else {
+          this.bottomTabBarStylePaddingBottomString = undefined;
+        }
       }
 
-      if (data['bottomTabBarStylePaddingLeftString'] != null && data['bottomTabBarStylePaddingLeftString'] != 'null' &&
-        data['bottomTabBarStylePaddingLeftString'] != 'undefined') {
-        this.bottomTabBarStylePaddingLeftString = data['bottomTabBarStylePaddingLeftString'] as string;
+      if (data.has('bottomTabBarStylePaddingLeftString')) {
+        if (data['bottomTabBarStylePaddingLeftString']) {
+          this.bottomTabBarStylePaddingLeftString = data['bottomTabBarStylePaddingLeftString'] as string;
+        } else {
+          this.bottomTabBarStylePaddingLeftString = undefined;
+        }
       }
 
-      if (data['bottomTabBarStylePaddingRightString'] != null &&
-        data['bottomTabBarStylePaddingRightString'] != 'null' &&
-        data['bottomTabBarStylePaddingRightString'] != 'undefined') {
-        this.bottomTabBarStylePaddingRightString = data['bottomTabBarStylePaddingRightString'] as string;
+      if (data.has('bottomTabBarStylePaddingRightString')) {
+        if (data['bottomTabBarStylePaddingRightString']) {
+          this.bottomTabBarStylePaddingRightString = data['bottomTabBarStylePaddingRightString'] as string;
+        } else {
+          this.bottomTabBarStylePaddingRightString = undefined;
+        }
       }
 
-      if (data['bottomTabBarStyleVerticalAlign'] != null && data['bottomTabBarStyleVerticalAlign'] != 'null' &&
-        data['bottomTabBarStyleVerticalAlign'] != 'undefined') {
-        this.bottomTabBarStyleVerticalAlign = data['bottomTabBarStyleVerticalAlign'] as VerticalAlign;
+      if (data.has('bottomTabBarStyleVerticalAlign')) {
+        if (data['bottomTabBarStyleVerticalAlign']) {
+          this.bottomTabBarStyleVerticalAlign = data['bottomTabBarStyleVerticalAlign'] as VerticalAlign;
+        } else {
+          this.bottomTabBarStyleVerticalAlign = VerticalAlign.Center
+        }
       }
 
-      if (data['bottomTabBarStyleLayoutMode'] != null && data['bottomTabBarStyleLayoutMode'] != 'null' &&
-        data['bottomTabBarStyleLayoutMode'] != 'undefined') {
-        this.bottomTabBarStyleLayoutMode = data['bottomTabBarStyleLayoutMode'] as LayoutMode;
+      if (data.has('bottomTabBarStyleLayoutMode') ) {
+        if (data['bottomTabBarStyleLayoutMode']) {
+          this.bottomTabBarStyleLayoutMode = data['bottomTabBarStyleLayoutMode'] as LayoutMode;
+        } else {
+          this.bottomTabBarStyleLayoutMode = LayoutMode.VERTICAL
+        }
       }
 
       if (data['bottomTabBarStyleSymmetricExtensible'] != null &&
@@ -283,23 +362,29 @@ struct TabsExampleThird {
         this.bottomTabBarStyleSymmetricExtensible = data['bottomTabBarStyleSymmetricExtensible'] as boolean;
       }
 
-      if (data['bottomTabBarStyleLabelStyleOverflow'] != null &&
-        data['bottomTabBarStyleLabelStyleOverflow'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleOverflow'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleOverflow = data['bottomTabBarStyleLabelStyleOverflow'] as TextOverflow;
+      if (data.has('bottomTabBarStyleLabelStyleOverflow') ) {
+        if (data['bottomTabBarStyleLabelStyleOverflow']) {
+          this.bottomTabBarStyleLabelStyleOverflow = data['bottomTabBarStyleLabelStyleOverflow'] as TextOverflow;
+        } else {
+          this.bottomTabBarStyleLabelStyleOverflow = undefined
+        }
       }
 
-      if (data['bottomTabBarStyleLabelStyleMaxLines'] != null &&
-        data['bottomTabBarStyleLabelStyleMaxLines'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleMaxLines'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleMaxLines = data['bottomTabBarStyleLabelStyleMaxLines'] as number;
+      if (data.has('bottomTabBarStyleLabelStyleMaxLines')) {
+        if (data['bottomTabBarStyleLabelStyleMaxLines']) {
+          this.bottomTabBarStyleLabelStyleMaxLines = data['bottomTabBarStyleLabelStyleMaxLines'] as number;
+        } else {
+          this.bottomTabBarStyleLabelStyleMaxLines = undefined;
+        }
       }
 
-      if (data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] != null &&
-        data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleMinFontSizeNumber =
-          data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] as number;
+      if (data.has('bottomTabBarStyleLabelStyleMinFontSizeNumber')) {
+        if (data['bottomTabBarStyleLabelStyleMinFontSizeNumber']) {
+          this.bottomTabBarStyleLabelStyleMinFontSizeNumber =
+            data['bottomTabBarStyleLabelStyleMinFontSizeNumber'] as number;
+        } else {
+          this.bottomTabBarStyleLabelStyleMinFontSizeNumber = undefined;
+        }
       }
 
       if (data['bottomTabBarStyleLabelStyleMinFontSizeString'] != null &&
@@ -309,11 +394,13 @@ struct TabsExampleThird {
           data['bottomTabBarStyleLabelStyleMinFontSizeString'] as string;
       }
 
-      if (data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] != null &&
-        data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleMaxFontSizeNumber =
-          data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] as number;
+      if (data.has('bottomTabBarStyleLabelStyleMaxFontSizeNumber')) {
+        if (data['bottomTabBarStyleLabelStyleMaxFontSizeNumber']) {
+          this.bottomTabBarStyleLabelStyleMaxFontSizeNumber =
+            data['bottomTabBarStyleLabelStyleMaxFontSizeNumber'] as number;
+        } else {
+          this.bottomTabBarStyleLabelStyleMaxFontSizeNumber = undefined;
+        }
       }
 
       if (data['bottomTabBarStyleLabelStyleMaxFontSizeString'] != null &&
@@ -330,10 +417,12 @@ struct TabsExampleThird {
           data['bottomTabBarStyleLabelStyleHeightAdaptivePolicy'] as TextHeightAdaptivePolicy;
       }
 
-      if (data['bottomTabBarStyleLabelStyleFontSizeNumber'] != null &&
-        data['bottomTabBarStyleLabelStyleFontSizeNumber'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleFontSizeNumber'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleFontSizeNumber = data['bottomTabBarStyleLabelStyleFontSizeNumber'] as number;
+      if (data.has('bottomTabBarStyleLabelStyleFontSizeNumber')) {
+        if (data['bottomTabBarStyleLabelStyleFontSizeNumber']) {
+          this.bottomTabBarStyleLabelStyleFontSizeNumber = data['bottomTabBarStyleLabelStyleFontSizeNumber'] as number;
+        } else {
+          this.bottomTabBarStyleLabelStyleFontSizeNumber = undefined;
+        }
       }
 
       if (data['bottomTabBarStyleLabelStyleFontSizeString'] != null &&
@@ -348,31 +437,41 @@ struct TabsExampleThird {
         this.bottomTabBarStyleLabelStyleFontWeight = data['bottomTabBarStyleLabelStyleFontWeight'] as FontWeight;
       }
 
-      if (data['bottomTabBarStyleLabelStyleFontWeightNumber'] != null &&
-        data['bottomTabBarStyleLabelStyleFontWeightNumber'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleFontWeightNumber'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleFontWeightNumber =
-          data['bottomTabBarStyleLabelStyleFontWeightNumber'] as number;
+      if (data.has('bottomTabBarStyleLabelStyleFontWeightNumber')) {
+        if (data['bottomTabBarStyleLabelStyleFontWeightNumber']) {
+          this.bottomTabBarStyleLabelStyleFontWeightNumber =
+            data['bottomTabBarStyleLabelStyleFontWeightNumber'] as number;
+        } else {
+          this.bottomTabBarStyleLabelStyleFontWeightNumber = undefined
+        }
       }
 
-      if (data['bottomTabBarStyleLabelStyleFontWeightString'] != null &&
-        data['bottomTabBarStyleLabelStyleFontWeightString'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleFontWeightString'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleFontWeightString =
-          data['bottomTabBarStyleLabelStyleFontWeightString'] as string;
+      if (data.has('bottomTabBarStyleLabelStyleFontWeightString') ) {
+        if (data['bottomTabBarStyleLabelStyleFontWeightString']) {
+          this.bottomTabBarStyleLabelStyleFontWeightString =
+            data['bottomTabBarStyleLabelStyleFontWeightString'] as string;
+        } else {
+          this.bottomTabBarStyleLabelStyleFontWeightString = undefined
+        }
       }
 
-      if (data['bottomTabBarStyleLabelStyleFontFamilyString'] != null &&
-        data['bottomTabBarStyleLabelStyleFontFamilyString'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleFontFamilyString'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleFontFamilyString =
-          data['bottomTabBarStyleLabelStyleFontFamilyString'] as string;
+      if (data.has('bottomTabBarStyleLabelStyleFontFamilyString')) {
+        if (data['bottomTabBarStyleLabelStyleFontFamilyString']) {
+          this.bottomTabBarStyleLabelStyleFontFamilyString =
+            data['bottomTabBarStyleLabelStyleFontFamilyString'] as string;
+        } else {
+          this.bottomTabBarStyleLabelStyleFontFamilyString = undefined
+        }
+
       }
 
-      if (data['bottomTabBarStyleLabelStyleFontStyle'] != null &&
-        data['bottomTabBarStyleLabelStyleFontStyle'] != 'null' &&
-        data['bottomTabBarStyleLabelStyleFontStyle'] != 'undefined') {
-        this.bottomTabBarStyleLabelStyleFontStyle = data['bottomTabBarStyleLabelStyleFontStyle'] as FontStyle;
+      if (data.has('bottomTabBarStyleLabelStyleFontStyle')) {
+        if (data['bottomTabBarStyleLabelStyleFontStyle']) {
+          this.bottomTabBarStyleLabelStyleFontStyle = data['bottomTabBarStyleLabelStyleFontStyle'] as FontStyle;
+        } else {
+          this.bottomTabBarStyleLabelStyleFontStyle = undefined;
+        }
+
       }
     }
   }
@@ -439,8 +538,9 @@ struct TabsExampleThird {
             Text('Tab1').fontSize(32)
           }.width('100%').height('100%').backgroundColor(Color.Yellow)
         }
-        .tabBar(SubTabBarStyle.of("tab1")
-          .padding(this.subTabBarStylePaddingNumber)
+        // padding 不能直接传值undefined，和1.1需判断
+        .tabBar(this.subTabBarStylePaddingNumber == undefined ? SubTabBarStyle.of("tab1") : SubTabBarStyle.of("tab1")
+          .padding(this.subTabBarStylePaddingNumber!)
         )
         .key('subTabBarNumberTest')
 
@@ -448,8 +548,8 @@ struct TabsExampleThird {
           Column() {
             Text('Tab2').fontSize(32)
           }.width('100%').height('100%').backgroundColor(Color.Pink)
-        }.tabBar(BottomTabBarStyle.of('app.media.icon', "tab1")
-          .padding(this.bottomTabBarStylePaddingNumber)
+        }.tabBar(this.bottomTabBarStylePaddingNumber != undefined ? BottomTabBarStyle.of('app.media.icon', "tab1")
+          .padding(this.bottomTabBarStylePaddingNumber!) : BottomTabBarStyle.of('app.media.icon', "tab1")
         )
         .key('bottomTabBarNumberTest')
       }
@@ -699,7 +799,7 @@ struct TabsExampleThird {
             maxFontSize: this.bottomTabBarStyleLabelStyleMaxFontSizeNumber,
             font: {
               size: this.bottomTabBarStyleLabelStyleFontSizeNumber,
-              weight: this.bottomTabBarStyleLabelStyleFontWeightNumber.toInt(),
+              weight: this.bottomTabBarStyleLabelStyleFontWeightNumber?.toInt(),
             }
           }))
         .key('bottomTabBarStyleLabelStyleNumberTest')
@@ -758,6 +858,6 @@ struct TabsExampleThird {
         .width($r('sys.float.ohos_id_subtab_horizontal_padding'))
         .key("subTabBarDefaultTestLeftJudge")
 
-    }.backgroundColor(Color.Red).width('100%').height('100%')
+    }
   }
 }

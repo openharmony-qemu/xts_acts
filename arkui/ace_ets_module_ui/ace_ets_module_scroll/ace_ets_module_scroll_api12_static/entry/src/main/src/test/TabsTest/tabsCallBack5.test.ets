@@ -53,8 +53,6 @@ export default function tabsCallBack5() {
         if (!("tabsCallBack5" == pages.name)) {
           console.info("get tabsCallBack5 pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push tabsCallBack5 page result:");
         }
       } catch (err) {
         console.error("push tabsCallBack5 page error:" + err);
@@ -62,9 +60,6 @@ export default function tabsCallBack5() {
       console.info("tabsCallBack5 beforeEach end");
     });
 
-
-    
-      
   /*
      * @tc.number   tabsCallBack5_static_0100
      * @tc.name     tabsCallBack5_static_0100

@@ -49,10 +49,8 @@ export default function showInSubWindowBindSheet() {
   describe('showInSubWindowBindSheet', () => {
 
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
-      
+      await CommonFunc.sleep(4000);
     })
 
     beforeEach(async () => {
@@ -67,7 +65,6 @@ export default function showInSubWindowBindSheet() {
         console.info("get showInSubWindowBindSheet state pages: " + JSON.stringify(pages));
         if (!("showInSubWindowBindSheet" == pages.name)) {
           console.info("get showInSubWindowBindSheet state pages.name: " + JSON.stringify(pages.name));
-
           showInSubWindowBindSheet.pushUrl(options);
           await CommonFunc.sleep(2000);
         }

@@ -117,6 +117,10 @@ import ImageAdvancedTest from './imageTest/ImageAdvancedTest.test.ets'
 import ImageAnimatorAdvancedTest from './ImageAnimator/imageAnimatorAdvancedTest.test.ets'
 
 export default function testsuite() {
+  getColorTest()
+  frame()
+  pivot()
+  scale()
   ImageAdvancedTest() //1个断言失败loading failed do not have  success IDE打包相对路径资源打不进去  1 网络加载图片
   ImageAnimatorAdvancedTest()
   ToggleJsunit(); //ToggleType.Switch equals ToggleType.Checkbox  1
@@ -168,7 +172,7 @@ export default function testsuite() {
   imageThreeJsunit();
   buttonJsunit();
   buttonEnabledJsunit();
-  checkBoxGroupUIJsunit();   // 新问题 JSON.stringfity()  2
+  checkBoxGroupUIJsunit();   // 1
   CheckBoxJsunit();
   TextClockJsunit();
   TextClockLongJsunit();
@@ -189,15 +193,11 @@ export default function testsuite() {
   drawContextGetSizeTest()
   keyframeTest()
   pixelRoundTest()
-  frame()
-  getChildTest() 
+  getChildTest()
   getClipToFrameJsunit()
-  getColorTest()
   getOpacityJsunit()
   getPosition()
   getSizeJsunit()
-  pivot()
-  scale()
   SetClipToFrameJsunit()
   SetOpacityJsunit()
   SetPositionJsunit()
@@ -217,6 +217,6 @@ export default function testsuite() {
   PatternLockJsunit();
   focusJsunit();
   imageAnimatorJsunit();
-  ProgressJsunit();  // Progress 背景色 3
+  ProgressJsunit();
   stageAnimatorTest();
 }

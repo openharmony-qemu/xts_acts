@@ -149,7 +149,7 @@ export default function subwindowDialog() {
       // await (buttonSubwindowMenu?.longClick() as Promise<void>);
       // await CommonFunc.sleep(1000);
       //
-      // await (buttonCloseDialog?.click() as Promise<void>);
+      await (buttonCloseDialog?.click() as Promise<void>);
       // await CommonFunc.sleep(1000);
       console.info('[subwindowDialog_static_0200] END');
       done();

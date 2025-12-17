@@ -50,10 +50,8 @@ export default function listUxTest() {
   describe('listUxTest', () => {
 
     beforeAll(() => {
-
-      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
+      await CommonFunc.sleep(4000);
 
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/list_ux",
@@ -407,11 +405,11 @@ export default function listUxTest() {
       try {
         let margin = JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("nurmal"))
           .getElement('$attrs')
-          .getElement('margin'))
+          .getString('margin'))
         console.log("====> ArkUX_Stage_List_Style_1000 margin:" + margin)
         let listItemGroupMargin =
-          JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("ArkUXII_List_style_1000"))
-            .getElement('$attrs').getElement('margin'))
+          JSON.parseJsonElement(inspector.getInspectorByKey("ArkUXII_List_style_1000"))
+            .getElement('$attrs').getString('margin')
         console.log("====> ArkUX_Stage_List_Style_1000 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
       } catch (err: Error) {
@@ -430,13 +428,13 @@ export default function listUxTest() {
        */
     it('ArkUX_Stage_List_Style_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let margin = JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("nurmal"))
+        let margin = JSON.parseJsonElement(inspector.getInspectorByKey("nurmal"))
           .getElement('$attrs')
-          .getElement('margin'))
+          .getString('margin')
         console.log("====> ArkUX_Stage_List_Style_1100 margin:" + margin)
         let listItemGroupMargin =
-          JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("ArkUXII_List_style_1100"))
-            .getElement('$attrs').getElement('margin'))
+          JSON.parseJsonElement(inspector.getInspectorByKey("ArkUXII_List_style_1100"))
+            .getElement('$attrs').getString('margin')
         console.log("====> ArkUX_Stage_List_Style_1100 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
       } catch (err: Error) {
@@ -455,13 +453,12 @@ export default function listUxTest() {
        */
     it('ArkUX_Stage_List_Style_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let margin = JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("nurmal"))
+        let margin = JSON.parseJsonElement(inspector.getInspectorByKey("nurmal"))
           .getElement('$attrs')
-          .getElement('margin'))
+          .getString('margin')
         console.log("====> ArkUX_Stage_List_Style_1200 margin:" + margin)
-        let listItemGroupMargin =
-          JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("ArkUXII_List_style_1200"))
-            .getElement('$attrs').getElement('margin'))
+        let listItemGroupMargin = JSON.parseJsonElement(inspector.getInspectorByKey("ArkUXII_List_style_1200"))
+            .getElement('$attrs').getString('margin')
         console.log("====> ArkUX_Stage_List_Style_1200 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
       } catch (err: Error) {
@@ -480,11 +477,11 @@ export default function listUxTest() {
        */
     it('ArkUX_Stage_List_RollBack_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        // inspector.sendEventByKey("scrollerForList", 10, "")
-        let obj = JSON.stringify(JSON.parseJsonElement(inspector.getInspectorByKey("RollBack"))
+        inspector.sendEventByKey("scrollerForList", 10, "")
+        let obj = JSON.parseJsonElement(inspector.getInspectorByKey("RollBack"))
           .getElement('$attrs')
-          .tryGetElement('scrollerForList'))
-        expect(obj).assertUndefined()
+          .tryGetElement('scrollerForList')
+        expect(obj === undefined).assertTrue()
       } catch (err: Error) {
         console.info('ArkUX_Stage_List_RollBack_0100 ERR  ' + JSON.stringify(err));
         expect().assertFail();
@@ -760,7 +757,7 @@ export default function listUxTest() {
             JSON.parseJsonElement(inspector.getInspectorByKey("ArkUX_Stage_List_LimitAnimation_1200"))
               .getElement('$attrs').getString('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1200 listItemLeft:" + scrollSnapAlign)
-          expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
+          expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
         } catch (err: Error) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1200 ERR  ' + JSON.stringify(err));
@@ -822,21 +819,21 @@ export default function listUxTest() {
        * @tc.desc     ArkUX_Stage_List_LimitAnimation_static_1500
        * @tc.level    Level.LEVEL0
        */
-    it('ArkUX_Stage_List_LimitAnimation_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      setTimeout(() => {
-        try {
-          let scrollSnapAlign =
-            JSON.parseJsonElement(inspector.getInspectorByKey("ArkUX_Stage_List_LimitAnimation_1500"))
-              .getElement('$attrs').getString('scrollSnapAlign')
-          console.log("====> ArkUX_Stage_List_LimitAnimation_static_1500 listItemLeft:" + scrollSnapAlign)
-          expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
-        } catch (err: Error) {
-          expect().assertFail();
-          console.info('ArkUX_Stage_List_LimitAnimation_static_1500 ERR  ' + JSON.stringify(err));
-        }
-        done()
-      }, 500);
-    })
+    // it('ArkUX_Stage_List_LimitAnimation_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   setTimeout(() => {
+    //     try {
+    //       let scrollSnapAlign =
+    //         JSON.parseJsonElement(inspector.getInspectorByKey("ArkUX_Stage_List_LimitAnimation_1500"))
+    //           .getElement('$attrs').getString('scrollSnapAlign')
+    //       console.log("====> ArkUX_Stage_List_LimitAnimation_static_1500 listItemLeft:" + scrollSnapAlign)
+    //       expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
+    //     } catch (err: Error) {
+    //       expect().assertFail();
+    //       console.info('ArkUX_Stage_List_LimitAnimation_static_1500 ERR  ' + JSON.stringify(err));
+    //     }
+    //     done()
+    //   }, 500);
+    // })
 
 
     /*

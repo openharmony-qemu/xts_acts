@@ -53,11 +53,11 @@ struct SetDefaultThemePage {
   @StorageLink(defaultThemeProperty) localTheme: CustomTheme | undefined
 
   aboutToAppear() {
-    // ThemeControl.setDefaultTheme(redCustomTheme);
+    ThemeControl.setDefaultTheme(redCustomTheme);
   }
 
   onPageHide() {
-    // ThemeControl.setDefaultTheme({colors: undefined});
+    ThemeControl.setDefaultTheme(undefined);
   }
 
   onWillApplyTheme(theme: CustomTheme | undefined) {
