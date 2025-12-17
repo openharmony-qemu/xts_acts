@@ -23,15 +23,15 @@ struct ContrastTest {
     Column() {
       Flex({justifyContent: FlexAlign.Center , alignItems: ItemAlign.Center }) {
         Column({ space: 5 }) {
-          Image(this.image_src).height('10%').id('imageId1')
+          Image(this.image_src).height('10%').id('imageContrastId1')
             .contrast(0).grayscale(0).saturate(0).sepia(0).sphericalEffect(0).lightUpEffect(0)
-          Image(this.image_src).height('10%').id('imageId2')
+          Image(this.image_src).height('10%').id('imageContrastId2')
             .contrast(-1).grayscale(-1).saturate(-1).sepia(-1).sphericalEffect(-1).lightUpEffect(-1)
-          Image(this.image_src).height('10%').id('imageId3')
+          Image(this.image_src).height('10%').id('imageContrastId3')
             .contrast(10).grayscale(1).saturate(50).sepia(undefined).sphericalEffect(2).lightUpEffect(2)
-          Image(this.image_src).height('10%').id('imageId4')
+          Image(this.image_src).height('10%').id('imageContrastId4')
             .contrast(9).grayscale(2).saturate(49).sphericalEffect(undefined).lightUpEffect(undefined)
-          Image(this.image_src).height('10%').id('imageId5')
+          Image(this.image_src).height('10%').id('imageContrastId5')
             .contrast(11).grayscale(undefined).saturate(undefined)
         }
       }
