@@ -50,7 +50,8 @@ static napi_value Nullptr_OH_ArkUI_GestureInterruptInfo_GetRecognizer(napi_env e
     event->userData = nullptr;
     event->count = 0;
     auto *previewOptions = OH_ArkUI_GestureInterruptInfo_GetRecognizer((ArkUI_GestureInterruptInfo *)event);
-    ASSERT_OBJ_NE(previewOptions, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetRecognizer", "GetRecognizer ret: %{public}p", previewOptions);      
+    ASSERT_EQ_INT(previewOptions, nullptr);
     NAPI_END;
 }
 

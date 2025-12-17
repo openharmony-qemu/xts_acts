@@ -30,6 +30,8 @@ export const CoastingAxisTest: (a: string) => void;
 
 export const hasAxisTest: (a: string) => void;
 
+export const RegionListTest: (a: string) => void;
+
 export const WaterFlowFillPolicyTest: (a: string) => void;
 
 export const snapSpeedTest: (a: string) => void;
