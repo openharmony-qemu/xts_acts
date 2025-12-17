@@ -51,14 +51,14 @@ export default function SmsMmsErrorTestStatic() {
     let specification: string = '3gpp';
     let specification2: string = '3gpp2';
 
-    /*
-      * @tc.number: Telephony_SmsMms_createMessage_Async_0200
-      * @tc.name  : Telephony_SmsMms_createMessage_Async_static_0200
-      * @tc.desc  :  Call interface CreateMessage,The incoming PDU is empty, the specification is 3GPP, shortMessage isn't empty      
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : Level 0
-      */
+    /**
+     * @tc.number  Telephony_SmsMms_createMessage_Async_0200
+     * @tc.name    Telephony_SmsMms_createMessage_Async_static_0200
+     * @tc.desc    Call interface CreateMessage,The incoming PDU is empty, the specification is 3GPP, shortMessage isn't empty
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
     it("Telephony_SmsMms_createMessage_Async_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = "Telephony_SmsMms_createMessage_Async_static_0200";
       try {
@@ -90,14 +90,14 @@ export default function SmsMmsErrorTestStatic() {
       done();
     });
 
-    /*
-    * @tc.number: Telephony_SmsMms_createMessage_Promise_0200
-    * @tc.name  : Telephony_SmsMms_createMessage_Promise_static_0200
-    * @tc.desc  :  Call interface CreateMessage,The incoming PDU is empty, the specification is 3GPP,promise returns the result Don't empty          
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.number  Telephony_SmsMms_createMessage_Promise_0200
+     * @tc.name    Telephony_SmsMms_createMessage_Promise_static_0200
+     * @tc.desc    Call interface CreateMessage,The incoming PDU is empty, the specification is 3GPP,promise returns the result Don't empty          
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
     it("Telephony_SmsMms_createMessage_Promise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = "Telephony_SmsMms_createMessage_Promise_static_0200";
       try {
@@ -112,14 +112,14 @@ export default function SmsMmsErrorTestStatic() {
       done();
     });
 
-    /*
-    * @tc.number: Telephony_SmsMms_hasSmsCapability_0100
-    * @tc.name  : Telephony_SmsMms_hasSmsCapability_static_0100
-    * @tc.desc  :  Check whether the Ims SMS function is supported
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.number  Telephony_SmsMms_hasSmsCapability_0100
+     * @tc.name    Telephony_SmsMms_hasSmsCapability_static_0100
+     * @tc.desc    Check whether the Ims SMS function is supported
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
     it("Telephony_SmsMms_hasSmsCapability_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = "Telephony_SmsMms_hasSmsCapability_static_0100";
       try {
@@ -134,24 +134,24 @@ export default function SmsMmsErrorTestStatic() {
       done();
     });
 
-    /*
-    * @tc.number: Telephony_SmsMms_getDefaultSmsSlotId_Promise_0100
-    * @tc.name  : Telephony_SmsMms_getDefaultSmsSlotId_Promise_static_0100
-    * @tc.desc  : Set the default card slot ID for sending SMS
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.number  Telephony_SmsMms_getDefaultSmsSlotId_Promise_0100
+     * @tc.name    Telephony_SmsMms_getDefaultSmsSlotId_Promise_static_0100
+     * @tc.desc    Set the default card slot ID for sending SMS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 0
+     */
     it("Telephony_SmsMms_getDefaultSmsSlotId_Promise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = "Telephony_SmsMms_getDefaultSmsSlotId_Promise_static_0100";
       try {
         let result = await sms.getDefaultSmsSlotId();
-        hilog.info(domain, tag, `${caseName} getDefaultSmsSlotId fail`);
-        ExpectTrue(true);
+        hilog.info(domain, tag, `${caseName} getDefaultSmsSlotId finish , result = ${result}`);
+        expect(result === 0 || result === 1).assertTrue();
         done();
       } catch(error) {
-        hilog.error(domain, tag, `${caseName} finish`);
-        ExpectTrue(true);
+        hilog.error(domain, tag, `${caseName} fail, err: ${error}`);
+        expect().assertFail();
         done();
       }
     });
