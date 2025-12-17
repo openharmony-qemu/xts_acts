@@ -12,8 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ImageEffectFilterRenderSuppTest from './ImageEffectFilterRenderSupp.test';
 import ImageEffectFilterSuppTest from './ImageEffectFilterSupp.test';
 import ImageEffectSuppTest from './ImageEffectSupp.test';
+import imageFrameworkPixelMapNativeCreateSuppTest from './ImageFrameworkPixelMapNativeCreateSupp.test';
+import imageFrameworkImageSourceNativeCreateSuppTest from './ImageSourceNativeCreateTest.test';
 import OHEffectBufferInfoGetTextureIdTest from './OHEffectBufferInfoGetTextureIdTest.test';
 import OHEffectBufferInfoGetTimestampTest from './OHEffectBufferInfoGetTimestampTest.test';
 import OHEffectBufferInfoSetTextureIdTest from './OHEffectBufferInfoSetTextureIdTest.test';
@@ -31,6 +34,9 @@ export default function testsuite() {
   OHEffectBufferInfoSetTextureIdTest();
   OHEffectBufferInfoGetTextureIdTest();
   ImageEffectFilterSuppTest();
+  ImageEffectFilterRenderSuppTest();
+  imageFrameworkPixelMapNativeCreateSuppTest();
+  imageFrameworkImageSourceNativeCreateSuppTest();
   ImageErrorSuppTest();
   ImageEffectInfoSupplementTest();
   PixelMapInitNativePixelMap();

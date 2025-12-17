@@ -17,10 +17,10 @@ interface PackingOption_format {
   format: string;
 }
 
-
 interface PackingOption_quality {
   quality: number;
 }
+
 export const packToData: (a: image.ImagePacker, b: image.ImageSource | image.PixelMap,
   c: image.PackingOption | PackingOption_format | PackingOption_quality) => number;
 export const OHImageEffectCreateSupp: (a: number) => number;
@@ -40,6 +40,13 @@ export const OHEffectFilterGetValueSupp: (a: number) => number;
 export const OHEffectFilterRegisterSupp: (a: number) => number;
 export const OHEffectFilterLookupFilterInfoSupp: (a: number) => number;
 export const OHEffectFilterReleaseSupp: (a: number) => number;
+export const OHEffectFilterRenderSupp: (a: number) => number;
+export const OHEffectFilterRenderWithTextureIdSupp: (a: number) => number;
+export const OHPixelmapNativeCreateScaledPixelMapSupp: (a: number) => number;
+export const OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp: (a: number) => number;
+export const OHPixelmapNativeTranslateSupp: (a: number) => number;
+export const OHImageSourceNativeCreateFromUriSupp: (a: number) => number;
+export const OHImageSourceNativeCreateFromFdSupp: (a: number) => number;
 export const OHImageAlphaTypeSupp: (a: number) => number;
 export const OHImageErrorCodeSupp: (a: number) => number;
 export const OHImageScaleModeSupp: (a: number) => number;
