@@ -130,5 +130,20 @@ export default function TextEnableSelectedDataDetectorTest() {
       console.info('[TextEnableSelectedDataDetectorTest_0050] END');
       done();
     });
+
+    /**
+     * @tc.name   TextEnableSelectedDataDetectorTest_0060
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextEnableSelectedDataDetectorTest_0060
+     * @tc.desc   test Text: NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR = 1038
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextEnableSelectedDataDetectorTest_0060', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextEnableSelectedDataDetectorTest_0060] START');
+      expect(NODE_TEXT_ENABLE_SELECTED_DATA_DETECTOR).assertEqual(1038);
+      console.info("[TextEnableSelectedDataDetectorTest_0060] END");
+      done();
+    });
   })
 }

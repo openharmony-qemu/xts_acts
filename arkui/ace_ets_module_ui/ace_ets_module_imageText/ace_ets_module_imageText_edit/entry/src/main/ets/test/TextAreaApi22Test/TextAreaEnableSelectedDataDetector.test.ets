@@ -130,5 +130,20 @@ export default function TextAreaEnableSelectedDataDetectorTest() {
       console.info('[TextAreaEnableSelectedDataDetectorTest_0050] END');
       done();
     });
+
+    /**
+     * @tc.name   TextAreaEnableSelectedDataDetectorTest_0060
+     * @tc.number SUB_ACE_TextAreaEnableSelectedDataDetectorTest_0060
+     * @tc.desc   test TextArea: NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR = 8033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextAreaEnableSelectedDataDetectorTest_0060', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextAreaEnableSelectedDataDetectorTest_0060] START');
+      expect(NODE_TEXT_AREA_ENABLE_SELECTED_DATA_DETECTOR).assertEqual(8033);
+      console.info('[TextAreaEnableSelectedDataDetectorTest_0060] END');
+      done();
+    });
   })
 }
