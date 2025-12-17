@@ -223,9 +223,9 @@ class Operations3 {
     static sub(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
         if (c0 > c1) {
-            c = (c0 - c1).toChar();
+            c = (c0.toInt()  - c1.toInt()).toChar();
         } else {
-            c = (c1 - c0).toChar();
+            c = (c1.toInt() - c0.toInt()).toChar();
         }
         return c as char;
     }
@@ -236,9 +236,9 @@ class A3 {
     static funcA(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
         if (c0 > c1) {
-            c = (c0 - c1).toChar();
+            c = (c0.toInt() - c1.toInt()).toChar();
         } else {
-            c = (c1 - c0).toChar();
+            c = (c1.toInt() - c0.toInt()).toChar();
         }
         return c as char;
     }
@@ -254,9 +254,9 @@ class A3 {
     static funcA(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
         if (c0 > c1) {
-            c = (c0 - c1).toChar();
+            c = (c0.toInt() - c1.toInt()).toChar();
         } else {
-            c = (c1 - c0).toChar();
+            c = (c1.toInt() - c0.toInt()).toChar();
         }
         return c as char;
     }
@@ -269,9 +269,9 @@ class A3 {
     static funcA(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
         if (c0 > c1) {
-            c = (c0 - c1).toChar();
+            c = (c0.toInt() - c1.toInt()).toChar();
         } else {
-            c = (c1 - c0).toChar();
+            c = (c1.toInt() - c0.toInt()).toChar();
         }
         return c as char;
     }
@@ -280,7 +280,7 @@ class A3 {
 class B3 extends A3 {
     static funcA(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
-        c = (c0 + c1).toChar();
+        c = (c0.toInt() + c1.toInt()).toChar();
         return c as char;
     }
 }
@@ -290,9 +290,9 @@ class A3 {
     static funcA(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
         if (c0 > c1) {
-            c = (c0 - c1).toChar();
+            c = (c0.toInt() - c1.toInt()).toChar();
         } else {
-            c = (c1 - c0).toChar();
+            c = (c1.toInt() - c0.toInt()).toChar();
         }
         return c as char;
     }
@@ -309,7 +309,7 @@ class A3 {
 class B3 extends A3 {
     static funcB(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
-        c = (c0 + c1).toChar();
+        c = (c0.toInt() + c1.toInt()).toChar();
         return c as char;
     }
 }
@@ -320,7 +320,7 @@ class C3 extends A3 {
 class D3 extends A3 {
     static funcA(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
-        c = (c0 + c1).toChar();
+        c = (c0.toInt() + c1.toInt()).toChar();
         return c as char;
     }
 }
@@ -333,8 +333,8 @@ class E3 extends A3 {
 
 class F3 {
     static increment(c0: char, c1: char): void {
-        F3.count = (F3.count + c0).toChar();
-        F3.count = (F3.count + c1).toChar();
+        F3.count = (F3.count.toInt() + c0.toInt()).toChar();
+        F3.count = (F3.count.toInt() + c1.toInt()).toChar();
     }
 
     static getCount(): char {
@@ -347,16 +347,16 @@ class F3 {
 class G3 {
     public static publicMethod(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
-        c = (c0 + c1).toChar();
+        c = (c0.toInt() + c1.toInt()).toChar();
         return c as char;
     }
 
     private static privateMethod(c0: char, c1: char): char {
         let c: Char = new Char(c'0');
         if (c0 > c1) {
-            c = (c0 - c1).toChar();
+            c = (c0.toInt() - c1.toInt()).toChar();
         } else {
-            c = (c1 - c0).toChar();
+            c = (c1.toInt() - c0.toInt()).toChar();
         }
         return c as char;
     }
@@ -1209,8 +1209,8 @@ class GetCharStatic {
     static specia10: char = c'\f';
     static specia11: char = c'\v';
     static specia12: char = c'\0';
-    static charMin: char = 0;
-    static charMax: char = 65535;
+    static charMin: char = c'\u0000';
+    static charMax: char = c'\uFFFF';
 }
 
 class CharStaticA extends GetCharStatic {

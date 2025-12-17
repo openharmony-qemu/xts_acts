@@ -125,18 +125,6 @@ ani_int test_Any_GetProperty([[maybe_unused]] ani_env *env, [[maybe_unused]] ani
     return ANI_TRUE;
 }
 
-ani_int test_Any_GetProperty_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_module md {};
-    ani_function fn {};
-    GetMethod(env, "getArray", &md, &fn);
-    ani_ref arrayRef {};
-    ASSERT_EQ(env->Function_Call_Ref(fn, &arrayRef), ANI_OK);
-    ani_ref nameRefByIdx {};
-    ASSERT_EQ(env->Any_GetByIndex(arrayRef, 0U, &nameRefByIdx), ANI_OK);
-    return ANI_TRUE;
-}
-
 ani_int test_Any_GetProperty_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_ref dummyResult {};

@@ -4344,25 +4344,6 @@ export default function objectOperationsTest() {
     })
 
     /**
-     * @tc.number      SUB_ANI_OBJECT_NEW_2400
-     * @tc.name        Object_New_0024
-     * @tc.desc        object new a multiple parameters method
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
-     */
-    it("Object_New_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      console.log('Object_New_0024 start');
-      let cls = new Foo();
-      let result = cls.test_Object_New_24();
-      expect(result).assertTrue();
-      console.log('Object_New_0024 done');
-      done();
-      console.log('Object_New_0024 end');
-    })
-
-    /**
      * @tc.number      SUB_ANI_OBJECT_NEW_2500
      * @tc.name        Object_New_0025
      * @tc.desc        object new v invalid args

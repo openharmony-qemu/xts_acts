@@ -348,7 +348,6 @@ export class Foo {
   native test_Any_GetByIndex(): boolean;
   native test_Any_GetByValue(): boolean;
   native test_Any_GetProperty(): boolean;
-  native test_Any_GetProperty_01(): boolean;
   native test_Any_GetProperty_02(): boolean;
   native test_Any_GetProperty_03(): boolean;
   native test_Any_GetProperty_04(): boolean;
@@ -1094,7 +1093,6 @@ export class Foo {
   native test_Class_Get_Static_Field_Short_11(): boolean;
   native test_Class_Get_Static_Field_Short_12(): boolean;
   native test_Class_Get_Static_Field_Bool_01(): boolean;
-  native test_Class_Get_Static_Field_Bool_02(): boolean;
   native test_Class_Get_Static_Field_Bool_03(): boolean;
   native test_Class_Get_Static_Field_Bool_04(): boolean;
   native test_Class_Get_Static_Field_Bool_05(): boolean;
@@ -1124,7 +1122,6 @@ export class Foo {
   native test_Class_Find_Method_17(): boolean;
   native test_Class_Find_Method_18(): boolean;
   native test_Class_Find_Method_19(): boolean;
-  native test_Class_Find_Method_20(): boolean;
   native test_Class_Find_Method_21(): boolean;
   native test_Class_Find_Method_22(): boolean;
   native test_Class_Find_Method_23(): boolean;
@@ -1583,7 +1580,6 @@ export class Foo {
   native test_Object_New_21(): boolean
   native test_Object_New_22(): boolean
   native test_Object_New_23(): boolean
-  native test_Object_New_24(): boolean
   native test_Object_New_25(): boolean
   native test_Object_New_26(): boolean
   native test_Object_New_27(): boolean

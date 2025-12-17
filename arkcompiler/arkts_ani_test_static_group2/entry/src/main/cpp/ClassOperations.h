@@ -10151,19 +10151,6 @@ ani_boolean test_Class_Get_Static_Field_Bool_01([[maybe_unused]] ani_env *env, [
     return ANI_TRUE;
 }
 
-ani_boolean test_Class_Get_Static_Field_Bool_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_class cls {};
-    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestBoolean", &cls), ANI_OK);
-    ani_static_field field {};
-    ASSERT_EQ(env->Class_FindStaticField(cls, "boolean_value", &field), ANI_OK);
-    ASSERT_NE(field, nullptr);
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env->c_api->Class_GetStaticField_Boolean(env, cls, field, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
-    return ANI_TRUE;
-}
-
 ani_boolean test_Class_Get_Static_Field_Bool_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};

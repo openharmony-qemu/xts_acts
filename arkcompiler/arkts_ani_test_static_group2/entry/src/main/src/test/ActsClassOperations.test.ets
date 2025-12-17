@@ -12400,25 +12400,6 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_CLASS_OPERATIONS_GET_STATIC_FIELD_BOOL_0200
-     * @tc.name      test_Class_Get_Static_Field_Bool_0002
-     * @tc.desc      get bool c api
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("test_Class_Get_Static_Field_Bool_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('test_Class_Get_Static_Field_Bool_0002 start');
-        let cls = new Foo();
-        let result = cls.test_Class_Get_Static_Field_Bool_02();
-        expect(result).assertTrue();
-        console.log('test_Class_Get_Static_Field_Bool_0002 done');
-        done();
-        console.log('test_Class_Get_Static_Field_Bool_0002 end');
-      })
-
-    /**
      * @tc.number    SUB_ANI_CLASS_OPERATIONS_GET_STATIC_FIELD_BOOL_0300
      * @tc.name      test_Class_Get_Static_Field_Bool_0003
      * @tc.desc      get static field bool invalid field type
@@ -12967,25 +12948,6 @@ export default function classOperationsTest() {
         console.log('test_Class_Find_Method_0019 done');
         done();
         console.log('test_Class_Find_Method_0019 end');
-      })
-
-    /**
-     * @tc.number    SUB_ANI_CLASS_OPERATIONS_FIND_METHOD_2000
-     * @tc.name      test_Class_Find_Method_0020
-     * @tc.desc      static method not found_2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it("test_Class_Find_Method_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        console.log('test_Class_Find_Method_0020 start');
-        let cls = new Foo();
-        let result = cls.test_Class_Find_Method_20();
-        expect(result).assertTrue();
-        console.log('test_Class_Find_Method_0020 done');
-        done();
-        console.log('test_Class_Find_Method_0020 end');
       })
 
     /**

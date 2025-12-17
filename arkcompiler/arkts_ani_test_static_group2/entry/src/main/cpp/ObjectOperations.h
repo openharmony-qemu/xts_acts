@@ -23,6 +23,76 @@ typedef struct 	ParamObjA {
     const char *signature;
 } ParamObjA;
 
+// NOLINTBEGIN(cppcoreguidelines-pro-type-vararg)
+template <typename R, typename... Args>
+ani_int DoCallFunctionV(ani_env *env, std::optional<R> *result, ani_function fn, Args &&...args)
+{
+    std::conditional_t<std::is_same_v<R, void>, std::nullopt_t, R> value {};
+    ani_status status;
+
+    if constexpr (std::is_same_v<R, ani_boolean>) {
+        status = env->Function_Call_Boolean(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_byte>) {
+        status = env->Function_Call_Byte(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_char>) {
+        status = env->Function_Call_Char(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_short>) {
+        status = env->Function_Call_Short(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_int>) {
+        status = env->Function_Call_Int(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_long>) {
+        status = env->Function_Call_Long(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_float>) {
+        status = env->Function_Call_Float(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_double>) {
+        status = env->Function_Call_Double(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, void>) {
+        status = env->Function_Call_Void(fn, std::forward<Args>(args)...);
+        value = std::nullopt;
+    } else if constexpr (std::is_same_v<R, ani_ref> || std::is_same_v<R, ani_tuple_value> ||
+        std::is_same_v<R, ani_object>) {
+        ani_ref resultRef {};
+        status = env->Function_Call_Ref(fn, &resultRef, std::forward<Args>(args)...);
+        value = static_cast<R>(resultRef);
+    } else {
+        enum { INCORRECT_TEMPLATE_TYPE = false };
+        static_assert(INCORRECT_TEMPLATE_TYPE, "Incorrect template type");
+    }
+
+    if (status == ANI_PENDING_ERROR) {
+        ASSERT_EQ(env->DescribeError(), ANI_OK);
+    }
+    ASSERT_EQ(status, ANI_OK);
+
+    result->emplace(value);
+    return ANI_TRUE;
+}
+// NOLINTEND(cppcoreguidelines-pro-type-vararg)
+
+template <typename R, typename... Args>
+ani_int CallEtsFunctionImplV(ani_env *env, std::optional<R> *result, const std::string &moduleDescriptor,
+                             const std::string &fnName, Args &&...args)
+{
+    ani_module mod {};
+    ASSERT_EQ(env->FindModule(moduleDescriptor.c_str(), &mod), ANI_OK);
+    ani_function fn {};
+    ASSERT_EQ(env->Module_FindFunction(mod, fnName.c_str(), nullptr, &fn), ANI_OK);
+    ASSERT_EQ(DoCallFunctionV(env, result, fn, std::forward<Args>(args)...), ANI_TRUE);
+    return ANI_TRUE;
+}
+
+/// Call function with name `fnName` from module denoted by `moduleDescriptor`
+template <typename R, typename... Args>
+R CallEtsFunctionV(ani_env *env, const std::string &moduleName, const std::string &fnName, Args &&...args)
+{
+    std::optional<R> result;
+    //auto moduleDescriptor = "L" + moduleName + ";";
+    CallEtsFunctionImplV(env, &result, moduleName, fnName, std::forward<Args>(args)...);
+    if constexpr (!std::is_same_v<R, void>) {
+        return result.value();
+    }
+}
+
 ani_int GetTestDataFieldRef(ani_env *env,
                             ani_object *objectResult,
                             ani_field *fieldNameResult,
@@ -43,6 +113,25 @@ ani_int GetTestDataFieldRef(ani_env *env,
     *objectResult = bob;
     *fieldNameResult = fieldName;
     *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_status TestFuncV(ani_env *env, ani_class cls, ani_method method, ani_object *result,
+                     ...)
+{
+    va_list args {};
+    va_start(args, result);
+    ani_status aniResult = ANI_ERROR;
+    aniResult = env->c_api->Object_New_V(env, cls, method, result, args);
+    va_end(args);
+    return aniResult;
+}
+
+ani_int GetTestString(ani_env *env, ani_string *tag)
+{
+    const char model[] = "Pure P60";
+    ASSERT_EQ(env->String_NewUTF8(model, strlen(model), tag), ANI_OK);
+    ASSERT_NE(*tag, nullptr);
     return ANI_TRUE;
 }
 
@@ -3440,57 +3529,6 @@ ani_int test_Object_New_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_o
                                                 phone, weight),
                   ANI_TRUE);
     }
-    return ANI_TRUE;
-}
-
-ani_int test_Object_New_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
-{
-    ani_class cls {};
-    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Mixture", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
-    const char *name =
-        "C{std.core.Object}C{escompat.Array}C{escompat.Array}ifdzlsC{std.core.String}"
-        "C{entry.src.main.src.ets.ObjectOperations.Animal}:C{"
-        "entry.src.main.src.ets.ObjectOperations.Mixture}";
-    ani_method newMethod {};
-    ASSERT_EQ(env->Class_FindMethod(cls, "newMixtureObject", name, &newMethod), ANI_OK);
-    ASSERT_NE(newMethod, nullptr);
-
-    ani_method checkMethod {};
-    ASSERT_EQ(env->Class_FindMethod(cls, "checkFun", nullptr, &checkMethod), ANI_OK);
-    ASSERT_NE(checkMethod, nullptr);
-
-    auto ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "getNull");
-    const auto intArray =
-        static_cast<ani_fixedarray_int>(CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations",
-                                                                  "getIntArray"));
-    const auto byteArray =
-        static_cast<ani_fixedarray_byte>(CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations",
-                                                                   "getByteArray"));
-
-    ani_string tag {};
-    GetTestString(env, &tag);
-    auto animalRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newAnimalObject");
-    ani_value args[11U];
-    args[0U].r = ref;
-    args[1U].r = intArray;
-    args[2U].r = byteArray;
-    args[3U].i = 42;  // 42 is intrinsic value
-    args[4U].f = 18.0F;
-    args[5U].d = 18.0F;
-    args[6U].z = ANI_FALSE;
-    args[7U].l = 1000000;  // 1000000 is intrinsic value
-    args[8U].s = 2U;
-    args[9U].r = tag;
-    args[10U].r = animalRef;
-
-    ani_object object {};
-    ASSERT_EQ(env->Object_New_A(cls, newMethod, &object, args), ANI_OK);
-    ASSERT_NE(object, nullptr);
-
-    ani_boolean result = ANI_FALSE;
-    ASSERT_EQ(env->Object_CallMethod_Boolean(object, checkMethod, &result), ANI_OK);
-    ASSERT_EQ(result, ANI_TRUE);
     return ANI_TRUE;
 }
 

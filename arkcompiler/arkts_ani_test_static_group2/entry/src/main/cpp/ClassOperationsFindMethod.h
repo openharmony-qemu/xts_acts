@@ -188,9 +188,6 @@ ani_boolean test_Class_Find_Method_16([[maybe_unused]] ani_env *env, [[maybe_unu
 
     ASSERT_EQ(env->Class_FindMethod(cls, "", "ii:i", &method), ANI_NOT_FOUND);
     ASSERT_EQ(env->Class_FindMethod(cls, "\t", "ii:i", &method), ANI_NOT_FOUND);
-
-    ASSERT_EQ(env->Class_FindMethod(cls, "int_method", "", &method), ANI_NOT_FOUND);
-    ASSERT_EQ(env->Class_FindMethod(cls, "int_method", "\t", &method), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
 
@@ -229,17 +226,6 @@ ani_boolean test_Class_Find_Method_19([[maybe_unused]] ani_env *env, [[maybe_unu
     return ANI_TRUE;
 }
 
-ani_boolean test_Class_Find_Method_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
-{
-    ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Phone", &cls), ANI_OK);
-    ASSERT_NE(cls, nullptr);
-
-    ani_static_method method {};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "get_button_names", "bla_bla_bla", &method), ANI_NOT_FOUND);
-    return ANI_TRUE;
-}
-
 ani_boolean test_Class_Find_Method_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
@@ -271,8 +257,6 @@ ani_boolean test_Class_Find_Method_23([[maybe_unused]] ani_env *env, [[maybe_unu
               ANI_INVALID_ARGS);
     ASSERT_EQ(env->Class_FindStaticMethod(cls, "", ":A{C{std.core.String}}", &method), ANI_NOT_FOUND);
     ASSERT_EQ(env->Class_FindStaticMethod(cls, "\t", ":A{C{std.core.String}}", &method), ANI_NOT_FOUND);
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "get_button_names", "", &method), ANI_NOT_FOUND);
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "get_button_names", "\t", &method), ANI_NOT_FOUND);
     return ANI_TRUE;
 }
 

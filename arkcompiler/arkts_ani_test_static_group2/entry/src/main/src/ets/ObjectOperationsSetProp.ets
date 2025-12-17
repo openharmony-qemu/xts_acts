@@ -158,8 +158,8 @@ class Car2 {
 }
 
 function newCarObject2() {
-    let var1: char = 0
-    let var2: char = 0
+    let var1: char = c'\0'
+    let var2: char = c'\0'
     return new Car2('Porsche', 'Porsche 911', var1, var2);
 }
 
@@ -168,11 +168,11 @@ interface Iface2 {
 }
 
 class ClassChar implements Iface2 {
-    public prop: char = 0
+    public prop: char = c'\0'
 }
 
 class ClassChar2 implements Iface2 {
-    public classprop: char = 0
+    public classprop: char = c'\0'
 
     public get prop(): char {
         return this.classprop
@@ -452,8 +452,8 @@ class Car7 {
     }
 
     public manufacturer: String;
-    private model: String;
-    private ecoFriendly: short;
+    private model2: String;
+    private ecoFriendly2: short;
     public highPerformance: short;
 }
 
@@ -512,8 +512,8 @@ class Car8 {
     }
 
     public manufacturer: int;
-    private model: int;
-    private ecoFriendly: String;
+    private model2: int;
+    private ecoFriendly2: String;
     public highPerformance: String;
 }
 
