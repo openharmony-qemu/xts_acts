@@ -26,4 +26,4 @@ napi_value OHEffectFilterRenderWithTextureIdSupp(napi_env env, napi_callback_inf
 #ifdef __cplusplus
 }
 #endif
-#endif 
+#endif

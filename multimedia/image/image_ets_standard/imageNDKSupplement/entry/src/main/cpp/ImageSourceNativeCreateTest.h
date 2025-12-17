@@ -12,16 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef IMAGENDKSUPPLEMENT_IMAGESOURCENATIVECREATE_H 
+#ifndef IMAGENDKSUPPLEMENT_IMAGESOURCENATIVECREATE_H
 #define IMAGENDKSUPPLEMENT_IMAGESOURCENATIVECREATE_H
 
 #include "napi/native_api.h"
 #ifdef __cplusplus
-extern "C" { 
+extern "C" {
 #endif
 napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info info);
 napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif
-#endif 
+#endif

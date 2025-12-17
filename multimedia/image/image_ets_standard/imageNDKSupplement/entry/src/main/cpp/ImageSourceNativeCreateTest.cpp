@@ -29,7 +29,7 @@
 #include <string>
 #include "GlUtilsTest.h"
 #include "render_texture.h"
-#include "ImageSourceNativeCreateTest.h" 
+#include "ImageSourceNativeCreateTest.h"
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
@@ -39,7 +39,7 @@
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
-#define IMAGE_NullString ""
+#define IMAGE_NULLSTRING ""
 
 
 #define CASE_INDEX_1 1
@@ -87,8 +87,11 @@ static constexpr uint32_t NUM_3 = 3;
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 
-napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info info) {
+#define OH_CREATEFROMFD_NUMBER_1 1
+#define OH_CREATEFROMFD_NUMBER_3 3
 
+napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_value result = nullptr;
@@ -112,7 +115,7 @@ napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info
         errCode = OH_ImageSourceNative_CreateFromUri(nullptr, 0, &imageSource);
         break;
     case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_CreateFromUri(IMAGE_NullString, urlSize, &imageSource);
+        errCode = OH_ImageSourceNative_CreateFromUri(IMAGE_NULLSTRING, urlSize, &imageSource);
         break;
 
     default:
@@ -123,7 +126,8 @@ napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info
     napi_create_int32(env, errCode, &ret);
     return ret;
 }
-napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info info) {
+napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -135,13 +139,13 @@ napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info 
     int32_t fd;
     switch (index) {
     case CASE_INDEX_1:
-        errCode = OH_ImageSourceNative_CreateFromFd(1, &imageSource);
+        errCode = OH_ImageSourceNative_CreateFromFd(OH_CREATEFROMFD_NUMBER_1, &imageSource);
         break;
     case CASE_INDEX_2:
-        errCode = OH_ImageSourceNative_CreateFromFd(3, &imageSource);
+        errCode = OH_ImageSourceNative_CreateFromFd(OH_CREATEFROMFD_NUMBER_3, &imageSource);
         break;
     default:
-        break; 
+        break;
     }
     OH_ImageSourceNative_Release(imageSource);
 

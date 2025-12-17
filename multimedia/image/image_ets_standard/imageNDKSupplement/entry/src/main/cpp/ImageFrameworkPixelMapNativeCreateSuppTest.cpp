@@ -28,7 +28,6 @@
 #include <native_color_space_manager/native_color_space_manager.h>
 #include <native_window/external_window.h>
 #include <string>
-//#include "gl_utils.h"
 #include "render_texture.h"
 #include "ImageFrameworkPixelMapNativeCreateSuppTest.h"
 
@@ -42,7 +41,7 @@
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
-#define IMAGE_NullString ""
+#define IMAGE_NULLSTRING ""
 
 
 #define CASE_INDEX_1 1
@@ -81,7 +80,11 @@
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 
-napi_value OHPixelmapNativeCreateScaledPixelMapSupp(napi_env env, napi_callback_info info) {
+#define OPTION_WIDTH 6
+#define OPTION_HEIGHT 4
+
+napi_value OHPixelmapNativeCreateScaledPixelMapSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -110,7 +113,8 @@ napi_value OHPixelmapNativeCreateScaledPixelMapSupp(napi_env env, napi_callback_
     napi_create_int32(env, code, &result);
     return result;
 }
-napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env, napi_callback_info info) {
+napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -124,9 +128,8 @@ napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env
     }
     OH_Pixelmap_InitializationOptions *createOpts;
     OH_PixelmapInitializationOptions_Create(&createOpts);
-
-    OH_PixelmapInitializationOptions_SetWidth(createOpts, 6);
-    OH_PixelmapInitializationOptions_SetHeight(createOpts, 4);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_HEIGHT);
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *srcPixelmap = nullptr;
@@ -153,12 +156,12 @@ napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env
         break;
     default:
         errCode = IMAGE_UNKNOWN_ERROR;
-        break; 
+        break;
     }
     if (dstPixelmap != nullptr) {
         OH_PixelmapNative_Release(dstPixelmap);
     }
-    if (srcPixelmap != nullptr && srcPixelmap != dstPixelmap) { 
+    if (srcPixelmap != nullptr && srcPixelmap != dstPixelmap) {
         OH_PixelmapNative_Release(srcPixelmap);
     }
     OH_PixelmapInitializationOptions_Release(createOpts);
@@ -166,7 +169,8 @@ napi_value OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp(napi_env env
     napi_create_int32(env, errCode, &result);
     return result;
 }
-napi_value OHPixelmapNativeTranslateSupp(napi_env env, napi_callback_info info) {
+napi_value OHPixelmapNativeTranslateSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -180,16 +184,15 @@ napi_value OHPixelmapNativeTranslateSupp(napi_env env, napi_callback_info info) 
     }
     OH_Pixelmap_InitializationOptions *createOpts;
     OH_PixelmapInitializationOptions_Create(&createOpts);
-    OH_PixelmapInitializationOptions_SetWidth(createOpts, 6);
-    OH_PixelmapInitializationOptions_SetHeight(createOpts, 4);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_HEIGHT);
     OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
 
     OH_PixelmapNative *pixelMap = nullptr;
     Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelMap);
     LOGI("OH_PixelmapNative_CreatePixelmap %{public}d", errCode);
-
-
+    
     switch (index) {
     case CASE_INDEX_1: {
         float x = 0;

@@ -19,7 +19,7 @@
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
 #include "ImageEffectFilterSuppTest.h"
-#include "ImageEffectFilterRenderSuppTest.h" 
+#include "ImageEffectFilterRenderSuppTest.h"
 #include "ImageFrameworkPixelMapNativeCreateSuppTest.h"
 #include "ImageSourceNativeCreateTest.h"
 #include "OHEffectBufferInfoSetTimestampTest.h"
@@ -55,7 +55,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHEffectFilterRenderSupp", OHEffectFilterRenderSupp),
     DESCRIPTOR("OHEffectFilterRenderWithTextureIdSupp", OHEffectFilterRenderWithTextureIdSupp),
     DESCRIPTOR("OHPixelmapNativeCreateScaledPixelMapSupp", OHPixelmapNativeCreateScaledPixelMapSupp),
-    DESCRIPTOR("OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp",OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp),
+    DESCRIPTOR("OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp",
+               OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp),
     DESCRIPTOR("OHPixelmapNativeTranslateSupp", OHPixelmapNativeTranslateSupp),
     DESCRIPTOR("OHImageSourceNativeCreateFromUriSupp", OHImageSourceNativeCreateFromUriSupp),
     DESCRIPTOR("OHImageSourceNativeCreateFromFdSupp", OHImageSourceNativeCreateFromFdSupp),

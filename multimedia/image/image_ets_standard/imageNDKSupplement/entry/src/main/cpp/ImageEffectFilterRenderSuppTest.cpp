@@ -41,7 +41,7 @@
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
-#define IMAGE_NullString "" 
+#define IMAGE_NULLSTRING "" 
 
 #define CASE_INDEX_1 1
 #define CASE_INDEX_2 2
@@ -81,14 +81,14 @@ ImageEffect_FilterDelegate getFilterDelegate()
 {
     ImageEffect_FilterDelegate filterDelegate;
 
-    filterDelegate.setValue = [](OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value) { 
-        return true; 
+    filterDelegate.setValue = [](OH_EffectFilter *filter, const char *key, const ImageEffect_Any *value) {
+        return true;
     };
-    filterDelegate.render = [](OH_EffectFilter *filter, OH_EffectBufferInfo *info, OH_EffectFilterDelegate_PushData pushData) { 
-        return true; 
+    filterDelegate.render = [](OH_EffectFilter *filter, OH_EffectBufferInfo *info, OH_EffectFilterDelegate_PushData pushData) {
+        return true;
     };
-    filterDelegate.save = [](OH_EffectFilter *filter, char **info) { 
-        return true; 
+    filterDelegate.save = [](OH_EffectFilter *filter, char **info) {
+        return true;
     };
     filterDelegate.restore = [](const char *info) {
         OH_EffectFilter *filter = OH_EffectFilter_Create(CUSTOM_FILTER);
@@ -97,7 +97,8 @@ ImageEffect_FilterDelegate getFilterDelegate()
     };
     return filterDelegate;
 }
-napi_value OHEffectFilterRenderSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterRenderSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -133,7 +134,8 @@ napi_value OHEffectFilterRenderSupp(napi_env env, napi_callback_info info) {
     return ret;
 }
 
-napi_value OHEffectFilterRenderWithTextureIdSupp(napi_env env, napi_callback_info info) {
+napi_value OHEffectFilterRenderWithTextureIdSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -145,7 +147,8 @@ napi_value OHEffectFilterRenderWithTextureIdSupp(napi_env env, napi_callback_inf
     OH_EffectFilterInfo_SetFilterName(customFilterInfo, CUSTOM_FILTER);
 
     ImageEffect_BufferType bufferTypeArray[] = {ImageEffect_BufferType::EFFECT_BUFFER_TYPE_TEXTURE};
-    OH_EffectFilterInfo_SetSupportedBufferTypes(customFilterInfo, sizeof(bufferTypeArray) / sizeof(ImageEffect_BufferType), bufferTypeArray);
+    OH_EffectFilterInfo_SetSupportedBufferTypes(
+        customFilterInfo, sizeof(bufferTypeArray) / sizeof(ImageEffect_BufferType), bufferTypeArray);
     ImageEffect_Format formatArray[] = {ImageEffect_Format::EFFECT_PIXEL_FORMAT_RGBA8888};
     OH_EffectFilterInfo_SetSupportedFormats(customFilterInfo, sizeof(formatArray) / sizeof(ImageEffect_Format),
                                             formatArray);
@@ -161,14 +164,14 @@ napi_value OHEffectFilterRenderWithTextureIdSupp(napi_env env, napi_callback_inf
 
     switch (index) {
     case CASE_INDEX_1:
-        errorCode = OH_EffectFilter_RenderWithTextureId(nullptr, input->GetName(), output->GetName(), ColorSpaceName::SRGB);
+        errorCode =
+            OH_EffectFilter_RenderWithTextureId(nullptr, input->GetName(), output->GetName(), ColorSpaceName::SRGB);
         break;
     default:
         break;
     }
     OH_EffectFilter_Release(filter);
     OH_EffectFilterInfo_Release(customFilterInfo);
-
     
     napi_value ret;
     napi_create_int32(env, errorCode, &ret);
