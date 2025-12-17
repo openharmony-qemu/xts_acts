@@ -14,7 +14,7 @@ let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegato
 
 let dataBaseDir : String;
 let domain: int  = 0x0000;
-let tag: string = 'rdbErrorCode14800015';
+let tag: string = 'RdbErrorCode14800015';
 const TAG = "[ttt]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
@@ -29,7 +29,7 @@ let STORE_CONFIG :data_relationalStore.StoreConfig = {
   name: "test6.db",
   securityLevel: data_relationalStore.SecurityLevel.S1,
 }
-const TABLE_NAME = "rdbErrorCode14800015"
+const TABLE_NAME = "RdbErrorCode14800015"
 
 let STORE_CONFIG1 :data_relationalStore.StoreConfig = {
   name: "test7.db",
@@ -78,9 +78,9 @@ export async function attachBatchInsert(store: data_relationalStore.RdbStore, ta
   await store.batchInsert(tableName, valueBucketArray);
 }
 
-export default function rdbErrorCode14800015() {
+export default function RdbErrorCode14800015() {
 
-  describe("rdbErrorCode14800015", (): void => {
+  describe("RdbErrorCode14800015", (): void => {
     beforeAll(async () : Promise<void> => {
       await abilityDelegator.startAbility({
         bundleName: 'com.example.relationalstore',
