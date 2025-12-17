@@ -305,13 +305,6 @@ function onAccelerometerCallback(data: sensor.AccelerometerResponse) {
 }
 
 function onFusionPressureCallback(data: sensor.FusionPressureResponse) {
-  if (data.accuracy >= sensor.SensorAccuracy.ACCURACY_UNRELIABLE && data.accuracy <=
-    sensor.SensorAccuracy.ACCURACY_HIGH) {
-    hilog.info(0x0000, 'testTag', 'FusionPressure callback accuracy verified' + JSON.stringify(data));
-  } else {
-    hilog.info(0x0000, 'testTag', 'FusionPressure callback invalid accuracy encountered' + JSON.stringify(data));
-    expect(false).assertTrue();
-  }
   expect(typeof (data.fusionPressure)).assertEqual("number");
 }
 

@@ -130,7 +130,7 @@ describe("SensorJsTest_sensor_65", function () {
         await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         function onSensorCallback(data) {
             console.info('newFusion_Pressure_SensorJsTest018  on error');
-            expect(typeof (data.value)).assertEqual("number");
+            expect(false).assertTrue();
         }
         try {
             sensor.on(sensor.SensorId.FUSION_PRESSURE, onSensorCallback);
