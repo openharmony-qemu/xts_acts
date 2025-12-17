@@ -64,7 +64,6 @@ typedef struct {
     uint32_t width;
     uint32_t height;
 };
-static std::string outImagePath;
 napi_value CreatePixelMapSuppTest(napi_env env, napi_callback_info info)
 {
     napi_value udfVar = nullptr;
@@ -294,9 +293,7 @@ int main()
 
 napi_value PixelmapNativeWritePixelsToArea(napi_env env, napi_callback_info info)
 {
-    
     Image_ErrorCode result = PixelmapNativeWritePixelsToArea();
-    
     napi_value jsResult;
     napi_get_boolean(env, (result == IMAGE_SUCCESS), &jsResult);
 

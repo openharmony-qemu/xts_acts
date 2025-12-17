@@ -78,8 +78,8 @@
 #define OPTION_ALPHA_ZERO 0
 #define VALUE_DAYA_BOOLVALUE 2
 
-static std::string imagePath;
-static std::string outImagePath;
+static std::string g_imagePath;
+static std::string g_outImagePath;
 
 namespace {
     constexpr uint32_t NUM_0 = 0;
@@ -97,11 +97,11 @@ napi_value savePixelMapForPathSupp(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    imagePath = CommonUtils::GetStringArgument(env, args[0]);
-    LOGI(" Received image path: %{public}s", imagePath.c_str());
+    g_imagePath = CommonUtils::GetStringArgument(env, args[0]);
+    LOGI(" Received image path: %{public}s", g_imagePath.c_str());
     napi_value ret;
     int status = -1;
-    if (imagePath.length() > 0) {
+    if (g_imagePath.length() > 0) {
         status = 0;
     }
     napi_create_int32(env, status, &ret);
@@ -115,10 +115,10 @@ napi_value CreatOutPixelMapForPathSupp(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    outImagePath = CommonUtils::GetStringArgument(env, args[0]);
+    g_outImagePath = CommonUtils::GetStringArgument(env, args[0]);
     napi_value ret;
     int status = -1;
-    if (outImagePath.length() > 0) {
+    if (g_outImagePath.length() > 0) {
         status = 0;
     }
     napi_create_int32(env, status, &ret);
@@ -287,7 +287,7 @@ napi_value OHImageEffectSetInputPixelmapSupp(napi_env env, napi_callback_info in
     napi_get_value_int32(env, args[0], &index);
     LOGI("Input index: %{public}d", index);
 
-    if (imagePath.empty()) {
+    if (g_imagePath.empty()) {
         LOGE("Image path is not set!");
         napi_value ret;
         napi_create_int32(env, EFFECT_ERROR_PARAM_INVALID, &ret);
@@ -347,7 +347,7 @@ napi_value OHImageEffectSetOutputPixelmapSupp(napi_env env, napi_callback_info i
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
 
-    std::shared_ptr<OH_PixelmapNative> pixelmapNativePtr = PixelMapHelper::Decode(imagePath);
+    std::shared_ptr<OH_PixelmapNative> pixelmapNativePtr = PixelMapHelper::Decode(g_imagePath);
     OH_PixelmapNative *outputPixelmap = pixelmapNativePtr.get();
     OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
     ImageEffect_ErrorCode code = EFFECT_UNKNOWN;

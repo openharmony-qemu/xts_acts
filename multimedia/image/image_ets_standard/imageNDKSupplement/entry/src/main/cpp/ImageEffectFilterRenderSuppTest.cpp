@@ -73,8 +73,8 @@
 #define EFFECT_PARAM_ERROR 29000121
 #define IMAGE_EFFECT_INVALID_PARAMETER 401
 #define IMAGE_EFFECT_SUCCESS 0
-static std::string imagePath;
-static std::string outImagePath;
+static std::string g_imagePath;
+static std::string g_outImagePath;
 
 
 ImageEffect_FilterDelegate getFilterDelegate()
@@ -103,7 +103,7 @@ napi_value OHEffectFilterRenderSupp(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    std::shared_ptr<OH_PixelmapNative> pixelmapNativePtr = PixelMapHelper::Decode(imagePath);
+    std::shared_ptr<OH_PixelmapNative> pixelmapNativePtr = PixelMapHelper::Decode(g_imagePath);
     OH_PixelmapNative *inputPixelmap = pixelmapNativePtr.get();
     OH_PixelmapNative *outputPixelmap = inputPixelmap;
     ImageEffect_FilterDelegate filterDelegate = getFilterDelegate();
@@ -118,7 +118,7 @@ napi_value OHEffectFilterRenderSupp(napi_env env, napi_callback_info info)
     
     ImageEffect_ErrorCode errorCode = OH_EffectFilter_Register(customFilterInfo, &filterDelegate);
     OH_EffectFilter *filter = OH_EffectFilter_Create(CUSTOM_FILTER);
-    std::shared_ptr<OH_PixelmapNative> outPixelPtr = PixelMapHelper::Decode(outImagePath);
+    std::shared_ptr<OH_PixelmapNative> outPixelPtr = PixelMapHelper::Decode(g_outImagePath);
     switch (index) {
     case CASE_INDEX_1:
         outputPixelmap = nullptr;

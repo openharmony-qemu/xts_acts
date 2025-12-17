@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef OHIMAGEEFFECTNDK_AccessPixelsTest_H
-#define OHIMAGEEFFECTNDK_AccessPixelsTest_H
+#ifndef OHIMAGEEFFECTNDK_ACCESSPIXELSTEST_H
+#define OHIMAGEEFFECTNDK_ACCESSPIXELSTEST_H
 #include "napi/native_api.h"
 #ifdef __cplusplus
 extern "C" {
