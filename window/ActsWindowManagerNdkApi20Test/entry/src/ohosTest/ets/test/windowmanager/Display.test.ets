@@ -17,6 +17,7 @@ import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
 import { ON } from "@kit.TestKit";
 
+const OK = 0;
 const CAN_NOT_BUILD_STAGE = -1;
 const DISPLAY_MANAGER_ERROR_NO_PERMISSION = 201;
 const DISPLAY_MANAGER_ERROR_INVALID_PARAM = 401;
