@@ -47,9 +47,36 @@ static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
     pathInfo.value = path;
     pathInfo.length = strlen(pathInfo.value);
     syncFolder.path = pathInfo;
+    syncFolder.state = CloudDisk_SyncFolderState::INACTIVE;
 
     CloudDisk_DisplayNameInfo displayNameInfo;
     char* newname = "Ntest";
+    displayNameInfo.displayNameResId = 0;
+    displayNameInfo.customAlias = newname;
+    displayNameInfo.customAliasLength = strlen(displayNameInfo.customAlias);
+    syncFolder.displayNameInfo = displayNameInfo;
+
+    LOGW("OH_CloudDisk_RegisterSyncFolder start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_RegisterSyncFolder(&syncFolder);
+    LOGW("OH_CloudDisk_RegisterSyncFolder ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value RegisterSyncFolder001(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolder syncFolder;
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+    syncFolder.path = pathInfo;
+    syncFolder.state = CloudDisk_SyncFolderState::ACTIVE;
+
+    CloudDisk_DisplayNameInfo displayNameInfo;
+    char* newname = "Ntest";
+    displayNameInfo.displayNameResId = 1;
     displayNameInfo.customAlias = newname;
     displayNameInfo.customAliasLength = strlen(displayNameInfo.customAlias);
     syncFolder.displayNameInfo = displayNameInfo;
@@ -190,6 +217,10 @@ static napi_value SetFileSyncStates(napi_env env, napi_callback_info info)
 
     char* path1 = "/storage/Users/currentUser/111.txt";
     char* path2 = "/storage/Users/currentUser/222.txt";
+    char* path2 = "/storage/Users/currentUser/333.txt";
+    char* path2 = "/storage/Users/currentUser/444.txt";
+    char* path2 = "/storage/Users/currentUser/555.txt";
+    char* path2 = "/storage/Users/currentUser/666.txt";
     CloudDisk_FileSyncState fileSyncStates[] = {
         {
             {
@@ -204,6 +235,34 @@ static napi_value SetFileSyncStates(napi_env env, napi_callback_info info)
                 .length = strlen(path2)
             },
             CloudDisk_SyncState::SYNC_FAILED
+        },
+        {
+            {
+                .value = path3,
+                .length = strlen(path3)
+            },
+            CloudDisk_SyncState::IDLE
+        },
+        {
+            {
+                .value = path4,
+                .length = strlen(path4)
+            },
+            CloudDisk_SyncState::SYNCING
+        },
+        {
+            {
+                .value = path5,
+                .length = strlen(path5)
+            },
+            CloudDisk_SyncState::SYNC_CANCELED
+        },
+        {
+            {
+                .value = path6,
+                .length = strlen(path6)
+            },
+            CloudDisk_SyncState::SYNC_CONFLICTED
         }
     };
     CloudDisk_FailedList *failedLists;
@@ -254,6 +313,7 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "RegisterSyncFolder", nullptr, RegisterSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "RegisterSyncFolder001", nullptr, RegisterSyncFolder001, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "UnregisterSyncFolder", nullptr, UnregisterSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ActiveSyncFolder", nullptr, ActiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },

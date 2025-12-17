@@ -19,6 +19,15 @@ import { fileUri } from '@kit.CoreFileKit';
 import { common, UIAbility } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
 
+const CloudDisk_ErrorCode = new Map<string, number>([
+  ['CLOUD_DISK_OK', 0],
+  ['CLOUD_DISK_NOT_SUPPORTED', 801],
+  ['CLOUD_DISK_INVALID_ARG', 34400001],
+  ['CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED', 34400002],
+  ['CLOUD_DISK_SYNC_FOLDER_NOT_REGISTERED', 34400008],
+  ['CLOUD_DISK_SYNC_FOLDER_PATH_NOT_EXIST', 34400010]
+]);
+
 export default function CloudDiskNdkTest(){
   describe('CloudDiskNdkTest',async () => {
 
@@ -41,6 +50,78 @@ export default function CloudDiskNdkTest(){
         done();
       } else {
         expect(ret).assertEqual(34400002);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0200
+     * @tc.name CloudDisk_RegisterSyncFolder_002
+     * @tc.desc Test RegisterSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_RegisterSyncFolder_002', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/appdata/";
+      console.info("CloudDisk_RegisterSyncFolder_002: " + filepath);
+      let ret = clouddisk.RegisterSyncFolder(filepath);
+      console.info("CloudDisk_RegisterSyncFolder_002 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+        done();
+      } else {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_INVALID_ARG'));
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0300
+     * @tc.name CloudDisk_RegisterSyncFolder_003
+     * @tc.desc Test RegisterSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+     it('CloudDisk_RegisterSyncFolder_003', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/Documents/test003";
+      console.info("CloudDisk_RegisterSyncFolder_003: " + filepath);
+      let ret = clouddisk.RegisterSyncFolder(filepath);
+      console.info("CloudDisk_RegisterSyncFolder_003 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+        done();
+      } else {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_SYNC_FOLDER_PATH_NOT_EXIST'));
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0400
+     * @tc.name CloudDisk_RegisterSyncFolder_004
+     * @tc.desc Test RegisterSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_RegisterSyncFolder_004', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/Documents/";
+      console.info("CloudDisk_RegisterSyncFolder_004: " + filepath);
+      let ret = clouddisk.RegisterSyncFolder(filepath);
+      console.info("CloudDisk_RegisterSyncFolder_004 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+        done();
+      } else {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED'));
         done();
       }
       done();
