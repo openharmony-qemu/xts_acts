@@ -22,13 +22,25 @@ static napi_value TestInvalidateAttributes(napi_env env, napi_callback_info info
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto ret1 = OH_ArkUI_NativeModule_InvalidateAttributes(column);
-    auto ret2 = OH_ArkUI_NativeModule_InvalidateAttributes(nullptr);
+    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_NativeModule_InvalidateAttributes ret1=%{public}d", ret1);
+    auto ret2 = OH_ArkUI_NativeModule_InvalidateAttributes(nullptr);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_NativeModule_InvalidateAttributes ret2=%{public}d", ret2);
-    ASSERT_EQ(ret1, ARKUI_ERROR_CODE_NO_ERROR);
-    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
+    
+    ArkUI_CrossLanguageOption *option = OH_ArkUI_CrossLanguageOption_Create();
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "RenderNodeNullTest001 property=%{public}p", option);
+    ASSERT_OBJ_NE(option, nullptr);
+    
+    OH_ArkUI_CrossLanguageOption_SetAttributeSettingStatus(option, true);
+    bool crossLanguageAttributeSettingTrue = OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus(option);
+    ASSERT_EQ(crossLanguageAttributeSettingTrue, true);
+    bool crossLanguageAttributeSettingFalse = OH_ArkUI_CrossLanguageOption_GetAttributeSettingStatus(nullptr);
+    ASSERT_EQ(crossLanguageAttributeSettingFalse, false);
+    
     NAPI_END;
 }
 
