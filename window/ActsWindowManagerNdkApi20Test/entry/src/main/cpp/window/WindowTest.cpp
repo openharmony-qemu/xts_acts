@@ -1247,13 +1247,25 @@ napi_value TestGetMainWindowSnapshot(napi_env env, napi_callback_info info)
         0, config, OnWindowSnapshotCallback);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "TestGetMainWindowSnapshot 1: %{public}d", result1);
+    int32_t result2 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        PARAM_4294967295, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 2: %{public}d", result2);
+    int32_t result3 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        PARAM_NEGATIVE_1, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 3: %{public}d", result3);
+    int32_t result4 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        PARAM_4294967296, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 4: %{public}d", result4);
     
     napi_value retValue;
     if (napi_create_array(env, &retValue) != napi_ok) {
         return nullptr;
     }
-    int32_t values[PARAM_1] = {result1};
-    for (int i = 0; i < PARAM_1; i++) {
+    int32_t values[PARAM_4] = {result1, result2, result3, result4};
+    for (int i = 0; i < PARAM_4; i++) {
         napi_value element;
         napi_create_int32(env, values[i], &element);
         napi_set_element(env, retValue, i, element);

@@ -1258,9 +1258,9 @@ export default function WindowTest() {
         } else {
           expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
         }
-        // expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
-        // expect(Result[2]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
-        // expect(Result[3]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[2]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        expect(Result[3]).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
