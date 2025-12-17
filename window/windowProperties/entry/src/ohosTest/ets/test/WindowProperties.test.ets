@@ -7683,16 +7683,6 @@ export default function windowPropertiesTest() {
 
       })
 
-    // 共建23用例
-    //   SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0100	验证窗口销毁后调用onframeMetricsMeasured接口抛错误码1300002
-      //   testOnFrameMetricsMeasuredErrorcode 	"on('frameMetricsMeasured')
-    //   off('frameMetricsMeasured')"	使用canIuse查看该sycap是否支持，SystemCapability.Window.SessionManager 
-      //   "1.创建子窗
-    //   2.销毁子窗
-    //   3.子窗调用on、off接口"	"判断设备是否支持SystemCapability.Window.SessionManager，若不支持，返回801，
-    //   若支持，on、off接口都返回错误码1300002"	Level 2
-      // 改为1300002
-      // todo: 不支持返回1300002
       /**
        * @tc.name   testOnFrameMetricsMeasuredErrorcode
        * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRIC_MEASURED_0100
