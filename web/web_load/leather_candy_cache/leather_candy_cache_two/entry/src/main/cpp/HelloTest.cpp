@@ -510,7 +510,7 @@ static napi_value Doblankless_INVALID_ARGS_GET_2049(napi_env env, napi_callback_
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-    napi_create_double(env, err, &Capacity);
+    napi_create_double(env, blanklessInfo.errCode, &Capacity);
 //    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
 //        if (blanklessInfo.similarity >= g_similarity) {
 //            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
