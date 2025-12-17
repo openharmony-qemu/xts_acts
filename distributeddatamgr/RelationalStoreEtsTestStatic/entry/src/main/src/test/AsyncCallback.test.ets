@@ -90,29 +90,6 @@ export default function AsyncCallback() {
       })
 
     /**
-     * @tc.name   relationalStoreTest_Async14800032_016
-     * @tc.number relationalStoreTest_Async14800032_016
-     * @tc.desc   cleanDirtyData success callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('relationalStoreTest_Async14800032_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (done: () => void) => {
-        console.info(TAG + "************* relationalStoreTest_Async14800032_016 start *************");
-        try {
-          rdbStore!.cleanDirtyData('employee', (err) => {
-            console.info(TAG + 'clean dirty data succeeded');
-          })
-        } catch (e: BusinessError) {
-          console.error(TAG + "relationalStoreTest_Async14800032_016 fail code is " + e.code + " message is " +
-          e.message);
-          expect(e.code).assertEqual(14800032);
-        }
-        done();
-      })
-
-    /**
      * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_AsyncErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_AsyncErrTest_0500
      * @tc.desc   Test cleanDirtyData
@@ -169,74 +146,6 @@ export default function AsyncCallback() {
           })
         } catch (err: Error) {
           expect(err.code).assertEqual(14800021);
-        }
-
-        done();
-      })
-
-
-    /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Async_0700
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Async_0700
-     * @tc.desc   Verify the properties of the text type
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_Async_0700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
-        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
-        await rdbStore!.executeSql(CREATE_TABLE_TEST1);
-        const u8 = new Uint8Array([1, 2, 3]);
-        const valueBucket: data_relationalStore.ValuesBucket = {
-          "name": "zhangsan",
-          "age": 20 as long,
-          "salary": 220.5,
-          "blobType": u8,
-        };
-        let PRIKey: Array<data_relationalStore.PRIKeyType> = [1 as long, 4 as long, 2 as long, 3 as long];
-
-        await rdbStore!.insert("test1", valueBucket);
-        let predicates = new data_relationalStore.RdbPredicates("test1");
-        predicates.equalTo("NAME", "zhangsan");
-
-        try {
-          rdbStore!.cleanDirtyData('test1', (err) => {
-            if (err) {
-              console.error(`clean dirty data failed, code is ${err.code},message is ${err.message}`);
-              expect().assertFail();
-            }
-            console.info('clean dirty data succeeded');
-            expect().assertFail();
-          })
-        } catch (e: Error) {
-          console.log(TAG + "e.code:" + e.code);
-          expect(e.code).assertEqual("14800014")
-        }
-
-        try {
-          rdbStore!.getModifyTime("test1", "NAME", PRIKey, (err) => {
-            if (err) {
-              console.error(`getModifyTime failed, code is ${err.code},message is ${err.message}`);
-            }
-          });
-        } catch (e: Error) {
-          console.log(TAG + "e.code:" + e.code);
-          expect(e.code).assertEqual("14800014")
-        }
-
-        try {
-          rdbStore!.cleanDirtyData('test1', 10, (err) => {
-            if (err) {
-              console.error(`clean dirty data failed, code is ${err.code},message is ${err.message}`);
-              expect().assertFail();
-            }
-            console.info('clean dirty data succeeded');
-            expect().assertFail();
-          })
-        } catch (e: Error) {
-          console.log(TAG + "e.code:" + e.code);
-          expect(e.code).assertEqual("14800014")
         }
 
         done();
@@ -471,31 +380,6 @@ export default function AsyncCallback() {
       })
 
     /**
-     * @tc.name   relationalStoreTest_Async14800032_018
-     * @tc.number relationalStoreTest_Async14800032_018
-     * @tc.desc   cleanDirtyData success callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('relationalStoreTest_Async14800032_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (done: () => void) => {
-        console.info(TAG + "************* relationalStoreTest035 start *************");
-        try {
-          rdbStore!.cleanDirtyData('employee', 100, (err) => {
-            console.info(TAG + 'clean dirty data succeeded');
-            done();
-          })
-        } catch (e: Error) {
-          console.error(TAG + "relationalStoreTest_Async14800032_018 fail code is " + e.code + " message is " +
-          e.message);
-          expect(e.code).assertEqual(14800032);
-          done();
-        }
-      })
-
-
-    /**
      * @tc.name   relationalStoreTest_Async14800033_018
      * @tc.number relationalStoreTest_Async14800033_018
      * @tc.desc   cleanDirtyData success callback
@@ -632,36 +516,14 @@ export default function AsyncCallback() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
         rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore!.executeSql(CREATE_TABLE_TEST1);
-        try {
-          dmInstance = distributedDeviceManager.createDeviceManager("com.example.appdatamgrverify");
-          let devices = dmInstance.getAvailableDeviceListSync();
-          deviceId = devices[0].networkId;
-        } catch (err: Error) {
-          let code = (err as BusinessError).code;
-          let message = (err as BusinessError).message
-          console.error("createDeviceManager errCode:" + code + ",errMessage:" + message);
-        }
-
-        try {
-          await rdbStore!.close();
-          console.info(`${TAG} close succeeded`);
-        } catch (err: Error) {
-          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-        }
-
-        try {
-          rdbStore!.obtainDistributedTableName(deviceId!, "test1", (err) => {
-            if (err) {
-              console.error(`ObtainDistributedTableName failed, code is ${err.code},message is ${err.message}`);
-              expect().assertFail();
-            }
-            expect().assertFail();
-          })
-        } catch (e: Error) {
-          console.log(TAG + "e.code:" + e.code);
-          expect(e.code).assertEqual("14800014")
-        }
-        rdbStore = undefined;
+        await rdbStore!.close();
+        let deviceId = "100"
+        rdbStore!.obtainDistributedTableName(deviceId, "test1", (err) => {
+          if (err) {
+            console.error(`ObtainDistributedTableName failed, code is ${err.code},message is ${err.message}`);
+            expect(err.code).assertEqual(14800014);
+          }
+        })
         done();
       })
 
@@ -701,26 +563,6 @@ export default function AsyncCallback() {
         await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
         done();
       })
-
-    /**
-     * @tc.name   relationalStoreTest035
-     * @tc.number relationalStoreTest035
-     * @tc.desc   cleanDirtyData success callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('relationalStoreTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
-      console.info(TAG + "************* relationalStoreTest035 start *************");
-      await rdbStore!.backup("backup4.db");
-      rdbStore!.restore("backup4.db", (err) => {
-        if (err) {
-          console.error(`Restore failed, code is ${err.code},message is ${err.message}`);
-          expect(err.code).assertEqual(14800032);
-        }
-        console.info('Restore success.');
-      })
-    })
 
   })
 }

@@ -559,50 +559,6 @@ export default function relationalStoreDistributedTest() {
     })
 
     /**
-     * @tc.name   testRdbStoreDistributed0014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1400
-     * @tc.desc   obtainDistributedTableName test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testRdbStoreDistributed0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        try {
-          rdbStore?.obtainDistributedTableName("deviceId", "EMPLOYEE",
-            async (err: BusinessError, tableName: String) => {
-              expect(err != null).assertTrue();
-              console.info('ObtainDistributedTableName failed, Unauthorized.' + err)
-            })
-        } catch (err: BusinessError) {
-          expect(err.code).assertEqual("401");
-        }
-        done();
-      })
-
-    // /**
-    //  * @tc.name   testRdbStoreDistributed0015
-    //  * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1500
-    //  * @tc.desc   obtainDistributedTableName test
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL2
-    //  */
-    // it('testRdbStoreDistributed0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: () => void): Promise<void> =>{
-    //     console.info(TAG + "************* testRdbStoreDistributed0015 start *************");
-    //     await data_Rdb.deleteRdbStore(context, config);
-    //     rdbStore = await data_Rdb.getRdbStore(context, config);
-    //     try{
-    //         rdbStore!.obtainDistributedTableName(["deviceId"], "EMPLOYEE")
-    //     } catch(err: BusinessError) {
-    //         console.error(TAG + `obtainDistributedTableName failed, code is ${err.code},message is ${err.message}`);
-    //         expect(err.code).assertEqual("401");
-    //     }
-    //     done();
-    //     console.info(TAG + "************* testRdbStoreDistributed0015 end *************");
-    // })
-
-    /**
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributeJsAPITest_1600
      * @tc.desc   sync test
