@@ -16,6 +16,8 @@ import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } fro
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
+import { continueManager } from '@kit.AbilityKit';
+import continueManager from '@ohos.app.ability.continueManager';
 import { Utils, startAbility, stopApplication } from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
