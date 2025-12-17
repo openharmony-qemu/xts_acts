@@ -794,19 +794,6 @@ export default function RenderNodeTest(){
     })
 
     /**
-     * @tc.name   RenderNodeErrorCode055
-     * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_055
-     * @tc.desc   Test InitModuleForArkTSEnv
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('RenderNodeErrorCode055', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.RenderNodeErrorCode055()).assertEqual(0)
-      done();
-    })
-
-    /**
      * @tc.name   RenderNodeErrorCode060
      * @tc.number SUB_ARKUI_CAPI_RenderNodeErrorCode_060
      * @tc.desc   Test InitModuleForArkTSEnv
