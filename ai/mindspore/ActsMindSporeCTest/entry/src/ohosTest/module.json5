@@ -1,0 +1,9 @@
+{
+  "module": {
+    "name": "mind_spore_test",
+    "type": "feature",
+    "deviceTypes": [],
+    "deliveryWithInstall": true,
+    "installationFree": false
+  }
+}
