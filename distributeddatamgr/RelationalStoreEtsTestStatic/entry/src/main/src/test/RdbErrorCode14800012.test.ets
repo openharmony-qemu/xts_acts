@@ -226,7 +226,7 @@ export default function RdbErrorCode14800012() {
 
     /**
      * @tc.name   relationalStoreTest029
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1400
+     * @tc.number relationalStoreTest029
      * @tc.desc   insertSync para greater than 2MB
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function RdbErrorCode14800012() {
 
     /**
      * @tc.name   relationalStoreTest031
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_1600
+     * @tc.number relationalStoreTest031
      * @tc.desc   insert para greater than 2MB queryLockedRow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

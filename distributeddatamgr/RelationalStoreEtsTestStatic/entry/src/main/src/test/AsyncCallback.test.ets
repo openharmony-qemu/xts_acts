@@ -332,16 +332,16 @@ export default function AsyncCallback() {
       })
 
     /**
-     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0050
-     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_0050
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0050
+     * @tc.number SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0050
      * @tc.desc   resultSet getBlob normal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void) => {
-        console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0050 start *************');
+        console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0050 start *************');
         let predicates = new data_relationalStore.RdbPredicates('test');
         let resultSet: data_relationalStore.ResultSet = await rdbStore!.query(predicates);
 
@@ -376,7 +376,7 @@ export default function AsyncCallback() {
         resultSet.close();
 
         done();
-        console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0050 end *************');
+        console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_Async_0050 end *************');
       })
 
     /**
