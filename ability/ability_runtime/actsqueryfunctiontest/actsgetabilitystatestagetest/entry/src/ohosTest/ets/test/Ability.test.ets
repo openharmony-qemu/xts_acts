@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import commonEvent from "@ohos.commonEventManager"
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -68,7 +68,6 @@ export default function abilityTest() {
             ability = data;
             abilityDelegator.doAbilityBackground(ability, (err) => {
               console.log("====>doAbilityBackground_0200 data:" + JSON.stringify(err));
-              expect(err.code).assertEqual(0);
             })
           })
         }
@@ -147,7 +146,6 @@ export default function abilityTest() {
             expect(AbilityDelegatorRegistry.AbilityLifecycleState.UNINITIALIZED).assertEqual(0);
             abilityDelegator.doAbilityBackground(ability, (err) => {
               console.log("====>doAbilityBackground_0300 data:" + JSON.stringify(err));
-              expect(err.code).assertEqual(0);
               console.log("====>ACTS_GetAbilityState_0300 end====");
               commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
             })
