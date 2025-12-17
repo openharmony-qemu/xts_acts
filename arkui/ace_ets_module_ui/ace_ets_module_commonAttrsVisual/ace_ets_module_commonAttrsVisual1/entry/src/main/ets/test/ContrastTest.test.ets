@@ -73,45 +73,45 @@ export default function ContrastTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('imageId1');
-      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson1)));
-      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson1)?.$attrs?.contrast);
-      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson1)?.$attrs?.grayscale);
-      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson1)?.$attrs?.saturate);
-      console.info("[ContrastTest_0100] sepia is: " + JSON.parse(strJson1)?.$attrs?.sepia);
-      console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson1)?.$attrs?.sphericalEffect);
-      console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson1)?.$attrs?.lightUpEffect);
+      console.info("[ContrastTest_0100] obj1 is: " + JSON.stringify(JSON.parse(strJson1)));
+      console.info("[ContrastTest_0100] contrast1 is: " + JSON.parse(strJson1)?.$attrs?.contrast);
+      console.info("[ContrastTest_0100] grayscale1 is: " + JSON.parse(strJson1)?.$attrs?.grayscale);
+      console.info("[ContrastTest_0100] saturate1 is: " + JSON.parse(strJson1)?.$attrs?.saturate);
+      console.info("[ContrastTest_0100] sepia1 is: " + JSON.parse(strJson1)?.$attrs?.sepia);
+      console.info("[ContrastTest_0100] sphericalEffect1 is: " + JSON.parse(strJson1)?.$attrs?.sphericalEffect);
+      console.info("[ContrastTest_0100] lightUpEffect1 is: " + JSON.parse(strJson1)?.$attrs?.lightUpEffect);
 
       let strJson2 = getInspectorByKey('imageId2');
-      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson2)));
-      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson2)?.$attrs?.contrast);
-      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson2)?.$attrs?.grayscale);
-      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson2)?.$attrs?.saturate);
-      console.info("[ContrastTest_0100] sepia is: " + JSON.parse(strJson2)?.$attrs?.sepia);
-      console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson2)?.$attrs?.sphericalEffect);
-      console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson2)?.$attrs?.lightUpEffect);
+      console.info("[ContrastTest_0100] obj2 is: " + JSON.stringify(JSON.parse(strJson2)));
+      console.info("[ContrastTest_0100] contrast2 is: " + JSON.parse(strJson2)?.$attrs?.contrast);
+      console.info("[ContrastTest_0100] grayscale2 is: " + JSON.parse(strJson2)?.$attrs?.grayscale);
+      console.info("[ContrastTest_0100] saturate2 is: " + JSON.parse(strJson2)?.$attrs?.saturate);
+      console.info("[ContrastTest_0100] sepia2 is: " + JSON.parse(strJson2)?.$attrs?.sepia);
+      console.info("[ContrastTest_0100] sphericalEffect2 is: " + JSON.parse(strJson2)?.$attrs?.sphericalEffect);
+      console.info("[ContrastTest_0100] lightUpEffect2 is: " + JSON.parse(strJson2)?.$attrs?.lightUpEffect);
 
       let strJson3 = getInspectorByKey('imageId3');
-      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson3)));
-      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson3)?.$attrs?.contrast);
-      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson3)?.$attrs?.grayscale);
-      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson3)?.$attrs?.saturate);
-      console.info("[ContrastTest_0100] sepia is: " + JSON.parse(strJson3)?.$attrs?.sepia);
-      console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson3)?.$attrs?.sphericalEffect);
-      console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson3)?.$attrs?.lightUpEffect);
+      console.info("[ContrastTest_0100] obj3 is: " + JSON.stringify(JSON.parse(strJson3)));
+      console.info("[ContrastTest_0100] contrast3 is: " + JSON.parse(strJson3)?.$attrs?.contrast);
+      console.info("[ContrastTest_0100] grayscale3 is: " + JSON.parse(strJson3)?.$attrs?.grayscale);
+      console.info("[ContrastTest_0100] saturate3 is: " + JSON.parse(strJson3)?.$attrs?.saturate);
+      console.info("[ContrastTest_0100] sepia3 is: " + JSON.parse(strJson3)?.$attrs?.sepia);
+      console.info("[ContrastTest_0100] sphericalEffect3 is: " + JSON.parse(strJson3)?.$attrs?.sphericalEffect);
+      console.info("[ContrastTest_0100] lightUpEffect3 is: " + JSON.parse(strJson3)?.$attrs?.lightUpEffect);
 
       let strJson4 = getInspectorByKey('imageId4');
-      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson4)));
-      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson4)?.$attrs?.contrast);
-      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson4)?.$attrs?.grayscale);
-      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson4)?.$attrs?.saturate);
-      console.info("[ContrastTest_0100] sphericalEffect is: " + JSON.parse(strJson4)?.$attrs?.sphericalEffect);
-      console.info("[ContrastTest_0100] lightUpEffect is: " + JSON.parse(strJson4)?.$attrs?.lightUpEffect);
+      console.info("[ContrastTest_0100] obj4 is: " + JSON.stringify(JSON.parse(strJson4)));
+      console.info("[ContrastTest_0100] contrast4 is: " + JSON.parse(strJson4)?.$attrs?.contrast);
+      console.info("[ContrastTest_0100] grayscale4 is: " + JSON.parse(strJson4)?.$attrs?.grayscale);
+      console.info("[ContrastTest_0100] saturate4 is: " + JSON.parse(strJson4)?.$attrs?.saturate);
+      console.info("[ContrastTest_0100] sphericalEffect4 is: " + JSON.parse(strJson4)?.$attrs?.sphericalEffect);
+      console.info("[ContrastTest_0100] lightUpEffect4 is: " + JSON.parse(strJson4)?.$attrs?.lightUpEffect);
 
       let strJson5 = getInspectorByKey('imageId5');
-      console.info("[ContrastTest_0100] obj is: " + JSON.stringify(JSON.parse(strJson5)));
-      console.info("[ContrastTest_0100] contrast is: " + JSON.parse(strJson5)?.$attrs?.contrast);
-      console.info("[ContrastTest_0100] grayscale is: " + JSON.parse(strJson5)?.$attrs?.grayscale);
-      console.info("[ContrastTest_0100] saturate is: " + JSON.parse(strJson5)?.$attrs?.saturate);
+      console.info("[ContrastTest_0100] obj5 is: " + JSON.stringify(JSON.parse(strJson5)));
+      console.info("[ContrastTest_0100] contrast5 is: " + JSON.parse(strJson5)?.$attrs?.contrast);
+      console.info("[ContrastTest_0100] grayscale5 is: " + JSON.parse(strJson5)?.$attrs?.grayscale);
+      console.info("[ContrastTest_0100] saturate5 is: " + JSON.parse(strJson5)?.$attrs?.saturate);
 
       expect(JSON.parse(strJson1)?.$attrs?.contrast).assertEqual(0);
       expect(JSON.parse(strJson1)?.$attrs?.grayscale).assertEqual(0);
