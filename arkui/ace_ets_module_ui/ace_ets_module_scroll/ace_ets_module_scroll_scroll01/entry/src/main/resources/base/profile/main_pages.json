@@ -44,6 +44,7 @@
         "MainAbility/pages/Scroll/scrollDraggingFling",
         "MainAbility/pages/Scroll/scrollScrollbarColor",
         "MainAbility/pages/Scroll/ScrollContentSize",
+        "MainAbility/pages/Scroll/scrollFrictionMin",
         "MainAbility/pages/Scroll/scrollFrictionRes",
         "MainAbility/pages/Scroll/scrollOffsetRes",
         "MainAbility/pages/Scroll/scrollContentOffset"
