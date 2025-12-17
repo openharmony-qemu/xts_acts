@@ -173,39 +173,6 @@ static bool CheckLevelsForProfile(int32_t profile, int32_t level)
     }
 }
 
-static bool CheckWmv3Profile(int32_t profile)
-{
-    if (profile == WMV3_PROFILE_SIMPLE ||
-        profile == WMV3_PROFILE_MAIN) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-static bool CheckWmv3LevelsForProfile(int32_t profile, int32_t level)
-{
-    if (profile == WMV3_PROFILE_SIMPLE) {
-        if (level == WMV3_LEVEL_LOW ||
-            level == WMV3_LEVEL_MEDIUM ||
-            level == WMV3_LEVEL_HIGH) {
-            return true;
-        } else {
-            return false;
-        }
-    } else if (profile == WMV3_PROFILE_MAIN) {
-        if (level == WMV3_LEVEL_LOW ||
-            level == WMV3_LEVEL_MEDIUM ||
-            level == WMV3_LEVEL_HIGH) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-}
-
 void DecApiNdkTest::SetUpTestCase()
 {
     const char *file = "/data/test/media/test_vc1.avi";
@@ -580,17 +547,45 @@ HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0011, TestSize.Level1)
         uint32_t levelNum = 0;
         ASSERT_NE(nullptr, profiles);
         for (int i = 0; i < profileNum; i++) {
-            cout << "profiles[" << i << "] = " << profiles[i] << endl;
-            ASSERT_EQ(CheckWmv3Profile(profiles[i]), true);
+            EXPECT_GE(profiles[i], 0);
             ret = OH_AVCapability_GetSupportedLevelsForProfile(capability, profiles[i], &levels, &levelNum);
             ASSERT_EQ(AV_ERR_OK, ret);
             ASSERT_NE(nullptr, levels);
             EXPECT_GT(levelNum, 0);
             for (int j = 0; j < levelNum; j++) {
-                cout << "level is " << levels[j] << endl;
-                ASSERT_EQ(CheckWmv3LevelsForProfile(profiles[i], levels[j]), true);
+                EXPECT_GE(levels[j], 0);
             }
         }
+    }
+}
+
+/**
+ * @tc.name   VIDEO_MSVIDEO1DEC_CAP_API_0012
+ * @tc.number VIDEO_MSVIDEO1DEC_CAP_API_0012
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DecApiNdkTest, VIDEO_MSVIDEO1DEC_CAP_API_0012, TestSize.Level1)
+{   
+
+    OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3,
+    false, SOFTWARE);
+    if (capability != nullptr) {
+        ASSERT_NE(nullptr, capability);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WMV3_PROFILE_SIMPLE, WMV3_LEVEL_LOW));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WMV3_PROFILE_SIMPLE, WMV3_LEVEL_MEDIUM));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WMV3_PROFILE_SIMPLE, WMV3_LEVEL_HIGH));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WMV3_PROFILE_MAIN, WMV3_LEVEL_LOW));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WMV3_PROFILE_MAIN, WMV3_LEVEL_MEDIUM));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(capability,
+        WMV3_PROFILE_MAIN, WMV3_LEVEL_HIGH));
     }
 }
 } // namespace
