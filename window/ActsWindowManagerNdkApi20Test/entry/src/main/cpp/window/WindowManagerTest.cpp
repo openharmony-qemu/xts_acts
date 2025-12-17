@@ -233,6 +233,24 @@ static void InitPushWindow2(napi_property_descriptor* desc)
     }
 }
 
+static void InitPushWindow3(napi_property_descriptor* desc)
+{
+    int32_t offset = 131;
+    napi_property_descriptor descTemp[] = {
+        XL("testLockCursorwithOutofRange",
+            Window::TestLockCursorwithOutofRange),
+        XL("testLockCursorwithoutPermission",
+            Window::TestLockCursorwithoutPermission),
+        XL("testUnLockCursorwithOutofRange",
+            Window::TestUnLockCursorwithOutofRange),
+        XL("testUnLockCursorwithoutPermission",
+            Window::TestUnLockCursorwithoutPermission),
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Init", "Init begins");
@@ -240,13 +258,14 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[131] = {};
+    napi_property_descriptor desc[135] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);
     InitPushWindowPip3(desc);
     InitPushDisplay(desc);
     InitPushWindow2(desc);
+    InitPushWindow3(desc);
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;

@@ -10,6 +10,7 @@
         "MainAbility/pages/CommonAttrs/backgroundAndSizeSetting",
         "MainAbility/pages/CommonAttrs/border",
         "MainAbility/pages/CommonAttrs/BorderRadiusRenderStrategy",
-        "MainAbility/pages/CommonAttrs/FlexFourBoundary"
+        "MainAbility/pages/CommonAttrs/FlexFourBoundary",
+        "MainAbility/pages/CommonCustom/LayoutFourReturn"
     ]
 }

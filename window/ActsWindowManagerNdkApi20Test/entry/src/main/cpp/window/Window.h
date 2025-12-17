@@ -70,6 +70,12 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0500(napi_env env, napi_c
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0600(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0700(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_callback_info info);
+
+napi_value TestLockCursorwithOutofRange(napi_env env, napi_callback_info info);
+napi_value TestLockCursorwithoutPermission(napi_env env, napi_callback_info info);
+napi_value TestUnLockCursorwithOutofRange(napi_env env, napi_callback_info info);
+napi_value TestUnLockCursorwithoutPermission(napi_env env, napi_callback_info info);
+
 };
 
 #endif //ACE_C_ARKUI_KEY_CODE_TEST_API20_WINDOW_H

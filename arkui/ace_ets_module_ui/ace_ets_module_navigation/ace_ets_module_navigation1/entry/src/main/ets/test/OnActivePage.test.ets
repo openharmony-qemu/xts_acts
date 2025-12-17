@@ -79,7 +79,7 @@ export default function OnActivePage() {
 
       let testVal: number = AppStorage.get('onInactive') as number
       console.log('OnActivePage_0100 on onInactive value : ' + testVal)
-      expect(testVal).assertEqual(4);
+      expect(testVal).assertEqual(NavDestinationActiveReason.OVERLAY);
       AppStorage.delete('onInactive');
 
       let btn4: Component = await driver.findComponent(ON.id('closeOverLayId'));
@@ -89,7 +89,7 @@ export default function OnActivePage() {
 
       let testVal2: number = AppStorage.get('onActive') as number
       console.log('OnActivePage_0100 on onActive value : ' + testVal2)
-      expect(testVal2).assertEqual(4);
+      expect(testVal2).assertEqual(NavDestinationActiveReason.OVERLAY);
       AppStorage.delete('onActive');
       console.log('[OnActivePage_0100] END');
       done();
@@ -119,7 +119,7 @@ export default function OnActivePage() {
       await driver.delayMs(3000);  
       let testVal: number = AppStorage.get('onInactive') as number
       console.log('OnActivePage_0200 on onInactive value : ' + testVal)
-      expect(testVal).assertEqual(0);
+      expect(testVal).assertEqual(NavDestinationActiveReason.TRANSITION);
       AppStorage.delete('onInactive');
 
       let btn3: Component = await driver.findComponent(ON.id('pushId'));
@@ -129,7 +129,7 @@ export default function OnActivePage() {
       await driver.delayMs(3000);  
       let testVal2: number = AppStorage.get('onActive') as number
       console.log('OnActivePage_0200 on onActive value : ' + testVal2)
-      expect(testVal2).assertEqual(0);
+      expect(testVal2).assertEqual(NavDestinationActiveReason.TRANSITION);
       AppStorage.delete('onActive');
 
       console.log('[OnActivePage_0200] END');
@@ -166,7 +166,7 @@ export default function OnActivePage() {
 
       let testVal: number = AppStorage.get('onInactive') as number
       console.log('OnActivePage_0300 on onInactive value : ' + testVal)
-      expect(testVal).assertEqual(3);
+      expect(testVal).assertEqual(NavDestinationActiveReason.DIALOG);
       AppStorage.delete('onInactive');
 
       let btn4: Component = await driver.findComponent(ON.id('closeDialogId'));
@@ -176,7 +176,7 @@ export default function OnActivePage() {
       await driver.delayMs(3000);  
       let testVal2: number = AppStorage.get('onActive') as number
       console.log('OnActivePage_0300 on onActive value : ' + testVal2)
-      expect(testVal2).assertEqual(3);
+      expect(testVal2).assertEqual(NavDestinationActiveReason.DIALOG);
       AppStorage.delete('onActive');
 
       console.log('[OnActivePage_0300] END');
@@ -213,7 +213,7 @@ export default function OnActivePage() {
 
       let testVal: number = AppStorage.get('onInactive') as number
       console.log('OnActivePage_0400 on onInactive value : ' + testVal)
-      expect(testVal).assertEqual(2);
+      expect(testVal).assertEqual(NavDestinationActiveReason.SHEET);
       AppStorage.delete('onInactive');
 
       console.log('[OnActivePage_0400] END');
@@ -250,7 +250,7 @@ export default function OnActivePage() {
 
       let testVal: number = AppStorage.get('onInactive') as number
       console.log('OnActivePage_0500 on onInactive value : ' + testVal)
-      expect(testVal).assertEqual(1);
+      expect(testVal).assertEqual(NavDestinationActiveReason.CONTENT_COVER);
       AppStorage.delete('onInactive');
 
       let btn4: Component = await driver.findComponent(ON.id('closeAllSheetId'));
@@ -260,10 +260,27 @@ export default function OnActivePage() {
       await driver.delayMs(3000);  
       let testVal2: number = AppStorage.get('onActive') as number
       console.log('OnActivePage_0500 on onActive value : ' + testVal2)
-      expect(testVal2).assertEqual(1);
+      expect(testVal2).assertEqual(NavDestinationActiveReason.CONTENT_COVER);
       AppStorage.delete('onActive');
 
       console.log('[OnActivePage_0500] END');
+      done();
+    });
+
+    /**
+     * @tc.name   OnActivePage_0600
+     * @tc.number OnActivePage_0600
+     * @tc.desc   Test NavDestinationActiveReason.APP_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OnActivePage_0600',  Level.LEVEL0, async (done: Function) => {
+      console.info('OnActivePage_0600 START');
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      expect(NavDestinationActiveReason.APP_STATE).assertEqual(5);
+      console.log('[OnActivePage_0600] END');
       done();
     });
 

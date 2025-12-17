@@ -3130,6 +3130,104 @@ namespace GifTestFunction {
         return result;
     }
 
+    static napi_value HeifsMetadataGetMimetype(napi_env env, napi_callback_info info)
+    {
+        napi_value result = nullptr;
+        napi_value argValue[NUM_1] = {NUM_0};
+        size_t argCount = NUM_1;
+    
+        napi_get_undefined(env, &result);
+        if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+            OH_LOG_ERROR(LOG_APP, "HeifsMetadataGetMimetype: failed to get input arguments!");
+            return result;
+        }
+
+        void *ptr = nullptr;
+        napi_get_value_external(env, argValue[NUM_0], &ptr);
+        OH_ImageSourceNative *imageSource = reinterpret_cast<OH_ImageSourceNative *>(ptr);
+        if (imageSource == nullptr) {
+            OH_LOG_ERROR(LOG_APP, "imageSource is nullptr!");
+            return getJsResult(env, IMAGE_BAD_PARAMETER);
+        }
+
+        OH_ImageSource_Info *imageSourceInfo = nullptr;
+        OH_ImageSourceInfo_Create(&imageSourceInfo);
+        IMG_NAPI_CHECK_NULL_PTR(imageSourceInfo, getJsResult(env, IMAGE_BAD_PARAMETER));
+
+        Image_ErrorCode errCode = OH_ImageSourceNative_GetImageInfo(imageSource, NUM_0, imageSourceInfo);
+        if (errCode != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "GetImageInfo failed, errCode: %{public}d", errCode);
+            IMG_NAPI_RELEASE_PTR(imageSourceInfo, OH_ImageSourceInfo_Release(imageSourceInfo));
+            return getJsResult(env, errCode);
+        }
+
+        Image_MimeType mimeType;
+        errCode = OH_ImageSourceInfo_GetMimeType(imageSourceInfo, &mimeType);
+        if (errCode != IMAGE_SUCCESS || mimeType.data == nullptr || mimeType.size == 0) {
+            OH_LOG_ERROR(LOG_APP, "GetMimeType failed or invalid, errCode: %{public}d", errCode);
+            IMG_NAPI_RELEASE_PTR(imageSourceInfo, OH_ImageSourceInfo_Release(imageSourceInfo));
+            return getJsResult(env, errCode != IMAGE_SUCCESS ? errCode : IMAGE_BAD_PARAMETER);
+        }
+
+        napi_create_string_utf8(env, (const char *)mimeType.data, mimeType.size, &result);
+        IMG_NAPI_RELEASE_PTR(imageSourceInfo, OH_ImageSourceInfo_Release(imageSourceInfo));
+        return result;
+    }
+
+    static napi_value testCreatePixelMapGetImageInfo(napi_env env, napi_callback_info info)
+    {
+        napi_value result = nullptr;
+        napi_value argValue[NUM_1] = {NUM_0};
+        size_t argCount = NUM_1;
+    
+        napi_get_undefined(env, &result);
+        if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+            OH_LOG_ERROR(LOG_APP, "testCreatePixelMapGetImageInfo: failed to get input arguments!");
+            return result;
+        }
+    
+        void *ptr = nullptr;
+        napi_get_value_external(env, argValue[NUM_0], &ptr);
+        OH_ImageSourceNative *imageSource = reinterpret_cast<OH_ImageSourceNative *>(ptr);
+        if (imageSource == nullptr) {
+            OH_LOG_ERROR(LOG_APP, "imageSource is nullptr!");
+            return getJsResult(env, IMAGE_BAD_PARAMETER);
+        }
+    
+        OH_DecodingOptions *decodingOptions = nullptr;
+        Image_ErrorCode errCode = OH_DecodingOptions_Create(&decodingOptions);
+
+        OH_PixelmapNative *pixelmap = nullptr;
+        errCode = OH_ImageSourceNative_CreatePixelmap(imageSource, decodingOptions, &pixelmap);
+        IMG_NAPI_RELEASE_PTR(decodingOptions, OH_DecodingOptions_Release(decodingOptions));
+        if (errCode != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "CreatePixelmap failed, errCode: %{public}d!", errCode);
+            return getJsResult(env, errCode);
+        }
+
+        OH_Pixelmap_ImageInfo *imageInfo = nullptr;
+        OH_PixelmapImageInfo_Create(&imageInfo);
+        uint32_t width = 0;
+        uint32_t height = 0;
+        errCode = OH_PixelmapNative_GetImageInfo(pixelmap, imageInfo);
+        if (errCode == IMAGE_SUCCESS) errCode = OH_PixelmapImageInfo_GetWidth(imageInfo, &width);
+        if (errCode == IMAGE_SUCCESS) errCode = OH_PixelmapImageInfo_GetHeight(imageInfo, &height);
+        
+        if (errCode != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "Get image info/width/height failed, errCode: %{public}d!", errCode);
+            IMG_NAPI_RELEASE_PTR(pixelmap, OH_PixelmapNative_Release(pixelmap));
+            IMG_NAPI_RELEASE_PTR(imageInfo, OH_PixelmapImageInfo_Release(imageInfo));
+            return getJsResult(env, errCode);
+        }
+    
+        napi_create_object(env, &result);
+        SetUint32NamedProperty(env, result, INFO_WIDTH, width);
+        SetUint32NamedProperty(env, result, INFO_HEIGHT, height);
+        IMG_NAPI_RELEASE_PTR(pixelmap, OH_PixelmapNative_Release(pixelmap));
+        IMG_NAPI_RELEASE_PTR(imageInfo, OH_PixelmapImageInfo_Release(imageInfo));
+        return result;
+    }
+
     static napi_value CreatePictureAtIndexByImageSourceError(napi_env env, napi_callback_info info)
     {
         napi_value result = nullptr;
@@ -3360,6 +3458,10 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"GifMetadataSetProperty", nullptr, GifTestFunction::MetadataSetProperty, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"HeifsMetadataGetMimetype", nullptr, GifTestFunction::HeifsMetadataGetMimetype, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"testCreatePixelMapGetImageInfo", nullptr, GifTestFunction::testCreatePixelMapGetImageInfo, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
         {"GifGetMainPixelmapInfo", nullptr, GifTestFunction::GetMainPixelmapInfo, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"CreatePictureAtIndexByImageSourceError", nullptr, GifTestFunction::CreatePictureAtIndexByImageSourceError,

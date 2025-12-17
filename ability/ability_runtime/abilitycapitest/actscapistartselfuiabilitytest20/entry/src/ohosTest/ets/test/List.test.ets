@@ -15,8 +15,10 @@
 
 import ActsCapabilityStartSelfUIAbilityTest from './ActsCapabilityStartSelfUIAbilityTest.test'
 import ActsCapabilityStartSelfUIAbilityTest1 from './ActsCapabilityStartSelfUIAbilityTest1.test'
+import ActsStartSelfUIAbilityWithPidTest from './ActsStartSelfUIAbilityWithPidTest.test'
 
 export default function testsuite() {
   ActsCapabilityStartSelfUIAbilityTest()
   ActsCapabilityStartSelfUIAbilityTest1()
+  ActsStartSelfUIAbilityWithPidTest()
 }

@@ -291,6 +291,291 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name   OHHiAppEventAddBoolParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddBoolParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHHiAppEventAddBoolParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddBoolParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   OHHiAppEventAddBoolArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddBoolArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHHiAppEventAddBoolArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddBoolArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   OHHiAppEventAddInt8ParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt8Param_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHHiAppEventAddInt8ParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt8ParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt8ArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt8ArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt8ArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt8ArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt16ParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt16Param_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt16ParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt16ParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt16ArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt16ArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt16ArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt16ArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt32ParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt32Param_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt32ParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt32ParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt32ArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt32ArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt32ArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt32ArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt64ParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt64Param_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt64ParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt64ParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddInt64ArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddInt64ArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddInt64ArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddInt64ArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddFloatParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddFloatParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddFloatParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddFloatParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddFloatArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddFloatArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddFloatArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddFloatArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddDoubleParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddDoubleParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddDoubleParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddDoubleParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddDoubleArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddDoubleArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddDoubleArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddDoubleArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddStringParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddStringParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddStringParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddStringParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   AddStringArrayParamReturn001
+     * @tc.number SUB_DFX_OHHiAppEventAddStringArrayParam_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AddStringArrayParamReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventAddStringArrayParamReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   CreateWatcherReturn001
+     * @tc.number SUB_DFX_OHHiAppEventCreateWatcher_Return_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('CreateWatcherReturn001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventCreateWatcherReturn();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   ConfigureReturnTrue001
+     * @tc.number SUB_DFX_OHHiAppEventConfigure_ReturnTrue_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ConfigureReturnTrue001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventConfigureReturnTrue();
+      console.log("hiappevent=================================" + result);
+      expect(result == 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   ConfigureReturnFalse001
+     * @tc.number SUB_DFX_OHHiAppEventConfigure_ReturnFalse_0100
+     * @tc.desc   test OHHiAppEventCreateParamList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ConfigureReturnFalse001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = hiappevent.OHHiAppEventConfigureReturnFalse();
+      console.log("hiappevent=================================" + result);
+      expect(result == 1).assertTrue();
+      done();
+    });
+
+    /**
      * @tc.name   testHiAppEventWatcherCode01
      * @tc.number SUB_DFX_DFT_HiAppEvent_Watcher_Code_0100
      * @tc.desc   验证hiappevent-OH_HiAppEvent_SetAppEventFilter所有场景返回值

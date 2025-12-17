@@ -40,6 +40,7 @@ import GridFillPolicyTest from "./grid/GridFillPolicyTest.test"
 import gridAttrsTest from "./grid/GridAttrsTest.test";
 import gridEventTest from './grid/GridEventTest.test';
 import clipShapeTest from "./clipShape/ClipShapeTest.test";
+import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -70,4 +71,5 @@ export default function testsuite() {
   gridAttrsTest();
   gridEventTest();
   clipShapeTest();
+  CustomMarkDirtyTest();
 }

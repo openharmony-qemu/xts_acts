@@ -215,7 +215,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -296,7 +296,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -809,7 +809,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -890,7 +890,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -1025,7 +1025,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -1106,7 +1106,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -1349,7 +1349,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.NV21,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -1430,7 +1430,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.NV21,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -1565,7 +1565,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGB_565,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,
@@ -1646,7 +1646,7 @@ export default function pixelMapReadPixelsTest() {
         desiredPixelFormat: image.PixelMapFormat.RGB_565,
       };
       let pixelMap: image.PixelMap = await getPixMap("test_exif_v2.jpg", decodingOptions);
-      let array: ArrayBuffer = new ArrayBuffer(160000);
+      let array: ArrayBuffer = new ArrayBuffer(3000);
       const area: image.PositionArea = {
         pixels: array,
         offset: 0,

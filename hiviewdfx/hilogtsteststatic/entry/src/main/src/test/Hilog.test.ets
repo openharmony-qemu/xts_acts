@@ -444,5 +444,75 @@ export default function HilogTsTest() {
         expect().assertFail()
       }
     })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1700
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1700
+     * @tc.desc   hilog新增向下调整日志级别接口-使用默认日志级别setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1800
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1800
+     * @tc.desc   hilog新增向下调整日志级别接口-比较默认值和设置值后取较大值setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_CLOSE_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(false);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1900
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1900
+     * @tc.desc   hilog新增向下调整日志级别接口-比较默认值和设置值后取较小值setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_OPEN_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+    
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2400
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2400
+     * @tc.desc   hilog调整日志级别接口后执行setMinLogLevel方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.ERROR, hilog.PreferStrategy.PREFER_CLOSE_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.WARN);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(false);
+      expect(res1).assertEqual(true);
+      hilog.setMinLogLevel(hilog.LogLevel.WARN)
+      let res2 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.WARN);
+      let res3 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res2).assertEqual(true);
+      expect(res3).assertEqual(true);
+    })
+
   })
 }
