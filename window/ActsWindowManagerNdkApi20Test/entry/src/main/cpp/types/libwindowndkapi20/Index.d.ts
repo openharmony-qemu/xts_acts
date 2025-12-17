@@ -148,3 +148,8 @@ export const DisplayManagerErrorCode801: (id: number) => number;
 export const DisplayManagerErrorCode1400001: (id: number) => number;
 export const DisplayManagerErrorCode1400003: () => number;
 export const DisplayManagerErrorCode1400004: () => number;
+
+export const testLockCursorwithOutofRange: (id: number) => Array<number>;
+export const testLockCursorwithoutPermission: (id: number) => number;
+export const testUnLockCursorwithOutofRange: (id: number) => Array<number>;
+export const testUnLockCursorwithoutPermission: (id: number) => number;
