@@ -29,6 +29,7 @@
 #include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
+#include "ImageEffectsSuppTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -88,7 +89,18 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelMapGetImageInfoTest", PixelMapGetImageInfoTest),
     DESCRIPTOR("PixelMapAccessPixelsTest", PixelMapAccessPixelsTest),
     DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),
-
+    DESCRIPTOR("OHImageEffectConfigureSupp", OHImageEffectConfigureSupp),
+    DESCRIPTOR("OHImageEffectSetOutputSurfaceSupp", OHImageEffectSetOutputSurfaceSupp),
+    DESCRIPTOR("OHImageEffectGetInputSurfaceSupp", OHImageEffectGetInputSurfaceSupp),
+    DESCRIPTOR("OHImageEffectSetInputPixelmapSupp", OHImageEffectSetInputPixelmapSupp),
+    DESCRIPTOR("savePixelMapForPathSupp", savePixelMapForPathSupp),
+    DESCRIPTOR("OHImageEffectSaveSupp", OHImageEffectSaveSupp),
+    DESCRIPTOR("OHImageEffectEmuSupp", OHImageEffectEmuSupp),
+    DESCRIPTOR("CreatePixelMap", CreatePixelMap),
+    DESCRIPTOR("CreatOutPixelMapForPathSupp", CreatOutPixelMapForPathSupp),
+    DESCRIPTOR("OHImageEffectSetOutputPixelmapSupp", OHImageEffectSetOutputPixelmapSupp),
+    DESCRIPTOR("OHImageEffectSetInputUriSupp", OHImageEffectSetInputUriSupp),
+    DESCRIPTOR("OHImageEffectSetOutputUriSupp", OHImageEffectSetOutputUriSupp),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

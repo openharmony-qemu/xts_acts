@@ -21,6 +21,15 @@ interface PackingOption_quality {
   quality: number;
 }
 
+interface pixelMapPots {
+  width: number,
+  height: number,
+  pixelFormat: number,
+  editable: number,
+  alphaType: number,
+  scaleMode: number
+}
+
 export const packToData: (a: image.ImagePacker, b: image.ImageSource | image.PixelMap,
   c: image.PackingOption | PackingOption_format | PackingOption_quality) => number;
 export const OHImageEffectCreateSupp: (a: number) => number;
@@ -83,3 +92,15 @@ export const OHImageEffectGetFilterSupp: (a: number) => number;
 export const OHImageEffectSetInputPictureSupp: (a: number) => number;
 export const OHImageEffectSetOutputPictureSupp: (a: number) => number;
 export const OHImageEffectReleaseSupp:(a: number) => number;
+export const OHImageEffectConfigureSupp: (a: number) => number;
+export const OHImageEffectSetOutputSurfaceSupp: (a: number) => number;
+export const OHImageEffectGetInputSurfaceSupp: (a: number) => number;
+export const OHImageEffectSetInputPixelmapSupp: (a: number) => number;
+export const OHImageEffectSetOutputPixelmapSupp: (a: number) => number;
+export const savePixelMapForPathSupp: (a: string) => number;
+export const OHImageEffectSaveSupp: (a: number) => number;
+export const OHImageEffectEmuSupp: (a: number) => number;
+export const OHImageEffectSetInputUriSupp: (a: number) => number;
+export const OHImageEffectSetOutputUriSupp: (a: number) => number;
+export const CreatOutPixelMapForPathSupp: (a: string) => number;
+export const CreatePixelMap: (a: ArrayBuffer, b:pixelMapPots) => image.PixelMap;
