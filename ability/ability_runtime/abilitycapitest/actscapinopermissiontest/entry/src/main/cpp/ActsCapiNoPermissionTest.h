@@ -21,5 +21,6 @@
 napi_value StartSelfUIAbilityPermissionDenied(napi_env env, napi_callback_info info);
 napi_value StartSelfUIAbilityWithStartOptionsPermissionDenied(napi_env env, napi_callback_info info);
 napi_value AbilityRuntimeErrorCodePermissionDeniedCode(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidPermissionDenied(napi_env env, napi_callback_info info);
 
 #endif //ACTSCAPISTARTSELFUIABILITYTEST20_ACTSCAPISTARTSELFUIABILITYTEST20TEST_H

@@ -17,6 +17,6 @@ import webViewSetHttpDns from './webViewSetHttpDns.test'
 
 
 export default function testsuite() {
-  webViewController()
   webViewSetHttpDns()
+  webViewController()
 }
