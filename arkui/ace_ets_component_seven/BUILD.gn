@@ -81,6 +81,7 @@ group("componentSevenAttrssTest") {
       "ace_ets_component_common_seven_attrs_width:ActsAceEtsComponentCommonSevenAttrsWidthTest",
       "ace_ets_component_common_seven_attrs_zIndex:ActsAceEtsComponentCommonSevenAttrsZIndexTest",
       "ace_ets_component_seven_special:ActsAceEtsComponentSevenSpecialTest",
+      "ace_ets_component_seven_special_static:ActsAceEtsComponentSevenSpecialStaticTest",
     ]
   }
 }
