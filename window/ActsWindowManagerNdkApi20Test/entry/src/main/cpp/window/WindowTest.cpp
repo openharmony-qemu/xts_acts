@@ -94,7 +94,7 @@ napi_value SetWindowStatusBarEnabledInvalidParam(napi_env env, napi_callback_inf
     bool flag1 = mt() % 2;
     bool flag2 = mt() % 2;
     napi_value retValue = 0;
-    g_result = OH_WindowManager_SetWindowStatusBarEnabled(g_mainWindowId-1, flag1, flag2);
+    g_result = OH_WindowManager_SetWindowStatusBarEnabled(g_mainWindowId - 1, flag1, flag2);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "SetWindowStatusBarEnabledInvalidParam: %{public}d", g_result);
     napi_create_int32(env, g_result, &retValue);
@@ -281,7 +281,7 @@ napi_value GetAllWindowLayoutInfoListParameterOverride(napi_env env, napi_callba
     OH_WindowManager_ReleaseAllWindowLayoutInfoList(windowLayoutInfo);
     windowLayoutInfo = NULL;
     free(windowLayoutInfoSize);
-    windowLayoutInfoSize = NULL;
+    windowLayoutInfoSize = nullptr;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -298,7 +298,7 @@ napi_value GetAllWindowLayoutInfoListOkOrDeviceNotSupported(napi_env env, napi_c
     OH_WindowManager_ReleaseAllWindowLayoutInfoList(windowLayoutInfo);
     windowLayoutInfo = NULL;
     free(windowLayoutInfoSize);
-    windowLayoutInfoSize = NULL;
+    windowLayoutInfoSize = nullptr;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -553,7 +553,7 @@ napi_value RegisterMouseEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterMouseEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -595,7 +595,7 @@ napi_value UnregisterMouseEventFilterOkOrServiceError(napi_env env, napi_callbac
 napi_value UnregisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "UnregisterMouseEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -629,7 +629,7 @@ napi_value RegisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterTouchEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -671,7 +671,7 @@ napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callbac
 napi_value UnregisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "UnregisterTouchEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {

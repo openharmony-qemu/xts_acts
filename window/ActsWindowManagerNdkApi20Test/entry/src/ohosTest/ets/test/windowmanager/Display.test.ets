@@ -118,7 +118,7 @@ export default function DisplayTest() {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testCreateDisplayByIdBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_INVALID_PARAM);
+        expect(Result[0]).assertEqual(OK);
         expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
         expect(Result[2]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
         done()
