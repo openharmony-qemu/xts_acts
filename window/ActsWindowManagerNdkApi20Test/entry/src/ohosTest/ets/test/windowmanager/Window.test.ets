@@ -1216,6 +1216,8 @@ export default function WindowTest() {
     it('testInjectTouchEvent', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testInjectTouchEvent';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
       try {
         console.info(`====>${caseName} start<====`);
         let windowClass = windowStage.getMainWindowSync();
@@ -1224,7 +1226,11 @@ export default function WindowTest() {
         let Result: Array<number> = windowndkapi20.testInjectTouchEvent(windowId);
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
         expect(Result[0]).assertEqual(WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL);
-        expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL);
+        if (isSupport) {
+          expect(Result[1]).assertEqual(OK);
+        } else {
+          expect(Result[1]).assertEqual(WINDOW_MANAGER_ERRORCODE_SYSTEM_ABNORMAL);
+        }
         done()
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
