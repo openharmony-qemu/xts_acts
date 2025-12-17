@@ -227,6 +227,30 @@ export default function relationalStoreCloudSyncEts() {
     })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_qiangjiAPIerrcode006Test_1600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_qiangjiAPIerrcode006Test_1600
+     * @tc.desc   goToFirstRow 14800021 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_qiangjiAPIerrcode006Test_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_SDK_qiangjiAPIerrcode006Test_1600 start *************');
+      await rdbStore2.execute(CREATE_TABLE_TESTERRCODE);
+      let resultSet = await rdbStore2.querySql("SELECT * FROM testerrcode1")
+      try{
+        resultSet.goToFirstRow();
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, "business error code %{public}d", err.code)
+        expect(true).assertEqual(err.code == 14800021)
+      }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_SDK_qiangjiAPIerrcode006Test_1600 end *************');
+    })
+
+    /**
      * @tc.name   SUB_DistributedData_RelationalStore_testgetRdbStore0008
      * @tc.number SUB_DistributedData_RelationalStore_testgetRdbStore0008
      * @tc.desc   getRdbStore promise 14800017 test
@@ -344,6 +368,27 @@ export default function relationalStoreCloudSyncEts() {
       await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
       done();
       hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_testexecuteSql0031 end *************');
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_RdbAPItestInsert_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbAPItestInsert_0200
+     * @tc.desc   getColumnIndex normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_SDK_RdbAPItestInsert_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestInsert_0200 start *************');
+      try{
+        let num = await rdbStore.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+        expect(num).assertEqual(4);
+        done();
+      }catch(err:BusinessError){
+        expect(err != null ).assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* SUB_DistributedData_RelationalStore_SDK_RdbAPItestInsert_0200 end *************');
     })
 
   })

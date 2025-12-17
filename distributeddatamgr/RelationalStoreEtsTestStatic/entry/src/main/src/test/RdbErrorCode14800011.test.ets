@@ -115,11 +115,11 @@ async function CreateCorruptDb1() {
   console.info(tag, `quit create corrupt store`);
 }
 
-export default function rdbErrorCode14800011() {
+export default function RdbErrorCode14800011() {
 
-  describe("rdbErrorCode14800011", (): void => {
+  describe("RdbErrorCode14800011", (): void => {
     beforeAll(async(): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'rdbErrorCode14800011 beforeAll');
+      hilog.info(domain, tag, '%{public}s', 'RdbErrorCode14800011 beforeAll');
       //abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
       await abilityDelegator.startAbility({
         bundleName: 'com.example.relationalstore',
@@ -1076,6 +1076,49 @@ export default function rdbErrorCode14800011() {
       } catch (err: BusinessError) {
         await transaction.rollback();
         hilog.info(domain, tag, '%{public}s', `SUB_DistributedData_RelationalStore_SDK_InsertSyncUint8ArrayTest_1000 + ${err.code} + ${err.message}`);
+        expect(14800011).assertEqual(err.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000
+     * @tc.desc   Transaction updateSync errcode is 14800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000 start *************");
+      let transaction: data_relationalStore.Transaction;
+      try {
+        rdbStore!.executeSync(CREATE_TABLE_TEST1);
+        const u8 = new Uint8Array([1, 2, 3]);
+        const valueBucket: data_relationalStore.ValuesBucket = {
+          "name": "zhangsan",
+          "age": 20 as long,
+          "salary": 220.5,
+          "blobType": u8,
+        };
+        const valueBucket1: data_relationalStore.ValuesBucket = {
+          "name": "lisi",
+          "age": 30 as long,
+          "salary": 20.5,
+          "blobType": u8,
+        };
+        transaction = await rdbStore!.createTransaction();
+        hilog.info(domain, tag, '%{public}s','SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000 end createTransaction');
+        transaction.insertSync("test1", valueBucket);
+        let predicates = new data_relationalStore.RdbPredicates("test1");
+        predicates.equalTo("NAME", "zhangsan");
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000 end CreateCorruptDb');
+        transaction.updateSync(valueBucket1, predicates);
+        done();
+      } catch (err: BusinessError) {
+        await transaction.rollback();
+        hilog.info(domain, tag, '%{public}s', `SUB_DistributedData_RelationalStore_SDK_UpdateSynctestUpdateSyncErrcode0200Test_1000 + ${err.code} + ${err.message}`);
         expect(14800011).assertEqual(err.code);
         done();
       }

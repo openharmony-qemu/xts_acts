@@ -13,7 +13,7 @@ let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegato
 
 let dataBaseDir : String;
 let domain: int  = 0x00ff;
-let tag: string = 'rdbErrorCode14800013';
+let tag: string = 'RdbErrorCode14800013';
 const TAG = "[ttt]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
@@ -53,9 +53,9 @@ vbs[0] = valueBucket0
 vbs[1] = valueBucket1
 vbs[2] = valueBucket2
 
-export default function rdbErrorCode14800013() {
+export default function RdbErrorCode14800013() {
 
-  describe("rdbErrorCode14800013", (): void => {
+  describe("RdbErrorCode14800013", (): void => {
     beforeAll(async () : Promise<void> => {
       await abilityDelegator.startAbility({
         bundleName: 'com.example.relationalstore',

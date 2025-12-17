@@ -26,7 +26,7 @@ const valueBucket2k: relationalStore.ValuesBucket = {
 };
 let dataBaseDir : String;
 let domain: int  = 0x0000;
-let tag: string = 'rdbErrorCode14800012';
+let tag: string = 'RdbErrorCode14800012';
 const TAG = "[ttt]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
@@ -90,9 +90,9 @@ const valueBucketEqual2m: relationalStore.ValuesBucket = {
 };
 
 
-export default function rdbErrorCode14800012() {
+export default function RdbErrorCode14800012() {
 
-  describe("rdbErrorCode14800012", (): void => {
+  describe("RdbErrorCode14800012", (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '[RELATIONAL_STORE_JSKITS_TEST] beforeAll');
       await abilityDelegator.startAbility({
