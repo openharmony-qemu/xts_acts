@@ -23,6 +23,7 @@ import backgroundAndSizeSettingJsunit from './CommonAttrs/BackgroundAndSizeSetti
 import borderJsunit from './CommonAttrs/BorderJsunit.test';
 import BorderRadiusRenderStrategyTest from './CommonAttrs/BorderRadiusRenderStrategyTest.ets';
 import FlexFourBoundaryTest from './CommonAttrs/FlexFourBoundaryTest.ets';
+import LayoutFourReturnTest from './CommonCustom/LayoutFourReturnTest.ets';
 
 export default function testsuite() {
   Calc01();
@@ -35,4 +36,5 @@ export default function testsuite() {
   borderJsunit();
   BorderRadiusRenderStrategyTest();
   FlexFourBoundaryTest();
+  LayoutFourReturnTest();
 }
