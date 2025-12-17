@@ -48,6 +48,7 @@ import RippleFields from './Particle/RippleFields.test';
 import VelocityFields from './Particle/VelocityFields.test';
 import UIContextAnimateToImmediately from './AnimatorResultTest/UIContextAnimateToImmediately.test'
 import StepsCurveComponent from './StepsCurveComponent.test';
+import CurvesSpringMotion from './CurvesSpringMotion.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -85,4 +86,5 @@ export default function testsuite() {
   VelocityFields();
   UIContextAnimateToImmediately();
   StepsCurveComponent();
+  CurvesSpringMotion();
 }
