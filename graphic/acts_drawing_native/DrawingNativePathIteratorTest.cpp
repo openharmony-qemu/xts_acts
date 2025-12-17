@@ -191,7 +191,7 @@ HWTEST_F(DrawingNativePathIteratorTest, testPathIteratorHasNextNormal, Function 
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorHasNext(pathIterator, &hasNext);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         OH_Drawing_PathIteratorNext(pathIterator, point2d, pointSize, i * offsetSize, &verb);
-        EXPECT_EQ(hasNext, verb == (OH_Drawing_PathIteratorVerb::DONE ? false : true));
+        EXPECT_EQ(hasNext, verb == OH_Drawing_PathIteratorVerb::DONE ? false : true);
     }
     OH_Drawing_PathIteratorDestroy(pathIterator);
     OH_Drawing_PathDestroy(path);
