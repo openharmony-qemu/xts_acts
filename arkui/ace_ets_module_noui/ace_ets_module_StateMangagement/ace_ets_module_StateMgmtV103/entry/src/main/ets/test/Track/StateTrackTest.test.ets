@@ -70,7 +70,7 @@ export default function StateTrackTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateTrackTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('StateTrackTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('StateTrackTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
@@ -102,7 +102,7 @@ export default function StateTrackTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateTrackTest_0200', Level.LEVEL0, async (done: Function) => {
+    it('StateTrackTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('StateTrackTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);

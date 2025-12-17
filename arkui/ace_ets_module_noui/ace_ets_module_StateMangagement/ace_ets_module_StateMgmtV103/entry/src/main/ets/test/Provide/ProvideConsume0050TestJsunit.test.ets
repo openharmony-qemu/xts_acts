@@ -65,7 +65,7 @@ export default function ProvideConsume0050TestJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideConsume0050Test_001', Level.LEVEL0, async () => {
+    it('ProvideConsume0050Test_001', Level.LEVEL1, async () => {
       await CommonFunc.sleep(1000);
       console.info('[ProvideConsume0050Test_001] START');
       await CommonFunc.sleep(1000);

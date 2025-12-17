@@ -63,7 +63,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0010', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0010', Level.LEVEL1, async (done: Function) => {
       console.info('PropDate2Jsunit_0010 START');
       let strJson = getInspectorByKey('setTime1');
       let obj: ESObject = JSON.parse(strJson);
@@ -82,7 +82,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0020', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0020', Level.LEVEL1, async (done: Function) => {
       console.info('PropDate2Jsunit_0020 START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('setTime1'));
@@ -106,7 +106,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0030', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0030', Level.LEVEL1, async (done: Function) => {
 
       let strJson = getInspectorByKey('setUTCFullYear1');
       let obj: ESObject = JSON.parse(strJson);
@@ -125,7 +125,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0040', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0040', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0040 START');
       let driver = Driver.create();
@@ -149,7 +149,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0050', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0050', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0050 START');
       let strJson = getInspectorByKey('setUTCMonth1');
@@ -169,7 +169,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0060', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0060', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0060 START');
       let driver = Driver.create();
@@ -193,7 +193,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0070', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0070', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0070 START');
       let strJson = getInspectorByKey('getUTCDate1');
@@ -213,7 +213,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0080', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0080', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0080 START');
       let driver = Driver.create();
@@ -237,7 +237,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0090', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0090', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0090 START');
       let strJson = getInspectorByKey('setUTCHours1');
@@ -257,7 +257,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0100 START');
       let driver = Driver.create();
@@ -281,7 +281,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0110', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0110', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0110 START');
       let strJson = getInspectorByKey('setUTCMinutes1');
@@ -301,7 +301,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0120', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0120', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0120 START');
       let driver = Driver.create();
@@ -325,7 +325,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0130', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0130', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_01430 START');
       let strJson = getInspectorByKey('setUTCSeconds1');
@@ -345,7 +345,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0140', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0140', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0140 START');
       let driver = Driver.create();
@@ -369,7 +369,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0150', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0150', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0150 START');
       let driver = Driver.create();
@@ -393,7 +393,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0160', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0160', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0160 START');
       let driver = Driver.create();
@@ -417,7 +417,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0170', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0170', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0170 START');
       let strJson = getInspectorByKey('setTime002');
@@ -437,7 +437,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0180', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0180', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0180 START');
       let driver = Driver.create();
@@ -461,7 +461,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0190', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0190', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0190 START');
       let strJson = getInspectorByKey('setUTCFullYear');
@@ -481,7 +481,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0200 START');
       let driver = Driver.create();
@@ -505,7 +505,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0210', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0210', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0210 START');
       let strJson = getInspectorByKey('setUTCMonth');
@@ -525,7 +525,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0220', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0220', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0220 START');
       let driver = Driver.create();
@@ -549,7 +549,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0230', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0230', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0230 START');
       let strJson = getInspectorByKey('setUTCDate');
@@ -569,7 +569,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0240', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0240', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0240 START');
       let driver = Driver.create();
@@ -593,7 +593,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0250', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0250', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0250 START');
       let strJson = getInspectorByKey('setUTCHours');
@@ -613,7 +613,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0260', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0260', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0260 START');
       let driver = Driver.create();
@@ -637,7 +637,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0270', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0270', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0270 START');
       let strJson = getInspectorByKey('setUTCMinutes');
@@ -657,7 +657,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0280', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0280', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0280 START');
       let driver = Driver.create();
@@ -681,7 +681,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0290', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0290', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0290 START');
       let strJson = getInspectorByKey('setUTCSeconds');
@@ -701,7 +701,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0300 START');
       let driver = Driver.create();
@@ -725,7 +725,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0310', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0310', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0310 START');
       let driver = Driver.create();
@@ -749,7 +749,7 @@ export default function PropDate2Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropDate2Jsunit_0320', Level.LEVEL0, async (done: Function) => {
+    it('PropDate2Jsunit_0320', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0320 START');
       let driver = Driver.create();
