@@ -72,7 +72,7 @@ export default function ContrastTest() {
       console.info('ContrastTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('imageId1');
+      let strJson1 = getInspectorByKey('imageContrastId1');
       console.info("[ContrastTest_0100] obj1 is: " + JSON.stringify(JSON.parse(strJson1)));
       console.info("[ContrastTest_0100] contrast1 is: " + JSON.parse(strJson1)?.$attrs?.contrast);
       console.info("[ContrastTest_0100] grayscale1 is: " + JSON.parse(strJson1)?.$attrs?.grayscale);
@@ -81,7 +81,7 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sphericalEffect1 is: " + JSON.parse(strJson1)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect1 is: " + JSON.parse(strJson1)?.$attrs?.lightUpEffect);
 
-      let strJson2 = getInspectorByKey('imageId2');
+      let strJson2 = getInspectorByKey('imageContrastId2');
       console.info("[ContrastTest_0100] obj2 is: " + JSON.stringify(JSON.parse(strJson2)));
       console.info("[ContrastTest_0100] contrast2 is: " + JSON.parse(strJson2)?.$attrs?.contrast);
       console.info("[ContrastTest_0100] grayscale2 is: " + JSON.parse(strJson2)?.$attrs?.grayscale);
@@ -90,7 +90,7 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sphericalEffect2 is: " + JSON.parse(strJson2)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect2 is: " + JSON.parse(strJson2)?.$attrs?.lightUpEffect);
 
-      let strJson3 = getInspectorByKey('imageId3');
+      let strJson3 = getInspectorByKey('imageContrastId3');
       console.info("[ContrastTest_0100] obj3 is: " + JSON.stringify(JSON.parse(strJson3)));
       console.info("[ContrastTest_0100] contrast3 is: " + JSON.parse(strJson3)?.$attrs?.contrast);
       console.info("[ContrastTest_0100] grayscale3 is: " + JSON.parse(strJson3)?.$attrs?.grayscale);
@@ -99,7 +99,7 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sphericalEffect3 is: " + JSON.parse(strJson3)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect3 is: " + JSON.parse(strJson3)?.$attrs?.lightUpEffect);
 
-      let strJson4 = getInspectorByKey('imageId4');
+      let strJson4 = getInspectorByKey('imageContrastId4');
       console.info("[ContrastTest_0100] obj4 is: " + JSON.stringify(JSON.parse(strJson4)));
       console.info("[ContrastTest_0100] contrast4 is: " + JSON.parse(strJson4)?.$attrs?.contrast);
       console.info("[ContrastTest_0100] grayscale4 is: " + JSON.parse(strJson4)?.$attrs?.grayscale);
@@ -107,7 +107,7 @@ export default function ContrastTest() {
       console.info("[ContrastTest_0100] sphericalEffect4 is: " + JSON.parse(strJson4)?.$attrs?.sphericalEffect);
       console.info("[ContrastTest_0100] lightUpEffect4 is: " + JSON.parse(strJson4)?.$attrs?.lightUpEffect);
 
-      let strJson5 = getInspectorByKey('imageId5');
+      let strJson5 = getInspectorByKey('imageContrastId5');
       console.info("[ContrastTest_0100] obj5 is: " + JSON.stringify(JSON.parse(strJson5)));
       console.info("[ContrastTest_0100] contrast5 is: " + JSON.parse(strJson5)?.$attrs?.contrast);
       console.info("[ContrastTest_0100] grayscale5 is: " + JSON.parse(strJson5)?.$attrs?.grayscale);
