@@ -49,6 +49,9 @@ import common_ts_ets_apiStaticClearJsunit from './imageEffectsTest/common_ts_ets
 import rotateTest from './imageEffectsTest/rotateTest.test';
 import shapeTest from './imageEffectsTest/shapeTest.test';
 import EdgeOutlineWidthsPage from './EdgeOutlineWidthsPage.test';
+import OpacityTest from './OpacityTest.test';
+import LinearGradientBlurTest from './LinearGradientBlurTest.test'
+import ContrastTest from './ContrastTest.test'
 
 export default function testsuite() {
   rotateAngleOptionsTest()
@@ -84,4 +87,7 @@ export default function testsuite() {
   rotateTest()
   shapeTest()
   EdgeOutlineWidthsPage()
+  OpacityTest()
+  LinearGradientBlurTest()
+  ContrastTest()
 }
