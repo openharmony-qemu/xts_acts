@@ -496,7 +496,7 @@ napi_value OHImageEffectCreateSupplement(napi_env env, napi_callback_info info)
 {
     OH_ImageEffect *imageEffect = nullptr;
     imageEffect = OH_ImageEffect_Create(NULL);
-     napi_value ret;
+    napi_value ret;
     if (imageEffect == nullptr) {
         napi_get_undefined(env, &ret);
     }
@@ -516,7 +516,6 @@ napi_value OHImageEffectAddFilterSupplement(napi_env env, napi_callback_info inf
 
 napi_value OHImageEffectInsertFilterSupplement(napi_env env, napi_callback_info info)
 {
-    
     OH_EffectFilter *insertFilter = nullptr;
     insertFilter = OH_ImageEffect_InsertFilter(nullptr, 0, OH_EFFECT_BRIGHTNESS_FILTER);
     napi_value ret;
@@ -533,7 +532,7 @@ napi_value OHImageEffectReplaceFilterSupplement(napi_env env, napi_callback_info
     OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
     replaceFilter = OH_ImageEffect_ReplaceFilter(nullptr, 0, OH_EFFECT_BRIGHTNESS_FILTER);
     OH_ImageEffect_Release(imageEffect);
-   napi_value ret;
+    napi_value ret;
     if (replaceFilter == nullptr) {
         napi_get_undefined(env, &ret);
     }

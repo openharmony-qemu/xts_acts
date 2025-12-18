@@ -61,25 +61,36 @@
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
 
+#define OPTION_WIDTH 4
+#define OPTION_HEIGHT 6
+#define OPTION_PIXEL_FORMAT 9
+#define OPTION_ALPHA_TYPE 0
+#define OPTION_TRANSLATE_X_50 50
+#define OPTION_TRANSLATE_Y_50 50
+#define OPTION_TRANSLATE_X (-50)
+#define OPTION_TRANSLATE_Y (-50)
+#define OPTION_ANGLE_90 90
+#define OPTION_ANGLE_180 180
+
 napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
 {
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
 
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 9;
-    createOps.alphaType = 0;
+    createOps.width = OPTION_WIDTH;
+    createOps.height = OPTION_HEIGHT;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT;
+    createOps.alphaType = OPTION_ALPHA_TYPE;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
 
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
     int32_t res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
     free(buff);
@@ -112,8 +123,8 @@ napi_value OHPixelMapTranslateSupplementTest(napi_env env, napi_callback_info in
         return result;
     }
     int32_t imageResult;
-    float x = 50;
-    float y = 50;
+    float x = OPTION_TRANSLATE_X_50;
+    float y = OPTION_TRANSLATE_Y_50;
     switch (index) {
     case CASE_INDEX_1:
         imageResult = OH_PixelMap_Translate(native, x, y);
@@ -122,8 +133,8 @@ napi_value OHPixelMapTranslateSupplementTest(napi_env env, napi_callback_info in
         imageResult = OH_PixelMap_Translate(nullptr, x, y);
         break;
     case CASE_INDEX_3:
-        x = -50;
-        y = -50;
+        x = OPTION_TRANSLATE_X;
+        y = OPTION_TRANSLATE_Y;
         imageResult = OH_PixelMap_Translate(native, x, y);
         break;
     default:
@@ -158,7 +169,7 @@ napi_value OHPixelMapRotateSupplementTest(napi_env env, napi_callback_info info)
         return result;
     }
     int32_t imageResult;
-    float angle = 90;
+    float angle = OPTION_ANGLE_90;
     switch (index) {
     case CASE_INDEX_1:
         imageResult = OH_PixelMap_Rotate(native, angle);
@@ -167,7 +178,7 @@ napi_value OHPixelMapRotateSupplementTest(napi_env env, napi_callback_info info)
         imageResult = OH_PixelMap_Rotate(nullptr, angle);
         break;
     case CASE_INDEX_3:
-        angle = 180;
+        angle = OPTION_ANGLE_180;
         imageResult = OH_PixelMap_Rotate(native, angle);
         break;
     default:
@@ -329,7 +340,6 @@ napi_value OHPixelmapNativeSetColorSpaceNativeSuppTest(napi_env env, napi_callba
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     
     OH_PixelmapNative *pixelmap = nullptr;
     OH_NativeColorSpaceManager *setColorSpaceNative = nullptr;
@@ -407,18 +417,18 @@ napi_value OHPixelmapNativeAccessPixelsSuppTest(napi_env env, napi_callback_info
     napi_get_value_int32(env, args[0], &index);
     
     OH_PixelmapNative *pixelmap = nullptr;
-    void *addr = nullptr; 
+    void *addr = nullptr;
     Image_ErrorCode returnValue;
     switch (index) {
     case CASE_INDEX_1:
-        pixelmap = nullptr; 
+        pixelmap = nullptr;
         returnValue = OH_PixelmapNative_AccessPixels(pixelmap, &addr);
         break;
     default:
         break;
     }
     
-    OH_PixelmapNative_Release(pixelmap); 
+    OH_PixelmapNative_Release(pixelmap);
    
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
@@ -479,7 +489,6 @@ napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info 
 }
 napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info info)
 {
-
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_status napiStatus = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
