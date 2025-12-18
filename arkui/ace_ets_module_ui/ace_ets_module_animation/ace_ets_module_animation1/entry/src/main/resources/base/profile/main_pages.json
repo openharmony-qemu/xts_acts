@@ -40,6 +40,7 @@
 		"MainAbility/pages/Particle/VelocityFields",
         "MainAbility/pages/AnimatorResult/UIContextAnimateToImmediately",
         "MainAbility/pages/StepsCurveComponent",
-        "MainAbility/pages/CurvesSpringMotion"
+        "MainAbility/pages/CurvesSpringMotion",
+        "MainAbility/pages/AnimatorEase"
     ]
 }
