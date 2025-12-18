@@ -54,7 +54,7 @@ export default function LinkTest0090() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkTest0090_001', Level.LEVEL0, async (done: Function) => {
+    it('LinkTest0090_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LinkTest0090_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

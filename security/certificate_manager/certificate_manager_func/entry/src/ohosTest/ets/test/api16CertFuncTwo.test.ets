@@ -988,6 +988,7 @@ export default function api16CertFuncTestTwoUnit() {
       try {
         let result : certManager.CMResult = await certManager.getUkeyCertificate(keyUri, ukeyInfo);
         console.info(`SUB_Security_CertManager_Ukey_0800 credentialList is: ${result.credentialList}`)
+        console.info(`SUB_Security_CertManager_Ukey_0800 credentialDetailList is: ${result.credentialDetailList}`)
         console.info(`SUB_Security_CertManager_Ukey_0800 credential is: ${credential.certPurpose}`)
         expect(null).assertFail();
       } catch (err) {

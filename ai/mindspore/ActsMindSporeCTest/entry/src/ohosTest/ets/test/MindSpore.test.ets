@@ -707,5 +707,655 @@ export default function MindSporeTest() {
       expect(result).assertEqual(0);
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0009
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0009
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0009', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0010
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0010
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0010', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0011
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0011
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0011', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0012
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0012
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0012', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0013
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0013
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0013', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0014
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0014
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0014', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0015
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0015
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0015', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0016
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0016
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0016', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(15);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0017
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0017
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0017', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(16);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0018
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0018
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0018', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(17);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0019
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0019
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0019', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(18);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0020
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0020
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0020', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(19);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0021
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0021
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0021', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(20);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0022
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0022
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0022', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(21);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0023
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0023
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0023', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(22);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0024
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0024
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0024', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(23);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0025
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0025
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0025', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(24);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0026
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0026
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0026
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0026', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(25);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0027
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0027
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0027', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(26);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0028
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0028
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0028', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(27);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0029
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0029
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0029
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0029', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(28);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0030
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0030
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0030', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(29);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0031
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0031
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0031
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0031', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(30);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0032
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0032
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0032', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(31);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0033
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0033
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0033', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(32);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0034
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0034
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0034', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(33);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0035
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0035
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0035
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0035', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(34);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0036
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0036
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0036
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0036', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(35);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0037
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0037
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0037
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0037', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(36);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0038
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0038
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0038
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0038', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(37);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0039
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0039
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0039
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0039', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(38);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0040
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0040
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0040', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(39);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0041
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0041
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0041
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0041', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(40);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0042
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0042
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0042', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(41);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0043
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0043
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0043
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0043', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(42);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0044
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0044
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0044
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0044', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(43);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0045
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0045
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0045
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0045', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(44);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0046
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0046
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0046
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0046', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(45);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0047
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0047
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0047
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0047', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(46);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0048
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0048
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0048', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(47);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0049
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0049
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0049
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0049', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(48);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0050
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0050
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0050', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(49);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0051
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0051
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0051
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0051', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(50);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0052
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0052
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0052
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0052', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(51);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0053
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0053
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0053
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0053', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(52);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0054
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0054
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0054
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0054', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(53);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0055
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0055
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0055
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0055', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(54);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0056
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0056
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0056
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0056', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(55);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0057
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0057
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0057
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0057', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(56);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0058
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0058
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0058
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0058', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(57);
+      expect(result).assertEqual(0);
+    })
+
   })
 }

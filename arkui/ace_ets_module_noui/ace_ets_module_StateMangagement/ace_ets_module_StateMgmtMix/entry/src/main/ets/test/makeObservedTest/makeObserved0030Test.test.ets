@@ -63,7 +63,7 @@ export default function makeObserved0030Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('makeObserved0030Test_01', Level.LEVEL0, async (done: Function) => {
+    it('makeObserved0030Test_01', Level.LEVEL1, async (done: Function) => {
       console.info('makeObserved0030Test_01 START');
       await CommonFunc.sleep(1000)
       let testArr: testType[] = [

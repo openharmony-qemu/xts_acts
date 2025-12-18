@@ -63,7 +63,7 @@ export default function StateArrayNewJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayNewJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayNewJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0200 START');
       let driver = await Driver.create()
@@ -87,7 +87,7 @@ export default function StateArrayNewJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayNewJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayNewJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0400 START');
       let driver = await Driver.create()
@@ -111,7 +111,7 @@ export default function StateArrayNewJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayNewJsunit_0600', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayNewJsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0600 START');
       let driver = await Driver.create()
@@ -135,7 +135,7 @@ export default function StateArrayNewJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayNewJsunit_0800', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayNewJsunit_0800', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0800 START');
       let driver = await Driver.create()
@@ -159,7 +159,7 @@ export default function StateArrayNewJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayNewJsunit_1000', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayNewJsunit_1000', Level.LEVEL1, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_1000 START');
       let driver = await Driver.create()
