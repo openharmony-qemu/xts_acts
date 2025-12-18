@@ -14,10 +14,10 @@
  */
 
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
-import { getPermission, driveFn, LOG_TAG} from '../common';
+import { getPermission, driveFn} from '../common';
 import { camera } from '@kit.CameraKit';
 
-const TAG = LOG_TAG + 'CameraAPIEnumSupplementTest';
+const TAG = 'CameraAPIEnumSupplementTest';
 
 export default function CameraAPIEnumSupplementTest() {
   describe('CameraAPIEnumSupplementTest', () => {
