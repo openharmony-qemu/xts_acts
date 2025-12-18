@@ -15,3 +15,23 @@
 export const ContainerPickerOnChangeTest: (a: string) => void;
 
 export const ContainerPickerOnScrollStopTest: (a: string) => void;
+
+export const chainWeightTest: (a: string) => void;
+
+export const borderTest: (a: string) => void;
+
+export const borderRadiusTest: (a: string) => void;
+
+export const ignoreLayoutSafeAreaTest: (a: string) => void;
+
+export const layoutGravityTest: (a: string) => void;
+
+export const flexSpaceTest: (a: string) => void;
+
+export const columnSpaceTest: (a: string) => void;
+
+export const rowSpaceTest: (a: string) => void;
+
+export const columnReverseTest: (a: string) => void;
+
+export const rowReverseTest: (a: string) => void;

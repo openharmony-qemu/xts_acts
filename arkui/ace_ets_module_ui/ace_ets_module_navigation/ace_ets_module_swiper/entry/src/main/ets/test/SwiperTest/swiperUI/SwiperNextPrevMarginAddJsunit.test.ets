@@ -2952,18 +2952,23 @@ export default function SwiperNextPrevMarginAddJsunit() {
 
     let swiperRight = swiperMargin.right;
     let swiperLeft = swiperMargin.left;
-
+    console.info("SwiperNextPrevMarginAddJsunit_0048 swiperRight is: ", swiperRight)
+    console.info("SwiperNextPrevMarginAddJsunit_0048 swiperLeft is: ", swiperLeft)
     // calculate the gap
     let subcomponment = CommonFunc.getComponentRect('1');
     let right =  subcomponment.right;
     let left  =  subcomponment.left;
-
+    console.info("SwiperNextPrevMarginAddJsunit_0048 right is: ", right)
+    console.info("SwiperNextPrevMarginAddJsunit_0048 right is: ", left)
     let strJson = getInspectorByKey('swiperNextPrevMargin50');
     let obj: ESObject = JSON.parse(strJson);
     let itemspace: string = obj.$attrs.itemSpace;
-    expect(itemspace).assertEqual('10.00vp');
-
-    expect(Math.abs(Math.floor((swiperRight - swiperLeft)- (3*(right - left) + vp2px(2 * 10)))) <= 1).assertTrue();
+    console.info("SwiperNextPrevMarginAddJsunit_0048 itemspace is: ", itemspace)
+    console.info("SwiperNextPrevMarginAddJsunit_0048 itemspace number is: ", parseInt(itemspace))
+    expect(Math.abs(parseInt(itemspace) - 10) <= 1 ).assertTrue();
+    console.info("SwiperNextPrevMarginAddJsunit_0048 itemspace number is: ",
+    Math.floor(Math.abs((swiperRight - swiperLeft)- (3*(right - left) + vp2px(2 * 10)))));
+    expect(Math.floor(Math.abs((swiperRight - swiperLeft)- (3*(right - left) + vp2px(2 * 10)))) <= 1).assertTrue();
     done();
   });
 

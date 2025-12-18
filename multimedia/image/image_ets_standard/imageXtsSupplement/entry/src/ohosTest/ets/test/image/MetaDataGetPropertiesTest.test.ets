@@ -39,7 +39,7 @@ async function getFd(fileName: string) {
 
 async function getImageSource(testName: string, pathUri: string): Promise<image.ImageSource> {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  let array = new ArrayBuffer(300000000);
+  let array = new ArrayBuffer(3000);
   let path = `file://${testContext.filesDir}/${pathUri}`;
   console.info(TAG, testName, `path: ${path}`);
   const fd = await fs.open(path);

@@ -94,6 +94,14 @@ static napi_value OhIsLoggableTest(napi_env env, napi_callback_info info)
     return res;
 }
 
+static napi_value OhIsLoggableTestFalse(napi_env env, napi_callback_info info)
+{
+    napi_value res = nullptr;
+    bool isLoggable = OH_LOG_IsLoggable(0x32000, "testTag", LOG_INFO);
+    napi_get_boolean(env, isLoggable, &res);
+    return res;
+}
+
 static napi_value OhPrintTest(napi_env env, napi_callback_info info)
 {
     napi_value res = nullptr;
@@ -180,6 +188,8 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "ohIsLoggableTest", nullptr, OhIsLoggableTest,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ohIsLoggableTestFalse", nullptr, OhIsLoggableTestFalse,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ohPrintTest", nullptr, OhPrintTest,
             nullptr, nullptr, nullptr, napi_default, nullptr },

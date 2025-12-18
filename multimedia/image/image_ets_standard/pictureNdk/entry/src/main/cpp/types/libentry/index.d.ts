@@ -146,6 +146,8 @@ export const CreatePictureAtIndexByImageSource: (imageSource: image.ImageSource,
 export const GetAllFrameCount: (imageSource: image.ImageSource) => number;
 export const GifMetadataGetProperty: (picture: image.Picture, gifPropertyKey: image.GifPropertyKey) => string;
 export const GifMetadataSetProperty: (picture: image.Picture, gifPropertyKey: image.GifPropertyKey, value: string) => number;
+export const HeifsMetadataGetMimetype: (imageSource: image.ImageSource) => string;
+export const testCreatePixelMapGetImageInfo: (imageSource: image.ImageSource) => InfoSize;
 export const GifGetMainPixelmapInfo: (picture: image.Picture) => InfoSize;
 export const CreatePictureAtIndexByImageSourceError: (imageSource: image.ImageSource, flag: boolean) => number;
 export const ImageSourceRelease: (imageSource: image.ImageSource) => number;

@@ -4306,6 +4306,53 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
+     * @tc.name   testEnumPixelUnit
+     * @tc.number testEnumPixelUnit
+     * @tc.desc   testEnumPixelUnit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumPixelUnit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testEnumPixelUnit';
+      console.log(caseName + 'begin.');
+      try {
+        console.log(caseName + ' PixelUnit: ' + JSON.stringify(window.PixelUnit))
+        expect(window.PixelUnit.PX).assertEqual(0);
+        expect(window.PixelUnit.VP).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEnumOcclusionState
+     * @tc.number testEnumOcclusionState
+     * @tc.desc   testEnumOcclusionState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumOcclusionState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testEnumOcclusionState';
+      console.log(caseName + 'begin.');
+      try {
+        console.log(caseName + ' OcclusionState: ' + JSON.stringify(window.OcclusionState))
+        expect(window.OcclusionState.NO_OCCLUSION).assertEqual(0);
+        expect(window.OcclusionState.PARTIAL_OCCLUSION).assertEqual(1);
+        expect(window.OcclusionState.FULL_OCCLUSION).assertEqual(2);
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0100
      * @tc.name       testGetWindowLimitsVPwithFloatWindow
      * @tc.desc       testGetWindowLimitsVPwithFloatWindow
@@ -4429,12 +4476,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         done()
       } catch (err) {
         console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
-        if (!canIUseRes) {
-          expect(err.code).assertEqual(801);
-        } else {
-          expect(err.code).assertEqual(1300002);
-          done();
-        }
+        expect(err.code).assertEqual(1300002);
+        done();
       }
     });
 

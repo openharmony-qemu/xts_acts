@@ -17,10 +17,19 @@ interface PackingOption_format {
   format: string;
 }
 
-
 interface PackingOption_quality {
   quality: number;
 }
+
+interface pixelMapPots {
+  width: number,
+  height: number,
+  pixelFormat: number,
+  editable: number,
+  alphaType: number,
+  scaleMode: number
+}
+
 export const packToData: (a: image.ImagePacker, b: image.ImageSource | image.PixelMap,
   c: image.PackingOption | PackingOption_format | PackingOption_quality) => number;
 export const OHImageEffectCreateSupp: (a: number) => number;
@@ -28,7 +37,25 @@ export const OHImageEffectAddFilterSupp: (a: number) => number;
 export const OHImageEffectInsertFilterSupp: (a: number) => number;
 export const OHImageEffectRemoveFilterSupp: (a: number) => number;
 export const OHImageEffectReplaceFilterSupp: (a: number) => number;
-
+export const OHEffectBufferInfoSetTimestampTest: (a: number) => number;
+export const OHEffectBufferInfoGetTimestampTest: (a: number) => number;
+export const OHEffectBufferInfoSetTextureIdTest: (a: number) => number;
+export const OHEffectBufferInfoGetTextureIdTest: (a: number) => number;
+export const OHEffectFilterCreateSupp: (a: number) => number;
+export const OHEffectFilterLookUpFiltersSupp: (a: number) => number;
+export const OHEffectFilterLookUpFiltersNullptrSupp: () => undefined;
+export const OHEffectFilterSetValueSupp: (a: number) => number;
+export const OHEffectFilterGetValueSupp: (a: number) => number;
+export const OHEffectFilterRegisterSupp: (a: number) => number;
+export const OHEffectFilterLookupFilterInfoSupp: (a: number) => number;
+export const OHEffectFilterReleaseSupp: (a: number) => number;
+export const OHEffectFilterRenderSupp: (a: number) => number;
+export const OHEffectFilterRenderWithTextureIdSupp: (a: number) => number;
+export const OHPixelmapNativeCreateScaledPixelMapSupp: (a: number) => number;
+export const OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp: (a: number) => number;
+export const OHPixelmapNativeTranslateSupp: (a: number) => number;
+export const OHImageSourceNativeCreateFromUriSupp: (a: number) => number;
+export const OHImageSourceNativeCreateFromFdSupp: (a: number) => number;
 export const OHImageAlphaTypeSupp: (a: number) => number;
 export const OHImageErrorCodeSupp: (a: number) => number;
 export const OHImageScaleModeSupp: (a: number) => number;
@@ -65,3 +92,25 @@ export const OHImageEffectGetFilterSupp: (a: number) => number;
 export const OHImageEffectSetInputPictureSupp: (a: number) => number;
 export const OHImageEffectSetOutputPictureSupp: (a: number) => number;
 export const OHImageEffectReleaseSupp:(a: number) => number;
+export const OHImageEffectConfigureSupp: (a: number) => number;
+export const OHImageEffectSetOutputSurfaceSupp: (a: number) => number;
+export const OHImageEffectGetInputSurfaceSupp: (a: number) => number;
+export const OHImageEffectSetInputPixelmapSupp: (a: number) => number;
+export const OHImageEffectSetOutputPixelmapSupp: (a: number) => number;
+export const savePixelMapForPathSupp: (a: string) => number;
+export const OHImageEffectSaveSupp: (a: number) => number;
+export const OHImageEffectEmuSupp: (a: number) => number;
+export const OHImageEffectSetInputUriSupp: (a: number) => number;
+export const OHImageEffectSetOutputUriSupp: (a: number) => number;
+export const CreatOutPixelMapForPathSupp: (a: string) => number;
+export const CreatePixelMap: (a: ArrayBuffer, b:pixelMapPots) => image.PixelMap;
+export const TestAccessPixels: (a: number) => number;
+export const TestUnAccessPixels: (a: number) => number;
+export const ImageSourceCreatTest: (a: number) => number;
+export const ImageSourceGetSupportedFormatsTest: (a: number) => number;
+export const ImageSourceCreateIncrementalTest: (a: number) => number;
+export const ImageSourceInitNativeSuppTest: () => undefined;
+export const PixelmapNativeGetNativeBuffer: (a: number) => number;
+export const TestImageScale: (a: number) => number;
+export const PixelmapNativeWritePixelsToArea: (a: number) => number;
+export const CreatePixelMapSuppTest: (a: number) => number;

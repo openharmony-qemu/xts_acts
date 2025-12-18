@@ -29,7 +29,7 @@ export default function withIdTest() {
         console.info("get withIdTest state pages:" + JSON.stringify(pages));
         if (!("withId" == pages.name)) {
           console.info("withIdTest pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl({url:"MainAbility/pages/Tabs/observer/withId"})
+          let result = await router.replaceUrl({url:"MainAbility/pages/Tabs/observer/withId"})
           await CommonFunc.sleep(2000);
           console.info("push withIdTest page result:" + JSON.stringify(result));
         }

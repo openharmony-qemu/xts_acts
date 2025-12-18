@@ -38,17 +38,17 @@ struct OnAccessibilityActionIntercept {
   @State stepTips: string = '不支持屏幕朗读直接按照失败处理走豁免\n' + '设备支持屏幕朗读时\n' +
     '测试内容:支持配置无障碍自定义状态播报文本\n' +
     '操作步骤: 开启屏幕朗读\n' +
-    '1、点击checkbox-普通英文组件，双击切换状态，再次单击checkbox组件，听播报内容\n' +
-    '2、点击checkbox-Resource组件，双击切换状态，再次单击checkbox组件，听播报内容\n' +
-    '3、点击checkbox-undefined组件，双击切换状态，再次单击checkbox组件，听播报内容\n' +
-    '4、点击checkbox-Modifier组件，双击切换状态，再次单击checkbox组件，听播报内容\n' +
-    '5、单击检查所有点是否都点过按钮,单指双击按钮\n' +
+    '1、点击checkbox-普通英文组件，双击切换状态2次，再次单击checkbox组件，听播报内容\n' +
+    '2、点击checkbox-Resource组件，双击切换状态2次，再次单击checkbox组件，听播报内容\n' +
+    '3、点击checkbox-undefined组件，双击切换状态2次，再次单击checkbox组件，听播报内容\n' +
+    '4、点击checkbox-Modifier组件，双击切换状态2次，再次单击checkbox组件，听播报内容\n' +
+    '5、测试完成，单击选中绿色对号按钮后双击，结束测试\n' +
     '预期结果：\n' +
     '1、播报:$%welcome checkbox point +......\n' +
-    '2、播报:播报resource自定义文本 +......\n' +
+    '2、播报:resource自定义文本 +......\n' +
     '3、播报内容中无自定义文本\n' +
     '4、播报:modifier text2 +......\n' +
-    '5、按钮聚焦,双击后按钮中false变为true\n';
+    '5、返回菜单，测试结束\n';
   @State checkbox1Modifier: Checkbox1Modifier = new Checkbox1Modifier()
   @State checkbox1Flag: boolean = true;
   @State checkbox2Flag: boolean = true;

@@ -675,7 +675,9 @@ export default function WindowPCTest() {
             const caseName:string = 'testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow_Static';
             hilog.info(domain, tag,caseName + 'begin.');
             let windowClass:window.Window = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow');
+            hilog.info(domain, tag,caseName + 'Succeed in createSubWindow');
             await windowClass.destroyWindow();
+            hilog.info(domain, tag,caseName + 'windowClass destroyWindow');
             try {
                 if( isFreeWindowMode == true) {
                     windowClass.setRelativePositionToParentWindowEnabled(true).then(() => {
@@ -812,9 +814,13 @@ export default function WindowPCTest() {
             hilog.info(domain, tag,caseName + 'begin.');
             let mainWindow:window.Window = windowStage.getMainWindowSync();
             let windowClass:window.Window = await windowStage.createSubWindow('testSetRelativePositionToParentWindowEnabled');
+            hilog.info(domain, tag,caseName + 'Succeed in createSubWindow');
             await windowClass.setUIContent('pages/index2');
+            hilog.info(domain, tag,caseName + 'Succeed in setUIContent');
             await windowClass.showWindow();
+            hilog.info(domain, tag,caseName + 'Succeed in showWindow');
             windowClass.resizeAsync(1000,1000)
+            hilog.info(domain, tag,caseName + 'Succeed in resizeAsync');
             await Utils.msSleep(1000);
             try {
                 if(isFreeWindowMode == true) {
@@ -876,9 +882,13 @@ export default function WindowPCTest() {
             hilog.info(domain, tag,caseName + 'begin.');
             let mainWindow:window.Window = windowStage.getMainWindowSync();
             let windowClass:window.Window = await windowStage.createSubWindow('testSetRelativePositionToParentWindowUnEnabled');
+            hilog.info(domain, tag,caseName + 'Succeed in createSubWindow');
             await windowClass.setUIContent('pages/index2');
+            hilog.info(domain, tag,caseName + 'Succeed in setUIContent');
             await windowClass.showWindow();
+            hilog.info(domain, tag,caseName + 'Succeed in showWindow');
             windowClass.resizeAsync(1000,1000)
+            hilog.info(domain, tag,caseName + 'Succeed in resizeAsync');
             await Utils.msSleep(1000);
             try {
                 if(isFreeWindowMode == true) {
