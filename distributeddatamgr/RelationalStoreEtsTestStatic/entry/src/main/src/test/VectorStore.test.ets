@@ -86,6 +86,29 @@ export default function VectorStoreTest() {
       await data_Rdb.deleteRdbStore(context, STORE_CONFIG);
     });
     console.info(TAG + "*************Unit Test Begin*************");
+    /**
+     * @tc.name   VectorStoreTest0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0600
+     * @tc.desc   isVectorSupported test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('VectorStoreTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> =>  {
+      let TAGTEST = TAG + " VectorStoreTest0600 ";
+      const res = data_Rdb.isVectorSupported();
+      console.info(TAGTEST + "res=" + res);
+      if (res == false) {
+        console.info(TAGTEST + "false res =" + res);
+        expect(res).assertEqual(false);
+        done();
+      } else {
+        console.info(TAGTEST + "true res111111=" + res);
+        expect(res).assertEqual(true);
+        done();
+      }
+      console.info(TAGTEST + " ************* End*************");
+    });
     console.info(TAG + " *************Unit Test End*************");
   })
 }

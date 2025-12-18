@@ -965,7 +965,6 @@ export default function ErrorCodeRdbStore21Test() {
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError21Test0035 *************'+err.code + err.message);
-        expect(err.code == 14800021).assertEqual(true)
         expect(err.code).assertEqual(14800012);
       }
       done();
