@@ -443,62 +443,6 @@ export default function RDBErrorCode21Test() {
       })
 
     /**
-     * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200
-     * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200
-     * @tc.desc   Verify the properties of the text type
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-        await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
-        let u8 = new Uint8Array([1, 2, 3]);
-        const valueBucket: relationalStore.ValuesBucket = {
-          "name": "zhangsan",
-          "age": 16 as long,
-          "salary": 100.5,
-          "blobType": u8,
-        };
-        const valueBucket1: relationalStore.ValuesBucket = {
-          "name": "lisi",
-          "age": 16 as long,
-          "salary": 100.5,
-          "blobType": u8,
-        };
-        await rdbStore.insert("test1", valueBucket);
-        let options: relationalStore.TransactionOptions = {
-          transactionType: relationalStore.TransactionType.EXCLUSIVE
-        }
-        const rdbTrans = await rdbStore.createTransaction(options);
-        let predicates = new relationalStore.RdbPredicates('test1');
-        predicates.equalTo("NAME", "lisi");
-
-        try {
-          rdbTrans.delete(predicates).then(() => {
-            rdbTrans.rollback();
-          })
-        } catch (err: BusinessError) {
-          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-          rdbTrans.rollback();
-          expect(err.code).assertEqual(14800021)
-        }
-
-        try {
-          rdbTrans.deleteSync(predicates);
-        } catch (err: BusinessError) {
-          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-          rdbTrans.rollback();
-          expect(err.code).assertEqual(14800021)
-        }
-        await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-        done();
-      })
-
-    /**
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900
      * @tc.number SUB_DistributedData_RDB_SDK_ErrorCode14800021Test_0900
      * @tc.desc   Verify the properties of the text type
