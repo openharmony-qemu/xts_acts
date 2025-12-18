@@ -15,6 +15,7 @@
 #include "napi/native_api.h"
 #include "multimodalinput/oh_input_manager.h"
 #include "multimodalinput/oh_key_code.h"
+#include "multimedia/image_framework/image/pixelmap_native.h"
 #include "hilog/log.h"
 #include <bits/alltypes.h>
 #include <thread>
@@ -25,6 +26,7 @@
 
 const int GLOBAL_RESMGR = 0xFF00;
 const char *TAG = "[SensorCapiSample]";
+const int LENGTH = 128;
 
 static napi_value GetPointerLocation1(napi_env env, napi_callback_info info)
 {
@@ -155,23 +157,526 @@ static napi_value InjectMouseEventGlobal3(napi_env env, napi_callback_info info)
     return result;
 }
 
-EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports)
+static napi_value SetPointerVisible1(napi_env env, napi_callback_info info)
 {
-    napi_property_descriptor desc[] = {
-        {"GetPointerLocation1", nullptr, GetPointerLocation1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetPointerLocation2", nullptr, GetPointerLocation2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetPointerLocation3", nullptr, GetPointerLocation3, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetPointerLocation4", nullptr, GetPointerLocation4, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GetPointerLocation5", nullptr, GetPointerLocation5, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"RequestInjection1", nullptr, RequestInjection1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"QueryAuthorizedStatus1", nullptr, QueryAuthorizedStatus1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"InjectMouseEventGlobal1", nullptr, InjectMouseEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"InjectMouseEventGlobal2", nullptr, InjectMouseEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"InjectMouseEventGlobal3", nullptr, InjectMouseEventGlobal3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    napi_value result;
+    Input_Result retResult = OH_Input_SetPointerVisible(false);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_DEVICE_NOT_SUPPORTED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
 
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+static napi_value SetPointerVisible2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_Result retResult = OH_Input_SetPointerVisible(true);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_DEVICE_NOT_SUPPORTED ||
+                      retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value GetPointerStyle1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = -1;
+    int32_t pointerStyle = -1;
+    Input_Result retResult = OH_Input_GetPointerStyle(windowId, &pointerStyle);
+    napi_create_int32(env, ((retResult == INPUT_SUCCESS && (pointerStyle == 0 || pointerStyle == 1))
+                      || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value GetPointerStyle2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = 100000;
+    int32_t pointerStyle = -1;
+    int32_t cursorStyle = 48;
+    Input_Result retResult = OH_Input_GetPointerStyle(windowId, &pointerStyle);
+    napi_create_int32(env, ((retResult == INPUT_SUCCESS && pointerStyle >= -1 && pointerStyle <= cursorStyle)
+                      || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value GetPointerStyle3(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = -2;
+    int32_t pointerStyle = -1;
+    Input_Result retResult = OH_Input_GetPointerStyle(windowId, &pointerStyle);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value GetPointerStyle4(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = 0;
+    Input_Result retResult = OH_Input_GetPointerStyle(windowId, nullptr);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value SetPointerStyle1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = -1;
+    int32_t pointerStyle = 1;
+    Input_Result retResult = OH_Input_SetPointerStyle(windowId, pointerStyle);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value SetPointerStyle2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = 100000;
+    int32_t pointerStyle = 1;
+    int32_t pointerStyle1 = -1;
+    Input_Result retResult1 = OH_Input_SetPointerStyle(windowId, pointerStyle);
+    Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle1);
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS || retResult1 == INPUT_SERVICE_EXCEPTION) &&
+                      ((retResult2 == INPUT_SUCCESS && pointerStyle1 == 1)  ||
+                      retResult2 == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value SetPointerStyle3(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = 0;
+    int32_t pointerStyle = -1;
+    Input_Result retResult = OH_Input_SetPointerStyle(windowId, pointerStyle);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value SetPointerStyle5(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t windowId = 0;
+    Input_PointerStyle pointerStyle = Input_PointerStyle::SCREENRECORDER_CURSOR;
+    int32_t pointerStyle1 = -1;
+    int32_t cursorStyle = 48;
+    Input_Result retResult1 = OH_Input_SetPointerStyle(windowId, pointerStyle);
+    Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle1);
+    napi_create_int32(env, (retResult1 == INPUT_SUCCESS || retResult1 == INPUT_SERVICE_EXCEPTION) &&
+                      ((retResult2 == INPUT_SUCCESS && pointerStyle1 == cursorStyle)  ||
+                      retResult2 == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    
+    return result;
+}
+
+static napi_value CustomCursor1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(nullptr, 0, 0);
+    napi_create_int32(env, (customCursor == nullptr) ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    return result;
+}
+
+static napi_value CustomCursor2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1;
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    int result1 = customCursor != nullptr ? 1 : 0;
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    int result2 = customCursor == nullptr ? 1 : 0;
+    napi_create_int32(env, (result1 == 1 && result2 == 1) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CustomCursor3(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap;
+    Input_Result retResult = OH_Input_CustomCursor_GetPixelMap(nullptr, &pixelmap);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CustomCursor4(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    Input_Result retResult = OH_Input_CustomCursor_GetPixelMap(customCursor, nullptr);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    return result;
+}
+
+static napi_value CustomCursor5(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t anchorX;
+    int32_t anchorY;
+    Input_Result retResult = OH_Input_CustomCursor_GetAnchor(nullptr, &anchorX, &anchorY);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CustomCursor6(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    int32_t anchorY;
+    Input_Result retResult = OH_Input_CustomCursor_GetAnchor(customCursor, nullptr, &anchorY);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    return result;
+}
+
+static napi_value CustomCursor7(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    int32_t anchorX;
+    Input_Result retResult = OH_Input_CustomCursor_GetAnchor(customCursor, &anchorX, nullptr);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    return result;
+}
+
+static napi_value CustomCursor8(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(true);
+    bool isfollowSystem = false;
+    Input_Result retResult = OH_Input_CursorConfig_IsFollowSystem(cursorConfig, &isfollowSystem);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS && isfollowSystem == true) ? 1 : 0, &result);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor9(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool isfollowSystem = false;
+    Input_Result retResult = OH_Input_CursorConfig_IsFollowSystem(nullptr, &isfollowSystem);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CustomCursor10(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(true);
+    Input_Result retResult = OH_Input_CursorConfig_IsFollowSystem(cursorConfig, nullptr);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor11(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(false);
+    bool isfollowSystem = true;
+    Input_Result retResult = OH_Input_CursorConfig_IsFollowSystem(cursorConfig, &isfollowSystem);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS && isfollowSystem == false) ? 1 : 0, &result);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor12(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    bool isfollowSystem = true;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
+    int32_t windowId = -1;
+    Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CustomCursor13(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
+    bool isfollowSystem = true;
+    Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
+    int32_t windowId = 10000;
+    Input_Result retResult1 = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
+    int32_t pointerStyle = -1;
+    Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle);
+    napi_create_int32(env, (retResult1 == INPUT_INVALID_WINDOWID && retResult2 == INPUT_SUCCESS &&
+                      pointerStyle == 0) ? 1 : 0, &result);
+    OH_Input_CustomCursor_Destroy(&customCursor);
+    OH_Input_CursorConfig_Destroy(&cursorConfig);
+    return result;
+}
+
+static napi_value CursorInfo1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    napi_create_int32(env, cursorInfo != nullptr ? 1 : 0, &result);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    napi_create_int32(env, cursorInfo == nullptr ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CursorInfo3(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool visible;
+    Input_PointerStyle pointerStyle;
+    int32_t sizeLevel;
+    uint32_t color;
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    Input_Result retResult1 = OH_Input_CursorInfo_IsVisible(cursorInfo, &visible);
+    Input_Result retResult2 = OH_Input_CursorInfo_GetStyle(cursorInfo, &pointerStyle);
+    Input_Result retResult3 = OH_Input_CursorInfo_GetSizeLevel(cursorInfo, &sizeLevel);
+    Input_Result retResult4 = OH_Input_CursorInfo_GetColor(cursorInfo, &color);
+    napi_create_int32(env, retResult1 == INPUT_SUCCESS && visible == false && retResult2 == INPUT_PARAMETER_ERROR &&
+                      retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo4(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool visible;
+    Input_PointerStyle pointerStyle;
+    int32_t sizeLevel;
+    uint32_t color;
+    Input_Result retResult1 = OH_Input_CursorInfo_IsVisible(nullptr, &visible);
+    Input_Result retResult2 = OH_Input_CursorInfo_GetStyle(nullptr, &pointerStyle);
+    Input_Result retResult3 = OH_Input_CursorInfo_GetSizeLevel(nullptr, &sizeLevel);
+    Input_Result retResult4 = OH_Input_CursorInfo_GetColor(nullptr, &color);
+    napi_create_int32(env, retResult1 == INPUT_PARAMETER_ERROR && retResult2 == INPUT_PARAMETER_ERROR &&
+                      retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CursorInfo5(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    Input_Result retResult1 = OH_Input_CursorInfo_IsVisible(cursorInfo, nullptr);
+    Input_Result retResult2 = OH_Input_CursorInfo_GetStyle(cursorInfo, nullptr);
+    Input_Result retResult3 = OH_Input_CursorInfo_GetSizeLevel(cursorInfo, nullptr);
+    Input_Result retResult4 = OH_Input_CursorInfo_GetColor(cursorInfo, nullptr);
+    napi_create_int32(env, retResult1 == INPUT_PARAMETER_ERROR && retResult2 == INPUT_PARAMETER_ERROR &&
+                      retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo6(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    struct Input_MouseEvent *mouseEvent = OH_Input_CreateMouseEvent();
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    Input_Result retResult = OH_Input_GetMouseEventCursorInfo(mouseEvent, cursorInfo);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
+    OH_Input_DestroyMouseEvent(&mouseEvent);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo7(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    Input_Result retResult = OH_Input_GetMouseEventCursorInfo(nullptr, cursorInfo);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo8(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    struct Input_MouseEvent *mouseEvent = OH_Input_CreateMouseEvent();
+    Input_Result retResult = OH_Input_GetMouseEventCursorInfo(mouseEvent, nullptr);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_Input_DestroyMouseEvent(&mouseEvent);
+    return result;
+}
+
+static napi_value CursorInfo9(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    Input_Result retResult = OH_Input_GetCursorInfo(cursorInfo, nullptr);
+    napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo10(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_Result retResult = OH_Input_GetCursorInfo(nullptr, &pixelmap1);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_PixelmapInitializationOptions_Release(options);
+    OH_PixelmapNative_Release(pixelmap1);
+    OH_PixelmapNative_Destroy(&pixelmap1);
+    return result;
+}
+
+static napi_value CursorInfo11(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_Result retResult = OH_Input_GetCursorInfo(nullptr, nullptr);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value CursorInfo12(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    Input_Result retResult = OH_Input_GetCursorInfo(cursorInfo, &pixelmap1);
+    napi_create_int32(env, retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    OH_PixelmapInitializationOptions_Release(options);
+    OH_PixelmapNative_Release(pixelmap1);
+    OH_PixelmapNative_Destroy(&pixelmap1);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+static napi_value CursorInfo13(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool visible;
+    Input_PointerStyle pointerStyle;
+    int32_t sizeLevel;
+    uint32_t color;
+    OH_PixelmapNative *pixelmap1 = nullptr;
+    OH_Pixelmap_InitializationOptions *options = nullptr;
+    OH_PixelmapInitializationOptions_Create(&options);
+    OH_PixelmapInitializationOptions_SetWidth(options, LENGTH);
+    OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
+    OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
+    Input_CursorInfo *cursorInfo = OH_Input_CursorInfo_Create();
+    OH_Input_GetCursorInfo(cursorInfo, &pixelmap1);
+    Input_Result retResult1 = OH_Input_CursorInfo_IsVisible(cursorInfo, &visible);
+    Input_Result retResult2 = OH_Input_CursorInfo_GetStyle(cursorInfo, &pointerStyle);
+    Input_Result retResult3 = OH_Input_CursorInfo_GetSizeLevel(cursorInfo, &sizeLevel);
+    Input_Result retResult4 = OH_Input_CursorInfo_GetColor(cursorInfo, &color);
+    napi_create_int32(env, retResult1 == INPUT_SUCCESS && retResult2 == INPUT_PARAMETER_ERROR &&
+                      retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
+    OH_PixelmapInitializationOptions_Release(options);
+    OH_PixelmapNative_Release(pixelmap1);
+    OH_PixelmapNative_Destroy(&pixelmap1);
+    OH_Input_CursorInfo_Destroy(&cursorInfo);
+    return result;
+}
+
+EXTERN_C_START
+static napi_property_descriptor desc_part1[] = {
+    {"GetPointerLocation1", nullptr, GetPointerLocation1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerLocation2", nullptr, GetPointerLocation2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerLocation3", nullptr, GetPointerLocation3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerLocation4", nullptr, GetPointerLocation4, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerLocation5", nullptr, GetPointerLocation5, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"RequestInjection1", nullptr, RequestInjection1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"QueryAuthorizedStatus1", nullptr, QueryAuthorizedStatus1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"InjectMouseEventGlobal1", nullptr, InjectMouseEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"InjectMouseEventGlobal2", nullptr, InjectMouseEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"InjectMouseEventGlobal3", nullptr, InjectMouseEventGlobal3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SetPointerVisible1", nullptr, SetPointerVisible1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SetPointerVisible2", nullptr, SetPointerVisible2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerStyle1", nullptr, GetPointerStyle1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerStyle2", nullptr, GetPointerStyle2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerStyle3", nullptr, GetPointerStyle3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetPointerStyle4", nullptr, GetPointerStyle4, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SetPointerStyle1", nullptr, SetPointerStyle1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SetPointerStyle2", nullptr, SetPointerStyle2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SetPointerStyle3", nullptr, SetPointerStyle3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SetPointerStyle5", nullptr, SetPointerStyle5, nullptr, nullptr, nullptr, napi_default, nullptr},
+};
+
+static napi_property_descriptor desc_part2[] = {
+    {"CustomCursor1", nullptr, CustomCursor1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor2", nullptr, CustomCursor2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor3", nullptr, CustomCursor3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor4", nullptr, CustomCursor4, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor5", nullptr, CustomCursor5, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor6", nullptr, CustomCursor6, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor7", nullptr, CustomCursor7, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor8", nullptr, CustomCursor8, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor9", nullptr, CustomCursor9, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor10", nullptr, CustomCursor10, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor11", nullptr, CustomCursor11, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor12", nullptr, CustomCursor12, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CustomCursor13", nullptr, CustomCursor13, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo1", nullptr, CursorInfo1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo2", nullptr, CursorInfo2, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo3", nullptr, CursorInfo3, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo4", nullptr, CursorInfo4, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo5", nullptr, CursorInfo5, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo6", nullptr, CursorInfo6, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo7", nullptr, CursorInfo7, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo8", nullptr, CursorInfo8, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo9", nullptr, CursorInfo9, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo10", nullptr, CursorInfo10, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo11", nullptr, CursorInfo11, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo12", nullptr, CursorInfo12, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"CursorInfo13", nullptr, CursorInfo13, nullptr, nullptr, nullptr, napi_default, nullptr},
+};
+
+static napi_value Init(napi_env env, napi_value exports) {
+    napi_define_properties(env, exports, sizeof(desc_part1) / sizeof(desc_part1[0]), desc_part1);
+    napi_define_properties(env, exports, sizeof(desc_part2) / sizeof(desc_part2[0]), desc_part2);
     return exports;
 }
 EXTERN_C_END
