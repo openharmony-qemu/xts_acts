@@ -248,7 +248,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_003
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0011
      * @tc.desc   getRowsData test with resultSet already close.
      *            1. execute querySql and close resultSet
      *            2. return 14800014
@@ -274,7 +274,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_004
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0012
      * @tc.desc   getRowsData test with resultSet querySql no such table.
      *            1. not create table and execute querySql
      *            2. return 14800021
@@ -299,7 +299,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_005
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0013
      * @tc.desc   getRowsData test with resultSet querySql no such table.
      *            1. create table using querySql
      *            2. execute getCurrentRowData and return 14800019
@@ -324,7 +324,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_006
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0014
      * @tc.desc   getRowsData test with resultSet querySql input create table sql.
      *            1. execute querySql, SQL length is less than 3
      *            2. return 14800001
@@ -349,7 +349,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_007
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0015
      * @tc.desc   getRowsData test with resultSet is empty.
      *            1. execute querySql
      *            2. no data and return 14800012
@@ -374,7 +374,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_008
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0016
      * @tc.desc   getRowsData test with input maxCount out of resultSet rows.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -427,7 +427,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_009
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0017
      * @tc.desc   getRowsData test with input maxCount is -1.
      *            1. maxCount is less than 0
      *            2. return 14800001
@@ -452,7 +452,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_010
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0018
      * @tc.desc   ResultSet.getRowsData test with attach db querySql.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -496,7 +496,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_011
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0019
      * @tc.desc   getRowsData test with input maxCount and position are -1.
      *            1. both maxCount and position are less than 0
      *            2. return 14800001
@@ -521,7 +521,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_012
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0020
      * @tc.desc   getRowsData test with input maxCount -1 and position is 0.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -544,7 +544,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_013
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0021
      * @tc.desc   getRowsData test, maxCount is 1, position is 1.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -584,7 +584,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   queryGetRowsData_014
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0022
      * @tc.desc   getRowsData test with input maxCount 0.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -607,7 +607,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_001
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0023
      * @tc.desc   multi-table querySqlWithoutRowCount with getRowsData and getRows comparison test
      *            1. query all data, using 'select * from ...'
      *            2. execute getRows and getRowsData
@@ -664,7 +664,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_002
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0024
      * @tc.desc   multi-table querySqlWithoutRowCount with getRowsData and getRows comparison test
      *            1. query all data
      *            2. execute getRows and getRowsData
@@ -724,7 +724,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_003
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0025
      * @tc.desc   liteResultSet.getRowsData test with liteResultSet already close.
      *            1. close resultSet
      *            2. execute getRowsData and return 14800014
@@ -751,7 +751,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_004
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0026
      * @tc.desc   liteResultSet.getRowsData test with querySqlWithoutRowCount no such table.
      *            1. not create table
      *            2. execute getRowsData and return 14800021
@@ -776,7 +776,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_005
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0027
      * @tc.desc   liteResultSet.getRowsData test with querySqlWithoutRowCount input create table sql.
      *            1. create table by querySqlWithoutRowCount
      *            2. execute getRowsData and return 14800021
@@ -801,7 +801,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_006
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0028
      * @tc.desc   liteResultSet.getRowsData test with querySqlWithoutRowCount input sql size less then 3.
      *            1. SQL length is less than 3
      *            2. execute getRowsData and return 14800001
@@ -826,7 +826,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_007
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0029
      * @tc.desc   liteResultSet.getRowsData test with resultSet is empty.
      *            1. no data in resultSet
      *            2. execute getRowsData and return 14800012
@@ -850,7 +850,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_008
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0030
      * @tc.desc   getRowsData test with input maxCount out of liteResultSet rows.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -906,7 +906,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_009
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0031
      * @tc.desc   getRowsData test with input maxCount is -1.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -929,7 +929,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_010
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0032
      * @tc.desc   LiteResultSet.getRowsData test with attach db querySqlWithoutRowCount.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -975,7 +975,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_011
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0033
      * @tc.desc   getRowsData test with input maxCount and position are -1.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -998,13 +998,13 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_012
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0034
      * @tc.desc   getRowsData test with input maxCount -1 and position is 0.
      * @tc.size   MediumTest
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('lite_queryGetRowsData_012',  0, async  () => {
+    it('lite_queryGetRowsData_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.log(TAG + '************* lite_queryGetRowsData_012 start *************');
       let liteResultSet: relationalStore.LiteResultSet | undefined;
       try {
@@ -1021,7 +1021,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_013
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0036
      * @tc.desc   getRowsData test for liteResultSet, maxCount is 1, position is 1.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -1061,7 +1061,7 @@ export default function RdbGetRowsData() {
 
     /**
      * @tc.name   lite_queryGetRowsData_014
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0037
      * @tc.desc   getRowsData test with input maxCount -1 and position is 0.
      * @tc.size   MediumTest
      * @tc.type   Function
