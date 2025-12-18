@@ -32,6 +32,12 @@ napi_value OHImageEffectGetFilterSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectSetInputPictureSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectSetOutputPictureSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectReleaseSupp(napi_env env, napi_callback_info info);
+napi_value OHImageEffectCreateSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectAddFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectInsertFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectReplaceFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectGetFilterSupplement(napi_env env, napi_callback_info info);
+napi_value OHImageEffectSetInputTextureSupp(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

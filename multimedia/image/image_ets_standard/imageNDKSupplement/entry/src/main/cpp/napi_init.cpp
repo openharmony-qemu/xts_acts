@@ -114,6 +114,12 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestImageScale", TestImageScale),
     DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
     DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
+    DESCRIPTOR("OHImageEffectCreateSupplement", OHImageEffectCreateSupplement),
+    DESCRIPTOR("OHImageEffectAddFilterSupplement", OHImageEffectAddFilterSupplement),
+    DESCRIPTOR("OHImageEffectInsertFilterSupplement", OHImageEffectInsertFilterSupplement),
+    DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
+    DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
+    DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
