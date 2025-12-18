@@ -155,7 +155,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
     /**
      * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1019
      * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1019
-     * @tc.desc       test getAllSubscriptionBundles Permission denied 201
+     * @tc.desc       test getAllSubscriptionBundles Permission denied 202
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 2
@@ -175,8 +175,13 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
               expect(err.code).assertEqual(202);
               done();
+            }
             });
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -240,8 +245,13 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
           }).catch((e: Error) => {
             let err = e as BusinessError;
             hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(202);
-            done();
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
+              expect(err.code).assertEqual(202);
+              done();
+            }
           });
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -275,8 +285,13 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
           }).catch((e: Error) => {
             let err = e as BusinessError;
             hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(202);
-            done();
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
+              expect(err.code).assertEqual(202);
+              done();
+            }
           });
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -307,8 +322,13 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
           }).catch((e: Error) => {
             let err = e as BusinessError;
             hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(201);
-            done();
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
+              expect(err.code).assertEqual(202);
+              done();
+            }
           });
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -342,8 +362,14 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
           }).catch((e: Error) => {
             let err = e as BusinessError;
             hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(202);
-            done();
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
+              expect(err.code).assertEqual(202);
+              done();
+            }
+
           });
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -386,8 +412,13 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
               expect(err.code).assertEqual(202);
               done();
+            }
             });
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);

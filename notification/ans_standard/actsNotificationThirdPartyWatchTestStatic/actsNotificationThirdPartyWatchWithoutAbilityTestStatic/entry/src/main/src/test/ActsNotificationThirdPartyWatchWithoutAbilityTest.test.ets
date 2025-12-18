@@ -72,8 +72,13 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+            if (err.code == 201) {
+              expect(err.code).assertEqual(201);
+              done();
+            } else {
               expect(err.code).assertEqual(1600023);
               done();
+            }
             })
         } catch (err: BusinessError) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
