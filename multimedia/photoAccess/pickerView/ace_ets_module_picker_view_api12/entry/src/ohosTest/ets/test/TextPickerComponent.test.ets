@@ -867,8 +867,9 @@ export default function TextPicker() {
         expect(result.orientation).not().assertUndefined();
         if (result.mimeType === MEDIA_TYPE_OF_VIDEO) { //如果是 视频 则有返回值
           expect(result.videoMode).not().assertUndefined();
+        } else { //反之没有返回值
+          expect(result.videoMode).assertUndefined();
         }
-        
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
