@@ -1442,7 +1442,7 @@ function testHangupCalling() {
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFWANT);
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
