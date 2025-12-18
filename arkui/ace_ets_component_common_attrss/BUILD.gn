@@ -63,6 +63,11 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_useSizeType:ActsAceEtsComponentCommonAttrsUseSizeTypeTest",
         "ace_ets_component_common_attrss_width:ActsAceEtsComponentCommonAttrsWidthTest",
         "ace_ets_component_common_attrss_zIndex:ActsAceEtsComponentCommonAttrsZIndexTest",
+        "ace_ets_component_common_attrss_margin_static:ActsAceEtsComponentCommonAttrsMarginStaticTest",
+        "ace_ets_component_common_attrss_offset_static:ActsAceEtsComponentCommonAttrsOffsetStaticTest",
+        "ace_ets_component_common_attrss_onAppear_static:ActsAceEtsComponentCommonAttrsOnAppearStaticTest",
+        "ace_ets_component_common_attrss_size_static:ActsAceEtsComponentCommonAttrsSizeStaticTest",
+        "ace_ets_component_common_attrss_stateStyles_static:ActsAceEtsComponentCommonAttrsStateStylesStaticTest",
       ]
     } else {
       deps = [
@@ -152,6 +157,18 @@ group("componentAttrssTest") {
         "ace_ets_component_common_attrss_width_nowear:ActsAceEtsComponentCommonAttrsWidthNowearTest",
         "ace_ets_component_common_attrss_zIndex:ActsAceEtsComponentCommonAttrsZIndexTest",
         "ace_ets_component_common_attrss_zIndex_nowear:ActsAceEtsComponentCommonAttrsZIndexNowearTest",
+        "ace_ets_component_common_attrss_margin_static:ActsAceEtsComponentCommonAttrsMarginStaticTest",
+        "ace_ets_component_common_attrss_markAnchor_nowear_static:ActsAceEtsComponentCommonAttrsMarkAnchorNowearStaticTest",
+        "ace_ets_component_common_attrss_markAnchor_static:ActsAceEtsComponentCommonAttrsMarkAnchorStaticTest",
+        "ace_ets_component_common_attrss_offset_nowear_static:ActsAceEtsComponentCommonAttrsOffsetNowearStaticTest",
+        "ace_ets_component_common_attrss_offset_static:ActsAceEtsComponentCommonAttrsOffsetStaticTest",
+        "ace_ets_component_common_attrss_onAppear_static:ActsAceEtsComponentCommonAttrsOnAppearStaticTest",
+        "ace_ets_component_common_attrss_onAppearNoWear_static:ActsAceEtsComponentCommonAttrsOnAppearNoWearStaticTest",
+        "ace_ets_component_common_attrss_onAreaChange_static:ActsAceEtsComponentCommonAttrsOnAreaChangeStaticTest",
+        "ace_ets_component_common_attrss_size_nowear_static:ActsAceEtsComponentCommonAttrsSizeNowearStaticTest",
+        "ace_ets_component_common_attrss_size_static:ActsAceEtsComponentCommonAttrsSizeStaticTest",
+        "ace_ets_component_common_attrss_stateStyles_nowear_static:ActsAceEtsComponentCommonAttrsStateStylesNowearStaticTest",
+        "ace_ets_component_common_attrss_stateStyles_static:ActsAceEtsComponentCommonAttrsStateStylesStaticTest",
       ]
     }
   }
