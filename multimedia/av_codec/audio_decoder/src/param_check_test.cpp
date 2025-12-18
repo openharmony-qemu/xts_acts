@@ -1222,7 +1222,7 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_027, TestSize.Level2)
     ASSERT_EQ(result0, AV_ERR_OK);
     
     // use all buffer
-    for(int32_t i = 0; i < 8; i++) {
+    for (int32_t i = 0; i < 8; i++) {
         result0 = OH_AudioCodec_QueryInputBuffer(codec, &index, 20000);
     }
     
