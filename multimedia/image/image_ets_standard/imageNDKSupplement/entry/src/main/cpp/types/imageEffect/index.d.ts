@@ -146,4 +146,3 @@ export const OHImageEffectInsertFilterSupplement:() => undefined;
 export const OHImageEffectReplaceFilterSupplement:() => undefined;
 export const OHImageEffectGetFilterSupplement:() => undefined;
 export const OHImageEffectSetInputTextureSupp:(a: number) => number;
->>>>>>> xts_ndk_image
