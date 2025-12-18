@@ -23,6 +23,7 @@ import AVPlayerSelectTrackTest from './AVPlayerSelectTrackTest.test'
 import PreDownLoadTest from './PreDownLoadTest.test'
 import AVTransCoderTest from './Transcoder.test'
 import AVPlayerFlvFuncTest from './AVPlayerFlvFuncTest.test'
+import AVPlayerSetPlaybackRateTest from './AVPlayerSetPlaybackRateTest.test'
 
 export default function testsuite() {
   AvPlayerEnumTest();
@@ -35,4 +36,5 @@ export default function testsuite() {
   PreDownLoadTest();
   AVTransCoderTest();
   AVPlayerFlvFuncTest();
+  AVPlayerSetPlaybackRateTest();
 }
