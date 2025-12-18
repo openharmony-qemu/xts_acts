@@ -54,6 +54,8 @@ static napi_value SetPublisherPermissionSuccess(napi_env env, napi_callback_info
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
+    CommonEvent_ErrCode permissionError = COMMONEVENT_ERR_PERMISSION_ERROR;
+    ASSERT_EQ(permissionError, COMMONEVENT_ERR_PERMISSION_ERROR);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublisherPermission(g_subscribeInfo, str);
     napi_create_int32(env, ret == COMMONEVENT_ERR_OK ? 0 : -1, &result);
@@ -65,8 +67,8 @@ static napi_value SetPublisherPermissionError(napi_env env, napi_callback_info i
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
-    CommonEvent_ErrCode permissionError = COMMONEVENT_ERR_PERMISSION_ERROR;
-    ASSERT_EQ(permissionError, COMMONEVENT_ERR_PERMISSION_ERROR);
+    CommonEvent_ErrCode sendingLimit = COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED;
+    ASSERT_EQ(sendingLimit, COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublisherPermission(nullptr, nullptr);
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
