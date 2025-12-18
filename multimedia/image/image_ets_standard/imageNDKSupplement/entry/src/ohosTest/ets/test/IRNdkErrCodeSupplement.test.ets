@@ -54,7 +54,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0001
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0001
-     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_UNKNOWN
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_SOURCE_DATA_INCOMPLETE
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -68,7 +68,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0002
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0002
-     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_OPAQUE
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MISMATCHED_FORMAT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -82,7 +82,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0003
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0003
-     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_PREMUL
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_UNKNOWN_FORMAT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -96,7 +96,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0004
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0004
-     * @tc.desc     OHOS_PIXEL_MAP_ALPHA_TYPE_UNPREMUL
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_SOURCE_UNRESOLVED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -110,7 +110,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0005
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0005
-     * @tc.desc     OHOS_PIXEL_MAP_READ_ONLY
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_DECODE_FAILED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -124,7 +124,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0006
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0006
-     * @tc.desc     OHOS_PIXEL_MAP_EDITABLE
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_PLUGIN_REGISTER_FAILED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -138,7 +138,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0007
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0007
-     * @tc.desc     OHOS_PIXEL_MAP_FORMAT_NONE
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_PLUGIN_CREATE_FAILED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -152,7 +152,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0008
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0008
-     * @tc.desc     OHOS_PIXEL_MAP_FORMAT_RGBA_8888
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_ENCODE_FAILED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -166,7 +166,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_0009
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_0009
-     * @tc.desc     OHOS_PIXEL_MAP_FORMAT_RGB_565
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_ADD_PIXEL_MAP_FAILED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -180,7 +180,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00010
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00010
-     * @tc.desc     IMAGE_LOCK_UNLOCK_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_HW_DECODE_UNSUPPORT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -194,7 +194,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00011
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00011
-     * @tc.desc     IMAGE_INIT_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_DECODE_HEAD_ABNORMAL
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -208,7 +208,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00012
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00012
-     * @tc.desc     IMAGE_CREATE_PIXELMAP_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_DECODE_EXIF_UNSUPPORT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -222,7 +222,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00013
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00013
-     * @tc.desc     IMAGE_ALLOCATOR_MODE_UNSUPPORTED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_PROPERTY_NOT_EXIST
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -236,7 +236,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00014
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00014
-     * @tc.desc     IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MEDIA_DATA_UNSUPPORT
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -250,7 +250,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00015
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00015
-     * @tc.desc     IMAGE_SOURCE_TOO_LARGE
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MEDIA_TOO_LARGE
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -264,7 +264,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00016
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00016
-     * @tc.desc     IMAGE_DECODE_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MEDIA_MALLOC_FAILED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -278,7 +278,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00017
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00017
-     * @tc.desc     IMAGE_SOURCE_ALLOC_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MEDIA_END_OF_STREAM
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -292,7 +292,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00018
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00018
-     * @tc.desc     IMAGE_ENCODE_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MEDIA_IO_ABNORMAL
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -306,7 +306,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00019
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00019
-     * @tc.desc     IMAGE_UNSUPPORTED_DATA_FORMAT
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_MEDIA_MALFORMED
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
@@ -320,7 +320,7 @@ export default function IRNdkErrCodeSupplementTest() {
     /**
      * @tc.number   SUB_IMAGE_IR_NDK_ERRCODE_00020
      * @tc.name     SUB_IMAGE_IR_NDK_ERRCODE_00020
-     * @tc.desc     IMAGE_LOCK_UNLOCK_FAILED
+     * @tc.desc     IRNdkErrCode-IMAGE_RESULT_SOURCE_DATA
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
