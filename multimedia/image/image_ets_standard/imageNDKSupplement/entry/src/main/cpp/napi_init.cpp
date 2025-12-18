@@ -32,6 +32,7 @@
 #include "ImagePackerCreateTest.h"
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
+#include "ImageInitImageNativeSuppTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
