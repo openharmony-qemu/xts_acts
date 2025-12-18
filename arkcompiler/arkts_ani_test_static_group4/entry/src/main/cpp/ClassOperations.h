@@ -222,7 +222,7 @@ ani_int TestCombineSceneInt([[maybe_unused]] ani_env *env, const char *className
     return ANI_TRUE;
 }
 
-ani_int TestCombineSceneShort([[maybe_unused]] ani_env *env, const char *className, ani_short val1, ani_short val2, 
+ani_int TestCombineSceneShort([[maybe_unused]] ani_env *env, const char *className, ani_short val1, ani_short val2,
     ani_short expectedValue)
 {
     ani_class cls {};
@@ -264,7 +264,7 @@ ani_int TestCombineSceneByte([[maybe_unused]] ani_env *env, const char *classNam
     return ANI_TRUE;
 }
 
-ani_int TestCombineSceneLong([[maybe_unused]] ani_env *env, const char *className, ani_long val1, ani_long val2, 
+ani_int TestCombineSceneLong([[maybe_unused]] ani_env *env, const char *className, ani_long val1, ani_long val2,
     ani_long expectedValue)
 {
     ani_class cls {};
@@ -371,7 +371,7 @@ ani_int TestCombineSceneRef([[maybe_unused]] ani_env *env, const char *className
     return ANI_TRUE;
 }
 
-ani_int TestCombineSceneDouble([[maybe_unused]] ani_env *env, const char *className, ani_double val1, ani_double val2, 
+ani_int TestCombineSceneDouble([[maybe_unused]] ani_env *env, const char *className, ani_double val1, ani_double val2,
     ani_double expectedValue)
 {
     ani_class cls {};
@@ -392,7 +392,7 @@ ani_int TestCombineSceneDouble([[maybe_unused]] ani_env *env, const char *classN
     return ANI_TRUE;
 }
 
-ani_int TestCombineSceneFloat([[maybe_unused]] ani_env *env, const char *className, ani_float val1, ani_float val2, 
+ani_int TestCombineSceneFloat([[maybe_unused]] ani_env *env, const char *className, ani_float val1, ani_float val2,
     ani_float expectedValue)
 {
     ani_class cls {};
@@ -413,7 +413,7 @@ ani_int TestCombineSceneFloat([[maybe_unused]] ani_env *env, const char *classNa
     return ANI_TRUE;
 }
 
-ani_int TestCombineSceneChar([[maybe_unused]] ani_env *env, const char *className, ani_char val1, ani_char val2, 
+ani_int TestCombineSceneChar([[maybe_unused]] ani_env *env, const char *className, ani_char val1, ani_char val2,
     ani_char expectedValue)
 {
     ani_class cls {};
@@ -439,7 +439,7 @@ typedef struct ParaValInt {
     ani_int val2;
 } ParaValInt;
 
-ani_int TestCombineSceneVoid([[maybe_unused]] ani_env *env, const char *className, ParaValInt *val, 
+ani_int TestCombineSceneVoid([[maybe_unused]] ani_env *env, const char *className, ParaValInt *val,
     ani_int expectedValue, bool doubleForArray = true)
 {
     ani_class cls {};
@@ -2967,19 +2967,22 @@ ani_boolean test_Class_FindStaticMethodFloat_13([[maybe_unused]] ani_env *env, [
 
 ani_boolean test_Class_FindStaticMethodFloat_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    TestCombineSceneFloat(env, "entry.src.main.src.ets.ClassOperationsMethodFloat.C", FLOAT_VAL1, FLOAT_VAL2, FLOAT_VAL1 + FLOAT_VAL2);
+    TestCombineSceneFloat(env,
+        "entry.src.main.src.ets.ClassOperationsMethodFloat.C", FLOAT_VAL1, FLOAT_VAL2, FLOAT_VAL1 + FLOAT_VAL2);
     return ANI_TRUE;
 }
 
 ani_boolean test_Class_FindStaticMethodFloat_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    TestCombineSceneFloat(env, "entry.src.main.src.ets.ClassOperationsMethodFloat.D", FLOAT_VAL1, FLOAT_VAL2, FLOAT_VAL2 - FLOAT_VAL1);
+    TestCombineSceneFloat(env,
+        "entry.src.main.src.ets.ClassOperationsMethodFloat.D", FLOAT_VAL1, FLOAT_VAL2, FLOAT_VAL2 - FLOAT_VAL1);
     return ANI_TRUE;
 }
 
 ani_boolean test_Class_FindStaticMethodFloat_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    TestCombineSceneFloat(env, "entry.src.main.src.ets.ClassOperationsMethodFloat.E", FLOAT_VAL1, FLOAT_VAL2, FLOAT_VAL1 + FLOAT_VAL2);
+    TestCombineSceneFloat(env,
+        "entry.src.main.src.ets.ClassOperationsMethodFloat.E", FLOAT_VAL1, FLOAT_VAL2, FLOAT_VAL1 + FLOAT_VAL2);
     return ANI_TRUE;
 }
 
@@ -3934,7 +3937,7 @@ ani_boolean TestCombineSceneBoolean(ani_env *env, const char *className, const c
 
     ani_boolean value = initValue;
     ASSERT_EQ(env->Class_CallStaticMethodByName_Boolean(cls, methodName, "zz:z", &value, ANI_TRUE, ANI_FALSE),
-                ANI_OK);
+              ANI_OK);
     ASSERT_EQ(value, expectedValue);
 
     ani_value args[2U];
@@ -5359,7 +5362,8 @@ ani_boolean TestFuncV5(ani_env *env, ani_class cls, const char *name, ani_float 
     return ANI_TRUE;
 }
 
-ani_boolean TestCombineSceneOfFloat(ani_env *env, const char *className, const char *methodName, ani_float expectedValue)
+ani_boolean TestCombineSceneOfFloat(ani_env *env, const char *className,
+                                    const char *methodName, ani_float expectedValue)
 {
     const ani_float FLOAT_VAL1 = 1.5F;
     const ani_float FLOAT_VAL2 = 2.5F;
@@ -6420,7 +6424,7 @@ ani_boolean TestCombineSceneOfRef(ani_env *env, const char *className, const cha
     args[1U].i = VAL4;
     ani_ref valueA = nullptr;
     ASSERT_EQ(env->Class_CallStaticMethodByName_Ref_A(cls, methodName, "ii:C{std.core.String}", &valueA, args),
-                ANI_OK);
+              ANI_OK);
     CheckRefNum2(env, valueA);
     return ANI_TRUE;
 }

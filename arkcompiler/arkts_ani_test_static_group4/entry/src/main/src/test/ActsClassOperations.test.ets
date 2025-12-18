@@ -1609,21 +1609,21 @@ export default function classOperationsTest() {
 
     /**
      * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBYTE_1500
-     * @tc.name      class_FindStaticMethodShort_0015
+     * @tc.name      test_Class_FindStaticMethodByte_0014
      * @tc.desc      call static method short from combine scenes 4
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("call_StaticMethodByte_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it("test_Class_FindStaticMethodByte_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('call_StaticMethodByte_0015 start');
+        console.log('test_Class_FindStaticMethodByte_0014 start');
         let cls = new Foo();
         let result = cls.test_Class_FindStaticMethodByte_14();
         expect(result).assertTrue();
-        console.log('call_StaticMethodByte_0015 done');
+        console.log('test_Class_FindStaticMethodByte_0014 done');
         done();
-        console.log('call_StaticMethodByte_0015 end');
+        console.log('test_Class_FindStaticMethodByte_0014 end');
       })
 
     /**

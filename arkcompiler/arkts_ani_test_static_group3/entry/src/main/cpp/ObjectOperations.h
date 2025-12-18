@@ -1025,7 +1025,7 @@ ani_int test_Object_Get_Property_By_Name_Char_04([[maybe_unused]] ani_env *env, 
 ani_int test_Object_Get_Property_By_Name_Char_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_char type = '\0';
-    ASSERT_EQ(env->Object_GetPropertyByName_Char(nullptr, "type", &type), ANI_INVALID_ARGS);return ANI_TRUE;
+    ASSERT_EQ(env->Object_GetPropertyByName_Char(nullptr, "type", &type), ANI_INVALID_ARGS);
     return ANI_TRUE;
 }
 
@@ -1548,21 +1548,21 @@ ani_int test_Object_Get_Property_By_Name_Short_07([[maybe_unused]] ani_env *env,
 
 ani_int GetMethodDataA(ani_env *env, ani_object *objectResult, ani_class *classResult, ParamObjA* param)
 {
-	ani_class cls {};
-	// Locate the class in the environment.
-	ASSERT_EQ(env->FindClass(param->className, &cls), ANI_OK);
-	ASSERT_NE(cls, nullptr);
+    ani_class cls {};
+    // Locate the class in the environment.
+    ASSERT_EQ(env->FindClass(param->className, &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
 
-	// Emulate allocation an instance of class.
-	ani_static_method newMethod {};
-	// NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
-	ASSERT_EQ(env->Class_FindStaticMethod(cls, param->newClassName, param->signature, &newMethod), ANI_OK);
-	ani_ref ref {};
-	// NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
-	ASSERT_EQ(env->Class_CallStaticMethod_Ref(cls, newMethod, &ref), ANI_OK);
+    // Emulate allocation an instance of class.
+    ani_static_method newMethod {};
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, param->newClassName, param->signature, &newMethod), ANI_OK);
+    ani_ref ref {};
+    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-vararg)
+    ASSERT_EQ(env->Class_CallStaticMethod_Ref(cls, newMethod, &ref), ANI_OK);
 
-	*objectResult = static_cast<ani_object>(ref);
-	*classResult = cls;
+    *objectResult = static_cast<ani_object>(ref);
+    *classResult = cls;
     return ANI_TRUE;
 }
 
@@ -2124,7 +2124,8 @@ ani_int test_Object_Set_Field_Byte_01([[maybe_unused]] ani_env *env, [[maybe_unu
     const int maxByteValue = 127;
     const int valuE128 = -128;
     ASSERT_EQ(CallEtsFunctionV<ani_boolean>(env, "entry.src.main.src.ets.ObjectOperations", "checkByteValue",
-                                            pack, zoerValue), ANI_TRUE);
+                                            pack, zoerValue),
+              ANI_TRUE);
 
     const int32_t loopCount = 3;
     for (int32_t i = 1; i <= loopCount; i++) {
@@ -2307,7 +2308,7 @@ ani_int test_Object_Set_Field_Char_05([[maybe_unused]] ani_env *env, [[maybe_unu
 }
 
 ani_int GetTestDataForDouble(ani_env *env, ani_object *packResult,
-                           ani_field *fieldBoolResult, ani_field *fieldStringResult)
+                             ani_field *fieldBoolResult, ani_field *fieldStringResult)
 {
     auto packRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newPackObject4");
 
@@ -2823,7 +2824,8 @@ ani_int test_Object_Set_Field_Short_01([[maybe_unused]] ani_env *env, [[maybe_un
         ASSERT_EQ(env->Object_SetField_Short(pack, fieldShort, value200), ANI_OK);
 
         ASSERT_EQ(CallEtsFunctionV<ani_boolean>(env, "entry.src.main.src.ets.ObjectOperations", "checkShortValue",
-                                                pack, value200), ANI_TRUE);
+                                                pack, value200),
+                  ANI_TRUE);
 
         ASSERT_EQ(env->Object_GetField_Short(pack, fieldShort, &sh), ANI_OK);
         ASSERT_EQ(sh, value200);
@@ -2968,8 +2970,8 @@ ani_int test_Object_Set_Field_Ref_01([[maybe_unused]] ani_env *env, [[maybe_unus
 
 ani_int test_Object_Set_Field_Ref_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    auto boxc = static_cast<ani_object>(CallEtsFunctionV<ani_ref>(env,
-                                            "entry.src.main.src.ets.ObjectOperations", "newBoxcObject"));
+    auto boxc = static_cast<ani_object>(
+                    CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newBoxcObject"));
 
     ani_class cls {};
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Boxc", &cls), ANI_OK);
@@ -3463,7 +3465,7 @@ ani_int test_Object_New_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_o
 
     ani_method ctor {};
     ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>",
-                                     "iC{std.core.String}C{entry.src.main.src.ets.ObjectOperations.Animal}:", &ctor),
+                                    "iC{std.core.String}C{entry.src.main.src.ets.ObjectOperations.Animal}:", &ctor),
               ANI_OK);
     ASSERT_NE(ctor, nullptr);
 

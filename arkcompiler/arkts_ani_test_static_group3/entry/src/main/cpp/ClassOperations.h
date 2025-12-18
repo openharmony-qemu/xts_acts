@@ -3508,7 +3508,6 @@ ani_boolean test_Class_Set_Field_By_Name_Long_01([[maybe_unused]] ani_env *env, 
     ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Long(env, cls, "long_value", &resultValue), ANI_OK);
     ASSERT_EQ(resultValue, 8L);
     return ANI_TRUE;
-    
 }
 
 ani_boolean test_Class_Set_Field_By_Name_Long_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
@@ -3905,7 +3904,7 @@ ani_boolean test_Class_Set_Field_By_Name_Short_08([[maybe_unused]] ani_env *env,
 
 ani_boolean test_Class_Set_Field_By_Name_Short_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
-    CheckFieldValueShortByName(env, 
+    CheckFieldValueShortByName(env,
                                "entry.src.main.src.ets.ClassOperationsFieldByName.ShortStaticFinal", "short_value");
     return ANI_TRUE;
 }
