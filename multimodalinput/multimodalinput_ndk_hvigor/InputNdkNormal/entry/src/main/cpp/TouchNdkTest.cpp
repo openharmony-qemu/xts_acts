@@ -15,6 +15,7 @@
 #include "napi/native_api.h"
 #include "multimodalinput/oh_input_manager.h"
 #include "multimodalinput/oh_key_code.h"
+#include "multimodalinput/oh_pointer_style.h"
 #include "hilog/log.h"
 #include <bits/alltypes.h>
 #include <thread>
@@ -175,6 +176,56 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value KeyCode1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t KEYCODE_HOME = 1;
+    int32_t KEYCODE_BACK = 2;
+    int32_t KEYCODE_SEARCH = 9;
+    int32_t KEYCODE_MEDIA_PLAY_PAUSE = 10;
+    int32_t KEYCODE_MEDIA_STOP = 11;
+    int32_t KEYCODE_MEDIA_NEXT = 12;
+    int32_t KEYCODE_MEDIA_PREVIOUS = 13;
+    int32_t KEYCODE_MEDIA_REWIND = 14;
+    int32_t KEYCODE_MEDIA_FAST_FORWARD = 15;
+    napi_create_int32(env,
+                      (Input_KeyCode::KEYCODE_HOME == KEYCODE_HOME && Input_KeyCode::KEYCODE_BACK == KEYCODE_BACK &&
+                      Input_KeyCode::KEYCODE_SEARCH == KEYCODE_SEARCH &&
+                      Input_KeyCode::KEYCODE_MEDIA_PLAY_PAUSE == KEYCODE_MEDIA_PLAY_PAUSE &&
+                      Input_KeyCode::KEYCODE_MEDIA_STOP == KEYCODE_MEDIA_STOP &&
+                      Input_KeyCode::KEYCODE_MEDIA_NEXT == KEYCODE_MEDIA_NEXT &&
+                      Input_KeyCode::KEYCODE_MEDIA_PREVIOUS == KEYCODE_MEDIA_PREVIOUS &&
+                      Input_KeyCode::KEYCODE_MEDIA_REWIND == KEYCODE_MEDIA_REWIND &&
+                      Input_KeyCode::KEYCODE_MEDIA_FAST_FORWARD == KEYCODE_MEDIA_FAST_FORWARD) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value KeyCode2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t KEYCODE_VIRTUAL_MULTITASK = 2210;
+    int32_t KEYCODE_BUTTON_A = 2301;
+    int32_t KEYCODE_BUTTON_B = 2302;
+    int32_t KEYCODE_BUTTON_X = 2304;
+    int32_t KEYCODE_BUTTON_Y = 2305;
+    int32_t KEYCODE_BUTTON_L1 = 2307;
+    int32_t KEYCODE_BUTTON_R1 = 2308;
+    int32_t KEYCODE_BUTTON_L2 = 2309;
+    int32_t KEYCODE_BUTTON_R2 = 2310;
+    napi_create_int32(env,
+                      (Input_KeyCode::KEYCODE_VIRTUAL_MULTITASK == KEYCODE_VIRTUAL_MULTITASK &&
+                      Input_KeyCode::KEYCODE_BUTTON_A == KEYCODE_BUTTON_A &&
+                      Input_KeyCode::KEYCODE_BUTTON_B == KEYCODE_BUTTON_B &&
+                      Input_KeyCode::KEYCODE_BUTTON_X == KEYCODE_BUTTON_X &&
+                      Input_KeyCode::KEYCODE_BUTTON_Y == KEYCODE_BUTTON_Y &&
+                      Input_KeyCode::KEYCODE_BUTTON_L1 == KEYCODE_BUTTON_L1 &&
+                      Input_KeyCode::KEYCODE_BUTTON_R1 == KEYCODE_BUTTON_R1 &&
+                      Input_KeyCode::KEYCODE_BUTTON_L2 == KEYCODE_BUTTON_L2 &&
+                      Input_KeyCode::KEYCODE_BUTTON_R2 == KEYCODE_BUTTON_R2
+                      ) ? 1 : 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -190,6 +241,39 @@ static napi_value Init(napi_env env, napi_value exports)
         {"AddKeyEventHook1", nullptr, AddKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode1", nullptr, KeyCode1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode2", nullptr, KeyCode2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode3", nullptr, KeyCode3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode4", nullptr, KeyCode4, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode5", nullptr, KeyCode5, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode6", nullptr, KeyCode6, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode7", nullptr, KeyCode7, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode8", nullptr, KeyCode8, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode9", nullptr, KeyCode9, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode10", nullptr, KeyCode10, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode11", nullptr, KeyCode11, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode12", nullptr, KeyCode12, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode13", nullptr, KeyCode13, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode14", nullptr, KeyCode14, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode15", nullptr, KeyCode15, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode16", nullptr, KeyCode16, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode17", nullptr, KeyCode17, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode18", nullptr, KeyCode18, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode19", nullptr, KeyCode19, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode20", nullptr, KeyCode20, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode21", nullptr, KeyCode21, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode22", nullptr, KeyCode22, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode23", nullptr, KeyCode23, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode24", nullptr, KeyCode24, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode25", nullptr, KeyCode25, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"KeyCode26", nullptr, KeyCode26, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle1", nullptr, PointerStyle1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle2", nullptr, PointerStyle2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle3", nullptr, PointerStyle3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle4", nullptr, PointerStyle4, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle5", nullptr, PointerStyle5, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle6", nullptr, PointerStyle6, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerStyle7", nullptr, PointerStyle7, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
