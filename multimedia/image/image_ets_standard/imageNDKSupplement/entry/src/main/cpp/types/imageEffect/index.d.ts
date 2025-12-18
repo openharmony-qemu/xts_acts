@@ -100,7 +100,6 @@ export const PixelmapNativeSetMemoryNameTest:(a: number) => number;
 export const ImageSourceNativeCreatePictureTest:(a: number,b:number) => number;
 export const ImageSourceNativeCreatePictureAtIndexTest:(a: number,b:number) => number;
 export const DecodingOptionsGetDesiredColorSpaceTest:(a: number) => number;
-//export const MediaAssetManagerCancelRequestTest:(a: number,srcUri:string,c:ESObject,destUri:string, callback?: (err: BusinessError, data: ESObject) => void ) => boolean;
 export const ClonePixelmapTest:(a: number) => number;
 export const CreateCroppedAndScaledPixelMapTest:(a: number) => number;
 export const CreatePixelmapFromSurfaceTest:(a: number,b:string) => number;

@@ -1,9 +1,17 @@
-//
-// Created on 2025/12/15.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
-
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 #include "PixleMapNativeTest.h"
 #include <cstdlib>
 #include <hilog/log.h>
@@ -27,12 +35,6 @@
 #define PARAM_960000 960000
 #define PARAM_200 200
 #define PARAM_300 300
-//enum class OH_PixelmapNative_AntiAliasingLevel : int32_t {
-//    ANTI_ALIASING_NONE = 0,    // 无抗锯齿（性能最高，画质最差）
-//    ANTI_ALIASING_LOW = 1,     // 低抗锯齿（平衡性能和画质）
-//    ANTI_ALIASING_MEDIUM = 2,  // 中抗锯齿（推荐默认值）
-//    ANTI_ALIASING_HIGH = 3     // 高抗锯齿（画质最好，性能消耗大）
-//};
 napi_value ClonePixelmapTest(napi_env env, napi_callback_info info)
 {
     LOGI("OH_PixelmapNative_Clone start");
@@ -202,8 +204,8 @@ napi_value CreatePixelmapFromNativeBufferTest(napi_env env, napi_callback_info i
     OH_NativeBuffer_Config config {
         .width = 256,
         .height = 256,
-        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888, // 显式指定RGBA_8888格式
-        .usage = NATIVEBUFFER_USAGE_CPU_READ  | NATIVEBUFFER_USAGE_CPU_WRITE , // 支持CPU读写
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ  | NATIVEBUFFER_USAGE_CPU_WRITE ,
     };
     OH_NativeBuffer* nativeBuffer = OH_NativeBuffer_Alloc(&config);
     if (nativeBuffer == nullptr) {

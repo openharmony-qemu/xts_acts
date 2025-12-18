@@ -27,7 +27,6 @@ import OHImagePixelMapCreateTest from './ImagePixelMapCreateTest.test';
 import OHImagePackerCreateTest from './OHImagePackerCreateTest.test';
 import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
 import ImageReceiverNativeTest from './ImageReceiverNativeTest.test';
-//import AssetManagerCancelRequestTest from './MediaAssetManagerCancelRequestTest.test';
 import PixelMapNativeTest from './PixelMapNativeTest.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
@@ -49,7 +48,6 @@ export default function testsuite() {
   OHImagePackerCreateTest()
   OHImagePixelMapCreateTest();
   ImageReceiverNativeTest();
-  //AssetManagerCancelRequestTest();
   PixelMapNativeTest();
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
