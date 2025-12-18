@@ -34,14 +34,14 @@ export default function webCookieLazyTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0001
-    * @tc.name        : testWebSetLazyInitializeWebEngine0001
-    * @tc.desc        : test SetLazyInitializeWebEngine normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name        : testWebSetLazyInitializeWebEngine0001
+     * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0001
+     * @tc.desc        : test SetLazyInitializeWebEngine normal
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 0
+     */
     it('testWebSetLazyInitializeWebEngine0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let expect_value:boolean = false;
       try {
@@ -54,14 +54,14 @@ export default function webCookieLazyTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0002
-    * @tc.name        : testWebSetLazyInitializeWebEngine0002
-    * @tc.desc        : test SetLazyInitializeWebEngine normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name        : testWebSetLazyInitializeWebEngine0002
+     * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0002
+     * @tc.desc        : test SetLazyInitializeWebEngine normal
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 0
+     */
     it('testWebSetLazyInitializeWebEngine0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let expect_value:boolean = false;
       try {
@@ -74,14 +74,14 @@ export default function webCookieLazyTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0003
-    * @tc.name        : testWebSetLazyInitializeWebEngine0003
-    * @tc.desc        : test SetLazyInitializeWebEngine normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name        : testWebSetLazyInitializeWebEngine0003
+     * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0003
+     * @tc.desc        : test SetLazyInitializeWebEngine normal
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 0
+     */
     it('testWebSetLazyInitializeWebEngine0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let expect_value:boolean = false;
       try {
@@ -96,14 +96,14 @@ export default function webCookieLazyTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0004
-    * @tc.name        : testWebSetLazyInitializeWebEngine00034
-    * @tc.desc        : test SetLazyInitializeWebEngine normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name        : testWebSetLazyInitializeWebEngine0004
+     * @tc.number      : SUB_WEB_setLazyInitializeWebEngine_0004
+     * @tc.desc        : test SetLazyInitializeWebEngine normal
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 0
+     */
     it('testWebSetLazyInitializeWebEngine0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let expect_value:boolean = false;
       try {
