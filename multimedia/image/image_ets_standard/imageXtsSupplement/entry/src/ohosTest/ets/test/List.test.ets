@@ -144,6 +144,9 @@ import GetImagePropertyJPGNullTest from './image/GetImagePropertyJPGNull.test';
 import GetImagePropertyPNGNullTest from './image/GetImagePropertyPNGNull.test';
 import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultipliedPixelMap.test';
 export default function testsuite() {
+  GetImagePropertyJPGNullTest();
+  GetImagePropertyPNGNullTest();
+  createUnpremultipliedPixelMapSyncTest();
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
   ImageCreateIncrementalSourceTest();
@@ -268,7 +271,4 @@ export default function testsuite() {
   SendableImageTest();
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImagePixmapSetColorSpaceTest();
-  GetImagePropertyJPGNullTest();
-  GetImagePropertyPNGNullTest();
-  createUnpremultipliedPixelMapSyncTest();
 }
