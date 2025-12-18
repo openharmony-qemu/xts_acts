@@ -34,6 +34,7 @@
 #include "ImagePackerCreateTest.h"
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
+#include "OHPixelMapSupplementTest.h"
 #include "ImageInitImageNativeSuppTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
@@ -126,6 +127,23 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestImageScale", TestImageScale),
     DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
     DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
+    DESCRIPTOR("OHPixelMapTranslateSupplementTest", OHPixelMapTranslateSupplementTest),
+    DESCRIPTOR("OHPixelMapRotateSupplementTest", OHPixelMapRotateSupplementTest),
+    DESCRIPTOR("OHPixelmapNativeSetColorSpaceNativeSuppTest", OHPixelmapNativeSetColorSpaceNativeSuppTest),
+    DESCRIPTOR("OHPixelmapNativeGetColorSpaceNativeSuppTest", OHPixelmapNativeGetColorSpaceNativeSuppTest),
+    DESCRIPTOR("OHEffectBufferInfoSetAddrSupplementTest", OHEffectBufferInfoSetAddrSupplementTest),
+    DESCRIPTOR("OHEffectBufferInfoGetAddrSupplementTest", OHEffectBufferInfoGetAddrSupplementTest),
+    DESCRIPTOR("OHEffectBufferInfoCreateSupplementTest", OHEffectBufferInfoCreateSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoCreateSupplementTest", OHEffectFilterInfoCreateSupplementTest),
+    DESCRIPTOR("OHEffectFilterCreateSupplementTest", OHEffectFilterCreateSupplementTest),
+    DESCRIPTOR("OHPixelmapNativeUnaccessPixelsSuppTest", OHPixelmapNativeUnaccessPixelsSuppTest),
+    DESCRIPTOR("CreateImageReceiverSupplementTest", CreateImageReceiverSupplementTest),
+    DESCRIPTOR("OHPixelmapNativeAccessPixelsSuppTest", OHPixelmapNativeAccessPixelsSuppTest),
+    DESCRIPTOR("OHPixelmapNativeCreateAlphaPixelmapSuppTest", OHPixelmapNativeCreateAlphaPixelmapSuppTest),
+    DESCRIPTOR("OHPixelmapNativeGetUniqueIdSuppTest", OHPixelmapNativeGetUniqueIdSuppTest),
+    DESCRIPTOR("OHPixelmapNativeIsReleasedSuppTest", OHPixelmapNativeIsReleasedSuppTest),
+    DESCRIPTOR("OHPixelmapNativeReadPixelsFromAreaSuppTest", OHPixelmapNativeReadPixelsFromAreaSuppTest),
+    DESCRIPTOR("OHPixelmapNativeWritePixelsToAreaSuppTest", OHPixelmapNativeWritePixelsToAreaSuppTest),
     DESCRIPTOR("OHImageEffectCreateSupplement", OHImageEffectCreateSupplement),
     DESCRIPTOR("OHImageEffectAddFilterSupplement", OHImageEffectAddFilterSupplement),
     DESCRIPTOR("OHImageEffectInsertFilterSupplement", OHImageEffectInsertFilterSupplement),
