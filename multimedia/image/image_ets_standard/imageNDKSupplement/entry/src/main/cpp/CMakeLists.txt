@@ -35,6 +35,7 @@ add_library(imageEffect SHARED
     ImagePixelMapTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
+    OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp)
 
 find_library(

@@ -32,6 +32,8 @@
 #include "ImagePackerCreateTest.h"
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
+#include "OHPixelMapSupplementTest.h"
+
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -114,6 +116,26 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestImageScale", TestImageScale),
     DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
     DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
+    
+    DESCRIPTOR("OHPixelMapTranslateSupplementTest", OHPixelMapTranslateSupplementTest),
+    DESCRIPTOR("OHPixelMapRotateSupplementTest", OHPixelMapRotateSupplementTest),
+    DESCRIPTOR("OHPixelmapNativeSetColorSpaceNativeSuppTest", OHPixelmapNativeSetColorSpaceNativeSuppTest),
+    DESCRIPTOR("OHPixelmapNativeGetColorSpaceNativeSuppTest", OHPixelmapNativeGetColorSpaceNativeSuppTest),
+    DESCRIPTOR("OHEffectBufferInfoSetAddrSupplementTest", OHEffectBufferInfoSetAddrSupplementTest),
+    DESCRIPTOR("OHEffectBufferInfoGetAddrSupplementTest", OHEffectBufferInfoGetAddrSupplementTest),
+    DESCRIPTOR("OHEffectBufferInfoCreateSupplementTest", OHEffectBufferInfoCreateSupplementTest),
+    DESCRIPTOR("OHEffectFilterInfoCreateSupplementTest", OHEffectFilterInfoCreateSupplementTest),
+    DESCRIPTOR("OHEffectFilterCreateSupplementTest", OHEffectFilterCreateSupplementTest),
+    DESCRIPTOR("OHPixelmapNativeUnaccessPixelsSuppTest", OHPixelmapNativeUnaccessPixelsSuppTest),
+    DESCRIPTOR("CreateImageReceiverSupplementTest", CreateImageReceiverSupplementTest),
+    DESCRIPTOR("OHPixelmapNativeAccessPixelsSuppTest", OHPixelmapNativeAccessPixelsSuppTest),
+    DESCRIPTOR("OHPixelmapNativeCreateAlphaPixelmapSuppTest", OHPixelmapNativeCreateAlphaPixelmapSuppTest),
+    DESCRIPTOR("OHPixelmapNativeGetUniqueIdSuppTest", OHPixelmapNativeGetUniqueIdSuppTest),
+    DESCRIPTOR("OHPixelmapNativeIsReleasedSuppTest", OHPixelmapNativeIsReleasedSuppTest),
+    DESCRIPTOR("OHPixelmapNativeReadPixelsFromAreaSuppTest", OHPixelmapNativeReadPixelsFromAreaSuppTest),
+    DESCRIPTOR("OHPixelmapNativeWritePixelsToAreaSuppTest", OHPixelmapNativeWritePixelsToAreaSuppTest),
+
+    
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

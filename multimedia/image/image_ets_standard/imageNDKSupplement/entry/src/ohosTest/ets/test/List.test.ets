@@ -29,6 +29,7 @@ import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
+import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -48,4 +49,5 @@ export default function testsuite() {
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
+  OHPixelMapSupplementTest();
 }
