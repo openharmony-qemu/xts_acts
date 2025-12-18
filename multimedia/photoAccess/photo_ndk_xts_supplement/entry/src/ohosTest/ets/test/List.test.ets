@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import CameraFunctionTest from "./camera/CameraSessionNdkTest.test";
+import OHMediaAssetCreateTest from "./photo/OHMediaAssetCreateTest.test";
 
 
 export default function testsuite() {
-  CameraFunctionTest()
+  OHMediaAssetCreateTest();
 }

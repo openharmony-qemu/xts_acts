@@ -13,23 +13,17 @@
  * limitations under the License.
  */
 
-#ifndef CAMERA_NDK_XTS_SUPPLEMENT_CAMERASESSIONNDKTEST_H
-#define CAMERA_NDK_XTS_SUPPLEMENT_CAMERASESSIONNDKTEST_H
-#include "hilog/log.h"
-#include "ohcamera/camera.h"
-#include "ohcamera/camera_input.h"
-#include "ohcamera/capture_session.h"
-#include "ohcamera/photo_output.h"
-#include "ohcamera/preview_output.h"
-#include "ohcamera/video_output.h"
-#include "ohcamera/camera_manager.h"
-
+#ifndef OHIMAGEEFFECTNDK_OHMEDIAASSETCREATETEST_H
+#define OHIMAGEEFFECTNDK_OHMEDIAASSETCREATETEST_H
+#include "napi/native_api.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
-napi_value initWithSurface(napi_env env, napi_callback_info info);
-napi_value captureSessionStart(napi_env env, napi_callback_info info);
+napi_value OHMediaAssetChangeRequestCreateTest(napi_env env, napi_callback_info info);
+napi_value OHMediaAssetChangeRequestAddResourceWithUriTest(napi_env env, napi_callback_info info);
 napi_value TestOhMediaAsset(napi_env env, napi_callback_info info);
+napi_value OHMediaAccessHelperApplyChangesTest(napi_env env, napi_callback_info info);
+napi_value OHMediaAssetChangeRequestReleaseTest(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif
