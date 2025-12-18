@@ -2302,6 +2302,46 @@ export default function CalendarManagerTest() {
       });
     });
 
+        /**
+     * @tc.name   SUB_Application_CalendarManagerApi_GetEvents_Promise_0600
+     * @tc.number SUB_Application_CalendarManagerApi_GetEvents_Promise_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_Application_CalendarManagerApi_GetEvents_Promise_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_GetEvents_Promise_0600';
+      const filter = calendarManager.EventFilter.filterByTime(1686931200000, 1703733961000);
+      const columns: (keyof calendarManager.Event)[] = ['title', 'type', 'startTime', 'endTime'];
+
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.getEvents(filter, columns).then((data) => {
+          console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
+          expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
+          return;
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+    });
+
     /**
      * @tc.name   SUB_Application_CalendarManagerApi_DeleteEvent_Async_0100
      * @tc.number SUB_Application_CalendarManagerApi_DeleteEvent_Async_0100
@@ -3376,5 +3416,76 @@ export default function CalendarManagerTest() {
       });
     });
 
+    /**
+     * @tc.name   SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0100
+     * @tc.number SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let CaseName = 'SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0100';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.queryEventInstances(1, 2).then((data) => {
+          console.info(CaseName + "Succeeded in getting event instances" + JSON.stringify(data));
+          expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
+          return;
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + `Failed to get event instances, Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+    });
+
+    /**
+     * @tc.name   SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0200
+     * @tc.number SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let CaseName = 'SUB_2Application_CalendarManagerApi_QueryEventInstances_TimeStampLenErr_0200';
+      let CalendarAccounts: calendarManager.CalendarAccount = {
+        name: '本地帐户',
+        type: calendarManager.CalendarType.LOCAL,
+        displayName: '本地帐户'
+      }
+      calendarMgr?.createCalendar(CalendarAccounts).then((Calendar) => {
+        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
+        Calendar.queryEventInstances(11111111111111, 12121212121212).then((data) => {
+          console.info(CaseName + "Succeeded in getting event instances" + JSON.stringify(data));
+          expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
+          return;
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + `Failed to get event instances, Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
+        });
+      }).catch((err: BusinessError) => {
+        console.info(CaseName + `Failed to create calendar, Code is ${err.code}, message is ${err.message}`);
+        expect().assertFail();
+      });
+    });
   });
 }
