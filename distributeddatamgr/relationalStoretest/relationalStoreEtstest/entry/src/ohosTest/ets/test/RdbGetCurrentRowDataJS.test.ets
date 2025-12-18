@@ -424,42 +424,8 @@ export default function RdbGetCurrentRowData() {
     })
 
     /**
-     * @tc.name   queryCurrentRowData_009
-     * @tc.number SUB_DistributedData_RelationalStore_queryCurrentRowDataJsApiTest_0009
-     * @tc.desc   ResultSet.CurrentRowData test with database is corrupted
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 2
-     */
-    it('queryCurrentRowData_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(TAG + '************* queryCurrentRowData_009 start *************');
-      let resultSet: relationalStore.ResultSet | undefined;
-
-
-      console.log(TAG + '************* queryCurrentRowData_009 end *************');
-
-    })
-
-    it('queryCurrentRowData_Corruption_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(TAG + '************* queryCurrentRowData_Corruption_009 start *************');
-      let resultSet: relationalStore.ResultSet | undefined;
-
-      // 方法1: 通过关闭数据库连接模拟损坏
-      try {
-        resultSet = await rdbStore.querySql('SELECT * FROM test WHERE age >= 25');
-        // 保存当前数据库状态
-        const tempStore = rdbStore;
-
-        resultSet.close();
-        console.info(TAG + '第一次关闭ResultSet');
-      }catch (err){
-        console.error(`queryCurrentRowData_008 failed message:${err.message} code:${err.code}`);
-      }
-    })
-
-          /**
      * @tc.name   lite_queryCurrentRowData_001
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0001
      * @tc.desc   multi-table querySqlWithoutRowCount with getCurrentRowData and getRow comparison test
      *            1. query all data, using 'select * from ....'
      *            2. execute getCurrentRowData and getRow
@@ -514,7 +480,7 @@ export default function RdbGetCurrentRowData() {
 
     /**
      * @tc.name   lite_queryCurrentRowData_002
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0002
      * @tc.desc   multi-table querySqlWithoutRowCount with getCurrentRowData and getRow comparison test
      *            1. query all data
      *            2. execute getCurrentRowData and getRow
@@ -572,8 +538,8 @@ export default function RdbGetCurrentRowData() {
     })
 
     /**
-     * @tc.name   lite_queryCurrentRowData_002
-     * @tc.number
+     * @tc.name   lite_queryCurrentRowData_003
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0003
      * @tc.desc   liteResultSet.getCurrentRowData test with liteResultSet already close.
      *            1. close resultSet and execute getCurrentRowData
      *            2. return 14800014
@@ -600,7 +566,7 @@ export default function RdbGetCurrentRowData() {
 
     /**
      * @tc.name   lite_queryCurrentRowData_004
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0004
      * @tc.desc   liteResultSet.getCurrentRowData test with querySqlWithoutRowCount no such table.
      *            1. not create table and execute getCurrentRowData
      *            2. return 14800021
@@ -625,7 +591,7 @@ export default function RdbGetCurrentRowData() {
 
     /**
      * @tc.name   lite_queryCurrentRowData_005
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0005
      * @tc.desc   liteResultSet.getCurrentRowData test with querySqlWithoutRowCount input create table sql.
      *            1. create table by querySqlWithoutRowCount
      *            2. execute getCurrentRowData and return 14800021
@@ -650,7 +616,7 @@ export default function RdbGetCurrentRowData() {
 
     /**
      * @tc.name   lite_queryCurrentRowData_006
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0006
      * @tc.desc   liteResultSet.getCurrentRowData test with querySqlWithoutRowCount input sql size less then 3.
      *            1. SQL length is less than 3
      *            2. execute getCurrentRowData and return 14800021
@@ -675,7 +641,7 @@ export default function RdbGetCurrentRowData() {
 
     /**
      * @tc.name   lite_queryCurrentRowData_007
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0007
      * @tc.desc   getCurrentRowData test with liteResultSet is empty.
      *            1. no data and execute getCurrentRowData
      *            2. return 14800012
@@ -700,7 +666,7 @@ export default function RdbGetCurrentRowData() {
 
     /**
      * @tc.name   lite_queryCurrentRowData_008
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_ litequeryCurrentRowDataJsApiTest_0008
      * @tc.desc   ResultSet.CurrentRowData test with attach db querySql.
      *            1. execute attach and querySql
      *            2. get all values
