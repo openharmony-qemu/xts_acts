@@ -16,11 +16,13 @@ import webGetCookieManager from './webGetCookieManager.test'
 import webViewControllerJsunit from './webViewControllerJsunit.test'
 import webViewExistCookie from './webViewExistCookie.test'
 import webViewDeleteEntireCookie from './webViewDeleteEntireCookie.test'
+import webCookieLazyTest from './webCookieLazyTest.test'
 
 export default function testsuite() {
        webViewControllerJsunit()
        webGetCookieManager()
        webViewExistCookie()
        webViewDeleteEntireCookie()
+       webCookieLazyTest()
 
 }
