@@ -88,22 +88,194 @@ export default function MindSporeTest() {
       }
       await Utils.sleep(500)
     })
-
-    describe('MindSporeTest', () => {
-
-      /**
-       * @tc.name   testMindSporeContextCreate001
-       * @tc.number SUB_THIRDPARTY_MINDSPORE_OH_AI_CONTEXTCREATE_0100
-       * @tc.desc   test the normal condition of OH_AI_ContextCreate
-       * @tc.type   FUNCTION
-       * @tc.size   MEDIUMTEST
-       * @tc.level  LEVEL0
-       */
-      it('testMindSporeContextCreate001', Level.LEVEL0, async (done: Function) => {
-        expect(true).assertEqual(1);
-        done()
-      });
-
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
     })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_UpdateWeights_0001
+     * @tc.number SUB_AI_MindSpore_Train_UpdateWeights_0001
+     * @tc.desc   SUB_AI_MindSpore_Train_UpdateWeights_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_UpdateWeights_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_UpdateWeights_0002
+     * @tc.number SUB_AI_MindSpore_Train_UpdateWeights_0002
+     * @tc.desc   SUB_AI_MindSpore_Train_UpdateWeights_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_UpdateWeights_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_UpdateWeights_0003
+     * @tc.number SUB_AI_MindSpore_Train_UpdateWeights_0003
+     * @tc.desc   SUB_AI_MindSpore_Train_UpdateWeights_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_UpdateWeights_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(2);
+      expect(result).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_UpdateWeights_0004
+     * @tc.number SUB_AI_MindSpore_Train_UpdateWeights_0004
+     * @tc.desc   SUB_AI_MindSpore_Train_UpdateWeights_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_UpdateWeights_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(3);
+      expect(result).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_UpdateWeights_0005
+     * @tc.number SUB_AI_MindSpore_Train_UpdateWeights_0005
+     * @tc.desc   SUB_AI_MindSpore_Train_UpdateWeights_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_UpdateWeights_0005', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(4);
+      expect(result).assertEqual(0);
+    })
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_UpdateWeights_0006
+     * @tc.number SUB_AI_MindSpore_Train_UpdateWeights_0006
+     * @tc.desc   SUB_AI_MindSpore_Train_UpdateWeights_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_UpdateWeights_0006', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_UpdateWeights(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_SetLearningRate_0001
+     * @tc.number SUB_AI_MindSpore_Train_SetLearningRate_0001
+     * @tc.desc   SUB_AI_MindSpore_Train_SetLearningRate_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_SetLearningRate_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_SetLearningRate(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_SetLearningRate_0002
+     * @tc.number SUB_AI_MindSpore_Train_SetLearningRate_0002
+     * @tc.desc   SUB_AI_MindSpore_Train_SetLearningRate_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_SetLearningRate_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_SetLearningRate(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_SetupVirtualBatch_0001
+     * @tc.number SUB_AI_MindSpore_Train_SetupVirtualBatch_0001
+     * @tc.desc   SUB_AI_MindSpore_Train_SetupVirtualBatch_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_SetupVirtualBatch_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_SetupVirtualBatch(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_SetOptimizationLevel_0001
+     * @tc.number SUB_AI_MindSpore_Train_SetOptimizationLevel_0001
+     * @tc.desc   SUB_AI_MindSpore_Train_SetOptimizationLevel_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_SetOptimizationLevel_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_SetOptimizationLevel(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_TrainCfg_0001
+     * @tc.number SUB_AI_MindSpore_Train_TrainCfg_0001
+     * @tc.desc   SUB_AI_MindSpore_Train_TrainCfg_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_TrainCfg_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_TrainCfg_0002
+     * @tc.number SUB_AI_MindSpore_Train_TrainCfg_0002
+     * @tc.desc   SUB_AI_MindSpore_Train_TrainCfg_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_TrainCfg_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_TrainCfg_0003
+     * @tc.number SUB_AI_MindSpore_Train_TrainCfg_0003
+     * @tc.desc   SUB_AI_MindSpore_Train_TrainCfg_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_TrainCfg_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_Train_TrainCfg_0004
+     * @tc.number SUB_AI_MindSpore_Train_TrainCfg_0004
+     * @tc.desc   SUB_AI_MindSpore_Train_TrainCfg_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Train_TrainCfg_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Train_TrainCfg(3);
+      expect(result).assertEqual(0);
+    })
+
   })
 }
