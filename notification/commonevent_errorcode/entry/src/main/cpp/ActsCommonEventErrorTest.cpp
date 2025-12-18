@@ -490,8 +490,8 @@ static napi_value SubscriberNumExceeded(napi_env env, napi_callback_info info)
         int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
         napi_create_int32(env, retResult == COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED ? 0 : -1, &result);
     }
-    CommonEvent_ErrCode SubscriberExceeded = COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED;
-    ASSERT_EQ(SubscriberExceeded, COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED);
+    CommonEvent_ErrCode subscriberExceeded = COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED;
+    ASSERT_EQ(subscriberExceeded, COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED);
     return result;
 }
 
