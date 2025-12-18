@@ -45,14 +45,14 @@ export default function webViewController() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONSHOWFILESELECTOR_0100
-    * @tc.name       : testOnShowFileSelectorStatic001
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.number     : SUB_WEB_ONSHOWFILESELECTOR_0100
+     * @tc.name       : testOnShowFileSelectorStatic001
+     * @tc.desc       : test onShowFileSelector
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testOnShowFileSelectorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testOnShowFileSelector001', 10)
@@ -63,14 +63,14 @@ export default function webViewController() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETTITLE_0100
-    * @tc.name       : testFileSelectorParamGetTitleStatic001
-    * @tc.desc       : test FileSelectorParam getTitle
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETTITLE_0100
+     * @tc.name       : testFileSelectorParamGetTitleStatic001
+     * @tc.desc       : test FileSelectorParam getTitle
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testFileSelectorParamGetTitleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetTitle001', 10)
@@ -81,14 +81,14 @@ export default function webViewController() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETMODE_0100
-    * @tc.name       : testFileSelectorParamGetModeStatic001
-    * @tc.desc       : test FileSelectorParam getMode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETMODE_0100
+     * @tc.name       : testFileSelectorParamGetModeStatic001
+     * @tc.desc       : test FileSelectorParam getMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testFileSelectorParamGetModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetMode001', 10)
@@ -103,14 +103,14 @@ export default function webViewController() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETACCEPTTYPE_0100
-    * @tc.name       : testFileSelectorParamGetAcceptTypeStatic001
-    * @tc.desc       : test FileSelectorParam getAcceptType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETACCEPTTYPE_0100
+     * @tc.name       : testFileSelectorParamGetAcceptTypeStatic001
+     * @tc.desc       : test FileSelectorParam getAcceptType
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testFileSelectorParamGetAcceptTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetAcceptType001', 10)
@@ -121,14 +121,14 @@ export default function webViewController() {
         done()
       })
 
-    /*
-   * @tc.number     : SUB_WEB_FILESELECTORPARAM_ISCAPTURE_0100
-   * @tc.name       : testFileSelectorParamIsCaptureStatic001
-   * @tc.desc       : test FileSelectorParam isCapture
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.number     : SUB_WEB_FILESELECTORPARAM_ISCAPTURE_0100
+     * @tc.name       : testFileSelectorParamIsCaptureStatic001
+     * @tc.desc       : test FileSelectorParam isCapture
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testFileSelectorParamIsCaptureStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamIsCapture001', 10)
@@ -139,14 +139,14 @@ export default function webViewController() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_0100
-    * @tc.name       : testFileSelectorResultHandleFileListStatic001
-    * @tc.desc       : test FileSelectorResult handleFileList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.number     : SUB_WEB_FILESELECTORRESULT_HANDLEFILELIST_0100
+     * @tc.name       : testFileSelectorResultHandleFileListStatic001
+     * @tc.desc       : test FileSelectorResult handleFileList
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testFileSelectorResultHandleFileListStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorResultHandleFileList001', 10)
@@ -157,14 +157,14 @@ export default function webViewController() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETMIMETYPES_0100
-    * @tc.name       : testFileSelectorParamGetMimeTypesStatic001
-    * @tc.desc       : test FileSelectorParam getMimeTypes
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.number     : SUB_WEB_FILESELECTORPARAM_GETMIMETYPES_0100
+     * @tc.name       : testFileSelectorParamGetMimeTypesStatic001
+     * @tc.desc       : test FileSelectorParam getMimeTypes
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
     it('testFileSelectorParamGetMimeTypesStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testFileSelectorParamGetMimeTypes001', 10)

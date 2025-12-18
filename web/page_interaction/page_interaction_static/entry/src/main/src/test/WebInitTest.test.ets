@@ -45,7 +45,7 @@ export default function webInitTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    /*
+    /**
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_033
      * @tc.name ContextMenuMediaTypeStatic
      * @tc.desc Save current page
@@ -60,7 +60,7 @@ export default function webInitTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_034
      * @tc.name ContextMenuInputFieldTypeStatic
      * @tc.desc Save current page
@@ -79,7 +79,7 @@ export default function webInitTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_035
      * @tc.name ContextMenuSourceTypeStatic
      * @tc.desc Save current page
@@ -95,7 +95,7 @@ export default function webInitTest() {
       done()
     })
 
-    /*
+    /**
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_014
      * @tc.name requestFocusStatic
      * @tc.desc Gets the request focus
@@ -109,12 +109,12 @@ export default function webInitTest() {
       done()
     })
 
-    /*
-      * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLABLE_1100
-      * @tc.name testScrollableElevenStatic
-      * @tc.desc When the scrollTo interface is called, the y input parameter is a positive number and the x input
-      * @parameter is a positive number, both of which are greater than the page width and height
-    */
+    /**
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLABLE_1100
+     * @tc.name testScrollableElevenStatic
+     * @tc.desc When the scrollTo interface is called, the y input parameter is a positive number and the x input
+     * @parameter is a positive number, both of which are greater than the page width and height
+     */
     it('testScrollableElevenStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       Utils.emitEvent('testScrollableEleven', 10)
       await Utils.sleep(2000);
@@ -124,14 +124,14 @@ export default function webInitTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
-    * @tc.name        : testJsResultHandleCancelStatic001
-    * @tc.desc        : test JsResultHandle.cancel()
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
+     * @tc.name        : testJsResultHandleCancelStatic001
+     * @tc.desc        : test JsResultHandle.cancel()
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 1
+     */
     it('testJsResultHandleCancelStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       Utils.emitEvent('emitJsResultHandleCancel001', 10)
       await Utils.sleep(1000);
@@ -141,14 +141,14 @@ export default function webInitTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLECONFIRM_0100
-    * @tc.name        : testJsResultHandleConfirmStatic001
-    * @tc.desc        : test JsResultHandle.confirm()
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.number      : SUB_WEB_JSRESULT_HANDLECONFIRM_0100
+     * @tc.name        : testJsResultHandleConfirmStatic001
+     * @tc.desc        : test JsResultHandle.confirm()
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 1
+     */
     it('testJsResultHandleConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       Utils.emitEvent('emitJsResultHandleConfirm001', 10)
       await Utils.sleep(1000);
@@ -158,14 +158,14 @@ export default function webInitTest() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_JSRESULT_HANDLEPROMPTCONFIRM_0100
-    * @tc.name        : testJsResultHandlePromptConfirmStatic001
-    * @tc.desc        : test JsResultHandle.promptConfirm()
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.number      : SUB_WEB_JSRESULT_HANDLEPROMPTCONFIRM_0100
+     * @tc.name        : testJsResultHandlePromptConfirmStatic001
+     * @tc.desc        : test JsResultHandle.promptConfirm()
+     * @tc.size        : MediumTest
+     * @tc.type        : Function
+     * @tc.level       : Level 1
+     */
     it('testJsResultHandlePromptConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
         Utils.emitEvent('emitJsResultHandlePromptConfirm001', 10)
