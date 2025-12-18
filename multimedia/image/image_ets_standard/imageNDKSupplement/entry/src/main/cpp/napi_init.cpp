@@ -33,6 +33,10 @@
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
 #include "ImageInitImageNativeSuppTest.h"
+#include "OHEffectBufferInfoSetInfoTest.h"
+#include "OHImageEffectRestoreTest.h"
+#include "OHImageSizeTest.h"
+#include "OHPixelmapNativeCreatePixelmapNativeTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -130,6 +134,20 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
     DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
     DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
+    DESCRIPTOR("OHEffectBufferInfoSetWidthTest", OHEffectBufferInfoSetWidthTest),
+    DESCRIPTOR("OHEffectBufferInfoGetWidthTest", OHEffectBufferInfoGetWidthTest),
+    DESCRIPTOR("OHEffectBufferInfoGetHeightTest", OHEffectBufferInfoGetHeightTest),
+    DESCRIPTOR("OHEffectBufferInfoSetHeightTest", OHEffectBufferInfoSetHeightTest),
+    DESCRIPTOR("OHEffectBufferInfoSetRowSizeTest", OHEffectBufferInfoSetRowSizeTest),
+    DESCRIPTOR("OHEffectBufferInfoGetRowSizeTest", OHEffectBufferInfoGetRowSizeTest),
+    DESCRIPTOR("OHEffectBufferInfoReleaseTest", OHEffectBufferInfoReleaseTest),
+    DESCRIPTOR("OHImageSizeTest", OHImageSizeTest),
+    DESCRIPTOR("OHImageEffectRestoreTest", OHImageEffectRestoreTest),
+    DESCRIPTOR("OHPixelmapNativeCreatePixelmapNativeTest", OHPixelmapNativeCreatePixelmapNativeTest),
+    DESCRIPTOR("OHPixelmapNativeGetArgbPixelsTest", OHPixelmapNativeGetArgbPixelsTest),
+    DESCRIPTOR("OHPixelmapNativeToSdrTest", OHPixelmapNativeToSdrTest),
+    DESCRIPTOR("PixelmapNativeCreateEmptyPixelmapUsingAllocator", PixelmapNativeCreateEmptyPixelmapUsingAllocator),
+
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

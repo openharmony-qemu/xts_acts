@@ -30,6 +30,10 @@ import ImageInitImageNativeSuppTest from './ImageInitImageNativeSupp.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
+import OHEffectBufferInfoSetInfoTest from './OHEffectBufferInfoSetInfoTest.test';
+import OHImageEffectRestoreTest from './OHImageEffectRestoreTest.test';
+import OHImageSizeTest from './OHImageSizeTest.test';
+import OHPixelmapNativeCreatePixelmapNativeTest from './OHPixelmapNativeCreatePixelmapNativeTest.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -50,4 +54,8 @@ export default function testsuite() {
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
+  OHEffectBufferInfoSetInfoTest();
+  OHImageEffectRestoreTest();
+  OHImageSizeTest();
+  OHPixelmapNativeCreatePixelmapNativeTest();
 }

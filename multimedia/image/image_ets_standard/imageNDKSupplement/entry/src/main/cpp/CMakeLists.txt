@@ -36,7 +36,12 @@ add_library(imageEffect SHARED
     ImageInitImageNativeSuppTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
-    ImageSourceTest.cpp)
+    ImageSourceTest.cpp
+    OHEffectBufferInfoSetInfoTest.cpp
+    OHImageEffectRestoreTest.cpp
+    OHImageSizeTest.cpp
+    OHPixelmapNativeCreatePixelmapNativeTest.cpp
+    )
 
 find_library(
     # Sets the name of the path variable.
