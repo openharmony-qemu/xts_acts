@@ -61,8 +61,6 @@
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
 
-
-
 napi_value CreatePixelMapTest(napi_env env, napi_callback_info info) 
 {
     napi_value udfVar = nullptr;
@@ -90,7 +88,6 @@ napi_value CreatePixelMapTest(napi_env env, napi_callback_info info)
     }
     return pixelMap;
 }
-
 napi_value OHPixelMapTranslateSupplementTest(napi_env env, napi_callback_info info) 
 {
     LOGI("OHPixelMapTranslateSupplementTest start");
@@ -137,7 +134,6 @@ napi_value OHPixelMapTranslateSupplementTest(napi_env env, napi_callback_info in
     napi_create_int32(env, imageResult, &ret);
     return ret;
 }
-
 napi_value OHPixelMapRotateSupplementTest(napi_env env, napi_callback_info info) 
 {
     LOGI("OHPixelMapRotateSupplementTest start");
@@ -182,7 +178,6 @@ napi_value OHPixelMapRotateSupplementTest(napi_env env, napi_callback_info info)
     napi_create_int32(env, imageResult, &ret);
     return ret;
 }
-
 napi_value OHEffectFilterCreateSupplementTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -211,7 +206,6 @@ napi_value OHEffectFilterCreateSupplementTest(napi_env env, napi_callback_info i
     napi_create_int32(env, code, &ret);
     return ret;
 }
-
 napi_value OHEffectFilterInfoCreateSupplementTest(napi_env env, napi_callback_info info)
 {
     OH_EffectFilterInfo *filterInfo = OH_EffectFilterInfo_Create();
@@ -224,7 +218,6 @@ napi_value OHEffectFilterInfoCreateSupplementTest(napi_env env, napi_callback_in
     napi_create_int32(env, status, &ret);
     return ret;
 }
-
 napi_value OHEffectBufferInfoCreateSupplementTest(napi_env env, napi_callback_info info)
 {
     OH_EffectBufferInfo *bufferInfo = OH_EffectBufferInfo_Create();
@@ -237,8 +230,6 @@ napi_value OHEffectBufferInfoCreateSupplementTest(napi_env env, napi_callback_in
     napi_create_int32(env, status, &ret);
     return ret;
 }
-
-
 napi_value OHEffectBufferInfoSetAddrSupplementTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -273,7 +264,6 @@ napi_value OHEffectBufferInfoSetAddrSupplementTest(napi_env env, napi_callback_i
     napi_create_int32(env, code, &ret);
     return ret;
 }
-
 napi_value OHEffectBufferInfoGetAddrSupplementTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -311,7 +301,6 @@ napi_value OHEffectBufferInfoGetAddrSupplementTest(napi_env env, napi_callback_i
     napi_create_int32(env, code, &ret);
     return ret;
 }
-
 napi_value CreateImageReceiverSupplementTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -333,8 +322,6 @@ napi_value CreateImageReceiverSupplementTest(napi_env env, napi_callback_info in
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-
-
 napi_value OHPixelmapNativeSetColorSpaceNativeSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -363,7 +350,6 @@ napi_value OHPixelmapNativeSetColorSpaceNativeSuppTest(napi_env env, napi_callba
     napi_create_int32(env, code, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeGetColorSpaceNativeSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -388,7 +374,6 @@ napi_value OHPixelmapNativeGetColorSpaceNativeSuppTest(napi_env env, napi_callba
     napi_create_int32(env, returnValue, &ret);
     return ret;
 }
-
 napi_value OHPixelmapNativeUnaccessPixelsSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -413,7 +398,6 @@ napi_value OHPixelmapNativeUnaccessPixelsSuppTest(napi_env env, napi_callback_in
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeAccessPixelsSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -440,7 +424,6 @@ napi_value OHPixelmapNativeAccessPixelsSuppTest(napi_env env, napi_callback_info
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeCreateAlphaPixelmapSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -467,7 +450,6 @@ napi_value OHPixelmapNativeCreateAlphaPixelmapSuppTest(napi_env env, napi_callba
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -495,7 +477,6 @@ napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info 
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info info) 
 {
 
@@ -524,7 +505,6 @@ napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info i
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
@@ -548,7 +528,6 @@ napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callbac
     napi_create_int32(env, code, &result);
     return result;
 }
-
 napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
