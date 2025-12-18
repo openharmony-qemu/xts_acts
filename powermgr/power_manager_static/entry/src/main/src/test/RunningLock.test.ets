@@ -453,7 +453,7 @@ export default function RunningLockTest() {
 
     /**
      * @tc.name   testRunningLockTest_static_1400
-     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0040
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0140
      * @tc.desc   Create lock callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
