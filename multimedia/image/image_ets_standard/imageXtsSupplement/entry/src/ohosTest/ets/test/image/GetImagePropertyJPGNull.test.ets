@@ -23,10 +23,11 @@ export default function GetImagePropertyJPGNullTest() {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let path = 'test_exif.jpg';
     let pathUri = `file://${testContext.filesDir}/${path}`;
-    let ImageSource: image.ImageSource = image.createImageSource(pathUri);
-    console.info(TAG, 'createImageSource success',JSON.stringify(ImageSource));
+    let ImageSource: image.ImageSource;
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
+      ImageSource = image.createImageSource(pathUri);
+      console.info(TAG, 'createImageSource success',JSON.stringify(ImageSource));
     });
     beforeEach(() => {
       console.info(TAG, 'beforeEach case.');
