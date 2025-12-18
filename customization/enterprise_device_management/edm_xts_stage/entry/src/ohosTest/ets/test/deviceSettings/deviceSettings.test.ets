@@ -762,7 +762,7 @@ export default function deviceSettingsTest() {
       } catch (error) {
         expect(error.code == 401).assertTrue();
       } finally {
-        await adminManager.disableSuperAdmin(SELFWANT);
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     });
