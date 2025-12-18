@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "NodeContentTest.h"
-#include<arkui/native_interface.h>
+#include <arkui/native_interface.h>
 #include <arkui/native_node.h>
 #include <arkui/native_node_napi.h>
 #include <hilog/log.h>
@@ -22,19 +22,18 @@
 namespace NativeXComponentSample {
 
 static ArkUI_NativeNodeAPI_1* nodeAPI;
-int nodecontentevent_type = -1;
+int nodecontenteventType = -1;
 
 ArkUI_NodeHandle CreateNodeContentTestNodeHandle(const std::string &tag)
 {
     // 创建XC组件
     ArkUI_NodeHandle xcNode = nodeAPI->createNode(ARKUI_NODE_XCOMPONENT); // surface类型
     ArkUI_AttributeItem itemStringStyle = {.string = "XComponentNodeContentPage_XComponent"};
-    ArkUI_NumberValue value[] = {480};
+    ArkUI_NumberValue value[] = {{.f32 = 200}};
     ArkUI_AttributeItem item = {value, 1};
     ArkUI_NumberValue value2[] = {{.i32 = 0}, {.i32 = 0}, {.i32 = 200}, {.i32 = 200}};
     ArkUI_AttributeItem item2 = {value2, 4};
 
-    value[0].f32 = 200;
     nodeAPI->setAttribute(xcNode, NODE_WIDTH, &item); // 200
     nodeAPI->setAttribute(xcNode, NODE_HEIGHT, &item); // 200
     nodeAPI->setAttribute(xcNode, NODE_ID, &itemStringStyle); // XComponentNodeContentPage_XComponent
@@ -79,8 +78,9 @@ napi_value NodeContentTest::CreateNodeContentTestNativeRoot(napi_env env, napi_c
             std::string *userDate = reinterpret_cast<std::string*>(OH_ArkUI_NodeContent_GetUserData(handle));
 
             ArkUI_NodeContentEventType event_type = OH_ArkUI_NodeContentEvent_GetEventType(event);
-            nodecontentevent_type = event_type;
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "OH_ArkUI_NodeContentEvent_GetEventType %{public}d", event_type);
+            nodecontenteventType = event_type;
+            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager",
+                "OH_ArkUI_NodeContentEvent_GetEventType %{public}d", event_type);
             
             if (event_type == NODE_CONTENT_EVENT_ON_ATTACH_TO_WINDOW) {
                 ArkUI_NodeHandle testNode;
@@ -110,8 +110,9 @@ napi_value NodeContentTest::CreateNodeContentTestNativeRoot(napi_env env, napi_c
 napi_value NodeContentTest::NodeContentEventGetEventType(napi_env env, napi_callback_info info)
 {
     napi_value event_type;
-    napi_create_int32(env, nodecontentevent_type, &event_type);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "NodeContentEventGetEventType %{public}d", nodecontentevent_type);
+    napi_create_int32(env, nodecontenteventType, &event_type);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager",
+        "NodeContentEventGetEventType %{public}d", nodecontenteventType);
     return event_type;
 }
 
