@@ -6416,7 +6416,7 @@ ani_boolean TestCombineSceneOfRef(ani_env *env, const char *className, const cha
 
     ani_ref value = nullptr;
     ASSERT_EQ(env->Class_CallStaticMethodByName_Ref(cls, methodName, "ii:C{std.core.String}", &value, VAL3, VAL4),
-                ANI_OK);
+              ANI_OK);
     CheckRefNum2(env, value);
 
     ani_value args[2U];
