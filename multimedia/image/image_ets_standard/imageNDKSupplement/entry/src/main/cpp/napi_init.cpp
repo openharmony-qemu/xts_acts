@@ -150,6 +150,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
     DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
     DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
+    DESCRIPTOR("IRNdkErrCodeSupplement", IRNdkErrCodeSupplement),
+    DESCRIPTOR("OIRNdkErrCodeEmuSupp", OIRNdkErrCodeEmuSupp),
     DESCRIPTOR("ImageReceiverNativeReadLatestImageTest", ImageReceiverNativeReadLatestImageTest),
     DESCRIPTOR("InitImageReceiverNativeTest", InitImageReceiverNativeTest),
     DESCRIPTOR("OHImageClipRectTest", OHImageClipRectTest),

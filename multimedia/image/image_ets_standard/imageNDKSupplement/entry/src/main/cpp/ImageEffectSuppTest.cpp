@@ -26,6 +26,7 @@
 #include <native_window/external_window.h>
 #include <string>
 #include <multimedia/image_effect/image_effect_errors.h>
+#include <multimedia/image_framework/image_mdk_common.h>
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
@@ -47,6 +48,15 @@
 #define CASE_INDEX_9 9
 #define CASE_INDEX_10 10
 #define CASE_INDEX_11 11
+#define CASE_INDEX_12 12
+#define CASE_INDEX_13 13
+#define CASE_INDEX_14 14
+#define CASE_INDEX_15 15
+#define CASE_INDEX_16 16
+#define CASE_INDEX_17 17
+#define CASE_INDEX_18 18
+#define CASE_INDEX_19 19
+#define CASE_INDEX_20 20
 #define IMAGE_EFFECT_2 2
 #define IMAGE_EFFECT_100 100
 #define IMAGE_EFFECT_100F 100.f
@@ -576,6 +586,83 @@ napi_value OHImageEffectSetInputTextureSupp(napi_env env, napi_callback_info inf
         break;
     case CASE_INDEX_2:
         code = OH_ImageEffect_SetInputTextureId(imageEffect, 0, ColorSpaceName::ADOBE_RGB);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value IRNdkErrCodeSupplement(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    IRNdkErrCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_SOURCE_NOT_SET;
+        break;
+    case CASE_INDEX_2:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_INIT;
+        break;
+    case CASE_INDEX_3:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_EXIST;
+        break;
+    case CASE_INDEX_4:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT;
+        break;
+    case CASE_INDEX_5:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_CAPTURE_NOT_INIT;
+        break;
+    case CASE_INDEX_6:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_SOURCE_URL_INVALID;
+        break;
+    case CASE_INDEX_7:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_VIDEO_TRACK_NOT_FOUND;
+        break;
+    case CASE_INDEX_8:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_CAMERA_NUM_REACH_MAX;
+        break;
+    case CASE_INDEX_9:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_SET_VOLUME;
+        break;
+    case CASE_INDEX_10:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_NUMBER_OVERFLOW;
+        break;
+    case CASE_INDEX_11:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_DIS_PLAYER_UNSUPPORTED;
+        break;
+    case CASE_INDEX_12:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_DENCODE_ICC_FAILED;
+        break;
+    case CASE_INDEX_13:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_ENCODE_ICC_FAILED;
+        break;
+    case CASE_INDEX_14:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_READ_PIXELMAP_FAILED;
+        break;
+    case CASE_INDEX_15:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_WRITE_PIXELMAP_FAILED;
+        break;
+    case CASE_INDEX_16:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_PIXELMAP_NOT_ALLOW_MODIFY;
+        break;
+    case CASE_INDEX_17:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_CONFIG_FAILED;
+        break;
+    case CASE_INDEX_18:
+        code = IRNdkErrCode::IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED;
+        break;
+    case CASE_INDEX_19:
+        code = IRNdkErrCode::IMAGE_RESULT_CREATE_SURFACE_FAILED;
+        break;
+    case CASE_INDEX_20:
+        code = IRNdkErrCode::IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED;
         break;
     default:
         break;
