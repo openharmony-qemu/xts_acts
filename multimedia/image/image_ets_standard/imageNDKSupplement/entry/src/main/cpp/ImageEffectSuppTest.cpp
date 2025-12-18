@@ -491,3 +491,97 @@ napi_value OHImageEffectReleaseSupp(napi_env env, napi_callback_info info)
     napi_create_int32(env, code, &ret);
     return ret;
 }
+
+napi_value OHImageEffectCreateSupplement(napi_env env, napi_callback_info info)
+{
+    OH_ImageEffect *imageEffect = nullptr;
+    imageEffect = OH_ImageEffect_Create(NULL);
+     napi_value ret;
+    if (imageEffect == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectAddFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_EffectFilter *filter = nullptr;
+    filter = OH_ImageEffect_AddFilter(nullptr, OH_EFFECT_BRIGHTNESS_FILTER);
+    napi_value ret;
+    if (filter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectInsertFilterSupplement(napi_env env, napi_callback_info info)
+{
+    
+    OH_EffectFilter *insertFilter = nullptr;
+    insertFilter = OH_ImageEffect_InsertFilter(nullptr, 0, OH_EFFECT_BRIGHTNESS_FILTER);
+    napi_value ret;
+    if (insertFilter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectReplaceFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_EffectFilter *replaceFilter = nullptr;
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
+    replaceFilter = OH_ImageEffect_ReplaceFilter(nullptr, 0, OH_EFFECT_BRIGHTNESS_FILTER);
+    OH_ImageEffect_Release(imageEffect);
+   napi_value ret;
+    if (replaceFilter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectGetFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
+    int32_t getFilterIndex = 0;
+    OH_EffectFilter *getFilter = OH_ImageEffect_GetFilter(nullptr, getFilterIndex);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    if (getFilter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectSetInputTextureSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    std::shared_ptr<OH_ImageEffect> imageEffectPtr(imageEffect, [](OH_ImageEffect *imageEffect) {
+        if (imageEffect != nullptr) {
+            OH_ImageEffect_Release(imageEffect);
+        }
+    });
+    std::shared_ptr<RenderTexture> input = std::make_shared<RenderTexture>(IMAGE_EFFECT_1920,
+        IMAGE_EFFECT_1080, GL_RGBA8);
+    input->Init();
+    ImageEffect_ErrorCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code= OH_ImageEffect_SetInputTextureId(nullptr, input->GetName(), ColorSpaceName::ADOBE_RGB);
+        break;
+    case CASE_INDEX_2:
+        code = OH_ImageEffect_SetInputTextureId(imageEffect, 0, ColorSpaceName::ADOBE_RGB);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}

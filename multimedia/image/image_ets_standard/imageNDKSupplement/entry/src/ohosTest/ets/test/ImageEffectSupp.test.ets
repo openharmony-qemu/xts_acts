@@ -415,5 +415,108 @@ export default function ImageEffectSuppTest() {
       let result: number = testNapi.OHImageEffectReleaseSupp(CASE_INDEX_2);
       expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
     });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPPLEMENT_0100
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPPLEMENT_0100
+     * @tc.desc   OH_ImageEffect_Create with undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_CREATE_SUPPLEMENT_0100', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result:undefined = testNapi.OHImageEffectCreateSupplement();
+      console.info(TAG,'Success',result);
+      expect(result).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPPLEMENT_0100
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPPLEMENT_0100
+     * @tc.desc   OH_ImageEffect_AddFilter with undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_ADD_FILTER_SUPPLEMENT_0100', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result:undefined = testNapi.OHImageEffectAddFilterSupplement();
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPPLEMENT_0100
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPPLEMENT_0100
+     * @tc.desc   OH_ImageEffect_InsertFilter with undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_INSERT_FILTER_SUPPLEMENT_0100', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: undefined = testNapi.OHImageEffectInsertFilterSupplement();
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPPLEMENT_0100
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPPLEMENT_0100
+     * @tc.desc   OH_ImageEffect_ReplaceFilter with undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_REPLACE_FILTER_SUPPLEMENT_0100', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: undefined = testNapi.OHImageEffectReplaceFilterSupplement();
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_GET_FILTER_SUPPLEMENT_0100
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_GET_FILTER_SUPPLEMENT_0100
+     * @tc.desc   OH_ImageEffect_GetFilter with undefined
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_GET_FILTER_SUPPLEMENT_0100', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: undefined = testNapi.OHImageEffectGetFilterSupplement();
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertUndefined();
+    });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_SET_INPUT_TURE_SUPP_0100
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_SET_INPUT_TURE_SUPP_0100
+     * @tc.desc   Start the Effector.
+     * @tc.type   FUNCTION
+     * @tc.size   Function
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_SET_INPUT_TURE_SUPP_0100', Level.LEVEL0, () => {
+      let result: number = testNapi.OHImageEffectSetInputTextureSupp(1);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
+
+    /**
+     * @tc.number SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_SET_INPUT_TURE_SUPP_0200
+     * @tc.name   SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_SET_INPUT_TURE_SUPP_0200
+     * @tc.desc   Start the Effector.
+     * @tc.type   FUNCTION
+     * @tc.size   Function
+     * @tc.level  LEVEL0
+     */
+    it('SUB_IMAGE_EFFECT_OH_IMAGE_EFFECT_SET_INPUT_TURE_SUPP_0200', Level.LEVEL0, () => {
+      let result: number = testNapi.OHImageEffectSetInputTextureSupp(2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(EFFECT_ERROR_PARAM_INVALID);
+    });
   });
 }
