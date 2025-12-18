@@ -24,6 +24,7 @@
 #include <multimedia/image_framework/image_pixel_map_mdk.h>
 #include <multimedia/image_framework/image/picture_native.h>
 #include "ImageEffectsSuppTest.h"
+#include <multimedia/image_framework/image_mdk_common.h>
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
@@ -48,6 +49,12 @@
 #define CASE_INDEX_12 12
 #define CASE_INDEX_13 13
 #define CASE_INDEX_14 14
+#define CASE_INDEX_15 15
+#define CASE_INDEX_16 16
+#define CASE_INDEX_17 17
+#define CASE_INDEX_18 18
+#define CASE_INDEX_19 19
+#define CASE_INDEX_20 20
 #define IMAGE_EFFECT_2 2
 #define IMAGE_EFFECT_100 100
 #define IMAGE_EFFECT_100F 100.f
@@ -538,6 +545,85 @@ napi_value OHImageEffectSetOutputUriSupp(napi_env env, napi_callback_info info)
         break;
     }
     OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value OIRNdkErrCodeEmuSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    IRNdkErrCode code; 
+    switch (index) {
+        case CASE_INDEX_1:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_SEEK_ERR;
+            break;
+        case CASE_INDEX_2:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_PERMISSION_DENIED;
+            break;
+        case CASE_INDEX_3:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_DEAD_OBJECT;
+            break;
+        case CASE_INDEX_4:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_TIMED_OUT;
+            break;
+        case CASE_INDEX_5:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_TRACK_NOT_ALL_SUPPORTED;
+            break;
+        case CASE_INDEX_6:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_ADAPTER_INIT_FAILED;
+            break;
+        case CASE_INDEX_7:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_WRITE_PARCEL_FAIL;
+            break;
+        case CASE_INDEX_8:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_READ_PARCEL_FAIL;
+            break;
+        case CASE_INDEX_9:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_NO_AVAIL_BUFFER;
+            break;
+        case CASE_INDEX_10:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_INVALID_PARAM;
+            break;
+        case CASE_INDEX_11:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_CODEC_ADAPTER_NOT_EXIST;
+            break;
+        case CASE_INDEX_12:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_CREATE_CODEC_ADAPTER_FAILED;
+            break;
+        case CASE_INDEX_13:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_CODEC_ADAPTER_NOT_INIT;
+            break;
+        case CASE_INDEX_14:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_ZCODEC_CREATE_FAILED;
+            break;
+        case CASE_INDEX_15:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_ZCODEC_NOT_EXIST;
+            break;
+        case CASE_INDEX_16:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_JNI_CLASS_NOT_EXIST;
+            break;
+        case CASE_INDEX_17:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_JNI_METHOD_NOT_EXIST;
+            break;
+        case CASE_INDEX_18:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_JNI_NEW_OBJ_FAILED;
+            break;
+        case CASE_INDEX_19:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_JNI_COMMON_ERROR;
+            break;
+        case CASE_INDEX_20:
+            code = IRNdkErrCode::IMAGE_RESULT_MEDIA_DISTRIBUTE_NOT_SUPPORT;
+            break;
+        default:
+            break;
+    }
+
     napi_value ret;
     napi_create_int32(env, code, &ret);
     return ret;

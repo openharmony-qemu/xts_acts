@@ -130,6 +130,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
     DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
     DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
+    DESCRIPTOR("IRNdkErrCodeSupplement", IRNdkErrCodeSupplement),
+    DESCRIPTOR("OIRNdkErrCodeEmuSupp", OIRNdkErrCodeEmuSupp),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
