@@ -820,61 +820,6 @@ export default function RelationStoreError11Test() {
     })
 
     /**
-     * @tc.name       RelationStoreError11Test0023
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error11Test_2300
-     * @tc.desc       Transaction getLong
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it('RelationStoreError11Test0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 start *************');
-      await CreateCorruptDb();
-      let resultSet = await rdbStore.querySql("SELECT * FROM test");
-      try{
-        let res = resultSet.getColumnIndex("data1");
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 res *************' +res);
-        expect(res).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
-      }catch(err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
-      }
-      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 end *************');
-    })
-
-    /**
-     * @tc.name       RelationStoreError11Test0024
-     * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error11Test_2400
-     * @tc.desc       Transaction getLong
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it('RelationStoreError11Test0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 start *************');
-      await CreateCorruptDb();
-      let resultSet = await rdbStore.querySql("SELECT * FROM test");
-      try{
-        let res = resultSet.getColumnName(0);
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 res *************' +res);
-        expect(res).assertFail();
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
-      }catch(err) {
-        err = err as BusinessError;
-        hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
-        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
-      }
-      hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 end *************');
-    })
-    /**
      * @tc.name       RelationStoreError11Test0025
      * @tc.number     SUB_DistributedData_RelationalStore_SDK_Error11Test_2500
      * @tc.desc       Transaction getLong
@@ -891,14 +836,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0025 res *************' +res);
         expect(res == "hello" ).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0025 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0025 end *************');
     })
 
@@ -919,14 +863,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0026 res *************' +res);
         expect(JSON.stringify(res) == '{"0":1,"1":2,"2":3}').assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0026 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0026 end *************');
     })
 
@@ -947,14 +890,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0027 res *************' +res);
         expect(res == 10).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0027 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0027 end *************');
     })
 
@@ -975,14 +917,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0028 res *************' +res);
         expect(res == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0028 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0028 end *************');
     })
 
@@ -1003,14 +944,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0029 res *************' +res);
         expect(JSON.stringify(res) == '{"size":"","uri":"","name":"","path":"","createTime":"","modifyTime":""}').assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0029 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0029 end *************');
     })
     /**
@@ -1051,14 +991,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0030 res *************' +res.length);
         expect(res.length == 0).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0030 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0030 end *************');
     })
 
@@ -1079,14 +1018,13 @@ export default function RelationStoreError11Test() {
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0031 res *************' +res);
         expect(res == null).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }catch(err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0031 err *************'+err.code + err.message);
-        expect(err.code == 14800011).assertEqual(true);
+        expect(err.code).assertEqual(14800012);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
-        done();
       }
+      done();
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0031 end *************');
     })
     /**

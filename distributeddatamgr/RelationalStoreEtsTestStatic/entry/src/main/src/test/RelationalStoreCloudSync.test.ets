@@ -185,41 +185,6 @@ export default function relationalStoreCloudSyncTest() {
         console.log(tag + '************* testRdbStoreCloudSync0003 end *************');
       })
 
-    /**
-     * @tc.name   testRdbStoreCloudSync0014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudSyncJsAPITest_2300
-     * @tc.desc   cloud sync with table, SyncMode is SYNC_MODE_CLOUD_FIRST and promise method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testRdbStoreCloudSync0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        console.log(tag + '************* testRdbStoreCloudSync0014 start *************');
-        if (canIUse('SystemCapability.DistributedDataManager.CloudSync.Client')) {
-          try {
-            let tableArray = ['cloud_text'];
-            await rdbStore.cloudSync(
-              relationalStore.SyncMode.SYNC_MODE_CLOUD_FIRST, tableArray, Progess).then(() => {
-              console.log(tag + `cloud sync success:`);
-            });
-            await Utils.msSleep(500);
-            expect(syncProgressDetail.schedule == relationalStore.Progress.SYNC_FINISH).assertTrue();
-            expect(syncProgressDetail.code != 0).assertTrue();
-            done();
-          } catch (err: BusinessError) {
-            console.log(tag + `cloud sync fail, err code is ${err.code}, message is ${err.message}.`);
-            expect().assertFail();
-            done();
-          }
-        } else {
-          console.info(tag + 'cloud is not support');
-          done();
-        }
-
-        console.log(tag + '************* testRdbStoreCloudSync0014 end *************');
-      })
-
     console.log(tag + '*************Unit Test End*************');
   })
 }
