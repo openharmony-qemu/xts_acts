@@ -138,7 +138,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   queryGetColumnNames_001
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0001
      * @tc.desc   multi-table for query all column names by getColumnNames
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -177,7 +177,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   queryGetColumnNames_002
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0002
      * @tc.desc   getColumnNames test with resultSet already close.
      *            1. close resultSet and execute getColumnNames
      *            2. return 14800014
@@ -204,7 +204,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   queryGetColumnNames_003
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0003
      * @tc.desc   getColumnNames test with resultSet querySql no such table.
      *            1. not create table and execute getColumnNames
      *            2. return 14800021
@@ -229,7 +229,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   queryGetColumnNames_004
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0004
      * @tc.desc   getColumnNames test with resultSet querySql input create table sql.
      *            1. create table by querySql and execute getColumnNames
      *            2. return 14800019
@@ -254,7 +254,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   queryGetColumnNames_005
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0005
      * @tc.desc   getColumnNames test with resultSet querySql input sql size less then 3.
      *            1. SQL length is less than 3
      *            2. execute getColumnNames and return 14800001
@@ -279,7 +279,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   queryGetColumnNames_006
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_queryGetColumnNames_0006
      * @tc.desc   ResultSet.getColumnNames test with attach db querySql.
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -317,7 +317,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   lite_queryGetColumnNames_001
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_lite_queryGetColumnNames_0001
      * @tc.desc   multi-table querySqlWithoutRowCount with getColumnNames test, query all column names
      * @tc.size   MediumTest
      * @tc.type   Function
@@ -351,7 +351,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   lite_queryGetColumnNames_002
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_lite_queryGetColumnNames_0002
      * @tc.desc   liteResultSet.getColumnNames test with liteResultSet already close.
      *            1. close resultSet
      *            2. execute getColumnNames and return 14800014
@@ -379,7 +379,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   lite_queryGetColumnNames_003
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_lite_queryGetColumnNames_0003
      * @tc.desc   liteResultSet.getColumnNames test with querySqlWithoutRowCount no such table.
      *            1. not create table
      *            2. execute getColumnNames and return 14800021
@@ -404,7 +404,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   lite_queryGetColumnNames_004
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_lite_queryGetColumnNames_0004
      * @tc.desc   liteResultSet.getColumnNames test with querySqlWithoutRowCount input create table sql.
      *            1. create table by querySqlWithoutRowCount
      *            2. execute getColumnNames and return 14800021
@@ -429,7 +429,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   lite_queryGetColumnNames_005
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_lite_queryGetColumnNames_0005
      * @tc.desc   liteResultSet.getColumnNames test with querySqlWithoutRowCount input sql size less then 3.
      *            1. SQL length is less than 3
      *            2. execute getColumnNames and return 14800001
@@ -454,7 +454,7 @@ export default function RdbGetColumnNames() {
 
     /**
      * @tc.name   lite_queryGetColumnNames_006
-     * @tc.number
+     * @tc.number SUB_DistributedData_RelationalStore_lite_queryGetColumnNames_0006
      * @tc.desc   LiteResultSet.getColumnNames test with attach db querySqlWithoutRowCount.
      * @tc.size   MediumTest
      * @tc.type   Function
