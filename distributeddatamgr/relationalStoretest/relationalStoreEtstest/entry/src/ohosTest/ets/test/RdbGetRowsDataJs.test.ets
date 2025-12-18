@@ -616,7 +616,7 @@ export default function RdbGetRowsData() {
      * @tc.type   Function
      * @tc.level  Level 2
      */
-    it('lite_queryGetRowsData_001', 0, async  () => {
+    it('lite_queryGetRowsData_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async () => {
       console.log(TAG + '************* lite_queryGetRowsData_001 start *************');
       let liteResultSet: relationalStore.LiteResultSet | undefined;
       try {
