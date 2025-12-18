@@ -1872,6 +1872,11 @@ export default function windowTitleBarTest() {
           await sleep(300);
           isVisible =  subWindowClass.getWindowDecorVisible();
           console.info(msgStr + 'Succeeded in getWindowDecorVisible. Data: ' + isVisible);
+          if(!isFreeWindowMode){
+            expect(isVisible).assertEqual(false);
+          }else{
+            expect(isVisible).assertEqual(true);
+          }
           expect(isVisible).assertEqual(true);
           subWindowClass.setWindowDecorVisible(false);
           isVisible =  subWindowClass.getWindowDecorVisible();
@@ -2170,6 +2175,7 @@ export default function windowTitleBarTest() {
     it("testSetSupportedWindowModeswithIncorrectParameters", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testSetSupportedWindowModeswithIncorrectParameters";
       console.log(caseName + "begin");
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       let options: StartOptions = {
         supportWindowModes: [
           bundleManager.SupportWindowMode.SPLIT,
@@ -2190,10 +2196,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (!canIUseRes) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2209,10 +2215,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (!canIUseRes) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2228,10 +2234,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
-          expect(error.code).assertEqual(1300016);
-        } else {
+        if (!canIUseRes) {
           expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(1300016);
         }
         done();
       }

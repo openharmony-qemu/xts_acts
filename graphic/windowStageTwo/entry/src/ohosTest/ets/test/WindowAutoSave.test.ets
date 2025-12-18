@@ -229,7 +229,11 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }
+          else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -295,6 +299,9 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -353,7 +360,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -412,7 +422,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -470,7 +483,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -521,7 +537,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -553,7 +572,9 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（非沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          }
           // 拉起Ability
           windowStageStart = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -565,11 +586,18 @@ export default function windowAutoSaveTest() {
           console.info(`${message} isLayoutFullScreen = ${isLayoutFullScreen} , expect false`)
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
-
-          expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
-          //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
-          expect(isLayoutFullScreen).assertFalse()
-          done()
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertFalse()
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertEqual(false)
+            done()
+          }
+          
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
@@ -607,7 +635,9 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          }
           // 拉起Ability
           windowStageStart = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -618,11 +648,18 @@ export default function windowAutoSaveTest() {
           console.info(`${message} isLayoutFullScreen = ${isLayoutFullScreen} , expect false`)
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
-
-          expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
-          //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
-          expect(isLayoutFullScreen).assertFalse()
-          done()
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertFalse()
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertEqual(false)
+            done()
+          }
+          
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
@@ -681,6 +718,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
+            done();
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -746,6 +786,9 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -802,7 +845,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -858,7 +904,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -914,7 +963,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -963,7 +1015,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -997,7 +1052,10 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（非沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          }
+          
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -1047,7 +1105,10 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          }
+          
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -1200,7 +1261,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+          }else {
             expect().assertFail();
             done();
           }
@@ -1264,7 +1327,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+          }else {
             expect().assertFail();
             done();
           }
@@ -1314,7 +1379,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+          }else {
             expect().assertFail();
             done();
           }
@@ -1366,7 +1433,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+          }else {
             expect().assertFail();
             done();
           }
@@ -1418,7 +1487,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+          }else {
             expect().assertFail();
             done();
           }
@@ -1469,6 +1540,8 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
           } else {
             expect().assertFail();
             done();
@@ -1532,6 +1605,8 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
           } else {
             expect().assertFail();
             done();
@@ -1584,6 +1659,8 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
           } else {
             expect().assertFail();
             done();
@@ -1636,6 +1713,8 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
           } else {
             expect().assertFail();
             done();
@@ -1688,7 +1767,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+          }else {
             expect().assertFail();
             done();
           }
