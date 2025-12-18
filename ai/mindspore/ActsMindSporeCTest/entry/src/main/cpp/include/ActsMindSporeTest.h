@@ -22,7 +22,8 @@
 
 // Include all module headers
 #include "ActsMindSporeCommonTest.h"
-#include "ActsMindSporeTrainTest.h"
 #include "ActsMindSporeContextTest.h"
+#include "ActsMindSporeModelTest.h"
+#include "ActsMindSporeTrainTest.h"
 
 #endif // ACTSMINDSPORECTEST_ACTS_MINDSPORE_H

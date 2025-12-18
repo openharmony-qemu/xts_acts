@@ -1520,5 +1520,262 @@ int SUBAIMindSporeContextCreate0058()
     return OH_AI_STATUS_SUCCESS;
 }
 
+// OH_AI_DeviceInfoSetPriority，device为nullptr
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0059
+ * @tc.number SUBAIMindSporeContextCreate0059
+ * @tc.desc   SUBAIMindSporeContextCreate0059
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0059()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoSetPriority(nullptr, OH_AI_PRIORITY_MEDIUM);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoGetPriority，device不正确
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0060
+ * @tc.number SUBAIMindSporeContextCreate0060
+ * @tc.desc   SUBAIMindSporeContextCreate0060
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0060()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoHandle cpuDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+    OH_AI_DeviceInfoGetPriority(cpuDeviceInfo);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoGetPriority，device为nullptr
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0061
+ * @tc.number SUBAIMindSporeContextCreate0061
+ * @tc.desc   SUBAIMindSporeContextCreate0061
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0061()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoGetPriority(nullptr);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoAddExtension，device不正确
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0062
+ * @tc.number SUBAIMindSporeContextCreate0062
+ * @tc.desc   SUBAIMindSporeContextCreate0062
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0062()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoHandle cpuDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+    const char* modelName = "cache_model";
+    OH_AI_Status extensionRet = OH_AI_DeviceInfoAddExtension(cpuDeviceInfo, "ModelName", modelName, strlen(modelName));
+    ASSERT_EQ(extensionRet, OH_AI_STATUS_LITE_ERROR);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoAddExtension，device为nullptr
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0063
+ * @tc.number SUBAIMindSporeContextCreate0063
+ * @tc.desc   SUBAIMindSporeContextCreate0063
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0063()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    const char* modelName = "cache_model";
+    OH_AI_Status extensionRet = OH_AI_DeviceInfoAddExtension(nullptr, "ModelName", modelName, strlen(modelName));
+    ASSERT_EQ(extensionRet, OH_AI_STATUS_LITE_NULLPTR);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoAddExtension，name不在白名单内
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0064
+ * @tc.number SUBAIMindSporeContextCreate0064
+ * @tc.desc   SUBAIMindSporeContextCreate0064
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0064()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoHandle nnrtDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
+    bool gotId = AddFirstNpuDeviceId(nnrtDeviceInfo);
+    ASSERT_EQ(gotId, true);
+    const char* modelName = "cache_model";
+    OH_AI_Status extensionRet = OH_AI_DeviceInfoAddExtension(nnrtDeviceInfo, "aaa", modelName, strlen(modelName));
+    ASSERT_EQ(extensionRet, OH_AI_STATUS_LITE_ERROR);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoAddExtension，name为空
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0065
+ * @tc.number SUBAIMindSporeContextCreate0065
+ * @tc.desc   SUBAIMindSporeContextCreate0065
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0065()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return -1;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoHandle nnrtDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
+    bool gotId = AddFirstNpuDeviceId(nnrtDeviceInfo);
+    ASSERT_EQ(gotId, true);
+    const char* modelName = "cache_model";
+    OH_AI_Status extensionRet = OH_AI_DeviceInfoAddExtension(nnrtDeviceInfo, nullptr, modelName, strlen(modelName));
+    ASSERT_EQ(extensionRet, OH_AI_STATUS_LITE_NULLPTR);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_DeviceInfoAddExtension，value为空
+/**
+ * @tc.name   SUBAIMindSporeContextCreate0066
+ * @tc.number SUBAIMindSporeContextCreate0066
+ * @tc.desc   SUBAIMindSporeContextCreate0066
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextCreate0066()
+{
+    if (!IsNPU()) {
+        OHPrintf("NNRt is not NPU, skip this test");
+        return ActsMindSporeValues::NPU_SKIP_STATUS;
+    }
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_DeviceInfoHandle nnrtDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
+    bool gotId = AddFirstNpuDeviceId(nnrtDeviceInfo);
+    ASSERT_EQ(gotId, true);
+    const char* modelName = "cache_model";
+    OH_AI_Status extensionRet = OH_AI_DeviceInfoAddExtension(nnrtDeviceInfo, "ModelName", nullptr, strlen(modelName));
+    ASSERT_EQ(extensionRet, OH_AI_STATUS_LITE_NULLPTR);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 正常场景：多输入模型，测试ContextDestroy接口，Context在model释放之前释放
+/**
+ * @tc.name   SUBAIMindSporeContextDestroy0001
+ * @tc.number SUBAIMindSporeContextDestroy0001
+ * @tc.desc   SUBAIMindSporeContextDestroy0001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextDestroy0001()
+{
+    OHPrintf("==========Init Context==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    OHPrintf("==========Create model==========\n");
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OHPrintf("==========Build model==========\n");
+    OH_AI_Status ret =
+        OH_AI_ModelBuildFromFile(model, FilePath("ml_headpose_pb2tflite.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
+    OHPrintf("==========build model return code:%d\n", ret);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    OHPrintf("==========GetInputs==========\n");
+    OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
+    ASSERT_NE(inputs.handle_list, nullptr);
+    FillInputsData(inputs, "ml_headpose_pb2tflite", false);
+    OHPrintf("==========Model Predict==========\n");
+    OH_AI_TensorHandleArray outputs;
+    ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    CompareResult(
+        outputs, "ml_headpose_pb2tflite", ActsMindSporeValues::STRICT_TOLERANCE, ActsMindSporeValues::STRICT_TOLERANCE);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 异常场景：多输入模型，测试ContextDestroy接口，Context在model释放之后释放
+/**
+ * @tc.name   SUBAIMindSporeContextDestroy0002
+ * @tc.number SUBAIMindSporeContextDestroy0002
+ * @tc.desc   SUBAIMindSporeContextDestroy0002
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeContextDestroy0002()
+{
+    OHPrintf("==========Init Context==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    OHPrintf("==========Create model==========\n");
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OHPrintf("==========Build model==========\n");
+    OH_AI_Status ret =
+        OH_AI_ModelBuildFromFile(model, FilePath("ml_headpose_pb2tflite.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
+    OHPrintf("==========build model return code:%d\n", ret);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    OHPrintf("==========GetInputs==========\n");
+    OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
+    ASSERT_NE(inputs.handle_list, nullptr);
+    FillInputsData(inputs, "ml_headpose_pb2tflite", false);
+    OHPrintf("==========Model Predict==========\n");
+    OH_AI_TensorHandleArray outputs;
+    ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    CompareResult(
+        outputs, "ml_headpose_pb2tflite", ActsMindSporeValues::STRICT_TOLERANCE, ActsMindSporeValues::STRICT_TOLERANCE);
+    OH_AI_ModelDestroy(&model);
+    OH_AI_ContextDestroy(&context);
+    return OH_AI_STATUS_SUCCESS;
+}
+
 } // namespace MindSpore
 }
