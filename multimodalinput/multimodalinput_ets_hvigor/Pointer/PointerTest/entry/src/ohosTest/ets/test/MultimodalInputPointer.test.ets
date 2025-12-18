@@ -1716,6 +1716,33 @@ export default function MultimodalInputPointerTest() {
     });    
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_Style_0300
+     * @tc.number SUB_MMI_Input_Api_Pointer_Style_0300
+     * @tc.desc   Test Pointer interface PointerStyle 45-51 and -100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_Style_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_Style_0300";
+      try {
+        console.info(`${caseName} enter`);
+        expect(pointer.PointerStyle.RUNNING_LEFT).assertEqual(45);
+        expect(pointer.PointerStyle.RUNNING_RIGHT).assertEqual(46);
+        expect(pointer.PointerStyle.AECH_DEVELOPER_DEFINED_ICON).assertEqual(47);
+        expect(pointer.PointerStyle.LASER_CURSOR).assertEqual(49);
+        expect(pointer.PointerStyle.LASER_CURSOR_DOT).assertEqual(50);
+        expect(pointer.PointerStyle.LASER_CURSOR_DOT_RED).assertEqual(51);
+        expect(pointer.PointerStyle.DEVELOPER_DEFINED_ICON).assertEqual(-100);
+        done();
+      } catch (error) {
+        console.info(`${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(false).assertTrue();
+        done();
+      }
+    }); 
+    
+    /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_RightClickType_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_RightClickType_0100
      * @tc.desc   Test Pointer interface RightClickType TOUCHPAD_TWO_FINGER_TAP_OR_RIGHT_BUTTON
