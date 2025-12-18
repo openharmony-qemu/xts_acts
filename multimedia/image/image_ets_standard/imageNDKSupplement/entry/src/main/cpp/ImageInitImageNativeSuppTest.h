@@ -32,4 +32,4 @@ napi_value OHAuxiliaryPictureNativeSetMetadataSupp(napi_env env, napi_callback_i
 #ifdef __cplusplus
 }
 #endif
-#endif 
+#endif
