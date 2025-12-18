@@ -36,14 +36,16 @@ const FIREWALL_RULE: networkManager.FirewallRule = {
   appUid: '9696',
   direction: networkManager.Direction.OUTPUT,
   action: networkManager.Action.DENY,
-  protocol: networkManager.Protocol.UDP
+  protocol: networkManager.Protocol.UDP,
+  logType: networkManager.LogType.NFLOG
 }
 
 const FIREWALL_RULE2: networkManager.FirewallRule = {
   srcAddr: '192.168.44.1-192.188.33.77',
   direction: networkManager.Direction.INPUT,
   action: networkManager.Action.ALLOW,
-  protocol: networkManager.Protocol.TCP
+  protocol: networkManager.Protocol.TCP,
+  logType: networkManager.LogType.NFLOG
 }
 
 const FIREWALL_RULE3: networkManager.FirewallRule = {
@@ -52,7 +54,8 @@ const FIREWALL_RULE3: networkManager.FirewallRule = {
   destPort: '6161',
   direction: networkManager.Direction.INPUT,
   action: networkManager.Action.ALLOW,
-  protocol: networkManager.Protocol.ICMP
+  protocol: networkManager.Protocol.ICMP,
+  logType: networkManager.LogType.NFLOG
 }
 
 const FIREWALL_RULE4: networkManager.FirewallRule = {
@@ -62,7 +65,8 @@ const FIREWALL_RULE4: networkManager.FirewallRule = {
   appUid: '9696',
   direction: networkManager.Direction.INPUT,
   action: networkManager.Action.ALLOW,
-  protocol: networkManager.Protocol.ALL
+  protocol: networkManager.Protocol.ALL,
+  logType: networkManager.LogType.NFLOG
 }
 
 const FIREWALL_RULE5: networkManager.FirewallRule = {
@@ -73,7 +77,8 @@ const FIREWALL_RULE5: networkManager.FirewallRule = {
   appUid: '9696',
   direction: networkManager.Direction.FORWARD,
   action: networkManager.Action.REJECT,
-  protocol: networkManager.Protocol.UDP
+  protocol: networkManager.Protocol.UDP,
+  logType: networkManager.LogType.NFLOG
 }
 
 const FIREWALL_RULE6: networkManager.FirewallRule = {
@@ -83,32 +88,37 @@ const FIREWALL_RULE6: networkManager.FirewallRule = {
   destPort: '8080',
   direction: networkManager.Direction.FORWARD,
   action: networkManager.Action.REJECT,
-  protocol: networkManager.Protocol.UDP
+  protocol: networkManager.Protocol.UDP,
+  logType: networkManager.LogType.NFLOG
 }
 
 const DOMAIN_FILTER_RULE: networkManager.DomainFilterRule = {
   domainName: 'www.example.com',
   appUid: '9696',
-  action: networkManager.Action.DENY
+  action: networkManager.Action.DENY,
+  logType: networkManager.LogType.NFLOG
 };
 
 const DOMAIN_FILTER_RULE2: networkManager.DomainFilterRule = {
   domainName: 'www.6666.com',
   appUid: '9797',
-  action: networkManager.Action.ALLOW
+  action: networkManager.Action.ALLOW,
+  logType: networkManager.LogType.NFLOG
 };
 
 const DOMAIN_FILTER_RULE3: networkManager.DomainFilterRule = {
   domainName: 'www.example.com',
   appUid: '9696',
   direction: networkManager.Direction.FORWARD,
-  action: networkManager.Action.REJECT
+  action: networkManager.Action.REJECT,
+  logType: networkManager.LogType.NFLOG
 };
 
 const DOMAIN_FILTER_RULE4: networkManager.DomainFilterRule = {
   domainName: 'www.example.com',
   direction: networkManager.Direction.FORWARD,
-  action: networkManager.Action.REJECT
+  action: networkManager.Action.REJECT,
+  logType: networkManager.LogType.NFLOG
 };
 
 const ADD_APN_INFO: Record<string, string> = {
