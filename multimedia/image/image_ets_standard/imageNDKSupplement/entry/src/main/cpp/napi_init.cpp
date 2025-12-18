@@ -13,20 +13,25 @@
  * limitations under the License.
  */
 
+#include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImagePixelMapTest.h"
 #include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
+#include "ImageEffectFilterSuppTest.h"
+#include "ImageEffectFilterRenderSuppTest.h"
+#include "ImageFrameworkPixelMapNativeCreateSuppTest.h"
+#include "ImageSourceNativeCreateTest.h"
 #include "OHEffectBufferInfoSetTimestampTest.h"
 #include "OHEffectBufferInfoGetTimestampTest.h"
 #include "OHEffectBufferInfoSetTextureIdTest.h"
 #include "OHEffectBufferInfoGetTextureIdTest.h"
-#include "ImageEffectFilterSuppTest.h"
 #include "OHImageErrorSuppTest.h"
 #include "OHEffectFilterInfoSupplementTest.h"
 #include "ImagePackerCreateTest.h"
-
+#include "ImageEffectsSuppTest.h"
+#include "ImageSourceTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -49,6 +54,14 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHEffectFilterRegisterSupp", OHEffectFilterRegisterSupp),
     DESCRIPTOR("OHEffectFilterLookupFilterInfoSupp", OHEffectFilterLookupFilterInfoSupp),
     DESCRIPTOR("OHEffectFilterReleaseSupp", OHEffectFilterReleaseSupp),
+    DESCRIPTOR("OHEffectFilterRenderSupp", OHEffectFilterRenderSupp),
+    DESCRIPTOR("OHEffectFilterRenderWithTextureIdSupp", OHEffectFilterRenderWithTextureIdSupp),
+    DESCRIPTOR("OHPixelmapNativeCreateScaledPixelMapSupp", OHPixelmapNativeCreateScaledPixelMapSupp),
+    DESCRIPTOR("OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp",
+               OHPixelmapNativeCreateScaledPixelMapWithAntiAliasingSupp),
+    DESCRIPTOR("OHPixelmapNativeTranslateSupp", OHPixelmapNativeTranslateSupp),
+    DESCRIPTOR("OHImageSourceNativeCreateFromUriSupp", OHImageSourceNativeCreateFromUriSupp),
+    DESCRIPTOR("OHImageSourceNativeCreateFromFdSupp", OHImageSourceNativeCreateFromFdSupp),
     DESCRIPTOR("OHImageAlphaTypeSupp", OHImageAlphaTypeSupp),
     DESCRIPTOR("OHImageErrorCodeSupp", OHImageErrorCodeSupp),
     DESCRIPTOR("OHImageScaleModeSupp", OHImageScaleModeSupp),
@@ -79,8 +92,29 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelMapGetImageInfoTest", PixelMapGetImageInfoTest),
     DESCRIPTOR("PixelMapAccessPixelsTest", PixelMapAccessPixelsTest),
     DESCRIPTOR("PixelMapUnAccessPixelsTest", PixelMapUnAccessPixelsTest),
+    DESCRIPTOR("OHImageEffectConfigureSupp", OHImageEffectConfigureSupp),
+    DESCRIPTOR("OHImageEffectSetOutputSurfaceSupp", OHImageEffectSetOutputSurfaceSupp),
+    DESCRIPTOR("OHImageEffectGetInputSurfaceSupp", OHImageEffectGetInputSurfaceSupp),
+    DESCRIPTOR("OHImageEffectSetInputPixelmapSupp", OHImageEffectSetInputPixelmapSupp),
+    DESCRIPTOR("savePixelMapForPathSupp", savePixelMapForPathSupp),
+    DESCRIPTOR("OHImageEffectSaveSupp", OHImageEffectSaveSupp),
+    DESCRIPTOR("OHImageEffectEmuSupp", OHImageEffectEmuSupp),
+    DESCRIPTOR("CreatePixelMap", CreatePixelMap),
+    DESCRIPTOR("CreatOutPixelMapForPathSupp", CreatOutPixelMapForPathSupp),
+    DESCRIPTOR("OHImageEffectSetOutputPixelmapSupp", OHImageEffectSetOutputPixelmapSupp),
+    DESCRIPTOR("OHImageEffectSetInputUriSupp", OHImageEffectSetInputUriSupp),
+    DESCRIPTOR("OHImageEffectSetOutputUriSupp", OHImageEffectSetOutputUriSupp),
+    DESCRIPTOR("TestAccessPixels", TestAccessPixels),
+    DESCRIPTOR("TestUnAccessPixels", TestUnAccessPixels),
+    DESCRIPTOR("ImageSourceCreatTest", ImageSourceCreatTest),
+    DESCRIPTOR("ImageSourceGetSupportedFormatsTest", ImageSourceGetSupportedFormatsTest),
+    DESCRIPTOR("ImageSourceCreateIncrementalTest", ImageSourceCreateIncrementalTest),
+    DESCRIPTOR("ImageSourceInitNativeSuppTest", ImageSourceInitNativeSuppTest),
+    DESCRIPTOR("PixelmapNativeGetNativeBuffer", PixelmapNativeGetNativeBuffer),
+    DESCRIPTOR("TestImageScale", TestImageScale),
+    DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
+    DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
 };
-
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
     size_t mergedLength = sizeof(desc1) / sizeof(desc1[0]);
