@@ -54,6 +54,7 @@ import sendablePhotoAccessHelperGetAlbumsTest from './photoAccess/SendablePhotoA
 import sendablePhotoAccessHelperCreateAssetTest from './photoAccess/SendablePhotoAccessHelperPhotoTypeEnum.test';
 import PhotoAccessHelperRequestPhotoUrisReadPermissionSupp
   from './photoAccess/PhotoAccessHelperRequestPhotoUrisReadPermission.test';
+import PhotoAccessAPIEnumSupplementTest from "./photoAccess/PhotoAccessAPIEnumSupplement.test";
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -105,6 +106,6 @@ export default function testsuite() {
   PhotoAccessHelperEnumAlbumKeys();
   sendablePhotoAccessHelperGetAlbumsTest();
   sendablePhotoAccessHelperCreateAssetTest();
-
   PhotoAccessHelperRequestPhotoUrisReadPermissionSupp();
+  PhotoAccessAPIEnumSupplementTest();
 }

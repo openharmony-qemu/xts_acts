@@ -31,6 +31,7 @@ import cameraSetFrameRateTest from './camera/CameraSetFrameRateTest.test';
 import cameraCanPreconfigTest from "./camera/CameraPreconfigFIR.test";
 import cameraCanPreconfigSecTest from "./camera/CameraPreconfigSec.test";
 import cameraEnumTestSupp from './camera/CameraEnum.test';
+import CameraAPIEnumSupplementTest from "./camera/CameraAPIEnumSupplement.test";
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -65,4 +66,5 @@ export default function testsuite() {
   cameraCanPreconfigTest();
   cameraCanPreconfigSecTest();
   cameraEnumTestSupp();
+  CameraAPIEnumSupplementTest();
 }
