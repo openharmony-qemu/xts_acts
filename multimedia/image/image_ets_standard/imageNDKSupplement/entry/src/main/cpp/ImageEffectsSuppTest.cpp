@@ -558,7 +558,7 @@ napi_value OIRNdkErrCodeEmuSupp(napi_env env, napi_callback_info info)
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
 
-    IRNdkErrCode code; 
+    IRNdkErrCode code;
     switch (index) {
         case CASE_INDEX_1:
             code = IRNdkErrCode::IMAGE_RESULT_MEDIA_SEEK_ERR;

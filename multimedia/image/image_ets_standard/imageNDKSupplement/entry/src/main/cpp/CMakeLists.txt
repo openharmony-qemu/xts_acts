@@ -34,8 +34,7 @@ add_library(imageEffect SHARED
     ImagePackerCreateTest.cpp
     ImagePixelMapTest.cpp
     ImageInitImageNativeSuppTest.cpp
-    ImagePictureNativeTest.cpp
-    ImageReceiverNative.cpp
+    ImageReceiverNativeTest.cpp
     PixleMapNativeTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
