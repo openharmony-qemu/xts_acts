@@ -66,7 +66,7 @@ struct ResponseRegionListExample {
         .height('5%')
         .id('button4')
         .responseRegionList([{
-          tool: ResponseRegionSupportedTool.PEN
+          tool: ResponseRegionSupportedTool.PEN && ResponseRegionSupportedTool.ALL
         }])
         .onClick(() => {
           this.text = 'button4 clicked'
@@ -76,7 +76,7 @@ struct ResponseRegionListExample {
         .height('5%')
         .id('button5')
         .responseRegionList([{
-          tool: ResponseRegionSupportedTool.MOUSE
+          tool: ResponseRegionSupportedTool.MOUSE && ResponseRegionSupportedTool.ALL
         }])
         .onClick(() => {
           this.text = 'button5 clicked'
