@@ -27,9 +27,12 @@ import OHImagePixelMapCreateTest from './ImagePixelMapCreateTest.test';
 import OHImagePackerCreateTest from './OHImagePackerCreateTest.test';
 import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
 import ImageInitImageNativeSuppTest from './ImageInitImageNativeSupp.test';
+import ImageReceiverNativeTest from './ImageReceiverNativeTest.test';
+import PixelMapNativeTest from './PixelMapNativeTest.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
+import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -47,7 +50,10 @@ export default function testsuite() {
   OHImagePackerCreateTest();
   OHImagePixelMapCreateTest();
   ImageInitImageNativeSuppTest();
+  ImageReceiverNativeTest();
+  PixelMapNativeTest();
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
+  OHPixelMapSupplementTest();
 }

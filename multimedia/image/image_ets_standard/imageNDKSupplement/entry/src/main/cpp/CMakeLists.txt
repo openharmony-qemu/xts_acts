@@ -27,6 +27,8 @@ add_library(imageEffect SHARED
     ImageEffectFilterSuppTest.cpp
     OHImageErrorSuppTest.cpp
     ImageEffectSuppTest.cpp
+    OHEffectFilterInfoSupplementTest.cpp
+    ImageEffectSuppTest.cpp
     ImageEffectFilterRenderSuppTest.cpp
     ImageFrameworkPixelMapNativeCreateSuppTest.cpp
     ImageSourceNativeCreateTest.cpp
@@ -34,8 +36,12 @@ add_library(imageEffect SHARED
     ImagePackerCreateTest.cpp
     ImagePixelMapTest.cpp
     ImageInitImageNativeSuppTest.cpp
+    ImagePictureNativeTest.cpp
+    ImageReceiverNative.cpp
+    PixleMapNativeTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
+    OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp)
 
 find_library(
@@ -57,6 +63,7 @@ find_library(
 
 target_link_libraries(imageEffect PUBLIC
     libimage_ndk.z.so
+    libimage_receiver_ndk.z.so
     libace_napi.z.so
     libhilog_ndk.z.so
     libimage_effect.so
@@ -71,6 +78,9 @@ target_link_libraries(imageEffect PUBLIC
     libimage_packer_ndk.z.so
     libimage_source_ndk.z.so
     libpicture.so
+    libimage_receiver.so
+    libimage_ndk.z.so
     ${EGL-lib}
     ${GLES-lib}
+    libmedia_asset_manager.so
 )
