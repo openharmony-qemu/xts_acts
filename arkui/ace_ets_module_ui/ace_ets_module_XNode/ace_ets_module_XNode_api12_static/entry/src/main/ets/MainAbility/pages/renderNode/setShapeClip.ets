@@ -72,9 +72,9 @@ struct SetShapeClip {
             top: 0,
             bottom: 150
           });
-          renderNode.shapeClip = shapeClip; //设置的值是值是空的{"rect":{}，期望的是"rect":{"left":0,"right":150,"top":0,"bottom":150}
+          renderNode.shapeClip = shapeClip; //设置的值是值是rect\":{\"top\":0,\"left\":0,\"right\":150,\"bottom\":150},，期望的是"rect":{"left":0,"right":150,"top":0,"bottom":150}
           this.myShapeClip = "" + JSON.stringify(renderNode.shapeClip)
-          console.log('+++++++++++++++',JSON.stringify(renderNode.shapeClip)) //值是空的{"rect":{},"roundRect":null,"circle":null,"oval":null,"path":null}
+          console.log('+++++++++++++++',JSON.stringify(renderNode.shapeClip)) //值是rect\":{\"top\":0,\"left\":0,\"right\":150,\"bottom\":150},
         })
       Button('setRoundRectShape')
         .onClick((e:ClickEvent) => {

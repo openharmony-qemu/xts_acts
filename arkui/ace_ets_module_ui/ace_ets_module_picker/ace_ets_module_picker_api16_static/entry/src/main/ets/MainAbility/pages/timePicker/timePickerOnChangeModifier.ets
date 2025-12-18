@@ -27,10 +27,10 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 struct TimePickerPage {
   @State isMilitaryTime: boolean = false
   private selectedTime: Date = new Date('2022-07-22T10:00:00')
-  @State hour: number = 10
-  @State minute: number = 0
+  @State hour: int = 10
+  @State minute: int = 0
   @State onChangeOff: string = 'false'
-  messageManager: MessageManager<boolean|Date|number> = new MessageManager<boolean|Date|number>()
+  messageManager: MessageManager = new MessageManager()
   @State enableCascade: boolean | undefined | null = true
   @State modifier :TimePickerModifier = new TimePickerModifier().onChange((value: TimePickerResult) => {
     if (value.hour >= 0) {
@@ -40,27 +40,23 @@ struct TimePickerPage {
   })
   onPageShow() {
     console.info('TimePicker onPageShow')
-    // globalThis.value = {
-    //   name: 'messageManager', message: this.messageManager
-    //
+    AppStorage.setOrCreate<MessageManager>('messageManager', this.messageManager )
+    // let callback: Callback = (message: Message ) => {
+    //   console.error('message = ' + message.name + '--' + message.value)
+    //   if (message.name == 'isMilitaryTime') {
+    //     this.isMilitaryTime = message.value as boolean
+    //   }
+    //   if (message.name == 'selectedTime') {
+    //     this.selectedTime = message.value as Date
+    //   }
+    //   if (message.name == 'hour') {
+    //     this.hour = message.value as int
+    //   }
+    //   if (message.name == 'minute') {
+    //     this.minute = message.value as int
+    //   }
     // }
-    AppStorage.setOrCreate<MessageManager<boolean|Date|number>>('messageManager', this.messageManager )
-    let callback: Callback<boolean|Date|number> = (message: Message<boolean|Date|number> ) => {
-      console.error('message = ' + message.name + '--' + message.value)
-      if (message.name == 'isMilitaryTime') {
-        this.isMilitaryTime = message.value as boolean
-      }
-      if (message.name == 'selectedTime') {
-        this.selectedTime = message.value as Date
-      }
-      if (message.name == 'hour') {
-        this.hour = message.value as number
-      }
-      if (message.name == 'minute') {
-        this.minute = message.value as number
-      }
-    }
-    this.messageManager.registerCallback(callback)
+    // this.messageManager.registerCallback(callback)
   }
 
   build() {

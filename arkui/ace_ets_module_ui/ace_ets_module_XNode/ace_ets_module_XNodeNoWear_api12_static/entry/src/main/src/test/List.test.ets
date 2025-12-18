@@ -16,5 +16,5 @@
 import APINodeContentTest from './FrameNodeTest/APINodeContentTest.test';
 
 export default function testsuite() {
-  APINodeContentTest(); // SDK11.22 Failure: 1, Error: 0, Pass: 1 execute timeout 1500ms, error in beforeAll function
+  APINodeContentTest(); // SDK12.1 Pass2 SDK12.9 失败一个
 }

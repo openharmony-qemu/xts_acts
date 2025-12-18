@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -35,9 +35,9 @@ export default function SystemTransition() {
   describe('SystemTransition', () => {
     beforeAll(() => {
       console.info("SystemTransition beforeEach start");
-      
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info('SystemTransition beforeEach start');

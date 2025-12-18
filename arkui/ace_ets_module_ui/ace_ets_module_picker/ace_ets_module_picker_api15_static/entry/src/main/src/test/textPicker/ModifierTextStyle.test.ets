@@ -38,7 +38,7 @@ export default function ModifierTextStyleTest() {
     beforeAll(() => {
       console.info("ModifierTextStyleTest beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.picker.api15.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {
@@ -75,8 +75,10 @@ export default function ModifierTextStyleTest() {
       console.info('[ModifierTextStyleTest_static_0100]:' + JSON.stringify(strJson));
       let obj = JSON.parseJsonElement(strJson);
       console.info('[ModifierTextStyleTest_static_0100 obj $attrs]:' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-      console.info('[ModifierTextStyleTest_static_0100 obj $attrs.defaultTextStyle]:' +
-      JSON.stringify(obj.getElement('$attrs').getElement('defaultTextStyle')));
+      console.info('[ModifierTextStyleTest_static_0100 obj $attrs.defaultTextStyle]:' + JSON.stringify(obj.getElement('$attrs').getElement('defaultTextStyle')));
+      console.info('[ModifierTextStyleTest_static_0100 obj $attrs.defaultTextStyle.minFontSize:' + obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize'));
+      console.info('[ModifierTextStyleTest_static_0100 obj $attrs.defaultTextStyle.maxFontSize:' + obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize'));
+      console.info('[ModifierTextStyleTest_static_0100 obj $attrs.defaultTextStyle.overflow:' + obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow'));
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('minFontSize')).assertEqual('28.00fp');
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');
       expect(obj.getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');

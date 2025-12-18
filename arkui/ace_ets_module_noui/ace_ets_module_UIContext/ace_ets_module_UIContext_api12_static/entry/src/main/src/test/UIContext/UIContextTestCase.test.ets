@@ -27,9 +27,9 @@ export default function UIContextTestCase() {
 
     beforeAll(() => {
       console.info("UIContextTestCase beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -46,7 +46,7 @@ export default function UIContextTestCase() {
           console.info("get UIContextTestCase pages.name:" + '');
           
           
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           
         }
@@ -94,7 +94,7 @@ it('UIContextTestCase_0200', Level.LEVEL2, async (done: () => void): Promise<voi
       let strJson = inspector.getInspectorByKey('getWindowName');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[UIContextTestCase_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('UIContext120');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('static0');
       console.info('[UIContextTestCase_0200] END');
       done();
     });

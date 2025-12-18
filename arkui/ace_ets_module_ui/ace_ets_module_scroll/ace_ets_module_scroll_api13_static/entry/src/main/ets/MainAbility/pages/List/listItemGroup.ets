@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import {UIContext} from '@ohos.arkui.UIContext';
-import { NodeController, FrameNode, ComponentContent, typeNode } from '@kit.ArkUI';
+import { NodeController,  ComponentContent } from '@ohos.arkui.node';
 import common from '@ohos.app.ability.common';
 import { Entry, Column, Component, Flex, ClickEvent, Scroller, Color,ResourceColor, OnScrollFrameBeginHandlerResult, Row,
   Image, TextAlign, Scroll, ScrollState, ForEach, EdgeEffect, FontWeight, Margin, Length, LocalizedMargin, FontStyle, Builder,

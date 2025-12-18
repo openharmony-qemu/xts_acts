@@ -15,5 +15,5 @@
  */
 import GaugeContentModifier from './component/GaugeContentModifier.test'
 export default function testsuite() {
-  GaugeContentModifier() // 10.22 pass(18)
+  GaugeContentModifier() // 11.22 pass(18)
 }

@@ -33,16 +33,16 @@ import webJsunit from './webTest/WebJsunitApi9.test'
 import webViewPageattrLackJsunit from './webTest/webviewPageLackattr.test'
 
 export default function testsuite() {
-  // AppStorageJsunit();  // SDK11.19 pass
-  // basicJsunit();  //SDK11.19 pass
-  // globalJsunit1(); // SDK11.22  Pass: 3
-  // ResourceColor();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939  expect #FF445566 equals #FF998877
-  // ResourceFloat();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939   expect 320.00vp equals 40.00vp
-  // ResourceInteger();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939   expect 10.00fp equals 20.00fp expect 10.00fp equals 20.00fp
-  // ResourcePlural();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939  expect 100 apples equals 100 apples2
-  // ResourceStrarray();  //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939  expect ["icon:,text:11","icon:,text:22"] equals ["icon:,text:111","icon:,text:222"]
-  // ResourceString(); //SDK11.22 Failure: 1, Pass: 1 lazyForEach SR20250717371939   expect 1.00fp equals 2.00fp
-  systemAppJsunit();  //  SDK11.22  App.getInfo() 外领域 9个用例
+  AppStorageJsunit();  // SDK11.19 pass
+  basicJsunit();  //SDK11.19 pass
+  globalJsunit1(); // SDK11.22  Pass: 3
+  ResourceColor();  //SDK11.28 pass 2
+  ResourceFloat();  //SDK11.28 pass 2
+  ResourceInteger();  //SDK11.28 pass 2
+  ResourcePlural();  //SDK11.28 pass 2
+  ResourceStrarray(); //SDK11.28 pass 2
+  ResourceString(); //SDK11.28 pass 2
+  // systemAppJsunit();  //  SDK11.22  App.getInfo() 外领域 9个用例
   // webEditTextJsunit(); // 0 web相关，不用管
   // web9Jsunit(); // 3  pass  web相关，不用管
   // webJsunit();  // 31   web相关，不用管

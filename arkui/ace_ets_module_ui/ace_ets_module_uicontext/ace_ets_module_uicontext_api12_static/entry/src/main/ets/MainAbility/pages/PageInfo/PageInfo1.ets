@@ -39,7 +39,7 @@ struct PageInfo1 {
   }
 
   @Builder
-  PageMap(name: string, param:Object) {
+  PageMap(name: string, param:Object|null|undefined) {
     if (name === 'pageOne') {
       this.pageOneTmp()
     }
@@ -50,18 +50,13 @@ struct PageInfo1 {
       Navigation(this.pageInfos) {
         Button('pushPath pageOne')
           .onClick((e:ClickEvent)=>{
-            // this.pageInfos.pushPath({name: 'pageOne', param: 'str'});  //报错说NavPathInfo需要new
             this.pageInfos.pushPath(new NavPathInfo( 'pageOne', 'str'));
           })
           .id('PageInfo1_pageOne')
       }.id('navigation')
       .mode(NavigationMode.Stack)
       .title('NavIndex')
-      // .navDestination(this.PageMap)
-      .navDestination(():void=> {
-        this.PageMap
-      })
-      // 源码为  navDestination(this.PageMap) 报错 Type '(name: String, param: Object) => void' is not compatible with type '(name: String, param: Object|null|undefined) => void|undefined' at index 1
+      .navDestination(this.PageMap)
     }
   }
 }
@@ -73,19 +68,24 @@ struct MyComponent {
 
   build() {
     Column() {
+      console.log('++++++++++MyComponent')
       Text('PageInfoExample')
       Text(this.text1).id('PageInfo1_text1')
       Text(this.text2).id('PageInfo1_text2')
       Button('click')
         .id('PageInfo1_get')
         .onClick((e:ClickEvent) => {
+          console.log('+++++++++++1')
           const uiContext: UIContext = this.getUIContext();
+          console.log('+++++++++++2')
           const uniqueId: number = this.getUniqueId();
-          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId as Int);
+          console.log('+++++++++++3')
+          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId as int);
+          console.log('+++++++++++4')
           this.text1 = pageInfo.routerPageInfo?.name + ''
           this.text2 = pageInfo.navDestinationInfo?.name + ''
-          console.info('pageInfo: ' + JSON.stringify(pageInfo));
-          console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId as Int)));
+          // console.info('pageInfo: ' + JSON.stringify(pageInfo));
+          // console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId as int)));
         })
     }
     .width('100%')

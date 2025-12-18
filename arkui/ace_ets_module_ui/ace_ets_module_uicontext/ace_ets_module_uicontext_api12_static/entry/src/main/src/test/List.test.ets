@@ -23,11 +23,11 @@ import APIUIContextGetSync from './componentSnapshot/APIUIContextGetSync.test';
 import UIContextOnIdle from './OnIdle/UIContextOnIdle.test';
 
 export default function testsuite() {
-  // APIcomponentSnapshotGetSync();//componentSnapshot.getSync
-  // APIUIContextGetSync();//.getComponentSnapshot().getSync
-  MeasureJsunit(); // pass5
-  // APIsetDragEventStrictReportingEnabled();
-  APIgetFrameNodeByUniqueId(); // 10.22 pass 1
-  // PageInfo1();//getPageInfoByUniqueId
-  // UIContextOnIdle();//IdleCallback
+  APIcomponentSnapshotGetSync();//SDK12.6 pass1
+  APIUIContextGetSync();//SDK12.6 pass1
+  MeasureJsunit(); //SDK12.2 pass5
+  APIsetDragEventStrictReportingEnabled();//SDK12.6 pass1
+  APIgetFrameNodeByUniqueId(); // SDK10.22 pass 1
+  PageInfo1();//SDK12.6 pass1
+  UIContextOnIdle();//SDK12.6 fail1 记录到表格242行
 }

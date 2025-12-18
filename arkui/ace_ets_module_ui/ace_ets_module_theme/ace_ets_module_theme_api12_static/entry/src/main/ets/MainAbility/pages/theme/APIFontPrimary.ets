@@ -23,50 +23,28 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
-// class BlueColors1 implements CustomColors {
-//   fontPrimary = '#FFBA1414';
-//   fontSecondary = '#FF398D0C';
-//   fontTertiary = '#FF0A2AFA';
-//   fontFourth = '#FFEFE05B';
-//   brand = Color.Orange;
-//   warning = Color.Pink;
-//   fontOnSecondary = '#FF0A2AFA';
-//   fontOnTertiary = '#ff0afa22';
-//   fontOnFourth = '#fffa5e0a';
-//   compCommonContrary = '#ff2ba4a4';
-//   compEmphasizeTertiary = '#ff1c1f5d';
-//   compBackgroundFocus = '#ff9295d9';
-//   compFocusedPrimary = '#ffcd72de';
-//   compFocusedSecondary = '#ff621e6e';
-//   compFocusedTertiary = '#ffd0334a';
-// }
-//
-// class BlueColors3 implements CustomColors {
-//   compDivider = '#FFBA1414';
-// }
-
-
-class BlueColors1 implements  CustomColors {
-  fontPrimary ?: '#FFBA1414';
-  fontSecondary?:'#FF398D0C';
-  fontTertiary ?:'#FF0A2AFA';
-  fontFourth ?: '#FFEFE05B';
-  // brand ?: Color.Orange;
-  // warning?: Color.Pink;
-  fontOnSecondary ?: '#FF0A2AFA';
-  fontOnTertiary ?: '#ff0afa22';
-  fontOnFourth ?: '#fffa5e0a';
-  compCommonContrary ?: '#ff2ba4a4';
-  compEmphasizeTertiary ?: '#ff1c1f5d';
-  compBackgroundFocus?:'#ff9295d9';
-  compFocusedPrimary ?: '#ffcd72de';
-  compFocusedSecondary ?: '#ff621e6e';
-  compFocusedTertiary ?: '#ffd0334a';
+class BlueColors1 implements CustomColors {
+  fontPrimary?:string = '#FFBA1414';
+  fontSecondary?:string = '#FF398D0C';
+  fontTertiary?:string = '#FF0A2AFA';
+  fontFourth?:string = '#FFEFE05B';
+  brand?:Color = Color.Orange;
+  warning?:Color = Color.Pink;
+  fontOnSecondary?:string = '#FF0A2AFA';
+  fontOnTertiary?:string = '#ff0afa22';
+  fontOnFourth?:string= '#fffa5e0a';
+  compCommonContrary?:string = '#ff2ba4a4';
+  compEmphasizeTertiary?:string = '#ff1c1f5d';
+  compBackgroundFocus?:string = '#ff9295d9';
+  compFocusedPrimary?:string = '#ffcd72de';
+  compFocusedSecondary?:string = '#ff621e6e';
+  compFocusedTertiary?:string = '#ffd0334a';
 }
 
 class BlueColors3 implements CustomColors {
-  compDivider?:'#FFBA1414';
+  compDivider?:string = '#FFBA1414';
 }
+
 
 
 class PageCustomTheme implements CustomTheme {

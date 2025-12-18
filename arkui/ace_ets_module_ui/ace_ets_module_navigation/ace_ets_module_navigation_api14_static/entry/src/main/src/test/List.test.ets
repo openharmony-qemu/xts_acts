@@ -27,15 +27,15 @@ import SystemTransition2 from './Navigation/SystemTransition2.test'
 
 
 export default function testsuite() {
-  SafeAreaPadding()   // pass
-  NavigationEnableDragBar()
-  MultiNavigationTest()  // 页面不存在对应id的组件  3用例
-  MultiEntry()   //  (page50)MultiNavigation Cannot find method '<set>onNavigationModeChange 造成 create page failed  7个用例
+  SafeAreaPadding()   // SDK12.2 pass1
+  NavigationEnableDragBar() // SDK12.2 pass1
+  MultiNavigationTest()  //SDK12.2 Error: 3 MultiNavigation不显示 12.3
+  MultiEntry()   // SDK12.2 Error: 7, MultiNavigation不显示 12.3
   Recoverable()   // pass 4
   RouterRecoverable() // pass1
-  NavigationBindToNestedScrollable()  // (page38)this.navPathStack.pushPathByName Cannot find method 'pushPathByName 造成app died 1个用例
-  NavigationBindToScrollable()  // (page38)this.navPathStack.pushPathByName Cannot find method 'pushPathByName 造成app died 1个用例
+  NavigationBindToNestedScrollable()  //SDK 12.2 Error: 1 Component not exist matching: {selfMatcher=[{attrName:visible; value:true; Pattern:0},{attrName:type; value:ToolBar; Pattern:0},]}
+  NavigationBindToScrollable()  // SDK12.2 pass
   RouterRecoverable2()  // pass 1ge
-  SystemTransition()   // (page56)no Provide found for Consume 造成 appDied，造成nullPoint  1ge
-  SystemTransition2() // (page59)no Provide found for Consume 造成 appDied，造成nullPoint  2ge
+  SystemTransition() //SDK12.2 pass1
+  SystemTransition2() //SDK12.2 pass2
 }

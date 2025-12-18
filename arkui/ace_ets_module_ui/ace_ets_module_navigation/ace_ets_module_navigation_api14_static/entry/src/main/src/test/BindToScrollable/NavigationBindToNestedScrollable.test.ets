@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect, Point} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -37,7 +37,7 @@ export default function NavigationBindToNestedScrollable() {
     beforeAll(() => {
       console.info("NavigationBindToNestedScrollable beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("NavigationBindToNestedScrollable beforeEach start");
@@ -111,11 +111,14 @@ export default function NavigationBindToNestedScrollable() {
 
       await driver.assertComponentExist(ON.type('TitleBar'));
       if (navigationWidth < 1500) {
-        await driver.assertComponentExist(ON.type('ToolBar'));
+        console.log('+++++++++++++1')
+        await driver.assertComponentExist(ON.type('ToolBar')); //找不到Component not exist matching: {selfMatcher=[{attrName:visible; value:true; Pattern:0},{attrName:type; value:ToolBar; Pattern:0},]}
+        console.log('+++++++++++++2')
         await driver.delayMs(1000);
       }
-
+  console.log('+++++++++++++3')
       let component3  = await driver.findComponent(ON.type('ToolBar'));
+  console.log('+++++++++++++4')
       let toolBarRect = await (component3?.getBounds() as Promise<Rect>);
       let tooBarTop1 = toolBarRect.top;
       let tooBarBottom1 = toolBarRect.bottom;

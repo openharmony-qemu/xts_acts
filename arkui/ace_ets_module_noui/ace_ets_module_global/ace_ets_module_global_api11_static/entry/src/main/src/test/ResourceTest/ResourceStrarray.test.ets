@@ -39,9 +39,9 @@ export default function ResourceStrarray() {
 
     beforeAll(() => {
       console.info("ResourceStrarray beforeAll start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.global.api11.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -58,7 +58,7 @@ export default function ResourceStrarray() {
           console.info("get ResourceStrarray pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(5000);
           // console.info("push ResourceStrarray page result:" + JSON.stringify(result));
         }

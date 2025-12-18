@@ -20,6 +20,10 @@ import UIObserverWillDrawTest from './ObserverTest/UIObserverWillDraw.test';
 import UIObserverDidLayoutTest from './ObserverTest/UIObserverDidLayout.test';
 
 export default function testsuite() {
+  ApplyNormalAttributeTest(); //11.20SDK pass
+  UIObserverDensityUpdateTest(); // 11.20SDK pass
+  UIObserverWillDrawTest(); // 11.20SDK pass
+  UIObserverDidLayoutTest(); // 11.20SDK pass
   lazyForEachTest();  // SR20250717371939  8用例
   // ApplyNormalAttributeTest(); //11.20SDK pass
   // UIObserverDensityUpdateTest(); // 11.20SDK pass

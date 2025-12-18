@@ -77,9 +77,9 @@ export default function onDisAppearTest() {
   describe('OnDisAppearTest', () => {
     beforeAll(() => {
       
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.disappear.nowear.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
       //Set value
@@ -89,7 +89,7 @@ export default function onDisAppearTest() {
       //Get text content,check content is changeDisAppear
       let compareTextObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.compareTextKey);
       // let strJson = inspector.getInspectorByKey(data.pageConfig.compareTextKey);
-      // await Utils.sleep(2000);
+      await Utils.sleep(2000);
       // let compareTextObj =  JSON.parseJsonElement(strJson);
       console.info('compareTextObj.getElement($attrs).getString(content): ' + compareTextObj.getElement('$attrs').getString('content'));
       expect(compareTextObj.getElement('$attrs').getString('content')).assertEqual(data.testValue.expectValue?.changeDisAppear);

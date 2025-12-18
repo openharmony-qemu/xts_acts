@@ -43,9 +43,9 @@ export default function componentContentDisposeTest() {
   describe('componentContentDisposeTest', () => {
     beforeAll(() => {
       console.info("componentContentDisposeTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
       console.info("componentContentDisposeTest_0100 beforeEach start");

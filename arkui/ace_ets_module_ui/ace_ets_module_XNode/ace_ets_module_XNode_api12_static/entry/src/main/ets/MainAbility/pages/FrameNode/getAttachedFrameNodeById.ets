@@ -96,6 +96,7 @@ struct GetAttachedFramenodeByID {
             console.log(`sally----- getAttachedFrameNodeById('sallychild1') getUserConfigSize is ` + JSON.stringify(frame.getUserConfigSize()))
             console.log(`sally----- getAttachedFrameNodeById('sallychild1') getMeasuredSize is ` + JSON.stringify(frame.getMeasuredSize()))
           } else {
+            this.message = 'Hello Sally'
             console.log(`sally----- getAttachedFrameNodeById('sallychild1') is ` + frame)
           }
         })

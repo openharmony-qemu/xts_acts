@@ -27,9 +27,9 @@ export default function ApplyNormalAttributeTest() {
   describe('ApplyNormalAttributeTest', () => {
     beforeAll(() => {
       console.info("ApplyNormalAttributeTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
       console.info("ApplyNormalAttributeTest beforeEach start");

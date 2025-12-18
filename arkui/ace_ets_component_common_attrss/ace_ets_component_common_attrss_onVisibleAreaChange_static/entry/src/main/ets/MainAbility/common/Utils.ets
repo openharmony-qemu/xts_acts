@@ -106,7 +106,7 @@ export class PageConfig {
   componentWidth: number
   componentHeight: number
 }
-let viewPage:string=''
+
 export default class Utils {
   public static instance: Utils = new Utils();
 
@@ -144,18 +144,7 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
@@ -167,8 +156,8 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(500);
-        console.info('push ' + obj.pageName);
+        await Utils.sleep(2000);
+
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -182,7 +171,7 @@ export default class Utils {
       router.back()
     }
     // AttrsManager.unRegisterDataChange();
-    await Utils.sleep(500);
+    await Utils.sleep(1000);
     router.clear();
   }
 
@@ -211,18 +200,6 @@ export default class Utils {
     } as RectValue
   }
 
-  // static getComponentRectByObj(obj: ESObject): RectValue {
-  //   console.info('[getInspectorByKey] current component is: ' + obj.$type);
-  //   let rectInfo: ESObject = JSON.parse('[' + obj.$rect + ']');
-  //   let rect_value: RectValue = {
-  //     left: Number(JSON.parse('[' + rectInfo[0] + ']')[0]),
-  //     top: Number(JSON.parse('[' + rectInfo[0] + ']')[1]),
-  //     right: Number(JSON.parse('[' + rectInfo[1] + ']')[0]),
-  //     bottom: Number(JSON.parse('[' + rectInfo[1] + ']')[1])
-  //   };
-  //   console.info(JSON.stringify(rect_value));
-  //   return rect_value;
-  // }
 
   static getComponentByKey(componentKey: string): jsonx.JsonElement {
     let strJson = inspector.getInspectorByKey(componentKey);

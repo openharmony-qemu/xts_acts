@@ -27,8 +27,8 @@ export default function UIObserverWillDrawTest() {
   describe('UIObserverWillDrawTest', () => {
     beforeAll(() => {
       console.info("UIObserverWillDrawTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
-      
+      await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
       console.info("UIObserverWillDrawTest beforeEach start");

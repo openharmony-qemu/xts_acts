@@ -15,5 +15,5 @@
  */
 import responseRegionTest from './responseRegion/ResponseRegionTest.test';
 export default function testsuite() {
-  responseRegionTest();
+  responseRegionTest(); //run: 98, Failure: 2, Error: 2, Pass: 94
 }

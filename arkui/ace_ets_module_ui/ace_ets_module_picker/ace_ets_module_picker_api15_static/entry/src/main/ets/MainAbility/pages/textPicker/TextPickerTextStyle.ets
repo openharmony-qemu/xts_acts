@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType,Resource, TextPickerAttribute, TextPicker, HorizontalAlign, 
-  TextOverflow, AttributeModifier,
+  Row, ClickEvent, Margin, ButtonType,Resource, TextPickerAttribute, TextPicker, HorizontalAlign, TextOverflow, AttributeModifier,
   HorizontalAlign, ColumnOptions} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -35,7 +34,7 @@ struct TextPickerTextStyleExample {
     Column({ space: 3 } as ColumnOptions) {
       TextPicker({
         range: this.fruits,
-        selected: this.select,
+        selected: this.select as int,
       })
         .height('50%')
         .key('TextPickerTextStyle')

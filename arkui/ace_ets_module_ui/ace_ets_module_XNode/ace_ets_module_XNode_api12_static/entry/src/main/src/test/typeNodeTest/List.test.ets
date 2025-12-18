@@ -25,9 +25,9 @@ export default function typeNodeListTest() {
   describe('typeNodeListTest', () => {
     beforeAll(() => {
       console.info("typeNodeListTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async () : Promise<void> => {
       console.info("typeNodeListTest beforeEach start");

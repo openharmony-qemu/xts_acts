@@ -84,10 +84,10 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 export default function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
     'Text',
-    'TextArea',
-    'TextClock',
-    'TextInput',
-    'TextTimer',
+    'TextArea',  // 55000ms pass
+    'TextClock', //TextClock_static_SetNumber
+    'TextInput', // 55000ms pass
+    'TextTimer', //TextTimer_static_SetNumber
     'Toggle',
     'Badge',
     'Column',
@@ -237,7 +237,7 @@ export default function responseRegionTest() {
     beforeAll(() => {
       console.info("ResponseRegionTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs02.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get the initial region information of the target component

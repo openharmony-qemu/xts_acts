@@ -36,24 +36,24 @@ import datePickerOnChangeModifierTest from './datePicker/datePickerOnChangeModif
 import selectNodeTest from './select/selectNode.test'
 
 export default function testsuite() {
-  // enableCascadeTest(); //SDK11.22 Failure: 1,Pass: 3  失败是因为参数类型不支持null
-  // CheckboxNodeTest(); //SDK11.22 Pass: 1
-  // checkboxGroupNodeTest(); // SDK11.22 Pass: 1
-  // radioNodeTest(); // SDK11.22 Pass: 1
-  // ratingNodeTest(); /// SDK11.22 Pass: 1
-  // sliderNodeTest(); // SDK11.22 Pass: 1
-  // toggleNodeTest(); // SDK11.22 Pass: 1
+  enableCascadeTest(); //SDK11.22 Pass: 4
+  CheckboxNodeTest(); //SDK11.22 Pass: 1
+  checkboxGroupNodeTest(); // SDK11.22 Pass: 1
+  radioNodeTest(); // SDK11.22 Pass: 1
+  ratingNodeTest(); /// SDK11.22 Pass: 1
+  sliderNodeTest(); // SDK11.22 Pass: 1
+  toggleNodeTest(); // SDK11.22 Pass: 1
   // Picker(); //手表端，不用管
   TimePicker();// SDK11.22 Pass: 7
-  // TextPicker(); //  SDK11.22 Pass: 7
-  // CheckboxOnChangeModifierTest(); // SDK11.22 Pass: 2
-  // radioOnChangeModifierTest(); // SDK11.22 Pass: 2
-  // CheckboxGroupOnChangeModifierTest(); // SDK11.22 Pass: 1
-  // ratingOnChangeModifierTest(); // SDK11.22 Pass: 1
-  // sliderOnChangeModifierTest(); // SDK11.22 Pass: 3
-  // toggleOnChangeModifierTest(); // SDK11.22 Pass: 2
-  // textPickerOnChangeModifierTest(); //SDK11.22 Pass: 2 Utils.getComponentRect
-  // timePickerOnChangeModifierTest(); // Error: 2  Utils.getComponentRect
-  // datePickerOnChangeModifierTest(); // SDK11.22 Property 'onChange' does not exist on type 'DatePickerModifier'
+  TextPicker(); //  SDK11.22 Pass: 7
+  CheckboxOnChangeModifierTest(); // SDK11.22 Pass: 2
+  radioOnChangeModifierTest(); // SDK11.22 Pass: 2
+  CheckboxGroupOnChangeModifierTest(); // SDK11.22 Pass: 1
+  ratingOnChangeModifierTest(); // SDK11.22 Pass: 1
+  sliderOnChangeModifierTest(); // SDK11.22 Pass: 3
+  toggleOnChangeModifierTest(); // SDK11.22 Pass: 2
+  textPickerOnChangeModifierTest(); //SDK11.22 Pass: 2
+  timePickerOnChangeModifierTest(); // pass 2
+  datePickerOnChangeModifierTest(); // SDK11.22 Pass: 2
   // selectNodeTest(); // 不存在page页面 1.1也没有
 }

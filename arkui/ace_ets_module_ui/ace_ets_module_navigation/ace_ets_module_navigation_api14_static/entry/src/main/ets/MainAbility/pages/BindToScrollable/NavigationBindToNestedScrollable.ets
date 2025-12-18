@@ -87,7 +87,8 @@ export struct PageOne {
     }
     .title('pageOne', {backgroundColor: Color.Red})
     .bindToNestedScrollable([{parent: this.scroller, child: this.scroller1}])
-    .toolbarConfiguration([
+    .toolbarConfiguration([   //滑动后toolbar不见了
+
       {value: 'a', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
       {value: 'b', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},
       {value: 'c', symbolIcon: new SymbolGlyphModifier($r('sys.symbol.ohos_folder_badge_plus'))},

@@ -28,9 +28,9 @@ export default function GetWindowWidthAndHeightTest() {
 
     beforeAll(() => {
       console.info("themePageToggleTest beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api13.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -78,8 +78,8 @@ it('GetWindowWidthBreakpoint_static_0100', Level.LEVEL0, async (done: () => void
       let obj = JSON.parseJsonElement(strJson);
       let strJson1 = inspector.getInspectorByKey('windowWidthBreakpoint');
       let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("[GetWindowWidthBreakpoint_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[GetWindowWidthBreakpoint_static_0100] component obj1 is: " + JSON.stringify(obj1));
+      console.info("[GetWindowWidthBreakpoint_static_0100] component obj is: " + obj.getElement('$attrs').getString('content'));
+      console.info("[GetWindowWidthBreakpoint_static_0100] component obj1 is: " + obj1.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual(obj1.getElement('$attrs').getString('content'))
       console.info('[GetWindowWidthBreakpoint_static_0100] END');
       done();

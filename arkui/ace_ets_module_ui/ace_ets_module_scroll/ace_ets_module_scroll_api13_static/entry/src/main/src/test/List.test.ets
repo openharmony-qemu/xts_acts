@@ -20,9 +20,9 @@ import tabsOpacityJsunit from './TabsTest/tabsOpacityJsunit.test';
 import offsetRemainScroll from './ScrollTest/offsetRemainScroll.test';
 
 export default function testsuite() {
-  headerListJsunit(); // driver.findComponent(ON.text("美术")) undefined
-  // listItemGroupComponent(); // ListItemGroup的接口导致页面加载失败
-  // bindTabsScroll(); // text01?.getText()为null 报错
+  headerListJsunit(); // SDK 12.9 err 1 0702表格256
+  // listItemGroupComponent(); // pass 2
   // tabsOpacityJsunit(); //pass 1
-  // offsetRemainScroll(); //pass 注释
+  // offsetRemainScroll(); //pass
+  // bindTabsScroll(); // SDK12.2 Cannot find method 'bindTabsToScrollable
 }

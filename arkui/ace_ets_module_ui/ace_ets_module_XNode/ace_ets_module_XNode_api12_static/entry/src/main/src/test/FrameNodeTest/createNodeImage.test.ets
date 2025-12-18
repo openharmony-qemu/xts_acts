@@ -33,9 +33,9 @@ export default function createNodeImage() {
   describe('createNodeImage', () => {
     beforeAll(() => {
       console.info("createNodeImage beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("createNodeImage beforeEach start");

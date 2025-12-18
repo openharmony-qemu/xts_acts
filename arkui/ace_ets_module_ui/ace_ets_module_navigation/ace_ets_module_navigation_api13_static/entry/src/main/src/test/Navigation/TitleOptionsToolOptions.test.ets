@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -36,9 +36,9 @@ export default function TitleOptionsToolOptions() {
   describe('TitleOptionsToolOptions', () => {
     beforeAll(() => {
       console.info("TitleOptionsToolOptions beforeEach start");
-      
+      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation13.static", "EntryAbility");
-      
+      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("TitleOptionsToolOptions beforeEach start");
@@ -83,13 +83,18 @@ export default function TitleOptionsToolOptions() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-
-      let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+  console.info('TitleOptionsToolOptions_0100 START  11');
+  try{
+    let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+  }catch(err){
+    console.log('++++++++++err',err)
+  }
+  let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(1000);
-
+  console.info('TitleOptionsToolOptions_0100 START  22');
       expect(obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getElement('backgroundBlurStyle').getString('value')).assertEqual("BlurStyle.BACKGROUND_THIN");
       expect(obj1.getArray("$children")[0].getArray("$children")[0].getArray("$children")[0].getElement('$attrs').getString('backgroundColor')).assertEqual("#80004AAF");
-
+  console.info('TitleOptionsToolOptions_0100 START  33');
       let btn2 = await driver.findComponent(ON.text('switch'));
       await (btn2?.click() as Promise<void>)
       console.info('[TitleOptionsToolOptions_0100] btn2 click');

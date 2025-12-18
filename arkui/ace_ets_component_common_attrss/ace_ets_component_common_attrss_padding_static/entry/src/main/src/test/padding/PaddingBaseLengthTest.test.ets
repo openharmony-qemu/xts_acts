@@ -41,41 +41,42 @@ export default function PaddingBaseLengthTest() {
   //A list of components that support padding attributes is required.
   let supportView:Array<string> = new Array<string>(
     'AlphabetIndexer',
-    // 'Button',
-    // 'BlankRow',
-    // 'BlankColumn',
-    // 'DataPanel',
-    // 'DatePicker',
-    // 'Divider',
-    // 'Image',
-    // 'ImageAnimator',
-    // 'LoadingProgress',
-    // 'Navigation',
-    // 'Progress',
-    // 'QRCode',
-    // 'ScrollBar',
-    // 'Rating',
-    // 'Search',
-    // 'Slider',
-    // 'Text',
-    // 'TextClock',
-    // 'TextInput',
-    // 'TextPicker',
-    // 'TextTimer',
-    // 'TimePicker',
-    // 'Circle',
-    // 'Ellipse',
-    // 'Polyline',
-    // 'Polygon',
-    // 'Path',
-    // 'Rect',
-    // 'Shape',
-    // 'Line',
-    // 'Menu',
-    // 'MenuItem',
-    // 'MenuItemGroup',
-    // 'Gauge',
-    // 'Marquee', // 非自身问题 NullPointerError 组件不显示
+    'Button',
+    'BlankRow',
+    'BlankColumn',
+    'DataPanel',
+    'DatePicker',
+    'Divider',
+    'Image',
+    'ImageAnimator',
+    'LoadingProgress',
+    'Navigation',
+    'Progress',
+    'QRCode',
+    'ScrollBar',
+    'Rating',
+    'Search',
+    'Slider',
+    'Text',
+    'TextClock',
+    'TextInput',
+    'TextPicker',
+    'TextTimer',
+    'TimePicker',
+    'Circle',
+    'Ellipse',
+    'Polyline',
+    'Polygon',
+    'Path',
+    'Rect',
+    'Shape',
+    'Line',
+    'Menu',
+    'MenuItem',
+    'MenuItemGroup',
+    'Gauge',
+    'Marquee', // 非自身问题 NullPointerError 组件不显示
+    'TextArea', // 非自身问题  TextArea的Padding值设置不进去
     // 'NavRouter', // 非自身问题 NullPointerError
     // 'TextArea', // 非自身问题  TextArea的Padding值设置不进去
   )
@@ -154,7 +155,7 @@ export default function PaddingBaseLengthTest() {
     beforeAll(() => {
 
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.

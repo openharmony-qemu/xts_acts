@@ -22,26 +22,26 @@ import {
   Text, Button, FontWeight, ClickEvent, Margin, Color, SliderStyle,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-// class GreenColors implements CustomColors {
-//   compBackgroundPrimary = '#ff049404';
-//   ompBackgroundPrimaryTran = '#FF00541F';
-//   compBackgroundPrimaryContrary = '#FFFFFFFF';
-//   compBackgroundSecondary = '#1111FF11';
-//   compBackgroundTertiary = '#FF00541F';
-//   compBackgroundEmphasiz = '#3322FF22';
-//   compBackgroundNeutral = '#FFFFFFFF'
-//   compEmphasizeSecondary = '#44FF2222'
-//   compEmphasizeTertiary = '#33FF1111'
-// }
-//
-// class RedColors implements CustomColors {
-//   fontPrimary = '#fff32b3c';
-//   fontEmphasize = '#FFD53032';
-//   fontOnPrimary = '#FFFFFFFF';
-//   compBackgroundTertiary = '#44FF2222';
-//   backgroundEmphasize = '#FFD00000';
-//   compEmphasizeSecondary = '#33FF1111';
-// }
+class GreenColors implements CustomColors {
+  compBackgroundPrimary?:string = '#ff049404';
+  ompBackgroundPrimaryTran?:string = '#FF00541F';
+  compBackgroundPrimaryContrary?:string = '#FFFFFFFF';
+  compBackgroundSecondary?:string = '#1111FF11';
+  compBackgroundTertiary?:string = '#FF00541F';
+  compBackgroundEmphasiz?:string = '#3322FF22';
+  compBackgroundNeutral?:string = '#FFFFFFFF'
+  compEmphasizeSecondary?:string = '#44FF2222'
+  compEmphasizeTertiary?:string = '#33FF1111'
+}
+
+class RedColors implements CustomColors {
+  fontPrimary?:string = '#fff32b3c';
+  fontEmphasize?:string = '#FFD53032';
+  fontOnPrimary?:string = '#FFFFFFFF';
+  compBackgroundTertiary?:string = '#44FF2222';
+  backgroundEmphasize?:string = '#FFD00000';
+  compEmphasizeSecondary?:string = '#33FF1111';
+}
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
@@ -58,8 +58,8 @@ struct themeSliderPage {
   themeNames: string[] = ['System', 'Custom (green)', 'Custom (red)'];
   themeArray: Array<CustomTheme | undefined> = new Array<CustomTheme|undefined>(
     undefined, // System
-    // new PageCustomTheme(new GreenColors()),
-    // new PageCustomTheme(new RedColors())
+    new PageCustomTheme(new GreenColors()),
+    new PageCustomTheme(new RedColors())
   )
   @State themeIndex: number = 0;
 

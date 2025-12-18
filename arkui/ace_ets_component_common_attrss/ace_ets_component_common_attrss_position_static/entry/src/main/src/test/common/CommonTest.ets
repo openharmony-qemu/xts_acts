@@ -95,6 +95,7 @@ export default class CommonTest {
               caseTag: caseTag,
               testValue: testValue,
             }
+            // AppStorage.setOrCreate<Position>('_position', (data.testValue as TestValue).setValue as Position)
             console.info('[' + caseTag + '] ================== setValue : ' + data.testValue.setValue.x);
             //Check test result
             console.info('[' + caseTag + '] ================== pageConfig.componentKey: ' + pageConfig.componentKey);

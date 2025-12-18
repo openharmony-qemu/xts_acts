@@ -32,14 +32,13 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
-
 export default function PolylineResourceTest() {
   describe('PolylineResourceTest', () => {
     beforeAll(() => {
       console.info("PolylineResourceTest beforeEach start");
 
       await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -78,35 +77,25 @@ export default function PolylineResourceTest() {
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey("PolylineResource1");
-      await CommonFunc.sleep(2000);
-      console.info("[PolylineResourceTest_0100] width1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
-      console.info("[PolylineResourceTest_0100] height1 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
+  await CommonFunc.sleep(2000);
+      console.info("[PolylineResourceTest_0100] width1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')));
+      console.info("[PolylineResourceTest_0100] height1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')));
 
       let strJson2 = inspector.getInspectorByKey("PolylineResource2");
-      await CommonFunc.sleep(2000);
-      console.info("[PolylineResourceTest_0100] width2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
-      console.info("[PolylineResourceTest_0100] height2 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
+  await CommonFunc.sleep(2000);
+      console.info("[PolylineResourceTest_0100] width2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width')));
+      console.info("[PolylineResourceTest_0100] height2 is: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height')));
 
       let strJson3 = inspector.getInspectorByKey("PolylineResource3");
-      await CommonFunc.sleep(2000);
-      console.info("[PolylineResourceTest_0100] width3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
-      console.info("[PolylineResourceTest_0100] height3 is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
-
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height'))
-        .assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height'));
-
+  await CommonFunc.sleep(2000);
+      console.info("[PolylineResourceTest_0100] width3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width')));
+      console.info("[PolylineResourceTest_0100] height3 is: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height')));
+      
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('width'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')).assertEqual(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('height'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('width')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('width'));
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('height')).assertEqual(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('height'));
+    
       console.info('[PolylineResourceTest_0100] END');
       done();
     });

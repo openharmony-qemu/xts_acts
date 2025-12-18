@@ -39,7 +39,7 @@ import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 let para: Record<string, string> = { 'PropAPIonDrow': 'start' };
-let storage: LocalStorage = new LocalStorage();
+let storage: LocalStorage = new LocalStorage(para);
 
 function GetChildLayoutConstraint(constraint: LayoutConstraint, child: FrameNode): LayoutConstraint {
   const size = child.getUserConfigSize();
@@ -70,7 +70,9 @@ class MyFrameNode extends FrameNode {
   }
 
   onMeasure(constraint: LayoutConstraint): void {
+    console.log('++++++++onMeasure1')
     let sizeRes: Size = { width: 105, height: 105 };
+    console.log('++++++++onMeasure2')
     for (let i = 0;i < this.getChildrenCount();i++) {
       let child = this.getChild(i);
       if (child) {
@@ -102,12 +104,12 @@ class MyFrameNode extends FrameNode {
   onDraw(context: DrawContext) {
     const canvas = context.canvas;
     const pen = new drawing.Pen();
-    // pen.setStrokeWidth(5);
-    // pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
-    // canvas.attachPen(pen);
-    // canvas.drawRect({ left: 0, right: this.width, top: 0, bottom: this.width });
-    // canvas.detachPen();
-    // storage.set('PropAPIonDrow', 'onDraw succ');
+    pen.setStrokeWidth(5);
+    pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    canvas.attachPen(pen);
+    canvas.drawRect({ left: 0, right: this.width, top: 0, bottom: this.width });
+    canvas.detachPen();
+    storage.set('PropAPIonDrow', 'onDraw succ');
   }
 
   addWidth() {
@@ -161,10 +163,14 @@ struct setMeasuredSize1 {
 
         Button(this.text1).id('APIsetOnDraw')
           .onClick((e:ClickEvent) => {
-            if(this.drawContext){
-              this.nodeController?.rootNode?.onDraw(this.drawContext!);
-            }
-            this.text1 = storage.get<string>('PropAPIonDrow')! as string
+            console.log('++++++++++++1',this.drawContext)  //这个是null
+              if(this.drawContext){
+                console.log('++++++++++++2')
+                this.nodeController?.rootNode?.onDraw(this.drawContext!);
+              }
+              this.text1 = storage.get<string>('PropAPIonDrow')! as string //获取的值是start
+            console.log('++++++++++++this.text1',this.text1)
+
           })
       }
       .width('100%')

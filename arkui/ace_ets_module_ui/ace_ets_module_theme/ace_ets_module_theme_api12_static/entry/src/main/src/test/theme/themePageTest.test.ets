@@ -26,9 +26,9 @@ export default function themePageTest() {
   describe('themePageTest', () => {
     beforeAll(() => {
       console.info("themePageTest beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.theme.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -78,7 +78,7 @@ it('themeInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       console.info("[themeInterfaceTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[themeInterfaceTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor'));
       console.info("[themeInterfaceTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FF00541F');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FF00541F');//page95 期望#FF00541F，实际#FF007DFF
       console.info('[themeInterfaceTest_static_0100] END');
       done();
     });

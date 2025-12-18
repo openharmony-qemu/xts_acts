@@ -26,9 +26,9 @@ export default function frameNodeApi() {
   describe('frameNodeApi', () => {
    beforeAll(() => {
       console.info("frameNodeApi beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.performance.api18.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -76,7 +76,7 @@ it('frameNodeApi_static_0100', Level.LEVEL3, async (done: () => void): Promise<v
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(4000);
       let button2 = await driver.findComponent(ON.id('frameNodeApi_Bind'));
-      await (button?.click() as Promise<void>);
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(4000);
       expect(AppStorage.get<Int>('reuse')!).assertEqual(1);
       expect(AppStorage.get<Int>('recycle')!).assertEqual(1);

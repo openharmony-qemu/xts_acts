@@ -61,7 +61,7 @@ export default function LoadingProgressContentModifier() {
   describe('LoadingProgressContentModifier', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info('LoadingProgressContentModifier beforeEach start');

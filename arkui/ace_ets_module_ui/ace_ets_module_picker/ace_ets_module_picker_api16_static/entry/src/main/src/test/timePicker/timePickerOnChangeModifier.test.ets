@@ -38,9 +38,9 @@ export default function timePickerOnChangeModifierTest() {
   describe('timePickerOnChangeModifierTest', () => {
     beforeAll(() => {
       console.info("timePickerOnChangeModifierTest beforeEach start");
-      
+      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -89,8 +89,7 @@ it('TimePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
         let right = timePicker.right
         let middle = (bottom-top) / 2 + top
         let left = timePicker.left
-        await driver.swipe(Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int, Math.round(AppStorage.get<number>("winTop") ?? +middle) as Int, Math.round(AppStorage.get<number>("winLeft") ?? 0 +(right-left)/2+left) as Int,
-        Math.round(0) as Int);
+        await driver.swipe(Math.round((right-left)/2+left) as Int, Math.round(middle) as Int, Math.round((right-left)/2+left) as Int, Math.round(0) as Int);
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
         console.info("TimePicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)

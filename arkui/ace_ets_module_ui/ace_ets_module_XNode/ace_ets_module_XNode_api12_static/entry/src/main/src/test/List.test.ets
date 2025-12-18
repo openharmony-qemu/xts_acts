@@ -90,77 +90,76 @@ import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
 
 export default function testsuite() {
   getNumeric();// SDK11.17 pass
-  // getAlpha();// SDK11.17 pass
-  // getBlue();// SDK11.17 pass
-  // getGreen();// SDK11.17 pass
-  // getRed();// SDK11.17 pass
-  // LengthMetricsUnitTest();// SDK11.17 pass
-  // typeNodechildrenMainSizeTest(); //SDK11.17 pass2
-  // APIdisposeTreeTest();   // SDK11.19 修改状态变量 页面没刷新  11.22.在生态1组问了曹进
-  // RELOAD();  // SDK11.17 pass
-  // ComponentContentAPIRecycleTest();// SDK11.17 pass
-  // APIPanGestureisisBeginTest();// SDK11.17 pass
-  // LengthUnitTest(); // SDK11.17 pass
-  // getBlendColor();  // SDK11.17 getBlendColor.test.ets:72:0  expect #FF000000 equals #FFE6E600
-  // RenderNodeDemo02Test();   // SDK11.17 pass
-  // RenderNodeDemo01Test();   //11.22  62行，renderNode.markNodeGroup存到appStorage中的值和期望不符,基础框架，还没问开发
-  // RenderNodeDemo03Test();   // SDK11.17 pass
-  // RenderNodeDemo04Test();   // SDK11.17 pass
-  // RenderNodeDemo05Test();   // SDK11.17 pass
-  // RenderNodeDemo06Test();   // 11.22  62行，renderNode.markNodeGroup存到appStorage中的值和期望不符,基础框架，还没问开发
-  // updateConfigurationTest1(); // SDK11.17 pass  单独跑可以通过，一起跑会appDied
-  // updateConfigurationTest2(); // pass SDK11.19
-  // setLabelTest();   // pass SDK11.19
-  // setMarkNodeGroupTest(); // 11.22. renderNode.markNodeGroup 取值为false，期望值为true
-  // setShapeClipTest(); // 11.22.设置的值是值是空的{"rect":{}，期望的是"rect":{"left":0,"right":150,"top":0,"bottom":150}
-  // typeNodeSwiperTest();  // pass 1
-  // typeNodeRelativeContainerTest();  // pass 1
-  // typeNodeProgressTest(); //Failure: 2, Pass: 1 55行，progress.getUserConfigPadding取值不对
-  // typeNodeLoadingProgressTest();  // pass
-  // typeNodeListTest(); // pass
-  // typeNodeGridColTest();//pass
-  // typeNodeDividerTest();// pass
-  // typeNodeBlankTest();// pass
-  // BuilderNodeApiRecycleTest();// pass
-  // BuilderNodeApiReuseTest();// pass
-  // ComponentContentAPIReuseTest(); // pass
-  // APImarkNodeGroupTest();  // 11.22. renderNode.markNodeGroup 取值为false，期望值为true
-  // borderRadiuses();  // pass1
-  // borderStyles();  // pass
-  // edgeColors();  //11.22 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335
-  // edgeWidths();  // pass1
-  // renderNodeGetInterfaceTest();  //11.22 16进制转10进制不对 Failure: 1, Error: 0, Pass: 3 expect bColor:-16711698 equals bColor:4278255598
-  // disposeTest();  // pass
-  // getAttrsTest();  //Failure: 6, Error: 0, Pass: 5 getAttrs.test.ets:173:0     expect {} equals {"top":{"unit":1,"value":3},"right":{"unit":1,"value":3},"bottom":{"unit":1,"value":3},"left":{"unit":1,"value":3}}
-  // getPosition();  // pass
-  // setLayout();  //11.22  expect 310 equals 0
-  // RenderNodeAttributeTest();  // pass
-  // setRectShape();  // pass
-  // resourceColor();  // pass
-  // onAppear();  // pass2
-  // createNodeBlank();  // pass
-  // createNodeColumn();  // pass
-  // createNodeDivider();  // pass
-  // createNodeFlex();  // pass
-  // createNodeGrid();  // pass
-  // createNodeImage();  // pass
-  // createNodeList();  // pass
-  // createNodeLoad();  // pass
-  // createNodeScroll();  // pass
-  // createNodeSearch();  // pass
-  // createNodeStack();  // pass
-  // createNodeText();  // pass
-  // commonEventTest1();  // pass2
-  // expectedUpdateInterval();  // pass
-  // CornerTest();  //pass1
-  // setCircleShapeTest();  // pass
-  // typeNodeTextInputTest();  // pass
-  // typeNodeListItemTest();  // pass
-  // attachNodeAdapterTest();  //11.22. RangeError message: Out of bounds
-  // getAttachedFrameNodeById();  // pass
-  // getAfterRemove();  // pass
-  // PercentReferenceTest();  // pass
-  // graphicGetInterfaceTest();  //appDied
-  // setMeasureSizeTest();  // SDK11.19 setMeasureSize.test.ets:81:0 expect 0 equals 105   App died
-  // SDK11.19 run: 119, Failure: 31, Error: 16, Pass: 72, Ignore: 0 appDied 2
+  getAlpha();// SDK11.17 pass
+  getBlue();// SDK11.17 pass
+  getGreen();// SDK11.17 pass
+  getRed();// SDK11.17 pass
+  LengthMetricsUnitTest();// SDK11.17 pass
+  typeNodechildrenMainSizeTest(); //SDK11.17 pass2
+  APIdisposeTreeTest();   // SDK12.11 记录在表格18行
+  RELOAD();  // SDK11.17 pass
+  ComponentContentAPIRecycleTest();// SDK11.17 pass
+  APIPanGestureisisBeginTest();// SDK11.17 pass
+  LengthUnitTest(); // SDK11.17 pass
+  getBlendColor();  // SDK11.17 记录到表格243行
+  RenderNodeDemo02Test();   // SDK11.17 pass
+  RenderNodeDemo01Test();   //11.22  62行 吴金辉DTS2512020009099
+  RenderNodeDemo03Test();   // SDK11.17 pass
+  RenderNodeDemo04Test();   // SDK11.17 pass
+  RenderNodeDemo05Test();   // SDK11.17 pass
+  RenderNodeDemo06Test();   // 11.22  62行 吴金辉DTS2512020009099
+  updateConfigurationTest1(); // SDK11.17 pass
+  updateConfigurationTest2(); // pass SDK11.19
+  setLabelTest();   // pass SDK11.19
+  setMarkNodeGroupTest(); // 11.22. 吴金辉DTS2512020009099
+  setShapeClipTest(); // SDK11.28 pass 1个
+  typeNodeSwiperTest();  // pass 1
+  typeNodeRelativeContainerTest();  // pass 1
+  typeNodeProgressTest(); //Failure: 2, Pass: 1 55行 吴金辉DTS2512020009099
+  typeNodeLoadingProgressTest();  // pass
+  typeNodeListTest(); // pass
+  typeNodeGridColTest();//pass
+  typeNodeDividerTest();// pass
+  typeNodeBlankTest();// pass
+  BuilderNodeApiRecycleTest();// pass
+  BuilderNodeApiReuseTest();// pass
+  ComponentContentAPIReuseTest(); // pass
+  APImarkNodeGroupTest();  // 11.22. renderNode.markNodeGroup 吴金辉DTS2512020009099
+  borderRadiuses();  // pass1
+  borderStyles();  // pass
+  edgeColors();  //11.22 吴金辉找se问 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335
+  edgeWidths();  // pass1
+  renderNodeGetInterfaceTest();  //11.22 吴金辉找se问 16进制转10进制不对edgeColorsValue:-16776961 equals edgeColorsValue:4278190335
+  disposeTest();  // pass
+  getAttrsTest();  // 记录在问题表格245行 Failure: 6, Error: 0, Pass: 5 getAttrs.test.ets:173:0     expect {} equals {"top":{"unit":1,"value":3},"right":{"unit":1,"value":3},"bottom":{"unit":1,"value":3},"left":{"unit":1,"value":3}}
+  getPosition();  // pass
+  setLayout();  //11.22 开发吴金辉在看 expect 310 equals 0
+  RenderNodeAttributeTest();  // pass
+  setRectShape();  // pass
+  resourceColor();  // pass
+  onAppear();  // pass2
+  createNodeBlank();  // pass
+  createNodeColumn();  // pass
+  createNodeDivider();  // pass
+  createNodeFlex();  // pass
+  createNodeGrid();  // pass
+  createNodeImage();  // pass
+  createNodeList();  // pass
+  createNodeLoad();  // pass
+  createNodeScroll();  // pass
+  createNodeSearch();  // pass
+  createNodeStack();  // pass
+  createNodeText();  // pass
+  commonEventTest1();  // pass2
+  expectedUpdateInterval();  // pass
+  CornerTest();  //pass1
+  setCircleShapeTest();  // pass
+  typeNodeTextInputTest();  // pass
+  typeNodeListItemTest();  // pass
+  attachNodeAdapterTest();  //11.22 记录在表格23行 RangeError message: Out of bounds
+  getAttachedFrameNodeById();  // SDK12.9 pass 2
+  getAfterRemove();  // SDK12.9 pass 3
+  PercentReferenceTest();  // SDK12.9 pass 1
+  graphicGetInterfaceTest();  //12.2 DTS2025101419802
+  setMeasureSizeTest();  // SDK11.19 记录到33行
 }

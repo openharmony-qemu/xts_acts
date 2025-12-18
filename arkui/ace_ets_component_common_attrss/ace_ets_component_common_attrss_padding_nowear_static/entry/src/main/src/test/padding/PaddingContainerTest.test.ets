@@ -35,28 +35,6 @@ let domain: int= 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-// class PageConfig {
-//   testName: string = '';
-//   pageName: string = '';
-//   pageUrl: string = '';
-//   parentBackGroundColor: Color = Color.White;
-//   parentComponentKey: string = '';
-//   referenceComponentKey: string = '';
-// }
-//
-// class TestValues {
-//   describe: string = '';
-//   setValue?: Padding;
-//   expectValue?: Padding;
-// }
-//
-// class Padding {
-//   padding: ESObject;
-//   top?: number;
-//   bottom?: number;
-//   left?: number;
-//   right?: number;
-// }
 
 export default function paddingTestContainer1() {
   //A list of components that support padding attributes is required.
@@ -173,7 +151,7 @@ export default function paddingTestContainer1() {
   describe('PaddingContainerTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
-      
+      await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {

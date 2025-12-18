@@ -51,7 +51,7 @@ class MyNodeAdapter extends NodeAdapter {
   cachePool: Array<FrameNode> = new Array<FrameNode>();
   changed: boolean = false
   reloadTimes: number = 0;
-  data: Array<string> = new Array<string>();
+  data: Array<string> = new Array<string>(100);
   hostNode: FrameNode | null = null;
 
   constructor(uiContext: UIContext, count: number) {
@@ -83,8 +83,9 @@ class MyNodeAdapter extends NodeAdapter {
   }
 
   loadData(): void {
+    // console.log('+++++++++++data.length',this.data.length,'this.totalNodeCount',this.totalNodeCount)
     for (let i = 0; i < this.totalNodeCount; i++) {
-      this.data[i] = 'Adapter ListItem ' + i + ' r:' + this.reloadTimes;   //name: RangeError message: Out of bounds
+      this.data[i] = 'Adapter ListItem ' + i + ' r:' + this.reloadTimes;
     }
   }
 

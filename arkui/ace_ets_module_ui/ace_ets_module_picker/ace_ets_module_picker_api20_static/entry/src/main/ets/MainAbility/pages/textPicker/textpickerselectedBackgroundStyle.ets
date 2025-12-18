@@ -15,7 +15,7 @@
  */
 
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, TextPicker} from '@ohos.arkui.component'
+  Row, ClickEvent, Margin, ButtonType, TextPicker,Color} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback } from '../../common/MessageManager';
 
@@ -32,10 +32,9 @@ struct TextPickerPage {
       TextPicker({
         range: this.multi,
         selected: this.selectedIndex as int,
-        // textPicker1
       })
         .id('textPicker1')
-        // .selectedBackgroundStyle({   // Property 'selectedBackgroundStyle' does not exist on type 'TextPickerAttribute'
+        // .selectedBackgroundStyle({  0702_SDK_12.15 // Property 'selectedBackgroundStyle' does not exist on type 'TextPickerAttribute'
         //   color : Color.Red,
         //   borderRadius: {
         //     topLeft:15,
