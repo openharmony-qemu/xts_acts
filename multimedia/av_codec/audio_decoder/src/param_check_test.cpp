@@ -1219,10 +1219,10 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_027, TestSize.Level2)
     result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
     ASSERT_EQ(result0, AV_ERR_OK);
     result0 = aDecBufferDemo->Start(codec);
-    ASSERT_EQ(result0, AV_ERR_OK);  
+    ASSERT_EQ(result0, AV_ERR_OK);
     
     // use all buffer
-    for(int32_t i=0; i < 8; i++) {
+    for(int32_t i = 0; i < 8; i++) {
         result0 = OH_AudioCodec_QueryInputBuffer(codec, &index, 20000);
     }
     

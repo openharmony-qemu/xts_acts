@@ -1243,7 +1243,8 @@ static napi_value OHAudioDecoderOutputFormatChangeSync(napi_env env, napi_callba
     int backParam = FAIL;
     napi_value result = nullptr;
     uint32_t inputIndex = 0;
-    uint32_t outputIndex = 0;   
+    uint32_t outputIndex = 0;
+    int64_t timeout = 20000;
     OH_AVErrCode checkParam;
     OH_AVFormat *format = nullptr;
     OH_AVCodecBufferAttr attr;
@@ -1265,7 +1266,7 @@ static napi_value OHAudioDecoderOutputFormatChangeSync(napi_env env, napi_callba
         napi_create_int32(env, backParam, &result);
         return result;
     }
-    OH_AudioCodec_QueryInputBuffer(g_audioDec, &inputIndex, 20000);
+    OH_AudioCodec_QueryInputBuffer(g_audioDec, &inputIndex, timeout);
     OH_AVBuffer *buffer = OH_AudioCodec_GetInputBuffer(g_audioDec, inputIndex);
     if (buffer != nullptr) {
         g_inputFile.read(reinterpret_cast<char *>(&needSize), sizeof(needSize));
@@ -1276,7 +1277,7 @@ static napi_value OHAudioDecoderOutputFormatChangeSync(napi_env env, napi_callba
         g_inputFile.read((char *)OH_AVBuffer_GetAddr(buffer), attr.size);
         OH_AudioCodec_PushInputBuffer(g_audioDec, inputIndex);
         
-        checkParam = OH_AudioCodec_QueryOutputBuffer(g_audioDec, &outputIndex, 20000);
+        checkParam = OH_AudioCodec_QueryOutputBuffer(g_audioDec, &outputIndex, timeout);
         if (checkParam == AV_ERR_STREAM_CHANGED) {
             backParam = SUCCESS;
         }
@@ -1379,8 +1380,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"OHAudioDecoderOutputFormatChange", nullptr, OHAudioDecoderOutputFormatChange, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"OHAudioDecoderOutputFormatChangeSync", nullptr, OHAudioDecoderOutputFormatChangeSync, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+        {"OHAudioDecoderOutputFormatChangeSync", nullptr, OHAudioDecoderOutputFormatChangeSync, nullptr, nullptr, 
+         nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
