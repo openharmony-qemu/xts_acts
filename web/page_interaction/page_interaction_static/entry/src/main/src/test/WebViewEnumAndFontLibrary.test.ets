@@ -46,12 +46,12 @@ export default function WebViewEnumAndFontLibrary() {
     })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETINPUTFIELDTYPE_0100
-     * @tc.name       : testWebContextMenuParamGetInputFieldTypeStatic001
-     * @tc.desc       : test WebContextMenuParamGetInputFieldType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENUPARAMGETINPUTFIELDTYPE_0100
+     * @tc.name        testWebContextMenuParamGetInputFieldTypeStatic001
+     * @tc.desc        test WebContextMenuParamGetInputFieldType
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuParamGetInputFieldTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -64,12 +64,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCETYPE_0100
-     * @tc.name       : testWebContextMenuParamGetSourceTypeStatic001
-     * @tc.desc       : test WebContextMenuParamGetSourceType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENUPARAMGETSOURCETYPE_0100
+     * @tc.name        testWebContextMenuParamGetSourceTypeStatic001
+     * @tc.desc        test WebContextMenuParamGetSourceType
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuParamGetSourceTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -82,12 +82,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETMEDIATYPE_0100
-     * @tc.name       : testWebContextMenuParamGetMediaTypeStatic001
-     * @tc.desc       : test WebContextMenuParamGetMediaType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENUPARAMGETMEDIATYPE_0100
+     * @tc.name        testWebContextMenuParamGetMediaTypeStatic001
+     * @tc.desc        test WebContextMenuParamGetMediaType
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuParamGetMediaTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -100,12 +100,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETUNFILTEREDLINKURL_0100
-     * @tc.name       : testWebContextMenuParamGetUnfilteredLinkUrlStatic001
-     * @tc.desc       : test WebContextMenuParamGetUnfilteredLinkUrl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENUPARAMGETUNFILTEREDLINKURL_0100
+     * @tc.name        testWebContextMenuParamGetUnfilteredLinkUrlStatic001
+     * @tc.desc        test WebContextMenuParamGetUnfilteredLinkUrl
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuParamGetUnfilteredLinkUrlStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -118,12 +118,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENUPARAMGETLINKURL_0100
-     * @tc.name       : testWebContextMenuParamGetLinkUrlStatic001
-     * @tc.desc       : test WebContextMenuParamGetLinkUrl
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENUPARAMGETLINKURL_0100
+     * @tc.name        testWebContextMenuParamGetLinkUrlStatic001
+     * @tc.desc        test WebContextMenuParamGetLinkUrl
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuParamGetLinkUrlStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -136,12 +136,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENURESULTCOPY_0100
-     * @tc.name       : testWebContextMenuResultCopyStatic001
-     * @tc.desc       : test WebContextMenuResultCopy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTCOPY_0100
+     * @tc.name        testWebContextMenuResultCopyStatic001
+     * @tc.desc        test WebContextMenuResultCopy
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuResultCopyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -154,12 +154,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENURESULTCUT_0100
-     * @tc.name       : testWebContextMenuResultCutStatic001
-     * @tc.desc       : test WebContextMenuResultCut
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTCUT_0100
+     * @tc.name        testWebContextMenuResultCutStatic001
+     * @tc.desc        test WebContextMenuResultCut
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuResultCutStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -172,12 +172,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENURESULTCOPYIMAGE_0100
-     * @tc.name       : testWebContextMenuResultCopyImageStatic001
-     * @tc.desc       : test WebContextMenuResultCopyImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTCOPYIMAGE_0100
+     * @tc.name        testWebContextMenuResultCopyImageStatic001
+     * @tc.desc        test WebContextMenuResultCopyImage
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuResultCopyImageStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -190,12 +190,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENURESULTSELECTALL_0100
-     * @tc.name       : testWebContextMenuResultSelectAllStatic001
-     * @tc.desc       : test WebContextMenuResultSelectAll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTSELECTALL_0100
+     * @tc.name        testWebContextMenuResultSelectAllStatic001
+     * @tc.desc        test WebContextMenuResultSelectAll
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuResultSelectAllStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
@@ -208,12 +208,12 @@ export default function WebViewEnumAndFontLibrary() {
       })
 
     /**
-     * @tc.number     : SUB_WEB_WEBCONTEXTMENURESULTCLOSECONTEXTMENU_0100
-     * @tc.name       : testWebContextMenuResultCloseContextMenuStatic001
-     * @tc.desc       : test WebContextMenuResultCloseContextMenu
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      SUB_WEB_WEBCONTEXTMENURESULTCLOSECONTEXTMENU_0100
+     * @tc.name        testWebContextMenuResultCloseContextMenuStatic001
+     * @tc.desc        test WebContextMenuResultCloseContextMenu
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('testWebContextMenuResultCloseContextMenuStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {

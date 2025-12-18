@@ -125,12 +125,12 @@ export default function webInitTest() {
     })
 
     /**
-     * @tc.number      : SUB_WEB_JSRESULT_HANDLECANCEL_0100
-     * @tc.name        : testJsResultHandleCancelStatic001
-     * @tc.desc        : test JsResultHandle.cancel()
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+     * @tc.number       SUB_WEB_JSRESULT_HANDLECANCEL_0100
+     * @tc.name         testJsResultHandleCancelStatic001
+     * @tc.desc         test JsResultHandle.cancel()
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it('testJsResultHandleCancelStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       Utils.emitEvent('emitJsResultHandleCancel001', 10)
@@ -142,12 +142,12 @@ export default function webInitTest() {
     })
 
     /**
-     * @tc.number      : SUB_WEB_JSRESULT_HANDLECONFIRM_0100
-     * @tc.name        : testJsResultHandleConfirmStatic001
-     * @tc.desc        : test JsResultHandle.confirm()
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+     * @tc.number       SUB_WEB_JSRESULT_HANDLECONFIRM_0100
+     * @tc.name         testJsResultHandleConfirmStatic001
+     * @tc.desc         test JsResultHandle.confirm()
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it('testJsResultHandleConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
       Utils.emitEvent('emitJsResultHandleConfirm001', 10)
@@ -159,12 +159,12 @@ export default function webInitTest() {
     })
 
     /**
-     * @tc.number      : SUB_WEB_JSRESULT_HANDLEPROMPTCONFIRM_0100
-     * @tc.name        : testJsResultHandlePromptConfirmStatic001
-     * @tc.desc        : test JsResultHandle.promptConfirm()
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 1
+     * @tc.number       SUB_WEB_JSRESULT_HANDLEPROMPTCONFIRM_0100
+     * @tc.name         testJsResultHandlePromptConfirmStatic001
+     * @tc.desc         test JsResultHandle.promptConfirm()
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 1
      */
     it('testJsResultHandlePromptConfirmStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void) => {
