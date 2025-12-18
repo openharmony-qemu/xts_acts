@@ -442,7 +442,7 @@ static napi_value Doblankless_INVALID_ARGS_GET_2048(napi_env env, napi_callback_
                          blanklessInfo.similarity, blanklessInfo.loadingTime, err);
             napi_create_double(env, err, &Capacity);
         }
-    } else if (err == g_errCode) {
+    } else if (blanklessInfo.errCode == g_errCode) {
         napi_create_double(env, blanklessInfo.errCode, &Capacity);
     }
     return Capacity;
