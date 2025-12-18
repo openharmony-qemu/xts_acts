@@ -152,6 +152,8 @@ export const OHPixelmapNativeGetUniqueIdSuppTest: (a: number) => number;
 export const OHPixelmapNativeIsReleasedSuppTest: (a: number) => number;
 export const OHPixelmapNativeReadPixelsFromAreaSuppTest: (a: number) => number;
 export const OHPixelmapNativeWritePixelsToAreaSuppTest: (a: number) => number;
+export const IRNdkErrCodeSupplementTest: (a: number) => number;
+
 export const OHImageEffectCreateSupplement:() => undefined;
 export const OHImageEffectAddFilterSupplement:() => undefined;
 export const OHImageEffectInsertFilterSupplement:() => undefined;
