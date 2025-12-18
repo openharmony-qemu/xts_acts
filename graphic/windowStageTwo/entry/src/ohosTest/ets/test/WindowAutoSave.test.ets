@@ -1058,6 +1058,8 @@ export default function windowAutoSaveTest() {
           let windowClassStart = windowStageStart.getMainWindowSync()
           if(isFreeWindowMode){
             await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          }else{
+            await terminateAbility(message);
           }
           
           // 拉起Ability
@@ -1111,6 +1113,8 @@ export default function windowAutoSaveTest() {
           let windowClassStart = windowStageStart.getMainWindowSync()
           if(isFreeWindowMode){
             await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          }else{
+            await terminateAbility(message);
           }
           
           // 拉起Ability
