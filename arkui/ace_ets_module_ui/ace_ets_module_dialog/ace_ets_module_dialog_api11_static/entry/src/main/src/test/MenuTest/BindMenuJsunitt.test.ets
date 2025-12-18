@@ -98,7 +98,6 @@ export default function bindMenuTesttt() {
 
     
     
-'use static';
 /**
      * @tc.number   bindMenuTest_static_0100
      * @tc.name     bindMenuTest_static_0100
