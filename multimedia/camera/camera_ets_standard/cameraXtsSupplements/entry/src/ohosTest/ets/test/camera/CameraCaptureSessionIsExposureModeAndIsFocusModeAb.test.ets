@@ -263,6 +263,7 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
         console.info(TAG, testName,'come in',);
         let isExposureModeSupported: boolean = mCaptureSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
         console.info(TAG, testName,'isExposureModeSupported', isExposureModeSupported);
+        expect(isEmpty(isExposureModeSupported)).assertFalse();
       })
       done();
     })
