@@ -1813,5 +1813,360 @@ export default function MindSporeTest() {
       expect(result).assertEqual(0);
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ModelCreate_0041
+     * @tc.number SUB_AI_MindSpore_ModelCreate_0041
+     * @tc.desc   SUB_AI_MindSpore_ModelCreate_0041
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ModelCreate_0041', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(35);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ModelCreate_0042
+     * @tc.number SUB_AI_MindSpore_ModelCreate_0042
+     * @tc.desc   SUB_AI_MindSpore_ModelCreate_0042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ModelCreate_0042', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ModelCreate(36);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ModelLoadConfig_0001
+     * @tc.number SUB_AI_MindSpore_ModelLoadConfig_0001
+     * @tc.desc   SUB_AI_MindSpore_ModelLoadConfig_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ModelLoadConfig_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ModelLoadConfig_0002
+     * @tc.number SUB_AI_MindSpore_ModelLoadConfig_0002
+     * @tc.desc   SUB_AI_MindSpore_ModelLoadConfig_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ModelLoadConfig_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ModelLoadConfig_0003
+     * @tc.number SUB_AI_MindSpore_ModelLoadConfig_0003
+     * @tc.desc   SUB_AI_MindSpore_ModelLoadConfig_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ModelLoadConfig_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ModelLoadConfig_0004
+     * @tc.number SUB_AI_MindSpore_ModelLoadConfig_0004
+     * @tc.desc   SUB_AI_MindSpore_ModelLoadConfig_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ModelLoadConfig_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ModelLoadConfig(3);
+      expect(result).assertEqual(0);
+    })
+
+    // Other
+    /**
+     * @tc.name   SUB_AI_MindSpore_Covered_0001
+     * @tc.number SUB_AI_MindSpore_Covered_0001
+     * @tc.desc   SUB_AI_MindSpore_Covered_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_Covered_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_Covered(0);
+      expect(result).assertEqual(0);
+    })
+
+    // NNRT copy_free related test cases
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0001
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0001
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0002
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0002
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0003
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0003
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0004
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0004
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0005
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0005
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0005', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0006
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0006
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0006', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_copy_free_0007
+     * @tc.number SUB_AI_MindSpore_NNRT_copy_free_0007
+     * @tc.desc   SUB_AI_MindSpore_NNRT_copy_free_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_copy_free_0007', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_copy_free(6);
+      expect(result).assertEqual(0);
+    })
+
+    // CPU copy_free related test cases
+    /**
+     * @tc.name   SUB_AI_MindSpore_CPU_copy_free_0001
+     * @tc.number SUB_AI_MindSpore_CPU_copy_free_0001
+     * @tc.desc   SUB_AI_MindSpore_CPU_copy_free_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_CPU_copy_free_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_CPU_copy_free_0002
+     * @tc.number SUB_AI_MindSpore_CPU_copy_free_0002
+     * @tc.desc   SUB_AI_MindSpore_CPU_copy_free_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_CPU_copy_free_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_CPU_copy_free_0003
+     * @tc.number SUB_AI_MindSpore_CPU_copy_free_0003
+     * @tc.desc   SUB_AI_MindSpore_CPU_copy_free_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_CPU_copy_free_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_CPU_copy_free_0004
+     * @tc.number SUB_AI_MindSpore_CPU_copy_free_0004
+     * @tc.desc   SUB_AI_MindSpore_CPU_copy_free_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_CPU_copy_free_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_CPU_copy_free(3);
+      expect(result).assertEqual(0);
+    })
+
+    // HIAI OfflineModel related test cases
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0004
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0004
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0005
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0005
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0005', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0006
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0006
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0006', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0007
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0007
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0007', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0008
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0008
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0008', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0009
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0009
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0009', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0010
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0010
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0010', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0011
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0011
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0011', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0012
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0012
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0012', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(8);
+      expect(result).assertEqual(0);
+    })
+
   })
 }
