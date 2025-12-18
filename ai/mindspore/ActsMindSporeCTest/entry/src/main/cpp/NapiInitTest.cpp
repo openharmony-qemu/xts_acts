@@ -411,7 +411,7 @@ static napi_value SUB_AI_MindSpore_ModelCreate(napi_env env, napi_callback_info 
             Acts::MindSpore::SUBAIMindSporeModelCreate0034, Acts::MindSpore::SUBAIMindSporeModelCreate0035,
             Acts::MindSpore::SUBAIMindSporeModelCreate0036, Acts::MindSpore::SUBAIMindSporeModelCreate0037,
             Acts::MindSpore::SUBAIMindSporeModelCreate0038, Acts::MindSpore::SUBAIMindSporeModelCreate0039,
-            Acts::MindSpore::SUBAIMindSporeModelCreate0040,Acts::MindSpore::SUBAIMindSporeModelCreate0041,
+            Acts::MindSpore::SUBAIMindSporeModelCreate0040, Acts::MindSpore::SUBAIMindSporeModelCreate0041,
             Acts::MindSpore::SUBAIMindSporeModelCreate0042,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
