@@ -41,6 +41,6 @@
         "MainAbility/pages/AnimatorResult/UIContextAnimateToImmediately",
         "MainAbility/pages/StepsCurveComponent",
         "MainAbility/pages/CurvesSpringMotion",
-        "MainAbility/pages/AnimatorEase"
+        "MainAbility/pages/Animation/AnimatorEase"
     ]
 }
