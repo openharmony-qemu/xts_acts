@@ -27,8 +27,6 @@ add_library(imageEffect SHARED
     ImageEffectFilterSuppTest.cpp
     OHImageErrorSuppTest.cpp
     ImageEffectSuppTest.cpp
-    OHEffectFilterInfoSupplementTest.cpp
-    ImageEffectSuppTest.cpp
     ImageEffectFilterRenderSuppTest.cpp
     ImageFrameworkPixelMapNativeCreateSuppTest.cpp
     ImageSourceNativeCreateTest.cpp

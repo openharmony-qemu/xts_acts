@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "ImageReceiverNative.h"
+#include "ImageReceiverNativeTest.h"
 #include <cstdint>
 #include <cstring>
 #include <hilog/log.h>
@@ -49,7 +49,7 @@ namespace {
     constexpr size_t ID_SIZE = 64;
 }
 napi_value ImageReceiverNativeReadLatestImageTest(napi_env env, napi_callback_info info)
-{   
+{
     LOGI("OH_ImageReceiverNative_ReadLatestImage start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -68,17 +68,17 @@ napi_value ImageReceiverNativeReadLatestImageTest(napi_env env, napi_callback_in
     errCode = OH_ImageReceiverNative_Create(options, &receiver);
     OH_ImageNative *image;
     errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, &image);
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         errCode = OH_ImageReceiverNative_ReadLatestImage(nullptr, &image);
         LOGI("OH_ImageReceiverNative_ReadLatestImage %{public}d", errCode);
         break;
     case CASE_INDEX_2:
-        errCode = OH_ImageReceiverNative_ReadLatestImage(receiver,&image);
+        errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, &image);
         LOGI("OH_ImageReceiverNative_ReadLatestImage %{public}d", errCode);
         break;
     case CASE_INDEX_3:
-        errCode = OH_ImageReceiverNative_ReadLatestImage(receiver,nullptr);
+        errCode = OH_ImageReceiverNative_ReadLatestImage(receiver, nullptr);
         LOGI("OH_ImageReceiverNative_ReadLatestImage %{public}d", errCode);
         break;
     default:
@@ -89,7 +89,7 @@ napi_value ImageReceiverNativeReadLatestImageTest(napi_env env, napi_callback_in
     return result;
 }
 napi_value InitImageReceiverNativeTest(napi_env env, napi_callback_info info)
-{   
+{
     LOGI("OH_ImageReceiverNative_ReadLatestImage start");
     napi_value thisVar = nullptr;
     napi_value argValue[2] = {0};
@@ -103,11 +103,11 @@ napi_value InitImageReceiverNativeTest(napi_env env, napi_callback_info info)
     napi_get_value_int32(env, argValue[0], &index);
     LOGI("get argValue %{public}d", index);
     napi_ref reference;
-    napi_create_reference(env, argValue[0], 1 ,&reference);
+    napi_create_reference(env, argValue[0], 1, &reference);
     napi_value imgReceiver_js;
     napi_get_reference_value(env, reference, &imgReceiver_js);
-    ImageReceiverNative * imgReceiver = nullptr;
-    switch (index){
+    ImageReceiverNative *imgReceiver = nullptr;
+    switch (index) {
     case CASE_INDEX_1:
         imgReceiver = OH_Image_Receiver_InitImageReceiverNative(nullptr, imgReceiver_js);
         LOGI("OH_ImageReceiverNative_ReadLatestImage %{public}d", imgReceiver);
@@ -139,7 +139,7 @@ static ImageNative* getNativeImage(napi_env env, napi_callback_info info)
     return OH_Image_InitImageNative(env, argValue[NUM_0]);
 }
 napi_value OHImageClipRectTest(napi_env env, napi_callback_info info)
-{   
+{
     LOGI("OH_Image_ClipRect start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -156,7 +156,7 @@ napi_value OHImageClipRectTest(napi_env env, napi_callback_info info)
     LOGI("getNativeImageSucceed %{public}d");
     struct OhosImageRect rect;
     int32_t res = IMAGE_RESULT_SUCCESS;
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         res = OH_Image_ClipRect(nullptr, &rect);
         LOGI("OH_Image_ClipRect %{public}d", res);
@@ -191,7 +191,7 @@ napi_value CreatePixelmapUsingAllocatorTest(napi_env env, napi_callback_info inf
     LOGI("get fdNumber %{public}d", fdNumber);
     char name[1024];
     size_t nameSize = 1024;
-    napi_get_value_string_utf8(env, argValue[NUM_0], name, 1024, &nameSize);
+    napi_get_value_string_utf8(env, argValue[NUM_0], name, nameSize, &nameSize);
     Image_MimeType* mimeType = nullptr;
     size_t length = 0;
     Image_ErrorCode errCode = OH_ImageSourceNative_GetSupportedFormats(&mimeType, &length);
@@ -200,13 +200,13 @@ napi_value CreatePixelmapUsingAllocatorTest(napi_env env, napi_callback_info inf
     LOGI("OH_ImageSourceNative_CreateFromFd %{public}d", errCode);
     OH_DecodingOptions *options = nullptr;
     OH_DecodingOptions_Create(&options);
-    int32_t FORMAT = -1;
-    OH_DecodingOptions_GetPixelFormat(options,&FORMAT);
+    int32_t format = -1;
+    OH_DecodingOptions_GetPixelFormat(options, &format);
     IMAGE_ALLOCATOR_TYPE allocatorType = IMAGE_ALLOCATOR_TYPE::IMAGE_ALLOCATOR_TYPE_DMA;  // 使用DMA创建pixelMap。
     OH_PixelmapNative *pixelmap = nullptr;
     int32_t resultValue =
         OH_ImageSourceNative_CreatePixelmapUsingAllocator(imageSource, options, allocatorType, &pixelmap);
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         resultValue =
         OH_ImageSourceNative_CreatePixelmapUsingAllocator(nullptr, options, allocatorType, &pixelmap);
@@ -264,7 +264,7 @@ napi_value PixelmapNativeSetMemoryNameTest(napi_env env, napi_callback_info info
     char name[] = "testName";
     size_t len = strlen(name);
     Image_ErrorCode returnValue = OH_PixelmapNative_SetMemoryName(pixelmap, name, &len);
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         returnValue = OH_PixelmapNative_SetMemoryName(pixelmap, name, &len);
         LOGI("OH_PixelmapNative_SetMemoryName %{public}d", returnValue);
@@ -295,7 +295,7 @@ napi_value ImageSourceNativeCreatePictureTest(napi_env env, napi_callback_info i
     LOGI("get fdNumber %{public}d", fdNumber);
     char name[1024];
     size_t nameSize = 1024;
-    napi_get_value_string_utf8(env, argValue[NUM_0], name, 1024, &nameSize);
+    napi_get_value_string_utf8(env, argValue[NUM_0], name, nameSize, &nameSize);
     Image_MimeType* mimeType = nullptr;
     size_t length = 0;
     Image_ErrorCode errCode = OH_ImageSourceNative_GetSupportedFormats(&mimeType, &length);
@@ -307,7 +307,7 @@ napi_value ImageSourceNativeCreatePictureTest(napi_env env, napi_callback_info i
     OH_PictureNative *picture = nullptr;
     int32_t resultValue =
         OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &picture);
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         resultValue =
         OH_ImageSourceNative_CreatePicture(imageSource, decodingOptions, &picture);
@@ -339,7 +339,7 @@ napi_value ImageSourceNativeCreatePictureAtIndexTest(napi_env env, napi_callback
     LOGI("get fdNumber %{public}d", fdNumber);
     char name[1024];
     size_t nameSize = 1024;
-    napi_get_value_string_utf8(env, argValue[NUM_0], name, 1024, &nameSize);
+    napi_get_value_string_utf8(env, argValue[NUM_0], name, nameSize, &nameSize);
     Image_MimeType* mimeType = nullptr;
     size_t length = 0;
     Image_ErrorCode errCode = OH_ImageSourceNative_GetSupportedFormats(&mimeType, &length);
@@ -351,7 +351,7 @@ napi_value ImageSourceNativeCreatePictureAtIndexTest(napi_env env, napi_callback
     OH_PictureNative *picture = nullptr;
     int32_t resultValue =
         OH_ImageSourceNative_CreatePictureAtIndex(imageSource, NUM_1, &picture);
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         resultValue =
         OH_ImageSourceNative_CreatePictureAtIndex(imageSource, NUM_1, &picture);
@@ -385,7 +385,7 @@ napi_value DecodingOptionsGetDesiredColorSpaceTest(napi_env env, napi_callback_i
     OH_DecodingOptions_Create(&opts);
     int32_t colorSpaceName;
     Image_ErrorCode errCode = OH_DecodingOptions_GetDesiredColorSpace(opts, &colorSpaceName);
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
         errCode = OH_DecodingOptions_GetDesiredColorSpace(nullptr, &colorSpaceName);
         LOGI("OH_DecodingOptions_GetDesiredColorSpace %{public}d", errCode);

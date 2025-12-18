@@ -38,6 +38,7 @@ napi_value OHImageEffectInsertFilterSupplement(napi_env env, napi_callback_info 
 napi_value OHImageEffectReplaceFilterSupplement(napi_env env, napi_callback_info info);
 napi_value OHImageEffectGetFilterSupplement(napi_env env, napi_callback_info info);
 napi_value OHImageEffectSetInputTextureSupp(napi_env env, napi_callback_info info);
+napi_value IRNdkErrCodeSupplement(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

@@ -137,8 +137,26 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHPixelmapNativeReadPixelsFromAreaSuppTest", OHPixelmapNativeReadPixelsFromAreaSuppTest),
     DESCRIPTOR("OHPixelmapNativeWritePixelsToAreaSuppTest", OHPixelmapNativeWritePixelsToAreaSuppTest),
     DESCRIPTOR("IRNdkErrCodeSupplementTest", IRNdkErrCodeSupplementTest),
-
-    
+    DESCRIPTOR("OHImageEffectCreateSupplement", OHImageEffectCreateSupplement),
+    DESCRIPTOR("OHImageEffectAddFilterSupplement", OHImageEffectAddFilterSupplement),
+    DESCRIPTOR("OHImageEffectInsertFilterSupplement", OHImageEffectInsertFilterSupplement),
+    DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
+    DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
+    DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
+    DESCRIPTOR("IRNdkErrCodeSupplement", IRNdkErrCodeSupplement),
+    DESCRIPTOR("OIRNdkErrCodeEmuSupp", OIRNdkErrCodeEmuSupp),
+    DESCRIPTOR("ImageReceiverNativeReadLatestImageTest", ImageReceiverNativeReadLatestImageTest),
+    DESCRIPTOR("InitImageReceiverNativeTest", InitImageReceiverNativeTest),
+    DESCRIPTOR("OHImageClipRectTest", OHImageClipRectTest),
+    DESCRIPTOR("CreatePixelmapUsingAllocatorTest", CreatePixelmapUsingAllocatorTest),
+    DESCRIPTOR("PixelmapNativeSetMemoryNameTest", PixelmapNativeSetMemoryNameTest),
+    DESCRIPTOR("ImageSourceNativeCreatePictureTest", ImageSourceNativeCreatePictureTest),
+    DESCRIPTOR("ImageSourceNativeCreatePictureAtIndexTest", ImageSourceNativeCreatePictureAtIndexTest),
+    DESCRIPTOR("DecodingOptionsGetDesiredColorSpaceTest", DecodingOptionsGetDesiredColorSpaceTest),
+    DESCRIPTOR("ClonePixelmapTest", ClonePixelmapTest),
+    DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
+    DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
+    DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

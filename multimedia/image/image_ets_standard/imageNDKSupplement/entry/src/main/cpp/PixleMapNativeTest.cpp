@@ -64,8 +64,7 @@ napi_value ClonePixelmapTest(napi_env env, napi_callback_info info)
     OH_PixelmapNative_CreatePixelmap(data, dataSize, options, &pixelmap);
     OH_PixelmapNative *dstPixelmap = nullptr;
     Image_ErrorCode code = OH_PixelmapNative_Clone(pixelmap, &dstPixelmap);
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         code = OH_PixelmapNative_Clone(pixelmap, &dstPixelmap);
         LOGI("OH_PixelmapNative_Clone %{public}d", code);
@@ -114,16 +113,17 @@ napi_value CreateCroppedAndScaledPixelMapTest(napi_env env, napi_callback_info i
     OH_PixelmapNative_CreatePixelmap(data, dataSize, options, &pixelmap);
     OH_PixelmapNative *dstPixelmap = nullptr;
     Image_Region region = {
-    .x = 10,          
-    .y = 10,          
-    .width = 100,      
-    .height = 200      
+    .x = 10,
+    .y = 10,
+    .width = 100,
+    .height = 200
     };
     Image_Scale scale = {0.5f, 0.5f};
-    OH_PixelmapNative_AntiAliasingLevel level = OH_PixelmapNative_AntiAliasingLevel::OH_PixelmapNative_AntiAliasing_MEDIUM;
-    Image_ErrorCode code = OH_PixelmapNative_CreateCroppedAndScaledPixelMap(pixelmap, &region, &scale, level, &dstPixelmap);
-    switch (index)
-    {
+    OH_PixelmapNative_AntiAliasingLevel level =
+        OH_PixelmapNative_AntiAliasingLevel::OH_PixelmapNative_AntiAliasing_MEDIUM;
+    Image_ErrorCode code =
+        OH_PixelmapNative_CreateCroppedAndScaledPixelMap(pixelmap, &region, &scale, level, &dstPixelmap);
+    switch (index) {
     case CASE_INDEX_1:
         OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_NV21);
         code = OH_PixelmapNative_CreateCroppedAndScaledPixelMap(pixelmap, &region, &scale, level, &dstPixelmap);
@@ -174,8 +174,7 @@ napi_value CreatePixelmapFromSurfaceTest(napi_env env, napi_callback_info info)
     LOGI("strlen字节长度： %{public}d", length);
     OH_PixelmapNative* pixelmap = nullptr;
     Image_ErrorCode code = OH_PixelmapNative_CreatePixelmapFromSurface(surfaceId, length, &pixelmap);
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         code = OH_PixelmapNative_CreatePixelmapFromSurface(surfaceId, length, &pixelmap);
         LOGI("OH_PixelmapNative_CreateCroppedAndScaledPixelMap %{public}d", code);
@@ -205,7 +204,7 @@ napi_value CreatePixelmapFromNativeBufferTest(napi_env env, napi_callback_info i
         .width = 256,
         .height = 256,
         .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
-        .usage = NATIVEBUFFER_USAGE_CPU_READ  | NATIVEBUFFER_USAGE_CPU_WRITE ,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE,
     };
     OH_NativeBuffer* nativeBuffer = OH_NativeBuffer_Alloc(&config);
     if (nativeBuffer == nullptr) {
@@ -213,8 +212,7 @@ napi_value CreatePixelmapFromNativeBufferTest(napi_env env, napi_callback_info i
     }
     OH_PixelmapNative* pixelmap = nullptr;
     Image_ErrorCode code = OH_PixelmapNative_CreatePixelmapFromNativeBuffer(nativeBuffer, &pixelmap);
-    switch (index)
-    {
+    switch (index) {
     case CASE_INDEX_1:
         code = OH_PixelmapNative_CreatePixelmapFromNativeBuffer(nativeBuffer, &pixelmap);
         LOGI("OH_PixelmapNative_CreatePixelmapFromNativeBuffer %{public}d", code);
