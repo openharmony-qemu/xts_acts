@@ -125,7 +125,7 @@ napi_value OHPixelMapTranslateSupplementTest(napi_env env, napi_callback_info in
         x = -50;
         y = -50;
         imageResult = OH_PixelMap_Translate(native, x, y);
-        break;    
+        break;
     default:
         break;
     }
@@ -169,7 +169,7 @@ napi_value OHPixelMapRotateSupplementTest(napi_env env, napi_callback_info info)
     case CASE_INDEX_3:
         angle = 180;
         imageResult = OH_PixelMap_Rotate(native, angle);
-        break;    
+        break;
     default:
         break;
     }
@@ -460,7 +460,7 @@ napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info 
     
     OH_PixelmapNative* pixelmap = nullptr;
     uint32_t uniqueId = 0;
-    Image_ErrorCode returnValue;  
+    Image_ErrorCode returnValue;
     
     switch (testIndex) {
     case CASE_INDEX_1:
@@ -499,7 +499,7 @@ napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info i
         break;
     }
 
-    OH_PixelmapNative_Release(pixelmap); 
+    OH_PixelmapNative_Release(pixelmap);
    
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
