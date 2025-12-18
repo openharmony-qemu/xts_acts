@@ -19,7 +19,7 @@ import router from '@ohos.router';
 import { Entry,Component,Column,Margin,Text, Button, ButtonType, ClickEvent, Scroll, FontWeight } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
-interface RouterParams {
+export interface RouterParams {
   view: string;
 }
 @Entry
@@ -29,22 +29,14 @@ struct RouterPushOne {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
 
   }
-
-  onPageShow() {
-    let uiContext: UIContext = this.getUIContext()
-    this.routerUI = AppStorage.get<Router>("router") as Router
-  }
-
   @State message: string = 'RouterPushUrlOne'
   @State messageUI: string = 'UIRouterPushUrlOne'
-  @State routerUI: Router|undefined = undefined
 
   build() {
     Scroll() {
       Column() {
         Text(this.message)
-        // Text("RouterPushThree " + JSON.parseJsonElement(JSON.stringify(this.routerUI?.getParams())))
-        Text("RouterPushThree ")
+        Text("RouterPushThree " + JSON.stringify(this.getUIContext().getRouter().getParams()))
           .fontSize(20)
           .id("Text_RouterPushThree_Params")
         Button("turn_RouterPushUrlTwo_noParms")
@@ -54,7 +46,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_RouterPushUrlTwo_noParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
           })
@@ -65,7 +57,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_RouterPushUrlTwo_hasParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
               params: {
                 view: "params"
@@ -80,7 +72,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_RouterPushReplace_noParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
           })
@@ -91,7 +83,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_RouterPushReplace_hasParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
               params: {
                 view: "params"
@@ -107,7 +99,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_UIRouterPushUrlTwo_noParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
           })
@@ -118,7 +110,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_UIRouterPushUrlTwo_hasParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
               params: {
                 view: "params"
@@ -133,7 +125,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_UIRouterPushReplace_noParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo'
             })
           })
@@ -144,7 +136,7 @@ struct RouterPushOne {
           } as Margin)
           .id("turn_UIRouterPushReplace_hasParms")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushTwo',
               params: {
                 view: "params"

@@ -22,7 +22,6 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RouterPushThree {
-  routerInstance: Router = AppStorage.get<Router>("router") as Router
 
   build() {
     Scroll() {
@@ -38,7 +37,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_null")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               // params: null
             })
@@ -51,7 +50,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_number")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: {
@@ -69,7 +68,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushThree_stringArray")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: {
@@ -86,7 +85,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_number1")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: "message",
@@ -102,7 +101,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_numArray")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.replaceUrl({
+            AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: "message",
@@ -118,7 +117,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_number_push")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: {
@@ -136,7 +135,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_null_push")
           .onClick((e: ClickEvent) => {
-            this.routerInstance.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               // params: null
             })

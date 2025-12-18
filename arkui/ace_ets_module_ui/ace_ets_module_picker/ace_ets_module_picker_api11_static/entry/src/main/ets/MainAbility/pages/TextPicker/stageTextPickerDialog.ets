@@ -15,7 +15,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
-import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, ClickEvent, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
+import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, ClickEvent,TextPickerDialogOptions, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
@@ -43,7 +43,6 @@ struct stageTextPickerDialog {
           .onClick((e:ClickEvent) => {
             try {
               AppStorage.get<UIContext>('uiContent')?.showTextPickerDialog({
-              //globalThis.uiContent.showTextPickerDialog({
                 range: this.fruits,
                 onAccept: (value: TextPickerResult) => {
                   console.info("TextPickerDialog:onAccept()" + JSON.stringify(value))
@@ -54,7 +53,7 @@ struct stageTextPickerDialog {
                 onChange: (value: TextPickerResult) => {
                   console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
                 }
-              })
+              } as TextPickerDialogOptions)
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
@@ -87,7 +86,6 @@ struct stageTextPickerDialog {
           .key("TextPickerDialog2")
           .onClick((e:ClickEvent) => {
             try {
-              //globalThis.uiContent.showTextPickerDialog({
               AppStorage.get<UIContext>('uiContent')?.showTextPickerDialog({
                 range: this.fruits,
                 onAccept: (value: TextPickerResult) => {
@@ -99,7 +97,7 @@ struct stageTextPickerDialog {
                 onChange: (value: TextPickerResult) => {
                   console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
                 }
-              })
+              } as TextPickerDialogOptions)
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
@@ -133,7 +131,6 @@ struct stageTextPickerDialog {
           .onClick((e:ClickEvent) => {
             try {
               AppStorage.get<UIContext>('uiContent')?.showTextPickerDialog({
-              //globalThis.uiContent.showTextPickerDialog({
 
                 range: this.fruits,
                 onAccept: (value: TextPickerResult) => {
@@ -145,7 +142,7 @@ struct stageTextPickerDialog {
                 onChange: (value: TextPickerResult) => {
                   console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
                 }
-              })
+              } as TextPickerDialogOptions)
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"

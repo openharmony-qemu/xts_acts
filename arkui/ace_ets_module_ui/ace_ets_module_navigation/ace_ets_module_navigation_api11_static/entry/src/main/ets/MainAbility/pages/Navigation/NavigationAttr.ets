@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,NavPathInfo,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,NavPathInfo,
   NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,NavigationTransitionProxy,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, NavContentInfo,NavigationOperation,NavigationAnimatedTransition
@@ -101,7 +101,7 @@ struct NavigationApi1 {
             fromParam.start(operation == NavigationOperation.PUSH, true);
             toParam.start(operation == NavigationOperation.PUSH, false);
             console.log(`toParam.start`);
-            animateTo({ duration: toParam.timeout as int, onFinish: () => {
+            this.getUIContext()?.animateTo({ duration: toParam.timeout as int, onFinish: () => {
               transitionProxy.finishTransition();
               this.finishTransitionTest = '444'
               console.log('finishTransition改变:' + this.finishTransitionTest);

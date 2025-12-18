@@ -47,7 +47,6 @@ export default function SliderInterfaceTest() {
   describe('SliderInterfaceTest', () => {
 
     beforeAll(() => {
-      await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 

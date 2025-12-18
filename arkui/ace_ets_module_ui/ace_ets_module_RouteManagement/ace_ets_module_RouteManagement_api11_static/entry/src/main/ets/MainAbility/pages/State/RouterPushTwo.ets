@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,Curve,PopInfo,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,Curve,PopInfo,HorizontalAlign,AnimateParam,NavDestinationTransition,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,CalendarAlign,ToolbarItemStatus,NavigationMenuItem,SymbolRenderingStrategy,ToolbarItem, SafeAreaType,SafeAreaEdge,Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
-,NavPathStack} from '@ohos.arkui.component';
+  ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -28,10 +28,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-
-interface RouterParams {
-  view: string;
-}
+import {RouterParams} from './RouterPushOne'
 
 @Entry
 @Component
@@ -41,20 +38,19 @@ struct RouterPushTwo {
   }
 
   @State params: string = ''
-  @State routerUI: Router|undefined = undefined
 
   onPageShow() {
-    // this.params = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams())).getString("view")
-    let uiContext: UIContext = this.getUIContext()
-    this.routerUI = AppStorage.get<Router>("router") as Router
+    try{
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      this.params = routerParamOptions ? routerParamOptions.view : ''
+    }catch(e){}
   }
 
 
   build() {
     Scroll() {
       Column() {
-        // Text("RouterPushTwo " + this.params)
-        Text("RouterPushTwo ")
+        Text("RouterPushTwo " + this.params)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .id("Text_RouterPushTwo")
@@ -66,7 +62,7 @@ struct RouterPushTwo {
           } as Margin)
           .id("turn_RouterPushUrlOne_RouterMode_Standard")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
             }, router.RouterMode.Standard)
           })
@@ -78,13 +74,12 @@ struct RouterPushTwo {
           } as Margin)
           .id("turn_RouterPushUrlOne_RouterMode_Single")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
             }, router.RouterMode.Single)
           })
 
-        // Text("UIRouterPushTwo " + this.params)
-        Text("UIRouterPushTwo ")
+        Text("UIRouterPushTwo " + this.params)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .id("Text_UIRouterPushTwo")
@@ -96,7 +91,7 @@ struct RouterPushTwo {
           } as Margin)
           .id("turn_UIRouterPushUrlOne_RouterMode_Standard")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
             }, router.RouterMode.Standard)
           })
@@ -108,7 +103,7 @@ struct RouterPushTwo {
           } as Margin)
           .id("turn_UIRouterPushUrlOne_RouterMode_Single")
           .onClick((e: ClickEvent) => {
-            this.routerUI?.pushUrl({
+            AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
             }, router.RouterMode.Single)
           })

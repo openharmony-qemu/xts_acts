@@ -37,8 +37,7 @@ struct pageB {
         }).margin({ top: 20 } as Margin).id('page_c')
 
         Text('' + this.getUIContext().getRouter().getState().name).id('name_B')
-        // Text('' + this.getUIContext().getRouter().getLength()).id('name_length')
-        Text('').id('name_length')
+        Text('' + this.getUIContext().getRouter().getLength()).id('name_length')
       }
       .width('100%')
     }

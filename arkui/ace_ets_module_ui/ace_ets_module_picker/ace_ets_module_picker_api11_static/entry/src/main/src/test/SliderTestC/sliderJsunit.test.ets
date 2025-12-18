@@ -59,7 +59,6 @@ export default function sliderJsunitSliderTest() {
   describe("sliderJsunitSliderTestSliderTest", () => {
 
     beforeAll(() => {
-      await UtilsTest.loadAndSetUpUiTest();
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
     });
 
