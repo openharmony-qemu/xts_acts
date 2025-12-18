@@ -1819,9 +1819,8 @@ export default function windowAutoSaveTest() {
           if(isFreeWindowMode){
             expect(result).assertTrue();
           }else{
-            expect().assertEqual(false);
+            expect(result).assertEqual(false);
           }
-          done();
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
