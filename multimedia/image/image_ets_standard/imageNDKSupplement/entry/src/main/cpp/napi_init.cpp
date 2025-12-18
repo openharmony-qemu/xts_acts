@@ -16,6 +16,8 @@
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImagePixelMapTest.h"
+#include "ImageReceiverNativeTest.h"
+#include "PixleMapNativeTest.h"
 #include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
@@ -130,6 +132,18 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
     DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
     DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
+    DESCRIPTOR("ImageReceiverNativeReadLatestImageTest", ImageReceiverNativeReadLatestImageTest),
+    DESCRIPTOR("InitImageReceiverNativeTest", InitImageReceiverNativeTest),
+    DESCRIPTOR("OHImageClipRectTest", OHImageClipRectTest),
+    DESCRIPTOR("CreatePixelmapUsingAllocatorTest", CreatePixelmapUsingAllocatorTest),
+    DESCRIPTOR("PixelmapNativeSetMemoryNameTest", PixelmapNativeSetMemoryNameTest),
+    DESCRIPTOR("ImageSourceNativeCreatePictureTest", ImageSourceNativeCreatePictureTest),
+    DESCRIPTOR("ImageSourceNativeCreatePictureAtIndexTest", ImageSourceNativeCreatePictureAtIndexTest),
+    DESCRIPTOR("DecodingOptionsGetDesiredColorSpaceTest", DecodingOptionsGetDesiredColorSpaceTest),
+    DESCRIPTOR("ClonePixelmapTest", ClonePixelmapTest),
+    DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
+    DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
+    DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
