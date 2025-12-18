@@ -48,7 +48,7 @@ export default function swiperTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('swiperTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('swiperTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

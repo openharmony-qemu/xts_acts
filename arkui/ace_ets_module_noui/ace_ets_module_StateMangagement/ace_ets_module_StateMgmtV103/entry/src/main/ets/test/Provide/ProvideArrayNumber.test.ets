@@ -62,7 +62,7 @@ export default function ProvideArrayNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArrayNumber_0100', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArrayNumber_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArrayNumber_0100 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -88,7 +88,7 @@ export default function ProvideArrayNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArrayNumber_0200', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArrayNumber_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArrayNumber_0200 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -114,7 +114,7 @@ export default function ProvideArrayNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArrayNumber_0300', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArrayNumber_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArrayNumber_0300 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -140,7 +140,7 @@ export default function ProvideArrayNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArrayNumber_0400', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArrayNumber_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArrayNumber_0400 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -166,7 +166,7 @@ export default function ProvideArrayNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArrayNumber_0500', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArrayNumber_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArrayNumber_0500 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);

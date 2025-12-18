@@ -53,7 +53,7 @@ export default function StorageDeprecatedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StorageDeprecatedTest_001', Level.LEVEL0, async (done: Function) => {
+    it('StorageDeprecatedTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[StorageDeprecatedTest_001] START');
       await CommonFunc.sleep(2000);
       let obj: ESObject = JSON.parse(getInspectorByKey('tvDeprecatedGet'));
@@ -84,7 +84,7 @@ export default function StorageDeprecatedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StorageDeprecatedTest_002', Level.LEVEL0, async (done: Function) => {
+    it('StorageDeprecatedTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[StorageDeprecatedTest_002] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -120,7 +120,7 @@ export default function StorageDeprecatedTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StorageDeprecatedTest_003', Level.LEVEL0, async (done: Function) => {
+    it('StorageDeprecatedTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[StorageDeprecatedTest_003] START');
       await CommonFunc.sleep(2000);
       let para: Record<string, number> = { 'StorageDeprecatedTest_003': 47 };

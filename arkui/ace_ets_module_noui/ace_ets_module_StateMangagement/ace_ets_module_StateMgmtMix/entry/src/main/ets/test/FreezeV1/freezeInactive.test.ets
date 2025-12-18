@@ -60,7 +60,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('freezeInactive_0100', Level.LEVEL0, async (done: Function) => {
+    it('freezeInactive_0100', Level.LEVEL1, async (done: Function) => {
       console.info('freezeInactive_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('freeze_Inactive');

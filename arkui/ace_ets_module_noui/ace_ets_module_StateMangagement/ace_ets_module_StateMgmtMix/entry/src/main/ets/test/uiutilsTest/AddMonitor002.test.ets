@@ -53,7 +53,7 @@ export default function AddMonitor002() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('AddMonitor002_001', Level.LEVEL0, async (done: Function) => {
+    it('AddMonitor002_001', Level.LEVEL1, async (done: Function) => {
       console.info('[AddMonitor002_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

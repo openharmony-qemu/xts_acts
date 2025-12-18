@@ -48,7 +48,7 @@ export default function bindSheetTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('bindSheetTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('bindSheetTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -73,7 +73,7 @@ export default function bindSheetTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('bindSheetTest_0200', Level.LEVEL0, async (done: Function) => {
+    it('bindSheetTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetTest_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
