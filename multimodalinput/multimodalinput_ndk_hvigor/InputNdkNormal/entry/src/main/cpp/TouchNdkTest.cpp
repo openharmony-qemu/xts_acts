@@ -179,49 +179,45 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
 static napi_value KeyCode1(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    int32_t KEYCODE_HOME = 1;
-    int32_t KEYCODE_BACK = 2;
-    int32_t KEYCODE_SEARCH = 9;
-    int32_t KEYCODE_MEDIA_PLAY_PAUSE = 10;
-    int32_t KEYCODE_MEDIA_STOP = 11;
-    int32_t KEYCODE_MEDIA_NEXT = 12;
-    int32_t KEYCODE_MEDIA_PREVIOUS = 13;
-    int32_t KEYCODE_MEDIA_REWIND = 14;
-    int32_t KEYCODE_MEDIA_FAST_FORWARD = 15;
+    int32_t keyCode1 = 1;
+    int32_t keyCode2 = 2;
+    int32_t keyCode3 = 9;
+    int32_t keyCode4 = 10;
+    int32_t keyCode5 = 11;
+    int32_t keyCode6 = 12;
+    int32_t keyCode7 = 13;
+    int32_t keyCode8 = 14;
+    int32_t keyCode9 = 15;
     napi_create_int32(env,
-                      (Input_KeyCode::KEYCODE_HOME == KEYCODE_HOME && Input_KeyCode::KEYCODE_BACK == KEYCODE_BACK &&
-                      Input_KeyCode::KEYCODE_SEARCH == KEYCODE_SEARCH &&
-                      Input_KeyCode::KEYCODE_MEDIA_PLAY_PAUSE == KEYCODE_MEDIA_PLAY_PAUSE &&
-                      Input_KeyCode::KEYCODE_MEDIA_STOP == KEYCODE_MEDIA_STOP &&
-                      Input_KeyCode::KEYCODE_MEDIA_NEXT == KEYCODE_MEDIA_NEXT &&
-                      Input_KeyCode::KEYCODE_MEDIA_PREVIOUS == KEYCODE_MEDIA_PREVIOUS &&
-                      Input_KeyCode::KEYCODE_MEDIA_REWIND == KEYCODE_MEDIA_REWIND &&
-                      Input_KeyCode::KEYCODE_MEDIA_FAST_FORWARD == KEYCODE_MEDIA_FAST_FORWARD) ? 1 : 0, &result);
+                      (Input_KeyCode::KEYCODE_HOME == keyCode1 && Input_KeyCode::KEYCODE_BACK == keyCode2 &&
+                      Input_KeyCode::KEYCODE_SEARCH == keyCode3 &&
+                      Input_KeyCode::KEYCODE_MEDIA_PLAY_PAUSE == keyCode4 &&
+                      Input_KeyCode::KEYCODE_MEDIA_STOP == keyCode5 &&
+                      Input_KeyCode::KEYCODE_MEDIA_NEXT == keyCode6 &&
+                      Input_KeyCode::KEYCODE_MEDIA_PREVIOUS == keyCode7 &&
+                      Input_KeyCode::KEYCODE_MEDIA_REWIND == keyCode8 &&
+                      Input_KeyCode::KEYCODE_MEDIA_FAST_FORWARD == keyCode9) ? 1 : 0, &result);
     return result;
 }
 
 static napi_value KeyCode2(napi_env env, napi_callback_info info)
 {
     napi_value result;
-    int32_t KEYCODE_VIRTUAL_MULTITASK = 2210;
-    int32_t KEYCODE_BUTTON_A = 2301;
-    int32_t KEYCODE_BUTTON_B = 2302;
-    int32_t KEYCODE_BUTTON_X = 2304;
-    int32_t KEYCODE_BUTTON_Y = 2305;
-    int32_t KEYCODE_BUTTON_L1 = 2307;
-    int32_t KEYCODE_BUTTON_R1 = 2308;
-    int32_t KEYCODE_BUTTON_L2 = 2309;
-    int32_t KEYCODE_BUTTON_R2 = 2310;
+    int32_t keyCode1 = 2210;
+    int32_t keyCode2 = 2301;
+    int32_t keyCode3 = 2302;
+    int32_t keyCode4 = 2304;
+    int32_t keyCode5 = 2305;
+    int32_t keyCode6 = 2307;
+    int32_t keyCode7 = 2308;
+    int32_t keyCode8 = 2309;
+    int32_t keyCode9 = 2310;
     napi_create_int32(env,
-                      (Input_KeyCode::KEYCODE_VIRTUAL_MULTITASK == KEYCODE_VIRTUAL_MULTITASK &&
-                      Input_KeyCode::KEYCODE_BUTTON_A == KEYCODE_BUTTON_A &&
-                      Input_KeyCode::KEYCODE_BUTTON_B == KEYCODE_BUTTON_B &&
-                      Input_KeyCode::KEYCODE_BUTTON_X == KEYCODE_BUTTON_X &&
-                      Input_KeyCode::KEYCODE_BUTTON_Y == KEYCODE_BUTTON_Y &&
-                      Input_KeyCode::KEYCODE_BUTTON_L1 == KEYCODE_BUTTON_L1 &&
-                      Input_KeyCode::KEYCODE_BUTTON_R1 == KEYCODE_BUTTON_R1 &&
-                      Input_KeyCode::KEYCODE_BUTTON_L2 == KEYCODE_BUTTON_L2 &&
-                      Input_KeyCode::KEYCODE_BUTTON_R2 == KEYCODE_BUTTON_R2
+                      (Input_KeyCode::KEYCODE_VIRTUAL_MULTITASK == keyCode1 &&
+                      Input_KeyCode::KEYCODE_BUTTON_A == keyCode2 && Input_KeyCode::KEYCODE_BUTTON_B == keyCode3 &&
+                      Input_KeyCode::KEYCODE_BUTTON_X == keyCode4 && Input_KeyCode::KEYCODE_BUTTON_Y == keyCode5 &&
+                      Input_KeyCode::KEYCODE_BUTTON_L1 == keyCode6 && Input_KeyCode::KEYCODE_BUTTON_R1 == keyCode7 &&
+                      Input_KeyCode::KEYCODE_BUTTON_L2 == keyCode8 && Input_KeyCode::KEYCODE_BUTTON_R2 == keyCode9
                       ) ? 1 : 0, &result);
     return result;
 }
