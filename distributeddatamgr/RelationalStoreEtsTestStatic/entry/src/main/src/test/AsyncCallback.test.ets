@@ -32,10 +32,6 @@ let STORE_CONFIG: data_relationalStore.StoreConfig = {
   securityLevel: data_relationalStore.SecurityLevel.S1,
 }
 
-let distributedConfig: data_relationalStore.DistributedConfig = {
-  autoSync: false
-}
-
 let deviceId: string | undefined = undefined;
 let context: common.UIAbilityContext;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
