@@ -49,7 +49,8 @@ export default function rectJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testrect_radiusHeight_static_01
      * @tc.name     testrect_radiusHeight_static_01
      * @tc.desc     testrect_radiusHeight_static_01
@@ -71,7 +72,8 @@ it('testrect_radiusHeight_static_01', Level.LEVEL0, async (done: () => void): Pr
     });
 
     
-    /*
+    
+/**
      * @tc.number   testrect_radius_static_02
      * @tc.name     testrect_radius_static_02
      * @tc.desc     testrect_radius_static_02
@@ -94,7 +96,8 @@ it('testrect_radius_static_02', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    /*
+    
+/**
      * @tc.number   testrect_radiusWidth_static_03
      * @tc.name     testrect_radiusWidth_static_03
      * @tc.desc     testrect_radiusWidth_static_03

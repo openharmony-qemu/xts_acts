@@ -52,7 +52,8 @@ export default function textPickerDialogSelectedAreaTest() {
       console.info('textPickerDialogSelectedAreaTest beforeEach end');
     });
     
-    /*
+    
+/**
      * @tc.number   textPickerDialogSelectedAreaTest_static_001
      * @tc.name     textPickerDialogSelectedAreaTest_static_001
      * @tc.desc     textPickerDialogSelectedAreaTest_static_001

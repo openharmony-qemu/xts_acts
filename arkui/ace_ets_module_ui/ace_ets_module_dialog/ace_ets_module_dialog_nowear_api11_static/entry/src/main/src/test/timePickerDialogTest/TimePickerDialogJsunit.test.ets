@@ -52,13 +52,14 @@ export default function TimePickerDialogJsunit() {
 
 
     
-/*
+
+    /**
      * @tc.number   TimePickerDialogJsunit_0100
      * @tc.name     TimePickerDialogJsunit_0100
      * @tc.desc     TimePickerDialogJsunit_0100
      * @tc.level    Level.LEVEL2
      */
-    it('TimePickerDialogJsunit_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TimePickerDialogJsunit_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TimePickerDialogJsunit_0100 START');
 	    let driver = Driver.create()
       let button = await driver.findComponent(ON.id('TimePickerDialog'));

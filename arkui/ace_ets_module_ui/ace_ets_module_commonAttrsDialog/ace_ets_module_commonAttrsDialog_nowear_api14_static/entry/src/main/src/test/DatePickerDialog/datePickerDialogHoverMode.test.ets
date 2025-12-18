@@ -82,13 +82,14 @@ export default function datePickerDialogHoverMode() {
       console.info("MultiNavigation after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   datePickerDialogHoverMode_static_0100
      * @tc.name     datePickerDialogHoverMode_static_0100
      * @tc.desc     datePickerDialogHoverMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('datePickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('datePickerDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datePickerDialogHoverMode_0100 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()
@@ -114,13 +115,14 @@ export default function datePickerDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   datePickerDialogHoverMode_static_0200
      * @tc.name     datePickerDialogHoverMode_static_0200
      * @tc.desc     datePickerDialogHoverMode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('datePickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('datePickerDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datePickerDialogHoverMode_0200 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()

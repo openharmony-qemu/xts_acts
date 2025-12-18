@@ -81,7 +81,8 @@ export default function StackMatchParentTest() {
     });
 
 
-    /*
+    
+/**
      * @tc.number   StackMatchParentTest_static_0100
      * @tc.name     StackMatchParentTest_static_0100
      * @tc.desc     StackMatchParentTest_static_0100

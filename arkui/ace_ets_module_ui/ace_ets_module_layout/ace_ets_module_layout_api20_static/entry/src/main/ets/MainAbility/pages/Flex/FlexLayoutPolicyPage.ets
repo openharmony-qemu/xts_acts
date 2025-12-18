@@ -24,8 +24,8 @@ struct FlexLayoutPolicyPage {
   build() {
     Flex() {
       Flex().backgroundColor(Color.Pink)
-        .width(LayoutPolicy.matchParent.toString())
-        .height(LayoutPolicy.matchParent.toString())
+        .width(LayoutPolicy.matchParent)
+        .height(LayoutPolicy.matchParent)
         .id('FlexLayoutPolicyTest_static_0100_Flex_child')
     }
     .width(200)

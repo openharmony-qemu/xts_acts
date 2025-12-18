@@ -36,7 +36,6 @@ export default function showTimePickerDialogBackgroundEffectTest() {
     beforeAll(() => {
       console.info("showTimePickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -60,7 +59,8 @@ export default function showTimePickerDialogBackgroundEffectTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   showTimePickerDialogBackgroundEffectTest_static_0100
      * @tc.name     showTimePickerDialogBackgroundEffectTest_static_0100
      * @tc.desc     showTimePickerDialogBackgroundEffectTest_static_0100
@@ -111,7 +111,8 @@ it('showTimePickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | S
     
     
     
-    /*
+    
+/**
      * @tc.number   showTimePickerDialogBackgroundEffectTest_static_0200
      * @tc.name     showTimePickerDialogBackgroundEffectTest_static_0200
      * @tc.desc     showTimePickerDialogBackgroundEffectTest_static_0200
@@ -147,7 +148,8 @@ it('showTimePickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | S
     
     
     
-    /*
+    
+/**
      * @tc.number   showTimePickerDialogBackgroundEffectTest_static_0300
      * @tc.name     showTimePickerDialogBackgroundEffectTest_static_0300
      * @tc.desc     showTimePickerDialogBackgroundEffectTest_static_0300

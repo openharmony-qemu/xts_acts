@@ -58,7 +58,8 @@ export default function columnWidthsTest() {
       console.info('columnWidthTest after each called');
     })
     
-    /*
+    
+/**
      * @tc.number   columnWidthsText_static_0100
      * @tc.name     columnWidthsText_static_0100
      * @tc.desc     columnWidthsText_static_0100
@@ -77,7 +78,8 @@ it('columnWidthsText_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       });
   
       
-      /*
+      
+/**
      * @tc.number   columnWidthsText_static_0101
      * @tc.name     columnWidthsText_static_0101
      * @tc.desc     columnWidthsText_static_0101
@@ -99,7 +101,8 @@ it('columnWidthsText_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       })
   
       
-      /*
+      
+/**
      * @tc.number   columnWidthsText_static_0102
      * @tc.name     columnWidthsText_static_0102
      * @tc.desc     columnWidthsText_static_0102
@@ -121,7 +124,8 @@ it('columnWidthsText_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       })
   
       
-      /*
+      
+/**
      * @tc.number   columnWidthsText_static_0103
      * @tc.name     columnWidthsText_static_0103
      * @tc.desc     columnWidthsText_static_0103

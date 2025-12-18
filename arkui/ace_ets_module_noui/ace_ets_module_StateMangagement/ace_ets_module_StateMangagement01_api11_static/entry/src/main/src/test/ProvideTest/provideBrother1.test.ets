@@ -82,7 +82,8 @@ export default function provideBrother1() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   provideBrotherOneTest_static_0100
      * @tc.name     provideBrotherOneTest_static_0100
      * @tc.desc     provideBrotherOneTest_static_0100

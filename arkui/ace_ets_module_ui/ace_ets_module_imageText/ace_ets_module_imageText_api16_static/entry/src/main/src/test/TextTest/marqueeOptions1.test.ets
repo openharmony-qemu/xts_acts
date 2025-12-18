@@ -70,13 +70,14 @@ export default function marqueeOptionsTest1() {
     });
     
     
-/*
+
+    /**
      * @tc.number   marqueeOptionsTest1_static_001
      * @tc.name     marqueeOptionsTest1_static_001
      * @tc.desc     marqueeOptionsTest1_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('marqueeOptionsTest1_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[marqueeOptionsTest1_static_001] START');
       await CommonFunc.sleep(1000);
       let marqueeOptions = inspector.getInspectorByKey('MarqueeOptions');
@@ -97,13 +98,14 @@ export default function marqueeOptionsTest1() {
 
     
     
-/*
+
+    /**
      * @tc.number   onMarqueeStateChangeTest_static_001
      * @tc.name     onMarqueeStateChangeTest_static_001
      * @tc.desc     onMarqueeStateChangeTest_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('onMarqueeStateChangeTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
+it('onMarqueeStateChangeTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[onMarqueeStateChangeTest_static_001] START');
       await CommonFunc.sleep(1000);
       let MarqueeState = inspector.getInspectorByKey('MarqueeState');

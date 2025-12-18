@@ -80,13 +80,14 @@ export default function TextOnWillChangeOptionsTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   TextOnWillChangeOptionsTest_static_0001
      * @tc.name     TextOnWillChangeOptionsTest_static_0001
      * @tc.desc     TextOnWillChangeOptionsTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('TextOnWillChangeOptionsTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TextOnWillChangeOptionsTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnWillChangeOptionsTest TextOnWillChangeOptionsTest0001 START');
       await CommonFunc.sleep(1000);
@@ -148,13 +149,14 @@ export default function TextOnWillChangeOptionsTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextOnWillChangeOptionsTest_static_0002
      * @tc.name     TextOnWillChangeOptionsTest_static_0002
      * @tc.desc     TextOnWillChangeOptionsTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('TextOnWillChangeOptionsTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TextOnWillChangeOptionsTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnWillChangeOptionsTest TextOnWillChangeOptionsTest0002 START');
 
@@ -216,13 +218,14 @@ export default function TextOnWillChangeOptionsTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextOnWillChangeOptionsTest_static_0003
      * @tc.name     TextOnWillChangeOptionsTest_static_0003
      * @tc.desc     TextOnWillChangeOptionsTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('TextOnWillChangeOptionsTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TextOnWillChangeOptionsTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnWillChangeOptionsTest TextOnWillChangeOptionsTest0003 START');
       await CommonFunc.sleep(1000);
@@ -284,13 +287,14 @@ export default function TextOnWillChangeOptionsTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextOnWillChangeOptionsTest_static_0004
      * @tc.name     TextOnWillChangeOptionsTest_static_0004
      * @tc.desc     TextOnWillChangeOptionsTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('TextOnWillChangeOptionsTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TextOnWillChangeOptionsTest_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnWillChangeOptionsTest TextOnWillChangeOptionsTest0004 START');
 
@@ -352,13 +356,14 @@ export default function TextOnWillChangeOptionsTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextOnWillChangeOptionsTest_static_0005
      * @tc.name     TextOnWillChangeOptionsTest_static_0005
      * @tc.desc     TextOnWillChangeOptionsTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('TextOnWillChangeOptionsTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TextOnWillChangeOptionsTest_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnWillChangeOptionsTest TextOnWillChangeOptionsTest0005 START');
       await CommonFunc.sleep(1000);
@@ -420,13 +425,14 @@ export default function TextOnWillChangeOptionsTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextOnWillChangeOptionsTest_static_0006
      * @tc.name     TextOnWillChangeOptionsTest_static_0006
      * @tc.desc     TextOnWillChangeOptionsTest_static_0006
      * @tc.level    Level.LEVEL1
      */
-    it('TextOnWillChangeOptionsTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('TextOnWillChangeOptionsTest_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('TextOnWillChangeOptionsTest TextOnWillChangeOptionsTest0006 START');
 

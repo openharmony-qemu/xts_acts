@@ -79,13 +79,14 @@ export default function customDialogHoverMode() {
       console.info("MultiNavigation after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   customDialogHoverMode_static_0100
      * @tc.name     customDialogHoverMode_static_0100
      * @tc.desc     customDialogHoverMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('customDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('customDialogHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('customDialogHoverMode_0100 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()
@@ -111,13 +112,14 @@ export default function customDialogHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   customDialogHoverMode_static_0200
      * @tc.name     customDialogHoverMode_static_0200
      * @tc.desc     customDialogHoverMode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('customDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('customDialogHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('customDialogHoverMode_0200 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()

@@ -64,7 +64,8 @@ export default function badgeTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_001
      * @tc.name     badgeResourceTest_static_001
      * @tc.desc     badgeResourceTest_static_001
@@ -83,7 +84,8 @@ it('badgeResourceTest_static_001', Level.LEVEL1, async (done: () => void): Promi
     });
 
     
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_002
      * @tc.name     badgeResourceTest_static_002
      * @tc.desc     badgeResourceTest_static_002
@@ -102,7 +104,8 @@ it('badgeResourceTest_static_002', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_003
      * @tc.name     badgeResourceTest_static_003
      * @tc.desc     badgeResourceTest_static_003
@@ -120,7 +123,8 @@ it('badgeResourceTest_static_003', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_004
      * @tc.name     badgeResourceTest_static_004
      * @tc.desc     badgeResourceTest_static_004
@@ -139,7 +143,8 @@ it('badgeResourceTest_static_004', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_005
      * @tc.name     badgeResourceTest_static_005
      * @tc.desc     badgeResourceTest_static_005
@@ -158,7 +163,8 @@ it('badgeResourceTest_static_005', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_006
      * @tc.name     badgeResourceTest_static_006
      * @tc.desc     badgeResourceTest_static_006
@@ -177,7 +183,8 @@ it('badgeResourceTest_static_006', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_007
      * @tc.name     badgeResourceTest_static_007
      * @tc.desc     badgeResourceTest_static_007
@@ -195,7 +202,8 @@ it('badgeResourceTest_static_007', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_008
      * @tc.name     badgeResourceTest_static_008
      * @tc.desc     badgeResourceTest_static_008
@@ -216,7 +224,8 @@ it('badgeResourceTest_static_008', Level.LEVEL1, async (done: () => void): Promi
 
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_011
      * @tc.name     badgeResourceTest_static_011
      * @tc.desc     badgeResourceTest_static_011
@@ -235,7 +244,8 @@ it('badgeResourceTest_static_011', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_012
      * @tc.name     badgeResourceTest_static_012
      * @tc.desc     badgeResourceTest_static_012
@@ -254,7 +264,8 @@ it('badgeResourceTest_static_012', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_013
      * @tc.name     badgeResourceTest_static_013
      * @tc.desc     badgeResourceTest_static_013
@@ -272,7 +283,8 @@ it('badgeResourceTest_static_013', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_014
      * @tc.name     badgeResourceTest_static_014
      * @tc.desc     badgeResourceTest_static_014
@@ -291,7 +303,8 @@ it('badgeResourceTest_static_014', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_015
      * @tc.name     badgeResourceTest_static_015
      * @tc.desc     badgeResourceTest_static_015
@@ -310,7 +323,8 @@ it('badgeResourceTest_static_015', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_016
      * @tc.name     badgeResourceTest_static_016
      * @tc.desc     badgeResourceTest_static_016
@@ -329,7 +343,8 @@ it('badgeResourceTest_static_016', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_017
      * @tc.name     badgeResourceTest_static_017
      * @tc.desc     badgeResourceTest_static_017
@@ -347,7 +362,8 @@ it('badgeResourceTest_static_017', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    /*
+    
+/**
      * @tc.number   badgeResourceTest_static_018
      * @tc.name     badgeResourceTest_static_018
      * @tc.desc     badgeResourceTest_static_018

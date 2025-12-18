@@ -82,13 +82,14 @@ export default function textAreaInputTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textAreaInputTest_static_0001
      * @tc.name     textAreaInputTest_static_0001
      * @tc.desc     textAreaInputTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
+it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
       if (AppStorage.get<number>("winLeft") == 0) {
         let driver = Driver.create();
         console.info('textAreaInputTest textAreaInputTest0001 START');

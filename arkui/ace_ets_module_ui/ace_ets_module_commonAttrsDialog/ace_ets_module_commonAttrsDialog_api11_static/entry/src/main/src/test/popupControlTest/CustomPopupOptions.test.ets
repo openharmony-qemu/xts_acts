@@ -82,13 +82,14 @@ export default function CustomPopupOptions() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   CustomPopupOptions_static_0100
      * @tc.name     CustomPopupOptions_static_0100
      * @tc.desc     CustomPopupOptions_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('CustomPopupOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('CustomPopupOptions_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomPopupOptions_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(2000);

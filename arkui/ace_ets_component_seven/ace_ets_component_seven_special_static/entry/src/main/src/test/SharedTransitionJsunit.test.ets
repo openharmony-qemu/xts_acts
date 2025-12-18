@@ -56,7 +56,8 @@ export default function sharedTransitionJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   sharedTransitionTest_static_0100
      * @tc.name     sharedTransitionTest_static_0100
      * @tc.desc     sharedTransitionTest_static_0100

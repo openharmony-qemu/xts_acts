@@ -20,10 +20,10 @@ import { ClickEvent } from '@ohos.arkui.component';
 @Entry
 @Component
 struct ButtonAlign {
-  
-  
-  
-  
+  // @State isLocalizedAlignment: LocalizedAlignment[] =
+  //   [LocalizedAlignment.TOP_START, LocalizedAlignment.TOP, LocalizedAlignment.TOP_END, LocalizedAlignment.START,
+  //     LocalizedAlignment.CENTER, LocalizedAlignment.END, LocalizedAlignment.BOTTOM_START, LocalizedAlignment.BOTTOM,
+  //     LocalizedAlignment.BOTTOM_END]
   @State isLocalizedAlignmentIndex: number = 0
   @State isDirection: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto]
   @State isDirectionIndex: number = 0

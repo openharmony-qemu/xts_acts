@@ -72,13 +72,14 @@ export default function RichEditorTextStyle() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorTextStyle_static_0001
      * @tc.name     RichEditorTextStyle_static_0001
      * @tc.desc     RichEditorTextStyle_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorTextStyle_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorTextStyle_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle RichEditorTextStyle0001 START');
       await CommonFunc.sleep(1000);
@@ -101,13 +102,14 @@ export default function RichEditorTextStyle() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorTextStyle_static_0002
      * @tc.name     RichEditorTextStyle_static_0002
      * @tc.desc     RichEditorTextStyle_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorTextStyle_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorTextStyle_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle RichEditorTextStyle0002 START');
       await CommonFunc.sleep(1000);
@@ -130,13 +132,14 @@ export default function RichEditorTextStyle() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorTextStyle_static_0003
      * @tc.name     RichEditorTextStyle_static_0003
      * @tc.desc     RichEditorTextStyle_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorTextStyle_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorTextStyle_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle RichEditorTextStyle0003 START');
       await CommonFunc.sleep(1000);
@@ -159,13 +162,14 @@ export default function RichEditorTextStyle() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorTextStyle_static_0004
      * @tc.name     RichEditorTextStyle_static_0004
      * @tc.desc     RichEditorTextStyle_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorTextStyle_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorTextStyle_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle RichEditorTextStyle0004 START');
       await CommonFunc.sleep(1000);
@@ -188,13 +192,14 @@ export default function RichEditorTextStyle() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorTextStyle_static_0005
      * @tc.name     RichEditorTextStyle_static_0005
      * @tc.desc     RichEditorTextStyle_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorTextStyle_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorTextStyle_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle RichEditorTextStyle0005 START');
       await CommonFunc.sleep(1000);
@@ -217,13 +222,14 @@ export default function RichEditorTextStyle() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorTextStyle_static_0006
      * @tc.name     RichEditorTextStyle_static_0006
      * @tc.desc     RichEditorTextStyle_static_0006
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorTextStyle_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorTextStyle_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorTextStyle RichEditorTextStyle0006 START');
       await CommonFunc.sleep(1000);

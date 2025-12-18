@@ -18,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement'
 
 class SelectModifier1 implements AttributeModifier<SelectAttribute> {
     font: Font = { size: 30, weight: 400, family: 'serif', style: FontStyle.Normal }
-    fontColor: Color = Color.Brown
+    fontColor: int = 0xCCCCCC as int
     spaceValue: number = 8
     spaceValueString: string = '50.00vp'
     arrowPosition: ArrowPosition = ArrowPosition.END

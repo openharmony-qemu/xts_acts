@@ -62,13 +62,14 @@ export default function ImageOrientationTest() {
     });
 
     
-/*
+
+    /**
      * @tc.number   ImageOrientationTest_static_0100
      * @tc.name     ImageOrientationTest_static_0100
      * @tc.desc     ImageOrientationTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ImageOrientationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ImageOrientationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageOrientationTest_0100 START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);

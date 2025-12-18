@@ -78,7 +78,7 @@ export default function tipsDialogTest() {
       console.info('tipsDialogTest after each called');
     })
 
-    /*
+    /**
      * @tc.number   tipsDialogTest_static_0100
      * @tc.name     tipsDialogTest_static_0100
      * @tc.desc     tipsDialogTest_static_0100
@@ -107,7 +107,7 @@ export default function tipsDialogTest() {
         done();
       });
 
-    /*
+    /**
      * @tc.number   tipsDialogTest_static_0200
      * @tc.name     tipsDialogTest_static_0200
      * @tc.desc     tipsDialogTest_static_0200
@@ -136,7 +136,7 @@ export default function tipsDialogTest() {
         done();
       });
 
-    /*
+    /**
      * @tc.number   tipsDialogTest_static_0300
      * @tc.name     tipsDialogTest_static_0300
      * @tc.desc     tipsDialogTest_static_0300

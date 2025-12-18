@@ -80,13 +80,14 @@ export default function abilityTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ArkUX_Stage_Popup_static_0100
      * @tc.name     ArkUX_Stage_Popup_static_0100
      * @tc.desc     ArkUX_Stage_Popup_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Stage_Popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Stage_Popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Popup_0100 START');
       setTimeout(() => {
         try {

@@ -79,7 +79,8 @@ export default function FlexMatchParentTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   FlexMatchParentTest_static_0100
      * @tc.name     FlexMatchParentTest_static_0100
      * @tc.desc     FlexMatchParentTest_static_0100

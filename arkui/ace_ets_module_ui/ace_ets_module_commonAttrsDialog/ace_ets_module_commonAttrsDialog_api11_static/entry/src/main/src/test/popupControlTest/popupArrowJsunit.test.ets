@@ -80,13 +80,14 @@ export default function popupArrowJsunit() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   popupArrowJsunit_static_0100
      * @tc.name     popupArrowJsunit_static_0100
      * @tc.desc     popupArrowJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('popupArrowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('popupArrowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[popupArrowJsunit_0100] START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -75,13 +75,14 @@ export default function CustomLayoutUniqueidTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   CustomLayoutUniqueidTest_static_0100
      * @tc.name     CustomLayoutUniqueidTest_static_0100
      * @tc.desc     CustomLayoutUniqueidTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('CustomLayoutUniqueidTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomLayoutUniqueidTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[CustomLayoutUniqueidTest_static_0100] START');
       await CommonFunc.sleep(2000);
 
@@ -117,13 +118,14 @@ export default function CustomLayoutUniqueidTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   CustomLayoutUniqueidTest_static_0200
      * @tc.name     CustomLayoutUniqueidTest_static_0200
      * @tc.desc     CustomLayoutUniqueidTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('CustomLayoutUniqueidTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomLayoutUniqueidTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('CustomLayoutUniqueidTest_static_0200 START');
       await CommonFunc.sleep(1000);
 

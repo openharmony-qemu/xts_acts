@@ -85,13 +85,14 @@ export default function menuBlurStyleJsunit() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   menuBlurStyleJsunit_static_0100
      * @tc.name     menuBlurStyleJsunit_static_0100
      * @tc.desc     menuBlurStyleJsunit_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('menuBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('menuBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuBlurStyleJsunit_0100] START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

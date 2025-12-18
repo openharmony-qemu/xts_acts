@@ -81,7 +81,8 @@ export default function provideParent6() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   provideParentSixTest_static_0100
      * @tc.name     provideParentSixTest_static_0100
      * @tc.desc     provideParentSixTest_static_0100

@@ -52,7 +52,8 @@ export default function counterJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testCounter01_static_01
      * @tc.name     testCounter01_static_01
      * @tc.desc     testCounter01_static_01
@@ -70,7 +71,8 @@ it('testCounter01_static_01', Level.LEVEL0, async (done: () => void): Promise<vo
 
     
     
-    /*
+    
+/**
      * @tc.number   testCounter02_static_02
      * @tc.name     testCounter02_static_02
      * @tc.desc     testCounter02_static_02

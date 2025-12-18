@@ -49,7 +49,8 @@ export default function listItemGroupJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testList_item_group0007_static_01
      * @tc.name     testList_item_group0007_static_01
      * @tc.desc     testList_item_group0007_static_01

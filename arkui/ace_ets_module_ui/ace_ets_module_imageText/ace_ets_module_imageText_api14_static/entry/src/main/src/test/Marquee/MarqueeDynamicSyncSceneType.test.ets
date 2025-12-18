@@ -64,13 +64,14 @@ export default function MarqueeDynamicSyncSceneTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   MarqueeDynamicSyncSceneTest_static_0010
      * @tc.name     MarqueeDynamicSyncSceneTest_static_0010
      * @tc.desc     MarqueeDynamicSyncSceneTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('MarqueeDynamicSyncSceneTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MarqueeDynamicSyncSceneTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MarqueeDynamicSyncSceneTest_0010 START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);

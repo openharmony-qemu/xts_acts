@@ -52,7 +52,8 @@ export default function checkboxJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Checkbox_static_0100
      * @tc.name     ArkUX_Stage_Checkbox_static_0100
      * @tc.desc     ArkUX_Stage_Checkbox_static_0100
@@ -78,7 +79,8 @@ it('ArkUX_Stage_Checkbox_static_0100', Level.LEVEL0, async (done: () => void): P
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Checkbox_static_0400
      * @tc.name     ArkUX_Stage_Checkbox_static_0400
      * @tc.desc     ArkUX_Stage_Checkbox_static_0400
@@ -104,7 +106,8 @@ it('ArkUX_Stage_Checkbox_static_0400', Level.LEVEL0, async (done: () => void): P
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Checkbox_static_0300
      * @tc.name     ArkUX_Stage_Checkbox_static_0300
      * @tc.desc     ArkUX_Stage_Checkbox_static_0300
@@ -131,7 +134,8 @@ it('ArkUX_Stage_Checkbox_static_0300', Level.LEVEL0, async (done: () => void): P
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Checkbox_attrs_static_0200
      * @tc.name     ArkUX_Stage_Checkbox_attrs_static_0200
      * @tc.desc     ArkUX_Stage_Checkbox_attrs_static_0200

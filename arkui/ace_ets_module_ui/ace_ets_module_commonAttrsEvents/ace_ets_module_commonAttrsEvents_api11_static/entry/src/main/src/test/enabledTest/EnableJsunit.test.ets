@@ -68,13 +68,14 @@ export default function enableJsunit() {
     //   routerInstance.back();
     // })
 
-    /*
+    
+    /**
      * @tc.number   testEnable_static_01
      * @tc.name     testEnable_static_01
      * @tc.desc     testEnable_static_01
      * @tc.level    Level.LEVEL0
      */
-    it('testEnable_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEnable_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEnable01] START');
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('enabled');
@@ -84,13 +85,14 @@ export default function enableJsunit() {
       done()
     });
 
-    /*
+    
+    /**
      * @tc.number   testEnable_static_03
      * @tc.name     testEnable_static_03
      * @tc.desc     testEnable_static_03
      * @tc.level    Level.LEVEL0
      */
-    it('testEnable_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEnable_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEnable03] START');
       try {
         let eventData: events_emitter.EventData = {
@@ -115,13 +117,14 @@ export default function enableJsunit() {
       done()
     });
 
-    /*
+    
+    /**
      * @tc.number   testEnable_static_04
      * @tc.name     testEnable_static_04
      * @tc.desc     testEnable_static_04
      * @tc.level    Level.LEVEL0
      */
-    it('testEnable_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEnable_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testEnable04 START');
       try {
         let eventData: events_emitter.EventData = {
@@ -145,13 +148,14 @@ export default function enableJsunit() {
       done()
     });
 
-    /*
+    
+    /**
      * @tc.number   testEnable_static_02
      * @tc.name     testEnable_static_02
      * @tc.desc     testEnable_static_02
      * @tc.level    Level.LEVEL0
      */
-    it('testEnable_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('testEnable_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEnable02] START');
       try {
         let eventData: events_emitter.EventData = {

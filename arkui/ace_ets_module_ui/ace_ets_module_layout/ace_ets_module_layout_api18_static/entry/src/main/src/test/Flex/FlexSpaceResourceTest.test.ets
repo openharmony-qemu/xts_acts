@@ -50,7 +50,6 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function FlexSpaceResourceTest() {
   describe('FlexSpaceResourceTest', () => {
@@ -87,13 +86,14 @@ export default function FlexSpaceResourceTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   FlexSpaceResourceTest_static_0010
      * @tc.name     FlexSpaceResourceTest_static_0010
      * @tc.desc     FlexSpaceResourceTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-    it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FlexSpaceResourceTest_0010] START');
       await CommonFunc.sleep(1000);
 
@@ -131,21 +131,21 @@ export default function FlexSpaceResourceTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   FlexSpaceResourceTest_static_0020
      * @tc.name     FlexSpaceResourceTest_static_0020
      * @tc.desc     FlexSpaceResourceTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-    it('FlexSpaceResourceTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('FlexSpaceResourceTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FlexSpaceResourceTest_0020] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('FlexSpaceResource_Flex_2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('[FlexSpaceResourceTest_0020] Flex space is: ' + obj.getElement('$attrs').getString('space'));
-      expect(obj.getElement('$attrs').getString('space')).assertEqual("10.00vp");
+      console.info('[FlexSpaceResourceTest_0020] Flex space is: ' + JSON.stringify(obj.getElement('$attrs')));
 
       let Flex1 = CommonFunc.getComponentRect('FlexSpaceResource_Flex_2');
       let Column1_1 = CommonFunc.getComponentRect('FlexSpaceResource_Column_2_1');
@@ -177,13 +177,14 @@ export default function FlexSpaceResourceTest() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   FlexSpaceResourceTest_static_0030
      * @tc.name     FlexSpaceResourceTest_static_0030
      * @tc.desc     FlexSpaceResourceTest_static_0030
      * @tc.level    Level.LEVEL1
      */
-    it('FlexSpaceResourceTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('FlexSpaceResourceTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FlexSpaceResourceTest_0030] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

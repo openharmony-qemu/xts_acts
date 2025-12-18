@@ -71,13 +71,14 @@ export default function SearchFontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   SearchFontFeatureTest_static_0010
      * @tc.name     SearchFontFeatureTest_static_0010
      * @tc.desc     SearchFontFeatureTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-    it('SearchFontFeatureTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SearchFontFeatureTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SearchFontFeatureTest_0010] START');
       let strJson: string = inspector.getInspectorByKey('Search_fontFeature_on');
       console.info('[SearchFontFeatureTest_0010] Search_fontFeature_on: ' + strJson);
@@ -90,13 +91,14 @@ export default function SearchFontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   SearchFontFeatureTest_static_0020
      * @tc.name     SearchFontFeatureTest_static_0020
      * @tc.desc     SearchFontFeatureTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-    it('SearchFontFeatureTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SearchFontFeatureTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SearchFontFeatureTest_0020] START');
       let strJson = inspector.getInspectorByKey('Search_fontFeature_off');
       console.info('[SearchFontFeatureTest_0020] fontFeature: ' + strJson);
@@ -109,13 +111,14 @@ export default function SearchFontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   SearchFontFeatureTest_static_0030
      * @tc.name     SearchFontFeatureTest_static_0030
      * @tc.desc     SearchFontFeatureTest_static_0030
      * @tc.level    Level.LEVEL1
      */
-    it('SearchFontFeatureTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SearchFontFeatureTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SearchFontFeatureTest_0030] START');
       let strJson = inspector.getInspectorByKey('Search_fontFeature_default');
       console.info('[SearchFontFeatureTest_0030] Search_fontFeature_default: ' + strJson);
@@ -128,13 +131,14 @@ export default function SearchFontFeatureTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   SearchFontFeatureTest_static_0040
      * @tc.name     SearchFontFeatureTest_static_0040
      * @tc.desc     SearchFontFeatureTest_static_0040
      * @tc.level    Level.LEVEL1
      */
-    it('SearchFontFeatureTest_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SearchFontFeatureTest_static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SearchFontFeatureTest_0040] START');
       let strJson = inspector.getInspectorByKey('Search_fontFeature_undefined');
       console.info('[SearchFontFeatureTest_0040] fontFeature: ' + strJson);

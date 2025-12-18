@@ -70,13 +70,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0100
      * @tc.name     searchEnterKeyType_static_0100
      * @tc.desc     searchEnterKeyType_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0100';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -110,13 +111,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0200
      * @tc.name     searchEnterKeyType_static_0200
      * @tc.desc     searchEnterKeyType_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0200';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -150,13 +152,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0300
      * @tc.name     searchEnterKeyType_static_0300
      * @tc.desc     searchEnterKeyType_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0300';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -190,13 +193,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0400
      * @tc.name     searchEnterKeyType_static_0400
      * @tc.desc     searchEnterKeyType_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0400';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -230,13 +234,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0500
      * @tc.name     searchEnterKeyType_static_0500
      * @tc.desc     searchEnterKeyType_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0500';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -270,13 +275,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0600
      * @tc.name     searchEnterKeyType_static_0600
      * @tc.desc     searchEnterKeyType_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0600';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -309,13 +315,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0700
      * @tc.name     searchEnterKeyType_static_0700
      * @tc.desc     searchEnterKeyType_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'searchEnterKeyType0700';
       console.info('[' + tagName + '] START============================');
       CommonFunc.sleep(1000)
@@ -347,13 +354,14 @@ export default function searchEnterKeyTypeTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   searchEnterKeyType_static_0800
      * @tc.name     searchEnterKeyType_static_0800
      * @tc.desc     searchEnterKeyType_static_0800
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
         let tagName = 'searchEnterKeyType0800';
         console.info('[' + tagName + '] START============================');
         CommonFunc.sleep(1000)
@@ -385,13 +393,14 @@ export default function searchEnterKeyTypeTest() {
 
 
       
-      /*
+      
+    /**
      * @tc.number   searchEnterKeyType_static_0900
      * @tc.name     searchEnterKeyType_static_0900
      * @tc.desc     searchEnterKeyType_static_0900
      * @tc.level    Level.LEVEL1
      */
-    it('searchEnterKeyType_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('searchEnterKeyType_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
         let tagName = 'searchEnterKeyType0900';
         console.info('[' + tagName + '] START============================');
         let strJsonNew: string = inspector.getInspectorByKey('key_search_enterkeytype_default');

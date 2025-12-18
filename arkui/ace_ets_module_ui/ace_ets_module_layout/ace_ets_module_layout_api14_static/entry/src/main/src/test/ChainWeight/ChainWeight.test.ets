@@ -90,13 +90,14 @@ export default function ChainWeight() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ChainWeight_static_0100
      * @tc.name     ChainWeight_static_0100
      * @tc.desc     ChainWeight_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ChainWeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ChainWeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ChainWeight_static_0100 START');
       await CommonFunc.sleep(1000);
 

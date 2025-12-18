@@ -64,7 +64,8 @@ export default function ProgressContentTest() {
       routerInstance.back();
     })
     
-    /*
+    
+/**
      * @tc.number   ProgressContentTest_static_001
      * @tc.name     ProgressContentTest_static_001
      * @tc.desc     ProgressContentTest_static_001
@@ -83,7 +84,8 @@ it('ProgressContentTest_static_001', Level.LEVEL1, async (done: () => void): Pro
     });
 
     
-    /*
+    
+/**
      * @tc.number   ProgressContentTest_static_002
      * @tc.name     ProgressContentTest_static_002
      * @tc.desc     ProgressContentTest_static_002
@@ -102,7 +104,8 @@ it('ProgressContentTest_static_002', Level.LEVEL1, async (done: () => void): Pro
     });
 
     
-    /*
+    
+/**
      * @tc.number   ProgressContentTest_static_003
      * @tc.name     ProgressContentTest_static_003
      * @tc.desc     ProgressContentTest_static_003
@@ -121,7 +124,8 @@ it('ProgressContentTest_static_003', Level.LEVEL1, async (done: () => void): Pro
     });
     
     
-    /*
+    
+/**
      * @tc.number   ProgressContentTest_static_004
      * @tc.name     ProgressContentTest_static_004
      * @tc.desc     ProgressContentTest_static_004

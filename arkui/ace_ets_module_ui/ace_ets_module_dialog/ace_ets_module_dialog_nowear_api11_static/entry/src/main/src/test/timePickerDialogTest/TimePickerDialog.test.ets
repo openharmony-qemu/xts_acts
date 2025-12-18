@@ -71,13 +71,14 @@ export default function TimePickerDialog() {
 
     
     
-/*
+
+    /**
      * @tc.number   TimePickerDialog_static_0100
      * @tc.name     TimePickerDialog_static_0100
      * @tc.desc     TimePickerDialog_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('TimePickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TimePickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TimePickerDialog_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

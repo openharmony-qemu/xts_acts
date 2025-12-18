@@ -87,13 +87,14 @@ export default function popup() {
       console.info("bindPopup after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   popup_static_0100
      * @tc.name     popup_static_0100
      * @tc.desc     popup_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('popup_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('popup_0100 START');
       await Utils.sleep(1500);
       let callback = (indexEvent: events_emitter.EventData) => {

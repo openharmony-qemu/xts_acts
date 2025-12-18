@@ -70,13 +70,14 @@ export default function preventDefault() {
     });
 
 
-    /*
-         * @tc.number   preventDefault_static_0001
-         * @tc.name     preventDefault_static_0001
-         * @tc.desc     preventDefault_static_0001
-         * @tc.level    Level.LEVEL0
-         */
-    it('preventDefault_static_0001', Level.LEVEL0, async () => {
+    
+    /**
+     * @tc.number   preventDefault_static_0001
+     * @tc.name     preventDefault_static_0001
+     * @tc.desc     preventDefault_static_0001
+     * @tc.level    Level.LEVEL0
+     */
+it('preventDefault_static_0001', Level.LEVEL0, async () => {
       try {
         let driver = Driver.create();
           console.info('preventDefault preventDefault0001 START');

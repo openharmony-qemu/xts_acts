@@ -74,13 +74,14 @@ export default function DetentsChange() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   DetentsChange_static_0100
      * @tc.name     DetentsChange_static_0100
      * @tc.desc     DetentsChange_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('DetentsChange_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('DetentsChange_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DetentsChange_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

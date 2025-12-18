@@ -49,7 +49,8 @@ export default function marqueeJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testMarquee_static_04001
      * @tc.name     testMarquee_static_04001
      * @tc.desc     testMarquee_static_04001
@@ -66,7 +67,8 @@ it('testMarquee_static_04001', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testMarquee_static_04002
      * @tc.name     testMarquee_static_04002
      * @tc.desc     testMarquee_static_04002
@@ -83,7 +85,8 @@ it('testMarquee_static_04002', Level.LEVEL0, async (done: () => void): Promise<v
 
     
     
-    /*
+    
+/**
      * @tc.number   testMarquee_static_04003
      * @tc.name     testMarquee_static_04003
      * @tc.desc     testMarquee_static_04003
@@ -100,7 +103,8 @@ it('testMarquee_static_04003', Level.LEVEL0, async (done: () => void): Promise<v
 
     
     
-    /*
+    
+/**
      * @tc.number   testMarquee_static_04004
      * @tc.name     testMarquee_static_04004
      * @tc.desc     testMarquee_static_04004
@@ -117,7 +121,8 @@ it('testMarquee_static_04004', Level.LEVEL0, async (done: () => void): Promise<v
 
    
     
-    /*
+    
+/**
      * @tc.number   testMarquee_static_04005
      * @tc.name     testMarquee_static_04005
      * @tc.desc     testMarquee_static_04005

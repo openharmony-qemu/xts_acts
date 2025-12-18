@@ -35,8 +35,7 @@ let data2: BadgeParamWithString = {
 }
 
 let data3: BadgeParamWithString = {
-  value: 'string',
-  // value: $r('app.string.text_string'),
+  value: $r('app.string.text_string'),
   style: {},
   position: undefined
 }
@@ -89,8 +88,8 @@ class MyNodeController extends  NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     let row = typeNode.createRowNode(uiContext)
-    // col.initialize().borderColor(Color.Black).alignItems(HorizontalAlign.Center).width('50%')
-    // row.initialize()
+    col.initialize().borderColor(Color.Black).alignItems(HorizontalAlign.Center).width('50%')
+    row.initialize()
 
     let badgeString1 = typeNode.createBadgeNode(uiContext)
     badgeString1.initialize(data1).key('key_ badge_001')

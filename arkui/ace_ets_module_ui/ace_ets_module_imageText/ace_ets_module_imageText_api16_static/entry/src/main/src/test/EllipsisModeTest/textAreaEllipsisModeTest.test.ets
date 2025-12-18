@@ -70,13 +70,14 @@ export default function textAreaEllipsisModeTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   textAreaEllipsisModeTest_static_0001
      * @tc.name     textAreaEllipsisModeTest_static_0001
      * @tc.desc     textAreaEllipsisModeTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaEllipsisModeTest_static_0001', Level.LEVEL1, async () => {
+it('textAreaEllipsisModeTest_static_0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0001 START');
         await CommonFunc.sleep(1000);
@@ -89,13 +90,14 @@ export default function textAreaEllipsisModeTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   textAreaEllipsisModeTest_static_0002
      * @tc.name     textAreaEllipsisModeTest_static_0002
      * @tc.desc     textAreaEllipsisModeTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaEllipsisModeTest_static_0002', Level.LEVEL1, async () => {
+it('textAreaEllipsisModeTest_static_0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0002 START');
         await CommonFunc.sleep(1000);
@@ -108,13 +110,14 @@ export default function textAreaEllipsisModeTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   textAreaEllipsisModeTest_static_0003
      * @tc.name     textAreaEllipsisModeTest_static_0003
      * @tc.desc     textAreaEllipsisModeTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaEllipsisModeTest_static_0003', Level.LEVEL1, async () => {
+it('textAreaEllipsisModeTest_static_0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0003 START');
         await CommonFunc.sleep(1000);
@@ -127,13 +130,14 @@ export default function textAreaEllipsisModeTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   textAreaEllipsisModeTest_static_0004
      * @tc.name     textAreaEllipsisModeTest_static_0004
      * @tc.desc     textAreaEllipsisModeTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaEllipsisModeTest_static_0004', Level.LEVEL1, async () => {
+it('textAreaEllipsisModeTest_static_0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0004 START');
         await CommonFunc.sleep(1000);
@@ -146,13 +150,14 @@ export default function textAreaEllipsisModeTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   textAreaEllipsisModeTest_static_0005
      * @tc.name     textAreaEllipsisModeTest_static_0005
      * @tc.desc     textAreaEllipsisModeTest_static_0005
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaEllipsisModeTest_static_0005', Level.LEVEL1, async () => {
+it('textAreaEllipsisModeTest_static_0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
         console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0005 START');
         await CommonFunc.sleep(1000);

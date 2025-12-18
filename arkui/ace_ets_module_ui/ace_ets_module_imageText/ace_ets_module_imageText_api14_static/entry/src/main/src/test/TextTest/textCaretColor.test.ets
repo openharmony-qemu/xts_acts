@@ -71,13 +71,14 @@ export default function textCaretColor() {
 
     
     
-/*
+
+    /**
      * @tc.number   textCaretColor_static_0001
      * @tc.name     textCaretColor_static_0001
      * @tc.desc     textCaretColor_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('textCaretColor_static_0001', Level.LEVEL1, async () => {
+it('textCaretColor_static_0001', Level.LEVEL1, async () => {
       console.info('textCaretColor0001 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('text');

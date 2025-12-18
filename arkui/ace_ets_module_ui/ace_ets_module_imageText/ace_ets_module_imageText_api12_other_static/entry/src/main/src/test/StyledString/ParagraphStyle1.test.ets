@@ -80,13 +80,14 @@ export default function ParagraphStyle1() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   ParagraphStyle_static_10001
      * @tc.name     ParagraphStyle_static_10001
      * @tc.desc     ParagraphStyle_static_10001
      * @tc.level    Level.LEVEL1
      */
-    it('ParagraphStyle_static_10001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ParagraphStyle_static_10001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString ParagraphStyle_static_10001 START');
       await CommonFunc.sleep(1000);

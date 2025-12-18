@@ -48,7 +48,8 @@ export default function pathNewTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testPathNe0004
      * @tc.name     testPathNe0004
      * @tc.desc     testPathNe0004

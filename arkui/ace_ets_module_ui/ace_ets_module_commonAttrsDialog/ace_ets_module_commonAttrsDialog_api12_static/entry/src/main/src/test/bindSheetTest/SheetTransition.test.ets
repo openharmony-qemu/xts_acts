@@ -72,13 +72,14 @@ export default function SheetTransition() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   SheetTransition_static_0100
      * @tc.name     SheetTransition_static_0100
      * @tc.desc     SheetTransition_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SheetTransition_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

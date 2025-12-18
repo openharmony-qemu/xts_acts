@@ -107,7 +107,7 @@ struct NavigationPage {
       }
       .key('navigation1')
       .backButtonIcon('resources/base/media/icon.png')
-      // .attributeModifier(this.myModifier)
+      .attributeModifier(this.myModifier)
     }.height('100%')
   }
 }

@@ -48,13 +48,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_001
      * @tc.name     ShapeJsunit_static_001
      * @tc.desc     ShapeJsunit_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_001] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -70,13 +71,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_002
      * @tc.name     ShapeJsunit_static_002
      * @tc.desc     ShapeJsunit_static_002
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_002] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,13 +91,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_003
      * @tc.name     ShapeJsunit_static_003
      * @tc.desc     ShapeJsunit_static_003
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_003] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -108,13 +111,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_004
      * @tc.name     ShapeJsunit_static_004
      * @tc.desc     ShapeJsunit_static_004
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_004] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -127,13 +131,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_005
      * @tc.name     ShapeJsunit_static_005
      * @tc.desc     ShapeJsunit_static_005
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_005] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -145,13 +150,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_006
      * @tc.name     ShapeJsunit_static_006
      * @tc.desc     ShapeJsunit_static_006
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_006] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -164,13 +170,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_007
      * @tc.name     ShapeJsunit_static_007
      * @tc.desc     ShapeJsunit_static_007
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_007] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -183,13 +190,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_008
      * @tc.name     ShapeJsunit_static_008
      * @tc.desc     ShapeJsunit_static_008
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_008] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -202,13 +210,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_009
      * @tc.name     ShapeJsunit_static_009
      * @tc.desc     ShapeJsunit_static_009
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_009] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -221,13 +230,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_0010
      * @tc.name     ShapeJsunit_static_0010
      * @tc.desc     ShapeJsunit_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0010] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -243,13 +253,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_0011
      * @tc.name     ShapeJsunit_static_0011
      * @tc.desc     ShapeJsunit_static_0011
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0011] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -262,13 +273,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_0012
      * @tc.name     ShapeJsunit_static_0012
      * @tc.desc     ShapeJsunit_static_0012
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0012] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);
@@ -281,13 +293,14 @@ export default function shape() {
     });
 
 
-    /*
+    
+    /**
      * @tc.number   ShapeJsunit_static_0013
      * @tc.name     ShapeJsunit_static_0013
      * @tc.desc     ShapeJsunit_static_0013
      * @tc.level    Level.LEVEL0
      */
-    it('ShapeJsunit_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ShapeJsunit_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ShapeJsunit_static_0013] START');
       let strJson = inspector.getInspectorByKey('ShapeKey1');
       let obj = JSON.parseJsonElement(strJson);

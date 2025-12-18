@@ -76,13 +76,14 @@ export default function followTransformOfTargetPopup() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   followTransformOfTargetPopup_static_0010
      * @tc.name     followTransformOfTargetPopup_static_0010
      * @tc.desc     followTransformOfTargetPopup_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('followTransformOfTargetPopup_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('followTransformOfTargetPopup_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('followTransformOfTargetPopup_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);
@@ -107,13 +108,14 @@ export default function followTransformOfTargetPopup() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   followTransformOfTargetPopup_static_0020
      * @tc.name     followTransformOfTargetPopup_static_0020
      * @tc.desc     followTransformOfTargetPopup_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('followTransformOfTargetPopup_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('followTransformOfTargetPopup_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('followTransformOfTargetPopup_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

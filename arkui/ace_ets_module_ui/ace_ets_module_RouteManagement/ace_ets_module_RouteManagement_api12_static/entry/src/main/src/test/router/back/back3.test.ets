@@ -56,7 +56,8 @@ export default function back3() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   back3_static_0100
      * @tc.name     back3_static_0100
      * @tc.desc     back3_static_0100

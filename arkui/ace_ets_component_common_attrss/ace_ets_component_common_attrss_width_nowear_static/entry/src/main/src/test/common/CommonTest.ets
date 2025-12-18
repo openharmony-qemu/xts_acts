@@ -18,6 +18,8 @@ import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { Length } from '@ohos.arkui.component'
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
@@ -59,12 +61,7 @@ export default class CommonTest {
           caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
         }
 
-        /**
-         * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
-         * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
-         * @tc.desc Test whether the state of different components
-         *            after modifying their properties meets expectations
-         */
+        
         it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
           console.info('[' + caseTag + '] START');
           //Push page.
@@ -74,7 +71,7 @@ export default class CommonTest {
           pageConfig.containerView = containerView;
           pageConfig.testValue = testValue;
           await Utils.pushPage(pageConfig);
-          // try {
+          try {
           //If there is no call back functions, do nothing.
           if (functions.length === 0) {
             done();
@@ -93,16 +90,16 @@ export default class CommonTest {
             caseTag: caseTag,
             testValue: testValue,
           }
-          if (funcs.length > 1) {
-            // let customParams = await ((functions[0] as CallbackWithReturn)(data) as Promise<Object>);
-            // //Set custom params to data, can be used by check test result.
-            // if (customParams) {
-            //   data.customParams = customParams;
-            // }
-          } else {
+            if (funcs.length > 1) {
+              let customParams = await (functions[0] as CallbackWithReturn)(data) ?? '';
+              //Set custom params to data, can be used by check test result.
+              if (customParams) {
+                data.customParams = customParams;
+              }
+            } else {
             //If there is only an assertion function, automatically modify the status value
-            // console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-            // AttrsManager.change(data.caseTag, data.testValue.setValue);
+            AppStorage.setOrCreate<Length>('_width', data.testValue.setValue.width) // 页面不更新
+            console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
             await Utils.sleep(1000);
           }
 
@@ -111,15 +108,15 @@ export default class CommonTest {
           data.viewObj = JSON.parseJsonElement(strJson);
           await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-          // } catch (err: Error) {
-          //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-          //   console.error(msg);
-          //   console.error(err.stack);
-          //   if (err.name != 'AssertException') {
-          //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-          //     expect().assertFail();
-          //   }
-          // }
+          } catch (err: Error) {
+            let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+            console.error(msg);
+            console.error(err.stack);
+            if (err.name != 'AssertException') {
+              await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+              expect().assertFail();
+            }
+          }
           await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 
           console.info('[' + caseTag + '] END');

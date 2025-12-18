@@ -73,13 +73,14 @@ export default function TextPickerDialog() {
 
     
     
-/*
+
+    /**
      * @tc.number   TextPickerDialog_static_0100
      * @tc.name     TextPickerDialog_static_0100
      * @tc.desc     TextPickerDialog_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('TextPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('TextPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('TextPickerDialog_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -55,7 +55,8 @@ export default function replaceNamedRoute8() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   replaceNamedRoute8_static_0100
      * @tc.name     replaceNamedRoute8_static_0100
      * @tc.desc     replaceNamedRoute8_static_0100
@@ -78,7 +79,7 @@ it('replaceNamedRoute8_static_0100', Level.LEVEL2, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
       console.info('[replaceNamedRoute8_static_0100] btn2 click');
       let str =  AppStorage.get<string>('replaceNamedRoute8_mes') + '';
-      expect(str).assertEqual('undefined;replaceNamedRoute8_aboutToAppear;replaceNamedRoute8_aboutToAppear');
+      expect(str).assertEqual('undefined;replaceNamedRoute8_aboutToAppear');
 
       console.info('[replaceNamedRoute8_static_0100] END');
       done();

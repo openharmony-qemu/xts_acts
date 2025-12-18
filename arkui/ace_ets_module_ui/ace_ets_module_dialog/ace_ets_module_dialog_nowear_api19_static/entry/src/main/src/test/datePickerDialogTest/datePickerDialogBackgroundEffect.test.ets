@@ -34,7 +34,6 @@ export default function datePickerDialogBackgroundEffectTest() {
     beforeAll(() => {
       console.info("DatePickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -56,7 +55,8 @@ export default function datePickerDialogBackgroundEffectTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   datePickerDialogBackgroundEffectTest_static_0100
      * @tc.name     datePickerDialogBackgroundEffectTest_static_0100
      * @tc.desc     datePickerDialogBackgroundEffectTest_static_0100
@@ -113,7 +113,8 @@ it('datePickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   datePickerDialogBackgroundEffectTest_static_0200
      * @tc.name     datePickerDialogBackgroundEffectTest_static_0200
      * @tc.desc     datePickerDialogBackgroundEffectTest_static_0200
@@ -150,7 +151,8 @@ it('datePickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   datePickerDialogBackgroundEffectTest_static_0300
      * @tc.name     datePickerDialogBackgroundEffectTest_static_0300
      * @tc.desc     datePickerDialogBackgroundEffectTest_static_0300

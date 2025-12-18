@@ -71,7 +71,8 @@ export default function textAreaInputTest() {
 
     
     
-/*
+
+/**
      * @tc.number   textAreaInputTest_static_0001
      * @tc.name     textAreaInputTest_static_0001
      * @tc.desc     textAreaInputTest_static_0001

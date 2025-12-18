@@ -74,13 +74,14 @@ export default function sourceTypeJsunit() {
       console.info("sourceType after each called");
     });
 
-    /*
+    
+    /**
      * @tc.number   sourceTypeTest_static_0100
      * @tc.name     sourceTypeTest_static_0100
      * @tc.desc     sourceTypeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('sourceTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('sourceTypeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000)
 
       let rect = CommonFunc.getComponentRect('button')

@@ -63,13 +63,14 @@ export default function bindContextMenuMargin() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   bindContextMenuMargin_Static_0100
      * @tc.name     bindContextMenuMargin_Static_0100
      * @tc.desc     bindContextMenuMargin_Static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('bindContextMenuMargin_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindContextMenuMargin_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindContextMenuMargin_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

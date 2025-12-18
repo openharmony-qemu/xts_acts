@@ -64,13 +64,15 @@ export default function UnmarshallingErrorCodeTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   UnmarshallingErrorCodeTest_static_0010
      * @tc.name     UnmarshallingErrorCodeTest_static_0010
      * @tc.desc     UnmarshallingErrorCodeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('UnmarshallingErrorCodeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('UnmarshallingErrorCodeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[UnmarshallingErrorCodeTest_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);

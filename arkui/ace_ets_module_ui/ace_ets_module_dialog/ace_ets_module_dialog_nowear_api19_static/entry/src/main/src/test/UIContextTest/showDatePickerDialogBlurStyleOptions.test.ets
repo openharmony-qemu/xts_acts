@@ -38,7 +38,6 @@ export default function showDatePickerDialogBlurStyleOptionsTest() {
     beforeAll(() => {
       console.info("ShowDatePickerDialogBlurStyleOptionsTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -62,7 +61,8 @@ export default function showDatePickerDialogBlurStyleOptionsTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   showDatePickerDialogBlurStyleOptions_static_0100
      * @tc.name     showDatePickerDialogBlurStyleOptions_static_0100
      * @tc.desc     showDatePickerDialogBlurStyleOptions_static_0100
@@ -105,7 +105,8 @@ it('showDatePickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   showDatePickerDialogBlurStyleOptions_static_0200
      * @tc.name     showDatePickerDialogBlurStyleOptions_static_0200
      * @tc.desc     showDatePickerDialogBlurStyleOptions_static_0200
@@ -138,7 +139,8 @@ it('showDatePickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   showDatePickerDialogBlurStyleOptions_static_0300
      * @tc.name     showDatePickerDialogBlurStyleOptions_static_0300
      * @tc.desc     showDatePickerDialogBlurStyleOptions_static_0300

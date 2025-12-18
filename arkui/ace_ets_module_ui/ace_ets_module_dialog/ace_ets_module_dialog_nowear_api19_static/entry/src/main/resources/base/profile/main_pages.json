@@ -11,6 +11,8 @@
     "MainAbility/pages/calendarPickerDialog/calendarPickerDialogBackgroundEffect",
     "MainAbility/pages/calendarPickerDialog/calendarPickerDialogBlurStyleOptions",
     "MainAbility/pages/UIContext/showActionSheetBlurStyleOptions",
-    "MainAbility/pages/UIContext/showTextPickerDialogBlurStyleOptions"
+    "MainAbility/pages/UIContext/showTextPickerDialogBlurStyleOptions",
+    "MainAbility/pages/actionSheet/actionSheetBackgroundEffect",
+    "MainAbility/pages/actionSheet/actionSheetBlurStyleOptions"
   ]
 }

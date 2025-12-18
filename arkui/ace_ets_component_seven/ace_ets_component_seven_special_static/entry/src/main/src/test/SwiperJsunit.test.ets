@@ -49,7 +49,8 @@ export default function swiperJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0001
      * @tc.name     swiperTest_static_0001
      * @tc.desc     swiperTest_static_0001
@@ -68,7 +69,8 @@ it('swiperTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<voi
 
   
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0002
      * @tc.name     swiperTest_static_0002
      * @tc.desc     swiperTest_static_0002
@@ -88,7 +90,8 @@ it('swiperTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0003
      * @tc.name     swiperTest_static_0003
      * @tc.desc     swiperTest_static_0003
@@ -108,7 +111,8 @@ it('swiperTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0004
      * @tc.name     swiperTest_static_0004
      * @tc.desc     swiperTest_static_0004
@@ -128,7 +132,8 @@ it('swiperTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0005
      * @tc.name     swiperTest_static_0005
      * @tc.desc     swiperTest_static_0005
@@ -148,7 +153,8 @@ it('swiperTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0006
      * @tc.name     swiperTest_static_0006
      * @tc.desc     swiperTest_static_0006
@@ -168,7 +174,8 @@ it('swiperTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0007
      * @tc.name     swiperTest_static_0007
      * @tc.desc     swiperTest_static_0007
@@ -188,7 +195,8 @@ it('swiperTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0008
      * @tc.name     swiperTest_static_0008
      * @tc.desc     swiperTest_static_0008
@@ -207,7 +215,8 @@ it('swiperTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0009
      * @tc.name     swiperTest_static_0009
      * @tc.desc     swiperTest_static_0009
@@ -227,7 +236,8 @@ it('swiperTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0010
      * @tc.name     swiperTest_static_0010
      * @tc.desc     swiperTest_static_0010
@@ -247,7 +257,8 @@ it('swiperTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0011
      * @tc.name     swiperTest_static_0011
      * @tc.desc     swiperTest_static_0011
@@ -267,7 +278,8 @@ it('swiperTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0012
      * @tc.name     swiperTest_static_0012
      * @tc.desc     swiperTest_static_0012
@@ -287,7 +299,8 @@ it('swiperTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0013
      * @tc.name     swiperTest_static_0013
      * @tc.desc     swiperTest_static_0013
@@ -306,7 +319,8 @@ it('swiperTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_0014
      * @tc.name     swiperTest_static_0014
      * @tc.desc     swiperTest_static_0014
@@ -326,7 +340,8 @@ it('swiperTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_015
      * @tc.name     swiperTest_static_015
      * @tc.desc     swiperTest_static_015
@@ -346,7 +361,8 @@ it('swiperTest_static_015', Level.LEVEL0, async (done: () => void): Promise<void
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_016
      * @tc.name     swiperTest_static_016
      * @tc.desc     swiperTest_static_016
@@ -366,7 +382,8 @@ it('swiperTest_static_016', Level.LEVEL0, async (done: () => void): Promise<void
 
 
     
-    /*
+    
+/**
      * @tc.number   swiperTest_static_017
      * @tc.name     swiperTest_static_017
      * @tc.desc     swiperTest_static_017

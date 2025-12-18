@@ -63,13 +63,14 @@ export default function treeViewSymbol() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   treeViewSymbol_static_0100
      * @tc.name     treeViewSymbol_static_0100
      * @tc.desc     treeViewSymbol_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('treeViewSymbol_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('treeViewSymbol_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[treeViewSymbol_static_0100] START');
           try{

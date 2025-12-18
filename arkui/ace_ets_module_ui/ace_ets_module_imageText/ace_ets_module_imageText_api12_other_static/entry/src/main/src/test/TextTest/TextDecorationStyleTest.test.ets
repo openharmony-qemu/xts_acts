@@ -72,13 +72,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0001
      * @tc.name     TextDecorationStyleTest_static_0001
      * @tc.desc     TextDecorationStyleTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0001 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextDOTTED');
@@ -93,13 +94,14 @@ export default function TextDecorationStyleTest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0002
      * @tc.name     TextDecorationStyleTest_static_0002
      * @tc.desc     TextDecorationStyleTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0002 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextDASHED');
@@ -115,13 +117,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0003
      * @tc.name     TextDecorationStyleTest_static_0003
      * @tc.desc     TextDecorationStyleTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0003 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleSearchDOTTED');
@@ -137,13 +140,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0004
      * @tc.name     TextDecorationStyleTest_static_0004
      * @tc.desc     TextDecorationStyleTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0004 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleSearchDASHED');
@@ -159,13 +163,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0005
      * @tc.name     TextDecorationStyleTest_static_0005
      * @tc.desc     TextDecorationStyleTest_static_0005
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0005 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextAreaDOTTED');
@@ -181,13 +186,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0006
      * @tc.name     TextDecorationStyleTest_static_0006
      * @tc.desc     TextDecorationStyleTest_static_0006
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0006 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextAreaDASHED');
@@ -203,13 +209,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0007
      * @tc.name     TextDecorationStyleTest_static_0007
      * @tc.desc     TextDecorationStyleTest_static_0007
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0007 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextInputDOTTED');
@@ -225,13 +232,14 @@ export default function TextDecorationStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextDecorationStyleTest_static_0008
      * @tc.name     TextDecorationStyleTest_static_0008
      * @tc.desc     TextDecorationStyleTest_static_0008
      * @tc.level    Level.LEVEL0
      */
-    it('TextDecorationStyleTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextDecorationStyleTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDecorationStyleTest0008 START');
       await CommonFunc.sleep(500);
       let strJson = inspector.getInspectorByKey('TextDecorationStyleTextInputDASHED');

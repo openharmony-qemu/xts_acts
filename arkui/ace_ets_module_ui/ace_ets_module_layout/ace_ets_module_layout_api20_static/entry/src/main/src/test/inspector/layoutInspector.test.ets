@@ -63,7 +63,7 @@ export default function LayoutInspectorTest() {
         if (!("layoutInspector" == pages.name)) {
           console.info("get LayoutInspectorTest pages.name:" + JSON.stringify(pages.name));
           
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           
         }
@@ -77,7 +77,8 @@ export default function LayoutInspectorTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ISLAYOUT_INSPECTOR_static_0100
      * @tc.name     ISLAYOUT_INSPECTOR_static_0100
      * @tc.desc     ISLAYOUT_INSPECTOR_static_0100
@@ -98,7 +99,8 @@ it('ISLAYOUT_INSPECTOR_static_0100', Level.LEVEL1, async (done: () => void): Pro
     });
 
     
-    /*
+    
+/**
      * @tc.number   ISLAYOUT_INSPECTOR_static_0200
      * @tc.name     ISLAYOUT_INSPECTOR_static_0200
      * @tc.desc     ISLAYOUT_INSPECTOR_static_0200
@@ -109,9 +111,10 @@ it('ISLAYOUT_INSPECTOR_static_0200', Level.LEVEL1, async (done: () => void): Pro
       
       let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['content'])
       console.info("ISLAYOUT_INSPECTOR_0200 testStr: " + testStr);
-      console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).getElement("content"));
+      console.info("ISLAYOUT_INSPECTOR_0200 testStr: " + JSON.stringify(JSON.parseJsonElement(testStr)));
+      console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).getString("content"));
       
-      let isContainContent: boolean = JSON.parseJsonElement(testStr).getElement("content") === undefined ? true : false
+      let isContainContent: boolean = JSON.parseJsonElement(testStr).getString("content") === undefined ? true : false
       
       expect(isContainContent).assertEqual(true);
       console.info('[ISLAYOUT_INSPECTOR_0200] END');

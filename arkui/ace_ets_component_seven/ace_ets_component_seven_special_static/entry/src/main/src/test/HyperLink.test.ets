@@ -52,7 +52,8 @@ export default function hyperLinkJsunit() {
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_hyperLink_attrs_static_0100
      * @tc.name     ArkUX_Stage_hyperLink_attrs_static_0100
      * @tc.desc     ArkUX_Stage_hyperLink_attrs_static_0100

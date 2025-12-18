@@ -54,7 +54,8 @@ export default function transitionJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   transitionTest_static_0200
      * @tc.name     transitionTest_static_0200
      * @tc.desc     transitionTest_static_0200

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Builder, Column, Button, Text, ColumnOptions, SheetSize, ClickEvent, FlexAlign, SheetType } from '@ohos.arkui.component'
+import { Entry, Component, TripleLengthDetents, Builder, Column, Button, Text, ColumnOptions, SheetSize, ClickEvent, FlexAlign, SheetType } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -57,7 +57,7 @@ struct detentSelection {
           this.isShow = true
         })
         .bindSheet(this.isShow, this.myBuilder, {
-          // detents: [SheetSize.MEDIUM, SheetSize.FIT_CONTENT, SheetSize.LARGE],
+          // detents: [SheetSize.MEDIUM, SheetSize.FIT_CONTENT, SheetSize.LARGE] as TripleLengthDetents,
           preferType: SheetType.BOTTOM,
           detentSelection: this.detentSelection,
           onAppear: () => {

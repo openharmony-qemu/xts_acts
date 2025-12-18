@@ -61,13 +61,14 @@ export default function KeyboardAvoidModeTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   KeyboardAvoidModeTest_static_0100
      * @tc.name     KeyboardAvoidModeTest_static_0100
      * @tc.desc     KeyboardAvoidModeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('KeyboardAvoidModeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('KeyboardAvoidModeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('KeyboardAvoidModeTest_static_0100 START');
       // globalThis.value.message.notify({
       //   value:'OFFSET_WITH_CARET'
@@ -90,13 +91,14 @@ export default function KeyboardAvoidModeTest() {
     });
 	
     
-/*
+
+    /**
      * @tc.number   KeyboardAvoidModeTest_static_0200
      * @tc.name     KeyboardAvoidModeTest_static_0200
      * @tc.desc     KeyboardAvoidModeTest_static_0200
      * @tc.level    Level.LEVEL2
      */
-    it('KeyboardAvoidModeTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('KeyboardAvoidModeTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('KeyboardAvoidModeTest_static_0200 START');
       // globalThis.value.message.notify({
       //   value:'RESIZE_WITH_CARET'

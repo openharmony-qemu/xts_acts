@@ -71,13 +71,14 @@ export default function SheetMode() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   SheetMode_static_0100
      * @tc.name     SheetMode_static_0100
      * @tc.desc     SheetMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('SheetMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SheetMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SheetMode_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

@@ -63,7 +63,7 @@ export default function SegmentButtonV2Test() {
     });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0100
      * @tc.name     SegmentButtonV2Test_static_0100
      * @tc.desc     SegmentButtonV2Test_static_0100
@@ -93,7 +93,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0200
      * @tc.name     SegmentButtonV2Test_static_0200
      * @tc.desc     SegmentButtonV2Test_static_0200
@@ -121,13 +121,14 @@ export default function SegmentButtonV2Test() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   SegmentButtonV2Test_static_0300
      * @tc.name     SegmentButtonV2Test_static_0300
      * @tc.desc     SegmentButtonV2Test_static_0300
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0300", "START");
         let imageSegment = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -149,7 +150,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0400
      * @tc.name     SegmentButtonV2Test_static_0400
      * @tc.desc     SegmentButtonV2Test_static_0400
@@ -175,7 +176,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0500
      * @tc.name     SegmentButtonV2Test_static_0500
      * @tc.desc     SegmentButtonV2Test_static_0500
@@ -202,7 +203,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0600
      * @tc.name     SegmentButtonV2Test_static_0600
      * @tc.desc     SegmentButtonV2Test_static_0600
@@ -227,7 +228,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0700
      * @tc.name     SegmentButtonV2Test_static_0700
      * @tc.desc     SegmentButtonV2Test_static_0700
@@ -256,7 +257,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0800
      * @tc.name     SegmentButtonV2Test_static_0800
      * @tc.desc     SegmentButtonV2Test_static_0800
@@ -279,7 +280,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0900
      * @tc.name     SegmentButtonV2Test_static_0900
      * @tc.desc     SegmentButtonV2Test_static_0900
@@ -307,7 +308,7 @@ export default function SegmentButtonV2Test() {
       });
 
 
-    /*
+    /**
      * @tc.number   SegmentButtonV2Test_static_0110
      * @tc.name     SegmentButtonV2Test_static_0110
      * @tc.desc     SegmentButtonV2Test_static_0110

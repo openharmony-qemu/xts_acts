@@ -48,7 +48,8 @@ export default function navDestinationJsunit() {
 
     
     
-    /*
+    
+/**
      * @tc.number   testNavDestination_static_01
      * @tc.name     testNavDestination_static_01
      * @tc.desc     testNavDestination_static_01

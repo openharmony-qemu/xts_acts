@@ -34,7 +34,6 @@ export default function textPickerDialogBackgroundEffectTest() {
     beforeAll(() => {
       console.info("textPickerDialogBackgroundEffectTest beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
@@ -56,7 +55,8 @@ export default function textPickerDialogBackgroundEffectTest() {
     
     
     
-    /*
+    
+/**
      * @tc.number   textPickerDialogBackgroundEffectTest_static_0100
      * @tc.name     textPickerDialogBackgroundEffectTest_static_0100
      * @tc.desc     textPickerDialogBackgroundEffectTest_static_0100
@@ -105,7 +105,8 @@ it('textPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   textPickerDialogBackgroundEffectTest_static_0200
      * @tc.name     textPickerDialogBackgroundEffectTest_static_0200
      * @tc.desc     textPickerDialogBackgroundEffectTest_static_0200
@@ -141,7 +142,8 @@ it('textPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.
     
     
     
-    /*
+    
+/**
      * @tc.number   textPickerDialogBackgroundEffectTest_static_0300
      * @tc.name     textPickerDialogBackgroundEffectTest_static_0300
      * @tc.desc     textPickerDialogBackgroundEffectTest_static_0300

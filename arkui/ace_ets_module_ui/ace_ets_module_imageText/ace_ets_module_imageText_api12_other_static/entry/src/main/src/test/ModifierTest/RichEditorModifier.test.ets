@@ -67,13 +67,14 @@ export default function RichEditorModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorModifierTest_static_0010
      * @tc.name     RichEditorModifierTest_static_0010
      * @tc.desc     RichEditorModifierTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('RichEditorModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RichEditorModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichEditorModifier_get_width');
@@ -88,13 +89,14 @@ export default function RichEditorModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorModifierTest_static_0020
      * @tc.name     RichEditorModifierTest_static_0020
      * @tc.desc     RichEditorModifierTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('RichEditorModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('RichEditorModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('RichEditorModifier_get_type');

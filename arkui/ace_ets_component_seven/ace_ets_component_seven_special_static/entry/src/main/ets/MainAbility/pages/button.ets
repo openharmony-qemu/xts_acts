@@ -20,7 +20,7 @@ class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.type(ButtonType.Circle)
       .stateEffect(true)
-      // .fontColor(0xCCCCCC)
+      .fontColor(0xCCCCCC)
       .fontSize(12)
       .fontWeight(FontWeight.Normal)
       .fontFamily('cursive')

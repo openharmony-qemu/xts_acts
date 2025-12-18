@@ -64,7 +64,8 @@ export default function selectApi1() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   selectApi1_static_0100
      * @tc.name     selectApi1_static_0100
      * @tc.desc     selectApi1_static_0100

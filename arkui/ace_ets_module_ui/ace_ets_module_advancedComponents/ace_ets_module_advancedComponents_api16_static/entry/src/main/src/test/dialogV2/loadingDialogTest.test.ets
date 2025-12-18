@@ -63,13 +63,14 @@ export default function loadingDialogTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   loadingDialogTest_static_0100
      * @tc.name     loadingDialogTest_static_0100
      * @tc.desc     loadingDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('loadingDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('loadingDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[loadingDialogTest_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

@@ -98,7 +98,8 @@ export default function linkJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   linkTest_static_001
      * @tc.name     linkTest_static_001
      * @tc.desc     linkTest_static_001
@@ -119,7 +120,8 @@ it('linkTest_static_001', Level.LEVEL0, async () => {
     });
 
     
-    /*
+    
+/**
      * @tc.number   linkTest_static_002
      * @tc.name     linkTest_static_002
      * @tc.desc     linkTest_static_002

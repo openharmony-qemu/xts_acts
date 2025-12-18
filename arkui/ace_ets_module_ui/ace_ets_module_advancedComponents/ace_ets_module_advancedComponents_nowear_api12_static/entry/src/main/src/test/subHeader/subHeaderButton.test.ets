@@ -62,13 +62,14 @@ export default function subHeaderButton() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   subHeaderButton_static_0100
      * @tc.name     subHeaderButton_static_0100
      * @tc.desc     subHeaderButton_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('subHeaderButton_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('subHeaderButton_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderButton_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

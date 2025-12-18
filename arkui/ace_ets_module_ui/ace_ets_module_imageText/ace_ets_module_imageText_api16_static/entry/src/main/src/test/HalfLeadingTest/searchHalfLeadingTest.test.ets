@@ -68,13 +68,14 @@ export default function searchHalfLeadingTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   searchHalfLeadingTest_static_0001
      * @tc.name     searchHalfLeadingTest_static_0001
      * @tc.desc     searchHalfLeadingTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('searchHalfLeadingTest_static_0001', Level.LEVEL0, async () => {
+it('searchHalfLeadingTest_static_0001', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0001 START');
         await CommonFunc.sleep(1000);
@@ -87,13 +88,14 @@ export default function searchHalfLeadingTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   searchHalfLeadingTest_static_0002
      * @tc.name     searchHalfLeadingTest_static_0002
      * @tc.desc     searchHalfLeadingTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('searchHalfLeadingTest_static_0002', Level.LEVEL0, async () => {
+it('searchHalfLeadingTest_static_0002', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0002 START');
         await CommonFunc.sleep(1000);
@@ -106,13 +108,14 @@ export default function searchHalfLeadingTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   searchHalfLeadingTest_static_0003
      * @tc.name     searchHalfLeadingTest_static_0003
      * @tc.desc     searchHalfLeadingTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-    it('searchHalfLeadingTest_static_0003', Level.LEVEL0, async () => {
+it('searchHalfLeadingTest_static_0003', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0003 START');
         await CommonFunc.sleep(1000);
@@ -125,13 +128,14 @@ export default function searchHalfLeadingTest() {
 	
 	
     
-/*
+
+    /**
      * @tc.number   searchHalfLeadingTest_static_0004
      * @tc.name     searchHalfLeadingTest_static_0004
      * @tc.desc     searchHalfLeadingTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-    it('searchHalfLeadingTest_static_0004', Level.LEVEL0, async () => {
+it('searchHalfLeadingTest_static_0004', Level.LEVEL0, async () => {
         let driver = Driver.create();
         console.info('searchHalfLeadingTest searchHalfLeadingTest0004 START');
         await CommonFunc.sleep(1000);

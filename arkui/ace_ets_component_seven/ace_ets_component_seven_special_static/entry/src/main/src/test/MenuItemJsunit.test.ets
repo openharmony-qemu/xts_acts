@@ -50,7 +50,8 @@ export default function menuItemJsunit() {
 
     
     
-    /*
+    
+/**
      * @tc.number   menuItemJsunit01_static_01
      * @tc.name     menuItemJsunit01_static_01
      * @tc.desc     menuItemJsunit01_static_01
@@ -69,7 +70,8 @@ it('menuItemJsunit01_static_01', Level.LEVEL0, async (done: () => void): Promise
 
    
     
-    /*
+    
+/**
      * @tc.number   menuItemJsunit02_static_02
      * @tc.name     menuItemJsunit02_static_02
      * @tc.desc     menuItemJsunit02_static_02
@@ -88,7 +90,8 @@ it('menuItemJsunit02_static_02', Level.LEVEL0, async (done: () => void): Promise
 
    
     
-    /*
+    
+/**
      * @tc.number   menuItemJsunit03_static_03
      * @tc.name     menuItemJsunit03_static_03
      * @tc.desc     menuItemJsunit03_static_03
@@ -107,7 +110,8 @@ it('menuItemJsunit03_static_03', Level.LEVEL0, async (done: () => void): Promise
 
    
     
-    /*
+    
+/**
      * @tc.number   menuItemJsunit04_static_04
      * @tc.name     menuItemJsunit04_static_04
      * @tc.desc     menuItemJsunit04_static_04
@@ -126,7 +130,8 @@ it('menuItemJsunit04_static_04', Level.LEVEL0, async (done: () => void): Promise
 
    
     
-    /*
+    
+/**
      * @tc.number   menuItemJsunit05_static_05
      * @tc.name     menuItemJsunit05_static_05
      * @tc.desc     menuItemJsunit05_static_05

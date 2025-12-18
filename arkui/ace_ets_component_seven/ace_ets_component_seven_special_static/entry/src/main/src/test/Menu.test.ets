@@ -50,7 +50,8 @@ export default function MenuJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_attrs_static_0100
      * @tc.name     ArkUX_Stage_Menu_attrs_static_0100
      * @tc.desc     ArkUX_Stage_Menu_attrs_static_0100
@@ -68,7 +69,8 @@ it('ArkUX_Stage_Menu_attrs_static_0100', Level.LEVEL0, async (done: () => void):
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_attrs_static_0101
      * @tc.name     ArkUX_Stage_Menu_attrs_static_0101
      * @tc.desc     ArkUX_Stage_Menu_attrs_static_0101
@@ -89,7 +91,8 @@ it('ArkUX_Stage_Menu_attrs_static_0101', Level.LEVEL0, async (done: () => void):
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUX_Stage_Menu_attrs_static_0102
      * @tc.name     ArkUX_Stage_Menu_attrs_static_0102
      * @tc.desc     ArkUX_Stage_Menu_attrs_static_0102

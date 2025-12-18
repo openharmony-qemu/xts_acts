@@ -78,7 +78,7 @@ export default function confirmDialogTest() {
       console.info('confirmDialogTest after each called');
     })
 
-    /*
+    /**
      * @tc.number   confirmDialogTest_static_0100
      * @tc.name     confirmDialogTest_static_0100
      * @tc.desc     confirmDialogTest_static_0100

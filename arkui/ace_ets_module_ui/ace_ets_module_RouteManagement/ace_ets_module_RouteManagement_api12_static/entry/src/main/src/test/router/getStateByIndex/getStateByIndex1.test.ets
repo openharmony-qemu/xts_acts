@@ -57,7 +57,8 @@ export default function getStateByIndex1() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   getStateByIndex1_static_0100
      * @tc.name     getStateByIndex1_static_0100
      * @tc.desc     getStateByIndex1_static_0100

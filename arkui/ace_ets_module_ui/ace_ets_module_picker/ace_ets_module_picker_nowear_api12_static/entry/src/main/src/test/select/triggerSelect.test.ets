@@ -61,7 +61,8 @@ export default function triggerSelect() {
     });
     
      
-    /*
+    
+/**
      * @tc.number   triggerSelect_static_0100
      * @tc.name     triggerSelect_static_0100
      * @tc.desc     triggerSelect_static_0100

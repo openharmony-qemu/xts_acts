@@ -55,7 +55,8 @@ export default function router_back8() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   router_back8_static_0100
      * @tc.name     router_back8_static_0100
      * @tc.desc     router_back8_static_0100

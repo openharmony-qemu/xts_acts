@@ -52,7 +52,8 @@ export default function alphabetIndexerJsunit() {
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0101
      * @tc.name     ArkUI_AlphabetIndexer_static_0101
      * @tc.desc     ArkUI_AlphabetIndexer_static_0101
@@ -68,7 +69,8 @@ it('ArkUI_AlphabetIndexer_static_0101', Level.LEVEL0, async (done: () => void): 
  
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0102
      * @tc.name     ArkUI_AlphabetIndexer_static_0102
      * @tc.desc     ArkUI_AlphabetIndexer_static_0102
@@ -84,7 +86,8 @@ it('ArkUI_AlphabetIndexer_static_0102', Level.LEVEL0, async (done: () => void): 
     
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0103
      * @tc.name     ArkUI_AlphabetIndexer_static_0103
      * @tc.desc     ArkUI_AlphabetIndexer_static_0103
@@ -100,7 +103,8 @@ it('ArkUI_AlphabetIndexer_static_0103', Level.LEVEL0, async (done: () => void): 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0104
      * @tc.name     ArkUI_AlphabetIndexer_static_0104
      * @tc.desc     ArkUI_AlphabetIndexer_static_0104
@@ -116,7 +120,8 @@ it('ArkUI_AlphabetIndexer_static_0104', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0105
      * @tc.name     ArkUI_AlphabetIndexer_static_0105
      * @tc.desc     ArkUI_AlphabetIndexer_static_0105
@@ -132,7 +137,8 @@ it('ArkUI_AlphabetIndexer_static_0105', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0106
      * @tc.name     ArkUI_AlphabetIndexer_static_0106
      * @tc.desc     ArkUI_AlphabetIndexer_static_0106
@@ -148,7 +154,8 @@ it('ArkUI_AlphabetIndexer_static_0106', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0107
      * @tc.name     ArkUI_AlphabetIndexer_static_0107
      * @tc.desc     ArkUI_AlphabetIndexer_static_0107
@@ -163,7 +170,8 @@ it('ArkUI_AlphabetIndexer_static_0107', Level.LEVEL0, async (done: () => void): 
     });    /**
      
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0108
      * @tc.name     ArkUI_AlphabetIndexer_static_0108
      * @tc.desc     ArkUI_AlphabetIndexer_static_0108
@@ -179,7 +187,8 @@ it('ArkUI_AlphabetIndexer_static_0108', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0109
      * @tc.name     ArkUI_AlphabetIndexer_static_0109
      * @tc.desc     ArkUI_AlphabetIndexer_static_0109
@@ -195,7 +204,8 @@ it('ArkUI_AlphabetIndexer_static_0109', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0110
      * @tc.name     ArkUI_AlphabetIndexer_static_0110
      * @tc.desc     ArkUI_AlphabetIndexer_static_0110
@@ -211,7 +221,8 @@ it('ArkUI_AlphabetIndexer_static_0110', Level.LEVEL0, async (done: () => void): 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0111
      * @tc.name     ArkUI_AlphabetIndexer_static_0111
      * @tc.desc     ArkUI_AlphabetIndexer_static_0111
@@ -227,7 +238,8 @@ it('ArkUI_AlphabetIndexer_static_0111', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0112
      * @tc.name     ArkUI_AlphabetIndexer_static_0112
      * @tc.desc     ArkUI_AlphabetIndexer_static_0112
@@ -243,7 +255,8 @@ it('ArkUI_AlphabetIndexer_static_0112', Level.LEVEL0, async (done: () => void): 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0113
      * @tc.name     ArkUI_AlphabetIndexer_static_0113
      * @tc.desc     ArkUI_AlphabetIndexer_static_0113
@@ -259,7 +272,8 @@ it('ArkUI_AlphabetIndexer_static_0113', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0114
      * @tc.name     ArkUI_AlphabetIndexer_static_0114
      * @tc.desc     ArkUI_AlphabetIndexer_static_0114
@@ -275,7 +289,8 @@ it('ArkUI_AlphabetIndexer_static_0114', Level.LEVEL0, async (done: () => void): 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0115
      * @tc.name     ArkUI_AlphabetIndexer_static_0115
      * @tc.desc     ArkUI_AlphabetIndexer_static_0115
@@ -291,7 +306,8 @@ it('ArkUI_AlphabetIndexer_static_0115', Level.LEVEL0, async (done: () => void): 
 
     
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0116
      * @tc.name     ArkUI_AlphabetIndexer_static_0116
      * @tc.desc     ArkUI_AlphabetIndexer_static_0116
@@ -307,7 +323,8 @@ it('ArkUI_AlphabetIndexer_static_0116', Level.LEVEL0, async (done: () => void): 
 
    
     
-    /*
+    
+/**
      * @tc.number   ArkUI_AlphabetIndexer_static_0117
      * @tc.name     ArkUI_AlphabetIndexer_static_0117
      * @tc.desc     ArkUI_AlphabetIndexer_static_0117

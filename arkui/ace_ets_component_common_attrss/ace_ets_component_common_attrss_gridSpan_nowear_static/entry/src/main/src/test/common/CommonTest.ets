@@ -17,6 +17,7 @@
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void> ;
 
@@ -61,12 +62,7 @@ export default class CommonTest {
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          /**
-           * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
-           * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
-           * @tc.desc Test whether the state of different components
-           *            after modifying their properties meets expectations
-           */
+          
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
             //Push page.
@@ -95,8 +91,19 @@ export default class CommonTest {
                 caseTag: caseTag,
                 testValue: testValue,
               }
-              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-              await Utils.sleep(1000);
+
+              if (funcs.length > 1) {
+                let customParams = await (functions[0] as CallbackWithReturn)(data) ?? '';
+                //Set custom params to data, can be used by check test result.
+                if (customParams) {
+                  data.customParams = customParams;
+                }
+              } else {
+                //If there is only an assertion function, automatically modify the status value
+                AppStorage.setOrCreate<number>('_gridSpan', data.testValue.setValue) // 页面不更新
+                console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+                await Utils.sleep(1000);
+              }
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
               console.info('[' + caseTag + '] ================== strJson: ' + strJson);
@@ -131,6 +138,7 @@ export default class CommonTest {
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
+        await Utils.back();
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');

@@ -83,7 +83,8 @@ export default function ConsumeNumber() {
 
 
     
-    /*
+    
+/**
      * @tc.number   ConsumeNumber_static_0100
      * @tc.name     ConsumeNumber_static_0100
      * @tc.desc     ConsumeNumber_static_0100
@@ -105,7 +106,8 @@ it('ConsumeNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeNumber_static_0200
      * @tc.name     ConsumeNumber_static_0200
      * @tc.desc     ConsumeNumber_static_0200
@@ -127,7 +129,8 @@ it('ConsumeNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeNumber_static_0300
      * @tc.name     ConsumeNumber_static_0300
      * @tc.desc     ConsumeNumber_static_0300
@@ -149,7 +152,8 @@ it('ConsumeNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeNumber_static_0400
      * @tc.name     ConsumeNumber_static_0400
      * @tc.desc     ConsumeNumber_static_0400
@@ -171,7 +175,8 @@ it('ConsumeNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   ConsumeNumber_static_0500
      * @tc.name     ConsumeNumber_static_0500
      * @tc.desc     ConsumeNumber_static_0500

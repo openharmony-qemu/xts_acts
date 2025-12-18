@@ -48,7 +48,8 @@ export default function polyLineJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testpolyLine_static_01
      * @tc.name     testpolyLine_static_01
      * @tc.desc     testpolyLine_static_01

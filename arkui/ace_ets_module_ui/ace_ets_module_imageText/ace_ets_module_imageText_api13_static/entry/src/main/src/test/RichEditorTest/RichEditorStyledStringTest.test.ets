@@ -70,13 +70,15 @@ export default function RichEditorStyledStringTest() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   RichEditorStyledStringTest_static_0100
      * @tc.name     RichEditorStyledStringTest_static_0100
      * @tc.desc     RichEditorStyledStringTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('RichEditorStyledStringTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('RichEditorStyledStringTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorStyledStringTest_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

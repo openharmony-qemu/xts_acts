@@ -50,7 +50,8 @@ export default function radioGroupJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testRadioGroup001_static_01
      * @tc.name     testRadioGroup001_static_01
      * @tc.desc     testRadioGroup001_static_01
@@ -72,7 +73,8 @@ it('testRadioGroup001_static_01', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   testRadioGroup002_static_02
      * @tc.name     testRadioGroup002_static_02
      * @tc.desc     testRadioGroup002_static_02

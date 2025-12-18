@@ -55,7 +55,8 @@ export default function getState1() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   getState1_static_0100
      * @tc.name     getState1_static_0100
      * @tc.desc     getState1_static_0100

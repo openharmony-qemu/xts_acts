@@ -33,6 +33,7 @@ import StyledString from './styledString/StyledString.test';
 import StyledStringURL from './styledString/StyledStringURL.test';
 import KeyboardAvoidMode from './UIContext/KeyboardAvoidMode.test'
 export default function testsuite() {
+  StyledStringURL();
   textAreaNode();
   RichEditorOnHoverTest();
   getRectsForRangeTest();
@@ -51,6 +52,5 @@ export default function testsuite() {
   ImageOrientation();
   onSubmitTest();
   StyledString();//11.17SDK pass:1 failed:1
-  StyledStringURL();
   KeyboardAvoidMode();
 }

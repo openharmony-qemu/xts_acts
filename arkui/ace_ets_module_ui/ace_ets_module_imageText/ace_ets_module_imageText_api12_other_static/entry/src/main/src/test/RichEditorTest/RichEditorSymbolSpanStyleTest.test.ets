@@ -65,13 +65,14 @@ export default function RichEditorSymbolSpanStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorSymbolSpanStyleTest_static_0001
      * @tc.name     RichEditorSymbolSpanStyleTest_static_0001
      * @tc.desc     RichEditorSymbolSpanStyleTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorSymbolSpanStyleTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorSymbolSpanStyleTest_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorSymbolSpanStyleTest0001 START');
       await CommonFunc.sleep(1000);
@@ -99,13 +100,14 @@ export default function RichEditorSymbolSpanStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorSymbolSpanStyleTest_static_0002
      * @tc.name     RichEditorSymbolSpanStyleTest_static_0002
      * @tc.desc     RichEditorSymbolSpanStyleTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorSymbolSpanStyleTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorSymbolSpanStyleTest_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('RichEditorSymbolSpanStyleTest0002 START');
       await CommonFunc.sleep(1000);
@@ -134,13 +136,14 @@ export default function RichEditorSymbolSpanStyleTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   RichEditorSymbolSpanStyleTest_static_0003
      * @tc.name     RichEditorSymbolSpanStyleTest_static_0003
      * @tc.desc     RichEditorSymbolSpanStyleTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('RichEditorSymbolSpanStyleTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RichEditorSymbolSpanStyleTest_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info(' RichEditorSymbolSpanStyleTest0003 START');
       await CommonFunc.sleep(1000);

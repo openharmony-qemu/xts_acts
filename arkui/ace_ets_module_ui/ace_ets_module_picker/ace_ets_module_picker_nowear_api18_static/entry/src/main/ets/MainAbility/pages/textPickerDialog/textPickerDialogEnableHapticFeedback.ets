@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, FontWeight } from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, FontWeight,TextPickerDialogOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -60,7 +60,7 @@ struct pickerDialogExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()');
               }
-            })
+            } as TextPickerDialogOptions)
           });
 
         Button('2')
@@ -97,7 +97,7 @@ struct pickerDialogExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()');
               }
-            })
+            } as TextPickerDialogOptions)
           });
 
       }
@@ -136,7 +136,7 @@ struct pickerDialogExample {
             onWillDisappear: () => {
               console.info('TextPickerDialog:onWillDisappear()');
             }
-          })
+          } as TextPickerDialogOptions)
         });
 
         Button('4')
@@ -173,7 +173,7 @@ struct pickerDialogExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()');
               }
-            })
+            } as TextPickerDialogOptions)
           });
       }
     }

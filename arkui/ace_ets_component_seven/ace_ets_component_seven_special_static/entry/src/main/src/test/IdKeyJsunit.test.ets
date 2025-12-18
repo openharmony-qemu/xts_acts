@@ -54,7 +54,8 @@ export default function idKeyJsunit() {
     })
 
     
-    /*
+    
+/**
      * @tc.number   idkey0001_static
      * @tc.name     idkey0001_static
      * @tc.desc     idkey0001_static
@@ -71,7 +72,8 @@ it('idkey0001_static', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   idkey0002_static
      * @tc.name     idkey0002_static
      * @tc.desc     idkey0002_static

@@ -81,13 +81,14 @@ export default function actionSheetHoverMode() {
       console.info("MultiNavigation after each called");
     });
     
-    /*
+    
+    /**
      * @tc.number   actionSheetHoverMode_static_0100
      * @tc.name     actionSheetHoverMode_static_0100
      * @tc.desc     actionSheetHoverMode_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('actionSheetHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('actionSheetHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('actionSheetHoverMode_0100 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()
@@ -113,13 +114,14 @@ export default function actionSheetHoverMode() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   actionSheetHoverMode_static_0200
      * @tc.name     actionSheetHoverMode_static_0200
      * @tc.desc     actionSheetHoverMode_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('actionSheetHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('actionSheetHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('actionSheetHoverMode_0200 START');
       if (display.isFoldable() && display.getFoldStatus() == 3) {
         let driver = Driver.create()

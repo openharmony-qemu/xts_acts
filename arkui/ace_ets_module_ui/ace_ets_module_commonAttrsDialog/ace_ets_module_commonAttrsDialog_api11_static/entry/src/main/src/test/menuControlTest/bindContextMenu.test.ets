@@ -71,13 +71,14 @@ export default function bindContextMenu() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   bindContextMenu_static_0100
      * @tc.name     bindContextMenu_static_0100
      * @tc.desc     bindContextMenu_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('bindContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('bindContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindContextMenu_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

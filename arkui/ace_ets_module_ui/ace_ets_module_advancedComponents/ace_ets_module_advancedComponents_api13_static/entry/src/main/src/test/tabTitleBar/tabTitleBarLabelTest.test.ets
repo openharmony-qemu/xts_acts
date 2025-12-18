@@ -56,7 +56,7 @@ export default function tabTitleBarLabelTest() {
       console.info("tabTitleBarLabelTest after each called");
     })
 
-    /*
+    /**
      * @tc.number   tabTitleBarLabelTest_static_0100
      * @tc.name     tabTitleBarLabelTest_static_0100
      * @tc.desc     tabTitleBarLabelTest_static_0100

@@ -81,7 +81,8 @@ export default function StackSafeAreaTest() {
     });
 
 
-    /*
+    
+/**
      * @tc.number   StackSafeAreaTest_static_0100
      * @tc.name     StackSafeAreaTest_static_0100
      * @tc.desc     StackSafeAreaTest_static_0100

@@ -90,13 +90,14 @@ export default function ModalBlurStyle() {
       await CommonFunc.sleep(1000);
     });
     
-    /*
+    
+    /**
      * @tc.number   ModalBlurStyle_static_0100
      * @tc.name     ModalBlurStyle_static_0100
      * @tc.desc     ModalBlurStyle_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ModalBlurStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ModalBlurStyle_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -113,13 +114,14 @@ export default function ModalBlurStyle() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   ModalBlurStyle_static_0200
      * @tc.name     ModalBlurStyle_static_0200
      * @tc.desc     ModalBlurStyle_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('ModalBlurStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ModalBlurStyle_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -135,13 +137,14 @@ export default function ModalBlurStyle() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   ModalBlurStyle_static_0300
      * @tc.name     ModalBlurStyle_static_0300
      * @tc.desc     ModalBlurStyle_static_0300
      * @tc.level    Level.LEVEL0
      */
-    it('ModalBlurStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ModalBlurStyle_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0300 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -157,13 +160,14 @@ export default function ModalBlurStyle() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   ModalBlurStyle_static_0400
      * @tc.name     ModalBlurStyle_static_0400
      * @tc.desc     ModalBlurStyle_static_0400
      * @tc.level    Level.LEVEL0
      */
-    it('ModalBlurStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ModalBlurStyle_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0400 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -180,13 +184,14 @@ export default function ModalBlurStyle() {
       done();
     });
     
-    /*
+    
+    /**
      * @tc.number   ModalBlurStyle_static_0500
      * @tc.name     ModalBlurStyle_static_0500
      * @tc.desc     ModalBlurStyle_static_0500
      * @tc.level    Level.LEVEL0
      */
-    it('ModalBlurStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ModalBlurStyle_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ModalBlurStyle_0500 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

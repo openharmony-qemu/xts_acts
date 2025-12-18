@@ -49,7 +49,8 @@ export default function listItemJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testList_itemOnSelect00051_static_01
      * @tc.name     testList_itemOnSelect00051_static_01
      * @tc.desc     testList_itemOnSelect00051_static_01
@@ -69,7 +70,8 @@ it('testList_itemOnSelect00051_static_01', Level.LEVEL0, async (done: () => void
 
    
     
-    /*
+    
+/**
      * @tc.number   testList_itemOnSelect00052_static_02
      * @tc.name     testList_itemOnSelect00052_static_02
      * @tc.desc     testList_itemOnSelect00052_static_02

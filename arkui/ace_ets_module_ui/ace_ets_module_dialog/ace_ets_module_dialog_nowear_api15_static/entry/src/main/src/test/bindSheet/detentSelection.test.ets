@@ -53,13 +53,14 @@ export default function detentSelection() {
 
     
     
-/*
+
+    /**
      * @tc.number   detentSelection_static_0100
      * @tc.name     detentSelection_static_0100
      * @tc.desc     detentSelection_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('detentSelection_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('detentSelection_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('detentSelection_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -86,13 +87,14 @@ export default function detentSelection() {
 
     
     
-/*
+
+    /**
      * @tc.number   detentSelection_static_0200
      * @tc.name     detentSelection_static_0200
      * @tc.desc     detentSelection_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('detentSelection_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('detentSelection_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('detentSelection_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

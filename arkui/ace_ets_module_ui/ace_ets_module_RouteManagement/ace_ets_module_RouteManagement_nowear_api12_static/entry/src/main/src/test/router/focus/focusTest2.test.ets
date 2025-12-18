@@ -55,7 +55,8 @@ export default function focus() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   focus_0100
      * @tc.name     focus_0100
      * @tc.desc     focus_0100

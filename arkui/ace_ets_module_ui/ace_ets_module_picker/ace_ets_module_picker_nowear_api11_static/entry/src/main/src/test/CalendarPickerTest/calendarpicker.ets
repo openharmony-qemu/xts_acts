@@ -71,6 +71,7 @@ export default function calendarpicker() {
     
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0100
      * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0100
@@ -93,6 +94,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0100', Level.LEVEL1, async (done
 
 
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0200
@@ -141,6 +143,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0200', Level.LEVEL1, async (done
 
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0300
      * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0300
@@ -186,6 +189,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0300', Level.LEVEL1, async (done
 
 
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0400
@@ -236,6 +240,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0400', Level.LEVEL1, async (done
 
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0500
      * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0500
@@ -285,6 +290,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0500', Level.LEVEL1, async (done
 
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0600
      * @tc.name     ArkUI_Stage_CalendarPicker_textStyle_static_0600
@@ -326,6 +332,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0600', Level.LEVEL1, async (done
 
 
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_textStyle_static_0700
@@ -369,6 +376,7 @@ it('ArkUI_Stage_CalendarPicker_textStyle_static_0700', Level.LEVEL1, async (done
 
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
      * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100
@@ -389,6 +397,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0100', Level.LEVEL1, async (done
 
 
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200
@@ -429,6 +438,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0200', Level.LEVEL1, async (done
 
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
      * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300
@@ -465,6 +475,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300', Level.LEVEL1, async (done
 
     
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400
@@ -503,6 +514,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0400', Level.LEVEL1, async (done
     
      
     
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
      * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500
@@ -536,6 +548,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500', Level.LEVEL1, async (done
     
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
      * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600
@@ -560,6 +573,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0600', Level.LEVEL1, async (done
 
     
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700
@@ -586,6 +600,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0700', Level.LEVEL1, async (done
     
     
 
+
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
      * @tc.name     ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800
@@ -609,6 +624,7 @@ it('ArkUI_Stage_CalendarPicker_EdgeAlign_static_0800', Level.LEVEL1, async (done
 
     
     
+
 
 /**
      * @tc.number   ArkUI_Stage_CalendarPicker_hintRadius_static_0100

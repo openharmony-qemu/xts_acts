@@ -79,7 +79,8 @@ export default function StateArray() {
       console.info("StateArray beforeEach end");
     });
     
-    /*
+    
+/**
      * @tc.number   StateArray_static_0100
      * @tc.name     StateArray_static_0100
      * @tc.desc     StateArray_static_0100
@@ -101,7 +102,8 @@ it('StateArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateArray_static_0200
      * @tc.name     StateArray_static_0200
      * @tc.desc     StateArray_static_0200
@@ -123,7 +125,8 @@ it('StateArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateArray_static_0300
      * @tc.name     StateArray_static_0300
      * @tc.desc     StateArray_static_0300
@@ -145,7 +148,8 @@ it('StateArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   StateArray_static_0400
      * @tc.name     StateArray_static_0400
      * @tc.desc     StateArray_static_0400

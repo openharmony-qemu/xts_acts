@@ -79,13 +79,14 @@ export default function textAreaHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textAreaHalfLeadingTest_static_0001
      * @tc.name     textAreaHalfLeadingTest_static_0001
      * @tc.desc     textAreaHalfLeadingTest_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaHalfLeadingTest_static_0001', Level.LEVEL1, async () => {
+it('textAreaHalfLeadingTest_static_0001', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaHalfLeadingTest textAreaHalfLeadingTest0001 START');
       await CommonFunc.sleep(1000);
@@ -98,13 +99,14 @@ export default function textAreaHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textAreaHalfLeadingTest_static_0002
      * @tc.name     textAreaHalfLeadingTest_static_0002
      * @tc.desc     textAreaHalfLeadingTest_static_0002
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaHalfLeadingTest_static_0002', Level.LEVEL1, async () => {
+it('textAreaHalfLeadingTest_static_0002', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaHalfLeadingTest textAreaHalfLeadingTest0002 START');
       await CommonFunc.sleep(1000);
@@ -117,13 +119,14 @@ export default function textAreaHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textAreaHalfLeadingTest_static_0003
      * @tc.name     textAreaHalfLeadingTest_static_0003
      * @tc.desc     textAreaHalfLeadingTest_static_0003
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaHalfLeadingTest_static_0003', Level.LEVEL1, async () => {
+it('textAreaHalfLeadingTest_static_0003', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaHalfLeadingTest textAreaHalfLeadingTest0003 START');
       await CommonFunc.sleep(1000);
@@ -136,13 +139,14 @@ export default function textAreaHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textAreaHalfLeadingTest_static_0004
      * @tc.name     textAreaHalfLeadingTest_static_0004
      * @tc.desc     textAreaHalfLeadingTest_static_0004
      * @tc.level    Level.LEVEL1
      */
-    it('textAreaHalfLeadingTest_static_0004', Level.LEVEL1, async () => {
+it('textAreaHalfLeadingTest_static_0004', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaHalfLeadingTest textAreaHalfLeadingTest0004 START');
       await CommonFunc.sleep(1000);

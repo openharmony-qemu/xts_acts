@@ -62,13 +62,14 @@ export default function subHeaderSelect() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   subHeaderSelect_static_0100
      * @tc.name     subHeaderSelect_static_0100
      * @tc.desc     subHeaderSelect_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('subHeaderSelect_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('subHeaderSelect_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderSelect_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);

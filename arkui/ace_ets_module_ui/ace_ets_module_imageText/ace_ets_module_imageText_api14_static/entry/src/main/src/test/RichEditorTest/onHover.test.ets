@@ -64,13 +64,14 @@ export default function RichEditorOnHoverTest() {
 
      
     
-/*
+
+    /**
      * @tc.number   RichEditorOnHoverTest_static_0010
      * @tc.name     RichEditorOnHoverTest_static_0010
      * @tc.desc     RichEditorOnHoverTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-    it('RichEditorOnHoverTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('RichEditorOnHoverTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorOnHoverTest_0010 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);
@@ -90,13 +91,14 @@ export default function RichEditorOnHoverTest() {
 
      
     
-/*
+
+    /**
      * @tc.number   RichEditorOnHoverTest_static_0020
      * @tc.name     RichEditorOnHoverTest_static_0020
      * @tc.desc     RichEditorOnHoverTest_static_0020
      * @tc.level    Level.LEVEL2
      */
-    it('RichEditorOnHoverTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('RichEditorOnHoverTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('RichEditorOnHoverTest_0020 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(500);

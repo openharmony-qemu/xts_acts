@@ -53,7 +53,8 @@ export default function gridMaxCountJsunit() {
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0100
      * @tc.name     GridJsunit_static_0100
      * @tc.desc     GridJsunit_static_0100
@@ -72,7 +73,8 @@ it('GridJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0101
      * @tc.name     GridJsunit_static_0101
      * @tc.desc     GridJsunit_static_0101
@@ -91,7 +93,8 @@ it('GridJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0102
      * @tc.name     GridJsunit_static_0102
      * @tc.desc     GridJsunit_static_0102
@@ -111,7 +114,8 @@ it('GridJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0103
      * @tc.name     GridJsunit_static_0103
      * @tc.desc     GridJsunit_static_0103
@@ -130,7 +134,8 @@ it('GridJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0104
      * @tc.name     GridJsunit_static_0104
      * @tc.desc     GridJsunit_static_0104
@@ -149,7 +154,8 @@ it('GridJsunit_static_0104', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0105
      * @tc.name     GridJsunit_static_0105
      * @tc.desc     GridJsunit_static_0105
@@ -168,7 +174,8 @@ it('GridJsunit_static_0105', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0106
      * @tc.name     GridJsunit_static_0106
      * @tc.desc     GridJsunit_static_0106
@@ -187,7 +194,8 @@ it('GridJsunit_static_0106', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0107
      * @tc.name     GridJsunit_static_0107
      * @tc.desc     GridJsunit_static_0107
@@ -206,7 +214,8 @@ it('GridJsunit_static_0107', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0108
      * @tc.name     GridJsunit_static_0108
      * @tc.desc     GridJsunit_static_0108
@@ -225,7 +234,8 @@ it('GridJsunit_static_0108', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0109
      * @tc.name     GridJsunit_static_0109
      * @tc.desc     GridJsunit_static_0109
@@ -244,7 +254,8 @@ it('GridJsunit_static_0109', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0110
      * @tc.name     GridJsunit_static_0110
      * @tc.desc     GridJsunit_static_0110
@@ -263,7 +274,8 @@ it('GridJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0111
      * @tc.name     GridJsunit_static_0111
      * @tc.desc     GridJsunit_static_0111
@@ -282,7 +294,8 @@ it('GridJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0112
      * @tc.name     GridJsunit_static_0112
      * @tc.desc     GridJsunit_static_0112
@@ -301,7 +314,8 @@ it('GridJsunit_static_0112', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0113
      * @tc.name     GridJsunit_static_0113
      * @tc.desc     GridJsunit_static_0113
@@ -320,7 +334,8 @@ it('GridJsunit_static_0113', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0114
      * @tc.name     GridJsunit_static_0114
      * @tc.desc     GridJsunit_static_0114
@@ -339,7 +354,8 @@ it('GridJsunit_static_0114', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0115
      * @tc.name     GridJsunit_static_0115
      * @tc.desc     GridJsunit_static_0115
@@ -358,7 +374,8 @@ it('GridJsunit_static_0115', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0116
      * @tc.name     GridJsunit_static_0116
      * @tc.desc     GridJsunit_static_0116
@@ -377,7 +394,8 @@ it('GridJsunit_static_0116', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0117
      * @tc.name     GridJsunit_static_0117
      * @tc.desc     GridJsunit_static_0117
@@ -396,7 +414,8 @@ it('GridJsunit_static_0117', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/**
      * @tc.number   GridJsunit_static_0118
      * @tc.name     GridJsunit_static_0118
      * @tc.desc     GridJsunit_static_0118

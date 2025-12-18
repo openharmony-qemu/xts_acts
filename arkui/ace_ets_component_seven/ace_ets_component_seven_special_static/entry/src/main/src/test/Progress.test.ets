@@ -48,7 +48,8 @@ export default function progressStyleJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   testProgressStyle0001_static_01
      * @tc.name     testProgressStyle0001_static_01
      * @tc.desc     testProgressStyle0001_static_01
@@ -68,7 +69,8 @@ it('testProgressStyle0001_static_01', Level.LEVEL0, async (done: () => void): Pr
 
    
     
-    /*
+    
+/**
      * @tc.number   testProgressStyle0002_static_02
      * @tc.name     testProgressStyle0002_static_02
      * @tc.desc     testProgressStyle0002_static_02
@@ -88,7 +90,8 @@ it('testProgressStyle0002_static_02', Level.LEVEL0, async (done: () => void): Pr
 
    
     
-    /*
+    
+/**
      * @tc.number   testProgressStyle0003_static_03
      * @tc.name     testProgressStyle0003_static_03
      * @tc.desc     testProgressStyle0003_static_03

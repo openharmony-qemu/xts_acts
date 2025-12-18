@@ -58,7 +58,8 @@ export default function calendarPickerJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_CalendarPicker_static_0100
      * @tc.name     ArkUI_Stage_CalendarPicker_static_0100
      * @tc.desc     ArkUI_Stage_CalendarPicker_static_0100
@@ -79,7 +80,8 @@ it('ArkUI_Stage_CalendarPicker_static_0100', Level.LEVEL1, async (done: () => vo
     });
 
     
-    /*
+    
+/**
      * @tc.number   ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.name     ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.desc     ArkUI_Stage_CalendarPicker_attributeModifier_static_0101

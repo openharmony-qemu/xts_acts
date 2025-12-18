@@ -73,13 +73,14 @@ export default function ScrollSizeMode_APITest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ScrollSizeMode_APITest_static_0100
      * @tc.name     ScrollSizeMode_APITest_static_0100
      * @tc.desc     ScrollSizeMode_APITest_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ScrollSizeMode_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSizeMode_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSizeMode_APITest_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -101,13 +102,14 @@ export default function ScrollSizeMode_APITest() {
     });
 
     
-    /*
+    
+    /**
      * @tc.number   ScrollSizeMode_APITest_static_0200
      * @tc.name     ScrollSizeMode_APITest_static_0200
      * @tc.desc     ScrollSizeMode_APITest_static_0200
      * @tc.level    Level.LEVEL0
      */
-    it('ScrollSizeMode_APITest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ScrollSizeMode_APITest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ScrollSizeMode_APITest_0200 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

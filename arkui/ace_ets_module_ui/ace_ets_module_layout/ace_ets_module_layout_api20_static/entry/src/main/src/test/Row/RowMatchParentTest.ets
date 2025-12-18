@@ -81,7 +81,8 @@ export default function RowMatchParentTest() {
     });
 
 
-    /*
+    
+/**
      * @tc.number   RowMatchParentTest_static_0100
      * @tc.name     RowMatchParentTest_static_0100
      * @tc.desc     RowMatchParentTest_static_0100

@@ -52,7 +52,8 @@ export default function timePickerDialogSelectedAreaTest() {
       console.info('timePickerDialogSelectedAreaTest beforeEach end');
     });
     
-    /*
+    
+/**
      * @tc.number   timePickerDialogSelectedAreaTest_static_001
      * @tc.name     timePickerDialogSelectedAreaTest_static_001
      * @tc.desc     timePickerDialogSelectedAreaTest_static_001

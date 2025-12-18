@@ -30,10 +30,11 @@ export default function testsuite() {
   progressButtonV2PageTest();
   editableTitleBarAccessibilityTest();
   editableTitleBarSymbolTest();
-  tipsDialogTest();
   selectDialogTest();
   confirmDialogTest();
   alertDialogTest();
   loadingDialogTest();
   customContentDialogTest();
+  tipsDialogTest();
+
 }

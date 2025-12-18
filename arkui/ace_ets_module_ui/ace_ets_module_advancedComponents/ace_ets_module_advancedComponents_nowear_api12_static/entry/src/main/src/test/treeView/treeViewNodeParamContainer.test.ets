@@ -63,13 +63,14 @@ export default function treeViewNodeParamContainer() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   treeViewNodeParamContainer_static_0100
      * @tc.name     treeViewNodeParamContainer_static_0100
      * @tc.desc     treeViewNodeParamContainer_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('treeViewNodeParamContainer_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('treeViewNodeParamContainer_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[treeViewNodeParamContainer_static_0100] START');
           try{

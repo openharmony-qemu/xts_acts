@@ -74,13 +74,14 @@ export default function SetFrameRateRangeTest() {
 
     
     
-/*
+
+    /**
      * @tc.number   MarqueerequireDynamicSyncSceneTest_static_0010
      * @tc.name     MarqueerequireDynamicSyncSceneTest_static_0010
      * @tc.desc     MarqueerequireDynamicSyncSceneTest_static_0010
      * @tc.level    Level.LEVEL2
      */
-    it('MarqueerequireDynamicSyncSceneTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('MarqueerequireDynamicSyncSceneTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MarqueerequireDynamicSyncSceneTest_0010 START');
       await CommonFunc.sleep(500);
 

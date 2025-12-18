@@ -56,13 +56,14 @@ export default function textPickerJsunit() {
     })
 
     
-/*
+
+    /**
      * @tc.number   testTextPickerDialog_static_0100
      * @tc.name     testTextPickerDialog_static_0100
      * @tc.desc     testTextPickerDialog_static_0100
      * @tc.level    Level.LEVEL2
      */
-    it('testTextPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testTextPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         console.info('[testTextPickerDialog0100] START');
         await Utils.sleep(1000);
@@ -77,13 +78,14 @@ export default function textPickerJsunit() {
     });
 
     
-/*
+
+    /**
      * @tc.number   testTextPickerDialog_static_0200
      * @tc.name     testTextPickerDialog_static_0200
      * @tc.desc     testTextPickerDialog_static_0200
      * @tc.level    Level.LEVEL2
      */
-    it('testTextPickerDialog_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('testTextPickerDialog_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         console.info('[testTextPickerDialog0200] START');
         await Utils.sleep(1000);

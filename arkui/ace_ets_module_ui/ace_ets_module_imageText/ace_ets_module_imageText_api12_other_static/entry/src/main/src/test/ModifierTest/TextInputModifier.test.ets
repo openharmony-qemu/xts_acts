@@ -67,13 +67,14 @@ export default function TextInputModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextInputModifierTest_static_0010
      * @tc.name     TextInputModifierTest_static_0010
      * @tc.desc     TextInputModifierTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-    it('TextInputModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextInputModifierTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextInputModifierTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputModifier_get_fontSize');
@@ -87,13 +88,14 @@ export default function TextInputModifierTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   TextInputModifierTest_static_0020
      * @tc.name     TextInputModifierTest_static_0020
      * @tc.desc     TextInputModifierTest_static_0020
      * @tc.level    Level.LEVEL0
      */
-    it('TextInputModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('TextInputModifierTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextInputModifierTest_static_0020 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TextInputModifier_get_type');

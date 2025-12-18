@@ -63,20 +63,21 @@ export default function selectDialogTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   selectDialogTest_static_0100
      * @tc.name     selectDialogTest_static_0100
      * @tc.desc     selectDialogTest_static_0100
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[selectDialogTest_static_0100] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(1000);
       // 点击打开SelectDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SelectDialogV2'))
       openAlertDialog!.click();
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
       // 点击打开SelectDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('文本标题'));
       let content = await driver.findComponent(ON.text('文本文本文本文本文本'));
@@ -86,27 +87,28 @@ export default function selectDialogTest() {
       expect(cancelButton !== null).assertTrue();
       // 关闭SelectDialog
       cancelButton!.click();
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
       console.info('[selectDialogTest_static_0100] END');
       done();
     });
 
     
     
-    /*
+    
+    /**
      * @tc.number   selectDialogTest_static_0200
      * @tc.name     selectDialogTest_static_0200
      * @tc.desc     selectDialogTest_static_0200
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
-    it('selectDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('selectDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[selectDialogTest_static_0200] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
       // 点击打开SelectDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SecSelectDialogV2'))
       openAlertDialog!.click();
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
       // 点击打开SelectDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('文本标题'));
       let content = await driver.findComponent(ON.text('文本内容'));
@@ -118,7 +120,7 @@ export default function selectDialogTest() {
       expect(cancelButton !== null).assertTrue();
       // 关闭SelectDialog
       cancelButton!.click();
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
       console.info('[selectDialogTest_static_0200] END');
       done();
     });

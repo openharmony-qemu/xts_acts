@@ -49,7 +49,8 @@ export default function textTimer() {
 
   
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0100
      * @tc.name     textTimerJsunit_static_0100
      * @tc.desc     textTimerJsunit_static_0100
@@ -74,7 +75,8 @@ it('textTimerJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0101
      * @tc.name     textTimerJsunit_static_0101
      * @tc.desc     textTimerJsunit_static_0101
@@ -99,7 +101,8 @@ it('textTimerJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0102
      * @tc.name     textTimerJsunit_static_0102
      * @tc.desc     textTimerJsunit_static_0102
@@ -124,7 +127,8 @@ it('textTimerJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0103
      * @tc.name     textTimerJsunit_static_0103
      * @tc.desc     textTimerJsunit_static_0103
@@ -143,7 +147,8 @@ it('textTimerJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0200
      * @tc.name     textTimerJsunit_static_0200
      * @tc.desc     textTimerJsunit_static_0200
@@ -163,7 +168,8 @@ it('textTimerJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0300
      * @tc.name     textTimerJsunit_static_0300
      * @tc.desc     textTimerJsunit_static_0300
@@ -183,7 +189,8 @@ it('textTimerJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0400
      * @tc.name     textTimerJsunit_static_0400
      * @tc.desc     textTimerJsunit_static_0400
@@ -203,7 +210,8 @@ it('textTimerJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
 
    
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0500
      * @tc.name     textTimerJsunit_static_0500
      * @tc.desc     textTimerJsunit_static_0500
@@ -223,7 +231,8 @@ it('textTimerJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promis
 
   
     
-    /*
+    
+/**
      * @tc.number   textTimerJsunit_static_0600
      * @tc.name     textTimerJsunit_static_0600
      * @tc.desc     textTimerJsunit_static_0600

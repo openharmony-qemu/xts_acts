@@ -55,7 +55,8 @@ export default function back11() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   back11_static_0100
      * @tc.name     back11_static_0100
      * @tc.desc     back11_static_0100

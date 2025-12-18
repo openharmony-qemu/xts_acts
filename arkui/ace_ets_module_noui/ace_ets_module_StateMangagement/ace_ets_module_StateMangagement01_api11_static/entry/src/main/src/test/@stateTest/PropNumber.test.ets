@@ -82,7 +82,8 @@ export default function PropNumber() {
 
 
     
-    /*
+    
+/**
      * @tc.number   PropNumber_static_0100
      * @tc.name     PropNumber_static_0100
      * @tc.desc     PropNumber_static_0100
@@ -104,7 +105,8 @@ it('PropNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropNumber_static_0200
      * @tc.name     PropNumber_static_0200
      * @tc.desc     PropNumber_static_0200
@@ -126,7 +128,8 @@ it('PropNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropNumber_static_0300
      * @tc.name     PropNumber_static_0300
      * @tc.desc     PropNumber_static_0300
@@ -148,7 +151,8 @@ it('PropNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropNumber_static_0400
      * @tc.name     PropNumber_static_0400
      * @tc.desc     PropNumber_static_0400
@@ -170,7 +174,8 @@ it('PropNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropNumber_static_0500
      * @tc.name     PropNumber_static_0500
      * @tc.desc     PropNumber_static_0500

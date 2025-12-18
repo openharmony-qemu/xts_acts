@@ -56,12 +56,12 @@ export default function selectTitleBarLabelTest() {
       console.info('selectTitleBarLabelTest after each called');
     })
 
-    /*
-     * @tc.number   selectTitleBarLabelTest_static_0100
-     * @tc.name     selectTitleBarLabelTest_static_0100
-     * @tc.desc     selectTitleBarLabelTest_static_0100
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
-     */
+    /**
+    * @tc.number   selectTitleBarLabelTest_static_0100
+    * @tc.name     selectTitleBarLabelTest_static_0100
+    * @tc.desc     selectTitleBarLabelTest_static_0100
+    * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+    */
     it('selectTitleBarLabelTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('[selectTitleBarLabelTest_static_0100] START');

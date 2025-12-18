@@ -35,12 +35,12 @@ import {
   FontWeight,
   Profiler,
   setAppBgColor,
-  FlexWrap,$r,Resource
+  FlexWrap,$r,Resource,Length
 } from '@ohos.arkui.component'
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  Prop,Provide,Consume,UIUtils
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -56,7 +56,7 @@ import common from '@ohos.app.ability.common';
 @Component
 struct Child_CA {
   // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量
-  @Consume Array: Array<Number> | Array<boolean> | Boolean | Array<Resource>| Array<Int> ;
+  @Consume Array: Array<Length>  | Array<boolean> | Boolean | Array<Resource>| Array<Int> ;
 
   build() {
     Column() {
@@ -106,7 +106,7 @@ struct Ancestors_CA {
 
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(this.Array))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(UIUtils.getTarget(this.Array)))
         .fontSize(9).key('ConsumeArray').height('5%')
 
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id) ??'')

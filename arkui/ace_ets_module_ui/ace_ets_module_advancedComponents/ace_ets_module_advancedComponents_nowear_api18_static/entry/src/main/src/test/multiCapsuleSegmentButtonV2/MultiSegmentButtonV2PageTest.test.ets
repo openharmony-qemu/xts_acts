@@ -63,13 +63,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_001
      * @tc.name     MultiSegmentButtonV2PageTest_static_001
      * @tc.desc     MultiSegmentButtonV2PageTest_static_001
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_001] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId001'));
@@ -86,13 +87,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_002
      * @tc.name     MultiSegmentButtonV2PageTest_static_002
      * @tc.desc     MultiSegmentButtonV2PageTest_static_002
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_002] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId002'));
@@ -109,13 +111,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_003
      * @tc.name     MultiSegmentButtonV2PageTest_static_003
      * @tc.desc     MultiSegmentButtonV2PageTest_static_003
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_003] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId003'));
@@ -132,13 +135,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_004
      * @tc.name     MultiSegmentButtonV2PageTest_static_004
      * @tc.desc     MultiSegmentButtonV2PageTest_static_004
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_004] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId004'));
@@ -159,13 +163,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_005
      * @tc.name     MultiSegmentButtonV2PageTest_static_005
      * @tc.desc     MultiSegmentButtonV2PageTest_static_005
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_005] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("a"));
@@ -182,13 +187,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_006
      * @tc.name     MultiSegmentButtonV2PageTest_static_006
      * @tc.desc     MultiSegmentButtonV2PageTest_static_006
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_006] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("b"));
@@ -205,13 +211,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_007
      * @tc.name     MultiSegmentButtonV2PageTest_static_007
      * @tc.desc     MultiSegmentButtonV2PageTest_static_007
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_007] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("c"));
@@ -228,13 +235,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_008
      * @tc.name     MultiSegmentButtonV2PageTest_static_008
      * @tc.desc     MultiSegmentButtonV2PageTest_static_008
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_008] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("d"));
@@ -251,13 +259,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_009
      * @tc.name     MultiSegmentButtonV2PageTest_static_009
      * @tc.desc     MultiSegmentButtonV2PageTest_static_009
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_009] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -276,13 +285,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_010
      * @tc.name     MultiSegmentButtonV2PageTest_static_010
      * @tc.desc     MultiSegmentButtonV2PageTest_static_010
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_010] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -304,13 +314,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_011
      * @tc.name     MultiSegmentButtonV2PageTest_static_011
      * @tc.desc     MultiSegmentButtonV2PageTest_static_011
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_011] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -335,13 +346,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_012
      * @tc.name     MultiSegmentButtonV2PageTest_static_012
      * @tc.desc     MultiSegmentButtonV2PageTest_static_012
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_012] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -363,13 +375,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_015
      * @tc.name     MultiSegmentButtonV2PageTest_static_015
      * @tc.desc     MultiSegmentButtonV2PageTest_static_015
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_022] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -389,13 +402,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_016
      * @tc.name     MultiSegmentButtonV2PageTest_static_016
      * @tc.desc     MultiSegmentButtonV2PageTest_static_016
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_016', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_016] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -415,13 +429,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_017
      * @tc.name     MultiSegmentButtonV2PageTest_static_017
      * @tc.desc     MultiSegmentButtonV2PageTest_static_017
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_017] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -441,13 +456,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_018
      * @tc.name     MultiSegmentButtonV2PageTest_static_018
      * @tc.desc     MultiSegmentButtonV2PageTest_static_018
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_018] START");
       const driver = Driver.create();
       await driver.delayMs(1000);
@@ -467,13 +483,14 @@ export default function MultiSegmentButtonV2PageTest() {
 
     
     
-    /*
+    
+    /**
      * @tc.number   MultiSegmentButtonV2PageTest_static_019
      * @tc.name     MultiSegmentButtonV2PageTest_static_019
      * @tc.desc     MultiSegmentButtonV2PageTest_static_019
      * @tc.level    Level.LEVEL0
      */
-    it('MultiSegmentButtonV2PageTest_static_019', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('MultiSegmentButtonV2PageTest_static_019', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[MultiSegmentButtonV2PageTest_static_019] START");
       const driver = Driver.create();
       await driver.delayMs(1000);

@@ -50,7 +50,8 @@ export default function qrCodeJsunit() {
 
    
     
-    /*
+    
+/**
      * @tc.number   test_qrCode_static_001
      * @tc.name     test_qrCode_static_001
      * @tc.desc     test_qrCode_static_001
@@ -68,7 +69,8 @@ it('test_qrCode_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   test_qrCode_static_002
      * @tc.name     test_qrCode_static_002
      * @tc.desc     test_qrCode_static_002
@@ -88,7 +90,8 @@ it('test_qrCode_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
 
    
     
-    /*
+    
+/**
      * @tc.number   test_qrCode_static_003
      * @tc.name     test_qrCode_static_003
      * @tc.desc     test_qrCode_static_003

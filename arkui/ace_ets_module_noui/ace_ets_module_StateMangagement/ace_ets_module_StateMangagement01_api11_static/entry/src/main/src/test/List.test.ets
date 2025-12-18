@@ -65,8 +65,8 @@ import PersistentTest0040 from './Zhuang/PersistentTest0040.test';
 
 
 export default function testsuite() {
-  ConsumeArray();//11.17SDK pass:2  filed：2   expect count type of "[object Array]" number is {"store_":[true]} equals count type of "[object Array]" number is [true]
-  ConsumeArray1();//11.17SDK pass:1  filed：4
+  ConsumeArray();
+  ConsumeArray1();
   //ConsumeColor(); //缺少页面
   //ConsumeHight(); //缺少页面
   ConsumeNumber();

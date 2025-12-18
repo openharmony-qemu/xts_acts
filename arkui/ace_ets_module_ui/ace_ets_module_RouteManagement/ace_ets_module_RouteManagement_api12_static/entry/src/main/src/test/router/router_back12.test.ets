@@ -55,7 +55,8 @@ export default function router_back12() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   router_back12_static_0100
      * @tc.name     router_back12_static_0100
      * @tc.desc     router_back12_static_0100

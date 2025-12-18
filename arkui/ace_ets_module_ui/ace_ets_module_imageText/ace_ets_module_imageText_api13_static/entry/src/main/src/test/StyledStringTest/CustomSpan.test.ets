@@ -67,13 +67,15 @@ export default function CustomSpan() {
 
 
     
-/*
+
+    
+/**
      * @tc.number   CustomSpan_static_0001
      * @tc.name     CustomSpan_static_0001
      * @tc.desc     CustomSpan_static_0001
      * @tc.level    Level.LEVEL1
      */
-    it('CustomSpan_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomSpan_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('StyledString CustomSpan0001 START');
       await CommonFunc.sleep(1000);

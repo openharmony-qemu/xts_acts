@@ -79,13 +79,14 @@ export default function textInputHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textInputHalfLeadingTest_static_0001
      * @tc.name     textInputHalfLeadingTest_static_0001
      * @tc.desc     textInputHalfLeadingTest_static_0001
      * @tc.level    Level.LEVEL0
      */
-    it('textInputHalfLeadingTest_static_0001', Level.LEVEL0, async () => {
+it('textInputHalfLeadingTest_static_0001', Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('textInputHalfLeadingTest textInputHalfLeadingTest0001 START');
       await CommonFunc.sleep(1000);
@@ -98,13 +99,14 @@ export default function textInputHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textInputHalfLeadingTest_static_0002
      * @tc.name     textInputHalfLeadingTest_static_0002
      * @tc.desc     textInputHalfLeadingTest_static_0002
      * @tc.level    Level.LEVEL0
      */
-    it('textInputHalfLeadingTest_static_0002', Level.LEVEL0, async () => {
+it('textInputHalfLeadingTest_static_0002', Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('textInputHalfLeadingTest textInputHalfLeadingTest0002 START');
       await CommonFunc.sleep(1000);
@@ -117,13 +119,14 @@ export default function textInputHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textInputHalfLeadingTest_static_0003
      * @tc.name     textInputHalfLeadingTest_static_0003
      * @tc.desc     textInputHalfLeadingTest_static_0003
      * @tc.level    Level.LEVEL0
      */
-    it('textInputHalfLeadingTest_static_0003', Level.LEVEL0, async () => {
+it('textInputHalfLeadingTest_static_0003', Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('textInputHalfLeadingTest textInputHalfLeadingTest0003 START');
       await CommonFunc.sleep(1000);
@@ -136,13 +139,14 @@ export default function textInputHalfLeadingTest() {
 
 
     
-    /*
+    
+    /**
      * @tc.number   textInputHalfLeadingTest_static_0004
      * @tc.name     textInputHalfLeadingTest_static_0004
      * @tc.desc     textInputHalfLeadingTest_static_0004
      * @tc.level    Level.LEVEL0
      */
-    it('textInputHalfLeadingTest_static_0004', Level.LEVEL0, async () => {
+it('textInputHalfLeadingTest_static_0004', Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('textInputHalfLeadingTest textInputHalfLeadingTest0004 START');
       await CommonFunc.sleep(1000);

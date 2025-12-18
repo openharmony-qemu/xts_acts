@@ -67,13 +67,14 @@ export default function marqueeOptionsTest2() {
 
     
     
-/*
+
+    /**
      * @tc.number   marqueeOptionsTest2_static_0100
      * @tc.name     marqueeOptionsTest2_static_0100
      * @tc.desc     marqueeOptionsTest2_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('marqueeOptionsTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('marqueeOptionsTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('marqueeOptionsTest2_static_0100 START');
       await CommonFunc.sleep(5000);
 

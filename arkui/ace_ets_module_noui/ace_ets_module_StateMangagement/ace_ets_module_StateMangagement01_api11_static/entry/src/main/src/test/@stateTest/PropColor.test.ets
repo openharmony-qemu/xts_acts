@@ -81,7 +81,8 @@ export default function PropColor() {
 
     // pass过 注释
     
-    /*
+    
+/**
      * @tc.number   PropColor_static_0100
      * @tc.name     PropColor_static_0100
      * @tc.desc     PropColor_static_0100
@@ -103,7 +104,8 @@ it('PropColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropColor_static_0200
      * @tc.name     PropColor_static_0200
      * @tc.desc     PropColor_static_0200
@@ -125,7 +127,8 @@ it('PropColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropColor_static_0300
      * @tc.name     PropColor_static_0300
      * @tc.desc     PropColor_static_0300
@@ -147,7 +150,8 @@ it('PropColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
     
-    /*
+    
+/**
      * @tc.number   PropColor_static_0400
      * @tc.name     PropColor_static_0400
      * @tc.desc     PropColor_static_0400
@@ -170,7 +174,8 @@ it('PropColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
     });
 
     
-    /*
+    
+/**
      * @tc.number   PropColor_static_0500
      * @tc.name     PropColor_static_0500
      * @tc.desc     PropColor_static_0500
@@ -193,7 +198,8 @@ it('PropColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
     });
 
     
-    /*
+    
+/**
      * @tc.number   PropColor_static_0600
      * @tc.name     PropColor_static_0600
      * @tc.desc     PropColor_static_0600

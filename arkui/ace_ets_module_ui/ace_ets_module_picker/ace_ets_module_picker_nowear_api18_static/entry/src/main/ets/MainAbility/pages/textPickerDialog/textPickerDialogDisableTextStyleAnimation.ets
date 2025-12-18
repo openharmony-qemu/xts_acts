@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, ColumnOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, TextOverflow } from '@ohos.arkui.component'
+import { Entry, Column, ColumnOptions, Component, Row, Button, ClickEvent, BlurStyle, Flex, FlexWrap, Color, TextPickerResult, TextOverflow, TextPickerDialogOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -66,7 +66,7 @@ struct TextPickerDialogDisableTextStyleAnimationExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()')
               }
-            })
+            } as TextPickerDialogOptions)
           })
         Button('false')
           .id('false')
@@ -108,7 +108,7 @@ struct TextPickerDialogDisableTextStyleAnimationExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()')
               }
-            })
+            } as TextPickerDialogOptions)
           })
         Button('undefined')
           .id('undefined')
@@ -150,7 +150,7 @@ struct TextPickerDialogDisableTextStyleAnimationExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()')
               }
-            })
+            } as TextPickerDialogOptions)
           })
         Button('null')
           .id('null')
@@ -192,7 +192,7 @@ struct TextPickerDialogDisableTextStyleAnimationExample {
               onWillDisappear: () => {
                 console.info('TextPickerDialog:onWillDisappear()')
               }
-            })
+            } as TextPickerDialogOptions)
           })
       }.width('100%')
     }.height('100%')

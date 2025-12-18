@@ -47,7 +47,8 @@ export default function textStyleJsunit() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   testTextStyle001
      * @tc.name     testTextStyle001
      * @tc.desc     testTextStyle001
@@ -65,7 +66,8 @@ it('testTextStyle001', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   testTextStyle002
      * @tc.name     testTextStyle002
      * @tc.desc     testTextStyle002
@@ -83,7 +85,8 @@ it('testTextStyle002', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   testTextStyle003
      * @tc.name     testTextStyle003
      * @tc.desc     testTextStyle003
@@ -101,7 +104,8 @@ it('testTextStyle003', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
     
-    /*
+    
+/**
      * @tc.number   testTextStyle004
      * @tc.name     testTextStyle004
      * @tc.desc     testTextStyle004
@@ -119,7 +123,8 @@ it('testTextStyle004', Level.LEVEL0, async (done: () => void): Promise<void> => 
     });
 
      
-     /*
+     
+/**
      * @tc.number   testTextStyle005
      * @tc.name     testTextStyle005
      * @tc.desc     testTextStyle005

@@ -54,7 +54,8 @@ export default function pushUrl18() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   pushUrl18_static_0100
      * @tc.name     pushUrl18_static_0100
      * @tc.desc     pushUrl18_static_0100

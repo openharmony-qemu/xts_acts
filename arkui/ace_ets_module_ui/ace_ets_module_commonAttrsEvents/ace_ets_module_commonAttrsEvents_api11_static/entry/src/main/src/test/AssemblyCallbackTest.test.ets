@@ -29,13 +29,14 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-
 export default function assemblyCallbackTest() {
   describe('assemblyCallbackTest', () => {
+    await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
+
+    let uiContext = AppStorage.get<UIContext>('uiContext')!
 
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {
@@ -58,20 +59,22 @@ export default function assemblyCallbackTest() {
       console.info("assemblyCallbackTest beforeEach end");
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUX_Callback_notification_static_0210
      * @tc.name     ArkUX_Callback_notification_static_0210
      * @tc.desc     ArkUX_Callback_notification_static_0210
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Callback_notification_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Callback_notification_static_0210', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0210 START');
       setTimeout(() => {
         try {
-          // let listener11 = inspector.createComponentObserver("null")
-          // console.info('ArkUX_Callback_notification_static_0210 START  :' + listener11);
+          console.info('ArkUX_Callback_notification_static_0210 START  111:');
+          let listener11 = uiContext.getUIInspector().createComponentObserver("null") as inspector.ComponentObserver
+          console.info('ArkUX_Callback_notification_static_0210 START  222:');
           // console.info('ArkUX_Callback_notification_static_0210 START  :' + typeof listener11);
-          // expect(typeof listener11).assertEqual("object")
+          expect(typeof listener11).assertEqual("object")
           // console.info('ArkUX_Callback_notification_static_0210 END ');
         } catch (err) {
           expect().assertFail()
@@ -81,13 +84,14 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUX_Callback_notification_static_0220
      * @tc.name     ArkUX_Callback_notification_static_0220
      * @tc.desc     ArkUX_Callback_notification_static_0220
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Callback_notification_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Callback_notification_static_0220', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0220 START');
       setTimeout(() => {
         try {
@@ -104,13 +108,14 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUX_Callback_notification_static_0230
      * @tc.name     ArkUX_Callback_notification_static_0230
      * @tc.desc     ArkUX_Callback_notification_static_0230
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Callback_notification_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Callback_notification_static_0230', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0230 START');
       setTimeout(() => {
         try {
@@ -127,13 +132,14 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUX_Callback_notification_static_0240
      * @tc.name     ArkUX_Callback_notification_static_0240
      * @tc.desc     ArkUX_Callback_notification_static_0240
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Callback_notification_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Callback_notification_static_0240', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0240 START');
       setTimeout(() => {
         try {
@@ -150,13 +156,14 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUX_Callback_notification_static_0250
      * @tc.name     ArkUX_Callback_notification_static_0250
      * @tc.desc     ArkUX_Callback_notification_static_0250
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Callback_notification_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Callback_notification_static_0250', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0250 START');
       setTimeout(() => {
         try {
@@ -173,13 +180,14 @@ export default function assemblyCallbackTest() {
       }, 500)
     });
 
-    /*
+    
+    /**
      * @tc.number   ArkUX_Callback_notification_static_0260
      * @tc.name     ArkUX_Callback_notification_static_0260
      * @tc.desc     ArkUX_Callback_notification_static_0260
      * @tc.level    Level.LEVEL0
      */
-    it('ArkUX_Callback_notification_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Callback_notification_static_0260', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Callback_notification_static_0260 START');
       setTimeout(() => {
         try {

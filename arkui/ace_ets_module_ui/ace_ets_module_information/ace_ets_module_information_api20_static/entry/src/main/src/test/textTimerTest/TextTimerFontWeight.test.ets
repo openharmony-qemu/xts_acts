@@ -61,7 +61,8 @@ export default function TextTimerFontWeightTest() {
     });
 
     
-    /*
+    
+/**
      * @tc.number   TextTimerFontWeightTest_static_001
      * @tc.name     TextTimerFontWeightTest_static_001
      * @tc.desc     TextTimerFontWeightTest_static_001
@@ -80,7 +81,8 @@ it('TextTimerFontWeightTest_static_001', Level.LEVEL1, async (done: () => void):
     });
    
     
-    /*
+    
+/**
      * @tc.number   TextTimerFontWeightTest_static_002
      * @tc.name     TextTimerFontWeightTest_static_002
      * @tc.desc     TextTimerFontWeightTest_static_002
@@ -103,7 +105,8 @@ it('TextTimerFontWeightTest_static_002', Level.LEVEL1, async (done: () => void):
 
     
     
-    /*
+    
+/**
      * @tc.number   TextTimerFontWeightTest_static_003
      * @tc.name     TextTimerFontWeightTest_static_003
      * @tc.desc     TextTimerFontWeightTest_static_003
@@ -126,7 +129,8 @@ it('TextTimerFontWeightTest_static_003', Level.LEVEL1, async (done: () => void):
 
     
     
-    /*
+    
+/**
      * @tc.number   TextTimerFontWeightTest_static_004
      * @tc.name     TextTimerFontWeightTest_static_004
      * @tc.desc     TextTimerFontWeightTest_static_004
