@@ -1111,9 +1111,10 @@ export default function CalendarManagerTest() {
       }
       calendarMgr?.createCalendar(CalendarAccounts).then((data) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(data));
-        calendarMgr?.deleteCalendar(undefined, (err, data) => {
+        calendarMgr?.deleteCalendar(data, (err, data) => {
           if (err) {
             console.info(CaseName + `Failed to delete calendar, Code is ${err.code}, message is ${err.message}`);
+            expect().assertFail();
             expect(err.code).assertEqual(401);
           } else {
             console.info(CaseName + "Succeeded in deleting calendar" + JSON.stringify(data));
@@ -1269,11 +1270,12 @@ export default function CalendarManagerTest() {
       }
       calendarMgr?.createCalendar(CalendarAccounts).then((data) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(data));
-        calendarMgr?.deleteCalendar(undefined).then((data) => {
+        calendarMgr?.deleteCalendar(data).then((data) => {
           console.info(CaseName + "Succeeded in deleting calendar" + JSON.stringify(data));
           return;
         }).catch((err: BusinessError) => {
           console.info(CaseName + `Failed to delete calendar, Code is ${err.code}, message is ${err.message}`);
+          expect().assertFail();
           expect(err.code).assertEqual(401);
         });
       }).catch((err: BusinessError) => {
