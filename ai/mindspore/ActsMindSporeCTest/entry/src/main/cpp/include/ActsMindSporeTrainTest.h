@@ -36,6 +36,31 @@ int SUBAIMindSporeTrainTrainCfg0001();
 int SUBAIMindSporeTrainTrainCfg0002();
 int SUBAIMindSporeTrainTrainCfg0003();
 int SUBAIMindSporeTrainTrainCfg0004();
+int SUBAIMindSporeTrainModelBuild0001();
+int SUBAIMindSporeTrainModelBuild0002();
+int SUBAIMindSporeTrainModelBuild0003();
+int SUBAIMindSporeTrainModelBuild0004();
+int SUBAIMindSporeTrainModelBuild0005();
+int SUBAIMindSporeTrainExportModel0001();
+int SUBAIMindSporeTrainExportModel0002();
+int SUBAIMindSporeTrainExportModel0003();
+int SUBAIMindSporeTrainExportModel0004();
+int SUBAIMindSporeTrainExportModel0005();
+int SUBAIMindSporeTrainExportModel0006();
+int SUBAIMindSporeTrainExportModel0007();
+int SUBAIMindSporeTrainExportModel0008();
+int SUBAIMindSporeTrainExportModel0009();
+int SUBAIMindSporeTrainExportModel0010();
+int SUBAIMindSporeTrainExportModel0011();
+int SUBAIMindSporeTrainExportModel0012();
+int SUBAIMindSporeTrainExportModel0013();
+int SUBAIMindSporeTrainExportModel0014();
+int SUBAIMindSporeTrainExportWeights0001();
+int SUBAIMindSporeTrainExportWeights0002();
+int SUBAIMindSporeTrainExportWeights0003();
+int SUBAIMindSporeTrainExportWeights0004();
+int SUBAIMindSporeTrainExportWeights0005();
+int SUBAIMindSporeTrainExportWeights0006();
 } // namespace MindSpore
 } // namespace Acts
 
