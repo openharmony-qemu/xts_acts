@@ -293,8 +293,8 @@ export default function pasteBoardRecordTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000 start")
+    it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200 start")
       try {
         let pasteData = pasteboard.createData('', "String")
       } catch (err) {
@@ -303,7 +303,7 @@ export default function pasteBoardRecordTest() {
         expect(err.code).assertEqual("401")
       }
       expect(error != undefined).assertTrue();
-      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000 end")
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200 end")
       done();
     })
 
