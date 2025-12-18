@@ -23,6 +23,7 @@ import { BusinessError } from '@ohos.base';
 let filePath: ESObject;
 let fdNumber: number;
 let globalpixelmap: PixelMap;
+let isSupportTiff: Boolean;
 
 async function getFd(fileName:string) {
   let context: ESObject = await AppStorage.get('thisContext');
@@ -71,6 +72,7 @@ export default function imageDecodeOptions() {
 
 
         beforeAll(async () => {
+            isSupportTiff = image.getImageSourceSupportedFormats().includes("image/tiff");
             console.info("beforeAll case");
         });
 
@@ -2848,37 +2850,44 @@ export default function imageDecodeOptions() {
          * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100", Level.LEVEL0, async (done: Function) => {
-            await getFd("test.tiff");
-            const imageSourceApi = image.createImageSource(fdNumber);
-            let decodingOptions: Options = {
-                sampleSize: 1,
-                editable: true,
-                desiredSize: { width: 1, height: 2 },
-                rotate: 10,
-                desiredPixelFormat: 3,
-                desiredRegion: { size: { height: 1, width: 2 }, x: 0, y: 0 },
-                index: 0,
-            };
-            imageSourceApi.createPixelMap(decodingOptions, (err, pixelmap) => {
-                globalpixelmap = pixelmap;
-                if (err) {
-                    console.info(
-                        "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100 success "
-                    );
-                    console.info(
-                        "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100 createPixelMap error " +
-                            JSON.stringify(err)
-                    );
-                    expect(pixelmap == undefined).assertTrue();
-                    done();
-                } else {
-                    console.info(
-                        "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100 fail  " + pixelmap
-                    );
-                    expect(false).assertTrue();
-                    done();
-                }
-            });
+            if (!isSupportTiff) {
+                console.info("device is not support tiff");
+                done();
+                return;
+            } else {
+                await getFd("test.tiff");
+                const imageSourceApi = image.createImageSource(fdNumber);
+                let decodingOptions: Options = {
+                    sampleSize: 1,
+                    editable: true,
+                    desiredSize: { width: 1, height: 2 },
+                    rotate: 10,
+                    desiredPixelFormat: 3,
+                    desiredRegion: { size: { height: 1, width: 2 }, x: 0, y: 0 },
+                    index: 0,
+                };
+                imageSourceApi.createPixelMap(decodingOptions, (err, pixelmap) => {
+                    globalpixelmap = pixelmap;
+                    if (err) {
+                        console.info(
+                            "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100 fail "
+                        );
+                        console.info(
+                            "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100 createPixelMap error " +
+                                JSON.stringify(err)
+                        );
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info(
+                            "SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_UNSUPPORTED_IMAGE_FORMAT_0100  success " + pixelmap
+                        );
+                        expect(pixelmap != undefined).assertTrue();
+                        done();
+                    }
+                });
+            }
+            
         });
 
         /**
