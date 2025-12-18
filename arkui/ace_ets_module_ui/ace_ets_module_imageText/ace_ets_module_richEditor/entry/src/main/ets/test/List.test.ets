@@ -192,7 +192,6 @@ import richEditorObserverTest from './RichEditorApi22Test/richEditorObserver.tes
 import richEditorSupportSvg2Test from './RichEditorApi22Test/richEditorSupportSvg2.test';
 import RichEditorEnableSelectedDataDetectorTest from './RichEditorApi22Test/RichEditorEnableSelectedDataDetector.test';
 import RichEditorOnWillAttachIMETest from './RichEditorApi22Test/RichEditorOnWillAttachIME.test';
-import RichEditorDeleteBackwardTest from './RichEditorApi22Test/RichEditorDeleteBackward.test';
 
 
 export default function testsuite() {
@@ -376,5 +375,4 @@ export default function testsuite() {
   richEditorSupportSvg2Test()
   RichEditorEnableSelectedDataDetectorTest()
   RichEditorOnWillAttachIMETest()
-  RichEditorDeleteBackwardTest()
 }

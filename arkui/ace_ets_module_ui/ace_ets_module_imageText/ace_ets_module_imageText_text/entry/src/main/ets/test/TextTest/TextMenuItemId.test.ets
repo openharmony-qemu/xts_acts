@@ -22,12 +22,11 @@ export default function TextMenuItemIdTest() {
   describe('TextMenuItemIdTest', () => {
     beforeEach(async (done: Function) => {
       console.info("TextMenuItemIdTest beforeEach start");
-     
       try {
         router.clear();
-        console.info("get TextMenuItemIdTest state success " + JSON.stringify(pages));
+        console.info("TextMenuItemIdTest router clear success");
       } catch (err) {
-        console.error("push TextMenuItemIdTest page error: " + err);
+        console.error("TextMenuItemIdTest router clear error: " + err);
       }
       done();
     });
@@ -424,6 +423,51 @@ export default function TextMenuItemIdTest() {
       console.info('[TextMenuItemIdTest_0260] START');
       expect(ARKUI_TEXT_RESPONSE_TYPE_DEFAULT).assertEqual(3);
       console.info("[TextMenuItemIdTest_0260] END");
+      done();
+    });
+
+    /**
+     * @tc.name   TextMenuItemIdTest_0270
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextMenuItemIdTest_0270
+     * @tc.desc   test RichEditor: Edge.Center = 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextMenuItemIdTest_0270', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextMenuItemIdTest_0270] START');
+      expect(Edge.Center).assertEqual(1);
+      console.info("[TextMenuItemIdTest_0270] END");
+      done();
+    });
+
+    /**
+     * @tc.name   TextMenuItemIdTest_0280
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextMenuItemIdTest_0280
+     * @tc.desc   test RichEditor: Edge.Baseline = 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextMenuItemIdTest_0280', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextMenuItemIdTest_0280] START');
+      expect(Edge.Baseline).assertEqual(3);
+      console.info("[TextMenuItemIdTest_0280] END");
+      done();
+    });
+
+    /**
+     * @tc.name   TextMenuItemIdTest_0290
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextMenuItemIdTest_0290
+     * @tc.desc   test RichEditor: Edge.Middle = 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('TextMenuItemIdTest_0290', Level.LEVEL2, async (done: Function) => {
+      console.info('[TextMenuItemIdTest_0290] START');
+      expect(Edge.Middle).assertEqual(5);
+      console.info("[TextMenuItemIdTest_0290] END");
       done();
     });
   })
