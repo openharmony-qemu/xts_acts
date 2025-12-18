@@ -784,7 +784,7 @@ export default function deviceSettingsTest() {
       } catch (error) {
         expect().assertFail();
       } finally {
-        await adminManager.disableSuperAdmin(SELFWANT);
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     });
