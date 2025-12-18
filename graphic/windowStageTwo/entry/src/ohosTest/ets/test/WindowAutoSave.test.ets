@@ -1271,6 +1271,7 @@ export default function windowAutoSaveTest() {
             done()
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           }else {
             expect().assertFail();
             done();
@@ -1337,6 +1338,7 @@ export default function windowAutoSaveTest() {
             done()
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           }else {
             expect().assertFail();
             done();
@@ -1389,6 +1391,7 @@ export default function windowAutoSaveTest() {
             done()
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           }else {
             expect().assertFail();
             done();
@@ -1443,6 +1446,7 @@ export default function windowAutoSaveTest() {
             done()
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           }else {
             expect().assertFail();
             done();
@@ -1497,6 +1501,7 @@ export default function windowAutoSaveTest() {
             done()
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           }else {
             expect().assertFail();
             done();
@@ -1550,6 +1555,7 @@ export default function windowAutoSaveTest() {
             done()
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1615,6 +1621,7 @@ export default function windowAutoSaveTest() {
             done()
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1669,6 +1676,7 @@ export default function windowAutoSaveTest() {
             done()
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1723,6 +1731,7 @@ export default function windowAutoSaveTest() {
             done()
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1777,6 +1786,7 @@ export default function windowAutoSaveTest() {
             done()
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
+            done();
           }else {
             expect().assertFail();
             done();
@@ -1806,7 +1816,11 @@ export default function windowAutoSaveTest() {
       try {
         windowStage.isWindowRectAutoSave().then((result) => {
           console.info(`${message} isWindowRectAutoSave = ${result}, expect true.`)
-          expect(result).assertTrue();
+          if(isFreeWindowMode){
+            expect(result).assertTrue();
+          }else{
+            expect().assertEqual(false);
+          }
           done();
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
