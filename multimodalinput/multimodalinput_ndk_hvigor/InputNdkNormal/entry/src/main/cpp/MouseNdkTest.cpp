@@ -674,7 +674,8 @@ static napi_property_descriptor desc_part2[] = {
     {"CursorInfo13", nullptr, CursorInfo13, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_define_properties(env, exports, sizeof(desc_part1) / sizeof(desc_part1[0]), desc_part1);
     napi_define_properties(env, exports, sizeof(desc_part2) / sizeof(desc_part2[0]), desc_part2);
     return exports;
