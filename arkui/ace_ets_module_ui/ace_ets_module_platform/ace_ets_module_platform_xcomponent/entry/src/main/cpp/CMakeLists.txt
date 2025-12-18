@@ -23,6 +23,7 @@ add_library(nativerender SHARED
     XComponent/XComponentSurfaceConfigTest.cpp
     XComponent/XComponentKeyMouseEventTest.cpp
     XComponent/NodeXComponentTest.cpp
+    XComponent/NodeContentTest.cpp
     napi_render_init.cpp
 )
 find_library(
