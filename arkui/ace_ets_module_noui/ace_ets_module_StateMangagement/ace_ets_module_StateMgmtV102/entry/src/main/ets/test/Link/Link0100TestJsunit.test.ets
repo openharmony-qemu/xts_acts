@@ -53,7 +53,7 @@ export default function Link0100TestJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Link0100TestJsunit_001', Level.LEVEL0, async (done: Function) => {
+    it('Link0100TestJsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[Link0100TestJsunit_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

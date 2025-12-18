@@ -380,43 +380,6 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003
-     * @tc.desc   VideoOutput set frame rate with min:1>max:0
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003';
-      videoSessionSetFrameRate(done,testName ,(supportedFrameRatesArray) => {
-        try {
-          if(supportedFrameRatesArray[0]['max'] > 0){
-            console.info(TAG, testName,`supportedFrameRatesArray.length: `,supportedFrameRatesArray.length)
-            let min: number = supportedFrameRatesArray[0]['min'];
-            let max: number = supportedFrameRatesArray[0]['max'];
-            mVideoOutput.setFrameRate(max, min);
-            let res = mVideoOutput.getActiveFrameRate();
-            expect(res.min).assertEqual(min);
-            expect(res.max).assertEqual(max);
-            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
-            mVideoOutput.setFrameRate(max, min);
-            res = mVideoOutput.getActiveFrameRate();
-            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
-            expect(res.min).assertEqual(min);
-            expect(res.max).assertEqual(max);
-            done();
-          }else {
-            console.info(TAG, testName ,'The Device is Not supportedFrameRates');
-            done();
-          }
-        } catch (error) {
-          console.error(TAG, testName, 'Failed setFrameRate', JSON.stringify(error), error.code);
-          expect().assertFail();
-        }
-      })
-    })
-    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004
      * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004
      * @tc.desc   VideoOutput set frame rate with min:1>max:0
@@ -862,7 +825,7 @@ export default function cameraSetFrameRateTest() {
             console.info(TAG, testName,`supportedFrameRatesArray.length: `,supportedFrameRatesArray.length)
             let min: number = supportedFrameRatesArray[0]['min'];
             let max: number = supportedFrameRatesArray[0]['max'];
-            mPreviewOutput.setFrameRate(max, min);
+            mPreviewOutput.setFrameRate(min, max);
             let res = mPreviewOutput.getActiveFrameRate();
             expect(res.min).assertEqual(min);
             expect(res.max).assertEqual(max);

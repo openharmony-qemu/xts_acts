@@ -235,6 +235,109 @@ static napi_value SUB_AI_MindSpore_Train_TrainCfg(napi_env env, napi_callback_in
     });
 }
 
+static napi_value SUB_AI_MindSpore_Train_ModelBuild(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeTrainModelBuild0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::SUBAIMindSporeTrainModelBuild0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::SUBAIMindSporeTrainModelBuild0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::SUBAIMindSporeTrainModelBuild0004();
+                break;
+            case CASE_NUM_4:
+                result = Acts::MindSpore::SUBAIMindSporeTrainModelBuild0005();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+static napi_value SUB_AI_MindSpore_Train_ExportModel(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<MindSporeFn, TRAIN_EXPORT_MODEL_HANDLER_COUNT> handlers = {
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0001, Acts::MindSpore::SUBAIMindSporeTrainExportModel0002,
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0003, Acts::MindSpore::SUBAIMindSporeTrainExportModel0004,
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0005, Acts::MindSpore::SUBAIMindSporeTrainExportModel0006,
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0007, Acts::MindSpore::SUBAIMindSporeTrainExportModel0008,
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0009, Acts::MindSpore::SUBAIMindSporeTrainExportModel0010,
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0011, Acts::MindSpore::SUBAIMindSporeTrainExportModel0012,
+            Acts::MindSpore::SUBAIMindSporeTrainExportModel0013, Acts::MindSpore::SUBAIMindSporeTrainExportModel0014,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+static napi_value SUB_AI_MindSpore_Train_ExportWeights(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeTrainExportWeights0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::SUBAIMindSporeTrainExportWeights0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::SUBAIMindSporeTrainExportWeights0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::SUBAIMindSporeTrainExportWeights0004();
+                break;
+            case CASE_NUM_4:
+                result = Acts::MindSpore::SUBAIMindSporeTrainExportWeights0005();
+                break;
+            case CASE_NUM_5:
+                result = Acts::MindSpore::SUBAIMindSporeTrainExportWeights0006();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// Context related functions
+static napi_value SUB_AI_MindSpore_ContextCreate(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<MindSporeFn, CONTEXT_CREATE_HANDLER_COUNT> handlers = {
+            Acts::MindSpore::SUBAIMindSporeContextCreate0001, Acts::MindSpore::SUBAIMindSporeContextCreate0002,
+            Acts::MindSpore::SUBAIMindSporeContextCreate0003, Acts::MindSpore::SUBAIMindSporeContextCreate0004,
+            Acts::MindSpore::SUBAIMindSporeContextCreate0005, Acts::MindSpore::SUBAIMindSporeContextCreate0006,
+            Acts::MindSpore::SUBAIMindSporeContextCreate0007, Acts::MindSpore::SUBAIMindSporeContextCreate0008,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
     return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
@@ -248,6 +351,10 @@ static const napi_property_descriptor g_mindsporeDescriptors[] = {
     DECL_NAPI_DESC(SUB_AI_MindSpore_Train_SetupVirtualBatch),
     DECL_NAPI_DESC(SUB_AI_MindSpore_Train_SetOptimizationLevel),
     DECL_NAPI_DESC(SUB_AI_MindSpore_Train_TrainCfg),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_Train_ModelBuild),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_Train_ExportModel),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_Train_ExportWeights),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_ContextCreate),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

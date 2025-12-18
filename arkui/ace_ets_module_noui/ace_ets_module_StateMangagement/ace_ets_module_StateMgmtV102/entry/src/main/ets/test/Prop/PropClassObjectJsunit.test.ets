@@ -63,7 +63,7 @@ export default function PropClassObjectJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropClassObjectJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('PropClassObjectJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0100 START');
       let strJson = getInspectorByKey('sub_prop_AA');
@@ -83,7 +83,7 @@ export default function PropClassObjectJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropClassObjectJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropClassObjectJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -107,7 +107,7 @@ export default function PropClassObjectJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropClassObjectJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('PropClassObjectJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0300 START');
       let strJson = getInspectorByKey('prop_Object_AA');
@@ -127,7 +127,7 @@ export default function PropClassObjectJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropClassObjectJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('PropClassObjectJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropClassObjectJsunit_0400 START');
       let driver = await UiDriver.create()

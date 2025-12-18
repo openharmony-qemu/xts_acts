@@ -64,7 +64,7 @@ struct cachedCountListMin {
       }
       .id('list_cached_negative')
       .clip(false)
-      .cachedCount(-1, true)
+      .cachedCount(-1)
       .border({width:1})
       .width('80%')
       .height('30%')

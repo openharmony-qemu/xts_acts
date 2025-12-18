@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
-import pasteboarderror from 'libpasteboarderrorcode.so'
+import { describe, it, expect, Level } from '@ohos/hypium';
+import pasteboarderror from 'libpasteboarderrorcode.so';
 const Success = 0;
 
 export default function ActsPasteboardErrorTest() {
@@ -141,6 +141,90 @@ export default function ActsPasteboardErrorTest() {
         done()
       } catch (err) {
         console.error("====>Sub_PasteboardClearDataInvalidParameter_0600 catch err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0700
+     * @tc.number Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0700
+     * @tc.desc   Test PasteboardClearDataInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0700', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_0700 start====");
+        let result: number = pasteboarderror.PasteboardErrDeviceNotSupported();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_0700 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_PasteboardClearDataInvalidParameter_0700 catch err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0800
+     * @tc.number Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0800
+     * @tc.desc   Test PasteboardClearDataInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0800', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_0800 start====");
+        let result: number = pasteboarderror.PasteboardErrBusy();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_0800 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_PasteboardClearDataInvalidParameter_0800 catch err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0900
+     * @tc.number Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0900
+     * @tc.desc   Test PasteboardClearDataInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_0900', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_0900 start====");
+        let result: number = pasteboarderror.PasteboardErrPateboardProgressStartError();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_0900 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_PasteboardClearDataInvalidParameter_0900 catch err: " + err);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_1000
+     * @tc.number Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_1000
+     * @tc.desc   Test PasteboardClearDataInvalidParameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_PasteboardSubscriber_PasteboardClearDataInvalidParameter_1000', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_1000 start====");
+        let result: number = pasteboarderror.PasteboardErrPasteBoardProgressAbnormal();
+        expect(result).assertEqual(Success);
+        console.info("====>Sub_PasteboardClearDataInvalidParameter_1000 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>Sub_PasteboardClearDataInvalidParameter_1000 catch err: " + err);
         done()
       }
     });

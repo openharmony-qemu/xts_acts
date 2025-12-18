@@ -53,7 +53,7 @@ export default function FlushErrorCode() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FlushErrorCode_001', Level.LEVEL0, async (done: Function) => {
+    it('FlushErrorCode_001', Level.LEVEL1, async (done: Function) => {
       console.info('[FlushErrorCode_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

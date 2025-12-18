@@ -72,7 +72,7 @@ export default function PropEnumJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropEnumJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropEnumJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropEnumJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -103,7 +103,7 @@ export default function PropEnumJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropEnumJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('PropEnumJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropEnumJsunit_0400 START');
       let driver = await UiDriver.create()

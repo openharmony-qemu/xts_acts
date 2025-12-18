@@ -76,6 +76,13 @@ napi_value TestLockCursorwithoutPermission(napi_env env, napi_callback_info info
 napi_value TestUnLockCursorwithOutofRange(napi_env env, napi_callback_info info);
 napi_value TestUnLockCursorwithoutPermission(napi_env env, napi_callback_info info);
 
+napi_value TestSetWindowBrightness(napi_env env, napi_callback_info info);
+napi_value TestInjectTouchEvent(napi_env env, napi_callback_info info);
+napi_value TestGetMainWindowSnapshot(napi_env env, napi_callback_info info);
+napi_value TestLockCursor(napi_env env, napi_callback_info info);
+napi_value TestUnlockCursor(napi_env env, napi_callback_info info);
+
+
 };
 
 #endif //ACE_C_ARKUI_KEY_CODE_TEST_API20_WINDOW_H
