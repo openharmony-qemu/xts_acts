@@ -421,7 +421,6 @@ static napi_value SUB_AI_MindSpore_ModelCreate(napi_env env, napi_callback_info 
     });
 }
 
-
 static napi_value SUB_AI_MindSpore_ModelLoadConfig(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
@@ -547,7 +546,82 @@ static napi_value SUB_AI_MindSpore_HIAI_OfflineModel(napi_env env, napi_callback
             Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0006, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0007,
             Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0008, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0009,
             Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0010, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0011,
-            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0012,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0012, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0013,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0014, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0015,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0016, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0017,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0018,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHOS NNRT
+static napi_value OHOS_NNRT(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::OHOSNNRT0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::OHOSNNRT0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::OHOSNNRT0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::OHOSNNRT0005();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHOS NNRT QUANT
+static napi_value OHOS_NNRT_QUANT(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::OHOSNNRTQUANT0001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// Tensor related functions
+static napi_value SUB_AI_MindSpore_TensorCreate(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<MindSporeFn, TENSOR_CREATE_HANDLER_COUNT> handlers = {
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0001, Acts::MindSpore::SUBAIMindSporeTensorCreate0002,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0003, Acts::MindSpore::SUBAIMindSporeTensorCreate0004,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0005, Acts::MindSpore::SUBAIMindSporeTensorCreate0006,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0007, Acts::MindSpore::SUBAIMindSporeTensorCreate0008,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0009, Acts::MindSpore::SUBAIMindSporeTensorCreate0010,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0011, Acts::MindSpore::SUBAIMindSporeTensorCreate0012,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0013, Acts::MindSpore::SUBAIMindSporeTensorCreate0014,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0015, Acts::MindSpore::SUBAIMindSporeTensorCreate0016,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0017, Acts::MindSpore::SUBAIMindSporeTensorCreate0018,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -580,7 +654,9 @@ static const napi_property_descriptor g_mindsporeDescriptors[] = {
     DECL_NAPI_DESC(SUB_AI_MindSpore_NNRT_copy_free),
     DECL_NAPI_DESC(SUB_AI_MindSpore_CPU_copy_free),
     DECL_NAPI_DESC(SUB_AI_MindSpore_HIAI_OfflineModel),
-
+    DECL_NAPI_DESC(OHOS_NNRT),
+    DECL_NAPI_DESC(OHOS_NNRT_QUANT),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_TensorCreate),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

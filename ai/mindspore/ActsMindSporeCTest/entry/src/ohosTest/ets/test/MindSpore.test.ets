@@ -2168,5 +2168,377 @@ export default function MindSporeTest() {
       expect(result).assertEqual(0);
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0013
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0013
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0013', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0014
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0014
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0014', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0015
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0015
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0015', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0016
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0016
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0016', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0017
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0017
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0017', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_HIAI_OfflineModel_0018
+     * @tc.number SUB_AI_MindSpore_HIAI_OfflineModel_0018
+     * @tc.desc   SUB_AI_MindSpore_HIAI_OfflineModel_0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_HIAI_OfflineModel_0018', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_HIAI_OfflineModel(14);
+      expect(result).assertEqual(0);
+    })
+
+    // OHOS NNRT
+    /**
+     * @tc.name   OHOS_NNRT_0001
+     * @tc.number OHOS_NNRT_0001
+     * @tc.desc   OHOS_NNRT_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_NNRT_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_NNRT(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_NNRT_0002
+     * @tc.number OHOS_NNRT_0002
+     * @tc.desc   OHOS_NNRT_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_NNRT_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_NNRT(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_NNRT_0003
+     * @tc.number OHOS_NNRT_0003
+     * @tc.desc   OHOS_NNRT_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_NNRT_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_NNRT(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_NNRT_0005
+     * @tc.number OHOS_NNRT_0005
+     * @tc.desc   OHOS_NNRT_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_NNRT_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_NNRT(3)).assertEqual(0);
+    })
+
+    // OHOS NNRT QUANT
+    /**
+     * @tc.name   OHOS_NNRT_QUANT_0001
+     * @tc.number OHOS_NNRT_QUANT_0001
+     * @tc.desc   OHOS_NNRT_QUANT_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_NNRT_QUANT_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_NNRT_QUANT(0)).assertEqual(0);
+    })
+
+    // Tensor related test cases
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0001
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0001
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0002
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0002
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0003
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0003
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0004
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0004
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0005
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0005
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0005', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0006
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0006
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0006', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0007
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0007
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0007', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0008
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0008
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0008', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0009
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0009
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0009', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0010
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0010
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0010', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0011
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0011
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0011', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0012
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0012
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0012', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0013
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0013
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0013', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0014
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0014
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0014', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(13);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0015
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0015
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0015', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0016
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0016
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0016', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(15);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0017
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0017
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0017', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(16);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_TensorCreate_0018
+     * @tc.number SUB_AI_MindSpore_TensorCreate_0018
+     * @tc.desc   SUB_AI_MindSpore_TensorCreate_0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_TensorCreate_0018', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(17);
+      expect(result).assertEqual(0);
+    })
+
   })
 }

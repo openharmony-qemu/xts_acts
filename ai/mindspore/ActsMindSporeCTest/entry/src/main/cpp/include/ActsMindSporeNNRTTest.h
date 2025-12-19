@@ -19,6 +19,12 @@
 namespace Acts {
 namespace MindSpore {
 // NNRT related functions
+int SUBAIMindSporeNNRTCache0001();
+int SUBAIMindSporeNNRTCache0002();
+int SUBAIMindSporeNNRTCache0003();
+int SUBAIMindSporeNNRTCache0004();
+int SUBAIMindSporeNNRTCache0005();
+int SUBAIMindSporeNNRTCache0006();
 int SUBAIMindSporeNNRTCopyFree0001();
 int SUBAIMindSporeNNRTCopyFree0002();
 int SUBAIMindSporeNNRTCopyFree0003();
@@ -43,7 +49,21 @@ int SUBAIMindSporeHIAIOfflineModel0009();
 int SUBAIMindSporeHIAIOfflineModel0010();
 int SUBAIMindSporeHIAIOfflineModel0011();
 int SUBAIMindSporeHIAIOfflineModel0012();
+int SUBAIMindSporeHIAIOfflineModel0013();
+int SUBAIMindSporeHIAIOfflineModel0014();
+int SUBAIMindSporeHIAIOfflineModel0015();
+int SUBAIMindSporeHIAIOfflineModel0016();
+int SUBAIMindSporeHIAIOfflineModel0017();
+int SUBAIMindSporeHIAIOfflineModel0018();
 
+// OHOS NNRT
+int OHOSNNRT0001();
+int OHOSNNRT0002();
+int OHOSNNRT0003();
+int OHOSNNRT0005();
+
+// OHOS NNRT QUANT
+int OHOSNNRTQUANT0001();
 } // namespace MindSpore
 } // namespace Acts
 
