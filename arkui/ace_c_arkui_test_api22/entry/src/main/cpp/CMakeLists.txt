@@ -16,6 +16,7 @@ add_library(nativerender SHARED
     image/ImageAltTest.cpp
     textMinLines/MinLinesTest.cpp
     hasAxisTest/HasAxisTest.cpp
+    InteractiveFramework/RegionListTest.cpp
     list/CoastingAxisTest.cpp
     component/ButtonComponentTest.cpp
     component/ComponentTest.cpp
