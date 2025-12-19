@@ -1357,6 +1357,136 @@ export default function MindSporeTest() {
       expect(result).assertEqual(0);
     })
 
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0059
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0059
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0059
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0059', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(58);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0060
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0060
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0060', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(59);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0061
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0061
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0061
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0061', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(60);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0062
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0062
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0062
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0062', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(61);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0063
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0063
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0063
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0063', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(62);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0064
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0064
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0064
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0064', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(63);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0065
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0065
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0065
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0065', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(64);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextCreate_0066
+     * @tc.number SUB_AI_MindSpore_ContextCreate_0066
+     * @tc.desc   SUB_AI_MindSpore_ContextCreate_0066
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextCreate_0066', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextCreate(65);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextDestroy_0001
+     * @tc.number SUB_AI_MindSpore_ContextDestroy_0001
+     * @tc.desc   SUB_AI_MindSpore_ContextDestroy_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextDestroy_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextDestroy(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_ContextDestroy_0002
+     * @tc.number SUB_AI_MindSpore_ContextDestroy_0002
+     * @tc.desc   SUB_AI_MindSpore_ContextDestroy_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_ContextDestroy_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_ContextDestroy(1);
+      expect(result).assertEqual(0);
+    })
+
     // Model related test cases
     /**
      * @tc.name   SUB_AI_MindSpore_ModelCreate_0001
@@ -2954,6 +3084,980 @@ export default function MindSporeTest() {
     it('SUB_AI_MindSpore_TensorCreate_0050', Level.LEVEL0, () => {
       const result = libMindSpore.SUB_AI_MindSpore_TensorCreate(49);
       expect(result).assertEqual(0);
+    })
+
+    // NNRT Cache related test cases
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_Cache_0001
+     * @tc.number SUB_AI_MindSpore_NNRT_Cache_0001
+     * @tc.desc   SUB_AI_MindSpore_NNRT_Cache_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_Cache_0001', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_Cache_0002
+     * @tc.number SUB_AI_MindSpore_NNRT_Cache_0002
+     * @tc.desc   SUB_AI_MindSpore_NNRT_Cache_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_Cache_0002', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_Cache_0003
+     * @tc.number SUB_AI_MindSpore_NNRT_Cache_0003
+     * @tc.desc   SUB_AI_MindSpore_NNRT_Cache_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_Cache_0003', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_Cache_0004
+     * @tc.number SUB_AI_MindSpore_NNRT_Cache_0004
+     * @tc.desc   SUB_AI_MindSpore_NNRT_Cache_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_Cache_0004', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_Cache_0005
+     * @tc.number SUB_AI_MindSpore_NNRT_Cache_0005
+     * @tc.desc   SUB_AI_MindSpore_NNRT_Cache_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_Cache_0005', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_AI_MindSpore_NNRT_Cache_0006
+     * @tc.number SUB_AI_MindSpore_NNRT_Cache_0006
+     * @tc.desc   SUB_AI_MindSpore_NNRT_Cache_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_MindSpore_NNRT_Cache_0006', Level.LEVEL0, () => {
+      const result = libMindSpore.SUB_AI_MindSpore_NNRT_Cache(5);
+      expect(result).assertEqual(0);
+    })
+
+    // OHOS Context CPU
+    /**
+     * @tc.name   OHOS_Context_CPU_0001
+     * @tc.number OHOS_Context_CPU_0001
+     * @tc.desc   OHOS_Context_CPU_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0002
+     * @tc.number OHOS_Context_CPU_0002
+     * @tc.desc   OHOS_Context_CPU_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0003
+     * @tc.number OHOS_Context_CPU_0003
+     * @tc.desc   OHOS_Context_CPU_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0004
+     * @tc.number OHOS_Context_CPU_0004
+     * @tc.desc   OHOS_Context_CPU_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(3)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0005
+     * @tc.number OHOS_Context_CPU_0005
+     * @tc.desc   OHOS_Context_CPU_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(4)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0006
+     * @tc.number OHOS_Context_CPU_0006
+     * @tc.desc   OHOS_Context_CPU_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0006', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(5)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0007
+     * @tc.number OHOS_Context_CPU_0007
+     * @tc.desc   OHOS_Context_CPU_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0007', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(6)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0008
+     * @tc.number OHOS_Context_CPU_0008
+     * @tc.desc   OHOS_Context_CPU_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0008', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(7)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0009
+     * @tc.number OHOS_Context_CPU_0009
+     * @tc.desc   OHOS_Context_CPU_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0009', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(8)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0010
+     * @tc.number OHOS_Context_CPU_0010
+     * @tc.desc   OHOS_Context_CPU_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0010', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(9)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0011
+     * @tc.number OHOS_Context_CPU_0011
+     * @tc.desc   OHOS_Context_CPU_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0011', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(10)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0012
+     * @tc.number OHOS_Context_CPU_0012
+     * @tc.desc   OHOS_Context_CPU_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0012', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(11)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0013
+     * @tc.number OHOS_Context_CPU_0013
+     * @tc.desc   OHOS_Context_CPU_0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0013', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(12)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0014
+     * @tc.number OHOS_Context_CPU_0014
+     * @tc.desc   OHOS_Context_CPU_0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0014', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(13)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0015
+     * @tc.number OHOS_Context_CPU_0015
+     * @tc.desc   OHOS_Context_CPU_0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0015', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(14)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0016
+     * @tc.number OHOS_Context_CPU_0016
+     * @tc.desc   OHOS_Context_CPU_0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0016', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(15)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0017
+     * @tc.number OHOS_Context_CPU_0017
+     * @tc.desc   OHOS_Context_CPU_0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0017', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(16)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0018
+     * @tc.number OHOS_Context_CPU_0018
+     * @tc.desc   OHOS_Context_CPU_0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0018', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(17)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0019
+     * @tc.number OHOS_Context_CPU_0019
+     * @tc.desc   OHOS_Context_CPU_0019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0019', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(18)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Context_CPU_0020
+     * @tc.number OHOS_Context_CPU_0020
+     * @tc.desc   OHOS_Context_CPU_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_CPU_0020', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_CPU(19)).assertEqual(0);
+    })
+
+    // OHOS Context NPU
+    /**
+     * @tc.name   OHOS_Context_NPU_0002
+     * @tc.number OHOS_Context_NPU_0002
+     * @tc.desc   OHOS_Context_NPU_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Context_NPU_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Context_NPU(0)).assertEqual(0);
+    })
+
+    // OHOS Model Build
+    /**
+     * @tc.name   OHOS_Model_Build_0001
+     * @tc.number OHOS_Model_Build_0001
+     * @tc.desc   OHOS_Model_Build_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0002
+     * @tc.number OHOS_Model_Build_0002
+     * @tc.desc   OHOS_Model_Build_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0003
+     * @tc.number OHOS_Model_Build_0003
+     * @tc.desc   OHOS_Model_Build_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0004
+     * @tc.number OHOS_Model_Build_0004
+     * @tc.desc   OHOS_Model_Build_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(3)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0005
+     * @tc.number OHOS_Model_Build_0005
+     * @tc.desc   OHOS_Model_Build_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(4)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0006
+     * @tc.number OHOS_Model_Build_0006
+     * @tc.desc   OHOS_Model_Build_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0006', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(5)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0007
+     * @tc.number OHOS_Model_Build_0007
+     * @tc.desc   OHOS_Model_Build_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0007', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(6)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0008
+     * @tc.number OHOS_Model_Build_0008
+     * @tc.desc   OHOS_Model_Build_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0008', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(7)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Build_0009
+     * @tc.number OHOS_Model_Build_0009
+     * @tc.desc   OHOS_Model_Build_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Build_0009', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Build(8)).assertEqual(0);
+    })
+
+    // OHOS Model Resize
+    /**
+     * @tc.name   OHOS_Model_Resize_0001
+     * @tc.number OHOS_Model_Resize_0001
+     * @tc.desc   OHOS_Model_Resize_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Resize_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Resize(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Resize_0002
+     * @tc.number OHOS_Model_Resize_0002
+     * @tc.desc   OHOS_Model_Resize_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Resize_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Resize(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Resize_0003
+     * @tc.number OHOS_Model_Resize_0003
+     * @tc.desc   OHOS_Model_Resize_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Resize_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Resize(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Resize_0004
+     * @tc.number OHOS_Model_Resize_0004
+     * @tc.desc   OHOS_Model_Resize_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Resize_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Resize(3)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Resize_0005
+     * @tc.number OHOS_Model_Resize_0005
+     * @tc.desc   OHOS_Model_Resize_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Resize_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Resize(4)).assertEqual(0);
+    })
+
+    // OHOS Model Predict
+    /**
+     * @tc.name   OHOS_Model_Predict_0001
+     * @tc.number OHOS_Model_Predict_0001
+     * @tc.desc   OHOS_Model_Predict_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Predict_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Predict(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Predict_0002
+     * @tc.number OHOS_Model_Predict_0002
+     * @tc.desc   OHOS_Model_Predict_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Predict_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Predict(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Predict_0003
+     * @tc.number OHOS_Model_Predict_0003
+     * @tc.desc   OHOS_Model_Predict_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Predict_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Predict(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_Predict_0004
+     * @tc.number OHOS_Model_Predict_0004
+     * @tc.desc   OHOS_Model_Predict_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_Predict_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_Predict(3)).assertEqual(0);
+    })
+
+    // OHOS Model GetInputByTensorName
+    /**
+     * @tc.name   OHOS_Model_GetInputByTensorName_0001
+     * @tc.number OHOS_Model_GetInputByTensorName_0001
+     * @tc.desc   OHOS_Model_GetInputByTensorName_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_GetInputByTensorName_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_GetInputByTensorName(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_GetInputByTensorName_0002
+     * @tc.number OHOS_Model_GetInputByTensorName_0002
+     * @tc.desc   OHOS_Model_GetInputByTensorName_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_GetInputByTensorName_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_GetInputByTensorName(1)).assertEqual(0);
+    })
+
+    // OHOS Model GetOutputByTensorName
+    /**
+     * @tc.name   OHOS_Model_GetOutputByTensorName_0001
+     * @tc.number OHOS_Model_GetOutputByTensorName_0001
+     * @tc.desc   OHOS_Model_GetOutputByTensorName_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_GetOutputByTensorName_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_GetOutputByTensorName(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Model_GetOutputByTensorName_0002
+     * @tc.number OHOS_Model_GetOutputByTensorName_0002
+     * @tc.desc   OHOS_Model_GetOutputByTensorName_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Model_GetOutputByTensorName_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Model_GetOutputByTensorName(1)).assertEqual(0);
+    })
+
+    // OHOS Tensor Create
+    /**
+     * @tc.name   OHOS_Tensor_Create_0001
+     * @tc.number OHOS_Tensor_Create_0001
+     * @tc.desc   OHOS_Tensor_Create_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0002
+     * @tc.number OHOS_Tensor_Create_0002
+     * @tc.desc   OHOS_Tensor_Create_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0003
+     * @tc.number OHOS_Tensor_Create_0003
+     * @tc.desc   OHOS_Tensor_Create_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0004
+     * @tc.number OHOS_Tensor_Create_0004
+     * @tc.desc   OHOS_Tensor_Create_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(3)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0005
+     * @tc.number OHOS_Tensor_Create_0005
+     * @tc.desc   OHOS_Tensor_Create_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(4)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0006
+     * @tc.number OHOS_Tensor_Create_0006
+     * @tc.desc   OHOS_Tensor_Create_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0006', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(5)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0007
+     * @tc.number OHOS_Tensor_Create_0007
+     * @tc.desc   OHOS_Tensor_Create_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0007', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(6)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0008
+     * @tc.number OHOS_Tensor_Create_0008
+     * @tc.desc   OHOS_Tensor_Create_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0008', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(7)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0009
+     * @tc.number OHOS_Tensor_Create_0009
+     * @tc.desc   OHOS_Tensor_Create_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0009', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(8)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0010
+     * @tc.number OHOS_Tensor_Create_0010
+     * @tc.desc   OHOS_Tensor_Create_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0010', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(9)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0011
+     * @tc.number OHOS_Tensor_Create_0011
+     * @tc.desc   OHOS_Tensor_Create_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0011', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(10)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0012
+     * @tc.number OHOS_Tensor_Create_0012
+     * @tc.desc   OHOS_Tensor_Create_0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0012', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(11)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0013
+     * @tc.number OHOS_Tensor_Create_0013
+     * @tc.desc   OHOS_Tensor_Create_0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0013', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(12)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0014
+     * @tc.number OHOS_Tensor_Create_0014
+     * @tc.desc   OHOS_Tensor_Create_0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0014', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(13)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0015
+     * @tc.number OHOS_Tensor_Create_0015
+     * @tc.desc   OHOS_Tensor_Create_0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0015', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(14)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Tensor_Create_0016
+     * @tc.number OHOS_Tensor_Create_0016
+     * @tc.desc   OHOS_Tensor_Create_0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Tensor_Create_0016', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Tensor_Create(15)).assertEqual(0);
+    })
+
+    // OHOS Input
+    /**
+     * @tc.name   OHOS_Input_0001
+     * @tc.number OHOS_Input_0001
+     * @tc.desc   OHOS_Input_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Input_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Input(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Input_0002
+     * @tc.number OHOS_Input_0002
+     * @tc.desc   OHOS_Input_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Input_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Input(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Input_0003
+     * @tc.number OHOS_Input_0003
+     * @tc.desc   OHOS_Input_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Input_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Input(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Input_0004
+     * @tc.number OHOS_Input_0004
+     * @tc.desc   OHOS_Input_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Input_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Input(3)).assertEqual(0);
+    })
+
+    // OHOS Multiple
+    /**
+     * @tc.name   OHOS_Multiple_0001
+     * @tc.number OHOS_Multiple_0001
+     * @tc.desc   OHOS_Multiple_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Multiple_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Multiple(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Multiple_0002
+     * @tc.number OHOS_Multiple_0002
+     * @tc.desc   OHOS_Multiple_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Multiple_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Multiple(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Multiple_0003
+     * @tc.number OHOS_Multiple_0003
+     * @tc.desc   OHOS_Multiple_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Multiple_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Multiple(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Multiple_0004
+     * @tc.number OHOS_Multiple_0004
+     * @tc.desc   OHOS_Multiple_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Multiple_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Multiple(3)).assertEqual(0);
+    })
+
+    // OHOS Parallel
+    /**
+     * @tc.name   OHOS_Parallel_0001
+     * @tc.number OHOS_Parallel_0001
+     * @tc.desc   OHOS_Parallel_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Parallel_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Parallel(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Parallel_0002
+     * @tc.number OHOS_Parallel_0002
+     * @tc.desc   OHOS_Parallel_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Parallel_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Parallel(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_Parallel_0003
+     * @tc.number OHOS_Parallel_0003
+     * @tc.desc   OHOS_Parallel_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Parallel_0003', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Parallel(2)).assertEqual(0);
+    })
+
+    // OHOS Compatible
+    /**
+     * @tc.name   OHOS_Compatible_0001
+     * @tc.number OHOS_Compatible_0001
+     * @tc.desc   OHOS_Compatible_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_Compatible_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_Compatible(0)).assertEqual(0);
+    })
+
+    // OHOS OfflineModel
+    /**
+     * @tc.name   OHOS_OfflineModel_0001
+     * @tc.number OHOS_OfflineModel_0001
+     * @tc.desc   OHOS_OfflineModel_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0001', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(0)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0002
+     * @tc.number OHOS_OfflineModel_0002
+     * @tc.desc   OHOS_OfflineModel_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0002', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(1)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0004
+     * @tc.number OHOS_OfflineModel_0004
+     * @tc.desc   OHOS_OfflineModel_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0004', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(2)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0005
+     * @tc.number OHOS_OfflineModel_0005
+     * @tc.desc   OHOS_OfflineModel_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0005', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(3)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0006
+     * @tc.number OHOS_OfflineModel_0006
+     * @tc.desc   OHOS_OfflineModel_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0006', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(4)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0007
+     * @tc.number OHOS_OfflineModel_0007
+     * @tc.desc   OHOS_OfflineModel_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0007', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(5)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0008
+     * @tc.number OHOS_OfflineModel_0008
+     * @tc.desc   OHOS_OfflineModel_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0008', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(6)).assertEqual(0);
+    })
+    /**
+     * @tc.name   OHOS_OfflineModel_0009
+     * @tc.number OHOS_OfflineModel_0009
+     * @tc.desc   OHOS_OfflineModel_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OHOS_OfflineModel_0009', Level.LEVEL0, () => {
+      expect(libMindSpore.OHOS_OfflineModel(7)).assertEqual(0);
     })
 
   })
