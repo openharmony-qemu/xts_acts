@@ -63,8 +63,6 @@ export default function displayPriorityTest() {
     'LoadingProgress',
     'Marquee',
     'Menu',
-    //'Navigation',
-    // 'NavRouter',
     'Progress',
     'QRCode',
     'Radio',
@@ -76,19 +74,15 @@ export default function displayPriorityTest() {
     'TextArea',
     'TextClock',
     'TextInput',
-    //'TextPicker',
     'TextTimer',
     'TimePicker',
     'Toggle',
     'Badge',
     'Column',
     'Counter',
-    //'Flex',
     'GridRow',
     'Grid',
     'List',
-    // 'Navigator',
-    //'Panel',
     'Refresh',
     'RelativeContainer',
     'Row',
@@ -150,17 +144,6 @@ export default function displayPriorityTest() {
         displayPriority: 4.0
       }
     },
-
-    //    {
-    //    describe: 'SetDecimal',
-    //    setValue: {
-    //      displayPriority: 2.9,
-    //    },
-    //    expectValue: {
-    //      displayPriority: 2.0
-    //    }
-    //  },
-
     {
       describe: 'SetPriority',
       setValue: {

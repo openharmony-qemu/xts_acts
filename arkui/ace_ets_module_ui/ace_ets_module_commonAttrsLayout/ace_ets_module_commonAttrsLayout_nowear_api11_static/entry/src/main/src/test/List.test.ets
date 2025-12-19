@@ -28,17 +28,17 @@ import getWaterFlowItemRect4 from './getItemRect/waterFlow/getWaterFlowItemRect4
 import getWaterFlowItemRect5 from './getItemRect/waterFlow/getWaterFlowItemRect5.test';
 
 export default function testsuite() {
+  getWaterFlowItemRect1(); // 4 pass 4  getWaterFlowItemRect1.test.ets:173:0
+  getWaterFlowItemRect5(); // 2 pass 2
+  comSizeAbilityTest_14(); // 3
+  comSizeAbilityTest_18(); // 4
+  comSizeAbilityTest_27(); // 2
+  comSizeAbilityTest_29(); // 3
+  getWaterFlowItemRect2(); // 2 pass 2
+  getWaterFlowItemRect3(); // 2 pass 2
+  getWaterFlowItemRect4(); // 3 pass 3
   ChipAction();
   ChipAction2();
   ChipOnClose();
   ChipOnClose2();
-  comSizeAbilityTest_14();
-  comSizeAbilityTest_18();
-  comSizeAbilityTest_27();
-  comSizeAbilityTest_29();
-  getWaterFlowItemRect1(); // 4 pass 4
-  getWaterFlowItemRect2(); // 2 pass 2
-  getWaterFlowItemRect3(); // 2 pass 2
-  getWaterFlowItemRect4(); // 3 pass 3
-  getWaterFlowItemRect5(); // 2 pass 2
 }

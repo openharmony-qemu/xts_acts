@@ -105,10 +105,24 @@ it('comSizeAbilityTestJsunit_static_37', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(1000);
       expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(260))) <= 1).assertTrue();
       expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(130))) <= 1).assertTrue();
-      expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-      expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+      // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+      expect(JSON.stringify(Translate.x)).assertEqual('1');
+      expect(JSON.stringify(Translate.y)).assertEqual('1');
+      expect(JSON.stringify(Translate.z)).assertEqual('1');
+      // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Scale.x)).assertEqual('1');
+      expect(JSON.stringify(Scale.y)).assertEqual('1');
+      expect(JSON.stringify(Scale.z)).assertEqual('1');
+      expect(JSON.stringify(Scale.centerX)).assertEqual('1');
+      expect(JSON.stringify(Scale.centerY)).assertEqual('1');
+      // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Rotate.x)).assertEqual('1');
+      expect(JSON.stringify(Rotate.y)).assertEqual('1');
+      expect(JSON.stringify(Rotate.z)).assertEqual('1');
+      expect(JSON.stringify(Rotate.angle)).assertEqual('0');
+      expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
+      expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
+      // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_37] END')
       await CommonFunc.sleep(1000);
       done()
@@ -150,10 +164,24 @@ it('comSizeAbilityTestJsunit_static_38', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(1000);
       expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(160))) <= 1).assertTrue();
       expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(120))) <= 1).assertTrue();
-      expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-      expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+      // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+      expect(JSON.stringify(Translate.x)).assertEqual('1');
+      expect(JSON.stringify(Translate.y)).assertEqual('1');
+      expect(JSON.stringify(Translate.z)).assertEqual('1');
+      // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Scale.x)).assertEqual('1');
+      expect(JSON.stringify(Scale.y)).assertEqual('1');
+      expect(JSON.stringify(Scale.z)).assertEqual('1');
+      expect(JSON.stringify(Scale.centerX)).assertEqual('1');
+      expect(JSON.stringify(Scale.centerY)).assertEqual('1');
+      // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Rotate.x)).assertEqual('1');
+      expect(JSON.stringify(Rotate.y)).assertEqual('1');
+      expect(JSON.stringify(Rotate.z)).assertEqual('1');
+      expect(JSON.stringify(Rotate.angle)).assertEqual('0');
+      expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
+      expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
+      // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_38] END')
       await CommonFunc.sleep(1000);
       done()
@@ -195,10 +223,24 @@ it('comSizeAbilityTestJsunit_static_39', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(1000);
       expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(120))) <= 1).assertTrue();
       expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-      expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
-      expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+      // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+      expect(JSON.stringify(Translate.x)).assertEqual('1');
+      expect(JSON.stringify(Translate.y)).assertEqual('1');
+      expect(JSON.stringify(Translate.z)).assertEqual('1');
+      // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Scale.x)).assertEqual('1');
+      expect(JSON.stringify(Scale.y)).assertEqual('1');
+      expect(JSON.stringify(Scale.z)).assertEqual('1');
+      expect(JSON.stringify(Scale.centerX)).assertEqual('1');
+      expect(JSON.stringify(Scale.centerY)).assertEqual('1');
+      // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+      expect(JSON.stringify(Rotate.x)).assertEqual('1');
+      expect(JSON.stringify(Rotate.y)).assertEqual('1');
+      expect(JSON.stringify(Rotate.z)).assertEqual('1');
+      expect(JSON.stringify(Rotate.angle)).assertEqual('0');
+      expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
+      expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
+      // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       console.info('[comSizeAbilityTestJsunit_static_39] END')
       await CommonFunc.sleep(1000);
       done()

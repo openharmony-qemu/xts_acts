@@ -18,7 +18,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -67,9 +67,6 @@ export default function getListItemRect4() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
@@ -86,7 +83,7 @@ it('getListItemRect4_static_0100', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message1.notify({ name: 'visibility1', value: Visibility.Visible })
       await CommonFunc.sleep(1000);
 
@@ -147,7 +144,7 @@ it('getListItemRect4_static_0200', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message1.notify({ name: 'visibility1', value: Visibility.Hidden })
       await CommonFunc.sleep(1000);
 
@@ -208,7 +205,7 @@ it('getListItemRect4_static_0300', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Visibility> =
         AppStorage.get<MessageManager<Visibility>>("messageManagerVisibility")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message1.notify({ name: 'visibility1', value: Visibility.None })
       await CommonFunc.sleep(1000);
 

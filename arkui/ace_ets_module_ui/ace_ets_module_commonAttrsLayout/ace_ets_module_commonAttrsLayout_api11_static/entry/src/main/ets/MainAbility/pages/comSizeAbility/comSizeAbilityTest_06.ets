@@ -17,16 +17,18 @@ import {
   Builder,
   Button,
   ClickEvent,
+  Color,
   Column,
   Component,
   Entry,
   ForEach,
   List,
   ListItem,
+  ListItemGroup,
   Row,
   Scroller,
   Text,
-  TextAlign,ListItemGroup,Color
+  TextAlign
 } from '@ohos.arkui.component';
 import matrix4 from '@ohos.matrix4';
 
@@ -91,41 +93,43 @@ struct comSizeAbilityTest_06 {
       List({ space: 5, initialIndex: 0, scroller: this.scroller }) {
         ListItem() {
           List({ space: 20 }) {
-            // ForEach(this.timetable, (item: TimeTable) => {
-            //   ListItemGroup({ header: this.itemHead(item.title), footer: this.itemFoot(item.projects.length) }) {
-            //     ForEach(item.projects, (project: string) => {
-            //       ListItem() {
-            //         Text(project)
-            //           .width("100%")
-            //           .height(100)
-            //           .fontSize(20)
-            //           .textAlign(TextAlign.Center)
-            //           .backgroundColor(0xFFFFFF)
-            //       }
-            //     }, (item: string) => item)
-            //   }
-            //   .key("ListItemGroup_Size")
-            //   .backgroundColor(0xDCDC59) // 浅蓝色的List
-            //   .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
-            //   .size({ width: 160, height: 100 })
-            //   .translate({ x: 1, y: 1, z: 1 })
-            //   .scale({
-            //     x: 1,
-            //     y: 1,
-            //     z: 1,
-            //     centerX: 1,
-            //     centerY: 1
-            //   })
-            //   .rotate({
-            //     x: 1,
-            //     y: 1,
-            //     z: 1,
-            //     angle: 0,
-            //     centerX: 1,
-            //     centerY: 1
-            //   })
-            //   .transform(matrix)
-            // })
+            ForEach(this.timetable, (item: TimeTable) => {
+              ListItemGroup(
+                // { header: this.itemHead(item.title), footer: this.itemFoot(item.projects.length) }
+              ) {
+                ForEach(item.projects, (project: string) => {
+                  ListItem() {
+                    Text(project)
+                      .width("100%")
+                      .height(100)
+                      .fontSize(20)
+                      .textAlign(TextAlign.Center)
+                      .backgroundColor(0xFFFFFF)
+                  }
+                }, (item: string) => item)
+              }
+              .key("ListItemGroup_Size")
+              .backgroundColor(0xDCDC59) // 浅蓝色的List
+              .divider({ strokeWidth: 1, color: Color.Blue }) // 每行之间的分界线
+              .size({ width: 160, height: 100 })
+              .translate({ x: 1, y: 1, z: 1 })
+              .scale({
+                x: 1,
+                y: 1,
+                z: 1,
+                centerX: 1,
+                centerY: 1
+              })
+              .rotate({
+                x: 1,
+                y: 1,
+                z: 1,
+                angle: 0,
+                centerX: 1,
+                centerY: 1
+              })
+              .transform(matrix)
+            })
           }.backgroundColor('red').height(200)
         }
 

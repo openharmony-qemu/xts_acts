@@ -66,9 +66,9 @@ struct comSizeAbilityTest_17 {
       List({ space: 5, initialIndex: 0, scroller: this.scroller }) {
         ListItem() {
           TextPicker({ range: this.apfruits, selected: this.select })
-            .onChange((value: string | string[], index: Int | Int[]) => {
-              console.info('Picker item changed, value: ' + value + ', index: ' + index)
-            } as OnTextPickerChangeCallback)
+          // .onChange((value: string | string[], index: Int | Int[]) => {
+          //   console.info('Picker item changed, value: ' + value + ', index: ' + index)
+          // } as OnTextPickerChangeCallback)
             .margin(bott as Margin)
             .backgroundColor('0XBDDB69')
             .key("TextPicker_Size")

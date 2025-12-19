@@ -20,13 +20,15 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {
   AlignRuleOption,
   focusControl,
+  KeyEvent,
   KeySource,
   KeyType,
   MouseAction,
   MouseButton,
+  MouseEvent,
   SourceTool,
   SourceType,
-  TouchType
+  TouchType,
 } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -34,7 +36,8 @@ import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
 import { sendKeyEvent, sendMouseEvent, sendTouchEvent } from '@ohos.arkui.Test';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
-let viewPage:string = ""
+
+let viewPage: string = ""
 
 export class RectValue {
   left: number = 0;
@@ -135,23 +138,13 @@ export default class Utils {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
       let pageParams: RouterParams = new RouterParams();
+      console.log('obj is: ' + obj)
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
@@ -163,7 +156,7 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(500);
+        await Utils.sleep(1000);
         console.info('push ' + obj.pageName);
       }
     } catch (err) {
@@ -318,14 +311,14 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as Long,
       stopPropagation: () => {
       },
       getModifierKeyState: (keys: Array<string>): boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
-    })
+    } as KeyEvent)
     console.info('performKeyEvent result : ' + result);
     return result
   }
@@ -358,7 +351,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as Long,
       target: {
         area: {
           width: width,
@@ -382,7 +375,7 @@ export default class Utils {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
-    })
+    } as MouseEvent)
 
     console.info('performMouseEvent result : ' + result);
 

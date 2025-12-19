@@ -14,51 +14,46 @@
  * limitations under the License.
  */
 import {
-  Entry,
-  Component,
   $r,
-  Column,
-  ColumnOptions,
-  Text,
-  Color,
-  Image,
-  List,
-  ListItem,
-  PreDragStatus,
-  Scroller,
-  CanvasRenderingContext2D,
+  Builder,
   Button,
-  RenderingContextSettings,
   Canvas,
-  ClickEvent,
-  Row,
+  CanvasRenderingContext2D,
   CheckboxGroup,
   Circle,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  Component,
   Counter,
   Divider,
   Ellipse,
-  Gauge,
-  GridRow,
-  GridCol,
+  Entry,
   ForEach,
-  GridItem,
+  Gauge,
   Grid,
-  Builder,
+  GridCol,
+  GridItem,
+  GridRow,
+  Image,
+  List,
+  ListItem,
   ListItemGroup,
-  ResourceStr,
-  MenuItemGroup,
-  MenuItem,
-  MenuItemOptions,
   Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemOptions,
+  PreDragStatus,
+  RenderingContextSettings,
+  ResourceStr,
+  Row,
   Scroll,
+  Scroller,
+  Text,
 } from '@ohos.arkui.component';
-import {
-  State,
-  Link,
-  Prop,
-} from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -70,6 +65,7 @@ struct comSizeAbilityTest_07 {
   @State select: boolean = true
   public iconStr: ResourceStr = $r("app.media.icon")
   public iconStr2: ResourceStr = $r("app.media.icon")
+
   @Builder
   MyMenu1() {
     Column() {
@@ -140,7 +136,7 @@ struct comSizeAbilityTest_07 {
           startIcon: $r("app.media.icon"),
           content: "Menu",
           endIcon: $r("app.media.icon"),
-        }as MenuItemOptions)
+        } as MenuItemOptions)
       }
       .backgroundColor('gray')
       .key("Menu_Size")
@@ -175,12 +171,20 @@ struct comSizeAbilityTest_07 {
             .bindMenu(this.MyMenu1)
             .key('btn_MenuItemGroup')
             .bindMenu(this.MyMenu1)
+            .onClick(() => {
+              console.log('test start click')
+            })
         }
 
         Column() {
-          Button(`ShowSize: MenuItem`).fontSize(16).margin(5)
-            .key('btn_MenuItem')
+          Button(`ShowSize: MenuItem`)
+            .fontSize(16)
+            .margin(5)
             .bindMenu(this.MyMenu2)
+            .key('btn_MenuItem')
+            .onClick(() => {
+              console.log('test start click')
+            })
         }
 
         Column() {

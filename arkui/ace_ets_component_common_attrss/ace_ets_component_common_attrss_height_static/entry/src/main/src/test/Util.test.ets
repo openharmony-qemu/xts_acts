@@ -20,8 +20,7 @@ const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelega
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'ActsAceEtsModuleLayoutApi18StaticTest'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-class UtilsTest{
-  static isloadAndSetUpUiTest = false;
+class UtilsTest {
   static isStartedAbility = false;
 
   static async msSleep(count:int) : Promise<int> {
@@ -36,7 +35,7 @@ class UtilsTest{
     try {
       if (!UtilsTest.isStartedAbility) {
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
-        hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
+        hilog.info(domain, tag, `startAbility, success`);
         UtilsTest.isStartedAbility = true;
         await UtilsTest.msSleep(4000);
       }
@@ -74,7 +73,5 @@ async function stopApplication(bundleName: string): Promise<boolean>{
 }
 
 export {
-  UtilsTest,
-  startAbility,
-  stopApplication
+  UtilsTest, startAbility, stopApplication
 }

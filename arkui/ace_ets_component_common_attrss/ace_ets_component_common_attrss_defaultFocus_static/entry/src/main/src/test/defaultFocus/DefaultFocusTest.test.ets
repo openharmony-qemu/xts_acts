@@ -47,10 +47,8 @@ export default function DefaultFocusTest() {
     'Checkbox',
     'CheckboxGroup',
     'DatePicker',
-    //    'ImageAnimator',
     'Menu',
     'MenuItem',
-    //    'MenuItemGroup',
     'Radio',
     'Rating',
     'Slider',
@@ -59,21 +57,15 @@ export default function DefaultFocusTest() {
     'Toggle',
     'AlphabetIndexer',
     'Column',
-    //    'ColumnSplit',
     'Counter',
     'Flex',
-    //    'GridCol',
-    //    'GridRow',
     'GridItem',
     'ListItem',
-    //    'ListItemGroup',
     'Row',
-    //    'RowSplit',
     'Scroll',
     'Stack',
     'Swiper',
     'Tabs',
-    //    'TabContent'
   )
   //Page config, this param is required.
   let pageConfig: PageConfig = {

@@ -209,28 +209,28 @@ struct comSizeAbilityTest_18 {
           // })
           // .columnsGap(10)
           // .rowsGap(5)
-          // .backgroundColor('0xFAEEE0')
+          .backgroundColor('0xFAEEE0')
           // .layoutDirection(FlexDirection.Column)
-          // .key("WaterFlow_Size")
-          // .backgroundColor('0XBDDB69')
-          // .size({ width: 220, height: 140 })
-          // .translate({ x: 1, y: 1, z: 1 })
-          // .scale({
-          //   x: 1,
-          //   y: 1,
-          //   z: 1,
-          //   centerX: 1,
-          //   centerY: 1
-          // })
-          // .rotate({
-          //   x: 1,
-          //   y: 1,
-          //   z: 1,
-          //   angle: 0,
-          //   centerX: 1,
-          //   centerY: 1
-          // })
-          // .transform(matrix)
+          .key("WaterFlow_Size")
+          .backgroundColor('0XBDDB69')
+          .size({ width: 220, height: 140 })
+          .translate({ x: 1, y: 1, z: 1 })
+          .scale({
+            x: 1,
+            y: 1,
+            z: 1,
+            centerX: 1,
+            centerY: 1
+          })
+          .rotate({
+            x: 1,
+            y: 1,
+            z: 1,
+            angle: 0,
+            centerX: 1,
+            centerY: 1
+          })
+          .transform(matrix)
         }.key('WaterFlow_Father')
       }.width('100%')
     }.height('100%')

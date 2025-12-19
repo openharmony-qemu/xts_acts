@@ -18,7 +18,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -73,8 +73,6 @@ export default function getListItemRect1() {
       await CommonFunc.sleep(2000);
       await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(3000);
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
@@ -89,7 +87,7 @@ it('getListItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getListItemRect1_static_0100] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
@@ -146,7 +144,7 @@ it('getListItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getListItemRect1_static_0200] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 1.0 })
+      message.notify({ name: 'index', value: 1 })
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
       let listItem_2: RectValue = CommonFunc.getComponentRect('getListItemRect1_listItem_2') as RectValue;
@@ -204,7 +202,7 @@ it('getListItemRect1_static_0300', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getListItemRect1_static_0300] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: -1.0 })
+      message.notify({ name: 'index', value: -1 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -255,7 +253,7 @@ it('getListItemRect1_static_0400', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getListItemRect1_static_0400] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -310,7 +308,7 @@ it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getListItemRect1_static_0500] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 100.0 })
+      message.notify({ name: 'index', value: 100 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -360,7 +358,7 @@ it('getListItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getListItemRect1_static_0600] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'padding1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
@@ -416,7 +414,7 @@ it('getListItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promi
 it('getListItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[getListItemRect1_static_0700] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'margin1', value: 20.0 })
       await CommonFunc.sleep(1000);
 

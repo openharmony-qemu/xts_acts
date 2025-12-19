@@ -45,7 +45,7 @@ struct getListItemRect6 {
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
-  messageManager: MessageManager<Object> = new MessageManager<Object>()
+  messageManager: MessageManager<Int> = new MessageManager<Int>()
   private listScroller: ListScroller = new ListScroller()
 
   @Builder
@@ -58,8 +58,8 @@ struct getListItemRect6 {
 
   onPageShow() {
     console.info('getListItemRect6 onPageShow');
-    AppStorage.setOrCreate<MessageManager<Object>>('messageManager', this.messageManager);
-    let callback: Callback<Object> = (message: Message<Object>) => {
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManager', this.messageManager);
+    let callback: Callback<Int> = (message: Message<Int>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
         this.index = message.value as Int;

@@ -49,78 +49,66 @@ interface Attrs {
  * Test of common attribute: height
  */
 export default function heightTest() {
-  
-  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  
 
-  const uiContext = AppStorage.get<UIContext>('uiContext')!
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000);
+
+  console.log('test start get UIContext before');
+  const uiContext = AppStorage.get<UIContext>('uiContext');
+  console.log('test start get UIContext before');
 
   //A list of components that support padding attributes is required.
   let supportView = [
-     'AlphabetIndexer',
-     'Button',
+    'AlphabetIndexer',
+    'Button',
     'BlankRow',
     'BlankColumn',
-     'Checkbox',
+    'Checkbox',
     'CheckboxGroup',
-     'DataPanel',
-     'DatePicker',
-     'Divider',
-     'Gauge',
-     'Image',
-     'ImageAnimator',
-     'LoadingProgress',
-     'Marquee',
-     'Navigation',
-     // 'NavRouter', // Navigation替换
-     'Progress',
-     'QRCode',
-     'Radio',
-     //    'ScrollBar',
-     'Rating',
-     'Search',
-     'RichText',
-     'Slider',
-     'Text',
-     //    'TextArea',
-     'TextClock',
-     //    'TextInput',
-     'TextPicker',
-     'TextTimer',
-     'TimePicker',
+    'DataPanel',
+    'DatePicker',
+    'Divider',
+    'Gauge',
+    'Image',
+    'ImageAnimator',
+    'LoadingProgress',
+    'Marquee',
+    'Navigation',
+    'Progress',
+    'QRCode',
+    'Radio',
+    'Rating',
+    'Search',
+    'RichText',
+    'Slider',
+    'Text',
+    'TextClock',
+    'TextPicker',
+    'TextTimer',
+    'TimePicker',
     'Toggle',
     'Badge',
-     'Column',
-     //    'Counter',
-     'Flex',
-     //    'GridRow',
-     'Grid',
-     'List',
-     'ListItem',
-     //    'Panel',
-     'Refresh',
-     'Row',
-     //    'Scroll',
-     //    'SideBarContainer',
-     'Stack',
-     'Swiper',
-     //    'Tabs',
-     'Circle',
-     'Ellipse',
-     'Polyline',
-     'Polygon',
-     'Path',
-     'Rect',
-     'Shape',
-     'Line',
-     //    'StepperItem',
-     //    'GridCol',
-     'GridItem',
-     'RelativeContainer',
-     // 'Navigator', // Navigation 替换
-     'Menu',
-     'MenuItem',
-   //    'MenuItemGroup'
+    'Column',
+    'Flex',
+    'Grid',
+    'List',
+    'ListItem',
+    'Refresh',
+    'Row',
+    'Stack',
+    'Swiper',
+    'Circle',
+    'Ellipse',
+    'Polyline',
+    'Polygon',
+    'Path',
+    'Rect',
+    'Shape',
+    'Line',
+    'GridItem',
+    'RelativeContainer',
+    'Menu',
+    'MenuItem',
   ]
 
 
@@ -152,7 +140,7 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '550.00vp',
-        height: uiContext.vp2px(550), ExceedParent: true
+        height: uiContext!.vp2px(550), ExceedParent: true
       }
     },
     {
@@ -162,29 +150,29 @@ export default function heightTest() {
       },
       expectValue: {
         heightCompare: '50.00%',
-        height: uiContext.vp2px(parentHeight) * 0.5
+        height: uiContext!.vp2px(parentHeight) * 0.5
       }
     },
     {
-    describe: 'Resource',
-    setValue: {
-      height: $r('app.float.200vp')
+      describe: 'Resource',
+      setValue: {
+        height: $r('app.float.200vp')
+      },
+      expectValue: {
+        heightCompare: '200.00vp',
+        height: uiContext!.vp2px(200)
+      }
     },
-    expectValue: {
-      heightCompare: '200.00vp',
-      height: uiContext.vp2px(200)
-    }
-  },
     {
-    describe: 'StringPx',
-    setValue: {
-      height: '300px'
-    },
-    expectValue: {
-      heightCompare: '300.00px',
-      height: 300
+      describe: 'StringPx',
+      setValue: {
+        height: '300px'
+      },
+      expectValue: {
+        heightCompare: '300.00px',
+        height: 300
+      }
     }
-  }
   ]
 
 

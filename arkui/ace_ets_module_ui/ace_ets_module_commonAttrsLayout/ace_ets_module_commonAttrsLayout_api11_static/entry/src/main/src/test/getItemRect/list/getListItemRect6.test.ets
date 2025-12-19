@@ -63,9 +63,6 @@ export default function getListItemRect6() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
@@ -79,8 +76,8 @@ export default function getListItemRect6() {
 it('getListItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemRect6_static_0100] START');
-      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 3.0 })
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManager")!
+      message.notify({ name: 'index', value: 4 })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')

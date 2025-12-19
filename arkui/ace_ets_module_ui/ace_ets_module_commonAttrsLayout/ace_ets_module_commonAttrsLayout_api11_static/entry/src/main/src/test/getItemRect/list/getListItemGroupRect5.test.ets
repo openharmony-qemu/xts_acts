@@ -80,9 +80,9 @@ export default function getListItemGroupRect5() {
 it('getListItemGroupRect5_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect5_static_0100] START');
-      const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
-      message.notify({ name: 'indexInGroup', value: 0.0 })
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
+      message.notify({ name: 'index', value: 0 as Int })
+      message.notify({ name: 'indexInGroup', value: 0 as Int })
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
@@ -142,13 +142,14 @@ it('getListItemGroupRect5_static_0100', Level.LEVEL0, async (done: () => void): 
 it('getListItemGroupRect5_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect5_static_0200] START');
+      const message3: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManagerInt")!
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
       const message1: MessageManager<Axis> = AppStorage.get<MessageManager<Axis>>("messageManagerAxis")!
       const message2: MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManagerString")!
-      message.notify({ name: 'index', value: 0.0 })
-      message.notify({ name: 'indexInGroup', value: 0.0 })
+      message.notify({ name: 'index', value: 0 as Int })
+      message.notify({ name: 'indexInGroup', value: 0 as Int })
       message1.notify({ name: 'listDirection1', value: Axis.Horizontal })
-      message.notify({ name: 'width2', value: 30.0 })
+      message2.notify({ name: 'width2', value: '30.0' })
       message2.notify({ name: 'height2', value: '100%' })
       await CommonFunc.sleep(1000);
 
