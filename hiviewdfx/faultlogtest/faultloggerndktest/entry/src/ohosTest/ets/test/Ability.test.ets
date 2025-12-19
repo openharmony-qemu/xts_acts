@@ -72,7 +72,7 @@ export default function abilityTest() {
         extensionAbilitiesInfo.forEach((extensionAbility, index) => {
           console.log(`====> testFaultlogExtension_0100 Extension index ${index + 1}:`);
           console.log(`====> testFaultlogExtension_0100  Extension index type: ${extensionAbility.extensionAbilityType}`);
-          if (extensionAbility.extensionAbilityType === 33) {
+          if (extensionAbility.extensionAbilityType === bundleManager.ExtensionAbilityType.FAULT_LOG) {
             found = true;
           }
         });

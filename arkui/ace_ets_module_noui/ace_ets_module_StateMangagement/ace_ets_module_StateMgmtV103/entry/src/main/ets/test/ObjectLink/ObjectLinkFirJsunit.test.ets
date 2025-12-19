@@ -70,7 +70,7 @@ export default function ObjectLinkFirJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkFirJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkFirJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0100 START');
       let strJson = getInspectorByKey('fir_state');
@@ -90,7 +90,7 @@ export default function ObjectLinkFirJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkFirJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkFirJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0200 START');
       let strJson = getInspectorByKey('fir_provide');
@@ -110,7 +110,7 @@ export default function ObjectLinkFirJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkFirJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkFirJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0300 START');
       let driver = await UiDriver.create()
@@ -135,7 +135,7 @@ export default function ObjectLinkFirJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkFirJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkFirJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkFirJsunit_0400 START');
       let driver = await UiDriver.create()

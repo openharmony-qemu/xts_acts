@@ -27,7 +27,7 @@ async function pixelmapScaleTest(done: Function, testName: string, scaleX: numbe
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let pathUri = 'test.jpg'
-    let auxBuffer = new ArrayBuffer(299700600);
+    let auxBuffer = new ArrayBuffer(3000);
     let path = 'file://' + testContext.filesDir + "/" + pathUri;
     const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, auxBuffer);
@@ -59,7 +59,7 @@ async function sendableImageScaleAbnormalTest(done: Function, testName: string, 
 
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let pathUri = 'test.jpg'
-    let auxBuffer = new ArrayBuffer(299700600);
+    let auxBuffer = new ArrayBuffer(3000);
     let path = 'file://' + testContext.filesDir + "/" + pathUri;
     const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, auxBuffer);

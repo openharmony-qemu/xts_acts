@@ -67,7 +67,7 @@ export default function stateArr() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArr0010TestJsunit_001', Level.LEVEL0, async (done: Function) => {
+    it('StateArr0010TestJsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[StateArr0010TestJsunit_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

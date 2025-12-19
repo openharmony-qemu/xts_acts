@@ -20,7 +20,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 const TABLE = 'distributedTables';
-const TAG = "[rdbErrorCode14800051]"
+const TAG = "[RdbErrorCode14800051]"
 
 const CREATE_TABLE_TEST =
   "CREATE TABLE IF NOT EXISTS employee (id INTEGER PRIMARY KEY,name TEXT NOT NULL, age INTEGER, salary REAL, data4 BLOB,data5 asset,data6 assets)";
@@ -31,9 +31,9 @@ const STORE_CONFIG: data_relationalStore.StoreConfig = {
 let context: common.UIAbilityContext;
 let rdbStore: data_relationalStore.RdbStore | undefined | null;
 
-export default function rdbErrorCode14800051() {
+export default function RdbErrorCode14800051() {
 
-  describe("rdbErrorCode14800051", (): void => {
+  describe("RdbErrorCode14800051", (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();

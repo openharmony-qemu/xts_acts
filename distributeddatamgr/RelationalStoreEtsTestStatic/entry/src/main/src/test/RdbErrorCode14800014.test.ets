@@ -26,7 +26,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 const TABLE = 'distributedTables';
-const TAG = "[rdbErrorCode14800014]"
+const TAG = "[RdbErrorCode14800014]"
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 let context: common.UIAbilityContext;
@@ -119,9 +119,9 @@ async function createTest(): Promise<void> {
   });
 }
 
-export default function rdbErrorCode14800014() {
+export default function RdbErrorCode14800014() {
 
-  describe("rdbErrorCode14800014", (): void => {
+  describe("RdbErrorCode14800014", (): void => {
     beforeAll(async (): Promise<void> => {
       const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let want: Want = {

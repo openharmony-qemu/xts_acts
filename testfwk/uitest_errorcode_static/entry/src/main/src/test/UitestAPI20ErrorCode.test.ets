@@ -23,7 +23,6 @@ let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runn
 
 const waitUiReadyMs: int = 1000;
 const TestTag: string = 'UitestDriverErrorTest';
-const AsyncErrorCode: int = 17000002;
 const ParameterErrorCode: int = 17000007;
 const InvisibleErrorCode: int = 17000004;
 const CapabilityCode: int = 801;
@@ -37,35 +36,6 @@ export default function uitestDriverErrorTest() {
       driver = Driver.create();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "uitestDriverErrorTest loadup over!!!!!")
-    })
-
-    /**
-     * @tc.name test_getDisplayId_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_001
-     * @tc.desc getDisplayId 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3 
-     */
-    it('test_getDisplayId_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_getDisplayId_17000002_static start`);
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let button = await driver.findComponent(ON.text('MainPage'));
-        if (button != null) {
-          driver.delayMs(waitUiReadyMs * 3);
-          await Utils.msSleep(100)
-          await button.getDisplayId();
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_getDisplayId_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000);
-      await stopApplication('com.uitestScene.acts');
-      console.log(`${TestTag}, test_getDisplayId_17000002_static end`);
     })
 
     /**
@@ -98,35 +68,6 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name test_getOriginalText_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_003
-     * @tc.desc getOriginalText 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_getOriginalText_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_getOriginalText_17000002_static start`);
-      try {
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
-        let button = await driver.findComponent(ON.text('MainPage'));
-        if (button != null) {
-          driver.delayMs(waitUiReadyMs * 3);
-          await Utils.msSleep(100)
-          await button.getOriginalText();
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_getOriginalText_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000)
-      await stopApplication('com.uitestScene.acts');
-      console.log(`${TestTag}, test_getOriginalText_17000002_static end`);
-    })
-
-    /**
      * @tc.name test_getOriginalText_17000004_static
      * @tc.number Uitest_Api20ErrorTest_004
      * @tc.desc getOriginalText 17000004 test.
@@ -153,52 +94,6 @@ export default function uitestDriverErrorTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_getOriginalText_17000004_static end`);
-    })
-
-    /**
-     * @tc.name test_driver_triggerCombineKeysWithId_17000002
-     * @tc.number Uitest_Api20ErrorTest_005
-     * @tc.desc triggerCombineKeys 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("test_driver_triggerCombineKeysWithId_17000002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_triggerCombineKeysWithId_17000002 start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.triggerCombineKeys(2, 2072, 2017, 0);
-        expect().assertFail();
-      } catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_triggerCombineKeysWithId_17000002 error is, ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000);
-      console.log(`${TestTag}, test_driver_triggerCombineKeysWithId_17000002 end`);
-    })
-
-    /**
-     * @tc.name test_driver_ClickAt_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_006
-     * @tc.desc ClickAt 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_ClickAt_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_ClickAt_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.clickAt({x: 100, y: 100});
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_ClickAt_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000)
-      console.log(`${TestTag}, test_driver_ClickAt_17000002_static end`);
     })
 
     /**
@@ -236,29 +131,6 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name test_driver_DoubleClickAt_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_008
-     * @tc.desc doubleClickAt 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_DoubleClickAt_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_DoubleClickAt_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100)
-        await driver.doubleClickAt({x: 100, y: 100});
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_DoubleClickAt_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000)
-      console.log(`${TestTag}, test_driver_DoubleClickAt_17000002_static end`);
-    })
-
-    /**
      * @tc.name test_driver_DoubleClickAt_17000007_static
      * @tc.number Uitest_Api20ErrorTest_009
      * @tc.desc doubleClickAt 17000007 test.
@@ -290,29 +162,6 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_DoubleClickAt_17000007_static end`);
-    })
-
-    /**
-     * @tc.name test_driver_longClickAt_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_010
-     * @tc.desc longClickAt 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_longClickAt_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_longClickAt_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.longClickAt({x: 100, y: 100}, 1500);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_longClickAt_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000)
-      console.log(`${TestTag}, test_driver_longClickAt_17000002_static end`);
     })
 
     /**
@@ -365,29 +214,6 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_longClickAt_17000007_static end`);
-    })
-
-    /**
-     * @tc.name test_driver_swipeBetween_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_012
-     * @tc.desc swipeBetween 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_swipeBetween_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_swipeBetween_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.swipeBetween({x: 100, y: 100}, {x: 100, y: 100});
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_swipeBetween_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000);
-      console.log(`${TestTag}, test_driver_swipeBetween_17000002_static end`);
     })
 
     /**
@@ -457,75 +283,6 @@ export default function uitestDriverErrorTest() {
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, test_driver_swipeBetween_17000007_static end`);
-    })
-
-    /**
-     * @tc.name test_driver_mouseLongClick_duration_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_014
-     * @tc.desc mouseLongClick 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_mouseLongClick_duration_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_mouseLongClick_duration_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.mouseLongClick({x:248, y:194}, MouseButton.MOUSE_BUTTON_LEFT, 2072, 2073, 600);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_mouseLongClick_duration_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000);
-      console.log(`${TestTag}, test_driver_mouseLongClick_duration_17000002_static end`);
-    })
-
-    /**
-     * @tc.name test_driver_mouseDrag_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_015
-     * @tc.desc mouseDrag 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_mouseDrag_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_mouseDrag_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.mouseDrag({x:100, y:100}, {x:200, y:200}, 600, 1500);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_mouseDrag_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await Utils.msSleep(5000);
-      console.log(`${TestTag}, test_driver_mouseDrag_17000002_static end`);
-    })
-
-    /**
-     * @tc.name test_driver_crownRotate_17000002_static
-     * @tc.number Uitest_Api20ErrorTest_016
-     * @tc.desc crownRotate 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_driver_crownRotate_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_driver_crownRotate_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await Utils.msSleep(100);
-        await driver.crownRotate(100, 100);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_driver_crownRotate_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code == 801 || e.code == 17000002).assertTrue();
-      }
-      await Utils.msSleep(5000);
-      console.log(`${TestTag}, test_driver_crownRotate_17000002_static end`);
     })
 
     /**

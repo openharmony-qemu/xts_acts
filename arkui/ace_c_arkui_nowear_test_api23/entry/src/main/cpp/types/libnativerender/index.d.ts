@@ -13,3 +13,5 @@
  * limitations under the License.
  */
 export const touchTestInfoTest: (a: string) => void;
+
+export const testAddNodeInsertNode: (content: NodeContent, tag: string) => void;

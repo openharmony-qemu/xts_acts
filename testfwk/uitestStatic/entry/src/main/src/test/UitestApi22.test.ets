@@ -1467,12 +1467,15 @@ export default function uitestDriverTestApi22() {
         pointers.setPoint(0,8, ninePoint);
         await driver.injectKnucklePointerAction(pointers, 3000);
         await driver.delayMs(waitUiReadyMs * 8)
-        let screenPng = await driver.findComponent(ON.text('保存'));
-        expect(screenPng != null).assertTrue();
-        await driver.pressBack();
+        let isTantWindow = driver.findWindow({bundleName: 'com.huawei.hmos.vassistant'});
+        await Utils.msSleep(1000);
+        console.log(`${TestTag}, tesKnuckleKnockRect_static isTantWindow, ${JSON.stringify(isTantWindow)}`);
+        expect(isTantWindow != null).assertTrue();
+        await stopApplication('com.huawei.hmos.vassistant');
         await Utils.msSleep(2000)
       } catch (error: BusinessError) {
         console.log(`${TestTag}, tesKnuckleKnockRect_static error, ${JSON.stringify(error)}`);
+        await stopApplication('com.huawei.hmos.vassistant');
         expect(error.code).assertEqual(17000005);
       }
       await Utils.msSleep(3000)
