@@ -19,6 +19,9 @@
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 
+const int32_t CONFIRM_RESULT_ONE = 1;
+const int32_t CONFIRM_RESULT_TOW = 2;
+
 static napi_value GetLocalDeviceNameErrorCodeOK(napi_env env, napi_callback_info info)
 {
     char *localDeviceName = nullptr;
@@ -28,12 +31,14 @@ static napi_value GetLocalDeviceNameErrorCodeOK(napi_env env, napi_callback_info
         free(localDeviceName); // 释放内存
     }
     napi_value retValue;
-    int32_t confirmResult;
-    if (result == ERR_OK || result == DM_ERR_FAILED || result == DM_ERR_OBTAIN_SERVICE ||
-        result == DM_ERR_OBTAIN_BUNDLE_NAME) {
-        confirmResult = ERR_OK;
+    int32_t confirmResult = 0;
+    if (result == DM_ERR_FAILED || result == DM_ERR_OBTAIN_SERVICE || result == DM_ERR_OBTAIN_BUNDLE_NAME
+        || result == ERR_PERMISSION_ERROR || result == ERR_INVALID_PARAMETER) {
+        confirmResult = CONFIRM_RESULT_ONE;
+    } else if (result == ERR_OK) {
+        confirmResult = ERR_OK
     } else {
-        confirmResult = 1;
+        confirmResult = CONFIRM_RESULT_TOW;
     }
     napi_create_int32(env, confirmResult, &retValue);
     return retValue;
