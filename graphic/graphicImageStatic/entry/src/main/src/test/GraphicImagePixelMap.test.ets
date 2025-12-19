@@ -1906,7 +1906,7 @@ export default function graphicImagePixelMap() {
         } catch (err) {
           err = err as BusinessError;
           console.error('www data error createPixelMapSync' + JSON.stringify(err));
-          expect(Number(err.code) == 401).assertTrue();
+          expect(Number(err.code) == 62980178).assertTrue();
         }
         done();
       })
@@ -1929,7 +1929,7 @@ export default function graphicImagePixelMap() {
         } catch (err) {
           err = err as BusinessError;
           console.error('www data error createPixelMapSync' + JSON.stringify(err));
-          expect(Number(err.code) == 401).assertTrue();
+          expect(Number(err.code) == 62980178).assertTrue();
         }
         done();
       })
