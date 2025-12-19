@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { CustomColors, CustomTheme, Theme, ThemeControl } from '@ohos.arkui.theme';
+import { CustomColors, CustomDarkColors, CustomTheme, Theme, ThemeControl } from '@ohos.arkui.theme';
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
