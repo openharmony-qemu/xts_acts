@@ -24,8 +24,9 @@
 #include "ActsMindSporeCommonTest.h"
 #include "ActsMindSporeContextTest.h"
 #include "ActsMindSporeModelTest.h"
-#include "ActsMindSporeTrainTest.h"
 #include "ActsMindSporeNNRTTest.h"
+#include "ActsMindSporeOHOSTest.h"
 #include "ActsMindSporeTensorTest.h"
+#include "ActsMindSporeTrainTest.h"
 
 #endif // ACTSMINDSPORECTEST_ACTS_MINDSPORE_H
