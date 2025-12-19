@@ -2946,7 +2946,7 @@ export default function TextPicker() {
       let boxPath = fileUri.getUriFromPath(getContext().filesDir + "/image.png").toString();
       photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog([boxPath],
         [photoCreationConfig]).then((result) => {
-        console.log(result);
+        console.log(`result = ${JSON.stringify(result)}`);
       });
       await driveFn();
       let code: number = EventType.SELECT_ITEM_INFO;
