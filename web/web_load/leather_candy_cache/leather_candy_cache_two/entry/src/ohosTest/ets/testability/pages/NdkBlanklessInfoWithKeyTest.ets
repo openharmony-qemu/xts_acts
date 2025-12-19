@@ -304,27 +304,27 @@ struct ndkBlanklessInfoWithKeyTest {
               testNapi.clearBlanklessLoadingCache(this.webTag);
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
-              let num1: number = testNapi.doblankless_INVALID_ARGS_GET_ONE(this.webTag);
+              let num1: number = testNapi.doblankless_INVALID_ARGS_SET_ONE(this.webTag);
               console.log(`${msg}`, 'first loadUrl finish:' + num1);
               this.isPageEnd = -1;
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
               console.log(`${msg}`, 'second loadUrl finish');
-              num = testNapi.doblankless_INVALID_ARGS_GET_ONE(this.webTag);
-              console.log(msg, `预期值：-5`,` 1 实际值${num}`);
+              num = testNapi.doblankless_INVALID_ARGS_SET_ONE(this.webTag);
+              console.log(msg, `预期值：-5`,`1 实际值${num}`);
               this.isPageEnd = -1;
               await this.controller.refresh();
               await waitForExist(() => this.isPageEnd, this.str, 0);
               console.log(`${msg}`, 'third loadUrl finish');
-              num = testNapi.doblankless_INVALID_ARGS_GET_ONE(this.webTag);
-              console.log(msg, `预期值：0`,` 2 实际值${num}`);
-              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ONE 0:' + num);
+              num = testNapi.doblankless_INVALID_ARGS_SET_ONE(this.webTag);
+              console.log(msg, `预期值：0`,`2 实际值${num}`);
+              console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_ONE 0:' + num);
               if (num == 801) {
                 Utils.emitEvent(0, 148200)
-                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ONE 1:' + num);
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_ONE 1:' + num);
               } else {
                 Utils.emitEvent(num, 148200)
-                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_GET_ONE 2:' + num);
+                console.log(`${msg}`, 'testNapi.doblankless_INVALID_ARGS_SET_ONE 2:' + num);
               }
               break;
             }

@@ -278,25 +278,9 @@ static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-//    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
-//        if (blanklessInfo.similarity >= g_similarity) {
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS, true);
             napi_create_double(env, err, &Capacity);
-//        } else {
-//            ArkWeb_BlanklessErrorCode err =
-//                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, err);
-//            napi_create_double(env, err, &Capacity);
-//        }
-//    } else if (err == g_errCode) {
-//        napi_create_double(env, err, &Capacity);
-//    }
     return Capacity;
 }
 static napi_value Doblankless_INVALID_ARGS_SET_ONE(napi_env env, napi_callback_info info)
@@ -319,21 +303,9 @@ static napi_value Doblankless_INVALID_ARGS_SET_ONE(napi_env env, napi_callback_i
                  "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
-//        if (blanklessInfo.similarity >= g_similarity) {
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH1, true);
             napi_create_double(env, err, &Capacity);
-//        } else {
-//            ArkWeb_BlanklessErrorCode err =
-//                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, err);
-//            napi_create_double(env, err, &Capacity);
-//        }
     } else if (blanklessInfo.errCode == g_errCode) {
         napi_create_double(env, blanklessInfo.errCode, &Capacity);
     }
@@ -386,21 +358,9 @@ static napi_value Doblankless_INVALID_ARGS_SET_2048(napi_env env, napi_callback_
                  "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
-//        if (blanklessInfo.similarity >= g_similarity) {
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2048, true);
             napi_create_double(env, err, &Capacity);
-//        } else {
-//            ArkWeb_BlanklessErrorCode err =
-//                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, err);
-//            napi_create_double(env, err, &Capacity);
-//        }
     } else if (blanklessInfo.errCode == g_errCode) {
         napi_create_double(env, blanklessInfo.errCode, &Capacity);
     }
@@ -466,25 +426,9 @@ static napi_value Doblankless_INVALID_ARGS_SET_2049(napi_env env, napi_callback_
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
                  "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
-//    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
-//        if (blanklessInfo.similarity >= g_similarity) {
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
             ArkWeb_BlanklessErrorCode err =
                 OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049, true);
             napi_create_double(env, err, &Capacity);
-//        } else {
-//            ArkWeb_BlanklessErrorCode err =
-//                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, err);
-//            napi_create_double(env, err, &Capacity);
-//        }
-//    } else if (err == g_errCode) {
-//        napi_create_double(env, err, &Capacity);
-//    }
     return Capacity;
 }
 static napi_value Doblankless_INVALID_ARGS_GET_2049(napi_env env, napi_callback_info info)
@@ -507,25 +451,6 @@ static napi_value Doblankless_INVALID_ARGS_GET_2049(napi_env env, napi_callback_
                  "mmx1 similarity:%{public}f,loadingTime:%{public}d,errCode:%{public}d", blanklessInfo.similarity,
                  blanklessInfo.loadingTime, blanklessInfo.errCode);
     napi_create_double(env, blanklessInfo.errCode, &Capacity);
-//    if (blanklessInfo.errCode == ARKWEB_BLANKLESS_SUCCESS) {
-//        if (blanklessInfo.similarity >= g_similarity) {
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx2 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, blanklessInfo.errCode);
-//            ArkWeb_BlanklessErrorCode err =
-//                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessINVALID_ARGS_LENGTH2049, true);
-//            napi_create_double(env, err, &Capacity);
-//        } else {
-//            ArkWeb_BlanklessErrorCode err =
-//                OH_NativeArkWeb_SetBlanklessLoadingWithKey(webTagValue, g_doblanklessGetInfoValueWithKey, true);
-//            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, g_tag,
-//                         "mmx3 similarity:%{public}f,loadingTime:%{public}d,errcode:%{public}d",
-//                         blanklessInfo.similarity, blanklessInfo.loadingTime, err);
-//            napi_create_double(env, err, &Capacity);
-//        }
-//    } else if (err == g_errCode) {
-//        napi_create_double(env, err, &Capacity);
-//    }
     return Capacity;
 }
 
