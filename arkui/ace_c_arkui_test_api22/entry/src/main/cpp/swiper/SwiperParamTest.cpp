@@ -219,4 +219,15 @@ static napi_value SetMaxDisplayCountParamTest(napi_env env, napi_callback_info i
     NAPI_END;
 }
 
+static napi_value SetShowBackgroundTest(napi_env env, napi_callback_info info)
+{
+    ArkUI_SwiperArrowStyle *arrowStyle = nullptr;
+    OH_ArkUI_SwiperArrowStyle_SetShowBackground(arrowStyle, 0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetShowBackgroundTest", " SetShowBackgroundTest done");
+    int check = OH_ArkUI_SwiperArrowStyle_GetShowBackground(arrowStyle);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetShowBackgroundTest SetShowBackgroundTest", "%{public}d", check);
+    ASSERT_EQ(check, 0);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

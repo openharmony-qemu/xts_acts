@@ -77,5 +77,17 @@ export default function SwiperParamTest(){
       done()
     })
     
+    /**
+     * @tc.name   testSwiperParam005
+     * @tc.number testSwiperParam005
+     * @tc.desc   Test SetShowBackground param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSwiperParam005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testSwiperParam005()).assertEqual(0)
+      done()
+    })
   })
 }
