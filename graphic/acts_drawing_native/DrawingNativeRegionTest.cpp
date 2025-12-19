@@ -1294,8 +1294,94 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsMultipleCalls, Function
 }
 
 /**
- * @tc.name   testRegionTranslateNormal
+ * @tc.name   testRegionQuickRejectNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1500
+ * @tc.desc   test for testRegionQuickRejectNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    bool isReject = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region, 0, 0, 100, 100, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, true);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 500, 500, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
+    errorCode = OH_Drawing_RegionQuickReject(region, 500, 500, 700, 700, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, true);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickRejectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1501
+ * @tc.desc   test for testRegionQuickRejectNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isReject = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(nullptr, 300, 300, 500, 500, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isReject, false);
+    errorCode = OH_Drawing_RegionQuickReject(region, 0, 300, 500, 500, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
+    errorCode = OH_Drawing_RegionQuickReject(region, 300, 0, 500, 500, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
+    errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 0, 500, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
+    errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 500, 0, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickRejectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1502
+ * @tc.desc   test for testRegionQuickRejectMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isReject = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region, 500, 500, 700, 700, &isReject);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isReject, true);
+    }
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionTranslateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1600
  * @tc.desc   test for testRegionTranslateNormal
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -1319,7 +1405,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNormal, Function | SmallTes
 
 /**
  * @tc.name   testRegionTranslateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1501
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1601
  * @tc.desc   test for testRegionTranslateNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -1343,7 +1429,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNull, Function | SmallTest 
 
 /**
  * @tc.name   testRegionTranslateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1502
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1602
  * @tc.desc   test for testRegionTranslateMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
