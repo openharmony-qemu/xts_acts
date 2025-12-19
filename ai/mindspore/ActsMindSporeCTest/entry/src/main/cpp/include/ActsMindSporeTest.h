@@ -26,5 +26,6 @@
 #include "ActsMindSporeModelTest.h"
 #include "ActsMindSporeTrainTest.h"
 #include "ActsMindSporeNNRTTest.h"
+#include "ActsMindSporeTensorTest.h"
 
 #endif // ACTSMINDSPORECTEST_ACTS_MINDSPORE_H
