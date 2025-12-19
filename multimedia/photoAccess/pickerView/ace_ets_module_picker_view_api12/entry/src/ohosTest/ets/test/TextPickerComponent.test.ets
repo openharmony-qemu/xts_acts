@@ -54,7 +54,7 @@ const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
 
-async function friveFn() {
+async function driveFn() {
   let dr = Driver.create();
   await CommonFunc.sleep(100);
   let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
@@ -2943,13 +2943,12 @@ export default function TextPicker() {
         photoType: photoAccessHelper.PhotoType.IMAGE,
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       };
-      let pickerController: PickerController = new PickerController();
-      let boxPath = fileUri.getUriFromPath(context.filesDir + "/image.png").toString();
-      photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialog([boxPath],
+      let boxPath = fileUri.getUriFromPath(getContext().filesDir + "/image.png").toString();
+      photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog([boxPath],
         [photoCreationConfig]).then((result) => {
         console.log(result);
       });
-      await friveFn();
+      await driveFn();
       let code: number = EventType.SELECT_ITEM_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let callback = (event: events_emitter.EventData) => {
