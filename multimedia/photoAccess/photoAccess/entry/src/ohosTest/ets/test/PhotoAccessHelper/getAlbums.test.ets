@@ -143,6 +143,11 @@ export default function getAlbumsTest () {
         let subTypes: Array<photoAccessHelper.AlbumSubtype> = [
           albumSubtype.VIDEO,
           albumSubtype.FAVORITE,
+          albumSubtype.TRASH,
+          albumSubtype.CAMERA,
+          albumSubtype.IMAGE,
+          albumSubtype.SCREENSHOT,
+          albumSubtype.CLOUD_ENHANCEMENT,
         ];
         let count = 0;
         for (let i = 0; i < subTypes.length; i++) {
@@ -215,6 +220,338 @@ export default function getAlbumsTest () {
       } catch (error) {
         console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
         expect(error.code === '13900020' || error.code === '401').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0500
+     * @tc.name      : getAlbums_callback_005
+     * @tc.desc      : get system albums with 3 param
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_005', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_005';
+      try {
+        let subTypes: Array<photoAccessHelper.AlbumSubtype> = [
+          albumSubtype.VIDEO,
+          albumSubtype.FAVORITE,
+          albumSubtype.TRASH,
+          albumSubtype.CAMERA,
+          albumSubtype.IMAGE,
+          albumSubtype.SCREENSHOT,
+          albumSubtype.CLOUD_ENHANCEMENT,
+        ];
+        let count = 0;
+        for (let i = 0; i < subTypes.length; i++) {
+          let opt = fetchOption(testNum, 'album_type', albumType.SYSTEM);
+          helper.getAlbums(albumType.SYSTEM, subTypes[i], opt, async (err, fetchResult) => {
+            try {
+              if (err !== undefined) {
+                console.info(`${testNum} getAlbums Failed! err: ${err}`);
+                expect(false).assertTrue();
+              } else {
+                const album = await fetchResult.getFirstObject();
+                fetchResult.close();
+                checkSystemAlbum(expect, testNum, album, subTypes[i]);
+                count++;
+              }
+            } catch (error) {
+              console.info(`${testNum} getAlbums Failed! error: ${error}`);
+            }
+            if (i + 1 === subTypes.length) {
+              expect(count === subTypes.length);
+              done();
+            }
+          });
+          await sleep(50);
+        }
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0600
+     * @tc.name      : getAlbums_callback_006
+     * @tc.desc      : get hidden albums with 3 param
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_006', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_006';
+      try {
+        let opt = fetchOption(testNum, 'album_type', albumType.SYSTEM);
+        helper.getAlbums(albumType.SYSTEM, albumSubtype.HIDDEN, opt, async (err, fetchResult) => {
+          try {
+            if (err !== undefined) {
+              console.info(`${testNum} getAlbums Failed! err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+              expect(fetchResult.getCount() == 0).assertTrue();
+              done();
+            }
+          } catch (error) {
+            console.info(`${testNum} getAlbums Failed! error: ${error}`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0700
+     * @tc.name      : getAlbums_callback_007
+     * @tc.desc      : get hidden albums with 2 param
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_007', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_007';
+      try {
+        helper.getAlbums(albumType.SYSTEM, albumSubtype.HIDDEN, async (err, fetchResult) => {
+          try {
+            if (err !== undefined) {
+              console.info(`${testNum} getAlbums Failed! err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+              expect(fetchResult.getCount() == 0).assertTrue();
+              done();
+            }
+          } catch (error) {
+            console.info(`${testNum} getAlbums Failed! error: ${error}`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0800
+     * @tc.name      : getAlbums_callback_008
+     * @tc.desc      : get deleted albums with 3 param
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_008', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_008';
+      try {
+        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        await photoAccessHelper.MediaAlbumChangeRequest.deleteAlbums(testContext, [album]);
+        let opt = fetchOption(testNum, 'album_name', testNum);
+        helper.getAlbums(albumType.USER, albumSubtype.USER_GENERIC, opt, async (err, fetchResult) => {
+          try {
+            if (err !== undefined) {
+              console.info(`${testNum} getAlbums Failed! err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+              expect(fetchResult.getCount() == 0).assertTrue();
+              done();
+            }
+          } catch (error) {
+            console.info(`${testNum} getAlbums Failed! error: ${error}`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0900
+     * @tc.name      : getAlbums_callback_009
+     * @tc.desc      : get source albums with 3 param
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_009', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_009';
+      try {
+        let opt = fetchOption(testNum, 'album_type', albumType.SOURCE);
+        helper.getAlbums(albumType.SOURCE, albumSubtype.SOURCE_GENERIC, opt, async (err, fetchResult) => {
+          try {
+            if (err !== undefined) {
+              console.info(`${testNum} getAlbums Failed! err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+              const album = await fetchResult.getFirstObject();
+              fetchResult.close();
+              expect(album.albumType).assertEqual(albumType.SOURCE);
+              expect(album.albumSubtype).assertEqual(albumSubtype.SOURCE_GENERIC);
+              done();
+            }
+          } catch (error) {
+            console.info(`${testNum} getAlbums Failed! error: ${error}`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1000
+     * @tc.name      : getAlbums_callback_010
+     * @tc.desc      : get source albums with 2 param
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_010', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_010';
+      try {
+        helper.getAlbums(albumType.SOURCE, albumSubtype.SOURCE_GENERIC, async (err, fetchResult) => {
+          try {
+            if (err !== undefined) {
+              console.info(`${testNum} getAlbums Failed! err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+              const album = await fetchResult.getFirstObject();
+              fetchResult.close();
+              expect(album.albumType).assertEqual(albumType.SOURCE);
+              expect(album.albumSubtype).assertEqual(albumSubtype.SOURCE_GENERIC);
+              done();
+            }
+          } catch (error) {
+            console.info(`${testNum} getAlbums Failed! error: ${error}`);
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1100
+     * @tc.name      : getAlbums_callback_011
+     * @tc.desc      : get albums with invalid database field
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_011', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_011';
+      try {
+        const predicates = new dataSharePredicates.DataSharePredicates();
+        const opt: photoAccessHelper.FetchOptions = {
+          fetchColumns: ['image_count'],
+          predicates: predicates
+        };
+        helper.getAlbums(albumType.SOURCE, albumSubtype.SOURCE_GENERIC, opt, async (err, fetchResult) => {
+          if (err !== undefined) {
+            console.info(`${testNum} getAlbums Failed! err: ${err.code}`);
+            expect(err.code == 13900020).assertTrue();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(error.code == 13900020).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1200
+     * @tc.name      : getAlbums_callback_012
+     * @tc.desc      : Obtaining user albums for multiple times
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_012', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_012';
+      try {
+        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        let opt = fetchOption(testNum, 'album_name', testNum);
+        for (let i = 0; i < 20; i++) {
+          helper.getAlbums(albumType.USER, albumSubtype.USER_GENERIC, opt, async (err, fetchResult) => {
+            try {
+              if (err !== undefined) {
+                console.info(`${testNum} getAlbums Failed! err: ${err}`);
+                expect(false).assertTrue();
+              } else {
+                console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+                expect(fetchResult.getCount() == 1).assertTrue();
+              }
+            } catch (error) {
+              console.info(`${testNum} getAlbums Failed! error: ${error}`);
+              done();
+            }
+          });
+        }
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1300
+     * @tc.name      : getAlbums_callback_013
+     * @tc.desc      : Obtaining source albums for multiple times
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('getAlbums_callback_013', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getAlbums_callback_013';
+      try {
+        for (let i = 0; i < 20; i++) {
+          helper.getAlbums(albumType.SOURCE, albumSubtype.SOURCE_GENERIC, async (err, fetchResult) => {
+            try {
+              if (err !== undefined) {
+                console.info(`${testNum} getAlbums Failed! err: ${err}`);
+                expect(false).assertTrue();
+              } else {
+                console.info(`${testNum} count is : ${fetchResult.getCount()}`);
+                expect(fetchResult.getCount() > 0).assertTrue();
+              }
+            } catch (error) {
+              console.info(`${testNum} getAlbums Failed! error: ${error}`);
+              done();
+            }
+          });
+        }
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
         done();
       }
     });
@@ -302,6 +639,11 @@ export default function getAlbumsTest () {
         let subTypes: Array<photoAccessHelper.AlbumSubtype> = [
           albumSubtype.VIDEO,
           albumSubtype.FAVORITE,
+          albumSubtype.TRASH,
+          albumSubtype.CAMERA,
+          albumSubtype.IMAGE,
+          albumSubtype.SCREENSHOT,
+          albumSubtype.CLOUD_ENHANCEMENT,
         ];
         let count = 0;
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined = undefined;
