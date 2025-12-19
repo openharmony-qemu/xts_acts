@@ -2954,7 +2954,7 @@ export default function TextPicker() {
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let callback = (event: events_emitter.EventData) => {
         let result: ItemInfo = event?.data?.msg;
-        console.info('testPicker14 select ItemInfo=:' + JSON.stringify(result));
+        console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
         expect(result.videoMode).assertUndefined();
       }
       let event: events_emitter.InnerEvent = {
@@ -2971,21 +2971,21 @@ export default function TextPicker() {
       }
       await routeToUrl(options);
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
-      console.info("testPicker14 JSON.parse(strJson) is" + strJson);
+      console.info("testPicker59 JSON.parse(strJson) is" + strJson);
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       await CommonFunc.sleep(2000);
 
       let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info("testPicker14 findComponent checkbox fail");
+        console.info("testPicker59 findComponent checkbox fail");
       } else {
-        console.info("testPicker14 findComponent checkbox success");
+        console.info("testPicker59 findComponent checkbox success");
         await checkBoxs[0].click();
         await CommonFunc.sleep(2000);
-        console.info("testPicker14 btn click finish");
+        console.info("testPicker59 btn click finish");
       }
       router.back();
-      console.info("testPicker14 finish");
+      console.info("testPicker59 finish");
       events_emitter.off(event.eventId);
       done();
     });
