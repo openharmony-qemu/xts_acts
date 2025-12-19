@@ -735,7 +735,7 @@ export default function UiTest() {
                 pointers.setPoint(0,11, ten6Point);
                 pointers.setPoint(0,12, ten7Point);
                 await driver.injectKnucklePointerAction(pointers);
-                await driver.delayMs(waitUiReadyMs * 2)
+                await driver.delayMs(waitUiReadyMs * 5);
                 let screenPng = await driver.findComponent(ON.id('ScrollHandWriteBoxStack'));
                 expect(screenPng != null).assertTrue();
                 await driver.pressBack();
@@ -3627,6 +3627,23 @@ export default function UiTest() {
 
         afterEach(async () => {
             await stopApplication('com.uitestScene.acts')
+        })
+
+        afterAll(async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            const driver = Driver.create();
+            await driver.delayMs(waitUiReadyMs);
+            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+            console.log(`${TestTag}, afterAll maximize window,${JSON.stringify(window)}`);
+            if (window != null) {
+                try {
+                    await window.maximize();
+                } catch (error) {
+                    console.log(`${TestTag}, afterAll maximize error,${JSON.stringify(error)}`);
+                }
+            }
+            await driver.delayMs(waitUiReadyMs);
+            await stopApplication('com.uitestScene.acts');
         })
 
         /**
