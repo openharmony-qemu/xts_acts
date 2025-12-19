@@ -1591,7 +1591,8 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        windowClassStart.on('windowWillClose', callback);
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback);
         let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
@@ -1607,6 +1608,7 @@ export default function windowPCTest() {
         } catch (err) {
           console.error(`The window does not exist`);
           expect().assertFail();
+        }
         }
         done();
       } catch (err) {
@@ -1645,7 +1647,8 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        windowClassStart.on('windowWillClose', callback);
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback);
         let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
@@ -1665,6 +1668,8 @@ export default function windowPCTest() {
           console.info(`The window does not exist`);
           expect(err.code).assertEqual(1300002);
         }
+        }
+        
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message}`);
@@ -1710,7 +1715,8 @@ export default function windowPCTest() {
       try {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
-        windowClassStart.on('windowWillClose', callback);
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback);
         let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
@@ -1721,6 +1727,10 @@ export default function windowPCTest() {
         console.log(`${message} succeed off listen`)
         expect().assertFail();
         done();
+        }else{
+          done();
+        }
+        
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
         if (err.code == 1300002 || err.code == 801) {
@@ -1806,7 +1816,8 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        windowClassStart.on('windowWillClose', callback);
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback);
         let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
@@ -1822,6 +1833,8 @@ export default function windowPCTest() {
           console.info(`The window does not exist`);
           expect(err.code).assertEqual(1300002)
         }
+        }
+        
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -1872,28 +1885,31 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync()
         let windowName = windowClassStart.getUIContext().getWindowName();
-        windowClassStart.on('windowWillClose', callback1);
-        windowClassStart.on('windowWillClose', callback2);
-        windowClassStart.off('windowWillClose', callback2);
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        await sleep(1000);
-        let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
-        AppStorage.setOrCreate('startNum', startNum - 1);
-        if (result) {
-          expect().assertFail();
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback1);
+          windowClassStart.on('windowWillClose', callback2);
+          windowClassStart.off('windowWillClose', callback2);
+          let driver: Driver = Driver.create()
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          await sleep(1000);
+          let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
+          AppStorage.setOrCreate('startNum', startNum - 1);
+          if (result) {
+            expect().assertFail();
+          }
+          ;
+          try {
+            const windowClassFind = window.findWindow(windowName);
+            console.error(`The window ${windowClassFind} still exist`);
+            windowClassFind.off('windowWillClose');
+            expect().assertFail();
+          } catch (err) {
+            console.info(`The window does not exist`);
+            expect(err.code).assertEqual(1300002);
+          }
         }
-        ;
-        try {
-          const windowClassFind = window.findWindow(windowName);
-          console.error(`The window ${windowClassFind} still exist`);
-          windowClassFind.off('windowWillClose');
-          expect().assertFail();
-        } catch (err) {
-          console.info(`The window does not exist`);
-          expect(err.code).assertEqual(1300002);
-        }
+        
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -1944,28 +1960,31 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        windowClassStart.on('windowWillClose', callback1);
-        windowClassStart.on('windowWillClose', callback2);
-        windowClassStart.off('windowWillClose');
-        let driver: Driver = Driver.create()
-        let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        await button.click();
-        await sleep(1000);
-        let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
-        AppStorage.setOrCreate('startNum', startNum - 1);
-        if (result) {
-          expect().assertFail();
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback1);
+          windowClassStart.on('windowWillClose', callback2);
+          windowClassStart.off('windowWillClose');
+          let driver: Driver = Driver.create()
+          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          await button.click();
+          await sleep(1000);
+          let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number;
+          AppStorage.setOrCreate('startNum', startNum - 1);
+          if (result) {
+            expect().assertFail();
+          }
+          ;
+          try {
+            const windowClassFind = window.findWindow(windowName)
+            console.error(`The window ${windowClassFind} still exist`);
+            windowClassFind.off('windowWillClose');
+            expect().assertFail();
+          } catch (err) {
+            console.info(`The window does not exist`);
+            expect(err.code).assertEqual(1300002);
+          }
         }
-        ;
-        try {
-          const windowClassFind = window.findWindow(windowName)
-          console.error(`The window ${windowClassFind} still exist`);
-          windowClassFind.off('windowWillClose');
-          expect().assertFail();
-        } catch (err) {
-          console.info(`The window does not exist`);
-          expect(err.code).assertEqual(1300002);
-        }
+        
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
@@ -2021,20 +2040,23 @@ export default function windowPCTest() {
           subWindowClass.moveWindowToAsync(0,100);
           await subWindowClass.showWindow();
           await sleep(1000);
-          subWindowClass.on('windowWillClose', callback);
-          let driver: Driver = Driver.create();
-          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'))
-          await button.click()
-          await sleep(1000);
-          try {
-            window.findWindow('subwindow0');
-            console.info(`${message} subwindow0 is existing`);
-            subWindowClass.off('windowWillClose');
-            expect().assertFail();
-          } catch (exception) {
-            console.info(`${message} subwindow0 is not existing`);
-          }
-          expect(result).assertFalse();
+          if(isFreeWindowMode){
+            subWindowClass.on('windowWillClose', callback);
+            let driver: Driver = Driver.create();
+            let button = await driver.findComponent(ON.id('EnhanceCloseBtn'))
+            await button.click()
+            await sleep(1000);
+            try {
+              window.findWindow('subwindow0');
+              console.info(`${message} subwindow0 is existing`);
+              subWindowClass.off('windowWillClose');
+              expect().assertFail();
+            } catch (exception) {
+              console.info(`${message} subwindow0 is not existing`);
+            }
+            expect(result).assertFalse();
+            }
+          
           done();
         }).catch(async (err: BusinessError) => {
           console.error(`${message} Failed to create subwindow, Cause code ${err.code}, message ${err.message} `);
@@ -2091,21 +2113,23 @@ export default function windowPCTest() {
           subWindowClass.moveWindowToAsync(0,200);
           subWindowClass.showWindow();
           await sleep(1000);
-          subWindowClass.on('windowWillClose', callback);
-          let driver: Driver = Driver.create();
-          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-          await button.click();
-          await sleep(1000);
-          subWindowClass.off('windowWillClose', callback);
-          try {
-            window.findWindow('subwindow0');
-            console.info(`subwindow0 is existing`);
+          if(isFreeWindowMode){
+            subWindowClass.on('windowWillClose', callback);
+            let driver: Driver = Driver.create();
+            let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+            await button.click();
+            await sleep(1000);
             subWindowClass.off('windowWillClose', callback);
-          } catch (exception) {
-            console.info(`subwindow0 is not existing`);
-            expect().assertFail();
+            try {
+              window.findWindow('subwindow0');
+              console.info(`subwindow0 is existing`);
+              subWindowClass.off('windowWillClose', callback);
+            } catch (exception) {
+              console.info(`subwindow0 is not existing`);
+              expect().assertFail();
+            }
+            expect(result).assertTrue();
           }
-          expect(result).assertTrue();
           done();
         }).catch(async (err: BusinessError) => {
           console.error(`${message} Failed to create subwindow, Cause code ${err.code}, message ${err.message}`);
@@ -2160,21 +2184,22 @@ export default function windowPCTest() {
           subWindowClass.moveWindowToAsync(0,200);
           subWindowClass.showWindow();
           await sleep(1000);
-          subWindowClass.on('windowWillClose', callback);
-          let driver: Driver = Driver.create();
-          let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-          await button.click();
-          await sleep(1000);
-          try {
-            window.findWindow('subwindow0');
-            console.info(`subwindow0 is existing`);
-            subWindowClass.off('windowWillClose');
-            expect().assertFail();
-          } catch (exception) {
-            console.info(`subwindow0 is not existing`);
-            expect(true).assertTrue();
+          if(isFreeWindowMode){
+            subWindowClass.on('windowWillClose', callback);
+            let driver: Driver = Driver.create();
+            let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+            await button.click();
+            await sleep(1000);
+            try {
+              window.findWindow('subwindow0');
+              console.info(`subwindow0 is existing`);
+              subWindowClass.off('windowWillClose');
+              expect().assertFail();
+            } catch (exception) {
+              console.info(`subwindow0 is not existing`);
+              expect(true).assertTrue();
+            };
           }
-          ;
           done();
         }).catch(async (err: BusinessError) => {
           console.error(`${message} Failed to create subwindow, Cause code ${err.code}, message ${err.message} `);
@@ -2226,7 +2251,8 @@ export default function windowPCTest() {
         let windowStageStart = await startAbility(message, context);
         let windowClassStart = windowStageStart.getMainWindowSync();
         let windowName = windowClassStart.getUIContext().getWindowName();
-        windowClassStart.on('windowWillClose', callback);
+        if(isFreeWindowMode){
+          windowClassStart.on('windowWillClose', callback);
         let driver: Driver = Driver.create()
         let button = await driver.findComponent(ON.id('EnhanceCloseBtn'));
         await button.click();
@@ -2274,6 +2300,8 @@ export default function windowPCTest() {
           console.info(`${message} The window does not exist, Cause code ${err.code}, message ${err.message}`);
           expect(err.code).assertEqual(1300002)
         }
+        }
+        
         done();
       } catch (err) {
         console.error(`${message} Failed to register callback, Cause code ${err.code}, message ${err.message} `);
