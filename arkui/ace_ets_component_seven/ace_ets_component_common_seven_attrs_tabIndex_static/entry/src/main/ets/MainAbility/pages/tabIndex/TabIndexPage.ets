@@ -1202,8 +1202,8 @@ struct TabIndexPage {
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					.commonStyleButton(this.componentKey, this._tabIndex.tabIndex as Int)
 					.attributeModifier(this._tabIndexButtonModifier)
+					.commonStyleButton(this.componentKey, this._tabIndex.tabIndex as Int)
 			}
 			if (this.targetView == 'Blank') {
 				Blank()

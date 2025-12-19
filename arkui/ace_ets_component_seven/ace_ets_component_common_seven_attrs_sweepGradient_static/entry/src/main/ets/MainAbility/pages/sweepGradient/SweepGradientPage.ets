@@ -1768,8 +1768,8 @@ struct SweepGradientPage {
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					.commonStyleButton(this.componentKey,this._sweepGradient.sweepGradient)
 					.attributeModifier(this._sweepGradientButtonModifier)
+					.commonStyleButton(this.componentKey,this._sweepGradient.sweepGradient)
 			}
 			if (this.targetView == 'Blank') {
 				Blank()

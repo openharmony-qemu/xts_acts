@@ -1461,8 +1461,9 @@ struct sphericalEffectPage {
     GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').commonStyleButton(this.componentKey, this._sphericalEffect.sphericalEffect)
+          Button('button1')
             .attributeModifier(this._sphericalEffectButttonMod)
+            .commonStyleButton(this.componentKey, this._sphericalEffect.sphericalEffect)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._sphericalEffectTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

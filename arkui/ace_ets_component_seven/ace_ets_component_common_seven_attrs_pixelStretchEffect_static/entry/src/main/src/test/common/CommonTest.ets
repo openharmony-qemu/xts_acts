@@ -34,7 +34,7 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: Int = 0;
+      let lastIndex: Int= 0;
       testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
@@ -89,17 +89,17 @@ export default class CommonTest {
                 }
               }
 
-            //Execute test
-            let data: BasePageConfig = {
-              pageConfig: pageConfig,
-              caseTag: caseTag,
-              testValue: testValue,
-            }
+              //Execute test
+              let data: BasePageConfig = {
+                pageConfig: pageConfig,
+                caseTag: caseTag,
+                testValue: testValue,
+              }
 
-            //Check test result
-            let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-            data.viewObj = JSON.parseJsonElement(strJson);
-            await (functions[functions.length - 1] as CallbackWithReturn)(data);
+              //Check test result
+              let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
+              data.viewObj = JSON.parseJsonElement(strJson);
+              await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
             } catch (err: Error) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err

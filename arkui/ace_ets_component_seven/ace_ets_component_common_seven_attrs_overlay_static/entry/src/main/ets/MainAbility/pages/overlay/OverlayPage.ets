@@ -50,7 +50,6 @@ import {
   ColumnSplitAttribute,
   CommonMethod,
   Component,
-  ComponentContent,
   Counter,
   CounterAttribute,
   DataPanel,
@@ -1449,8 +1448,8 @@ struct OverlayPage {
       }
       if (this.targetView == 'Button') {
         Button('button1')
-          .commonStyleButton(this.componentKey, this._overlay.overlay)
           .attributeModifier(this._overlayButtonModifier)
+          .commonStyleButton(this.componentKey, this._overlay.overlay)
       }
       if (this.targetView == 'Blank') {
         Blank()

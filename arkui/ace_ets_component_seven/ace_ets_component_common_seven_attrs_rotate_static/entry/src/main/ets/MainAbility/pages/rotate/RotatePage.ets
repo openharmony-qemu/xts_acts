@@ -2010,8 +2010,8 @@ struct RotatePage {
       }
       if (this.targetView == 'Button') {
         Button('button1')
-          .commonStyleButton(this.componentKey, this._rotate.rotate)
           .attributeModifier(this._rotateButtonModifier)
+          .commonStyleButton(this.componentKey, this._rotate.rotate)
       }
       if (this.targetView == 'Blank') {
         Blank()

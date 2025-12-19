@@ -1451,8 +1451,8 @@ struct sepiaPage {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
-            .commonStyleButton(this.componentKey, this._sepia.sepia)
             .attributeModifier(this._sepiaButttonMod)
+            .commonStyleButton(this.componentKey, this._sepia.sepia)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._sepiaTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

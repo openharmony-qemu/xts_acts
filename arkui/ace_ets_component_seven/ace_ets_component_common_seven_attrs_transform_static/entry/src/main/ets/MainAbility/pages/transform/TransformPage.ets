@@ -1085,7 +1085,7 @@ struct transformPage {
     GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').commonStyleButton(this.componentKey, this._transform.transform).attributeModifier(this._transformButtonMod)
+          Button('button1').attributeModifier(this._transformButtonMod).commonStyleButton(this.componentKey, this._transform.transform)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._transformTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

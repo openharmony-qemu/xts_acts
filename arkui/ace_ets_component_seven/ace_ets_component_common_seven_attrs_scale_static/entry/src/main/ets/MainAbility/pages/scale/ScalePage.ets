@@ -1128,7 +1128,7 @@ struct scalePage {
     GridRow({ columns: this.columns as Int, gutter: this.gutter}) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').commonStyleButton(this.componentKey, this._scale.scale).attributeModifier(this._scaleButttonMod)
+          Button('button1').attributeModifier(this._scaleButttonMod).commonStyleButton(this.componentKey, this._scale.scale)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._scaleTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

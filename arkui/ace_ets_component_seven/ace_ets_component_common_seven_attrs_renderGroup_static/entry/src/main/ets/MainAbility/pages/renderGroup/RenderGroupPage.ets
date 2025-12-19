@@ -1201,7 +1201,7 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
- 
+
   this.key(componentKey)
   return this
 }
@@ -1461,8 +1461,8 @@ struct renderGroupPage {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
-            .commonStyleButton(this.componentKey, this._renderGroup.renderGroup)
             .attributeModifier(this._renderGroupButttonMod)
+            .commonStyleButton(this.componentKey, this._renderGroup.renderGroup)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._renderGroupTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

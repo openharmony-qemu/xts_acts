@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { beforeAll, describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { OverlayOptions, Alignment } from '@ohos.arkui.component'
+import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../../ets/MainAbility/common/Utils';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test';
+import { Alignment, OverlayOptions } from '@ohos.arkui.component'
 
 export default function OverlayTest() {
   //A list of components that support the position attribute, which is required.
@@ -33,7 +33,7 @@ export default function OverlayTest() {
   let parentHeight = 200;
   let gutter = 10;
   let columns = 3;
-  let pageConfig:PageConfig = {
+  let pageConfig: PageConfig = {
     testName: 'testOverlay',
     pageName: 'overlayPage',
     pageUrl: 'MainAbility/pages/overlay/OverlayPage',
@@ -46,24 +46,24 @@ export default function OverlayTest() {
     gutter: gutter,
     columns: columns
   }
-  let testValues:TestValue[]= [{
+  let testValues: TestValue[] = [{
     describe: 'SetOverlay',
     setValue: {
       overlay: ({
-        value:'Overlay test',
-        options: { 
-          align: Alignment.Top, 
+        value: 'Overlay test',
+        options: {
+          align: Alignment.Top,
           offset: { x: 2, y: -15 }
-         }
+        }
       })
     },
     expectValue: {
       overlay: ({
-        value:'Overlay test',
-        options: { 
-          align: 'Alignment.Top', 
+        value: 'Overlay test',
+        options: {
+          align: 'Alignment.Top',
           offset: { x: '2.00vp', y: '-15.00vp' }
-         }
+        }
       })
     }
   }]
@@ -73,7 +73,8 @@ export default function OverlayTest() {
    */
   describe('overlayTest', () => {
     beforeAll(() => {
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000);
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
@@ -81,10 +82,20 @@ export default function OverlayTest() {
       console.info('[' + data.caseTag + '] overlayTest');
       console.info('[' + data.testValue.expectValue.overlay + '] expectValue');
       console.info('[' + data.viewObj!.getElement('$attrs').getElement('overlay') + '] viewObj.$attrs.overlay');
-      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getString('title')).assertEqual(data.testValue.expectValue.overlay.value);
-      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getString('align')).assertEqual(data.testValue.expectValue.overlay.options.align);
-      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getElement('offset').getString('x')).assertEqual(data.testValue.expectValue.overlay.options.offset.x);
-      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getElement('offset').getString('y')).assertEqual(data.testValue.expectValue.overlay.options.offset.y);
+      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getString('title'))
+        .assertEqual(data.testValue.expectValue.overlay.value);
+      expect(data.viewObj!.getElement('$attrs').getElement('overlay').getElement('options').getString('align'))
+        .assertEqual(data.testValue.expectValue.overlay.options.align);
+      expect(data.viewObj!.getElement('$attrs')
+        .getElement('overlay')
+        .getElement('options')
+        .getElement('offset')
+        .getString('x')).assertEqual(data.testValue.expectValue.overlay.options.offset.x);
+      expect(data.viewObj!.getElement('$attrs')
+        .getElement('overlay')
+        .getElement('options')
+        .getElement('offset')
+        .getString('y')).assertEqual(data.testValue.expectValue.overlay.options.offset.y);
     });
   })
 }
