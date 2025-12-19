@@ -51,11 +51,19 @@ import getUIContextApi01 from './ImageGetUIContext/getUIContextApi01.test';
 import getUIContextApi02 from './ImageGetUIContext/getUIContextApi02.test';
 import getUIContextApi03 from './ImageGetUIContext/getUIContextApi03.test';
 import BorderImageTest from './BorderImageTest/BorderImage.test';
+import getUIContextApi04 from './ImageGetUIContext/getUIContextApi04.test';
+import getUIContextApi05 from './ImageGetUIContext/getUIContextApi05.test';
+import getUIContextApi06 from './ImageGetUIContext/getUIContextApi06.test';
+import getUIContextApi07 from './ImageGetUIContext/getUIContextApi07.test';
 
 export default function testsuite() {
   getUIContextApi01();
   getUIContextApi02();
   getUIContextApi03();
+  getUIContextApi04();
+  getUIContextApi05();
+  getUIContextApi06();
+  getUIContextApi07();
   APIClipMaskShapeTest();
   AboutToRecycleImageJSTest();
   ImageBasicAttributesTest();
