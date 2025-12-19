@@ -225,12 +225,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0500
-     * @tc.name      : getAlbums_callback_005
-     * @tc.desc      : get system albums with 3 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0500
+     * @tc.name   getAlbums_callback_005
+     * @tc.desc   get system albums with 3 param
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_005', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_005';
@@ -276,12 +276,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0600
-     * @tc.name      : getAlbums_callback_006
-     * @tc.desc      : get hidden albums with 3 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0600
+     * @tc.name   getAlbums_callback_006
+     * @tc.desc   get hidden albums with 3 param
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_006', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_006';
@@ -310,12 +310,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0700
-     * @tc.name      : getAlbums_callback_007
-     * @tc.desc      : get hidden albums with 2 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0700
+     * @tc.name   getAlbums_callback_007
+     * @tc.desc   get hidden albums with 2 param
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_007', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_007';
@@ -343,12 +343,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0800
-     * @tc.name      : getAlbums_callback_008
-     * @tc.desc      : get deleted albums with 3 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0800
+     * @tc.name   getAlbums_callback_008
+     * @tc.desc   get deleted albums with 3 param
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_008', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_008';
@@ -379,12 +379,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0900
-     * @tc.name      : getAlbums_callback_009
-     * @tc.desc      : get source albums with 3 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_0900
+     * @tc.name   getAlbums_callback_009
+     * @tc.desc   get source albums with 3 param
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_009', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_009';
@@ -416,12 +416,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1000
-     * @tc.name      : getAlbums_callback_010
-     * @tc.desc      : get source albums with 2 param
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1000
+     * @tc.name   getAlbums_callback_010
+     * @tc.desc   get source albums with 2 param
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_010', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_010';
@@ -452,12 +452,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1100
-     * @tc.name      : getAlbums_callback_011
-     * @tc.desc      : get albums with invalid database field
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1100
+     * @tc.name   getAlbums_callback_011
+     * @tc.desc   get albums with invalid database field
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_011', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_011';
@@ -485,12 +485,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1200
-     * @tc.name      : getAlbums_callback_012
-     * @tc.desc      : Obtaining user albums for multiple times
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1200
+     * @tc.name   getAlbums_callback_012
+     * @tc.desc   Obtaining user albums for multiple times
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_012', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_012';
@@ -522,12 +522,12 @@ export default function getAlbumsTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1300
-     * @tc.name      : getAlbums_callback_013
-     * @tc.desc      : Obtaining source albums for multiple times
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_1300
+     * @tc.name   getAlbums_callback_013
+     * @tc.desc   Obtaining source albums for multiple times
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getAlbums_callback_013', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAlbums_callback_013';
