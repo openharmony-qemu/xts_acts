@@ -302,12 +302,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0700
-      * @tc.name      : removeAssets_callback_007
-      * @tc.desc      : remove asset from favorite album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0700
+      * @tc.name   removeAssets_callback_007
+      * @tc.desc   remove asset from favorite album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_007';
@@ -336,12 +336,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0800
-      * @tc.name      : removeAssets_callback_008
-      * @tc.desc      : remove asset from video album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0800
+      * @tc.name   removeAssets_callback_008
+      * @tc.desc   remove asset from video album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_008', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_008';
@@ -369,12 +369,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0900
-      * @tc.name      : removeAssets_callback_009
-      * @tc.desc      : remove asset from hidden album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0900
+      * @tc.name   removeAssets_callback_009
+      * @tc.desc   remove asset from hidden album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_009', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_009';
@@ -405,12 +405,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1000
-      * @tc.name      : removeAssets_callback_010
-      * @tc.desc      : remove asset from trash album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1000
+      * @tc.name    removeAssets_callback_010
+      * @tc.desc    remove asset from trash album,error code 13900020
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 2
     */
     it('removeAssets_callback_010', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_010';
@@ -439,12 +439,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1100
-      * @tc.name      : removeAssets_callback_011
-      * @tc.desc      : remove asset from screenshot album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1100
+      * @tc.name   removeAssets_callback_011
+      * @tc.desc   remove asset from screenshot album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_011', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_011';
@@ -473,12 +473,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1200
-      * @tc.name      : removeAssets_callback_012
-      * @tc.desc      : remove asset from camera album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1200
+      * @tc.name   removeAssets_callback_012
+      * @tc.desc   remove asset from camera album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_012', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_012';
@@ -506,12 +506,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1300
-      * @tc.name      : removeAssets_callback_013
-      * @tc.desc      : remove asset from image album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1300
+      * @tc.name   removeAssets_callback_013
+      * @tc.desc   remove asset from image album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_013', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_013';
@@ -539,12 +539,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1400
-      * @tc.name      : removeAssets_callback_014
-      * @tc.desc      : remove asset from cloud enhancement album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1400
+      * @tc.name   removeAssets_callback_014
+      * @tc.desc   remove asset from cloud enhancement album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_014', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_014';
@@ -572,12 +572,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1500
-      * @tc.name      : removeAssets_callback_015
-      * @tc.desc      : remove asset from source enhancement album,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1500
+      * @tc.name   removeAssets_callback_015
+      * @tc.desc   remove asset from source enhancement album,error code 13900020
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_015', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_015';
@@ -605,12 +605,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1600
-      * @tc.name      : removeAssets_callback_016
-      * @tc.desc      : remove moving photo asset from user album.
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1600
+      * @tc.name   removeAssets_callback_016
+      * @tc.desc   remove moving photo asset from user album.
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 0
     */
     it('removeAssets_callback_016', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_callback_016';
@@ -645,12 +645,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1700
-      * @tc.name      : removeAssets_callback_017
-      * @tc.desc      : remove trash asset from user album.
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1700
+      * @tc.name   removeAssets_callback_017
+      * @tc.desc   remove trash asset from user album.
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_017', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_017';
@@ -682,12 +682,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1800
-      * @tc.name      : removeAssets_callback_018
-      * @tc.desc      : remove hidden asset from user album.
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1800
+      * @tc.name   removeAssets_callback_018
+      * @tc.desc   remove hidden asset from user album.
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_018', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_018';
@@ -719,12 +719,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1900
-      * @tc.name      : removeAssets_callback_019
-      * @tc.desc      : remove permanently deleted asset from user album.
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_1900
+      * @tc.name   removeAssets_callback_019
+      * @tc.desc   remove permanently deleted asset from user album.
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_019', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_019';
@@ -758,12 +758,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_2000
-      * @tc.name      : removeAssets_callback_020
-      * @tc.desc      : remove asset from user album，the assets that do not exist are placed before the assets that exist.
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_2000
+      * @tc.name   removeAssets_callback_020
+      * @tc.desc   remove asset from user album，the assets that do not exist are placed before the assets that exist.
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 0
     */
     it('removeAssets_callback_020', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_callback_020';
@@ -817,12 +817,12 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_2100
-      * @tc.name      : removeAssets_callback_021
-      * @tc.desc      : remove repeat asset from user album.
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_2100
+      * @tc.name   removeAssets_callback_021
+      * @tc.desc   remove repeat asset from user album.
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('removeAssets_callback_021', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_021';
