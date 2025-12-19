@@ -78,6 +78,35 @@ export default function HidebuggwpasanTest() {
         })
 
         /**
+         * @tc.name   testHidebuggwpasan_0400
+         * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0400
+         * @tc.desc   全部为默认值参数,alwaysEnabled为空值
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+        */
+        it('testHidebuggwpasan_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info("testHidebuggwpasan_0400 start");
+            try {
+                console.info("testHidebuggwpasan_0400 start 01");
+                hidebug.enableGwpAsanGrayscale();
+                console.info("testHidebuggwpasan_0400 start 02");
+                let state = hidebug.getGwpAsanGrayscaleState();
+                console.log('testHidebuggwpasan_0400: ' + state);
+                expect(state == 7).assertTrue();
+                console.info("testHidebuggwpasan_0400 start 03");
+                hidebug.disableGwpAsanGrayscale();
+                console.info("testHidebuggwpasan_0400 start 04");
+                done();
+            } catch (err: BusinessError) {
+                console.info(`testHidebuggwpasan_0400 > error code: ${err.code}, error msg: ${err.message}`);
+                expect().assertFail();
+                done();
+            }
+            console.info("testHidebuggwpasan_0400 end");
+        })
+
+        /**
          * @tc.name   testHidebuggwpasan_0500
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0500
          * @tc.desc   默认值为undefined,抛出错误码401
