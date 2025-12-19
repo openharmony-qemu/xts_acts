@@ -208,16 +208,11 @@ export default function setAlbumNameChangeRequestTest() {
         console.info(`${testNum} set album name successfully`);
         album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, newName);
         console.info(testNum + 'new album name is : ' + album.albumName);
-        expect(album.albumName).assertEqual(newName);
-        expect(album.albumType).assertEqual(albumChangeRequest.getAlbum().albumType);
-        expect(album.albumSubtype).assertEqual(albumChangeRequest.getAlbum().albumSubtype);
-        expect(album.albumName).assertEqual(albumChangeRequest.getAlbum().albumName);
-        expect(album.count).assertEqual(albumChangeRequest.getAlbum().count);
-        expect(album.coverUri).assertEqual(albumChangeRequest.getAlbum().coverUri);
+        expect().assertFail();
         done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(false).assertTrue();
+        expect(error.code == 14000011).assertTrue();
         done();
       }
     })
@@ -243,15 +238,11 @@ export default function setAlbumNameChangeRequestTest() {
         console.info(`${testNum} set album name successfully`);
         album = await getAlbum(testNum, albumType.USER, albumSubtype.USER_GENERIC, albumKeys.ALBUM_NAME, newName);
         console.info(testNum + 'new album name is : ' + album.albumName);
-        expect(album.albumName).assertEqual(oldName);
-        expect(album.albumType).assertEqual(albumChangeRequest.getAlbum().albumType);
-        expect(album.albumSubtype).assertEqual(albumChangeRequest.getAlbum().albumSubtype);
-        expect(album.count).assertEqual(albumChangeRequest.getAlbum().count);
-        expect(album.coverUri).assertEqual(albumChangeRequest.getAlbum().coverUri);
+        expect().assertFail();
         done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(false).assertTrue();
+        expect(error.code == 14000011).assertTrue();
         done();
       }
     })
@@ -575,15 +566,11 @@ export default function setAlbumNameChangeRequestTest() {
         console.info(`${testNum} set album name successfully`);
         album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
         console.info(testNum + 'new album name is : ' + album.albumName);
-        expect(album.albumType).assertEqual(albumChangeRequest.getAlbum().albumType);
-        expect(album.albumSubtype).assertEqual(albumChangeRequest.getAlbum().albumSubtype);
-        expect(album.albumName).assertEqual(albumChangeRequest.getAlbum().albumName);
-        expect(album.count).assertEqual(albumChangeRequest.getAlbum().count);
-        expect(album.coverUri).assertEqual(albumChangeRequest.getAlbum().coverUri);
+        expect().assertFail();
         done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(false).assertTrue();
+        expect(error.code == 14000011).assertTrue();
         done();
       }
     })
@@ -640,15 +627,11 @@ export default function setAlbumNameChangeRequestTest() {
         console.info(`${testNum} set album name successfully`);
         album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC, albumKeys.ALBUM_NAME, oldName);
         console.info(testNum + 'new album name is : ' + album.albumName);
-        expect(album.albumName).assertEqual(oldName);
-        expect(album.albumType).assertEqual(albumChangeRequest.getAlbum().albumType);
-        expect(album.albumSubtype).assertEqual(albumChangeRequest.getAlbum().albumSubtype);
-        expect(album.count).assertEqual(albumChangeRequest.getAlbum().count);
-        expect(album.coverUri).assertEqual(albumChangeRequest.getAlbum().coverUri);
+        expect().assertFail();
         done();
       } catch (error) {
         console.error(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(false).assertTrue();
+        expect(error.code == 14000011).assertTrue();
         done();
       }
     })
