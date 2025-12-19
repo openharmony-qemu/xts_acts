@@ -622,6 +622,22 @@ static napi_value SUB_AI_MindSpore_TensorCreate(napi_env env, napi_callback_info
             Acts::MindSpore::SUBAIMindSporeTensorCreate0013, Acts::MindSpore::SUBAIMindSporeTensorCreate0014,
             Acts::MindSpore::SUBAIMindSporeTensorCreate0015, Acts::MindSpore::SUBAIMindSporeTensorCreate0016,
             Acts::MindSpore::SUBAIMindSporeTensorCreate0017, Acts::MindSpore::SUBAIMindSporeTensorCreate0018,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0019, Acts::MindSpore::SUBAIMindSporeTensorCreate0020,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0021, Acts::MindSpore::SUBAIMindSporeTensorCreate0022,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0023, Acts::MindSpore::SUBAIMindSporeTensorCreate0024,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0025, Acts::MindSpore::SUBAIMindSporeTensorCreate0026,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0027, Acts::MindSpore::SUBAIMindSporeTensorCreate0028,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0029, Acts::MindSpore::SUBAIMindSporeTensorCreate0030,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0031, Acts::MindSpore::SUBAIMindSporeTensorCreate0032,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0033, Acts::MindSpore::SUBAIMindSporeTensorCreate0034,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0035, Acts::MindSpore::SUBAIMindSporeTensorCreate0036,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0037, Acts::MindSpore::SUBAIMindSporeTensorCreate0038,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0039, Acts::MindSpore::SUBAIMindSporeTensorCreate0040,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0041, Acts::MindSpore::SUBAIMindSporeTensorCreate0042,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0043, Acts::MindSpore::SUBAIMindSporeTensorCreate0044,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0045, Acts::MindSpore::SUBAIMindSporeTensorCreate0046,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0047, Acts::MindSpore::SUBAIMindSporeTensorCreate0048,
+            Acts::MindSpore::SUBAIMindSporeTensorCreate0049, Acts::MindSpore::SUBAIMindSporeTensorCreate0050,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;

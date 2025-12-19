@@ -573,5 +573,745 @@ int SUBAIMindSporeTensorCreate0018()
     return OH_AI_STATUS_SUCCESS;
 }
 
+// OH_AI_TensorSetDataType接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0019
+ * @tc.number SUBAIMindSporeTensorCreate0019
+ * @tc.desc   SUBAIMindSporeTensorCreate0019
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0019()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorSetDataType(nullptr, OH_AI_DATATYPE_NUMBERTYPE_FLOAT32);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetDataType接口，OH_AI_DataType设置无效值、非法值
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0020
+ * @tc.number SUBAIMindSporeTensorCreate0020
+ * @tc.desc   SUBAIMindSporeTensorCreate0020
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0020()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetDataType(tensor, OH_AI_DataTypeInvalid);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 正常设置datatype
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0021
+ * @tc.number SUBAIMindSporeTensorCreate0021
+ * @tc.desc   SUBAIMindSporeTensorCreate0021
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0021()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_NUMBERTYPE_FLOAT16);
+    ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_FLOAT16);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 多次设置datatype
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0022
+ * @tc.number SUBAIMindSporeTensorCreate0022
+ * @tc.desc   SUBAIMindSporeTensorCreate0022
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0022()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_NUMBERTYPE_FLOAT16);
+    ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_FLOAT16);
+    OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_NUMBERTYPE_UINT8);
+    ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetDataType接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0023
+ * @tc.number SUBAIMindSporeTensorCreate0023
+ * @tc.desc   SUBAIMindSporeTensorCreate0023
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0023()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorGetDataType(nullptr);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetShape接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0024
+ * @tc.number SUBAIMindSporeTensorCreate0024
+ * @tc.desc   SUBAIMindSporeTensorCreate0024
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0024()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorSetShape(nullptr, createShape, createShapeNum);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetShape接口，shape数组长度为33
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0025
+ * @tc.number SUBAIMindSporeTensorCreate0025
+ * @tc.desc   SUBAIMindSporeTensorCreate0025
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0025()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    constexpr size_t createShapeSet = 33;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetShape(tensor, createShape, createShapeSet);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 正常设置shape
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0026
+ * @tc.number SUBAIMindSporeTensorCreate0026
+ * @tc.desc   SUBAIMindSporeTensorCreate0026
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0026()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    constexpr size_t newShapeNum = 4;
+    int64_t newShape[newShapeNum] = { 1, 32, 32, 1 };
+    OH_AI_TensorSetShape(tensor, newShape, newShapeNum);
+    size_t newRetShapeNum;
+    const int64_t* newRetShape = OH_AI_TensorGetShape(tensor, &newRetShapeNum);
+    ASSERT_EQ(newRetShapeNum, newShapeNum);
+    for (size_t i = 0; i < newRetShapeNum; i++) {
+        ASSERT_EQ(newRetShape[i], newShape[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 多次设置shape
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0027
+ * @tc.number SUBAIMindSporeTensorCreate0027
+ * @tc.desc   SUBAIMindSporeTensorCreate0027
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0027()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    constexpr size_t newShapeNum = 4;
+    int64_t newShape[newShapeNum] = { 1, 32, 32, 1 };
+    OH_AI_TensorSetShape(tensor, newShape, newShapeNum);
+    size_t newRetShapeNum;
+    const int64_t* newRetShape = OH_AI_TensorGetShape(tensor, &newRetShapeNum);
+    ASSERT_EQ(newRetShapeNum, newShapeNum);
+    for (size_t i = 0; i < newRetShapeNum; i++) {
+        ASSERT_EQ(newRetShape[i], newShape[i]);
+    }
+    constexpr size_t newShapeNum2 = 4;
+    int64_t newShape2[newShapeNum2] = { 1, 16, 16, 1 };
+    OH_AI_TensorSetShape(tensor, newShape2, newShapeNum2);
+    size_t newRetShapeNum2;
+    const int64_t* newRetShape2 = OH_AI_TensorGetShape(tensor, &newRetShapeNum2);
+    ASSERT_EQ(newRetShapeNum2, newShapeNum2);
+    for (size_t i = 0; i < newRetShapeNum2; i++) {
+        ASSERT_EQ(newRetShape2[i], newShape2[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetShape接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0028
+ * @tc.number SUBAIMindSporeTensorCreate0028
+ * @tc.desc   SUBAIMindSporeTensorCreate0028
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0028()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    size_t shapeNum;
+    OH_AI_TensorGetShape(nullptr, &shapeNum);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetFormat接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0029
+ * @tc.number SUBAIMindSporeTensorCreate0029
+ * @tc.desc   SUBAIMindSporeTensorCreate0029
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0029()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorSetFormat(nullptr, OH_AI_FORMAT_NCHW);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 正常设置format
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0030
+ * @tc.number SUBAIMindSporeTensorCreate0030
+ * @tc.desc   SUBAIMindSporeTensorCreate0030
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0030()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NCHW);
+    ASSERT_EQ(OH_AI_TensorGetFormat(tensor), OH_AI_FORMAT_NCHW);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 多次设置format
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0031
+ * @tc.number SUBAIMindSporeTensorCreate0031
+ * @tc.desc   SUBAIMindSporeTensorCreate0031
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0031()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NCHW);
+    ASSERT_EQ(OH_AI_TensorGetFormat(tensor), OH_AI_FORMAT_NCHW);
+    OH_AI_TensorSetFormat(tensor, OH_AI_FORMAT_NHWC);
+    ASSERT_EQ(OH_AI_TensorGetFormat(tensor), OH_AI_FORMAT_NHWC);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 循环设置所有的format类型
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0032
+ * @tc.number SUBAIMindSporeTensorCreate0032
+ * @tc.desc   SUBAIMindSporeTensorCreate0032
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0032()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    constexpr size_t formatNum = 18;
+    OH_AI_Format format[formatNum] = { OH_AI_FORMAT_NCHW, OH_AI_FORMAT_NHWC,   OH_AI_FORMAT_NHWC4, OH_AI_FORMAT_HWKC,
+                                       OH_AI_FORMAT_HWCK, OH_AI_FORMAT_KCHW,   OH_AI_FORMAT_CKHW,  OH_AI_FORMAT_KHWC,
+                                       OH_AI_FORMAT_CHWK, OH_AI_FORMAT_HW,     OH_AI_FORMAT_HW4,   OH_AI_FORMAT_NC,
+                                       OH_AI_FORMAT_NC4,  OH_AI_FORMAT_NC4HW4, OH_AI_FORMAT_NCDHW, OH_AI_FORMAT_NWC,
+                                       OH_AI_FORMAT_NCW };
+    for (size_t i = 0; i < formatNum; ++i) {
+        OH_AI_TensorSetFormat(tensor, format[i]);
+        ASSERT_EQ(OH_AI_TensorGetFormat(tensor), format[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetFormat接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0033
+ * @tc.number SUBAIMindSporeTensorCreate0033
+ * @tc.desc   SUBAIMindSporeTensorCreate0033
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0033()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorGetFormat(nullptr);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetData接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0034
+ * @tc.number SUBAIMindSporeTensorCreate0034
+ * @tc.desc   SUBAIMindSporeTensorCreate0034
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0034()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorSetData(nullptr, data);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetData接口，data为空指针nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0035
+ * @tc.number SUBAIMindSporeTensorCreate0035
+ * @tc.desc   SUBAIMindSporeTensorCreate0035
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0035()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetData(tensor, nullptr);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetData接口，正常设置data
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0036
+ * @tc.number SUBAIMindSporeTensorCreate0036
+ * @tc.desc   SUBAIMindSporeTensorCreate0036
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0036()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    float data2[dataLen] = { 12, 22, 32, 42, 52, 62 };
+    OH_AI_TensorSetData(tensor, data2);
+    const float* retData = static_cast<const float*>(OH_AI_TensorGetData(tensor));
+    ASSERT_NE(retData, nullptr);
+    OHPrintf("return data is:");
+    for (size_t i = 0; i < dataLen; i++) {
+        ASSERT_EQ(retData[i], data2[i]);
+        OHPrintf("%f ", retData[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetData接口，多次设置data
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0037
+ * @tc.number SUBAIMindSporeTensorCreate0037
+ * @tc.desc   SUBAIMindSporeTensorCreate0037
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0037()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    float data2[dataLen] = { 12, 22, 32, 42, 52, 62 };
+    float data3[dataLen] = { 13, 23, 33, 43, 53, 63 };
+    OH_AI_TensorSetData(tensor, data2);
+    OH_AI_TensorSetData(tensor, data3);
+    const float* retData = static_cast<const float*>(OH_AI_TensorGetData(tensor));
+    ASSERT_NE(retData, nullptr);
+    OHPrintf("return data is:");
+    for (size_t i = 0; i < dataLen; i++) {
+        ASSERT_EQ(retData[i], data3[i]);
+        OHPrintf("%f ", retData[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetData接口。tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0038
+ * @tc.number SUBAIMindSporeTensorCreate0038
+ * @tc.desc   SUBAIMindSporeTensorCreate0038
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0038()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorGetData(nullptr);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetMutableData接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0039
+ * @tc.number SUBAIMindSporeTensorCreate0039
+ * @tc.desc   SUBAIMindSporeTensorCreate0039
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0039()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorGetMutableData(nullptr);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetElementNum接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0040
+ * @tc.number SUBAIMindSporeTensorCreate0040
+ * @tc.desc   SUBAIMindSporeTensorCreate0040
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0040()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    int64_t element = OH_AI_TensorGetElementNum(nullptr);
+    std::cout << element << std::endl;
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetDataSize接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0041
+ * @tc.number SUBAIMindSporeTensorCreate0041
+ * @tc.desc   SUBAIMindSporeTensorCreate0041
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0041()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    size_t datasize = OH_AI_TensorGetDataSize(nullptr);
+    std::cout << datasize << std::endl;
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorGetDataSize接口，未填入数据
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0042
+ * @tc.number SUBAIMindSporeTensorCreate0042
+ * @tc.desc   SUBAIMindSporeTensorCreate0042
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0042()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 4;
+    int64_t createShape[createShapeNum] = { 1, 48, 48, 3 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, nullptr, 0);
+    ASSERT_NE(tensor, nullptr);
+    size_t datasize = OH_AI_TensorGetDataSize(tensor);
+    std::cout << datasize << std::endl;
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetUserData接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0043
+ * @tc.number SUBAIMindSporeTensorCreate0043
+ * @tc.desc   SUBAIMindSporeTensorCreate0043
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0043()
+{
+    const int userData = 6 * 4;
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorSetUserData(nullptr, data, userData);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetUserData接口，data为空指针nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0044
+ * @tc.number SUBAIMindSporeTensorCreate0044
+ * @tc.desc   SUBAIMindSporeTensorCreate0044
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0044()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    OH_AI_TensorSetUserData(tensor, nullptr, 0);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetUserData接口，正常设置data
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0045
+ * @tc.number SUBAIMindSporeTensorCreate0045
+ * @tc.desc   SUBAIMindSporeTensorCreate0045
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0045()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    constexpr size_t userData = 6 * 4;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    float data2[dataLen] = { 12, 22, 32, 42, 52, 62 };
+    OH_AI_TensorSetUserData(tensor, data2, userData);
+    const float* retData = static_cast<const float*>(OH_AI_TensorGetData(tensor));
+    ASSERT_NE(retData, nullptr);
+    OHPrintf("return data is:");
+    for (size_t i = 0; i < dataLen; i++) {
+        ASSERT_EQ(retData[i], data2[i]);
+        OHPrintf("%f ", retData[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetUserData接口，多次设置data
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0046
+ * @tc.number SUBAIMindSporeTensorCreate0046
+ * @tc.desc   SUBAIMindSporeTensorCreate0046
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0046()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    constexpr size_t userData = 6 * 4;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    float data2[dataLen] = { 12, 22, 32, 42, 52, 62 };
+    float data3[dataLen] = { 13, 23, 33, 43, 53, 63 };
+    OH_AI_TensorSetUserData(tensor, data2, userData);
+    OH_AI_TensorSetUserData(tensor, data3, userData);
+    const float* retData = static_cast<const float*>(OH_AI_TensorGetData(tensor));
+    ASSERT_NE(retData, nullptr);
+    OHPrintf("return data is:");
+    for (size_t i = 0; i < dataLen; i++) {
+        ASSERT_EQ(retData[i], data3[i]);
+        OHPrintf("%f ", retData[i]);
+    }
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetAllocator接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0047
+ * @tc.number SUBAIMindSporeTensorCreate0047
+ * @tc.desc   SUBAIMindSporeTensorCreate0047
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0047()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    void* inAllocator = OH_AI_TensorGetAllocator(tensor);
+    OH_AI_TensorSetAllocator(nullptr, inAllocator);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetAllocator接口，正常设置allocator
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0048
+ * @tc.number SUBAIMindSporeTensorCreate0048
+ * @tc.desc   SUBAIMindSporeTensorCreate0048
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0048()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    void* inAllocator = OH_AI_TensorGetAllocator(tensor);
+    OH_AI_TensorSetAllocator(tensor, inAllocator);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetAllocator接口，多次设置allocator
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0049
+ * @tc.number SUBAIMindSporeTensorCreate0049
+ * @tc.desc   SUBAIMindSporeTensorCreate0049
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0049()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    constexpr size_t createShapeNum = 1;
+    int64_t createShape[createShapeNum] = { 6 };
+    constexpr size_t dataLen = 6;
+    float data[dataLen] = { 1, 2, 3, 4, 5, 6 };
+    OH_AI_TensorHandle tensor =
+        OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape, createShapeNum, data, 6 * 4);
+    ASSERT_NE(tensor, nullptr);
+    void* inAllocator = OH_AI_TensorGetAllocator(tensor);
+    OH_AI_TensorSetAllocator(tensor, inAllocator);
+    OH_AI_TensorSetAllocator(tensor, inAllocator);
+    OH_AI_TensorDestroy(&tensor);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_TensorSetAllocator接口，tensor为nullptr
+/**
+ * @tc.name   SUBAIMindSporeTensorCreate0050
+ * @tc.number SUBAIMindSporeTensorCreate0050
+ * @tc.desc   SUBAIMindSporeTensorCreate0050
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeTensorCreate0050()
+{
+    OHPrintf("==========OH_AI_TensorCreate==========\n");
+    OH_AI_TensorGetAllocator(nullptr);
+    return OH_AI_STATUS_SUCCESS;
+}
+
 } // namespace MindSpore
 } // namespace Acts
