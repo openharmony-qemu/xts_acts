@@ -22,7 +22,7 @@ import common from '@ohos.app.ability.common';
 import { Permissions } from 'permissions';
 import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import geoLocationManager from '@ohos.geoLocationManager';
-import { notificationManager } from '@kit.NotificationKit';
+import notificationManager from '@ohos.notificationManager';
 import { canIUse } from '@internal.full.global';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
