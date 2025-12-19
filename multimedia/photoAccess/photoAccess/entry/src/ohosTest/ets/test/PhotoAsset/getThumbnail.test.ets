@@ -683,6 +683,7 @@ export default function getThumbnailTest() {
       await createMovingPhoto(testNum, testContext, title)
       const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.TITLE, title);
       await getThumbnailCallback1(done, testNum, fetchOps);
+      expect(title == 'getThumbnail_callback_24').assertTrue();
     });
 
     /**
