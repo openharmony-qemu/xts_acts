@@ -164,6 +164,9 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
     DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
+    DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
+    DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
+    DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

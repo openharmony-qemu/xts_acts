@@ -556,5 +556,245 @@ export default function ImageErrorSuppTest() {
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(5);
     });
+
+    /**
+     * @tc.number   SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0001
+     * @tc.name     SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0001
+     * @tc.desc     MediaLibraryErrorCode-MEDIA_LIBRARY_PERMISSION_DENIED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.MediaLibraryErrorCode(CASE_INDEX_1);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(201);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0002
+     * @tc.name     SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0002
+     * @tc.desc     MediaLibraryErrorCode-MEDIA_LIBRARY_INVALID_DISPLAY_NAME
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0002', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.MediaLibraryErrorCode(CASE_INDEX_2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(23800102);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0003
+     * @tc.name     SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0003
+     * @tc.desc     MediaLibraryErrorCode-MEDIA_LIBRARY_INVALID_ASSET_URI
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0003', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.MediaLibraryErrorCode(CASE_INDEX_3);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(23800103);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0004
+     * @tc.name     SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0004
+     * @tc.desc     MediaLibraryErrorCode-MEDIA_LIBRARY_INVALID_PHOTO_KEY
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0004', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.MediaLibraryErrorCode(CASE_INDEX_4);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(23800104);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0005
+     * @tc.name     SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0005
+     * @tc.desc     MediaLibraryMediaType-MEDIA_LIBRARY_VIDEO
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_MEDIA_LIBRARY_ERROR_CODE_SUPP_0005', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.MediaLibraryErrorCode(CASE_INDEX_5);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(2);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0001
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0001
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_UNKNOWN
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_1);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200001);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0002
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0002
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_INITIALIZE_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0002', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200002);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0003
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0003
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_CREATE_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0003', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_3);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200003);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0004
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0004
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_PROCESS_FAILED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0004', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_4);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200004);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0005
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0005
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0005', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_5);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200005);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0006
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0006
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0006', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_6);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200006);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0007
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0007
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_NO_MEMORY
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0007', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_7);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200007);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0008
+     * @tc.name     SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0008
+     * @tc.desc     ImageProcessingErrorCode-IMAGE_PROCESSING_ERROR_INVALID_VALUE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PROCESSING_ERROR_CODE_SUPP_0008', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageProcessingErrorCode(CASE_INDEX_8);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(29200009);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0001
+     * @tc.name     SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0001
+     * @tc.desc     ImageDetailEnhancerQualityLevel-IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_NONE
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageDetailEnhancerQualityLevel(CASE_INDEX_1);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0002
+     * @tc.name     SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0002
+     * @tc.desc     ImageDetailEnhancerQualityLevel-IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_LOW
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0002', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageDetailEnhancerQualityLevel(CASE_INDEX_2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0003
+     * @tc.name     SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0003
+     * @tc.desc     ImageDetailEnhancerQualityLevel-IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_MEDIUM
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_DETAIL_ENHANCER_CODE_SUPP_0003', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageDetailEnhancerQualityLevel(CASE_INDEX_3);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(2);
+    });
   });
 }
