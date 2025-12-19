@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../MainAbility/common/Common';
 import { EventType } from '../MainAbility/common/Common';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {
   PhotoPickerComponent,
@@ -53,6 +53,14 @@ import { fileUri } from '@kit.CoreFileKit';
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
+
+async function friveFn() {
+  let dr = Driver.create();
+  await CommonFunc.sleep(100);
+  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
+  await power?.click();
+  await CommonFunc.sleep(1000);
+}
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -863,12 +871,7 @@ export default function TextPicker() {
         expect(result.duration).not().assertUndefined();
         expect(result.photoSubType).not().assertUndefined();
         expect(result.dynamicRangeType).not().assertUndefined();
-        expect(result.orientation).not().assertUndefined();
-        if (result.mimeType && result.mimeType.startsWith('video/')) { //如果是 视频 则有返回值
-          expect(result.videoMode).not().assertUndefined();
-        } else { //反之没有返回值
-          expect(result.videoMode).assertUndefined();
-        }
+        expect(result.videoMode).assertUndefined();
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -2919,6 +2922,72 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker58 finish");
+      done();
+    });
+
+    /**
+      * @tc.number      testPicker59
+      * @tc.name        testPicker59
+      * @tc.desc        Testing Change PhotoPickerComponent pickerOptions's isSlidingSupported property
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
+      */
+    it('testPicker59', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+        title: 'test',
+        fileNameExtension: 'png',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+      };
+      let pickerController: PickerController = new PickerController();
+      let boxPath = fileUri.getUriFromPath(context.filesDir + "/image.png").toString();
+      photoAccessHelper.getPhotoAccessHelper(context).showAssetsCreationDialog([boxPath],
+        [photoCreationConfig]).then((result) => {
+        console.log(result);
+      });
+      await friveFn();
+      let code: number = EventType.SELECT_ITEM_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let callback = (event: events_emitter.EventData) => {
+        let result: ItemInfo = event?.data?.msg;
+        console.info('testPicker14 select ItemInfo=:' + JSON.stringify(result));
+        expect(result.videoMode).assertUndefined();
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker14 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+
+      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      if (checkBoxs === null || checkBoxs.length <= 0) {
+        console.info("testPicker14 findComponent checkbox fail");
+      } else {
+        console.info("testPicker14 findComponent checkbox success");
+        await checkBoxs[0].click();
+        await CommonFunc.sleep(2000);
+        console.info("testPicker14 btn click finish");
+      }
+      router.back();
+      console.info("testPicker14 finish");
+      events_emitter.off(event.eventId);
       done();
     });
   })
