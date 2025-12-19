@@ -1212,7 +1212,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsRectMultipleCalls, Function | Smal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1400
  * @tc.desc   test for testRegionQuickContainsNormal
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNormal, Function | SmallTest | Level0) {
