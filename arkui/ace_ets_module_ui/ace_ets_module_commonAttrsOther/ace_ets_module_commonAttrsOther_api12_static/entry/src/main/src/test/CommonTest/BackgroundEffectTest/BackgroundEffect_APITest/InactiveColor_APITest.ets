@@ -59,7 +59,7 @@ export default function Bgde_InactiveColor_APITest() {
     beforeEach(async (): Promise<void> => {
       console.info("Bgde_InactiveColor_APITest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Common/backgroundBlurStyle/backgroundBlurStyleOptions/inactiveColor",
+        url: "MainAbility/pages/Common/BackgroundEffect/BackgroundEffectOptions/inactiveColor",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
