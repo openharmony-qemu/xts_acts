@@ -18,7 +18,6 @@ import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
 import { albumType, albumSubtype, genRadomStr, fetchOption, albumKeys, getPermission, driveFn, sleep } from '../common'
 import common from '@ohos.app.ability.common'
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
-import Context from '../../../../../../../../../../../../prebuilts/ohos-sdk/linux/22/js/api/application/Context'
 
 export default function setAlbumNameChangeRequestTest() {
   describe('setAlbumNameChangeRequestTest', () => {
@@ -149,12 +148,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0300
-     * @tc.name      : album_name_change_request_003
-     * @tc.desc      : change system album name.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0300
+     * @tc.name   album_name_change_request_003
+     * @tc.desc   change system album name.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('album_name_change_request_003', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_name_change_request_003';
@@ -190,12 +189,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0400
-     * @tc.name      : album_name_change_request_004
-     * @tc.desc      : change user album name whit repeat name.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0400
+     * @tc.name   album_name_change_request_004
+     * @tc.desc   change user album name whit repeat name.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('album_name_change_request_004', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_name_change_request_004';
@@ -218,12 +217,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0500
-     * @tc.name      : album_name_change_request_005
-     * @tc.desc      : User albums are not allowed to be named with the same name in uppercase or lowercase.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0500
+     * @tc.name   album_name_change_request_005
+     * @tc.desc   User albums are not allowed to be named with the same name in uppercase or lowercase.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_005', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_005';
@@ -248,12 +247,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0600
-     * @tc.name      : album_name_change_request_006
-     * @tc.desc      : change user album name whit empty name.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0600
+     * @tc.name   album_name_change_request_006
+     * @tc.desc   change user album name whit empty name.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('album_name_change_request_006', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_name_change_request_006';
@@ -274,12 +273,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0700
-     * @tc.name      : album_name_change_request_007
-     * @tc.desc      : Rename source album name length to 1.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0700
+     * @tc.name   album_name_change_request_007
+     * @tc.desc   Rename source album name length to 1.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_007', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_007';
@@ -309,12 +308,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0800
-     * @tc.name      : album_name_change_request_008
-     * @tc.desc      : Rename source album name length to 255.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0800
+     * @tc.name   album_name_change_request_008
+     * @tc.desc   Rename source album name length to 255.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_008', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_008';
@@ -344,12 +343,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0900
-     * @tc.name      : album_name_change_request_009
-     * @tc.desc      : Rename source album name is '@#￥'.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_0900
+     * @tc.name   album_name_change_request_009
+     * @tc.desc   Rename source album name is '@#￥'.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_009', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_009';
@@ -379,12 +378,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1000
-     * @tc.name      : album_name_change_request_010
-     * @tc.desc      : Renaming Source Album Multiple Times.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1000
+     * @tc.name   album_name_change_request_010
+     * @tc.desc   Renaming Source Album Multiple Times.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_010', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_010';
@@ -415,12 +414,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1100
-     * @tc.name      : album_name_change_request_011
-     * @tc.desc      : Rename source album name to system album name.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1100
+     * @tc.name   album_name_change_request_011
+     * @tc.desc   Rename source album name to system album name.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_011', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_011';
@@ -454,12 +453,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1200
-     * @tc.name      : album_name_change_request_012
-     * @tc.desc      : Renaming source albums with cloud sync enabled.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1200
+     * @tc.name   album_name_change_request_012
+     * @tc.desc   Renaming source albums with cloud sync enabled.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_012', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_012';
@@ -494,12 +493,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1300
-     * @tc.name      : album_name_change_request_013
-     * @tc.desc      : change source album name whit invalid name.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1300
+     * @tc.name   album_name_change_request_013
+     * @tc.desc   change source album name whit invalid name.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('album_name_change_request_013', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_name_change_request_013';
@@ -523,12 +522,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1400
-     * @tc.name      : album_name_change_request_014
-     * @tc.desc      : change source album name whit null.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1400
+     * @tc.name   album_name_change_request_014
+     * @tc.desc   change source album name whit null.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('album_name_change_request_014', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_name_change_request_014';
@@ -549,12 +548,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1500
-     * @tc.name      : album_name_change_request_015
-     * @tc.desc      : change source album name whit repeat name.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1500
+     * @tc.name   album_name_change_request_015
+     * @tc.desc   change source album name whit repeat name.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_015', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_015';
@@ -576,12 +575,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1600
-     * @tc.name      : album_name_change_request_016
-     * @tc.desc      : Rename the source album without calling applyChange.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1600
+     * @tc.name   album_name_change_request_016
+     * @tc.desc   Rename the source album without calling applyChange.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_016', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_016';
@@ -604,12 +603,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1700
-     * @tc.name      : album_name_change_request_017
-     * @tc.desc      : source albums are not allowed to be named with the same name in uppercase or lowercase.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1700
+     * @tc.name   album_name_change_request_017
+     * @tc.desc   source albums are not allowed to be named with the same name in uppercase or lowercase.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_017', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_017';
@@ -637,12 +636,12 @@ export default function setAlbumNameChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1800
-     * @tc.name      : album_name_change_request_018
-     * @tc.desc      : Rename the source album name to the name in the whitelist.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_NAME_CHANGE_REQUEST_1800
+     * @tc.name   album_name_change_request_018
+     * @tc.desc   Rename the source album name to the name in the whitelist.
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('album_name_change_request_018', Level.LEVEL1, async (done: Function) => {
       let testNum: string = 'album_name_change_request_018';
