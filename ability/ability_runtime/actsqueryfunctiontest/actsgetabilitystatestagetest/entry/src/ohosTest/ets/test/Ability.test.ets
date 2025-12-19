@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import AbilityDelegatorRegistryOld from '@ohos.application.abilityDelegatorRegistry'
 import commonEvent from "@ohos.commonEventManager"
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -77,6 +78,7 @@ export default function abilityTest() {
         let state = abilityDelegator.getAbilityState(ability);
         console.log("====>ACTS_GetAbilityState_0200 state:" + state);
         expect(state).assertEqual(AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND);
+        expect(state).assertEqual(AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND);
         console.log("====>ACTS_GetAbilityState_0200 end====");
         commonEvent.unsubscribe(subscriber, UnSubscribeCallback);
       }
@@ -139,11 +141,17 @@ export default function abilityTest() {
             let state = abilityDelegator.getAbilityState(ability);
             console.log("====>ACTS_GetAbilityState_0300 state:" + state);
             expect(state).assertEqual(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+            expect(state).assertEqual(AbilityDelegatorRegistryOld.AbilityLifecycleState.FOREGROUND);
             expect(state != AbilityDelegatorRegistry.AbilityLifecycleState.CREATE).assertTrue();
             expect(state != AbilityDelegatorRegistry.AbilityLifecycleState.DESTROY).assertTrue();
+            expect(state != AbilityDelegatorRegistryOld.AbilityLifecycleState.CREATE).assertTrue();
+            expect(state != AbilityDelegatorRegistryOld.AbilityLifecycleState.DESTROY).assertTrue();
             expect(AbilityDelegatorRegistry.AbilityLifecycleState.DESTROY).assertEqual(4);
             expect(AbilityDelegatorRegistry.AbilityLifecycleState.CREATE).assertEqual(1);
             expect(AbilityDelegatorRegistry.AbilityLifecycleState.UNINITIALIZED).assertEqual(0);
+            expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.DESTROY).assertEqual(4);
+            expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.CREATE).assertEqual(1);
+            expect(AbilityDelegatorRegistryOld.AbilityLifecycleState.UNINITIALIZED).assertEqual(0);
             abilityDelegator.doAbilityBackground(ability, (err) => {
               console.log("====>doAbilityBackground_0300 data:" + JSON.stringify(err));
               console.log("====>ACTS_GetAbilityState_0300 end====");
