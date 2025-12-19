@@ -1109,7 +1109,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNull, Function | SmallTest | 
 
 /**
  * @tc.name   testRegionIsEmptyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1202
  * @tc.desc   test for testRegionIsEmptyMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST 
