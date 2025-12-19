@@ -240,10 +240,10 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"getSaveCookieAsyncCallbackResult", nullptr, GetSaveCookieAsyncCallbackResult, nullptr, nullptr, nullptr,
             napi_default, nullptr},
-        {"lazyInitializeWebEngineInCookieManagerSetTrue", nullptr, LazyInitializeWebEngineInCookieManagerSetTrue, nullptr,
-            nullptr, nullptr,napi_default, nullptr},
-        {"lazyInitializeWebEngineInCookieManagerSetFalse", nullptr, LazyInitializeWebEngineInCookieManagerSetFalse, nullptr,
-            nullptr, nullptr,napi_default, nullptr},
+        {"lazyInitializeWebEngineInCookieManagerSetTrue", nullptr, LazyInitializeWebEngineInCookieManagerSetTrue,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"lazyInitializeWebEngineInCookieManagerSetFalse", nullptr, LazyInitializeWebEngineInCookieManagerSetFalse,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

@@ -1,6 +1,7 @@
 /*   * Copyright (c) 2024 Huawei Device Co., Ltd.   * Licensed under the Apache License, Version 2.0 (the "License");   * you may not use this file except in compliance with the License.   * You may obtain a copy of the License at   *   *     http://www.apache.org/licenses/LICENSE-2.0   *   * Unless required by applicable law or agreed to in writing, software   * distributed under the License is distributed on an "AS IS" BASIS,   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.   * See the License for the specific language governing permissions and   * limitations under the License.   */
 import testNapi from 'libentry.so';
 import { beforeEach, describe, it , TestType, Size, Level, beforeAll, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import hilog from '@ohos.hilog';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -258,11 +259,10 @@ export default function webviewApi() {
     it('testWebResourceRequest_IsMainFrame_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_IsMainFrame_True PASS');
       Utils.emitEvent("testWebResourceRequest_IsMainFrame_True", 147701)
-      let isReturn = false;
-      Utils.registerEvent("testWebResourceRequest_IsMainFrame_True", true, 147860, ()=>{isReturn = true});
+      Utils.registerBaseEvent('testWebResourceRequest_IsMainFrame_True', true, 147860, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected)
+        })
       await Utils.waitAndClickComponent('webHostingButton',driver);
-      await waitForExist(()=>isReturn, 'testWebResourceRequest_IsMainFrame_True', true,1000);
-      done();
     })
 
     /**
@@ -371,7 +371,7 @@ export default function webviewApi() {
     })
 
     /**
-     * @tc.name   testArkWebSchemeHandlerGetUserDataReturnNullptr
+     * @tc.name   testArkWebSetSchemeHandlerReturnFalse
      * @tc.number SUB_ACE_WEB_OH_ARKWEB_SETSCHEMEHANDLER_RETURNFALSE
      * @tc.desc   test OH_ArkWeb_SetSchemeHandler  return false
      * @tc.type   FUNCTION
@@ -414,7 +414,7 @@ export default function webviewApi() {
 
     /**
      * @tc.name   testArkWebServiceWorkerSetSchemeHandlerReturnFalse
-     * @tc.number SUB_ACE_WEB_OH_ARKWEB_SETSCHEMEHANDLER_RETURNFALSE
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBSERVICEWORKER_SETSCHEMEHANDLER_RETURNFALSE
      * @tc.desc   test OH_ArkWebServiceWorker_SetSchemeHandler  return false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

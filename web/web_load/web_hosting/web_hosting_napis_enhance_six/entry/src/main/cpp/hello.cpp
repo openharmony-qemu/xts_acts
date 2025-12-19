@@ -33,7 +33,7 @@ NativeResourceManager *g_resourceManager;
 bool testIsEof;
 bool testIsInMemory;
 bool testIsChunked;
-bool testIsMainFrame;
+bool g_testIsMainFrame;
 uint64_t testHttpBodyStreamGetPosition = 0;
 uint64_t testHttpBodyStreamGetSize = -1;
 int32_t testHttpBodyStreamSetReadCallBack = -1;
@@ -63,7 +63,7 @@ void OnURLRequestStart(const ArkWeb_SchemeHandler *schemeHandler, ArkWeb_Resourc
     OH_LOG_INFO(LOG_APP, "OnURLRequestStart OH_ArkWebResourceRequest_IsMainFrame %{public}d",
         OH_ArkWebResourceRequest_IsMainFrame(resourceRequest));
     if (OH_ArkWebResourceRequest_IsMainFrame(resourceRequest)) {
-        testIsMainFrame = OH_ArkWebResourceRequest_IsMainFrame(resourceRequest);
+        g_testIsMainFrame = OH_ArkWebResourceRequest_IsMainFrame(resourceRequest);
     }
 
     RawfileRequest *request = new RawfileRequest(resourceRequest, resourceHandler, g_resourceManager);
@@ -341,7 +341,7 @@ napi_value ArkWebHttpBodyStreamGetUserDataReturnNullptr(napi_env env, napi_callb
 {
     napi_value result;
     OH_LOG_ERROR(LOG_APP, "ArkWebHttpBodyStreamGetUserDataReturnNullptr start ");
-    int *getUserData = (int *)OH_ArkWebHttpBodyStream_GetUserData(nullptr);
+    int *getUserData = static_cast<int *>(OH_ArkWebHttpBodyStream_GetUserData(nullptr));
     if (getUserData == nullptr) {
         OH_LOG_ERROR(LOG_APP, "OH_ArkWebHttpBodyStream_GetUserData return null");
         napi_create_int32(env, 0, &result);
@@ -355,7 +355,7 @@ napi_value ArkWebResourceRequestGetUserDataReturnNullptr(napi_env env, napi_call
 {
     napi_value result;
     OH_LOG_ERROR(LOG_APP, "ArkWebResourceRequestGetUserDataReturnNullptr start ");
-    int *getUserData = (int *)OH_ArkWebResourceRequest_GetUserData(nullptr);
+    int *getUserData = static_cast<int *>(OH_ArkWebResourceRequest_GetUserData(nullptr));
     if (getUserData == nullptr) {
         OH_LOG_ERROR(LOG_APP, "OH_ArkWebResourceRequest_GetUserData return null");
         napi_create_int32(env, 0, &result);
@@ -369,7 +369,7 @@ napi_value ArkWebSchemeHandlerGetUserDataReturnNullptr(napi_env env, napi_callba
 {
     napi_value result;
     OH_LOG_ERROR(LOG_APP, "ArkWebSchemeHandlerGetUserDataReturnNullptr start ");
-    int *getUserData = (int *)OH_ArkWebSchemeHandler_GetUserData(nullptr);
+    int *getUserData = static_cast<int *>(OH_ArkWebSchemeHandler_GetUserData(nullptr));
     if (getUserData == nullptr) {
         OH_LOG_ERROR(LOG_APP, "OH_ArkWebSchemeHandler_GetUserData return null");
         napi_create_int32(env, 0, &result);
@@ -435,7 +435,7 @@ napi_value ArkWebResourceRequestIsMainFrameReturnTrue(napi_env env, napi_callbac
 {
     napi_value result;
     OH_LOG_ERROR(LOG_APP, "ArkWebResourceRequestIsMainFrameReturnTrue start ");
-    if (testIsMainFrame) {
+    if (g_testIsMainFrame) {
         napi_create_int32(env, 1, &result);
     } else {
         napi_create_int32(env, 0, &result);
@@ -471,14 +471,16 @@ static napi_value Init(napi_env env, napi_value exports) {
             nullptr, nullptr, napi_default, nullptr},
         {"arkWebSchemeHandlerGetUserDataReturnNullptr", nullptr, ArkWebSchemeHandlerGetUserDataReturnNullptr, nullptr,
             nullptr, nullptr, napi_default, nullptr},
-        {"arkWebSetSchemeHandlerReturnTrue", nullptr, ArkWebSetSchemeHandlerReturnTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"arkWebSetSchemeHandlerReturnFalse", nullptr, ArkWebSetSchemeHandlerReturnFalse, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"arkWebServiceWorkerSetSchemeHandlerReturnTrue", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnTrue, nullptr, nullptr,
+        {"arkWebSetSchemeHandlerReturnTrue", nullptr, ArkWebSetSchemeHandlerReturnTrue, nullptr, nullptr,
             nullptr, napi_default, nullptr},
-        {"arkWebServiceWorkerSetSchemeHandlerReturnFalse", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnFalse, nullptr, nullptr,
+        {"arkWebSetSchemeHandlerReturnFalse", nullptr, ArkWebSetSchemeHandlerReturnFalse, nullptr, nullptr,
             nullptr, napi_default, nullptr},
-        {"arkWebResourceRequestIsMainFrameReturnTrue", nullptr, ArkWebResourceRequestIsMainFrameReturnTrue, nullptr, nullptr,
-            nullptr, napi_default, nullptr}
+        {"arkWebServiceWorkerSetSchemeHandlerReturnTrue", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnTrue,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"arkWebServiceWorkerSetSchemeHandlerReturnFalse", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnFalse,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"arkWebResourceRequestIsMainFrameReturnTrue", nullptr, ArkWebResourceRequestIsMainFrameReturnTrue,
+             nullptr, nullptr, nullptr, napi_default, nullptr}
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

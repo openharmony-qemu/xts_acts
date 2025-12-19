@@ -4642,28 +4642,28 @@ export default function ActsWebErrorCodeListTest() {
     })
 
     /**
-     * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT
+     * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_FILE_NOT_FOUND
      * @tc.number SUB_WEB_NET_ERROR_23900
-     * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_INVALID_ARGUMENT
+     * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_FILE_NOT_FOUND
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testArkWebResponse_GetError_ARKWEB_ERR_FILE_NOT_FOUND', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        let result: number = webCode.webArkWebNetError("ARKWEB_ERR_INVALID_ARGUMENT");
-        console.info("====>testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT result====", result);
+        let result: number = webCode.webArkWebNetError("ARKWEB_ERR_FILE_NOT_FOUND");
+        console.info("====>testArkWebResponse_GetError_ARKWEB_ERR_FILE_NOT_FOUND result====", result);
         expect(result).assertEqual(0);
       } catch (err) {
         expect(0).assertEqual(1);
-        console.error("====>testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT catch err: " + err);
+        console.error("====>testArkWebResponse_GetError_ARKWEB_ERR_FILE_NOT_FOUND catch err: " + err);
       }
       done();
     })
 
      /**
       * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_CACHE_READ_FAILURE
-      * @tc.number SUB_WEB_NET_ERROR_23900
+      * @tc.number SUB_WEB_NET_ERROR_24000
       * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_INVALID_ARGUMENT
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST

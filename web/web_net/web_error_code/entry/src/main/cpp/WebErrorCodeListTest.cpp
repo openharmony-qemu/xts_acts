@@ -305,13 +305,25 @@ static void AddErrCodeFTPPandDNS(std::map<std::string, ArkWeb_NetError>& netErro
     }
 }
 
+static ArkWeb_NetError AddArkWebNetErrorCode(std::map<std::string, ArkWeb_NetError>& netErrorMap)
+{
+    std::map<std::string, ArkWeb_NetError> codeExMap = {
+        {"ARKWEB_ERR_INVALID_ARGUMENT", ARKWEB_ERR_INVALID_ARGUMENT},
+        {"ARKWEB_ERR_FILE_NOT_FOUND", ARKWEB_ERR_FILE_NOT_FOUND},
+        {"ARKWEB_ERR_CACHE_READ_FAILURE", ARKWEB_ERR_CACHE_READ_FAILURE},
+        {"ARKWEB_ERR_INVALID_RESPONSE", ARKWEB_ERR_INVALID_RESPONSE},
+        {"ARKWEB_ERR_INVALID_CHUNKED_ENCODING", ARKWEB_ERR_INVALID_CHUNKED_ENCODING},
+        {"ARKWEB_ERR_METHOD_UNSUPPORTED", ARKWEB_ERR_METHOD_UNSUPPORTED},
+    };
+    for (const auto pair : codeExMap) {
+        netErrorMap[pair.first] = pair.second;
+    }
+}
+
 static ArkWeb_NetError GetWebNetErrorCode(const char *name)
 {
     std::string strName(name);
     std::map<std::string, ArkWeb_NetError> netErrorMap = {
-        {"ARKWEB_ERR_INVALID_ARGUMENT", ARKWEB_ERR_INVALID_ARGUMENT},
-        {"ARKWEB_ERR_FILE_NOT_FOUND", ARKWEB_ERR_FILE_NOT_FOUND},
-        {"ARKWEB_ERR_CACHE_READ_FAILURE", ARKWEB_ERR_CACHE_READ_FAILURE},
         {"ARKWEB_ERR_INVALID_ECH_CONFIG_LIST", ARKWEB_ERR_INVALID_ECH_CONFIG_LIST},
         {"ARKWEB_ERR_ECH_NOT_NEGOTIATED", ARKWEB_ERR_ECH_NOT_NEGOTIATED},
         {"ARKWEB_ERR_ECH_FALLBACK_CERTIFICATE_INVALID", ARKWEB_ERR_ECH_FALLBACK_CERTIFICATE_INVALID},
@@ -340,9 +352,6 @@ static ArkWeb_NetError GetWebNetErrorCode(const char *name)
         {"ARKWEB_ERR_TOO_MANY_REDIRECTS", ARKWEB_ERR_TOO_MANY_REDIRECTS},
         {"ARKWEB_ERR_UNSAFE_REDIRECT", ARKWEB_ERR_UNSAFE_REDIRECT},
         {"ARKWEB_ERR_UNSAFE_PORT", ARKWEB_ERR_UNSAFE_PORT},
-        {"ARKWEB_ERR_INVALID_RESPONSE", ARKWEB_ERR_INVALID_RESPONSE},
-        {"ARKWEB_ERR_INVALID_CHUNKED_ENCODING", ARKWEB_ERR_INVALID_CHUNKED_ENCODING},
-        {"ARKWEB_ERR_METHOD_UNSUPPORTED", ARKWEB_ERR_METHOD_UNSUPPORTED},
     };
     
     AddNetErrorByName(netErrorMap);
@@ -352,6 +361,7 @@ static ArkWeb_NetError GetWebNetErrorCode(const char *name)
     AddWebNetErrorCERTAndECHCode(netErrorMap);
     AddNetErrorHTTPCode(netErrorMap);
     AddErrCodeFTPPandDNS(netErrorMap);
+    AddArkWebNetErrorCode(netErrorMap);
     auto it = netErrorMap.find(strName);
     if (it != netErrorMap.end()) {
         return it->second;
