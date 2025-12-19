@@ -393,18 +393,12 @@ export default function albumCommitModifyTest () {
         album.commitModify(async (err) => {
           console.info(`${testNum} Entering the callback`);
           if (err != undefined) {
-            console.info(`${testNum} Entering the callback, err: ${err}`);
-            expect(false).assertTrue();
+            console.info(`${testNum} Entering the callback, err: ${err.code}`);
+            expect(err.code == 14000011).assertTrue();
             done();
           } else {
-            const fetchOps = fetchOption(testNum, albumKeys.ALBUM_NAME, newName);
-            const fetchResult:ESObject = await helper.getAlbums(albumType.USER, albumSubtype.USER_GENERIC, fetchOps);
-            console.info(`${testNum} fetchResult: ${fetchResult.getCount()}`);
-            const album:ESObject = await fetchResult.getFirstObject();
-            console.info(`${testNum} new name is: ${album.albumName}`);
-            expect(album.albumName).assertEqual('lowercase');
-            fetchResult.close();
-            done();
+            console.info(`${testNum} fail`);
+            expect().assertFail();
           }
         })
       } catch (error) {
