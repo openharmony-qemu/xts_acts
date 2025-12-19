@@ -40,6 +40,7 @@
 #include "OHImageEffectRestoreTest.h"
 #include "OHImageSizeTest.h"
 #include "OHPixelmapNativeCreatePixelmapNativeTest.h"
+#include "ImageResultIRNdkErrCodeTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -167,7 +168,6 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHPixelmapNativeGetArgbPixelsTest", OHPixelmapNativeGetArgbPixelsTest),
     DESCRIPTOR("OHPixelmapNativeToSdrTest", OHPixelmapNativeToSdrTest),
     DESCRIPTOR("PixelmapNativeCreateEmptyPixelmapUsingAllocator", PixelmapNativeCreateEmptyPixelmapUsingAllocator),
-
     DESCRIPTOR("IRNdkErrCodeSupplement", IRNdkErrCodeSupplement),
     DESCRIPTOR("OIRNdkErrCodeEmuSupp", OIRNdkErrCodeEmuSupp),
     DESCRIPTOR("ImageReceiverNativeReadLatestImageTest", ImageReceiverNativeReadLatestImageTest),
@@ -182,6 +182,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
     DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
+    DESCRIPTOR("ImageResultIRNdkErrCodeTest", ImageResultIRNdkErrCodeTest),
+    
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

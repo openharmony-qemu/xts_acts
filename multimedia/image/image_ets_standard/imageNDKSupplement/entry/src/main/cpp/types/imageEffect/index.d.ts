@@ -173,3 +173,4 @@ export const OHPixelmapNativeToSdrTest: (a: number) => number;
 export const PixelmapNativeCreateEmptyPixelmapUsingAllocator: (a: number) => number;
 export const IRNdkErrCodeSupplement:(a: number) => number;
 export const OIRNdkErrCodeEmuSupp:(a: number) => number;
+export const ImageResultIRNdkErrCodeTest:(a: number) => number;
