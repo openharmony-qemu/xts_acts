@@ -2024,6 +2024,7 @@ napi_value StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled(na
     element.moduleName = const_cast<char *>("entry");
     AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    OH_AbilityRuntime_SetStartOptionsStartVisibility(options, ABILITY_RUNTIME_HIDE_UPON_START);
     AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
     if (ret == ABILITY_RUNTIME_ERROR_VISIBILITY_SETTING_DISABLED || ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {

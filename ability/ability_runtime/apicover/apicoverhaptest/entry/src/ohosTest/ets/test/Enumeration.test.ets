@@ -550,7 +550,7 @@ export default function ApiCoverTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_wantConstant_1700', Level.LEVEL0, async (done: Function) => {
-      expect('ohos.extra.param.appCloneIndex').assertEqual(wantConstant.Params.APP_CLONE_INDEX_KEY);
+      expect('ohos.extra.param.key.appCloneIndex').assertEqual(wantConstant.Params.APP_CLONE_INDEX_KEY);
       done();
     })
 
