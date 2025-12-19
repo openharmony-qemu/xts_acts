@@ -47,7 +47,7 @@ export default function telephonyRadioNoPermissionEmptyTest() {
 
   describe('telephonyRadioNoPermissionEmptyTest', () => {
 
-    /*
+    /**
      * @tc.number: SUB_Telephony_Radio_NoPermissionEmpty_0150
      * @tc.name  : telephonyRadioNoPermissionEmptyTest0150
      * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
