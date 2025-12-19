@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "CameraSessionNdkTEST.h"
+#include "CameraSessionNdkTest.h"
 #include <cstddef>
 #include <cstdint>
 
@@ -28,44 +28,40 @@
 #define CASE_INDEX_3 3
 #define CASE_INDEX_4 4
 
-Camera_Manager* cameraManager = nullptr;
-Camera_Input* cameraInput = nullptr;
-Camera_Device* cameras = nullptr;
-Camera_Profile* previewProfile = nullptr;
-Camera_Profile* photoProfile = nullptr;
-Camera_PreviewOutput* previewOutput = nullptr;
+Camera_Manager *cameraManager = nullptr;
+Camera_Input *cameraInput = nullptr;
+Camera_Device *cameras = nullptr;
+Camera_Profile *previewProfile = nullptr;
+Camera_Profile *photoProfile = nullptr;
+Camera_PreviewOutput *previewOutput = nullptr;
 Camera_PhotoOutput *photoOutput = nullptr;
-Camera_CaptureSession* captureSession = nullptr;
+Camera_CaptureSession *captureSession = nullptr;
 
-void CameraManagerStatusCallback(Camera_Manager* cameraManager, Camera_StatusInfo* status)
+void CameraManagerStatusCallback(Camera_Manager *cameraManager, Camera_StatusInfo *status)
 {
     OH_LOG_INFO(LOG_APP, "CameraManagerStatusCallback is called");
 }
 
-CameraManager_Callbacks* GetCameraManagerListener()
+CameraManager_Callbacks *GetCameraManagerListener()
 {
-    static CameraManager_Callbacks cameraManagerListener = {
-        .onCameraStatus = CameraManagerStatusCallback
-    };
+    static CameraManager_Callbacks cameraManagerListener = {.onCameraStatus = CameraManagerStatusCallback};
     return &cameraManagerListener;
 }
 
-void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
+void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode)
 {
-   OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode: %{public}d", errorCode);
+    OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode: %{public}d", errorCode);
 }
 
-CameraInput_Callbacks* GetCameraInputListener(void)
+CameraInput_Callbacks *GetCameraInputListener(void)
 {
-   static CameraInput_Callbacks cameraInputCallbacks = {
-      .onError = OnCameraInputError
-   };
-   return &cameraInputCallbacks;
+    static CameraInput_Callbacks cameraInputCallbacks = {.onError = OnCameraInputError};
+    return &cameraInputCallbacks;
 }
 
 bool IsSupportedSceneMode(Camera_Device camera, Camera_SceneMode sceneMode)
 {
-    Camera_SceneMode* sceneModes = nullptr;
+    Camera_SceneMode *sceneModes = nullptr;
     uint32_t sceneModeSize = 0;
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedSceneModes(&camera, &sceneModes, &sceneModeSize);
     if (sceneModes == nullptr || ret != CAMERA_OK) {
@@ -94,12 +90,11 @@ void CreateAndOpenCamera()
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_RegisterCallback failed.");
     }
-     ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
-     if (cameras == nullptr || size == 0 || ret != CAMERA_OK) {
-         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
-         return;
-     }
-    LOGI("OH_CameraManager_GetSupportedCameras %{public}d", size);
+    ret = OH_CameraManager_GetSupportedCameras(cameraManager, &cameras, &size);
+    if (cameras == nullptr || size == 0 || ret != CAMERA_OK) {
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameras failed.");
+        return;
+    }
     ret = OH_CameraManager_CreateCameraInput(cameraManager, &cameras[cameraDeviceIndex], &cameraInput);
     if (cameraInput == nullptr || ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreateCameraInput failed. %{public}d", ret);
@@ -117,16 +112,16 @@ void CreateAndOpenCamera()
     LOGI("camer input 创建成功");
 }
 
-void createPhotoOutput(char * surfaceID)
+void createPhotoOutput(char *surfaceID)
 {
     const Camera_Device camera = cameras[0];
-    Camera_OutputCapability* cameraOutputCapability = nullptr;
+    Camera_OutputCapability *cameraOutputCapability = nullptr;
     bool isSupported = IsSupportedSceneMode(camera, Camera_SceneMode::NORMAL_PHOTO);
     if (!isSupported) {
         OH_LOG_ERROR(LOG_APP, "NORMAL_PHOTO is not supported.");
     }
-    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(cameraManager, &camera,
-        Camera_SceneMode::NORMAL_PHOTO, &cameraOutputCapability);
+    Camera_ErrorCode ret = OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode(
+        cameraManager, &camera, Camera_SceneMode::NORMAL_PHOTO, &cameraOutputCapability);
     if (cameraOutputCapability == nullptr || ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_GetSupportedCameraOutputCapability failed.");
     }
@@ -140,11 +135,14 @@ void createPhotoOutput(char * surfaceID)
     } else {
         photoProfile = cameraOutputCapability->photoProfiles[0];
     }
-    Camera_ErrorCode preCode = OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surfaceID, &previewOutput);
+    Camera_ErrorCode preCode =
+        OH_CameraManager_CreatePreviewOutput(cameraManager, previewProfile, surfaceID, &previewOutput);
     if (cameraOutputCapability == nullptr || preCode != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed. %{public}d  %{public}s",preCode,surfaceID);
+        OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePreviewOutput failed. %{public}d  %{public}s", preCode,
+                     surfaceID);
     }
-    Camera_ErrorCode photoSurface = OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
+    Camera_ErrorCode photoSurface =
+        OH_CameraManager_CreatePhotoOutputWithoutSurface(cameraManager, photoProfile, &photoOutput);
     if (cameraOutputCapability == nullptr || photoSurface != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CameraManager_CreatePhotoOutputWithoutSurface failed.");
     }
@@ -191,7 +189,7 @@ void CreateCaptureSession()
 }
 
 
-napi_value initWithSurface(napi_env env, napi_callback_info info) 
+napi_value initWithSurface(napi_env env, napi_callback_info info)
 {
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -199,7 +197,6 @@ napi_value initWithSurface(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
-    LOGI("surface ID %{public}s", faceID);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     CreateCaptureSession();
@@ -208,7 +205,7 @@ napi_value initWithSurface(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value captureSessionAddPreviewOutput(napi_env env, napi_callback_info info) 
+napi_value captureSessionAddPreviewOutput(napi_env env, napi_callback_info info)
 {
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -216,7 +213,6 @@ napi_value captureSessionAddPreviewOutput(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
-    LOGI("surface ID %{public}s", faceID);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     if (cameraManager == nullptr) {
@@ -237,7 +233,7 @@ napi_value captureSessionAddPreviewOutput(napi_env env, napi_callback_info info)
     return ret1;
 }
 
-napi_value captureSessionRemovePreviewOutput(napi_env env, napi_callback_info info) 
+napi_value captureSessionRemovePreviewOutput(napi_env env, napi_callback_info info)
 {
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -245,7 +241,6 @@ napi_value captureSessionRemovePreviewOutput(napi_env env, napi_callback_info in
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
-    LOGI("surface ID %{public}s", faceID);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     if (cameraManager == nullptr) {
@@ -266,7 +261,7 @@ napi_value captureSessionRemovePreviewOutput(napi_env env, napi_callback_info in
     return ret1;
 }
 
-napi_value captureSessionBeginConfig(napi_env env, napi_callback_info info) 
+napi_value captureSessionBeginConfig(napi_env env, napi_callback_info info)
 {
     size_t uuidLen = 0;
     size_t argc = 1;
@@ -274,7 +269,6 @@ napi_value captureSessionBeginConfig(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
-    LOGI("surface ID %{public}s", faceID);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
     if (cameraManager == nullptr) {
@@ -302,17 +296,14 @@ napi_value captureSessionBeginConfig(napi_env env, napi_callback_info info)
 napi_value captureSessionStart(napi_env env, napi_callback_info info)
 {
     CreateAndOpenCamera();
-    LOGD("CASE_INDEX_1 selected, temperature=%{public}d", cameraManager);
     Camera_ErrorCode result = OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
     if (result != CAMERA_OK) {
         napi_value ret;
         napi_create_int32(env, result, &ret);
         return ret;
     }
-    
-    int32_t error;
-    error = OH_CaptureSession_Start(captureSession);
-    
+    Camera_ErrorCode error = OH_CaptureSession_Start(captureSession);
+
     OH_CaptureSession_Release(captureSession);
     napi_value ret;
     napi_create_int32(env, error, &ret);
@@ -328,9 +319,8 @@ napi_value captureSessionIsVideoStabilizationModeSupported(napi_env env, napi_ca
         napi_create_int32(env, result, &ret);
         return ret;
     }
-    int32_t error;
     bool res;
-    error = OH_CaptureSession_IsVideoStabilizationModeSupported(captureSession, STABILIZATION_MODE_OFF, &res);
+    Camera_ErrorCode error = OH_CaptureSession_IsVideoStabilizationModeSupported(captureSession, STABILIZATION_MODE_OFF, &res);
     OH_CaptureSession_Release(captureSession);
     napi_value ret;
     napi_create_int32(env, error, &ret);
@@ -346,8 +336,7 @@ napi_value captureSessionSetVideoStabilizationMode(napi_env env, napi_callback_i
         napi_create_int32(env, result, &ret);
         return ret;
     }
-    int32_t error;
-    error = OH_CaptureSession_SetVideoStabilizationMode(captureSession, STABILIZATION_MODE_OFF);
+    Camera_ErrorCode error = OH_CaptureSession_SetVideoStabilizationMode(captureSession, STABILIZATION_MODE_OFF);
     OH_CaptureSession_Release(captureSession);
     napi_value ret;
     napi_create_int32(env, error, &ret);
@@ -361,13 +350,13 @@ napi_value captureSessionEnableControlCenter(napi_env env, napi_callback_info in
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    int32_t error;
+    Camera_ErrorCode error;
     switch (index) {
     case CASE_INDEX_1:
         error = OH_CaptureSession_EnableControlCenter(captureSession, true);
         break;
     case CASE_INDEX_2:
-        error = OH_CaptureSession_EnableControlCenter(captureSession,false);
+        error = OH_CaptureSession_EnableControlCenter(captureSession, false);
     default:
         break;
     }
@@ -387,85 +376,80 @@ napi_value captureSessionRelease(napi_env env, napi_callback_info info)
     return ret;
 }
 
-napi_value captureSessionIsAutoDeviceSwitchSupported(napi_env env, napi_callback_info info) {
-   size_t argc = 1;
+napi_value captureSessionIsAutoDeviceSwitchSupported(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    LOGD("start");
 
     bool enable;
     Camera_ErrorCode error = OH_CaptureSession_IsAutoDeviceSwitchSupported(captureSession, &enable);
-    LOGD("end error=%{public}d, enable=%{public}s", 
-         error, enable ? "true" : "false");
-    
+
     napi_value result;
-    napi_get_boolean(env, enable, &result); 
+    napi_get_boolean(env, enable, &result);
     return result;
 }
 
-napi_value captureSessionEnableAutoDeviceSwitch(napi_env env, napi_callback_info info) {
+napi_value captureSessionEnableAutoDeviceSwitch(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    
+
     Camera_ErrorCode error;
     bool enable = false;
     switch (index) {
-        case CASE_INDEX_1:
-            enable = true;
-            break;
-        case CASE_INDEX_2:
-            enable = false;
-            break;
-        default:
-            break;;
+    case CASE_INDEX_1:
+        enable = true;
+        break;
+    case CASE_INDEX_2:
+        enable = false;
+        break;
+    default:
+        break;
     }
-    
+
     error = OH_CaptureSession_EnableAutoDeviceSwitch(captureSession, enable);
-    LOGD("CASE_INDEX_2 success selected, temperature=%{public}d", error);
 
     napi_value ret;
     napi_create_int32(env, error, &ret);
     return ret;
 }
 
-napi_value captureSessionIsMacroSupported(napi_env env, napi_callback_info info) {
+napi_value captureSessionIsMacroSupported(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    LOGD("  start");
 
     bool enable;
     Camera_ErrorCode error = OH_CaptureSession_IsMacroSupported(captureSession, &enable);
-    LOGD(" end error=%{public}d, enable=%{public}s",error, enable ? "true" : "false");
-    
+
     napi_value result;
-    napi_get_boolean(env, enable, &result); 
+    napi_get_boolean(env, enable, &result);
     return result;
 }
 
-napi_value captureSessionEnableMacro(napi_env env, napi_callback_info info) {
+napi_value captureSessionEnableMacro(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    LOGD("CASE_INDEX_2 selected, temperature=%{public}d", index);
 
     Camera_ErrorCode error;
     bool enable;
     switch (index) {
     case CASE_INDEX_1:
-        LOGD("CASE_INDEX_2 selected, temperature=");
         enable = true;
         error = OH_CaptureSession_EnableMacro(captureSession, enable);
         break;
     case CASE_INDEX_2:
-        LOGD("CASE_INDEX_2 selected, temperature=");
         enable = false;
         error = OH_CaptureSession_EnableMacro(captureSession, enable);
         break;
@@ -474,26 +458,25 @@ napi_value captureSessionEnableMacro(napi_env env, napi_callback_info info) {
     default:
         break;
     }
-    LOGD("CASE_INDEX_2 selected, temperature=%{public}d", error);
 
     napi_value ret;
     napi_create_int32(env, error, &ret);
     return ret;
 }
 
-napi_value captureSessionEnableMacroConfigAllow(napi_env env, napi_callback_info info) {
+napi_value captureSessionEnableMacroConfigAllow(napi_env env, napi_callback_info info)
+{
     size_t uuidLen = 0;
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     char faceID[256];
     napi_get_value_string_utf8(env, args[0], faceID, sizeof(faceID), &uuidLen);
-    LOGI("surface ID %{public}s", faceID);
     CreateAndOpenCamera();
     createPhotoOutput(faceID);
 
     Camera_ErrorCode error;
-    
+
     if (cameraManager == nullptr) {
         OH_LOG_ERROR(LOG_APP, "cameraManager is nullptr.");
     }
@@ -518,91 +501,82 @@ napi_value captureSessionEnableMacroConfigAllow(napi_env env, napi_callback_info
     return ret1;
 }
 
-napi_value captureSessionGetWhiteBalanceRange(napi_env env, napi_callback_info info) {
+napi_value captureSessionGetWhiteBalanceRange(napi_env env, napi_callback_info info)
+{
     int32_t min;
     int32_t max;
     Camera_ErrorCode error = OH_CaptureSession_GetWhiteBalanceRange(captureSession, &min, &max);
-    LOGI("GetWhiteBalanceRange ret1=%{public}d, min=%{public}d, max=%{public}d", 
-         error, min, max);
-    
+
     napi_value ret;
     napi_create_int32(env, error, &ret);
     return ret;
 }
 
-napi_value captureSessionSetWhiteBalance(napi_env env, napi_callback_info info) {
+napi_value captureSessionSetWhiteBalance(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    LOGD("Input index=%{public}d", index);
-    
+
     int32_t min;
     int32_t max;
     Camera_ErrorCode err = OH_CaptureSession_GetWhiteBalanceRange(captureSession, &min, &max);
     napi_value ret1;
     napi_create_int32(env, err, &ret1);
-    
-    LOGI("GetWhiteBalanceRange ret1=%{public}d, min=%{public}d, max=%{public}d", 
-         err, min, max);
-    
-    int32_t colorTemperature = 0;
+
+    int32_t Temperature = 0;
     switch (index) {
-        case CASE_INDEX_1:
-            colorTemperature = 2799;
-            LOGD("CASE_INDEX_1 selected, temperature=%{public}d", colorTemperature);
-            break;
-        case CASE_INDEX_2:
-            colorTemperature = 10001;
-            LOGD("CASE_INDEX_2 selected, temperature=%{public}d", colorTemperature);
-            break;
-        case CASE_INDEX_3:
-            colorTemperature = 2800;
-            LOGD("CASE_INDEX_2 selected, temperature=%{public}d", colorTemperature);
-            break;
-        case CASE_INDEX_4:
-            colorTemperature = 10000;
-            LOGD("CASE_INDEX_2 selected, temperature=%{public}d", colorTemperature);
-            break;
-        default:
-            break;
+    case CASE_INDEX_1:
+        Temperature = 2799;
+        break;
+    case CASE_INDEX_2:
+        Temperature = 10001;
+        break;
+    case CASE_INDEX_3:
+        Temperature = 2800;
+        break;
+    case CASE_INDEX_4:
+        Temperature = 10000;
+        break;
+    default:
+        break;
     }
-    
-    Camera_ErrorCode error = OH_CaptureSession_SetWhiteBalance(captureSession, colorTemperature);
+
+    Camera_ErrorCode error = OH_CaptureSession_SetWhiteBalance(captureSession, Temperature);
     napi_value ret;
     napi_create_int32(env, error, &ret);
     return ret;
 }
 
-napi_value captureSessionEmu(napi_env env, napi_callback_info info) {
+napi_value captureSessionEmu(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    
+
     int32_t code;
     switch (index) {
-        case CASE_INDEX_1:
-            code = Camera_PhotoQualityPrioritization::CAMERA_PHOTO_QUALITY_PRIORITIZATION_HIGH_QUALITY;
-            break;
-        case CASE_INDEX_2:
-            code = Camera_FoldStatus::CAMERA_FOLD_STATUS_NON_FOLDABLE;
-            break;
-        case CASE_INDEX_3:
-            code = Camera_FoldStatus::CAMERA_FOLD_STATUS_EXPANDED;
-            break;
-        case CASE_INDEX_4:
-            code = Camera_FoldStatus::CAMERA_FOLD_STATUS_FOLDED;
-            break;
-        default:
-            break;
+    case CASE_INDEX_1:
+        code = Camera_PhotoQualityPrioritization::CAMERA_PHOTO_QUALITY_PRIORITIZATION_HIGH_QUALITY;
+        break;
+    case CASE_INDEX_2:
+        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_NON_FOLDABLE;
+        break;
+    case CASE_INDEX_3:
+        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_EXPANDED;
+        break;
+    case CASE_INDEX_4:
+        code = Camera_FoldStatus::CAMERA_FOLD_STATUS_FOLDED;
+        break;
+    default:
+        break;
     }
-    
-    LOGD("CASE_INDEX_2 success selected, temperature=%{public}d", code);
 
     napi_value ret;
     napi_create_int32(env, code, &ret);
@@ -632,13 +606,16 @@ napi_value OHCaptureSessionDeleteSupportedEffectTypes(napi_env env, napi_callbac
     Camera_ErrorCode errorCode;
     Camera_ControlCenterEffectType *effectType = new Camera_ControlCenterEffectType[1];
     uint32_t size;
+    uint32_t sizes;
     errorCode = OH_CaptureSession_GetSupportedEffectTypes(captureSession, &effectType, &size);
-        switch (index) {
+    switch (index) {
     case CASE_INDEX_1:
-         code = OH_CaptureSession_DeleteSupportedEffectTypes(captureSession, effectType, 2);
+        sizes = 2;
+        code = OH_CaptureSession_DeleteSupportedEffectTypes(captureSession, effectType, sizes);
         break;
     case CASE_INDEX_2:
-         code = OH_CaptureSession_DeleteSupportedEffectTypes(captureSession, effectType, 3);
+        sizes = 3;
+        code = OH_CaptureSession_DeleteSupportedEffectTypes(captureSession, effectType, sizes);
         break;
     default:
         break;
@@ -656,12 +633,14 @@ napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info i
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
     Camera_ErrorCode code;
-     switch (index) {
+    switch (index) {
     case CASE_INDEX_1:
-       code = OH_CameraInput_OpenConcurrentCameras(cameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
+        code = OH_CameraInput_OpenConcurrentCameras(cameraInput,
+                                                    Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_LIMITED_CAPABILITY);
         break;
     case CASE_INDEX_2:
-        code = OH_CameraInput_OpenConcurrentCameras(cameraInput, Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_FULL_CAPABILITY);
+        code = OH_CameraInput_OpenConcurrentCameras(cameraInput,
+                                                    Camera_ConcurrentType::CAMERA_CONCURRENT_TYPE_FULL_CAPABILITY);
         break;
     default:
         break;
