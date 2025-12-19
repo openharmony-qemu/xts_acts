@@ -2927,7 +2927,7 @@ export default function TextPicker() {
     /**
       * @tc.number      testPicker59
       * @tc.name        testPicker59
-      * @tc.desc        Testing Change PhotoPickerComponent pickerOptions's isSlidingSupported property
+      * @tc.desc        Testing ItemInfo's videoMode
       * @tc.size        MediumTest
       * @tc.type        Function
       * @tc.level       Level 0
