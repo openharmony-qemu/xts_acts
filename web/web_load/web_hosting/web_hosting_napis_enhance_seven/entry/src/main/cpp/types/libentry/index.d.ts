@@ -24,3 +24,5 @@ export const saveCookieAsyncThread: () => number;
 export const saveCookieAsyncCallback: () => number;
 export const getSaveCookieSyncThreadResult: () => number;
 export const getSaveCookieAsyncCallbackResult: () => number;
+export const lazyInitializeWebEngineInCookieManagerSetTrue: () => number;
+export const lazyInitializeWebEngineInCookieManagerSetFalse: () => number;

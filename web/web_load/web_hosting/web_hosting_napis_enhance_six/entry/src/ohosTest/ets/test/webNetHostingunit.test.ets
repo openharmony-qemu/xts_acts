@@ -1,8 +1,8 @@
 /*   * Copyright (c) 2024 Huawei Device Co., Ltd.   * Licensed under the Apache License, Version 2.0 (the "License");   * you may not use this file except in compliance with the License.   * You may obtain a copy of the License at   *   *     http://www.apache.org/licenses/LICENSE-2.0   *   * Unless required by applicable law or agreed to in writing, software   * distributed under the License is distributed on an "AS IS" BASIS,   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.   * See the License for the specific language governing permissions and   * limitations under the License.   */
-import { beforeEach, describe, it , TestType, Size, Level, beforeAll } from '@ohos/hypium';
+import testNapi from 'libentry.so';
+import { beforeEach, describe, it , TestType, Size, Level, beforeAll, expect } from '@ohos/hypium';
 import hilog from '@ohos.hilog';
 import Utils from './Utils';
-// import { hilog } from '@kit.PerformanceAnalysisKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 import { router } from '@kit.ArkUI';
@@ -246,5 +246,192 @@ export default function webviewApi() {
       await waitForExist(()=>isReturn, 'emitWebResourceHandler_DidFinish', true,1000);
       done();
     })
+
+    /**
+     * @tc.name   testWebResourceRequest_IsMainFrame_True
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBRESOURCEREQUEST_ISMAINFRAME_RETURNTRUE
+     * @tc.desc   test OH_ArkWebResourceRequest_IsMainFrame  return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebResourceRequest_IsMainFrame_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequest_IsMainFrame_True PASS');
+      Utils.emitEvent("testWebResourceRequest_IsMainFrame_True", 147701)
+      let isReturn = false;
+      Utils.registerEvent("testWebResourceRequest_IsMainFrame_True", true, 147860, ()=>{isReturn = true});
+      await Utils.waitAndClickComponent('webHostingButton',driver);
+      await waitForExist(()=>isReturn, 'testWebResourceRequest_IsMainFrame_True', true,1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testArkWebGetNativeApiReturnNullptr
+     * @tc.number SUB_ACE_WEB_OH_ARKWEB_GETNATIVEAPI_RETURNNULLPTR
+     * @tc.desc   test OH_ArkWeb_GetNativeAPI  return nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebGetNativeApiReturnNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testArkWebGetNativeApiReturnNullptr start')
+        try {
+            let ret = testNapi.arkWebGetNativeApiReturnNullptr();
+            expect(ret).assertEqual(0)
+        } catch(error) {
+            console.error('testArkWebGetNativeApiReturnNullptr error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebGetNativeApiReturnNullptr end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebHttpBodyStreamGetUserDataReturnNullptr
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBHTTPBODYSTREAM_GETUSERDATA_RETURNNULLPTR
+     * @tc.desc   test OH_ArkWebHttpBodyStream_GetUserData  return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebHttpBodyStreamGetUserDataReturnNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testArkWebHttpBodyStreamGetUserDataReturnNullptr start')
+        try {
+            let ret = testNapi.arkWebSchemeHandlerGetUserDataReturnNullptr();
+            expect(ret).assertEqual(0)
+        } catch(error) {
+            console.error('testArkWebHttpBodyStreamGetUserDataReturnNullptr error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebHttpBodyStreamGetUserDataReturnNullptr end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebResourceRequestGetUserDataReturnNullptr
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBRESOURCEREQUEST_GETUSERDATA_RETURNNULLPTR
+     * @tc.desc   test OH_ArkWebResourceRequest_GetUserData  return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebResourceRequestGetUserDataReturnNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testArkWebResourceRequestGetUserDataReturnNullptr start')
+        try {
+            let ret = testNapi.arkWebResourceRequestGetUserDataReturnNullptr();
+            expect(ret).assertEqual(0)
+        } catch(error) {
+            console.error('testArkWebResourceRequestGetUserDataReturnNullptr error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebResourceRequestGetUserDataReturnNullptr end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebSchemeHandlerGetUserDataReturnNullptr
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBSCHEMEHANDLER_GETUSERDATA_RETURNNULLPTR
+     * @tc.desc   test OH_ArkWebSchemeHandler_GetUserData  return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebSchemeHandlerGetUserDataReturnNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testArkWebSchemeHandlerGetUserDataReturnNullptr start')
+        try {
+            let ret = testNapi.arkWebSchemeHandlerGetUserDataReturnNullptr();
+            expect(ret).assertEqual(0)
+        } catch(error) {
+            console.error('testArkWebSchemeHandlerGetUserDataReturnNullptr error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebSchemeHandlerGetUserDataReturnNullptr end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebSetSchemeHandlerReturnTrue
+     * @tc.number SUB_ACE_WEB_OH_ARKWEB_SETSCHEMEHANDLER_RETURNTURE
+     * @tc.desc   test OH_ArkWeb_SetSchemeHandler  return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testArkWebSetSchemeHandlerReturnTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        console.log('testArkWebSetSchemeHandlerReturnTrue start')
+        try {
+            let ret = testNapi.arkWebSetSchemeHandlerReturnTrue();
+            expect(ret).assertEqual(1)
+        } catch(error) {
+            console.error('testArkWebSetSchemeHandlerReturnTrue error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebSetSchemeHandlerReturnTrue end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebSchemeHandlerGetUserDataReturnNullptr
+     * @tc.number SUB_ACE_WEB_OH_ARKWEB_SETSCHEMEHANDLER_RETURNFALSE
+     * @tc.desc   test OH_ArkWeb_SetSchemeHandler  return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebSetSchemeHandlerReturnFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testArkWebSetSchemeHandlerReturnFalse start')
+        try {
+            let ret = testNapi.arkWebSetSchemeHandlerReturnFalse();
+            expect(ret).assertEqual(0)
+        } catch(error) {
+            console.error('testArkWebSetSchemeHandlerReturnFalse error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebSetSchemeHandlerReturnFalse end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebServiceWorkerSetSchemeHandlerReturnTrue
+     * @tc.number SUB_ACE_WEB_OH_ARKWEBSERVICEWORKER_SETSCHEMEHANDLER_RETURNTURE
+     * @tc.desc   test OH_ArkWebServiceWorker_SetSchemeHandler  return true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testArkWebServiceWorkerSetSchemeHandlerReturnTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        console.log('testArkWebServiceWorkerSetSchemeHandlerReturnTrue start')
+        try {
+            let ret = testNapi.arkWebServiceWorkerSetSchemeHandlerReturnTrue();
+            expect(ret).assertEqual(1)
+        } catch(error) {
+            console.error('testArkWebServiceWorkerSetSchemeHandlerReturnTrue error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebServiceWorkerSetSchemeHandlerReturnTrue end')
+        done()
+    })
+
+    /**
+     * @tc.name   testArkWebServiceWorkerSetSchemeHandlerReturnFalse
+     * @tc.number SUB_ACE_WEB_OH_ARKWEB_SETSCHEMEHANDLER_RETURNFALSE
+     * @tc.desc   test OH_ArkWebServiceWorker_SetSchemeHandler  return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebServiceWorkerSetSchemeHandlerReturnFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testArkWebServiceWorkerSetSchemeHandlerReturnFalse start')
+        try {
+            let ret = testNapi.arkWebServiceWorkerSetSchemeHandlerReturnFalse();
+            expect(ret).assertEqual(0)
+        } catch(error) {
+            console.error('testArkWebServiceWorkerSetSchemeHandlerReturnFalse error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testArkWebServiceWorkerSetSchemeHandlerReturnFalse end')
+        done()
+    })
+
   })
 }

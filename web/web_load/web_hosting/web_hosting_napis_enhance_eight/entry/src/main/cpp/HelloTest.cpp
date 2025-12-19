@@ -258,6 +258,42 @@ static napi_value RequestStop(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value ArkWebHttpBodyStreamAsyncReadBufLenMinValue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_LOG_INFO(LOG_APP, "ArkWebHttpBodyStreamAsyncReadBufLenMinValue start");
+    ArkWeb_HttpBodyStream* httpBodyStream = nullptr;
+    uint8_t buffer[256] = {0};
+    OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, buffer, 0);
+    OH_LOG_INFO(LOG_APP, "OH_ArkWebHttpBodyStream_AsyncRead set bufLen 0 success");
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
+static napi_value ArkWebHttpBodyStreamAsyncReadBufLenMinBoundary(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_LOG_INFO(LOG_APP, "ArkWebHttpBodyStreamAsyncReadBufLenMinBoundary start");
+    ArkWeb_HttpBodyStream* httpBodyStream = nullptr;
+    uint8_t buffer[256] = {0};
+    OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, buffer, -1);
+    OH_LOG_INFO(LOG_APP, "OH_ArkWebHttpBodyStream_AsyncRead set bufLen -1 success");
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
+static napi_value ArkWebHttpBodyStreamAsyncReadBufLenMaxBoundary(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_LOG_INFO(LOG_APP, "ArkWebHttpBodyStreamAsyncReadBufLenMaxBoundary start");
+    ArkWeb_HttpBodyStream* httpBodyStream = nullptr;
+    uint8_t buffer[256] = {0};
+    OH_ArkWebHttpBodyStream_AsyncRead(httpBodyStream, buffer, 2147483647);
+    OH_LOG_INFO(LOG_APP, "OH_ArkWebHttpBodyStream_AsyncRead set bufLen 2147483647 success");
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -272,6 +308,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"readBufferValue", nullptr, ReadBufferValue, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"threadIdEqual", nullptr, ThreadIdEqual, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"requestStop", nullptr, RequestStop, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"arkWebHttpBodyStreamAsyncReadBufLenMinValue", nullptr, ArkWebHttpBodyStreamAsyncReadBufLenMinValue, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"arkWebHttpBodyStreamAsyncReadBufLenMinBoundary", nullptr, ArkWebHttpBodyStreamAsyncReadBufLenMinBoundary, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"arkWebHttpBodyStreamAsyncReadBufLenMaxBoundary", nullptr, ArkWebHttpBodyStreamAsyncReadBufLenMaxBoundary, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

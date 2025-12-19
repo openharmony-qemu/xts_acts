@@ -205,6 +205,26 @@ static napi_value SaveCookieSync(napi_env env, napi_callback_info info)
     return resultCode;
 }
 
+static napi_value LazyInitializeWebEngineInCookieManagerSetTrue(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "LazyInitializeWebEngineInCookieManagerSetTrue  start");
+    OH_NativeArkWeb_LazyInitializeWebEngineInCookieManager(true);
+    OH_LOG_INFO(LOG_APP, "OH_NativeArkWeb_LazyInitializeWebEngineInCookieManager set true success");
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
+static napi_value LazyInitializeWebEngineInCookieManagerSetFalse(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "LazyInitializeWebEngineInCookieManagerSetFalse  start");
+    OH_NativeArkWeb_LazyInitializeWebEngineInCookieManager(false);
+    OH_LOG_INFO(LOG_APP, "LazyInitializeWebEngineInCookieManagerSetFalse set true success");
+    napi_value result;
+    napi_create_int32(env, 1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -220,6 +240,10 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"getSaveCookieAsyncCallbackResult", nullptr, GetSaveCookieAsyncCallbackResult, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"lazyInitializeWebEngineInCookieManagerSetTrue", nullptr, LazyInitializeWebEngineInCookieManagerSetTrue, nullptr,
+            nullptr, nullptr,napi_default, nullptr},
+        {"lazyInitializeWebEngineInCookieManagerSetFalse", nullptr, LazyInitializeWebEngineInCookieManagerSetFalse, nullptr,
+            nullptr, nullptr,napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
