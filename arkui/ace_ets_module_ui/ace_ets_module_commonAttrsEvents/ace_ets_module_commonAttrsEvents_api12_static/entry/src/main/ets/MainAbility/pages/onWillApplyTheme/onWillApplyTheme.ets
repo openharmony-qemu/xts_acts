@@ -72,6 +72,7 @@ import {
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors;
+  darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;

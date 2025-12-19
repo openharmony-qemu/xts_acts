@@ -15,7 +15,7 @@
  */
 
 import { SelectDialog } from '@ohos.arkui.advanced.Dialog';
-import { CustomColors, CustomTheme } from '@ohos.arkui.theme';
+import { CustomColors, CustomDarkColors, CustomTheme } from '@ohos.arkui.theme';
 import {
   Button,
   Column,
@@ -33,6 +33,7 @@ import { State } from '@ohos.arkui.stateManagement';
 
 class CustomThemeImpl implements CustomTheme {
   public colors?: CustomColors;
+  public darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;

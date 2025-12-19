@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { CustomColors, CustomTheme } from '@ohos.arkui.theme';
+import { CustomColors, CustomTheme, CustomDarkColors } from '@ohos.arkui.theme';
 import { brownThemeColors } from './customTheme/BrownCustomThemeColor';
 import { greenThemeColors } from './customTheme/GreenCustomThemeColor';
 import { redThemeColors } from './customTheme/RedCustomThemeColor';
@@ -20,6 +20,7 @@ import { systemColors } from './systemTheme/SystemColors';
 
 export class CustomThemeImpl implements CustomTheme {
   public colors?: CustomColors;
+  public darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;

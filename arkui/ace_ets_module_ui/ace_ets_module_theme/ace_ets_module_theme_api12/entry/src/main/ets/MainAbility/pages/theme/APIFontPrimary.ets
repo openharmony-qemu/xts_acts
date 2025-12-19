@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { CustomTheme, CustomColors, ThemeControl } from '@ohos.arkui.theme';
+import { CustomTheme, CustomColors, CustomDarkColors, ThemeControl } from '@ohos.arkui.theme';
 
 class BlueColors1 implements CustomColors {
   fontPrimary = '#FFBA1414';
@@ -38,6 +38,7 @@ class BlueColors3 implements CustomColors {
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors;
+  darkColors?: CustomDarkColors
 
   constructor(colors: CustomColors) {
     this.colors = colors;
