@@ -1230,7 +1230,7 @@ napi_value OH_AVMuxer_SetRotationNotPermit(napi_env env, napi_callback_info info
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_AUDIO_AAC);
@@ -1256,7 +1256,7 @@ napi_value OH_AVMuxer_SetFormatNotPermit(napi_env env, napi_callback_info info)
     napi_value retValue;
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
@@ -1287,7 +1287,7 @@ napi_value OH_AVMuxer_AddTrackNotPermit(napi_env env, napi_callback_info info)
     napi_value retValue;
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
@@ -1322,7 +1322,7 @@ napi_value OH_AVMuxer_StartNotPermit(napi_env env, napi_callback_info info)
     napi_value retValue;
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVErrCode result = OH_AVMuxer_Start(muxer);
 
@@ -1339,7 +1339,7 @@ napi_value OH_AVMuxer_WriteSampleNotPermit(napi_env env, napi_callback_info info
     napi_value retValue;
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
@@ -1375,7 +1375,7 @@ napi_value OH_AVMuxer_WriteSampleBufferNotPermit(napi_env env, napi_callback_inf
     napi_value retValue;
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
@@ -1411,7 +1411,7 @@ napi_value OH_AVMuxer_StopNotPermit(napi_env env, napi_callback_info info)
     napi_value retValue;
     if (muxer == nullptr) {
         napi_create_int32(env, 0, &retValue);
-        return retValue;    
+        return retValue;
     }
     OH_AVErrCode result = OH_AVMuxer_Stop(muxer);
     close(fileDescribe);
