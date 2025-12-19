@@ -91,7 +91,7 @@ napi_value StartSelfUIAbilityWithPidMultiAppNotSupport(napi_env env, napi_callba
     const char* value = "app_instance_0";
     OH_AbilityBase_SetWantCharParam(want, key, value);
     AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
-    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
     OH_AbilityBase_DestroyWant(want);
     if (ret == ABILITY_RUNTIME_ERROR_CODE_MULTI_APP_NOT_SUPPORTED) {
         napi_value napiRet;
