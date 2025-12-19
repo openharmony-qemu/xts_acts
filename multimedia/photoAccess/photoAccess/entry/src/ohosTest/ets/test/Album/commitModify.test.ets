@@ -294,12 +294,11 @@ export default function albumCommitModifyTest () {
         album.commitModify((err) => {
           console.info(`${testNum} Entering the callback`);
           if (err != undefined) {
-            console.info(`${testNum} Entering the callback, err: ${err}`);
-            expect(err.code == 13900020).assertTrue();
+            console.info(`${testNum} Entering the callback, err: ${err.code}`);
+            expect(false).assertTrue();
             done();
           } else {
             console.info(`${testNum} success`);
-            expect(true).assertTrue();
             done();
           }
         })
