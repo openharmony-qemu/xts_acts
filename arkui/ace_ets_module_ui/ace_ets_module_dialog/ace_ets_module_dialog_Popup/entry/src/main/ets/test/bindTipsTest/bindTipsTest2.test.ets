@@ -64,5 +64,48 @@ export default function bindTips2Test() {
       await Utils.sleep(5000);
       done();
     });
+
+    /**
+     * @tc.number bindTips2_0300
+     * @tc.name bindTips2_0300
+     * @tc.desc Test ArrowPointPosition
+     * @tc.level: Level 0
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it("bindTips2_0300", Level.LEVEL0, async (done: Function) => {
+      console.info('bindTips2_0300 start');
+      expect(ArrowPointPosition.START).assertEqual('Start');
+      console.info('bindTips2_0300 end');
+      done();
+    })
+    /**
+     * @tc.number bindTips2_0400
+     * @tc.name bindTips2_0400
+     * @tc.desc Test ArrowPointPosition
+     * @tc.level: Level 0
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it("bindTips2_0400", Level.LEVEL0, async (done: Function) => {
+      console.info('bindTips2_0400 start');
+      expect(ArrowPointPosition.CENTER).assertEqual('Center');
+      console.info('bindTips2_0400 end');
+      done();
+    })
+    /**
+     * @tc.number bindTips2_0500
+     * @tc.name bindTips2_0500
+     * @tc.desc Test ArrowPointPosition
+     * @tc.level: Level 0
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it("bindTips2_0500", Level.LEVEL0, async (done: Function) => {
+      console.info('bindTips2_0500 start');
+      expect(ArrowPointPosition.END).assertEqual('End');
+      console.info('bindTips2_0500 end');
+      done();
+    })
   })
 }
