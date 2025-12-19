@@ -454,46 +454,27 @@ export default function RDBErrorCode21Test() {
       async (done: () => void): Promise<void> => {
         rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
         await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
-        await rdbStore.executeSql(CREATE_TABLE_TEST1);
-        let u8 = new Uint8Array([1, 2, 3]);
-        const valueBucket: relationalStore.ValuesBucket = {
-          "name": "zhangsan",
-          "age": 16 as long,
-          "salary": 100.5,
-          "blobType": u8,
-        };
-        const valueBucket1: relationalStore.ValuesBucket = {
-          "name": "lisi",
-          "age": 16 as long,
-          "salary": 100.5,
-          "blobType": u8,
-        };
-        await rdbStore.insert("test1", valueBucket);
         let options: relationalStore.TransactionOptions = {
           transactionType: relationalStore.TransactionType.EXCLUSIVE
         }
-        const rdbTrans = await rdbStore.createTransaction(options);
+        let rdbTrans = await rdbStore.createTransaction(options);
         let predicates = new relationalStore.RdbPredicates('test1');
         predicates.equalTo("NAME", "lisi");
-
         try {
-          rdbTrans.delete(predicates).then(() => {
-            rdbTrans.rollback();
-          })
+          await rdbTrans.delete(predicates);
         } catch (err: BusinessError) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-          rdbTrans.rollback();
+          await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-
+        rdbTrans = await rdbStore.createTransaction(options);
         try {
           rdbTrans.deleteSync(predicates);
         } catch (err: BusinessError) {
           console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-          rdbTrans.rollback();
+          await rdbTrans.rollback();
           expect(err.code).assertEqual(14800021)
         }
-        await rdbStore.executeSql("DROP TABLE IF EXISTS test1");
         await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
         done();
       })
