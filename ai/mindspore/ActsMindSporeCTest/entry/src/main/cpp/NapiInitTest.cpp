@@ -411,7 +411,143 @@ static napi_value SUB_AI_MindSpore_ModelCreate(napi_env env, napi_callback_info 
             Acts::MindSpore::SUBAIMindSporeModelCreate0034, Acts::MindSpore::SUBAIMindSporeModelCreate0035,
             Acts::MindSpore::SUBAIMindSporeModelCreate0036, Acts::MindSpore::SUBAIMindSporeModelCreate0037,
             Acts::MindSpore::SUBAIMindSporeModelCreate0038, Acts::MindSpore::SUBAIMindSporeModelCreate0039,
-            Acts::MindSpore::SUBAIMindSporeModelCreate0040,
+            Acts::MindSpore::SUBAIMindSporeModelCreate0040, Acts::MindSpore::SUBAIMindSporeModelCreate0041,
+            Acts::MindSpore::SUBAIMindSporeModelCreate0042,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+
+static napi_value SUB_AI_MindSpore_ModelLoadConfig(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeModelLoadConfig0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::SUBAIMindSporeModelLoadConfig0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::SUBAIMindSporeModelLoadConfig0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::SUBAIMindSporeModelLoadConfig0004();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+
+// Other functions
+static napi_value SUB_AI_MindSpore_Covered(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeCovered0001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+static napi_value SUB_AI_MindSpore_NNRT_copy_free(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0004();
+                break;
+            case CASE_NUM_4:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0005();
+                break;
+            case CASE_NUM_5:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0006();
+                break;
+            case CASE_NUM_6:
+                result = Acts::MindSpore::SUBAIMindSporeNNRTCopyFree0007();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// CPU related functions
+static napi_value SUB_AI_MindSpore_CPU_copy_free(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = Acts::MindSpore::SUBAIMindSporeCPUCopyFree0001();
+                break;
+            case CASE_NUM_1:
+                result = Acts::MindSpore::SUBAIMindSporeCPUCopyFree0002();
+                break;
+            case CASE_NUM_2:
+                result = Acts::MindSpore::SUBAIMindSporeCPUCopyFree0003();
+                break;
+            case CASE_NUM_3:
+                result = Acts::MindSpore::SUBAIMindSporeCPUCopyFree0004();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// HIAI OfflineModel related functions
+static napi_value SUB_AI_MindSpore_HIAI_OfflineModel(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<MindSporeFn, HIAI_OFFLINEMODEL_HANDLER_COUNT> handlers = {
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0004, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0005,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0006, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0007,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0008, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0009,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0010, Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0011,
+            Acts::MindSpore::SUBAIMindSporeHIAIOfflineModel0012,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -439,6 +575,11 @@ static const napi_property_descriptor g_mindsporeDescriptors[] = {
     DECL_NAPI_DESC(SUB_AI_MindSpore_ContextCreate),
     DECL_NAPI_DESC(SUB_AI_MindSpore_ContextDestroy),
     DECL_NAPI_DESC(SUB_AI_MindSpore_ModelCreate),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_ModelLoadConfig),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_Covered),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_NNRT_copy_free),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_CPU_copy_free),
+    DECL_NAPI_DESC(SUB_AI_MindSpore_HIAI_OfflineModel),
 
 };
 

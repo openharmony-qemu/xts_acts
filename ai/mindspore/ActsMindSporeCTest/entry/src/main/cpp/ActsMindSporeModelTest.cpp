@@ -1132,5 +1132,243 @@ int SUBAIMindSporeModelCreate0040()
     return OH_AI_STATUS_SUCCESS;
 }
 
+// 两个model调用同一个context
+/**
+ * @tc.name   SUBAIMindSporeModelCreate0041
+ * @tc.number SUBAIMindSporeModelCreate0041
+ * @tc.desc   SUBAIMindSporeModelCreate0041
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeModelCreate0041()
+{
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    OH_AI_DeviceInfoHandle cpuDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+    OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
+    OHPrintf("==========OH_AI_ModelBuildFromFile==========\n");
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
+    OH_AI_Status buildRet =
+        OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
+    ASSERT_EQ(buildRet, OH_AI_STATUS_SUCCESS);
+    OH_AI_Status buildRet2 = OH_AI_ModelBuildFromFile(
+        model2, FilePath("aiy_vision_classifier_plants_V1_3.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
+    ASSERT_EQ(buildRet2, OH_AI_STATUS_LITE_PARAM_INVALID);
+    OHPrintf("==========OH_AI_ModelDestroy==========\n");
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+    OH_AI_ModelDestroy(&model2);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// OH_AI_ModelCreate同时创建3个model
+/**
+ * @tc.name   SUBAIMindSporeModelCreate0042
+ * @tc.number SUBAIMindSporeModelCreate0042
+ * @tc.desc   SUBAIMindSporeModelCreate0042
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeModelCreate0042()
+{
+    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    OH_AI_DeviceInfoHandle cpuDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+    OH_AI_ContextAddDeviceInfo(context, cpuDeviceInfo);
+    OH_AI_ContextHandle context2 = OH_AI_ContextCreate();
+    OH_AI_DeviceInfoHandle cpuDeviceInfo2 = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+    OH_AI_ContextAddDeviceInfo(context2, cpuDeviceInfo2);
+    OH_AI_ContextHandle context3 = OH_AI_ContextCreate();
+    OH_AI_DeviceInfoHandle cpuDeviceInfo3 = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_CPU);
+    OH_AI_ContextAddDeviceInfo(context3, cpuDeviceInfo3);
+    OHPrintf("==========Model Build==========\n");
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    ModelPredict(model, context, ModelPredictOptions("ml_face_isface", {}, false, true, false));
+    OHPrintf("==========Model Build2==========\n");
+    OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
+    ASSERT_NE(model2, nullptr);
+    ModelPredict(model2, context2, ModelPredictOptions("ml_face_isface_quant", {}, false, false, false));
+    OHPrintf("==========Model Build3==========\n");
+    OH_AI_ModelHandle model3 = OH_AI_ModelCreate();
+    ASSERT_NE(model3, nullptr);
+    OH_AI_ShapeInfo shapeInfos = { 4, { 1, 32, 512, 1 } };
+    ModelPredict(model3, context3, ModelPredictOptions("ml_ocr_cn", shapeInfos, false, false, false));
+    return OH_AI_STATUS_SUCCESS;
+}
+
+// 完善枚举值覆盖率
+/**
+ * @tc.name   SUBAIMindSporeCovered0001
+ * @tc.number SUBAIMindSporeCovered0001
+ * @tc.desc   SUBAIMindSporeCovered0001
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeCovered0001()
+{
+    ASSERT_EQ(OH_AI_COMPCODE_CORE, EXPECT_OH_AI_COMPCODE_CORE);
+    ASSERT_EQ(OH_AI_COMPCODE_MD, EXPECT_OH_AI_COMPCODE_MD);
+    ASSERT_EQ(OH_AI_COMPCODE_ME, EXPECT_OH_AI_COMPCODE_ME);
+    ASSERT_EQ(OH_AI_COMPCODE_MC, EXPECT_OH_AI_COMPCODE_MC);
+    ASSERT_EQ(OH_AI_COMPCODE_LITE, EXPECT_OH_AI_COMPCODE_LITE);
+
+    ASSERT_EQ(OH_AI_STATUS_CORE_FAILED, EXPECT_OH_AI_STATUS_CORE_FAILED);
+    ASSERT_EQ(OH_AI_STATUS_LITE_NO_CHANGE, EXPECT_OH_AI_STATUS_LITE_NO_CHANGE);
+    ASSERT_EQ(OH_AI_STATUS_LITE_SUCCESS_EXIT, EXPECT_OH_AI_STATUS_LITE_SUCCESS_EXIT);
+    ASSERT_EQ(OH_AI_STATUS_LITE_MEMORY_FAILED, EXPECT_OH_AI_STATUS_LITE_MEMORY_FAILED);
+    ASSERT_EQ(OH_AI_STATUS_LITE_NOT_SUPPORT, EXPECT_OH_AI_STATUS_LITE_NOT_SUPPORT);
+    ASSERT_EQ(OH_AI_STATUS_LITE_THREADPOOL_ERROR, EXPECT_OH_AI_STATUS_LITE_THREADPOOL_ERROR);
+    ASSERT_EQ(OH_AI_STATUS_LITE_UNINITIALIZED_OBJ, EXPECT_OH_AI_STATUS_LITE_UNINITIALIZED_OBJ);
+    ASSERT_EQ(OH_AI_STATUS_LITE_OUT_OF_TENSOR_RANGE, EXPECT_OH_AI_STATUS_LITE_OUT_OF_TENSOR_RANGE);
+    ASSERT_EQ(OH_AI_STATUS_LITE_REENTRANT_ERROR, EXPECT_OH_AI_STATUS_LITE_REENTRANT_ERROR);
+    ASSERT_EQ(OH_AI_STATUS_LITE_GRAPH_FILE_ERROR, EXPECT_OH_AI_STATUS_LITE_GRAPH_FILE_ERROR);
+    ASSERT_EQ(OH_AI_STATUS_LITE_NOT_FIND_OP, EXPECT_OH_AI_STATUS_LITE_NOT_FIND_OP);
+    ASSERT_EQ(OH_AI_STATUS_LITE_INVALID_OP_NAME, EXPECT_OH_AI_STATUS_LITE_INVALID_OP_NAME);
+    ASSERT_EQ(OH_AI_STATUS_LITE_INVALID_OP_ATTR, EXPECT_OH_AI_STATUS_LITE_INVALID_OP_ATTR);
+    ASSERT_EQ(OH_AI_STATUS_LITE_OP_EXECUTE_FAILURE, EXPECT_OH_AI_STATUS_LITE_OP_EXECUTE_FAILURE);
+    ASSERT_EQ(OH_AI_STATUS_LITE_FORMAT_ERROR, EXPECT_OH_AI_STATUS_LITE_FORMAT_ERROR);
+    ASSERT_EQ(OH_AI_STATUS_LITE_INFER_ERROR, EXPECT_OH_AI_STATUS_LITE_INFER_ERROR);
+    ASSERT_EQ(OH_AI_STATUS_LITE_INFER_INVALID, EXPECT_OH_AI_STATUS_LITE_INFER_INVALID);
+
+    ASSERT_EQ(OH_AI_DEVICETYPE_GPU, EXPECT_OH_AI_DEVICETYPE_GPU);
+    ASSERT_EQ(OH_AI_NNRTDEVICE_CPU, EXPECT_OH_AI_NNRTDEVICE_CPU);
+    ASSERT_EQ(OH_AI_NNRTDEVICE_GPU, EXPECT_OH_AI_NNRTDEVICE_GPU);
+    ASSERT_EQ(OH_AI_NNRTDEVICE_ACCELERATOR, EXPECT_OH_AI_NNRTDEVICE_ACCELERATOR);
+
+    ASSERT_EQ(OH_AI_KO0, EXPECT_OH_AI_KO0);
+    ASSERT_EQ(OH_AI_KO3, EXPECT_OH_AI_KO3);
+    ASSERT_EQ(OH_AI_KAUTO, EXPECT_OH_AI_KAUTO);
+    ASSERT_EQ(OH_AI_KOPTIMIZATIONTYPE, EXPECT_OH_AI_KOPTIMIZATIONTYPE);
+
+    ASSERT_EQ(OH_AI_DATATYPE_UNKNOWN, EXPECT_OH_AI_DATATYPE_UNKNOWN);
+    ASSERT_EQ(OH_AI_DATATYPE_OBJECTTYPE_STRING, EXPECT_OH_AI_DATATYPE_OBJECTTYPE_STRING);
+    ASSERT_EQ(OH_AI_DATATYPE_OBJECTTYPE_LIST, EXPECT_OH_AI_DATATYPE_OBJECTTYPE_LIST);
+    ASSERT_EQ(OH_AI_DATATYPE_OBJECTTYPE_TUPLE, EXPECT_OH_AI_DATATYPE_OBJECTTYPE_TUPLE);
+    ASSERT_EQ(OH_AI_DATATYPE_OBJECTTYPE_TENSOR, EXPECT_OH_AI_DATATYPE_OBJECTTYPE_TENSOR);
+    ASSERT_EQ(OH_AI_DATATYPE_NUMBERTYPE_BEGIN, EXPECT_OH_AI_DATATYPE_NUMBERTYPE_BEGIN);
+    ASSERT_EQ(OH_AI_DATATYPE_NUMBERTYPE_END, EXPECT_OH_AI_DATATYPE_NUMBERTYPE_END);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+/**
+ * @tc.name   SUBAIMindSporeModelLoadConfig0001
+ * @tc.number SUBAIMindSporeModelLoadConfig0001
+ * @tc.desc   正常场景1：合法参数+有效配置文件 → 返回OH_AI_STATUS_SUCCESS
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeModelLoadConfig0001()
+{
+    OHPrintf("==========创建上下文与模型==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context); // 添加CPU设备支持
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OHPrintf("==========加载合法配置文件==========\n");
+    // 测试目标：加载存在且格式正确的配置文件
+    OH_AI_Status loadStatus = OH_AI_ModelLoadConfig(model, FilePath("ml_face_isface.config").c_str());
+    ASSERT_EQ(loadStatus, OH_AI_STATUS_SUCCESS);
+    // 从文件加载模型
+    OHPrintf("==========从文件加载模型==========\n");
+    auto status =
+        OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    OHPrintf("==========GetInputs==========\n");
+    OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
+    ASSERT_NE(inputs.handle_list, nullptr);
+    FillInputsData(inputs, "ml_face_isface", true);
+    OHPrintf("==========Model Predict==========\n");
+    OH_AI_TensorHandleArray outputs;
+    OH_AI_Status predictRet = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
+    ASSERT_EQ(predictRet, OH_AI_STATUS_SUCCESS);
+    OHPrintf("==========CompareResult==========\n");
+    CompareResult(outputs, "ml_face_isface");
+    // 资源释放
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+/**
+ * @tc.name   SUBAIMindSporeModelLoadConfig0002
+ * @tc.number SUBAIMindSporeModelLoadConfig0002
+ * @tc.desc   异常场景1：config_file_path为nullptr → 返回OH_AI_STATUS_LITE_NULLPTR
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeModelLoadConfig0002()
+{
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OH_AI_Status loadStatus = OH_AI_ModelLoadConfig(model, nullptr);
+    std::cout << "loadStatus is " << loadStatus << std::endl;
+    ASSERT_EQ(loadStatus, OH_AI_STATUS_LITE_NULLPTR);
+    OH_AI_Status loadStatus01 = OH_AI_ModelLoadConfig(nullptr, FilePath("ml_face_isface.config").c_str());
+    std::cout << "loadStatus is " << loadStatus01 << std::endl;
+    ASSERT_EQ(loadStatus01, OH_AI_STATUS_LITE_NULLPTR);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+/**
+ * @tc.name   SUBAIMindSporeModelLoadConfig0003
+ * @tc.number SUBAIMindSporeModelLoadConfig0003
+ * @tc.desc   异常场景2：配置文件不存在 → 必须返回非SUCCESS且非NULLPTR
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeModelLoadConfig0003()
+{
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OH_AI_Status loadStatus = OH_AI_ModelLoadConfig(model, FilePath("not_exist.config").c_str()); // 不存在
+    std::cout << "loadStatus is " << loadStatus << std::endl;
+    // 修正：同时断言非SUCCESS和非NULLPTR，确保错误被检测
+    ASSERT_NE(loadStatus, OH_AI_STATUS_SUCCESS);
+    ASSERT_NE(loadStatus, OH_AI_STATUS_LITE_NULLPTR);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+    return OH_AI_STATUS_SUCCESS;
+}
+
+/**
+ * @tc.name   SUBAIMindSporeModelLoadConfig0004
+ * @tc.number SUBAIMindSporeModelLoadConfig0004
+ * @tc.desc   异常场景3：配置内容无效（如不支持的数据类型）→ 返回SUCCESS
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+int SUBAIMindSporeModelLoadConfig0004()
+{
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    OH_AI_Status loadStatus = OH_AI_ModelLoadConfig(model, FilePath("invalid_content.config").c_str()); // 内容无效
+    std::cout << "loadStatus is " << loadStatus << std::endl;
+    ASSERT_EQ(loadStatus, OH_AI_STATUS_SUCCESS);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+    return OH_AI_STATUS_SUCCESS;
+}
+
 } // namespace MindSpore
 } // namespace Acts

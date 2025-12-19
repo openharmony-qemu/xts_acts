@@ -54,6 +54,16 @@ int SUBAIMindSporeModelCreate0037();
 int SUBAIMindSporeModelCreate0038();
 int SUBAIMindSporeModelCreate0039();
 int SUBAIMindSporeModelCreate0040();
+int SUBAIMindSporeModelCreate0041();
+int SUBAIMindSporeModelCreate0042();
+
+int SUBAIMindSporeCovered0001();
+
+int SUBAIMindSporeModelLoadConfig0001();
+int SUBAIMindSporeModelLoadConfig0002();
+int SUBAIMindSporeModelLoadConfig0003();
+int SUBAIMindSporeModelLoadConfig0004();
+
 } // namespace MindSpore
 } // namespace Acts
 

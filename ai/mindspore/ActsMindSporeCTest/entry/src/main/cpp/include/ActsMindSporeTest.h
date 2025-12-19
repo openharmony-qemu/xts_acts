@@ -25,5 +25,6 @@
 #include "ActsMindSporeContextTest.h"
 #include "ActsMindSporeModelTest.h"
 #include "ActsMindSporeTrainTest.h"
+#include "ActsMindSporeNNRTTest.h"
 
 #endif // ACTSMINDSPORECTEST_ACTS_MINDSPORE_H
