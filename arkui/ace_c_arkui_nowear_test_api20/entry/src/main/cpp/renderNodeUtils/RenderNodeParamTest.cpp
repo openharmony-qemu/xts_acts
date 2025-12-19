@@ -90,21 +90,21 @@ static napi_value RenderNodeParam002(napi_env env, napi_callback_info info)
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     ArkUI_Vector2AnimatablePropertyHandle property2 =
-        OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(NUMBER_100000000, NUMBER_100000000); 
+        OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(NUMBER_100000000, NUMBER_100000000);
     auto result2 = OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(property2, &x, &y);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam002 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     ArkUI_Vector2AnimatablePropertyHandle property3 =
-        OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(NUMBER_N_100000001, NUMBER_N_100000001); 
+        OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(NUMBER_N_100000001, NUMBER_N_100000001);
     auto result3 = OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(property3, &x, &y);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam002 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
 
     ArkUI_Vector2AnimatablePropertyHandle property4 =
-        OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(NUMBER_100000001, NUMBER_100000001); 
+        OH_ArkUI_RenderNodeUtils_CreateVector2AnimatableProperty(NUMBER_100000001, NUMBER_100000001);
     auto result4 = OH_ArkUI_RenderNodeUtils_GetVector2AnimatablePropertyValue(property4, &x, &y);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam002 result1=%{public}d", result4);
@@ -122,7 +122,7 @@ static napi_value RenderNodeParam003(napi_env env, napi_callback_info info)
     auto result1 =
         OH_ArkUI_RenderNodeUtils_SetVector2AnimatablePropertyValue(property, NUMBER_N_100000000, NUMBER_N_100000000);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam003 result1=%{public}d", result1); 
+        "kkk RenderNodeParam003 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     auto result2 =
@@ -157,28 +157,28 @@ static napi_value RenderNodeParam004(napi_env env, napi_callback_info info)
 
     auto result1 = OH_ArkUI_RenderNodeUtils_SetBorderWidth(rsNodeRoot, widthOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam004 result1=%{public}d", result1); 
+        "kkk RenderNodeParam004 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth(widthOption, NUMBER_100000000,
         ArkUI_EdgeDirection::ARKUI_EDGE_DIRECTION_ALL);
     auto result2 = OH_ArkUI_RenderNodeUtils_SetBorderWidth(rsNodeRoot, widthOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam004 result2=%{public}d", result2); 
+        "kkk RenderNodeParam004 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth(widthOption, NUMBER_N_100000001,
         ArkUI_EdgeDirection::ARKUI_EDGE_DIRECTION_ALL);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetBorderWidth(rsNodeRoot, widthOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam004 result3=%{public}d", result3); 
+        "kkk RenderNodeParam004 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderWidthOptionEdgeWidth(widthOption, NUMBER_100000001,
         ArkUI_EdgeDirection::ARKUI_EDGE_DIRECTION_ALL);
     auto result4 = OH_ArkUI_RenderNodeUtils_SetBorderWidth(rsNodeRoot, widthOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam004 result4=%{public}d", result4); 
+        "kkk RenderNodeParam004 result4=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
@@ -195,21 +195,21 @@ static napi_value RenderNodeParam005(napi_env env, napi_callback_info info)
 
     auto result1 = OH_ArkUI_RenderNodeUtils_SetBorderColor(rsNodeRoot, colorOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam005 result1=%{public}d", result1); 
+        "kkk RenderNodeParam005 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor(colorOption, NUMBER_2147483647,
         ArkUI_EdgeDirection::ARKUI_EDGE_DIRECTION_ALL);
     auto result2 = OH_ArkUI_RenderNodeUtils_SetBorderColor(rsNodeRoot, colorOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam005 result2=%{public}d", result2); 
+        "kkk RenderNodeParam005 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderColorOptionEdgeColor(colorOption, NUMBER_2147483648,
         ArkUI_EdgeDirection::ARKUI_EDGE_DIRECTION_ALL);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetBorderColor(rsNodeRoot, colorOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam005 result3=%{public}d", result3); 
+        "kkk RenderNodeParam005 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
@@ -225,21 +225,21 @@ static napi_value RenderNodeParam006(napi_env env, napi_callback_info info)
         ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_LEFT);
     auto result1 = OH_ArkUI_RenderNodeUtils_SetBorderRadius(rsNodeRoot, radiusOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam006 result1=%{public}d", result1); 
+        "kkk RenderNodeParam006 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_2147483647,
         ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_LEFT);
     auto result2 = OH_ArkUI_RenderNodeUtils_SetBorderRadius(rsNodeRoot, radiusOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam006 result2=%{public}d", result2); 
+        "kkk RenderNodeParam006 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetNodeBorderRadiusOptionCornerRadius(radiusOption, NUMBER_2147483648,
         ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_TOP_LEFT);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetBorderRadius(rsNodeRoot, radiusOption);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam006 result3=%{public}d", result3); 
+        "kkk RenderNodeParam006 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
@@ -255,28 +255,28 @@ static napi_value RenderNodeParam007(napi_env env, napi_callback_info info)
     auto rectMask1 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result1 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam007 result1=%{public}d", result1); 
+        "kkk RenderNodeParam007 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX(circleShape, NUMBER_100000000);
     auto rectMask2 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask2);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam007 result2=%{public}d", result2); 
+        "kkk RenderNodeParam007 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX(circleShape, NUMBER_N_100000001);
     auto rectMask3 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask3);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam007 result3=%{public}d", result3); 
+        "kkk RenderNodeParam007 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterX(circleShape, NUMBER_100000001);
     auto rectMask4 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result4 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask4);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam007 result4=%{public}d", result4); 
+        "kkk RenderNodeParam007 result4=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
@@ -292,28 +292,28 @@ static napi_value RenderNodeParam008(napi_env env, napi_callback_info info)
     auto rectMask1 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result1 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam008 result1=%{public}d", result1); 
+        "kkk RenderNodeParam008 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY(circleShape, NUMBER_100000000);
     auto rectMask2 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask2);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam008 result2=%{public}d", result2); 
+        "kkk RenderNodeParam008 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY(circleShape, NUMBER_N_100000001);
     auto rectMask3 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask3);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam008 result3=%{public}d", result3); 
+        "kkk RenderNodeParam008 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionCenterY(circleShape, NUMBER_100000001);
     auto rectMask4 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result4 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask4);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam008 result4=%{public}d", result4); 
+        "kkk RenderNodeParam008 result4=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
@@ -329,28 +329,28 @@ static napi_value RenderNodeParam009(napi_env env, napi_callback_info info)
     auto rectMask1 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result1 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam009 result1=%{public}d", result1); 
+        "kkk RenderNodeParam009 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius(circleShape, NUMBER_N_1);
     auto rectMask2 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask2);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam009 result2=%{public}d", result2); 
+        "kkk RenderNodeParam009 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius(circleShape, NUMBER_100000000);
     auto rectMask3 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask3);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam009 result3=%{public}d", result3); 
+        "kkk RenderNodeParam009 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_RenderNodeUtils_SetCircleShapeOptionRadius(circleShape, NUMBER_100000001);
     auto rectMask4 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromCircleShape(circleShape);
     auto result4 = OH_ArkUI_RenderNodeUtils_SetMask(rsNodeRoot, rectMask4);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam009 result4=%{public}d", result4); 
+        "kkk RenderNodeParam009 result4=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
@@ -359,7 +359,7 @@ static napi_value RenderNodeParam010(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     auto rsNodeRoot = OH_ArkUI_RenderNodeUtils_CreateNode();
-    auto roundShape = OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption();  
+    auto roundShape = OH_ArkUI_RenderNodeUtils_CreateRoundRectShapeOption();
     OH_ArkUI_RenderNodeUtils_SetRoundRectShapeOptionCornerXY(roundShape, NUMBER_N_100000000, NUMBER_N_100000000,
         ArkUI_CornerDirection::ARKUI_CORNER_DIRECTION_ALL);
     auto rectMask1 = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRoundRectShape(roundShape);
@@ -696,7 +696,7 @@ static napi_value RenderNodeParam022(napi_env env, napi_callback_info info)
     
     auto result4 = OH_ArkUI_RenderNodeUtils_SetRotation(rsNode, NUMBER_1000001, NUMBER_1000001, NUMBER_1000001);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam022 result4=%{public}d", result4); 
+        "kkk RenderNodeParam022 result4=%{public}d", result4);
     ASSERT_EQ(result4, ARKUI_ERROR_CODE_NO_ERROR);
     
     NAPI_END;
@@ -744,7 +744,7 @@ static napi_value RenderNodeParam024(napi_env env, napi_callback_info info)
 
     auto result3 = OH_ArkUI_RenderNodeUtils_SetShadowOffset(rsNode, NUMBER_N_100000001, NUMBER_N_100000001);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam024 result3=%{public}d", result3); 
+        "kkk RenderNodeParam024 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
     
     auto result4 = OH_ArkUI_RenderNodeUtils_SetShadowOffset(rsNode, NUMBER_100000001, NUMBER_100000001);
@@ -948,7 +948,7 @@ static napi_value RenderNodeParam031(napi_env env, napi_callback_info info)
     auto rsNode = OH_ArkUI_RenderNodeUtils_CreateNode();
     OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom, rsNode);
     
-    ArkUI_FloatPropertyHandle property = OH_ArkUI_RenderNodeUtils_CreateFloatProperty(0.5f); 
+    ArkUI_FloatPropertyHandle property = OH_ArkUI_RenderNodeUtils_CreateFloatProperty(0.5f);
     auto result1 = OH_ArkUI_RenderNodeUtils_SetFloatPropertyValue(property, NUMBER_N_100000000);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam031 result1=%{public}d", result1);
@@ -996,7 +996,7 @@ static napi_value RenderNodeParam032(napi_env env, napi_callback_info info)
         OH_ArkUI_RenderNodeUtils_CreateVector2Property(NUMBER_N_100000001, NUMBER_N_100000001);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetVector2PropertyValue(property3, NUMBER_N_100000001, NUMBER_N_100000001);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam032 result3=%{public}d", result3);   
+        "kkk RenderNodeParam032 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
     
     ArkUI_Vector2PropertyHandle property4 =
@@ -1030,7 +1030,7 @@ static napi_value RenderNodeParam033(napi_env env, napi_callback_info info)
     ArkUI_ColorPropertyHandle property3 = OH_ArkUI_RenderNodeUtils_CreateColorProperty(NUMBER_2147483648);
     auto result3 = OH_ArkUI_RenderNodeUtils_SetColorPropertyValue(property3, NUMBER_2147483648);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "kkk RenderNodeParam033 result3=%{public}d", result3); 
+        "kkk RenderNodeParam033 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
     
     NAPI_END;
