@@ -15,8 +15,7 @@
 
 #include "napi/native_api.h"
 #include <js_native_api.h>
-#include <string.h>
-#include "CameraSessionNdkTEST.h"
+#include "CameraSessionNdkTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
