@@ -16,6 +16,7 @@
 #include "renderNode/RenderNodeAttributeTest.cpp"
 #include "renderNode/RenderNodeTest.cpp"
 #include "renderNodeUtils/renderNodeUtils.cpp"
+#include "renderNodeUtils/RenderNodeParamTest.cpp"
 
 namespace ArkUICapiTest
 {
