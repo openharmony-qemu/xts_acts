@@ -66,3 +66,7 @@ export const testGridLayoutOptions003: () => number;
 export const testGridLayoutOptions004: () => number;
 export const TestRegisterGetIrregularSizeByIndexCallback001: () => number;
 export const TestRegisterGetRectByIndexCallback001: () => number;
+export const testSwiperParam001: () => number;
+export const testSwiperParam002: () => number;
+export const testSwiperParam003: () => number;
+export const testSwiperParam004: () => number;

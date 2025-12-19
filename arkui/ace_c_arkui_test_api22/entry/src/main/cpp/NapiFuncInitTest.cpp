@@ -21,6 +21,7 @@
 #include "InteractiveFramework/NativeNodeExtentedBooleanTest.cpp"
 #include "InteractiveFramework/LongPressGestureTest.h"
 #include "grid/GridAttrsTest.h"
+#include "swiper/SwiperParamTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -138,6 +139,14 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestRegisterGetIrregularSizeByIndexCallback001", nullptr, TestRegisterGetIrregularSizeByIndexCallback001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testSwiperParam001", nullptr, SwiperParamTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testSwiperParam002", nullptr, SwiperFontWeightEnumeratedTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testSwiperParam003", nullptr, SwiperSelectedFontEnumeratedTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testSwiperParam004", nullptr, SetMaxDisplayCountParamTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr}, 
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
