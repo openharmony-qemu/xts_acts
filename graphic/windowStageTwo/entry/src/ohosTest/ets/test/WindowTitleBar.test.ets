@@ -2442,7 +2442,7 @@ export default function windowTitleBarTest() {
       let caseName = "testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen";
       console.log(caseName + "begin");
       let mainWindow = windowStage.getMainWindowSync();
-      let windowStageStart:Window.WindowStage|undefined = undefined
+      let windowStageStart:window.WindowStage|undefined = undefined
       let test = true;
       let driver = Driver.create();
       let options: StartOptions = {
