@@ -97,12 +97,12 @@ export default function assetGetCountTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0200
-     * @tc.name      : getCount_callback_002
-     * @tc.desc      : getCount with system album assets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0200
+     * @tc.name   getCount_callback_002
+     * @tc.desc   getCount with system album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getCount_callback_002', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getCount_callback_002';
@@ -137,12 +137,12 @@ export default function assetGetCountTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0300
-     * @tc.name      : getCount_callback_003
-     * @tc.desc      : getCount with user album assets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0300
+     * @tc.name   getCount_callback_003
+     * @tc.desc   getCount with user album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getCount_callback_003', Level.LEVEL0, async (done:Function)=> {
       const testNum: string = 'getCount_callback_003';
@@ -166,12 +166,12 @@ export default function assetGetCountTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0400
-     * @tc.name      : getCount_callback_004
-     * @tc.desc      : getCount with deleted user album assets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0400
+     * @tc.name   getCount_callback_004
+     * @tc.desc   getCount with deleted user album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getCount_callback_004', Level.LEVEL0, async (done:Function)=> {
       const testNum: string = 'getCount_callback_004';
@@ -196,12 +196,12 @@ export default function assetGetCountTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0500
-     * @tc.name      : getCount_callback_005
-     * @tc.desc      : getCount with source album assets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0500
+     * @tc.name   getCount_callback_005
+     * @tc.desc   getCount with source album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getCount_callback_005', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getCount_callback_005';
