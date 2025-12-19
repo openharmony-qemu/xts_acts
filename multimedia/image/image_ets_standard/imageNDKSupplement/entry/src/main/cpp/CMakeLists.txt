@@ -39,7 +39,8 @@ add_library(imageEffect SHARED
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
     OHPixelMapSupplementTest.cpp
-    ImageSourceTest.cpp)
+    ImageSourceTest.cpp
+    ImageNdkErrCodeTest.cpp)
 
 find_library(
     # Sets the name of the path variable.

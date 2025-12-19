@@ -33,6 +33,7 @@ import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
 import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
+import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -56,4 +57,5 @@ export default function testsuite() {
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
   OHPixelMapSupplementTest();
+  IRNdkErrCode();
 }

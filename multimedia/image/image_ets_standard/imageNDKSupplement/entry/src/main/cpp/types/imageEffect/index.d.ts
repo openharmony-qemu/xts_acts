@@ -158,5 +158,6 @@ export const OHImageEffectInsertFilterSupplement:() => undefined;
 export const OHImageEffectReplaceFilterSupplement:() => undefined;
 export const OHImageEffectGetFilterSupplement:() => undefined;
 export const OHImageEffectSetInputTextureSupp:(a: number) => number;
+export const OHIRNdkErrCodeTestSupp:(a: number) => number;
 export const IRNdkErrCodeSupplement:(a: number) => number;
 export const OIRNdkErrCodeEmuSupp:(a: number) => number;
