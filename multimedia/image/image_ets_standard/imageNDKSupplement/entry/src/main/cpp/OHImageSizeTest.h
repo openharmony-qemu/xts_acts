@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #ifndef OHIMAGEEFFECTNDK_OHIMAGESIZETEST_H
 #define OHIMAGEEFFECTNDK_OHIMAGESIZETEST_H
 #include "napi/native_api.h"

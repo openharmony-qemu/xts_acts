@@ -18,7 +18,6 @@ import { JSON } from '@kit.ArkTS';
 const EFFECT_ERROR_PARAM_INVALID = 401;
 const CASE_INDEX_1 = 1;
 const TAG = 'OHImageEffectRestoreSupp';
-
 export default function OHImageEffectRestoreTest() {
   describe('OHImageEffectRestoreTest', () => {
     beforeAll(() => {

@@ -30,7 +30,6 @@ const CASE_INDEX_4 = 4;
 const CASE_INDEX_5 = 5;
 const TAG = 'OHPixelmapNativeCreatePixelmapNativeSupp';
 let fdNumber: number;
-
 async function getFd(path: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   console.info(TAG, 'get testContext success',context);

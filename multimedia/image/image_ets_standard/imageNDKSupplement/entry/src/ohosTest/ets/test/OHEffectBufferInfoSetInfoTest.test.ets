@@ -25,7 +25,6 @@ const CASE_INDEX_3 = 3;
 const CASE_INDEX_4 = 4;
 const CASE_INDEX_5 = 5;
 const TAG = 'OHEffectBufferInfoSetInfoTestTestSupp';
-
 export default function OHEffectBufferInfoSetInfoTest() {
   describe('OHEffectBufferInfoSetInfoTest', () => {
     beforeAll(() => {

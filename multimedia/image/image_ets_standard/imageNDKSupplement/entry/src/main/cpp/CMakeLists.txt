@@ -13,7 +13,6 @@ include_directories(
     ${NATIVERENDER_ROOT_PATH}/include
     ${NATIVERENDER_ROOT_PATH}/utils
 )
-
 add_library(imageEffect SHARED
     napi_init.cpp
     utils/CommonUtilsTest.cpp

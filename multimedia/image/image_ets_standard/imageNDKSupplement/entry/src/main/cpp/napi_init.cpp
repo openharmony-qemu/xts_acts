@@ -41,7 +41,6 @@
 #include "OHImageSizeTest.h"
 #include "OHPixelmapNativeCreatePixelmapNativeTest.h"
 #include "ImageResultIRNdkErrCodeTest.h"
-
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 

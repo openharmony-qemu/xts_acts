@@ -37,7 +37,6 @@ const CASE_INDEX_16 = 16;
 const CASE_INDEX_17 = 17;
 const CASE_INDEX_18 = 18;
 const TAG = 'ImageResultIRNdkErrCodeSupp';
-
 export default function ImageResultIRNdkErrCodeTest() {
   describe('ImageResultIRNdkErrCodeTest', () => {
     beforeAll(() => {

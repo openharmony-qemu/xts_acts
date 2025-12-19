@@ -29,7 +29,6 @@ interface pixelMapPots {
   alphaType: number,
   scaleMode: number
 }
-
 export const packToData: (a: image.ImagePacker, b: image.ImageSource | image.PixelMap,
   c: image.PackingOption | PackingOption_format | PackingOption_quality) => number;
 export const OHImageEffectCreateSupp: (a: number) => number;

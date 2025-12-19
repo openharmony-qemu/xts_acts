@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #include "OHPixelmapNativeCreatePixelmapNativeTest.h"
 #include <cstdlib>
 #include <hilog/log.h>
@@ -63,7 +62,8 @@
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 
 
-napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_info info) {
+napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -113,7 +113,8 @@ napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_
     napi_create_int32(env, code, &result);
     return result;
 }
-napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info info) {
+napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);

@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #include "OHImageSizeTest.h"
 #include <cstdlib>
 #include <hilog/log.h>
@@ -63,7 +62,8 @@
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))   
 
 
-napi_value OHImageSizeTest(napi_env env, napi_callback_info info) {
+napi_value OHImageSizeTest(napi_env env, napi_callback_info info)
+{
     size_t argc = 2;
     napi_value args[2] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);

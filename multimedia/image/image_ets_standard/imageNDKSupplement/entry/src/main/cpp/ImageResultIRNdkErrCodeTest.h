@@ -19,6 +19,7 @@
 extern "C" {
 #endif
 napi_value ImageResultIRNdkErrCodeTest(napi_env env, napi_callback_info info);
+
 #ifdef __cplusplus
 }
 #endif

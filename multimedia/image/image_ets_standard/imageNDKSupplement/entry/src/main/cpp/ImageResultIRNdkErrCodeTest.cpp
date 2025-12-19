@@ -63,7 +63,6 @@
 #define IMAGE_EFFECT_1080 1080
 #define IMAGE_EFFECT_1920 1920
 #define IMAGE_EFFECT_4090 4090
-#define IMAGE_EFFECT_5120 5120
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
 napi_value ImageResultIRNdkErrCodeTest(napi_env env, napi_callback_info info)
