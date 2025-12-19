@@ -1065,7 +1065,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsComplexMultipleCalls, Function | S
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1200
  * @tc.desc   test for testRegionIsEmptyNormal
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNormal, Function | SmallTest | Level0) {
@@ -1091,7 +1091,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNormal, Function | SmallTest 
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1201
  * @tc.desc   test for testRegionIsEmptyNull
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNull, Function | SmallTest | Level3) {
@@ -1112,7 +1112,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNull, Function | SmallTest | 
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1202
  * @tc.desc   test for testRegionIsEmptyMultipleCalls
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyMultipleCalls, Function | SmallTest | Level3) {
@@ -1136,7 +1136,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyMultipleCalls, Function | Sma
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1300
  * @tc.desc   test for testRegionIsRectNormal
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionIsRectNormal, Function | SmallTest | Level0) {
@@ -1171,7 +1171,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsRectNormal, Function | SmallTest |
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1301
  * @tc.desc   test for testRegionIsRectNull
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionIsRectNull, Function | SmallTest | Level0) {
@@ -1192,7 +1192,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionIsRectNull, Function | SmallTest | L
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1302
  * @tc.desc   test for testRegionIsRectMultipleCalls
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionIsRectMultipleCalls, Function | SmallTest | Level3) {
@@ -1237,7 +1237,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNormal, Function | Smal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1401
  * @tc.desc   test for testRegionQuickContainsNull
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNull, Function | SmallTest | Level3) {
@@ -1274,7 +1274,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNull, Function | SmallT
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1402
  * @tc.desc   test for testRegionQuickContainsMultipleCalls
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsMultipleCalls, Function | SmallTest | Level3) {
@@ -1298,7 +1298,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsMultipleCalls, Function
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1500
  * @tc.desc   test for testRegionTranslateNormal
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNormal, Function | SmallTest | Level0) {
@@ -1322,7 +1322,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNormal, Function | SmallTes
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1501
  * @tc.desc   test for testRegionTranslateNull
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNull, Function | SmallTest | Level3) {
@@ -1346,7 +1346,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNull, Function | SmallTest 
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1502
  * @tc.desc   test for testRegionTranslateMultipleCalls
  * @tc.type   FUNCTION
- * @tc.size   SMALLTEST 
+ * @tc.size   SMALLTEST
  * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRegionTest, testRegionTranslateMultipleCalls, Function | SmallTest | Level3) {
