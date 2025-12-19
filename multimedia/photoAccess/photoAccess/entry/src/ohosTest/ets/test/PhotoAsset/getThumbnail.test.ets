@@ -682,8 +682,13 @@ export default function getThumbnailTest() {
       const title = 'getThumbnail_callback_24';
       await createMovingPhoto(testNum, testContext, title)
       const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.TITLE, title);
-      await getThumbnailCallback1(done, testNum, fetchOps);
-      expect(title == 'getThumbnail_callback_24').assertTrue();
+      try {
+        await getThumbnailCallback1(done, testNum, fetchOps);
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -870,7 +875,13 @@ export default function getThumbnailTest() {
       const expectSize: ESObject = {
         width: 128, height: 128
       };
-      await getThumbnailCallback2(done, testNum, fetchOps, size, expectSize);
+      try {
+        await getThumbnailCallback2(done, testNum, fetchOps, size, expectSize);
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
