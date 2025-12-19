@@ -4601,5 +4601,85 @@ export default function ActsWebErrorCodeListTest() {
       }
     })
 
+    /**
+     * @tc.name   testArkWebResponse_GetError_ARKWEB_NET_OK
+     * @tc.number SUB_WEB_NET_ERROR_23700
+     * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_NET_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testArkWebResponse_GetError_ARKWEB_NET_OK', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let result: number = webCode.webArkWebNetError("ARKWEB_NET_OK");
+        console.info("====>testArkWebResponse_GetError_ARKWEB_NET_OK result====", result);
+        expect(result).assertEqual(0);
+      } catch (err) {
+        expect(0).assertEqual(1);
+        console.error("====>testArkWebResponse_GetError_ARKWEB_NET_OK catch err: " + err);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT
+     * @tc.number SUB_WEB_NET_ERROR_23800
+     * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let result: number = webCode.webArkWebNetError("ARKWEB_ERR_INVALID_ARGUMENT");
+        console.info("====>testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT result====", result);
+        expect(result).assertEqual(0);
+      } catch (err) {
+        expect(0).assertEqual(1);
+        console.error("====>testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT catch err: " + err);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT
+     * @tc.number SUB_WEB_NET_ERROR_23900
+     * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let result: number = webCode.webArkWebNetError("ARKWEB_ERR_INVALID_ARGUMENT");
+        console.info("====>testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT result====", result);
+        expect(result).assertEqual(0);
+      } catch (err) {
+        expect(0).assertEqual(1);
+        console.error("====>testArkWebResponse_GetError_ARKWEB_ERR_INVALID_ARGUMENT catch err: " + err);
+      }
+      done();
+    })
+
+     /**
+      * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_CACHE_READ_FAILURE
+      * @tc.number SUB_WEB_NET_ERROR_23900
+      * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_INVALID_ARGUMENT
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it('testArkWebResponse_GetError_ARKWEB_ERR_CACHE_READ_FAILURE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+       try {
+         let result: number = webCode.webArkWebNetError("ARKWEB_ERR_CACHE_READ_FAILURE");
+         console.info("====>testArkWebResponse_GetError_ARKWEB_ERR_CACHE_READ_FAILURE result====", result);
+         expect(result).assertEqual(0);
+       } catch (err) {
+         expect(0).assertEqual(1);
+         console.error("====>testArkWebResponse_GetError_ARKWEB_ERR_CACHE_READ_FAILURE catch err: " + err);
+       }
+       done();
+     })
+
   })
 }
