@@ -59,7 +59,7 @@ export default function Bgde_Policy_APITest() {
     beforeEach(async (): Promise<void> => {
       console.info("Bgde_Policy_APITest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/Common/backgroundBlurStyle/backgroundBlurStyleOptions/Policy",
+        url: "MainAbility/pages/Common/BackgroundEffect/BackgroundEffectOptions/Policy",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

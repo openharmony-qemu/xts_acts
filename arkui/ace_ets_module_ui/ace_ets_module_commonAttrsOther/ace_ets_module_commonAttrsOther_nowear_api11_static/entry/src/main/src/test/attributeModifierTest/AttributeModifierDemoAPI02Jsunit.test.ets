@@ -56,7 +56,7 @@ export default function AttributeModifierDemoAPI02Jsunit() {
           console.info("get AttributeModifierDemoAPI02Jsunit state pages.name:" + JSON.stringify(pages.name));
           console.log('test router is oK')
           routerInstance.pushUrl(options);
-          console.log('test router is oK')
+          await CommonFunc.sleep(2000);
         }
       } catch (err: Error) {
         console.error("push AttributeModifierDemoAPI02Jsunit page error:" + err);
