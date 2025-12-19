@@ -176,12 +176,12 @@ export default function albumCommitModifyTest () {
     })
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0400
-      * @tc.name      : album_commitModify_callback_004
-      * @tc.desc      : commitModify with system album camera album
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0400
+      * @tc.name   album_commitModify_callback_004
+      * @tc.desc   commitModify with system album camera album
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('album_commitModify_callback_004', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_004';
@@ -210,12 +210,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0500
-      * @tc.name      : album_commitModify_callback_005
-      * @tc.desc      : commitModify with album albumNames to '1234'
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0500
+      * @tc.name   album_commitModify_callback_005
+      * @tc.desc   commitModify with album albumNames to '1234'
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 0
     */
     it('album_commitModify_callback_005', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_005';
@@ -248,12 +248,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0600
-      * @tc.name      : album_commitModify_callback_006
-      * @tc.desc      : commitModify with album albumNames to '?'
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0600
+      * @tc.name   album_commitModify_callback_006
+      * @tc.desc   commitModify with album albumNames to '?'
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('album_commitModify_callback_006', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_006';
@@ -280,12 +280,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0700
-      * @tc.name      : album_commitModify_callback_007
-      * @tc.desc      : commitModify with album albumNames no chang
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0700
+      * @tc.name   album_commitModify_callback_007
+      * @tc.desc   commitModify with album albumNames no chang
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 0
     */
     it('album_commitModify_callback_007', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_007';
@@ -311,12 +311,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0800
-      * @tc.name      : album_commitModify_callback_008
-      * @tc.desc      : commitModify with source album source generic album
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0800
+      * @tc.name   album_commitModify_callback_008
+      * @tc.desc   commitModify with source album source generic album
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('album_commitModify_callback_008', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_008';
@@ -346,12 +346,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0900
-      * @tc.name      : album_commitModify_callback_009
-      * @tc.desc      : commitModify with same album name
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_0900
+      * @tc.name   album_commitModify_callback_009
+      * @tc.desc   commitModify with same album name
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 2
     */
     it('album_commitModify_callback_009', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_009';
@@ -377,12 +377,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1000
-      * @tc.name      : album_commitModify_callback_010
-      * @tc.desc      : commitModify with uppercase and lowercase album name
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
+      * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1000
+      * @tc.name   album_commitModify_callback_010
+      * @tc.desc   commitModify with uppercase and lowercase album name
+      * @tc.size   MEDIUM
+      * @tc.type   Function
+      * @tc.level  Level 0
     */
     it('album_commitModify_callback_010', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_010';
@@ -409,12 +409,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1100
-      * @tc.name      : album_commitModify_callback_011
-      * @tc.desc      : commitModify with album name is '';
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1100
+      * @tc.name    album_commitModify_callback_011
+      * @tc.desc    commitModify with album name is '';
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 2
     */
     it('album_commitModify_callback_011', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_011';
@@ -440,12 +440,12 @@ export default function albumCommitModifyTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1200
-      * @tc.name      : album_commitModify_callback_012
-      * @tc.desc      : commitModify with album name lenght is 256;
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_COMMITMODIFY_1200
+      * @tc.name    album_commitModify_callback_012
+      * @tc.desc    commitModify with album name lenght is 256;
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 2
     */
     it('album_commitModify_callback_012', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'album_commitModify_callback_012';
