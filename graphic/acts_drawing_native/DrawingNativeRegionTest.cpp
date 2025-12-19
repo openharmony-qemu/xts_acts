@@ -1270,8 +1270,33 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNull, Function | SmallT
 }
 
 /**
- * @tc.name   testRegionQuickContainsMultipleCalls
+ * @tc.name   testRegionQuickContainsAbnormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1402
+ * @tc.desc   test for testRegionQuickContainsAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsAbnormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isContains = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(region, -100, 100, 100, 100, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    errorCode = OH_Drawing_RegionQuickContains(region, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickContainsMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1403
  * @tc.desc   test for testRegionQuickContainsMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -1359,8 +1384,33 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectNull, Function | SmallTes
 }
 
 /**
- * @tc.name   testRegionQuickRejectMultipleCalls
+ * @tc.name   testRegionQuickRejectAbnormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1502
+ * @tc.desc   test for testRegionQuickRejectAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectAbnormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isReject = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickReject(region, -100, -100, 100, 100, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, true);
+    errorCode = OH_Drawing_RegionQuickReject(region, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, &isReject);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickRejectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1503
  * @tc.desc   test for testRegionQuickRejectMultipleCalls
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
