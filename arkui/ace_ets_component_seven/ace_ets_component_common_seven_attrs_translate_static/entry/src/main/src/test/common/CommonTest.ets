@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -29,7 +29,8 @@ export default class CommonTest {
    * @param testValues   : test values
    * @param functions    : [0]:executeTest, [last] checkTestResult
    */
-  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[], ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
+  static initTest(pageConfig: PageConfig, supportView: string[], testValues: TestValue[],
+    ...functions: (CallbackWithReturn | CallbackWithReturn[])[]) {
     console.log('functionsfunctions' + functions?.length)
     supportView.forEach(targetView => {
 

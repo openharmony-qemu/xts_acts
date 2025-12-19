@@ -1465,8 +1465,8 @@ struct renderFitPage {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._renderFitTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-            .commonStyleAlp(this.componentKey, this._renderFit.renderFit)
             .attributeModifier(this._renderFitAlphabetIndexerMod)
+            .commonStyleAlp(this.componentKey, this._renderFit.renderFit)
         } else if (this.targetView == 'Blank') {
           Blank()
             .backgroundColor(Color.Yellow)

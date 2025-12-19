@@ -1936,8 +1936,8 @@ struct ShadowPage {
       if (this.targetView == 'Blank') {
         Blank()
           .backgroundColor(Color.Yellow)
-          .commonStyleBlank(this.componentKey, this._shadow.shadow)
           .attributeModifier(this._shadowBlankModifier)
+          .commonStyleBlank(this.componentKey, this._shadow.shadow)
       }
       if (this.targetView == 'Checkbox') {
         Checkbox()

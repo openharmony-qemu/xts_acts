@@ -1517,8 +1517,9 @@ struct WidthPage {
     Row() {
       if (this.targetView == 'Button') {
         Button('button1')
+          .height(100)
+          .attributeModifier(this._widthButtonMod)
           .commonStyleButton(this.componentKey, this._width.width)
-          .height(100).attributeModifier(this._widthButtonMod)
       } else if (this.targetView == 'Text') {
         Text('text1').commonStyle(this.componentKey).height(100).attributeModifier(this._widthTextMod)
       } else if (this.targetView == 'AlphabetIndexer') {

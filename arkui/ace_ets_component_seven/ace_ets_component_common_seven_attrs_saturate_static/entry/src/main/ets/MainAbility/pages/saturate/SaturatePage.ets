@@ -1451,8 +1451,8 @@ struct saturatePage {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
-            .commonStyleButton(this.componentKey, this._saturate.saturate)
             .attributeModifier(this._saturateButttonMod)
+            .commonStyleButton(this.componentKey, this._saturate.saturate)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._saturateTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -34,7 +34,7 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: Int = 0;
+      let lastIndex: Int= 0;
       testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;

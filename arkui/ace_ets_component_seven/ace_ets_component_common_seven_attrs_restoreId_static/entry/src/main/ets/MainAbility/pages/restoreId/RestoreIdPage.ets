@@ -811,8 +811,8 @@ function commonStyle(this: BlankAttribute, componentKey: string): this {
   return this
 }
 
-function commonStyle(this: ButtonAttribute, componentKey: string): this {
-  this.restoreId(2)
+function commonStyleBtn(this: ButtonAttribute, componentKey: string, _restoreId: Int | undefined): this {
+  this.restoreId(_restoreId)
   this.key(componentKey)
   return this
 }
@@ -1368,7 +1368,7 @@ struct restoreIdPage {
   @State columns: number = 0;
   @State gutter: number = 0;
   @State parentComponentKey: string = '';
-  @StoragePropRef('_restoreId') restoreId: Int = 0
+  @StoragePropRef('_restoreId') _restoreId: Int = 0
 
   onPageShow() {
     console.info('restoreId page show called ')
@@ -1383,15 +1383,17 @@ struct restoreIdPage {
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
 
-  commonStyleButton(instance: CommonMethod) {
-    instance.key(this.componentKey)
-  }
+  // commonStyleButton(instance: CommonMethod) {
+  //   instance.key(this.componentKey)
+  // }
 
   build() {
     GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').applyStyles(this.commonStyleButton).attributeModifier(this._restoreIdButttonMod)
+          Button('button1')
+            .attributeModifier(this._restoreIdButttonMod)
+            .commonStyleBtn(this.componentKey, this._restoreId)
         } else if (this.targetView == 'Text') {
           Text('text1').commonStyle(this.componentKey).attributeModifier(this._restoreIdTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {

@@ -16,30 +16,190 @@
 
 import { attrsManager } from '../../common/AttrsManager'
 import router from '@ohos.router'
-import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
-  AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
-  LoadingProgress, Marquee, Navigation, Menu, $r, MenuItem, QRCode, Radio, Rating, ScrollBar, Select, MenuItemOptions,
-  Slider, Stepper, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
-  Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
-  RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, StepperItem, TextTimer, ToggleType, TextAlign,
-  GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
-  TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
-  BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
-  ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
-  GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
-  ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
-  MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
-  ProgressAttribute, QRCodeAttribute, RadioAttribute, RatingAttribute, RectAttribute, RefreshAttribute, RelativeContainerAttribute,
-  RemoteWindowAttribute, RichEditorAttribute, RichTextAttribute, RowAttribute, RowSplitAttribute, ScrollAttribute, ScrollBarAttribute,
-  SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
-  StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
-  TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
-  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,TranslateOptions,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions } from '@ohos.arkui.component'
-import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
-import { SetValue, RouterParams } from '../../common/Utils';
+import {
+  $r,
+  AlphabetIndexer,
+  AlphabetIndexerAttribute,
+  AttributeModifier,
+  Badge,
+  BadgeAttribute,
+  BadgeParamWithNumber,
+  BarState,
+  Blank,
+  BlankAttribute,
+  Button,
+  ButtonAttribute,
+  CalendarPicker,
+  CalendarPickerAttribute,
+  Canvas,
+  CanvasAttribute,
+  CanvasRenderingContext2D,
+  Checkbox,
+  CheckboxAttribute,
+  CheckboxGroup,
+  CheckboxGroupAttribute,
+  Circle,
+  CircleAttribute,
+  Color,
+  Column,
+  ColumnAttribute,
+  ColumnOptions,
+  ColumnSplit,
+  ColumnSplitAttribute,
+  Component,
+  Counter,
+  CounterAttribute,
+  DataPanel,
+  DataPanelAttribute,
+  DatePicker,
+  DatePickerAttribute,
+  Divider,
+  DividerAttribute,
+  Ellipse,
+  EllipseAttribute,
+  Entry,
+  Flex,
+  FlexAlign,
+  FlexAttribute,
+  FlowItem,
+  FlowItemAttribute,
+  ForEach,
+  FormLink,
+  FormLinkAttribute,
+  FormLinkOptions,
+  Gauge,
+  GaugeAttribute,
+  Grid,
+  GridAttribute,
+  GridCol,
+  GridColAttribute,
+  GridItem,
+  GridItemAttribute,
+  GridRow,
+  GridRowAttribute,
+  GridRowDirection,
+  HorizontalAlign,
+  Hyperlink,
+  HyperlinkAttribute,
+  Image,
+  ImageAnimator,
+  ImageAnimatorAttribute,
+  ImageAttribute,
+  ImageFit,
+  Line,
+  LineAttribute,
+  List,
+  ListAttribute,
+  ListItem,
+  ListItemAttribute,
+  ListItemGroup,
+  ListItemGroupAttribute,
+  LoadingProgress,
+  LoadingProgressAttribute,
+  Marquee,
+  MarqueeAttribute,
+  Menu,
+  MenuAttribute,
+  MenuItem,
+  MenuItemAttribute,
+  MenuItemGroup,
+  MenuItemGroupAttribute,
+  MenuItemOptions,
+  NavDestinationAttribute,
+  Navigation,
+  NavigationAttribute,
+  NavPathStack,
+  Path,
+  PathAttribute,
+  Polygon,
+  PolygonAttribute,
+  Polyline,
+  PolylineAttribute,
+  Progress,
+  ProgressAttribute,
+  ProgressType,
+  QRCode,
+  QRCodeAttribute,
+  Radio,
+  RadioAttribute,
+  Rating,
+  RatingAttribute,
+  Rect,
+  RectAttribute,
+  Refresh,
+  RefreshAttribute,
+  RelativeContainer,
+  RelativeContainerAttribute,
+  RemoteWindowAttribute,
+  RenderingContextSettings,
+  RichEditorAttribute,
+  RichTextAttribute,
+  Row,
+  RowAttribute,
+  RowSplit,
+  RowSplitAttribute,
+  Scroll,
+  ScrollAttribute,
+  ScrollBar,
+  ScrollBarAttribute,
+  Scroller,
+  Search,
+  SearchAttribute,
+  Select,
+  SelectAttribute,
+  Shape,
+  ShapeAttribute,
+  SideBarContainer,
+  SideBarContainerAttribute,
+  SideBarContainerType,
+  Slider,
+  SliderAttribute,
+  SliderStyle,
+  Span,
+  SpanAttribute,
+  Stack,
+  StackAttribute,
+  Stepper,
+  StepperAttribute,
+  StepperItem,
+  StepperItemAttribute,
+  Swiper,
+  SwiperAttribute,
+  TabContent,
+  TabContentAttribute,
+  Tabs,
+  TabsAttribute,
+  Text,
+  TextAlign,
+  TextArea,
+  TextAreaAttribute,
+  TextAttribute,
+  TextClock,
+  TextClockAttribute,
+  TextInput,
+  TextInputAttribute,
+  TextPicker,
+  TextPickerAttribute,
+  TextTimer,
+  TextTimerAttribute,
+  TimePicker,
+  TimePickerAttribute,
+  Toggle,
+  ToggleAttribute,
+  ToggleType,
+  TranslateOptions,
+  VerticalAlign,
+  VideoAttribute,
+  WaterFlow,
+  WaterFlowAttribute,
+  Web,
+  WebAttribute,
+  WebviewController,
+  WindowSceneAttribute,
+  XComponentAttribute
+} from '@ohos.arkui.component'
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
+import { RouterParams, SetValue } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
@@ -727,20 +887,21 @@ function commonStyle(this: CounterAttribute, componentKey: string): this {
 	return this
 }
 
-function commonStyleDataPanel(this: DataPanelAttribute, componentKey: string, _translate: TranslateOptions| undefined): this {
-	this.translate(_translate)
-	this.key(componentKey)
-	return this
+function commonStyleDataPanel(this: DataPanelAttribute, componentKey: string,
+  _translate: TranslateOptions | undefined): this {
+  this.translate(_translate)
+  this.key(componentKey)
+  return this
 }
 
 function commonStyle(this: DatePickerAttribute, componentKey: string): this {
-	this.key(componentKey)
-	return this
+  this.key(componentKey)
+  return this
 }
 
 function commonStyle(this: EllipseAttribute, componentKey: string): this {
-	this.key(componentKey)
-	return this
+  this.key(componentKey)
+  return this
 }
 
 function commonStyle(this: FlexAttribute, componentKey: string): this {
@@ -1087,770 +1248,794 @@ function commonStyle(this: TabContentAttribute, componentKey: string): this {
 @Entry
 @Component
 struct TranslatePage {
-	@State _translateAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()
-	@State _translateBadgeModifier: BadgeModifier = new BadgeModifier()
-	@State _translateButtonModifier: ButtonModifier = new ButtonModifier()
-	@State _translateBlankModifier: BlankModifier = new BlankModifier()
-	@State _translateCalendarPickerModifier: CalendarPickerModifier = new CalendarPickerModifier()
-	@State _translateCanvasModifier: CanvasModifier = new CanvasModifier()
-	@State _translateCheckboxModifier: CheckboxModifier = new CheckboxModifier()
-	@State _translateCheckboxGroupModifier: CheckboxGroupModifier = new CheckboxGroupModifier()
-	@State _translateCircleModifier: CircleModifier = new CircleModifier()
-	@State _translateColumnModifier: ColumnModifier = new ColumnModifier()
-	@State _translateColumnSplitModifier: ColumnSplitModifier = new ColumnSplitModifier()
-	@State _translateCounterModifier: CounterModifier = new CounterModifier()
-	@State _translateDataPanelModifier: DataPanelModifier = new DataPanelModifier()
-
-	@State _translateDatePickerModifier: DatePickerModifier = new DatePickerModifier()
-	@State _translateDividerModifier: DividerModifier = new DividerModifier()
-	@State _translateEllipseModifier: EllipseModifier = new EllipseModifier()
-	@State _translateFlexModifier: FlexModifier = new FlexModifier()
-	@State _translateFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _translateFormLinkModifier: FormLinkModifier = new FormLinkModifier()
-	@State _translateGaugeModifier: GaugeModifier = new GaugeModifier()
-	@State _translateGridModifier: GridModifier = new GridModifier()
-	@State _translateGridColModifier: GridColModifier = new GridColModifier()
-	@State _translateGridItemModifier: GridItemModifier = new GridItemModifier()
-	@State _translateGridRowModifier: GridRowModifier = new GridRowModifier()
-	@State _translateHyperlinkModifier: HyperlinkModifier = new HyperlinkModifier()
-	@State _translateImageModifier: ImageModifier = new ImageModifier()
-	@State _translateImageAnimatorModifier: ImageAnimatorModifier = new ImageAnimatorModifier()
-	@State _translateLineModifier: LineModifier = new LineModifier()
-	@State _translateListModifier: ListModifier = new ListModifier()
-	@State _translateListItemModifier: ListItemModifier = new ListItemModifier()
-	@State _translateListItemGroupModifier: ListItemGroupModifier = new ListItemGroupModifier()
-	@State _translateLoadingProgressModifier: LoadingProgressModifier = new LoadingProgressModifier()
-	@State _translateMarqueeModifier: MarqueeModifier = new MarqueeModifier()
-	@State _translateMenuModifier: MenuModifier = new MenuModifier()
-	@State _translateMenuItemModifier: MenuItemModifier = new MenuItemModifier()
-	@State _translateMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
-	@State _translateNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
-	@State _translateNavigationModifier: NavigationModifier = new NavigationModifier()
-	@State _translatePathModifier: PathModifier = new PathModifier()
-	@State _translatePolygonModifier: PolygonModifier = new PolygonModifier()
-	@State _translatePolylineModifier: PolylineModifier = new PolylineModifier()
-	@State _translateProgressModifier: ProgressModifier = new ProgressModifier()
-	@State _translateQRCodeModifier: QRCodeModifier = new QRCodeModifier()
-	@State _translateRadioModifier: RadioModifier = new RadioModifier()
-	@State _translateRatingModifier: RatingModifier = new RatingModifier()
-	@State _translateRectModifier: RectModifier = new RectModifier()
-	@State _translateRefreshModifier: RefreshModifier = new RefreshModifier()
-	@State _translateRelativeContainerModifier: RelativeContainerModifier = new RelativeContainerModifier()
-	@State _translateRemoteWindowModifier: RemoteWindowModifier = new RemoteWindowModifier()
-	@State _translateRichEditorModifier: RichEditorModifier = new RichEditorModifier()
-	@State _translateRichTextModifier: RichTextModifier = new RichTextModifier()
-	@State _translateRowModifier: RowModifier = new RowModifier()
-	@State _translateRowSplitModifier: RowSplitModifier = new RowSplitModifier()
-	@State _translateScrollModifier: ScrollModifier = new ScrollModifier()
-	@State _translateScrollBarModifier: ScrollBarModifier = new ScrollBarModifier()
-	@State _translateSearchModifier: SearchModifier = new SearchModifier()
-	@State _translateSelectModifier: SelectModifier = new SelectModifier()
-	@State _translateShapeModifier: ShapeModifier = new ShapeModifier()
-	@State _translateSideBarContainerModifier: SideBarContainerModifier = new SideBarContainerModifier()
-	@State _translateSliderModifier: SliderModifier = new SliderModifier()
-	@State _translateSpanModifier: SpanModifier = new SpanModifier()
-	@State _translateStackModifier: StackModifier = new StackModifier()
-	@State _translateStepperModifier: StepperModifier = new StepperModifier()
-	@State _translateStepperItemModifier: StepperItemModifier = new StepperItemModifier()
-	@State _translateSwiperModifier: SwiperModifier = new SwiperModifier()
-	@State _translateTabContentModifier: TabContentModifier = new TabContentModifier()
-	@State _translateTabsModifier: TabsModifier = new TabsModifier()
-	@State _translateTextModifier: TextModifier = new TextModifier()
-	@State _translateTextAreaModifier: TextAreaModifier = new TextAreaModifier()
-	@State _translateTextClockModifier: TextClockModifier = new TextClockModifier()
-	@State _translateTextInputModifier: TextInputModifier = new TextInputModifier()
-	@State _translateTextPickerModifier: TextPickerModifier = new TextPickerModifier()
-	@State _translateTextTimerModifier: TextTimerModifier = new TextTimerModifier()
-	@State _translateTimePickerModifier: TimePickerModifier = new TimePickerModifier()
-	@State _translateToggleModifier: ToggleModifier = new ToggleModifier()
-	@State _translateVideoModifier: VideoModifier = new VideoModifier()
-	@State _translateWaterFlowModifier: WaterFlowModifier = new WaterFlowModifier()
-	@State _translateWebModifier: WebModifier = new WebModifier()
-	@State _translateWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
-	@State _translateXComponentModifier: XComponentModifier = new XComponentModifier()
+  @State _translateAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()
+  @State _translateBadgeModifier: BadgeModifier = new BadgeModifier()
+  @State _translateButtonModifier: ButtonModifier = new ButtonModifier()
+  @State _translateBlankModifier: BlankModifier = new BlankModifier()
+  @State _translateCalendarPickerModifier: CalendarPickerModifier = new CalendarPickerModifier()
+  @State _translateCanvasModifier: CanvasModifier = new CanvasModifier()
+  @State _translateCheckboxModifier: CheckboxModifier = new CheckboxModifier()
+  @State _translateCheckboxGroupModifier: CheckboxGroupModifier = new CheckboxGroupModifier()
+  @State _translateCircleModifier: CircleModifier = new CircleModifier()
+  @State _translateColumnModifier: ColumnModifier = new ColumnModifier()
+  @State _translateColumnSplitModifier: ColumnSplitModifier = new ColumnSplitModifier()
+  @State _translateCounterModifier: CounterModifier = new CounterModifier()
+  @State _translateDataPanelModifier: DataPanelModifier = new DataPanelModifier()
+  @State _translateDatePickerModifier: DatePickerModifier = new DatePickerModifier()
+  @State _translateDividerModifier: DividerModifier = new DividerModifier()
+  @State _translateEllipseModifier: EllipseModifier = new EllipseModifier()
+  @State _translateFlexModifier: FlexModifier = new FlexModifier()
+  @State _translateFlowItemModifier: FlowItemModifier = new FlowItemModifier()
+  @State _translateFormLinkModifier: FormLinkModifier = new FormLinkModifier()
+  @State _translateGaugeModifier: GaugeModifier = new GaugeModifier()
+  @State _translateGridModifier: GridModifier = new GridModifier()
+  @State _translateGridColModifier: GridColModifier = new GridColModifier()
+  @State _translateGridItemModifier: GridItemModifier = new GridItemModifier()
+  @State _translateGridRowModifier: GridRowModifier = new GridRowModifier()
+  @State _translateHyperlinkModifier: HyperlinkModifier = new HyperlinkModifier()
+  @State _translateImageModifier: ImageModifier = new ImageModifier()
+  @State _translateImageAnimatorModifier: ImageAnimatorModifier = new ImageAnimatorModifier()
+  @State _translateLineModifier: LineModifier = new LineModifier()
+  @State _translateListModifier: ListModifier = new ListModifier()
+  @State _translateListItemModifier: ListItemModifier = new ListItemModifier()
+  @State _translateListItemGroupModifier: ListItemGroupModifier = new ListItemGroupModifier()
+  @State _translateLoadingProgressModifier: LoadingProgressModifier = new LoadingProgressModifier()
+  @State _translateMarqueeModifier: MarqueeModifier = new MarqueeModifier()
+  @State _translateMenuModifier: MenuModifier = new MenuModifier()
+  @State _translateMenuItemModifier: MenuItemModifier = new MenuItemModifier()
+  @State _translateMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
+  @State _translateNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
+  @State _translateNavigationModifier: NavigationModifier = new NavigationModifier()
+  @State _translatePathModifier: PathModifier = new PathModifier()
+  @State _translatePolygonModifier: PolygonModifier = new PolygonModifier()
+  @State _translatePolylineModifier: PolylineModifier = new PolylineModifier()
+  @State _translateProgressModifier: ProgressModifier = new ProgressModifier()
+  @State _translateQRCodeModifier: QRCodeModifier = new QRCodeModifier()
+  @State _translateRadioModifier: RadioModifier = new RadioModifier()
+  @State _translateRatingModifier: RatingModifier = new RatingModifier()
+  @State _translateRectModifier: RectModifier = new RectModifier()
+  @State _translateRefreshModifier: RefreshModifier = new RefreshModifier()
+  @State _translateRelativeContainerModifier: RelativeContainerModifier = new RelativeContainerModifier()
+  @State _translateRemoteWindowModifier: RemoteWindowModifier = new RemoteWindowModifier()
+  @State _translateRichEditorModifier: RichEditorModifier = new RichEditorModifier()
+  @State _translateRichTextModifier: RichTextModifier = new RichTextModifier()
+  @State _translateRowModifier: RowModifier = new RowModifier()
+  @State _translateRowSplitModifier: RowSplitModifier = new RowSplitModifier()
+  @State _translateScrollModifier: ScrollModifier = new ScrollModifier()
+  @State _translateScrollBarModifier: ScrollBarModifier = new ScrollBarModifier()
+  @State _translateSearchModifier: SearchModifier = new SearchModifier()
+  @State _translateSelectModifier: SelectModifier = new SelectModifier()
+  @State _translateShapeModifier: ShapeModifier = new ShapeModifier()
+  @State _translateSideBarContainerModifier: SideBarContainerModifier = new SideBarContainerModifier()
+  @State _translateSliderModifier: SliderModifier = new SliderModifier()
+  @State _translateSpanModifier: SpanModifier = new SpanModifier()
+  @State _translateStackModifier: StackModifier = new StackModifier()
+  @State _translateStepperModifier: StepperModifier = new StepperModifier()
+  @State _translateStepperItemModifier: StepperItemModifier = new StepperItemModifier()
+  @State _translateSwiperModifier: SwiperModifier = new SwiperModifier()
+  @State _translateTabContentModifier: TabContentModifier = new TabContentModifier()
+  @State _translateTabsModifier: TabsModifier = new TabsModifier()
+  @State _translateTextModifier: TextModifier = new TextModifier()
+  @State _translateTextAreaModifier: TextAreaModifier = new TextAreaModifier()
+  @State _translateTextClockModifier: TextClockModifier = new TextClockModifier()
+  @State _translateTextInputModifier: TextInputModifier = new TextInputModifier()
+  @State _translateTextPickerModifier: TextPickerModifier = new TextPickerModifier()
+  @State _translateTextTimerModifier: TextTimerModifier = new TextTimerModifier()
+  @State _translateTimePickerModifier: TimePickerModifier = new TimePickerModifier()
+  @State _translateToggleModifier: ToggleModifier = new ToggleModifier()
+  @State _translateVideoModifier: VideoModifier = new VideoModifier()
+  @State _translateWaterFlowModifier: WaterFlowModifier = new WaterFlowModifier()
+  @State _translateWebModifier: WebModifier = new WebModifier()
+  @State _translateWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
+  @State _translateXComponentModifier: XComponentModifier = new XComponentModifier()
   @State targetView: string = '';
   @State componentKey: string = '';
   @State parentWidth: number = 0;
   @State parentHeight: number = 0;
-  @State columns: number =  0
-  @State gutter: number =  0
-  @State parentBackGroundColor: string =  '#FFFF00'
-  @State parentComponentKey: string =  '';
-	@StoragePropRef('_translateObj') _translate: SetValue = {
-	height: 0, translate: { x: 0, y: 0, z: 0}
-}
+  @State columns: number = 0
+  @State gutter: number = 0
+  @State parentBackGroundColor: string = '#FFFF00'
+  @State parentComponentKey: string = '';
+  @StoragePropRef('_translateObj') _translate: SetValue = {
+    height: 0, translate: { x: 0, y: 0, z: 0 }
+  }
 
-	onPageShow() {
-		console.info('translate translate page show called ')
-		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
-			.getElement("view")
-		this.targetView = viewElement.getString("targetView")
-		this.componentKey = viewElement.getString("componentKey")
-		this.parentWidth = viewElement.getDouble("parentWidth")
-		this.parentHeight = viewElement.getDouble("parentHeight")
-		this.columns = viewElement.getDouble("columns")
-		this.gutter = viewElement.getDouble("gutter")
-		this.parentComponentKey = viewElement.getString("parentComponentKey")
-		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
-	}
+  onPageShow() {
+    console.info('translate translate page show called ')
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+      .getElement("view")
+    this.targetView = viewElement.getString("targetView")
+    this.componentKey = viewElement.getString("componentKey")
+    this.parentWidth = viewElement.getDouble("parentWidth")
+    this.parentHeight = viewElement.getDouble("parentHeight")
+    this.columns = viewElement.getDouble("columns")
+    this.gutter = viewElement.getDouble("gutter")
+    this.parentComponentKey = viewElement.getString("parentComponentKey")
+    this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
+  }
 
-
-	build() {
-		Column() {
-			if (this.targetView == 'AlphabetIndexer') {
-				AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateAlphabetIndexerModifier)
-			}
-			if (this.targetView == 'Button') {
-				Button('button1')
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateButtonModifier)
-			}
-			if (this.targetView == 'Blank') {
-				Blank()
-					.backgroundColor(Color.Yellow)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateBlankModifier)
-			}
-			if (this.targetView == 'Checkbox') {
-				Checkbox()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateCheckboxModifier)
-			}
-			if (this.targetView == 'CheckboxGroup') {
-				CheckboxGroup({ group: 'checkboxGroup' })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateCheckboxGroupModifier)
-			}
-			if (this.targetView == 'DataPanel') {
-				DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-					.commonStyleDataPanel(this.componentKey, this._translate.translate)
-					.attributeModifier(this._translateDataPanelModifier)
-			}
-			if (this.targetView == 'DatePicker') {
-				DatePicker({ start: new Date('1970-1-1'), end: new Date('2100-1-1') })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateDatePickerModifier)
-			}
-			if (this.targetView == 'Divider') {
-				Divider()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateDividerModifier)
-			}
-			if (this.targetView == 'Gauge') {
-				Gauge({ value: 105 })
-					.colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateGaugeModifier)
-			}
-			if (this.targetView == 'Image') {
-				Image($r('app.media.icon'))
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateImageModifier)
-			}
-			if (this.targetView == 'ImageAnimator') {
-				ImageAnimator()
-					.images([{ src: $r('app.media.icon') }])
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateImageAnimatorModifier)
-			}
-			if (this.targetView == 'LoadingProgress') {
-				LoadingProgress()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateLoadingProgressModifier)
-			}
-			if (this.targetView == 'Marquee') {
-				Marquee({ 
-					start: true,
-					step: 50,
-					loop: Infinity as Int,
-					fromStart: true,
-					src: 'Running Marquee starts rolling'
-				})
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateMarqueeModifier)
-			}
-			if (this.targetView == 'Navigation') {
+  build() {
+    Column() {
+      if (this.targetView == 'AlphabetIndexer') {
+        AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateAlphabetIndexerModifier)
+      }
+      if (this.targetView == 'Button') {
+        Button('button1')
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateButtonModifier)
+      }
+      if (this.targetView == 'Blank') {
+        Blank()
+          .backgroundColor(Color.Yellow)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateBlankModifier)
+      }
+      if (this.targetView == 'Checkbox') {
+        Checkbox()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateCheckboxModifier)
+      }
+      if (this.targetView == 'CheckboxGroup') {
+        CheckboxGroup({ group: 'checkboxGroup' })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateCheckboxGroupModifier)
+      }
+      if (this.targetView == 'DataPanel') {
+        DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
+          .attributeModifier(this._translateDataPanelModifier)
+          .commonStyleDataPanel(this.componentKey, this._translate.translate)
+      }
+      if (this.targetView == 'DatePicker') {
+        DatePicker({ start: new Date('1970-1-1'), end: new Date('2100-1-1') })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateDatePickerModifier)
+      }
+      if (this.targetView == 'Divider') {
+        Divider()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateDividerModifier)
+      }
+      if (this.targetView == 'Gauge') {
+        Gauge({ value: 105 })
+          .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateGaugeModifier)
+      }
+      if (this.targetView == 'Image') {
+        Image($r('app.media.icon'))
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateImageModifier)
+      }
+      if (this.targetView == 'ImageAnimator') {
+        ImageAnimator()
+          .images([{ src: $r('app.media.icon') }])
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateImageAnimatorModifier)
+      }
+      if (this.targetView == 'LoadingProgress') {
+        LoadingProgress()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateLoadingProgressModifier)
+      }
+      if (this.targetView == 'Marquee') {
+        Marquee({
+          start: true,
+          step: 50,
+          loop: Infinity as Int,
+          fromStart: true,
+          src: 'Running Marquee starts rolling'
+        })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateMarqueeModifier)
+      }
+      if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
-				}
-					.commonStyle(this.componentKey)
-					// .attributeModifier(this._translateNavigationModifier)
-			}
-			if (this.targetView == 'Menu') {
-				Menu() {
-          MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-				}
-					.backgroundColor(Color.Yellow)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateMenuModifier)
-			}
-			if (this.targetView == 'NavRouter') {
-			}
-			if (this.targetView == 'Progress') {
-				Progress({ value: 10, type: ProgressType.Eclipse })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateProgressModifier)
-			}
-			if (this.targetView == 'QRCode') {
-				QRCode('Running Marquee starts rolling')
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateQRCodeModifier)
-			}
-			if (this.targetView == 'Radio') {
-				Radio({ value: 'Radio1', group: 'radioGroup' })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRadioModifier)
-			}
-			if (this.targetView == 'Rating') {
-				Rating({ rating: 3.5, indicator: false })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRatingModifier)
-			}
-			if (this.targetView == 'ScrollBar') {
-				ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
-					Text()
-						.width(20)
-						.height(100)
-						.borderRadius(10)
-						.backgroundColor('#C0C0C0')
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateScrollBarModifier)
-			}
-			if (this.targetView == 'Search') {
-				Search()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateSearchModifier)
-			}
-			if (this.targetView == 'Select') {
-				Select([{ value: 'aaa' }, { value: 'bbb' }])
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateSelectModifier)
-			}
-			if (this.targetView == 'Slider') {
-				Slider({ value: 50, min: 0, max: 100, style: SliderStyle.OutSet })
-					.showTips(true)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateSliderModifier)
-			}
-			if (this.targetView == 'Stepper') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-				}
-					.commonStyle(this.componentKey)
-					// .attributeModifier(this._translateStepperModifier)
-			}
-			if (this.targetView == 'StepperItem') {
-				Stepper() {
-					StepperItem() {
-						Column() {
-							Text('Page One')
-						}
-					}
-						.backgroundColor(Color.Red)
-						.commonStyle(this.componentKey)
-						// .attributeModifier(this._translateStepperItemModifier)
-				}
-					.backgroundColor(Color.Yellow)
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'Text') {
-				Text('text1')
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTextModifier)
-			}
-			if (this.targetView == 'TextArea') {
-				TextArea({ placeholder: 'The text area can hold an unlimited amount of text. input your word...' })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTextAreaModifier)
-			}
-			if (this.targetView == 'TextClock') {
-				TextClock({ timeZoneOffset: -8 })
-					.format('hms')
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTextClockModifier)
-			}
-			if (this.targetView == 'TextInput') {
-				TextInput({ placeholder: 'input your word...' })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTextInputModifier)
-			}
-			if (this.targetView == 'TextPicker') {
-				TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTextPickerModifier)
-			}
-			if (this.targetView == 'TextTimer') {
-				TextTimer({ isCountDown: true, count: 30000 })
-					.format('mm:ss.SS')
-					.fontColor(Color.Black)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTextTimerModifier)
-			}
-			if (this.targetView == 'TimePicker') {
-				TimePicker({ selected: new Date('2022-07-22T08:00:00') })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTimePickerModifier)
-			}
-			if (this.targetView == 'Toggle') {
-				Toggle({ type: ToggleType.Switch, isOn: false })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateToggleModifier)
-			}
-			if (this.targetView == 'Web') {
-        Web({ src: 'www.example.com', controller: new WebviewController() })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateWebModifier)
-			}
-			if (this.targetView == 'Circle') {
-				Circle()
-					.width(150)
-					.height(200)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateCircleModifier)
-			}
-			if (this.targetView == 'Ellipse') {
-				Ellipse()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateEllipseModifier)
-			}
-			if (this.targetView == 'Line') {
-				Line()
-					.startPoint([0, 0])
-					.endPoint([50, 100])
-					.backgroundColor(Color.Black)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateLineModifier)
-			}
-			if (this.targetView == 'Polyline') {
-				Polyline()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translatePolylineModifier)
-			}
-			if (this.targetView == 'Polygon') {
-				Polygon()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translatePolygonModifier)
-			}
-			if (this.targetView == 'Path') {
-				Path()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translatePathModifier)
-			}
-			if (this.targetView == 'Rect') {
-				Rect()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRectModifier)
-			}
-			if (this.targetView == 'Shape') {
-				Shape() {
-					Rect()
-						.width(100)
-						.height(50)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateShapeModifier)
-			}
-			if (this.targetView == 'Badge') {
-        Badge({ count: 50, style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } } as BadgeParamWithNumber) {
-					Button('message')
-						.width(100)
-						.height(50)
-						.backgroundColor(0x317aff)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateBadgeModifier)
-			}
-			if (this.targetView == 'Column') {
-				Column() {
-					Button('')
-						.width(100)
-						.height(50)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateColumnModifier)
-			}
-			if (this.targetView == 'ColumnSplit') {
-				ColumnSplit() {
-					Text('1')
-						.width('100%')
-						.height(50)
-						.backgroundColor(0xF5DEB3)
-						.textAlign(TextAlign.Center)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateColumnSplitModifier)
-			}
-			if (this.targetView == 'Counter') {
-				Counter() {
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateCounterModifier)
-			}
-			if (this.targetView == 'Flex') {
-				Flex() {
-					Text('1')
-						.width('20%')
-						.height(50)
-						.backgroundColor(0xF5DEB3)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateFlexModifier)
-			}
-			if (this.targetView == 'GridRow') {
-				GridRow({ columns: 1, direction: GridRowDirection.Row }) {
-					ForEach(
-						[Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown],
-						(color:Color) => {
-							GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } }) {
-								Row()
-									.width('100%')
-									.height('20vp')
-							}
-								.borderColor(color)
-								.borderWidth(2)
-						}
-					)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateGridRowModifier)
-			}
-			if (this.targetView == 'Grid') {
-				Grid() {
-          ForEach(['0', '1', '2', '3', '4'], (item: string) => {
-						ForEach(['0', '1', '2', '3', '4'], (day: string) => {
-							GridItem() {
-								Text(day)
-									.backgroundColor(Color.White)
-									.width('100%')
-									.height('100%')
-									.textAlign(TextAlign.Center)
-							}
-						})
-					})
-				}
-					.columnsTemplate('1fr 1fr 1fr 1fr 1fr')
-					.rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-					.backgroundColor(0xFAEEE0)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateGridModifier)
-			}
-			if (this.targetView == 'List') {
-				List() {
-				}
-					.height('100%')
-					.width('100%')
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateListModifier)
-			}
-			if (this.targetView == 'ListItem') {
-				List({ space: 20, initialIndex: 0 }) {
-					ListItem() {
-						Text('item1')
-							.width('100%')
-							.textAlign(TextAlign.Center)
-							.backgroundColor(Color.White)
-					}
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateListItemModifier)
-				}
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'ListItemGroup') {
-				List({ space: 0, initialIndex: 0 }) {
-					ListItemGroup()
-						.backgroundColor(Color.Yellow)
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateListItemGroupModifier)
-				}
-					.backgroundColor(Color.Pink)
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'Navigator') {
-			}
-			if (this.targetView == 'Panel') {
-			}
-			if (this.targetView == 'Refresh') {
-				Refresh({ refreshing: true }) {
-					Text('123')
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRefreshModifier)
-			}
-			if (this.targetView == 'RelativeContainer') {
-				RelativeContainer() {
-					Row()
-						.width(100)
-						.height(100)
-						.backgroundColor('#FF3333')
-						.alignRules({
-							top: { anchor: '__container__', align: VerticalAlign.Top },
-							left: { anchor: '__container__', align: HorizontalAlign.Start }
-						})
-						.id('constraintSize')
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRelativeContainerModifier)
-			}
-			if (this.targetView == 'Row') {
-				Row()
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRowModifier)
-			}
-			if (this.targetView == 'RowSplit') {
-				RowSplit() {
-					Text('Text')
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateRowSplitModifier)
-			}
-			if (this.targetView == 'Scroll') {
-				Scroll() {
-					Column() {
-						ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
-							Text('Scroll' + item.toString())
-								.width('90%')
-								.height(50)
-								.backgroundColor(Color.White)
-								.textAlign(TextAlign.Center)
-						}, (item: int) => item.toString())
-					}
-					.width('100%')
-				}
-					.scrollBar(BarState.On)
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateScrollModifier)
-			}
-			if (this.targetView == 'SideBarContainer') {
-				SideBarContainer(SideBarContainerType.Embed) {
-					Column() {
-						ForEach([1, 2, 3], (item: int) => {
-							Column({ space: 5 } as ColumnOptions) {
-								Image($r('app.media.icon'))
-									.width(50)
-									.height(50)
-								Text('Index0' + item)
-									.fontSize(25)
-							}
-						})
-					}
-						.width('100%')
-						.justifyContent(FlexAlign.SpaceEvenly)
-						.backgroundColor(Color.Green)
+        }
+        .commonStyle(this.componentKey)
 
-					Column() {
-						Text('SideBarContainer content')
-							.fontSize(25)
-					}
-						.backgroundColor(Color.Orange)
-				}
-					.commonStyle(this.componentKey)
-					// .attributeModifier(this._translateSideBarContainerModifier)
-			}
-			if (this.targetView == 'Stack') {
-				Stack() {
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateStackModifier)
-			}
-			if (this.targetView == 'Swiper') {
-				Swiper() {
-					ForEach([1, 2, 3], (item: int) => {
-						Text('Swiper' + item)
-							.width('90%')
-							.height(50)
-					}, (item: int) => item.toString())
-				}
-					.indicator(true)
-					.backgroundColor(Color.White)
-					.commonStyle(this.componentKey)
-					// .attributeModifier(this._translateSwiperModifier)
-			}
-			if (this.targetView == 'Tabs') {
-				Tabs() {
-					TabContent() {
-						Column()
-							.width('100%')
-							.height('100%')
-							.backgroundColor('#00CB87')
-					}
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateTabsModifier)
-			}
-			if (this.targetView == 'TabContent') {
-				Tabs() {
-					TabContent() {
-						Text('TabContent Test')
-							.width('100%')
-							.height('100%')
-							.backgroundColor(Color.White)
-					}
-						.tabBar('Tabs1')
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateTabContentModifier)
-				}
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'WaterFlow') {
-				WaterFlow() {
-					ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
-						FlowItem() {
-							Column() {
-								Text('WaterFlow' + item)
-									.fontSize(12)
-									.height('16')
-								Image($r('app.media.icon'))
-									.width(50)
-									.height(50)
-									.objectFit(ImageFit.Fill)
-							}
-						}
-					}, (item: int) => item.toString())
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateWaterFlowModifier)
-			}
-			if (this.targetView == 'GridCol') {
-				GridRow({ columns: 1, direction: GridRowDirection.Row }) {
-					GridCol() {
-						Row()
-							.width('100%')
-							.height('20vp')
-					}
-						.backgroundColor(Color.Yellow)
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateGridColModifier)
-				}
-					.backgroundColor(Color.Pink)
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'GridItem') {
-				Grid() {
-					GridItem() {
-						Text('4')
-							.backgroundColor(0xFAEEE0)
-							.width('100%')
-							.height('100%')
-							.textAlign(TextAlign.Center)
-					}
-						.rowStart(1)
-						.rowEnd(4)
-						.backgroundColor(Color.Yellow)
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateGridItemModifier)
-				}
-					.backgroundColor(Color.Pink)
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'FlowItem') {
-				WaterFlow() {
-					ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
-						FlowItem() {
-							Column() {
-								Text('WaterFlow' + item)
-									.fontSize(12)
-									.height('16')
-								Image($r('app.media.icon'))
-									.width(50)
-									.height(50)
-									.objectFit(ImageFit.Fill)
-							}
-						}
-						.backgroundColor(Color.Yellow)
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateFlowItemModifier)
-					}, (item: int) => item.toString())
-				}
-					.backgroundColor(Color.Pink)
-					.width('100%')
-					.height('100%')
-			}
-			if (this.targetView == 'MenuItem') {
-				Row() {
-					Menu() {
-						MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-							.commonStyle(this.componentKey)
-							.attributeModifier(this._translateMenuItemModifier)
-					}
-						.backgroundColor(Color.Yellow)
-						.width('100%')
-						.height('100%')
-				}
-					.width('100%')
-					.height('100%')
-					.backgroundColor(Color.Green)
-			}
-			if (this.targetView == 'MenuItemGroup') {
-				Row() {
-					Menu() {
-						MenuItemGroup({ header: 'MenuItemGroup' }) {
+        // .attributeModifier(this._translateNavigationModifier)
+      }
+      if (this.targetView == 'Menu') {
+        Menu() {
+          MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
+        }
+        .backgroundColor(Color.Yellow)
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateMenuModifier)
+      }
+      if (this.targetView == 'NavRouter') {
+      }
+      if (this.targetView == 'Progress') {
+        Progress({ value: 10, type: ProgressType.Eclipse })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateProgressModifier)
+      }
+      if (this.targetView == 'QRCode') {
+        QRCode('Running Marquee starts rolling')
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateQRCodeModifier)
+      }
+      if (this.targetView == 'Radio') {
+        Radio({ value: 'Radio1', group: 'radioGroup' })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateRadioModifier)
+      }
+      if (this.targetView == 'Rating') {
+        Rating({ rating: 3.5, indicator: false })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateRatingModifier)
+      }
+      if (this.targetView == 'ScrollBar') {
+        ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
+          Text()
+            .width(20)
+            .height(100)
+            .borderRadius(10)
+            .backgroundColor('#C0C0C0')
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateScrollBarModifier)
+      }
+      if (this.targetView == 'Search') {
+        Search()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateSearchModifier)
+      }
+      if (this.targetView == 'Select') {
+        Select([{ value: 'aaa' }, { value: 'bbb' }])
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateSelectModifier)
+      }
+      if (this.targetView == 'Slider') {
+        Slider({
+          value: 50,
+          min: 0,
+          max: 100,
+          style: SliderStyle.OutSet
+        })
+          .showTips(true)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateSliderModifier)
+      }
+      if (this.targetView == 'Stepper') {
+        Stepper() {
+          StepperItem() {
+            Column() {
+              Text('Page One')
+            }
+          }
+        }
+        .commonStyle(this.componentKey)
+
+        // .attributeModifier(this._translateStepperModifier)
+      }
+      if (this.targetView == 'StepperItem') {
+        Stepper() {
+          StepperItem() {
+            Column() {
+              Text('Page One')
+            }
+          }
+          .backgroundColor(Color.Red)
+          .commonStyle(this.componentKey)
+
+          // .attributeModifier(this._translateStepperItemModifier)
+        }
+        .backgroundColor(Color.Yellow)
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'Text') {
+        Text('text1')
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTextModifier)
+      }
+      if (this.targetView == 'TextArea') {
+        TextArea({ placeholder: 'The text area can hold an unlimited amount of text. input your word...' })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTextAreaModifier)
+      }
+      if (this.targetView == 'TextClock') {
+        TextClock({ timeZoneOffset: -8 })
+          .format('hms')
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTextClockModifier)
+      }
+      if (this.targetView == 'TextInput') {
+        TextInput({ placeholder: 'input your word...' })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTextInputModifier)
+      }
+      if (this.targetView == 'TextPicker') {
+        TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTextPickerModifier)
+      }
+      if (this.targetView == 'TextTimer') {
+        TextTimer({ isCountDown: true, count: 30000 })
+          .format('mm:ss.SS')
+          .fontColor(Color.Black)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTextTimerModifier)
+      }
+      if (this.targetView == 'TimePicker') {
+        TimePicker({ selected: new Date('2022-07-22T08:00:00') })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTimePickerModifier)
+      }
+      if (this.targetView == 'Toggle') {
+        Toggle({ type: ToggleType.Switch, isOn: false })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateToggleModifier)
+      }
+      if (this.targetView == 'Web') {
+        Web({ src: 'www.example.com', controller: new WebviewController() })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateWebModifier)
+      }
+      if (this.targetView == 'Circle') {
+        Circle()
+          .width(150)
+          .height(200)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateCircleModifier)
+      }
+      if (this.targetView == 'Ellipse') {
+        Ellipse()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateEllipseModifier)
+      }
+      if (this.targetView == 'Line') {
+        Line()
+          .startPoint([0, 0])
+          .endPoint([50, 100])
+          .backgroundColor(Color.Black)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateLineModifier)
+      }
+      if (this.targetView == 'Polyline') {
+        Polyline()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translatePolylineModifier)
+      }
+      if (this.targetView == 'Polygon') {
+        Polygon()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translatePolygonModifier)
+      }
+      if (this.targetView == 'Path') {
+        Path()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translatePathModifier)
+      }
+      if (this.targetView == 'Rect') {
+        Rect()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateRectModifier)
+      }
+      if (this.targetView == 'Shape') {
+        Shape() {
+          Rect()
+            .width(100)
+            .height(50)
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateShapeModifier)
+      }
+      if (this.targetView == 'Badge') {
+        Badge({
+          count: 50,
+          style: {
+            color: 0xFFFFFF,
+            fontSize: 16,
+            badgeSize: 20,
+            badgeColor: Color.Red
+          }
+        } as BadgeParamWithNumber) {
+          Button('message')
+            .width(100)
+            .height(50)
+            .backgroundColor(0x317aff)
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateBadgeModifier)
+      }
+      if (this.targetView == 'Column') {
+        Column() {
+          Button('')
+            .width(100)
+            .height(50)
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateColumnModifier)
+      }
+      if (this.targetView == 'ColumnSplit') {
+        ColumnSplit() {
+          Text('1')
+            .width('100%')
+            .height(50)
+            .backgroundColor(0xF5DEB3)
+            .textAlign(TextAlign.Center)
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateColumnSplitModifier)
+      }
+      if (this.targetView == 'Counter') {
+        Counter() {
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateCounterModifier)
+      }
+      if (this.targetView == 'Flex') {
+        Flex() {
+          Text('1')
+            .width('20%')
+            .height(50)
+            .backgroundColor(0xF5DEB3)
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateFlexModifier)
+      }
+      if (this.targetView == 'GridRow') {
+        GridRow({ columns: 1, direction: GridRowDirection.Row }) {
+          ForEach(
+            [Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Pink, Color.Grey, Color.Blue, Color.Brown],
+            (color: Color) => {
+              GridCol({
+                span: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4
+                }
+              }) {
+                Row()
+                  .width('100%')
+                  .height('20vp')
+              }
+              .borderColor(color)
+              .borderWidth(2)
+            }
+          )
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateGridRowModifier)
+      }
+      if (this.targetView == 'Grid') {
+        Grid() {
+          ForEach(['0', '1', '2', '3', '4'], (item: string) => {
+            ForEach(['0', '1', '2', '3', '4'], (day: string) => {
+              GridItem() {
+                Text(day)
+                  .backgroundColor(Color.White)
+                  .width('100%')
+                  .height('100%')
+                  .textAlign(TextAlign.Center)
+              }
+            })
+          })
+        }
+        .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
+        .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
+        .backgroundColor(0xFAEEE0)
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateGridModifier)
+      }
+      if (this.targetView == 'List') {
+        List() {
+        }
+        .height('100%')
+        .width('100%')
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateListModifier)
+      }
+      if (this.targetView == 'ListItem') {
+        List({ space: 20, initialIndex: 0 }) {
+          ListItem() {
+            Text('item1')
+              .width('100%')
+              .textAlign(TextAlign.Center)
+              .backgroundColor(Color.White)
+          }
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateListItemModifier)
+        }
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'ListItemGroup') {
+        List({ space: 0, initialIndex: 0 }) {
+          ListItemGroup()
+            .backgroundColor(Color.Yellow)
+            .commonStyle(this.componentKey)
+            .attributeModifier(this._translateListItemGroupModifier)
+        }
+        .backgroundColor(Color.Pink)
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'Navigator') {
+      }
+      if (this.targetView == 'Panel') {
+      }
+      if (this.targetView == 'Refresh') {
+        Refresh({ refreshing: true }) {
+          Text('123')
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateRefreshModifier)
+      }
+      if (this.targetView == 'RelativeContainer') {
+        RelativeContainer() {
+          Row()
+            .width(100)
+            .height(100)
+            .backgroundColor('#FF3333')
+            .alignRules({
+              top: { anchor: '__container__', align: VerticalAlign.Top },
+              left: { anchor: '__container__', align: HorizontalAlign.Start }
+            })
+            .id('constraintSize')
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateRelativeContainerModifier)
+      }
+      if (this.targetView == 'Row') {
+        Row()
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateRowModifier)
+      }
+      if (this.targetView == 'RowSplit') {
+        RowSplit() {
+          Text('Text')
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateRowSplitModifier)
+      }
+      if (this.targetView == 'Scroll') {
+        Scroll() {
+          Column() {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
+              Text('Scroll' + item.toString())
+                .width('90%')
+                .height(50)
+                .backgroundColor(Color.White)
+                .textAlign(TextAlign.Center)
+            }, (item: int) => item.toString())
+          }
+          .width('100%')
+        }
+        .scrollBar(BarState.On)
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateScrollModifier)
+      }
+      if (this.targetView == 'SideBarContainer') {
+        SideBarContainer(SideBarContainerType.Embed) {
+          Column() {
+            ForEach([1, 2, 3], (item: int) => {
+              Column({ space: 5 } as ColumnOptions) {
+                Image($r('app.media.icon'))
+                  .width(50)
+                  .height(50)
+                Text('Index0' + item)
+                  .fontSize(25)
+              }
+            })
+          }
+          .width('100%')
+          .justifyContent(FlexAlign.SpaceEvenly)
+          .backgroundColor(Color.Green)
+
+          Column() {
+            Text('SideBarContainer content')
+              .fontSize(25)
+          }
+          .backgroundColor(Color.Orange)
+        }
+        .commonStyle(this.componentKey)
+
+        // .attributeModifier(this._translateSideBarContainerModifier)
+      }
+      if (this.targetView == 'Stack') {
+        Stack() {
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateStackModifier)
+      }
+      if (this.targetView == 'Swiper') {
+        Swiper() {
+          ForEach([1, 2, 3], (item: int) => {
+            Text('Swiper' + item)
+              .width('90%')
+              .height(50)
+          }, (item: int) => item.toString())
+        }
+        .indicator(true)
+        .backgroundColor(Color.White)
+        .commonStyle(this.componentKey)
+
+        // .attributeModifier(this._translateSwiperModifier)
+      }
+      if (this.targetView == 'Tabs') {
+        Tabs() {
+          TabContent() {
+            Column()
+              .width('100%')
+              .height('100%')
+              .backgroundColor('#00CB87')
+          }
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateTabsModifier)
+      }
+      if (this.targetView == 'TabContent') {
+        Tabs() {
+          TabContent() {
+            Text('TabContent Test')
+              .width('100%')
+              .height('100%')
+              .backgroundColor(Color.White)
+          }
+          .tabBar('Tabs1')
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateTabContentModifier)
+        }
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'WaterFlow') {
+        WaterFlow() {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
+            FlowItem() {
+              Column() {
+                Text('WaterFlow' + item)
+                  .fontSize(12)
+                  .height('16')
+                Image($r('app.media.icon'))
+                  .width(50)
+                  .height(50)
+                  .objectFit(ImageFit.Fill)
+              }
+            }
+          }, (item: int) => item.toString())
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateWaterFlowModifier)
+      }
+      if (this.targetView == 'GridCol') {
+        GridRow({ columns: 1, direction: GridRowDirection.Row }) {
+          GridCol() {
+            Row()
+              .width('100%')
+              .height('20vp')
+          }
+          .backgroundColor(Color.Yellow)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateGridColModifier)
+        }
+        .backgroundColor(Color.Pink)
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'GridItem') {
+        Grid() {
+          GridItem() {
+            Text('4')
+              .backgroundColor(0xFAEEE0)
+              .width('100%')
+              .height('100%')
+              .textAlign(TextAlign.Center)
+          }
+          .rowStart(1)
+          .rowEnd(4)
+          .backgroundColor(Color.Yellow)
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateGridItemModifier)
+        }
+        .backgroundColor(Color.Pink)
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'FlowItem') {
+        WaterFlow() {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
+            FlowItem() {
+              Column() {
+                Text('WaterFlow' + item)
+                  .fontSize(12)
+                  .height('16')
+                Image($r('app.media.icon'))
+                  .width(50)
+                  .height(50)
+                  .objectFit(ImageFit.Fill)
+              }
+            }
+            .backgroundColor(Color.Yellow)
+            .commonStyle(this.componentKey)
+            .attributeModifier(this._translateFlowItemModifier)
+          }, (item: int) => item.toString())
+        }
+        .backgroundColor(Color.Pink)
+        .width('100%')
+        .height('100%')
+      }
+      if (this.targetView == 'MenuItem') {
+        Row() {
+          Menu() {
+            MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
+              .commonStyle(this.componentKey)
+              .attributeModifier(this._translateMenuItemModifier)
+          }
+          .backgroundColor(Color.Yellow)
+          .width('100%')
+          .height('100%')
+        }
+        .width('100%')
+        .height('100%')
+        .backgroundColor(Color.Green)
+      }
+      if (this.targetView == 'MenuItemGroup') {
+        Row() {
+          Menu() {
+            MenuItemGroup({ header: 'MenuItemGroup' }) {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-						}
-							.commonStyle(this.componentKey)
-							.attributeModifier(this._translateMenuItemGroupModifier)
-					}
-						.backgroundColor(Color.Yellow)
-						.width('100%')
-						.height('100%')
-				}
-					.width('100%')
-					.height('100%')
-					.backgroundColor(Color.Green)
-			}
-			if (this.targetView == 'CalendarPicker') {
-				CalendarPicker({ hintRadius: 10, selected: new Date() })
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateCalendarPickerModifier)
-			}
-			if (this.targetView == 'Canvas') {
-				Canvas(new CanvasRenderingContext2D(new RenderingContextSettings(true)))
-					.backgroundColor('#FFFF00')
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
+            }
+            .commonStyle(this.componentKey)
+            .attributeModifier(this._translateMenuItemGroupModifier)
+          }
+          .backgroundColor(Color.Yellow)
+          .width('100%')
+          .height('100%')
+        }
+        .width('100%')
+        .height('100%')
+        .backgroundColor(Color.Green)
+      }
+      if (this.targetView == 'CalendarPicker') {
+        CalendarPicker({ hintRadius: 10, selected: new Date() })
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateCalendarPickerModifier)
+      }
+      if (this.targetView == 'Canvas') {
+        Canvas(new CanvasRenderingContext2D(new RenderingContextSettings(true)))
+          .backgroundColor('#FFFF00')
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._translateCanvasModifier)
+      }
+      if (this.targetView == 'FormLink') {
+        FormLink({
+          action: "router",
+          abilityName: "EntryAbility",
           params: { message: 'testForRouter' } as ObjElement
         } as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateFormLinkModifier)
-			}
-			if (this.targetView == 'Hyperlink') {
-				Hyperlink('https://example.com/', 'Go to the developer website') {
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._translateHyperlinkModifier)
-			}
-			if (this.targetView == 'Span') {
-				Text() {
-					Span('Span1')
-						.commonStyle(this.componentKey)
-						.attributeModifier(this._translateSpanModifier)
-				}
-			}
-		}
-		.width(this.parentWidth)
-		.height(this.parentHeight)
-		.backgroundColor(this.parentBackGroundColor || '#FFFF00')
-		.key(this.parentComponentKey)
-	}
+          Button("router event").width(120)
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateFormLinkModifier)
+      }
+      if (this.targetView == 'Hyperlink') {
+        Hyperlink('https://example.com/', 'Go to the developer website') {
+        }
+        .commonStyle(this.componentKey)
+        .attributeModifier(this._translateHyperlinkModifier)
+      }
+      if (this.targetView == 'Span') {
+        Text() {
+          Span('Span1')
+            .commonStyle(this.componentKey)
+            .attributeModifier(this._translateSpanModifier)
+        }
+      }
+    }
+    .width(this.parentWidth)
+    .height(this.parentHeight)
+    .backgroundColor(this.parentBackGroundColor || '#FFFF00')
+    .key(this.parentComponentKey)
+  }
 }
+
 class ObjElement {
   message?: string;
 }
