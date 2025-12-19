@@ -291,6 +291,7 @@ static napi_value OH_LowPowerVideoSink_Prepare0101(napi_env env, napi_callback_i
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -329,6 +330,7 @@ static napi_value OH_LowPowerVideoSink_Prepare0102(napi_env env, napi_callback_i
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -369,6 +371,7 @@ static napi_value OH_LowPowerVideoSink_StartDecoder0101(napi_env env, napi_callb
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -408,6 +411,7 @@ static napi_value OH_LowPowerVideoSink_StartDecoder0102(napi_env env, napi_callb
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -450,6 +454,7 @@ static napi_value OH_LowPowerVideoSink_RenderFirstFrame0101(napi_env env, napi_c
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -491,6 +496,7 @@ static napi_value OH_LowPowerVideoSink_RenderFirstFrame0102(napi_env env, napi_c
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -532,6 +538,7 @@ static napi_value OH_LowPowerVideoSink_StartRenderer0101(napi_env env, napi_call
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -572,6 +579,7 @@ static napi_value OH_LowPowerVideoSink_StartRenderer0102(napi_env env, napi_call
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -614,6 +622,7 @@ static napi_value OH_LowPowerVideoSink_Pause0101(napi_env env, napi_callback_inf
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -655,6 +664,7 @@ static napi_value OH_LowPowerVideoSink_Pause0102(napi_env env, napi_callback_inf
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -698,6 +708,7 @@ static napi_value OH_LowPowerVideoSink_Resume0101(napi_env env, napi_callback_in
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -740,6 +751,7 @@ static napi_value OH_LowPowerVideoSink_Resume0102(napi_env env, napi_callback_in
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -783,6 +795,7 @@ static napi_value OH_LowPowerVideoSink_Flush0101(napi_env env, napi_callback_inf
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -826,6 +839,7 @@ static napi_value OH_LowPowerVideoSink_Flush0102(napi_env env, napi_callback_inf
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -868,6 +882,7 @@ static napi_value OH_LowPowerVideoSink_Stop0101(napi_env env, napi_callback_info
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -909,6 +924,7 @@ static napi_value OH_LowPowerVideoSink_Stop0102(napi_env env, napi_callback_info
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -952,6 +968,7 @@ static napi_value OH_LowPowerVideoSink_Reset0101(napi_env env, napi_callback_inf
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
@@ -1020,6 +1037,7 @@ static napi_value OH_LowPowerVideoSink_SetSyncAudioSink0101(napi_env env, napi_c
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     napi_value retValue;
     napi_create_int32(env, res, &retValue);
@@ -1061,6 +1079,7 @@ static napi_value OH_LowPowerVideoSink_SetPlaybackSpeed0101(napi_env env, napi_c
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
     OH_VideoEncoder_Destroy(encoder);
     OH_AVFormat_Destroy(Format);
     napi_value retValue;
