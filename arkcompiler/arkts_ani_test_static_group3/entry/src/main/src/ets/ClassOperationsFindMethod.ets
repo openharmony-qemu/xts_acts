@@ -426,7 +426,7 @@ namespace nsa {
     }
 }
 
-class Phone {
+class MyPhone {
     static get_button_names(): string[] {
         return ["UP", "down"]
     }

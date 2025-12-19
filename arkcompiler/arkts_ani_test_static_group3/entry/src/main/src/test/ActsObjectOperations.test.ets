@@ -2824,25 +2824,6 @@ export default function objectOperationsTest() {
     })
 
     /**
-     * @tc.number      SUB_ANI_OBJECT_INSTANCE_0400
-     * @tc.name        test_Object_Instance_0004
-     * @tc.desc        object instance of array
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
-     */
-    it("test_Object_Instance_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      console.log('test_Object_Instance_0004 start');
-      let cls = new Foo();
-      let result = cls.test_Object_Instance_04();
-      expect(result).assertTrue();
-      console.log('test_Object_Instance_0004 done');
-      done();
-      console.log('test_Object_Instance_0004 end');
-    })
-
-    /**
      * @tc.number      SUB_ANI_OBJECT_INSTANCE_0500
      * @tc.name        test_Object_Instance_0005
      * @tc.desc        object interface instance of

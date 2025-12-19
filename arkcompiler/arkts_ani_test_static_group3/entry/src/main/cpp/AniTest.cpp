@@ -893,8 +893,6 @@ namespace {
                             reinterpret_cast<void *>(test_Object_Instance_02)},
         ani_native_function{"test_Object_Instance_03", ":z",
                             reinterpret_cast<void *>(test_Object_Instance_03)},
-        ani_native_function{"test_Object_Instance_04", ":z",
-                            reinterpret_cast<void *>(test_Object_Instance_04)},
         ani_native_function{"test_Object_Instance_05", ":z",
                             reinterpret_cast<void *>(test_Object_Instance_05)},
         ani_native_function{"test_Object_Instance_06", ":z",

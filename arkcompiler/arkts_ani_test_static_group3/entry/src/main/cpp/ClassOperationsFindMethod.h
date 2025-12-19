@@ -194,7 +194,7 @@ ani_boolean test_Class_Find_Method_16([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Phone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -206,7 +206,7 @@ ani_boolean test_Class_Find_Method_17([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Phone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -218,7 +218,7 @@ ani_boolean test_Class_Find_Method_18([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Phone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -229,7 +229,7 @@ ani_boolean test_Class_Find_Method_19([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Phone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
@@ -247,7 +247,7 @@ ani_boolean test_Class_Find_Method_22([[maybe_unused]] ani_env *env, [[maybe_unu
 ani_boolean test_Class_Find_Method_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls {};
-    ASSERT_EQ(env->FindClass("test.Phone", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("test.MyPhone", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
