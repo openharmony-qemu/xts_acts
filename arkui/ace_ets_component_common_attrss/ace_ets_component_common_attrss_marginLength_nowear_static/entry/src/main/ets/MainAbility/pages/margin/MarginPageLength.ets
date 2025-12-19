@@ -13,27 +13,124 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {SetValue} from '../../common/Utils'
-import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import animator, { AnimatorResult, AnimatorOptions, PlayMode } from '@ohos.animator';
-import {TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
-  BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,Length,
-  ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,
-  MenuItemOptions,MenuItem,$r,Entry,Column,Component,Button,ClickEvent,ForEach,Text,Row,List,ListItem,Color,FlexAlign,ExpectedFrameRateRange,Scroll,Margin,MarqueeOptions,
-// Styles,
-  WebviewController,AlphabetIndexer,Axis,Blank,ListItemGroup,Checkbox,CheckboxGroup,DataPanel,DatePicker,Gauge,Image,ImageAnimator,LoadingProgress,Marquee,Menu,Navigation,Progress,QRCode,Radio,Rating,RichText,Scroller,Flex,BarState,ScrollDirection,Search,Select,Slider,Stepper,
-  TextArea,TextClock,ImageFit,TextInput,TextPicker,TextTimer,Toggle,Web,Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,Badge,ColumnSplit,Counter,GridRow,Grid,Refresh,RelativeContainer,RowSplit,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,DataPanelType
+import { RouterParams, SetValue } from '../../common/Utils'
+import { Callback, Message, MessageManager } from '../../common/MessageManager';
+import {
+  $r,
+  AlignRuleOption,
+  AlphabetIndexer,
+  applyStyles,
+  Axis,
+  Badge,
+  BadgeParam,
+  BadgeParamWithNumber,
+  BadgeStyle,
+  BarState,
+  Blank,
+  Button,
+  Checkbox,
+  CheckboxGroup,
+  Circle,
+  ClickEvent,
+  Color,
+  Column,
+  ColumnOptions,
+  ColumnSplit,
+  CommonMethod,
+  Component,
+  Counter,
+  DataPanel,
+  DataPanelType,
+  DatePicker,
+  Divider,
+  Ellipse,
+  Entry,
+  ExpectedFrameRateRange,
+  Flex,
+  FlexAlign,
+  FlexDirection,
+  FlowItem,
+  ForEach,
+  Gauge,
+  Grid,
+  GridCol,
+  GridColColumnOption,
+  GridColOptions,
+  GridItem,
+  GridRow,
+  GridRowDirection,
+  HorizontalAlign,
+  Image,
+  ImageAnimator,
+  ImageFit,
+  Length,
+  Line,
+  List,
+  ListItem,
+  ListItemGroup,
+  LoadingProgress,
+  Margin,
+  Marquee,
+  MarqueeOptions,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemOptions,
+  Navigation,
+  Path,
+  Polygon,
+  Polyline,
+  Progress,
+  ProgressType,
+  QRCode,
+  Radio,
+  Rating,
+  Rect,
+  Refresh,
+  RelativeContainer,
+  RichText,
+  Row,
+  RowSplit,
+  Scroll,
+  ScrollBar,
+  ScrollDirection,
+  Scroller,
+  Search,
+  Select,
+  Shape,
+  SideBarContainer,
+  SideBarContainerType,
+  Slider,
+  SliderStyle,
+  Stack,
+  Stepper,
+  StepperItem,
+  Swiper,
+  TabContent,
+  Tabs,
+  Text,
+  TextAlign,
+  TextArea,
+  TextClock,
+  TextInput,
+  TextPicker,
+  TextTimer,
+  TimePicker,
+  Toggle,
+  ToggleType,
+  VerticalAlign,
+  WaterFlow,
+  Web,
+  WebviewController
 } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement'
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { RouterParams } from '../../common/Utils'
 
 @Entry
 @Component
 struct MarginPageLength {
-  @StorageProp('_margin') _margin: Length = 0 as Double
+  @StoragePropRef('_margin') _margin: Length = 0 as Double
   @State targetView: string = "";
   @State targetGroupView: string = "";
   @State componentKey: string = "";
@@ -46,7 +143,7 @@ struct MarginPageLength {
 
   onPageShow() {
     console.info('Margin page show called ')
-    AppStorage.setOrCreate<Length>('_margin', 0)
+    // AppStorage.setOrCreate<Length>('_margin', 0)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Length>('_margin', routerParamOptions.view.testValue.setValue.margin)
@@ -72,7 +169,6 @@ struct MarginPageLength {
     instance.key(this.componentKey)
   }
 
-
   build() {
     Row() {
       if (this.targetView == 'ListItem') {
@@ -86,7 +182,10 @@ struct MarginPageLength {
               .width('100%').textAlign(TextAlign.Center).backgroundColor(Color.White)
           }.key(this.referenceComponentKey)
         }
-        .listDirection(Axis.Vertical).width(this.parentWidth as number).height(this.parentHeight as number).key(this.parentComponentKey)
+        .listDirection(Axis.Vertical)
+        .width(this.parentWidth as number)
+        .height(this.parentHeight as number)
+        .key(this.parentComponentKey)
       } else if (this.targetView == 'ListItemGroup') {
         List({ space: 0, initialIndex: 0 }) {
           ListItemGroup().backgroundColor(Color.Yellow).margin(this._margin).key(this.componentKey)
@@ -162,7 +261,10 @@ struct MarginPageLength {
           .width('100%')
           .height('100%')
         }
-        .width(this.parentWidth as number).height(this.parentHeight as number).backgroundColor(Color.Pink).key(this.parentComponentKey)
+        .width(this.parentWidth as number)
+        .height(this.parentHeight as number)
+        .backgroundColor(Color.Pink)
+        .key(this.parentComponentKey)
       } else if (this.targetView == 'FlowItem') {
         WaterFlow() {
           FlowItem() {
@@ -177,7 +279,10 @@ struct MarginPageLength {
           .width('100%')
           .height('100%')
         }
-        .backgroundColor(Color.Pink).width(this.parentWidth as number).height(this.parentHeight as number).key(this.parentComponentKey)
+        .backgroundColor(Color.Pink)
+        .width(this.parentWidth as number)
+        .height(this.parentHeight as number)
+        .key(this.parentComponentKey)
       } else if (this.targetView == 'GridItem') {
         Grid() {
           GridItem() {
@@ -191,7 +296,10 @@ struct MarginPageLength {
           .key(this.componentKey)
           .backgroundColor(Color.Yellow)
         }
-        .backgroundColor(Color.Pink).width(this.parentWidth as number).height(this.parentHeight as number).key(this.parentComponentKey)
+        .backgroundColor(Color.Pink)
+        .width(this.parentWidth as number)
+        .height(this.parentHeight as number)
+        .key(this.parentComponentKey)
       } else {
         Column() {
           if (this.targetView == 'Button') {
@@ -411,7 +519,12 @@ struct MarginPageLength {
           } else if (this.targetView == 'Badge') {
             Badge({
               count: 50,
-              style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red } as BadgeStyle,
+              style: {
+                color: 0xFFFFFF,
+                fontSize: 16,
+                badgeSize: 20,
+                badgeColor: Color.Red
+              } as BadgeStyle,
             } as BadgeParamWithNumber) {
               Button('message')
                 .width(100).height(50).backgroundColor(0x317aff)

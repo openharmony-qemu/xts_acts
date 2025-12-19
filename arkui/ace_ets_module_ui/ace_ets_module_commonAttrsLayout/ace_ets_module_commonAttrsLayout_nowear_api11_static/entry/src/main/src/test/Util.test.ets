@@ -73,7 +73,5 @@ async function stopApplication(bundleName: string): Promise<boolean>{
 }
 
 export {
-  UtilsTest,
-  startAbility,
-  stopApplication
+  UtilsTest, startAbility, stopApplication
 }

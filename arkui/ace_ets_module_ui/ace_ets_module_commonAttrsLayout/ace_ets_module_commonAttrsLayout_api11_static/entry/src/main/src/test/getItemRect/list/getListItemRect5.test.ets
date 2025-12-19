@@ -18,7 +18,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -29,7 +29,6 @@ import { UtilsTest } from '../../Util.test';
 import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
-import { UIContext } from '@ohos.arkui.UIContext';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -67,9 +66,6 @@ export default function getListItemRect5() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
@@ -144,7 +140,7 @@ it('getListItemRect5_static_0200', Level.LEVEL0, async (done: () => void): Promi
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
       const message1: MessageManager<Axis> = AppStorage.get<MessageManager<Axis>>("messageManagerAxis")!
       const message2: MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManagerString")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message1.notify({ name: 'listDirection1', value: Axis.Horizontal })
       message.notify({ name: 'width2', value: 30.0 })
       message2.notify({ name: 'height2', value: '100%' })

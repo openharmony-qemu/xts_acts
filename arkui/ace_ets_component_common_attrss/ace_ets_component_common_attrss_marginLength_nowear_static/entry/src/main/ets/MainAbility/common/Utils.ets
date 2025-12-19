@@ -16,16 +16,29 @@
 
 import router from '@ohos.router';
 import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
-import {Color,Length, TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType } from '@ohos.arkui.component';
+import {
+  AlignRuleOption,
+  Color,
+  focusControl,
+  KeySource,
+  KeyType,
+  Length,
+  MouseAction,
+  MouseButton,
+  SourceTool,
+  SourceType,
+  TouchType
+} from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
+import { sendKeyEvent, sendMouseEvent, sendTouchEvent } from '@ohos.arkui.Test';
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
-import { jsonx } from "std/core";
-let viewPage:string = ""
+import { jsonx } from 'std/core';
+
+let viewPage: string = ""
 
 export class RectValue {
   left: number = 0;
@@ -33,20 +46,25 @@ export class RectValue {
   right: number = 0;
   bottom: number = 0;
 }
+
 export class AttrContent {
   content: string = ''
 }
+
 export class StrJsonObj {
   $attrs: AttrContent = new AttrContent()
 }
 
-export interface CurrentRatio{
+export interface CurrentRatio {
   currentRatio: number
   isVisible: boolean
-};
+}
+;
+
 export class SetValue {
   margin: Length = 0
 }
+
 export class ExpectValue {
   margin: Length = 0
   top: Length = 0
@@ -54,6 +72,7 @@ export class ExpectValue {
   bottom: Length = 0
   left: Length = 0
 }
+
 export class RouterParams {
   view: PageConfig = new PageConfig()
 }
@@ -62,7 +81,7 @@ export class TestValue {
   describe: string = '';
   setValue: SetValue = new SetValue();
   exceptView: string = '';
-  expectValue:ExpectValue=new ExpectValue()
+  expectValue: ExpectValue = new ExpectValue()
 }
 
 export class BasePageConfig {
@@ -110,7 +129,7 @@ export class PageConfig {
 export default class Utils {
   public static instance: Utils = new Utils();
 
-  static async sleep(time: int) : Promise<int>  {
+  static async sleep(time: int): Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
         resolve(0)
@@ -139,23 +158,13 @@ export default class Utils {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
       let pageParams: RouterParams = new RouterParams();
+      console.log('obj is: ' + obj)
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        console.info('viewPage: ' + viewPage);
-        if(viewPage == ""){
-          viewPage = obj.targetView
-        } else if(viewPage !== "" && viewPage !== obj.targetView){
-          viewPage = obj.targetView
-          router.pushUrl({
-            url: 'MainAbility/pages/index/index',
-          });
-          await Utils.sleep(500);
-        }else{
-          router.clear()
-        }
+        await Utils.back();
         pages = router.getState();
       }
 
@@ -167,8 +176,7 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(500);
-        console.info('push ' + obj.pageName);
+        await Utils.sleep(1000);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -196,7 +204,7 @@ export default class Utils {
     const str = obj1.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+      return part.split(",").map((item: string): double => parseFloat(item.trim()));
     });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
@@ -212,7 +220,7 @@ export default class Utils {
     const str = obj.getString("$rect")
     let parts = str.substring(1, str.length - 1).split("],[");
     let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
+      return part.split(",").map((item: string): double => parseFloat(item.trim()));
     });
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
       "windowRect Top: " + AppStorage.get<number>("winTop"));
@@ -335,10 +343,10 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as Long,
       stopPropagation: () => {
       },
-      getModifierKeyState:(keys: Array<string>):boolean => {
+      getModifierKeyState: (keys: Array<string>): boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
@@ -375,7 +383,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as Long,
       target: {
         area: {
           width: width,
@@ -395,7 +403,7 @@ export default class Utils {
       pressure: 0,
       stopPropagation: () => {
       },
-      getModifierKeyState:(keys: Array<string>):boolean => {
+      getModifierKeyState: (keys: Array<string>): boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }

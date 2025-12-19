@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 import {
-  $r,
   $$,
+  $r,
   Builder,
   Button,
   Canvas,
@@ -53,6 +53,7 @@ import {
   Radio,
   Rect,
   Refresh,
+  RefreshOptions,
   RenderingContextSettings,
   ResourceStr,
   Row,
@@ -61,7 +62,7 @@ import {
   Text,
 } from '@ohos.arkui.component';
 import { AppStorage, Link, Prop, State, } from '@ohos.arkui.stateManagement';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import matrix4 from '@ohos.matrix4'
 
@@ -101,31 +102,34 @@ struct comSizeAbilityTest_12 {
         }.key('Rect_Father')
 
         Column() {
-          // Refresh({ refreshing: $$(this.isRefreshing), offset: 120, friction: 100 }) {
-          //   Text('下拉刷新: ' + this.counter)
-          //     .fontSize(30)
-          //     .margin(10)
-          // }
-          // .backgroundColor('gray')
-          // .key("Refresh_Size")
-          // .size({ width: 220, height: 140 })
-          // .translate({ x: 1, y: 1, z: 1 })
-          // .scale({
-          //   x: 1,
-          //   y: 1,
-          //   z: 1,
-          //   centerX: 1,
-          //   centerY: 1
-          // })
-          // .rotate({
-          //   x: 1,
-          //   y: 1,
-          //   z: 1,
-          //   angle: 0,
-          //   centerX: 1,
-          //   centerY: 1
-          // })
-          // .transform(matrix)
+          Refresh({
+            refreshing: $$(this.isRefreshing)
+            // , offset: 120, friction: 100
+          } as RefreshOptions) {
+            Text('下拉刷新: ' + this.counter)
+              .fontSize(30)
+              .margin(10)
+          }
+          .backgroundColor('gray')
+          .key("Refresh_Size")
+          .size({ width: 220, height: 140 })
+          .translate({ x: 1, y: 1, z: 1 })
+          .scale({
+            x: 1,
+            y: 1,
+            z: 1,
+            centerX: 1,
+            centerY: 1
+          })
+          .rotate({
+            x: 1,
+            y: 1,
+            z: 1,
+            angle: 0,
+            centerX: 1,
+            centerY: 1
+          })
+          .transform(matrix)
         }.key('Refresh_Father')
       }.width('100%')
     }.height('100%')

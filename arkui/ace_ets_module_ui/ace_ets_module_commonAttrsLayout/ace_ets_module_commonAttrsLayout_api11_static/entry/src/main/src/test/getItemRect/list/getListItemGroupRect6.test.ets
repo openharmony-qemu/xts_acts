@@ -54,6 +54,7 @@ export default function getListItemGroupRect6() {
         if (!("getListItemGroupRect6" == pages.name)) {
           console.info("get getListItemGroupRect6 state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push getListItemGroupRect6 page error: " + err);
@@ -62,8 +63,6 @@ export default function getListItemGroupRect6() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
@@ -77,9 +76,9 @@ export default function getListItemGroupRect6() {
 it('getListItemGroupRect6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getListItemGroupRect6_static_0100] START');
-      const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 });
-      message.notify({ name: 'indexInGroup', value: 3.0 });
+      const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManager")!
+      message.notify({ name: 'index', value: 0 });
+      message.notify({ name: 'indexInGroup', value: -1 });
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')

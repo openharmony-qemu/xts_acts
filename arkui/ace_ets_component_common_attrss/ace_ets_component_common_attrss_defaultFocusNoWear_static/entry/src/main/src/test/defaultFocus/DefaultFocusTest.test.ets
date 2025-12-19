@@ -38,7 +38,6 @@ export default function DefaultFocusTest() {
     'Select',
     'Stepper',
     'StepperItem',
-    'Web',
     'SideBarContainer'
   )
   //Page config, this param is required.

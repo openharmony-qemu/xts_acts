@@ -313,7 +313,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as Long,
       stopPropagation: () => {
       },
       getModifierKeyState: (keys: Array<string>): boolean => {
@@ -353,7 +353,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as Long,
       target: {
         area: {
           width: width,

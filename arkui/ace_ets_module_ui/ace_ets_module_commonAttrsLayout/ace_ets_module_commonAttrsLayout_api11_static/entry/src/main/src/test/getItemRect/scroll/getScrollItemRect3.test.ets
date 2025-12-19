@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -36,9 +36,9 @@ export default function getScrollItemRect3() {
   describe('getScrollItemRect3', () => {
     beforeAll(() => {
       console.info("getScrollItemRect3 beforeAll start");
-      
+
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      
+
     });
     beforeEach(() => {
       console.info("getScrollItemRect3 beforeEach start");
@@ -61,25 +61,25 @@ export default function getScrollItemRect3() {
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      const getScrollItemRect3 = AppStorage.get<Router>("router") as Router
-      getScrollItemRect3.back({
-        url: 'MainAbility/pages/index/index'
-      })
+      // const getScrollItemRect3 = AppStorage.get<Router>("router") as Router
+      // getScrollItemRect3.back({
+      //   url: 'MainAbility/pages/index/index'
+      // })
       console.info("BadgeFocus after each called");
     });
 
-    
+
     /*
      * @tc.number   getScrollItemRect3_static_0100
      * @tc.name     getScrollItemRect3_static_0100
      * @tc.desc     getScrollItemRect3_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getScrollItemRect3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getScrollItemRect3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getScrollItemRect3_static_0100] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'x1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
@@ -130,11 +130,11 @@ it('getScrollItemRect3_static_0100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.desc     getScrollItemRect3_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('getScrollItemRect3_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getScrollItemRect3_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[getScrollItemRect3_static_0200] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'y1', value: 20.0 })
       await CommonFunc.sleep(1000);
 

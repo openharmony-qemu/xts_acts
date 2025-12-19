@@ -63,7 +63,7 @@ import getScrollItemRect3 from './getItemRect/scroll/getScrollItemRect3.test';
 import getScrollItemRect4 from './getItemRect/scroll/getScrollItemRect4.test';
 import getScrollItemRect5 from './getItemRect/scroll/getScrollItemRect5.test';
 import CustomLayoutOnLayout from './CustomComponentLayout/CustomLayoutOnLayout.test';
-// import girdContainerJsunit from './GridContainerTest/GridContainerJsunit.test';
+import girdContainerJsunit from './GridContainerTest/GridContainerJsunit.test';
 import GridSettingsJsunit from './GridContainerTest/GridSettingsJsunit.test';
 import LayoutConstraintsJsunit from './layoutConstraintsTest/LayoutConstraintsJsunit.test';
 import MeasureJsunit from './MeasureSizeTest/MeasureJsunit.test';
@@ -73,64 +73,64 @@ import onMeasureSize3 from './MeasureSizeTest/onMeasureSize3.test';
 import onPlaceChildren1 from './PlaceChildrenTest/onPlaceChildren1.test';
 
 export default function testsuite() {
-  // BackgroundJsunit(); // 3 pass 3
-  comSizeAbilityTest_01();
-  // comSizeAbilityTest_02();
-  // comSizeAbilityTest_03();
-  // comSizeAbilityTest_04();
-  // comSizeAbilityTest_05(); // 3
-  // comSizeAbilityTest_06(); // 3
-  // comSizeAbilityTest_07();
-  // comSizeAbilityTest_08(); // 3
-  // comSizeAbilityTest_09(); // 3
-  // comSizeAbilityTest_10();
-  // comSizeAbilityTest_11();
-  // comSizeAbilityTest_12(); // 3
-  // comSizeAbilityTest_13();
-  // comSizeAbilityTest_15();
-  // comSizeAbilityTest_16();
-  // comSizeAbilityTest_17(); // 3
-  // comSizeAbilityTest_19();
-  // comSizeAbilityTest_20(); // 3
-  // comSizeAbilityTest_21(); // 3
-  // comSizeAbilityTest_22();
-  // comSizeAbilityTest_23();
-  // comSizeAbilityTest_24();
-  // comSizeAbilityTest_25();
-  // comSizeAbilityTest_26();
-  // comSizeAbilityTest_28();
+  BackgroundJsunit(); // 3 pass 3
+  comSizeAbilityTest_01(); // 3 pass 3
+  comSizeAbilityTest_02(); // 2 pass 2
+  comSizeAbilityTest_03(); // 4 pass 4
+  comSizeAbilityTest_04(); // 1 pass 1
+  comSizeAbilityTest_05(); // 3 pass 3
+  comSizeAbilityTest_06(); // 3 pass 3
+  comSizeAbilityTest_07(); // 3 pass 3
+  comSizeAbilityTest_08(); // 2 NavRouter废弃
+  comSizeAbilityTest_09(); // 1 pass 1
+  comSizeAbilityTest_10(); // 3 pass 3
+  comSizeAbilityTest_11(); // 2 pass 2
+  comSizeAbilityTest_12(); // 2 pass 2
+  comSizeAbilityTest_13(); // 3 pass 3
+  comSizeAbilityTest_15(); // 1 pass 1
+  comSizeAbilityTest_16(); // 3 pass 3
+  comSizeAbilityTest_17(); // 3 pass 2
+  comSizeAbilityTest_19(); // 1 pass 1
+  comSizeAbilityTest_20(); // 1 pass 1
+  comSizeAbilityTest_21(); // 1 RemoteWindow 外领域
+  comSizeAbilityTest_22(); // 1 pass 1
+  comSizeAbilityTest_23(); // 1 pass 1
+  comSizeAbilityTest_24(); // 1 pass 1
+  comSizeAbilityTest_25(); // 1 pass 1
+  comSizeAbilityTest_26(); // 1 pass 1
+  comSizeAbilityTest_28(); // 1 pass 1
   // 40
 
-  // getGridItemRect1();
-  // getGridItemRect2();
-  // getGridItemRect3();
-  // getGridItemRect4();
-  // getGridItemRect5();
-  // getGridItemRect6();
-  // getListItemGroupRect1();
-  // getListItemGroupRect2();
-  // getListItemGroupRect3();
-  // getListItemGroupRect4();
-  // getListItemGroupRect5();
-  // getListItemGroupRect6();
-  // getListItemRect1();
-  // getListItemRect2();
-  // getListItemRect3();
-  // getListItemRect4();
-  // getListItemRect5();
-  // getListItemRect6();
-  // getScrollItemRect1();
-  // getScrollItemRect2();
-  // getScrollItemRect3();
-  // getScrollItemRect4();
-  // getScrollItemRect5();
-  // CustomLayoutOnLayout();
-  // girdContainerJsunit(); // gridContainer废弃用例已注释 2
-  // GridSettingsJsunit(); // UseSizeType相关 5用例 gridOffset 3用例 gridSpan 3用例
-  // LayoutConstraintsJsunit(); // 6 pass 6 emitter
-  // MeasureJsunit();
-  // onMeasureSize1();
-  // onMeasureSize2();
-  // onMeasureSize3();
-  // onPlaceChildren1();
+  getGridItemRect1();
+  getGridItemRect2();
+  getGridItemRect3();
+  getGridItemRect4();
+  getGridItemRect5();
+  getGridItemRect6();
+  getListItemGroupRect1();
+  getListItemGroupRect2();
+  getListItemGroupRect3();
+  getListItemGroupRect4();
+  getListItemGroupRect5();
+  getListItemGroupRect6(); // expect 10 equals 0
+  getListItemRect1();
+  getListItemRect2();
+  getListItemRect3();
+  getListItemRect4();
+  getListItemRect5();
+  getListItemRect6(); // expect 8 equals 0
+  getScrollItemRect1();
+  getScrollItemRect2();
+  getScrollItemRect3();
+  getScrollItemRect4();
+  // getScrollItemRect5(); //
+  CustomLayoutOnLayout();
+  girdContainerJsunit(); // gridContainer废弃用例已注释 2
+  // GridSettingsJsunit(); // UseSizeType相关 5用例 gridOffset 3用例 gridSpan 3用例 注释
+  LayoutConstraintsJsunit(); // 6 pass 6 emitter
+  MeasureJsunit();
+  onMeasureSize1();
+  onMeasureSize2();
+  onMeasureSize3();
+  onPlaceChildren1();
 }

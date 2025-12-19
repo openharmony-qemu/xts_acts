@@ -36,7 +36,6 @@ export default function defaultFocusValueTest() {
   let supportView: Array<string> = new Array<string>(
     'Stepper',
     'StepperItem',
-    // 'Web',
     'ColumnSplit',
     'RowSplit',
   )

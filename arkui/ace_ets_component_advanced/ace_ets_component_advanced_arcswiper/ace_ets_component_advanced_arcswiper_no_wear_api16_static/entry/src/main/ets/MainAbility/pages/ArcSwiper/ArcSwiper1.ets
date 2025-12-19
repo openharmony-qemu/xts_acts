@@ -15,42 +15,42 @@
  */
 
 import {
-  ArcSwiperAttribute,
-  ArcSwiper,
-  ArcDotIndicator,
   ArcDirection,
+  ArcDotIndicator,
+  ArcSwiper,
+  ArcSwiperAttribute,
   ArcSwiperController
 } from '@ohos.arkui.ArcSwiper'
-import { UIContext, PromptAction } from '@ohos.arkui.UIContext';
+import { PromptAction, UIContext } from '@ohos.arkui.UIContext';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base';
 import {
-  Builder,
-  Entry,
-  Component,
-  Scroller,
-  FontStyle,
-  Color,
-  BlurStyle,
-  Column,
-  Stack,
-  Row,
-  Text,
-  Divider,
   Alignment,
-  wrapBuilder,
-  Scroll,
+  BlurStyle,
+  Builder,
+  Color,
+  Column,
   ColumnOptions,
+  Component,
+  CrownSensitivity,
+  DataChangeListener,
+  Divider,
+  EdgeEffect,
+  Entry,
+  FontStyle,
+  IDataSource,
+  LazyForEach,
   List,
   ListItem,
-  LazyForEach,
-  EdgeEffect,
-  IDataSource,
-  DataChangeListener,
+  Row,
+  Scroll,
+  Scroller,
+  Stack,
+  Text,
   TextAlign,
-  CrownSensitivity
+  wrapBuilder
 } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Context } from '@ohos.abilityAccessCtrl'
 
 class MyDataSource implements IDataSource<int> {
@@ -79,9 +79,9 @@ class MyDataSource implements IDataSource<int> {
 @Entry
 @Component
 struct ArcSwiper1 {
+  scroller: Scroller = new Scroller();
   private arcSwiperController: ArcSwiperController = new ArcSwiperController()
   private data: MyDataSource = new MyDataSource([])
-  scroller: Scroller = new Scroller();
 
   aboutToAppear(): void {
     let list: int[] = []
@@ -97,14 +97,14 @@ struct ArcSwiper1 {
         List({ space: 5, initialIndex: 0 }) {
           ListItem() {
             ArcSwiper(this.arcSwiperController) {
-              LazyForEach(this.data, (item: int) => {
-                Text(item.toString())
-                  .width('90%')
-                  .height('90%')
-                  .backgroundColor(Color.Red)
-                  .textAlign(TextAlign.Center)
-                  .fontSize(30)
-              }, (item: int) => item!.toString())
+              // LazyForEach(this.data, (item: int) => {
+              //   Text(item.toString())
+              //     .width('90%')
+              //     .height('90%')
+              //     .backgroundColor(Color.Red)
+              //     .textAlign(TextAlign.Center)
+              //     .fontSize(30)
+              // }, (item: int) => item!.toString())
             }
             .key('arcSwiperTest001')
             .index(-1)

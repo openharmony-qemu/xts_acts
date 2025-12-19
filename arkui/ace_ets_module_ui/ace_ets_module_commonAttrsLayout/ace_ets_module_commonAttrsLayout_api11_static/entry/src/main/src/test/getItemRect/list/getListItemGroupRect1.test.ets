@@ -74,8 +74,6 @@ export default function getListItemGroupRect1() {
       await CommonFunc.sleep(2000);
       await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(3000);
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.back();
       console.info("BadgeFocus after each called");
     });
 
@@ -90,7 +88,7 @@ it('getListItemGroupRect1_static_0100', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0100] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
       await CommonFunc.sleep(1000);
 
@@ -151,7 +149,7 @@ it('getListItemGroupRect1_static_0200', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0200] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 1.0 })
       await CommonFunc.sleep(1000);
 
@@ -213,7 +211,7 @@ it('getListItemGroupRect1_static_0300', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0300] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: -1.0 })
       await CommonFunc.sleep(1000);
 
@@ -263,7 +261,7 @@ it('getListItemGroupRect1_static_0400', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0300] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
       await CommonFunc.sleep(1000);
 
@@ -319,7 +317,7 @@ it('getListItemGroupRect1_static_0500', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0500] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 100.0 })
       await CommonFunc.sleep(1000);
 
@@ -370,7 +368,7 @@ it('getListItemGroupRect1_static_0600', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0600] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 1.0 })
+      message.notify({ name: 'index', value: 1 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
       await CommonFunc.sleep(1000);
 
@@ -422,7 +420,7 @@ it('getListItemGroupRect1_static_0700', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0700] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 1.0 })
       message.notify({ name: 'space2', value: 20.0 })
       await CommonFunc.sleep(1000);
@@ -485,7 +483,7 @@ it('getListItemGroupRect1_static_0800', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0800] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
       message.notify({ name: 'padding1', value: 20.0 })
       await CommonFunc.sleep(1000);
@@ -547,7 +545,7 @@ it('getListItemGroupRect1_static_0900', Level.LEVEL0, async (done: () => void): 
 
       console.info('[getListItemGroupRect1_static_0900] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'indexInGroup', value: 0.0 })
       message.notify({ name: 'padding1', value: 0.0 })
       message.notify({ name: 'margin1', value: 20.0 })

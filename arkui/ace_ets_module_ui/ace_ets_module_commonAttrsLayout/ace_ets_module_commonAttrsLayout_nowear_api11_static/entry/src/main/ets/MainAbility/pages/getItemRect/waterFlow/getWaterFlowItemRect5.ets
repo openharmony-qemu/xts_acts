@@ -145,7 +145,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[1 % 100])
+        // .height(this.itemHeightArray[1 % 100])
         .backgroundColor(this.colors[1 % 5])
 
 
@@ -155,7 +155,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[2 % 100])
+        // .height(this.itemHeightArray[2 % 100])
         .backgroundColor(this.colors[2 % 5])
 
 
@@ -165,7 +165,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[3 % 100])
+        // .height(this.itemHeightArray[3 % 100])
         .backgroundColor(this.colors[3 % 5])
 
 
@@ -175,7 +175,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[4 % 100])
+        // .height(this.itemHeightArray[4 % 100])
         .backgroundColor(this.colors[4 % 5])
 
 
@@ -185,7 +185,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[5 % 100])
+        // .height(this.itemHeightArray[5 % 100])
         .backgroundColor(this.colors[5 % 5])
 
 
@@ -195,7 +195,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[6 % 100])
+        // .height(this.itemHeightArray[6 % 100])
         .backgroundColor(this.colors[6 % 5])
 
 
@@ -205,7 +205,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[7 % 100])
+        // .height(this.itemHeightArray[7 % 100])
         .backgroundColor(this.colors[7 % 5])
 
 
@@ -215,7 +215,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[8 % 100])
+        // .height(this.itemHeightArray[8 % 100])
         .backgroundColor(this.colors[8 % 5])
 
 
@@ -225,7 +225,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[9 % 100])
+        // .height(this.itemHeightArray[9 % 100])
         .backgroundColor(this.colors[9 % 5])
 
 
@@ -235,7 +235,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[10 % 100])
+        // .height(this.itemHeightArray[10 % 100])
         .backgroundColor(this.colors[10 % 5])
 
 
@@ -245,7 +245,7 @@ struct getWaterFlowItemRect5 {
           }
         }
         .width('100%')
-        .height(this.itemHeightArray[11 % 100])
+        // .height(this.itemHeightArray[11 % 100])
         .backgroundColor(this.colors[11 % 5])
 
       }

@@ -63,13 +63,9 @@ export default function enabledTest() {
     'LoadingProgress',
     'Marquee',
     'MenuItem',
-
-    // 'NavRouter',
     'ScrollBar',
     'Row',
     'RelativeContainer',
-
-    // 'Navigator',
     'GridItem',
     'TextTimer',
     'Stepper',
@@ -94,9 +90,6 @@ export default function enabledTest() {
     'Grid',
     'List',
     'ListItem',
-    'Panel',
-    // 77 pass 77
-
     'Refresh',
     'Scroll',
     'Stack',
@@ -109,9 +102,7 @@ export default function enabledTest() {
     'Polygon',
     'Path',
     'Rect',
-
     'Shape'
-    // 77 pass 77
   ]
 
   let exceptFocusViews: Array<string> = new Array<string>(
@@ -210,10 +201,8 @@ export default function enabledTest() {
    */
   describe('EnabledTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       console.info("enabledTest beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

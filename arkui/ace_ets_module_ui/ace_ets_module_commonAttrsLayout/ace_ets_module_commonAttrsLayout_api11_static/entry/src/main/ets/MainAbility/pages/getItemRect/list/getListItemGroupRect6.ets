@@ -48,7 +48,7 @@ struct getListItemGroupRect6 {
   @State y: number = 0
   @State width1: number = 0
   @State height1: number = 0
-  messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManager: MessageManager<Int> = new MessageManager<Int>()
   private listScroller: ListScroller = new ListScroller()
 
   @Builder
@@ -79,8 +79,8 @@ struct getListItemGroupRect6 {
 
   onPageShow() {
     console.info('getListItemGroupRect6 onPageShow');
-    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManager', this.messageManager);
+    let callback: Callback<Int> = (message: Message<Int>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
         this.index = message.value as Int;
@@ -98,6 +98,8 @@ struct getListItemGroupRect6 {
         this.y = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).y
         this.width1 = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).width
         this.height1 = this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).height
+        console.log('tset get data height is: ' +
+        this.listScroller.getItemRectInGroup(this.index, this.indexInGroup).height)
       }).id('getListItemGroupRect6_button')
       Text('' + this.x).key('getListItemGroupRect6_text1')
       Text('' + this.y).key('getListItemGroupRect6_text2')

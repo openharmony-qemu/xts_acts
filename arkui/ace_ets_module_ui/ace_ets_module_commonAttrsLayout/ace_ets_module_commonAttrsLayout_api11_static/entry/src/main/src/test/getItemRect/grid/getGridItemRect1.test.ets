@@ -18,7 +18,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -81,7 +81,7 @@ it('getGridItemRect1_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getGridItemRect1_static_0100] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 3.0 })
+      message.notify({ name: 'index', value: 3 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -132,7 +132,7 @@ it('getGridItemRect1_static_0200', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getGridItemRect1_static_0200] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 4.0 })
+      message.notify({ name: 'index', value: 4 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -232,7 +232,7 @@ it('getGridItemRect1_static_0500', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getGridItemRect1_static_0500] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -282,7 +282,7 @@ it('getGridItemRect1_static_0600', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getGridItemRect1_static_0600] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 1.0 })
+      message.notify({ name: 'index', value: 1 })
       await CommonFunc.sleep(1000);
 
       let driver = Driver.create();
@@ -331,7 +331,7 @@ it('getGridItemRect1_static_0700', Level.LEVEL0, async (done: () => void): Promi
 
       console.info('[getGridItemRect1_static_0700] START');
       const message: MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'padding1', value: 20.0 })
       await CommonFunc.sleep(1000);
 

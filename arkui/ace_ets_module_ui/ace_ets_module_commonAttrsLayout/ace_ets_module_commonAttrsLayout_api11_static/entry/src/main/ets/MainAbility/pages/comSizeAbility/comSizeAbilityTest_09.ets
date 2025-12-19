@@ -48,32 +48,32 @@ struct comSizeAbilityTest_09 {
             .onClick((e: ClickEvent) => {
               this.show = !this.show
             })
-          // bindSheet(this.show) { // 展示细节
-          //   Column() {
-          //     Text('滑动面板')
-          //     Divider()
-          //     Text('详情')
-          //   }
-          // }
-          // .key("Panel_Size")
-          // .size({ width: 261, height: 140 })
-          // .translate({ x: 1, y: 1, z: 1 })
-          // .scale({
-          //   x: 1,
-          //   y: 1,
-          //   z: 1,
-          //   centerX: 1,
-          //   centerY: 1
-          // })
-          // .rotate({
-          //   x: 1,
-          //   y: 1,
-          //   z: 1,
-          //   angle: 0,
-          //   centerX: 1,
-          //   centerY: 1
-          // })
-          // .transform(matrix)
+            // bindSheet(this.show) { // 展示细节
+            //   Column() {
+            //     Text('滑动面板')
+            //     Divider()
+            //     Text('详情')
+            //   }
+            // }
+            .key("Panel_Size")
+            .size({ width: 261, height: 140 })
+            .translate({ x: 1, y: 1, z: 1 })
+            .scale({
+              x: 1,
+              y: 1,
+              z: 1,
+              centerX: 1,
+              centerY: 1
+            })
+            .rotate({
+              x: 1,
+              y: 1,
+              z: 1,
+              angle: 0,
+              centerX: 1,
+              centerY: 1
+            })
+            .transform(matrix)
         }
         .backgroundColor('0xDCDCDC')
         .width('100%')

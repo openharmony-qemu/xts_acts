@@ -45,7 +45,6 @@ export default function defaultTest() {
   let supportView: Array<string> = new Array<string>(
      'Stepper',
      'StepperItem',
-    // 'Web',
      'ColumnSplit',
      'RowSplit',
      'FlowItem',

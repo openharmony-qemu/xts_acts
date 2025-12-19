@@ -64,6 +64,7 @@ struct getListItemGroupRect5 {
   @State width1: number = 0
   @State height1: number = 0
   messageManager: MessageManager<number> = new MessageManager<number>()
+  messageManagerInt: MessageManager<Int> = new MessageManager<Int>()
   messageManagerString: MessageManager<string> = new MessageManager<string>()
   messageManagerAxis: MessageManager<Axis> = new MessageManager<Axis>()
   private arr: string[] = ['0', '1', '2', '3', '4', '5', '6', '7']
@@ -89,10 +90,11 @@ struct getListItemGroupRect5 {
 
   onPageShow() {
     console.info('getListItemGroupRect5 onPageShow');
+    AppStorage.setOrCreate<MessageManager<Int>>('messageManagerInt', this.messageManagerInt);
     AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
     AppStorage.setOrCreate<MessageManager<Axis>>('messageManagerAxis', this.messageManagerAxis);
     AppStorage.setOrCreate<MessageManager<string>>('messageManagerString', this.messageManagerString);
-    let callback: Callback<number> = (message: Message<number>) => {
+    let callbackInt: Callback<Int> = (message: Message<Int>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
         this.index = message.value as Int;
@@ -100,6 +102,12 @@ struct getListItemGroupRect5 {
         this.indexInGroup = message.value as Int;
       }
     }
+    // let callback: Callback<Number> = (message: Message<Number>) => {
+    //   console.error('message = ' + message.name + "--" + message.value);
+    //   if (message.name == 'width2') {
+    //     this.width2 = message.value as Number;
+    //   }
+    // }
     let stringCallback: Callback<string> = (message: Message<string>) => {
       if (message.name == 'width2') {
         this.width2 = message.value as String;
@@ -114,7 +122,8 @@ struct getListItemGroupRect5 {
     }
     this.messageManagerAxis.registerCallback(AxisCallback);
     this.messageManagerString.registerCallback(stringCallback);
-    this.messageManager.registerCallback(callback);
+    this.messageManagerInt.registerCallback(callbackInt);
+    // this.messageManager.registerCallback(callback);
   }
 
   build() {

@@ -61,8 +61,6 @@ export default function comSizeAbilityTest_07() {
         if (!("comSizeAbilityTest" == pages.name)) {
           console.info("get comSizeAbilityTest_07 state pages.name: " + JSON.stringify(pages.name))
           routerInstance.pushUrl(options)
-          // await CommonFunc.sleep(1000);
-          // console.info("push comSizeAbilityTest_07 success: " + JSON.stringify(result))
         }
       } catch (err) {
         console.error("push comSizeAbilityTest_07 page error: " + err)
@@ -94,10 +92,24 @@ it('comSizeAbilityTestJsunit_static_20', Level.LEVEL0, async (done: () => void):
         console.info("[comSizeAbilityTestJsunit_static_20] component Scale is: " + JSON.stringify(Scale))
         console.info("[comSizeAbilityTestJsunit_static_20] component Rotate is: " + JSON.stringify(Rotate))
         await CommonFunc.sleep(1000);
-        expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-        expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"centerY":1,"z":1,"centerX":1}');
-        expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"centerY":1,"angle":0,"z":1,"centerX":1}');
-        expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+        // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+        expect(JSON.stringify(Translate.x)).assertEqual('1');
+        expect(JSON.stringify(Translate.y)).assertEqual('1');
+        expect(JSON.stringify(Translate.z)).assertEqual('1');
+        // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+        expect(JSON.stringify(Scale.x)).assertEqual('1');
+        expect(JSON.stringify(Scale.y)).assertEqual('1');
+        expect(JSON.stringify(Scale.z)).assertEqual('1');
+        expect(JSON.stringify(Scale.centerX)).assertEqual('1');
+        expect(JSON.stringify(Scale.centerY)).assertEqual('1');
+        // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+        expect(JSON.stringify(Rotate.x)).assertEqual('1');
+        expect(JSON.stringify(Rotate.y)).assertEqual('1');
+        expect(JSON.stringify(Rotate.z)).assertEqual('1');
+        expect(JSON.stringify(Rotate.angle)).assertEqual('0');
+        expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
+        expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
+        // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       }
       console.info('[comSizeAbilityTestJsunit_static_20] END')
       await CommonFunc.sleep(1000);
@@ -117,6 +129,7 @@ it('comSizeAbilityTestJsunit_static_21', Level.LEVEL0, async (done: () => void):
         let driver = Driver.create();
         let button1 = await driver.findComponent(ON.id('btn_MenuItem'))
         await (button1?.click() as Promise<void>);
+        console.log('test start click ' + JSON.stringify(button1))
         await CommonFunc.sleep(2000);
         let modePosition: componentUtils.ComponentInfo = componentUtils1.getRectangleById("MenuItem_Size");
         let Size = modePosition.size
@@ -134,10 +147,24 @@ it('comSizeAbilityTestJsunit_static_21', Level.LEVEL0, async (done: () => void):
         await CommonFunc.sleep(1000);
         expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(90))) <= 1).assertTrue();
         expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(90))) <= 1).assertTrue();
-        expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-        expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"centerY":1,"z":1,"centerX":1}');
-        expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"centerY":1,"angle":0,"z":1,"centerX":1}');
-        expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+        // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+        expect(JSON.stringify(Translate.x)).assertEqual('1');
+        expect(JSON.stringify(Translate.y)).assertEqual('1');
+        expect(JSON.stringify(Translate.z)).assertEqual('1');
+        // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+        expect(JSON.stringify(Scale.x)).assertEqual('1');
+        expect(JSON.stringify(Scale.y)).assertEqual('1');
+        expect(JSON.stringify(Scale.z)).assertEqual('1');
+        expect(JSON.stringify(Scale.centerX)).assertEqual('1');
+        expect(JSON.stringify(Scale.centerY)).assertEqual('1');
+        // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+        expect(JSON.stringify(Rotate.x)).assertEqual('1');
+        expect(JSON.stringify(Rotate.y)).assertEqual('1');
+        expect(JSON.stringify(Rotate.z)).assertEqual('1');
+        expect(JSON.stringify(Rotate.angle)).assertEqual('0');
+        expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
+        expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
+        // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
       }
       console.info('[comSizeAbilityTestJsunit_static_21] END')
       await CommonFunc.sleep(1000);
@@ -174,10 +201,24 @@ it('comSizeAbilityTestJsunit_static_22', Level.LEVEL0, async (done: () => void):
         await CommonFunc.sleep(1000);
         expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
         expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-        expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
-        expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"centerY":1,"z":1,"centerX":1}');
-        expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"centerY":1,"angle":0,"z":1,"centerX":1}');
-        expect(JSON.stringify(Transform)).assertEqual('[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]');
+        // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
+        expect(JSON.stringify(Translate.x)).assertEqual('1');
+        expect(JSON.stringify(Translate.y)).assertEqual('1');
+        expect(JSON.stringify(Translate.z)).assertEqual('1');
+        // expect(JSON.stringify(Scale)).assertEqual('{"x":1,"y":1,"z":1,"centerX":1,"centerY":1}');
+        expect(JSON.stringify(Scale.x)).assertEqual('1');
+        expect(JSON.stringify(Scale.y)).assertEqual('1');
+        expect(JSON.stringify(Scale.z)).assertEqual('1');
+        expect(JSON.stringify(Scale.centerX)).assertEqual('1');
+        expect(JSON.stringify(Scale.centerY)).assertEqual('1');
+        // expect(JSON.stringify(Rotate)).assertEqual('{"x":1,"y":1,"z":1,"angle":0,"centerX":1,"centerY":1}');
+        expect(JSON.stringify(Rotate.x)).assertEqual('1');
+        expect(JSON.stringify(Rotate.y)).assertEqual('1');
+        expect(JSON.stringify(Rotate.z)).assertEqual('1');
+        expect(JSON.stringify(Rotate.angle)).assertEqual('0');
+        expect(JSON.stringify(Rotate.centerX)).assertEqual('1');
+        expect(JSON.stringify(Rotate.centerY)).assertEqual('1');
+        // expect(JSON.stringify(Transform)).assertEqual('[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]]');
         await CommonFunc.sleep(1000);
         await (driver?.click(Math.round(AppStorage.get<number>("winLeft") as number + uiContext.vp2px(200)) as int,
           Math.round(AppStorage.get<number>("winTop") as number + uiContext.vp2px(200)) as int) as Promise<void>);

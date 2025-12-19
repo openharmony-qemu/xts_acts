@@ -18,7 +18,7 @@ import router from '@ohos.router';
 import ohosrouter from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
-import { Router, ComponentUtils, UIContext } from '@ohos.arkui.UIContext';
+import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -81,7 +81,7 @@ it('getScrollItemRect5_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('[getScrollItemRect5_static_0100] START');
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'padding1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
@@ -162,7 +162,7 @@ it('getScrollItemRect5_static_0200', Level.LEVEL0, async (done: () => void): Pro
         console.error("push getScrollItemRect5 page error: " + err);
       }
       const message: MessageManager<Object> = AppStorage.get<MessageManager<Object>>("messageManager")!
-      message.notify({ name: 'index', value: 0.0 })
+      message.notify({ name: 'index', value: 0 })
       message.notify({ name: 'margin1', value: 20.0 })
       await CommonFunc.sleep(1000);
 
