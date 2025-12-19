@@ -261,7 +261,7 @@ static napi_value Doblankless_INVALID_ARGS(napi_env env, napi_callback_info info
 }
 static napi_value Doblankless_INVALID_ARGS_SET_ZERO(napi_env env, napi_callback_info info)
 {
-     size_t argc = 1;
+    size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     // 获取第一个参数 webTag
