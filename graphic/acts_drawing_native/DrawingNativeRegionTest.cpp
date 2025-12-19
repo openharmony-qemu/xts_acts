@@ -787,6 +787,581 @@ HWTEST_F(DrawingNativeRegionTest, testRegionEmptyCalls, Function | SmallTest | L
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RegionDestroy(region);
 }
+
+/**
+ * @tc.name   testRegionGetBoundaryNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0900
+ * @tc.desc   test for testRegionGetBoundaryNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionGetBoundaryNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBoundaryPath(region, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    bool isEmpty = false;
+    OH_Drawing_PathIsEmpty(path, &isEmpty);
+    EXPECT_EQ(isEmpty, true);
+
+    OH_Drawing_RegionSetRect(region, rect);
+    errorCode = OH_Drawing_RegionGetBoundaryPath(region, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathIsEmpty(path, &isEmpty);
+    EXPECT_EQ(isEmpty, false);
+    bool ret = OH_Drawing_PathContains(path, 300.01, 200.00);
+    EXPECT_EQ(ret, false);
+    ret = OH_Drawing_PathContains(path, 200, 300.01);
+    EXPECT_EQ(ret, false);
+    ret = OH_Drawing_PathContains(path, 299.99, 299.99);
+    EXPECT_EQ(ret, true);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testRegionGetBoundaryNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0901
+ * @tc.desc   test for testRegionGetBoundaryNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionGetBoundaryNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBoundaryPath(nullptr, path);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    bool isEmpty = false;
+    OH_Drawing_PathIsEmpty(path, &isEmpty);
+    EXPECT_EQ(isEmpty, true);
+
+    errorCode = OH_Drawing_RegionGetBoundaryPath(region, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_PathIsEmpty(path, &isEmpty);
+    EXPECT_EQ(isEmpty, true);
+    OH_Drawing_RegionDestroy(region);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testRegionGetBoundaryMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0902
+ * @tc.desc   test for testRegionGetBoundaryMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionGetBoundaryMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBoundaryPath(region, path);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        bool isEmpty = false;
+        OH_Drawing_PathIsEmpty(path, &isEmpty);
+        EXPECT_EQ(isEmpty, true);
+    }
+    OH_Drawing_RegionDestroy(region);
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testRegionGetBoundsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1000
+ * @tc.desc   test for testRegionGetBoundsNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionGetBoundsNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region1, nullptr);
+    OH_Drawing_Region *region2 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region2, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_RegionSetRect(region1, rect1);
+    OH_Drawing_RegionSetRect(region2, rect2);
+
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBounds(region1, rect1);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect1), 100);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect1), 100);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect1), 300);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect1), 300);
+
+    OH_Drawing_RegionOp(region1, region2, OH_Drawing_RegionOpMode::REGION_OP_MODE_UNION);
+    errorCode = OH_Drawing_RegionGetBounds(region1, rect1);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect1), 100);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect1), 100);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect1), 400);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect1), 400);
+    
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_RegionDestroy(region1);
+    OH_Drawing_RegionDestroy(region2);
+}
+
+/**
+ * @tc.name   testRegionGetBoundsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1001
+ * @tc.desc   test for testRegionGetBoundsNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionGetBoundsNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBounds(nullptr, rect);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_RegionGetBounds(region, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionGetBoundsMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1002
+ * @tc.desc   test for testRegionGetBoundsMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionGetBoundsMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionGetBounds(region, rect);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 100);
+        EXPECT_EQ(OH_Drawing_RectGetTop(rect), 100);
+        EXPECT_EQ(OH_Drawing_RectGetRight(rect), 300);
+        EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 300);
+    }
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionIsComplexNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1100
+ * @tc.desc   test for testRegionIsComplexNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsComplexNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region1, nullptr);
+    OH_Drawing_Region *region2 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region2, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_RegionSetRect(region1, rect1);
+    OH_Drawing_RegionSetRect(region2, rect2);
+
+    bool isComplex = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsComplex(region1, &isComplex);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isComplex, false);
+
+    OH_Drawing_RegionOp(region1, region2, OH_Drawing_RegionOpMode::REGION_OP_MODE_UNION);
+    errorCode = OH_Drawing_RegionIsComplex(region1, &isComplex);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isComplex, true);
+    
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_RegionDestroy(region1);
+    OH_Drawing_RegionDestroy(region2);
+}
+
+/**
+ * @tc.name   testRegionIsComplexNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1101
+ * @tc.desc   test for testRegionIsComplexNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsComplexNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isComplex = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsComplex(nullptr, &isComplex);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isComplex, false);
+    errorCode = OH_Drawing_RegionIsComplex(region, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isComplex, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionIsComplexMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1102
+ * @tc.desc   test for testRegionIsComplexMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsComplexMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region1, nullptr);
+    OH_Drawing_Region *region2 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region2, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_RegionSetRect(region1, rect1);
+    OH_Drawing_RegionSetRect(region2, rect2);
+
+    bool isComplex = false;
+    OH_Drawing_RegionOp(region1, region2, OH_Drawing_RegionOpMode::REGION_OP_MODE_UNION);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsComplex(region1, &isComplex);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isComplex, true);
+    }
+    
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_RegionDestroy(region1);
+    OH_Drawing_RegionDestroy(region2);
+}
+
+/**
+ * @tc.name   testRegionIsEmptyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1200
+ * @tc.desc   test for testRegionIsEmptyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    bool isEmpty = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsEmpty(region, &isEmpty);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isEmpty, true);
+
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    errorCode = OH_Drawing_RegionIsEmpty(region, &isEmpty);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isEmpty, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionIsEmptyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1201
+ * @tc.desc   test for testRegionIsEmptyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    bool isEmpty = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsEmpty(nullptr, &isEmpty);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isEmpty, false);
+    errorCode = OH_Drawing_RegionIsEmpty(region, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isEmpty, false);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionIsEmptyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1200
+ * @tc.desc   test for testRegionIsEmptyMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsEmptyMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    bool isEmpty = false;
+    OH_Drawing_RegionSetRect(region, rect);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsEmpty(region, &isEmpty);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isEmpty, false);
+    }
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionIsRectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1300
+ * @tc.desc   test for testRegionIsRectNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsRectNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region1 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region1, nullptr);
+    OH_Drawing_Region *region2 = OH_Drawing_RegionCreate();
+    EXPECT_NE(region2, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(200, 200, 400, 400);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_RegionSetRect(region1, rect1);
+    OH_Drawing_RegionSetRect(region2, rect2);
+
+    bool isRect = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsRect(region1, &isRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRect, true);
+
+    OH_Drawing_RegionOp(region1, region2, OH_Drawing_RegionOpMode::REGION_OP_MODE_UNION);
+    errorCode = OH_Drawing_RegionIsRect(region1, &isRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isRect, false);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_RegionDestroy(region1);
+    OH_Drawing_RegionDestroy(region2);
+}
+
+/**
+ * @tc.name   testRegionIsRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1301
+ * @tc.desc   test for testRegionIsRectNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsRectNull, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    bool isRect = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsRect(nullptr, &isRect);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isRect, false);
+    errorCode = OH_Drawing_RegionIsRect(region, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isRect, false);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionIsRectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1302
+ * @tc.desc   test for testRegionIsRectMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionIsRectMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    bool isRect = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionIsRect(region, &isRect);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isRect, false);
+    }
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickContainsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1400
+ * @tc.desc   test for testRegionQuickContainsNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isContains = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(region, 200, 200, 400, 400, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, true);
+    errorCode = OH_Drawing_RegionQuickContains(region, 200, 200, 600, 600, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickContainsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1401
+ * @tc.desc   test for testRegionQuickContainsNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isContains = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(nullptr, 200, 200, 400, 400, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isContains, false);
+    errorCode = OH_Drawing_RegionQuickContains(region, 0, 200, 400, 400, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    errorCode = OH_Drawing_RegionQuickContains(region, 200, 0, 400, 400, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    errorCode = OH_Drawing_RegionQuickContains(region, 200, 200, 0, 400, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    errorCode = OH_Drawing_RegionQuickContains(region, 200, 200, 400, 0, &isContains);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isContains, false);
+    errorCode = OH_Drawing_RegionQuickContains(region, 200, 200, 400, 400, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isContains, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionQuickContainsMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1402
+ * @tc.desc   test for testRegionQuickContainsMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionQuickContainsMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    bool isContains = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionQuickContains(region, 200, 200, 400, 400, &isContains);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isContains, true);
+    }
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionTranslateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1500
+ * @tc.desc   test for testRegionTranslateNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionTranslate(region, 100, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    bool ret = OH_Drawing_RegionContains(region, 300, 300);
+    EXPECT_EQ(ret, true);
+    ret = OH_Drawing_RegionContains(region, 401, 401);
+    EXPECT_EQ(ret, false);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionTranslateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1501
+ * @tc.desc   test for testRegionTranslateNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionTranslateNull, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionTranslate(nullptr, 100, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_RegionTranslate(region, 0, 100);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    errorCode = OH_Drawing_RegionTranslate(region, 100, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
+
+/**
+ * @tc.name   testRegionTranslateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1502
+ * @tc.desc   test for testRegionTranslateMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST 
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeRegionTest, testRegionTranslateMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 300, 300);
+    EXPECT_NE(rect, nullptr);
+    OH_Drawing_RegionSetRect(region, rect);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_RegionTranslate(region, 100, 100);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
