@@ -670,12 +670,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2400
-     * @tc.name      : getThumbnail_callback_024
-     * @tc.desc      : getThumbnail(moving photo) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2400
+     * @tc.name   getThumbnail_callback_024
+     * @tc.desc   getThumbnail(moving photo) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_024', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_024';
@@ -686,12 +686,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2500
-     * @tc.name      : getThumbnail_callback_025
-     * @tc.desc      : getThumbnail(trash asset) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2500
+     * @tc.name   getThumbnail_callback_025
+     * @tc.desc   getThumbnail(trash asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_025', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_025';
@@ -726,12 +726,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2600
-     * @tc.name      : getThumbnail_callback_026
-     * @tc.desc      : getThumbnail(hidden asset) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2600
+     * @tc.name   getThumbnail_callback_026
+     * @tc.desc   getThumbnail(hidden asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_026', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_026';
@@ -768,12 +768,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2700
-     * @tc.name      : getThumbnail_callback_027
-     * @tc.desc      : getThumbnail(deleted asset) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2700
+     * @tc.name   getThumbnail_callback_027
+     * @tc.desc   getThumbnail(deleted asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_027', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_027';
@@ -815,12 +815,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2800
-     * @tc.name      : getThumbnail_callback_028
-     * @tc.desc      : getThumbnail(damaged asset) by no size
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2800
+     * @tc.name   getThumbnail_callback_028
+     * @tc.desc   getThumbnail(damaged asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_028', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_028';
@@ -851,12 +851,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2900
-     * @tc.name      : getThumbnail_callback_029
-     * @tc.desc      : getThumbnail(moving photo) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2900
+     * @tc.name   getThumbnail_callback_029
+     * @tc.desc   getThumbnail(moving photo) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_029', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_029';
@@ -873,12 +873,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3000
-     * @tc.name      : getThumbnail_callback_030
-     * @tc.desc      : getThumbnail(trash asset) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3000
+     * @tc.name   getThumbnail_callback_030
+     * @tc.desc   getThumbnail(trash asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_030', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_030';
@@ -915,12 +915,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3100
-     * @tc.name      : getThumbnail_callback_031
-     * @tc.desc      : getThumbnail(hidden asset) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3100
+     * @tc.name   getThumbnail_callback_031
+     * @tc.desc   getThumbnail(hidden asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_031', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_031';
@@ -959,12 +959,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3200
-     * @tc.name      : getThumbnail_callback_032
-     * @tc.desc      : getThumbnail(damaged asset) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3200
+     * @tc.name   getThumbnail_callback_032
+     * @tc.desc   getThumbnail(damaged asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
     it('getThumbnail_callback_032', Level.LEVEL2, async (done: Function) => {
       const testNum = 'getThumbnail_callback_032';
@@ -998,12 +998,12 @@ export default function getThumbnailTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3300
-     * @tc.name      : getThumbnail_callback_033
-     * @tc.desc      : getThumbnail(deleted asset) by { width: 128, height: 128 }
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3300
+     * @tc.name   getThumbnail_callback_033
+     * @tc.desc   getThumbnail(deleted asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('getThumbnail_callback_033', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getThumbnail_callback_033';
