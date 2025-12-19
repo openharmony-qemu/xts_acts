@@ -17,14 +17,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 
 export default function EmptyTest() {
   describe('EmptyTest', () => {
-    /*
-      * @tc.number: testTheDevicesNotSupportSyscap001
-      * @tc.name  : testTheDevicesNotSupportSyscap001
-      * @tc.desc  : The Devices not support this stsCap.
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : Level 3
-      */
+    /**
+    * @tc.number: testTheDevicesNotSupportSyscap001
+    * @tc.name  : testTheDevicesNotSupportSyscap001
+    * @tc.desc  : The Devices not support this stsCap.
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : Level 3
+    */
     it('testTheDevicesNotSupportSyscap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let a: number = 1;
       let b: number = 2;
