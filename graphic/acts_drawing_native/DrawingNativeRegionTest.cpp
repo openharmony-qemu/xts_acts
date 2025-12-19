@@ -1351,6 +1351,9 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectNull, Function | SmallTes
     errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 500, 0, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(isReject, false);
+    errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 500, 0, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isReject, false);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RegionDestroy(region);
 }
