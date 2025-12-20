@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include <js_native_api.h>
 #include <string.h>
+#include "OHMediaAssetCreateTest.h"
 #include "CameraSessionNdkTEST.h"
 #include "MediaAssetManagerCancelRequestTest.h"
 
@@ -27,9 +28,11 @@
 
 
 napi_property_descriptor desc1[] = {
-    DESCRIPTOR("initWithSurface", initWithSurface),
-    DESCRIPTOR("captureSessionStart", captureSessionStart),
+    DESCRIPTOR("OHMediaAssetChangeRequestCreateTest", OHMediaAssetChangeRequestCreateTest),
+    DESCRIPTOR("OHMediaAssetChangeRequestAddResourceWithUriTest", OHMediaAssetChangeRequestAddResourceWithUriTest),
     DESCRIPTOR("TestOhMediaAsset", TestOhMediaAsset),
+    DESCRIPTOR("OHMediaAccessHelperApplyChangesTest", OHMediaAccessHelperApplyChangesTest),
+    DESCRIPTOR("OHMediaAssetChangeRequestReleaseTest", OHMediaAssetChangeRequestReleaseTest),
     DESCRIPTOR("MediaAssetManagerCancelRequestTest", MediaAssetManagerCancelRequestTest),
 };
 
