@@ -154,6 +154,14 @@ struct PickerComponent {
     this.vedioCallBackState = state;
   }
 
+  private onScrollStopAtEndCallback(): void {
+    console.info('onScrollStopAtEnd')
+  }
+
+    private onScrollStopAtStartCallback(): void {
+    console.info('onScrollStopAtStart')
+  }
+
   private onAlbumClick(albumInfo: AlbumInfo): boolean {
     this.isShowAlbum = false;
     console.info('onAlbumClick' + JSON.stringify(albumInfo?.uri));
@@ -331,6 +339,8 @@ struct PickerComponent {
         onExceedMaxSelected: this.exceedMaxSeletedCallback,
         onCurrentAlbumDeleted: this.currentAlbumDeletedCallback,
         onVideoPlayStateChanged: this.videoPlayStateChangedCallback,
+        onScrollStopAtEnd: this.onScrollStopAtEndCallback,
+        onScrollStopAtStart: this.onScrollStopAtStartCallback,
         pickerController: this.pickerController,
       })
         .height('70%')
