@@ -21,7 +21,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 const TAG = 'ets_apiLack_add';
 
-function itemTextStyle(this: TextAttribute): this {
+function itemTextStyle(this: TextAttribute) {
   this.fontColor('#182431')
   this.fontSize(36)
   this.fontWeight(500)
@@ -31,7 +31,7 @@ function itemTextStyle(this: TextAttribute): this {
 }
 
 
-function itemStyle(this: ColumnAttribute): this {
+function itemStyle(this: ColumnAttribute) {
   this.width(336)
   this.height(621)
   this.margin({ top: 48, left: 12 } as Margin)

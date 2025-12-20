@@ -143,7 +143,7 @@ struct TextMenuType1 {
   }
 }
 
-function MenuStyles(this: MenuAttribute): this {
+function MenuStyles(this: MenuAttribute) {
   this.radius($r('sys.float.ohos_id_corner_radius_card'))
   this.clip(true)
   this.backgroundColor('#F0F0F0')
