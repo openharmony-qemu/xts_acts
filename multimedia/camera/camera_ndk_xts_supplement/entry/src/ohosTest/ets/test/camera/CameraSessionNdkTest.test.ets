@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
-import { driveFn, getPermission, } from '../common';
+import { driveFn, getPermission, } from '../common.test';
 import { indexSurfaceId } from '../../testability/pages/Index';
 
 const EFFECT_SUCCESS = 0;
