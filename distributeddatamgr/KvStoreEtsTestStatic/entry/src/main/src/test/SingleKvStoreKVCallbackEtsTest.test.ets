@@ -1864,4 +1864,297 @@ export default function SingleKvStoreCallbackTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_REMOVE_CALLBACK_6300
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_6300
+     * @tc.desc   Test Js Api SingleKvStore.RemoveDeviceData() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_REMOVE_CALLBACK_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info('SingleKvStoreRemoveDeviceDataCallbackTest001');
+        try {
+          kvStore!.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT,
+            (err: Error | null, data: string[] | undefined): void => {
+              console.info('SingleKvStoreRemoveDeviceDataCallbackTest001 put success');
+              expect(err == undefined).assertTrue();
+              let deviceid = 'no_exist_device_id';
+              kvStore!.removeDeviceData(deviceid,
+                (err: Error | null, data: string[] | undefined): void => {
+                  if (err == undefined) {
+                    console.info('SingleKvStoreRemoveDeviceDataCallbackTest001 removeDeviceData success');
+                    expect(null).assertFail();
+                    done();
+                  } else {
+                    console.info('SingleKvStoreRemoveDeviceDataCallbackTest001 removeDeviceData fail');
+                    kvStore!.get(KEY_TEST_STRING_ELEMENT,
+                      (err: Error | null, data: boolean | string | Long | Double | Uint8Array | undefined) => {
+                        console.info('SingleKvStoreRemoveDeviceDataCallbackTest001 get success');
+                        expect(data == VALUE_TEST_STRING_ELEMENT).assertTrue();
+                        done();
+                      });
+                  }
+                });
+            });
+        } catch (e: Error) {
+          console.error('SingleKvStoreRemoveDeviceDataCallbackTest001 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_REMOVE_CALLBACK_6500
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_6600
+     * @tc.desc   Test Js Api SingleKvStore.RemoveDeviceData() testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_REMOVE_CALLBACK_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info('SingleKvStoreRemoveDeviceDataCallbackTest003');
+        try {
+          kvStore!.removeDeviceData('', (err: Error | null, data: string[] | undefined) => {
+            if (err == undefined) {
+              console.info('SingleKvStoreRemoveDeviceDataCallbackTest003 removeDeviceData success');
+              expect(null).assertFail();
+            } else {
+              console.info('SingleKvStoreRemoveDeviceDataCallbackTest003 removeDeviceData fail');
+            }
+            done();
+          });
+        } catch (e: Error) {
+          console.error('SingleKvStoreRemoveDeviceDataCallbackTest003 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_SETSYNC_CALLBACK_6700
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_7100
+     * @tc.desc   Test Js Api SingleKvStore.SetSyncParam() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_SETSYNC_CALLBACK_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info('SingleKvStoreSetSyncParamCallbackTest001');
+        try {
+          let defaultAllowedDelayMs = 500;
+          kvStore!.setSyncParam(defaultAllowedDelayMs, (err: Error | null, data: string[] | undefined) => {
+            console.info('SingleKvStoreSetSyncParamCallbackTest001 put success');
+            expect(err == undefined).assertTrue();
+            done();
+          });
+        } catch (e: Error) {
+          console.error('SingleKvStoreSetSyncParamCallbackTest001 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_GETSECURITY_CALLBACK_7100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_4300
+     * @tc.desc   Test Js Api SingleKvStore.GetSecurityLevel() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_GETSECURITY_CALLBACK_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info('SingleKvStoreGetSecurityLevelCallbackTest001');
+        try {
+          kvStore!.getSecurityLevel((err: Error | null,
+            data: factory.SecurityLevel | undefined) => {
+            console.info('SingleKvStoreGetSecurityLevelCallbackTest001 getSecurityLevel success: ' + data);
+            console.info('SingleKvStoreGetSecurityLevelCallbackTest001 getSecurityLevel success: ' +
+            factory.SecurityLevel.S2);
+            expect(data == factory.SecurityLevel.S2).assertTrue();
+            done();
+          });
+        } catch (e: Error) {
+          console.error('SingleKvStoreGetSecurityLevelCallbackTest001 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_GETRESULT_CALLBACK_7500
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_4000
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULT_CALLBACK_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let resultSet: factory.KVStoreResultSet;
+        console.info('SingleKvStoreGetResultSetCallbackTest001');
+        try {
+          let entries: factory.Entry[] = [];
+          for (let i = 0; i < 10; i++) {
+            entries.push({
+              key: 'batch_test_string_key' + i,
+              value: {
+                type: factory.ValueType.STRING,
+                value: 'batch_test_string_value'
+              }
+            });
+          }
+
+          kvStore!.putBatch(entries, (err: BusinessError | null, data: string[] | undefined) => {
+            console.info('SingleKvStoreGetResultSetCallbackTest001 putBatch success');
+            expect(err == undefined).assertTrue();
+            kvStore!.getResultSet('batch_test_string_key',
+              (err: Error | null, result: factory.KVStoreResultSet | undefined) => {
+                console.info('SingleKvStoreGetResultSetCallbackTest001 getResultSet success');
+                resultSet = result as factory.KVStoreResultSet;
+                expect(resultSet!.getCount() == 10).assertTrue();
+                console.info('SingleKvStoreGetResultSetCallbackTest001 getCount() == 10');
+                kvStore!.closeResultSet(resultSet, (err, data) => {
+                  console.info('SingleKvStoreGetResultSetCallbackTest001 closeResultSet success');
+                  expect(err == undefined).assertTrue();
+                  done();
+                })
+              });
+          });
+        } catch (e: Error) {
+          console.error('SingleKvStoreGetResultSetCallbackTest001 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_GETRESULT_CALLBACK_7800
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_4700
+     * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULT_CALLBACK_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001');
+        try {
+          let resultSet: factory.KVStoreResultSet;
+          let query = new factory.Query();
+          await kvStore!.getResultSet(query).then((result) => {
+            console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet success');
+            resultSet = result as factory.KVStoreResultSet;
+          }).catch((err: Error) => {
+            console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet fail ' + err +
+              ', error code is ${err.code}, message is ${err.message}');
+            expect(err == undefined).assertTrue();
+          });
+          kvStore!.closeResultSet(resultSet, (err, data) => {
+            console.info('SingleKvStoreGetResultSetPredicatesCallbackTest001 closeResultSet success');
+            done();
+          })
+        } catch (e: Error) {
+          console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_CLOSERESULT_CALLBACK_8000
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_3700
+     * @tc.desc   Test Js Api SingleKvStore.CloseResultSet() testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_CLOSERESULT_CALLBACK_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let resultSet: factory.KVStoreResultSet;
+        //(done: () => void) => {
+        console.info('SingleKvStoreCloseResultSetCallbackTest002');
+        try {
+          kvStore!.getResultSet('batch_test_string_key',(err: BusinessError | null, result: factory.KVStoreResultSet | undefined) => {
+            console.info('SingleKvStoreCloseResultSetCallbackTest002 getResultSet success');
+            resultSet = result as factory.KVStoreResultSet;
+            kvStore!.closeResultSet(resultSet, (err, data) => {
+              if (err == undefined) {
+                console.info('SingleKvStoreCloseResultSetCallbackTest002 closeResultSet success');
+                expect(err == undefined).assertTrue();
+                done();
+              } else {
+                console.info('SingleKvStoreCloseResultSetCallbackTest002 closeResultSet fail');
+                expect(null).assertFail();
+                done();
+              }
+            });
+          });
+        } catch (e: Error) {
+          console.error('SingleKvStoreCloseResultSetCallbackTest002 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_GETENTRIES_CALLBACK_8300
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvCallbackEtsApiTest_4800
+     * @tc.desc   Test Js Api SingleKvStore.GetEntries() testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_SINGLEKVSTORE_GETENTRIES_CALLBACK_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        console.info('SingleKvStoreGetEntriesCallbackTest001');
+        try {
+          let arr = new Uint8Array([21, 31]);
+          let entries: factory.Entry[] = [];
+          for (let i = 0; i < 10; i++) {
+            entries.push({
+              key: 'batch_test_bool_key' + i,
+              value: {
+                type: factory.ValueType.BYTE_ARRAY,
+                value: arr
+              }
+            });
+          }
+          console.info('SingleKvStoreGetEntriesCallbackTest001 entries: ' + JSON.stringify(entries));
+          kvStore!.putBatch(entries,  (err: Error | null, data: string[] | undefined) => {
+            console.info('SingleKvStoreGetEntriesCallbackTest001 putBatch success');
+            expect(err == undefined).assertTrue();
+            let query = new factory.Query();
+            query.prefixKey("batch_test");
+            kvStore!.getEntries(query,  (err, entrys)=> {
+              console.info('SingleKvStoreGetEntriesCallbackTest001 getEntries success');
+              console.info('SingleKvStoreGetEntriesCallbackTest001 entrys.length: ' + entrys!.length);
+              console.info('SingleKvStoreGetEntriesCallbackTest001 entrys[0]: ' + JSON.stringify(entrys![0]));
+              expect(entrys!.length == 10).assertTrue();
+              expect(entrys![0].value.value.toString() == arr.toString()).assertTrue();
+              console.info('SingleKvStoreGetEntriesCallbackTest001 success');
+              done();
+            });
+          });
+
+        } catch (e: Error) {
+          console.error('SingleKvStoreGetEntriesCallbackTest001 e ' +
+            `, error code is ${e.code}, message is ${e.message}`);
+          expect(null).assertFail();
+          done();
+        }
+      })
+  })
 }
