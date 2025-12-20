@@ -4664,7 +4664,7 @@ export default function ActsWebErrorCodeListTest() {
      /**
       * @tc.name   testArkWebResponse_GetError_ARKWEB_ERR_CACHE_READ_FAILURE
       * @tc.number SUB_WEB_NET_ERROR_24000
-      * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_INVALID_ARGUMENT
+      * @tc.desc   test OH_ArkWebResponse_GetError return ARKWEB_ERR_CACHE_READ_FAILURE
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2

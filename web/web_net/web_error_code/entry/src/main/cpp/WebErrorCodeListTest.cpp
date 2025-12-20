@@ -305,7 +305,7 @@ static void AddErrCodeFTPPandDNS(std::map<std::string, ArkWeb_NetError>& netErro
     }
 }
 
-static ArkWeb_NetError AddArkWebNetErrorCode(std::map<std::string, ArkWeb_NetError>& netErrorMap)
+static void AddArkWebNetErrorCode(std::map<std::string, ArkWeb_NetError>& netErrorMap)
 {
     std::map<std::string, ArkWeb_NetError> codeExMap = {
         {"ARKWEB_ERR_INVALID_ARGUMENT", ARKWEB_ERR_INVALID_ARGUMENT},
