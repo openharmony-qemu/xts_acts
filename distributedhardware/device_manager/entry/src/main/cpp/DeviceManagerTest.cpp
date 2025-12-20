@@ -31,12 +31,12 @@ static napi_value GetLocalDeviceNameErrorCodeOK(napi_env env, napi_callback_info
         free(localDeviceName); // 释放内存
     }
     napi_value retValue;
-    int32_t confirmResult = 0;
+    int32_t confirmResult;
     if (result == DM_ERR_FAILED || result == DM_ERR_OBTAIN_SERVICE || result == DM_ERR_OBTAIN_BUNDLE_NAME
         || result == ERR_PERMISSION_ERROR || result == ERR_INVALID_PARAMETER) {
         confirmResult = CONFIRM_RESULT_ONE;
     } else if (result == ERR_OK) {
-        confirmResult = ERR_OK
+        confirmResult = ERR_OK;
     } else {
         confirmResult = CONFIRM_RESULT_TOW;
     }
