@@ -467,8 +467,8 @@ static napi_value Init(napi_env env, napi_value exports) {
             napi_default, nullptr},
         {"arkWebHttpBodyStreamGetUserDataReturnNullptr", nullptr, ArkWebHttpBodyStreamGetUserDataReturnNullptr, nullptr,
             nullptr, nullptr, napi_default, nullptr},
-        {"arkWebResourceRequestGetUserDataReturnNullptr", nullptr, ArkWebResourceRequestGetUserDataReturnNullptr, nullptr,
-            nullptr, nullptr, napi_default, nullptr},
+        {"arkWebResourceRequestGetUserDataReturnNullptr", nullptr, ArkWebResourceRequestGetUserDataReturnNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"arkWebSchemeHandlerGetUserDataReturnNullptr", nullptr, ArkWebSchemeHandlerGetUserDataReturnNullptr, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"arkWebSetSchemeHandlerReturnTrue", nullptr, ArkWebSetSchemeHandlerReturnTrue, nullptr, nullptr,
@@ -476,11 +476,11 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"arkWebSetSchemeHandlerReturnFalse", nullptr, ArkWebSetSchemeHandlerReturnFalse, nullptr, nullptr,
             nullptr, napi_default, nullptr},
         {"arkWebServiceWorkerSetSchemeHandlerReturnTrue", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnTrue,
-             nullptr, nullptr, nullptr, napi_default, nullptr},
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"arkWebServiceWorkerSetSchemeHandlerReturnFalse", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnFalse,
-             nullptr, nullptr, nullptr, napi_default, nullptr},
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"arkWebResourceRequestIsMainFrameReturnTrue", nullptr, ArkWebResourceRequestIsMainFrameReturnTrue,
-             nullptr, nullptr, nullptr, napi_default, nullptr}
+            nullptr, nullptr, nullptr, napi_default, nullptr}
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

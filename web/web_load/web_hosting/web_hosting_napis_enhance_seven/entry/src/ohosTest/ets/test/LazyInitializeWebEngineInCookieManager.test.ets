@@ -15,7 +15,7 @@
 import testNapi from 'libentry.so'
 import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { URL_BAIDU } from '../../test/Config.test';
+import { URL_BAIDU } from './Config.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function LazyInitializeWebEngineInCookieManager() {
