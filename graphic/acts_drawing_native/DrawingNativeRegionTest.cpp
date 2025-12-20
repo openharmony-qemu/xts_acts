@@ -1372,13 +1372,13 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectNull, Function | SmallTes
     EXPECT_EQ(isReject, false);
     errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 0, 500, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(isReject, false);
+    EXPECT_EQ(isReject, true);
     errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 500, 0, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(isReject, false);
+    EXPECT_EQ(isReject, true);
     errorCode = OH_Drawing_RegionQuickReject(region, 300, 300, 500, 0, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(isReject, false);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isReject, true);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RegionDestroy(region);
 }
@@ -1403,7 +1403,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionQuickRejectAbnormal, Function | Smal
     EXPECT_EQ(isReject, true);
     errorCode = OH_Drawing_RegionQuickReject(region, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, &isReject);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(isReject, false);
+    EXPECT_EQ(isReject, true);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RegionDestroy(region);
 }
