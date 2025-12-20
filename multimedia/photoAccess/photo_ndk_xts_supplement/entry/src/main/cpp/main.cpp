@@ -16,16 +16,17 @@
 #include "napi/native_api.h"
 #include <js_native_api.h>
 #include <string.h>
-#include "CameraSessionNdkTEST.h"
-
+#include "OHMediaAssetCreateTest.h"
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 
 
 napi_property_descriptor desc1[] = {
-    DESCRIPTOR("initWithSurface", initWithSurface),
-    DESCRIPTOR("captureSessionStart", captureSessionStart),
+    DESCRIPTOR("OHMediaAssetChangeRequestCreateTest", OHMediaAssetChangeRequestCreateTest),
+    DESCRIPTOR("OHMediaAssetChangeRequestAddResourceWithUriTest", OHMediaAssetChangeRequestAddResourceWithUriTest),
     DESCRIPTOR("TestOhMediaAsset", TestOhMediaAsset),
+    DESCRIPTOR("OHMediaAccessHelperApplyChangesTest", OHMediaAccessHelperApplyChangesTest),
+    DESCRIPTOR("OHMediaAssetChangeRequestReleaseTest", OHMediaAssetChangeRequestReleaseTest),
 };
 
 EXTERN_C_START 
