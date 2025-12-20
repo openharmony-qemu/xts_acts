@@ -53,6 +53,20 @@
         "name": "ohos.permission.MICROPHONE",
         "reason": "$string:TestAbility_desc"
       },
+      {
+        "name": "ohos.permission.READ_IMAGEVIDEO",
+        "reason": "$string:reason",
+        "usedScene": {
+          "when": "always"
+        }
+      },
+      {
+        "name": "ohos.permission.WRITE_IMAGEVIDEO",
+        "reason": "$string:reason",
+        "usedScene": {
+          "when": "always"
+        }
+      }
     ]
   }
 }

@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { image } from '@kit.ImageKit';
 export const initWithSurface: (faceID : string) => number;
 export const captureSessionStart: (index: number) => number;
 export const TestOhMediaAsset: (index: number, b: string) => number;
+export const MediaAssetManagerCancelRequestTest:(a: number,srcUri:string,c:ESObject,destUri:string, callback?: (err: BusinessError, data: ESObject) => void ) => boolean;

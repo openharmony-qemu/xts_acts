@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 import CameraFunctionTest from "./camera/CameraSessionNdkTest.test";
+import AssetManagerCancelRequestTest from "./photo/MediaAssetManagerCancelRequestTest.test";
 
 
 export default function testsuite() {
   CameraFunctionTest()
+  AssetManagerCancelRequestTest()
 }
