@@ -110,3 +110,5 @@ export const getMediaDescription: () => number;
 export const getMediaDescriptionOne: () => number;
 export const getTrackDescription: (loudness:number) => number;
 export const getTrackDescriptionOne: (loudness:number) => number;
+export const getPlaybackStatisticMetrics: (fd: number, offset: number, length: number) => Record<string, number>;
+export const getPlaybackStatisticMetricsAbnormal: () => number;
