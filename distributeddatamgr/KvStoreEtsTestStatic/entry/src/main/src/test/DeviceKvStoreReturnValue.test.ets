@@ -1712,4 +1712,513 @@ export default function DeviceKvStoreReturnValue(){
       }
 
     })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2200
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2200
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2200 begin---------  ');
+
+        await (kvStore!.putBatch(entries) as Promise<void>);
+        await kvStore!.getResultSet('batch_test_string_key').then(async (result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(10);
+
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2200 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+
+
+      } catch (e: Error) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2201
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2201
+     * @tc.desc   getResultSet(keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2201 begin---------  ');
+
+        await (kvStore!.getResultSet('batch_test_string_key') as Promise<factory.KVStoreResultSet>).then(async(result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(0);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2201 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2300
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2300
+     * @tc.desc   getResultSet(localDeviceId, keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2300 begin---------  ');
+
+        await kvStore!.putBatch(entries).catch((err: Error) => {
+          console.error(TAG + `Failed to putBatch.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+        //await kvStore!.getResultSet(localDeviceId, 'batch_test_string_key').then(async (result: factory.KVStoreResultSet) => {
+        await (kvStore!.getResultSet(localDeviceId, 'batch_test_string_key') as Promise<factory.KVStoreResultSet>).then(async (result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(10);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2300 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2301
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2301
+     * @tc.desc   getResultSet(localDeviceId, keyPrefix: string): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2301 begin---------  ');
+        //await kvStore!.getResultSet(localDeviceId, 'batch_test_string_key').then(async(result: factory.KVStoreResultSet) => {
+        await (kvStore!.getResultSet(localDeviceId, 'batch_test_string_key') as Promise<factory.KVStoreResultSet>).then(async(result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(0);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2301 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2400
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2400
+     * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2400 begin---------  ');
+
+        kvStore!.putBatch(entries, (err: BusinessError | null) => {
+          console.info(TAG + 'Succeeded putBatch, err=' + err);
+          const query = new factory.Query();
+          query.prefixKey("batch_test");
+
+          kvStore!.getResultSet(query, (err: BusinessError<void>|null, result: factory.KVStoreResultSet|undefined) => {
+            if (err) {
+              console.error(TAG + 'getResultSet failed, err=' + err);
+              expect(null).assertFail();
+              done();
+            }
+            // 断言result不为null，否则测试失败
+            if (!result) {
+              console.error(TAG + 'getResultSet returned undefined result');
+              expect(null).assertFail();
+              done();
+            }
+            console.info(TAG + 'Succeeded getResultSet, result=' + result + ',err=' + err);
+            expect(result != null).assertTrue();
+
+            expect(result!.getCount()).assertEqual(10);
+
+            kvStore!.closeResultSet(result!, (err: BusinessError | null) => {
+              if (err) {
+                console.error(TAG + 'closeResultSet failed, err=' + err);
+                expect(null).assertFail();
+                done();
+              }
+              console.info(TAG + 'Succeeded closeResultSet, err=' + err);
+              expect(err == null).assertTrue();
+            })
+            console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2400 end---------  ');
+            done();
+          });
+
+        });
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2401
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2401
+     * @tc.desc   getResultSet(query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2401 begin---------  ');
+        const query = new factory.Query();
+        query.prefixKey("batch_test");
+        //kvStore!.getResultSet(query, async (err: BusinessError, result: factory.KVStoreResultSet) => {
+        kvStore!.getResultSet(query, (err: BusinessError<void>|null, result: factory.KVStoreResultSet|undefined) => {
+          if (err) {
+            console.error(TAG + 'getResultSet failed, err=' + err);
+            expect(null).assertFail();
+            done();
+          }
+          // 断言result不为null，否则测试失败
+          if (!result) {
+            console.error(TAG + 'getResultSet returned undefined result');
+            expect(null).assertFail();
+            done();
+          }
+          console.info(TAG + 'Succeeded getResultSet, result=' + result + ',err=' + err);
+          expect(result != null).assertTrue();
+
+          expect(result!.getCount()).assertEqual(0);
+
+          kvStore!.closeResultSet(result!, (err: BusinessError | null) => {
+            if (err) {
+              console.error(TAG + 'closeResultSet failed, err=' + err);
+              expect(null).assertFail();
+              done();
+            }
+            console.info(TAG + 'Succeeded closeResultSet, err=' + err);
+            expect(err == null).assertTrue();
+          })
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2401 end---------  ');
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2500
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2500
+     * @tc.desc   getResultSet(localDeviceId, query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2500 begin---------  ');
+        //kvStore!.putBatch(entries, async (err: BusinessError | null) => {
+        kvStore!.putBatch(entries, (err: BusinessError | null) => {
+          console.info(TAG + 'Succeeded putBatch, err=' + err);
+          const query = new factory.Query();
+          query.prefixKey("batch_test");
+          //kvStore!.getResultSet(localDeviceId, query, async (err: BusinessError, result: factory.KVStoreResultSet) => {
+          kvStore!.getResultSet(localDeviceId, query, (err: BusinessError<void>|null, result: factory.KVStoreResultSet|undefined) => {
+            if (err) {
+              console.error(TAG + 'getResultSet failed, err=' + err);
+              expect(null).assertFail();
+              done();
+            }
+            // 断言result不为null，否则测试失败
+            if (!result) {
+              console.error(TAG + 'getResultSet returned undefined result');
+              expect(null).assertFail();
+              done();
+            }
+            console.info(TAG + 'Succeeded getResultSet, result=' + result + ',err=' + err);
+            expect(result != null).assertTrue();
+            expect(result!.getCount()).assertEqual(10);
+
+            kvStore!.closeResultSet(result!, (err: BusinessError | null) => {
+              if (err) {
+                console.error(TAG + 'closeResultSet failed, err=' + err);
+                expect(null).assertFail();
+                done();
+              }
+              console.info(TAG + 'Succeeded closeResultSet, err=' + err);
+              expect(err == null).assertTrue();
+            })
+            console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2500 end---------  ');
+            done();
+          });
+
+        });
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2501
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2501
+     * @tc.desc   getResultSet(localDeviceId, query: Query, callback:AsyncCallback<KVStoreResultSet>): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2501 begin---------  ');
+        const query = new factory.Query();
+        query.prefixKey("batch_test");
+        //kvStore!.getResultSet(localDeviceId, query, async (err: BusinessError, result: factory.KVStoreResultSet) => {
+        kvStore!.getResultSet(localDeviceId, query, (err: BusinessError<void>|null, result: factory.KVStoreResultSet|undefined) => {
+          if (err) {
+            console.error(TAG + `getResultSet failed, code: ${err.code}, message: ${err.message}`);
+            expect(null).assertFail();
+            done();
+            return;
+          }
+
+          if (!result) {
+            console.error(TAG + 'getResultSet returned undefined result');
+            expect(null).assertFail();
+            done();
+            return;
+          }
+          console.info(TAG + 'Succeeded getResultSet, result=' + result + ',err=' + err);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(0);
+
+          kvStore!.closeResultSet(result, (err: BusinessError | null) => {
+            if (err) {
+              console.error(TAG + 'closeResultSet failed, err=' + err);
+              expect(null).assertFail();
+              done();
+            }
+            console.info(TAG + 'Succeeded closeResultSet, err=' + err);
+            expect(err == null).assertTrue();
+          })
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2501 end---------  ');
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2600
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2600
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2600 begin---------  ');
+        //await kvStore!.putBatch(entries)
+        await kvStore!.putBatch(entries).catch((err: Error) => {
+          console.error(TAG + `Failed to putBatch.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+        const query = new factory.Query();
+        query.prefixKey("batch_test");
+        await kvStore!.getResultSet(query).then(async(result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(10);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2600 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2601
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2601
+     * @tc.desc   getResultSet(query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2601 begin---------  ');
+        const query = new factory.Query();
+        query.prefixKey("batch_test");
+        await kvStore!.getResultSet(query).then(async(result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(0);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2601 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError ) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2700
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2700
+     * @tc.desc   getResultSet(localDeviceId, query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2700 begin---------  ');
+        //await kvStore!.putBatch(entries)
+        await kvStore!.putBatch(entries).catch((err: Error) => {
+          console.error(TAG + `Failed to putBatch.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+        const query = new factory.Query();
+        query.prefixKey("batch_test");
+        await kvStore!.getResultSet(localDeviceId, query).then(async(result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(10);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2700 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   SUB_DDM_DKV_ReturnValue_2701
+     * @tc.number SUB_DistributedData_KVStore_SDK_DeviceKvReturnValueTest_2701
+     * @tc.desc   getResultSet(localDeviceId, query: Query): Promise<KVStoreResultSet>
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DDM_DKV_ReturnValue_2701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2701 begin---------  ');
+        const query = new factory.Query();
+        query.prefixKey("batch_test");
+        await kvStore!.getResultSet(localDeviceId, query).then(async(result: factory.KVStoreResultSet) => {
+          console.info(TAG + 'Succeeded getEntries, result=' + result);
+          expect(result != null).assertTrue();
+          expect(result.getCount()).assertEqual(0);
+          await kvStore!.closeResultSet(result);
+          console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_2701 end---------  ');
+          done();
+        }).catch((err: Error) => {
+          console.error(TAG + `Failed to get Entries.code is ${err.code},message is ${err.message}`);
+          expect(null).assertFail();
+          done();
+        });
+
+      } catch (e: BusinessError) {
+        console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+    })
+    console.info(TAG + '-------------------describe KvStoreReturnValue  end-------------------');
+  })
 }
