@@ -101,5 +101,18 @@ export default function AccessibilityProviderCreateTest(){
       expect(nativeFunc.CreateAccessibilityElementInfoTest()).assertEqual(0)
       done();
     })
+
+    /**
+     * @tc.number AccessibilityErrorCodeTest_001
+     * @tc.name AccessibilityErrorCodeTest_001
+     * @tc.desc AccessibilityErrorCode Test
+     * @tc.level LEVEL1
+     * @tc.size MediumTest
+     * @tc.type Function
+     */
+    it('AccessibilityErrorCodeTest_001', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.AccessibilityErrorCodeTest001()).assertEqual(0)
+      done();
+    })
   })
 }
