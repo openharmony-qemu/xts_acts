@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import cameraObj from 'libentry.so'
-import { driveFn, getPermission, } from '../common.test';
+import { driveFn, getPermission, } from '../CameraCommon.test';
 import { indexSurfaceId } from '../../testability/pages/Index';
 
 const CAMERA_OPERATION_NOT_ALLOWED = 7400102;
