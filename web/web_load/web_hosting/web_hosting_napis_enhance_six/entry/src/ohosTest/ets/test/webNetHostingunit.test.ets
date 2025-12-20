@@ -289,7 +289,7 @@ export default function webviewApi() {
     /**
      * @tc.name   testArkWebHttpBodyStreamGetUserDataReturnNullptr
      * @tc.number SUB_ACE_WEB_OH_ARKWEBHTTPBODYSTREAM_GETUSERDATA_RETURNNULLPTR
-     * @tc.desc   test OH_ArkWebHttpBodyStream_GetUserData  return true
+     * @tc.desc   test OH_ArkWebHttpBodyStream_GetUserData  return nullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -297,7 +297,7 @@ export default function webviewApi() {
     it('testArkWebHttpBodyStreamGetUserDataReturnNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testArkWebHttpBodyStreamGetUserDataReturnNullptr start')
         try {
-            let ret = testNapi.arkWebSchemeHandlerGetUserDataReturnNullptr();
+            let ret = testNapi.arkWebHttpBodyStreamGetUserDataReturnNullptr();
             expect(ret).assertEqual(0)
         } catch(error) {
             console.error('testArkWebHttpBodyStreamGetUserDataReturnNullptr error: ' + JSON.stringify(error))
@@ -310,7 +310,7 @@ export default function webviewApi() {
     /**
      * @tc.name   testArkWebResourceRequestGetUserDataReturnNullptr
      * @tc.number SUB_ACE_WEB_OH_ARKWEBRESOURCEREQUEST_GETUSERDATA_RETURNNULLPTR
-     * @tc.desc   test OH_ArkWebResourceRequest_GetUserData  return true
+     * @tc.desc   test OH_ArkWebResourceRequest_GetUserData  return nullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -331,7 +331,7 @@ export default function webviewApi() {
     /**
      * @tc.name   testArkWebSchemeHandlerGetUserDataReturnNullptr
      * @tc.number SUB_ACE_WEB_OH_ARKWEBSCHEMEHANDLER_GETUSERDATA_RETURNNULLPTR
-     * @tc.desc   test OH_ArkWebSchemeHandler_GetUserData  return true
+     * @tc.desc   test OH_ArkWebSchemeHandler_GetUserData  return nullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -352,7 +352,7 @@ export default function webviewApi() {
     /**
      * @tc.name   testArkWebSetSchemeHandlerReturnTrue
      * @tc.number SUB_ACE_WEB_OH_ARKWEB_SETSCHEMEHANDLER_RETURNTURE
-     * @tc.desc   test OH_ArkWeb_SetSchemeHandler  return true
+     * @tc.desc   test OH_ArkWeb_SetSchemeHandler  return nullptr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
