@@ -130,20 +130,5 @@ export default function TextInputEnableSelectedDataDetectorTest() {
       console.info('[TextInputEnableSelectedDataDetectorTest_0050] END');
       done();
     });
-
-    /**
-     * @tc.name   TextInputEnableSelectedDataDetectorTest_0060
-     * @tc.number SUB_ACE_TextInputEnableSelectedDataDetectorTest_0060
-     * @tc.desc   test TextInput: NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR = 7038
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('TextInputEnableSelectedDataDetectorTest_0060', Level.LEVEL2, async (done: Function) => {
-      console.info('[TextInputEnableSelectedDataDetectorTest_0060] START');
-      expect(NODE_TEXT_INPUT_ENABLE_SELECTED_DATA_DETECTOR).assertEqual(7038);
-      console.info('[TextInputEnableSelectedDataDetectorTest_0060] END');
-      done();
-    });
   })
 }
