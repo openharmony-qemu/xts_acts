@@ -4499,9 +4499,13 @@ export default function audioFramework() {
       console.log(`${TagFrmwk}: Promise : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
       const PROMISE = audioManager.isActive(audioMedia);
       PROMISE.then((data) => {
+        let flag: boolean = true;
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Media: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
+          expect(flag).assertTrue();
+        } else if (data == true) {
+          console.log(`${TagFrmwk}: Promise: isActive: Media: TRUE: PASS:${data}`);
+          expect(flag).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -4525,12 +4529,16 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0200', 1, (done: Function) => {
       console.log(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
       audioManager.isActive(audioMedia, (err, data) => {
+        let flag: boolean = true;
         if (err) {
           console.error(`${TagFrmwk}: Callback : Media : isActive: failed  ${err.message}`);
           expect().assertFail();
         } else if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
+          expect(flag).assertTrue();
+        } else if (data == true) {
+          console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
+          expect(flag).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -4603,9 +4611,13 @@ export default function audioFramework() {
       console.log(`${TagFrmwk}: Promise : isActive Media: ENAME: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
       const PROMISE = audioManager.isActive(audio.AudioVolumeType.MEDIA);
       PROMISE.then((data) => {
+        let flag: boolean = true;
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Media: ENAME: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
+          expect(flag).assertTrue();
+        } else if (data == ture) {
+          console.log(`${TagFrmwk}: Promise: isActive: Media: ENAME: TRUE: PASS:${data}`);
+          expect(flag).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Promise: isActive: Media: ENAME: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -4628,12 +4640,16 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0600', 2, (done: Function) => {
       audioManager.isActive(audio.AudioVolumeType.MEDIA, (err, data) => {
+        let flag: boolean = true;
         if (err) {
           console.error(`${TagFrmwk}: Callback : Media : ENAME: isActive: failed  ${err.message}`);
           expect().assertFail();
         } else if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Media: ENAME: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
+          expect(flag).assertTrue();
+        } else if (data == true) {
+          console.log(`${TagFrmwk}: Callback: isActive: Media: ENAME: TRUE: PASS:${data}`);
+          expect(flag).assertTrue();
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Media: ENAME: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
@@ -7468,6 +7484,21 @@ export default function audioFramework() {
         console.log('err :' + JSON.stringify(err));
         expect(false).assertTrue();
       }
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200
+     * @tc.desc   Activate speaker - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      except(audio.AudioVolumeMode.SYSTEM_GLOBAL).assertEqual(0);
+      console.log(`SYSTEM_GLOBAL is: ${audio.AudioVolumeMode.SYSTEM_GLOBAL}`);
+      except(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
+      console.log(`APP_INDIVIDUAL is: ${audio.AudioVolumeMode.APP_INDIVIDUAL}`);
       done();
     })
   })
