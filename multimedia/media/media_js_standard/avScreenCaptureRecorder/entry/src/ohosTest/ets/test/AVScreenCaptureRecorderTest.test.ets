@@ -739,7 +739,7 @@ export default function AVScreenCaptureRecorderTest() {
         audioBitrate: 96000,
         preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
         strategy: {
-          PrivacyMaskMode: 1,
+          privacyMaskMode: 1,
         }
       }
 
@@ -797,7 +797,7 @@ export default function AVScreenCaptureRecorderTest() {
         audioBitrate: 96000,
         preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
         strategy: {
-          PrivacyMaskMode: 0,
+          privacyMaskMode: 0,
         }
       }
 
