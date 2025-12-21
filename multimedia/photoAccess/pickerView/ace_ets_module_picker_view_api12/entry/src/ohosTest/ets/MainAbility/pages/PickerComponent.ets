@@ -304,7 +304,7 @@ struct PickerComponent {
         updatedOptions.photoBrowserBackgroundColorMode = PickerColorMode.DARK;
         updatedOptions.uiComponentColorMode = PickerColorMode.DARK;
         updatedOptions.isSlidingSupported = true;
-        updatedOptions.edgeEffect = edgeEffect.None;
+        updatedOptions.edgeEffect = EdgeEffect.None;
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
