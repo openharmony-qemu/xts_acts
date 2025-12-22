@@ -66,7 +66,8 @@
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
 
-napi_value OHImageEffectErrorCodeSupp(napi_env env, napi_callback_info info) {
+napi_value OHImageEffectErrorCodeSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -102,7 +103,8 @@ napi_value OHImageEffectErrorCodeSupp(napi_env env, napi_callback_info info) {
     napi_create_int32(env, number, &ret);
     return ret;
 }
-napi_value OHIRNdkErrorCodeTestSupp(napi_env env, napi_callback_info info) {
+napi_value OHIRNdkErrorCodeTestSupp(napi_env env, napi_callback_info info)
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);

@@ -61,7 +61,7 @@
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGD(...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
-#define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))   
+#define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 napi_value OHImageEffectRestoreTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -70,13 +70,13 @@ napi_value OHImageEffectRestoreTest(napi_env env, napi_callback_info info)
     int32_t index;
     LOGI("get index %{public}d", index);
     napi_get_value_int32(env, args[0], &index);
-    const char *Image = nullptr;
+    const char *image = nullptr;
     LOGI("get args %{public}d", args);
-    OH_ImageEffect * ImageEffect= OH_ImageEffect_Create(Image);
+    OH_ImageEffect *ImageEffect = OH_ImageEffect_Create(image);
     LOGI("get ImageEffect %{public}d", ImageEffect);
     char *infoArgs = {};
     char *infoArg = infoArgs;
-    ImageEffect_ErrorCode ErrorCode = OH_ImageEffect_Save(ImageEffect,&infoArg);
+    ImageEffect_ErrorCode ErrorCode = OH_ImageEffect_Save(ImageEffect, &infoArg);
     LOGI("get infoArg %{public}d", infoArg);
     OH_ImageEffect *ImageEffectInfo = nullptr;
     switch (index) {

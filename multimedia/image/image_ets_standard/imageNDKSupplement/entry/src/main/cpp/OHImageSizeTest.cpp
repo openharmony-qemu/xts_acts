@@ -59,7 +59,7 @@
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGD(...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
-#define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))   
+#define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 
 
 napi_value OHImageSizeTest(napi_env env, napi_callback_info info)
@@ -73,21 +73,14 @@ napi_value OHImageSizeTest(napi_env env, napi_callback_info info)
     int32_t fdNumber;
     napi_get_value_int32(env, args[1], &fdNumber);
     LOGI("get fdNumber %{public}d", fdNumber);
-   struct OhosImageSourceOps options = {
-        .density=0,
-        .pixelFormat=0,
-        .size = {
-        .width=0,
-        .height=0
-        }
-    };
+    struct OhosImageSourceOps options = {.density = 0, .pixelFormat = 0, .size = {.width = 0, .height = 0}};
     napi_value imageSource = nullptr;
     int32_t code = OH_ImageSource_CreateFromFd(env, fdNumber, &options, &imageSource);
     LOGI("OH_ImageSource_CreateFromFd %{public}d", code);
     ImageNative* imageNative = OH_Image_InitImageNative(env, imageSource);
     LOGI("OH_Image_InitImageNative %{public}d", imageSource);
     LOGI("OH_Image_InitImageNative %{public}d", imageNative);
-    int32_t SizeCode;
+    int32_t sizeCode;
     struct OhosImageSize* size;
     switch (index) {
     case CASE_INDEX_1:
@@ -96,9 +89,9 @@ napi_value OHImageSizeTest(napi_env env, napi_callback_info info)
     default:
         break;
     }
-    SizeCode = OH_Image_Size(imageNative,size);
+    sizeCode = OH_Image_Size(imageNative, size);
     OH_Image_Release(imageNative);
     napi_value ret;
-    napi_create_int32(env, SizeCode, &ret);
+    napi_create_int32(env, sizeCode, &ret);
     return ret;
 }

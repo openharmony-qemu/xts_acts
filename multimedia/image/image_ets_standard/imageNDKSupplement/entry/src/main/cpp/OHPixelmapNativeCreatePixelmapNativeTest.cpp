@@ -60,7 +60,10 @@
 #define LOGD(...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
-
+#define IMAGE_DEFAULT_WIDTH_HEIGHT 1920 * 1080 * 4
+#define IMAGE_DEFAULT_BUFFER 10000
+#define IMAGE_DEFAULT_DATA_LENGTH 96000
+#define IMAGE_DEFAULT_DATA_LENGTH_D (-96000)
 
 napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_info info)
 {
@@ -72,36 +75,36 @@ napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_
     napi_get_value_int32(env, args[0], &index);
     uint8_t *data = nullptr;
     size_t dataLength = 0;
-    const int HEIGHT = 300;
-    const int WIDTH = 200;
+    const int height = 300;
+    const int width = 200;
     for (int i = 0; i < dataLength; i++) {
         data[i] = i + 1;
     }
     OH_Pixelmap_InitializationOptions *ops;
     OH_PixelmapInitializationOptions_Create(&ops);
-    OH_PixelmapInitializationOptions_SetWidth(ops, WIDTH);
-    OH_PixelmapInitializationOptions_SetHeight(ops, HEIGHT);
+    OH_PixelmapInitializationOptions_SetWidth(ops, width);
+    OH_PixelmapInitializationOptions_SetHeight(ops, height);
     OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_BGRA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(ops, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelMap = nullptr;
     Image_ErrorCode code;
     switch (index) {
     case CASE_INDEX_1:
-        data[96000];
-        dataLength = 96000;
+        data[IMAGE_DEFAULT_DATA_LENGTH];
+        dataLength = IMAGE_DEFAULT_DATA_LENGTH;
         ops = nullptr;
         code =
             OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataLength, ops, IMAGE_ALLOCATOR_MODE_AUTO, &pixelMap);
         break;
     case CASE_INDEX_2:
-        dataLength = 96000;
+        dataLength = IMAGE_DEFAULT_DATA_LENGTH;
         data = nullptr;
         code =
             OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataLength, ops, IMAGE_ALLOCATOR_MODE_AUTO, &pixelMap);
         break;
     case CASE_INDEX_3:
-        data[96000];
-        dataLength = -96000;
+        data[IMAGE_DEFAULT_DATA_LENGTH];
+        dataLength = IMAGE_DEFAULT_DATA_LENGTH_D;
         code =
             OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataLength, ops, IMAGE_ALLOCATOR_MODE_AUTO, &pixelMap);
         break;
@@ -121,8 +124,8 @@ napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info in
     int32_t index;
     LOGI("get index %{public}d", index);
     napi_get_value_int32(env, args[0], &index);
-    const int HEIGHT = 30;
-    const int WIDTH = 20;
+    const int height = 30;
+    const int width = 20;
     uint8_t data[2400];
     size_t dataSize = 2400;
     for (int i = 0; i < dataSize; i++) {
@@ -132,9 +135,9 @@ napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info in
     OH_Pixelmap_InitializationOptions *ops;
     code = OH_PixelmapInitializationOptions_Create(&ops);
     LOGI("get 2 %{public}d", code);
-    code = OH_PixelmapInitializationOptions_SetWidth(ops, WIDTH);
+    code = OH_PixelmapInitializationOptions_SetWidth(ops, width);
     LOGI("get 3 %{public}d", code);
-    code = OH_PixelmapInitializationOptions_SetHeight(ops, HEIGHT);
+    code = OH_PixelmapInitializationOptions_SetHeight(ops, height);
     LOGI("get 4 %{public}d", code);
     code = OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_BGRA_8888);
     LOGI("get 5 %{public}d", code);
@@ -149,21 +152,24 @@ napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info in
     switch (index) {
     case CASE_INDEX_1:
         pixelmap = nullptr;
-        buffer[10000];
-        bufferSize = 1920 * 1080 * 4;
+        buffer[IMAGE_DEFAULT_BUFFER];
+        bufferSize = IMAGE_DEFAULT_WIDTH_HEIGHT;
         buffer = (uint8_t *)malloc(bufferSize);
         LOGI("get buffer");
         errcode = OH_PixelmapNative_GetArgbPixels(pixelmap, buffer, &bufferSize);
         break;
     case CASE_INDEX_2:
         buffer = nullptr;
-        bufferSize = 1920 * 1080 * 4;
+        bufferSize = IMAGE_DEFAULT_WIDTH_HEIGHT;
         errcode = OH_PixelmapNative_GetArgbPixels(pixelmap, buffer, &bufferSize);
         break;
     case CASE_INDEX_3:
-        buffer[10000];
-        bufferSize = 1920 * 1080 * 4;
+        buffer[IMAGE_DEFAULT_BUFFER];
+        bufferSize = IMAGE_DEFAULT_WIDTH_HEIGHT;
         buffer = (uint8_t *)malloc(bufferSize);
+        if (buffer == nullptr) {
+            return nullptr;
+        }
         errcode = OH_PixelmapNative_GetArgbPixels(pixelmap, buffer, nullptr);
         break;
     default:
@@ -181,8 +187,8 @@ napi_value OHPixelmapNativeToSdrTest(napi_env env, napi_callback_info info)
     int32_t index;
     LOGI("get index %{public}d", index);
     napi_get_value_int32(env, args[0], &index);
-    const int HEIGHT = 30;
-    const int WIDTH = 20;
+    const int height = 30;
+    const int width = 20;
     uint8_t data[2400];
     size_t dataSize = 2400;
     for (int i = 0; i < dataSize; i++) {
@@ -190,8 +196,8 @@ napi_value OHPixelmapNativeToSdrTest(napi_env env, napi_callback_info info)
     }
     OH_Pixelmap_InitializationOptions *ops;
     OH_PixelmapInitializationOptions_Create(&ops);
-    OH_PixelmapInitializationOptions_SetWidth(ops, WIDTH);
-    OH_PixelmapInitializationOptions_SetHeight(ops, HEIGHT);
+    OH_PixelmapInitializationOptions_SetWidth(ops, width);
+    OH_PixelmapInitializationOptions_SetHeight(ops, height);
     OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_BGRA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(ops, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelmap = nullptr;
@@ -218,15 +224,15 @@ napi_value PixelmapNativeCreateEmptyPixelmapUsingAllocator(napi_env env, napi_ca
     napi_get_value_int32(env, args[0], &index);
     uint8_t *data = nullptr;
     size_t dataLength = 0;
-    const int HEIGHT = 300;
-    const int WIDTH = 200;
+    const int height = 300;
+    const int width = 200;
     for (int i = 0; i < dataLength; i++) {
         data[i] = i + 1;
     }
-    OH_Pixelmap_InitializationOptions *ops; 
+    OH_Pixelmap_InitializationOptions *ops;
     OH_PixelmapInitializationOptions_Create(&ops);
-    OH_PixelmapInitializationOptions_SetWidth(ops, WIDTH);
-    OH_PixelmapInitializationOptions_SetHeight(ops, HEIGHT);
+    OH_PixelmapInitializationOptions_SetWidth(ops, width);
+    OH_PixelmapInitializationOptions_SetHeight(ops, height);
     OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_BGRA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(ops, PIXELMAP_ALPHA_TYPE_UNKNOWN);
     OH_PixelmapNative *pixelMap = nullptr;
