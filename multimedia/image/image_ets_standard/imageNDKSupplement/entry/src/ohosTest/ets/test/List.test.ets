@@ -70,11 +70,8 @@ export default function testsuite() {
   OHPixelmapNativeCreatePixelmapNativeTest();
   ImageEffectErrorCodeSuppTest();
   OHPixelMapSupplementTest();
-<<<<<<< xts_ndk_image
   IRNdkErrCodeSupplementTest();
-=======
   ImageResultIRNdkErrCodeTest();
->>>>>>> xts_ndk_image
   IRNdkErrCode();
 
 }
