@@ -3009,7 +3009,7 @@ static napi_value NAPI_Global_GetPlaybackStatisticMetrics(napi_env env, napi_cal
     GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_RESOURCE_CONNECTION_DURATION);
     GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_FIRST_FRAME_DECAPSULATION_DURATION);
     GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_PLAYING_TIME);
-    GetIntValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_REQUEST_COUNT);
+    GetIntValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_REQUESTS_COUNT);
     GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_DOWNLOAD_TIME);
     GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_DOWNLOAD_SIZE);
     GetIntValue(metrics, env, result, OH_MEDIA_EVENT_INFO_STALLING_COUNT);
