@@ -158,7 +158,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_0008', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_0008";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_1);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_1);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980096);
     });
@@ -173,7 +173,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_0009', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_0009";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_2);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_2);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980097);
     });
@@ -188,7 +188,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00010', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00010";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_3);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_3);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980098);
     });
@@ -203,7 +203,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00011', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00011";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_4);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_4);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980099);
     });
@@ -218,7 +218,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00012', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00012";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_5);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_5);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980100);
     });
@@ -233,7 +233,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00013', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00013";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_6);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_6);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980101);
     });
@@ -248,7 +248,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00014', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00014";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_7);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_7);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980102);
     });
@@ -263,7 +263,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00015', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00015";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_8);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_8);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980103);
     });
@@ -278,7 +278,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00016', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00016";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_9);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_9);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980104);
     });
@@ -293,7 +293,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00017', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00017";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_10);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_10);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980106);
     });
@@ -308,7 +308,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00018', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00018";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_11);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_11);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980107);
     });
@@ -323,7 +323,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00019', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00019";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_12);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_12);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980108);
     });
@@ -338,7 +338,7 @@ export default function ImageEffectErrorCodeSuppTest() {
     it('SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00020', Level.LEVEL0, () => {
       const testName = "SUB_IR_NDK_ERROR_CODE_TEST_SUPP_00020";
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHIRNdkErrCodeTestSupp(CASE_INDEX_13);
+      let result: number = testNapi.OHIRNdkErrorCodeTestSupp(CASE_INDEX_13);
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(62980109);
     });
