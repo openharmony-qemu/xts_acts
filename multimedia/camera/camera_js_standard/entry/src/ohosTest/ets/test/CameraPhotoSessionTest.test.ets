@@ -235,6 +235,63 @@ export default function CameraPhotoSessionTest() {
 
     return true;
   }
+  
+  let createHeifOutput = (idx: number, heifIdx: number) => {
+    console.info('Enter createOutput');
+
+    let cameraOutputCap = mCameraManager.getSupportedFullOutputCapability(mCameraDevicesArray[idx], camera.SceneMode.NORMAL_PHOTO);
+    let i:number = heifIdx;
+    if (cameraOutputCap != undefined) {
+      if (cameraOutputCap.previewProfiles != null) {
+        console.info(TAG + "cameraOutputCap.previewProfiles.length: " + cameraOutputCap.previewProfiles.length);
+        for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
+          mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceIds);
+          if (mPreviewOutput != undefined) {
+            break;
+          }
+        }
+ 
+        if (mPreviewOutput == undefined) {
+          console.info(TAG + "createPreviewOutput FAILED");
+        }
+ 
+        console.info(TAG + "createPreviewOutput: " + mPreviewOutput);
+      }
+      
+      if (cameraOutputCap.photoProfiles != null) {
+        console.info(TAG + "cameraOutputCap.photoProfiles.length: " + cameraOutputCap.photoProfiles.length);
+        for (; i < cameraOutputCap.photoProfiles.length; i++) {
+          if(cameraOutputCap.photoProfiles[i].format == camera.CameraFormat.CAMERA_FORMAT_HEIC){
+            mPhotoOutput = mCameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[i]);
+            console.info(
+              TAG +
+              "Entering SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100 " +
+              "createHeifOutput, format: " +
+              cameraOutputCap.photoProfiles[i].format +
+              ", width: " + cameraOutputCap.photoProfiles[i].size.width +
+              ", height: " + cameraOutputCap.photoProfiles[i].size.height);
+            if (mPhotoOutput != undefined) {
+              i++;
+              break;
+            }else{
+              console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100 FAILED with createHeifOutput.");
+            }
+          }         
+        }
+        if(i >= cameraOutputCap.photoProfiles.length){
+          i = -1;
+        }
+        if (mPhotoOutput == undefined) {
+          console.info(TAG + "createPhotoOutput FAILED");
+        }
+       console.info(TAG + "createPhotoOutput: " + mPhotoOutput);
+      }
+    }
+ 
+    console.info('Exit createOutputs');
+ 
+    return i;
+  }
 
   let releaseOutput = async () => {
     console.info('Enter releaseOutput');
@@ -301,25 +358,52 @@ export default function CameraPhotoSessionTest() {
     return true;
   }
 
+  let startHeifCameraSession = async (idx: number, heifIdx: number): Promise<number> => {
+    console.info(TAG + "Enter startCameraSession");
+ 
+    await createInput(idx);
+    heifIdx = createHeifOutput(idx, heifIdx);
+ 
+    await sleep(100);
+ 
+    mCameraSession.beginConfig();
+ 
+    if (mCameraInput != undefined) {
+      console.info(TAG + "Start to addInput");
+      mCameraSession.addInput(mCameraInput);
+    }
+ 
+    if (mPreviewOutput != undefined) {
+      console.info(TAG + "Start to addOutput mPreviewOutput");
+      mCameraSession.addOutput(mPreviewOutput);
+    }
+ 
+    if (mPhotoOutput != undefined) {
+      console.info(TAG + "Start to addOutput mPhotoOutput");
+      mCameraSession.addOutput(mPhotoOutput);
+    }
+ 
+    await sleep(30);
+ 
+    await mCameraSession.commitConfig();
+    console.info(TAG + "commitConfig end");
+    await sleep(50);
+ 
+    await mCameraSession.start();
+ 
+    await sleep(100);
+    console.info(TAG + "Exit startCameraSession");
+ 
+    return heifIdx;
+  }
+
   let stopCameraSession = async () => {
     console.info(TAG + "Enter stopCameraSession");
-    mCameraSession.beginConfig();
     await mCameraSession.stop();
     await sleep(100);
-
-    if (!isEmpty(mCameraInput)) {
-      console.info(TAG + "Start to removeInput input");
-      mCameraSession.removeInput(mCameraInput);
-    }
-
-    if (!isEmpty(mPreviewOutput)) {
-      console.info(TAG + "Start to removeOutput mPreviewOutput");
-      mCameraSession.removeOutput(mPreviewOutput);
-    }
-
     await releaseInput();
     await releaseOutput();
-
+    await mCameraSession.release();
     console.info(TAG + "Exit stopCameraSession");
 
     return true;
@@ -1935,6 +2019,42 @@ export default function CameraPhotoSessionTest() {
             console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_WHITE_BALANCE_PROMISE_0100 FAILED" + err.code);
             expect(true).assertFalse();
         }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
+     * @tc.desc   white balance api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100', Level.LEVEL0, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        let i = 0;
+        
+        while(i != -1){
+          try{            
+            createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+            i = await startHeifCameraSession(0, i);
+            await sleep(100);
+            if(i!= -1){
+              await stopCameraSession();
+            }            
+          } catch (err) {
+            console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100 FAILED" + err.code);
+            expect(true).assertFalse();
+          }
+        }
+        
         done();
       }
     })

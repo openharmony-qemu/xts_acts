@@ -176,8 +176,11 @@ public:
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);
+    Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
     Camera_ErrorCode CreatePhotoOutput(char* photoSurfaceId);
+    Camera_ErrorCode CreateHeifPhotoOutput(char* photoSurfaceId, int idx);
+    int AdjustHeifIdx(int idx);
     Camera_ErrorCode CreateVideoOutput(char* videoId);
     Camera_ErrorCode CreateMetadataOutput(void);
     Camera_ErrorCode IsCameraMuted(void);

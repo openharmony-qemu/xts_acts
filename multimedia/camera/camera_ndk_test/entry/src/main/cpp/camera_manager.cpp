@@ -450,6 +450,41 @@ Camera_ErrorCode NDKCamera::GetSupportedOutputCapability(void)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::GetSupportedFullOutputCapability(void)
+{
+    if (cameraManager_ == nullptr) {
+        LOG("ndkXTS cameraManager_ is null.");
+    } else if (cameras_ == nullptr) {
+        LOG("ndkXTS cameras_ is null.");
+    }
+    ret_ = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
+        cameraManager_, cameras_, NORMAL_PHOTO, &cameraOutputCapability_);
+    if (cameraOutputCapability_ == nullptr || ret_ != CAMERA_OK) {
+        LOG("ndkXTS GetSupportedFullCameraOutputCapabilityWithSceneMode failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    return ret_;
+}
+
+int NDKCamera::AdjustHeifIdx(int idx)
+{
+    if (idx == -1) {
+        return idx;
+    }
+    if (cameraOutputCapability_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    for (; idx < cameraOutputCapability_->photoProfilesSize; idx++) {
+        if (cameraOutputCapability_->photoProfiles[idx]->format == CAMERA_FORMAT_HEIC) {
+            break;
+        }
+    }
+    if (idx >= cameraOutputCapability_->photoProfilesSize) {
+        idx = -1;
+    }
+    return idx;
+}
+
 Camera_ErrorCode NDKCamera::CreatePreviewOutput(void)
 {
     profile_ = cameraOutputCapability_->previewProfiles[0];
@@ -517,6 +552,27 @@ Camera_ErrorCode NDKCamera::CreatePhotoOutput(char* photoSurfaceId)
         return CAMERA_INVALID_ARGUMENT;
     }
     LOG("ndkXTS CreatePhotoOutput start.");
+    ret_ = OH_CameraManager_CreatePhotoOutput(cameraManager_, profile_, photoSurfaceId, &photoOutput_);
+    PhotoOutputRegisterCallback();
+
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CreateHeifPhotoOutput(char* photoSurfaceId, int idx)
+{
+    LOG("ndkXTS CreateHeifPhotoOutput start.");
+    profile_ = cameraOutputCapability_->photoProfiles[idx];
+    LOG("ndkXTS CreateHeifPhotoOutput photoProfiles start.");
+    if (profile_ == nullptr) {
+        LOG("ndkXTS Get photoProfiles failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    if (photoSurfaceId == nullptr) {
+        LOG("ndkXTS CreateHeifPhotoOutput failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    LOG("ndkXTS CreateHeifPhotoOutput start.");
     ret_ = OH_CameraManager_CreatePhotoOutput(cameraManager_, profile_, photoSurfaceId, &photoOutput_);
     PhotoOutputRegisterCallback();
 
