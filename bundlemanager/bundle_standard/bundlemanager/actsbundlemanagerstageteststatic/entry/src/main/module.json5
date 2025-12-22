@@ -353,6 +353,51 @@
         "srcEntry": "./ets/FormAbility/FormAbility.ts",
         "type": "distributed",
         "exported": true
+      },
+      {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "callerInfoQuery",
+        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "type": "callerInfoQuery",
+        "exported": true
+      },
+      {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "appService",
+        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "type": "appService",
+        "exported": true
+      },
+      {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "liveForm",
+        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "type": "liveForm",
+        "exported": true
+      },
+      {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "webNativeMessaging",
+        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "type": "webNativeMessaging",
+        "exported": true
+      },
+      {
+        "description": "$string:form_description",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "name": "notificationSubscriber",
+        "srcEntry": "./ets/FormAbility/FormAbility.ts",
+        "type": "notificationSubscriber",
+        "exported": true
       }
     ],
     "requestPermissions": [

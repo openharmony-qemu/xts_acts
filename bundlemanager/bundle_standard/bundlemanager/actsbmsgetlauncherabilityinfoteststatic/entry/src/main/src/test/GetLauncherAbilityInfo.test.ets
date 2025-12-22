@@ -56,6 +56,7 @@ export default function actsGetLauncherAbilityInfoTest() {
         expect(data[0].iconId).assertLarger(0.0);
         expect(data[0].userId).assertEqual(100);
         expect(data[0].installTime).assertLarger(0.0);
+        expect(data[0].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
         expect(data[0].elementName.deviceId).assertEqual("");
         expect(data[0].elementName.bundleName).assertEqual(BUNDLE_NAME2);
         expect(data[0].elementName.moduleName).assertEqual("entry");
