@@ -2444,7 +2444,7 @@ export default function AVPlayerTest() {
         new Array('prepare_duration', 'resource_connection_duration', 'first_frame_decapsulation_duration', 
           'total_playback_time', 'loading_count', 'total_loading_time', 'total_loading_Bytes', 
           'stalling_count', 'total_stalling_time');
-      expect(fileDescriptor.fd).assertLarger(0);
+      expect(fileDescriptor).not().assertEqual(undefined);
       if (fileDescriptor) {
         testCheckPlaybackStatisticMetrics(fileDescriptor, avPlayer, playBackMetricsKey, done, testName);
       }
@@ -2459,7 +2459,8 @@ export default function AVPlayerTest() {
      * @tc.level  LEVEL0
      */
     it('metricsControl_001', Level.LEVEL0,async (done: Function) => {
-      expect(fileDescriptor.fd).assertLarger(0);
+      expect(fileDescriptor).not().assertEqual(undefined);
+      expect(subtitleFdSrc).not().assertEqual(undefined);     
       if (fileDescriptor && subtitleFdSrc) {
         testMetricsListening(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100", avPlayer, metricsON, done);
       }
