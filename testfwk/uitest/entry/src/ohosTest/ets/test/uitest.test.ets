@@ -703,6 +703,22 @@ export default function UiTest() {
          */
         it('tesKnuckleKnockS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesKnuckleKnockS start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs);
+            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+            console.log(`${TestTag}, tesKnuckleKnockS window,${JSON.stringify(window)}`);
+            if (window != null) {
+                try {
+                    let windowMode = await window.getWindowMode();
+                    if (windowMode != WindowMode.FLOATING) {
+                        await window.resume();
+                    }
+                    await window.maximize();
+                } catch (error) {
+                    console.log(`${TestTag}, tesKnuckleKnockS maximize error,${JSON.stringify(error)}`);
+                }
+            }
+            await driver.delayMs(waitUiReadyMs);
             try {
                 let play = display.getDefaultDisplaySync();
                 let centerX = play.width / 2;
@@ -3634,9 +3650,13 @@ export default function UiTest() {
             const driver = Driver.create();
             await driver.delayMs(waitUiReadyMs);
             let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
-            console.log(`${TestTag}, afterAll maximize window,${JSON.stringify(window)}`);
+            console.log(`${TestTag}, afterAll window,${JSON.stringify(window)}`);
             if (window != null) {
                 try {
+                    let windowMode = await window.getWindowMode();
+                    if (windowMode != WindowMode.FLOATING) {
+                        await window.resume();
+                    }
                     await window.maximize();
                 } catch (error) {
                     console.log(`${TestTag}, afterAll maximize error,${JSON.stringify(error)}`);
@@ -5396,7 +5416,22 @@ export default function UiTest() {
          * @tc.level  LEVEL3
          */
         it('testSwipe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            let driver1 = Driver.create();
+            await driver.delayMs(waitUiReadyMs);
+            let window = await driver1.findWindow({ bundleName: 'com.uitestScene.acts' });
+            console.log(`${TestTag}, testSwipe window,${JSON.stringify(window)}`);
+            if (window != null) {
+                try {
+                    let windowMode = await window.getWindowMode();
+                    if (windowMode != WindowMode.FLOATING) {
+                        await window.resume();
+                    }
+                    await window.maximize();
+                } catch (error) {
+                    console.log(`${TestTag}, testSwipe maximize error,${JSON.stringify(error)}`);
+                }
+            }
             await driver.delayMs(waitUiReadyMs)
             let displayClass = await display.getDefaultDisplay();
             let screenWidth = displayClass.width
