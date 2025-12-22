@@ -456,7 +456,6 @@ static napi_value RenderNodeParam013(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
-
 static napi_value RenderNodeParam014(napi_env env, napi_callback_info info)
 {
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
@@ -471,12 +470,12 @@ static napi_value RenderNodeParam014(napi_env env, napi_callback_info info)
     auto result2 = OH_ArkUI_RenderNodeUtils_SetClipToFrame(rsNode, NUMBER_N_1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam014 result2=%{public}d", result2);
-    ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(result2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
 
     auto result3 = OH_ArkUI_RenderNodeUtils_SetClipToFrame(rsNode, NUMBER_2);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam014 result3=%{public}d", result3);
-    ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
+    ASSERT_EQ(result3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
     
     NAPI_END;
 }
