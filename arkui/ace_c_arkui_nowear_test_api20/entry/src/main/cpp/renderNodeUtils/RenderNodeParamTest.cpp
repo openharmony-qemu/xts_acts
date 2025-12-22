@@ -468,12 +468,12 @@ static napi_value RenderNodeParam014(napi_env env, napi_callback_info info)
         "kkk RenderNodeParam014 result1=%{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
     
-    auto result2 = OH_ArkUI_RenderNodeUtils_SetBackgroundColor(rsNode, NUMBER_N_1);
+    auto result2 = OH_ArkUI_RenderNodeUtils_SetClipToFrame(rsNode, NUMBER_N_1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam014 result2=%{public}d", result2);
     ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
 
-    auto result3 = OH_ArkUI_RenderNodeUtils_SetBackgroundColor(rsNode, NUMBER_2);
+    auto result3 = OH_ArkUI_RenderNodeUtils_SetClipToFrame(rsNode, NUMBER_2);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk RenderNodeParam014 result3=%{public}d", result3);
     ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
