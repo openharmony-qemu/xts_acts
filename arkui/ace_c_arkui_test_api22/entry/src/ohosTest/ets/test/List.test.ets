@@ -15,6 +15,7 @@
 import imageAltTest  from "./image/imageAltTest.test";
 import textMinLinesTest from './textMinLines/TextMinLinesTest.test'
 import HasAxisTest from './hasAxisTest/HasAxisTest.test'
+import RegionListCapiTest from "./InteractiveFramework/RegionListTest.test";
 import CoastingAxisTest from "./list/coastingAxisTest.test";
 import snapSpeedTest from "./list/snapSpeedTest.test";
 import lanesValueTest from "./list/lanesValueTest.test";
@@ -42,6 +43,7 @@ import gridEventTest from './grid/GridEventTest.test';
 import clipShapeTest from "./clipShape/ClipShapeTest.test";
 import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test'
+import SwiperParamTest from './swiper/SwiperParamTest.test';
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -50,6 +52,7 @@ export default function testsuite() {
   lanesValueTest();
   textMinLinesTest();
   HasAxisTest();
+  RegionListCapiTest();
   WaterFlowFillPolicyTest();
   imageDrawableDescriptorTest();
   imageErrorTest();
@@ -74,4 +77,5 @@ export default function testsuite() {
   clipShapeTest();
   CustomMarkDirtyTest();
   TextMenuItemIdTest();
+  SwiperParamTest();
 }

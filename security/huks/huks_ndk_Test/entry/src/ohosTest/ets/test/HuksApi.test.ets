@@ -19,111 +19,6 @@ import huksndk from 'libhuksndk.so'
 export default function SecurityHuksApiTest() {
   describe('SecurityHuksApiTest', () => {
     /**
-     * @tc.name   SUB_Security_HUKS_Utils_Native_API22_Func_0100
-     * @tc.number SUB_Security_HUKS_Utils_Native_API22_Func_0100
-     * @tc.desc   test OH_Huks_InitExternalCryptoParamSet
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Utils_Native_API22_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Utils0100();
-        expect(result).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.name   SUB_Security_HUKS_Utils_Native_API22_Func_0200
-     * @tc.number SUB_Security_HUKS_Utils_Native_API22_Func_0200
-     * @tc.desc   test OH_Huks_AddExternalCryptoParams
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Utils_Native_API22_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Utils0100();
-        expect(result).assertEqual(0);
-      }
-    });
-    
-    /**
-     * @tc.name   SUB_Security_HUKS_Utils_Native_API22_Func_0300
-     * @tc.number SUB_Security_HUKS_Utils_Native_API22_Func_0300
-     * @tc.desc   test OH_Huks_BuildExternalCryptoParamSet
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Utils_Native_API22_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Utils0100();
-        expect(result).assertEqual(0);
-      }
-    });
-    
-    /**
-     * @tc.name   SUB_Security_HUKS_Utils_Native_API22_Func_0400
-     * @tc.number SUB_Security_HUKS_Utils_Native_API22_Func_0400
-     * @tc.desc   test OH_Huks_FreeExternalCryptoParamSet
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Utils_Native_API22_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Utils0100();
-        expect(result).assertEqual(0);
-      }
-    });
-    
-    /**
-     * @tc.name   SUB_Security_HUKS_Utils_Native_API22_Func_0500
-     * @tc.number SUB_Security_HUKS_Utils_Native_API22_Func_0500
-     * @tc.desc   test OH_Huks_GetExternalCryptoParam
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Utils_Native_API22_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Utils0100();
-        expect(result).assertEqual(0);
-      }
-    });
-    
-    /**
-     * @tc.name   SUB_Security_HUKS_Type_Native_API22_Func_0100
-     * @tc.number SUB_Security_HUKS_Type_Native_API22_Func_0100
-     * @tc.desc   test OH_Huks_ExternalCryptoTag
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Type_Native_API22_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Type0100();
-        expect(result).assertEqual(0);
-      }
-    });
-    
-    /**
-     * @tc.name   SUB_Security_HUKS_Type_Native_API22_Func_0200
-     * @tc.number SUB_Security_HUKS_Type_Native_API22_Func_0200
-     * @tc.desc   test OH_Huks_ExternalPinAuthState
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Security_HUKS_Type_Native_API22_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
-      if (canIUse("SystemCapability.Security.Huks.CryptoExtension")) {
-        let result: number = huksndk.huksNativeApi22Type0200();
-        expect(result).assertEqual(0);
-      }
-    });
-    
-    /**
      * @tc.name   SUB_Security_HUKS_Type_Native_API22_Func_0300
      * @tc.number SUB_Security_HUKS_Type_Native_API22_Func_0300
      * @tc.desc   test OH_Huks_ErrCode
@@ -133,6 +28,32 @@ export default function SecurityHuksApiTest() {
      */
     it('SUB_Security_HUKS_Type_Native_API22_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let result: number = huksndk.huksNativeApi22Type0300();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Type_Native_API22_Func_0400
+     * @tc.number SUB_Security_HUKS_Type_Native_API22_Func_0400
+     * @tc.desc   test OH_Huks_Tag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_Type_Native_API22_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let result: number = huksndk.huksNativeApi22Type0400();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Type_Native_API22_Func_0500
+     * @tc.number SUB_Security_HUKS_Type_Native_API22_Func_0500
+     * @tc.desc   test OH_Huks_KeyClassType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_Type_Native_API22_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let result: number = huksndk.huksNativeApi22Type0500();
       expect(result).assertEqual(0);
     });
   })

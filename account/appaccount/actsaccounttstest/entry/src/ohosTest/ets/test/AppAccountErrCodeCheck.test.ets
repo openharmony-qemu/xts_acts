@@ -652,8 +652,7 @@ export default function AppAccountErrCodeCheck() {
       try {
         let appAccountManager = account.createAppAccountManager();
         console.info(tag + "start deleteCredential");
-        let data = await appAccountManager.deleteCredential(accountName, "PIN");
-        console.info(tag + "data: " + JSON.stringify(data));
+        await appAccountManager.deleteCredential(accountName, "PIN");
         expect().assertFail();
         done();
       } catch (err) {
@@ -681,9 +680,8 @@ export default function AppAccountErrCodeCheck() {
       }
       let appAccountManager = account.createAppAccountManager();
       console.info(tag + "start deleteCredential");
-      appAccountManager.deleteCredential(accountName, "PIN", (err, data) => {
+      appAccountManager.deleteCredential(accountName, "PIN", (err) => {
         console.info(tag + "err: " + JSON.stringify(err));
-        console.info(tag + "data: " + JSON.stringify(data));
         try {
           expect(err.code).assertEqual(12300003);
         } catch (err) {
@@ -708,8 +706,7 @@ export default function AppAccountErrCodeCheck() {
       try {
         let appAccountManager = account.createAppAccountManager();
         console.info(tag + "start deleteCredential");
-        let data = await appAccountManager.deleteCredential(accountName, "PIN");
-        console.info(tag + "data: " + JSON.stringify(data));
+        await appAccountManager.deleteCredential(accountName, "PIN");
         expect().assertFail();
         done();
       } catch (err) {
@@ -735,9 +732,8 @@ export default function AppAccountErrCodeCheck() {
       console.info(tag + "start createAccount");
       await appAccountManager.createAccount(name);
       console.info(tag + "start deleteCredential");
-      appAccountManager.deleteCredential(name, "PIN", (err, data) => {
+      appAccountManager.deleteCredential(name, "PIN", (err) => {
         console.info(tag + "err: " + JSON.stringify(err));
-        console.info(tag + "data: " + JSON.stringify(data));
         try {
           expect(err.code).assertEqual(12300102);
         } catch (err) {
@@ -763,8 +759,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start createAccount");
         await appAccountManager.createAccount(name);
         console.info(tag + "start deleteCredential");
-        let data = await appAccountManager.deleteCredential(name, "PIN");
-        console.info(tag + "data: " + JSON.stringify(data));
+        await appAccountManager.deleteCredential(name, "PIN");
         expect().assertFail();
         done();
       } catch (err) {

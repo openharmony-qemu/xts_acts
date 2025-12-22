@@ -62,7 +62,7 @@ export default function ProvideArray() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArray_0100', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArray_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function ProvideArray() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArray_0200', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArray_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -108,7 +108,7 @@ export default function ProvideArray() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArray_0300', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArray_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -131,7 +131,7 @@ export default function ProvideArray() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideArray_0400', Level.LEVEL0, async (done: Function) => {
+    it('ProvideArray_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ProvideArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

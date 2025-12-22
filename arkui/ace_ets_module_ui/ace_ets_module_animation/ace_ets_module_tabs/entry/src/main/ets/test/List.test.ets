@@ -78,7 +78,6 @@ import withIdTest from './TabsTest/observer/withId.test';
 import withoutIdTest from './TabsTest/observer/withoutId.test';
 
 export default function testsuite() {
-  withoutIdTest();
   tabsBarPositionJsunit();
   TabsApi();
   APITabsBarBackgroundBlurStyleJsunit();
@@ -134,5 +133,6 @@ export default function testsuite() {
   tabs_onContentDidScrollTest();
   tabs_undefinedTest();
   DrawableTabBarIndicatorPage();
+  withoutIdTest();
   withIdTest(); 
   } 

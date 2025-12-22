@@ -33,6 +33,7 @@
 #include "image/AnimationControllerTest.h"
 #include "grid/GridFillPolicyTest.h"
 #include "grid/GridEventTest.h"
+#include "InteractiveFramework/RegionListTest.h"
 #include "clipShape/ClipShapeTest.h"
 #include "CustomComponent/CustomMarkDirtyTest.h"
 
@@ -51,6 +52,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"imageAltTest", nullptr, ImageAltTest::imageAltTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"textMinLinesTest", nullptr, MinLinesTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hasAxisTest", nullptr, HasAxisTest::CreateNativeNode, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"RegionListTest", nullptr, RegionListTest::CreateNativeNode, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"CoastingAxisTest_a", nullptr, CoastingAxisTest::CoastingAxisEventTest_a,
          nullptr, nullptr, nullptr, napi_default, nullptr},

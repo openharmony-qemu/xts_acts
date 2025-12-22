@@ -85,7 +85,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       let n: number = t.length;
       for (let i = 0; i < 10000; i++) {
-        globalText += t.charAt(Math.floor(Math.random() * n));
+        globalText += t[Math.floor(Math.random() * n).toInt()];
       }
       console.log("Datablob = " + globalText);
       let ginBlob: cryptoFramework.DataBlob = {
@@ -329,7 +329,7 @@ export default function DigestAlgorithmSm3Jsunit() {
       let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
       let n: number = t.length;
       for (let i = 0; i < 10000; i++) {
-        globalText += t.charAt(Math.floor(Math.random() * n));
+        globalText += t[Math.floor(Math.random() * n).toInt()];
       }
       console.log("Datablob = " + globalText);
       let ginBlob: cryptoFramework.DataBlob = {

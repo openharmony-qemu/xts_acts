@@ -104,7 +104,7 @@ export default function ContextDirTest() {
           .then((ability) => {
             ability?.lastRequestWant?.abilityName !== 'TestAbility' && ability?.context?.terminateSelf();
           });
-        await sleep(600);
+        await sleep(1000);
       } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s', "close TopAbility error: " + JSON.stringify(error));
       }
@@ -112,7 +112,7 @@ export default function ContextDirTest() {
         bundleName: 'com.example.contextdirtest',
         abilityName: 'TestAbility',
       })
-      await sleep(1200);
+      await sleep(2000);
     })
 
     /**

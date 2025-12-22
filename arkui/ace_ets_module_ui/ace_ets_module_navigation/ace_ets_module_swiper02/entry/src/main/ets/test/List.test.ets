@@ -13,7 +13,12 @@
  * limitations under the License.
  */
 import swiperFillPolicy from './swiper/swiperFillPolicy.test';
-
+import SwiperParamExample from './swiper/SwiperParamExample.test';
+import TabsExample1 from './tabs/TabsExample1.test';
+import TabsExample2 from './tabs/TabsExample2.test';
 export default function testsuite() {
   swiperFillPolicy()
+  SwiperParamExample()
+  TabsExample1()
+  TabsExample2()
 }

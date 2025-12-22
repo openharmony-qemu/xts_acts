@@ -251,6 +251,89 @@ static void InitPushWindow3(napi_property_descriptor* desc)
     }
 }
 
+static void InitPushWindow4(napi_property_descriptor* desc)
+{
+    int32_t offset = 135;
+    napi_property_descriptor descTemp[] = {
+        XL("testSetWindowBrightness",
+            Window::TestSetWindowBrightness),
+        XL("testInjectTouchEvent",
+            Window::TestInjectTouchEvent),
+        XL("testGetMainWindowSnapshot",
+            Window::TestGetMainWindowSnapshot),
+        XL("testLockCursor",
+            Window::TestLockCursor),
+        XL("testUnlockCursor",
+            Window::TestUnlockCursor),
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
+static void InitPushDisplay2(napi_property_descriptor* desc)
+{
+    int32_t offset = 140;
+    napi_property_descriptor descTemp[] = {
+        XL("testCaptureScreenPixelmapBoundaryValue",
+            Display::TestCaptureScreenPixelmapBoundaryValue),
+        XL("testCreateDisplayByIdBoundaryValue", Display::TestCreateDisplayByIdBoundaryValue),
+        XL("testUnregisterAvailableAreaChangeListenerBoundaryValue",
+            Display::TestUnregisterAvailableAreaChangeListenerBoundaryValue),
+        XL("testCreateAvailableAreaBoundaryValue",
+            Display::TestCreateAvailableAreaBoundaryValue),
+        XL("testUnregisterDisplayAddListenerBoundaryValue",
+            Display::TestUnregisterDisplayAddListenerBoundaryValue),
+        XL("testUnregisterDisplayRemoveListenerBoundaryValue",
+            Display::TestUnregisterDisplayRemoveListenerBoundaryValue),
+        XL("testGetDisplaySourceModeBoundaryValue",
+            Display::TestGetDisplaySourceModeBoundaryValue),
+        XL("testGetDisplayPositionBoundaryValue",
+            Display::TestGetDisplayPositionBoundaryValue),
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
+static void InitPushWindowPip4(napi_property_descriptor* desc)
+{
+    int32_t offset = 148;
+    napi_property_descriptor descTemp[] = {
+        XL("testSetPipMainWindowIdBoundaryValue", WindowPip::TestSetPipMainWindowIdBoundaryValue),
+        XL("testSetPipRectBoundaryValue", WindowPip::TestSetPipRectBoundaryValue),
+        XL("testSetPipControlGroupBoundaryValue", WindowPip::TestSetPipControlGroupBoundaryValue),
+        XL("testDeletePipBoundaryValue", WindowPip::TestDeletePipBoundaryValue),
+        XL("testStartPipBoundaryValue", WindowPip::TestStartPipBoundaryValue),
+        XL("testStopPipBoundaryValue", WindowPip::TestStopPipBoundaryValue),
+        XL("testUpdatePipContentSizeBoundaryValue", WindowPip::TestUpdatePipContentSizeBoundaryValue),
+        XL("testUpdatePipControlStatusBoundaryValue", WindowPip::TestUpdatePipControlStatusBoundaryValue),
+        XL("testSetPipControlEnabledBoundaryValue", WindowPip::TestSetPipControlEnabledBoundaryValue),
+        XL("testSetPipInitialSurfaceRectBoundaryValue", WindowPip::TestSetPipInitialSurfaceRectBoundaryValue),
+        XL("testUnsetPipInitialSurfaceRectBoundaryValue", WindowPip::TestUnsetPipInitialSurfaceRectBoundaryValue),
+        XL("testRegisterStartPipCallbackBoundaryValue", WindowPip::TestRegisterStartPipCallbackBoundaryValue),
+        XL("testUnregisterStartPipCallbackBoundaryValue",
+            WindowPip::TestUnregisterStartPipCallbackBoundaryValue),
+        XL("testUnregisterAllStartPipCallbacksBoundaryValue",
+            WindowPip::TestUnregisterAllStartPipCallbacksBoundaryValue),
+        XL("testRegisterLifecycleListenerBoundaryValue", WindowPip::TestRegisterLifecycleListenerBoundaryValue),
+        XL("testUnregisterLifecycleListenerBoundaryValue", WindowPip::TestUnregisterLifecycleListenerBoundaryValue),
+        XL("testUnregisterAllLifecycleListenersBoundaryValue",
+            WindowPip::TestUnregisterAllLifecycleListenersBoundaryValue),
+        XL("testRegisterControlEventListenerBoundaryValue", WindowPip::TestRegisterControlEventListenerBoundaryValue),
+        XL("testUnregisterControlEventListenerBoundaryValue",
+            WindowPip::TestUnregisterControlEventListenerBoundaryValue),
+        XL("testUnregisterAllControlEventListenersBoundaryValue",
+            WindowPip::TestUnregisterAllControlEventListenersBoundaryValue),
+        XL("testRegisterResizeListenerBoundaryValue", WindowPip::TestRegisterResizeListenerBoundaryValue),
+        XL("testUnregisterResizeListenerBoundaryValue", WindowPip::TestUnregisterResizeListenerBoundaryValue),
+        XL("testUnregisterAllResizeListenersBoundaryValue", WindowPip::TestUnregisterAllResizeListenersBoundaryValue),
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Init", "Init begins");
@@ -258,7 +341,7 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[135] = {};
+    napi_property_descriptor desc[171] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);
@@ -266,6 +349,9 @@ static napi_value Init(napi_env env, napi_value exports)
     InitPushDisplay(desc);
     InitPushWindow2(desc);
     InitPushWindow3(desc);
+    InitPushWindow4(desc);
+    InitPushDisplay2(desc);
+    InitPushWindowPip4(desc);
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;

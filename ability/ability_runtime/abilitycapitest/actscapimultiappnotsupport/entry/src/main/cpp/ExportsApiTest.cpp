@@ -22,7 +22,9 @@ napi_property_descriptor desc[] = {
     {"StartSelfUIAbilityWithStartOptionsMultiAppNotSupport", nullptr,
         StartSelfUIAbilityWithStartOptionsMultiAppNotSupport, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AbilityRuntimeErrorCodeMultiAppNotSupportCode",
-        nullptr, AbilityRuntimeErrorCodeMultiAppNotSupportCode, nullptr, nullptr, nullptr, napi_default, nullptr}
+        nullptr, AbilityRuntimeErrorCodeMultiAppNotSupportCode, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"StartSelfUIAbilityWithPidMultiAppNotSupport",
+        nullptr, StartSelfUIAbilityWithPidMultiAppNotSupport, nullptr, nullptr, nullptr, napi_default, nullptr}
 };
 
 EXTERN_C_START

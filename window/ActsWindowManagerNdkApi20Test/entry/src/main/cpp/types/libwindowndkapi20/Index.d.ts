@@ -153,3 +153,44 @@ export const testLockCursorwithOutofRange: (id: number) => Array<number>;
 export const testLockCursorwithoutPermission: (id: number) => number;
 export const testUnLockCursorwithOutofRange: (id: number) => Array<number>;
 export const testUnLockCursorwithoutPermission: (id: number) => number;
+
+export const testSetWindowBrightness: (id: number, brightness: number) => number;
+export const testInjectTouchEvent: (id: number) => Array<number>;
+export const testGetMainWindowSnapshot: (id: number) => Array<number>;
+export const testLockCursor: (id: number) => Array<number>;
+export const testUnlockCursor: (id: number) => Array<number>;
+
+export const testCaptureScreenPixelmapBoundaryValue: () => Array<number>;
+export const testCreateDisplayByIdBoundaryValue: () => Array<number>;
+export const testUnregisterAvailableAreaChangeListenerBoundaryValue: () => Array<number>;
+export const testCreateAvailableAreaBoundaryValue: () => Array<number>;
+export const testUnregisterDisplayAddListenerBoundaryValue: () => Array<number>;
+export const testUnregisterDisplayRemoveListenerBoundaryValue: () => Array<number>;
+export const testGetDisplaySourceModeBoundaryValue: () => Array<number>;
+export const testGetDisplayPositionBoundaryValue: () => Array<number>;
+
+export const testSetPipMainWindowIdBoundaryValue: () => Array<number>;
+export const testSetPipRectBoundaryValue: () => Array<number>;
+export const testSetPipControlGroupBoundaryValue: () => Array<number>;
+export const testDeletePipBoundaryValue: () => Array<number>;
+export const testStartPipBoundaryValue: () => Array<number>;
+export const testStopPipBoundaryValue: () => Array<number>;
+export const testUpdatePipContentSizeBoundaryValue: () => Array<number>;
+export const testUpdatePipControlStatusBoundaryValue: () => Array<number>;
+export const testSetPipControlEnabledBoundaryValue: () => Array<number>;
+export const testSetPipInitialSurfaceRectBoundaryValue: () => Array<number>;
+export const testUnsetPipInitialSurfaceRectBoundaryValue: () => Array<number>;
+export const testRegisterStartPipCallbackBoundaryValue: () => Array<number>;
+export const testUnregisterStartPipCallbackBoundaryValue: () => Array<number>;
+export const testUnregisterAllStartPipCallbacksBoundaryValue: () => Array<number>;
+export const testRegisterLifecycleListenerBoundaryValue: () => Array<number>;
+export const testUnregisterLifecycleListenerBoundaryValue: () => Array<number>;
+export const testUnregisterAllLifecycleListenersBoundaryValue: () => Array<number>;
+export const testRegisterControlEventListenerBoundaryValue: () => Array<number>;
+export const testUnregisterControlEventListenerBoundaryValue: () => Array<number>;
+export const testUnregisterAllControlEventListenersBoundaryValue: () => Array<number>;
+export const testRegisterResizeListenerBoundaryValue: () => Array<number>;
+export const testUnregisterResizeListenerBoundaryValue: () => Array<number>;
+export const testUnregisterAllResizeListenersBoundaryValue: () => Array<number>;
+
+

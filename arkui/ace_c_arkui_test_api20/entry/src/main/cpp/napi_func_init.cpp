@@ -45,6 +45,8 @@ namespace ArkUICapiTest
                 napi_default, nullptr},
             {"CreateAccessibilityElementInfoTest", nullptr, CreateAccessibilityElementInfoTest, nullptr, nullptr,
                 nullptr, napi_default, nullptr},
+            {"AccessibilityErrorCodeTest001", nullptr, AccessibilityErrorCodeTest001, nullptr, nullptr,
+                nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

@@ -71,7 +71,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0001', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0001', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0001] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -116,7 +116,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0002', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0002', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0002] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -161,7 +161,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0003', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0003', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0003] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -206,7 +206,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0004', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0004', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0004] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -251,7 +251,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0005', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0005', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0005] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -296,7 +296,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0006', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0006', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0006] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -341,7 +341,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0007', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0007', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0007] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -386,7 +386,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0008', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0008', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0008] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -431,7 +431,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0009', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0009', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0008] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -476,7 +476,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0010', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0010] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -521,7 +521,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0011', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0011', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0011] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
@@ -569,7 +569,7 @@ export default function ProvideJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideJsunit_0012', Level.LEVEL0, async (done: Function) => {
+    it('ProvideJsunit_0012', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideJsunit_0012] START');
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);

@@ -2128,5 +2128,23 @@ export default function dlpTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_errorCode_17_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_errorCode_17_0100
+     * @tc.desc   test accounttype ActionType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_errorCode_17_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_Security_DataSecurity_DLP_errorCode_17_0100: started.");
+      expect(dlpPermission.AccountType.CLOUD_ACCOUNT).assertEqual(1);
+      expect(dlpPermission.AccountType.DOMAIN_ACCOUNT).assertEqual(2);
+      expect(dlpPermission.AccountType.ENTERPRISE_ACCOUNT).assertEqual(4);
+      expect(dlpPermission.ActionType.NOT_OPEN).assertEqual(0);
+      expect(dlpPermission.ActionType.OPEN).assertEqual(1);
+      done();
+    })
+
   })
 }

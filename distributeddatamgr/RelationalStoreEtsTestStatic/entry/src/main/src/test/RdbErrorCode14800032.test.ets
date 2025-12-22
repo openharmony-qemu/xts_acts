@@ -16,7 +16,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 const TAG = "[RdbErrorCode14800032]"
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-  "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
+  "data1 text," + "data2 INTEGER, " + "data3 INTEGER," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 floatvector(128)," + "data8 UNLIMITED INT" + ")";
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 
@@ -114,7 +114,7 @@ async function attachCheck(store: data_relationalStore.RdbStore) {
 
 export default function RdbErrorCode14800032() {
 
-  describe("rdbErrorCode1480032", (): void => {
+  describe("RdbErrorCode14800032", (): void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'start beforeAll');
       await abilityDelegator.startAbility({
@@ -134,6 +134,7 @@ export default function RdbErrorCode14800032() {
       let attachStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
       await attachStore.executeSql(CREATE_TABLE_TEST1);
       await rdbStore!.execute(CREATE_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST4);
       await rdbStore!.execute(CREATE_TABLE_EMPLOYEE);
       let u8 = new Uint8Array([3 as long, 4 as long, 5 as long]);
       const valueBucket :data_relationalStore.ValuesBucket = {
@@ -159,7 +160,7 @@ export default function RdbErrorCode14800032() {
     afterAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '[RELATIONAL_STORE_JSKITS_TEST] afterEach');
       rdbStore = undefined;
-      await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      // await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
     });
 
     /**
@@ -342,7 +343,60 @@ export default function RdbErrorCode14800032() {
       console.log(TAG + "************* testRdbStoreBatchInsertWithConflictResolutionSyncErrcode0500 end *************");
     })
 
-   
+    /**
+     * @tc.name   testRdbStoreAttach0016
+     * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0020
+     * @tc.desc   non encrypted database attach non encrypted database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreAttach0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRdbStoreAttach0016 start *************");
+      let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      await store.executeSql(CREATE_TABLE_TEST1);
+      await store.executeSql(CREATE_TABLE_TEST4);
+      await attachInsert(store, "test1");
+      try {
+        let num = await store.attach(context, STORE_CONFIG1, "attachDB");
+        expect(1).assertEqual(num);
+      } catch(e: BusinessError) {
+        console.log("testRdbStoreAttach0016 : failed, err: code=" + e.code + " message=" + e.message);
+        expect('14800032').assertEqual(e.code);
+        done();
+      }
+      await attachCheck(store);
+      expect(0).assertEqual(await store.detach("attachDB"))
+      console.log(TAG + "************* testRdbStoreAttach0016 end *************");
+      done();
+    })
+
+    /**
+     * @tc.name   testRdbStoreAttach0018
+     * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0050
+     * @tc.desc   non encrypted database attach non encrypted database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreAttach0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(TAG + "************* testRdbStoreAttach0018 start *************");
+      await rdbStore!.execute(CREATE_TABLE_TEST1);
+      await attachInsert(rdbStore!, "test1");
+      try {
+        console.log(TAG + "************* testRdbStoreAttach0018 attach start *************");
+        let dataBaseDir = context.databaseDir + "/rdb/";
+        let num = await rdbStore!.attach(dataBaseDir + "store1.db", "attachDB");
+      } catch(e: BusinessError) {
+        console.log("testRdbStoreAttach0018 err: failed, err: code=" + e.code + " message=" + e.message);
+        expect().assertFail();
+        done();
+      }
+      await attachCheck(rdbStore!);
+      expect(0).assertEqual(await rdbStore!.detach("attachDB"));
+      console.log(TAG + "************* testRdbStoreAttach0018 end *************");
+      done();
+    })
 
     /**
      * @tc.name   relationalStoreTest001

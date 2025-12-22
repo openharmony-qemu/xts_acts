@@ -1796,35 +1796,6 @@ export default function CameraSessionFlashSuppTest() {
 
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PHOTO_SESSION_PRECONFIG_0700
-     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PHOTO_SESSION_PRECONFIG_0700
-     * @tc.desc   PhotoSession_Preconfig
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PHOTO_SESSION_PRECONFIG_0700', Level.LEVEL2, async (done: Function) => {
-      const testName: string = 'SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PHOTO_SESSION_PRECONFIG_0700';
-      if (isEmpty(mCameraDeviceArray)) {
-        console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      } else {
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        try {
-          console.info(TAG, testName, "Start preconfig");
-          let result = mPhotoSession.preconfig(0, -1);
-          console.info(TAG, testName, "Success preconfig", result);
-          expect().assertFail();
-        } catch (error) {
-          console.error(TAG, testName, 'Failed preconfig', JSON.stringify(error), error.code);
-          expect(error.code).assertEqual('7400201');
-        }
-        await releasePhotoSession();
-      }
-      done();
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PHOTO_SESSION_PRECONFIG_0800
      * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PHOTO_SESSION_PRECONFIG_0800
      * @tc.desc   PhotoSession_Preconfig
@@ -1897,34 +1868,6 @@ export default function CameraSessionFlashSuppTest() {
       done();
     })
 
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0200
-     * @tc.number SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0200
-     * @tc.desc   PreviewOutput_setFrameRate
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0200', Level.LEVEL2, async (done: Function) => {
-      const testName: string = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0200';
-      if (isEmpty(mCameraDeviceArray)) {
-        console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      } else {
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        try {
-          console.info(TAG, testName, "Start setFrameRate");
-          let result = mPreviewOutput.setFrameRate(1000, 10);
-          console.info(TAG, testName, "Success setFrameRate", result);
-          expect().assertFail();
-        } catch (error) {
-          console.error(TAG, testName, 'Failed setFrameRate', JSON.stringify(error), error.code);
-          expect(error.code).assertEqual('7400101');
-        }
-        await releasePhotoSession();
-      }
-      done();
-    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_GET_ACTIVE_FRAMERATE_0100

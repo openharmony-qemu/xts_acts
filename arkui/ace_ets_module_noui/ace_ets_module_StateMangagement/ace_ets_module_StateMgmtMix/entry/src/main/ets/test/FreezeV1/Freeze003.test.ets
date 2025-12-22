@@ -75,7 +75,7 @@ export default function FreezeV1Test03() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest001', Level.LEVEL0, async () => {
+    it('FreezeTest001', Level.LEVEL1, async () => {
       console.info('FreezeTest001 START');
       let driver = await Driver.create();
 
@@ -109,7 +109,7 @@ export default function FreezeV1Test03() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest002', Level.LEVEL0, async () => {
+    it('FreezeTest002', Level.LEVEL1, async () => {
       console.info('FreezeTest002 START');
       let driver = await Driver.create();
       let nextPage1 = await driver.findComponent(ON.id('NextPage1'));
@@ -141,7 +141,7 @@ export default function FreezeV1Test03() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest003', Level.LEVEL0, async () => {
+    it('FreezeTest003', Level.LEVEL1, async () => {
       console.info('FreezeTest003 START');
       let driver = await Driver.create();
       let nextPage2 = await driver.findComponent(ON.id('NextPage2'));
@@ -173,7 +173,7 @@ export default function FreezeV1Test03() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest004', Level.LEVEL0, async () => {
+    it('FreezeTest004', Level.LEVEL1, async () => {
       console.info('FreezeTest004 START');
       let driver = await Driver.create();
       let backPage3 = await driver.findComponent(ON.id('BackPage3'));
@@ -202,7 +202,7 @@ export default function FreezeV1Test03() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('FreezeTest005', Level.LEVEL0, async () => {
+    it('FreezeTest005', Level.LEVEL1, async () => {
       console.info('FreezeTest005 START');
       let driver = await Driver.create();
       let backPage2 = await driver.findComponent(ON.id('BackPage2'));

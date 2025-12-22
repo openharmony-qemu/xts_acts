@@ -159,9 +159,9 @@ async function attachCheck(store: data_relationalStore.RdbStore) {
   await deleteCheck(store, "test1", 11);
 }
 
-export default function rdbErrorCode14800033() {
+export default function RdbErrorCode14800033() {
 
-  describe("rdbErrorCode14800033", (): void => {
+  describe("RdbErrorCode14800033", (): void => {
     beforeAll(async (): Promise<void> => {
       const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let want: Want = {
@@ -184,6 +184,7 @@ export default function rdbErrorCode14800033() {
       console.info(TAG + "create rdb store success")
       dataBaseDir = context.databaseDir + "/rdb/";
       await rdbStore!.execute(CREATE_TABLE_TEST);
+      await rdbStore!.execute(CREATE_TABLE_TEST1);
       await rdbStore!.execute(CREATE_TABLE_EMPLOYEE1);
       let u8 = new Uint8Array([3, 4, 5])
       const valueBucket: data_relationalStore.ValuesBucket = {
@@ -760,8 +761,56 @@ export default function rdbErrorCode14800033() {
           "************* testRdbStorebatchInsertWithConflictResolutionSyncErrcode0600 end *************");
       })
 
- 
+    /**
+     * @tc.name   testRdbStoreAttach0017
+     * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0030
+     * @tc.desc   non encrypted database attach non encrypted database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreAttach0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.log(TAG + "************* testRdbStoreAttach0017 start *************");
+      rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      await attachInsert(rdbStore!, "test");
+      try {
+        let num = await rdbStore!.attach(context, STORE_CONFIG1, "attachDB");
+      } catch (e: Error) {
+        console.log("testRdbStoreAttach0017 : failed, err: code=" + e.code + " message=" + e.message);
+        expect(14800033).assertEqual(e.code);
+        done();
+      }
+      await attachCheck(rdbStore!);
+      expect(0).assertEqual(await rdbStore!.detach("attachDB"))
+      console.log(TAG + "************* testRdbStoreAttach0017 end *************");
+      done();
+    })
 
+    /**
+     * @tc.name   testRdbStoreAttach0018
+     * @tc.number SUB_Distributed_Data_RelationalStore_SDK_AttachAPITest_0060
+     * @tc.desc   non encrypted database attach non encrypted database
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreAttach0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      console.log(TAG + "************* testRdbStoreAttach0018 start *************");
+      await rdbStore!.execute(CREATE_TABLE_TEST);
+      await attachInsert(rdbStore!, "test");
+      try {
+        let num: int = await rdbStore!.attach(dataBaseDir + "rdbStore33.db", "attachDB");
+      } catch (e: Error) {
+        console.log("testRdbStoreAttach0018 err: failed, err: code=" + e.code + " message=" + e.message);
+        expect().assertFail();
+        done();
+      }
+      await attachCheck(rdbStore!);
+      expect(0).assertEqual(await rdbStore!.detach("attachDB"));
+      done();
+      console.log(TAG + "************* testRdbStoreAttach0018 end *************");
+    })
 
     /**
      * @tc.name   testRdbStoreTrans004

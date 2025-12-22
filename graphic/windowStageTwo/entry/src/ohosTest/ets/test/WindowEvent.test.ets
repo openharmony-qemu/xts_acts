@@ -185,7 +185,7 @@ export default function windowEventTest() {
         let driver: Driver = Driver.create();
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), 0);
+        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), (windowProperties.windowRect.top as number+10));
         await sleep(300);
         console.log(`${caseName} timer1: ${timer}`);
         expect(timer).assertEqual(0);

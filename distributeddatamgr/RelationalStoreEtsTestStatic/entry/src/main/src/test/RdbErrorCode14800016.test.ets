@@ -13,7 +13,7 @@ let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegato
 
 let dataBaseDir : String;
 let domain: int  = 0x00fe;
-const TAG = "[rdbErrorCode14800016]"
+const TAG = "[RdbErrorCode14800016]"
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test1 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
@@ -50,9 +50,9 @@ export async function attachBatchInsert(store: data_relationalStore.RdbStore, ta
   await store.batchInsert(tableName, valueBucketArray);
 }
 
-export default function rdbErrorCode14800016() {
+export default function RdbErrorCode14800016() {
 
-  describe("rdbErrorCode14800016", (): void => {
+  describe("RdbErrorCode14800016", (): void => {
     beforeAll(async () : Promise<void> => {
       await abilityDelegator.startAbility({
         bundleName: 'com.example.relationalstore',

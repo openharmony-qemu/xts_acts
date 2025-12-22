@@ -22,6 +22,8 @@ group("ActsAceEtsModuleCommonAttrsEventsTest") {
       "ace_ets_module_commonAttrsEvents_api20:ActsAceEtsModuleCommonAttrsEventsApi20Test",
       "ace_ets_module_commonAttrsEvents_interactiveAttributes:ActsAceEtsModuleCommonAttrsEventsInteractiveAttributesTest",
       "ace_ets_module_commonAttrsEvents_api13_static:ActsAceEtsModuleCommonAttrsEventsApi13StaticTest",
+      "ace_ets_module_commonAttrsEvents_api11_static:ActsAceEtsModuleCommonAttrsEventsApi11StaticTest",
+      "ace_ets_module_commonAttrsEvents_api20_static:ActsAceEtsModuleCommonAttrsEventsApi20StaticTest",
     ]
   } else {
     deps = [
@@ -34,6 +36,9 @@ group("ActsAceEtsModuleCommonAttrsEventsTest") {
       "ace_ets_module_commonAttrsEvents_interactiveAttributes:ActsAceEtsModuleCommonAttrsEventsInteractiveAttributesTest",
       "ace_ets_module_commonAttrsEvents_focusControl:ActsAceEtsModuleCommonAttrsEventsFocusControlTest",
       "ace_ets_module_commonAttrsEvents_api13_static:ActsAceEtsModuleCommonAttrsEventsApi13StaticTest",
+      "ace_ets_module_commonAttrsEvents_api11_static:ActsAceEtsModuleCommonAttrsEventsApi11StaticTest",
+      "ace_ets_module_commonAttrsEvents_api12_static:ActsAceEtsModuleCommonAttrsEventsApi12StaticTest",
+      "ace_ets_module_commonAttrsEvents_api20_static:ActsAceEtsModuleCommonAttrsEventsApi20StaticTest",
     ]
   }
 }

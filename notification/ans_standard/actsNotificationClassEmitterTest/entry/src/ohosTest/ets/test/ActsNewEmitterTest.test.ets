@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe,it, expect, Level } from '@ohos/hypium';
+import { describe,it, expect, Level,afterEach } from '@ohos/hypium';
 import { emitter, Callback } from '@kit.BasicServicesKit';
 
 
@@ -31,6 +31,9 @@ async function sleep(time: number) {
 }
 export default function ActsNewEmitterTest() {
   describe('ActsNewEmitterTest', () => {
+    afterEach(async ()=> {
+       await sleep(2000)
+    })
 
    /**
      * @tc.number  Sub_Notification_Class_Emitter_Emit_0100

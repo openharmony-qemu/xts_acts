@@ -100,5 +100,49 @@ export default function SelectStatusTest() {
       done();
     });
 
+    /**
+     * @tc.number    SelectStatusTest_0300
+     * @tc.name      SelectStatusTest_0300
+     * @tc.desc      SelectStatusTest
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('SelectStatusTest_0300', Level.LEVEL3, async (done: Function) => {
+      console.info('SelectStatusTest_0300 START');
+      expect( SelectStatus.None+'').assertEqual('2');
+      console.info("[SelectStatusTest_0300] end");
+      done();
+    });
+
+    /**
+     * @tc.number    MenuPreviewMode_0400
+     * @tc.name      MenuPreviewMode_0400
+     * @tc.desc      MenuPreviewMode
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('MenuPreviewMode_0400', Level.LEVEL3, async (done: Function) => {
+      console.info('MenuPreviewMode_0400 START');
+      expect( MenuPreviewMode.NONE+'').assertEqual('0');
+      console.info("[MenuPreviewMode_0400] end");
+      done();
+    });
+
+    /**
+     * @tc.number    SliderStyle_0500
+     * @tc.name      SliderStyle_0500
+     * @tc.desc      SliderStyle
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('SliderStyle_0500', Level.LEVEL3, async (done: Function) => {
+      console.info('SliderStyle_0500 START');
+      expect( SliderStyle.NONE+'').assertEqual('2');
+      console.info("[SliderStyle_0500] end");
+      done();
+    });
   })
 }

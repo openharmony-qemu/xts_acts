@@ -53,7 +53,7 @@ export default function ConsumeDefault0240() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeDefault0240_001', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeDefault0240_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ConsumeDefault0240_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -89,7 +89,7 @@ export default function ConsumeDefault0240() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeDefault0240_002', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeDefault0240_002', Level.LEVEL1, async (done: Function) => {
       console.info('[ConsumeDefault0240_002] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -142,7 +142,7 @@ export default function ConsumeDefault0240() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ConsumeDefault0240_003', Level.LEVEL0, async (done: Function) => {
+    it('ConsumeDefault0240_003', Level.LEVEL1, async (done: Function) => {
       console.info('[ConsumeDefault0240_003] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
