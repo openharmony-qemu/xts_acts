@@ -75,12 +75,12 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Radio_GetRadioTech_0150
-     * @tc.name  : testTelephonyRadioGetRadioTech_static_0150
-     * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_0150
+     * @tc.name   testTelephonyRadioGetRadioTech_static_0150
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Using callback for asynchronous callback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('testTelephonyRadioGetRadioTech_static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonyRadioGetRadioTech_static_0150';
@@ -115,12 +115,12 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Radio_GetRadioTech_0250
-     * @tc.name  : testTelephonyRadioGetRadioTech_static_0250
-     * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 3
+     * @tc.number SUB_Telephony_Radio_GetRadioTech_0250
+     * @tc.name   testTelephonyRadioGetRadioTech_static_0250
+     * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
      */
     it('testTelephonyRadioGetRadioTech_static_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonyRadioGetRadioTech_static_0250';
@@ -155,12 +155,12 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Radio_GetRadioTechSync_0150
-    * @tc.name  : testTelephonyRadioGetRadioTechSync_static_0150
-    * @tc.desc  : Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 3
+    * @tc.number SUB_Telephony_Radio_GetRadioTechSync_0150
+    * @tc.name   testTelephonyRadioGetRadioTechSync_static_0150
+    * @tc.desc   Obtain the wireless access technologies for the CS and PS domains currently accessed. Use Promise asynchronous callback.
+    * @tc.size   MediumTest
+    * @tc.type   Function
+    * @tc.level  Level 3
     */
     it('testTelephonyRadioGetRadioTechSync_static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonyRadioGetRadioTechSync_static_0150';
@@ -195,12 +195,12 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Radio_IsRadioOn_0150
-     * @tc.name  : testTelephonyRadioIsRadioOn_static_0150
-     * @tc.desc  : Check if the main card's Radio is turned on. Use callback for asynchronous callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number SUB_Telephony_Radio_IsRadioOn_0150
+     * @tc.name   testTelephonyRadioIsRadioOn_static_0150
+     * @tc.desc   Check if the main card's Radio is turned on. Use callback for asynchronous callback.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('testTelephonyRadioIsRadioOn_static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonyRadioIsRadioOn_static_0150';
@@ -235,12 +235,12 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
     });
 
     /**
-     * @tc.number: SUB_Telephony_Radio_IsRadioOn_0250
-     * @tc.name  : testTelephonyRadioIsRadioOn_static_0250
-     * @tc.desc  : Check if the Radio is turned on. Use Promise asynchronous callback.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.number SUB_Telephony_Radio_IsRadioOn_0250
+     * @tc.name   testTelephonyRadioIsRadioOn_static_0250
+     * @tc.desc   Check if the Radio is turned on. Use Promise asynchronous callback.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('testTelephonyRadioIsRadioOn_static_0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonyRadioIsRadioOn_static_0250';
@@ -274,12 +274,12 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
     });
 
     /**
-    * @tc.number: SUB_Telephony_Radio_IsRadioOn_0350
-    * @tc.name  : testTelephonyRadioIsRadioOn_static_0350
-    * @tc.desc  : Check if the main card's Radio is turned on. Use callback for asynchronous callback.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : Level 1
+    * @tc.number SUB_Telephony_Radio_IsRadioOn_0350
+    * @tc.name   testTelephonyRadioIsRadioOn_static_0350
+    * @tc.desc   Check if the main card's Radio is turned on. Use callback for asynchronous callback.
+    * @tc.size   MediumTest
+    * @tc.type   Function
+    * @tc.level  Level 1
     */
     it('testTelephonyRadioIsRadioOn_static_0350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let caseName: string = 'testTelephonyRadioIsRadioOn_static_0350';
