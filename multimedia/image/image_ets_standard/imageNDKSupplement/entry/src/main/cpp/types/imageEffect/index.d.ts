@@ -29,7 +29,6 @@ interface pixelMapPots {
   alphaType: number,
   scaleMode: number
 }
-
 export const packToData: (a: image.ImagePacker, b: image.ImageSource | image.PixelMap,
   c: image.PackingOption | PackingOption_format | PackingOption_quality) => number;
 export const OHImageEffectCreateSupp: (a: number) => number;
@@ -164,6 +163,20 @@ export const OHImageEffectInsertFilterSupplement:() => undefined;
 export const OHImageEffectReplaceFilterSupplement:() => undefined;
 export const OHImageEffectGetFilterSupplement:() => undefined;
 export const OHImageEffectSetInputTextureSupp:(a: number) => number;
+export const OHEffectBufferInfoSetWidthTest: (a: number) => number;
+export const OHEffectBufferInfoGetWidthTest: (a: number) => number;
+export const OHEffectBufferInfoGetHeightTest: (a: number) => number;
+export const OHEffectBufferInfoSetHeightTest: (a: number) => number;
+export const OHEffectBufferInfoSetRowSizeTest: (a: number) => number;
+export const OHEffectBufferInfoGetRowSizeTest: (a: number) => number;
+export const OHEffectBufferInfoReleaseTest: (a: number) => number;
+export const OHImageSizeTest: (a: number,b: number) => number;
+export const OHImageEffectRestoreTest: (a: number) => number;
+export const OHPixelmapNativeCreatePixelmapNativeTest: (a: number) => number;
+export const OHPixelmapNativeGetArgbPixelsTest: (a: number) => number;
+export const OHPixelmapNativeToSdrTest: (a: number) => number;
+export const PixelmapNativeCreateEmptyPixelmapUsingAllocator: (a: number) => number;
 export const OHIRNdkErrCodeTestSupp:(a: number) => number;
 export const IRNdkErrCodeSupplement:(a: number) => number;
 export const OIRNdkErrCodeEmuSupp:(a: number) => number;
+export const ImageResultIRNdkErrCodeTest:(a: number) => number;

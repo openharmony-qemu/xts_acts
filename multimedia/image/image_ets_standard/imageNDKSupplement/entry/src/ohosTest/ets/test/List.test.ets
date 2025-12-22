@@ -32,9 +32,14 @@ import PixelMapNativeTest from './PixelMapNativeTest.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
+import OHEffectBufferInfoSetInfoTest from './OHEffectBufferInfoSetInfoTest.test';
+import OHImageEffectRestoreTest from './OHImageEffectRestoreTest.test';
+import OHImageSizeTest from './OHImageSizeTest.test';
+import OHPixelmapNativeCreatePixelmapNativeTest from './OHPixelmapNativeCreatePixelmapNativeTest.test';
 import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
 import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
 import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
+import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
 import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 
 
@@ -59,9 +64,17 @@ export default function testsuite() {
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
+  OHEffectBufferInfoSetInfoTest();
+  OHImageEffectRestoreTest();
+  OHImageSizeTest();
+  OHPixelmapNativeCreatePixelmapNativeTest();
   ImageEffectErrorCodeSuppTest();
   OHPixelMapSupplementTest();
+<<<<<<< xts_ndk_image
   IRNdkErrCodeSupplementTest();
+=======
+  ImageResultIRNdkErrCodeTest();
+>>>>>>> xts_ndk_image
   IRNdkErrCode();
 
 }
