@@ -32,6 +32,7 @@ import PixelMapNativeTest from './PixelMapNativeTest.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
+import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
 import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
 import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
 import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
@@ -58,6 +59,7 @@ export default function testsuite() {
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
+  ImageEffectErrorCodeSuppTest();
   OHPixelMapSupplementTest();
   IRNdkErrCodeSupplementTest();
   IRNdkErrCode();

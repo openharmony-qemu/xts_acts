@@ -23,6 +23,9 @@ napi_value OHImageAlphaTypeSupp(napi_env env, napi_callback_info info);
 napi_value OHImageErrorCodeSupp(napi_env env, napi_callback_info info);
 napi_value OHImageScaleModeSupp(napi_env env, napi_callback_info info);
 napi_value OHImageAuxiliaryPictureSupp(napi_env env, napi_callback_info info);
+napi_value MediaLibraryErrorCode(napi_env env, napi_callback_info info);
+napi_value ImageProcessingErrorCode(napi_env env, napi_callback_info info);
+napi_value ImageDetailEnhancerQualityLevel(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

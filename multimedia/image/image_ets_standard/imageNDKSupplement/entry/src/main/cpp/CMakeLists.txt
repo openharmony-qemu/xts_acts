@@ -38,6 +38,7 @@ add_library(imageEffect SHARED
     PixleMapNativeTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
+    OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp
     IRNdkErrCodeSupplementTest.cpp)
@@ -62,6 +63,7 @@ find_library(
 
 
 target_link_libraries(imageEffect PUBLIC
+    libimage_processing.so
     libimage_ndk.z.so
     libimage_receiver_ndk.z.so
     libace_napi.z.so

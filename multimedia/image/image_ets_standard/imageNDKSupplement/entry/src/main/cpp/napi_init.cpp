@@ -32,6 +32,8 @@
 #include "ImagePackerCreateTest.h"
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
+#include "ImageInitImageNativeSuppTest.h"
+#include "OHImageEffectErrcodeSuppTest.h"
 #include "OHPixelMapSupplementTest.h"
 #include "IRNdkErrCodeSupplementTest.h"
 #include "ImageInitImageNativeSuppTest.h"
@@ -120,7 +122,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestImageScale", TestImageScale),
     DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
     DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
-    
+    DESCRIPTOR("OHImageEffectErrorCodeSupp", OHImageEffectErrorCodeSupp),
+    DESCRIPTOR("OHIRNdkErrorCodeTestSupp", OHIRNdkErrorCodeTestSupp),
     DESCRIPTOR("OHPixelMapTranslateSupplementTest", OHPixelMapTranslateSupplementTest),
     DESCRIPTOR("OHPixelMapRotateSupplementTest", OHPixelMapRotateSupplementTest),
     DESCRIPTOR("OHPixelmapNativeSetColorSpaceNativeSuppTest", OHPixelmapNativeSetColorSpaceNativeSuppTest),
@@ -159,6 +162,9 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
     DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
+    DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
+    DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
+    DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
