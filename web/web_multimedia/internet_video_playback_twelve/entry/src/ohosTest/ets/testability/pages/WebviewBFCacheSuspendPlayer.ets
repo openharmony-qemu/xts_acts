@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
 import { UIContext } from '@ohos.arkui.UIContext';
-import Utils from '../../test/Utils';
+import Utils from '../../test/Utils.test';
 import JSON from '@ohos.util.json';
 import { Driver, ON } from '@ohos.UiTest';
 import Want from '@ohos.app.ability.Want';
