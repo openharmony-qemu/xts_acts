@@ -4615,7 +4615,7 @@ export default function audioFramework() {
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: isActive: Media: ENAME: TRUE: PASS:${data}`);
           expect(flag).assertTrue();
-        } else if (data == ture) {
+        } else if (data == true) {
           console.log(`${TagFrmwk}: Promise: isActive: Media: ENAME: TRUE: PASS:${data}`);
           expect(flag).assertTrue();
         } else {
@@ -7495,9 +7495,9 @@ export default function audioFramework() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOVOLUMEMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      except(audio.AudioVolumeMode.SYSTEM_GLOBAL).assertEqual(0);
+      expect(audio.AudioVolumeMode.SYSTEM_GLOBAL).assertEqual(0);
       console.log(`AUDIOVOLUMEMODE_SYSTEM_GLOBAL is: ${audio.AudioVolumeMode.SYSTEM_GLOBAL}`);
-      except(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
+      expect(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
       console.log(`AUDIOVOLUMEMODE_APP_INDIVIDUAL is: ${audio.AudioVolumeMode.APP_INDIVIDUAL}`);
       done();
     })
