@@ -23,7 +23,6 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from '@ohos.app.ability.contextConstant';
-import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -39,9 +38,6 @@ class AbilityStartCallbackExt implements common.AbilityStartCallback {
   onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
     console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
   }
-
-  completionHandler?: CompletionHandlerForAbilityStartCallback = undefined
-
 }
 
 export default function UiAbilityContextStartAbilityStatic() {

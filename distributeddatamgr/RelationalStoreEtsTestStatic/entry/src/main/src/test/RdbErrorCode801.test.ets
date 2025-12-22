@@ -24,7 +24,7 @@ let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager()
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 
 const TABLE = 'distributedTables';
-const TAG = "[rdbErrorCode801]"
+const TAG = "[RdbErrorCode801]"
 
 const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test1 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
@@ -44,8 +44,8 @@ const STORE_CONFIG1: data_relationalStore.StoreConfig = {
 let context: common.UIAbilityContext;
 let rdbStore: data_relationalStore.RdbStore | undefined | null;
 
-export default function rdbErrorCode801() {
-  describe("rdbErrorCode801", (): void => {
+export default function RdbErrorCode801() {
+  describe("RdbErrorCode801", (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -407,7 +407,32 @@ export default function rdbErrorCode801() {
         console.info(TAG + "-----SUB_DistributedData_RelationalStore_off_ErrTest_0800 end-----")
       })
 
-
+    /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0600
+     * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0600
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_RelationalStore_on_ErrTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async () => {
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0600 start-----")
+        let progressDetail = (progressDetail: data_relationalStore.ProgressDetails) => {
+          console.info(`progress: ${progressDetail}`);
+        }
+        let rdbStore1 = await data_relationalStore.getRdbStore(context, STORE_CONFIG1);
+        try {
+          if (rdbStore1 != undefined) {
+            (rdbStore1 as data_relationalStore.RdbStore).onAutoSyncProgress(progressDetail);
+            console.info(TAG + 'on success.');
+          }
+        } catch (err: Error) {
+          console.error(TAG + 'Failed to on.Code: ' + err.code + ',message:' + err.message);
+          expect(err.code).assertEqual(801)
+        }
+        console.info(TAG + "-----SUB_DistributedData_RelationalStore_on_ErrTest_0600 end-----")
+      })
 
     /**
      * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0100

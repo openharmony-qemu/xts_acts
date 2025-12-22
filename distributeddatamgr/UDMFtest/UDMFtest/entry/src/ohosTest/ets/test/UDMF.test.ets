@@ -4772,5 +4772,44 @@ export default function UDMFApiTest() {
       expect(result_2).assertEqual(false);
       console.info('SummaryOverviewTest01 end');
     })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151
+     * @tc.desc   Test SUB_DistributedData_UDMF_SDK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151 start');
+      let unifiedRecord = new unifiedDataChannel.UnifiedRecord("general.composite-object", null);
+      let unifiedData = new unifiedDataChannel.UnifiedData(unifiedRecord);
+      let records = unifiedData.getRecords();
+      let record: unifiedDataChannel.UnifiedRecord = (records[0]) as unifiedDataChannel.UnifiedRecord;
+      expect(records.length == 1).assertEqual(true);
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0151 start');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152
+     * @tc.desc   Test SUB_DistributedData_UDMF_SDK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152 start');
+      let unifiedRecord = new unifiedDataChannel.UnifiedRecord("general.composite-object", undefined);
+      let unifiedData = new unifiedDataChannel.UnifiedData(unifiedRecord);
+      let records = unifiedData.getRecords();
+      let record: unifiedDataChannel.UnifiedRecord = (records[0]) as unifiedDataChannel.UnifiedRecord;
+      expect(records.length == 1).assertEqual(true);
+      console.info('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0152 start');
+      done();
+    })
+
   })
 }

@@ -63,6 +63,11 @@
         "MainAbility/pages/ImageLoader/ImageLoader",
         "MainAbility/pages/ImageGetUIContext/getUIContextApi01",
         "MainAbility/pages/ImageGetUIContext/getUIContextApi02",
-        "MainAbility/pages/ImageGetUIContext/getUIContextApi03"
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi03",
+        "MainAbility/pages/BorderImage/BorderImage",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi04",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi05",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi06",
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi07"
     ]
 }

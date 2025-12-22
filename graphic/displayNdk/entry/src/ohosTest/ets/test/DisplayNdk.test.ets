@@ -1002,6 +1002,77 @@ export default function DisplayNdkTest() {
       }
     })
 
+    /**
+     * @tc.name   testNativeDisplayManager_ErrorCode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_ERRORCODE_0100
+     * @tc.desc   testNativeDisplayManager_ErrorCode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_ErrorCode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_ErrorCode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_ErrorCode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
+     * @tc.desc   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_FoldDisplayMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_FoldDisplayMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_FoldDisplayMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testNativeDisplayManager_SourceMode_enum
+     * @tc.number SUB_DISPLAY_SOURCE_MODE_0100
+     * @tc.desc   testNativeDisplayManager_SourceMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_SourceMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_SourceMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_SourceMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
 
   })
 }

@@ -15,9 +15,11 @@
 import requestCacheDownloadJSTest from './requestCacheDownload.test';
 import requestCacheDownloadHttpJSTest from './RequestCacheDownloadHttp.test'
 import requestCacheDownloadStateSecret from './RequestCacheDownloadStateSecret.test'
+import requestCacheDownloadStrategyJSTest from './RequestCacheDownloadStrategy.test'
 
 export default function testsuite() {
   requestCacheDownloadJSTest();
   requestCacheDownloadHttpJSTest();
   requestCacheDownloadStateSecret();
+  requestCacheDownloadStrategyJSTest();
 }

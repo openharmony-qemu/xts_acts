@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/XTSIndex",
     "MainAbility/pages/testgesture",
-    "MainAbility/pages/touchTestInfo/TouchTestInfoTest"
+    "MainAbility/pages/touchTestInfo/TouchTestInfoTest",
+    "MainAbility/pages/node/TestAddNodeInsertNode"
   ]
 }

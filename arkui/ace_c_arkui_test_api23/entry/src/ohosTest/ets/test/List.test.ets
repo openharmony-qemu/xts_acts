@@ -19,6 +19,20 @@ import ContainerPickerOnScrollStopTest from './containerPicker/ContainerPickerOn
 import ContainerPickerSelectedIndex from './containerPicker/ContainerPickerSelectedIndexTest.test'
 import ContainerPickerSelectionIndicator from './containerPicker/ContainerPickerSelectionIndicatorTest.test'
 import ContainerPickerSubComponent from './containerPicker/ContainerPickerSubComponentTest.test'
+import chainWeightTest from './chainWeight/ChainWeightTest.test'
+import borderTest from './border/BorderTest.test'
+import borderRadiusTest from './border/BorderRadiusTest.test'
+import ignoreLayoutSafeAreaTest from './layout/IgnoreLayoutSafeAreaTest.test'
+import layoutGravityTest from './layout/LayoutGravityTest.test'
+import flexSpaceTest from './flex/FlexSpaceTest.test'
+import columnSpaceTest from './column/ColumnSpaceTest.test'
+import rowSpaceTest from './row/RowSpaceTest.test'
+import columnReverseTest from './column/ColumnReverseTest.test'
+import rowReverseTest from './row/RowReverseTest.test'
+import TextCompressLeadingPunctuationTest from "./text/TextCompressLeadingPunctuationTest.test";
+import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressLeadingPunctuationTest.test";
+import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
+
 
 export default function testsuite() {
   ContainerPickerCanLoop();
@@ -28,4 +42,17 @@ export default function testsuite() {
   ContainerPickerSelectedIndex();
   ContainerPickerSelectionIndicator();
   ContainerPickerSubComponent();
+  chainWeightTest();
+  borderTest();
+  borderRadiusTest();
+  ignoreLayoutSafeAreaTest();
+  layoutGravityTest();
+  flexSpaceTest();
+  columnSpaceTest();
+  rowSpaceTest();
+  columnReverseTest();
+  rowReverseTest();
+  TextCompressLeadingPunctuationTest();
+  TextAreaCompressLeadingPunctuationTest();
+  TextInputCompressLeadingPunctuationTest();
 }

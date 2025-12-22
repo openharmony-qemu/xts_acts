@@ -18,6 +18,19 @@ add_library(nativerender SHARED
     component/ContainerPickerComponentTest.cpp
     containerPicker/ContainerPickerOnChangeTest.cpp
     containerPicker/ContainerPickerOnScrollStopTest.cpp
+    chainWeight/ChainWeightTest.cpp
+    border/BorderTest.cpp
+    border/BorderRadiusTest.cpp
+    layout/IgnoreLayoutSafeAreaTest.cpp
+    layout/LayoutGravityTest.cpp
+    flex/FlexSpaceTest.cpp
+    column/ColumnSpaceTest.cpp
+    row/RowSpaceTest.cpp
+    column/ColumnReverseTest.cpp
+    row/RowReverseTest.cpp
+    text/TextCompressLeadingPunctuationTest.cpp
+    textArea/TextAreaCompressLeadingPunctuationTest.cpp
+    textInput/TextInputCompressLeadingPunctuationTest.cpp
 )
 
 add_library(nativefunc SHARED

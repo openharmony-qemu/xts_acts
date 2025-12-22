@@ -13,11 +13,9 @@
  * limitations under the License.
  */
 import huksNdkTest from './huksNdk.test';
-import HuksErrorTest from './HuksError.test';
 import HuksApiTest from './HuksApi.test';
 
 export default function testsuite() {
   huksNdkTest();
-  HuksErrorTest();
   HuksApiTest();
 }

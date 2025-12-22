@@ -64,8 +64,8 @@ export default function onOffAudioCapturerChangeTest() {
     let driveFn = async () => {
       let dr = Driver.create();
       await sleep(1000);
-      let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-      await sleep(1000);
+      let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+      await sleep(2000);
       await power?.click();
     }
 

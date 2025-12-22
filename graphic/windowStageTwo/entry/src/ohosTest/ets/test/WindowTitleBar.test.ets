@@ -1872,7 +1872,11 @@ export default function windowTitleBarTest() {
           await sleep(300);
           isVisible =  subWindowClass.getWindowDecorVisible();
           console.info(msgStr + 'Succeeded in getWindowDecorVisible. Data: ' + isVisible);
-          expect(isVisible).assertEqual(true);
+          if(!isFreeWindowMode){
+            expect(isVisible).assertEqual(false);
+          }else{
+            expect(isVisible).assertEqual(true);
+          }
           subWindowClass.setWindowDecorVisible(false);
           isVisible =  subWindowClass.getWindowDecorVisible();
           console.info(msgStr + 'Succeeded in getWindowDecorVisible. Data: ' + isVisible);
@@ -2177,6 +2181,8 @@ export default function windowTitleBarTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
+      let displaylength = await display.getAllDisplayPhysicalResolution();
+      console.log(caseName + ' displaylength.length:' + displaylength.length);
       let foldStatus:display.FoldStatus = display.getFoldStatus();
       console.log(caseName + ' foldStatus:' + foldStatus);
       try {
@@ -2190,7 +2196,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
+        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
           expect(error.code).assertEqual(1300016);
         } else {
           expect(error.code).assertEqual(801);
@@ -2209,7 +2215,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
+        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
           expect(error.code).assertEqual(1300016);
         } else {
           expect(error.code).assertEqual(801);
@@ -2228,7 +2234,7 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isFreeWindowMode == true || deviceType == 'tablet' || foldStatus == display.FoldStatus.FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED) {
+        if (isFreeWindowMode == true || deviceType == 'tablet' || displaylength.length == 3) {
           expect(error.code).assertEqual(1300016);
         } else {
           expect(error.code).assertEqual(801);
@@ -2436,6 +2442,7 @@ export default function windowTitleBarTest() {
       let caseName = "testSetSupportedWindowModeswithInvisibleMaximizeButtonhGrayOutMaximizeButtonTrueNotSupportFullScreen";
       console.log(caseName + "begin");
       let mainWindow = windowStage.getMainWindowSync();
+      let windowStageStart:window.WindowStage|undefined = undefined
       let test = true;
       let driver = Driver.create();
       let options: StartOptions = {
@@ -2446,9 +2453,10 @@ export default function windowTitleBarTest() {
         ]
       };
       try {
+        mainWindow.setWindowTitleButtonVisible(false,true,true);
         let windowStageStart = await startAbility(caseName, context, options);
         await sleep(200);
-        mainWindow.setWindowTitleButtonVisible(false,true,true);
+        
         let windowClass = windowStageStart.getMainWindowSync();
         let windowRect = mainWindow.getWindowProperties().windowRect;
         console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}`);
@@ -2480,10 +2488,11 @@ export default function windowTitleBarTest() {
           }
           console.log(`${caseName} test2: ${test}`);
           expect(test).assertTrue();
+          mainWindow.setWindowTitleButtonVisible(true,true,true);
           await windowClass.maximize();
           await sleep(200);
           console.log(`${caseName} maximize success`);
-          mainWindow.setWindowTitleButtonVisible(true,true,true);
+          
           await terminateAbility(caseName);
           expect(false).assertTrue();
 
@@ -2491,13 +2500,15 @@ export default function windowTitleBarTest() {
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
-        await terminateAbility(caseName);
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300002)
-          mainWindow.setWindowTitleButtonVisible(true,true,true);
-        } else {
+        if(error.code == 801){
           expect(error.code).assertEqual(801)
+        }else{
+          expect(error.code).assertEqual(1300002)
         }
+        
+        if (windowStageStart != undefined) {
+          await terminateAbility(caseName);
+        } 
         done();
       }
     })

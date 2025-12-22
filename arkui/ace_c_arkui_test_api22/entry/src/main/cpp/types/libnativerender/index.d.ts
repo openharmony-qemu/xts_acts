@@ -30,6 +30,8 @@ export const CoastingAxisTest: (a: string) => void;
 
 export const hasAxisTest: (a: string) => void;
 
+export const RegionListTest: (a: string) => void;
+
 export const WaterFlowFillPolicyTest: (a: string) => void;
 
 export const snapSpeedTest: (a: string) => void;
@@ -67,3 +69,5 @@ export const gridOnScrollBarUpdateTest: (a: string) => void;
 export const gridOnWillScrollTest: (a: string) => void;
 
 export const clipShapeTest: (a: string) => void;
+
+export const CreateCustomMarkDirtyNativeRoot: (content: NodeContent, tag: string) => void;

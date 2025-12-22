@@ -18,6 +18,7 @@ import testNapi from 'libentry.so';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
+import pipWindow from '@ohos.PiPWindow';
 
 export default function PipWindowNdkTest() {
   describe('ActsPipWindowNdkTest', () => {
@@ -1061,6 +1062,143 @@ export default function PipWindowNdkTest() {
         console.error(`${caseName} error: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
         done();
+      }
+    })
+
+    /**
+     * @tc.name   testPipSetParentWindowIdwithNonExistedWindowId
+     * @tc.number SUB_BASIC_WMS_PIP_NDK_SETPARENTWIDNOWID_ERRCODE_1300016_0100
+     * @tc.desc   testPipSetParentWindowIdwithNonExistedWindowId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPipSetParentWindowIdwithNonExistedWindowId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPipSetParentWindowIdwithNonExistedWindowId';
+      let pipController:pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config:pipWindow.PiPConfiguration = {
+        context: context,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      try{
+        pipController = await pipWindow.create(config);
+        if (!pipController.isPiPSupported()) {
+          done()
+        } else {
+          let result = testNapi.testPipSetParentWindowIdwithNonExistedWindowId(10000);
+          console.log(`${caseName} result: ${JSON.stringify(result)}`);
+          if (result === 801) {
+            done()
+          } else {
+            expect(result).assertEqual(1300016);
+            done();
+          }
+        }
+      } catch (err) {
+        console.error(`${caseName} error: ${JSON.stringify(err)}`);
+        if (err.code == 801) {
+          done()
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testPipSetParentWindowId
+     * @tc.number SUB_BASIC_WMS_PIP_NDK_SETPARENTWIDNOWID_0100
+     * @tc.desc   testPipSetParentWindowId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPipSetParentWindowId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = 'testPipSetParentWindowId';
+      let pipController:pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config:pipWindow.PiPConfiguration = {
+        context: context,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      let subWindowClass: window.Window | undefined;
+      try {
+        pipController = await pipWindow.create(config)
+        console.log(caseName + ' www data startPiP_Function_Promise begin')
+        subWindowClass = await windowStage.createSubWindow('testPipSetParentWindowId');
+        let subId = subWindowClass.getWindowProperties().id;
+        console.log(caseName + ' subWindowClass id: ' + subId)
+        let promise = pipController.startPiP();
+        promise.then(async () => {
+          console.log(caseName + ' www data Succeeded in starting pip')
+          let result = testNapi.testPipSetParentWindowId(subId);
+          console.log(`${caseName} result: ${JSON.stringify(result)}`);
+          if (result==801) {
+            await subWindowClass?.destroyWindow()
+            done();
+          } else {
+            expect(result).assertEqual(1300016);
+            await pipController?.stopPiP();
+            await subWindowClass?.destroyWindow()
+            done();
+          }
+        }).catch(async (err:BusinessError) => {
+          console.log(caseName + ' www data Failed1 to start pip. Cause:' +
+              JSON.stringify(err.code)+':msg:'+JSON.stringify(err.message));
+          expect().assertFail();
+          await subWindowClass?.destroyWindow()
+          done();
+        });
+      } catch (error) {
+        console.log(caseName + ' www data Failed2 to start pip. Cause:' +
+            JSON.stringify(error.code)+':msg:'+JSON.stringify(error.message));
+        await subWindowClass?.destroyWindow()
+        if(error.code == 801){
+          expect(error.message!=null).assertTrue();
+          done();
+        } else{
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   testPictureInPicture_PipState_enum
+     * @tc.number SUB_PictureInPicture_PipState_0100
+     * @tc.desc   testPictureInPicture_PipState_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPictureInPicture_PipState_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testPictureInPicture_PipState_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testPictureInPicture_PipState_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
       }
     })
 

@@ -63,7 +63,7 @@ export default function provideParent6() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provideParentSixTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('provideParentSixTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('provideParentSixTest_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('provideParent6');

@@ -21,7 +21,7 @@ import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
 import testNapi from 'libentry.so';
-// import { JSON } from '@kit.ArkTS'
+import { URL_BAIDU_HTTPS } from '../../test/Config.test';
 
 @Entry
 @Component
@@ -50,7 +50,7 @@ struct webRegisterCustomsComponent {
     testNapi.setSchemeHandler();
     console.error('aboutToAppear setSchemeHandler' + this.isSet)
     console.error('aboutToAppear registerCustomSchemes End')
-    
+
     testNapi.initResourceManager(getContext().resourceManager);
   }
 
@@ -237,6 +237,18 @@ struct webRegisterCustomsComponent {
                 Utils.emitEvent(true, 147850);
               } else {
                 Utils.emitEvent(false, 147850);
+              }
+              break;
+            }
+            case 'testWebResourceRequest_IsMainFrame_True': {
+              this.controller.loadUrl(URL_BAIDU_HTTPS+'/iframe1.html')
+              await waitForExist(() => testNapi.arkWebResourceRequestIsMainFrameReturnTrue(), 'testWebResourceRequest_IsMainFrame', 1, 1000)
+              let result: number = testNapi.arkWebResourceRequestIsMainFrameReturnTrue();
+              console.log('arkWebResourceRequestIsMainFrameReturnTrue ==>' + String(result));
+              if (result == 1) {
+                Utils.emitEvent(true, 147860);
+              } else {
+                Utils.emitEvent(false, 147860);
               }
               break;
             }

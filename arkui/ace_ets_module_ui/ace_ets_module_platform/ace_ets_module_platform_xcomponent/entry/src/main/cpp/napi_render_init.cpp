@@ -17,6 +17,7 @@
 #include "XComponent/XComponentSurfaceConfigTest.h"
 #include "XComponent/XComponentKeyMouseEventTest.h"
 #include "XComponent/NodeXComponentTest.h"
+#include "XComponent/NodeContentTest.h"
 
 namespace NativeXComponentSample {
 
@@ -113,6 +114,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestSurfaceCallbackCreateReturnNull", nullptr, NodeXComponentTest::TestSurfaceCallbackCreateReturnNull,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestXComponentGetNativeWindowReturnNull", nullptr, NodeXComponentTest::TestXComponentGetNativeWindowReturnNull,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"CreateNodeContentTestNativeRoot", nullptr, NodeContentTest::CreateNodeContentTestNativeRoot,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"NodeContentEventGetEventType", nullptr, NodeContentTest::NodeContentEventGetEventType,
          nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

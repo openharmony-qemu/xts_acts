@@ -39,6 +39,8 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_Route1:ActsAceEtsModuleRouter1Test",
       "ace_ets_module_navigation_api16_static:ActsAceEtsModuleNavigationApi16StaticTest",
       "ace_ets_module_navigation_wear_api18_static:ActsAceEtsModuleNavigationWearApi18StaticTest",
+      "ace_ets_module_navigation_api11_static:ActsAceEtsModuleNavigationApi11StaticTest",
+      "ace_ets_module_navigation_api18_static:ActsAceEtsModuleNavigationApi18StaticTest",
     ]
   } else {
     deps = [
@@ -70,7 +72,8 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_swiper02:ActsAceEtsModuleSwiper02Test",
       "ace_ets_module_router1:ActsAceEtsModuleRouter1Test",
       "ace_ets_module_router_nowear:ActsAceEtsModuleRouterNoWearTest",
-      "ace_ets_module_navigation_api16_static:ActsAceEtsModuleNavigationApi16StaticTest",
+      "ace_ets_module_navigation_api11_static:ActsAceEtsModuleNavigationApi11StaticTest",
+      "ace_ets_module_navigation_api18_static:ActsAceEtsModuleNavigationApi18StaticTest",
     ]
   }
 }

@@ -62,7 +62,7 @@ export default function LinkArray1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkArray_0500', Level.LEVEL0, async (done: Function) => {
+    it('LinkArray_0500', Level.LEVEL1, async (done: Function) => {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function LinkArray1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkArray_0600', Level.LEVEL0, async (done: Function) => {
+    it('LinkArray_0600', Level.LEVEL1, async (done: Function) => {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -108,7 +108,7 @@ export default function LinkArray1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkArray_0700', Level.LEVEL0, async (done: Function) => {
+    it('LinkArray_0700', Level.LEVEL1, async (done: Function) => {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -131,7 +131,7 @@ export default function LinkArray1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkArray_0800', Level.LEVEL0, async (done: Function) => {
+    it('LinkArray_0800', Level.LEVEL1, async (done: Function) => {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -154,7 +154,7 @@ export default function LinkArray1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkArray_0900', Level.LEVEL0, async (done: Function) => {
+    it('LinkArray_0900', Level.LEVEL1, async (done: Function) => {
       console.info('StateArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

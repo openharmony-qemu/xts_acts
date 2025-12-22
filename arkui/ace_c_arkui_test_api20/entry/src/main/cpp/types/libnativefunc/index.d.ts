@@ -22,3 +22,4 @@ export const AccessibilityValueCreateTest: () => number;
 export const AccessibilityStateCreateTest: () => number;
 export const CreateAccessibilityEventInfoTest: () => number;
 export const CreateAccessibilityElementInfoTest: () => number;
+export const AccessibilityErrorCodeTest001: () => number;

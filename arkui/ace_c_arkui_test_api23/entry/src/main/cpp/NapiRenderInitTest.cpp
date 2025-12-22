@@ -16,7 +16,19 @@
 #include "manager/PluginManagerTest.h"
 #include "containerPicker/ContainerPickerOnChangeTest.h"
 #include "containerPicker/ContainerPickerOnScrollStopTest.h"
-
+#include "chainWeight/ChainWeightTest.h"
+#include "border/BorderTest.h"
+#include "border/BorderRadiusTest.h"
+#include "layout/IgnoreLayoutSafeAreaTest.h"
+#include "layout/LayoutGravityTest.h"
+#include "flex/FlexSpaceTest.h"
+#include "column/ColumnSpaceTest.h"
+#include "row/RowSpaceTest.h"
+#include "column/ColumnReverseTest.h"
+#include "row/RowReverseTest.h"
+#include "text/TextCompressLeadingPunctuationTest.h"
+#include "textArea/TextAreaCompressLeadingPunctuationTest.h"
+#include "textInput/TextInputCompressLeadingPunctuationTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -33,6 +45,32 @@ static napi_value Init(napi_env env, napi_value exports)
         {"ContainerPickerOnChangeTest", nullptr, ContainerPickerOnChangeTest::CreateNativeNode,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ContainerPickerOnScrollStopTest", nullptr, ContainerPickerOnScrollStopTest::CreateNativeNode,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"chainWeightTest", nullptr, ChainWeightTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"borderTest", nullptr, BorderTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"borderRadiusTest", nullptr, BorderRadiusTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"ignoreLayoutSafeAreaTest", nullptr, IgnoreLayoutSafeAreaTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"layoutGravityTest", nullptr, LayoutGravityTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"flexSpaceTest", nullptr, FlexSpaceTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"columnSpaceTest", nullptr, ColumnSpaceTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"rowSpaceTest", nullptr, RowSpaceTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"columnReverseTest", nullptr, ColumnReverseTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"rowReverseTest", nullptr, RowReverseTest::CreateNativeNode, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaCompressLeadingPunctuationTest", nullptr, TextAreaCompressLeadingPunctuationTest::CreateNativeNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr}, 
+        {"TextCompressLeadingPunctuationTest", nullptr, TextCompressLeadingPunctuationTest::CreateNativeNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr}, 
+        {"TextInputCompressLeadingPunctuationTest", nullptr, TextInputCompressLeadingPunctuationTest::CreateNativeNode, 
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

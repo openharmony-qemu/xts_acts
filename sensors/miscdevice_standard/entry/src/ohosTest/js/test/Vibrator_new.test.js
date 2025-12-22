@@ -567,5 +567,37 @@ describe("VibratorJsTest_misc_4", function () {
         })
         done();
     })
+
+    /**
+     * @tc.name   SUB_SensorSystem_Vibrator_Enumeration_0100
+     * @tc.number SUB_SensorSystem_Vibrator_Enumeration_0100
+     * @tc.desc   Enumeration of HapticFeedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_Enumeration_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_Enumeration_0100"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        let data1 = vibrator.HapticFeedback.EFFECT_SOFT;
+        console.info(TAG + ` data1: ${data1}`);
+        expect(data1).assertEqual('haptic.effect.soft');
+        let data2 = vibrator.HapticFeedback.EFFECT_HARD;
+        console.info(TAG + ` data2: ${data2}`);
+        expect(data2).assertEqual('haptic.effect.hard');
+        let data3 = vibrator.HapticFeedback.EFFECT_SHARP;
+        console.info(TAG + ` data3: ${data3}`);
+        expect(data3).assertEqual('haptic.effect.sharp');
+        let data4 = vibrator.HapticFeedback.EFFECT_NOTICE_SUCCESS;
+        console.info(TAG + ` data4: ${data4}`);
+        expect(data4).assertEqual('haptic.notice.success');
+        let data5 = vibrator.HapticFeedback.EFFECT_NOTICE_FAILURE;
+        console.info(TAG + ` data5: ${data5}`);
+        expect(data5).assertEqual('haptic.notice.fail');
+        let data6 = vibrator.HapticFeedback.EFFECT_NOTICE_WARNING;
+        console.info(TAG + ` data6: ${data6}`);
+        expect(data6).assertEqual('haptic.notice.warning');
+        done();
+    })
 })
 }

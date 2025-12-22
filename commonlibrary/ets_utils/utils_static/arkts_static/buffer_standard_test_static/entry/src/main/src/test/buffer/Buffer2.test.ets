@@ -4725,7 +4725,7 @@ export default function bufferTest2() {
         const value = 'World';
         const index = buf.lastIndexOf(value, 1, 'base64');
         expect(String(index)).assertEqual('-1');
-      } catch (err:Exception) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
