@@ -43,21 +43,29 @@ struct TabsExample_NO_ANIMATION {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-        // TabContent() {
-        //   Column().width('100%').height('100%').backgroundColor('#00CB87')
-        // }.tabBar(this.tabBuilder(0, 'green'))
-        //
-        // TabContent() {
-        //   Column().width('100%').height('100%').backgroundColor('#007DFF')
-        // }.tabBar(this.tabBuilder(1, 'blue'))
-        //
-        // TabContent() {
-        //   Column().width('100%').height('100%').backgroundColor('#FFBF00')
-        // }.tabBar(this.tabBuilder(2, 'yellow'))
-        //
-        // TabContent() {
-        //   Column().width('100%').height('100%').backgroundColor('#E67C92')
-        // }.tabBar(this.tabBuilder(3, 'pink'))
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#00CB87')
+        }.tabBar(()=>{
+          this.tabBuilder(0, 'green')
+        })
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#007DFF')
+        }.tabBar(()=>{
+          this.tabBuilder(1, 'blue')
+        })
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        }.tabBar(()=>{
+          this.tabBuilder(2, 'yellow')
+        })
+
+        TabContent() {
+          Column().width('100%').height('100%').backgroundColor('#E67C92')
+        }.tabBar(()=>{
+          this.tabBuilder(3, 'pink')
+        })
       }
       .animationMode(AnimationMode.NO_ANIMATION)
       .id('NO_ANIMATION')
