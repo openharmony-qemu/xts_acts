@@ -28,6 +28,7 @@ import listNewJsunit from './List/ListNewTest.test';
 import listScrollTo from './List/listScrollTo.test';
 import focusedList from './List/focusedList.test'
 import focusedCardList from './ListItemGroup/focusedCardList.test'
+import itemInGroupMin from './ListItemGroup/itemInGroupMin.test'
 import ListScrollToItemInGroup from './ListItemGroup/ListScrollToItemInGroup.test'
 import listUxTest from './ListItemGroup/listux.test'
 import conSizeGroup1 from './ListItemGroup/conSizeGroup1.test';
@@ -90,6 +91,7 @@ export default function testsuite() {
   ListMainChildrenTest()
   focusedList()
   focusedCardList()
+  itemInGroupMin()
   ListScrollToItemInGroup()
   conSizeGroup1()
   conSizeGroup2()
