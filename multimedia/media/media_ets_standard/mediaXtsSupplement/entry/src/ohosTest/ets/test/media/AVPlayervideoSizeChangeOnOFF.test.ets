@@ -924,9 +924,5 @@ export default function AVPlayervideoSizeChangeSuppTest() {
         }
       })
     })
-
-
-
-
   })
 }
