@@ -451,6 +451,7 @@ export class Foo {
   native test_Object_Instance_01(): boolean;
   native test_Object_Instance_02(): boolean;
   native test_Object_Instance_03(): boolean;
+  native test_Object_Instance_04(): boolean;
   native test_Object_Instance_05(): boolean;
   native test_Object_Instance_06(): boolean;
   native test_Object_Instance_07(): boolean;

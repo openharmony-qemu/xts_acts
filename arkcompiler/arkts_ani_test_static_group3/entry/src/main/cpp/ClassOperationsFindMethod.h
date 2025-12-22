@@ -198,7 +198,7 @@ ani_boolean test_Class_Find_Method_17([[maybe_unused]] ani_env *env, [[maybe_unu
     ASSERT_NE(cls, nullptr);
 
     ani_static_method method {};
-    ASSERT_EQ(env->Class_FindStaticMethod(cls, "get_button_names", ":C{escompat.Array}", &method), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticMethod(cls, "get_button_names", ":C{std.core.Array}", &method), ANI_OK);
     ASSERT_NE(method, nullptr);
     return ANI_TRUE;
 }

@@ -1779,6 +1779,24 @@ ani_int test_Object_Instance_03([[maybe_unused]] ani_env *env, [[maybe_unused]] 
     return ANI_TRUE;
 }
 
+ani_int test_Object_Instance_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object objectArr;
+    ani_class classA;
+    ParamObjA paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperations.A";
+    paramObjOperation.newClassName = "new_A_array";
+    paramObjOperation.signature = ":C{std.core.Array}";
+    GetMethodDataA(env, &objectArr, &classA, &paramObjOperation);
+
+    ani_boolean res;
+    ani_class arrayCls;
+    ASSERT_EQ(env->FindClass("std.core.Array", &arrayCls), ANI_OK);
+    ASSERT_EQ(env->Object_InstanceOf(objectArr, arrayCls, &res), ANI_OK);
+    ASSERT_EQ(res, ANI_TRUE);
+    return ANI_TRUE;
+}
+
 ani_int test_Object_Instance_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_object objectI;
