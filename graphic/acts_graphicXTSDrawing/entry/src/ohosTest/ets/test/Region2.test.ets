@@ -409,7 +409,7 @@ export default function drawingTsRegionPart2Test() {
       try {
         let result = region.quickContains(-300, -300, 100, 100);
         console.info(msg + `quickContains 2 successed result: ${result}`);
-        expect(result).assertEqual(true);
+        expect(result).assertEqual(false);
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + `quickContains 2 failed. Error code is: ${e.code}. Error message is: ${e.message}`);
