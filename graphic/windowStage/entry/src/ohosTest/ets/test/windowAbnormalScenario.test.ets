@@ -4296,6 +4296,126 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
+     * @tc.name   testSetDimBehind_1_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3521
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDimBehind_1_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      let caseName = 'testSetDimBehind_1_Promise';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let win: ohosWindow.Window | void;
+      win = await windowStage.createSubWindow('testSetDimBehind_1_Promise').catch((err: BusinessError) => {
+        console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+        expect().assertFail();
+      });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!win).assertTrue();
+      try {
+        await (win as ohosWindow.Window).setDimBehind(1).then(async () => {
+          console.info(msgStr + 'Succeeded in setting the dimness.');
+          await (win as ohosWindow.Window).destroyWindow();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to set the dimness. Cause: ' + JSON.stringify(err));
+          await (win as ohosWindow.Window).destroyWindow();
+          expect(err.code).assertEqual(801);
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the dimness. Cause: ' + JSON.stringify(exception));
+        await (win as ohosWindow.Window).destroyWindow();
+        expect(exception.code).assertEqual(801);
+      }
+    })
+    /**
+     * @tc.name   testSetDimBehind_-1_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3521
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDimBehind_-1_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind_-1_Promise';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let win: ohosWindow.Window | void;
+      win = await windowStage.createSubWindow('testSetDimBehind_-1_Promise').catch((err: BusinessError) => {
+        console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+        expect().assertFail();
+      });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!win).assertTrue();
+      try {
+        await (win as ohosWindow.Window).setDimBehind(-1).then(async () => {
+          console.info(msgStr + 'Succeeded in setting the dimness.');
+          await (win as ohosWindow.Window).destroyWindow();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to set the dimness. Cause: ' + JSON.stringify(err));
+          await (win as ohosWindow.Window).destroyWindow();
+          expect(err.code).assertEqual(801);
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the dimness. Cause: ' + JSON.stringify(exception));
+        await (win as ohosWindow.Window).destroyWindow();
+        if(exception.code == 801){
+          done();
+        }else{
+          expect(exception.code).assertEqual(401);
+          done()
+        }
+        
+      }
+    })
+    /**
+     * @tc.name   testSetDimBehind_2_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3521
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDimBehind_2_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind_2_Promise';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let win: ohosWindow.Window | void;
+      win = await windowStage.createSubWindow('testSetDimBehind_2_Promise').catch((err: BusinessError) => {
+        console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+        expect().assertFail();
+      });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!win).assertTrue();
+      try {
+        await (win as ohosWindow.Window).setDimBehind(2).then(async () => {
+          console.info(msgStr + 'Succeeded in setting the dimness.');
+          await (win as ohosWindow.Window).destroyWindow();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + 'Failed to set the dimness. Cause: ' + JSON.stringify(err));
+          await (win as ohosWindow.Window).destroyWindow();
+          expect(err.code).assertEqual(801);
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the dimness. Cause: ' + JSON.stringify(exception));
+        await (win as ohosWindow.Window).destroyWindow();
+        if(exception.code == 801){
+          done();
+        }else{
+          expect(exception.code).assertEqual(401);
+          done()
+        }
+        
+      }
+    })
+    /**
      * @tc.name   testSetDimBehind_InvalidValue_Callback
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3530
      * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
@@ -4376,6 +4496,139 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
         await (win as ohosWindow.Window).destroyWindow();
         expect(exception.code).assertEqual(801);
         done();
+      }
+    })
+    /**
+     * @tc.name   testSetDimBehind_1_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3541
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDimBehind_1_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind_1_Callback';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let win: ohosWindow.Window | void;
+      win = await windowStage.createSubWindow('testSetDimBehind_1_Callback').catch((err: BusinessError) => {
+        console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!win).assertTrue();
+      try {
+        (win as ohosWindow.Window).setDimBehind(1, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(msgStr + 'Failed to set the dimness Cause: ' + JSON.stringify(err));
+            await (win as ohosWindow.Window).destroyWindow();
+            expect(err.code).assertEqual(801);
+            done();
+            return;
+          }
+          console.info(msgStr + 'Succeeded in setting the dimness.');
+          await (win as ohosWindow.Window).destroyWindow();
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the dimness. Cause:' + JSON.stringify(exception));
+        await (win as ohosWindow.Window).destroyWindow();
+        expect(exception.code).assertEqual(801);
+        done();
+      }
+    })
+    /**
+     * @tc.name   testSetDimBehind_-1_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3542
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDimBehind_-1_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind_-1_Callback';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let win: ohosWindow.Window | void;
+      win = await windowStage.createSubWindow('testSetDimBehind_-1_Callback').catch((err: BusinessError) => {
+        console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!win).assertTrue();
+      try {
+        (win as ohosWindow.Window).setDimBehind(-1, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(msgStr + 'Failed to set the dimness Cause: ' + JSON.stringify(err));
+            await (win as ohosWindow.Window).destroyWindow();
+            expect(err.code).assertEqual(801);
+            done();
+            return;
+          }
+          console.info(msgStr + 'Succeeded in setting the dimness.');
+          await (win as ohosWindow.Window).destroyWindow();
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the dimness. Cause:' + JSON.stringify(exception));
+        await (win as ohosWindow.Window).destroyWindow();
+        if(exception.code){
+          done();
+        }else{
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+        
+      }
+    })
+    /**
+     * @tc.name   testSetDimBehind_2_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3542
+     * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDimBehind_2_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind_2_Callback';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let win: ohosWindow.Window | void;
+      win = await windowStage.createSubWindow('testSetDimBehind_2_Callback').catch((err: BusinessError) => {
+        console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      });
+      console.log(msgStr + 'windowStage.createSubWindow success');
+      expect(!!win).assertTrue();
+      try {
+        (win as ohosWindow.Window).setDimBehind(2, async (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(msgStr + 'Failed to set the dimness Cause: ' + JSON.stringify(err));
+            await (win as ohosWindow.Window).destroyWindow();
+            expect(err.code).assertEqual(801);
+            done();
+            return;
+          }
+          console.info(msgStr + 'Succeeded in setting the dimness.');
+          await (win as ohosWindow.Window).destroyWindow();
+          done()
+        });
+      } catch (exception) {
+        console.error(msgStr + 'Failed to set the dimness. Cause:' + JSON.stringify(exception));
+        await (win as ohosWindow.Window).destroyWindow();
+        if(exception.code){
+          done();
+        }else{
+          expect(exception.code).assertEqual(401);
+          done();
+        }
+        
       }
     })
     /**
