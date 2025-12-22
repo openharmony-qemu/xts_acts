@@ -130,7 +130,6 @@ async function setSpeedTestPlaying(done: Function,testName:string,FileName:strin
   }
 }
 
-
 async function setSpeedTestPaused(done: Function,testName:string,FileName:string,targetSpeed:media.PlaybackSpeed,
   callback: (resSpeed:media.PlaybackSpeed)=>void) {
   try {
@@ -144,8 +143,6 @@ async function setSpeedTestPaused(done: Function,testName:string,FileName:string
           console.info(TAG, testName, 'State is playing. Setting speed to', targetSpeed);
           avPlayer.setSpeed(targetSpeed);
           console.info(TAG, testName, 'setSpeed success');
-
-          ;
           break;
         case 'playing':
           avPlayer.pause();
@@ -185,8 +182,6 @@ async function setSpeedTestPaused(done: Function,testName:string,FileName:string
   }
 }
 
-
-
 async function setSpeedTestCompleted(done: Function,testName:string,FileName:string,targetSpeed:media.PlaybackSpeed,
   callback: (resSpeed:media.PlaybackSpeed)=>void) {
   try {
@@ -200,8 +195,6 @@ async function setSpeedTestCompleted(done: Function,testName:string,FileName:str
           console.info(TAG, testName, 'State is playing. Setting speed to', targetSpeed);
           avPlayer.setSpeed(targetSpeed);
           console.info(TAG, testName, 'setSpeed success');
-
-          ;
           break;
         case 'paused':
           console.info(TAG, testName, 'State is prepared. Ready for next operation.');
@@ -259,10 +252,6 @@ export default function AVPlayerSetSpeedTest() {
       console.info('afterAll case');
     });
 
-
-
-
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_001
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_001
@@ -281,11 +270,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
       });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_002
@@ -305,10 +291,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_003
@@ -328,7 +312,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -350,11 +333,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_005
@@ -374,11 +354,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_006
@@ -398,10 +375,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_007
@@ -421,7 +396,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -446,7 +420,6 @@ export default function AVPlayerSetSpeedTest() {
         });
     });
 
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_009
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_009
@@ -465,11 +438,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_010
@@ -489,10 +459,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_011
@@ -512,7 +480,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -534,10 +501,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_013
@@ -557,11 +522,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_014
@@ -581,10 +543,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_015
@@ -628,7 +588,6 @@ export default function AVPlayerSetSpeedTest() {
         });
     });
 
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_017
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_017
@@ -647,11 +606,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_018
@@ -671,10 +627,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_019
@@ -694,7 +648,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -716,10 +669,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_021
@@ -739,11 +690,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_022
@@ -763,10 +711,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_023
@@ -786,7 +732,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -811,7 +756,6 @@ export default function AVPlayerSetSpeedTest() {
         });
     });
 
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_025
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_025
@@ -830,11 +774,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_026
@@ -854,10 +795,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_027
@@ -877,7 +816,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -899,7 +837,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -922,11 +859,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_030
@@ -946,10 +880,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_031
@@ -969,7 +901,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -995,8 +926,6 @@ export default function AVPlayerSetSpeedTest() {
         });
     });
 
-
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_033
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_033
@@ -1018,8 +947,6 @@ export default function AVPlayerSetSpeedTest() {
         });
     });
 
-
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_034
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_034
@@ -1038,10 +965,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_035
@@ -1061,7 +986,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -1083,10 +1007,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_037
@@ -1106,11 +1028,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_038
@@ -1130,10 +1049,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_039
@@ -1174,10 +1091,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_041
@@ -1197,11 +1112,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_042
@@ -1221,10 +1133,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_043
@@ -1244,7 +1154,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -1266,10 +1175,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_045
@@ -1289,11 +1196,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_046
@@ -1313,10 +1217,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_SPEED_047
@@ -1336,7 +1238,6 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
 
@@ -1358,12 +1259,8 @@ export default function AVPlayerSetSpeedTest() {
         (res) => {
           expect(res).assertEqual(targetSpeed);
           console.info(TAG, testName, "setSpeed successfully",res,targetSpeed);
-
         });
     });
-
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_OFF_BUFFER_ING_UPDATE_001
@@ -1387,7 +1284,6 @@ export default function AVPlayerSetSpeedTest() {
         done();
       }
     });
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_OFF_BUFFER_ING_UPDATE_002
@@ -1711,7 +1607,6 @@ export default function AVPlayerSetSpeedTest() {
       }
     });
 
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_OFF_SEI_MESSAGE_RECEIVED_001
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_OFF_SEI_MESSAGE_RECEIVED_001
@@ -1758,7 +1653,6 @@ export default function AVPlayerSetSpeedTest() {
       }
     });
 
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_OFF_SEI_MESSAGE_RECEIVED_003
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_OFF_SEI_MESSAGE_RECEIVED_003
@@ -1781,6 +1675,5 @@ export default function AVPlayerSetSpeedTest() {
         done();
       }
     });
-
   })
 }
