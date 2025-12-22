@@ -13,7 +13,6 @@ include_directories(
     ${NATIVERENDER_ROOT_PATH}/include
     ${NATIVERENDER_ROOT_PATH}/utils
 )
-
 add_library(imageEffect SHARED
     napi_init.cpp
     utils/CommonUtilsTest.cpp
@@ -38,8 +37,17 @@ add_library(imageEffect SHARED
     PixleMapNativeTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
+    OHEffectBufferInfoSetInfoTest.cpp
+    OHImageEffectRestoreTest.cpp
+    OHImageSizeTest.cpp
+    OHPixelmapNativeCreatePixelmapNativeTest.cpp
+    OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
-    ImageSourceTest.cpp)
+    ImageSourceTest.cpp
+    IRNdkErrCodeSupplementTest.cpp
+    ImageResultIRNdkErrCodeTest.cpp
+    ImageNdkErrCodeTest.cpp)
+
 
 find_library(
     # Sets the name of the path variable.
@@ -59,6 +67,7 @@ find_library(
 
 
 target_link_libraries(imageEffect PUBLIC
+    libimage_processing.so
     libimage_ndk.z.so
     libimage_receiver_ndk.z.so
     libace_napi.z.so

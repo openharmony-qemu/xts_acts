@@ -22,6 +22,8 @@
 #include <multimedia/image_framework/image/picture_native.h>
 #include <multimedia/image_framework/image_pixel_map_mdk.h>
 #include <multimedia/image_framework/image_pixel_map_napi.h>
+#include <multimedia/media_library/media_asset_base_capi.h>
+#include <multimedia/video_processing_engine/image_processing_types.h>
 #include "OHImageErrorSuppTest.h"
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
@@ -228,6 +230,105 @@ napi_value OHImageAuxiliaryPictureSupp(napi_env env, napi_callback_info info)
         break;
     case CASE_INDEX_5:
         number = AUXILIARY_PICTURE_TYPE_FRAGMENT_MAP;
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, number, &ret);
+    return ret;
+}
+
+napi_value MediaLibraryErrorCode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    int32_t number;
+    switch (index) {
+    case CASE_INDEX_1:
+        number = MEDIA_LIBRARY_PERMISSION_DENIED;
+        break;
+    case CASE_INDEX_2:
+        number = MEDIA_LIBRARY_INVALID_DISPLAY_NAME;
+        break;
+    case CASE_INDEX_3:
+        number = MEDIA_LIBRARY_INVALID_ASSET_URI;
+        break;
+    case CASE_INDEX_4:
+        number = MEDIA_LIBRARY_INVALID_PHOTO_KEY;
+        break;
+    case CASE_INDEX_5:
+        number = MEDIA_LIBRARY_VIDEO;
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, number, &ret);
+    return ret;
+}
+
+napi_value ImageProcessingErrorCode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    int32_t number;
+    switch (index) {
+    case CASE_INDEX_1:
+        number = IMAGE_PROCESSING_ERROR_UNKNOWN;
+        break;
+    case CASE_INDEX_2:
+        number = IMAGE_PROCESSING_ERROR_INITIALIZE_FAILED;
+        break;
+    case CASE_INDEX_3:
+        number = IMAGE_PROCESSING_ERROR_CREATE_FAILED;
+        break;
+    case CASE_INDEX_4:
+        number = IMAGE_PROCESSING_ERROR_PROCESS_FAILED;
+        break;
+    case CASE_INDEX_5:
+        number = IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING;
+        break;
+    case CASE_INDEX_6:
+        number = IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED;
+        break;
+    case CASE_INDEX_7:
+        number = IMAGE_PROCESSING_ERROR_NO_MEMORY;
+        break;
+    case CASE_INDEX_8:
+        number = IMAGE_PROCESSING_ERROR_INVALID_VALUE;
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, number, &ret);
+    return ret;
+}
+
+napi_value ImageDetailEnhancerQualityLevel(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    int32_t number;
+    switch (index) {
+    case CASE_INDEX_1:
+        number = IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_NONE;
+        break;
+    case CASE_INDEX_2:
+        number = IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_LOW;
+        break;
+    case CASE_INDEX_3:
+        number = IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_MEDIUM;
         break;
     default:
         break;
