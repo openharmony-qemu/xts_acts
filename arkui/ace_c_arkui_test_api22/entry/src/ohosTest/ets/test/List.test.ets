@@ -42,6 +42,7 @@ import gridAttrsTest from "./grid/GridAttrsTest.test";
 import gridEventTest from './grid/GridEventTest.test';
 import clipShapeTest from "./clipShape/ClipShapeTest.test";
 import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
+import TextMenuItemIdTest from './TextTest/TextMenuItemId.test'
 import SwiperParamTest from './swiper/SwiperParamTest.test';
 
 export default function testsuite() {
@@ -75,5 +76,6 @@ export default function testsuite() {
   gridEventTest();
   clipShapeTest();
   CustomMarkDirtyTest();
+  TextMenuItemIdTest();
   SwiperParamTest();
 }
