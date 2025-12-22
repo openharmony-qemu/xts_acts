@@ -70,7 +70,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0100 START');
       let strJson = getInspectorByKey('str_obl');
@@ -90,7 +90,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -114,7 +114,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0300 START');
       let strJson = getInspectorByKey('num_obl');
@@ -134,7 +134,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0400 START');
       let driver = await UiDriver.create()
@@ -158,7 +158,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0500', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0500', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0500 START');
       let strJson = getInspectorByKey('bon_obl');
@@ -178,7 +178,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0600', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0600 START');
       let driver = await UiDriver.create()
@@ -202,7 +202,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0700', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0700', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0700 START');
       let strJson = getInspectorByKey('cor_obl');
@@ -222,7 +222,7 @@ export default function ObjectLinkNusJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkNusJsunit_0800', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkNusJsunit_0800', Level.LEVEL1, async (done: Function) => {
 
       console.info('ObjectLinkNusJsunit_0800 START');
       let driver = await UiDriver.create()

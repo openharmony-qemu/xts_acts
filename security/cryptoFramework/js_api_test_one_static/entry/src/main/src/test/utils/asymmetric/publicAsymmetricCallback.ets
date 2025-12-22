@@ -735,7 +735,7 @@ async function encryptAndDecryptNormalProcessSuperdata(asyAlgoName: string,
   let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
   let n: number = t.length;
   for (let i = 0; i < globalTextLen; i++) {
-    globalText += t.charAt(Math.floor(Math.random() * n));
+    globalText += t.charAt(Math.floor(Math.random() * n).toInt());
   }
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
 
@@ -812,7 +812,7 @@ async function signAndVerifyNormalProcessSuperdata(asyAlgoName: string,
   let globalText: string = '';
   let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz",n = t.length,s="";
   for (let i = 0; i < globalTextLen; i++) {
-    globalText += t.charAt(Math.floor(Math.random() * n));
+    globalText += t.charAt(Math.floor(Math.random() * n).toInt());
   }
   let input: cryptoFramework.DataBlob = { data: stringTouInt8Array(globalText) };
 

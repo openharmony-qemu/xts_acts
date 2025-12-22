@@ -63,7 +63,7 @@ export default function provideBrother1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provideBrotherOneTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('provideBrotherOneTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('provideBrotherOneTest_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('provideBrother1');

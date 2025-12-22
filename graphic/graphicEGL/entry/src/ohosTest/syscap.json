@@ -4,8 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.WindowManager.WindowManager.Core",
-                    "SystemCapability.Window.SessionManager"
+                    "SystemCapability.Graphic.Graphic2D.EGL"
                 ]
             }
         ]

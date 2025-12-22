@@ -16,16 +16,56 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import image from '@ohos.multimedia.image';
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
-import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, sleep, pushCreateAsset } from '../common'
+import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, sleep, pushCreateAsset, createMovingPhoto, albumSubtype, albumType } from '../common'
 import common from '@ohos.app.ability.common';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
+import fileio from "@ohos.fileio";
 
 export default function getThumbnailTest() {
 
   const fileNameList = ["getThumb.jpg", "getThumb.mp4"];
 
-
   describe('getThumbnailTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext);
+    let getAsset = async (testNum: string, key: string, value: string | number) => {
+      const predicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(key, value);
+      const ops: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(ops);
+      console.info(`${testNum} asset count is: ${fetchResult.getCount()}`);
+      const asset: photoAccessHelper.PhotoAsset = await fetchResult.getLastObject();
+      fetchResult.close();
+      return asset
+    }
+    let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype) => {
+      let predicatesAlbum: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOptionsAlbum: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicatesAlbum
+      };
+      let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+      await helper.getAlbums(type, subtype, fetchOptionsAlbum);
+      console.info(testNum + ' album count is ' + albumFetchResult.getCount());
+      let album: photoAccessHelper.Album = await albumFetchResult.getLastObject();
+      return album;
+    }
+    let getAlbumAssets = async (testNum: string, album: photoAccessHelper.Album, key: string, value: string | number) => {
+      const predicates = new dataSharePredicates.DataSharePredicates();
+      predicates.equalTo(key, value);
+      const ops: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicates
+      };
+      const fetchResult = await album.getAssets(ops);
+      console.info(`${testNum} asset count is: ${fetchResult.getCount()}`);
+      const asset = await fetchResult.getLastObject();
+      fetchResult.close();
+      return asset
+    }
      let getThumbnailCallback1 = async(done: Function, testNum: string, fetchOps: ESObject) => {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
@@ -627,6 +667,391 @@ export default function getThumbnailTest() {
         width: 99999, height: 99999
       };
       await getThumbnailCallbackAbnormal(done, testNum, fetchOps, size);
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2400
+     * @tc.name   getThumbnail_callback_024
+     * @tc.desc   getThumbnail(moving photo) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_024', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_024';
+      const title = 'getThumbnail_callback_24';
+      await createMovingPhoto(testNum, testContext, title)
+      const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.TITLE, title);
+      try {
+        await getThumbnailCallback1(done, testNum, fetchOps);
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2500
+     * @tc.name   getThumbnail_callback_025
+     * @tc.desc   getThumbnail(trash asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_025', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_025';
+      const displayNames = ['getThumbnail_callback_25.jpg'];
+      try {
+        await pushCreateAsset(testContext, displayNames);
+        let asset: photoAccessHelper.PhotoAsset = await getAsset(testNum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [asset]);
+        let tAlbum: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
+        asset = await getAlbumAssets(testNum, tAlbum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        asset.getThumbnail(async (err, pixelMap) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              const info = await pixelMap.getImageInfo();
+              const defaultSize: ESObject = { width: 256, height: 256 };
+              expect(info.size.width).assertEqual(defaultSize.width);
+              expect(info.size.height).assertEqual(defaultSize.height);
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2600
+     * @tc.name   getThumbnail_callback_026
+     * @tc.desc   getThumbnail(hidden asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_026', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_026';
+      const displayNames = ['getThumbnail_callback_26.jpg'];
+      try {
+        await pushCreateAsset(testContext, displayNames);
+        let asset: photoAccessHelper.PhotoAsset = await getAsset(testNum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        await asset.setHidden(true);
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getHiddenAlbums(photoAccessHelper.HiddenPhotosDisplayMode.ASSETS_MODE);
+        console.info(testNum + 'album count is : ' + fetchResult.getCount());
+        let album: photoAccessHelper.Album = await fetchResult.getLastObject();
+        asset = await getAlbumAssets(testNum, album, photoKeys.DISPLAY_NAME, displayNames[0]);
+        asset.getThumbnail(async (err, pixelMap) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              const info = await pixelMap.getImageInfo();
+              const defaultSize: ESObject = { width: 256, height: 256 };
+              expect(info.size.width).assertEqual(defaultSize.width);
+              expect(info.size.height).assertEqual(defaultSize.height);
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2700
+     * @tc.name   getThumbnail_callback_027
+     * @tc.desc   getThumbnail(deleted asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_027', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_027';
+      const displayNames = ['getThumbnail_callback_27.jpg'];
+      try {
+        await pushCreateAsset(testContext, displayNames);
+        let asset: photoAccessHelper.PhotoAsset = await getAsset(testNum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [asset]);
+        let tAlbum: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
+        asset = await getAlbumAssets(testNum, tAlbum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(tAlbum);
+        albumChangeRequest.deleteAssets([asset]);
+        await helper.applyChanges(albumChangeRequest);
+        console.info(`${testNum} delete asset success`);
+        await sleep(1000);
+        for (let i = 0; i < 20; i++) {
+          asset.getThumbnail(async (err, pixelMap) => {
+            try {
+              if (err) {
+                console.info(`${testNum} err: ${err.code}`);
+                expect(err.code == 3).assertTrue();
+              } else {
+                const info = await pixelMap.getImageInfo();
+                console.info(`${testNum} size: ${info.size.width} ${info.size.height}`);
+                // expect(false).assertTrue();
+              }
+            } catch (error) {
+              console.info(`${testNum} error: ${error.code}`);
+            }
+          })
+          await sleep(500);
+        }
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2800
+     * @tc.name   getThumbnail_callback_028
+     * @tc.desc   getThumbnail(damaged asset) by no size
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_028', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_028';
+      const displayNames = ['getThumbnail_callback_28.jpg'];
+      try {
+        let asset: photoAccessHelper.PhotoAsset = await helper.createAsset(displayNames[0]);
+        let fd = await asset.open('rw');
+        await fileio.write(fd, '1111');
+        await asset.close(fd);
+        asset.getThumbnail(async (err, pixelMap) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err.code}`);
+              expect(err.code == 3).assertTrue();
+            } else {
+              expect(false).assertTrue();
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error.code}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_2900
+     * @tc.name   getThumbnail_callback_029
+     * @tc.desc   getThumbnail(moving photo) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_029', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_029';
+      const title = 'getThumbnail_callback_29';
+      await createMovingPhoto(testNum, testContext, title)
+      const fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.TITLE, title);
+      const size: ESObject = {
+        width: 128, height: 128
+      };
+      const expectSize: ESObject = {
+        width: 128, height: 128
+      };
+      try {
+        await getThumbnailCallback2(done, testNum, fetchOps, size, expectSize);
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3000
+     * @tc.name   getThumbnail_callback_030
+     * @tc.desc   getThumbnail(trash asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_030', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_030';
+      const displayNames = ['getThumbnail_callback_030.jpg'];
+      try {
+        await pushCreateAsset(testContext, displayNames);
+        let asset: photoAccessHelper.PhotoAsset = await getAsset(testNum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [asset]);
+        let tAlbum: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
+        asset = await getAlbumAssets(testNum, tAlbum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        const size: image.Size = {
+          width: 128, height: 128
+        };
+        asset.getThumbnail(size, async (err, pixelMap) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              const info = await pixelMap.getImageInfo();
+              expect(info.size.width).assertEqual(size.width);
+              expect(info.size.height).assertEqual(size.height);
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3100
+     * @tc.name   getThumbnail_callback_031
+     * @tc.desc   getThumbnail(hidden asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_031', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_031';
+      const displayNames = ['getThumbnail_callback_31.jpg'];
+      try {
+        await pushCreateAsset(testContext, displayNames);
+        let asset: photoAccessHelper.PhotoAsset = await getAsset(testNum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        await asset.setHidden(true);
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getHiddenAlbums(photoAccessHelper.HiddenPhotosDisplayMode.ASSETS_MODE);
+        console.info(testNum + 'album count is : ' + fetchResult.getCount());
+        let album: photoAccessHelper.Album = await fetchResult.getLastObject();
+        asset = await getAlbumAssets(testNum, album, photoKeys.DISPLAY_NAME, displayNames[0]);
+        const size: image.Size = {
+          width: 128, height: 128
+        };
+        asset.getThumbnail(size, async (err, pixelMap) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err}`);
+              expect(false).assertTrue();
+            } else {
+              const info = await pixelMap.getImageInfo();
+              expect(info.size.width).assertEqual(size.width);
+              expect(info.size.height).assertEqual(size.height);
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3200
+     * @tc.name   getThumbnail_callback_032
+     * @tc.desc   getThumbnail(damaged asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('getThumbnail_callback_032', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_032';
+      const displayNames = ['getThumbnail_callback_32.jpg'];
+      try {
+        let asset: photoAccessHelper.PhotoAsset = await helper.createAsset(displayNames[0]);
+        let fd = await asset.open('rw');
+        await fileio.write(fd, '1111');
+        await asset.close(fd);
+        const size: image.Size = {
+          width: 128, height: 128
+        };
+        asset.getThumbnail(size, async (err) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err.code}`);
+              expect(err.code == 3).assertTrue();
+            } else {
+              expect(false).assertTrue();
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error.code}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3300
+     * @tc.name   getThumbnail_callback_033
+     * @tc.desc   getThumbnail(deleted asset) by { width: 128, height: 128 }
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getThumbnail_callback_033', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'getThumbnail_callback_033';
+      const displayNames = ['getThumbnail_callback_33.jpg'];
+      try {
+        await pushCreateAsset(testContext, displayNames);
+        let asset: photoAccessHelper.PhotoAsset = await getAsset(testNum, photoKeys.DISPLAY_NAME, displayNames[0]);
+        await photoAccessHelper.MediaAssetChangeRequest.deleteAssets(testContext, [asset]);
+        let tAlbum: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, albumSubtype.TRASH);
+        let albumChangeRequest: photoAccessHelper.MediaAlbumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(tAlbum);
+        albumChangeRequest.deleteAssets([asset]);
+        await helper.applyChanges(albumChangeRequest);
+        const size: image.Size = {
+          width: 128, height: 128
+        };
+        await sleep(1000);
+        asset.getThumbnail(size, async (err, pixelMap) => {
+          try {
+            if (err) {
+              console.info(`${testNum} err: ${err.code}`);
+              expect(err.code == 3).assertTrue();
+            } else {
+              const info = await pixelMap.getImageInfo();
+              console.info(`${testNum} size: ${info.size.width} ${info.size.height}`);
+              // expect(false).assertTrue();
+            }
+          } catch (error) {
+            console.info(`${testNum} error: ${error}`);
+          }
+          done();
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     //promise

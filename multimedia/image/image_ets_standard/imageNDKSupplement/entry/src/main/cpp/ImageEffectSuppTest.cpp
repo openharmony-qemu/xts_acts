@@ -26,6 +26,7 @@
 #include <native_window/external_window.h>
 #include <string>
 #include <multimedia/image_effect/image_effect_errors.h>
+#include <multimedia/image_framework/image_mdk_common.h>
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
@@ -47,6 +48,15 @@
 #define CASE_INDEX_9 9
 #define CASE_INDEX_10 10
 #define CASE_INDEX_11 11
+#define CASE_INDEX_12 12
+#define CASE_INDEX_13 13
+#define CASE_INDEX_14 14
+#define CASE_INDEX_15 15
+#define CASE_INDEX_16 16
+#define CASE_INDEX_17 17
+#define CASE_INDEX_18 18
+#define CASE_INDEX_19 19
+#define CASE_INDEX_20 20
 #define IMAGE_EFFECT_2 2
 #define IMAGE_EFFECT_100 100
 #define IMAGE_EFFECT_100F 100.f
@@ -483,6 +493,176 @@ napi_value OHImageEffectReleaseSupp(napi_env env, napi_callback_info info)
     case CASE_INDEX_2:
         imageEffect = nullptr;
         code = OH_ImageEffect_Release(imageEffect);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value OHImageEffectCreateSupplement(napi_env env, napi_callback_info info)
+{
+    OH_ImageEffect *imageEffect = nullptr;
+    imageEffect = OH_ImageEffect_Create(NULL);
+    napi_value ret;
+    if (imageEffect == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectAddFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_EffectFilter *filter = nullptr;
+    filter = OH_ImageEffect_AddFilter(nullptr, OH_EFFECT_BRIGHTNESS_FILTER);
+    napi_value ret;
+    if (filter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectInsertFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_EffectFilter *insertFilter = nullptr;
+    insertFilter = OH_ImageEffect_InsertFilter(nullptr, 0, OH_EFFECT_BRIGHTNESS_FILTER);
+    napi_value ret;
+    if (insertFilter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectReplaceFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_EffectFilter *replaceFilter = nullptr;
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
+    replaceFilter = OH_ImageEffect_ReplaceFilter(nullptr, 0, OH_EFFECT_BRIGHTNESS_FILTER);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    if (replaceFilter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectGetFilterSupplement(napi_env env, napi_callback_info info)
+{
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
+    int32_t getFilterIndex = 0;
+    OH_EffectFilter *getFilter = OH_ImageEffect_GetFilter(nullptr, getFilterIndex);
+    OH_ImageEffect_Release(imageEffect);
+    napi_value ret;
+    if (getFilter == nullptr) {
+        napi_get_undefined(env, &ret);
+    }
+    return ret;
+}
+
+napi_value OHImageEffectSetInputTextureSupp(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
+    std::shared_ptr<OH_ImageEffect> imageEffectPtr(imageEffect, [](OH_ImageEffect *imageEffect) {
+        if (imageEffect != nullptr) {
+            OH_ImageEffect_Release(imageEffect);
+        }
+    });
+    std::shared_ptr<RenderTexture> input = std::make_shared<RenderTexture>(IMAGE_EFFECT_1920,
+        IMAGE_EFFECT_1080, GL_RGBA8);
+    input->Init();
+    ImageEffect_ErrorCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code= OH_ImageEffect_SetInputTextureId(nullptr, input->GetName(), ColorSpaceName::ADOBE_RGB);
+        break;
+    case CASE_INDEX_2:
+        code = OH_ImageEffect_SetInputTextureId(imageEffect, 0, ColorSpaceName::ADOBE_RGB);
+        break;
+    default:
+        break;
+    }
+    napi_value ret;
+    napi_create_int32(env, code, &ret);
+    return ret;
+}
+
+napi_value IRNdkErrCodeSupplement(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    IRNdkErrCode code;
+    switch (index) {
+    case CASE_INDEX_1:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_SOURCE_NOT_SET;
+        break;
+    case CASE_INDEX_2:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_INIT;
+        break;
+    case CASE_INDEX_3:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_EXIST;
+        break;
+    case CASE_INDEX_4:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT;
+        break;
+    case CASE_INDEX_5:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_CAPTURE_NOT_INIT;
+        break;
+    case CASE_INDEX_6:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_SOURCE_URL_INVALID;
+        break;
+    case CASE_INDEX_7:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_VIDEO_TRACK_NOT_FOUND;
+        break;
+    case CASE_INDEX_8:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_RTSP_CAMERA_NUM_REACH_MAX;
+        break;
+    case CASE_INDEX_9:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_SET_VOLUME;
+        break;
+    case CASE_INDEX_10:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_NUMBER_OVERFLOW;
+        break;
+    case CASE_INDEX_11:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_DIS_PLAYER_UNSUPPORTED;
+        break;
+    case CASE_INDEX_12:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_DENCODE_ICC_FAILED;
+        break;
+    case CASE_INDEX_13:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_ENCODE_ICC_FAILED;
+        break;
+    case CASE_INDEX_14:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_READ_PIXELMAP_FAILED;
+        break;
+    case CASE_INDEX_15:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_WRITE_PIXELMAP_FAILED;
+        break;
+    case CASE_INDEX_16:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_PIXELMAP_NOT_ALLOW_MODIFY;
+        break;
+    case CASE_INDEX_17:
+        code = IRNdkErrCode::IMAGE_RESULT_MEDIA_CONFIG_FAILED;
+        break;
+    case CASE_INDEX_18:
+        code = IRNdkErrCode::IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED;
+        break;
+    case CASE_INDEX_19:
+        code = IRNdkErrCode::IMAGE_RESULT_CREATE_SURFACE_FAILED;
+        break;
+    case CASE_INDEX_20:
+        code = IRNdkErrCode::IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED;
         break;
     default:
         break;

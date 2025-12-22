@@ -62,7 +62,7 @@ export default function PropColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropColor_0100', Level.LEVEL0, async (done: Function) => {
+    it('PropColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function PropColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropColor_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -108,7 +108,7 @@ export default function PropColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropColor_0300', Level.LEVEL0, async (done: Function) => {
+    it('PropColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -131,7 +131,7 @@ export default function PropColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropColor_0400', Level.LEVEL0, async (done: Function) => {
+    it('PropColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -154,7 +154,7 @@ export default function PropColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropColor_0500', Level.LEVEL0, async (done: Function) => {
+    it('PropColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -177,7 +177,7 @@ export default function PropColor() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropColor_0600', Level.LEVEL0, async (done: Function) => {
+    it('PropColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('PropColor_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

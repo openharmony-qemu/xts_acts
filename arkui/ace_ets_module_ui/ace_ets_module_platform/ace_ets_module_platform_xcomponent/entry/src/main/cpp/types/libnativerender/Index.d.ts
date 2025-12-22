@@ -65,3 +65,6 @@ export const TestSurfaceHolderCreateReturnNull: (id: string) => void;
 export const TestSurfaceHolderGetUserDataReturnNull: (id: string) => void;
 export const TestSurfaceCallbackCreateReturnNull: (id: string) => void;
 export const TestXComponentGetNativeWindowReturnNull: (id: string) => void;
+
+export const CreateNodeContentTestNativeRoot: (content: NodeContent) => void;
+export const NodeContentEventGetEventType: () => void;

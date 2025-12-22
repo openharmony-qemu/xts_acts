@@ -33,7 +33,9 @@
 #include "image/AnimationControllerTest.h"
 #include "grid/GridFillPolicyTest.h"
 #include "grid/GridEventTest.h"
+#include "InteractiveFramework/RegionListTest.h"
 #include "clipShape/ClipShapeTest.h"
+#include "CustomComponent/CustomMarkDirtyTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -50,6 +52,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"imageAltTest", nullptr, ImageAltTest::imageAltTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"textMinLinesTest", nullptr, MinLinesTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hasAxisTest", nullptr, HasAxisTest::CreateNativeNode, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"RegionListTest", nullptr, RegionListTest::CreateNativeNode, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"CoastingAxisTest_a", nullptr, CoastingAxisTest::CoastingAxisEventTest_a,
          nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -99,6 +103,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"gridOnScrollBarUpdateTest", nullptr, GridEventTest::GridOnScrollBarUpdateTest, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"clipShapeTest", nullptr, ClipShapeTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreateCustomMarkDirtyNativeRoot", nullptr, CustomMarkDirtyTest::CreateCustomMarkDirtyNativeRoot,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

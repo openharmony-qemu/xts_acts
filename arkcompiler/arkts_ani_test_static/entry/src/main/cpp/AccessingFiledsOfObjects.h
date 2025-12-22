@@ -310,7 +310,7 @@ ani_int test_Class_FindIndexableGetter([[maybe_unused]] ani_env *env, [[maybe_un
 
     ani_method value;
     ASSERT_EQ(
-        env->Class_FindIndexableGetter(cls, "D:Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;", &value),
+        env->Class_FindIndexableGetter(cls, "d:C{entry.src.main.src.ets.AccessingFiledsOfObjects.TestField}", &value),
         ANI_OK);
     ASSERT_NE(value, nullptr);
     return ANI_TRUE;
@@ -323,7 +323,7 @@ ani_int test_Class_FindIndexableSetter([[maybe_unused]] ani_env *env, [[maybe_un
     ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_method value;
-    ASSERT_EQ(env->Class_FindIndexableSetter(cls, "DZ:V", &value), ANI_OK);
+    ASSERT_EQ(env->Class_FindIndexableSetter(cls, "dz:", &value), ANI_OK);
     ASSERT_NE(value, nullptr);
     return ANI_TRUE;
 }
@@ -331,7 +331,7 @@ ani_int test_Class_FindIndexableSetter([[maybe_unused]] ani_env *env, [[maybe_un
 ani_int test_Class_FindIterator([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_class cls = {};
-    ASSERT_EQ(env->FindClass("Lentry/src/main/src/ets/AccessingFiledsOfObjects/Singleton;", &cls), ANI_OK);
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.AccessingFiledsOfObjects.Singleton", &cls), ANI_OK);
     ASSERT_NE(cls, nullptr);
 
     ani_method value;

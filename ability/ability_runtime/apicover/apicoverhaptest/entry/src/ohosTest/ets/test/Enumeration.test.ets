@@ -542,6 +542,20 @@ export default function ApiCoverTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_wantConstant_1700
+     * @tc.number SUB_Ability_AbilityBase_wantConstant_1700
+     * @tc.desc   Test wantConstant Params.APP_CLONE_INDEX_KEY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_1700', Level.LEVEL0, async (done: Function) => {
+      expect('ohos.extra.param.key.appCloneIndex').assertEqual(wantConstant.Params.APP_CLONE_INDEX_KEY);
+      done();
+    })
+
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_WantAgent_0100
      * @tc.number SUB_Ability_AbilityBase_WantAgent_0100
      * @tc.desc   Test wantAgent OperationType.UNKNOWN_TYPE.

@@ -17,8 +17,8 @@
 struct Grid_ScorllStartAndStop {
   @State number: String[] = ['0', '1', '2', '3', '4'];
   scroller: Scroller = new Scroller();
-  @State text1: string = '';
-  @State text2: string = '';
+  @State text1: string = '111';
+  @State text2: string = '111';
 
   build() {
     Column({ space: 5 }) {
@@ -76,7 +76,7 @@ struct Grid_ScorllStartAndStop {
         .rowsGap(10)
         .width('80%')
         .backgroundColor(0xFAEEE0)
-        .height(300)
+        .height('100%')
         .scrollBar(BarState.Off)
         .onScrollStart(() => {
           this.text1 = 'onScrollStart'
@@ -93,7 +93,7 @@ struct Grid_ScorllStartAndStop {
             .borderRadius(10)
             .backgroundColor('#C0C0C0')
         }.width(20).backgroundColor('#ededed')
-      }.height(300)
+      }.height('50%')
       .id('Grid_ScrollStartandStop_scrollBar')
 
     }.width('100%').margin({ top: 5 })

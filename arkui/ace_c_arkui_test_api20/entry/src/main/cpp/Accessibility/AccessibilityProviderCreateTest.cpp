@@ -19,6 +19,9 @@
 #include <arkui/native_interface_accessibility.h>
 #include <ace/xcomponent/native_interface_xcomponent.h>
 
+#define NUMBER_N_1 (-1)
+#define NUMBER_N_3 (-3)
+
 namespace ArkUICapiTest {
 
 static napi_value AccessibilityProviderCreateTest(napi_env env, napi_callback_info info)
@@ -66,6 +69,19 @@ static napi_value CreateAccessibilityElementInfoTest(napi_env env, napi_callback
     NAPI_START(Custom, ARKUI_NODE_CUSTOM);
     ArkUI_AccessibilityElementInfo* elementInfo = OH_ArkUI_CreateAccessibilityElementInfo();
     ASSERT_OBJ_NE(elementInfo, nullptr);
+    NAPI_END;
+}
+
+static napi_value AccessibilityErrorCodeTest001(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "AccessibilityErrorCodeTest001 ret=%{public}d", ARKUI_ACCESSIBILITY_NATIVE_RESULT_FAILED);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "AccessibilityErrorCodeTest001 ret=%{public}d", ARKUI_ACCESSIBILITY_NATIVE_RESULT_OUT_OF_MEMORY);
+
+    ASSERT_EQ(ARKUI_ACCESSIBILITY_NATIVE_RESULT_FAILED, NUMBER_N_1);
+    ASSERT_EQ(ARKUI_ACCESSIBILITY_NATIVE_RESULT_OUT_OF_MEMORY, NUMBER_N_3);
     NAPI_END;
 }
 

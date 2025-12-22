@@ -46,6 +46,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_uicontext_widget:ActsAceEtsModuleUiContextWidgetTest",
       "ace_ets_module_video:ActsAceEtsModuleVideoTest",
       "ace_ets_module_media:ActsAceEtsModuleMediaTest",
+      "ace_ets_module_modifier_static:ActsAceEtsModuleModifierStaticTest",
     ]
   } else {
     deps = [
@@ -86,6 +87,10 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_uicontext_widget:ActsAceEtsModuleUiContextWidgetTest",
       "ace_ets_module_video:ActsAceEtsModuleVideoTest",
       "ace_ets_module_media:ActsAceEtsModuleMediaTest",
+      "ace_ets_module_modifier_static:ActsAceEtsModuleModifierStaticTest",
+      "ace_ets_module_select/ace_ets_module_select_api12_static:ActsAceEtsModuleSelectApi12StaticTest",
+      "ace_ets_module_select/ace_ets_module_select_api18_static:ActsAceEtsModuleSelectApi18StaticTest",
+      "ace_ets_module_select/ace_ets_module_select_api20_static:ActsAceEtsModuleSelectApi20StaticTest",
     ]
   }
 }

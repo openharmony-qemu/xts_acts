@@ -60,5 +60,28 @@ export default function listItemGroupNone() {
       console.info('[listItemGroupNone_0100] END');
       done();
     });
+
+    /**
+     * @tc.name   ListItemGroupArea_0200
+     * @tc.number ListItemGroupArea_0200
+     * @tc.desc   Test Enumerated value for ListItemGroupArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ListItemGroupArea_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('ListItemGroupArea_0200 START');
+      await CommonFunc.sleep(1000);
+      console.info('ListItemGroupArea_0200 NONE: ' + ListItemGroupArea.NONE);
+      console.info('ListItemGroupArea_0200 IN_LIST_ITEM_AREA: ' + ListItemGroupArea.IN_LIST_ITEM_AREA);
+      console.info('ListItemGroupArea_0200 IN_HEADER_AREA: ' + ListItemGroupArea.IN_HEADER_AREA);
+      console.info('ListItemGroupArea_0200 IN_FOOTER_AREA: ' + ListItemGroupArea.IN_FOOTER_AREA);
+      expect(ListItemGroupArea.NONE).assertEqual(0);
+      expect(ListItemGroupArea.IN_LIST_ITEM_AREA).assertEqual(1);
+      expect(ListItemGroupArea.IN_HEADER_AREA).assertEqual(2);
+      expect(ListItemGroupArea.IN_FOOTER_AREA).assertEqual(3);
+      console.log('[ListItemGroupArea_0200] END');
+      done();
+    });
   })
 }

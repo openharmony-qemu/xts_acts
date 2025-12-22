@@ -176,7 +176,7 @@ export default function cameraVideoCodecTypeTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsVideoCodecTypeModeSupportedArray = new Array<boolean>(mCameraNum);
+    mIsVideoCodecTypeModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
     console.info('Exit getCameraSupportDevicesArray');
     return true;
   }

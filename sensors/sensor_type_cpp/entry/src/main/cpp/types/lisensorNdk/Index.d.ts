@@ -112,3 +112,5 @@ export const vibrator_PlayVibrationCustomTest1: () => number;
 export const vibrator_PlayVibrationCustomTest2: () => number;
 
 export const permission_deniedTest: () => number;
+
+export const Sensor_Result_0100: () => number;

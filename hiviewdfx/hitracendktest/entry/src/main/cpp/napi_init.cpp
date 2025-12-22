@@ -16,7 +16,6 @@
 #include "napi/native_api.h"
 #include "hitrace/trace.h"
 #include "hilog/log.h"
-
 #undef LOG_TAG
 #define LOG_TAG "traceTest"
 
@@ -29,6 +28,8 @@
 #define PARAM_5 5
 #define PARAM_10 10
 #define PARAM_9 9
+#undef LOG_DOMAIN
+#define LOG_DOMAIN 0x3200
 static const int32_t TASK_ID = 111;
 static const int32_t TASK_ID_TWO = 112;
 static const int32_t TASK_ID_THREE = 1001;
@@ -142,6 +143,12 @@ static napi_value Begin(napi_env env, napi_callback_info info)
 {
     int count = PARAM_0;
     HiTraceId hiTraceId = OH_HiTrace_BeginChain("hiTraceChainndktest", HITRACE_FLAG_DEFAULT);
+    OH_LOG_ERROR(LOG_APP, "chainId is %{public}llu", hiTraceId.chainId);
+    OH_LOG_ERROR(LOG_APP, "ver is %{public}llu", hiTraceId.ver);
+    OH_LOG_ERROR(LOG_APP, "valid is %{public}llu", hiTraceId.valid);
+    OH_LOG_ERROR(LOG_APP, "parentSpanId is %{public}llu", hiTraceId.parentSpanId);
+    OH_LOG_ERROR(LOG_APP, "spanId is %{public}llu", hiTraceId.spanId);
+    OH_LOG_ERROR(LOG_APP, "flags is %{public}llu", hiTraceId.flags);
     count++;
     OH_HiTrace_InitId(&hiTraceId);
     OH_HiTrace_ClearId();
@@ -151,6 +158,13 @@ static napi_value Begin(napi_env env, napi_callback_info info)
     OH_HiTrace_EndChain();
     count++;
     HiTraceId traceId5 = OH_HiTrace_BeginChain("hitraceNdkTest5", HITRACE_FLAG_INCLUDE_ASYNC);
+    HiTraceId hiTraceGetId = OH_HiTrace_GetId();
+    OH_LOG_ERROR(LOG_APP, "chainId is %{public}llu", hiTraceGetId.chainId);
+    OH_LOG_ERROR(LOG_APP, "ver is %{public}llu", hiTraceGetId.ver);
+    OH_LOG_ERROR(LOG_APP, "valid is %{public}llu", hiTraceGetId.valid);
+    OH_LOG_ERROR(LOG_APP, "parentSpanId is %{public}llu", hiTraceGetId.parentSpanId);
+    OH_LOG_ERROR(LOG_APP, "spanId is %{public}llu", hiTraceGetId.spanId);
+    OH_LOG_ERROR(LOG_APP, "flags is %{public}llu", hiTraceGetId.flags);
     count++;
     uint8_t pIdArray;
     OH_HiTrace_IdToBytes(&traceId5, &pIdArray, sizeof(traceId5));
@@ -210,7 +224,13 @@ static napi_value BeginSpan(napi_env env, napi_callback_info info)
     count++;
     OH_HiTrace_GetParentSpanId(&hiTraceId);
     count++;
-    OH_HiTrace_CreateSpan();
+    HiTraceId hiTraceId1 = OH_HiTrace_CreateSpan();
+    OH_LOG_ERROR(LOG_APP, "chainId is %{public}llu", hiTraceId1.chainId);
+    OH_LOG_ERROR(LOG_APP, "ver is %{public}llu", hiTraceId1.ver);
+    OH_LOG_ERROR(LOG_APP, "valid is %{public}llu", hiTraceId1.valid);
+    OH_LOG_ERROR(LOG_APP, "parentSpanId is %{public}llu", hiTraceId1.parentSpanId);
+    OH_LOG_ERROR(LOG_APP, "spanId is %{public}llu", hiTraceId1.spanId);
+    OH_LOG_ERROR(LOG_APP, "flags is %{public}llu", hiTraceId1.flags);
     count++;
     OH_HiTrace_Tracepoint(HITRACE_CM_DEFAULT, HITRACE_TP_CS, &hiTraceId, "hitracetest4");
     count++;
@@ -222,6 +242,40 @@ static napi_value BeginSpan(napi_env env, napi_callback_info info)
     }
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
+static napi_value OHHiTraceIsIdValid(napi_env env, napi_callback_info info)
+{
+    HiTraceId hiTraceGetId = OH_HiTrace_GetId();
+    bool  isvalid = OH_HiTrace_IsIdValid(&hiTraceGetId);
+    napi_value result = nullptr;
+    napi_get_boolean(env, isvalid, &result);
+    return result;
+}
+
+static napi_value OHHiTraceIsFlagEnabled(napi_env env, napi_callback_info info)
+{
+    HiTraceId hiTraceGetId = OH_HiTrace_GetId();
+    bool  isvalid = OH_HiTrace_IsFlagEnabled(&hiTraceGetId, HITRACE_FLAG_INCLUDE_ASYNC);
+    napi_value result = nullptr;
+    napi_get_boolean(env, isvalid, &result);
+    return result; 
+}
+
+static napi_value OHHiTraceIsTraceEnabled(napi_env env, napi_callback_info info)
+{
+    bool  isvalid = OH_HiTrace_IsTraceEnabled();
+    napi_value result = nullptr;
+    napi_get_boolean(env, isvalid, &result);
+    return result;
+}
+
+static napi_value OHHiTraceIsTraceEnabl2(napi_env env, napi_callback_info info)
+{
+    bool  isvalid = OH_HiTrace_IsTraceEnabled();
+    napi_value result = nullptr;
+    napi_get_boolean(env, isvalid, &result);
     return result;
 }
 
@@ -237,6 +291,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"begin", nullptr, Begin, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"beginflag", nullptr, Beginflag, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"beginSpan", nullptr, BeginSpan, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHHiTraceIsIdValid", nullptr, OHHiTraceIsIdValid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHHiTraceIsFlagEnabled", nullptr, OHHiTraceIsFlagEnabled, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHHiTraceIsTraceEnabled", nullptr, OHHiTraceIsTraceEnabled, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHHiTraceIsTraceEnabl2", nullptr, OHHiTraceIsTraceEnabl2, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

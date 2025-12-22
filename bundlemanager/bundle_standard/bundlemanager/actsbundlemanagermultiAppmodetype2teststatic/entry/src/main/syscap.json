@@ -4,12 +4,15 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Driver.HID.Extension",
-                    "SystemCapability.Driver.ExternalDevice",
-                    "SystemCapability.Driver.USB.Extension",
-                    "SystemCapability.Driver.DDK.Extension",
-                    "SystemCapability.Driver.UsbSerial.Extension",
-                    "SystemCapability.Driver.SCSI.Extension"
+                    "SystemCapability.BundleManager.BundleFramework",
+                    "SystemCapability.BundleManager.Zlib",
+                    "SystemCapability.BundleManager.BundleFramework.AppControl",
+                    "SystemCapability.BundleManager.BundleFramework.Core",
+                    "SystemCapability.BundleManager.BundleFramework.FreeInstall",
+                    "SystemCapability.BundleManager.BundleFramework.Launcher",
+                    "SystemCapability.BundleManager.BundleFramework.DefaultApp",
+                    "SystemCapability.BundleManager.BundleFramework.Resource",
+                    "SystemCapability.BundleManager.BundleFramework.Overlay"
                 ]
             }
         ]

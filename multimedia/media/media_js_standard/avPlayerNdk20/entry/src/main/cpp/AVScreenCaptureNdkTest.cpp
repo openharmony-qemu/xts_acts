@@ -960,9 +960,10 @@ static napi_value OH_AVScreenCapture_GetCaptureTypeSelected0101(napi_env env, na
 static napi_value OH_AVScreenCapture_GetDisplayIdSelected0100(napi_env env, napi_callback_info info)
 {
     void *userData;
-    OH_AVScreenCaptureConfig config_;
+    OH_AVScreenCaptureConfig config;
+    SetConfig(config);
     OH_AVScreenCapture_SetSelectionCallback(g_screenCapturee, OnUserSelected, userData);
-    OH_AVScreenCapture_Init(g_screenCapturee, config_);
+    OH_AVScreenCapture_Init(g_screenCapturee, config);
     OH_AVScreenCapture_StartScreenCapture(g_screenCapturee);
     int32_t res = 1;
     if (res1 == AV_SCREEN_CAPTURE_ERR_OK) {

@@ -179,7 +179,12 @@ export default function HitraceMeterTest() {
         console.info("-------DFX_DFR_HitraceMeter_Static_0700 start--------");
         try {
           console.info("DFX_DFR_HitraceMeter_Static_0700 1 start")
-          hiTraceMeter.isTraceEnabled();
+          let istrace = hiTraceMeter.isTraceEnabled()
+          if (istrace) {
+              expect(istrace).assertTrue();
+          }else{
+              expect(istrace).assertFalse();
+          }
           console.info("DFX_DFR_HitraceMeter_Static_0700 1 success");
         } catch (err) {
           console.info("DFX_DFR_HitraceMeter_Static_0700 1 fail!");
@@ -217,5 +222,76 @@ export default function HitraceMeterTest() {
       console.info("------DFX_DFR_HitraceMeter_Static_0800 end------");
       done();
     })
+
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_0900
+     * @tc.number DFX_DFR_HitraceMeter_Static_0900
+     * @tc.desc   验证registerTraceListener和unregisterTraceListener接口正常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("DFX_DFR_HitraceMeter_Static_0900", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      console.info("-------DFX_DFR_HitraceMeter_Static_0800 start--------");
+      let traceCount = 1;
+      try {
+        let callback: hiTraceMeter.TraceEventListener = (traceStatus: boolean) => {
+          if (traceStatus) {
+            console.info("SUB_DFX_DFR_Hitrace_Interface_0100 " + traceStatus);
+          } else {
+            console.info("SUB_DFX_DFR_Hitrace_Interface_0100 " + traceStatus);
+          }
+        };
+        let regRet = hiTraceMeter.registerTraceListener(callback);
+        console.info("SUB_DFX_DFR_Hitrace_Interface_0100 regRet: " + regRet);
+        expect(regRet == 0).assertTrue();
+        let unregRet = hiTraceMeter.unregisterTraceListener(regRet);
+        console.info("SUB_DFX_DFR_Hitrace_Interface_0100 unregRet: " + unregRet);
+        expect(unregRet == 0).assertTrue();
+        console.info("SUB_DFX_DFR_Hitrace_Interface_0100 success");
+        done();
+
+      } catch (err) {
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   DFX_DFR_HitraceMeter_Static_1000
+     * @tc.number DFX_DFR_HitraceMeter_Static_1000
+     * @tc.desc   验证registerTraceListener接口连续调用11次，unregisterTraceListener接口连续调用10次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("DFX_DFR_HitraceMeter_Static_1000", Level.LEVEL3, async (done:()=>void) : Promise<void> => {
+      console.info("-------DFX_DFR_HitraceMeter_Static_1000 start--------");
+      try {
+        let callback: hiTraceMeter.TraceEventListener = (traceStatus: boolean) => {
+          if (traceStatus) {
+            console.info("DFX_DFR_HitraceMeter_Static_1000 " + traceStatus);
+          } else {
+            console.info("DFX_DFR_HitraceMeter_Static_1000 " + traceStatus);
+          }
+        };
+        let regRet = hiTraceMeter.registerTraceListener(callback);
+        console.info("DFX_DFR_HitraceMeter_Static_1000 regRet: " + regRet);
+        expect(regRet == 0).assertTrue();
+        let unregRet = hiTraceMeter.unregisterTraceListener(regRet);
+        console.info("DFX_DFR_HitraceMeter_Static_1000 unregRet: " + unregRet);
+        expect(unregRet == 0).assertTrue();
+        console.info("DFX_DFR_HitraceMeter_Static_1000 success");
+        done();
+      } catch (err) {
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("DFX_DFR_HitraceMeter_Static_1000 end");
+    })
+
+
+
   })
 }

@@ -39,6 +39,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_api16_static:ActsAceEtsModuleDialogApi16StaticTest",
       "ace_ets_module_dialog_api18_static:ActsAceEtsModuleDialogApi18StaticTest",
       "ace_ets_module_dialog_api12_static:ActsAceEtsModuleDialogApi12StaticTest",
+      "ace_ets_module_dialog_api15_static:ActsAceEtsModuleDialogApi15StaticTest",
     ]
   } else {
     deps = [
@@ -77,6 +78,7 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_api12_static:ActsAceEtsModuleDialogApi12StaticTest",
       "ace_ets_module_dialog_nowear_api19_static:ActsAceEtsModuleDialogNoWearApi19StaticTest",
       "ace_ets_module_dialog_nowear_api11_static:ActsAceEtsModuleDialogNoWearApi11StaticTest",
+      "ace_ets_module_dialog_api15_static:ActsAceEtsModuleDialogApi15StaticTest",
     ]
   }
 }
