@@ -20,7 +20,7 @@
 extern "C" {
 #endif
 napi_value OHImageEffectErrorCodeSupp(napi_env env, napi_callback_info info);
-napi_value OHIRNdkErrCodeTestSupp(napi_env env, napi_callback_info info);
+napi_value OHIRNdkErrorCodeTestSupp(napi_env env, napi_callback_info info);
 
 #ifdef __cplusplus
 }
