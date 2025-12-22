@@ -138,7 +138,7 @@ export default function RegExpTest001() {
       const re1: RegExp = new RegExp('abc', 'gi');
       const re2: RegExp = new RegExp('abc', 'ig');
       expect(re1.flags).assertEqual('gi');
-      expect(re2.flags).assertEqual('gi');
+      expect(re2.flags).assertEqual('gi'); // ECMAScript normalizes flag order
       expect(re1.test('ABC')).assertTrue();
       expect(re2.test('ABC')).assertTrue();
     });
@@ -2590,7 +2590,7 @@ export default function RegExpTest001() {
       const regex2 = new RegExp('(a(b))+');
       const match2 = regex2.exec(str2);
       expect(match2![1]).assertEqual("ab");
-      expect(match2![2]).assertEqual("b");
+      expect(match2![2]).assertEqual("b"); // last captured value of inner group
     });
 
     /**
@@ -2628,7 +2628,7 @@ export default function RegExpTest001() {
 
       regex.lastIndex = 3;
       const second = regex.exec(str);
-      expect(second).assertEqual(null);
+      expect(second).assertEqual(null); // sticky match fails at space
     });
 
     /**
@@ -2770,7 +2770,7 @@ export default function RegExpTest001() {
       const regex = new RegExp('(ab)+');
       const str = "abab";
       const result = regex.exec(str);
-      expect(result![1]).assertEqual("ab");
+      expect(result![1]).assertEqual("ab"); // last captured group
     });
 
     /**
