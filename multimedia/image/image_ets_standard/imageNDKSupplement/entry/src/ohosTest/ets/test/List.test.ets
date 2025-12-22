@@ -36,6 +36,7 @@ import OHEffectBufferInfoSetInfoTest from './OHEffectBufferInfoSetInfoTest.test'
 import OHImageEffectRestoreTest from './OHImageEffectRestoreTest.test';
 import OHImageSizeTest from './OHImageSizeTest.test';
 import OHPixelmapNativeCreatePixelmapNativeTest from './OHPixelmapNativeCreatePixelmapNativeTest.test';
+import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
 import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
 import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
 import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
@@ -65,6 +66,7 @@ export default function testsuite() {
   OHImageEffectRestoreTest();
   OHImageSizeTest();
   OHPixelmapNativeCreatePixelmapNativeTest();
+  ImageEffectErrorCodeSuppTest();
   OHPixelMapSupplementTest();
   ImageResultIRNdkErrCodeTest();
   IRNdkErrCode();

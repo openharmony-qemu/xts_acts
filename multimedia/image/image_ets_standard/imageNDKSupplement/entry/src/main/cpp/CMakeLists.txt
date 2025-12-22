@@ -41,6 +41,7 @@ add_library(imageEffect SHARED
     OHImageEffectRestoreTest.cpp
     OHImageSizeTest.cpp
     OHPixelmapNativeCreatePixelmapNativeTest.cpp
+    OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp
     ImageResultIRNdkErrCodeTest.cpp)

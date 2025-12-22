@@ -34,6 +34,8 @@
 #include "ImagePackerCreateTest.h"
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
+#include "ImageInitImageNativeSuppTest.h"
+#include "OHImageEffectErrcodeSuppTest.h"
 #include "OHPixelMapSupplementTest.h"
 #include "ImageInitImageNativeSuppTest.h"
 #include "OHEffectBufferInfoSetInfoTest.h"
@@ -133,6 +135,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestImageScale", TestImageScale),
     DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
     DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
+    DESCRIPTOR("OHImageEffectErrorCodeSupp", OHImageEffectErrorCodeSupp),
+    DESCRIPTOR("OHIRNdkErrorCodeTestSupp", OHIRNdkErrorCodeTestSupp),
     DESCRIPTOR("OHPixelMapTranslateSupplementTest", OHPixelMapTranslateSupplementTest),
     DESCRIPTOR("OHPixelMapRotateSupplementTest", OHPixelMapRotateSupplementTest),
     DESCRIPTOR("OHPixelmapNativeSetColorSpaceNativeSuppTest", OHPixelmapNativeSetColorSpaceNativeSuppTest),
