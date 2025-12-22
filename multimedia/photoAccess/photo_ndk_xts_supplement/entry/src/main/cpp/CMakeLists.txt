@@ -13,7 +13,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/utils)
 
 add_library(entry SHARED
-    PhotoMain.cpp
+    PhotoMainTest.cpp
     OHMediaAssetCreateTest.cpp
     OHMediaAssetManagerRequestTest.cpp
     MediaAssetManagerCancelRequestTest)
