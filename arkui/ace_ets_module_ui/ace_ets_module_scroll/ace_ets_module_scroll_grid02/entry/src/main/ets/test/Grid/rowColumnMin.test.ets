@@ -58,7 +58,7 @@ export default function rowColumnMin() {
       console.info("[rowColumnMin_0100] rowEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.rowEnd));
       console.info("[rowColumnMin_0100] columnStart: " + JSON.stringify(JSON.parse(strJson).$attrs.columnStart));
       console.info("[rowColumnMin_0100] columnEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.columnEnd));
-      expect(JSON.parse(strJson).$type).assertEqual("Grid");
+      expect(JSON.parse(strJson).$type).assertEqual("GridItem");
       expect(JSON.parse(strJson).$attrs.rowStart).assertEqual("0");
       expect(JSON.parse(strJson).$attrs.rowEnd).assertEqual("0");
       expect(JSON.parse(strJson).$attrs.columnStart).assertEqual("0");
@@ -91,7 +91,7 @@ export default function rowColumnMin() {
       console.info("[rowColumnMin_0200] rowEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.rowEnd));
       console.info("[rowColumnMin_0200] columnStart: " + JSON.stringify(JSON.parse(strJson).$attrs.columnStart));
       console.info("[rowColumnMin_0200] columnEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.columnEnd));
-      expect(JSON.parse(strJson).$type).assertEqual("Grid");
+      expect(JSON.parse(strJson).$type).assertEqual("GridItem");
 
       let gridItem5 = CommonFunc.getComponentRectOnScreen('row_column_negative');
       console.info("[rowColumnMin_0100] gridItem5 left is: " + gridItem5.left);
