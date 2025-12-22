@@ -1097,4 +1097,37 @@ static napi_value RenderNodeParam035(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
+static napi_value RenderNodeParam036(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Custom, ARKUI_NODE_CUSTOM);
+    auto rsNode = OH_ArkUI_RenderNodeUtils_CreateNode();
+    OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom, rsNode);
+    
+    auto rectShape = OH_ArkUI_RenderNodeUtils_CreateRectShapeOption();
+    auto rectMask = OH_ArkUI_RenderNodeUtils_CreateRenderNodeMaskOptionFromRectShape(rectShape);
+    OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor(rectMask, 0);
+    OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor(rectMask, 0);
+    auto result1 = OH_ArkUI_RenderNodeUtils_SetMask(rsNode, rectMask);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "kkk RenderNodeParam036 result1=%{public}d", result1);
+    ASSERT_EQ(result1, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor(rectMask, NUMBER_4294967295);
+    OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor(rectMask, NUMBER_4294967295);
+    auto result2 = OH_ArkUI_RenderNodeUtils_SetMask(rsNode, rectMask);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "kkk RenderNodeParam036 result2=%{public}d", result2);
+    ASSERT_EQ(result2, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionFillColor(rectMask, NUMBER_4294967296);
+    OH_ArkUI_RenderNodeUtils_SetRenderNodeMaskOptionStrokeColor(rectMask, NUMBER_4294967296);
+    auto result3 = OH_ArkUI_RenderNodeUtils_SetMask(rsNode, rectMask);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "kkk RenderNodeParam036 result3=%{public}d", result3);
+    ASSERT_EQ(result3, ARKUI_ERROR_CODE_NO_ERROR);
+    
+    OH_ArkUI_RenderNodeUtils_DisposeRectShapeOption(rectShape);
+    OH_ArkUI_RenderNodeUtils_DisposeRenderNodeMaskOption(rectMask);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

@@ -212,3 +212,4 @@ export const RenderNodeParam032: () => number;
 export const RenderNodeParam033: () => number;
 export const RenderNodeParam034: () => number;
 export const RenderNodeParam035: () => number;
+export const RenderNodeParam036: () => number;
