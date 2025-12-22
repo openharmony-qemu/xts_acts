@@ -38,6 +38,8 @@ add_library(imageEffect SHARED
     PixleMapNativeTest.cpp
     ImageEffectsSuppTest.cpp
     AccessPixelsTest.cpp
+    ImageSourceTest.cpp
+    OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp
     ImageNdkErrCodeTest.cpp)
