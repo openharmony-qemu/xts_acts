@@ -21,7 +21,7 @@
 #include "InteractiveFramework/NativeNodeExtentedBooleanTest.cpp"
 #include "InteractiveFramework/LongPressGestureTest.h"
 #include "grid/GridAttrsTest.h"
-#include "Text/TextMeunItemIdTest.cpp"
+#include "Text/TextMenuItemIdTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START

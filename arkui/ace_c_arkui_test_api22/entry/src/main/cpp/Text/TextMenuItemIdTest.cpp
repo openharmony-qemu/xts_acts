@@ -353,7 +353,7 @@ static napi_value TextMenuItemId_026(napi_env env, napi_callback_info info)
     NAPI_START(Text, ARKUI_NODE_TEXT);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "TextMenuItemId_026 result=%{public}d", ARKUI_ERROR_CODE_INVALID_STYLED_STRING);
-    ASSERT_EQ(ARKUI_ERROR_CODE_INVALID_STYLED_STRING, PARAM_8033);
+    ASSERT_EQ(ARKUI_ERROR_CODE_INVALID_STYLED_STRING, PARAM_180101);
     NAPI_END;
 }
 

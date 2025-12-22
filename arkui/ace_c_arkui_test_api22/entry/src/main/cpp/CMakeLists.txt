@@ -56,7 +56,6 @@ add_library(nativefunc SHARED
     component/ComponentTest.cpp
     component/GridComponentTest.cpp
     component/TextComponentTest.cpp
-    Text/TextMenuItemIdTest.cpp
 )
 
 find_library(
