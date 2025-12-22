@@ -14,7 +14,13 @@
  */
 
 #include "napi/native_api.h"
-#include "MultiThreadTestAdapter.cpp"
+#include "MultiThreadTest.cpp"
+
+namespace {
+const int32_t TEST_CASE_0100 = 100;
+const int32_t TEST_CASE_0200 = 200;
+const int32_t INVALID_RESULT = -1;
+}
 
 // 异步工作数据结构
 struct AsyncWorkData {
@@ -31,14 +37,14 @@ static void ExecuteAsyncWork(napi_env env, void* data)
     
     // 在工作线程中执行耗时的测试函数
     switch (workData->testCase) {
-        case 100:
-            workData->result = SUB_AI_NNR_Reliability_North_Stress_0100();
+        case TEST_CASE_0100:
+            workData->result = SubAiNnrReliabilityNorthStress0100();
             break;
-        case 200:
-            workData->result = SUB_AI_NNR_Reliability_North_Stress_0200();
+        case TEST_CASE_0200:
+            workData->result = SubAiNnrReliabilityNorthStress0200();
             break;
         default:
-            workData->result = -1;
+            workData->result = INVALID_RESULT;
             break;
     }
 }
@@ -64,76 +70,66 @@ static void CompleteAsyncWork(napi_env env, napi_status status, void* data)
     delete workData;
 }
 
-/**
- * NAPI function for Stress tests
- * 参数：testCase - 测试用例编号 (100 或 200)
- * 返回：Promise<number>，成功返回 0，失败返回 -1
- */
-static napi_value SubAiNnrReliabilityNorthStress(napi_env env, napi_callback_info info)
+static int32_t GetTestCaseNumber(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
     napi_value args[1];
-    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_status status = napi_get_cb_info(env, info, &argc, args,
+        nullptr, nullptr);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "Failed to get callback info");
-        return nullptr;
+        return INVALID_RESULT;
     }
 
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
         napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return nullptr;
+        return INVALID_RESULT;
     }
 
-    int32_t testCase = -1;
+    int32_t testCase = INVALID_RESULT;
     status = napi_get_value_int32(env, args[0], &testCase);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "Failed to get test case number");
-        return nullptr;
+        return INVALID_RESULT;
     }
 
-    // 验证测试用例编号
-    if (testCase != 100 && testCase != 200) {
-        napi_throw_error(env, nullptr, "Invalid test case number. Use 100 or 200");
-        return nullptr;
+    if (testCase != TEST_CASE_0100 && testCase != TEST_CASE_0200) {
+        napi_throw_error(env, nullptr, "Invalid test case number");
+        return INVALID_RESULT;
     }
 
-    // 创建 Promise
+    return testCase;
+}
+
+static napi_value CreateAsyncWork(napi_env env, int32_t testCase)
+{
     napi_value promise;
     napi_deferred deferred;
-    status = napi_create_promise(env, &deferred, &promise);
+    napi_status status = napi_create_promise(env, &deferred, &promise);
     if (status != napi_ok) {
         napi_throw_error(env, nullptr, "Failed to create promise");
         return nullptr;
     }
 
-    // 创建异步工作数据
     AsyncWorkData* workData = new AsyncWorkData();
     workData->deferred = deferred;
     workData->testCase = testCase;
 
-    // 创建异步工作任务
     napi_value resourceName;
-    napi_create_string_utf8(env, "NNRtStabilityTest", NAPI_AUTO_LENGTH, &resourceName);
-    
-    status = napi_create_async_work(
-        env,
-        nullptr,
-        resourceName,
-        ExecuteAsyncWork,
-        CompleteAsyncWork,
-        workData,
-        &workData->asyncWork
-    );
-    
+    napi_create_string_utf8(env, "NNRtStabilityTest",
+        NAPI_AUTO_LENGTH, &resourceName);
+
+    status = napi_create_async_work(env, nullptr, resourceName,
+        ExecuteAsyncWork, CompleteAsyncWork, workData,
+        &workData->asyncWork);
     if (status != napi_ok) {
         delete workData;
         napi_throw_error(env, nullptr, "Failed to create async work");
         return nullptr;
     }
 
-    // 将异步工作加入队列
     status = napi_queue_async_work(env, workData->asyncWork);
     if (status != napi_ok) {
         napi_delete_async_work(env, workData->asyncWork);
@@ -145,13 +141,32 @@ static napi_value SubAiNnrReliabilityNorthStress(napi_env env, napi_callback_inf
     return promise;
 }
 
+/**
+ * NAPI function for Stress tests
+ * 参数：testCase - 测试用例编号 (100 或 200)
+ * 返回：Promise<number>，成功返回 0，失败返回 -1
+ */
+static napi_value SubAiNnrReliabilityNorthStress(napi_env env,
+    napi_callback_info info)
+{
+    int32_t testCase = GetTestCaseNumber(env, info);
+    if (testCase == INVALID_RESULT) {
+        return nullptr;
+    }
+
+    return CreateAsyncWork(env, testCase);
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"SubAiNnrReliabilityNorthStress", nullptr, SubAiNnrReliabilityNorthStress, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SubAiNnrReliabilityNorthStress", nullptr,
+            SubAiNnrReliabilityNorthStress, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    napi_define_properties(env, exports,
+        sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
 EXTERN_C_END
