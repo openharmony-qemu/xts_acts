@@ -20,6 +20,7 @@ import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
+import { promptAction } from '@kit.ArkUI';
 
 
 
