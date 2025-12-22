@@ -13,16 +13,12 @@
  * limitations under the License.
  */
 
+#include "OHMediaAssetManagerRequestTest.h"
 #include "napi/native_api.h"
 #include <js_native_api.h>
 #include <string.h>
 #include "OHMediaAssetCreateTest.h"
-#include "CameraSessionNdkTEST.h"
 #include "MediaAssetManagerCancelRequestTest.h"
-
-
-
-
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
 
@@ -33,10 +29,11 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("TestOhMediaAsset", TestOhMediaAsset),
     DESCRIPTOR("OHMediaAccessHelperApplyChangesTest", OHMediaAccessHelperApplyChangesTest),
     DESCRIPTOR("OHMediaAssetChangeRequestReleaseTest", OHMediaAssetChangeRequestReleaseTest),
+    DESCRIPTOR("TestRequestImageForPath", TestRequestImageForPath),
     DESCRIPTOR("MediaAssetManagerCancelRequestTest", MediaAssetManagerCancelRequestTest),
 };
 
-EXTERN_C_START 
+EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     size_t mergedLength =

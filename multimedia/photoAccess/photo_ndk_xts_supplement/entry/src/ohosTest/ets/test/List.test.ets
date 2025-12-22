@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 import OHMediaAssetCreateTest from "./photo/OHMediaAssetCreateTest.test";
-import CameraFunctionTest from "./camera/CameraSessionNdkTest.test";
+import OHMediaAssetManagerRequest from "./photo/OHMediaAssetManagerRequest.test";
 import AssetManagerCancelRequestTest from "./photo/MediaAssetManagerCancelRequestTest.test";
 
 
 export default function testsuite() {
   OHMediaAssetCreateTest();
-  CameraFunctionTest()
   AssetManagerCancelRequestTest()
+  OHMediaAssetManagerRequest();
 }

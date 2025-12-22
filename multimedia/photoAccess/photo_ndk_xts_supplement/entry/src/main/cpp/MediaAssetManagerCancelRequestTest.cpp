@@ -35,7 +35,7 @@ const uint32_t PARAM3 = 3;
 #define TYPE_PRECONFIG_MODE 2
 #define TYPE_RATIO_PRECONFIG_MODE 3
 const char ERROR_REQUEST_ID[UUID_STR_MAX_LENGTH] = "00000000-0000-0000-0000-000000000000";
-bool GetUtf8String(napi_env env, napi_value root, std::string &res)
+static  bool GetUtf8String(napi_env env, napi_value root, std::string &res)
 {
     size_t bufferSize = NUM0;
     napi_get_value_string_utf8(env, root, nullptr, NUM0, &bufferSize);
@@ -48,7 +48,7 @@ bool GetUtf8String(napi_env env, napi_value root, std::string &res)
     res.assign(buffer.begin(), buffer.end());
     return true;
 }
-napi_status GetDeliveryMode(napi_env env, const napi_value arg, const std::string &propName,
+static  napi_status GetDeliveryMode(napi_env env, const napi_value arg, const std::string &propName,
                             MediaLibrary_DeliveryMode &deliveryMode)
 {
     bool present = false;
@@ -65,7 +65,7 @@ napi_status GetDeliveryMode(napi_env env, const napi_value arg, const std::strin
     }
     return napi_ok;
 }
-napi_status ParseArgGetRequestOption(napi_env env, napi_value arg, MediaLibrary_DeliveryMode &deliveryMode)
+static  napi_status ParseArgGetRequestOption(napi_env env, napi_value arg, MediaLibrary_DeliveryMode &deliveryMode)
 {
     if (GetDeliveryMode(env, arg, "deliveryMode", deliveryMode) != napi_ok) {
         LOGI("GetDeliveryMode failed");
@@ -73,7 +73,7 @@ napi_status ParseArgGetRequestOption(napi_env env, napi_value arg, MediaLibrary_
     }
     return napi_ok;
 }
-void OnDataPrepared(int32_t result, MediaLibrary_RequestId requestIdStruct)
+static void OnDataPrepared(int32_t result, MediaLibrary_RequestId requestIdStruct)
 {
     LOGI("OnDataPrepared");
     //printf("OnDataPrepared requestId: %{public}s result: %{public}d", requestIdStruct.requestId, result);

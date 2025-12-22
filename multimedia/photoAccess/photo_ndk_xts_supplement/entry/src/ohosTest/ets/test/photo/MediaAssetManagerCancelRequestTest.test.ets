@@ -19,7 +19,7 @@ import { common } from "@kit.AbilityKit";
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import fs, { ListFileOptions } from '@ohos.file.fs';
 import fileuri from "@ohos.file.fileuri";
-import { driveFn, getPermission } from "../common";
+import { driveFn, getPermission } from "../PhotoCommon.test";
 
 
 const CASE_INDEX_1 = 1;

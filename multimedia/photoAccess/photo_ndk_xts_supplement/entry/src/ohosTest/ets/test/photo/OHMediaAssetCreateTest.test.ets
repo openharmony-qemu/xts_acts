@@ -18,7 +18,7 @@ import testNapi from 'libentry.so'
 import fileio from '@ohos.fileio'
 import { common } from "@kit.AbilityKit";
 import { JSON } from '@kit.ArkTS';
-import { driveFn, getPermission, sleep, } from '../common';
+import { driveFn, getPermission, sleep, } from '../PhotoCommon.test';
 import { indexSurfaceId } from '../../testability/pages/Index';
 const IMAGE_RESULT_BAD_PARAMETER = -1
 const IMAGE_RESULT_JNI_ENV_ABNORMAL = 62980250

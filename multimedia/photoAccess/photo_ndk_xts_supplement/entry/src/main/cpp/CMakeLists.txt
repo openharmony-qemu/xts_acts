@@ -12,10 +12,11 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include
                     ${NATIVERENDER_ROOT_PATH}/utils)
 
-add_library(entry SHARED main.cpp  CameraSessionNdkTEST.cpp
-    MediaAssetManagerCancelRequestTest.cpp)
-add_library(entry SHARED main.cpp
-    OHMediaAssetCreateTest.cpp)
+add_library(entry SHARED
+    PhotoMain.cpp
+    OHMediaAssetCreateTest.cpp
+    OHMediaAssetManagerRequestTest.cpp
+    MediaAssetManagerCancelRequestTest)
 
 find_library(
     # Sets the name of the path variable.

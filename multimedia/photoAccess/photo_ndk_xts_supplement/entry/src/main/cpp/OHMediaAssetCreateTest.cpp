@@ -133,7 +133,8 @@ void PreviewOutputOnFrameEnd(Camera_PreviewOutput *previewOutput, int32_t frameC
 void PreviewOutputOnError(Camera_PreviewOutput *previewOutput, Camera_ErrorCode errorCode) {
     OH_LOG_INFO(LOG_APP, "PreviewOutput errorCode = %{public}d", errorCode);
 }
-void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode) {
+void OnCameraInputError(const Camera_Input *cameraInput, Camera_ErrorCode errorCode)
+{
     OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode = %{public}d", errorCode);
 }
 PreviewOutput_Callbacks *GetPreviewOutputListener(void) {
@@ -146,7 +147,8 @@ CameraInput_Callbacks *GetCameraInputListener(void) {
     static CameraInput_Callbacks cameraInputCallbacks = {.onError = OnCameraInputError};
     return &cameraInputCallbacks;
 }
-void PhotoAssetAvailable(Camera_PhotoOutput *photoOutput, OH_MediaAsset *backPhotoAsset) {
+void PhotoAssetAvailable(Camera_PhotoOutput *photoOutput, OH_MediaAsset *backPhotoAsset)
+{
     OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "multimedia", "PhotoAssetAvailable ===========");
     LOGI("get photoAssetAvailable %{public}p", backPhotoAsset);
     photoAsset = backPhotoAsset;
@@ -272,7 +274,7 @@ napi_value OHMediaAssetChangeRequestAddResourceWithUriTest(napi_env env, napi_ca
     changeRequest = OH_MediaAssetChangeRequest_Create(photoAsset);
     LOGI("get changeRequest %{public}p", changeRequest);
     MediaLibrary_ResourceType resourceType = MEDIA_LIBRARY_IMAGE_RESOURCE;
-     char fileUri[200] =
+    char fileUri[200] =
         "file://com.example.myapplication.MainAbility/data/storage/el2/base/haps/entry/files/non_exist_uri.mp4";
     switch (index) {
     case CASE_INDEX_1:

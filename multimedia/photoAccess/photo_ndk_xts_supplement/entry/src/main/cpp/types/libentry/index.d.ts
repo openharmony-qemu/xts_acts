@@ -15,10 +15,10 @@
 import { image } from '@kit.ImageKit';
 export const OHMediaAssetChangeRequestCreateTest: (a: number) => number;
 export const OHMediaAssetChangeRequestAddResourceWithUriTest: (a: number) => number;
-export const TestOhMediaAsset: (a: number,b: string) => number;
 export const OHMediaAccessHelperApplyChangesTest: (a: number) => number;
 export const OHMediaAssetChangeRequestReleaseTest: (a: number) => number;
 export const initWithSurface: (faceID : string) => number;
 export const captureSessionStart: (index: number) => number;
 export const TestOhMediaAsset: (index: number, b: string) => number;
 export const MediaAssetManagerCancelRequestTest:(a: number,srcUri:string,c:ESObject,destUri:string, callback?: (err: BusinessError, data: ESObject) => void ) => boolean;
+export const TestRequestImageForPath: (a: number,srcUri:string,c:ESObject,destUri:string, callback?: (err: BusinessError, data: ESObject) => void ) => string;
