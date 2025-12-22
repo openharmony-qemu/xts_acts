@@ -26,32 +26,51 @@ OH_NN_UInt32Array TransformUInt32Array(const std::vector<uint32_t>& vector)
     return {data, static_cast<uint32_t>(vector.size())};
 }
 
-int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs)
+static int AddTensorsForOperation(OH_NNModel *model,
+    const std::vector<OHNNOperandTest> &operands,
+    const std::vector<uint32_t> &paramIndices, int &opCnt)
+{
+    for (int i = 0; i < operands.size(); i++) {
+        const OHNNOperandTest &operandTem = operands[i];
+        auto quantParam = operandTem.quantParam;
+        OH_NN_Tensor operand = {operandTem.dataType,
+            (uint32_t) operandTem.shape.size(),
+            operandTem.shape.data(), quantParam, operandTem.type};
+        int ret = OH_NNModel_AddTensor(model, &operand);
+        if (ret != OH_NN_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP,
+                "[NNRtTest] OH_NNModel_AddTensor failed! ret=%{public}d",
+                ret);
+            return ret;
+        }
+        if (std::find(paramIndices.begin(), paramIndices.end(), opCnt) !=
+            paramIndices.end()) {
+            ret = OH_NNModel_SetTensorData(model, opCnt,
+                operandTem.data, operandTem.length);
+            if (ret != OH_NN_SUCCESS) {
+                OH_LOG_ERROR(LOG_APP,
+                    "[NNRtTest] OH_NNModel_SetTensorData failed!",
+                    " ret=%{public}d", ret);
+                return ret;
+            }
+        }
+        opCnt += 1;
+    }
+    return OH_NN_SUCCESS;
+}
+
+int BuildMultiOpGraph(OH_NNModel *model,
+    const OHNNGraphArgsMulti &graphArgs)
 {
     int ret = 0;
     int opCnt = 0;
     for (int j = 0; j < graphArgs.operationTypes.size(); j++) {
-        for (int i = 0; i < graphArgs.operands[j].size(); i++) {
-            const OHNNOperandTest &operandTem = graphArgs.operands[j][i];
-            auto quantParam = operandTem.quantParam;
-            OH_NN_Tensor operand = {operandTem.dataType, (uint32_t) operandTem.shape.size(),
-                operandTem.shape.data(), quantParam, operandTem.type};
-            ret = OH_NNModel_AddTensor(model, &operand);
-            if (ret != OH_NN_SUCCESS) {
-                OH_LOG_ERROR(LOG_APP, "[NNRtTest] OH_NNModel_AddTensor failed! ret=%{public}d", ret);
-                return ret;
-            }
-            if (std::find(graphArgs.paramIndices[j].begin(),
-                graphArgs.paramIndices[j].end(), opCnt) !=
-                    graphArgs.paramIndices[j].end()) {
-                ret = OH_NNModel_SetTensorData(model, opCnt, operandTem.data, operandTem.length);
-            }
-            if (ret != OH_NN_SUCCESS) {
-                OH_LOG_ERROR(LOG_APP, "[NNRtTest] OH_NNModel_SetTensorData failed! ret=%{public}d", ret);
-                return ret;
-            }
-            opCnt += 1;
+        ret = AddTensorsForOperation(model, graphArgs.operands[j],
+            graphArgs.paramIndices[j], opCnt);
+        if (ret != OH_NN_SUCCESS) {
+            return ret;
         }
+
         auto paramIndices = TransformUInt32Array(graphArgs.paramIndices[j]);
         auto inputIndices = TransformUInt32Array(graphArgs.inputIndices[j]);
         auto outputIndices = TransformUInt32Array(graphArgs.outputIndices[j]);
@@ -60,7 +79,9 @@ int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs)
             graphArgs.operationTypes[j], &paramIndices, &inputIndices,
             &outputIndices);
         if (ret != OH_NN_SUCCESS) {
-            OH_LOG_ERROR(LOG_APP, "[NNRtTest] OH_NNModel_AddOperation failed! ret=%{public}d", ret);
+            OH_LOG_ERROR(LOG_APP,
+                "[NNRtTest] OH_NNModel_AddOperation failed!",
+                " ret=%{public}d", ret);
             return ret;
         }
     }
@@ -69,12 +90,15 @@ int BuildMultiOpGraph(OH_NNModel *model, const OHNNGraphArgsMulti &graphArgs)
     ret = OH_NNModel_SpecifyInputsAndOutputs(model, &graphInputs,
         &graphOutputs);
     if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[NNRtTest] OH_NNModel_SpecifyInputsAndOutputs failed! ret=%{public}d", ret);
+        OH_LOG_ERROR(LOG_APP,
+            "[NNRtTest] OH_NNModel_SpecifyInputsAndOutputs failed!",
+            " ret=%{public}d", ret);
         return ret;
     }
     ret = OH_NNModel_Finish(model);
     if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[NNRtTest] OH_NNModel_Finish failed! ret=%{public}d", ret);
+        OH_LOG_ERROR(LOG_APP,
+            "[NNRtTest] OH_NNModel_Finish failed! ret=%{public}d", ret);
         return ret;
     }
     return ret;
@@ -167,18 +191,10 @@ OH_NN_ReturnCode SetDevice(OH_NNCompilation *compilation)
     return OH_NN_SUCCESS;
 }
 
-int CompileGraphMock(OH_NNCompilation *compilation,
+static int SetCompilationParams(OH_NNCompilation *compilation,
     const OHNNCompileParam &compileParam)
 {
     int ret = 0;
-    ret = SetDevice(compilation);
-    if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP,
-            "[NNRtTest] OH_NNCompilation_SetDevice failed! ret=%{public}d",
-            ret);
-        return ret;
-    }
-    // set cache
     if (!compileParam.cacheDir.empty()) {
         ret = OH_NNCompilation_SetCache(compilation,
             compileParam.cacheDir.c_str(), compileParam.cacheVersion);
@@ -189,7 +205,6 @@ int CompileGraphMock(OH_NNCompilation *compilation,
             return ret;
         }
     }
-    // set performance
     if (compileParam.performanceMode != OH_NN_PERFORMANCE_NONE) {
         ret = OH_NNCompilation_SetPerformanceMode(compilation,
             compileParam.performanceMode);
@@ -200,7 +215,6 @@ int CompileGraphMock(OH_NNCompilation *compilation,
             return ret;
         }
     }
-    // set priority
     if (compileParam.priority != OH_NN_PRIORITY_NONE) {
         ret = OH_NNCompilation_SetPriority(compilation,
             compileParam.priority);
@@ -211,7 +225,6 @@ int CompileGraphMock(OH_NNCompilation *compilation,
             return ret;
         }
     }
-    // enable fp16
     if (compileParam.enableFp16) {
         ret = OH_NNCompilation_EnableFloat16(compilation,
             compileParam.enableFp16);
@@ -222,7 +235,25 @@ int CompileGraphMock(OH_NNCompilation *compilation,
             return ret;
         }
     }
-    // build
+    return OH_NN_SUCCESS;
+}
+
+int CompileGraphMock(OH_NNCompilation *compilation,
+    const OHNNCompileParam &compileParam)
+{
+    int ret = SetDevice(compilation);
+    if (ret != OH_NN_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP,
+            "[NNRtTest] OH_NNCompilation_SetDevice failed!",
+            " ret=%{public}d", ret);
+        return ret;
+    }
+
+    ret = SetCompilationParams(compilation, compileParam);
+    if (ret != OH_NN_SUCCESS) {
+        return ret;
+    }
+
     ret = OH_NNCompilation_Build(compilation);
     return ret;
 }

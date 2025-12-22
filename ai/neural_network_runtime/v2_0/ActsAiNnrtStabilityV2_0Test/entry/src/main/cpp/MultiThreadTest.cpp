@@ -147,6 +147,45 @@ static int ExecuteWithExecutor(OH_NNCompilation *compilation,
     return 0;
 }
 
+static int PrepareModelAndCompilation(OH_NNModel **model,
+    OH_NNCompilation **compilation, const OHNNGraphArgs &graphArgs,
+    const OHNNCompileParam &compileParam)
+{
+    *model = OH_NNModel_Construct();
+    if (*model == nullptr) {
+        OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED: OH_NNModel_Construct returned nullptr");
+        return -1;
+    }
+
+    int ret = BuildSingleOpGraph(*model, graphArgs);
+    if (ret != OH_NN_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED: BuildSingleOpGraph failed, ret=%{public}d",
+            ret);
+        OH_NNModel_Destroy(model);
+        return -1;
+    }
+
+    *compilation = OH_NNCompilation_Construct(*model);
+    if (*compilation == nullptr) {
+        OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED: OH_NNCompilation_Construct returned nullptr");
+        OH_NNModel_Destroy(model);
+        return -1;
+    }
+
+    ret = CompileGraphMock(*compilation, compileParam);
+    if (ret != OH_NN_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED: CompileGraphMock failed, ret=%{public}d", ret);
+        Free(*model, *compilation);
+        return -1;
+    }
+
+    return 0;
+}
+
 static int SubAiNnrReliabilityNorthStress0200()
 {
     OH_LOG_INFO(LOG_APP,
@@ -160,35 +199,11 @@ static int SubAiNnrReliabilityNorthStress0200()
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
 
-    OH_NNModel *model1 = OH_NNModel_Construct();
-    if (model1 == nullptr) {
-        OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED: OH_NNModel_Construct returned nullptr");
-        return -1;
-    }
-
-    int ret = BuildSingleOpGraph(model1, graphArgs);
-    if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED: BuildSingleOpGraph failed, ret=%{public}d",
-            ret);
-        OH_NNModel_Destroy(&model1);
-        return -1;
-    }
-
-    OH_NNCompilation *compilation1 = OH_NNCompilation_Construct(model1);
-    if (compilation1 == nullptr) {
-        OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED: OH_NNCompilation_Construct returned nullptr");
-        OH_NNModel_Destroy(&model1);
-        return -1;
-    }
-
-    ret = CompileGraphMock(compilation1, compileParam);
-    if (ret != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED: CompileGraphMock failed, ret=%{public}d", ret);
-        Free(model1, compilation1);
+    OH_NNModel *model1 = nullptr;
+    OH_NNCompilation *compilation1 = nullptr;
+    int ret = PrepareModelAndCompilation(&model1, &compilation1,
+        graphArgs, compileParam);
+    if (ret != 0) {
         return -1;
     }
 
