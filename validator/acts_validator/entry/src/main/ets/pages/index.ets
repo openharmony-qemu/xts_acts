@@ -293,7 +293,6 @@ struct IndexPage {
     .scrollBar(BarState.On)
     .scrollable(ScrollDirection.Vertical)
     .scrollBarColor(Color.Orange)
-    .margin({bottom:80})
   }
 
   ClearText() {
