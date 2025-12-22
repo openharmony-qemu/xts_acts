@@ -17,8 +17,8 @@
 #include <cstdio>
 #include <string>
 #include <vector>
-#include "common/NNcoreUtilsTest.h"
-#include "common/NNcoreConstTest.h"
+#include "include/NNcoreUtilsTest.h"
+#include "include/NNcoreConstTest.h"
 
 using namespace OHOS::NeuralNetworkRuntime::Test;
 
