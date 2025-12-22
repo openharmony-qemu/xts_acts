@@ -4331,7 +4331,7 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
     /**
      * @tc.name   testSetDimBehind__1_Promise
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3521
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3522
      * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4374,7 +4374,7 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
     /**
      * @tc.name   testSetDimBehind_2_Promise
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3521
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3523
      * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4587,7 +4587,7 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
     })
     /**
      * @tc.name   testSetDimBehind_2_Callback
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3542
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3543
      * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
