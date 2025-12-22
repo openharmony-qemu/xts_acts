@@ -14,26 +14,26 @@
  */
 
 import {
-    describe,
-    it,
-    expect,
-    TestType,
-    Size,
-    Level,
-    beforeAll,
-    beforeEach,
-    afterEach,
-    afterAll
-  } from "../../../hypium/index";
-  import hilog from '@ohos.hilog'
-  import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-  import { BusinessError } from '@ohos.base';
-  import UIAbility from '@ohos.app.ability.UIAbility';
-  import Utils from './Util.test';
-  import { AppStorage } from '@ohos.arkui.stateManagement';
-  import common from '@ohos.app.ability.common';
-  import relationalStore from '@ohos.data.relationalStore';
-  
+  describe,
+  it,
+  expect,
+  TestType,
+  Size,
+  Level,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll
+} from "../../../hypium/index";
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { BusinessError } from '@ohos.base';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import Utils from './Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+import relationalStore from '@ohos.data.relationalStore';
+
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext;
