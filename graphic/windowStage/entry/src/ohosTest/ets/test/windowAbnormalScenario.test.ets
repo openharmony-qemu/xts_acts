@@ -4330,19 +4330,19 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.name   testSetDimBehind_-1_Promise
+     * @tc.name   testSetDimBehind__1_Promise
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3521
      * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetDimBehind_-1_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testSetDimBehind_-1_Promise';
+    it('testSetDimBehind__1_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind__1_Promise';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let win: ohosWindow.Window | void;
-      win = await windowStage.createSubWindow('testSetDimBehind_-1_Promise').catch((err: BusinessError) => {
+      win = await windowStage.createSubWindow('testSetDimBehind__1_Promise').catch((err: BusinessError) => {
         console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
         expect().assertFail();
       });
@@ -4540,19 +4540,19 @@ export default function windowAbnormalScenarioTest(context: common.UIAbilityCont
       }
     })
     /**
-     * @tc.name   testSetDimBehind_-1_Callback
+     * @tc.name   testSetDimBehind__1_Callback
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3542
      * @tc.desc   When Windows are superimposed, if the device has child Windows, set the darkness value of the next window
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetDimBehind_-1_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testSetDimBehind_-1_Callback';
+    it('testSetDimBehind__1_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetDimBehind__1_Callback';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let win: ohosWindow.Window | void;
-      win = await windowStage.createSubWindow('testSetDimBehind_-1_Callback').catch((err: BusinessError) => {
+      win = await windowStage.createSubWindow('testSetDimBehind__1_Callback').catch((err: BusinessError) => {
         console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
         expect().assertFail();
         done();
