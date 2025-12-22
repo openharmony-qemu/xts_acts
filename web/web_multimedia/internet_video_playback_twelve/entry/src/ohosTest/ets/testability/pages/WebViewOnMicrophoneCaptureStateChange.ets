@@ -87,6 +87,7 @@ struct webViewController {
                 await buttonOne.click();
                 let buttonTwo = await driver.waitForComponent(ON.text('onConfirm'),10000);
                 await buttonTwo.click();
+                await Utils.sleep(1000);
                 this.controller.stopMicrophone();
                 setTimeout(() => {
                   Utils.emitEvent(this.newState, 20251229);
@@ -99,6 +100,7 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange002": {
               try {
                 this.flag = 2;
+                await Utils.sleep(1000);
                 this.controller.pauseMicrophone();
                 setTimeout(() => {
                   Utils.emitEvent(this.newState, 20251230);
@@ -111,6 +113,7 @@ struct webViewController {
             case "emitOnMicrophoneCaptureStateChange003": {
               try {
                 this.flag = 3;
+                await Utils.sleep(1000);
                 this.controller.resumeMicrophone();
                   setTimeout(() => {
                     Utils.emitEvent(this.newState, 20251231);
