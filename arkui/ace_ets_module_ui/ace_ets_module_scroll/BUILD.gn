@@ -39,6 +39,7 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_waterflow:ActsAceEtsModuleScrollWaterFlowTest",
       "ace_ets_module_swiper_api11:ActsAceEtsModuleSwiperApi11Test",
       "ace_ets_module_swiper_api11_static:ActsAceEtsModuleSwiperApi11StaticTest",
+      "ace_ets_module_scroll_api13_static:ActsAceEtsModuleScrollApi13StaticTest",
     ]
   } else {
     deps = [
@@ -85,6 +86,7 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_nowear_api15_static:ActsAceEtsModuleScrollNowearApi15StaticTest",
       "ace_ets_module_scroll_nowear_api20_static:ActsAceEtsModuleScrollNowearApi20StaticTest",
       "ace_ets_module_swiper_api11_static:ActsAceEtsModuleSwiperApi11StaticTest",
+      "ace_ets_module_scroll_api13_static:ActsAceEtsModuleScrollApi13StaticTest",
     ]
   }
 }
