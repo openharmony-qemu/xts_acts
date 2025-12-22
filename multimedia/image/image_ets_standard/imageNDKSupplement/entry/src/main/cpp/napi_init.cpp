@@ -38,8 +38,12 @@
 #include "OHImageEffectErrcodeSuppTest.h"
 #include "OHPixelMapSupplementTest.h"
 #include "ImageInitImageNativeSuppTest.h"
+#include "OHEffectBufferInfoSetInfoTest.h"
+#include "OHImageEffectRestoreTest.h"
+#include "OHImageSizeTest.h"
+#include "OHPixelmapNativeCreatePixelmapNativeTest.h"
+#include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
-
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -156,6 +160,19 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHImageEffectReplaceFilterSupplement", OHImageEffectReplaceFilterSupplement),
     DESCRIPTOR("OHImageEffectGetFilterSupplement", OHImageEffectGetFilterSupplement),
     DESCRIPTOR("OHImageEffectSetInputTextureSupp", OHImageEffectSetInputTextureSupp),
+    DESCRIPTOR("OHEffectBufferInfoSetWidthTest", OHEffectBufferInfoSetWidthTest),
+    DESCRIPTOR("OHEffectBufferInfoGetWidthTest", OHEffectBufferInfoGetWidthTest),
+    DESCRIPTOR("OHEffectBufferInfoGetHeightTest", OHEffectBufferInfoGetHeightTest),
+    DESCRIPTOR("OHEffectBufferInfoSetHeightTest", OHEffectBufferInfoSetHeightTest),
+    DESCRIPTOR("OHEffectBufferInfoSetRowSizeTest", OHEffectBufferInfoSetRowSizeTest),
+    DESCRIPTOR("OHEffectBufferInfoGetRowSizeTest", OHEffectBufferInfoGetRowSizeTest),
+    DESCRIPTOR("OHEffectBufferInfoReleaseTest", OHEffectBufferInfoReleaseTest),
+    DESCRIPTOR("OHImageSizeTest", OHImageSizeTest),
+    DESCRIPTOR("OHImageEffectRestoreTest", OHImageEffectRestoreTest),
+    DESCRIPTOR("OHPixelmapNativeCreatePixelmapNativeTest", OHPixelmapNativeCreatePixelmapNativeTest),
+    DESCRIPTOR("OHPixelmapNativeGetArgbPixelsTest", OHPixelmapNativeGetArgbPixelsTest),
+    DESCRIPTOR("OHPixelmapNativeToSdrTest", OHPixelmapNativeToSdrTest),
+    DESCRIPTOR("PixelmapNativeCreateEmptyPixelmapUsingAllocator", PixelmapNativeCreateEmptyPixelmapUsingAllocator),
     DESCRIPTOR("IRNdkErrCodeSupplement", IRNdkErrCodeSupplement),
     DESCRIPTOR("OIRNdkErrCodeEmuSupp", OIRNdkErrCodeEmuSupp),
     DESCRIPTOR("ImageReceiverNativeReadLatestImageTest", ImageReceiverNativeReadLatestImageTest),
@@ -170,6 +187,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
     DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
+    DESCRIPTOR("ImageResultIRNdkErrCodeTest", ImageResultIRNdkErrCodeTest),
     DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
     DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
     DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
