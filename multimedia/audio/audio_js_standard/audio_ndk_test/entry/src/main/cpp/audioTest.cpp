@@ -8272,10 +8272,10 @@ static napi_value BluetoothAndNearlinkPreferredRecordCategory_001(napi_env env, 
 static napi_value AudioCommonResult_001(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    int32_t = streamErrorSystem = 3;
-    int32_t = errorUnsupported = 6800104;
-    int32_t = errorTimeout = 6800105;
-    int32_t = errorLimit = 6800201;
+    int32_t streamErrorSystem = 3;
+    int32_t errorUnsupported = 6800104;
+    int32_t errorTimeout = 6800105;
+    int32_t errorLimit = 6800201;
     if (streamErrorSystem != AUDIOSTREAM_ERROR_SYSTEM) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AUDIOSTREAM_ERROR_SYSTEM fail, result is: %{public}d", AUDIOSTREAM_ERROR_SYSTEM);

@@ -7487,18 +7487,18 @@ export default function audioFramework() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200
-     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200
-     * @tc.desc   Activate speaker - Promise
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOVOLUMEMODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOVOLUMEMODE_0100
+     * @tc.desc   AudioVolumemode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOVOLUMEMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       except(audio.AudioVolumeMode.SYSTEM_GLOBAL).assertEqual(0);
-      console.log(`SYSTEM_GLOBAL is: ${audio.AudioVolumeMode.SYSTEM_GLOBAL}`);
+      console.log(`AUDIOVOLUMEMODE_SYSTEM_GLOBAL is: ${audio.AudioVolumeMode.SYSTEM_GLOBAL}`);
       except(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
-      console.log(`APP_INDIVIDUAL is: ${audio.AudioVolumeMode.APP_INDIVIDUAL}`);
+      console.log(`AUDIOVOLUMEMODE_APP_INDIVIDUAL is: ${audio.AudioVolumeMode.APP_INDIVIDUAL}`);
       done();
     })
   })
