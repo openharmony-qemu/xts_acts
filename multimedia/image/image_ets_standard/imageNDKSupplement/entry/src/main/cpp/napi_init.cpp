@@ -17,6 +17,8 @@
 #include "ImagePackerCreateTest.h"
 #include "ImagePixelMapTest.h"
 #include "napi/native_api.h"
+#include "ImageReceiverNativeTest.h"
+#include "PixleMapNativeTest.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
 #include "ImageEffectFilterSuppTest.h"
