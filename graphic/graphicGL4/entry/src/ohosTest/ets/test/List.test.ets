@@ -15,9 +15,19 @@
  
 import libGl4ApiTest from './LibGl4Api.test';
 import EmptyTest from './Empty.test';
+import gl4api from 'libentry.so';
 
 export default function testsuite() {
-  if (canIUse("SystemCapability.Graphic.Graphic2D.GL4")){
+  let flagNum = 1;
+  try {
+    let result: number = gl4api.isSupportGL();
+    console.info('www data isSupportGLv4', result);
+    flagNum = result;
+  } catch(err){
+    flagNum = 1;
+    console.info('www data error isSupportGLv4', flagNum);
+  }
+  if (canIUse("SystemCapability.Graphic.Graphic2D.GL4") && flagNum == 0){
     libGl4ApiTest();
   }else{
     EmptyTest()

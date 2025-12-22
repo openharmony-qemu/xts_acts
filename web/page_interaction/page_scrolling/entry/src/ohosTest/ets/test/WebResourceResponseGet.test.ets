@@ -44,14 +44,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTYPE_0100
-    * @tc.name       : testScrollType001
-    * @tc.desc       : test ScrollType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollType001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTYPE_0100
+     * @tc.desc   test ScrollType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testScrollType001';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -61,14 +61,14 @@ export default function webResourceResponseGet() {
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0100
-    * @tc.name       : testscrollByWithResult001
-    * @tc.desc       : test ScrollByWithResult
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testscrollByWithResult001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0100
+     * @tc.desc   test ScrollByWithResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testscrollByWithResult001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testscrollByWithResult001';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
@@ -78,14 +78,14 @@ export default function webResourceResponseGet() {
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0200
-    * @tc.name       : testscrollByWithResult002
-    * @tc.desc       : test ScrollByWithResult
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testscrollByWithResult002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0200
+     * @tc.desc   test ScrollByWithResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testscrollByWithResult002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = 'testscrollByWithResult002';
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)

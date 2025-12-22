@@ -106,12 +106,12 @@ export default function AVPlayerStabilityTest() {
     });
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_001
-     * @tc.name      : avplayer_func_promise_001
-     * @tc.desc      : Local Video play source (H264_AAC)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   avplayer_func_promise_001
+     * @tc.number AVPLAYER_STABILITY_TEST_001
+     * @tc.desc   Local Video play source (H264_AAC)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_001';
@@ -125,12 +125,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_002
-     * @tc.name      : avplayer_func_promise_002
-     * @tc.desc      : Local Video play source (H263_AAC)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_002
+     * @tc.number AVPLAYER_STABILITY_TEST_002
+     * @tc.desc   Local Video play source (H263_AAC)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_002';
@@ -144,12 +144,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_003
-     * @tc.name      : avplayer_func_promise_003
-     * @tc.desc      : Local Video play source (H263_MP3)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_003
+     * @tc.number AVPLAYER_STABILITY_TEST_003
+     * @tc.desc   Local Video play source (H263_MP3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_003';
@@ -163,12 +163,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_004
-     * @tc.name      : avplayer_func_promise_004
-     * @tc.desc      : Local Video play source (MPEG2_AAC)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_004
+     * @tc.number AVPLAYER_STABILITY_TEST_004
+     * @tc.desc   Local Video play source (MPEG2_AAC)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_004';
@@ -182,12 +182,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_005
-     * @tc.name      : avplayer_func_promise_005
-     * @tc.desc      : Local Video play source (MPEG2_MP3)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_005
+     * @tc.number AVPLAYER_STABILITY_TEST_005
+     * @tc.desc   Local Video play source (MPEG2_MP3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_005';
@@ -201,12 +201,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_006
-     * @tc.name      : avplayer_func_promise_006
-     * @tc.desc      : Local Video play source (MPEG2_MP3)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_006
+     * @tc.number AVPLAYER_STABILITY_TEST_006
+     * @tc.desc   Local Video play source (MPEG2_MP3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_006';
@@ -220,12 +220,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_007
-     * @tc.name      : avplayer_func_promise_007
-     * @tc.desc      : Local Video play source (h263.mov)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_007
+     * @tc.number AVPLAYER_STABILITY_TEST_007
+     * @tc.desc   Local Video play source (h263.mov)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_007', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_007';
@@ -239,12 +239,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_008
-     * @tc.name      : avplayer_func_promise_008
-     * @tc.desc      : Local Video play source (mpeg2.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_008
+     * @tc.number AVPLAYER_STABILITY_TEST_008
+     * @tc.desc   Local Video play source (mpeg2.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_008', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_008';
@@ -258,12 +258,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_009
-     * @tc.name      : avplayer_func_promise_009
-     * @tc.desc      : Local Video play source (h264_aac.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_009
+     * @tc.number AVPLAYER_STABILITY_TEST_009
+     * @tc.desc   Local Video play source (h264_aac.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_009';
@@ -277,12 +277,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_010
-     * @tc.name      : avplayer_func_promise_010
-     * @tc.desc      : Local Video play source (h264_mp3.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_010
+     * @tc.number AVPLAYER_STABILITY_TEST_010
+     * @tc.desc   Local Video play source (h264_mp3.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_010', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_010';
@@ -296,12 +296,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_011
-     * @tc.name      : avplayer_func_promise_011
-     * @tc.desc      : Local Video play source (h263_aac.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_011
+     * @tc.number AVPLAYER_STABILITY_TEST_011
+     * @tc.desc   Local Video play source (h263_aac.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_011', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_011';
@@ -315,12 +315,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_012
-     * @tc.name      : avplayer_func_promise_012
-     * @tc.desc      : Local Video play source (h263_mp3.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_012
+     * @tc.number AVPLAYER_STABILITY_TEST_012
+     * @tc.desc   Local Video play source (h263_mp3.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_012', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_012';
@@ -335,12 +335,12 @@ export default function AVPlayerStabilityTest() {
 
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_013
-     * @tc.name      : avplayer_func_promise_013
-     * @tc.desc      : Local Video play source (mpeg2_aac.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_013
+     * @tc.number AVPLAYER_STABILITY_TEST_013
+     * @tc.desc   Local Video play source (mpeg2_aac.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_013', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_013';
@@ -354,12 +354,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_014
-     * @tc.name      : avplayer_func_promise_014
-     * @tc.desc      : Local Video play source (mpeg2_mp3.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_014
+     * @tc.number AVPLAYER_STABILITY_TEST_014
+     * @tc.desc   Local Video play source (mpeg2_mp3.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_014', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_014';
@@ -373,12 +373,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_015
-     * @tc.name      : avplayer_func_promise_015
-     * @tc.desc      : Local Video play source (mpeg4_aac.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_015
+     * @tc.number AVPLAYER_STABILITY_TEST_015
+     * @tc.desc   Local Video play source (mpeg4_aac.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_015', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_015';
@@ -392,12 +392,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_016
-     * @tc.name      : avplayer_func_promise_016
-     * @tc.desc      : Local Video play source (mpeg4_mp3.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_016
+     * @tc.number AVPLAYER_STABILITY_TEST_016
+     * @tc.desc   Local Video play source (mpeg4_mp3.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_016', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_016';
@@ -411,12 +411,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_018
-     * @tc.name      : avplayer_func_promise_018
-     * @tc.desc      : Local Video play source (h263.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_018
+     * @tc.number AVPLAYER_STABILITY_TEST_018
+     * @tc.desc   Local Video play source (h263.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_018', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_018';
@@ -430,12 +430,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_019
-     * @tc.name      : avplayer_func_promise_019
-     * @tc.desc      : Local Video play source (mpeg2.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_019
+     * @tc.number AVPLAYER_STABILITY_TEST_019
+     * @tc.desc   Local Video play source (mpeg2.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_019', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_019';
@@ -449,12 +449,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_020
-     * @tc.name      : avplayer_func_promise_020
-     * @tc.desc      : Local Video play source (mpeg4.ts)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_020
+     * @tc.number AVPLAYER_STABILITY_TEST_020
+     * @tc.desc   Local Video play source (mpeg4.ts)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_020', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_020';
@@ -468,12 +468,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_021
-     * @tc.name      : avplayer_func_promise_021
-     * @tc.desc      : Local Video play source (H264_AAC.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_021
+     * @tc.number AVPLAYER_STABILITY_TEST_021
+     * @tc.desc   Local Video play source (H264_AAC.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_021', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_021';
@@ -487,12 +487,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_022
-     * @tc.name      : avplayer_func_promise_022
-     * @tc.desc      : Local Video play source (H264_MP3.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_022
+     * @tc.number AVPLAYER_STABILITY_TEST_022
+     * @tc.desc   Local Video play source (H264_MP3.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_022', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_022';
@@ -506,12 +506,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_023
-     * @tc.name      : avplayer_func_promise_023
-     * @tc.desc      : Local Video play source (H263_AAC.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_023
+     * @tc.number AVPLAYER_STABILITY_TEST_023
+     * @tc.desc   Local Video play source (H263_AAC.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_023', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_023';
@@ -525,12 +525,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_024
-     * @tc.name      : avplayer_func_promise_024
-     * @tc.desc      : Local Video play source (H263_MP3.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_024
+     * @tc.number AVPLAYER_STABILITY_TEST_024
+     * @tc.desc   Local Video play source (H263_MP3.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_024', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_024';
@@ -544,12 +544,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_025
-     * @tc.name      : avplayer_func_promise_025
-     * @tc.desc      : Local Video play source (MPEG2_AAC.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_025
+     * @tc.number AVPLAYER_STABILITY_TEST_025
+     * @tc.desc   Local Video play source (MPEG2_AAC.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_025', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_025';
@@ -563,12 +563,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_026
-     * @tc.name      : avplayer_func_promise_026
-     * @tc.desc      : Local Video play source (mpeg2_mp3.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_026
+     * @tc.number AVPLAYER_STABILITY_TEST_026
+     * @tc.desc   Local Video play source (mpeg2_mp3.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_026', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_026';
@@ -582,12 +582,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_027
-     * @tc.name      : avplayer_func_promise_027
-     * @tc.desc      : Local Video play source (mpeg4_aac.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_027
+     * @tc.number AVPLAYER_STABILITY_TEST_027
+     * @tc.desc   Local Video play source (mpeg4_aac.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_027', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_027';
@@ -601,12 +601,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_028
-     * @tc.name      : avplayer_func_promise_028
-     * @tc.desc      : Local Video play source (MPEG4_MP3.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_028
+     * @tc.number AVPLAYER_STABILITY_TEST_028
+     * @tc.desc   Local Video play source (MPEG4_MP3.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_028', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_028';
@@ -620,12 +620,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_029
-     * @tc.name      : avplayer_func_promise_029
-     * @tc.desc      : Local Video play source (h264.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_029
+     * @tc.number AVPLAYER_STABILITY_TEST_029
+     * @tc.desc   Local Video play source (h264.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_029', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_029';
@@ -639,12 +639,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_030
-     * @tc.name      : avplayer_func_promise_030
-     * @tc.desc      : Local Video play source (h263.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_030
+     * @tc.number AVPLAYER_STABILITY_TEST_030
+     * @tc.desc   Local Video play source (h263.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_030', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_030';
@@ -658,12 +658,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_031
-     * @tc.name      : avplayer_func_promise_031
-     * @tc.desc      : Local Video play source (MPEG2.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_031
+     * @tc.number AVPLAYER_STABILITY_TEST_031
+     * @tc.desc   Local Video play source (MPEG2.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_031', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_031';
@@ -677,12 +677,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_032
-     * @tc.name      : avplayer_func_promise_032
-     * @tc.desc      : Local Video play source (mpeg4.mkv)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_032
+     * @tc.number AVPLAYER_STABILITY_TEST_032
+     * @tc.desc   Local Video play source (mpeg4.mkv)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_032', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_032';
@@ -696,12 +696,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_033
-     * @tc.name      : avplayer_func_promise_033
-     * @tc.desc      : Local Video play source (aac_audio.aac)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_033
+     * @tc.number AVPLAYER_STABILITY_TEST_033
+     * @tc.desc   Local Video play source (aac_audio.aac)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_033', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_033';
@@ -715,12 +715,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_034
-     * @tc.name      : avplayer_func_promise_034
-     * @tc.desc      : Local Video play source (MP3_AUDIO.mp3)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_034
+     * @tc.number AVPLAYER_STABILITY_TEST_034
+     * @tc.desc   Local Video play source (MP3_AUDIO.mp3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_034', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_034';
@@ -734,12 +734,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_035
-     * @tc.name      : avplayer_func_promise_035
-     * @tc.desc      : Local Video play source (m4a_audio.m4a)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_035
+     * @tc.number AVPLAYER_STABILITY_TEST_035
+     * @tc.desc   Local Video play source (m4a_audio.m4a)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_035', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_035';
@@ -753,12 +753,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_036
-     * @tc.name      : avplayer_func_promise_036
-     * @tc.desc      : Local Video play source (ogg_audio.ogg)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_036
+     * @tc.number AVPLAYER_STABILITY_TEST_036
+     * @tc.desc   Local Video play source (ogg_audio.ogg)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_036', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_036';
@@ -772,12 +772,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_037
-     * @tc.name      : avplayer_func_promise_037
-     * @tc.desc      : Local Video play source (wav_audio.wav)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_037
+     * @tc.number AVPLAYER_STABILITY_TEST_037
+     * @tc.desc   Local Video play source (wav_audio.wav)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_037', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_037';
@@ -791,12 +791,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_038
-     * @tc.name      : avplayer_func_promise_038
-     * @tc.desc      : Local Video play source (flac_audio.flac)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_038
+     * @tc.number AVPLAYER_STABILITY_TEST_038
+     * @tc.desc   Local Video play source (flac_audio.flac)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_038', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_038';
@@ -810,12 +810,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_039
-     * @tc.name      : avplayer_func_promise_039
-     * @tc.desc      : Local Video play short source
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level2
+     * @tc.name   avplayer_func_promise_039
+     * @tc.number AVPLAYER_STABILITY_TEST_039
+     * @tc.desc   Local Video play short source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('avplayer_func_promise_039', Level.LEVEL2, async (done: Function) => {
       const testName = 'avplayer_func_promise_039';
@@ -829,12 +829,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_040
-     * @tc.name      : seek_avplayer_001
-     * @tc.desc      : Local Video play->seek (1000 times)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   seek_avplayer_001
+     * @tc.number AVPLAYER_STABILITY_TEST_040
+     * @tc.desc   Local Video play->seek (1000 times)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('seek_avplayer_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'seek_avplayer_001';
@@ -848,12 +848,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_041
-     * @tc.name      : seek_avplayer_002
-     * @tc.desc      : Local Video play->seek (1000 times)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   seek_avplayer_002
+     * @tc.number AVPLAYER_STABILITY_TEST_041
+     * @tc.desc   Local Video play->seek (1000 times)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('seek_avplayer_002', Level.LEVEL3, async (done: Function) => {
       const testName = 'seek_avplayer_002';
@@ -867,12 +867,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_042
-     * @tc.name      : create_avplayer_time_001
-     * @tc.desc      : Local Video test create time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   create_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_042
+     * @tc.desc   Local Video test create time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('create_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'create_avplayer_time_001';
@@ -886,12 +886,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_043
-     * @tc.name      : prepare_avplayer_time_001
-     * @tc.desc      : Local Video test prepare time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   prepare_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_043
+     * @tc.desc   Local Video test prepare time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('prepare_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'prepare_avplayer_time_001';
@@ -905,12 +905,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_044
-     * @tc.name      : play_avplayer_time_001
-     * @tc.desc      : Local Video test play time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   play_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_044
+     * @tc.desc   Local Video test play time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('play_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'play_avplayer_time_001';
@@ -924,12 +924,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_045
-     * @tc.name      : pause_avplayer_time_001
-     * @tc.desc      : Local Video test pause time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   pause_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_045
+     * @tc.desc   Local Video test pause time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('pause_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'pause_avplayer_time_001';
@@ -943,12 +943,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_046
-     * @tc.name      : pause_avplayer_time_002
-     * @tc.desc      : Local Video pause prepare time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   pause_avplayer_time_002
+     * @tc.number AVPLAYER_STABILITY_TEST_046
+     * @tc.desc   Local Video pause prepare time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('pause_avplayer_time_002', Level.LEVEL3, async (done: Function) => {
       const testName = 'pause_avplayer_time_002';
@@ -962,12 +962,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_047
-     * @tc.name      : stop_avplayer_time_001
-     * @tc.desc      : Local Video test stop time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   stop_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_047
+     * @tc.desc   Local Video test stop time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('stop_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'stop_avplayer_time_001';
@@ -981,12 +981,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_048
-     * @tc.name      : stop_avplayer_time_002
-     * @tc.desc      : Local Video stop prepare time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   stop_avplayer_time_002
+     * @tc.number AVPLAYER_STABILITY_TEST_048
+     * @tc.desc   Local Video stop prepare time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('stop_avplayer_time_002', Level.LEVEL3, async (done: Function) => {
       const testName = 'stop_avplayer_time_002';
@@ -1000,12 +1000,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_049
-     * @tc.name      : reset_avplayer_time_001
-     * @tc.desc      : Local Video test reset time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   reset_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_049
+     * @tc.desc   Local Video test reset time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('reset_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'reset_avplayer_time_001';
@@ -1019,12 +1019,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_050
-     * @tc.name      : reset_avplayer_time_002
-     * @tc.desc      : Local Video test reset time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   reset_avplayer_time_002
+     * @tc.number AVPLAYER_STABILITY_TEST_050
+     * @tc.desc   Local Video test reset time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('reset_avplayer_time_002', Level.LEVEL3, async (done: Function) => {
       const testName = 'reset_avplayer_time_002';
@@ -1038,12 +1038,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_051
-     * @tc.name      : release_avplayer_time_001
-     * @tc.desc      : Local Video test release time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   release_avplayer_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_051
+     * @tc.desc   Local Video test release time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('release_avplayer_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'release_avplayer_time_001';
@@ -1057,12 +1057,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_052
-     * @tc.name      : release_avplayer_time_002
-     * @tc.desc      : Local Video release prepare time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   release_avplayer_time_002
+     * @tc.number AVPLAYER_STABILITY_TEST_052
+     * @tc.desc   Local Video release prepare time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('release_avplayer_time_002', Level.LEVEL3, async (done: Function) => {
       const testName = 'release_avplayer_time_002';
@@ -1076,12 +1076,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_053
-     * @tc.name      : getTrackDescription_time_001
-     * @tc.desc      : Local Video test getTrackDescription time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   getTrackDescription_time_001
+     * @tc.number AVPLAYER_STABILITY_TEST_053
+     * @tc.desc   Local Video test getTrackDescription time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getTrackDescription_time_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'getTrackDescription_time_001';
@@ -1095,12 +1095,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_053
-     * @tc.name      : getTrackDescription_time_002
-     * @tc.desc      : Local Video test getTrackDescription time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   getTrackDescription_time_002
+     * @tc.number AVPLAYER_STABILITY_TEST_053
+     * @tc.desc   Local Video test getTrackDescription time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getTrackDescription_time_002', Level.LEVEL3, async (done: Function) => {
       const testName = 'getTrackDescription_time_002';
@@ -1114,12 +1114,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_054
-     * @tc.name      : setSpeed_avplayer_001
-     * @tc.desc      : Local Video test setSpeed time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   setSpeed_avplayer_001
+     * @tc.number AVPLAYER_STABILITY_TEST_054
+     * @tc.desc   Local Video test setSpeed time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('setSpeed_avplayer_001', Level.LEVEL3, async (done: Function) => {
       const testName = 'setSpeed_avplayer_001';
@@ -1133,12 +1133,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_055
-     * @tc.name      : setBitrate_avplayer_001
-     * @tc.desc      : Local Video test setBitrate time (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   setBitrate_avplayer_001
+     * @tc.number AVPLAYER_STABILITY_TEST_055
+     * @tc.desc   Local Video test setBitrate time (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setBitrate_avplayer_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setBitrate_avplayer_001';
@@ -1152,12 +1152,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_056
-     * @tc.name      : setVolume_avplayer_001
-     * @tc.desc      : Local Video test setVolume time (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   setVolume_avplayer_001
+     * @tc.number AVPLAYER_STABILITY_TEST_056
+     * @tc.desc   Local Video test setVolume time (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVolume_avplayer_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setVolume_avplayer_001';
@@ -1171,12 +1171,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_057
-     * @tc.name      : on_off_startRenderFrame_001
-     * @tc.desc      : Local Video test firstFrame time
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_startRenderFrame_001
+     * @tc.number AVPLAYER_STABILITY_TEST_057
+     * @tc.desc   Local Video test firstFrame time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_startRenderFrame_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_startRenderFrame_001';
@@ -1190,12 +1190,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_058
-     * @tc.name      : on_off_volumeChange_001
-     * @tc.desc      : Local Video test volumeChange listen (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_volumeChange_001
+     * @tc.number AVPLAYER_STABILITY_TEST_058
+     * @tc.desc   Local Video test volumeChange listen (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_volumeChange_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_volumeChange_001';
@@ -1210,12 +1210,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_059
-     * @tc.name      : on_off_bitrateDone_availableBitrates_001
-     * @tc.desc      : Local Video test bitrateDone/availableBitrates listen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_bitrateDone_availableBitrates_001
+     * @tc.number AVPLAYER_STABILITY_TEST_059
+     * @tc.desc   Local Video test bitrateDone/availableBitrates listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_bitrateDone_availableBitrates_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_bitrateDone_availableBitrates_001';
@@ -1231,12 +1231,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_060
-     * @tc.name      : on_off_seekDone_001
-     * @tc.desc      : Local Video test seekDone listen (wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_seekDone_001
+     * @tc.number AVPLAYER_STABILITY_TEST_060
+     * @tc.desc   Local Video test seekDone listen (wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_seekDone_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_seekDone_001';
@@ -1252,12 +1252,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_061
-     * @tc.name      : on_off_speedDone_001
-     * @tc.desc      : Local Video test speedDone listen (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_speedDone_001
+     * @tc.number AVPLAYER_STABILITY_TEST_061
+     * @tc.desc   Local Video test speedDone listen (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_speedDone_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_speedDone_001';
@@ -1273,12 +1273,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_062
-     * @tc.name      : on_off_timeUpdate_001
-     * @tc.desc      : Local Video test timeUpdate listen (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_timeUpdate_001
+     * @tc.number AVPLAYER_STABILITY_TEST_062
+     * @tc.desc   Local Video test timeUpdate listen (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_timeUpdate_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_timeUpdate_001';
@@ -1294,12 +1294,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_063
-     * @tc.name      : on_off_durationUpdate_001
-     * @tc.desc      : Local Video test durationUpdate listen (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_durationUpdate_001
+     * @tc.number AVPLAYER_STABILITY_TEST_063
+     * @tc.desc   Local Video test durationUpdate listen (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_durationUpdate_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_durationUpdate_001';
@@ -1315,12 +1315,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_064
-     * @tc.name      : on_off_videoSizeChange_001
-     * @tc.desc      : Local Video test videoSizeChange listen (not wait callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_videoSizeChange_001
+     * @tc.number AVPLAYER_STABILITY_TEST_064
+     * @tc.desc   Local Video test videoSizeChange listen (not wait callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_videoSizeChange_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_videoSizeChange_001';
@@ -1336,12 +1336,12 @@ export default function AVPlayerStabilityTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_STABILITY_TEST_065
-     * @tc.name      : on_off_bufferingUpdate_audioInterrupt_001
-     * @tc.desc      : Local Video test bufferingUpdate/audioInterrupt listen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level3
+     * @tc.name   on_off_bufferingUpdate_audioInterrupt_001
+     * @tc.number AVPLAYER_STABILITY_TEST_065
+     * @tc.desc   Local Video test bufferingUpdate/audioInterrupt listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_bufferingUpdate_audioInterrupt_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_bufferingUpdate_audioInterrupt_001';

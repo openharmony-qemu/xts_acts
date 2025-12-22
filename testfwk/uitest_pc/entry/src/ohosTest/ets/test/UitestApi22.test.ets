@@ -93,9 +93,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testWindowChangeAddOptionsMonitor
          * @tc.number UiTest_API22_001
-         * @tc.name testWindowChangeAddOptionsMonitor
-         * @tc.desc monitor window add.
+         * @tc.desc   monitor window add.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowChangeAddOptionsMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testWindowChangeAddOptionsMonitor start`);
@@ -129,9 +132,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testWindowChangeRemoveOptionsMonitor
          * @tc.number UiTest_API22_002
-         * @tc.name testWindowChangeRemoveOptionsMonitor
-         * @tc.desc monitor window add.
+         * @tc.desc   monitor window add.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowChangeRemoveOptionsMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor start`);
@@ -165,9 +171,12 @@ export default function UiTest() {
         })
 
         /**
+         * @tc.name   testWindowChangeResizeOptionsMonitor
          * @tc.number UiTest_API22_003
-         * @tc.name testWindowChangeResizeOptionsMonitor
-         * @tc.desc monitor window resize.
+         * @tc.desc   monitor window resize.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowChangeResizeOptionsMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor start`);

@@ -29,6 +29,7 @@
 
         "MainAbility/pages/Video/VideoOnErrorPage",
         "MainAbility/pages/Video/VideoContentTransitionEffect",
-        "MainAbility/pages/Video/VideoSupportMoreSpeed"
+        "MainAbility/pages/Video/VideoSupportMoreSpeed",
+        "MainAbility/pages/Video/VideoOneBoundary"
     ]
 }

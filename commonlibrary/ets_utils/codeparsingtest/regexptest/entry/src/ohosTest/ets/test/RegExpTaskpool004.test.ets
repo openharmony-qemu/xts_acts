@@ -54,12 +54,12 @@ export default function RegExpTaskpoolTest004() {
     })
 
     /**
+     * @tc.name   testRegSearch0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_TASKPOOL_0001
-     * @tc.name testRegSearch0001
-     * @tc.desc Use simple regex to find the first match and return the index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use simple regex to find the first match and return the index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegSearch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const str: string = 'abc123';
@@ -70,12 +70,12 @@ export default function RegExpTaskpoolTest004() {
     });
 
     /**
+     * @tc.name   testRegSearch0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_TASKPOOL_0002
-     * @tc.name testRegSearch0002
-     * @tc.desc Use regex to search for a non-existing match, should return -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use regex to search for a non-existing match, should return -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegSearch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const str: string = 'abc123';
@@ -86,12 +86,12 @@ export default function RegExpTaskpoolTest004() {
     });
 
     /**
+     * @tc.name   testRegSplit0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TASKPOOL_0001
-     * @tc.name testRegSplit0001
-     * @tc.desc Split string by simple whitespace regular expression / /
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Split string by simple whitespace regular expression / /
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegSplit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const str: string = 'a b c';
@@ -102,12 +102,12 @@ export default function RegExpTaskpoolTest004() {
     });
 
     /**
+     * @tc.name   testRegSplit0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TASKPOOL_0002
-     * @tc.name testRegSplit0002
-     * @tc.desc Split string by digits using regular expression /\d/
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Split string by digits using regular expression /\d/
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegSplit0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const str: string = 'a1b2c3';

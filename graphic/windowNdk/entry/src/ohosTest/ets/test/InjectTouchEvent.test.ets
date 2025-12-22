@@ -68,12 +68,12 @@ export default function InjectTouchEvent() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0100
-     * @tc.name      : testInjectTouchEventwithTouchEventNullptr
-     * @tc.desc      : 验证injectTouchEvent接口中入参touchEvent为空返回401错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithTouchEventNullptr
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0100
+     * @tc.desc   验证injectTouchEvent接口中入参touchEvent为空返回401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithTouchEventNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithTouchEventNullptr';
@@ -91,12 +91,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0200
-     * @tc.name      : testInjectTouchEventwithTouchEventActionOutofRange
-     * @tc.desc      : 验证injectTouchEvent接口中入参toucheEvent中Action超出范围取值10时返回1300003错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithTouchEventActionOutofRange
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0200
+     * @tc.desc   验证injectTouchEvent接口中入参toucheEvent中Action超出范围取值10时返回1300003错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithTouchEventActionOutofRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithTouchEventActionOutofRange';
@@ -114,12 +114,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0300
-     * @tc.name      : testInjectTouchEventwithWindowidNotloadcontent
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowid窗口未loadcontent抛出1300003错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testInjectTouchEventwithWindowidNotloadcontent
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0300
+     * @tc.desc   验证injectTouchEvent接口中入参windowid窗口未loadcontent抛出1300003错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInjectTouchEventwithWindowidNotloadcontent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithWindowidNotloadcontent';
@@ -141,12 +141,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0400
-     * @tc.name      : testInjectTouchEventwithDestoryedSubwindow
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowid为销毁后的子窗返回1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testInjectTouchEventwithDestoryedSubwindow
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0400
+     * @tc.desc   验证injectTouchEvent接口中入参windowid为销毁后的子窗返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInjectTouchEventwithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithDestoryedSubwindow';
@@ -167,12 +167,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0500
-     * @tc.name      : testInjectTouchEventwithWindowXWindowYBeyondScreen
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowX、windowY超出窗口范围
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithWindowXWindowYBeyondScreen
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0500
+     * @tc.desc   验证injectTouchEvent接口中入参windowX、windowY超出窗口范围
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithWindowXWindowYBeyondScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithWindowXWindowYBeyondScreen';
@@ -216,12 +216,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0600
-     * @tc.name      : testInjectTouchEventwithFloatWindowXWindowY
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowX、windowY为float类型会截断取整
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithFloatWindowXWindowY
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0600
+     * @tc.desc   验证injectTouchEvent接口中入参windowX、windowY为float类型会截断取整
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithFloatWindowXWindowY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithFloatWindowXWindowY';
@@ -264,12 +264,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0700
-     * @tc.name      : testInjectTouchEventwithNonExistedWindowID
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowId传入大于0但不存在的windowid
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithNonExistedWindowID
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0700
+     * @tc.desc   验证injectTouchEvent接口中入参windowId传入大于0但不存在的windowid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithNonExistedWindowID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithNonExistedWindowID';
@@ -287,12 +287,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0800
-     * @tc.name      : testInjectTouchEventwithFloatWindowID
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowId为float类型会向下取整
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testInjectTouchEventwithFloatWindowID
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0800
+     * @tc.desc   验证injectTouchEvent接口中入参windowId为float类型会向下取整
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInjectTouchEventwithFloatWindowID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithFloatWindowID';
@@ -338,12 +338,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_0900
-     * @tc.name      : testInjectTouchEventwithNegativeWindowID
-     * @tc.desc      : 验证injectTouchEvent接口中入参windowId传入-1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithNegativeWindowID
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_0900
+     * @tc.desc   验证injectTouchEvent接口中入参windowId传入-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithNegativeWindowID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithNegativeWindowID';
@@ -360,12 +360,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1000
-     * @tc.name      : testInjectTouchEventwithTouchActionCancel
-     * @tc.desc      : 验证injectTouchEvent接口向子窗注入0触屏取消场景
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithTouchActionCancel
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1000
+     * @tc.desc   验证injectTouchEvent接口向子窗注入0触屏取消场景
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithTouchActionCancel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithTouchActionCancel';
@@ -408,12 +408,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1100
-     * @tc.name      : testInjectTouchEventwithTouchActionDown
-     * @tc.desc      : 验证injectTouchEvent接口向子窗注入1触屏按下场景
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithTouchActionDown
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1100
+     * @tc.desc   验证injectTouchEvent接口向子窗注入1触屏按下场景
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithTouchActionDown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithTouchActionDown';
@@ -457,12 +457,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1200
-     * @tc.name      : testInjectTouchEventwithTouchActionMove
-     * @tc.desc      : 验证injectTouchEvent接口向子窗注入2触屏移动场景
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithTouchActionMove
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1200
+     * @tc.desc   验证injectTouchEvent接口向子窗注入2触屏移动场景
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithTouchActionMove', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithTouchActionMove';
@@ -515,12 +515,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1300
-     * @tc.name      : testInjectTouchEventwithTouchActionUp
-     * @tc.desc      : 验证injectTouchEvent接口向子窗注入3触屏抬起场景
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testInjectTouchEventwithTouchActionUp
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1300
+     * @tc.desc   验证injectTouchEvent接口向子窗注入3触屏抬起场景
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectTouchEventwithTouchActionUp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithTouchActionUp';
@@ -564,12 +564,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1400
-     * @tc.name      : testInjectTouchEventwithMainWindowClick
-     * @tc.desc      : 验证injectTouchEvent接口向主窗注入13点击事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testInjectTouchEventwithMainWindowClick
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1400
+     * @tc.desc   验证injectTouchEvent接口向主窗注入13点击事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInjectTouchEventwithMainWindowClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithMainWindowClick';
@@ -614,12 +614,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1500
-     * @tc.name      : testInjectTouchEventwithSubWindowClick
-     * @tc.desc      : 验证injectTouchEvent接口向子窗注入13点击事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testInjectTouchEventwithSubWindowClick
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1500
+     * @tc.desc   验证injectTouchEvent接口向子窗注入13点击事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInjectTouchEventwithSubWindowClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithSubWindowClick';
@@ -664,12 +664,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1600
-     * @tc.name      : testInjectTouchEventwithDialogWindowClick
-     * @tc.desc      : 验证injectTouchEvent接口向系统窗注入13点击事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testInjectTouchEventwithDialogWindowClick
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1600
+     * @tc.desc   验证injectTouchEvent接口向系统窗注入13点击事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInjectTouchEventwithDialogWindowClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithDialogWindowClick';
@@ -719,12 +719,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1700
-     * @tc.name      : testInjectTouchEventwithSubWindowSlide
-     * @tc.desc      : 验证injectTouchEvent接口向子窗注入123滑动事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testInjectTouchEventwithSubWindowSlide
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1700
+     * @tc.desc   验证injectTouchEvent接口向子窗注入123滑动事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInjectTouchEventwithSubWindowSlide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithSubWindowSlide';
@@ -776,12 +776,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_1800
-     * @tc.name      : testInjectTouchEventwithSubWindowEdgeSlide
-     * @tc.desc      : 验证injectTouchEvent接口向子窗边缘注入123滑动事件不响应
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testInjectTouchEventwithSubWindowEdgeSlide
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_1800
+     * @tc.desc   验证injectTouchEvent接口向子窗边缘注入123滑动事件不响应
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInjectTouchEventwithSubWindowEdgeSlide', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithSubWindowEdgeSlide';
@@ -836,12 +836,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_2100
-     * @tc.name      : testInjectTouchEventwithSubWindowButtonDownCancle
-     * @tc.desc      : 验证injectTouchEvent接口向子窗button组件注入10按下后取消事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testInjectTouchEventwithSubWindowButtonDownCancle
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_2100
+     * @tc.desc   验证injectTouchEvent接口向子窗button组件注入10按下后取消事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testInjectTouchEventwithSubWindowButtonDownCancle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithSubWindowButtonDownCancle';
@@ -886,12 +886,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_2200
-     * @tc.name      : testInjectTouchEventwithSubWindowSlideDownCancle
-     * @tc.desc      : 验证injectTouchEvent接口向子窗滑动组件注入10按下后取消事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testInjectTouchEventwithSubWindowSlideDownCancle
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_2200
+     * @tc.desc   验证injectTouchEvent接口向子窗滑动组件注入10按下后取消事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInjectTouchEventwithSubWindowSlideDownCancle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithSubWindowSlideDownCancle';
@@ -941,12 +941,12 @@ export default function InjectTouchEvent() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_INJECTOUCHEVENT_2300
-     * @tc.name      : testInjectTouchEventwithHideSubWindowDown
-     * @tc.desc      : 验证injectTouchEvent接口向被遮挡子窗注入13按下事件
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testInjectTouchEventwithHideSubWindowDown
+     * @tc.number SUB_BASIC_WMS_INJECTOUCHEVENT_2300
+     * @tc.desc   验证injectTouchEvent接口向被遮挡子窗注入13按下事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInjectTouchEventwithHideSubWindowDown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testInjectTouchEventwithHideSubWindowDown';

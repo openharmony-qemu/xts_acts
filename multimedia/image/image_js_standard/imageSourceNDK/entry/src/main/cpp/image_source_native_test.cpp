@@ -140,6 +140,70 @@ static napi_value Init(napi_env env, napi_value exports)
         {
             "CreatePackingOptions", nullptr, ImageSourceTest::CreatePackingOptions,
             nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyShort", nullptr, ImageSourceTest::TestGetImagePropertyShort,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyLong", nullptr, ImageSourceTest::TestGetImagePropertyLong,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyDouble", nullptr, ImageSourceTest::TestGetImagePropertyDouble,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyArraySize", nullptr, ImageSourceTest::TestGetImagePropertyArraySize,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyString", nullptr, ImageSourceTest::TestGetImagePropertyString,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyIntArray", nullptr, ImageSourceTest::TestGetImagePropertyIntArray,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyDoubleArray", nullptr, ImageSourceTest::TestGetImagePropertyDoubleArray,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyBlob", nullptr, ImageSourceTest::TestGetImagePropertyBlob,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestGetImagePropertyError", nullptr, ImageSourceTest::TestGetImagePropertyError,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyShort", nullptr, ImageSourceTest::TestModifyImagePropertyShort,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyLong", nullptr, ImageSourceTest::TestModifyImagePropertyLong,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyDouble", nullptr, ImageSourceTest::TestModifyImagePropertyDouble,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyIntArray", nullptr, ImageSourceTest::TestModifyImagePropertyIntArray,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyDoubleArray", nullptr, ImageSourceTest::TestModifyImagePropertyDoubleArray,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyBlob", nullptr, ImageSourceTest::TestModifyImagePropertyBlob,
+            nullptr, nullptr, nullptr, napi_static, nullptr
+        },
+        {
+            "TestModifyImagePropertyError", nullptr, ImageSourceTest::TestModifyImagePropertyError,
+            nullptr, nullptr, nullptr, napi_static, nullptr
         }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
@@ -621,6 +685,80 @@ void FreeImageString(Image_String &imgStr)
     }
 }
 
+int32_t* ParseIntArrayFromArg(napi_env env, napi_value arg, uint32_t* arrayLength)
+{
+    bool isArray = false;
+    if (napi_is_array(env, arg, &isArray) != napi_ok || !isArray ||
+        napi_get_array_length(env, arg, arrayLength) != napi_ok) {
+        return nullptr;
+    }
+    
+    int32_t *valueArray = static_cast<int32_t *>(malloc(*arrayLength * sizeof(int32_t)));
+    if (valueArray == nullptr) {
+        return nullptr;
+    }
+    
+    for (uint32_t i = 0; i < *arrayLength; i++) {
+        napi_value element;
+        if (napi_get_element(env, arg, i, &element) != napi_ok ||
+            napi_get_value_int32(env, element, &valueArray[i]) != napi_ok) {
+            free(valueArray);
+            return nullptr;
+        }
+    }
+    return valueArray;
+}
+
+double* ParseDoubleArrayFromArg(napi_env env, napi_value arg, uint32_t* arrayLength)
+{
+    bool isArray = false;
+    if (napi_is_array(env, arg, &isArray) != napi_ok || !isArray ||
+        napi_get_array_length(env, arg, arrayLength) != napi_ok) {
+        return nullptr;
+    }
+    
+    double *valueArray = static_cast<double *>(malloc(*arrayLength * sizeof(double)));
+    if (valueArray == nullptr) {
+        return nullptr;
+    }
+    
+    for (uint32_t i = 0; i < *arrayLength; i++) {
+        napi_value element;
+        if (napi_get_element(env, arg, i, &element) != napi_ok ||
+            napi_get_value_double(env, element, &valueArray[i]) != napi_ok) {
+            free(valueArray);
+            return nullptr;
+        }
+    }
+    return valueArray;
+}
+
+void* ParseArrayBufferFromArg(napi_env env, napi_value arg, size_t* bufferSize)
+{
+    bool isArrayBuffer = false;
+    if (napi_is_arraybuffer(env, arg, &isArrayBuffer) != napi_ok || !isArrayBuffer) {
+        return nullptr;
+    }
+    
+    void *data = nullptr;
+    if (napi_get_arraybuffer_info(env, arg, &data, bufferSize) != napi_ok) {
+        return nullptr;
+    }
+    
+    if (data == nullptr || *bufferSize == 0) {
+        return nullptr;
+    }
+    
+    void *copiedData = malloc(*bufferSize);
+    if (copiedData == nullptr) {
+        return nullptr;
+    }
+    
+    std::copy(static_cast<const char*>(data), static_cast<const char*>(data) + *bufferSize,
+        static_cast<char*>(copiedData));
+    return copiedData;
+}
+
 napi_value ImageSourceTest::ModifyMakerNoteImageProperty(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -833,5 +971,726 @@ napi_value ImageSourceTest::CreatePackingOptions(napi_env env, napi_callback_inf
     }
     return result;
 }
+
+napi_value ImageSourceTest::TestGetImagePropertyShort(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_2] = {0};
+    size_t argCount = NUM_2;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2) {
+        LOG("GetImagePropertyShort: Invalid input parameters");
+        return result;
+    }
+    
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    uint16_t value = 0;
+
+    errCode = OH_ImageSourceNative_GetImagePropertyShort(imageSource, &key, &value);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyShort failed: err = %{public}d.", errCode);
+        FreeImageString(key);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_uint32(env, static_cast<uint32_t>(value), &result);
+    FreeImageString(key);
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyLong(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_2] = {0};
+    size_t argCount = NUM_2;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2) {
+        LOG("GetImagePropertyLong: Invalid input parameters");
+        return result;
+    }
+    
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    uint32_t value = 0;
+
+    errCode = OH_ImageSourceNative_GetImagePropertyLong(imageSource, &key, &value);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyLong failed: err = %{public}d.", errCode);
+        FreeImageString(key);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_uint32(env, value, &result);
+    FreeImageString(key);
+    LOG("GetImagePropertyLong: GetImagePropertyLong successfully, value = %{public}u", value);
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyDouble(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_2] = {0};
+    size_t argCount = NUM_2;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2) {
+        LOG("GetImagePropertyDouble: Invalid input parameters");
+        return result;
+    }
+    
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    double value = 0.0;
+
+    errCode = OH_ImageSourceNative_GetImagePropertyDouble(imageSource, &key, &value);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyDouble failed: err = %{public}d.", errCode);
+        FreeImageString(key);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_double(env, value, &result);
+    FreeImageString(key);
+    LOG("GetImagePropertyDouble: GetImagePropertyDouble successfully, value = %{public}f", value);
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyArraySize(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_2] = {0};
+    size_t argCount = NUM_2;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2) {
+        LOG("GetImagePropertyArraySize: Invalid input parameters");
+        return result;
+    }
+    
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    size_t size = 0;
+
+    errCode = OH_ImageSourceNative_GetImagePropertyArraySize(imageSource, &key, &size);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyArraySize failed: err = %{public}d.", errCode);
+        FreeImageString(key);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_int32(env, size, &result);
+    FreeImageString(key);
+    LOG("GetImagePropertyArraySize: GetImagePropertyArraySize successfully, size = %{public}zu", size);
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyString(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("GetImagePropertyString: Invalid input parameters");
+        return result;
+    }
+    
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    int32_t bufSizeFromJS = 0;
+    napi_get_value_int32(env, argValue[NUM_2], &bufSizeFromJS);
+    size_t bufSize = static_cast<size_t>(bufSizeFromJS);
+    
+    char *value = new (std::nothrow) char[bufSize]();
+    if (value == nullptr) {
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_GetImagePropertyString(imageSource, &key, value, bufSize);
+    OH_ImageSourceNative_Release(imageSource);
+    FreeImageString(key);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyString failed: err = %{public}d.", errCode);
+        delete[] value;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_string_utf8(env, value, NAPI_AUTO_LENGTH, &result);
+    LOG("GetImagePropertyString successfully, value = %{public}s", value);
+    delete[] value;
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyIntArray(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("GetImagePropertyIntArray: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    int32_t bufSizeFromJS = 0;
+    napi_get_value_int32(env, argValue[NUM_2], &bufSizeFromJS);
+    size_t bufSize = static_cast<size_t>(bufSizeFromJS);
+
+    int32_t *value = new (std::nothrow) int32_t[bufSize]();
+    if (value == nullptr) {
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_GetImagePropertyIntArray(imageSource, &key, value, bufSize);
+    FreeImageString(key);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyIntArray failed: err = %{public}d.", errCode);
+        delete[] value;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_array_with_length(env, bufSize, &result);
+    for (size_t i = 0; i < bufSize; i++) {
+        napi_value element;
+        napi_create_int32(env, value[i], &element);
+        napi_set_element(env, result, i, element);
+    }
+    LOG("GetImagePropertyIntArray successfully, size = %{public}zu", bufSize);
+    delete[] value;
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyDoubleArray(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("GetImagePropertyDoubleArray: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    int32_t bufSizeFromJS = 0;
+    napi_get_value_int32(env, argValue[NUM_2], &bufSizeFromJS);
+    size_t bufSize = static_cast<size_t>(bufSizeFromJS);
+
+    double *value = new (std::nothrow) double[bufSize]();
+    if (value == nullptr) {
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_GetImagePropertyDoubleArray(imageSource, &key, value, bufSize);
+    FreeImageString(key);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyDoubleArray failed: err = %{public}d.", errCode);
+        delete[] value;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    napi_create_array_with_length(env, bufSize, &result);
+    for (size_t i = 0; i < bufSize; i++) {
+        napi_value element;
+        napi_create_double(env, value[i], &element);
+        napi_set_element(env, result, i, element);
+    }
+    LOG("GetImagePropertyDoubleArray successfully, size = %{public}zu", bufSize);
+    delete[] value;
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyBlob(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("GetImagePropertyBlob: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    int32_t bufSizeFromJS = 0;
+    napi_get_value_int32(env, argValue[NUM_2], &bufSizeFromJS);
+    size_t bufSize = static_cast<size_t>(bufSizeFromJS);
+    
+    char *value = new (std::nothrow) char[bufSize]();
+    if (value == nullptr) {
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_GetImagePropertyBlob(imageSource, &key, value, bufSize);
+    FreeImageString(key);
+    OH_ImageSourceNative_Release(imageSource);
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_GetImagePropertyBlob failed: err = %{public}d.", errCode);
+        delete[] value;
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    void *arrayBufferData = nullptr;
+    napi_create_arraybuffer(env, bufSize, &arrayBufferData, &result);
+    if (arrayBufferData != nullptr && value != nullptr) {
+        std::copy(value, value + bufSize, static_cast<char*>(arrayBufferData));
+    }
+    LOG("GetImagePropertyBlob successfully, size = %{public}zu", bufSize);
+    delete[] value;
+    return result;
+}
+
+napi_value ImageSourceTest::TestGetImagePropertyError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        LOG("TestGetImagePropertyError: Invalid input parameters");
+        return result;
+    }
+
+    std::string type = getStringFromArgs(env, argValue[NUM_0]);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = IMAGE_SUCCESS;
+    Image_String key = {.data = const_cast<char *>("test"), .size = 4};
+    size_t bufSize = 10;
+
+    if (type == "short") {
+        uint16_t value = 0;
+        errCode = OH_ImageSourceNative_GetImagePropertyShort(imageSource, &key, &value);
+    } else if (type == "long") {
+        uint32_t value = 0;
+        errCode = OH_ImageSourceNative_GetImagePropertyLong(imageSource, &key, &value);
+    } else if (type == "double") {
+        double value = 0.0;
+        errCode = OH_ImageSourceNative_GetImagePropertyDouble(imageSource, &key, &value);
+    } else if (type == "arraySize") {
+        errCode = OH_ImageSourceNative_GetImagePropertyArraySize(imageSource, &key, &bufSize);
+    } else if (type == "string") {
+        char value[128] = {0};
+        errCode = OH_ImageSourceNative_GetImagePropertyString(imageSource, &key, value, bufSize);
+    } else if (type == "intArray") {
+        int32_t value[10] = {0};
+        errCode = OH_ImageSourceNative_GetImagePropertyIntArray(imageSource, &key, value, bufSize);
+    } else if (type == "doubleArray") {
+        double value[10] = {0};
+        errCode = OH_ImageSourceNative_GetImagePropertyDoubleArray(imageSource, &key, value, bufSize);
+    } else if (type == "arrayBuffer") {
+        char value[128] = {0};
+        LOG("TestGetImagePropertyError: imageSource: %{public}d", imageSource);
+        errCode = OH_ImageSourceNative_GetImagePropertyBlob(imageSource, &key, value, bufSize);
+    }
+
+    LOG("TestGetImagePropertyError: %{public}s returned error code: %{public}d", type.c_str(), errCode);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyShort(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("ModifyImagePropertyShort: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    
+    uint32_t valueFromJS = 0;
+    if (napi_get_value_uint32(env, argValue[NUM_2], &valueFromJS) != napi_ok) {
+        LOG("ModifyImagePropertyShort: Failed to get value parameter");
+        FreeImageString(key);
+        return result;
+    }
+    uint16_t value = static_cast<uint16_t>(valueFromJS);
+    LOG("ModifyImagePropertyShort: Successfully modified property, value = %{public}u", value);
+
+    errCode = OH_ImageSourceNative_ModifyImagePropertyShort(imageSource, &key, value);
+
+    OH_ImageSourceNative_Release(imageSource);
+    FreeImageString(key);
+    napi_create_int32(env, errCode, &result);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_ModifyImagePropertyShort failed: err = %{public}d.", errCode);
+    }
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyLong(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("ModifyImagePropertyLong: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    
+    uint32_t value = 0;
+    if (napi_get_value_uint32(env, argValue[NUM_2], &value) != napi_ok) {
+        LOG("ModifyImagePropertyLong: Failed to get value parameter");
+        FreeImageString(key);
+        return result;
+    }
+    errCode = OH_ImageSourceNative_ModifyImagePropertyLong(imageSource, &key, value);
+
+    OH_ImageSourceNative_Release(imageSource);
+    FreeImageString(key);
+    napi_create_int32(env, errCode, &result);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_ModifyImagePropertyLong failed: err = %{public}d.", errCode);
+    }
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyDouble(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("ModifyImagePropertyDouble: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    
+    double value = 0.0;
+    if (napi_get_value_double(env, argValue[NUM_2], &value) != napi_ok) {
+        LOG("ModifyImagePropertyDouble: Failed to get value parameter");
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, value);
+
+    OH_ImageSourceNative_Release(imageSource);
+    FreeImageString(key);
+    napi_create_int32(env, errCode, &result);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_ModifyImagePropertyDouble failed: err = %{public}d.", errCode);
+    }
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyIntArray(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("ModifyImagePropertyIntArray: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    uint32_t arrayLength = 0;
+    int32_t *valueArray = ParseIntArrayFromArg(env, argValue[NUM_2], &arrayLength);
+    
+    if (valueArray == nullptr) {
+        LOG("ModifyImagePropertyIntArray: Failed to parse array parameter");
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
+    
+    OH_ImageSourceNative_Release(imageSource);
+    free(valueArray);
+    FreeImageString(key);
+    napi_create_int32(env, errCode, &result);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_ModifyImagePropertyIntArray failed: err = %{public}d.", errCode);
+    }
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyDoubleArray(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("ModifyImagePropertyDoubleArray: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    uint32_t arrayLength = 0;
+    double *valueArray = ParseDoubleArrayFromArg(env, argValue[NUM_2], &arrayLength);
+    
+    if (valueArray == nullptr) {
+        LOG("ModifyImagePropertyDoubleArray: Failed to parse array parameter");
+        FreeImageString(key);
+        return result;
+    }
+
+    errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, valueArray, arrayLength);
+    
+    OH_ImageSourceNative_Release(imageSource);
+    free(valueArray);
+    FreeImageString(key);
+    napi_create_int32(env, errCode, &result);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_ModifyImagePropertyDoubleArray failed: err = %{public}d.", errCode);
+    }
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyBlob(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_3] = {0};
+    size_t argCount = NUM_3;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_3) {
+        LOG("ModifyImagePropertyBlob: Invalid input parameters");
+        return result;
+    }
+
+    int32_t fd = 0;
+    napi_get_value_int32(env, argValue[NUM_0], &fd);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
+    if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
+        LOG("createImageSource: Failed to create imageSource, error code: %{public}d", errCode);
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    
+    Image_String key = CreateImageStringFromArg(env, argValue[NUM_1]);
+    size_t bufferSize = 0;
+    void *bufferData = ParseArrayBufferFromArg(env, argValue[NUM_2], &bufferSize);
+
+    errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
+    
+    OH_ImageSourceNative_Release(imageSource);
+    free(bufferData);
+    FreeImageString(key);
+    napi_create_int32(env, errCode, &result);
+    
+    if (errCode != IMAGE_SUCCESS) {
+        LOG("OH_ImageSourceNative_ModifyImagePropertyBlob failed: err = %{public}d.", errCode);
+    }
+    return result;
+}
+
+napi_value ImageSourceTest::TestModifyImagePropertyError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_get_undefined(env, &result);
+
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1) {
+        LOG("TestModifyImagePropertyError: Invalid input parameters");
+        return result;
+    }
+
+    std::string type = getStringFromArgs(env, argValue[NUM_0]);
+    OH_ImageSourceNative *imageSource = nullptr;
+    Image_ErrorCode errCode = IMAGE_SUCCESS;
+    Image_String key = {.data = const_cast<char *>("test"), .size = 4};
+
+    int32_t intArray[] = {1, 2, 3};
+    double doubleArray[] = {1.0, 2.0, 3.0};
+    char bufferData[] = {0x01, 0x02, 0x03};
+    uint32_t imagePropertyValue = 100;
+    double imageDoubleValue = 100.0;
+    size_t size = 3;
+
+    if (type == "short") {
+        errCode = OH_ImageSourceNative_ModifyImagePropertyShort(imageSource, &key, imagePropertyValue);
+    } else if (type == "long") {
+        errCode = OH_ImageSourceNative_ModifyImagePropertyLong(imageSource, &key, imagePropertyValue);
+    } else if (type == "double") {
+        errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, imageDoubleValue);
+    } else if (type == "intArray") {
+        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, intArray, size);
+    } else if (type == "doubleArray") {
+        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, doubleArray, size);
+    } else if (type == "arrayBuffer") {
+        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, size);
+    }
+
+    LOG("TestModifyImagePropertyError: %{public}s returned error code: %{public}d", type.c_str(), errCode);
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 } // namespace Media
 } // namespace OHOS

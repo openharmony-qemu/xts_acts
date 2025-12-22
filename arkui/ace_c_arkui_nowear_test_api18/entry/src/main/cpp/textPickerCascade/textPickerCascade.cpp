@@ -55,6 +55,17 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_a1(napi_env env, napi_ca
     ASSERT_EQ(check, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = -5;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    ASSERT_OBJ(array, nullptr);
+    NAPI_END;
+}
+
 typedef const char* ArkUI_CharPtr;
 typedef struct RangeContent_ {
     ArkUI_CharPtr icon;
@@ -98,6 +109,25 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_b1(napi_env env, napi_ca
     ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_b2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_b2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 5;
+    char data[] = "";
+    int check = 1;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    OH_ArkUI_TextPickerRangeContentArray_SetIconAtIndex(array, data, 0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_b2", "SetIconAtIndex ret1 %{public}s",
+        ((((ArkUI_TextPickerRangeContentArray_*)array)->rangeContent[0])).icon);
+    char expect[] = {0};
+    strncpy(expect, ((((ArkUI_TextPickerRangeContentArray_*)array)->rangeContent[0])).icon, sizeof(expect) - 1);
+    expect[sizeof(expect) - 1] = '\0';
+    ASSERT_STREQ(data, expect);
+    NAPI_END;
+}
+
 napi_value TextPickerCascadeTest::TextPickerCascadeTest_c(napi_env env, napi_callback_info info)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_c", "CreateNativeNode");
@@ -132,6 +162,25 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_c1(napi_env env, napi_ca
     ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_c2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_c2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 5;
+    char data[] = "";
+    int check = 1;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    OH_ArkUI_TextPickerRangeContentArray_SetTextAtIndex(array, data, 0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_c2", "SetTextAtIndex ret1 %{public}s",
+        ((((ArkUI_TextPickerRangeContentArray_*)array)->rangeContent[0])).text);
+    char expect[] = {0};
+    strncpy(expect, ((((ArkUI_TextPickerRangeContentArray_*)array)->rangeContent[0])).text, sizeof(expect) - 1);
+    expect[sizeof(expect) - 1] = '\0';
+    ASSERT_STREQ(data, expect);
+    NAPI_END;
+}
+
 napi_value TextPickerCascadeTest::TextPickerCascadeTest_d(napi_env env, napi_callback_info info)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_d", "CreateNativeNode");
@@ -156,6 +205,16 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_d1(napi_env env, napi_ca
     int check = ((ret == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_d1", "check %{public}d", check);
     ASSERT_EQ(check, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_d2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_d2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 0;
+    auto ret = OH_ArkUI_TextCascadePickerRangeContentArray_Create(len);
+    ASSERT_OBJ(ret, nullptr);
     NAPI_END;
 }
 
@@ -203,6 +262,24 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_e1(napi_env env, napi_ca
     ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;
 }
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_e2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_e2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 6;
+    char data[] = "";
+    auto array = OH_ArkUI_TextCascadePickerRangeContentArray_Create(len);
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetTextAtIndex(array, data, 0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_e2", "SetTextAtIndex check %{public}s",
+        (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).text);
+    char expect[] = {0};
+    strncpy(expect, (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).text, sizeof(expect) - 1);
+    expect[sizeof(expect) - 1] = '\0';
+    ASSERT_STREQ(data, expect);
+    NAPI_END;
+}
+
 napi_value TextPickerCascadeTest::TextPickerCascadeTest_f(napi_env env, napi_callback_info info)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f", "CreateNativeNode");
@@ -239,6 +316,50 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_f1(napi_env env, napi_ca
        (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children->text == nullptr ){
         check = 0;
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f1", "SetTextAtIndex ret nullptr");
+    }
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_f2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = INT32_MAX;
+    char data[12] = "test data";
+    auto array = OH_ArkUI_TextCascadePickerRangeContentArray_Create(10);
+    auto child = OH_ArkUI_TextCascadePickerRangeContentArray_Create(1);
+
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetTextAtIndex(child, data, len);
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetChildAtIndex(array, child, len);
+    
+    int check = 1;
+    if ((((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children == nullptr ||
+       (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children->text == nullptr) {
+        check = 0;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f2", "SetTextAtIndex ret nullptr");
+    }
+    ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_f3(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f3", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = INT32_MAX - 1;
+    char data[12] = "test data";
+    auto array = OH_ArkUI_TextCascadePickerRangeContentArray_Create(10);
+    auto child = OH_ArkUI_TextCascadePickerRangeContentArray_Create(1);
+
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetTextAtIndex(child, data, len);
+    OH_ArkUI_TextCascadePickerRangeContentArray_SetChildAtIndex(array, child, len);
+    
+    int check = 1;
+    if ((((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children == nullptr ||
+       (((ArkUI_TextCascadePickerRangeContentArray_*)array)[0]).children->text == nullptr) {
+        check = 0;
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_f3", "SetTextAtIndex ret nullptr");
     }
     ASSERT_EQ(check, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END;

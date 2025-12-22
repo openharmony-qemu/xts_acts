@@ -53,13 +53,13 @@ export default function DecimalTest013() {
     });
         console.info("start################################start");
     /**
-    * @tc.number    : DECIMAL_TEST_001
-    * @tc.name      : Decimal_mul_Func_001
-    * @tc.desc      : Test mul
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
-    */
+     * @tc.name   Decimal_mul_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test mul
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_mul_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 300,
@@ -1073,13 +1073,13 @@ export default function DecimalTest013() {
         expect(true).assertEqual(true);
     });
     /**
-    * @tc.number    : DECIMAL_TEST_002
-    * @tc.name      : Decimal_mul_Func_002
-    * @tc.desc      : Test mul
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 0
-    */
+     * @tc.name   Decimal_mul_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test mul
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_mul_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 300,

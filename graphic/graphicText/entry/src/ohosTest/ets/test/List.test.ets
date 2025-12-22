@@ -27,6 +27,7 @@ import FontDescriptorTest1 from './FontDescriptorTest1.test'
 import graphicTextNewAPI from './GraphicTextNewAPI.test'
 import GraphicTextAPI21Test from './GraphicTextAPI21Test.test'
 import GraphicTextAPI22 from './GraphicTextAPI22.test'
+import GraphicTextAPI23 from './GraphicTextAPI23.test'
 
 export default function testsuite() {
   graphicTextATest();
@@ -44,4 +45,5 @@ export default function testsuite() {
   graphicTextNewAPI();
   GraphicTextAPI21Test();
   GraphicTextAPI22();
+  GraphicTextAPI23();
 }

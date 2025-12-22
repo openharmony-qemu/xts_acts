@@ -76,11 +76,14 @@ import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
 
 import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
+import AdoptChildOneTest from './FrameNodeMethod/AdoptChildOneTest.test';
+import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
+import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
+import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
-import convertPoint from './FrameNodeNewTest/convertPoint.test';
-import convertPointError24 from './FrameNodeNewTest/convertPointError24.test';
-import convertPointError25 from './FrameNodeNewTest/convertPointError25.test';
+
+import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -146,9 +149,13 @@ export default function testsuite() {
 
   GetFrameNodeNullTest();
   GetFrameNodeMethodNullTest();
-
+  AdoptChildOneTest();
+  AdoptChildTwoTest();
+  AdoptChildThreeTest();
+  AdoptChildTest();
+  
   frameNodeApi();
-  convertPoint();
-  convertPointError24();
-  convertPointError25();
+
+  GraphicsFourBoundaryTest();
+
 }

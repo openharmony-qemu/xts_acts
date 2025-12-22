@@ -28,13 +28,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'afterAll called');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0100
-     * @tc.name    testHilogTsApiStatic01
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic01
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0100
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic01 start');
@@ -47,13 +47,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic01 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0200
-     * @tc.name    testHilogTsApiStatic02
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic02
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0200
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic02 start');
@@ -66,13 +66,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic02 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0300
-     * @tc.name    testHilogTsApiStatic03
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic03
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0300
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic03 start');
@@ -85,13 +85,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic03 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0400
-     * @tc.name    testHilogTsApiStatic04
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic04
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0400
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic04 start');
@@ -104,13 +104,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic04 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0500
-     * @tc.name    testHilogTsApiStatic05
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic05
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0500
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic05 start');
@@ -123,13 +123,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic05 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0600
-     * @tc.name    testHilogTsApiStatic06
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic06
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0600
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic06 start');
@@ -142,13 +142,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic06 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0700
-     * @tc.name    testHilogTsApiStatic07
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic07
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0700
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic07 start');
@@ -161,13 +161,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic07 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0800
-     * @tc.name    testHilogTsApiStatic08
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic08
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0800
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic08 start');
@@ -181,13 +181,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic08 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_0900
-     * @tc.name    testHilogTsApiStatic09
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic09
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_0900
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic09 start');
@@ -200,13 +200,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic09 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1000
-     * @tc.name    testHilogTsApiStatic10
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic10
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1000
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic10 start');
@@ -220,13 +220,13 @@ export default function HilogTsTest() {
     })
 
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1100
-     * @tc.name    testHilogTsApiStatic11
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic11
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1100
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic11 start');
@@ -239,13 +239,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic11 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1200
-     * @tc.name    testHilogTsApiStatic12
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic12
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1200
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic12 start');
@@ -258,13 +258,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic12 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1300
-     * @tc.name    testHilogTsApiStatic13
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic13
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1300
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic13 start');
@@ -278,13 +278,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic13 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1400
-     * @tc.name    testHilogTsApiStatic14
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic14
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1400
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic14 start');
@@ -293,13 +293,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic14 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1500
-     * @tc.name    testHilogTsApiStatic15
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic15
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1500
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic15 start');
@@ -308,13 +308,13 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic15 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1600
-     * @tc.name    testHilogTsApiStatic16
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
+    /**
+     * @tc.name   testHilogTsApiStatic16
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1600
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHilogTsApiStatic16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       hilog.info(domain, tag, 'testHilogTsApiStatic16 start');
@@ -323,14 +323,14 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic16 end');
     })
 
-    /*
-     * @tc.number  DFX_DFT_Hiview_Libhilog_Hilog_Static_1700
-     * @tc.name    testHilogTsApiStatic17
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   2
-     */
+        /**
+         * @tc.name   testHilogTsApiStatic17
+         * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1700
+         * @tc.desc   hilog begin interface test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testHilogTsApiStatic17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
           hilog.info(domain, tag, 'testHilogTsApiStatic16 start');
           try{
@@ -346,13 +346,13 @@ export default function HilogTsTest() {
           hilog.info(domain, tag, 'testHilogTsApiStatic16 end');
         })
 
-    /*
-     * @tc.number  SUB_DFX_DFT_DefaultLevel_Static_0100
-     * @tc.name    SUB_DFX_DFT_DefaultLevel_Static_0100
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0100
+     * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0100
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_DefaultLevel_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.INFO);
@@ -362,13 +362,13 @@ export default function HilogTsTest() {
       expect(res1).assertEqual(true);
     })
 
-    /*
-     * @tc.number  SUB_DFX_DFT_DefaultLevel_Static_0200
-     * @tc.name    SUB_DFX_DFT_DefaultLevel_Static_0200
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0200
+     * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0200
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_DefaultLevel_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.WARN);
@@ -378,13 +378,13 @@ export default function HilogTsTest() {
       expect(res1).assertEqual(true);
     })
 
-    /*
-     * @tc.number  SUB_DFX_DFT_DefaultLevel_Static_0300
-     * @tc.name    SUB_DFX_DFT_DefaultLevel_Static_0300
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0300
+     * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0300
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_DefaultLevel_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.ERROR);
@@ -394,13 +394,13 @@ export default function HilogTsTest() {
       expect(res1).assertEqual(true);
     })
 
-    /*
-     * @tc.number  SUB_DFX_DFT_DefaultLevel_Static_0400
-     * @tc.name    SUB_DFX_DFT_DefaultLevel_Static_0400
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0400
+     * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0400
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_DefaultLevel_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.FATAL);
@@ -410,13 +410,13 @@ export default function HilogTsTest() {
       expect(res1).assertEqual(true);
     })
 
-    /*
-     * @tc.number  SUB_DFX_DFT_DefaultLevel_Static_0500
-     * @tc.name    SUB_DFX_DFT_DefaultLevel_Static_0500
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0500
+     * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0500
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_DefaultLevel_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.FATAL);
@@ -424,13 +424,13 @@ export default function HilogTsTest() {
       expect(res).assertEqual(false);
     })
 
-    /*
-     * @tc.number  SUB_DFX_DFT_DefaultLevel_Static_0600
-     * @tc.name    SUB_DFX_DFT_DefaultLevel_Static_0600
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    hilog begin interface test.
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0600
+     * @tc.number SUB_DFX_DFT_DefaultLevel_Static_0600
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_DefaultLevel_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.setMinLogLevel(hilog.LogLevel.ERROR);
@@ -444,5 +444,75 @@ export default function HilogTsTest() {
         expect().assertFail()
       }
     })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1700
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1700
+     * @tc.desc   hilog新增向下调整日志级别接口-使用默认日志级别setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.UNSET_LOGLEVEL)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1800
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1800
+     * @tc.desc   hilog新增向下调整日志级别接口-比较默认值和设置值后取较大值setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_CLOSE_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(false);
+      expect(res1).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_1900
+     * @tc.number SUB_DFX_DFT_DefaultLevel_1900
+     * @tc.desc   hilog新增向下调整日志级别接口-比较默认值和设置值后取较小值setLogLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.WARN, hilog.PreferStrategy.PREFER_OPEN_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.INFO);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(true);
+      expect(res1).assertEqual(true);
+    })
+    
+    /**
+     * @tc.name   SUB_DFX_DFT_DefaultLevel_2400
+     * @tc.number SUB_DFX_DFT_DefaultLevel_2400
+     * @tc.desc   hilog调整日志级别接口后执行setMinLogLevel方法
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_DefaultLevel_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      hilog.setLogLevel(hilog.LogLevel.ERROR, hilog.PreferStrategy.PREFER_CLOSE_LOG)
+      let res = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.WARN);
+      let res1 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res).assertEqual(false);
+      expect(res1).assertEqual(true);
+      hilog.setMinLogLevel(hilog.LogLevel.WARN)
+      let res2 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.WARN);
+      let res3 = hilog.isLoggable(0x3200, "HILOGTEST", hilog.LogLevel.FATAL);
+      expect(res2).assertEqual(true);
+      expect(res3).assertEqual(true);
+    })
+
   })
 }

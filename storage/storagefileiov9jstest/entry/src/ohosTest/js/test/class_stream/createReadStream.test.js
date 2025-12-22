@@ -23,14 +23,12 @@ export default function fscreateReadStream() {
   describe('fileIO_fs_create_stream', function () {
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_001
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0100
-     * @tc.name fileIO_test_create_ReadStream_001
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_001');
@@ -55,14 +53,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_002
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0200
-     * @tc.name fileIO_test_create_ReadStream_002
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads the file file area start end.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_002');
@@ -89,14 +85,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_003
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0300
-     * @tc.name fileIO_test_create_ReadStream_003
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream automatically reads file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_003');
@@ -121,14 +115,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_004
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0400
-     * @tc.name fileIO_test_create_ReadStream_004
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Seek (set offset position) before ReadStream reads the file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_004');
@@ -155,14 +147,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_005
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0500
-     * @tc.name fileIO_test_create_ReadStream_005
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Stream copy file read. txt ->write.txt
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_005');
@@ -190,14 +180,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_006
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0600
-     * @tc.name fileIO_test_create_ReadStream_006
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Copy files on Stream and use close to release resources at the end
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_006');
@@ -227,15 +215,13 @@ export default function fscreateReadStream() {
     });
 
     /**
-    * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0700
-    * @tc.name fileIO_test_create_ReadStream_007
-    * @tc.desc Test the createReadStream() interface of class Stream.
-    * Invalid argument.
-    * @tc.size MEDIUM
-    * @tc.type Function
-    * @tc.level Level 3
-    * @tc.require
-    */
+     * @tc.name   fileIO_test_create_ReadStream_007
+     * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0700
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('fileIO_test_create_ReadStream_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
 
       try {
@@ -248,14 +234,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_008
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0800
-     * @tc.name fileIO_test_create_ReadStream_008
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * No such file or directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_008');
@@ -272,14 +256,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_009
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_0900
-     * @tc.name fileIO_test_create_ReadStream_009
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Invalid argument,createWriteStream
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
 
@@ -293,14 +275,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_010
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1000
-     * @tc.name fileIO_test_create_ReadStream_010
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files.bytesRead
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_010');
@@ -320,14 +300,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_011
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1100
-     * @tc.name fileIO_test_create_ReadStream_011
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files.Seek
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_011');
@@ -346,14 +324,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_012
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1200
-     * @tc.name fileIO_test_create_ReadStream_012
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * ReadStream reads files,Seek, Invalid argument
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_012');
@@ -371,14 +347,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_013
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1300
-     * @tc.name fileIO_test_create_ReadStream_013
-     * @tc.desc Test the createWriteStream() interface of class Stream.
-     * ReadStream reads files.bytesWritten, path
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createWriteStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_013');
@@ -398,14 +372,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_014
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1400
-     * @tc.name fileIO_test_create_ReadStream_014
-     * @tc.desc Test the createWriteStream() interface of class Stream.
-     * ReadStream reads files.Seek
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createWriteStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_014');
@@ -424,14 +396,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_014
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1400
-     * @tc.name fileIO_test_create_ReadStream_014
-     * @tc.desc Test the createWriteStream() interface of class Stream.
-     * ReadStream reads files.Seek, Invalid argument
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createWriteStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_014');
@@ -449,14 +419,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_015
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1500
-     * @tc.name fileIO_test_create_ReadStream_015
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Copy files on Stream and use close to release resources at the end, start=0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_015');
@@ -487,14 +455,12 @@ export default function fscreateReadStream() {
     });
 
     /**
+     * @tc.name   fileIO_test_create_ReadStream_016
      * @tc.number SUB_DF_FILEIO_CREATE_READSTREAM_1600
-     * @tc.name fileIO_test_create_ReadStream_016
-     * @tc.desc Test the createReadStream() interface of class Stream.
-     * Copy files on Stream and use close to release resources at the end, mode=0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the createReadStream() interface of class Stream.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_create_ReadStream_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
       let fpath = await nextFileName('fileIO_test_create_ReadStream_016');

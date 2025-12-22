@@ -42,7 +42,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetPreferencesHelper0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1300
      * @tc.desc   GetPreferencesSync interface test
@@ -59,7 +58,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testGetPreferencesHelper0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetPreferencesJSAPITest_1200
      * @tc.desc   GetPreferences interface test
@@ -87,7 +85,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCacheHelper0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_1300
      * @tc.desc   RemovePreferencesFromCache interface test
@@ -110,7 +107,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCacheHelper0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0600
      * @tc.desc   RemovePreferencesFromCache interface test
@@ -141,7 +137,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCacheHelper0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0800
      * @tc.desc   RemovePreferencesFromCache interface test
@@ -168,7 +163,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testRemovePreferencesFromCacheHelper0006
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_RemoveJSAPITest_0700
      * @tc.desc   RemovePreferencesFromCache interface test
@@ -203,7 +197,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_1800
      * @tc.desc   DeletePreferences interface test
@@ -227,7 +220,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0700
      * @tc.desc   DeletePreferences interface test
@@ -258,7 +250,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0900
      * @tc.desc   DeletePreferences interface test
@@ -286,7 +277,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesDeleteHelper0006
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0800
      * @tc.desc   DeletePreferences interface test
@@ -321,7 +311,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMaxKeyLength001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0400
      * @tc.desc   Test key length
@@ -334,7 +323,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMaxValueLength001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0500
      * @tc.desc   Test value length
@@ -347,7 +335,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOn001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0800
      * @tc.desc   Test on interface
@@ -372,7 +359,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOn002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0600
      * @tc.desc   Test on interface
@@ -396,7 +382,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOn003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0400
      * @tc.desc   Test on interface
@@ -420,7 +405,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOn004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0300
      * @tc.desc   Test on interface
@@ -444,7 +428,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOff001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0200
      * @tc.desc   Test off interface
@@ -473,7 +456,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOff002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0100
      * @tc.desc   Test off interface
@@ -502,7 +484,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOff003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0700
      * @tc.desc   Test off interface
@@ -528,7 +509,6 @@ export default function preferencesHelperTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesOff004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_OnOFFJSAPITest_0500
      * @tc.desc   Test off interface

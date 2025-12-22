@@ -21,7 +21,6 @@ export default function userauthTest_API12() {
     describe('userauthTest_API12', function () {
 
         /**
-         * @generated.time 2025-11-09 20:57:57
          * @tc.name   SUB_Security_IAM_Func_API12_0100
          * @tc.number SUB_Security_IAM_Func_API12_0100
          * @tc.desc   GetEnrolledState parameter validity check

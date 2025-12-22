@@ -31,12 +31,12 @@ export default function GraphicTextFontCollection() {
     })
 
     /**
-     * @tc.number    : testGetGlobalInstanceStatic_01
-     * @tc.name      : testGetGlobalInstanceStatic_01
-     * @tc.desc      : To test interface getGlobalInstance of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testGetGlobalInstanceStatic_01
+     * @tc.number testGetGlobalInstanceStatic_01
+     * @tc.desc   To test interface getGlobalInstance of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGlobalInstanceStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -55,12 +55,12 @@ export default function GraphicTextFontCollection() {
       })
 
     /**
-     * @tc.number    : testNewFontCollectionStatic
-     * @tc.name      : testNewFontCollectionStatic
-     * @tc.desc      : To test interface new FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testNewFontCollectionStatic
+     * @tc.number testNewFontCollectionStatic
+     * @tc.desc   To test interface new FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNewFontCollectionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -79,12 +79,12 @@ export default function GraphicTextFontCollection() {
       })
 
     /**
-     * @tc.number    : testLoadFontStatic
-     * @tc.name      : testLoadFontStatic
-     * @tc.desc      : To test interface loadFont of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testLoadFontStatic
+     * @tc.number testLoadFontStatic
+     * @tc.desc   To test interface loadFont of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadFontStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -105,12 +105,12 @@ export default function GraphicTextFontCollection() {
       })
 
     /**
-     * @tc.number    : testclearCachesStatic
-     * @tc.name      : testclearCachesStatic
-     * @tc.desc      : To test interface clearCaches of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL1
+     * @tc.name   testclearCachesStatic
+     * @tc.number testclearCachesStatic
+     * @tc.desc   To test interface clearCaches of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testclearCachesStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

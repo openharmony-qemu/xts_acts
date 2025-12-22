@@ -22,12 +22,12 @@ describe('SystemCapabilityTest', function () {
     console.info('SystemCapabilityTest start################################start');
     
     /**
-     * @tc.number    SUB_STARTUP_JS_SYSTEM_CAPABILITY_001
-     * @tc.name      testSysCaps01
-     * @tc.desc      Verify the availability of SystemCapability AccessToken.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSysCaps01
+     * @tc.number SUB_STARTUP_JS_SYSTEM_CAPABILITY_001
+     * @tc.desc   Verify the availability of SystemCapability AccessToken.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSysCaps01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testSysCaps01 start');
@@ -45,12 +45,12 @@ describe('SystemCapabilityTest', function () {
     })
     
     /**
-     * @tc.number    SUB_STARTUP_JS_DEVCEINFO_0400
-     * @tc.name     testGetMarketName01
-     * @tc.desc      Get the external product family name represented by a string and the return value is not null.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   device_info_test_004
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_0400
+     * @tc.desc   Get the external product family name represented by a string and the return value is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('device_info_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testGetMarketName01 start')

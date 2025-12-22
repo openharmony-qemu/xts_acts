@@ -69,7 +69,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -94,7 +93,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -119,7 +117,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -146,7 +143,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -173,7 +169,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -202,7 +197,6 @@ export default function relationalStoreErrorCode32Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   update success callback
@@ -228,7 +222,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   update success callback
@@ -254,7 +247,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   update success callback
@@ -281,7 +273,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   update success callback
@@ -309,7 +300,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   update success callback
@@ -337,7 +327,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -360,7 +349,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest012
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -382,7 +370,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest013
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   delete success callback
@@ -404,7 +391,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   getModifyTime success callback
@@ -429,7 +415,6 @@ export default function relationalStoreErrorCode32Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest015
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   getModifyTime success callback
@@ -453,7 +438,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest016
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -477,7 +461,6 @@ export default function relationalStoreErrorCode32Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest017
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -501,7 +484,6 @@ export default function relationalStoreErrorCode32Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest018
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -524,7 +506,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest019
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   executeSync success callback
@@ -548,7 +529,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -568,7 +548,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest021
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -593,7 +572,6 @@ export default function relationalStoreErrorCode32Test() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest022
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   executeSync success callback
@@ -613,7 +591,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest023
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -633,7 +610,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest024
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -653,7 +629,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest025
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -673,7 +648,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest026
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -693,7 +667,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest027
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -712,7 +685,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest028
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -732,7 +704,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest029
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -756,7 +727,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -776,7 +746,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest031
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -799,7 +768,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest032
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -818,7 +786,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest033
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -838,7 +805,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest034
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -859,7 +825,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   relationalStoreTest035
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBFGAPITest_0100
      * @tc.desc   cleanDirtyData success callback
@@ -880,7 +845,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGetColumnIndex0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -903,7 +867,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGetColumnName0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -926,7 +889,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgoToFirstRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -949,7 +911,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgoToNextRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -972,7 +933,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgoToLastRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -994,7 +954,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgoToRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1017,7 +976,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgoTo0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1040,7 +998,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgoToPreviousRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1063,7 +1020,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetBlob0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1086,7 +1042,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetString0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1109,7 +1064,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetLong0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1132,7 +1086,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetDouble0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1155,7 +1108,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetAsset0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1178,7 +1130,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetAssets0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1201,7 +1152,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetValue0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1224,7 +1174,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testgetRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1247,7 +1196,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGetRows0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1270,7 +1218,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testGetSendableRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetEtsAPITest_0100
      * @tc.desc   resultSet getBlob normal test
@@ -1293,7 +1240,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreUnLockRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
      * @tc.desc   Configure predicates (TABLE name: "")
@@ -1316,7 +1262,6 @@ export default function relationalStoreErrorCode32Test() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreLockRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
      * @tc.desc   Configure predicates (TABLE name: "")
@@ -1339,7 +1284,6 @@ export default function relationalStoreErrorCode32Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreQueryLockedRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
      * @tc.desc   Configure predicates (TABLE name: "")

@@ -12,10 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { image } from '@kit.ImageKit';
 @Entry
 @Component
 struct ImageAltTestPage {
+  @State imagePixelMap: image.PixelMap | undefined = undefined;
+  private async getPixmapFromMedia(resource: Resource) {
+    let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
+    let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength));
+    let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+    });
+    await imageSource.release();
+    return createPixelMap;
+  }
+  aboutToAppear() {
+    this.getPixmapFromMedia($r('app.media.icon')).then(val => {
+      this.imagePixelMap = val;
+      return val;
+    })
+  }
   build() {
     Column() {
       Image('common/pages/apple')
@@ -38,6 +54,13 @@ struct ImageAltTestPage {
         .alt({
           placeholder: null,
           error: null
+        })
+      Image('common/pages/apple')
+        .width(80).height(80).margin(10)
+        .id('image004')
+        .alt({
+          placeholder: this.imagePixelMap,
+          error: this.imagePixelMap
         })
     }.width('100%').height('100%')
   }

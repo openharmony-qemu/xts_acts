@@ -281,6 +281,42 @@ export default function WindowKeyBoardTest() {
                 done()
             }
         })
+        /**
+         * @tc.number      testKeepKeyboardOnFocusErrCode1300002_0100
+         * @tc.name        testKeepKeyboardOnFocusErrCode1300002_0100
+         * @tc.desc        testKeepKeyboardOnFocusErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testKeepKeyboardOnFocusErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testKeepKeyboardOnFocusErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                err = err as BusinessError;
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.keepKeyboardOnFocus(true);
+                console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
 
 
 

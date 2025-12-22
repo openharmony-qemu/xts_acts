@@ -28,38 +28,38 @@ export default function timeNdk1Test() {
     })
 
     /**
-    * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_FUTIMES_0100
-    * @tc.name       : testMuslTimeFutimes001
-    * @tc.desc       : test the normal condition of Futimes_One
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+     * @tc.name   testMuslTimeFutimes001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_FUTIMES_0100
+     * @tc.desc   test the normal condition of Futimes_One
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslTimeFutimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.Futimes_One()).assertEqual(1);
       done()
     });
 
     /**
-    * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_FUTIMES_0200
-    * @tc.name       : testMuslTimeFutimes002
-    * @tc.desc       : test the abnormal condition of Futimes_Two
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+     * @tc.name   testMuslTimeFutimes002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_FUTIMES_0200
+     * @tc.desc   test the abnormal condition of Futimes_Two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testMuslTimeFutimes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.Futimes_Two()).assertEqual(1);
       done()
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_FUTIMESAT_0100
-     * @tc.name       : testMuslTimeFutimesat001
-     * @tc.desc       : test the normal condition of Futimesat_One
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeFutimesat001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_FUTIMESAT_0100
+     * @tc.desc   test the normal condition of Futimesat_One
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeFutimesat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.Futimesat_One()).assertEqual(1);
@@ -67,12 +67,12 @@ export default function timeNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_FUTIMESAT_0200
-     * @tc.name       : testMuslTimeFutimesat002
-     * @tc.desc       : test the abnormal condition of Futimesat_Two
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeFutimesat002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_FUTIMESAT_0200
+     * @tc.desc   test the abnormal condition of Futimesat_Two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeFutimesat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.Futimesat_Two()).assertEqual(1);
@@ -80,12 +80,12 @@ export default function timeNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TZNAME_0100
-     * @tc.name       : testMuslTimeTzName001
-     * @tc.desc       : test the normal condition of TzName_One
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeTzName001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TZNAME_0100
+     * @tc.desc   test the normal condition of TzName_One
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTzName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.TzName_One()).assertEqual(1);
@@ -93,12 +93,12 @@ export default function timeNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_TZNAME_0200
-     * @tc.name       : testMuslTimeTzName002
-     * @tc.desc       : test the normal condition of TzName_Two
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslTimeTzName002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_TZNAME_0200
+     * @tc.desc   test the normal condition of TzName_Two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeTzName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.TzName_Two()).assertEqual(1);
@@ -106,12 +106,12 @@ export default function timeNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_UTIMES_0100
-     * @tc.name       : testMuslTimeUtimes001
-     * @tc.desc       : test the normal condition of Utimes_One
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeUtimes001
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_UTIMES_0100
+     * @tc.desc   test the normal condition of Utimes_One
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeUtimes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.Utimes_One()).assertEqual(1);
@@ -119,12 +119,12 @@ export default function timeNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_TIME_UTIMES_0200
-     * @tc.name       : testMuslTimeUtimes002
-     * @tc.desc       : test the abnormal condition of Utimes_Two
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslTimeUtimes002
+     * @tc.number SUB_THIRDPARTY_MUSL_TIME_UTIMES_0200
+     * @tc.desc   test the abnormal condition of Utimes_Two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslTimeUtimes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(time1.Utimes_Two()).assertEqual(1);

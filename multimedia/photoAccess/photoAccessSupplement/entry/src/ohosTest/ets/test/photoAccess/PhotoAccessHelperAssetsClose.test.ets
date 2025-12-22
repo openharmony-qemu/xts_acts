@@ -41,12 +41,12 @@ export default function PhotoAccessHelperAssetsCloseTest() {
     });
 
     /**
-     * @tc.number    PhotoAccessHelperAssetsCloseTest_001
-     * @tc.name      PhotoAccessHelperAssetsCloseTest_001
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PhotoAccessHelperAssetsCloseTest_001
+     * @tc.number PhotoAccessHelperAssetsCloseTest_001
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PhotoAccessHelperAssetsCloseTest_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'PhotoAccessHelperAssetsCloseTest_001';
@@ -75,12 +75,12 @@ export default function PhotoAccessHelperAssetsCloseTest() {
     })
 
     /**
-     * @tc.number    PhotoAccessHelperAssetsCloseTest_002
-     * @tc.name      PhotoAccessHelperAssetsCloseTest_002
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PhotoAccessHelperAssetsCloseTest_002
+     * @tc.number PhotoAccessHelperAssetsCloseTest_002
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PhotoAccessHelperAssetsCloseTest_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'PhotoAccessHelperAssetsCloseTest_002';
@@ -108,12 +108,12 @@ export default function PhotoAccessHelperAssetsCloseTest() {
     })
 
     /**
-     * @tc.number    PhotoAccessHelperAssetsCloseTest_003
-     * @tc.name      PhotoAccessHelperAssetsCloseTest_003
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PhotoAccessHelperAssetsCloseTest_003
+     * @tc.number PhotoAccessHelperAssetsCloseTest_003
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PhotoAccessHelperAssetsCloseTest_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'PhotoAccessHelperAssetsCloseTest_003';
@@ -141,12 +141,12 @@ export default function PhotoAccessHelperAssetsCloseTest() {
     })
 
     /**
-     * @tc.number    PhotoAccessHelperAssetsCloseTest_004
-     * @tc.name      PhotoAccessHelperAssetsCloseTest_004
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PhotoAccessHelperAssetsCloseTest_004
+     * @tc.number PhotoAccessHelperAssetsCloseTest_004
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PhotoAccessHelperAssetsCloseTest_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'PhotoAccessHelperAssetsCloseTest_004';
@@ -168,12 +168,12 @@ export default function PhotoAccessHelperAssetsCloseTest() {
     })
 
     /**
-     * @tc.number    PhotoAccessHelperAssetsCloseTest_005
-     * @tc.name      PhotoAccessHelperAssetsCloseTest_005
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PhotoAccessHelperAssetsCloseTest_005
+     * @tc.number PhotoAccessHelperAssetsCloseTest_005
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PhotoAccessHelperAssetsCloseTest_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'PhotoAccessHelperAssetsCloseTest_005';
@@ -195,12 +195,12 @@ export default function PhotoAccessHelperAssetsCloseTest() {
     })
 
     /**
-     * @tc.number    PhotoAccessHelperAssetsCloseTest_006
-     * @tc.name      PhotoAccessHelperAssetsCloseTest_006
-     * @tc.desc      addAssets
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   PhotoAccessHelperAssetsCloseTest_006
+     * @tc.number PhotoAccessHelperAssetsCloseTest_006
+     * @tc.desc   addAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PhotoAccessHelperAssetsCloseTest_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'PhotoAccessHelperAssetsCloseTest_006';

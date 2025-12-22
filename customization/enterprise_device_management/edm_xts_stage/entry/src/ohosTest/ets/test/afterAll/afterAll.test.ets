@@ -23,21 +23,27 @@ import {
   TEST_BUNDLENAME,
   INVALID_BUNDLE_NAME,
   DEFAULT_APP_INDEX,
-  INVALID_APP_INDEX
+  INVALID_APP_INDEX,
+  BLUETOOTH_STATE,
+  WIFI_STATE,
+  getBluetoothState,
+  getWifiState
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import applicationManager from '@ohos.enterprise.applicationManager';
+import bluetoothManager from '@ohos.enterprise.bluetoothManager';
+import wifiManager from '@ohos.enterprise.wifiManager';
 
 export default function afterAllTest() {
   describe('afterAll_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_001
-     * @tc.name      : test_clearUpApplicationData_001
-     * @tc.desc      : test clearUpApplicationData method without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_001
+     * @tc.desc   test clearUpApplicationData method without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -50,12 +56,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_002
-     * @tc.name      : test_clearUpApplicationData_002
-     * @tc.desc      : test clearUpApplicationData method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_002
+     * @tc.desc   test clearUpApplicationData method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -71,12 +77,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_003
-     * @tc.name      : test_clearUpApplicationData_003
-     * @tc.desc      : test clearUpApplicationData method with invalid bundle name
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_003
+     * @tc.desc   test clearUpApplicationData method with invalid bundle name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -92,12 +98,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_004
-     * @tc.name      : test_clearUpApplicationData_004
-     * @tc.desc      : test clearUpApplicationData method with invalid app index
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_004
+     * @tc.desc   test clearUpApplicationData method with invalid app index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -113,12 +119,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_005
-     * @tc.name      : test_clearUpApplicationData_005
-     * @tc.desc      : test clearUpApplicationData method with invalid user id
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_005
+     * @tc.desc   test clearUpApplicationData method with invalid user id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -134,12 +140,12 @@ export default function afterAllTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_006
-     * @tc.name      : test_clearUpApplicationData_006
-     * @tc.desc      : test clearUpApplicationData method success
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_clearUpApplicationData_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA_006
+     * @tc.desc   test clearUpApplicationData method success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_clearUpApplicationData_006", Level.LEVEL2, async (done: Function) => {
       try {
@@ -152,5 +158,54 @@ export default function afterAllTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_restore_bluetooth_state_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_RESTORE_BLUETOOTH_STATE_0100
+     * @tc.desc   test restore bluetooth state with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_restore_bluetooth_state_0100', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      const STATE_ON = 2;
+      try {
+        if(getBluetoothState() == STATE_ON) {
+          bluetoothManager.turnOnBluetooth(SELFWANT);
+        } else {
+          bluetoothManager.turnOffBluetooth(SELFWANT);
+        }
+      } catch(error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_restore_wifi_state_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_RESTORE_WIFI_STATE_0200
+     * @tc.desc   test restore wifi state with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_restore_wifi_state_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if(getWifiState()) {
+          wifiManager.turnOnWifi(SELFWANT, false);
+        } else {
+          wifiManager.turnOffWifi(SELFWANT);
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   })
 }

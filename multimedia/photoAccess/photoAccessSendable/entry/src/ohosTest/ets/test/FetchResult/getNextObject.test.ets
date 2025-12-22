@@ -41,12 +41,12 @@ export default function getNextObjectTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Next_Obj_001
-     * @tc.name      : get_next_object_promise_001
-     * @tc.desc      : getNextObject
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   get_next_object_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Next_Obj_001
+     * @tc.desc   getNextObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('get_next_object_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'get_next_object_promise_001';

@@ -102,12 +102,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0400
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0400
-     * @tc.name test getPublicCertificate with parameter keyUri empty
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -121,12 +121,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0500
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0500
-     * @tc.name test getPublicCertificate with parameter keyUri invalid
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -140,12 +140,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0900
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0900
-     * @tc.name test isAuthorizedApp with parameter keyUri empty
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -159,12 +159,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_1000
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_1000
-     * @tc.name test isAuthorizedApp with parameter keyUri invalid
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -178,12 +178,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0010
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0010
-     * @tc.name the interface for obtaining private credentials was tested normally
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0010: started ");
@@ -222,12 +222,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0030
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0030
-     * @tc.name get 256 private credentials for normal testing
-     * @tc.desc normal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0030: started.");
@@ -296,12 +296,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   Security_CertManager_OpenCertDialogCertJsApi_Func_0030
      * @tc.number Security_CertManager_OpenCertDialogCertJsApi_Func_0030
-     * @tc.name test openCertificateManagerDialog with abnormal parameters
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Security_CertManager_OpenCertDialogCertJsApi_Func_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const context : common.Context = GlobalContext.getContext()
@@ -338,12 +338,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0100
      * @tc.number SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0100
-     * @tc.name test Enumeration
-     * @tc.desc
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertDialogCertJsApi_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC).assertEqual(29700001);
@@ -351,11 +351,16 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED).assertEqual(29700003);
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED).assertEqual(29700004);
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY).assertEqual(29700005);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED).assertEqual(29700006);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NO_AVAILABLE_CERTIFICATE).assertEqual(29700007);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_MAIN).assertEqual(1);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE).assertEqual(2);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL).assertEqual(3);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_INSTALL_CERTIFICATE).assertEqual(4);
       expect(certManagerDialog.CertificateType.CA_CERT).assertEqual(1);
+      expect(certManagerDialog.CertificateType.CREDENTIAL_USER).assertEqual(2);
+      expect(certManagerDialog.CertificateType.CREDENTIAL_APP).assertEqual(3);
+      expect(certManagerDialog.CertificateType.CREDENTIAL_UKEY).assertEqual(4);
       expect(certManagerDialog.CertificateScope.NOT_SPECIFIED).assertEqual(0);
       expect(certManagerDialog.CertificateScope.CURRENT_USER).assertEqual(1);
       expect(certManagerDialog.CertificateScope.GLOBAL_USER).assertEqual(2);
@@ -364,12 +369,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020
      * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020
-     * @tc.name test openInstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: started ");
@@ -401,7 +406,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
 
       try {
-        await certManagerDialog.openInstallCertificateDialog(context, 2, certificateScope, caCert)
+        await certManagerDialog.openInstallCertificateDialog(context, 999, certificateScope, caCert)
         expect(null).assertFail()
       } catch (err) {
         if (err.code == 29700004) {
@@ -451,12 +456,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040
      * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040
-     * @tc.name test openInstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: started ");
@@ -478,12 +483,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialog_0011
      * @tc.number SUB_Security_CertManager_OpenInstallCertificateDialog_0011
-     * @tc.name test openInstallCertificateDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenInstallCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: started ");

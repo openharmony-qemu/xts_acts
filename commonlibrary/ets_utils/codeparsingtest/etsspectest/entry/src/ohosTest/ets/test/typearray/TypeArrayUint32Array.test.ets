@@ -44,12 +44,12 @@ export default function typeArrayUint32ArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   TypeArrayUint32Array001
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_001
-     * @tc.name TypeArrayUint32Array001
-     * @tc.desc 用长度参数创建空Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   用长度参数创建空Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint32Array001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -60,12 +60,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array002
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_002
-     * @tc.name TypeArrayUint32Array002
-     * @tc.desc 从普通数字数组创建Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   从普通数字数组创建Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint32Array002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -77,12 +77,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array003
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_003
-     * @tc.name TypeArrayUint32Array003
-     * @tc.desc 从ArrayBuffer创建Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   从ArrayBuffer创建Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -93,12 +93,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array004
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_004
-     * @tc.name TypeArrayUint32Array004
-     * @tc.desc 从ArrayBuffer和偏移量、长度创建Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   从ArrayBuffer和偏移量、长度创建Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -110,12 +110,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array005
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_005
-     * @tc.name TypeArrayUint32Array005
-     * @tc.desc 从其他TypedArray创建Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   从其他TypedArray创建Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -126,12 +126,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array006
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_006
-     * @tc.name TypeArrayUint32Array006
-     * @tc.desc 从类数组对象创建Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   从类数组对象创建Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -140,12 +140,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array007
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_007
-     * @tc.name TypeArrayUint32Array007
-     * @tc.desc 验证BYTES_PER_ELEMENT静态属性
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   验证BYTES_PER_ELEMENT静态属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint32Array007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -153,12 +153,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array008
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_008
-     * @tc.name TypeArrayUint32Array008
-     * @tc.desc 验证实例的byteLength属性
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 1
+     * @tc.desc   验证实例的byteLength属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint32Array008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -167,12 +167,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array009
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_009
-     * @tc.name TypeArrayUint32Array009
-     * @tc.desc 验证buffer属性
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 2
+     * @tc.desc   验证buffer属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -182,12 +182,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array010
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_010
-     * @tc.name TypeArrayUint32Array010
-     * @tc.desc 验证byteOffset属性
-     * @tc.size SmallTest
-     * @tc.type Property
-     * @tc.level Level 2
+     * @tc.desc   验证byteOffset属性
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -197,12 +197,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array011
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_011
-     * @tc.name TypeArrayUint32Array011
-     * @tc.desc 设置和获取元素值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   设置和获取元素值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayUint32Array011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       () => {
@@ -216,12 +216,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array012
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_012
-     * @tc.name TypeArrayUint32Array012
-     * @tc.desc 设置超出最大值的元素（溢出处理）
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   设置超出最大值的元素（溢出处理）
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -232,12 +232,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array013
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_013
-     * @tc.name TypeArrayUint32Array013
-     * @tc.desc 设置负值元素（溢出处理）
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   设置负值元素（溢出处理）
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -250,12 +250,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array014
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_014
-     * @tc.name TypeArrayUint32Array014
-     * @tc.desc 使用set方法复制数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用set方法复制数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -265,12 +265,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array015
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_015
-     * @tc.name TypeArrayUint32Array015
-     * @tc.desc 使用set方法带偏移量复制
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用set方法带偏移量复制
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -281,12 +281,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array016
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_016
-     * @tc.name TypeArrayUint32Array016
-     * @tc.desc 使用subarray创建子数组视图
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用subarray创建子数组视图
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -297,12 +297,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array017
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_017
-     * @tc.name TypeArrayUint32Array017
-     * @tc.desc 修改subarray影响原始数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   修改subarray影响原始数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -313,12 +313,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array018
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_018
-     * @tc.name TypeArrayUint32Array018
-     * @tc.type Function
-     * @tc.desc 使用slice创建新数组
-     * @tc.size SmallTest
-     * @tc.level Level 2
+     * @tc.desc   使用slice创建新数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -329,12 +329,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array019
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_019
-     * @tc.name TypeArrayUint32Array019
-     * @tc.desc 修改slice结果不影响原始数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   修改slice结果不影响原始数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -345,12 +345,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array020
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_020
-     * @tc.name TypeArrayUint32Array020
-     * @tc.desc 使用fill方法填充数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用fill方法填充数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -359,12 +359,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(arr.every(v => v === 123456)).assertEqual(true);
       })
     /**
+     * @tc.name   TypeArrayUint32Array021
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_021
-     * @tc.name TypeArrayUint32Array021
-     * @tc.desc 使用fill方法填充指定范围元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用fill方法填充指定范围元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -374,12 +374,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array022
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_022
-     * @tc.name TypeArrayUint32Array022
-     * @tc.desc 使用fill方法填充超出范围的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用fill方法填充超出范围的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -390,12 +390,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array023
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_023
-     * @tc.name TypeArrayUint32Array023
-     * @tc.desc 使用map方法转换元素（范围内）
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用map方法转换元素（范围内）
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -405,12 +405,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array024
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_024
-     * @tc.name TypeArrayUint32Array024
-     * @tc.desc 使用map方法转换元素（范围外截断）
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用map方法转换元素（范围外截断）
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -422,12 +422,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array025
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_025
-     * @tc.name TypeArrayUint32Array025
-     * @tc.desc 使用filter方法筛选元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用filter方法筛选元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -437,12 +437,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array026
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_026
-     * @tc.name TypeArrayUint32Array026
-     * @tc.desc 使用reduce方法计算总和
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用reduce方法计算总和
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -452,12 +452,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array027
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_027
-     * @tc.name TypeArrayUint32Array027
-     * @tc.desc 使用reduce方法处理溢出值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用reduce方法处理溢出值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -469,12 +469,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array028
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_028
-     * @tc.name TypeArrayUint32Array028
-     * @tc.desc 使用every方法检查所有元素是否满足条件
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用every方法检查所有元素是否满足条件
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -487,12 +487,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array029
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_029
-     * @tc.name TypeArrayUint32Array029
-     * @tc.desc 使用some方法检查是否有元素满足条件
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用some方法检查是否有元素满足条件
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -506,12 +506,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array030
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_030
-     * @tc.name TypeArrayUint32Array030
-     * @tc.desc 使用find方法查找满足条件的元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用find方法查找满足条件的元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -521,12 +521,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array031
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_031
-     * @tc.name TypeArrayUint32Array031
-     * @tc.desc 使用findIndex方法查找满足条件的元素索引
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用findIndex方法查找满足条件的元素索引
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -536,12 +536,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array032
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_032
-     * @tc.name TypeArrayUint32Array032
-     * @tc.desc 使用includes方法检查元素是否存在
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用includes方法检查元素是否存在
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -551,12 +551,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array033
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_033
-     * @tc.name TypeArrayUint32Array033
-     * @tc.desc 使用includes方法检查溢出值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用includes方法检查溢出值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -565,12 +565,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array034
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_034
-     * @tc.name TypeArrayUint32Array034
-     * @tc.desc 使用indexOf方法查找元素首次出现位置
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用indexOf方法查找元素首次出现位置
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -581,12 +581,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array035
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_035
-     * @tc.name TypeArrayUint32Array035
-     * @tc.desc 使用lastIndexOf方法查找元素最后出现位置
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用lastIndexOf方法查找元素最后出现位置
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -597,12 +597,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array036
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_036
-     * @tc.name TypeArrayUint32Array036
-     * @tc.desc 使用join方法连接元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用join方法连接元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -612,12 +612,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array037
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_037
-     * @tc.name TypeArrayUint32Array037
-     * @tc.desc 使用values迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用values迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -630,12 +630,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array038
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_038
-     * @tc.name TypeArrayUint32Array038
-     * @tc.desc 使用keys迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用keys迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -648,12 +648,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array039
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_039
-     * @tc.name TypeArrayUint32Array039
-     * @tc.desc 使用entries迭代器
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用entries迭代器
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -667,12 +667,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array040
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_040
-     * @tc.name TypeArrayUint32Array040
-     * @tc.desc 使用Array.from转换为普通数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用Array.from转换为普通数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -682,12 +682,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(regArr.toString()).assertEqual('12345,67890,123456');
       })
     /**
+     * @tc.name   TypeArrayUint32Array041
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_041
-     * @tc.name TypeArrayUint32Array041
-     * @tc.desc 使用扩展运算符转换为普通数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用扩展运算符转换为普通数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -698,12 +698,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array042
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_042
-     * @tc.name TypeArrayUint32Array042
-     * @tc.desc 转换为Uint8Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   转换为Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -716,12 +716,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array043
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_043
-     * @tc.name TypeArrayUint32Array043
-     * @tc.desc 转换为Int32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   转换为Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -733,12 +733,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array044
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_044
-     * @tc.name TypeArrayUint32Array044
-     * @tc.desc 测试toString方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试toString方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -747,12 +747,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array045
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_045
-     * @tc.name TypeArrayUint32Array045
-     * @tc.desc 测试toLocaleString方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试toLocaleString方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -762,12 +762,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array046
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_046
-     * @tc.name TypeArrayUint32Array046
-     * @tc.desc 测试JSON.stringify
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -777,12 +777,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array047
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_047
-     * @tc.name TypeArrayUint32Array047
-     * @tc.desc 测试嵌套在对象中的JSON.stringify
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试嵌套在对象中的JSON.stringify
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -792,12 +792,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array048
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_048
-     * @tc.name TypeArrayUint32Array048
-     * @tc.desc 处理非整数赋值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   处理非整数赋值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -809,12 +809,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array049
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_049
-     * @tc.name TypeArrayUint32Array049
-     * @tc.desc 验证buffer字节长度与元素数量匹配
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   验证buffer字节长度与元素数量匹配
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -825,12 +825,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array050
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_050
-     * @tc.name TypeArrayUint32Array050
-     * @tc.desc 使用负数索引的subarray
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用负数索引的subarray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -842,12 +842,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array051
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_051
-     * @tc.name TypeArrayUint32Array051
-     * @tc.desc 使用负数索引的slice
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用负数索引的slice
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -859,12 +859,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array052
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_052
-     * @tc.name TypeArrayUint32Array052
-     * @tc.desc 使用负数起始索引的fill
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   使用负数起始索引的fill
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -874,12 +874,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array053
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_053
-     * @tc.name TypeArrayUint32Array053
-     * @tc.desc 测试map处理负值转换
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试map处理负值转换
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -890,12 +890,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array054
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_054
-     * @tc.name TypeArrayUint32Array054
-     * @tc.desc 测试filter筛选值范围
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试filter筛选值范围
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -905,12 +905,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array055
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_055
-     * @tc.name TypeArrayUint32Array055
-     * @tc.desc 测试reduce处理值转换
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试reduce处理值转换
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -920,12 +920,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array056
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_056
-     * @tc.name TypeArrayUint32Array056
-     * @tc.desc 测试every验证值类型
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试every验证值类型
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -937,12 +937,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array057
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_057
-     * @tc.name TypeArrayUint32Array057
-     * @tc.desc 测试some验证值类型
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试some验证值类型
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -954,12 +954,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array058
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_058
-     * @tc.name TypeArrayUint32Array058
-     * @tc.desc 测试find查找转换后的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试find查找转换后的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -969,12 +969,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array059
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_059
-     * @tc.name TypeArrayUint32Array059
-     * @tc.desc 测试findIndex查找转换后的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试findIndex查找转换后的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -984,12 +984,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array060
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_060
-     * @tc.name TypeArrayUint32Array060
-     * @tc.desc 测试includes查找转换后的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试includes查找转换后的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1000,12 +1000,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(hasTransformed).assertEqual(true);
       })
     /**
+     * @tc.name   TypeArrayUint32Array061
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_061
-     * @tc.name TypeArrayUint32Array061
-     * @tc.desc 测试indexOf查找转换后的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试indexOf查找转换后的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1015,12 +1015,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array062
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_062
-     * @tc.name TypeArrayUint32Array062
-     * @tc.desc 测试lastIndexOf查找转换后的值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试lastIndexOf查找转换后的值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1030,12 +1030,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array063
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_063
-     * @tc.name TypeArrayUint32Array063
-     * @tc.desc 测试join方法连接大量元素
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试join方法连接大量元素
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -1050,12 +1050,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array064
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_064
-     * @tc.name TypeArrayUint32Array064
-     * @tc.desc 测试values迭代器处理大量元素
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试values迭代器处理大量元素
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -1072,12 +1072,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array065
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_065
-     * @tc.name TypeArrayUint32Array065
-     * @tc.desc 测试keys迭代器处理大量元素
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试keys迭代器处理大量元素
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -1091,12 +1091,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array066
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_066
-     * @tc.name TypeArrayUint32Array066
-     * @tc.desc 测试entries迭代器处理大量元素
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试entries迭代器处理大量元素
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -1114,12 +1114,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array067
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_067
-     * @tc.name TypeArrayUint32Array067
-     * @tc.desc 测试Array.from带映射函数
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试Array.from带映射函数
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1129,12 +1129,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array068
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_068
-     * @tc.name TypeArrayUint32Array068
-     * @tc.desc 测试扩展运算符与数组操作结合
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试扩展运算符与数组操作结合
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1144,12 +1144,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array069
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_069
-     * @tc.name TypeArrayUint32Array069
-     * @tc.desc 测试转换为Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试转换为Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1162,12 +1162,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array070
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_070
-     * @tc.name TypeArrayUint32Array070
-     * @tc.desc 测试转换为Float64Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试转换为Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1179,12 +1179,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array071
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_071
-     * @tc.name TypeArrayUint32Array071
-     * @tc.desc 测试toString处理大数值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试toString处理大数值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1194,12 +1194,12 @@ export default function typeArrayUint32ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayUint32Array073
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_073
-     * @tc.name TypeArrayUint32Array073
-     * @tc.desc 测试JSON.stringify处理大数组
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试JSON.stringify处理大数组
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -1214,12 +1214,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array076
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_076
-     * @tc.name TypeArrayUint32Array076
-     * @tc.desc 测试缓冲区共享与不同类型数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   测试缓冲区共享与不同类型数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayUint32Array076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,
       () => {
@@ -1238,12 +1238,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array077
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_077
-     * @tc.name TypeArrayUint32Array077
-     * @tc.desc 测试slice起始索引等于数组长度
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试slice起始索引等于数组长度
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1254,12 +1254,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array078
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_078
-     * @tc.name TypeArrayUint32Array078
-     * @tc.desc 测试fill结束索引小于起始索引
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试fill结束索引小于起始索引
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1269,12 +1269,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array079
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_079
-     * @tc.name TypeArrayUint32Array079
-     * @tc.desc 测试map返回值超出Uint32范围多次
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试map返回值超出Uint32范围多次
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1286,12 +1286,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array080
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_080
-     * @tc.name TypeArrayUint32Array080
-     * @tc.desc 测试filter返回空结果
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试filter返回空结果
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1301,12 +1301,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(filtered instanceof Uint32Array).assertEqual(true);
       })
     /**
+     * @tc.name   TypeArrayUint32Array081
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_081
-     * @tc.name TypeArrayUint32Array081
-     * @tc.desc 测试reduceRight方法
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试reduceRight方法
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1317,12 +1317,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array082
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_082
-     * @tc.name TypeArrayUint32Array082
-     * @tc.desc 测试every方法验证所有元素为0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试every方法验证所有元素为0
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1333,12 +1333,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array083
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_083
-     * @tc.name TypeArrayUint32Array083
-     * @tc.desc 测试some方法验证是否有0元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试some方法验证是否有0元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1349,12 +1349,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array084
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_084
-     * @tc.name TypeArrayUint32Array084
-     * @tc.desc 测试find方法查找最大值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试find方法查找最大值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1370,12 +1370,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array085
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_085
-     * @tc.name TypeArrayUint32Array085
-     * @tc.desc 测试findIndex方法查找最小值索引
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试findIndex方法查找最小值索引
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1393,12 +1393,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array086
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_086
-     * @tc.name TypeArrayUint32Array086
-     * @tc.desc 测试includes方法检查最大值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试includes方法检查最大值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1410,12 +1410,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array087
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_087
-     * @tc.name TypeArrayUint32Array087
-     * @tc.desc 测试indexOf方法查找重复元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试indexOf方法查找重复元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1426,12 +1426,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array088
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_088
-     * @tc.name TypeArrayUint32Array088
-     * @tc.desc 测试lastIndexOf方法查找重复元素
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试lastIndexOf方法查找重复元素
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1442,12 +1442,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array089
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_089
-     * @tc.name TypeArrayUint32Array089
-     * @tc.desc 测试join方法使用空字符串分隔符
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试join方法使用空字符串分隔符
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1456,12 +1456,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array093
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_093
-     * @tc.name TypeArrayUint32Array093
-     * @tc.desc 测试Array.from创建新数组并转换值
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试Array.from创建新数组并转换值
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1472,12 +1472,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array094
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_094
-     * @tc.name TypeArrayUint32Array094
-     * @tc.desc 测试扩展运算符与数组方法结合
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试扩展运算符与数组方法结合
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1488,12 +1488,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array096
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_096
-     * @tc.name TypeArrayUint32Array096
-     * @tc.desc 测试toString处理空数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试toString处理空数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1502,12 +1502,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array097
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_097
-     * @tc.name TypeArrayUint32Array097
-     * @tc.desc 测试toLocaleString处理空数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试toLocaleString处理空数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1516,12 +1516,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array098
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_098
-     * @tc.name TypeArrayUint32Array098
-     * @tc.desc 测试JSON.stringify处理空数组
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试JSON.stringify处理空数组
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1530,12 +1530,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array099
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_099
-     * @tc.name TypeArrayUint32Array099
-     * @tc.desc 测试处理特殊值NaN
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试处理特殊值NaN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1546,12 +1546,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array100
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_100
-     * @tc.name TypeArrayUint32Array100
-     * @tc.desc 测试处理特殊值Infinity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   测试处理特殊值Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1561,12 +1561,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(arr.toString()).assertEqual('0,0');
       })
     /**
+     * @tc.name   TypeArrayUint32Array101
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_101
-     * @tc.name TypeArrayUint32Array101
-     * @tc.desc Create Uint32Array from ArrayBuffer with offset
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array from ArrayBuffer with offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1582,12 +1582,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array102
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_102
-     * @tc.name TypeArrayUint32Array102
-     * @tc.desc Modify ArrayBuffer through multiple views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modify ArrayBuffer through multiple views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1604,12 +1604,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array103
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_103
-     * @tc.name TypeArrayUint32Array103
-     * @tc.desc Share ArrayBuffer between Uint32Array and Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Share ArrayBuffer between Uint32Array and Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1622,12 +1622,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array104
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_104
-     * @tc.name TypeArrayUint32Array104
-     * @tc.desc Create overlapping views from same ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create overlapping views from same ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1641,12 +1641,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array105
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_105
-     * @tc.name TypeArrayUint32Array105
-     * @tc.desc Verify ArrayBuffer byteLength after Uint32Array operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify ArrayBuffer byteLength after Uint32Array operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1659,12 +1659,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array106
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_106
-     * @tc.name TypeArrayUint32Array106
-     * @tc.desc Create Uint32Array from SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array from SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1675,12 +1675,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array107
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_107
-     * @tc.name TypeArrayUint32Array107
-     * @tc.desc Modify SharedArrayBuffer through Uint32Array view
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modify SharedArrayBuffer through Uint32Array view
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array107', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1695,12 +1695,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array108
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_108
-     * @tc.name TypeArrayUint32Array108
-     * @tc.desc Create multiple views on SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create multiple views on SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array108', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1714,12 +1714,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array111
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_111
-     * @tc.name TypeArrayUint32Array111
-     * @tc.desc Create Uint32Array with maximum possible ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array with maximum possible ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1731,12 +1731,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array112
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_112
-     * @tc.name TypeArrayUint32Array112
-     * @tc.desc Create subarray view from SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create subarray view from SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1750,12 +1750,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array113
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_113
-     * @tc.name TypeArrayUint32Array113
-     * @tc.desc Slice creates new ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Slice creates new ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1767,12 +1767,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array114
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_114
-     * @tc.name TypeArrayUint32Array114
-     * @tc.desc Modify sliced array doesn't affect original
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modify sliced array doesn't affect original
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1785,12 +1785,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array117
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_117
-     * @tc.name TypeArrayUint32Array117
-     * @tc.desc Use set method with different buffer source
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use set method with different buffer source
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1803,12 +1803,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array118
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_118
-     * @tc.name TypeArrayUint32Array118
-     * @tc.desc Create Uint32Array with offset beyond buffer length
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array with offset beyond buffer length
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1817,12 +1817,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array119
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_119
-     * @tc.name TypeArrayUint32Array119
-     * @tc.desc Create Uint32Array with length exceeding buffer capacity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array with length exceeding buffer capacity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1831,12 +1831,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array120
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_120
-     * @tc.name TypeArrayUint32Array120
-     * @tc.desc Verify buffer properties across views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify buffer properties across views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1848,12 +1848,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(buffer.byteLength).assertEqual(16);
       })
     /**
+     * @tc.name   TypeArrayUint32Array121
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_121
-     * @tc.name TypeArrayUint32Array121
-     * @tc.desc Copy data between ArrayBuffer views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Copy data between ArrayBuffer views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1871,12 +1871,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array122
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_122
-     * @tc.name TypeArrayUint32Array122
-     * @tc.desc Create nested views from SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create nested views from SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1891,12 +1891,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array123
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_123
-     * @tc.name TypeArrayUint32Array123
-     * @tc.desc Test buffer sharing with different element sizes
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test buffer sharing with different element sizes
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1914,12 +1914,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array124
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_124
-     * @tc.name TypeArrayUint32Array124
-     * @tc.desc Create Uint32Array from portion of larger buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array from portion of larger buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1934,12 +1934,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array125
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_125
-     * @tc.name TypeArrayUint32Array125
-     * @tc.desc Check buffer bounds when modifying through view
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check buffer bounds when modifying through view
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1956,12 +1956,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array126
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_126
-     * @tc.name TypeArrayUint32Array126
-     * @tc.desc Create SharedArrayBuffer with maximum view size
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create SharedArrayBuffer with maximum view size
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1972,12 +1972,12 @@ export default function typeArrayUint32ArrayTest() {
         expect(arr.byteLength).assertEqual(4 * 1024);
       })
     /**
+     * @tc.name   TypeArrayUint32Array128
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_128
-     * @tc.name TypeArrayUint32Array128
-     * @tc.desc Share buffer between Uint32Array and DataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Share buffer between Uint32Array and DataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -1992,12 +1992,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array129
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_129
-     * @tc.name TypeArrayUint32Array129
-     * @tc.desc Modify buffer through DataView and check Uint32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Modify buffer through DataView and check Uint32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2012,12 +2012,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array130
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_130
-     * @tc.name TypeArrayUint32Array130
-     * @tc.desc Create overlapping views with different element types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create overlapping views with different element types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2034,12 +2034,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array131
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_131
-     * @tc.name TypeArrayUint32Array131
-     * @tc.desc Test buffer equality across views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test buffer equality across views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2052,12 +2052,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array132
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_132
-     * @tc.name TypeArrayUint32Array132
-     * @tc.desc Check byte alignment of views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check byte alignment of views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2074,12 +2074,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array135
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_135
-     * @tc.name TypeArrayUint32Array135
-     * @tc.desc Create Uint32Array from sliced ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create Uint32Array from sliced ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2092,12 +2092,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array136
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_136
-     * @tc.name TypeArrayUint32Array136
-     * @tc.desc Share sliced buffer between views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Share sliced buffer between views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2112,12 +2112,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array137
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_137
-     * @tc.name TypeArrayUint32Array137
-     * @tc.desc Check buffer slice doesn't affect original
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Check buffer slice doesn't affect original
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2133,12 +2133,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array138
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_138
-     * @tc.name TypeArrayUint32Array138
-     * @tc.desc Create view with maximum possible offset
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create view with maximum possible offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2152,12 +2152,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array139
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_139
-     * @tc.name TypeArrayUint32Array139
-     * @tc.desc Test buffer sharing between workers (simulated)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test buffer sharing between workers (simulated)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
@@ -2176,12 +2176,12 @@ export default function typeArrayUint32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayUint32Array140
      * @tc.number SUB_BUILDINS_TYPEARRAY_UINT32ARRAY_140
-     * @tc.name TypeArrayUint32Array140
-     * @tc.desc Create zero-length view from buffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Create zero-length view from buffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayUint32Array140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {

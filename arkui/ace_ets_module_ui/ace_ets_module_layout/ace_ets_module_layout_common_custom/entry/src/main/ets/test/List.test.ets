@@ -21,6 +21,9 @@ import ButtonAlignTest from './CommonCustom/ButtonAlignTest.ets'
 import mediaQueryOffJsunit from './CommonCustom/mediaQuery.test.ets';
 import backgroundAndSizeSettingJsunit from './CommonAttrs/BackgroundAndSizeSettingJsunit.test';
 import borderJsunit from './CommonAttrs/BorderJsunit.test';
+import BorderRadiusRenderStrategyTest from './CommonAttrs/BorderRadiusRenderStrategyTest.ets';
+import FlexFourBoundaryTest from './CommonAttrs/FlexFourBoundaryTest.ets';
+import LayoutFourReturnTest from './CommonCustom/LayoutFourReturnTest.ets';
 
 export default function testsuite() {
   Calc01();
@@ -31,4 +34,7 @@ export default function testsuite() {
   mediaQueryOffJsunit();
   backgroundAndSizeSettingJsunit();
   borderJsunit();
+  BorderRadiusRenderStrategyTest();
+  FlexFourBoundaryTest();
+  LayoutFourReturnTest();
 }

@@ -77,12 +77,12 @@ export default function ImagePixelMapNDKTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0100
-     * @tc.desc      : OH_PixelMap_CreatePixelMap return error code
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0100
+     * @tc.desc   OH_PixelMap_CreatePixelMap return error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0100', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -93,12 +93,12 @@ export default function ImagePixelMapNDKTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0200
-     * @tc.desc      : OH_PixelMap_CreatePixelMap returns error code
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0200
+     * @tc.desc   OH_PixelMap_CreatePixelMap returns error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CREATEPIXELMAP_0200', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -109,12 +109,12 @@ export default function ImagePixelMapNDKTest() {
     });
     // 补充
     /**
-     * @tc.number    : SUB_PIXELMAPCREATEPIXELMAPRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPCREATEPIXELMAPRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPCREATEPIXELMAPRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapCreatePixelMapResultSuccess001
+     * @tc.number SUB_PIXELMAPCREATEPIXELMAPRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPCREATEPIXELMAPRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapCreatePixelMapResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -124,12 +124,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPGETBYTESNUMBERPERROWRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPGETBYTESNUMBERPERROWRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPGETBYTESNUMBERPERROWRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapGetBytesNumberPerRowResultSuccess001
+     * @tc.number SUB_PIXELMAPGETBYTESNUMBERPERROWRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPGETBYTESNUMBERPERROWRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapGetBytesNumberPerRowResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -139,12 +139,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPGETISEDITABLERESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPGETISEDITABLERESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPGETISEDITABLERESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapGetIsEditableResultSuccess001
+     * @tc.number SUB_PIXELMAPGETISEDITABLERESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPGETISEDITABLERESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapGetIsEditableResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -154,12 +154,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPISSUPPORTALPHARESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPISSUPPORTALPHARESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPISSUPPORTALPHARESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapIsSupportAlphaResultSuccess001
+     * @tc.number SUB_PIXELMAPISSUPPORTALPHARESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPISSUPPORTALPHARESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapIsSupportAlphaResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -169,12 +169,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPSETALPHAABLERESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPSETALPHAABLERESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPSETALPHAABLERESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapSetAlphaAbleResultSuccess001
+     * @tc.number SUB_PIXELMAPSETALPHAABLERESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPSETALPHAABLERESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapSetAlphaAbleResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -184,12 +184,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPGETDENSITYRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPGETDENSITYRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPGETDENSITYRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapGetDensityResultSuccess001
+     * @tc.number SUB_PIXELMAPGETDENSITYRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPGETDENSITYRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapGetDensityResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -199,12 +199,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPSETOPACITYRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPSETOPACITYRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPSETOPACITYRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapSetOpacityResultSuccess001
+     * @tc.number SUB_PIXELMAPSETOPACITYRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPSETOPACITYRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapSetOpacityResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -214,12 +214,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPSCALERESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPSCALERESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPSCALERESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapScaleResultSuccess001
+     * @tc.number SUB_PIXELMAPSCALERESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPSCALERESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapScaleResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -229,12 +229,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPSCALEWITHANTIALIASINGRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPSCALEWITHANTIALIASINGRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPSCALEWITHANTIALIASINGRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapScaleWithAntiAliasingResultSuccess001
+     * @tc.number SUB_PIXELMAPSCALEWITHANTIALIASINGRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPSCALEWITHANTIALIASINGRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapScaleWithAntiAliasingResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -244,12 +244,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPTRANSLATERESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPTRANSLATERESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPTRANSLATERESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapTranslateResultSuccess001
+     * @tc.number SUB_PIXELMAPTRANSLATERESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPTRANSLATERESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapTranslateResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -259,12 +259,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPROTATERESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPROTATERESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPROTATERESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapRotateResultSuccess001
+     * @tc.number SUB_PIXELMAPROTATERESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPROTATERESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapRotateResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -274,12 +274,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPFLIPRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPFLIPRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPFLIPRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapFlipResultSuccess001
+     * @tc.number SUB_PIXELMAPFLIPRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPFLIPRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapFlipResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -289,12 +289,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPCROPRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPCROPRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPCROPRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapCropResultSuccess001
+     * @tc.number SUB_PIXELMAPCROPRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPCROPRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapCropResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -304,12 +304,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPGETIMAGEINFORESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPGETIMAGEINFORESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPGETIMAGEINFORESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapGetImageInfoResultSuccess001
+     * @tc.number SUB_PIXELMAPGETIMAGEINFORESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPGETIMAGEINFORESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapGetImageInfoResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -319,12 +319,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPACCESSPIXELSRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPACCESSPIXELSRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPACCESSPIXELSRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapAccessPixelsResultSuccess001
+     * @tc.number SUB_PIXELMAPACCESSPIXELSRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPACCESSPIXELSRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapAccessPixelsResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -334,12 +334,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPUNACCESSPIXELSRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPUNACCESSPIXELSRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPUNACCESSPIXELSRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapUnAccessPixelsResultSuccess001
+     * @tc.number SUB_PIXELMAPUNACCESSPIXELSRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPUNACCESSPIXELSRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapUnAccessPixelsResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);
@@ -349,12 +349,12 @@ export default function ImagePixelMapNDKTest() {
       done()
     });
     /**
-     * @tc.number    : SUB_PIXELMAPSETDENSITYRESULTSUCCESS_0100
-     * @tc.name      : SUB_PIXELMAPSETDENSITYRESULTSUCCESS_0100
-     * @tc.desc      : test PIXELMAPSETDENSITYRESULTSUCCESS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   PixelMapSetDensityResultSuccess001
+     * @tc.number SUB_PIXELMAPSETDENSITYRESULTSUCCESS_0100
+     * @tc.desc   test PIXELMAPSETDENSITYRESULTSUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PixelMapSetDensityResultSuccess001', Level.LEVEL3, async (done: Function) => {
       const color = new ArrayBuffer(96);

@@ -21,12 +21,12 @@ const OS_ACCOUNT_ERR_OK = 0;
 export default function AVSessionTest() {
   describe('AVSessionTest', () => {
     /**
-     * @tc.number   SUB_AVSession_AVMetadataErrorCode_001
-     * @tc.name     testAVSessionAVMetadataErrorCode001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataErrorCode001
+     * @tc.number SUB_AVSession_AVMetadataErrorCode_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -41,12 +41,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataSkipIntervals_001
-     * @tc.name     testAVSessionAVMetadataSkipIntervals001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataSkipIntervals001
+     * @tc.number SUB_AVSession_AVMetadataSkipIntervals_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataSkipIntervals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -61,12 +61,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataSkipIntervals_002
-     * @tc.name     testAVSessionAVMetadataSkipIntervals002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataSkipIntervals002
+     * @tc.number SUB_AVSession_AVMetadataSkipIntervals_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataSkipIntervals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -81,12 +81,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataSkipIntervals_003
-     * @tc.name     testAVSessionAVMetadataSkipIntervals003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataSkipIntervals003
+     * @tc.number SUB_AVSession_AVMetadataSkipIntervals_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataSkipIntervals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -101,12 +101,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderCreate_001
-     * @tc.name     testAVSessionAVMetadataBuilderCreate001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderCreate001
+     * @tc.number SUB_AVSession_AVMetadataBuilderCreate_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -121,12 +121,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderCreate_002
-     * @tc.name     testAVSessionAVMetadataBuilderCreate002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderCreate002
+     * @tc.number SUB_AVSession_AVMetadataBuilderCreate_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -141,12 +141,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderDestroy_001
-     * @tc.name     testAVSessionAVMetadataBuilderDestroy001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderDestroy001
+     * @tc.number SUB_AVSession_AVMetadataBuilderDestroy_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -161,12 +161,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderDestroy_002
-     * @tc.name     testAVSessionAVMetadataBuilderDestroy002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderDestroy002
+     * @tc.number SUB_AVSession_AVMetadataBuilderDestroy_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -181,12 +181,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetAssetId_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetAssetId001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetAssetId001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetAssetId_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetAssetId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -201,12 +201,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetAssetId_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetAssetId002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetAssetId002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetAssetId_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetAssetId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -221,12 +221,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetTitle_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetTitle001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetTitle001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetTitle_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -241,12 +241,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetTitle_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetTitle002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetTitle002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetTitle_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetTitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -261,12 +261,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetArtist_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetArtist001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetArtist001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetArtist_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetArtist001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -281,12 +281,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetArtist_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetArtist002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetArtist002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetArtist_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetArtist002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -301,12 +301,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetAuthor_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetAuthor001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetAuthor001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetAuthor_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetAuthor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -321,12 +321,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetAuthor_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetAuthor002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetAuthor002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetAuthor_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetAuthor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -341,12 +341,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetAlbum_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetAlbum001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetAlbum001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetAlbum_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetAlbum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -361,12 +361,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetAlbum_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetAlbum002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetAlbum002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetAlbum_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetAlbum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -381,12 +381,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetWriter_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetWriter001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetWriter001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetWriter_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetWriter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -401,12 +401,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetWriter_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetWriter002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetWriter002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetWriter_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetWriter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -421,12 +421,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetComposer_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetComposer001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetComposer001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetComposer_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetComposer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -441,12 +441,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetComposer_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetComposer002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetComposer002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetComposer_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetComposer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -461,12 +461,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetDuration_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetDuration001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetDuration001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetDuration_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetDuration001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -481,12 +481,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetDuration_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetDuration002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetDuration002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetDuration_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetDuration002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -501,12 +501,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetMediaImageUri_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetMediaImageUri001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetMediaImageUri001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetMediaImageUri_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetMediaImageUri001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -521,12 +521,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetMediaImageUri_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetMediaImageUri002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetMediaImageUri002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetMediaImageUri_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetMediaImageUri002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -541,12 +541,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetSubtitle_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetSubtitle001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetSubtitle001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetSubtitle_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetSubtitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -561,12 +561,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetSubtitle_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetSubtitle002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetSubtitle002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetSubtitle_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetSubtitle002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -581,12 +581,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetDescription_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetDescription001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetDescription001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetDescription_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -601,12 +601,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetDescription_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetDescription002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetDescription002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetDescription_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -621,12 +621,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetLyric_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetLyric001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetLyric001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetLyric_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetLyric001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -641,12 +641,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetLyric_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetLyric002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetLyric002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetLyric_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetLyric002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -661,12 +661,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetSkipIntervals_001
-     * @tc.name     testAVMetadataBuilderSetSkipIntervals001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVMetadataBuilderSetSkipIntervals001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetSkipIntervals_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVMetadataBuilderSetSkipIntervals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -681,12 +681,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetSkipIntervals_002
-     * @tc.name     testAVMetadataBuilderSetSkipIntervals002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVMetadataBuilderSetSkipIntervals002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetSkipIntervals_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVMetadataBuilderSetSkipIntervals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -701,12 +701,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetDisplayTags_001
-     * @tc.name     testAVSessionAVMetadataBuilderSetDisplayTags001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetDisplayTags001
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetDisplayTags_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetDisplayTags001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -721,12 +721,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderSetDisplayTags_002
-     * @tc.name     testAVSessionAVMetadataBuilderSetDisplayTags002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderSetDisplayTags002
+     * @tc.number SUB_AVSession_AVMetadataBuilderSetDisplayTags_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderSetDisplayTags002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -741,12 +741,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderGenerateAVMetadata_001
-     * @tc.name     testAVSessionAVMetadataBuilderGenerateAVMetadata001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderGenerateAVMetadata001
+     * @tc.number SUB_AVSession_AVMetadataBuilderGenerateAVMetadata_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderGenerateAVMetadata001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -761,12 +761,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataBuilderGenerateAVMetadata_002
-     * @tc.name     testAVSessionAVMetadataBuilderGenerateAVMetadata002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataBuilderGenerateAVMetadata002
+     * @tc.number SUB_AVSession_AVMetadataBuilderGenerateAVMetadata_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataBuilderGenerateAVMetadata002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -781,12 +781,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataDestroy_001
-     * @tc.name     testAVSessionAVMetadataDestroy001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataDestroy001
+     * @tc.number SUB_AVSession_AVMetadataDestroy_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -801,12 +801,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataDestroy_002
-     * @tc.name     testAVSessionAVMetadataDestroy002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataDestroy002
+     * @tc.number SUB_AVSession_AVMetadataDestroy_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -821,12 +821,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionType_001
-     * @tc.name     testAVSessionAVMetadataAVSessionType001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionType001
+     * @tc.number SUB_AVSession_AVMetadataAVSessionType_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -841,12 +841,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionType_002
-     * @tc.name     testAVSessionAVMetadataAVSessionType002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionType002
+     * @tc.number SUB_AVSession_AVMetadataAVSessionType_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -861,12 +861,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionType_003
-     * @tc.name     testAVSessionAVMetadataAVSessionType003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionType003
+     * @tc.number SUB_AVSession_AVMetadataAVSessionType_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -881,12 +881,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_001
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState001
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -901,12 +901,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_002
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState002
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -921,12 +921,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_003
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState003
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -941,12 +941,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_004
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState004
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState004
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_004
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -961,12 +961,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_005
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState005
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState005
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_005
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -981,12 +981,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_006
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState006
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState006
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_006
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1001,12 +1001,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_007
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState007
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState007
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_007
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1021,12 +1021,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_008
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState008
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState008
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_008
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1041,12 +1041,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_009
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState009
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState009
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_009
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1061,12 +1061,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_010
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState010
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState010
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_010
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1081,12 +1081,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_011
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState011
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState011
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_011
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1101,12 +1101,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_012
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState012
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState012
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_012
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1121,12 +1121,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSetPlaybackState_013
-     * @tc.name     testAVSessionAVMetadataAVSetPlaybackState013
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSetPlaybackState013
+     * @tc.number SUB_AVSession_AVMetadataAVSetPlaybackState_013
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSetPlaybackState013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1141,12 +1141,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_LoopMode_001
-     * @tc.name     testAVSessionLoopMode001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionLoopMode001
+     * @tc.number SUB_AVSession_LoopMode_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionLoopMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1161,12 +1161,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_LoopMode_002
-     * @tc.name     testAVSessionLoopMode002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionLoopMode002
+     * @tc.number SUB_AVSession_LoopMode_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionLoopMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1181,12 +1181,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_LoopMode_003
-     * @tc.name     testAVSessionLoopMode003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionLoopMode003
+     * @tc.number SUB_AVSession_LoopMode_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionLoopMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1201,12 +1201,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_LoopMode_004
-     * @tc.name     testAVSessionLoopMode004
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionLoopMode004
+     * @tc.number SUB_AVSession_LoopMode_004
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionLoopMode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1221,12 +1221,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_LoopMode_005
-     * @tc.name     testAVSessionLoopMode005
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionLoopMode005
+     * @tc.number SUB_AVSession_LoopMode_005
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionLoopMode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1241,12 +1241,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionControlCommand_001
-     * @tc.name     testAVSessionAVMetadataAVSessionControlCommand001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionControlCommand001
+     * @tc.number SUB_AVSession_AVMetadataAVSessionControlCommand_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionControlCommand001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1261,12 +1261,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionControlCommand_002
-     * @tc.name     testAVSessionAVMetadataAVSessionControlCommand002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionControlCommand002
+     * @tc.number SUB_AVSession_AVMetadataAVSessionControlCommand_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionControlCommand002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1281,12 +1281,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionControlCommand_003
-     * @tc.name     testAVSessionAVMetadataAVSessionControlCommand003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionControlCommand003
+     * @tc.number SUB_AVSession_AVMetadataAVSessionControlCommand_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionControlCommand003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1301,12 +1301,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionControlCommand_004
-     * @tc.name     testAVSessionAVMetadataAVSessionControlCommand004
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionControlCommand004
+     * @tc.number SUB_AVSession_AVMetadataAVSessionControlCommand_004
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionControlCommand004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1321,12 +1321,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_AVMetadataAVSessionControlCommand_005
-     * @tc.name     testAVSessionAVMetadataAVSessionControlCommand005
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionAVMetadataAVSessionControlCommand005
+     * @tc.number SUB_AVSession_AVMetadataAVSessionControlCommand_005
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionAVMetadataAVSessionControlCommand005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1341,12 +1341,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_CallbackResultFailure_001
-     * @tc.name     testAVSessionCallbackResultFailure001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionCallbackResultFailure001
+     * @tc.number SUB_AVSession_CallbackResultFailure_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionCallbackResultFailure001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1361,12 +1361,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Create_001
-     * @tc.name     testAVSessionCreate001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionCreate001
+     * @tc.number SUB_AVSession_Create_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1381,12 +1381,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Create_002
-     * @tc.name     testAVSessionCreate002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionCreate002
+     * @tc.number SUB_AVSession_Create_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1401,12 +1401,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Destroy_001
-     * @tc.name     testAVSessionDestroy001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionDestroy001
+     * @tc.number SUB_AVSession_Destroy_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1421,12 +1421,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Destroy_002
-     * @tc.name     testAVSessionDestroy002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionDestroy002
+     * @tc.number SUB_AVSession_Destroy_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1441,12 +1441,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Activate_001
-     * @tc.name     testAVSessionActivate001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionActivate001
+     * @tc.number SUB_AVSession_Activate_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionActivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1461,12 +1461,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Activate_002
-     * @tc.name     testAVSessionActivate002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionActivate002
+     * @tc.number SUB_AVSession_Activate_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionActivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1481,12 +1481,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Deactivate_001
-     * @tc.name     testAVSessionDeactivate001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionDeactivate001
+     * @tc.number SUB_AVSession_Deactivate_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionDeactivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1501,12 +1501,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_Deactivate_002
-     * @tc.name     testAVSessionDeactivate002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionDeactivate002
+     * @tc.number SUB_AVSession_Deactivate_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionDeactivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1521,12 +1521,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_GetSessionType_001
-     * @tc.name     testAVSessionGetSessionType001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionGetSessionType001
+     * @tc.number SUB_AVSession_GetSessionType_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionGetSessionType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1541,12 +1541,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_GetSessionType_002
-     * @tc.name     testAVSessionGetSessionType002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionGetSessionType002
+     * @tc.number SUB_AVSession_GetSessionType_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionGetSessionType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1561,12 +1561,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_GetSessionId_001
-     * @tc.name     testAVSessionGetSessionId001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionGetSessionId001
+     * @tc.number SUB_AVSession_GetSessionId_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionGetSessionId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1581,12 +1581,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_GetSessionId_002
-     * @tc.name     testAVSessionGetSessionId002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionGetSessionId002
+     * @tc.number SUB_AVSession_GetSessionId_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionGetSessionId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1601,12 +1601,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_PlaybackState_001
-     * @tc.name     testAVSessionPlaybackState001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionPlaybackState001
+     * @tc.number SUB_AVSession_PlaybackState_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionPlaybackState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1621,12 +1621,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_PlaybackState_002
-     * @tc.name     testAVSessionPlaybackState002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionPlaybackState002
+     * @tc.number SUB_AVSession_PlaybackState_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionPlaybackState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1641,12 +1641,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetAVMetadata_002
-     * @tc.name     testAVSessionSetAVMetadata002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetAVMetadata002
+     * @tc.number SUB_AVSession_SetAVMetadata_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetAVMetadata002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1661,12 +1661,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetAVMetadata_003
-     * @tc.name     testAVSessionSetAVMetadata003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetAVMetadata003
+     * @tc.number SUB_AVSession_SetAVMetadata_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetAVMetadata003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1681,12 +1681,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetPlaybackPosition_001
-     * @tc.name     testAVSessionSetPlaybackPosition001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetPlaybackPosition001
+     * @tc.number SUB_AVSession_SetPlaybackPosition_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetPlaybackPosition001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1701,12 +1701,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetPlaybackPosition_002
-     * @tc.name     testAVSessionSetPlaybackPosition002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetPlaybackPosition002
+     * @tc.number SUB_AVSession_SetPlaybackPosition_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetPlaybackPosition002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1721,12 +1721,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetFavorite_001
-     * @tc.name     testAVSessionSetFavorite001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetFavorite001
+     * @tc.number SUB_AVSession_SetFavorite_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetFavorite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1741,12 +1741,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetFavorite_002
-     * @tc.name     testAVSessionSetFavorite002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetFavorite002
+     * @tc.number SUB_AVSession_SetFavorite_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetFavorite002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1761,12 +1761,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetLoopMode_001
-     * @tc.name     testAVSessionSetLoopMode001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetLoopMode001
+     * @tc.number SUB_AVSession_SetLoopMode_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetLoopMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1781,12 +1781,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_SetLoopMode_002
-     * @tc.name     testAVSessionSetLoopMode002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionSetLoopMode002
+     * @tc.number SUB_AVSession_SetLoopMode_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionSetLoopMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1801,12 +1801,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_RegisterCommandCallback_001
-     * @tc.name     testAVSessionRegisterCommandCallback001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionRegisterCommandCallback001
+     * @tc.number SUB_AVSession_RegisterCommandCallback_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionRegisterCommandCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1821,12 +1821,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_RegisterCommandCallback_002
-     * @tc.name     testAVSessionRegisterCommandCallback002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionRegisterCommandCallback002
+     * @tc.number SUB_AVSession_RegisterCommandCallback_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionRegisterCommandCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1841,12 +1841,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_RegisterCommandCallback_003
-     * @tc.name     testAVSessionRegisterCommandCallback003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionRegisterCommandCallback003
+     * @tc.number SUB_AVSession_RegisterCommandCallback_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionRegisterCommandCallback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1861,12 +1861,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_UnregisterCommandCallback_001
-     * @tc.name     testAVSessionUnregisterCommandCallback001
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionUnregisterCommandCallback001
+     * @tc.number SUB_AVSession_UnregisterCommandCallback_001
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionUnregisterCommandCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1881,12 +1881,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_UnregisterCommandCallback_002
-     * @tc.name     testAVSessionUnregisterCommandCallback002
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionUnregisterCommandCallback002
+     * @tc.number SUB_AVSession_UnregisterCommandCallback_002
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionUnregisterCommandCallback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1901,12 +1901,12 @@ export default function AVSessionTest() {
       });
 
     /**
-     * @tc.number   SUB_AVSession_UnregisterCommandCallback_003
-     * @tc.name     testAVSessionUnregisterCommandCallback003
-     * @tc.desc     testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   testAVSessionUnregisterCommandCallback003
+     * @tc.number SUB_AVSession_UnregisterCommandCallback_003
+     * @tc.desc   testing OH_ArkUI_CustomSpanMetrics_SetWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVSessionUnregisterCommandCallback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

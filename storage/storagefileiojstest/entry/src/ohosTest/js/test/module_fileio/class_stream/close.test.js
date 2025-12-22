@@ -23,13 +23,12 @@ export default function fileioStreamClose() {
 describe('fileio_stream_close', function () {
 
   /**
+   * @tc.name   fileio_test_stream_close_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSESYNC_0000
-   * @tc.name fileio_test_stream_close_sync_000
-   * @tc.desc Test closeSync() interface,Close file stream.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test closeSync() interface,Close file stream.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_close_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_close_sync_000');
@@ -48,13 +47,12 @@ describe('fileio_stream_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_stream_close_sync_001
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSESYNC_0100
-   * @tc.name fileio_test_stream_close_sync_001
-   * @tc.desc Test closeSync() interface,When there are parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test closeSync() interface,When there are parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_close_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_close_sync_001');
@@ -72,13 +70,12 @@ describe('fileio_stream_close', function () {
   })
 
   /**
+   * @tc.name   fileio_test_stream_close_async_000
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSEASYNC_0000
-   * @tc.name fileio_test_stream_close_async_000
-   * @tc.desc Test close() interface,return in promise mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test close() interface,return in promise mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_close_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_close_async_000');
@@ -98,13 +95,12 @@ describe('fileio_stream_close', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_close_async_001
    * @tc.number SUB_DF_FILEIO_STREAM_CLOSEASYNC_0100
-   * @tc.name fileio_test_stream_close_async_001
-   * @tc.desc Test close() interface,return in callback mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test close() interface,return in callback mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_close_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_close_async_001');

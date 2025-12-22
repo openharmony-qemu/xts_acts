@@ -21,12 +21,12 @@ export default function LowPowerSinkNdkTest() {
   describe('LowPowerSinkNdkTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -47,12 +47,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Configure0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -73,12 +73,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -99,12 +99,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetParameter0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -125,12 +125,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0102
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0102
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0102
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -151,12 +151,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -177,12 +177,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Prepare0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -203,12 +203,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Start0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Start0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Start0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Start0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Start0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -229,12 +229,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Pause0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Pause0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Pause0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Pause0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Pause0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -255,12 +255,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Resume0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Resume0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Resume0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Resume0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Resume0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -281,12 +281,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Flush0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Flush0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Flush0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Flush0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Flush0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -307,12 +307,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Stop0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Stop0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Stop0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Stop0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Stop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -333,12 +333,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Reset0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Reset0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Reset0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Reset0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Reset0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -359,12 +359,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Destroy0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_Destroy0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_Destroy0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_Destroy0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_Destroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -385,12 +385,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetVolume0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetVolume0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetVolume0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetVolume0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetVolume0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -411,12 +411,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPlaybackSpeed0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPlaybackSpeed0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPlaybackSpeed0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPlaybackSpeed0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPlaybackSpeed0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -437,12 +437,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_ReturnSamples0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_ReturnSamples0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_ReturnSamples0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_ReturnSamples0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_ReturnSamples0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -463,12 +463,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_RegisterCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_RegisterCallback0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_RegisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_RegisterCallback0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_RegisterCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -489,12 +489,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -515,12 +515,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSinkCallback_Destroy0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -541,12 +541,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -568,12 +568,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPositionUpdateListener0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -595,12 +595,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -622,12 +622,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDataNeededListener0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -649,12 +649,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetErrorListener0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetErrorListener0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetErrorListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetErrorListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetErrorListener0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -676,12 +676,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetInterruptListener0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetInterruptListener0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetInterruptListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetInterruptListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetInterruptListener0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -703,12 +703,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDeviceChangeListener0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDeviceChangeListener0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDeviceChangeListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDeviceChangeListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetDeviceChangeListener0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -730,12 +730,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetEosListener0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetEosListener0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetEosListener0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetEosListener0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetEosListener0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -757,12 +757,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Configure0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Configure0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Configure0101
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Configure0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Configure0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -784,12 +784,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetParameter0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetParameter0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetParameter0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetParameter0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetParameter0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -811,12 +811,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetVideoSurface0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetVideoSurface0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetVideoSurface0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetVideoSurface0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetVideoSurface0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -838,12 +838,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Prepare0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Prepare0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Prepare0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Prepare0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Prepare0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -865,12 +865,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartDecoder0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartDecoder0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartDecoder0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartDecoder0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartDecoder0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -892,12 +892,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_RenderFirstFrame0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_RenderFirstFrame0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_RenderFirstFrame0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_RenderFirstFrame0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_RenderFirstFrame0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -919,12 +919,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartRenderer0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartRenderer0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartRenderer0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartRenderer0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_StartRenderer0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -946,12 +946,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Pause0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Pause0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Pause0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Pause0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Pause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -973,12 +973,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Resume0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Resume0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Resume0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Resume0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Resume0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1000,12 +1000,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Flush0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Flush0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Flush0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Flush0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Flush0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1027,12 +1027,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Stop0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Stop0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Stop0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Stop0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Stop0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1054,12 +1054,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Reset0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Reset0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Reset0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Reset0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Reset0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1081,12 +1081,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Destroy0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_Destroy0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_Destroy0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_Destroy0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_Destroy0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1108,12 +1108,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetSyncAudioSink0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetSyncAudioSink0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetSyncAudioSink0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetSyncAudioSink0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetSyncAudioSink0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1135,12 +1135,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetTargetStartFrame0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetTargetStartFrame0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetTargetStartFrame0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetTargetStartFrame0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetTargetStartFrame0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1162,12 +1162,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_SetPlaybackSpeed0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1189,12 +1189,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_ReturnSamples0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_ReturnSamples0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_ReturnSamples0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_ReturnSamples0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_ReturnSamples0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1216,12 +1216,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSink_RegisterCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSink_RegisterCallback0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSink_RegisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSink_RegisterCallback0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSink_RegisterCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1243,12 +1243,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_Destroy0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_Destroy0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_Destroy0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_Destroy0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_Destroy0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1270,12 +1270,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetDataNeededListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetDataNeededListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetDataNeededListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetDataNeededListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetDataNeededListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1298,12 +1298,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetErrorListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetErrorListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetErrorListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetErrorListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetErrorListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1325,12 +1325,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetRenderStartListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetRenderStartListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetRenderStartListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetRenderStartListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetRenderStartListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1353,12 +1353,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetStreamChangedListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetStreamChangedListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetStreamChangedListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetStreamChangedListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetStreamChangedListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1381,12 +1381,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1409,12 +1409,12 @@ export default function LowPowerSinkNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetEosListener0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetEosListener0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetEosListener0100
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetEosListener0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_LowPowerVideoSinkCallback_SetEosListener0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -1435,12 +1435,12 @@ export default function LowPowerSinkNdkTest() {
         }
       })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVSamplesBuffer_AppendOneBuffer0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVSamplesBuffer_AppendOneBuffer0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVSamplesBuffer_AppendOneBuffer0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVSamplesBuffer_AppendOneBuffer0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVSamplesBuffer_AppendOneBuffer0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

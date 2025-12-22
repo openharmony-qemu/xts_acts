@@ -61,14 +61,14 @@ export default function ActsWebJavaScriptOnDocumentEndTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_JAVASCRIPTONDOCUMENTEND_API_0001
-    * @tc.name       : testWebJavaScriptOnDocumentEnd001
-    * @tc.desc       : test javaScriptOnDocumentEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebJavaScriptOnDocumentEnd001
+     * @tc.number SUB_ACE_WEB_JAVASCRIPTONDOCUMENTEND_API_0001
+     * @tc.desc   test javaScriptOnDocumentEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebJavaScriptOnDocumentEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebJavaScriptOnDocumentEnd001", 173050)
       Utils.registerEvent("testWebJavaScriptOnDocumentEnd001", true, 173060, done);

@@ -25,6 +25,8 @@ group("ai") {
       "mindspore/mindsporejstest:ActsMindsporeJSTest",
       "mindspore/mindsporendktest:ActsMindSporeNdkTest",
       "mindspore/ai_mindsporectest_20:ActsMindSporec20Test",
+      "mindspore/mindsporejsteststatic:ActsMindsporeJSStaticTest",
+      "mindspore/ActsMindSporeCTest:ActsMindSporeCTest",
       "nnrtndk:ActsAInnrtNdkTest",
     ]
   }

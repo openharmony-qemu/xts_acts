@@ -42,59 +42,78 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_009
-     *tc.name onRefreshAccessedHistory                                                                                                                                                                                                            *tc.desic Triggered when the Web page refreshes accessed history
+    /**
+     * @tc.name   onRefreshAccessedHistory
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_009
+     * @tc.desc   onRefreshAccessedHistory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onRefreshAccessedHistory', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnRefreshAccessedHistory', 133750);
       Utils.registerContainEvent("emitOnRefreshAccessedHistory", "second.html", 133760, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_015
-     *tc.name accessBackward
-     *tc.desic Checks whether the web page can go back
+    /**
+     * @tc.name   accessBackward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_015
+     * @tc.desc   accessBackward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('accessBackward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessBackward', 133750);
       Utils.registerEvent("emitAccessBackward", "true", 133770, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_016
-     *tc.name accessForward
-     *tc.desic Checks whether the web page can go forward
+    /**
+     * @tc.name   accessForward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_016
+     * @tc.desc   accessForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('accessForward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessForward', 133750);
       Utils.registerEvent("emitAccessForward", "false", 133780, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_017
-     *tc.name accessStep
-     *tc.desic Checks whether the web page can go back or forward the given number of steps
+    /**
+     * @tc.name   accessStep
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_017
+     * @tc.desc   accessStep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('accessStep', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitAccessStep', 133750);
       Utils.registerEvent("emitAccessStep", "true", 133790, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_018
-     *tc.name backward
-     *tc.desic Goes back in the history of the web page
+    /**
+     * @tc.name   backward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_018
+     * @tc.desc   backward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('backward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitBackward', 133750);
       Utils.registerEvent("emitBackward", "\"index\"", 133800, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_019
-     *tc.name forward
-     *tc.desic Goes forward in the history of the web page
+    /**
+     * @tc.name   forward
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_019
+     * @tc.desc   forward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('forward', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitForward', 133750);

@@ -300,12 +300,12 @@ export default function cameraIsControlCenterSupported() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_EFFECT_TYPES_001
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_EFFECT_TYPES_001
-     * @tc.desc      VideoSession getSupportedEffectTypes
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_EFFECT_TYPES_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_EFFECT_TYPES_001
+     * @tc.desc   VideoSession getSupportedEffectTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_EFFECT_TYPES_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_EFFECT_TYPES_001';

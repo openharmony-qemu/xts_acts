@@ -14,7 +14,7 @@
  */
 import { SceneResourceFactory, Scene, RenderingPipelineType, Camera, VignetteSettings,
   PostProcessSettings,
-  ColorFringeSettings} from '@kit.ArkGraphics3D'
+  ColorFringeSettings, GeometryType} from '@kit.ArkGraphics3D'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 
 export default function scenePostProcessSettingTest() {
@@ -22,12 +22,12 @@ export default function scenePostProcessSettingTest() {
     let scene: Scene | null = null;
     let rf: SceneResourceFactory;
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0980
-     * @tc.name      : testScenePostProcessSettingsVignetteRoundness
-     * @tc.desc      : Verify the VignetteSettings roundness property supports set and get
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testScenePostProcessSettingsVignetteRoundness
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0980
+     * @tc.desc   Verify the VignetteSettings roundness property supports set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScenePostProcessSettingsVignetteRoundness', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testScenePostProcessSettingsVignetteRoundness";
@@ -66,12 +66,12 @@ export default function scenePostProcessSettingTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0990
-     * @tc.name      : testScenePostProcessSettingsVignetteIntensity
-     * @tc.desc      : Verify the VignetteSettings intensity property supports set and get
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testScenePostProcessSettingsVignetteIntensity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0990
+     * @tc.desc   Verify the VignetteSettings intensity property supports set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScenePostProcessSettingsVignetteIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testScenePostProcessSettingsVignetteIntensity";
@@ -115,12 +115,12 @@ export default function scenePostProcessSettingTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1000
-     * @tc.name      : testScenePostProcessSettingsColorFringeIntensity
-     * @tc.desc      : Verify the ColorFringeSettings intensity property supports set and get
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testScenePostProcessSettingsColorFringeIntensity
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1000
+     * @tc.desc   Verify the ColorFringeSettings intensity property supports set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScenePostProcessSettingsColorFringeIntensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testScenePostProcessSettingsColorFringeIntensity";
@@ -159,12 +159,12 @@ export default function scenePostProcessSettingTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1001
-     * @tc.name      : testScenePostProcessSettingsVignette
-     * @tc.desc      : Verify the PostProcessSettings vignette property supports set and get
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testScenePostProcessSettingsVignette
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1001
+     * @tc.desc   Verify the PostProcessSettings vignette property supports set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScenePostProcessSettingsVignette', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testScenePostProcessSettingsVignette";
@@ -204,12 +204,12 @@ export default function scenePostProcessSettingTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1002
-     * @tc.name      : testScenePostProcessSettingsColorFringe
-     * @tc.desc      : Verify the PostProcessSettings colorFringe property supports set and get
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testScenePostProcessSettingsColorFringe
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1002
+     * @tc.desc   Verify the PostProcessSettings colorFringe property supports set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScenePostProcessSettingsColorFringe', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testScenePostProcessSettingsColorFringe";
@@ -246,12 +246,12 @@ export default function scenePostProcessSettingTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1003
-     * @tc.name      : testSceneCameraPostProcessDefaults
-     * @tc.desc      : Verify the Camera default vignette and colorFringe settings and values
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSceneCameraPostProcessDefaults
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1003
+     * @tc.desc   Verify the Camera default vignette and colorFringe settings and values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSceneCameraPostProcessDefaults', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "\"============================testSceneCameraPostProcessDefaults";
@@ -276,7 +276,7 @@ export default function scenePostProcessSettingTest() {
         console.info(msg + " vignetteDefaults.roundness not null");
         expect(vignetteDefaults.intensity != null).assertTrue();
         console.info(msg + " vignetteDefaults.intensity not null");
-        expect(Math.abs(vignetteDefaults.roundness! - 0.707)).assertLess(1e-6);
+        expect(Math.abs(vignetteDefaults.roundness! - Math.sqrt(0.5))).assertLess(1e-6);
         console.info(msg + " vignetteDefaults.roundness default value correct");
         expect(Math.abs(vignetteDefaults.intensity! - 0.4)).assertLess(1e-6);
         console.info(msg + " vignetteDefaults.intensity default value correct");
@@ -304,6 +304,7 @@ export default function scenePostProcessSettingTest() {
         expect(Math.abs(cam.postProcess!.colorFringe!.intensity - 0.9)).assertLess(1e-6);
         console.info(msg + " colorFringe intensity set and checked");
         console.info(msg + " Camera postProcess values updated successfully");
+        expect(GeometryType.CYLINDER).assertEqual(4);
 
         done();
       } catch (err) {

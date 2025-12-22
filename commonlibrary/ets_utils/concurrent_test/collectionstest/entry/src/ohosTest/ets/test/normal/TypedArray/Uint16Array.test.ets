@@ -5,12 +5,12 @@ import { collections } from '@kit.ArkTS';
 export default function Uint16ArrayTest() {
   describe('Uint16ArrayTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0100
-     * @tc.name       : testUint16Array0001
-     * @tc.desc       : Testing the iterative ability of Uint16Array using a for loop.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0100
+     * @tc.desc   Testing the iterative ability of Uint16Array using a for loop.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0001";
@@ -28,12 +28,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0200
-     * @tc.name       : testUint16Array0002
-     * @tc.desc       : Testing the iterative ability of Uint16Array using ... deconstruction.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0200
+     * @tc.desc   Testing the iterative ability of Uint16Array using ... deconstruction.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0002";
@@ -52,12 +52,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0300
-     * @tc.name       : testUint16Array0003
-     * @tc.desc       : Testing create an empty ArkTS TypedArray object with Uint16Array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0300
+     * @tc.desc   Testing create an empty ArkTS TypedArray object with Uint16Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0003";
@@ -71,12 +71,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0400
-     * @tc.name       : testUint16Array0004
-     * @tc.desc       : Testing ArrayLength constructs -1 parameter and checks the length.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0400
+     * @tc.desc   Testing ArrayLength constructs -1 parameter and checks the length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0004";
@@ -89,12 +89,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0500
-     * @tc.name       : testUint16Array0005
-     * @tc.desc       : Testing ArrayLength constructs 0 parameter and checks the length.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0500
+     * @tc.desc   Testing ArrayLength constructs 0 parameter and checks the length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0005";
@@ -108,12 +108,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0600
-     * @tc.name       : testUint16Array0006
-     * @tc.desc       : Testing ArrayLength constructs 10 parameter and checks the length.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0600
+     * @tc.desc   Testing ArrayLength constructs 10 parameter and checks the length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0006";
@@ -127,12 +127,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0700
-     * @tc.name       : testUint16Array0007
-     * @tc.desc       : Testing ArrayLength constructs 100000 parameter and checks the length.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0700
+     * @tc.desc   Testing ArrayLength constructs 100000 parameter and checks the length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0007";
@@ -146,12 +146,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0800
-     * @tc.name       : testUint16Array0008
-     * @tc.desc       : Testing construct an object from an ArrayLike.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0800
+     * @tc.desc   Testing construct an object from an ArrayLike.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0008";
@@ -166,12 +166,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0900
-     * @tc.name       : testUint16Array0009
-     * @tc.desc       : Testing construct an object from an ArrayBuffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_0900
+     * @tc.desc   Testing construct an object from an ArrayBuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0009";
@@ -186,12 +186,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1000
-     * @tc.name       : testUint16Array0010
-     * @tc.desc       : Testing construct an object from another ArkTS TypedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1000
+     * @tc.desc   Testing construct an object from another ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0010";
@@ -207,12 +207,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1100
-     * @tc.name       : testUint16Array0011
-     * @tc.desc       : Testing create an ArrayBuffer with an empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1100
+     * @tc.desc   Testing create an ArrayBuffer with an empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0011";
@@ -227,12 +227,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1200
-     * @tc.name       : testUint16Array0012
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1200
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0012";
@@ -246,12 +246,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1300
-     * @tc.name       : testUint16Array0013
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1300
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0013";
@@ -265,12 +265,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1400
-     * @tc.name       : testUint16Array0014
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1400
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0014";
@@ -284,12 +284,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1500
-     * @tc.name       : testUint16Array0015
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1500
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0015";
@@ -304,12 +304,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1600
-     * @tc.name       : testUint16Array0016
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1600
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0016";
@@ -323,12 +323,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1700
-     * @tc.name       : testUint16Array0017
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1700
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0017";
@@ -343,12 +343,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1800
-     * @tc.name       : testUint16Array0018
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1800
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0018";
@@ -363,12 +363,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1900
-     * @tc.name       : testUint16Array0019
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_1900
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0019";
@@ -382,12 +382,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2000
-     * @tc.name       : testUint16Array0020
-     * @tc.desc       : Testing create an ArrayBuffer with a not empty buffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2000
+     * @tc.desc   Testing create an ArrayBuffer with a not empty buffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0020";
@@ -402,12 +402,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2100
-     * @tc.name       : testUint16Array0021
-     * @tc.desc       : Testing the 'from' interface with an array-like structure [1, 3, 5].
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2100
+     * @tc.desc   Testing the 'from' interface with an array-like structure [1, 3, 5].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0021";
@@ -422,12 +422,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2200
-     * @tc.name       : testUint16Array0022
-     * @tc.desc       : Testing the 'from' interface with an array-like structure [].
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2200
+     * @tc.desc   Testing the 'from' interface with an array-like structure [].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0022";
@@ -442,12 +442,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2300
-     * @tc.name       : testUint16Array0023
-     * @tc.desc       : Testing the array-like map function created from an object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2300
+     * @tc.desc   Testing the array-like map function created from an object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0023";
@@ -464,12 +464,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2400
-     * @tc.name       : testUint16Array0024
-     * @tc.desc       : Testing the array-like map function created from a character array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2400
+     * @tc.desc   Testing the array-like map function created from a character array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0024";
@@ -484,12 +484,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2500
-     * @tc.name       : testUint16Array0025
-     * @tc.desc       : Testing the array-like map function created from a string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2500
+     * @tc.desc   Testing the array-like map function created from a string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0025";
@@ -504,12 +504,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2600
-     * @tc.name       : testUint16Array0026
-     * @tc.desc       : Testing the array-like map function created from a num array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2600
+     * @tc.desc   Testing the array-like map function created from a num array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0026";
@@ -525,12 +525,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2700
-     * @tc.name       : testUint16Array0027
-     * @tc.desc       : Testing the array-like map function created from a nesting array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2700
+     * @tc.desc   Testing the array-like map function created from a nesting array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0027";
@@ -548,12 +548,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2800
-     * @tc.name       : testUint16Array0028
-     * @tc.desc       : Testing the array-like map function without specifying a mapping function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2800
+     * @tc.desc   Testing the array-like map function without specifying a mapping function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0028";
@@ -568,12 +568,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2900
-     * @tc.name       : testUint16Array0029
-     * @tc.desc       : Testing the array-like map function with specifying a mapping function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_2900
+     * @tc.desc   Testing the array-like map function with specifying a mapping function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0029";
@@ -589,12 +589,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3000
-     * @tc.name       : testUint16Array0030
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3000
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0030";
@@ -609,12 +609,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3100
-     * @tc.name       : testUint16Array0031
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3100
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0031";
@@ -629,12 +629,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3200
-     * @tc.name       : testUint16Array0032
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3200
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0032";
@@ -649,12 +649,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3300
-     * @tc.name       : testUint16Array0033
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3300
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0033";
@@ -669,12 +669,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3400
-     * @tc.name       : testUint16Array0034
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3400
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0034";
@@ -689,12 +689,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3500
-     * @tc.name       : testUint16Array0035
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3500
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0035";
@@ -709,12 +709,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3600
-     * @tc.name       : testUint16Array0036
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3600
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0036";
@@ -729,12 +729,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3700
-     * @tc.name       : testUint16Array0037
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3700
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0037";
@@ -749,12 +749,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3800
-     * @tc.name       : testUint16Array0038
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3800
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0038";
@@ -769,12 +769,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3900
-     * @tc.name       : testUint16Array0039
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_3900
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0039";
@@ -789,12 +789,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4000
-     * @tc.name       : testUint16Array0040
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4000
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0040";
@@ -809,12 +809,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4100
-     * @tc.name       : testUint16Array0041
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4100
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0041";
@@ -829,12 +829,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4200
-     * @tc.name       : testUint16Array0042
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4200
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0042";
@@ -849,12 +849,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4300
-     * @tc.name       : testUint16Array0043
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4300
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0043";
@@ -869,12 +869,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4400
-     * @tc.name       : testUint16Array0044
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4400
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0044";
@@ -889,12 +889,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4500
-     * @tc.name       : testUint16Array0045
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4500
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0045";
@@ -909,12 +909,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4600
-     * @tc.name       : testUint16Array0046
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4600
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0046";
@@ -929,12 +929,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4700
-     * @tc.name       : testUint16Array0047
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4700
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0047";
@@ -949,12 +949,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4800
-     * @tc.name       : testUint16Array0048
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4800
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0048";
@@ -969,12 +969,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4900
-     * @tc.name       : testUint16Array0049
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_4900
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0049";
@@ -989,12 +989,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5000
-     * @tc.name       : testUint16Array0050
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5000
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0050";
@@ -1009,12 +1009,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5100
-     * @tc.name       : testUint16Array0051
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5100
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0051";
@@ -1029,12 +1029,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5200
-     * @tc.name       : testUint16Array0052
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5200
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0052";
@@ -1049,12 +1049,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5300
-     * @tc.name       : testUint16Array0053
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5300
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0053";
@@ -1069,12 +1069,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5400
-     * @tc.name       : testUint16Array0054
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5400
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0054";
@@ -1089,12 +1089,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5500
-     * @tc.name       : testUint16Array0055
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5500
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0055";
@@ -1109,12 +1109,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5600
-     * @tc.name       : testUint16Array0056
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5600
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0056";
@@ -1129,12 +1129,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5700
-     * @tc.name       : testUint16Array0057
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5700
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0057";
@@ -1149,12 +1149,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5800
-     * @tc.name       : testUint16Array0058
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5800
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0058";
@@ -1169,12 +1169,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5900
-     * @tc.name       : testUint16Array0059
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_5900
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0059";
@@ -1189,12 +1189,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6000
-     * @tc.name       : testUint16Array0060
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6000
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0060";
@@ -1209,12 +1209,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6100
-     * @tc.name       : testUint16Array0061
-     * @tc.desc       : Testing the copyWithin function to copy part of the array within itself.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6100
+     * @tc.desc   Testing the copyWithin function to copy part of the array within itself.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0061";
@@ -1229,12 +1229,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6200
-     * @tc.name       : testUint16Array0062
-     * @tc.desc       : Testing whether it returns true when there are elements that meet the specified conditions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6200
+     * @tc.desc   Testing whether it returns true when there are elements that meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0062";
@@ -1249,12 +1249,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6300
-     * @tc.name       : testUint16Array0063
-     * @tc.desc       : Testing whether it returns false when no elements meet the specified conditions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6300
+     * @tc.desc   Testing whether it returns false when no elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0063";
@@ -1269,12 +1269,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6400
-     * @tc.name       : testUint16Array0064
-     * @tc.desc       : Testing whether it returns true when all elements that meet the specified conditions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6400
+     * @tc.desc   Testing whether it returns true when all elements that meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0064";
@@ -1289,12 +1289,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6500
-     * @tc.name       : testUint16Array0065
-     * @tc.desc       : Testing whether it returns true when all elements meet the specified conditions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6500
+     * @tc.desc   Testing whether it returns true when all elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0065";
@@ -1309,12 +1309,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6600
-     * @tc.name       : testUint16Array0066
-     * @tc.desc       : Testing whether it returns false when not all elements meet the specified conditions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6600
+     * @tc.desc   Testing whether it returns false when not all elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0066";
@@ -1329,12 +1329,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6700
-     * @tc.name       : testUint16Array0067
-     * @tc.desc       : Testing whether it returns false when no elements meet the specified conditions.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6700
+     * @tc.desc   Testing whether it returns false when no elements meet the specified conditions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0067";
@@ -1349,12 +1349,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6800
-     * @tc.name       : testUint16Array0068
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6800
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0068";
@@ -1373,12 +1373,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6900
-     * @tc.name       : testUint16Array0069
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_6900
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0069";
@@ -1393,12 +1393,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7000
-     * @tc.name       : testUint16Array0070
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7000
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0070";
@@ -1413,12 +1413,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7100
-     * @tc.name       : testUint16Array0071
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7100
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0071";
@@ -1433,12 +1433,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7200
-     * @tc.name       : testUint16Array0072
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7200
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0072";
@@ -1453,12 +1453,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7300
-     * @tc.name       : testUint16Array0073
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7300
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0073";
@@ -1473,12 +1473,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7400
-     * @tc.name       : testUint16Array0074
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7400
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0074";
@@ -1493,12 +1493,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7500
-     * @tc.name       : testUint16Array0075
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7500
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0075";
@@ -1513,12 +1513,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7600
-     * @tc.name       : testUint16Array0076
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7600
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0076";
@@ -1533,12 +1533,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7700
-     * @tc.name       : testUint16Array0077
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7700
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0077";
@@ -1553,12 +1553,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7800
-     * @tc.name       : testUint16Array0078
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7800
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0078";
@@ -1573,12 +1573,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7900
-     * @tc.name       : testUint16Array0079
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_7900
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0079";
@@ -1593,12 +1593,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8000
-     * @tc.name       : testUint16Array0080
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8000
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0080";
@@ -1613,12 +1613,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8100
-     * @tc.name       : testUint16Array0081
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8100
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0081";
@@ -1633,12 +1633,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8200
-     * @tc.name       : testUint16Array0082
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8200
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0082";
@@ -1653,12 +1653,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8300
-     * @tc.name       : testUint16Array0083
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8300
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0083";
@@ -1673,12 +1673,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8400
-     * @tc.name       : testUint16Array0084
-     * @tc.desc       : Testing the filling of an ArkTS TypedArray within a specified range with specific values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8400
+     * @tc.desc   Testing the filling of an ArkTS TypedArray within a specified range with specific values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0084";
@@ -1693,12 +1693,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8500
-     * @tc.name       : testUint16Array0085
-     * @tc.desc       : Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8500
+     * @tc.desc   Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0085";
@@ -1714,12 +1714,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8600
-     * @tc.name       : testUint16Array0086
-     * @tc.desc       : Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8600
+     * @tc.desc   Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0086";
@@ -1735,12 +1735,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8700
-     * @tc.name       : testUint16Array0087
-     * @tc.desc       : Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8700
+     * @tc.desc   Testing if filter returns a new ArkTS TypedArray with elements that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0087";
@@ -1759,12 +1759,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8800
-     * @tc.name       : testUint16Array0088
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meets the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8800
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meets the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0088";
@@ -1780,12 +1780,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8900
-     * @tc.name       : testUint16Array0089
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meets the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_8900
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meets the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0089";
@@ -1801,12 +1801,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9000
-     * @tc.name       : testUint16Array0090
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9000
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0090";
@@ -1825,12 +1825,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9100
-     * @tc.name       : testUint16Array0091
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9100
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0091";
@@ -1846,12 +1846,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9200
-     * @tc.name       : testUint16Array0092
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9200
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0092";
@@ -1867,12 +1867,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9300
-     * @tc.name       : testUint16Array0093
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9300
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0093";
@@ -1888,12 +1888,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9400
-     * @tc.name       : testUint16Array0094
-     * @tc.desc       : Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9400
+     * @tc.desc   Testing if find returns a new ArkTS TypedArray with the first element that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0094";
@@ -1911,12 +1911,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9500
-     * @tc.name       : testUint16Array0095
-     * @tc.desc       : Testing if findIndex returns the first element index that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9500
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0095";
@@ -1931,12 +1931,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9600
-     * @tc.name       : testUint16Array0096
-     * @tc.desc       : Testing if findIndex returns the first element index that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9600
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0096";
@@ -1951,12 +1951,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9700
-     * @tc.name       : testUint16Array0097
-     * @tc.desc       : Testing if findIndex returns the first element index that meet the criteria.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0097
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9700
+     * @tc.desc   Testing if findIndex returns the first element index that meet the criteria.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0097";
@@ -1971,12 +1971,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9800
-     * @tc.name       : testUint16Array0098
-     * @tc.desc       : Testing if forEach executes the provided callback function for each element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0098
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9800
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0098";
@@ -1996,12 +1996,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9900
-     * @tc.name       : testUint16Array0099
-     * @tc.desc       : Testing if forEach executes the provided callback function for each element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0099
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_9900
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0099";
@@ -2022,12 +2022,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10000
-     * @tc.name       : testUint16Array0100
-     * @tc.desc       : Testing if forEach executes the provided callback function for each element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10000
+     * @tc.desc   Testing if forEach executes the provided callback function for each element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0100";
@@ -2049,12 +2049,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10100
-     * @tc.name       : testUint16Array0101
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10100
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0101";
@@ -2069,12 +2069,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10200
-     * @tc.name       : testUint16Array0102
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10200
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0102";
@@ -2089,12 +2089,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10300
-     * @tc.name       : testUint16Array0103
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10300
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0103";
@@ -2110,12 +2110,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10400
-     * @tc.name       : testUint16Array0104
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10400
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0104";
@@ -2130,12 +2130,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10500
-     * @tc.name       : testUint16Array0105
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10500
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0105";
@@ -2150,12 +2150,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10600
-     * @tc.name       : testUint16Array0106
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10600
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0106";
@@ -2170,12 +2170,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10700
-     * @tc.name       : testUint16Array0107
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10700
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0107";
@@ -2190,12 +2190,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10800
-     * @tc.name       : testUint16Array0108
-     * @tc.desc       : Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10800
+     * @tc.desc   Testing whether indexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0108";
@@ -2210,12 +2210,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10900
-     * @tc.name       : testUint16Array0109
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_10900
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0109";
@@ -2230,12 +2230,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11000
-     * @tc.name       : testUint16Array0110
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11000
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0110";
@@ -2250,12 +2250,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11100
-     * @tc.name       : testUint16Array0111
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0111
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11100
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0111";
@@ -2270,12 +2270,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11200
-     * @tc.name       : testUint16Array0112
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0112
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11200
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0112";
@@ -2290,12 +2290,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11300
-     * @tc.name       : testUint16Array0113
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11300
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0113";
@@ -2310,12 +2310,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11400
-     * @tc.name       : testUint16Array0114
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11400
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0114";
@@ -2330,12 +2330,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11500
-     * @tc.name       : testUint16Array0115
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11500
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0115";
@@ -2350,12 +2350,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11600
-     * @tc.name       : testUint16Array0116
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11600
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0116";
@@ -2370,12 +2370,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11700
-     * @tc.name       : testUint16Array0117
-     * @tc.desc       : Testing concatenation of all elements into a string with a specified delimiter.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11700
+     * @tc.desc   Testing concatenation of all elements into a string with a specified delimiter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0117";
@@ -2390,12 +2390,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11800
-     * @tc.name       : testUint16Array0118
-     * @tc.desc       : Testing applying a callback function to each element to create a new ArkTS TypedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11800
+     * @tc.desc   Testing applying a callback function to each element to create a new ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0118";
@@ -2411,12 +2411,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11900
-     * @tc.name       : testUint16Array0119
-     * @tc.desc       : Testing applying a callback function to each element to create a new ArkTS TypedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_11900
+     * @tc.desc   Testing applying a callback function to each element to create a new ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0119";
@@ -2432,12 +2432,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12000
-     * @tc.name       : testUint16Array0120
-     * @tc.desc       : Testing applying a callback function to each element to create a new ArkTS TypedArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12000
+     * @tc.desc   Testing applying a callback function to each element to create a new ArkTS TypedArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0120";
@@ -2454,12 +2454,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12100
-     * @tc.name       : testUint16Array0121
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12100
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0121";
@@ -2473,12 +2473,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12200
-     * @tc.name       : testUint16Array0122
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12200
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0122";
@@ -2498,12 +2498,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12300
-     * @tc.name       : testUint16Array0123
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12300
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0123";
@@ -2524,12 +2524,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12400
-     * @tc.name       : testUint16Array0124
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12400
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0124";
@@ -2546,12 +2546,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12500
-     * @tc.name       : testUint16Array0125
-     * @tc.desc       : Testing reverse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12500
+     * @tc.desc   Testing reverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0125";
@@ -2566,12 +2566,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12600
-     * @tc.name       : testUint16Array0126
-     * @tc.desc       : Testing reverse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12600
+     * @tc.desc   Testing reverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0126";
@@ -2586,12 +2586,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12700
-     * @tc.name       : testUint16Array0127
-     * @tc.desc       : Testing reverse.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12700
+     * @tc.desc   Testing reverse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0127";
@@ -2613,12 +2613,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12800
-     * @tc.name       : testUint16Array0128
-     * @tc.desc       : Testing the set of int16Array, offset is null
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12800
+     * @tc.desc   Testing the set of int16Array, offset is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0128";
@@ -2634,12 +2634,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12900
-     * @tc.name       : testUint16Array0129
-     * @tc.desc       : Testing the set of Uint16Array, offset is null, forEach succeed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_12900
+     * @tc.desc   Testing the set of Uint16Array, offset is null, forEach succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0129";
@@ -2661,12 +2661,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13000
-     * @tc.name       : testUint16Array0130
-     * @tc.desc       : Testing the set of Uint16Array, offset is -1, return failed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13000
+     * @tc.desc   Testing the set of Uint16Array, offset is -1, return failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0130";
@@ -2682,12 +2682,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13100
-     * @tc.name       : testUint16Array0131
-     * @tc.desc       : Testing the set of Uint16Array, offset is 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13100
+     * @tc.desc   Testing the set of Uint16Array, offset is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0131";
@@ -2703,12 +2703,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13200
-     * @tc.name       : testUint16Array0132
-     * @tc.desc       : Testing the set of int16Array, offset is 0, forEach succeed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13200
+     * @tc.desc   Testing the set of int16Array, offset is 0, forEach succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0132";
@@ -2730,12 +2730,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13300
-     * @tc.name       : testUint16Array0133
-     * @tc.desc       : Testing the set of Uint16Array, offset is 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13300
+     * @tc.desc   Testing the set of Uint16Array, offset is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0133";
@@ -2751,12 +2751,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13400
-     * @tc.name       : testUint16Array0134
-     * @tc.desc       : Testing the set of Uint16Array, offset is 2, forEach succeed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13400
+     * @tc.desc   Testing the set of Uint16Array, offset is 2, forEach succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0134";
@@ -2778,12 +2778,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13500
-     * @tc.name       : testUint16Array0135
-     * @tc.desc       : Testing the set of Uint16Array, offset is 10(overstep), return failed.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13500
+     * @tc.desc   Testing the set of Uint16Array, offset is 10(overstep), return failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0135";
@@ -2799,12 +2799,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13600
-     * @tc.name       : testUint16Array0136
-     * @tc.desc       : Testing the Slice of Uint16Array, array is null, start is 1, end is 3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13600
+     * @tc.desc   Testing the Slice of Uint16Array, array is null, start is 1, end is 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0136";
@@ -2819,12 +2819,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13700
-     * @tc.name       : testUint16Array0137
-     * @tc.desc       : Testing the Slice of Uint16Array, array is null, parameter is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13700
+     * @tc.desc   Testing the Slice of Uint16Array, array is null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0137";
@@ -2839,12 +2839,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13800
-     * @tc.name       : testUint16Array0138
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, parameter is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13800
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0138";
@@ -2859,12 +2859,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13900
-     * @tc.name       : testUint16Array0139
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, parameter is undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_13900
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0139";
@@ -2879,12 +2879,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14000
-     * @tc.name       : testUint16Array0140
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, parameter is -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14000
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, parameter is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0140";
@@ -2899,12 +2899,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14100
-     * @tc.name       : testUint16Array0141
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, start is -1, end is -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14100
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, start is -1, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0141";
@@ -2919,12 +2919,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14200
-     * @tc.name       : testUint16Array0142
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, start is -1, end is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14200
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, start is -1, end is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0142";
@@ -2939,12 +2939,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14300
-     * @tc.name       : testUint16Array0143
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, start is 0, end is -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0143
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14300
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, start is 0, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0143";
@@ -2959,12 +2959,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14400
-     * @tc.name       : testUint16Array0144
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, parameter is 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0144
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14400
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, parameter is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0144";
@@ -2979,12 +2979,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14500
-     * @tc.name       : testUint16Array0145
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, parameter is 10(overstep).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0145
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14500
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, parameter is 10(overstep).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0145";
@@ -2999,12 +2999,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14600
-     * @tc.name       : testUint16Array0146
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, start is 2, end is 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0146
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14600
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, start is 2, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0146";
@@ -3019,12 +3019,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14700
-     * @tc.name       : testUint16Array0147
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, start is 2, end is 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0147
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14700
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, start is 2, end is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0147";
@@ -3039,12 +3039,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_148000
-     * @tc.name       : testUint16Array0148
-     * @tc.desc       : Testing the Slice of Uint16Array, array is not null, start is 2, end is 4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0148
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_148000
+     * @tc.desc   Testing the Slice of Uint16Array, array is not null, start is 2, end is 4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0148";
@@ -3059,12 +3059,12 @@ export default function Uint16ArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14900
-     * @tc.name       : testUint16Array0149
-     * @tc.desc       : Testing the sort of Uint16Array, array is null, parameter is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0149
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_14900
+     * @tc.desc   Testing the sort of Uint16Array, array is null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0149";
@@ -3079,12 +3079,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15000
-     * @tc.name       : testUint16Array0150
-     * @tc.desc       : Testing the sort of Uint16Array, array is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15000
+     * @tc.desc   Testing the sort of Uint16Array, array is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0150";
@@ -3099,12 +3099,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15100
-     * @tc.name       : testUint16Array0151
-     * @tc.desc       : Testing the sort of Uint16Array, array is not null, parameter is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0151
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15100
+     * @tc.desc   Testing the sort of Uint16Array, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0151";
@@ -3119,12 +3119,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15200
-     * @tc.name       : testUint16Array0152
-     * @tc.desc       : Testing the sort of Uint16Array, array is not null, parameter is undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0152
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15200
+     * @tc.desc   Testing the sort of Uint16Array, array is not null, parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0152";
@@ -3139,12 +3139,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15300
-     * @tc.name       : testUint16Array0153
-     * @tc.desc       : Testing the sort of Uint16Array, array is not null, parameter is grade down.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0153
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15300
+     * @tc.desc   Testing the sort of Uint16Array, array is not null, parameter is grade down.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0153";
@@ -3159,12 +3159,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15400
-     * @tc.name       : testUint16Array0154
-     * @tc.desc       : Testing the sort of Uint16Array, array is not null, set.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0154
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15400
+     * @tc.desc   Testing the sort of Uint16Array, array is not null, set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0154";
@@ -3180,12 +3180,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15500
-     * @tc.name       : testUint16Array0155
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, parameter is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0155
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15500
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0155";
@@ -3200,12 +3200,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15600
-     * @tc.name       : testUint16Array0156
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is -1, end is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0156
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15600
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is -1, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0156";
@@ -3220,12 +3220,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15700
-     * @tc.name       : testUint16Array0157
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is -1, end is -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0157
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15700
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is -1, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0157";
@@ -3240,12 +3240,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15800
-     * @tc.name       : testUint16Array0158
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is -1, end is 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0158
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15800
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is -1, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0158";
@@ -3260,12 +3260,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15900
-     * @tc.name       : testUint16Array0159
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is -1, end is overstep.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0159
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_15900
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is -1, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0159";
@@ -3280,12 +3280,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16000
-     * @tc.name       : testUint16Array0160
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is 2, end is null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16000
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is 2, end is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0160";
@@ -3300,12 +3300,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16100
-     * @tc.name       : testUint16Array0161
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is 2, end is -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0161
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16100
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is 2, end is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0161";
@@ -3320,12 +3320,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16200
-     * @tc.name       : testUint16Array0162
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is 2, end is 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0162
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16200
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is 2, end is 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0162";
@@ -3340,12 +3340,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16300
-     * @tc.name       : testUint16Array0163
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is 2, end is overstep.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0163
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16300
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is 2, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0163";
@@ -3360,12 +3360,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16400
-     * @tc.name       : testUint16Array0164
-     * @tc.desc       : Testing the subarray of Uint16Array, array is not null, begin is overstep, end is overstep.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0164
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16400
+     * @tc.desc   Testing the subarray of Uint16Array, array is not null, begin is overstep, end is overstep.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0164";
@@ -3380,12 +3380,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16500
-     * @tc.name       : testUint16Array0165
-     * @tc.desc       : Testing Collections of uint16array, array is [], at(1), return undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0165
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16500
+     * @tc.desc   Testing Collections of uint16array, array is [], at(1), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0165";
@@ -3400,12 +3400,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16600
-     * @tc.name       : testUint16Array0166
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], at(3), return undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0166
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16600
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], at(3), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0166";
@@ -3420,12 +3420,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16700
-     * @tc.name       : testUint16Array0167
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], at(-1), return element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0167
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16700
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], at(-1), return element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0167";
@@ -3440,12 +3440,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16800
-     * @tc.name       : testUint16Array0168
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], at(5), return undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0168
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16800
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], at(5), return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0168";
@@ -3460,12 +3460,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16900
-     * @tc.name       : testUint16Array0169
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], at(0), return element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0169
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_16900
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], at(0), return element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0169";
@@ -3480,12 +3480,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17000
-     * @tc.name       : testUint16Array0170
-     * @tc.desc       : Testing Collections of uint16array, array is [], includes(2), return false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17000
+     * @tc.desc   Testing Collections of uint16array, array is [], includes(2), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0170";
@@ -3500,12 +3500,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17100
-     * @tc.name       : testUint16Array0171
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], includes(5,-1), return false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0171
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17100
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], includes(5,-1), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0171";
@@ -3520,12 +3520,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17200
-     * @tc.name       : testUint16Array0172
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], includes(3,-1), return true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0172
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17200
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], includes(3,-1), return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0172";
@@ -3540,12 +3540,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17300
-     * @tc.name       : testUint16Array0173
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], includes(10), return false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0173
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17300
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], includes(10), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0173";
@@ -3560,12 +3560,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17400
-     * @tc.name       : testUint16Array0174
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], includes(1), return true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0174
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17400
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], includes(1), return true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0174";
@@ -3580,12 +3580,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17500
-     * @tc.name       : testUint16Array0175
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], includes(1,5), return false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0175
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17500
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], includes(1,5), return false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0175";
@@ -3600,12 +3600,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17600
-     * @tc.name       : testUint16Array0176
-     * @tc.desc       : Testing Collections of uint16array, array is [], entries(), .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0176
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17600
+     * @tc.desc   Testing Collections of uint16array, array is [], entries(), .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0176";
@@ -3621,12 +3621,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17700
-     * @tc.name       : testUint16Array0177
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], entries() .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0177
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17700
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], entries() .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0177";
@@ -3642,12 +3642,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17800
-     * @tc.name       : testUint16Array0178
-     * @tc.desc       : Testing Collections of uint16array, array is [], keys().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0178
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17800
+     * @tc.desc   Testing Collections of uint16array, array is [], keys().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0178";
@@ -3667,12 +3667,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17900
-     * @tc.name       : testUint16Array0179
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], keys(),iterator.next().value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0179
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_17900
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], keys(),iterator.next().value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0179";
@@ -3689,12 +3689,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18000
-     * @tc.name       : testUint16Array0180
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], keys(),for iterator.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18000
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], keys(),for iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0180";
@@ -3714,12 +3714,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18100
-     * @tc.name       : testUint16Array0181
-     * @tc.desc       : Testing Collections of uint16array, array is [], values().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0181
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18100
+     * @tc.desc   Testing Collections of uint16array, array is [], values().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0181";
@@ -3735,12 +3735,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18200
-     * @tc.name       : testUint16Array0182
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], values(),iterator.next().
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0182
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18200
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], values(),iterator.next().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0182";
@@ -3758,12 +3758,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18300
-     * @tc.name       : testUint16Array0183
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], values(),for value iterator.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0183
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18300
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], values(),for value iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0183";
@@ -3784,12 +3784,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18400
-     * @tc.name       : testUint16Array0184
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], set array,values(),for value iterator.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0184
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18400
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], set array,values(),for value iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0184";
@@ -3811,12 +3811,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18500
-     * @tc.name       : testUint16Array0185
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], index < 0, array[index] = undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0185
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18500
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], index < 0, array[index] = undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0185";
@@ -3831,12 +3831,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18600
-     * @tc.name       : testUint16Array0186
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3], index > arrayLength, array[index] = undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0186
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18600
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3], index > arrayLength, array[index] = undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0186";
@@ -3851,13 +3851,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18700
-     * @tc.name       : testUint16Array0187
-     * @tc.desc       : Testing Collections of uint16array, array is [1,2,3],
-     * 0 <= index < arrayLength, array[index] = array element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16Array0187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18700
+     * @tc.desc   Testing Collections of uint16array, array is [1,2,3],
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16Array0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16Array0187";
@@ -3872,12 +3871,12 @@ export default function Uint16ArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18800
-     * @tc.name       : testUint16ArrayReduceRight0001
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayReduceRight0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18800
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayReduceRight0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayReduceRight0001";
@@ -3893,12 +3892,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18900
-     * @tc.name       : testUint16ArrayReduceRight0002
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayReduceRight0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_18900
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayReduceRight0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayReduceRight0002";
@@ -3920,12 +3919,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19000
-     * @tc.name       : testUint16ArrayReduceRight0003
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayReduceRight0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19000
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayReduceRight0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayReduceRight0003";
@@ -3948,12 +3947,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19100
-     * @tc.name       : testUint16ArrayReduceRight0004
-     * @tc.desc       : Testing a reduction function on each element and returning the final result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayReduceRight0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19100
+     * @tc.desc   Testing a reduction function on each element and returning the final result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayReduceRight0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayReduceRight0004";
@@ -3973,12 +3972,12 @@ export default function Uint16ArrayTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19200
-     * @tc.name       : testUint16ArrayToLocaleString0001
-     * @tc.desc       : Test the function of the interface ArkTS Array ToLocaleString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUint16ArrayToLocaleString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19200
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayToLocaleString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayToLocaleString0001";
@@ -3996,12 +3995,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19500
-     * @tc.name       : testUint16ArrayToLocaleString0002
-     * @tc.desc       : Test the function of the interface ArkTS Array ToLocaleString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUint16ArrayToLocaleString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19500
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayToLocaleString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayToLocaleString0002";
@@ -4019,12 +4018,12 @@ export default function Uint16ArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19501
-     * @tc.name       : testUint16ArrayToLocaleString0003
-     * @tc.desc       : Test the function of the interface ArkTS Array ToLocaleString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUint16ArrayToLocaleString0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19501
+     * @tc.desc   Test the function of the interface ArkTS Array ToLocaleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayToLocaleString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayToLocaleString0003";
@@ -4042,12 +4041,12 @@ export default function Uint16ArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19600
-     * @tc.name       : testUint16ArrayLastIndexOf0001
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19600
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0001";
@@ -4064,12 +4063,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19700
-     * @tc.name       : testUint16ArrayLastIndexOf0002
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19700
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0002";
@@ -4086,12 +4085,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19800
-     * @tc.name       : testUint16ArrayLastIndexOf0003
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19800
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0003";
@@ -4109,12 +4108,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19900
-     * @tc.name       : testUint16ArrayLastIndexOf0004
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_19900
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0004";
@@ -4131,12 +4130,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20000
-     * @tc.name       : testUint16ArrayLastIndexOf0005
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20000
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0005";
@@ -4153,12 +4152,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20200
-     * @tc.name       : testUint16ArrayLastIndexOf0006
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20200
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0006";
@@ -4175,12 +4174,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20300
-     * @tc.name       : testUint16ArrayLastIndexOf0007
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20300
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0007";
@@ -4197,12 +4196,12 @@ export default function Uint16ArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20100
-     * @tc.name       : testUint16ArrayLastIndexOf0008
-     * @tc.desc       : Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayLastIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20100
+     * @tc.desc   Testing whether lastIndexOf returns the first index of the given element or -1 if it does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayLastIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayLastIndexOf0008";
@@ -4219,12 +4218,12 @@ export default function Uint16ArrayTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20400
-     * @tc.name       : testUint16ArrayOf0001
-     * @tc.desc       : Test the function of the interface Of
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20400
+     * @tc.desc   Test the function of the interface Of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayOf0001";
@@ -4240,12 +4239,12 @@ export default function Uint16ArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20500
-     * @tc.name       : testUint16ArrayOf0002
-     * @tc.desc       : Test the function of the interface Of
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUint16ArrayOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UINT16ARRAY_20500
+     * @tc.desc   Test the function of the interface Of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUint16ArrayOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testUint16ArrayOf0002";

@@ -28,7 +28,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 const Tag: string = 'AudioCpaturerEnhanceTest: ';
 let g_context: common.UIAbilityContext;
-let audioCap: audio.AudioCapturer;
+let audioCap: audio.AudioCapturer | null;
 
 export default function getCurrentInputDevicesTest() {
   describe('getCurrentInputDevices', () => {
@@ -69,8 +69,8 @@ export default function getCurrentInputDevicesTest() {
       await Utils.msSleep(1000);
     })
     afterEach(async () => {
-      if (audioCap != null) {
-        releaseFun(audioCap);
+      if (audioCap! != null) {
+        releaseFun(audioCap!);
       }
       console.info(`${Tag} afterEach: Test case-level clearance conditions`);
       await Utils.msSleep(1000);
@@ -166,12 +166,12 @@ export default function getCurrentInputDevicesTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0100
-     * @tc.desc        AudioCapturer - getCurrentInputDevices-Mic-SOURCE_TYPE_MIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0100
+     * @tc.desc   AudioCapturer - getCurrentInputDevices-Mic-SOURCE_TYPE_MIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -189,7 +189,7 @@ export default function getCurrentInputDevicesTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
@@ -201,7 +201,7 @@ export default function getCurrentInputDevicesTest() {
         done();
       }
       try {
-        let InputDeviceInfo: audio.AudioDeviceDescriptors = audioCap.getCurrentInputDevices();
+        let InputDeviceInfo: audio.AudioDeviceDescriptors = audioCap!.getCurrentInputDevices();
         // console.info(`getCurrentInputDevices :SUCCESS ${getInputDeviceInfo(InputDeviceInfo)}`)
         expect(InputDeviceInfo[0].deviceType).assertEqual(audio.DeviceType.MIC);
         expect(InputDeviceInfo[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
@@ -216,12 +216,12 @@ export default function getCurrentInputDevicesTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0200
-     * @tc.desc        AudioCapturer - getCurrentInputDevices-mic-STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0200
+     * @tc.desc   AudioCapturer - getCurrentInputDevices-mic-STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GETCURRENTINPUTDEVICES_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -239,13 +239,13 @@ export default function getCurrentInputDevicesTest() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCap = data;
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
         await getFd("capture_js-44100-2C-16B.pcm");
-        await recordingFun(audioCap);
+        await recordingFun(audioCap!);
       } catch (error: BusinessError) {
         console.info(`${Tag} AudioCapturer Created : ERROR :  ${error.message} ${error.code}`);
         expect(false).assertTrue();
@@ -253,7 +253,7 @@ export default function getCurrentInputDevicesTest() {
       }
 
       try {
-        let InputDeviceInfo: audio.AudioDeviceDescriptors = audioCap.getCurrentInputDevices();
+        let InputDeviceInfo: audio.AudioDeviceDescriptors = audioCap!.getCurrentInputDevices();
         // console.info(`getCurrentInputDevices :SUCCESS ${getInputDeviceInfo(InputDeviceInfo)}`)
         expect(InputDeviceInfo[0].id).assertLargerOrEqual(TestConst.OUTPUT_NUMBER_0);
         expect(InputDeviceInfo[0].deviceType).assertEqual(audio.DeviceType.MIC);
@@ -265,7 +265,7 @@ export default function getCurrentInputDevicesTest() {
         expect(false).assertTrue();
         done();
       }
-      await audioCap.stop();
+      await audioCap!.stop();
       console.log(`${Tag} stop ok`);
     })
   })

@@ -131,6 +131,8 @@ void addDrmKitTest(std::vector<napi_property_descriptor>& descData)
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN", nullptr, OH_MediaKeySystem_Destroy_DRM_ERR_UNKNOWN,
         nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"mediaKeySession_GenerateOfflineReleaseRequestInvalueOne", nullptr,
+        OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne, nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 
 
@@ -178,6 +180,16 @@ napi_value OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue(napi_env env,
     napi_create_int32(env, errCode == DRM_ERR_INVALID_VAL, &result);
     return result;
 }
+
+napi_value OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int ret = 0;
+    Drm_ErrCode errCode = OH_MediaKeySession_GenerateOfflineReleaseRequest(nullptr, nullptr, 0, nullptr, nullptr);
+    napi_create_int32(env, errCode == DRM_ERR_INVALID_VAL, &result);
+    return result;
+}
+
 
 napi_value OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue(napi_env env, napi_callback_info info)
 {

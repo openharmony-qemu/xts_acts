@@ -57,13 +57,13 @@ export default function jsMessageExtFour() {
     })
 
     /**
-    * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_PROMISE_0100
-    * @tc.name testPromiseJavascriptProxyGetErrorDescription001
-    * @tc.desc test Promise javascriptProxy getErrorDescription object length < 2048
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 0
-    */
+     * @tc.name   testPromiseJavascriptProxyGetErrorDescription001
+     * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_PROMISE_0100
+     * @tc.desc   test Promise javascriptProxy getErrorDescription object length < 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPromiseJavascriptProxyGetErrorDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJavascriptProxyGetErrorDescription001", 144)
       Utils.registerBaseEvent("testPromiseJavascriptProxyGetErrorDescription001", true, 25112127, done,
@@ -73,12 +73,12 @@ export default function jsMessageExtFour() {
       sendEventByKey('JsMessageExtFourButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJavascriptProxyGetErrorDescription002
      * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_PROMISE_0200
-     * @tc.name testPromiseJavascriptProxyGetErrorDescription002
-     * @tc.desc test Promise javascriptProxy getErrorDescription object length = 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise javascriptProxy getErrorDescription object length = 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJavascriptProxyGetErrorDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJavascriptProxyGetErrorDescription002", 144)
@@ -89,12 +89,12 @@ export default function jsMessageExtFour() {
       sendEventByKey('JsMessageExtFourButton', 10, '');
     })
     /**
+     * @tc.name   testPromiseJavascriptProxyGetErrorDescription003
      * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_PROMISE_0300
-     * @tc.name testPromiseJavascriptProxyGetErrorDescription003
-     * @tc.desc test Promise javascriptProxy getErrorDescription object length > 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Promise javascriptProxy getErrorDescription object length > 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPromiseJavascriptProxyGetErrorDescription003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPromiseJavascriptProxyGetErrorDescription003", 144)
@@ -105,12 +105,12 @@ export default function jsMessageExtFour() {
       sendEventByKey('JsMessageExtFourButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJavascriptProxyGetErrorDescription001
      * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_CALLBACK_0100
-     * @tc.name testCallbackJavascriptProxyGetErrorDescription001
-     * @tc.desc test Callback javascriptProxy getErrorDescription object length < 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback javascriptProxy getErrorDescription object length < 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJavascriptProxyGetErrorDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJavascriptProxyGetErrorDescription001", 144)
@@ -121,12 +121,12 @@ export default function jsMessageExtFour() {
       sendEventByKey('JsMessageExtFourButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJavascriptProxyGetErrorDescription002
      * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_CALLBACK_0200
-     * @tc.name testCallbackJavascriptProxyGetErrorDescription002
-     * @tc.desc test Callback javascriptProxy getErrorDescription object length = 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback javascriptProxy getErrorDescription object length = 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJavascriptProxyGetErrorDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJavascriptProxyGetErrorDescription002", 144)
@@ -137,12 +137,12 @@ export default function jsMessageExtFour() {
       sendEventByKey('JsMessageExtFourButton', 10, '');
     })
     /**
+     * @tc.name   testCallbackJavascriptProxyGetErrorDescription003
      * @tc.number SUB_WEB_JAVASCRIPTPROXY_GETERRORDESCRIPTION_CALLBACK_0300
-     * @tc.name testCallbackJavascriptProxyGetErrorDescription003
-     * @tc.desc test Callback javascriptProxy getErrorDescription object length > 2048
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Callback javascriptProxy getErrorDescription object length > 2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCallbackJavascriptProxyGetErrorDescription003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCallbackJavascriptProxyGetErrorDescription003", 144)

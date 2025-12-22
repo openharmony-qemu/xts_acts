@@ -138,6 +138,8 @@
         "MainAbility/pages/ArcSwiper/arcDotIndicator",
         "MainAbility/pages/ArcSwiper/arcSwiperEvent",
         "MainAbility/pages/ArcSwiper/arcSwiperShow",
-        "MainAbility/pages/ArcSwiper/arcSwiperContent"
+        "MainAbility/pages/ArcSwiper/arcSwiperContent",
+        "MainAbility/pages/Swiper/SwiperContentUpdate/SwiperContentUpdateOne",
+        "MainAbility/pages/Swiper/SwiperContentUpdate/SwiperContentUpdateTwo"
     ]
 }

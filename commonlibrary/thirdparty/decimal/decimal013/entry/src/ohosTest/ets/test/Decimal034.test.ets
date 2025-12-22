@@ -49,12 +49,12 @@ export default function DecimalTest034() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_toFraction_Func_001
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -244,12 +244,12 @@ export default function DecimalTest034() {
         test_toFraction_003('2469,20', '123.45', new Decimal('123'));
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_toFraction_Func_002
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -270,12 +270,12 @@ export default function DecimalTest034() {
         }
       });
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_decimalPlaces_Func_003
-     * @tc.desc      : Test decimalPlaces
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_decimalPlaces_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test decimalPlaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_decimalPlaces_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set({
@@ -295,12 +295,12 @@ export default function DecimalTest034() {
         expect(6).assertEqual(new Decimal(1.234567).decimalPlaces());
       });
     /**
-     * @tc.number    : DECIMAL_TEST_004
-     * @tc.name      : Decimal_sum_Func_004
-     * @tc.desc      : Test sum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_sum_Func_004
+     * @tc.number DECIMAL_TEST_004
+     * @tc.desc   Test sum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sum_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect('0').assertEqual(Decimal.sum(0, 0, 0).valueOf());
@@ -311,12 +311,12 @@ export default function DecimalTest034() {
         expect('-Infinity').assertEqual(Decimal.sum(100, 200, '-Infinity').valueOf());
       });
     /**
-     * @tc.number    : DECIMAL_TEST_005
-     * @tc.name      : Decimal_isPositive_Func_005
-     * @tc.desc      : Test isPositive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_isPositive_Func_005
+     * @tc.number DECIMAL_TEST_005
+     * @tc.desc   Test isPositive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isPositive_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         expect(true).assertEqual(new Decimal(0).isPositive());

@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 import SecurityCryptoFwPriKeyToPubKeyTestUnit from "./SecurityCryptoFwPriKeyGetPubKey.test";
+import SecurityCryptoFwReinforcementTestUnit from "./SecurityCryptoFwReinforcementOfString.test";
 
 
 export default function testsuite() {
   SecurityCryptoFwPriKeyToPubKeyTestUnit();
+  SecurityCryptoFwReinforcementTestUnit();
 }

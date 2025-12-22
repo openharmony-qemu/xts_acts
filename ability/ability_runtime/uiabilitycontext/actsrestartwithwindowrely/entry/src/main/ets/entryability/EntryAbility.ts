@@ -18,6 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { JSON } from '@kit.ArkTS';
+import { BusinessError } from '@ohos.base';
 
 const DOMAIN = 0x0000;
 export default class EntryAbility extends UIAbility {
@@ -38,6 +39,16 @@ export default class EntryAbility extends UIAbility {
           bundleName: 'com.acts.ability.restartapp.demo',
           parameters: {
             pubSuccess: true
+          }
+        }).then(()=>{
+          hilog.info(DOMAIN, 'testTag', '%{public}s', 'restartApp success');
+        }).catch((err:BusinessError)=>{
+          if(err.code == 801){
+            commonEventManager.publish('RESTART_SUCCESS', {}, () => {
+              hilog.info(DOMAIN, 'testTag', '%{public}s', 'demo exit');
+              this.context.terminateSelf();
+            });
+            return;
           }
         });
       }, 800)

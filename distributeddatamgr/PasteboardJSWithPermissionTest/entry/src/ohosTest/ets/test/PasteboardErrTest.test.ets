@@ -81,7 +81,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_convertToText_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_convertToText_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard convertToText Callback
@@ -103,7 +102,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_addEntry_ErrTest_0100
      * @tc.number SUB_Pasteboard_addEntry_ErrTest_0100
      * @tc.desc   Test pasteBoard addEntry
@@ -127,7 +125,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getValidTypes_ErrTest_0100
      * @tc.number SUB_Pasteboard_getValidTypes_ErrTest_0100
      * @tc.desc   Test pasteBoard getValidTypes
@@ -153,7 +150,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getData_ErrTest_0100
      * @tc.number SUB_Pasteboard_getData_ErrTest_0100
      * @tc.desc   Test pasteBoard getData
@@ -176,7 +172,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getRecordAt_ErrTest_0100
      * @tc.number SUB_Pasteboard_getRecordAt_ErrTest_0100
      * @tc.desc   Test pasteBoard getRecordAt
@@ -198,7 +193,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getRecord_ErrTest_0100
      * @tc.number SUB_Pasteboard_getRecord_ErrTest_0100
      * @tc.desc   Test pasteBoard getRecord
@@ -220,7 +214,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_hasMimeType_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasMimeType_ErrTest_0100
      * @tc.desc   Test pasteBoard hasMimeType
@@ -243,7 +236,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_removeRecordAt_ErrTest_0100
      * @tc.number SUB_Pasteboard_removeRecordAt_ErrTest_0100
      * @tc.desc   Test pasteBoard removeRecordAt
@@ -265,7 +257,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_on_ErrTest_0100
      * @tc.number SUB_Pasteboard_on_ErrTest_0100
      * @tc.desc   Test pasteBoard on
@@ -290,7 +281,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_off_ErrTest_0100
      * @tc.number SUB_Pasteboard_off_ErrTest_0100
      * @tc.desc   Test pasteBoard off
@@ -315,7 +305,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_isRemoteData_ErrTest_0100
      * @tc.number SUB_Pasteboard_isRemoteData_ErrTest_0100
      * @tc.desc   Test pasteBoard isRemoteData
@@ -338,7 +327,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getDataSource_ErrTest_0100
      * @tc.number SUB_Pasteboard_getDataSource_ErrTest_0100
      * @tc.desc   Test pasteBoard getDataSource
@@ -363,7 +351,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_hasDataType_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasDataType_ErrTest_0100
      * @tc.desc   Test pasteBoard hasDataType
@@ -387,7 +374,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_hasDataType_ErrTest_0200
      * @tc.number SUB_Pasteboard_hasDataType_ErrTest_0200
      * @tc.desc   Test pasteBoard hasDataType
@@ -409,7 +395,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_clear_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_clear_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard clear
@@ -431,7 +416,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_clearData_Callback_ErrTest_0200
      * @tc.number SUB_Pasteboard_clearData_Callback_ErrTest_0200
      * @tc.desc   Test pasteBoard clearData
@@ -453,7 +437,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_clearDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_clearDataSync_ErrTest_0100
      * @tc.desc   Test pasteBoard clearDataSync
@@ -479,7 +462,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getPasteData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_getPasteData_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard getPasteData
@@ -501,7 +483,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_getData_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard getData
@@ -523,7 +504,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_getDataSync_ErrTest_0100
      * @tc.desc   Test pasteBoard getDataSync
@@ -548,7 +528,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_hasPasteData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasPasteData_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard hasPasteData
@@ -570,7 +549,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_hasData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasData_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard hasData
@@ -592,7 +570,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_hasDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_hasDataSync_ErrTest_0100
      * @tc.desc   Test pasteBoard hasDataSync
@@ -619,7 +596,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_setPasteData_Callback_ErrTest_0100
      * @tc.number SUB_Pasteboard_setPasteData_Callback_ErrTest_0100
      * @tc.desc   Test pasteBoard setPasteData
@@ -641,7 +617,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_setDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_setDataSync_ErrTest_0100
      * @tc.desc   Test pasteBoard setDataSync
@@ -667,7 +642,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100
      * @tc.number SUB_Pasteboard_getUnifiedDataSync_ErrTest_0100
      * @tc.desc   Test pasteBoard getUnifiedDataSync
@@ -703,7 +677,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getDataWithProgress_ErrTest_0100
      * @tc.number SUB_Pasteboard_getDataWithProgress_ErrTest_0100
      * @tc.desc   Test pasteBoard getDataWithProgress
@@ -725,7 +698,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_getDataWithProgress_ErrTest_0200
      * @tc.number SUB_Pasteboard_getDataWithProgress_ErrTest_0200
      * @tc.desc   Test pasteBoard getDataWithProgress
@@ -754,7 +726,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_createData_ErrTest_0100
      * @tc.number SUB_Pasteboard_createData_ErrTest_0100
      * @tc.desc   Test pasteBoard createData
@@ -776,7 +747,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_setPasteData_ErrTest_0100
      * @tc.number SUB_Pasteboard_setPasteData_ErrTest_0100
      * @tc.desc   Test pasteBoard setPasteData
@@ -805,7 +775,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_setData_ErrTest_0100
      * @tc.number SUB_Pasteboard_setData_ErrTest_0100
      * @tc.desc   Test pasteBoard setData
@@ -827,7 +796,6 @@ export default function PasteboardErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   SUB_Pasteboard_PasteDataRecord_0100
      * @tc.number SUB_Pasteboard_PasteDataRecord_0100
      * @tc.desc   Test pasteBoard PasteDataRecord data

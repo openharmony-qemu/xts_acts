@@ -14,6 +14,7 @@
  */
 
 import bundleManager from '@ohos.bundle.bundleManager';
+import hilog from '@ohos.hilog'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 
@@ -83,6 +84,29 @@ export default function getSignatureInfo() {
       }).catch((err: BusinessError) => {
         expect(err.code).assertEqual(401);
         done();
+      });
+    })
+
+    /**
+     * @tc.name   getBundleInfoForSelfWithEntryModuleNoThing
+     * @tc.number Sub_Bms_Framework_getSignatureInfo04
+     * @tc.desc   Test getBundleInfoForSelf with GET_BUNDLE_INFO_WITH_ENTRY_MODULE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getBundleInfoForSelfWithEntryModuleNoThing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_ENTRY_MODULE
+        bundleManager.getBundleInfoForSelf(bundleFlags).then((data) => {
+          hilog.info(domain, tag, 'getBundleInfoForSelfWithEntryModuleNoThing  ====> start');
+          expect(data.hapModulesInfo.length).assertEqual(0);
+          hilog.info(domain, tag, 'getBundleInfoForSelfWithEntryModuleNoThing  ====> end');
+          done();
+        }).catch((err: BusinessError) => {
+          hilog.info(domain, tag, 'getBundleInfoForSelfWithEntryModuleNoThing  ====> err');
+          expect(err).assertFail();
+          done();
       });
     })
   })

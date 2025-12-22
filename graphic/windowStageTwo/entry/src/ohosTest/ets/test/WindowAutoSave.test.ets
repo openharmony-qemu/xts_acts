@@ -185,12 +185,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0100
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0100
+     * @tc.number testSetWindowRectAutoSaveTrue_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0100';
@@ -229,7 +229,11 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }
+          else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -243,12 +247,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0200
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0200
+     * @tc.number testSetWindowRectAutoSaveTrue_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0200';
@@ -295,6 +299,9 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -310,12 +317,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0300
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0300
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0300
+     * @tc.number testSetWindowRectAutoSaveTrue_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0300';
@@ -353,7 +360,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -368,12 +378,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0400
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0400
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0400
+     * @tc.number testSetWindowRectAutoSaveTrue_0400
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0400';
@@ -412,7 +422,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -427,12 +440,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0500
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0500
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0500
+     * @tc.number testSetWindowRectAutoSaveTrue_0500
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0500';
@@ -470,7 +483,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -485,12 +501,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0600
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0600
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0600
+     * @tc.number testSetWindowRectAutoSaveTrue_0600
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0600';
@@ -521,7 +537,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -536,12 +555,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0700
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0700
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0700
+     * @tc.number testSetWindowRectAutoSaveTrue_0700
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0700';
@@ -553,7 +572,11 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（非沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          }else{
+            await terminateAbility(message);
+          }
           // 拉起Ability
           windowStageStart = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -565,11 +588,18 @@ export default function windowAutoSaveTest() {
           console.info(`${message} isLayoutFullScreen = ${isLayoutFullScreen} , expect false`)
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
-
-          expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
-          //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
-          expect(isLayoutFullScreen).assertFalse()
-          done()
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertFalse()
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertEqual(false)
+            done()
+          }
+          
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
@@ -590,12 +620,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveTrue_0800
-     * @tc.name      : testSetWindowRectAutoSaveTrue_0800
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveTrue_0800
+     * @tc.number testSetWindowRectAutoSaveTrue_0800
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveTrue_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0800';
@@ -607,7 +637,11 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          }else{
+            await terminateAbility(message);
+          }
           // 拉起Ability
           windowStageStart = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -618,11 +652,18 @@ export default function windowAutoSaveTest() {
           console.info(`${message} isLayoutFullScreen = ${isLayoutFullScreen} , expect false`)
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
-
-          expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
-          //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
-          expect(isLayoutFullScreen).assertFalse()
-          done()
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertFalse()
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN) 
+            //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
+            expect(isLayoutFullScreen).assertEqual(false)
+            done()
+          }
+          
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
@@ -642,12 +683,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0100
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0100
+     * @tc.number testSetWindowRectAutoSaveFalse_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0100';
@@ -682,6 +723,9 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -696,12 +740,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0200
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0200
+     * @tc.number testSetWindowRectAutoSaveFalse_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0200';
@@ -746,6 +790,9 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
@@ -761,12 +808,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0300
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0300
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0300
+     * @tc.number testSetWindowRectAutoSaveFalse_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0300';
@@ -802,7 +849,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -817,12 +867,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0400
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0400
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0400
+     * @tc.number testSetWindowRectAutoSaveFalse_0400
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0400';
@@ -858,7 +908,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -872,13 +925,13 @@ export default function windowAutoSaveTest() {
 
     })
 
-      /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0500
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0500
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testSetWindowRectAutoSaveFalse_0500
+     * @tc.number testSetWindowRectAutoSaveFalse_0500
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0500';
@@ -914,7 +967,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -929,12 +985,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0600
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0600
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0600
+     * @tc.number testSetWindowRectAutoSaveFalse_0600
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0600';
@@ -963,7 +1019,10 @@ export default function windowAutoSaveTest() {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
             expect(true).assertTrue();
             done();
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -978,12 +1037,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0700
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0700
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0700
+     * @tc.number testSetWindowRectAutoSaveFalse_0700
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0700';
@@ -997,7 +1056,12 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（非沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          }else{
+            await terminateAbility(message);
+          }
+          
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -1028,12 +1092,12 @@ export default function windowAutoSaveTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowRectAutoSaveFalse_0800
-     * @tc.name      : testSetWindowRectAutoSaveFalse_0800
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowRectAutoSaveFalse_0800
+     * @tc.number testSetWindowRectAutoSaveFalse_0800
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowRectAutoSaveFalse_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0800';
@@ -1047,7 +1111,12 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          if(isFreeWindowMode){
+            await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          }else{
+            await terminateAbility(message);
+          }
+          
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
           // 窗口全屏，非沉浸式
@@ -1077,13 +1146,13 @@ export default function windowAutoSaveTest() {
 
     })
 
-/**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_0100
-     * @tc.name      : test_setWindowRectAutoSave_401
-     * @tc.desc      : test_setWindowRectAutoSave_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   test_setWindowRectAutoSave_401
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_0100
+     * @tc.desc   test_setWindowRectAutoSave_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setWindowRectAutoSave_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_setWindowRectAutoSave_401';
@@ -1100,12 +1169,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_0200
-     * @tc.name      : test_setWindowRectAutoSave_801
-     * @tc.desc      : test_setWindowRectAutoSave_801
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setWindowRectAutoSave_801
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_0200
+     * @tc.desc   test_setWindowRectAutoSave_801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setWindowRectAutoSave_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setWindowRectAutoSave_801';
@@ -1131,12 +1200,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_0300
-     * @tc.name      : test_setWindowRectAutoSave_1300002
-     * @tc.desc      : test_setWindowRectAutoSave_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_setWindowRectAutoSave_1300002
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_0300
+     * @tc.desc   test_setWindowRectAutoSave_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setWindowRectAutoSave_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_setWindowRectAutoSave_1300002';
@@ -1161,12 +1230,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0100
-     * @tc.name      : test_SetWindowRectAutoSave_0100
-     * @tc.desc      : test_SetWindowRectAutoSave_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SetWindowRectAutoSave_0100
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0100
+     * @tc.desc   test_SetWindowRectAutoSave_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetWindowRectAutoSave_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0100 ';
@@ -1200,7 +1269,10 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             expect().assertFail();
             done();
           }
@@ -1214,12 +1286,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0200
-     * @tc.name      : test_SetWindowRectAutoSave_0200
-     * @tc.desc      : test_SetWindowRectAutoSave_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SetWindowRectAutoSave_0200
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0200
+     * @tc.desc   test_SetWindowRectAutoSave_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetWindowRectAutoSave_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0200 ';
@@ -1264,7 +1336,10 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             expect().assertFail();
             done();
           }
@@ -1278,12 +1353,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0300
-     * @tc.name      : test_SetWindowRectAutoSave_0300
-     * @tc.desc      : test_SetWindowRectAutoSave_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SetWindowRectAutoSave_0300
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0300
+     * @tc.desc   test_SetWindowRectAutoSave_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetWindowRectAutoSave_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0300 ';
@@ -1314,7 +1389,10 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             expect().assertFail();
             done();
           }
@@ -1328,12 +1406,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0400
-     * @tc.name      : test_SetWindowRectAutoSave_0400
-     * @tc.desc      : test_SetWindowRectAutoSave_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SetWindowRectAutoSave_0400
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0400
+     * @tc.desc   test_SetWindowRectAutoSave_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetWindowRectAutoSave_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0400 ';
@@ -1366,7 +1444,10 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             expect().assertFail();
             done();
           }
@@ -1380,12 +1461,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0500
-     * @tc.name      : test_SetWindowRectAutoSave_0500
-     * @tc.desc      : test_SetWindowRectAutoSave_0500
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SetWindowRectAutoSave_0500
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0500
+     * @tc.desc   test_SetWindowRectAutoSave_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetWindowRectAutoSave_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0500 ';
@@ -1418,7 +1499,10 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             expect().assertFail();
             done();
           }
@@ -1432,12 +1516,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0600
-     * @tc.name      : test_SetWindowRectAutoSave_0600
-     * @tc.desc      : test_SetWindowRectAutoSave_0600
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SetWindowRectAutoSave_0600
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0600
+     * @tc.desc   test_SetWindowRectAutoSave_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetWindowRectAutoSave_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0600 ';
@@ -1469,6 +1553,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1483,12 +1570,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0700
-     * @tc.name      : test_SetWindowRectAutoSave_0700
-     * @tc.desc      : test_SetWindowRectAutoSave_0700
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SetWindowRectAutoSave_0700
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0700
+     * @tc.desc   test_SetWindowRectAutoSave_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetWindowRectAutoSave_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0700 ';
@@ -1532,6 +1619,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1546,12 +1636,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0800
-     * @tc.name      : test_SetWindowRectAutoSave_0800
-     * @tc.desc      : test_SetWindowRectAutoSave_0800
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SetWindowRectAutoSave_0800
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0800
+     * @tc.desc   test_SetWindowRectAutoSave_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetWindowRectAutoSave_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0800 ';
@@ -1584,6 +1674,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1598,12 +1691,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_0900
-     * @tc.name      : test_SetWindowRectAutoSave_0900
-     * @tc.desc      : test_SetWindowRectAutoSave_0900
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SetWindowRectAutoSave_0900
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_0900
+     * @tc.desc   test_SetWindowRectAutoSave_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetWindowRectAutoSave_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0900 ';
@@ -1636,6 +1729,9 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
+          }else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
           } else {
             expect().assertFail();
             done();
@@ -1650,12 +1746,12 @@ export default function windowAutoSaveTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowRectAutoSave_1000
-     * @tc.name      : test_SetWindowRectAutoSave_1000
-     * @tc.desc      : test_SetWindowRectAutoSave_1000
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SetWindowRectAutoSave_1000
+     * @tc.number SUB_BASIC_WMS_SetWindowRectAutoSave_1000
+     * @tc.desc   test_SetWindowRectAutoSave_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SetWindowRectAutoSave_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_1000 ';
@@ -1688,7 +1784,10 @@ export default function windowAutoSaveTest() {
           if (err.code == 801) {
             console.info(caseName + 'this deviceType does not support the Capability.');
             done()
-          } else {
+          } else if(!isFreeWindowMode){
+            expect(err.code).assertEqual(1300010);
+            done();
+          }else {
             expect().assertFail();
             done();
           }
@@ -1703,12 +1802,12 @@ export default function windowAutoSaveTest() {
    
 
     /**
-     * @tc.number    : testisWindowRectAutoSave
-     * @tc.name      : testisWindowRectAutoSave
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testisWindowRectAutoSave
+     * @tc.number testisWindowRectAutoSave
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testisWindowRectAutoSave', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'isWindowRectAutoSaveTest';
@@ -1717,8 +1816,11 @@ export default function windowAutoSaveTest() {
       try {
         windowStage.isWindowRectAutoSave().then((result) => {
           console.info(`${message} isWindowRectAutoSave = ${result}, expect true.`)
-          expect(result).assertTrue();
-          done();
+          if(isFreeWindowMode){
+            expect(result).assertTrue();
+          }else{
+            expect(result).assertEqual(false);
+          }
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);

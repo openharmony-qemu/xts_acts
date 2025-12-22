@@ -34,12 +34,12 @@ export default function FloatingWindowTest() {
       console.info('afterAll function.');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_WULTMINDOW_LATERAL_FLOATING_1300
-     * @tc.name      : test_landscap_disableLandscapeMultiWindow
-     * @tc.desc      : preferMultWindowOrientation配置为landscap，调用disableLandscapeMultiWindow不报错
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_landscap_disableLandscapeMultiWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_WULTMINDOW_LATERAL_FLOATING_1300
+     * @tc.desc   preferMultWindowOrientation配置为landscap，调用disableLandscapeMultiWindow不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_landscap_disableLandscapeMultiWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       try{

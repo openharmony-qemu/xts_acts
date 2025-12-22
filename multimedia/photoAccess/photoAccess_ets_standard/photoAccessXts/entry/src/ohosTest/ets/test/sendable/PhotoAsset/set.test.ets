@@ -132,12 +132,12 @@ export default function sendableSetTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_SET_001
-     * @tc.name      : set_photo_title_sendable_001
-     * @tc.desc      : set photo title success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   set_photo_title_sendable_001
+     * @tc.number SENDABLE_PHOTO_ASSET_SET_001
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_photo_title_sendable_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'set_photo_title_sendable_001';
@@ -146,12 +146,12 @@ export default function sendableSetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_SET_002
-     * @tc.name      : set_photo_title_sendable_002
-     * @tc.desc      : set photo title '', error code 14000014
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   set_photo_title_sendable_002
+     * @tc.number SENDABLE_PHOTO_ASSET_SET_002
+     * @tc.desc   set photo title '', error code 14000014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_photo_title_sendable_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'set_photo_title_sendable_002';
@@ -160,12 +160,12 @@ export default function sendableSetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_SET_003
-     * @tc.name      : set_photo_title_sendable_003
-     * @tc.desc      : set photo title ['123123', '123123'], error code 14000014
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   set_photo_title_sendable_003
+     * @tc.number SENDABLE_PHOTO_ASSET_SET_003
+     * @tc.desc   set photo title ['123123', '123123'], error code 14000014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_photo_title_sendable_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'set_photo_title_sendable_003';
@@ -174,12 +174,12 @@ export default function sendableSetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_SET_004
-     * @tc.name      : set_photo_title_sendable_004
-     * @tc.desc      : set photo title success
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   set_photo_title_sendable_004
+     * @tc.number SENDABLE_PHOTO_ASSET_SET_004
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_photo_title_sendable_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'set_photo_title_sendable_004';

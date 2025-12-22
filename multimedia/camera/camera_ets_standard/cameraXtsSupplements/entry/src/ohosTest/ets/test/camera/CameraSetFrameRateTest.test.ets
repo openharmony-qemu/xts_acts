@@ -324,12 +324,12 @@ export default function cameraSetFrameRateTest() {
 
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_001
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_001
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_001
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_001';
@@ -352,12 +352,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_002
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_002
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_002
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_002';
@@ -380,49 +380,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_003';
-      videoSessionSetFrameRate(done,testName ,(supportedFrameRatesArray) => {
-        try {
-          if(supportedFrameRatesArray[0]['max'] > 0){
-            console.info(TAG, testName,`supportedFrameRatesArray.length: `,supportedFrameRatesArray.length)
-            let min: number = supportedFrameRatesArray[0]['min'];
-            let max: number = supportedFrameRatesArray[0]['max'];
-            mVideoOutput.setFrameRate(max, min);
-            let res = mVideoOutput.getActiveFrameRate();
-            expect(res.min).assertEqual(min);
-            expect(res.max).assertEqual(max);
-            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
-            mVideoOutput.setFrameRate(max, min);
-            res = mVideoOutput.getActiveFrameRate();
-            console.info(TAG, testName, "Success getActiveFrameRate Min:",res.min , 'Max:',res.max);
-            expect(res.min).assertEqual(min);
-            expect(res.max).assertEqual(max);
-            done();
-          }else {
-            console.info(TAG, testName ,'The Device is Not supportedFrameRates');
-            done();
-          }
-        } catch (error) {
-          console.error(TAG, testName, 'Failed setFrameRate', JSON.stringify(error), error.code);
-          expect().assertFail();
-        }
-      })
-    })
-    /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_004';
@@ -445,12 +408,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_005
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_005
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_005
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_005';
@@ -473,12 +436,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_006
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_006
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_006
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_006';
@@ -501,12 +464,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_007
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_007
-     * @tc.desc       VideoOutput set frame rate with min:null>max:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_007
+     * @tc.desc   VideoOutput set frame rate with min:null>max:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_007';
@@ -529,12 +492,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_008
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_008
-     * @tc.desc       VideoOutput set frame rate with min:undefined>max:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_008
+     * @tc.desc   VideoOutput set frame rate with min:undefined>max:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_008';
@@ -557,12 +520,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_009
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_009
-     * @tc.desc       VideoOutput set frame rate with min:null>max:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_009
+     * @tc.desc   VideoOutput set frame rate with min:null>max:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_009';
@@ -585,12 +548,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_010
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_010
-     * @tc.desc       VideoOutput set frame rate with min:undefined>max:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_010
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_010
+     * @tc.desc   VideoOutput set frame rate with min:undefined>max:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_010';
@@ -613,12 +576,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_011
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_011
-     * @tc.desc       VideoOutput set frame rate with min:'' > max:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_011
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_011
+     * @tc.desc   VideoOutput set frame rate with min:'' > max:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_011';
@@ -642,12 +605,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_012
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_012
-     * @tc.desc       VideoOutput set frame rate with min:null > max:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_012
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_012
+     * @tc.desc   VideoOutput set frame rate with min:null > max:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_012';
@@ -671,12 +634,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_013
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_013
-     * @tc.desc       VideoOutput set frame rate with min:'' > max:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_013
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_013
+     * @tc.desc   VideoOutput set frame rate with min:'' > max:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_013';
@@ -701,12 +664,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_014
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_014
-     * @tc.desc       VideoOutput set frame rate with min:'string' > max:max
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_014
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_014
+     * @tc.desc   VideoOutput set frame rate with min:'string' > max:max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_014';
@@ -732,12 +695,12 @@ export default function cameraSetFrameRateTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_015
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_015
-     * @tc.desc       VideoOutput set frame rate with min:min > max:'string'
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_015
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_015
+     * @tc.desc   VideoOutput set frame rate with min:min > max:'string'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_015';
@@ -761,12 +724,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_016
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_016
-     * @tc.desc       VideoOutput set frame rate with min:'float' > max:max
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_016
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_016
+     * @tc.desc   VideoOutput set frame rate with min:'float' > max:max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_016';
@@ -791,12 +754,12 @@ export default function cameraSetFrameRateTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_001
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_001
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_001
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_001';
@@ -819,12 +782,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_002
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_002
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_002
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_002';
@@ -847,12 +810,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_003
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_003
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_003
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_003';
@@ -862,7 +825,7 @@ export default function cameraSetFrameRateTest() {
             console.info(TAG, testName,`supportedFrameRatesArray.length: `,supportedFrameRatesArray.length)
             let min: number = supportedFrameRatesArray[0]['min'];
             let max: number = supportedFrameRatesArray[0]['max'];
-            mPreviewOutput.setFrameRate(max, min);
+            mPreviewOutput.setFrameRate(min, max);
             let res = mPreviewOutput.getActiveFrameRate();
             expect(res.min).assertEqual(min);
             expect(res.max).assertEqual(max);
@@ -884,12 +847,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_004
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_004
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_004
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_004';
@@ -912,12 +875,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_005
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_005
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_005
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_005';
@@ -940,12 +903,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_006
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_006
-     * @tc.desc       VideoOutput set frame rate with min:1>max:0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_006
+     * @tc.desc   VideoOutput set frame rate with min:1>max:0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_006';
@@ -968,12 +931,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_007
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_007
-     * @tc.desc       VideoOutput set frame rate with min:null>max:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_007
+     * @tc.desc   VideoOutput set frame rate with min:null>max:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_007';
@@ -996,12 +959,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_008
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_008
-     * @tc.desc       VideoOutput set frame rate with min:undefined>max:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_008
+     * @tc.desc   VideoOutput set frame rate with min:undefined>max:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_008';
@@ -1024,12 +987,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_009
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_009
-     * @tc.desc       VideoOutput set frame rate with min:null>max:undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_009
+     * @tc.desc   VideoOutput set frame rate with min:null>max:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_009';
@@ -1052,12 +1015,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_010
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_010
-     * @tc.desc       VideoOutput set frame rate with min:undefined>max:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_010
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_010
+     * @tc.desc   VideoOutput set frame rate with min:undefined>max:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_010';
@@ -1080,12 +1043,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_011
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_011
-     * @tc.desc       VideoOutput set frame rate with min:'' > max:null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_011
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_011
+     * @tc.desc   VideoOutput set frame rate with min:'' > max:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_011';
@@ -1109,12 +1072,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_012
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_012
-     * @tc.desc       VideoOutput set frame rate with min:null > max:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_012
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_012
+     * @tc.desc   VideoOutput set frame rate with min:null > max:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_012';
@@ -1138,12 +1101,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_013
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_013
-     * @tc.desc       VideoOutput set frame rate with min:'' > max:''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_013
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_013
+     * @tc.desc   VideoOutput set frame rate with min:'' > max:''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_013';
@@ -1168,12 +1131,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_014
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_014
-     * @tc.desc       VideoOutput set frame rate with min:'string' > max:max
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_014
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_014
+     * @tc.desc   VideoOutput set frame rate with min:'string' > max:max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_014';
@@ -1199,12 +1162,12 @@ export default function cameraSetFrameRateTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_015
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_015
-     * @tc.desc       VideoOutput set frame rate with min:min > max:'string'
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_015
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_015
+     * @tc.desc   VideoOutput set frame rate with min:min > max:'string'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_015';
@@ -1229,12 +1192,12 @@ export default function cameraSetFrameRateTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_016
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_016
-     * @tc.desc       VideoOutput set frame rate with min:'float' > max:max
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_016
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_016
+     * @tc.desc   VideoOutput set frame rate with min:'float' > max:max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_016';

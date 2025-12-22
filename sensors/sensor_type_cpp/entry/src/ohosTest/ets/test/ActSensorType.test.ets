@@ -59,12 +59,12 @@ export default function sensorTypeNdkTest() {
     
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_010
-     * @tc.name     testSensor_typeNdkTest010
-     * @tc.desc     OH_Sensor_GetInfos test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest010
+     * @tc.number SEN_MISC_Miscdevice_ETS_010
+     * @tc.desc   OH_Sensor_GetInfos test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest010"
@@ -81,12 +81,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_020
-     * @tc.name     testSensor_typeNdkTest020
-     * @tc.desc     SENSOR_TYPE_ACCELEROMETER test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest020
+     * @tc.number SEN_MISC_Miscdevice_ETS_020
+     * @tc.desc   SENSOR_TYPE_ACCELEROMETER test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest020"
@@ -103,12 +103,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_030
-     * @tc.name     testSensor_typeNdkTest030
-     * @tc.desc     SENSOR_TYPE_GYROSCOPE test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest030
+     * @tc.number SEN_MISC_Miscdevice_ETS_030
+     * @tc.desc   SENSOR_TYPE_GYROSCOPE test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest030"
@@ -125,12 +125,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_040
-     * @tc.name     testSensor_typeNdkTest040
-     * @tc.desc     SENSOR_TYPE_MAGNETIC_FIELD test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest040
+     * @tc.number SEN_MISC_Miscdevice_ETS_040
+     * @tc.desc   SENSOR_TYPE_MAGNETIC_FIELD test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest040"
@@ -147,12 +147,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_050
-     * @tc.name     testSensor_typeNdkTest050
-     * @tc.desc     SENSOR_TYPE_BAROMETER test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest050
+     * @tc.number SEN_MISC_Miscdevice_ETS_050
+     * @tc.desc   SENSOR_TYPE_BAROMETER test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest050"
@@ -169,12 +169,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_060
-     * @tc.name     testSensor_typeNdkTest060
-     * @tc.desc     SENSOR_TYPE_HALL test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest060
+     * @tc.number SEN_MISC_Miscdevice_ETS_060
+     * @tc.desc   SENSOR_TYPE_HALL test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest060"
@@ -191,12 +191,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_070
-     * @tc.name     testSensor_typeNdkTest070
-     * @tc.desc     SENSOR_TYPE_PROXIMITY test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest070
+     * @tc.number SEN_MISC_Miscdevice_ETS_070
+     * @tc.desc   SENSOR_TYPE_PROXIMITY test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest070"
@@ -213,12 +213,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_080
-     * @tc.name     testSensor_typeNdkTest080
-     * @tc.desc     SENSOR_TYPE_ORIENTATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest080
+     * @tc.number SEN_MISC_Miscdevice_ETS_080
+     * @tc.desc   SENSOR_TYPE_ORIENTATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest080"
@@ -235,12 +235,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_090
-     * @tc.name     testSensor_typeNdkTest090
-     * @tc.desc     SENSOR_TYPE_ORIENTATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest090
+     * @tc.number SEN_MISC_Miscdevice_ETS_090
+     * @tc.desc   SENSOR_TYPE_ORIENTATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest090"
@@ -257,12 +257,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_100
-     * @tc.name     testSensor_typeNdkTest100
-     * @tc.desc     SENSOR_TYPE_ORIENTATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest100
+     * @tc.number SEN_MISC_Miscdevice_ETS_100
+     * @tc.desc   SENSOR_TYPE_ORIENTATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest100"
@@ -279,12 +279,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_110
-     * @tc.name     testSensor_typeNdkTest110
-     * @tc.desc     SENSOR_TYPE_ORIENTATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest110
+     * @tc.number SEN_MISC_Miscdevice_ETS_110
+     * @tc.desc   SENSOR_TYPE_ORIENTATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest110"
@@ -301,12 +301,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_120
-     * @tc.name     testSensor_typeNdkTest120
-     * @tc.desc     SENSOR_TYPE_ORIENTATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest120
+     * @tc.number SEN_MISC_Miscdevice_ETS_120
+     * @tc.desc   SENSOR_TYPE_ORIENTATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest120"
@@ -323,12 +323,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_130
-     * @tc.name     testSensor_typeNdkTest130
-     * @tc.desc     SENSOR_TYPE_ORIENTATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest130
+     * @tc.number SEN_MISC_Miscdevice_ETS_130
+     * @tc.desc   SENSOR_TYPE_ORIENTATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest130"
@@ -345,12 +345,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_140
-     * @tc.name     testSensor_typeNdkTest140
-     * @tc.desc     OH_SensorInfo_GetName test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest140
+     * @tc.number SEN_MISC_Miscdevice_ETS_140
+     * @tc.desc   OH_SensorInfo_GetName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest140"
@@ -367,12 +367,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_150
-     * @tc.name     testSensor_typeNdkTest150
-     * @tc.desc     OH_SensorInfo_GetName test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest150
+     * @tc.number SEN_MISC_Miscdevice_ETS_150
+     * @tc.desc   OH_SensorInfo_GetName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest150"
@@ -389,12 +389,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_160
-     * @tc.name     testSensor_typeNdkTest160
-     * @tc.desc     OH_SensorInfo_GetType test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest160
+     * @tc.number SEN_MISC_Miscdevice_ETS_160
+     * @tc.desc   OH_SensorInfo_GetType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest160"
@@ -411,12 +411,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_170
-     * @tc.name     testSensor_typeNdkTest170
-     * @tc.desc     OH_SensorInfo_GetResolution test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest170
+     * @tc.number SEN_MISC_Miscdevice_ETS_170
+     * @tc.desc   OH_SensorInfo_GetResolution test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest170"
@@ -433,12 +433,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_180
-     * @tc.name     testSensor_typeNdkTest180
-     * @tc.desc     OH_SensorInfo_GetMinSamplingInterval test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest180
+     * @tc.number SEN_MISC_Miscdevice_ETS_180
+     * @tc.desc   OH_SensorInfo_GetMinSamplingInterval test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest180"
@@ -455,12 +455,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_190
-     * @tc.name     testSensor_typeNdkTest190
-     * @tc.desc     OH_SensorInfo_GetMaxSamplingInterval test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest190
+     * @tc.number SEN_MISC_Miscdevice_ETS_190
+     * @tc.desc   OH_SensorInfo_GetMaxSamplingInterval test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest190"
@@ -477,12 +477,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_200
-     * @tc.name     testSensor_typeNdkTest200
-     * @tc.desc     OH_SensorEvent_GetType test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest200
+     * @tc.number SEN_MISC_Miscdevice_ETS_200
+     * @tc.desc   OH_SensorEvent_GetType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest200"
@@ -499,12 +499,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_210
-     * @tc.name     testSensor_typeNdkTest210
-     * @tc.desc     OH_SensorEvent_GetTimestamp test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest210
+     * @tc.number SEN_MISC_Miscdevice_ETS_210
+     * @tc.desc   OH_SensorEvent_GetTimestamp test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest210"
@@ -521,12 +521,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_220
-     * @tc.name     testSensor_typeNdkTest220
-     * @tc.desc     OH_SensorEvent_GetAccuracy test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest220
+     * @tc.number SEN_MISC_Miscdevice_ETS_220
+     * @tc.desc   OH_SensorEvent_GetAccuracy test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest220"
@@ -543,12 +543,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_230
-     * @tc.name     testSensor_typeNdkTest230
-     * @tc.desc     OH_SensorEvent_GetData test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest230
+     * @tc.number SEN_MISC_Miscdevice_ETS_230
+     * @tc.desc   OH_SensorEvent_GetData test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest230"
@@ -565,12 +565,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_240
-     * @tc.name     testSensor_typeNdkTest240
-     * @tc.desc     OH_Sensor_DestroySubscriptionId test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest240
+     * @tc.number SEN_MISC_Miscdevice_ETS_240
+     * @tc.desc   OH_Sensor_DestroySubscriptionId test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest240"
@@ -587,12 +587,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_250
-     * @tc.name     testSensor_typeNdkTest250
-     * @tc.desc     OH_Sensor_DestroySubscriptionId test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest250
+     * @tc.number SEN_MISC_Miscdevice_ETS_250
+     * @tc.desc   OH_Sensor_DestroySubscriptionId test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest250"
@@ -609,12 +609,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_260
-     * @tc.name     testSensor_typeNdkTest260
-     * @tc.desc     OH_SensorSubscriptionId_GetType test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest260
+     * @tc.number SEN_MISC_Miscdevice_ETS_260
+     * @tc.desc   OH_SensorSubscriptionId_GetType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest260"
@@ -631,12 +631,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_270
-     * @tc.name     testSensor_typeNdkTest270
-     * @tc.desc     OH_Sensor_DestroySubscriptionAttribute test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest270
+     * @tc.number SEN_MISC_Miscdevice_ETS_270
+     * @tc.desc   OH_Sensor_DestroySubscriptionAttribute test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest270"
@@ -653,12 +653,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_280
-     * @tc.name     testSensor_typeNdkTest280
-     * @tc.desc     OH_Sensor_DestroySubscriptionAttribute test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest280
+     * @tc.number SEN_MISC_Miscdevice_ETS_280
+     * @tc.desc   OH_Sensor_DestroySubscriptionAttribute test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest280"
@@ -675,12 +675,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_290
-     * @tc.name     testSensor_typeNdkTest290
-     * @tc.desc     OH_SensorSubscriptionAttribute_GetSamplingInterval test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest290
+     * @tc.number SEN_MISC_Miscdevice_ETS_290
+     * @tc.desc   OH_SensorSubscriptionAttribute_GetSamplingInterval test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest290', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest290"
@@ -697,12 +697,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_300
-     * @tc.name     testSensor_typeNdkTest300
-     * @tc.desc     OH_Sensor_DestroySubscriber test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest300
+     * @tc.number SEN_MISC_Miscdevice_ETS_300
+     * @tc.desc   OH_Sensor_DestroySubscriber test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest300"
@@ -719,12 +719,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_310
-     * @tc.name     testSensor_typeNdkTest310
-     * @tc.desc     OH_Sensor_DestroySubscriber test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest310
+     * @tc.number SEN_MISC_Miscdevice_ETS_310
+     * @tc.desc   OH_Sensor_DestroySubscriber test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest310"
@@ -741,12 +741,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_320
-     * @tc.name     testSensor_typeNdkTest320
-     * @tc.desc     OH_SensorSubscriber_GetCallback test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest320
+     * @tc.number SEN_MISC_Miscdevice_ETS_320
+     * @tc.desc   OH_SensorSubscriber_GetCallback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest320"
@@ -764,12 +764,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_330
-     * @tc.name     testSensor_typeNdkTest330
-     * @tc.desc     VIBRATOR_USAGE_UNKNOWN test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest330
+     * @tc.number SEN_MISC_Miscdevice_ETS_330
+     * @tc.desc   VIBRATOR_USAGE_UNKNOWN test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest330"
@@ -791,12 +791,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_340
-     * @tc.name     testSensor_typeNdkTest340
-     * @tc.desc     VIBRATOR_USAGE_ALARM test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest340
+     * @tc.number SEN_MISC_Miscdevice_ETS_340
+     * @tc.desc   VIBRATOR_USAGE_ALARM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest340"
@@ -818,12 +818,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_350
-     * @tc.name     testSensor_typeNdkTest350
-     * @tc.desc     VIBRATOR_USAGE_RING test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest350
+     * @tc.number SEN_MISC_Miscdevice_ETS_350
+     * @tc.desc   VIBRATOR_USAGE_RING test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest350"
@@ -841,12 +841,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_360
-     * @tc.name     testSensor_typeNdkTest360
-     * @tc.desc     VIBRATOR_USAGE_NOTIFICATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest360
+     * @tc.number SEN_MISC_Miscdevice_ETS_360
+     * @tc.desc   VIBRATOR_USAGE_NOTIFICATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest360"
@@ -864,12 +864,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_370
-     * @tc.name     testSensor_typeNdkTest370
-     * @tc.desc     VIBRATOR_USAGE_COMMUNICATION test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest370
+     * @tc.number SEN_MISC_Miscdevice_ETS_370
+     * @tc.desc   VIBRATOR_USAGE_COMMUNICATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest370"
@@ -887,12 +887,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_380
-     * @tc.name     testSensor_typeNdkTest380
-     * @tc.desc     VIBRATOR_USAGE_TOUCH test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest380
+     * @tc.number SEN_MISC_Miscdevice_ETS_380
+     * @tc.desc   VIBRATOR_USAGE_TOUCH test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest380"
@@ -910,12 +910,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_390
-     * @tc.name     testSensor_typeNdkTest390
-     * @tc.desc     VIBRATOR_USAGE_MEDIA and DEVICE_OPERATION_FAILED test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest390
+     * @tc.number SEN_MISC_Miscdevice_ETS_390
+     * @tc.desc   VIBRATOR_USAGE_MEDIA and DEVICE_OPERATION_FAILED test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest390"
@@ -932,12 +932,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_400
-     * @tc.name     testSensor_typeNdkTest400
-     * @tc.desc     VIBRATOR_USAGE_PHYSICAL_FEEDBACK ande OH_Vibrator_PlayVibration test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest400
+     * @tc.number SEN_MISC_Miscdevice_ETS_400
+     * @tc.desc   VIBRATOR_USAGE_PHYSICAL_FEEDBACK ande OH_Vibrator_PlayVibration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest400"
@@ -955,12 +955,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_410
-     * @tc.name     testSensor_typeNdkTest410
-     * @tc.desc     VIBRATOR_USAGE_SIMULATED_REALITY test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest410
+     * @tc.number SEN_MISC_Miscdevice_ETS_410
+     * @tc.desc   VIBRATOR_USAGE_SIMULATED_REALITY test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest410"
@@ -978,12 +978,12 @@ export default function sensorTypeNdkTest() {
 
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_420
-     * @tc.name     testSensor_typeNdkTest420
-     * @tc.desc     VIBRATOR_USAGE_MAX test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest420
+     * @tc.number SEN_MISC_Miscdevice_ETS_420
+     * @tc.desc   VIBRATOR_USAGE_MAX test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest420"
@@ -1000,12 +1000,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_430
-     * @tc.name     testSensor_typeNdkTest430
-     * @tc.desc     SENSOR_ACCURACY_LOW test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest430
+     * @tc.number SEN_MISC_Miscdevice_ETS_430
+     * @tc.desc   SENSOR_ACCURACY_LOW test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest430', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest430"
@@ -1022,12 +1022,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_440
-     * @tc.name     testSensor_typeNdkTest440
-     * @tc.desc     SENSOR_ACCURACY_MEDIUM test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest440
+     * @tc.number SEN_MISC_Miscdevice_ETS_440
+     * @tc.desc   SENSOR_ACCURACY_MEDIUM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest440"
@@ -1044,12 +1044,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_450
-     * @tc.name     testSensor_typeNdkTest450
-     * @tc.desc     SENSOR_ACCURACY_LOW test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest450
+     * @tc.number SEN_MISC_Miscdevice_ETS_450
+     * @tc.desc   SENSOR_ACCURACY_LOW test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest450"
@@ -1066,12 +1066,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_460
-     * @tc.name     testSensor_typeNdkTest460
-     * @tc.desc     OH_Sensor_Subscribe test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest460
+     * @tc.number SEN_MISC_Miscdevice_ETS_460
+     * @tc.desc   OH_Sensor_Subscribe test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest460"
@@ -1088,12 +1088,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_470
-     * @tc.name     testSensor_typeNdkTest470
-     * @tc.desc     OH_Sensor_Unsubscribe test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest470
+     * @tc.number SEN_MISC_Miscdevice_ETS_470
+     * @tc.desc   OH_Sensor_Unsubscribe test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest470', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest470"
@@ -1110,12 +1110,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_480
-     * @tc.name     testSensor_typeNdkTest480
-     * @tc.desc     OH_Vibrator_PlayVibrationCustom test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest480
+     * @tc.number SEN_MISC_Miscdevice_ETS_480
+     * @tc.desc   OH_Vibrator_PlayVibrationCustom test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest480"
@@ -1132,12 +1132,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_490
-     * @tc.name     testSensor_typeNdkTest490
-     * @tc.desc     OH_Vibrator_PlayVibrationCustom test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest490
+     * @tc.number SEN_MISC_Miscdevice_ETS_490
+     * @tc.desc   OH_Vibrator_PlayVibrationCustom test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest490', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest490"
@@ -1154,12 +1154,12 @@ export default function sensorTypeNdkTest() {
     });
 
     /**
-     * @tc.number   SEN_MISC_Miscdevice_ETS_500
-     * @tc.name     testSensor_typeNdkTest500
-     * @tc.desc     permission_denied test
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 3
+     * @tc.name   testSensor_typeNdkTest500
+     * @tc.number SEN_MISC_Miscdevice_ETS_500
+     * @tc.desc   permission_denied test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSensor_typeNdkTest500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       TAG = "testSensor_typeNdkTest500"
@@ -1171,6 +1171,27 @@ export default function sensorTypeNdkTest() {
         done()
       } catch (err) {
         console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Sensor_NDK_Sensor_Result_0100
+     * @tc.number SUB_Sensor_NDK_Sensor_Result_0100
+     * @tc.desc   SUB_Sensor_NDK_Sensor_Result_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Sensor_NDK_Sensor_Result_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let result: number = sensor.sensor_Result_0100();
+        console.info(`====>SUB_Sensor_NDK_Sensor_Result_0100 result: ${result}`);
+        expect(result == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Sensor_NDK_Sensor_Result_0100 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
         done();
       }
     });

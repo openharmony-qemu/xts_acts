@@ -48,7 +48,15 @@ function sleep(ms: number) {
 
 export default function shareAcquireShareDataTest() {
   describe('shareAcquireShareDataTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
     })
     beforeEach(() => {

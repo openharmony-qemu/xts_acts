@@ -58,27 +58,27 @@ export default function webController() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_STOP_0100
-    * @tc.name       : testStop001
-    * @tc.desc       : test stop
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testStop001
+     * @tc.number SUB_WEB_STOP_0100
+     * @tc.desc   test stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testStop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testStop001", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testStop001", true, 142026, done);
       await Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
     /**
-    * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0100
-    * @tc.name   testLoadUrlWithHeaderErrorCode01
-    * @tc.desc   test loadUrl with header null
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 2
-    */
+     * @tc.name   testLoadUrlWithHeaderErrorCode01
+     * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0100
+     * @tc.desc   test loadUrl with header null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLoadUrlWithHeaderErrorCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitLoadUrlWithHeaderErrorCode01", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerBaseEvent("testLoadUrlWithHeaderErrorCode01", 401, 2025110602,
@@ -88,12 +88,12 @@ export default function webController() {
       await Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
     /**
-     * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0200
      * @tc.name   testLoadUrlWithHeaderErrorCode02
+     * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0200
      * @tc.desc   test loadUrl with header undefined
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLoadUrlWithHeaderErrorCode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitLoadUrlWithHeaderErrorCode02", EVENT_ID_SET_EIMIT_KEY)

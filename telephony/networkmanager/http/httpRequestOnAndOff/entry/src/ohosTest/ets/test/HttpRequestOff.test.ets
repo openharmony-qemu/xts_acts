@@ -45,12 +45,12 @@ export default function HttpRequestOffTest() {
     let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
     let XTS_TEST_STREAM_HTTPS_URL: string = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0100
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0100
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpHttpRequestOff0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0100';
@@ -98,12 +98,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0200
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0200
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpHttpRequestOff0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0200';
@@ -148,12 +148,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0300
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0300
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0300
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0300';
@@ -198,12 +198,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0400
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0400
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0400
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0400';
@@ -248,12 +248,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0500
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0500
-     * @tc.desc   : Unsubscribe from the HTTP streaming response data reception completion event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0500
+     * @tc.desc   Unsubscribe from the HTTP streaming response data reception completion event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0500';
@@ -298,12 +298,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0600
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0600
-     * @tc.desc   : Unsubscribe from the HTTP streaming response data reception completion event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0600
+     * @tc.desc   Unsubscribe from the HTTP streaming response data reception completion event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0600';
@@ -349,12 +349,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0700
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0700
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving progress events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0700
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving progress events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0700';
@@ -405,12 +405,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0800
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0800
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving progress events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0800
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving progress events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0800';
@@ -462,12 +462,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_0900
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff0900
-     * @tc.desc   : Unsubscribe from HTTP network request data sending progress event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff0900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_0900
+     * @tc.desc   Unsubscribe from HTTP network request data sending progress event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff0900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff0900';
@@ -518,12 +518,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1000
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1000
-     * @tc.desc   : Unsubscribe from HTTP network request data sending progress event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1000
+     * @tc.desc   Unsubscribe from HTTP network request data sending progress event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1000';
@@ -575,12 +575,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1100
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1100
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1100';
@@ -626,12 +626,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1200
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1200
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1200';
@@ -676,12 +676,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1300
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1300
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1300
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1300';
@@ -726,12 +726,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1400
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1400
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1400
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1400';
@@ -776,12 +776,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1500
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1500
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1500
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1500';
@@ -826,12 +826,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1600
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1600
-     * @tc.desc   : Unsubscribe from the HTTP streaming response data reception completion event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1600
+     * @tc.desc   Unsubscribe from the HTTP streaming response data reception completion event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1600';
@@ -876,12 +876,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1700
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1700
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving progress events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1700
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving progress events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1700';
@@ -934,12 +934,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1800
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1800
-     * @tc.desc   : Unsubscribe from HTTP network request data sending progress event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1800
+     * @tc.desc   Unsubscribe from HTTP network request data sending progress event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1800';
@@ -990,12 +990,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_1900
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff1900
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff1900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_1900
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff1900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff1900';
@@ -1042,12 +1042,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_2000
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff2000
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff2000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_2000
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff2000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff2000';
@@ -1093,12 +1093,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_2100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff2100
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff2100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_2100
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff2100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff2100';
@@ -1144,12 +1144,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_2200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff2200
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff2200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_2200
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff2200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff2200';
@@ -1196,12 +1196,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_2900
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff2900
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff2900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_2900
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff2900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff2900';
@@ -1248,12 +1248,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3000
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3000
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3000
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3000';
@@ -1299,12 +1299,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3100
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3100
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3100';
@@ -1354,12 +1354,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3200
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3200
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3200';
@@ -1404,12 +1404,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3300
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3300
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3300
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3300';
@@ -1451,12 +1451,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3400
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3400
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3400
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3400';
@@ -1499,12 +1499,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3500
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3500
-     * @tc.desc   : Unsubscribe from the HTTP streaming response data reception completion event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3500
+     * @tc.desc   Unsubscribe from the HTTP streaming response data reception completion event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3500';
@@ -1546,12 +1546,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3600
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3600
-     * @tc.desc   : Unsubscribe from the HTTP streaming response data reception completion event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3600
+     * @tc.desc   Unsubscribe from the HTTP streaming response data reception completion event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3600';
@@ -1594,12 +1594,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3700
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3700
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving progress events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3700
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving progress events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3700';
@@ -1647,12 +1647,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3800
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3800
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving progress events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3800
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving progress events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3800';
@@ -1701,12 +1701,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_3900
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff3900
-     * @tc.desc   : Unsubscribe from HTTP network request data sending progress event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff3900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_3900
+     * @tc.desc   Unsubscribe from HTTP network request data sending progress event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff3900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff3900';
@@ -1754,12 +1754,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4000
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4000
-     * @tc.desc   : Unsubscribe from HTTP network request data sending progress event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4000
+     * @tc.desc   Unsubscribe from HTTP network request data sending progress event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4000';
@@ -1808,12 +1808,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4100
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4100
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4100';
@@ -1856,12 +1856,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4200
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4200
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4200';
@@ -1903,12 +1903,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4300
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4300
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4300
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4300';
@@ -1950,12 +1950,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4400
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4400
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4400
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4400';
@@ -1998,12 +1998,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4500
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4500
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4500
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4500',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4500';
@@ -2046,12 +2046,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4600
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4600
-     * @tc.desc   : Unsubscribe from the HTTP streaming response data reception completion event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4600
+     * @tc.desc   Unsubscribe from the HTTP streaming response data reception completion event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4600',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4600';
@@ -2093,12 +2093,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4700
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4700
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving progress events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4700
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving progress events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4700',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4700';
@@ -2147,12 +2147,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4800
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4800
-     * @tc.desc   : Unsubscribe from HTTP network request data sending progress event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4800
+     * @tc.desc   Unsubscribe from HTTP network request data sending progress event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4800',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4800';
@@ -2200,12 +2200,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_4900
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff4900
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff4900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_4900
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff4900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff4900';
@@ -2249,12 +2249,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_5000
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff5000
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff5000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_5000
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff5000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff5000';
@@ -2297,12 +2297,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_5100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff5100
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff5100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_5100
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff5100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff5100';
@@ -2344,12 +2344,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_5200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff5200
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff5200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_5200
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff5200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff5200';
@@ -2393,12 +2393,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_5900
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff5900
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff5900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_5900
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff5900',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff5900';
@@ -2443,12 +2443,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_6000
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff6000
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff6000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_6000
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff6000',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff6000';
@@ -2492,12 +2492,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_6100
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff6100
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff6100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_6100
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff6100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff6100';
@@ -2545,12 +2545,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_6200
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff6200
-     * @tc.desc   : Unsubscribe from HTTP Response Header event.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff6200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_6200
+     * @tc.desc   Unsubscribe from HTTP Response Header event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff6200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff6200';
@@ -2594,12 +2594,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_6300
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff6300
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff6300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_6300
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff6300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff6300';
@@ -2643,12 +2643,12 @@ export default function HttpRequestOffTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_HttpRequest_Off_6400
-     * @tc.name   : testNetworkMgrHttpHttpRequestOff6400
-     * @tc.desc   : Unsubscribe from HTTP streaming response data receiving events.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestOff6400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Off_6400
+     * @tc.desc   Unsubscribe from HTTP streaming response data receiving events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrHttpHttpRequestOff6400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpHttpRequestOff6400';

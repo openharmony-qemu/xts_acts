@@ -43,6 +43,11 @@ import TextAddApi1 from './TextAddApi1.test';
 import TextMenuItemIdEqualsTest from './TextMenuItemIdEqualsTest.test';
 import TextMenuType from './TextMenuType.test';
 
+import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
+import TextDirectionTest from './TextDirectionTest.test';
+import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
+import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
+
 export default function testsuite() {
   InputPresetTest()
   // FontTest
@@ -74,4 +79,8 @@ export default function testsuite() {
   TextAddApi1()
   TextMenuItemIdEqualsTest()
   TextMenuType()
+  RichEditorDeleteTest();
+  TextDirectionTest();
+  IncludeFontPaddingTest();
+  FallbackLineSpacingTest();
 }

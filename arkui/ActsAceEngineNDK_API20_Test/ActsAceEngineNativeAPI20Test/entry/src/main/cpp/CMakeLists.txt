@@ -26,6 +26,7 @@ add_library(nativexcomponent SHARED
     componentapi/UiStatesTest.cpp
     componentapi/ListItemGroupAreaTest.cpp
     componentapi/ListItemSwipeActionStateTest.cpp
+    componentapi/FinishCallBackLogicallyTest.cpp
 )
 
 add_library(uiinputeventndk SHARED

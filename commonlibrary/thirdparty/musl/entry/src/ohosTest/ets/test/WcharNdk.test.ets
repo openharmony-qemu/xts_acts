@@ -25,12 +25,12 @@ export default function wcharNdkTest() {
     })
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_WCHAR_GETWC_0100
-     * @tc.name     : testMuslWcharGetwc001
-     * @tc.desc     : test getwc
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslWcharGetwc001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCHAR_GETWC_0100
+     * @tc.desc   test getwc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWcharGetwc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = wchar.getwc();
@@ -39,12 +39,12 @@ export default function wcharNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCHAR_MBRLEN_0100
-     * @tc.name       : testMuslWcharMbrlen001
-     * @tc.desc       : test mbrlen
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslWcharMbrlen001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCHAR_MBRLEN_0100
+     * @tc.desc   test mbrlen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWcharMbrlen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = wchar.mbrlen();
@@ -54,12 +54,12 @@ export default function wcharNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCHAR_FGETWS_0100
-     * @tc.name       : testMuslWcharFGetWs001
-     * @tc.desc       : test fgetws
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWcharFGetWs001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCHAR_FGETWS_0100
+     * @tc.desc   test fgetws
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWcharFGetWs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = wchar.fgetws();
@@ -68,12 +68,12 @@ export default function wcharNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_WCHAR_FGETWC_0100
-     * @tc.name       : testMuslWcharFGetWc001
-     * @tc.desc       : test fgetwc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslWcharFGetWc001
+     * @tc.number SUB_THIRDPARTY_MUSL_WCHAR_FGETWC_0100
+     * @tc.desc   test fgetwc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslWcharFGetWc001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = wchar.fgetwc();

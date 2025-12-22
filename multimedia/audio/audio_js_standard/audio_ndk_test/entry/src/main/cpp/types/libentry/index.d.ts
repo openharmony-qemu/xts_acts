@@ -1,16 +1,16 @@
-/* 
- * Copyright (C) 2024 Huawei Device Co., Ltd. 
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with the License. 
- * You may obtain a copy of the License at 
- * 
- *     http://www.apache.org/licenses/LICENSE-2.0 
- * 
- * Unless required by applicable law or agreed to in writing, software 
- * distributed under the License is distributed on an "AS IS" BASIS, 
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and 
- * limitations under the License. 
+/*
+ * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 import resourceManager from '@ohos.resourceManager';
 export const AudioLowLatencyOut: () => number;
@@ -23,6 +23,7 @@ export const getFileList: (resmgr: resourceManager.ResourceManager, path: string
 export const createAudioStreamBuilder: () => number;
 export const audioCaptureGenerate: () => number;
 export const audioWorkGroup: () => number;
+export const AudioWorkGroup_001: () => number;
 export const audioCaptureGenerateErr: () => number;
 export const audioCaptureStart: () => number;
 export const audioCaptureStartErr: () => number;
@@ -79,8 +80,10 @@ export const audioStreamBuilderSetChannelCount: () => number;
 export const audioStreamBuilderSetSampleFormat: () => number;
 export const audioStreamBuilderSetEncodingType: () => number;
 export const audioStreamBuilderSetLatencyMode: () => number;
+export const AudioStreamBuilderSetLatencyMode_001: () => number;
 export const audioStreamBuilderSetRendererInfo: () => number;
 export const audioStreamBuilderSetCapturerInfo: () => number;
+export const AudioStreamBuilderSetCapturerInfo_001: () => number;
 export const audioStreamBuilderSetRendererCallback: () => number;
 export const audioStreamBuilderSetCapturerCallback: () => number;
 export const audioStreamBuilderSetFrameSizeInCallback: () => number;
@@ -183,6 +186,7 @@ export const audioAudioDeviceDescriptorGetDeviceEncodingTypes_003: () => number;
 export const audioAudioDeviceDescriptorGetDeviceEncodingTypes_004: () => number;
 export const audioAudioInternalRecordingSuccess01: () => number;
 export const audioAudioInternalRecordingSuccess02: () => number;
+export const audioAudioInternalRecordingSuccess03: () => number;
 export const audioAudioInternalRecordingFalse: () => number;
 export const audioStreamBuilderSetRendererWriteDataCallback_001: () => number;
 export const audioStreamBuilderSetRendererWriteDataCallback_002: () => number;
@@ -304,4 +308,14 @@ export const audioSessionManagerAvailableDevices_001: () => number;
 export const audioSessionManagerAvailableDevices_002: () => number;
 export const audioSessionManagerAvailableDevices_003: () => number;
 export const audioSessionManagerAvailableDevices_004: () => number;
+export const AudioSessionManagerAvailableDevices_005: () => number;
+export const AudioSessionManagerAvailableDevices_006: () => number;
+export const AudioSessionManagerAvailableDevices_007: () => number;
+export const AudioSessionManagerAvailableDevices_008: () => number;
+export const AudioSessionManagerAvailableDevices_009: () => number;
+export const AudioSessionManagerAvailableDevices_010: () => number;
+export const AudioSessionManagerAvailableDevices_011: () => number;
+export const AudioSessionManagerAvailableDevices_012: () => number;
+export const AudioSessionManagerAvailableDevices_013: () => number;
+export const AudioSessionManagerAvailableDevices_014: () => number;
 export const bluetoothAndNearlinkPreferredRecordCategory_001: () => number;

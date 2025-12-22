@@ -41,12 +41,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0100
-     * @tc.name builtinsReadonlyArrayAtTest0100
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsReadonlyArrayAtTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -70,12 +70,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0200
-     * @tc.name builtinsReadonlyArrayAtTest0200
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -99,12 +99,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0300
-     * @tc.name builtinsReadonlyArrayAtTest0300
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -128,12 +128,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0400
-     * @tc.name builtinsReadonlyArrayAtTest0400
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -157,12 +157,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0500
-     * @tc.name builtinsReadonlyArrayAtTest0500
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -185,12 +185,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0600
-     * @tc.name builtinsReadonlyArrayAtTest0600
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -213,12 +213,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0700
-     * @tc.name builtinsReadonlyArrayAtTest0700
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -241,12 +241,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0800
-     * @tc.name builtinsReadonlyArrayAtTest0800
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -269,12 +269,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest0900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_0900
-     * @tc.name builtinsReadonlyArrayAtTest0900
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -297,12 +297,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1000
-     * @tc.name builtinsReadonlyArrayAtTest1000
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -325,12 +325,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1100
-     * @tc.name builtinsReadonlyArrayAtTest1100
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -353,12 +353,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1200
-     * @tc.name builtinsReadonlyArrayAtTest1200
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -381,12 +381,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1300
-     * @tc.name builtinsReadonlyArrayAtTest1300
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -409,12 +409,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1400
-     * @tc.name builtinsReadonlyArrayAtTest1400
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -437,12 +437,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1500
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1500
-     * @tc.name builtinsReadonlyArrayAtTest1500
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -459,12 +459,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1600
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1600
-     * @tc.name builtinsReadonlyArrayAtTest1600
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -481,12 +481,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1700
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1700
-     * @tc.name builtinsReadonlyArrayAtTest1700
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -510,12 +510,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1800
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1800
-     * @tc.name builtinsReadonlyArrayAtTest1800
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -539,12 +539,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest1900
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_1900
-     * @tc.name builtinsReadonlyArrayAtTest1900
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -568,12 +568,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest2000
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_2000
-     * @tc.name builtinsReadonlyArrayAtTest2000
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -597,12 +597,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest2100
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_2100
-     * @tc.name builtinsReadonlyArrayAtTest2100
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -626,12 +626,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest2200
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_2200
-     * @tc.name builtinsReadonlyArrayAtTest2200
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -656,12 +656,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest2300
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_2300
-     * @tc.name builtinsReadonlyArrayAtTest2300
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -686,12 +686,12 @@ export default function builtinsReadonlyArrayAtTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayAtTest2400
      * @tc.number SUB_BUILTINS_READONLY_ARRAY_AT_TEST_2400
-     * @tc.name builtinsReadonlyArrayAtTest2400
-     * @tc.desc readonlyArray at
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   readonlyArray at
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsReadonlyArrayAtTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

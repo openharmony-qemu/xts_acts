@@ -32,12 +32,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
 
     console.info('====>requestCacheDownloadJSTest Test start');
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0100
      * @tc.number SUB_Request_cacheDownload_stateSecret_0100
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0100
-     * @tc.desc sslType value is TLS and url support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLS and url support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0100 is starting-----------------------");
@@ -73,12 +73,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0200
      * @tc.number SUB_Request_cacheDownload_stateSecret_0200
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0200
-     * @tc.desc sslType value is TLS and url not support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLS and url not support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0200 is starting-----------------------");
@@ -114,12 +114,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0300
      * @tc.number SUB_Request_cacheDownload_stateSecret_0300
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0300
-     * @tc.desc sslType value is TLCP and url support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLCP and url support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0300 is starting-----------------------");
@@ -157,12 +157,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0400
      * @tc.number SUB_Request_cacheDownload_stateSecret_0400
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0400
-     * @tc.desc sslType value is TLCP and url is not support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLCP and url is not support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0400 is starting-----------------------");
@@ -199,12 +199,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0500
      * @tc.number SUB_Request_cacheDownload_stateSecret_0500
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0500
-     * @tc.desc sslType value is TLCP and caPath is error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is TLCP and caPath is error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0500 is starting-----------------------");
@@ -241,12 +241,12 @@ export default function requestCacheDownloadStateSecretUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_stateSecret_0600
      * @tc.number SUB_Request_cacheDownload_stateSecret_0600
-     * @tc.name SUB_Request_cacheDownload_stateSecret_0600
-     * @tc.desc sslType value is undefined and url support it.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   sslType value is undefined and url support it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_stateSecret_0600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_stateSecret_0600 is starting-----------------------");
@@ -276,6 +276,121 @@ export default function requestCacheDownloadStateSecretUnitTest() {
         }, 10000)
       } catch (err) {
         console.info("====>SUB_Request_cacheDownload_stateSecret_0600 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_cacheClear_0100
+     * @tc.name SUB_Request_cacheDownload_cacheClear_0100
+     * @tc.desc clearMemoryCache success.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_cacheClear_0100', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_cacheClear_0100 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+      }
+      try {
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.clearMemoryCache();
+        expect(downloadOptions.headers !== undefined).assertTrue();
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0100 clearMemoryCache success");
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0100 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_cacheClear_0200
+     * @tc.name SUB_Request_cacheDownload_cacheClear_0200
+     * @tc.desc clearFileCache success.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_cacheClear_0200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_cacheClear_0200 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+      }
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_3.jpg';
+      let num: number = 20 * 1024 * 1024
+      let path: string = '/data/storage/el2/base/cache/preload_caches/' +
+        '8b058bba5e7749849d2b6e45df2a43b9ff1d8e71b0bff46f51ac97ff840d3f1e_F';
+      try {
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.setFileCacheSize(num);
+        cacheDownload.download(url, downloadOptions);
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0200 download success");
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          try {
+            let ifExit1: boolean = fs.accessSync(path);
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 ifExit: " + ifExit1);
+            expect(ifExit1).assertTrue();
+            cacheDownload.clearFileCache();
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 clearFileCache success");
+            let ifExit2: boolean = fs.accessSync(path);
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 clearFileCache ifExit2: " + ifExit2);
+            expect(ifExit2).assertFalse();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0200 err: " + JSON.stringify(err));
+            done();
+          }
+        }, 10000)
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0200 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_cacheClear_0300
+     * @tc.name SUB_Request_cacheDownload_cacheClear_0300
+     * @tc.desc can not clear download file.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_cacheClear_0300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_cacheClear_0300 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string> | undefined = {'Accept': '*/*'}
+      }
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_3.jpg';
+      let num: number = 20 * 1024 * 1024
+      let path: string = '/data/storage/el2/base/cache/preload_caches/' +
+        '8b058bba5e7749849d2b6e45df2a43b9ff1d8e71b0bff46f51ac97ff840d3f1e_F';
+      try {
+        let downloadOptions = new cacheDownloadOptions();
+        cacheDownload.setFileCacheSize(num);
+        cacheDownload.download(url, downloadOptions);
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0300 download success");
+        cacheDownload.clearFileCache();
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0300 clearFileCache success");
+        let t = setTimeout(() => {
+          clearTimeout(t);
+          try {
+            let ifExit1: boolean = fs.accessSync(path);
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0300 ifExit: " + ifExit1);
+            expect(ifExit1).assertTrue();
+            done();
+          }catch (err) {
+            console.info("====>SUB_Request_cacheDownload_cacheClear_0300 err: " + JSON.stringify(err));
+            done();
+          }
+        }, 10000)
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_cacheClear_0300 catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
       }

@@ -49,11 +49,14 @@ export default function uitestDriverTest() {
     })
 
 
-    /*
-    * @tc.number: uitestDriverTest_0001
-    * @tc.name: testWakeUpDisplay_static
-    * @tc.desc: wake up the device display.
-    */
+    /**
+     * @tc.name   testWakeUpDisplay_static
+     * @tc.number uitestDriverTest_0001
+     * @tc.desc   wake up the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWakeUpDisplay_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWakeUpDisplay_static Start`);
       try {
@@ -66,11 +69,14 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testWakeUpDisplay_static end`);
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0002
-    * @tc.name: testWaitForComponent_static
-    * @tc.desc: Find the first matched UiComponent on current UI during the time given.
-    */
+    /**
+     * @tc.name   testWaitForComponent_static
+     * @tc.number uitestDriverTest_0002
+     * @tc.desc   Find the first matched UiComponent on current UI during the time given.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testWaitForComponent_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testWaitForComponent_static Start!!!");
       let driver = Driver.create();
@@ -88,11 +94,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0003
-    * @tc.name: testPressBack_static
-    * @tc.desc: Press the BACK key.
-    */
+    /**
+     * @tc.name   testPressBack_static
+     * @tc.number uitestDriverTest_0003
+     * @tc.desc   Press the BACK key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPressBack_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testPressBack_static Start!!!");
       let driver = Driver.create();
@@ -116,11 +125,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0005
-    * @tc.name: testFindComponent_static
-    * @tc.desc: findComponent test.
-    */
+    /**
+     * @tc.name   testFindComponent_static
+     * @tc.number uitestDriverTest_0005
+     * @tc.desc   findComponent test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testFindComponent_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testFindComponent_static Start!!!");
       try {
@@ -143,11 +155,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0006
-    * @tc.name: testFindComponents_static
-    * @tc.desc: find all the matched UiComponents on current UI.
-    */
+    /**
+     * @tc.name   testFindComponents_static
+     * @tc.number uitestDriverTest_0006
+     * @tc.desc   find all the matched UiComponents on current UI.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testFindComponents_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testFindComponents_static Start!!!");
       let driver = Driver.create();
@@ -165,11 +180,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0007
-    * @tc.name: test_penLongClick_function_static
-    * @tc.desc: penLongClick function test.
-    */
+    /**
+     * @tc.name   test_penLongClick_function_static
+     * @tc.number uitestDriverTest_0007
+     * @tc.desc   penLongClick function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_penLongClick_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penLongClick_function_static start!!!!");
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -220,11 +238,14 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "test_penLongClick_function_static end!!!!");
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0008
-    * @tc.name: test_penDoubleClick_function_static
-    * @tc.desc: penDoubleClick function test.
-    */
+    /**
+     * @tc.name   test_penDoubleClick_function_static
+     * @tc.number uitestDriverTest_0008
+     * @tc.desc   penDoubleClick function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_penDoubleClick_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `test_penDoubleClick_function_static start`);
       let driver = Driver.create();
@@ -258,11 +279,14 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "test_penDoubleClick_function_static over!!!!")
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0009
-    * @tc.name: test_penClick_function_static
-    * @tc.desc: penClick function test.
-    */
+    /**
+     * @tc.name   test_penClick_function_static
+     * @tc.number uitestDriverTest_0009
+     * @tc.desc   penClick function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_penClick_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penClick_function_static start!!!!")
       let driver = Driver.create();
@@ -297,11 +321,14 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "testPenClick over!!!!")
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0029
-    * @tc.name: test_penClick_function_displayId_static
-    * @tc.desc: penClick function test.
-    */
+    /**
+     * @tc.name   test_penClick_function_displayId_static
+     * @tc.number uitestDriverTest_0029
+     * @tc.desc   penClick function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_penClick_function_displayId_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penClick_function_displayId_static start!!!!")
       try {
@@ -345,11 +372,14 @@ export default function uitestDriverTest() {
     })
 
 
-    /*
-    * @tc.number: uitestDriverTest_0071
-    * @tc.name: testMouseScroll_default_static
-    * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
-    */
+    /**
+     * @tc.name   testMouseScroll_default_static
+     * @tc.number uitestDriverTest_0071
+     * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseScroll_default_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -375,11 +405,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0010
-    * @tc.name: testMouseScroll_key_static
-    * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
-    */
+    /**
+     * @tc.name   testMouseScroll_key_static
+     * @tc.number uitestDriverTest_0010
+     * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseScroll_key_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -428,11 +461,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0073
-    * @tc.name: testMouseScroll_key2_static
-    * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
-    */
+    /**
+     * @tc.name   testMouseScroll_key2_static
+     * @tc.number uitestDriverTest_0073
+     * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseScroll_key2_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -482,11 +518,14 @@ export default function uitestDriverTest() {
     })
 
 
-    /*
-    * @tc.number: uitestDriverTest_0075
-    * @tc.name: testMouseScroll_speed_static
-    * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
-    */
+    /**
+     * @tc.name   testMouseScroll_speed_static
+     * @tc.number uitestDriverTest_0075
+     * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseScroll_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -535,11 +574,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0011
-    * @tc.name: testDriverClick_static
-    * @tc.desc: click in the specified location on the screen.
-    */
+    /**
+     * @tc.name   testDriverClick_static
+     * @tc.number uitestDriverTest_0011
+     * @tc.desc   click in the specified location on the screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testDriverClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testDriverClick_static start!!!!")
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -563,11 +605,14 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "testDriverClick_static end!!!!")
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0012
-    * @tc.name: testUiDriverDoubleClick_static
-    * @tc.desc: doubleClick in the specified location on the screen.
-    */
+    /**
+     * @tc.name   testUiDriverDoubleClick_static
+     * @tc.number uitestDriverTest_0012
+     * @tc.desc   doubleClick in the specified location on the screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testUiDriverDoubleClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       const driver = Driver.create();
@@ -596,11 +641,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0013
-    * @tc.name: testUiDriverLongClick_static
-    * @tc.desc: longClick in the specified location on the screen.
-    */
+    /**
+     * @tc.name   testUiDriverLongClick_static
+     * @tc.number uitestDriverTest_0013
+     * @tc.desc   longClick in the specified location on the screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testUiDriverLongClick_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -623,11 +671,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0014
-    * @tc.name: testMouseClick_RIGHT
-    * @tc.desc: longClick in the specified location on the screen.
-    */
+    /**
+     * @tc.name   testMouseClick_RIGHT
+     * @tc.number uitestDriverTest_0014
+     * @tc.desc   longClick in the specified location on the screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseClick_RIGHT',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (): Promise<void> => {
       hilog.info(domain, tag, `testMouseClick_RIGHT start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -662,11 +713,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0015
-    * @tc.name: testMouseClick_MIDDLE
-    * @tc.desc: mouseClick test.
-    */
+    /**
+     * @tc.name   testMouseClick_MIDDLE
+     * @tc.number uitestDriverTest_0015
+     * @tc.desc   mouseClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseClick_MIDDLE',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -692,11 +746,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0016
-    * @tc.name: testMouseClick_LEFT
-    * @tc.desc: mouseClick test.
-    */
+    /**
+     * @tc.name   testMouseClick_LEFT
+     * @tc.number uitestDriverTest_0016
+     * @tc.desc   mouseClick test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseClick_LEFT',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testMouseClick_LEFT start!!!!");
       let driver = Driver.create();
@@ -723,10 +780,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0017
-     * @tc.name: testMouseDoubleClick_static
-     * @tc.desc: doubleClick in the specified location on the screen by mouse.
+    /**
+     * @tc.name   testMouseDoubleClick_static
+     * @tc.number uitestDriverTest_0017
+     * @tc.desc   doubleClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseDoubleClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -754,10 +814,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0018
-     * @tc.name: testMouseDoubleClick_1_static
-     * @tc.desc: doubleClick in the specified location on the screen by mouse.
+    /**
+     * @tc.name   testMouseDoubleClick_1_static
+     * @tc.number uitestDriverTest_0018
+     * @tc.desc   doubleClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseDoubleClick_1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -785,10 +848,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0019
-     * @tc.name: testMouseDoubleClick_2_static
-     * @tc.desc: doubleClick in the specified location on the screen by mouse.
+    /**
+     * @tc.name   testMouseDoubleClick_2_static
+     * @tc.number uitestDriverTest_0019
+     * @tc.desc   doubleClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseDoubleClick_2_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -816,11 +882,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0020
-    * @tc.name: testMouseLongClick_static
-    * @tc.desc: longClick in the specified location on the screen by mouse.
-    */
+    /**
+     * @tc.name   testMouseLongClick_static
+     * @tc.number uitestDriverTest_0020
+     * @tc.desc   longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseLongClick_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       let driver = Driver.create();
@@ -841,11 +910,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0021
-    * @tc.name: testMouseLongClick_1_static
-    * @tc.desc: longClick in the specified location on the screen by mouse.
-    */
+    /**
+     * @tc.name   testMouseLongClick_1_static
+     * @tc.number uitestDriverTest_0021
+     * @tc.desc   longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseLongClick_1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       let driver = Driver.create();
@@ -866,11 +938,14 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-   * @tc.number: uitestDriverTest_0022
-   * @tc.name: testMouseLongClick_2_static
-   * @tc.desc: longClick in the specified location on the screen by mouse.
-   */
+    /**
+     * @tc.name   testMouseLongClick_2_static
+     * @tc.number uitestDriverTest_0022
+     * @tc.desc   longClick in the specified location on the screen by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMouseLongClick_2_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       let driver = Driver.create();
@@ -891,10 +966,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0026
-     * @tc.name: testAssertComponentExist_static
-     * @tc.desc: Assert whether the matched UiComponent exists on current UI.
+    /**
+     * @tc.name   testAssertComponentExist_static
+     * @tc.number uitestDriverTest_0026
+     * @tc.desc   Assert whether the matched UiComponent exists on current UI.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testAssertComponentExist_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -909,10 +987,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0027
-     * @tc.name: testGetDisplayRotation
-     * @tc.desc: getDisplayRotation test.
+    /**
+     * @tc.name   testGetDisplayRotation
+     * @tc.number uitestDriverTest_0027
+     * @tc.desc   getDisplayRotation test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplayRotation',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let driver = Driver.create();
@@ -930,10 +1011,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0028
-     * @tc.name: testGetDisplayDensity_static
-     * @tc.desc: get the density of the device display.
+    /**
+     * @tc.name   testGetDisplayDensity_static
+     * @tc.number uitestDriverTest_0028
+     * @tc.desc   get the density of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplayDensity_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testGetDisplayDensity_static start !!!!");
@@ -953,10 +1037,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0029
-     * @tc.name: testMonitor1_static
-     * @tc.desc: monitor toast appearance.
+    /**
+     * @tc.name   testMonitor1_static
+     * @tc.number uitestDriverTest_0029
+     * @tc.desc   monitor toast appearance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMonitor1_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -996,10 +1083,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0030
-     * @tc.name: testMonitor2_static
-     * @tc.desc: monitor toast appearance.
+    /**
+     * @tc.name   testMonitor2_static
+     * @tc.number uitestDriverTest_0030
+     * @tc.desc   monitor toast appearance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMonitor2_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
@@ -1038,10 +1128,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0031
-     * @tc.name: test_penSwipe_function_static
-     * @tc.desc: penSwipe function test.
+    /**
+     * @tc.name   test_penSwipe_function_static
+     * @tc.number uitestDriverTest_0031
+     * @tc.desc   penSwipe function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_penSwipe_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penSwipe_function_static start !!!!")
@@ -1079,10 +1172,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0057
-     * @tc.name: test_penSwipe_function_pressure_static
-     * @tc.desc: penSwipe function test.
+    /**
+     * @tc.name   test_penSwipe_function_pressure_static
+     * @tc.number uitestDriverTest_0057
+     * @tc.desc   penSwipe function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_penSwipe_function_pressure_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penSwipe_function_pressure_static start !!!!")
@@ -1111,10 +1207,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0059
-     * @tc.name: test_penSwipe_function_speed_static
-     * @tc.desc: penSwipe function test.
+    /**
+     * @tc.name   test_penSwipe_function_speed_static
+     * @tc.number uitestDriverTest_0059
+     * @tc.desc   penSwipe function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_penSwipe_function_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_penSwipe_function_speed_static start !!!!")
@@ -1143,10 +1242,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0032
-     * @tc.name: testFling_static
-     * @tc.desc: inject fling on the device display.
+    /**
+     * @tc.name   testFling_static
+     * @tc.number uitestDriverTest_0032
+     * @tc.desc   inject fling on the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFling_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testFling_static start !!!!");
@@ -1175,10 +1277,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0035
-     * @tc.name: testScreenCap_static
-     * @tc.desc: capture current screen.
+    /**
+     * @tc.name   testScreenCap_static
+     * @tc.number uitestDriverTest_0035
+     * @tc.desc   capture current screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testScreenCap_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testScreenCap_static start !!!!");
@@ -1198,10 +1303,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0036
-     * @tc.name: testGetDisplaySize_static
-     * @tc.desc: get the size of the device display.
+    /**
+     * @tc.name   testGetDisplaySize_static
+     * @tc.number uitestDriverTest_0036
+     * @tc.desc   get the size of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplaySize_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetDisplaySize start`);
@@ -1221,10 +1329,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testGetDisplaySize end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0037
-     * @tc.name: testFindWindowBundleName
-     * @tc.desc: get the size of the device display.
+    /**
+     * @tc.name   testFindWindowBundleName
+     * @tc.number uitestDriverTest_0037
+     * @tc.desc   get the size of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFindWindowBundleName',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testFindWindowBundleName start !!!!");
@@ -1248,10 +1359,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0038
-     * @tc.name: testFindWindowActive
-     * @tc.desc: get the size of the device display.
+    /**
+     * @tc.name   testFindWindowActive
+     * @tc.number uitestDriverTest_0038
+     * @tc.desc   get the size of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFindWindowActive',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testFindWindowActive start !!!!");
@@ -1275,10 +1389,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0039
-     * @tc.name: testFindWindowFocused
-     * @tc.desc: get the size of the device display.
+    /**
+     * @tc.name   testFindWindowFocused
+     * @tc.number uitestDriverTest_0039
+     * @tc.desc   get the size of the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFindWindowFocused',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testFindWindowFocused start !!!!");
@@ -1302,10 +1419,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0040
-     * @tc.name: test_touchPadMultiFingerSwipe_Up_Down_3_static
-     * @tc.desc: Swipe UP or Down with three point.
+    /**
+     * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_3_static
+     * @tc.number uitestDriverTest_0040
+     * @tc.desc   Swipe UP or Down with three point.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_touchPadMultiFingerSwipe_Up_Down_3_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (): Promise<void> => {
       hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_3_static start`);
@@ -1336,10 +1456,13 @@ export default function uitestDriverTest() {
     })
 
 
-    /*
-     * @tc.number: UiTest_API16_002
-     * @tc.name: test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static
-     * @tc.desc: Swipe Up or Down with three point then  in more task statue
+    /**
+     * @tc.name   test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static
+     * @tc.number UiTest_API16_002
+     * @tc.desc   Swipe Up or Down with three point then  in more task statue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static start`);
@@ -1372,10 +1495,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, `test_touchPadMultiFingerSwipe_Up_Down_Stay_3_static end`);
     })
-    /*
-     * @tc.number: uitestDriverTest_0041
-     * @tc.name: testMouseMoveWithTrack_static
-     * @tc.desc: swipe on the screen between the specified points with mouse.
+    /**
+     * @tc.name   testMouseMoveWithTrack_static
+     * @tc.number uitestDriverTest_0041
+     * @tc.desc   swipe on the screen between the specified points with mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseMoveWithTrack_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testMouseMoveWithTrack_static start !!!!");
@@ -1417,10 +1543,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0042
-     * @tc.name: testMouseMoveTo_static
-     * @tc.desc: move the mouse cursor to the specified location.
+    /**
+     * @tc.name   testMouseMoveTo_static
+     * @tc.number uitestDriverTest_0042
+     * @tc.desc   move the mouse cursor to the specified location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseMoveTo_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testMouseMoveTo_static start !!!!");
@@ -1456,10 +1585,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0044
-     * @tc.name: testInjectMultiPointerAction_static
-     * @tc.desc: inject multi-pointer action on the device display.
+    /**
+     * @tc.name   testInjectMultiPointerAction_static
+     * @tc.number uitestDriverTest_0044
+     * @tc.desc   inject multi-pointer action on the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectMultiPointerAction_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testInjectMultiPointerAction_static start !!!!");
@@ -1512,10 +1644,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "testInjectMultiPointerAction_static over!!!!")
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0066
-     * @tc.name: testInjectMultiPointerAction_speed_static
-     * @tc.desc: inject multi-pointer action on the device display.
+    /**
+     * @tc.name   testInjectMultiPointerAction_speed_static
+     * @tc.number uitestDriverTest_0066
+     * @tc.desc   inject multi-pointer action on the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testInjectMultiPointerAction_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testInjectMultiPointerAction_speed_static start !!!!");
@@ -1567,10 +1702,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "testInjectMultiPointerAction_speed_static over!!!!")
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0045
-     * @tc.name: test_injectPenPointAction_function_static
-     * @tc.desc: injectPenPointAction function test.
+    /**
+     * @tc.name   test_injectPenPointAction_function_static
+     * @tc.number uitestDriverTest_0045
+     * @tc.desc   injectPenPointAction function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_injectPenPointAction_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_injectPenPointAction_function_static start !!!!");
@@ -1614,10 +1752,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0061
-     * @tc.name: test_injectPenPointAction_speed_function_static
-     * @tc.desc: injectPenPointAction function test.
+    /**
+     * @tc.name   test_injectPenPointAction_speed_function_static
+     * @tc.number uitestDriverTest_0061
+     * @tc.desc   injectPenPointAction function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_injectPenPointAction_speed_function_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_injectPenPointAction_speed_function_static start !!!!");
@@ -1652,10 +1793,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0063
-     * @tc.name: test_injectPenPointAction_static
-     * @tc.desc: injectPenPointAction function test.
+    /**
+     * @tc.name   test_injectPenPointAction_static
+     * @tc.number uitestDriverTest_0063
+     * @tc.desc   injectPenPointAction function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_injectPenPointAction_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "test_injectPenPointAction_static start !!!!");
@@ -1690,10 +1834,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0046
-     * @tc.name: testWaitForIdle_static
-     * @tc.desc: wait for the UI become idle.
+    /**
+     * @tc.name   testWaitForIdle_static
+     * @tc.number uitestDriverTest_0046
+     * @tc.desc   wait for the UI become idle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWaitForIdle_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testWaitForIdle_static start !!!!")
@@ -1709,10 +1856,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "testWaitForIdle_static over!!!!");
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0047
-     * @tc.name: testTriggerKey_static
-     * @tc.desc: press the specified key.
+    /**
+     * @tc.name   testTriggerKey_static
+     * @tc.number uitestDriverTest_0047
+     * @tc.desc   press the specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTriggerKey_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testTriggerKey_static start !!!!")
@@ -1735,10 +1885,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0049
-     * @tc.name: testDelayMs
-     * @tc.desc: delayMs test.
+    /**
+     * @tc.name   testDelayMs
+     * @tc.number uitestDriverTest_0049
+     * @tc.desc   delayMs test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDelayMs',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testDelayMs start !!!!")
@@ -1753,10 +1906,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, "testDelayMs over!!!!")
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0050
-     * @tc.name: testDriverInputText_static
-     * @tc.desc: inject text on the specified location.
+    /**
+     * @tc.name   testDriverInputText_static
+     * @tc.number uitestDriverTest_0050
+     * @tc.desc   inject text on the specified location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverInputText_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testDriverInputText_static start !!!!");
@@ -1774,21 +1930,27 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testDriverInputText_static text, ${ JSON.stringify(text) }`);
         expect(text != null).assertTrue();
         if (text != null) {
-          await text.clearText();
-          await driver.delayMs(1000);
-          await exitInputMethod()
           let center = await text.getBoundsCenter();
           hilog.info(domain, tag, `testDriverInputText_static center, ${ JSON.stringify(center) }`);
           await driver.inputText(center, '123');
+          await driver.delayMs(1000);
+          await exitInputMethod();
+          await driver.delayMs(1000);
         }
         await driver.delayMs(1000);
         let text1 = await driver.findComponent(ON.type('TextInput'));
+        if (text1 == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          if (scroll != null) {
+            text1 = await scroll.scrollSearch(ON.type('TextInput'))
+          }
+        }
         hilog.info(domain, tag, `testDriverInputText_static text1 success, ${ JSON.stringify(text1) }`);
         expect(text1 != null).assertTrue();
         if (text1 != null) {
           let inputText = await text1.getText();
           hilog.info(domain, tag, `testDriverInputText_static inputText success, ${ JSON.stringify(inputText) }`);
-          expect(inputText).assertEqual('123');
+          expect(inputText).assertEqual('Hello W123orld');
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputText_static error, ${ JSON.stringify(error) }`);
@@ -1798,10 +1960,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0052
-     * @tc.name: testSwipe_static
-     * @tc.desc: swipe on the screen between the specified points.
+    /**
+     * @tc.name   testSwipe_static
+     * @tc.number uitestDriverTest_0052
+     * @tc.desc   swipe on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSwipe_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testSwipe_static start`);
@@ -1830,10 +1995,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0056
-     * @tc.name: testSwipe_speed_static
-     * @tc.desc: swipe on the screen between the specified points.
+    /**
+     * @tc.name   testSwipe_speed_static
+     * @tc.number uitestDriverTest_0056
+     * @tc.desc   swipe on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSwipe_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testSwipe_speed_static start`);
@@ -1862,10 +2030,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0055
-     * @tc.name: testScreenCapture_static
-     * @tc.desc: capture the specified area of current screen.
+    /**
+     * @tc.name   testScreenCapture_static
+     * @tc.number uitestDriverTest_0055
+     * @tc.desc   capture the specified area of current screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testScreenCapture_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testScreenCapture_static start`);
@@ -1890,10 +2061,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0096
-     * @tc.name: testDriverInputTextMode_static
-     * @tc.desc: enter '123',the values of both paste and addition are false
+    /**
+     * @tc.name   testDriverInputTextMode_static
+     * @tc.number uitestDriverTest_0096
+     * @tc.desc   enter '123',the values of both paste and addition are false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverInputTextMode_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverInputTextMode_static start`);
@@ -1913,8 +2087,6 @@ export default function uitestDriverTest() {
         expect(text != null).assertTrue();
         if (text != null) {
           let center = await text.getBoundsCenter()
-          await text.clearText();
-          await driver.delayMs(2000);
           hilog.info(domain, tag, `testDriverInputTextMode_static center, ${ JSON.stringify(center) }`);
           await driver.inputText(center, '123', {paste:false, addition:false})
           await exitInputMethod();
@@ -1932,7 +2104,7 @@ export default function uitestDriverTest() {
           if (text1 != null) {
             let msg = await text1.getText();
             hilog.info(domain, tag, `testDriverInputTextMode_static msg, ${ JSON.stringify(msg) }`);
-            expect(msg == '123').assertTrue()
+            expect(msg == 'Hello W123orld').assertTrue()
           }
         }
       } catch(error) {
@@ -1943,10 +2115,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testDriverInputText_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0097
-     * @tc.name: testDriverInputTextMode1_static
-     * @tc.desc: enter '长贵儿',the values of both paste and addition are false
+    /**
+     * @tc.name   testDriverInputTextMode1_static
+     * @tc.number uitestDriverTest_0097
+     * @tc.desc   enter '长贵儿',the values of both paste and addition are false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverInputTextMode1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverInputTextMode1_static start`);
@@ -1964,22 +2139,7 @@ export default function uitestDriverTest() {
         hilog.info(domain, tag, `testDriverInputTextMode1_static text, ${ JSON.stringify(text) }`);
         expect(text != null).assertTrue();
         if (text != null) {
-          await text.clearText();
-          await driver.delayMs(2000);
-          await exitInputMethod();
-          await driver.delayMs(2000);
-        }
-        let text1 = await driver.findComponent(ON.type('TextInput'))
-        if (text1 == null) {
-          let scorll = await driver.findComponent(ON.type('Scroll'))
-          if (scorll != null) {
-            text1 = await scorll.scrollSearch(ON.type('TextInput'))
-          }
-        }
-        hilog.info(domain, tag, `testDriverInputTextMode1_static text1, ${ JSON.stringify(text1) }`);
-        expect(text1 != null).assertTrue();
-        if (text1 != null) {
-          let center = await text1.getBoundsCenter();
+          let center = await text.getBoundsCenter();
           hilog.info(domain, tag, `testDriverInputTextMode1_static center, ${ JSON.stringify(center) }`);
           await driver.inputText(center, '长贵儿', {paste:false, addition:false});
           await driver.delayMs(2000)
@@ -1998,7 +2158,7 @@ export default function uitestDriverTest() {
         if (text2 != null) {
           let msg = await text2.getText();
           hilog.info(domain, tag, `testDriverInputTextMode1_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== '长贵儿').assertTrue()
+          expect(msg== 'Hello W长贵儿orld').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode1_static error, ${ JSON.stringify(error) }`);
@@ -2008,10 +2168,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testDriverInputTextMode1_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0058
-     * @tc.name: testDriverInputTextMode2_static
-     * @tc.desc: enter '123',the values of paste is true,the values of addition is false
+    /**
+     * @tc.name   testDriverInputTextMode2_static
+     * @tc.number uitestDriverTest_0058
+     * @tc.desc   enter '123',the values of paste is true,the values of addition is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverInputTextMode2_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverInputTextMode2_static start`);
@@ -2020,21 +2183,6 @@ export default function uitestDriverTest() {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
         await driver.delayMs(2000)
         let text = await driver.findComponent(ON.type('TextInput'))
-        if (text == null) {
-          let scorll = await driver.findComponent(ON.type('Scroll'))
-          if (scorll != null) {
-            text = await scorll.scrollSearch(ON.type('TextInput'))
-          }
-        }
-        hilog.info(domain, tag, `testDriverInputTextMode2_static text, ${ JSON.stringify(text) }`);
-        expect(text != null).assertTrue();
-        if (text != null) {
-          await text.clearText()
-          await driver.delayMs(2000)
-          await exitInputMethod()
-          await driver.delayMs(1000)
-        }
-        text = await driver.findComponent(ON.type('TextInput'))
         if (text == null) {
           let scorll = await driver.findComponent(ON.type('Scroll'))
           if (scorll != null) {
@@ -2062,7 +2210,7 @@ export default function uitestDriverTest() {
         if (text1 != null) {
           let msg = await text1.getText();
           hilog.info(domain, tag, `testDriverInputTextMode2_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== '123').assertTrue()
+          expect(msg== 'Hello W123orld').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode2_static error, ${ JSON.stringify(error) }`);
@@ -2072,10 +2220,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testDriverInputTextMode2_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0099
-     * @tc.name: testDriverInputTextMode3_static
-     * @tc.desc: enter '123',the values of paste is false,the values of addition is true
+    /**
+     * @tc.name   testDriverInputTextMode3_static
+     * @tc.number uitestDriverTest_0099
+     * @tc.desc   enter '123',the values of paste is false,the values of addition is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverInputTextMode3_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverInputTextMode3_static start`);
@@ -2122,10 +2273,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testDriverInputTextMode3_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0060
-     * @tc.name: testDriverInputTextMode4_static
-     * @tc.desc: enter '123',the values of paste is true,the values of addition is true
+    /**
+     * @tc.name   testDriverInputTextMode4_static
+     * @tc.number uitestDriverTest_0060
+     * @tc.desc   enter '123',the values of paste is true,the values of addition is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDriverInputTextMode4_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDriverInputTextMode4_static start`);
@@ -2171,10 +2325,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testDriverInputTextMode4_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0079
-     * @tc.name: testFlingWithId_static
-     * @tc.desc: fling test
+    /**
+     * @tc.name   testFlingWithId_static
+     * @tc.number uitestDriverTest_0079
+     * @tc.desc   fling test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFlingWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testFlingWithId_static start`);
@@ -2231,10 +2388,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testFlingWithId_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0062
-     * @tc.name: testPressBackWithId_static
-     * @tc.desc: pressBack test
+    /**
+     * @tc.name   testPressBackWithId_static
+     * @tc.number uitestDriverTest_0062
+     * @tc.desc   pressBack test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPressBackWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testPressBackWithId_static start`);
@@ -2268,10 +2428,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testPressBackWithId_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0093
-     * @tc.name: testTriggerKeyWithId_static
-     * @tc.desc: triggerKey test
+    /**
+     * @tc.name   testTriggerKeyWithId_static
+     * @tc.number uitestDriverTest_0093
+     * @tc.desc   triggerKey test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTriggerKeyWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testTriggerKeyWithId_static start`);
@@ -2308,10 +2471,13 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testTriggerKeyWithId_static end`);
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0064
-     * @tc.name: testGetDisplaySizeWithId_static
-     * @tc.desc: getDisplaySize test
+    /**
+     * @tc.name   testGetDisplaySizeWithId_static
+     * @tc.number uitestDriverTest_0064
+     * @tc.desc   getDisplaySize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetDisplaySizeWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetDisplaySizeWithId_static start`);

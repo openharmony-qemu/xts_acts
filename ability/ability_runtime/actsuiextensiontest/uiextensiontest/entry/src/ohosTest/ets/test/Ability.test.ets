@@ -36,36 +36,7 @@ export default function abilityTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(async (done:Function) => {
-      console.info("ACTS_UIExtension beforeEach start");
-      let options:router.RouterOptions = {
-        url: 'TestAbility/pages/p1',
-      }
 
-      try {
-        let result = await router.pushUrl(options);
-        await Utils.sleep(300);
-        console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
-      } catch (err) {
-        console.error("ACTS_UIExtension push page error: " + err);
-      }
-      globalId +=1;
-      let id = globalId;
-      console.log("start globalId="+globalId);
-      setTimeout(async () => {
-        console.log("id ="+id + "globalId="+globalId);
-        if(id == globalId){
-          console.log("unsubscribe start"+globalscribe + "globalId="+globalId);
-          Utils.unsubscribe(globalscribe)
-          console.log("unsubscribe done"+globalscribe + "globalId="+globalId);
-          expect().assertFail();
-          done()
-        }
-      }, 8000); // max wait 8s
-      setTimeout(async () => {
-        done()
-      }, 300);
-    });
     afterEach(async (done:Function) => {
       console.log("done globalId="+globalId);
       Utils.unsubscribe(globalscribe)
@@ -134,6 +105,16 @@ export default function abilityTest() {
             done();
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -194,6 +175,16 @@ export default function abilityTest() {
             });
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -256,6 +247,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -310,6 +311,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -360,6 +371,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -410,6 +431,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -477,6 +508,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -526,6 +567,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -570,6 +621,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -626,6 +687,16 @@ export default function abilityTest() {
             console.log(TAG + "multiServiceDestroy success");
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -670,6 +741,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -714,6 +795,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -770,6 +861,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -790,17 +891,6 @@ export default function abilityTest() {
       console.log(TAG + "begin");
       router.back()
       await Utils.sleep(500);
-      let options:router.RouterOptions = {
-        url: 'TestAbility/pages/p2',
-      }
-
-      try {
-        let result = await router.pushUrl(options);
-        await Utils.sleep(500);
-        console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
-      } catch (err) {
-        console.error("ACTS_UIExtension push page error: " + err);
-      }
 
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
       let successDifferentAppEvent007_visible = 'ACTS_UIExtension_DifferentApp007_visibleSuccess';
@@ -839,6 +929,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p2',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -895,6 +995,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -916,17 +1026,6 @@ export default function abilityTest() {
 
       router.back()
       await Utils.sleep(500);
-      let options:router.RouterOptions = {
-        url: 'TestAbility/pages/p2',
-      }
-
-      try {
-        let result = await router.pushUrl(options);
-        await Utils.sleep(500);
-        console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
-      } catch (err) {
-        console.error("ACTS_UIExtension push page error: " + err);
-      }
 
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
       let successDifferentAppEvent009_visible = 'ACTS_UIExtension_DifferentApp009_visibleSuccess';
@@ -965,6 +1064,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p2',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -986,17 +1095,6 @@ export default function abilityTest() {
 
       router.back()
       await Utils.sleep(500);
-      let options:router.RouterOptions = {
-        url: 'TestAbility/pages/p3',
-      }
-
-      try {
-        let result = await router.pushUrl(options);
-        await Utils.sleep(500);
-        console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
-      } catch (err) {
-        console.error("ACTS_UIExtension push page error: " + err);
-      }
 
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
       let successDifferentAppEvent010_ext1 = 'ACTS_UIExtension_DifferentApp010_ext1_Success';
@@ -1033,6 +1131,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p3',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -1054,17 +1162,6 @@ export default function abilityTest() {
 
       router.back()
       await Utils.sleep(500);
-      let options:router.RouterOptions = {
-        url: 'TestAbility/pages/p4',
-      }
-
-      try {
-        let result = await router.pushUrl(options);
-        await Utils.sleep(500);
-        console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
-      } catch (err) {
-        console.error("ACTS_UIExtension push page error: " + err);
-      }
 
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
       let successDifferentAppEvent011_visible = 'ACTS_UIExtension_DifferentApp011_visibleSuccess';
@@ -1101,6 +1198,16 @@ export default function abilityTest() {
             }
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p4',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -1121,17 +1228,6 @@ export default function abilityTest() {
       console.log(TAG + "begin");
       router.back()
       await Utils.sleep(500);
-      let options:router.RouterOptions = {
-        url: 'TestAbility/pages/p1',
-      }
-
-      try {
-        let result = await router.pushUrl(options);
-        await Utils.sleep(500);
-        console.info(TAG + "push page result: " + JSON.stringify(result));
-      } catch (err) {
-        console.error(TAG + "push page error: " + err);
-      }
 
       let processInfo = await appManager.getRunningProcessInfoByBundleName('com.example.uiextensiontest');
       console.log(TAG + JSON.stringify(processInfo));
@@ -1161,6 +1257,16 @@ export default function abilityTest() {
               done();
             }
           });
+          let options:router.RouterOptions = {
+            url: 'TestAbility/pages/p1',
+          }
+
+          try {
+            let result = await router.pushUrl(options);
+            console.info(TAG + "push page result: " + JSON.stringify(result));
+          } catch (err) {
+            console.error(TAG + "push page error: " + err);
+          }
         }).catch((error:BusinessError) => {
           console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
           expect().assertFail();
@@ -1323,6 +1429,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();
@@ -1382,6 +1498,16 @@ export default function abilityTest() {
             done()
           }
         });
+        let options:router.RouterOptions = {
+          url: 'TestAbility/pages/p1',
+        }
+
+        try {
+          let result = await router.pushUrl(options);
+          console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
+        } catch (err) {
+          console.error("ACTS_UIExtension push page error: " + err);
+        }
       }).catch((error:BusinessError) => {
         console.log(TAG + "createSubscriber err : " + JSON.stringify(error));
         expect().assertFail();

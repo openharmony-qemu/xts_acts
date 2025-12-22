@@ -75,12 +75,12 @@ export default function imagePackerPackToDataTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_001
-     * @tc.name      : imagePacker_packToData_promise_001
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_001
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_001
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_001';
@@ -92,12 +92,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_002
-     * @tc.name      : imagePacker_packToData_promise_002
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_002
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_002
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_002';
@@ -109,12 +109,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_004
-     * @tc.name      : imagePacker_packToData_promise_004
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_004
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_004
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToData_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_004';
@@ -126,12 +126,12 @@ export default function imagePackerPackToDataTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_005
-     * @tc.name      : imagePacker_packToData_promise_005
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_005
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_005
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_005';
@@ -143,12 +143,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_006
-     * @tc.name      : imagePacker_packToData_promise_006
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_006
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_006
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_006';
@@ -160,12 +160,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_007
-     * @tc.name      : imagePacker_packToData_promise_007
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_007
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_007
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_007';
@@ -177,12 +177,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_008
-     * @tc.name      : imagePacker_packToData_promise_008
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_008
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_008
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_008';
@@ -194,12 +194,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_009
-     * @tc.name      : imagePacker_packToData_promise_009
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_009
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_009
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_009';
@@ -211,12 +211,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_010
-     * @tc.name      : imagePacker_packToData_promise_010
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_010
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_010
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToData_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_010';
@@ -228,12 +228,12 @@ export default function imagePackerPackToDataTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_011
-     * @tc.name      : imagePacker_packToData_promise_011
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_011
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_011
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('imagePacker_packToData_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_011';
@@ -245,12 +245,12 @@ export default function imagePackerPackToDataTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_012
-     * @tc.name      : imagePacker_packToData_promise_012
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_012
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_012
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_012';
@@ -262,12 +262,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : imagePacker_packToData_promise_013
-     * @tc.name      : imagePacker_packToData_promise_013
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_013
+     * @tc.number imagePacker_packToData_promise_013
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_013';
@@ -276,12 +276,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_014
-     * @tc.name      : imagePacker_packToData_promise_014
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_014
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_014
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_014';
@@ -290,12 +290,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_015
-     * @tc.name      : imagePacker_packToData_promise_015
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_015
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_015
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_015';
@@ -304,12 +304,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_016
-     * @tc.name      : imagePacker_packToData_promise_016
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_016
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_016
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_016';
@@ -318,12 +318,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_017
-     * @tc.name      : imagePacker_packToData_promise_017
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_017
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_017
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_017';
@@ -332,12 +332,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_018
-     * @tc.name      : imagePacker_packToData_promise_018
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_018
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_018
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_018';
@@ -346,12 +346,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_019
-     * @tc.name      : imagePacker_packToData_promise_019
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_019
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_019
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_019';
@@ -360,12 +360,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_020
-     * @tc.name      : imagePacker_packToData_promise_020
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_020
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_020
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_020';
@@ -375,12 +375,12 @@ export default function imagePackerPackToDataTest() {
 
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_021
-     * @tc.name      : imagePacker_packToData_promise_021
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_021
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_021
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_021';
@@ -389,12 +389,12 @@ export default function imagePackerPackToDataTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_022
-     * @tc.name      : imagePacker_packToData_promise_022
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_022
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_022
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /* it('imagePacker_packToData_promise_022', Level.LEVEL0, async (done: Function) => {
        const testName = 'imagePacker_packToData_promise_022';
@@ -403,12 +403,12 @@ export default function imagePackerPackToDataTest() {
      })*/
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_023
-     * @tc.name      : imagePacker_packToData_promise_023
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_023
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_023
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /* it('imagePacker_packToData_promise_023', Level.LEVEL0, async (done: Function) => {
        const testName = 'imagePacker_packToData_promise_023';
@@ -417,12 +417,12 @@ export default function imagePackerPackToDataTest() {
      })*/
 
     /**
-     * @tc.number    : IMAGE_PACKER_PACK_TO_DATA_024
-     * @tc.name      : imagePacker_packToData_promise_024
-     * @tc.desc      : imagePacker_packToData
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imagePacker_packToData_promise_024
+     * @tc.number IMAGE_PACKER_PACK_TO_DATA_024
+     * @tc.desc   imagePacker_packToData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imagePacker_packToData_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'imagePacker_packToData_promise_024';

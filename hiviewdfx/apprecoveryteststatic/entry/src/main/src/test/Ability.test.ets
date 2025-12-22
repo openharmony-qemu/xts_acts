@@ -41,12 +41,12 @@ export default function abilityTest() {
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0100
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0100
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0100
-         * @tc.desc 故障发生时总是重启应用
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL0
+         * @tc.desc   故障发生时总是重启应用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0100 start---------------------");
@@ -63,12 +63,12 @@ export default function abilityTest() {
 
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0200
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0200
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0200
-         * @tc.desc JS故障发生时总是重启应用
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL0
+         * @tc.desc   JS故障发生时总是重启应用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0200 start---------------------");
@@ -84,12 +84,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0300
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0300
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0300
-         * @tc.desc 发生APP_FREEZE时重启应用
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   发生APP_FREEZE时重启应用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0300 start---------------------");
@@ -105,12 +105,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0400
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0400
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0400
-         * @tc.desc 总是不重启应用
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   总是不重启应用
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0400 start---------------------");
@@ -127,12 +127,12 @@ export default function abilityTest() {
 
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0500
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0500
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0500
-         * @tc.desc 当发生应用故障时保存
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   当发生应用故障时保存
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0500 start---------------------");
@@ -147,12 +147,12 @@ export default function abilityTest() {
             console.info("DFX_DFR_AppRecovery_Interface_Static_0500 end");
         })
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0600
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0600
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0600
-         * @tc.desc 当切后台保存数据
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   当切后台保存数据
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0600 start--------------------");
@@ -168,12 +168,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0700
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0700
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0700
-         * @tc.desc 当发生应用故障时保存
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   当发生应用故障时保存
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0700 start--------------------");
@@ -189,12 +189,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0800
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0800
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0800
-         * @tc.desc 每次状态保存都会写入到本地文件缓存
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   每次状态保存都会写入到本地文件缓存
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0800 start---------------------");
@@ -210,12 +210,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_0900
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_0900
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_0900
-         * @tc.desc 调用restartApp接口
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   调用restartApp接口
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_0900 start---------------------");
@@ -229,12 +229,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1000
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1000
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1000
-         * @tc.desc 调用saveAppState接口(不传参)
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   调用saveAppState接口(不传参)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1000 start---------------------");
@@ -248,12 +248,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1100
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1100
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1100
-         * @tc.desc enableAppRecovery接口不传参使用默认值
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   enableAppRecovery接口不传参使用默认值
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1100 start---------------------");
@@ -267,12 +267,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1200
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1200
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1200
-         * @tc.desc enableAppRecovery接口传1个参数
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   enableAppRecovery接口传1个参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1200 start--------------------");
@@ -286,12 +286,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1300
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1300
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1300
-         * @tc.desc enableAppRecovery接口传2个参数
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   enableAppRecovery接口传2个参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1300 start---------------------");
@@ -307,12 +307,12 @@ export default function abilityTest() {
 
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1400
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1400
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1400
-         * @tc.desc 检验appRecovery属性返回值是否符合预期
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   检验appRecovery属性返回值是否符合预期
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1400 start---------------------");
@@ -333,12 +333,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1500
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1500
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1500
-         * @tc.desc 检验AbilityConstant属性返回值是否符合预期
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   检验AbilityConstant属性返回值是否符合预期
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1500 start--------------------");
@@ -363,12 +363,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1600
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1600
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1600
-         * @tc.desc 调用saveAppState接口(传参Ability)
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   调用saveAppState接口(传参Ability)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1600 start--------------------");
@@ -383,12 +383,12 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1700
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1700
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1700
-         * @tc.desc 调用setRestartWant接口
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   调用setRestartWant接口
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1700 start--------------------");
@@ -407,12 +407,12 @@ export default function abilityTest() {
 
 
         /**
+         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1800
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1800
-         * @tc.name DFX_DFR_AppRecovery_Interface_Static_1800
-         * @tc.desc onSaveState接口测试
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   onSaveState接口测试
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("DFX_DFR_AppRecovery_Interface_Static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1800 start--------------------");

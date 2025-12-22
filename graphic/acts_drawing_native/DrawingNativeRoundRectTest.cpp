@@ -47,13 +47,13 @@ class DrawingNativeRoundRectTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0100
- * @tc.name: testRoundRectCreateNormal
- * @tc.desc: test for testRoundRectCreateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRoundRectCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0100
+ * @tc.desc   test for testRoundRectCreateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RoundRectCreate
@@ -70,13 +70,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateNormal, Function | Small
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0101
- * @tc.name: testRoundRectCreateNull
- * @tc.desc: test for testRoundRectCreateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectCreateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0101
+ * @tc.desc   test for testRoundRectCreateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectCreate with nullptr as the first parameter, check the error code using
@@ -101,13 +101,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateNull, Function | SmallTe
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0102
- * @tc.name: testRoundRectCreateAbnormal
- * @tc.desc: test for testRoundRectCreateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectCreateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0102
+ * @tc.desc   test for testRoundRectCreateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
@@ -131,13 +131,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateAbnormal, Function | Sma
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0103
- * @tc.name: testRoundRectCreateMaximum
- * @tc.desc: test for testRoundRectCreateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectCreateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0103
+ * @tc.desc   test for testRoundRectCreateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateMaximum, Function | SmallTest | Level3) {
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
@@ -161,13 +161,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateMaximum, Function | Smal
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0104
- * @tc.name: testRoundRectCreateMultipleCalls
- * @tc.desc: test for testRoundRectCreateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectCreateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0104
+ * @tc.desc   test for testRoundRectCreateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_RoundRectCreate 10 times
@@ -181,13 +181,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCreateMultipleCalls, Function 
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0200
- * @tc.name: testRoundRectSetGetCornerNormal
- * @tc.desc: test for testRoundRectSetGetCornerNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRoundRectSetGetCornerNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0200
+ * @tc.desc   test for testRoundRectSetGetCornerNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RoundRectCreate
@@ -227,13 +227,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerNormal, Function |
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0201
- * @tc.name: testRoundRectSetGetCornerNull
- * @tc.desc: test for testRoundRectSetGetCornerNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectSetGetCornerNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0201
+ * @tc.desc   test for testRoundRectSetGetCornerNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectCreate
@@ -259,13 +259,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerNull, Function | S
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0202
- * @tc.name: testRoundRectSetGetCornerAbnormal
- * @tc.desc: test for testRoundRectSetGetCornerAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectSetGetCornerAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0202
+ * @tc.desc   test for testRoundRectSetGetCornerAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectCreate
@@ -292,13 +292,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerAbnormal, Function
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0203
- * @tc.name: testRoundRectSetGetCornerMaximum
- * @tc.desc: test for testRoundRectSetGetCornerMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectSetGetCornerMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0203
+ * @tc.desc   test for testRoundRectSetGetCornerMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectCreate
@@ -325,13 +325,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerMaximum, Function 
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0204
- * @tc.name: testRoundRectSetGetCornerMultipleCalls
- * @tc.desc: test for testRoundRectSetGetCornerMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectSetGetCornerMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0204
+ * @tc.desc   test for testRoundRectSetGetCornerMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectCreate
@@ -361,13 +361,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectSetGetCornerMultipleCalls, Fun
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0205
- * @tc.name: testRoundRectGetCornerWhenNoSet
- * @tc.desc: test for testRoundRectGetCornerWhenNoSet.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testRoundRectGetCornerWhenNoSet
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0205
+ * @tc.desc   test for testRoundRectGetCornerWhenNoSet.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectGetCornerWhenNoSet, Function | SmallTest | Level2) {
     // 1. OH_Drawing_RoundRectCreate
@@ -388,13 +388,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectGetCornerWhenNoSet, Function |
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0300
- * @tc.name: testRoundRectDestroyNormal
- * @tc.desc: test for testRoundRectDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRoundRectDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0300
+ * @tc.desc   test for testRoundRectDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectDestroyNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_RoundRectCreate
@@ -413,13 +413,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectDestroyNormal, Function | Smal
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0301
- * @tc.name: testRoundRectDestroyNull
- * @tc.desc: test for testRoundRectDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0301
+ * @tc.desc   test for testRoundRectDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_RoundRectDestroy with nullptr as the parameter
@@ -428,13 +428,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectDestroyNull, Function | SmallT
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0400
- * @tc.name: testRoundRectOffsetNormal
- * @tc.desc: test for testRoundRectOffsetNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRoundRectOffsetNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0400
+ * @tc.desc   test for testRoundRectOffsetNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectOffsetNormal, Function | SmallTest | Level0) {
     //1. OH_Drawing_RoundRectCreate with the second parameter as integar values
@@ -473,13 +473,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectOffsetNormal, Function | Small
     OH_Drawing_RoundRectDestroy(roundRect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0401
- * @tc.name: testRoundRectOffsetNull
- * @tc.desc: test for testRoundRectOffsetNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectOffsetNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0401
+ * @tc.desc   test for testRoundRectOffsetNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectOffsetNull, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_RoundRectOffset with nullptr as the first parameter, check the error code using
@@ -502,13 +502,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectOffsetNull, Function | SmallTe
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0402
- * @tc.name: testRoundRectOffsetMultipleCalls
- * @tc.desc: test for testRoundRectOffsetMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectOffsetMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0402
+ * @tc.desc   test for testRoundRectOffsetMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectOffsetMultipleCalls, Function | SmallTest | Level3) {
     //1. Call OH_Drawing_RoundRectCreate with random values
@@ -530,13 +530,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectOffsetMultipleCalls, Function 
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0500
- * @tc.name: testRoundRectCopyNormal
- * @tc.desc: test for testRoundRectCopyNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testRoundRectCopyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0500
+ * @tc.desc   test for testRoundRectCopyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCopyNormal, Function | SmallTest | Level0) {
     // 1. Create a rect object by OH_Drawing_RectCreate.
@@ -580,13 +580,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCopyNormal, Function | SmallTe
     OH_Drawing_RoundRectDestroy(roundRect6);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0501
- * @tc.name: testRoundRectCopyNull
- * @tc.desc: test for testRoundRectCopyNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectCopyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0501
+ * @tc.desc   test for testRoundRectCopyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCopyNull, Function | SmallTest | Level3) {
     // 1. Create a rect object by OH_Drawing_RectCreate.
@@ -604,13 +604,13 @@ HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCopyNull, Function | SmallTest
     OH_Drawing_RoundRectDestroy(roundRect2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0502
- * @tc.name: testRoundRectCopyMultipleCalls
- * @tc.desc: test for testRoundRectCopyMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRoundRectCopyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0502
+ * @tc.desc   test for testRoundRectCopyMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeRoundRectTest, testRoundRectCopyMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create a rect object by OH_Drawing_RectCreate.

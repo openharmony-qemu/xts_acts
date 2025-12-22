@@ -29,7 +29,7 @@ export default function audioCapturerChange() {
   describe('audioRendererChange', () => {
     let audioStreamManager: audio.AudioStreamManager;
     let audioStreamManagerCB: audio.AudioStreamManager;
-    let audioRen: audio.AudioRenderer;
+    let audioRen: audio.AudioRenderer | null;
     let Tag = "AFRenLog";
     const AUDIOMANAGER = audio.getAudioManager();
     console.info(`${Tag} : Create AudioManger Object JS Framework`);
@@ -74,12 +74,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
-     * @tc.desc        AudioRendererChange - ON_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100
+     * @tc.desc   AudioRendererChange - ON_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -147,7 +147,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-001] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR : ${err.message}`);
@@ -157,12 +157,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
-     * @tc.desc        AudioRendererChange - ON_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200
+     * @tc.desc   AudioRendererChange - ON_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -209,7 +209,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS `);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
@@ -222,14 +222,14 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-002] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :  ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :  ${err.message}`);
@@ -239,12 +239,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
-     * @tc.desc        AudioRendererChange - ON_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300
+     * @tc.desc   AudioRendererChange - ON_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -275,7 +275,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS `);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
@@ -300,7 +300,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : renderInstant stopped :SUCCESS `);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant stop :ERROR :   ${err.message}`);
@@ -313,7 +313,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-003] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -324,12 +324,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
-     * @tc.desc        AudioRendererChange - ON_STATE_RELEASED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400
+     * @tc.desc   AudioRendererChange - ON_STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -360,14 +360,14 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS }`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
       }
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS}`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :  ${err.message}`);
@@ -393,7 +393,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -410,12 +410,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
-     * @tc.desc        AudioRendererChange - ON_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500
+     * @tc.desc   AudioRendererChange - ON_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -445,7 +445,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS }`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
@@ -471,7 +471,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRen.pause();
+        await audioRen!.pause();
         console.info(`${Tag} : renderInstant paused :SUCCESS }`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant pause :ERROR :   ${err.message}`);
@@ -484,14 +484,14 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-005] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -502,12 +502,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -557,7 +557,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-012] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -569,12 +569,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -624,7 +624,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-013] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -636,12 +636,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -692,7 +692,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-014] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -704,12 +704,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
-     * @tc.desc        AudioRendererChange - ON_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500
+     * @tc.desc   AudioRendererChange - ON_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -758,7 +758,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-015] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -770,12 +770,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
-     * @tc.desc        AudioRendererChange - STREAMID
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600
+     * @tc.desc   AudioRendererChange - STREAMID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -826,7 +826,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-015] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -838,12 +838,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
-     * @tc.desc        AudioRendererChange - CLIENTUID & RENDERERFLAG
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700
+     * @tc.desc   AudioRendererChange - CLIENTUID & RENDERERFLAG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -897,7 +897,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-015] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -908,12 +908,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ON_RENDERER_CHANGE_STATIC_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -960,7 +960,7 @@ export default function audioCapturerChange() {
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
@@ -973,7 +973,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-ON-018] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -984,12 +984,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
-     * @tc.desc        AudioRendererChange - OFF_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100
+     * @tc.desc   AudioRendererChange - OFF_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1036,7 +1036,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1047,12 +1047,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
-     * @tc.desc        AudioRendererChange - OFF_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200
+     * @tc.desc   AudioRendererChange - OFF_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1101,14 +1101,14 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-002] ResultFlag is:  ${resultFlag}`);
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1119,12 +1119,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
-     * @tc.desc        AudioRenderer - OFF_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300
+     * @tc.desc   AudioRenderer - OFF_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1154,7 +1154,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
@@ -1179,14 +1179,14 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-003] ResultFlag is:  ${resultFlag}`);
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1197,12 +1197,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
-     * @tc.desc        AudioRendererChange - OFF_STATE_RELEASED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400
+     * @tc.desc   AudioRendererChange - OFF_STATE_RELEASED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1234,14 +1234,14 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
@@ -1266,7 +1266,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-004] ResultFlag is:  ${resultFlag}`);
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1277,12 +1277,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
-     * @tc.desc        AudioRendererChange - OFF_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500
+     * @tc.desc   AudioRendererChange - OFF_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1313,7 +1313,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
@@ -1338,21 +1338,21 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [RENDERER-CHANGE-OFF-005] ResultFlag is:  ${resultFlag}`);
 
       try {
-        await audioRen.pause();
+        await audioRen!.pause();
         console.info(`${Tag} : renderInstant Pause :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant Pause :ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1364,12 +1364,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_OFF_RENDERER_CHANGE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1424,7 +1424,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1435,15 +1435,15 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
-     * @tc.desc        getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100
+     * @tc.desc   getCurrentAudioRendererInfoArraySync - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_GET_CURRENT_AUDIORENDERERINFOTARRAY_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -1507,7 +1507,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag}: [GET_RENDERER_STATE_1_PROMISE] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag}: Renderer release :ERROR :   ${err.message}`);
@@ -1517,15 +1517,15 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
-     * @tc.desc        AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100
+     * @tc.desc   AudioRendererChange - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -1590,7 +1590,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_1_PROMISE] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : audioRenderer.release :ERROR:   ${error.message}`);
@@ -1601,12 +1601,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
-     * @tc.desc        AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200
+     * @tc.desc   AudioRendererChange - GET_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1629,7 +1629,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
 
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1651,7 +1651,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
       try {
-        await audioRenderer.start();
+        await audioRenderer!.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : audioRenderer.start :ERROR:   ${error.message}`);
@@ -1685,7 +1685,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_2_PROMISE] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
           console.info(`${Tag} : audioRenderer.release :ERROR:   ${error.message}`);
@@ -1696,12 +1696,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
-     * @tc.desc        AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300
+     * @tc.desc   AudioRendererChange - GET_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1724,7 +1724,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
 
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions)
@@ -1734,7 +1734,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRenderer.start();
+        await audioRenderer!.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : audioRenderer.start :ERROR:   ${error.message}`);
@@ -1754,7 +1754,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRenderer.stop();
+        await audioRenderer!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : audioRenderer.stop :ERROR:   ${error.message}`);
@@ -1788,7 +1788,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_3_PROMISE] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : audioRenderer.release :ERROR:   ${error.message}`);
@@ -1799,12 +1799,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
-     * @tc.desc        AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400
+     * @tc.desc   AudioRendererChange - GET_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -1835,7 +1835,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
@@ -1855,7 +1855,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRen.pause();
+        await audioRen!.pause();
         console.info(`${Tag} : renderInstant Pause :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant Pause :ERROR :   ${err.message}`);
@@ -1890,14 +1890,14 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_5_PROMISE] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -1908,15 +1908,15 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -1985,7 +1985,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_DD_PROMISE] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR:   ${error.message}`);
@@ -1996,15 +1996,15 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
-     * @tc.desc        AudioRendererChange - GET_STATE_PREPARED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100
+     * @tc.desc   AudioRendererChange - GET_STATE_PREPARED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2073,7 +2073,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_1_CALLBACK] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
@@ -2084,12 +2084,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
-     * @tc.desc        AudioRendererChange - GET_STATE_RUNNING
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200
+     * @tc.desc   AudioRendererChange - GET_STATE_RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
@@ -2112,7 +2112,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
 
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
@@ -2134,7 +2134,7 @@ export default function audioCapturerChange() {
 
       await Utils.msSleep(100);
       try {
-        await audioRenderer.start();
+        await audioRenderer!.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer start :ERROR :   ${error.message}`);
@@ -2173,7 +2173,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_2_CALLBACK] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
@@ -2184,12 +2184,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
-     * @tc.desc        AudioRendererChange - GET_STATE_STOPPED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300
+     * @tc.desc   AudioRendererChange - GET_STATE_STOPPED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2211,7 +2211,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
 
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
@@ -2221,7 +2221,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRenderer.start();
+        await audioRenderer!.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer start :ERROR :   ${error.message}`);
@@ -2241,7 +2241,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRenderer.stop();
+        await audioRenderer!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${error.message}`);
@@ -2279,7 +2279,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_STATE_3_CALLBACK] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
@@ -2290,12 +2290,12 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
-     * @tc.desc        AudioRendererChange - GET_STATE_PAUSED
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400
+     * @tc.desc   AudioRendererChange - GET_STATE_PAUSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2325,7 +2325,7 @@ export default function audioCapturerChange() {
       }
 
       try {
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
@@ -2345,7 +2345,7 @@ export default function audioCapturerChange() {
       await Utils.msSleep(100);
 
       try {
-        await audioRen.pause();
+        await audioRen!.pause();
         console.info(`${Tag} : renderInstant Pause :SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant Pause :ERROR :   ${err.message}`);
@@ -2384,14 +2384,14 @@ export default function audioCapturerChange() {
       console.info('AFRendLog: [GET_REN_STA_5_CB] ## RenCh Off is called ##');
 
       try {
-        await audioRen.stop();
+        await audioRen!.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
@@ -2402,15 +2402,15 @@ export default function audioCapturerChange() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
-     * @tc.desc        AudioRendererChange - DEVICE DESCRIPTOR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500
+     * @tc.desc   AudioRendererChange - DEVICE DESCRIPTOR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_RENDERER_CHANGE_CALLBACK_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2483,7 +2483,7 @@ export default function audioCapturerChange() {
       console.info(`${Tag} : [GET_RENDERER_DD_CALLBACK] ######### RendererChange Off is called #########`);
 
       try {
-        await audioRenderer.release();
+        await audioRenderer!.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);

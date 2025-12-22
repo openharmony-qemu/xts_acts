@@ -39,12 +39,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0100
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0100
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0100
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0100';
@@ -62,12 +62,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0200
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0200
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0200
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0200';
@@ -89,12 +89,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0300
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0300
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0300
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0300';
@@ -119,12 +119,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0400
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0400
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0400
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0400';
@@ -149,12 +149,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0500
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0500
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0500
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0500';
@@ -177,12 +177,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0600
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0600
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0600
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0600';
@@ -211,12 +211,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0700
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0700
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0700
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0700';
@@ -236,12 +236,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0800
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0800
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0800
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0800';
@@ -260,12 +260,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest0900
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_0900
-     * @tc.name BuiltinsReadonlyUtilityTypeTest0900
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest0900';
@@ -284,12 +284,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1000
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1000
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1000
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1000';
@@ -309,12 +309,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1100
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1100
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1100
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1100';
@@ -337,12 +337,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1200
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1200
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1200
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1200';
@@ -362,12 +362,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1300
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1300
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1300
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1300';
@@ -387,12 +387,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1400
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1400
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1400
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1400';
@@ -412,12 +412,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1500
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1500
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1500
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1500';
@@ -442,12 +442,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1600
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1600
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1600
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1600';
@@ -469,12 +469,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1700
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1700
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1700
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1700';
@@ -494,12 +494,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1800
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1800
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1800
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1800';
@@ -524,12 +524,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest1900
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_1900
-     * @tc.name BuiltinsReadonlyUtilityTypeTest1900
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest1900';
@@ -550,12 +550,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2000
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2000
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2000
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2000';
@@ -577,12 +577,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2100
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2100
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2100
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2100';
@@ -601,12 +601,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2200
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2200
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2200
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2200';
@@ -626,12 +626,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2300
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2300
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2300
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2300';
@@ -651,12 +651,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2400
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2400
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2400
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2400';
@@ -675,12 +675,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2500
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2500
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2500
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2500';
@@ -699,12 +699,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2600
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2600
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2600
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2600';
@@ -723,12 +723,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2700
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2700
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2700
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2700';
@@ -748,12 +748,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2800
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2800
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2800
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2800';
@@ -771,12 +771,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest2900
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_2900
-     * @tc.name BuiltinsReadonlyUtilityTypeTest2900
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest2900';
@@ -795,12 +795,12 @@ export default function BuiltinsReadonlyUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsReadonlyUtilityTypeTest3000
      * @tc.number SUB_BUILTINS_READONLY_UTILITY_TEST_3000
-     * @tc.name BuiltinsReadonlyUtilityTypeTest3000
-     * @tc.desc Readonly Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Readonly Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyUtilityTypeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsReadonlyUtilityTypeTest3000';

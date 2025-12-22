@@ -250,12 +250,10 @@ void VDecAPI11Sample::Flush_buffer()
     std::queue<OH_AVBuffer *> empty;
     swap(empty, signal_->inBufferQueue_);
     signal_->inCond_.notify_all();
-    inLock.unlock();
     unique_lock<mutex> outLock(signal_->outMutex_);
     clearIntqueue(signal_->outIdxQueue_);
     clearBufferqueue(signal_->attrQueue_);
     signal_->outCond_.notify_all();
-    outLock.unlock();
 }
 
 std::vector<uint8_t> VDecAPI11Sample::LoadHashFile()
@@ -1444,7 +1442,6 @@ int32_t VDecAPI11Sample::SetConfigTransform()
     int32_t ret = ConfigureVideoDecoder();
     if (ret != AV_ERR_OK) {
         cout << "config failed" << endl;
-        Release();
         return ret;
     }
     

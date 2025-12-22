@@ -48,12 +48,12 @@ export default function HttpResponseCodeTest() {
     let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0100
-     * @tc.name   : testNetworkMgrHttpResponseCode0100
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
+     * @tc.name   testNetworkMgrHttpResponseCode0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_0100
+     * @tc.desc   Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpResponseCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0100';
@@ -69,15 +69,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0200
-     * @tc.name   : testNetworkMgrHttpResponseCode0200
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0200
+     * @tc.number testNetworkMgrHttpResponseCode0200
+     * @tc.desc   testNetworkMgrHttpResponseCode0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0200';
       console.info(`${caseName} test Start`);
@@ -92,15 +92,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0300
-     * @tc.name   : testNetworkMgrHttpResponseCode0300
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0300
+     * @tc.number testNetworkMgrHttpResponseCode0300
+     * @tc.desc   testNetworkMgrHttpResponseCode0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0300';
       console.info(`${caseName} test Start`);
@@ -115,15 +115,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0400
-     * @tc.name   : testNetworkMgrHttpResponseCode0400
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0400
+     * @tc.number testNetworkMgrHttpResponseCode0400
+     * @tc.desc   testNetworkMgrHttpResponseCode0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0400';
       console.info(`${caseName} test Start`);
@@ -138,15 +138,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0500
-     * @tc.name   : testNetworkMgrHttpResponseCode0500
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0500
+     * @tc.number testNetworkMgrHttpResponseCode0500
+     * @tc.desc   testNetworkMgrHttpResponseCode0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0500';
       console.info(`${caseName} test Start`);
@@ -161,15 +161,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0600
-     * @tc.name   : testNetworkMgrHttpResponseCode0600
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0600
+     * @tc.number testNetworkMgrHttpResponseCode0600
+     * @tc.desc   testNetworkMgrHttpResponseCode0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0600',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0600';
       console.info(`${caseName} test Start`);
@@ -184,15 +184,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0700
-     * @tc.name   : testNetworkMgrHttpResponseCode0700
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0700
+     * @tc.number testNetworkMgrHttpResponseCode0700
+     * @tc.desc   testNetworkMgrHttpResponseCode0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0700';
       console.info(`${caseName} test Start`);
@@ -207,15 +207,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0800
-     * @tc.name   : testNetworkMgrHttpResponseCode0800
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0800
+     * @tc.number testNetworkMgrHttpResponseCode0800
+     * @tc.desc   testNetworkMgrHttpResponseCode0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0800';
       console.info(`${caseName} test Start`);
@@ -230,15 +230,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0900
-     * @tc.name   : testNetworkMgrHttpResponseCode0900
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode0900
+     * @tc.number testNetworkMgrHttpResponseCode0900
+     * @tc.desc   testNetworkMgrHttpResponseCode0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode0900';
       console.info(`${caseName} test Start`);
@@ -253,15 +253,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1000
-     * @tc.name   : testNetworkMgrHttpResponseCode1000
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1000
+     * @tc.number testNetworkMgrHttpResponseCode1000
+     * @tc.desc   testNetworkMgrHttpResponseCode1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1000';
       console.info(`${caseName} test Start`);
@@ -276,15 +276,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1100
-     * @tc.name   : testNetworkMgrHttpResponseCode1100
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1100
+     * @tc.number testNetworkMgrHttpResponseCode1100
+     * @tc.desc   testNetworkMgrHttpResponseCode1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1100';
       console.info(`${caseName} test Start`);
@@ -299,15 +299,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1200
-     * @tc.name   : testNetworkMgrHttpResponseCode1200
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1200
+     * @tc.number testNetworkMgrHttpResponseCode1200
+     * @tc.desc   testNetworkMgrHttpResponseCode1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1200';
       console.info(`${caseName} test Start`);
@@ -322,15 +322,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1300
-     * @tc.name   : testNetworkMgrHttpResponseCode1300
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1300
+     * @tc.number testNetworkMgrHttpResponseCode1300
+     * @tc.desc   testNetworkMgrHttpResponseCode1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1300';
       console.info(`${caseName} test Start`);
@@ -345,15 +345,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1400
-     * @tc.name   : testNetworkMgrHttpResponseCode1400
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1400
+     * @tc.number testNetworkMgrHttpResponseCode1400
+     * @tc.desc   testNetworkMgrHttpResponseCode1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1400';
       console.info(`${caseName} test Start`);
@@ -368,15 +368,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1500
-     * @tc.name   : testNetworkMgrHttpResponseCode1500
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1500
+     * @tc.number testNetworkMgrHttpResponseCode1500
+     * @tc.desc   testNetworkMgrHttpResponseCode1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1500';
       console.info(`${caseName} test Start`);
@@ -391,15 +391,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1600
-     * @tc.name   : testNetworkMgrHttpResponseCode1600
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1600
+     * @tc.number testNetworkMgrHttpResponseCode1600
+     * @tc.desc   testNetworkMgrHttpResponseCode1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1600';
       console.info(`${caseName} test Start`);
@@ -414,15 +414,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1700
-     * @tc.name   : testNetworkMgrHttpResponseCode1700
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1700
+     * @tc.number testNetworkMgrHttpResponseCode1700
+     * @tc.desc   testNetworkMgrHttpResponseCode1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1700';
       console.info(`${caseName} test Start`);
@@ -437,15 +437,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1800
-     * @tc.name   : testNetworkMgrHttpResponseCode1800
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1800
+     * @tc.number testNetworkMgrHttpResponseCode1800
+     * @tc.desc   testNetworkMgrHttpResponseCode1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1800';
       console.info(`${caseName} test Start`);
@@ -460,15 +460,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1900
-     * @tc.name   : testNetworkMgrHttpResponseCode1900
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode1900
+     * @tc.number testNetworkMgrHttpResponseCode1900
+     * @tc.desc   testNetworkMgrHttpResponseCode1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode1900';
       console.info(`${caseName} test Start`);
@@ -483,15 +483,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2000
-     * @tc.name   : testNetworkMgrHttpResponseCode2000
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2000
+     * @tc.number testNetworkMgrHttpResponseCode2000
+     * @tc.desc   testNetworkMgrHttpResponseCode2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2000';
       console.info(`${caseName} test Start`);
@@ -506,15 +506,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2100
-     * @tc.name   : testNetworkMgrHttpResponseCode2100
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2100
+     * @tc.number testNetworkMgrHttpResponseCode2100
+     * @tc.desc   testNetworkMgrHttpResponseCode2100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2100';
       console.info(`${caseName} test Start`);
@@ -529,15 +529,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2200
-     * @tc.name   : testNetworkMgrHttpResponseCode2200
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2200
+     * @tc.number testNetworkMgrHttpResponseCode2200
+     * @tc.desc   testNetworkMgrHttpResponseCode2200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2200';
       console.info(`${caseName} test Start`);
@@ -552,15 +552,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2300
-     * @tc.name   : testNetworkMgrHttpResponseCode2300
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2300
+     * @tc.number testNetworkMgrHttpResponseCode2300
+     * @tc.desc   testNetworkMgrHttpResponseCode2300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2300';
       console.info(`${caseName} test Start`);
@@ -575,15 +575,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2400
-     * @tc.name   : testResponseCode2400
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2400
+     * @tc.number testNetworkMgrHttpResponseCode2400
+     * @tc.desc   testNetworkMgrHttpResponseCode2400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2400';
       console.info(`${caseName} test Start`);
@@ -599,15 +599,15 @@ export default function HttpResponseCodeTest() {
     });
 
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2500
-     * @tc.name   : testResponseCode2500
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2500
+     * @tc.number testNetworkMgrHttpResponseCode2500
+     * @tc.desc   testNetworkMgrHttpResponseCode2500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2500';
       console.info(`${caseName} test Start`);
@@ -622,15 +622,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2600
-     * @tc.name   : testNetworkMgrHttpResponseCode2600
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2600
+     * @tc.number testNetworkMgrHttpResponseCode2600
+     * @tc.desc   testNetworkMgrHttpResponseCode2600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2600';
       console.info(`${caseName} test Start`);
@@ -645,15 +645,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2700
-     * @tc.name   : testNetworkMgrHttpResponseCode2700
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2700
+     * @tc.number testNetworkMgrHttpResponseCode2700
+     * @tc.desc   testNetworkMgrHttpResponseCode2700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2700';
       console.info(`${caseName} test Start`);
@@ -668,15 +668,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2800
-     * @tc.name   : testNetworkMgrHttpResponseCode2800
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2800
+     * @tc.number testNetworkMgrHttpResponseCode2800
+     * @tc.desc   testNetworkMgrHttpResponseCode2800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2800';
       console.info(`${caseName} test Start`);
@@ -691,15 +691,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2900
-     * @tc.name   : testNetworkMgrHttpResponseCode2900
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode2900
+     * @tc.number testNetworkMgrHttpResponseCode2900
+     * @tc.desc   testNetworkMgrHttpResponseCode2900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode2900';
       console.info(`${caseName} test Start`);
@@ -714,15 +714,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3000
-     * @tc.name   : testNetworkMgrHttpResponseCode3000
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode3000
+     * @tc.number testNetworkMgrHttpResponseCode3000
+     * @tc.desc   testNetworkMgrHttpResponseCode3000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3000';
       console.info(`${caseName} test Start`);
@@ -737,15 +737,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3100
-     * @tc.name   : testNetworkMgrHttpResponseCode3100
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode3100
+     * @tc.number testNetworkMgrHttpResponseCode3100
+     * @tc.desc   testNetworkMgrHttpResponseCode3100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3100';
       console.info(`${caseName} test Start`);
@@ -760,15 +760,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3200
-     * @tc.name   : testNetworkMgrHttpResponseCode3200
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode3200
+     * @tc.number testNetworkMgrHttpResponseCode3200
+     * @tc.desc   testNetworkMgrHttpResponseCode3200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3200';
       console.info(`${caseName} test Start`);
@@ -783,15 +783,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3300
-     * @tc.name   : testNetworkMgrHttpResponseCode3300
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode3300
+     * @tc.number testNetworkMgrHttpResponseCode3300
+     * @tc.desc   testNetworkMgrHttpResponseCode3300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3300';
       console.info(`${caseName} test Start`);
@@ -806,15 +806,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3400
-     * @tc.name   : testNetworkMgrHttpResponseCode3400
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode3400
+     * @tc.number testNetworkMgrHttpResponseCode3400
+     * @tc.desc   testNetworkMgrHttpResponseCode3400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3400';
       console.info(`${caseName} test Start`);
@@ -829,15 +829,15 @@ export default function HttpResponseCodeTest() {
       console.info(`${caseName} test End`);
     });
 
-    /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3500
-     * @tc.name   : testNetworkMgrHttpResponseCode3500
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
-     */
 
+    /**
+     * @tc.name   testNetworkMgrHttpResponseCode3500
+     * @tc.number testNetworkMgrHttpResponseCode3500
+     * @tc.desc   testNetworkMgrHttpResponseCode3500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testNetworkMgrHttpResponseCode3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3500';
       console.info(`${caseName} test Start`);
@@ -853,12 +853,12 @@ export default function HttpResponseCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3600
-     * @tc.name   : testNetworkMgrHttpResponseCode3600
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
+     * @tc.name   testNetworkMgrHttpResponseCode3600
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_3600
+     * @tc.desc   Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpResponseCode3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3600';
@@ -902,12 +902,12 @@ export default function HttpResponseCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3700
-     * @tc.name   : testNetworkMgrHttpResponseCode3700
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
+     * @tc.name   testNetworkMgrHttpResponseCode3700
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_3700
+     * @tc.desc   Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpResponseCode3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3700';
@@ -949,12 +949,12 @@ export default function HttpResponseCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3800
-     * @tc.name   : testNetworkMgrHttpResponseCode3800
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
+     * @tc.name   testNetworkMgrHttpResponseCode3800
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_3800
+     * @tc.desc   Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpResponseCode3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3800';
@@ -998,12 +998,12 @@ export default function HttpResponseCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3900
-     * @tc.name   : testNetworkMgrHttpResponseCode3900
-     * @tc.desc   : Test ResponseCode property.
-     * @tc.level  : Level 2
-     * @tc.type   : Function
-     * @tc.size   : SmallTest
+     * @tc.name   testNetworkMgrHttpResponseCode3900
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_3900
+     * @tc.desc   Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpResponseCode3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrHttpResponseCode3900';

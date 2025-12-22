@@ -15,3 +15,4 @@
 
 export const StartSelfUIAbilityWithStartOptionsMultiAppNotSupport: () => number;
 export const AbilityRuntimeErrorCodeMultiAppNotSupportCode: () => number;
+export const StartSelfUIAbilityWithPidMultiAppNotSupport: () => number;

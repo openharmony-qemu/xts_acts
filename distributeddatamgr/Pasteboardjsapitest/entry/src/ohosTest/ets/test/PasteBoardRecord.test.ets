@@ -68,7 +68,6 @@ export default function pasteBoardRecordTest() {
       error = undefined;
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1000
      * @tc.desc   Test pasteBoard create pixelMap data success
@@ -90,7 +89,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2100
      * @tc.desc   Test pasteBoard create want data success
@@ -108,7 +106,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0200
      * @tc.desc   Test pasteBoard create arrayBuffer data success
@@ -126,7 +123,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1200
      * @tc.desc   Test pasteBoard create string data success
@@ -144,7 +140,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0300
      * @tc.desc   Test pasteBoard create arrayBuffer data success with 1024 bit mimeType
@@ -163,7 +158,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1500
      * @tc.desc   Test pasteBoard create arrayBuffer data success with 512000 bit valueType<string>
@@ -185,7 +179,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1700
      * @tc.desc   Test pasteBoard create uri data success
@@ -203,7 +196,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0400
      * @tc.desc   Test pasteBoard create string data fail with 1025 bit mimeType
@@ -227,7 +219,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1400
      * @tc.desc   Test pasteBoard create string data fail,type of mimeType is number
@@ -237,7 +228,6 @@ export default function pasteBoardRecordTest() {
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_0900 start")
-
       try {
         createData(0, "String")
       } catch (err) {
@@ -251,7 +241,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1000
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1300
      * @tc.desc   Test pasteBoard create string data fail,value of mimeType is null
@@ -274,7 +263,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1600
      * @tc.desc   Test pasteBoard create string data fail with one parameter
@@ -298,7 +286,28 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200
+     * @tc.desc   Test pasteBoard create string data fail with one parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200 start")
+      try {
+        let pasteData = pasteboard.createData('', "String")
+      } catch (err) {
+        console.info("Create data error, err code is: " + err.code)
+        error = err
+        expect(err.code).assertEqual("401")
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATEDATA_1200 end")
+      done();
+    })
+
+    /**
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0900
      * @tc.desc   Test pasteBoard create pixelMap record success
@@ -321,7 +330,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2000
      * @tc.desc   Test pasteBoard create want record success
@@ -342,7 +350,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0100
      * @tc.desc   Test pasteBoard create arrayBuffer record success
@@ -363,7 +370,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1100
      * @tc.desc   Test pasteBoard create string record success
@@ -384,7 +390,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0700
      * @tc.desc   Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
@@ -405,7 +410,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1800
      * @tc.desc   Test pasteBoard create string record success with 512000 bit valueType<string>
@@ -431,7 +435,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0800
      * @tc.desc   Test pasteBoard create string record fail with 1025 bit mimeType
@@ -455,7 +458,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0600
      * @tc.desc   Test pasteBoard create string record fail,type of mimeType is number
@@ -479,7 +481,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_1900
      * @tc.desc   Test pasteBoard create string record fail with 512001 bit valueType<string>
@@ -506,7 +507,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1000
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_0500
      * @tc.desc   Test pasteBoard create string record fail,mimeType is null
@@ -529,7 +529,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataCreate_2200
      * @tc.desc   Test pasteBoard create string record fail with one parameter
@@ -553,7 +552,28 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1200
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1200
+     * @tc.desc   Test pasteBoard create string record fail with one parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1200 start");
+      try {
+        let pasteDataRecord = pasteboard.createRecord('', "String");
+      } catch (err) {
+        console.info("Create record error, err code is: " + err.code);
+        error = err;
+        expect(err.code).assertEqual("401");
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_CREATERECORD_1200 end");
+      done();
+    })
+
+    /**
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2500
      * @tc.desc   Test pasteBoard add pixelMap record success
@@ -575,7 +595,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2900
      * @tc.desc   Test pasteBoard add want record success
@@ -595,7 +614,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2200
      * @tc.desc   Test pasteBoard add arrayBuffer record success
@@ -615,7 +633,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2600
      * @tc.desc   Test pasteBoard add string record success
@@ -635,7 +652,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2300
      * @tc.desc   Test pasteBoard add record success with 1024 bit mimeType
@@ -655,7 +671,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2000
      * @tc.desc   Test pasteBoard add 600th record success
@@ -677,7 +692,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2800
      * @tc.desc   Test pasteBoard add record success with 512000 bit valueType<string>
@@ -701,7 +715,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2400
      * @tc.desc   Test pasteBoard add record fail with 1025 bit mimeType
@@ -728,7 +741,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_0900
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_1900
      * @tc.desc   Test pasteBoard add record fail,type of mimeType is number
@@ -753,7 +765,29 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1000
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1000
+     * @tc.desc   Test pasteBoard add record fail,type of mimeType is number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1000 start");
+      let pasteData = pasteboard.createData("string", ARRAY_BUFFER);
+      try {
+        pasteData.addRecord('', "string");
+      } catch (err) {
+        console.info("Add record error, err code is: " + err.code);
+        error = err;
+        expect(err.code).assertEqual("401");
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1000 end");
+      done();
+    })
+
+    /**
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2100
      * @tc.desc   Test pasteBoard add 613th record successful
@@ -780,7 +814,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_2700
      * @tc.desc   Test pasteBoard add record fail,mimeType is null
@@ -795,7 +828,7 @@ export default function pasteBoardRecordTest() {
         pasteData.addRecord(null, "string");
       } catch (err) {
         console.info("Add record error, err code is: " + err.code)
-        error = err
+        error = err;
         expect(err.code).assertEqual("401")
       }
       expect(error != undefined).assertTrue();
@@ -804,7 +837,6 @@ export default function pasteBoardRecordTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataAddRead_3000
      * @tc.desc   Test pasteBoard add 613th record successful
@@ -813,8 +845,8 @@ export default function pasteBoardRecordTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300 start")
-      let pasteData = pasteboard.createData("string", ARRAY_BUFFER)
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300 start");
+      let pasteData = pasteboard.createData("string", ARRAY_BUFFER);
       for (let i = 0; i < 998; i++) {
         pasteData.addRecord("stringRecord" + i, ARRAY_BUFFER);
       }
@@ -827,9 +859,160 @@ export default function pasteBoardRecordTest() {
       let count = pasteData.getRecordCount();
       console.info("RecordCount is:" + count)
       expect(count == 1000).assertTrue();
-      let hasType: boolean = pasteData.hasType("stringRecord1000")
+      let hasType: boolean = pasteData.hasType("stringRecord1000");
       expect(hasType == true).assertTrue();
-      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300 end")
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDRECORD_1300 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0100
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0100
+     * @tc.desc   Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0100 start")
+      let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
+      try {
+        record.addEntry(pasteboard.MIMETYPE_TEXT_PLAIN, 'hello');
+        record.addEntry("x".repeat(1024), new ArrayBuffer(256));
+        let types: string[] = record.getValidTypes([
+          pasteboard.MIMETYPE_TEXT_PLAIN,
+          pasteboard.MIMETYPE_TEXT_URI,
+          "x".repeat(1024)
+        ]);
+        expect(types.length).assertEqual(3);
+        expect(types).assertDeepEquals(['text/plain','text/uri',"x".repeat(1024)]);
+      } catch (error) {
+        console.info("Create record error, err code is: " + error.code);
+        expect().assertFail();
+      }
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0100 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0200
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0200
+     * @tc.desc   Test pasteBoard create string record fail with 1025 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0200 start");
+      let mimeType = "x".repeat(1025);
+      try {
+        let pasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, ARRAY_BUFFER);
+        pasteDataRecord.addEntry(mimeType, ARRAY_BUFFER);
+      } catch (err) {
+        console.info("Create record error, err code is: " + err.code);
+        error = err;
+        expect(err.code).assertEqual("401");
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0200 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0300
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0300
+     * @tc.desc   Test pasteBoard create string record fail with 0 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0300 start");
+      try {
+        let pasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, ARRAY_BUFFER);
+        pasteDataRecord.addEntry('', ARRAY_BUFFER);
+      } catch (err) {
+        console.info("Create record error, err code is: " + err.code);
+        error = err
+        expect(err.code).assertEqual("401");
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_ADDENTRY_0300 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0100
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0100
+     * @tc.desc   Test pasteBoard create arrayBuffer record success with 1024 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0100 start");
+      let record: pasteboard.PasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_URI, 'dataability:///com.example.myapplication1/user.txt');
+      try {
+        record.addEntry("x".repeat(1024), ARRAY_BUFFER);
+        await record.getData("x".repeat(1024)).then((value: pasteboard.ValueType) => {
+          let textPlainContent = value as string;
+          console.info('Success to get 1024 value. value is: ' + textPlainContent);
+          expect(textPlainContent != null).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error('Failed to get text/plain value. Cause: ' + err.message);
+        });
+      } catch (error) {
+        console.info("Create record error, err code is: " + error.code);
+        expect().assertFail();
+      }
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0100 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0200
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0200
+     * @tc.desc   Test pasteBoard create string record fail with 1025 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0200 start");
+      let mimeType = "x".repeat(1025);
+      try {
+        let pasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, ARRAY_BUFFER);
+        pasteDataRecord.getData(mimeType);
+      } catch (err) {
+        console.info("Create record error, err code is: " + err.code);
+        error = err;
+        expect(err.code).assertEqual("401");
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0200 end");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0300
+     * @tc.number SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0300
+     * @tc.desc   Test pasteBoard create string record fail with 0 bit mimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0300 start");
+      try {
+        let pasteDataRecord = pasteboard.createRecord(pasteboard.MIMETYPE_TEXT_PLAIN, ARRAY_BUFFER);
+        pasteDataRecord.getData('');
+      } catch (err) {
+        console.info("Create record error, err code is: " + err.code);
+        error = err;
+        expect(err.code).assertEqual("401");
+      }
+      expect(error != undefined).assertTrue();
+      console.info("SUB_PASTEBOARD_FUNCTION_ETS_GETDATA_0300 end");
       done();
     })
   });

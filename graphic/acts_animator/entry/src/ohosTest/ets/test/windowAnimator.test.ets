@@ -26,12 +26,12 @@ export default function windowAnimatorTest(context: common.UIAbilityContext, win
     console.log('describe window_api_test start!!!')
 
     /**
+     * @tc.name   test_SetExpectedFrameRateRange
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3970
-     * @tc.name test_SetExpectedFrameRateRange
-     * @tc.desc Test the function of SetExpectedFrameRateRange Promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.desc   Test the function of SetExpectedFrameRateRange Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetExpectedFrameRateRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

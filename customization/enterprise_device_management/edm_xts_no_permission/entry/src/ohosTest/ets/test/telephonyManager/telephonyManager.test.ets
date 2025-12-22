@@ -30,17 +30,18 @@ export default function telephonyManagerTest() {
     testAddIncomingCallPolicyNumbers();
     testRemoveIncomingCallPolicyNumbers();
     testGetIncomingCallPolicyNumbers();
+    testHangupCalling();
   })
 }
 
 function testSetSimDisabled() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_SIM_DISABLED_0100
-   * @tc.name      : test_set_sim_disabled_0100
-   * @tc.desc      : test telephonyManager setSimDisabled with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_sim_disabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_DISABLED_0100
+   * @tc.desc   test telephonyManager setSimDisabled with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_sim_disabled_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -58,12 +59,12 @@ function testSetSimDisabled() {
 
 function testSetSimEnabled() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_SIM_ENABLED_0100
-   * @tc.name      : test_set_sim_enabled_0100
-   * @tc.desc      : test telephonyManager setSimEnabled with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_sim_enabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SIM_ENABLED_0100
+   * @tc.desc   test telephonyManager setSimEnabled with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_sim_enabled_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -81,12 +82,12 @@ function testSetSimEnabled() {
 
 function testIsSimDisabled() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_SIM_DISABLED_0100
-   * @tc.name      : test_is_sim_disabled_0100
-   * @tc.desc      : test telephonyManager isSimDisabled with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_sim_disabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_SIM_DISABLED_0100
+   * @tc.desc   test telephonyManager isSimDisabled with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_sim_disabled_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -104,12 +105,12 @@ function testIsSimDisabled() {
 
 function testAddOutgoingCallPolicyNumbers() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_0100
-   * @tc.name      : test_add_outgoing_call_policy_numbers_0100
-   * @tc.desc      : test telephonyManager addOutgoingCallPolicyNumbers with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_outgoing_call_policy_numbers_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_OUTGOING_CALL_POLICY_NUMBERS_0100
+   * @tc.desc   test telephonyManager addOutgoingCallPolicyNumbers with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_outgoing_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -128,12 +129,12 @@ function testAddOutgoingCallPolicyNumbers() {
 
 function testGetOutgoingCallPolicyNumbers() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_0100
-   * @tc.name      : test_get_outgoing_call_policy_numbers_0100
-   * @tc.desc      : test telephonyManager getOutgoingCallPolicyNumbers with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_outgoing_call_policy_numbers_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_OUTGOING_CALL_POLICY_NUMBERS_0100
+   * @tc.desc   test telephonyManager getOutgoingCallPolicyNumbers with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_outgoing_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -151,12 +152,12 @@ function testGetOutgoingCallPolicyNumbers() {
 
 function testRemoveOutgoingCallPolicyNumbers() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_0100
-   * @tc.name      : test_remove_outgoing_call_policy_numbers_0100
-   * @tc.desc      : test telephonyManager removeOutgoingCallPolicyNumbers with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_outgoing_call_policy_numbers_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_OUTGOING_CALL_POLICY_NUMBERS_0100
+   * @tc.desc   test telephonyManager removeOutgoingCallPolicyNumbers with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_outgoing_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -175,12 +176,12 @@ function testRemoveOutgoingCallPolicyNumbers() {
 
 function testAddIncomingCallPolicyNumbers() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_0100
-   * @tc.name      : test_add_incoming_call_policy_numbers_0100
-   * @tc.desc      : test telephonyManager addIncomingCallPolicyNumbers with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_incoming_call_policy_numbers_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INCOMING_CALL_POLICY_NUMBERS_0100
+   * @tc.desc   test telephonyManager addIncomingCallPolicyNumbers with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_incoming_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -199,12 +200,12 @@ function testAddIncomingCallPolicyNumbers() {
 
 function testGetIncomingCallPolicyNumbers() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_0100
-   * @tc.name      : test_get_incoming_call_policy_numbers_0100
-   * @tc.desc      : test telephonyManager getIncomingCallPolicyNumbers with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_incoming_call_policy_numbers_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_INCOMING_CALL_POLICY_NUMBERS_0100
+   * @tc.desc   test telephonyManager getIncomingCallPolicyNumbers with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_incoming_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -222,18 +223,41 @@ function testGetIncomingCallPolicyNumbers() {
 
 function testRemoveIncomingCallPolicyNumbers() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_0100
-   * @tc.name      : test_remove_incoming_call_policy_numbers_0100
-   * @tc.desc      : test telephonyManager removeIncomingCallPolicyNumbers with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_incoming_call_policy_numbers_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INCOMING_CALL_POLICY_NUMBERS_0100
+   * @tc.desc   test telephonyManager removeIncomingCallPolicyNumbers with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_incoming_call_policy_numbers_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testHangupCalling() {
+  /**
+   * @tc.name   test_hang_up_calling_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0100
+   * @tc.desc   test telephonyManager hangupCalling with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.hangupCalling(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201 || error.code == 801).assertTrue();

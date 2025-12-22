@@ -113,12 +113,12 @@ export default function api16CertNoPermissionTestUnit() {
     })
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetAllUserTrustedCertificates_0010
      * @tc.number SUB_Security_CertManager_GetAllUserTrustedCertificates_0010
-     * @tc.name test getAllUserTrustedCertificates interface no permission to call
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level0
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Security_CertManager_GetAllUserTrustedCertificates_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('SUB_Security_CertManager_GetAllUserTrustedCertificates_0010 start');
@@ -135,12 +135,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0010
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0010
-     * @tc.name test installUserTrustedCertificateSync interface no permission to call
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_InstallUserTrustedCertificates_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('SUB_Security_CertManager_InstallUserTrustedCertificates_0010 start');
@@ -156,12 +156,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_UninstallUserTrustedCertificate_0010
      * @tc.number SUB_Security_CertManager_UninstallUserTrustedCertificate_0010
-     * @tc.name test uninstallUserTrustedCertificateSync interface
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_UninstallUserTrustedCertificate_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_Security_CertManager_UninstallUserTrustedCertificate_0010 start');
@@ -178,12 +178,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0010
      * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0010
-     * @tc.name test openUninstallCertificateDialog with no permission
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0010: started ");
@@ -205,12 +205,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_OpenCertificateDialog_0011
      * @tc.number SUB_Security_CertManager_OpenCertificateDialog_0011
-     * @tc.name test openCertificateDetailDialog with abnormal parameters
-     * @tc.desc abnormal test
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_OpenCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenCertificateDialog_0011: started ");
@@ -233,12 +233,12 @@ export default function api16CertNoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_openAuthorzeDialog_0102
      * @tc.number SUB_Security_CertManager_openAuthorzeDialog_0102
-     * @tc.name test openAuthorzeDialog
-     * @tc.desc abnormal test
-     * @tc.size MediumTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_openAuthorzeDialog_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_openAuthorzeDialog_0102: started ");
@@ -248,6 +248,86 @@ export default function api16CertNoPermissionTestUnit() {
         expect(null).assertFail();
       } catch (err) {
         console.error(`SUB_Security_CertManager_openAuthorzeDialog_0102 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
+        expect(err.code).assertEqual(201);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_0100
+     * @tc.name SUB_Security_CertManager_Ukey_0100
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0100: started ");
+      const context :common.Context = GlobalContext.getContext();
+      let certTypes: Array<certManagerDialog.CertificateType> = [
+        certManagerDialog.CertificateType.CREDENTIAL_UKEY
+      ];
+      let certPurpose: certManager.CertificatePurpose = 0;
+      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+      console.info(`SUB_Security_CertManager_Ukey_0100 test1:${certPurpose} test2:${authorizeRequest}`);
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_Ukey_0100 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(201);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_0500
+     * @tc.name SUB_Security_CertManager_Ukey_0500
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0500: started ");
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+
+      try {
+        await certManager.getUkeyCertificate(keyUri, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code == 801) {
+          done();
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0500 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+          expect(err.code).assertEqual(201);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_0900
+     * @tc.name SUB_Security_CertManager_Ukey_0900
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("SUB_Security_CertManager_Ukey_0900: started ");
+      const context :common.Context = GlobalContext.getContext();
+      let keyUri: string = "test"
+      let ukeyAuthRequest: certManagerDialog.UkeyAuthRequest = { keyUri: keyUri }
+
+      try {
+        await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_Ukey_0900 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
         expect(err.code).assertEqual(201);
       }
       done();

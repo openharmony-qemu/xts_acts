@@ -63,7 +63,6 @@ describe('relationalStorePredicatesComplexFiledTest', function () {
     }
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1250
      * @tc.desc   resultSet Update test
@@ -93,7 +92,6 @@ describe('relationalStorePredicatesComplexFiledTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DDM_AppDataFWK_JSRelationalStore_Predicates_ComplexFiled_0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesJsAPITest_1260
      * @tc.desc   resultSet Update test

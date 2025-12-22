@@ -75,9 +75,12 @@ OH_Huks_Result HksTestSignVerify(struct OH_Huks_Blob *keyAlias, struct OH_Huks_P
 }
 
 /**
- * @tc.name: HuksSignVerifyED25519Test.Security_HUKS_NAPI_SignVerify_ED25519_0100
- * @tc.desc: alg-ED25519 pur-Sign.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_SignVerify_ED25519_0100
+ * @tc.number Security_HUKS_NAPI_SignVerify_ED25519_0100
+ * @tc.desc   alg-ED25519 pur-Sign.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HuksSignVerifyED25519Test, Security_HUKS_NAPI_SignVerify_ED25519_0100, TestSize.Level0)
 {

@@ -856,7 +856,6 @@ napi_value testNativeWindowCleanBufferUsage(napi_env env, napi_callback_info inf
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&image);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -891,8 +890,6 @@ napi_value testNativeWindowLockBufferNormal(napi_env env, napi_callback_info inf
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -931,8 +928,6 @@ napi_value testNativeWindowUnlockAndFlushBufferAbnormal01(napi_env env, napi_cal
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -971,8 +966,6 @@ napi_value testNativeWindowUnlockAndFlushBufferAbnormal03(napi_env env, napi_cal
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1011,8 +1004,6 @@ napi_value testNativeWindowUnlockAndFlushBufferAbnormal02(napi_env env, napi_cal
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1051,8 +1042,6 @@ napi_value testNativeWindowUnlockAndFlushBufferAbnormal04(napi_env env, napi_cal
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1087,8 +1076,6 @@ napi_value testNativeWindowLockBufferNull(napi_env env, napi_callback_info info)
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1115,8 +1102,6 @@ napi_value testNativeWindowUnLockAndFlushBufferNull(napi_env env, napi_callback_
     int32_t ret = OH_NativeWindow_UnlockAndFlushBuffer(nullptr);
     napi_create_int32(env, ret, &result);
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     return result;
 }
 
@@ -1149,8 +1134,6 @@ napi_value testNativeWindowLockBufferUpdateArea(napi_env env, napi_callback_info
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1199,7 +1182,6 @@ napi_value testNativeWindowLockBufferUpperLimit(napi_env env, napi_callback_info
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -1234,9 +1216,6 @@ napi_value testNativeWindowLockBufferMultipleCalls(napi_env env, napi_callback_i
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer1);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer2);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1271,8 +1250,6 @@ napi_value testNativeWindowUnLockAndFlushBufferMultipleCalls(napi_env env, napi_
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1317,8 +1294,6 @@ napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_i
         return result;
     }
     OH_NativeImage_Destroy(&nativeImage);
-    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }

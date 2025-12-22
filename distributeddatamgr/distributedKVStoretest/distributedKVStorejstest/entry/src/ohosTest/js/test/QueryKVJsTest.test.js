@@ -18,7 +18,6 @@ export default function queryTest(){
 describe('queryTest', function() {
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_RESET_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8300
      * @tc.desc   Test Js Api Query.reset() testcase 001
@@ -46,7 +45,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_RESET_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8400
      * @tc.desc   Test Js Api Query.reset() testcase 002
@@ -80,7 +78,6 @@ describe('queryTest', function() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_RESET_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8500
      * @tc.desc   Test Js Api Query.reset() testcase 003
@@ -108,7 +105,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_RESET_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8600
      * @tc.desc   Test Js Api Query.reset() testcase 004
@@ -134,7 +130,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_EQUALTO_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1600
      * @tc.desc   Test Js Api Query.equalTo() testcase 001
@@ -162,7 +157,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_EQUALTO_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1700
      * @tc.desc   Test Js Api Query.equalTo() testcase 002
@@ -187,7 +181,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_EQUALTO_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1800
      * @tc.desc   Test Js Api Query.equalTo() testcase 003
@@ -211,7 +204,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTEQUALTO_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5800
      * @tc.desc   Test Js Api Query.notEqualTo() testcase 001
@@ -239,7 +231,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTEQUALTO_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5900
      * @tc.desc   Test Js Api Query.notEqualTo() testcase 002
@@ -266,7 +257,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTEQUALTO_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6000
      * @tc.desc   Test Js Api Query.notEqualTo() testcase 003
@@ -290,7 +280,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTEQUALTO_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6100
      * @tc.desc   Test Js Api Query.notEqualTo() testcase 004
@@ -313,7 +302,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GREATERTHAN_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2300
      * @tc.desc   Test Js Api Query.greaterThan() testcase 001
@@ -341,7 +329,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GREATERTHAN_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2400
      * @tc.desc   Test Js Api Query.GreatThan() testcase 002
@@ -368,7 +355,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GREATERTHAN_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2500
      * @tc.desc   Test Js Api Query.GreatThan() testcase 003
@@ -392,7 +378,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LESSTHAN_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4500
      * @tc.desc   Test Js Api Query.LessThan() testcase 001
@@ -419,7 +404,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LESSTHAN_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4600
      * @tc.desc   Test Js Api Query.LessThan() testcase 002
@@ -446,7 +430,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LESSTHAN_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4700
      * @tc.desc   Test Js Api Query.LessThan() testcase 003
@@ -468,7 +451,6 @@ describe('queryTest', function() {
         done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GREATETHANOREQUALTO_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2600
      * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 001
@@ -496,7 +478,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GREATETHANOREQUALTO_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2700
      * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 002
@@ -525,7 +506,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GREATETHANOREQUALTO_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2800
      * @tc.desc   Test Js Api Query.GreaterThanOrEqualTo() testcase 003
@@ -549,7 +529,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LESSTHANOREQUALTO_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4800
      * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 001
@@ -577,7 +556,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LESSTHANOREQUALTO_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4900
      * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 002
@@ -604,7 +582,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LESSTHANOREQUALTO_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5000
      * @tc.desc   Test Js Api Query.LessThanOrEqualTo() testcase 003
@@ -627,7 +604,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNULL_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4200
      * @tc.desc   Test Js Api Query.IsNull() testcase 001
@@ -653,7 +629,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNULL_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4300
      * @tc.desc   Test Js Api Query.IsNull() testcase 002
@@ -678,7 +653,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNULL_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4400
      * @tc.desc   Test Js Api Query.IsNull() testcase 003
@@ -702,7 +676,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNUMBER_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2900
      * @tc.desc   Test Js Api Query.InNumber() testcase 001
@@ -756,7 +729,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNUMBER_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3000
      * @tc.desc   Test Js Api Query.InNumber() testcase 002
@@ -784,7 +756,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNUMBER_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3100
      * @tc.desc   Test Js Api Query.InNumber() testcase 003
@@ -808,7 +779,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNUMBER_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3200
      * @tc.desc   Test Js Api Query.InNumber() testcase 004
@@ -832,7 +802,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNUMBER_PROMISE_0500
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3300
      * @tc.desc   Test Js Api Query.InNumber() testcase 005
@@ -859,7 +828,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISNUMBER_PROMISE_0600
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3400
      * @tc.desc   Test Js Api Query.InNumber() testcase 006
@@ -899,7 +867,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISSTRING_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3500
      * @tc.desc   Test Js Api Query.InString() testcase 001
@@ -925,7 +892,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISSTRING_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3600
      * @tc.desc   Test Js Api Query.InString() testcase 002
@@ -952,7 +918,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISSTRING_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3700
      * @tc.desc   Test Js Api Query.InString() testcase 003
@@ -976,7 +941,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ISSTRING_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3800
      * @tc.desc   Test Js Api Query.InString() testcase 004
@@ -1000,7 +964,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTINNUMBER_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6200
      * @tc.desc   Test Js Api Query.NotInNumber() testcase 001
@@ -1026,7 +989,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTINNUMBER_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6300
      * @tc.desc   Test Js Api Query.NotInNumber() testcase 002
@@ -1051,7 +1013,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTINNUMBER_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6400
      * @tc.desc   Test Js Api Query.NotInNumber() testcase 003
@@ -1076,7 +1037,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTINSTRING_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6500
      * @tc.desc   Test Js Api Query.NotInString() testcase 001
@@ -1102,7 +1062,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTINSTRING_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6600
      * @tc.desc   Test Js Api Query.NotInString() testcase 002
@@ -1127,7 +1086,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTINSTRING_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6700
      * @tc.desc   Test Js Api Query.NotInString() testcase 004
@@ -1151,7 +1109,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIKE_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5100
      * @tc.desc   Test Js Api Query.Like() testcase 001
@@ -1177,7 +1134,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIKE_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5200
      * @tc.desc   Test Js Api Query.Like() testcase 002
@@ -1202,7 +1158,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIKE_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5300
      * @tc.desc   Test Js Api Query.Like() testcase 003
@@ -1226,7 +1181,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_UNLIKE_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_9000
      * @tc.desc   Test Js Api Query.Unlike() testcase 001
@@ -1251,7 +1205,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_UNLIKE_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_9100
      * @tc.desc   Test Js Api Query.Unlike() testcase 002
@@ -1276,7 +1229,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_UNLIKE_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_9200
      * @tc.desc   Test Js Api Query.Unlike() testcase 003
@@ -1300,7 +1252,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_AND_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0100
      * @tc.desc   Test Js Api Query.And() testcase 001
@@ -1327,7 +1278,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_AND_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0200
      * @tc.desc   Test Js Api Query.And() testcase 002
@@ -1352,7 +1302,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_AND_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0300
      * @tc.desc   Test Js Api Query.And() testcase 003
@@ -1377,7 +1326,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_AND_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0400
      * @tc.desc   Test Js Api Query.And() testcase 004
@@ -1401,7 +1349,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_OR_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6800
      * @tc.desc   Test Js Api Query.Or() testcase 001
@@ -1428,7 +1375,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_OR_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_6900
      * @tc.desc   Test Js Api Query.Or() testcase 002
@@ -1454,7 +1400,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_OR_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7000
      * @tc.desc   Test Js Api Query.Or() testcase 003
@@ -1481,7 +1426,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_OR_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7100
      * @tc.desc   Test Js Api Query.Or() testcase 004
@@ -1505,7 +1449,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYASC_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7200
      * @tc.desc   Test Js Api Query.OrderByAsc() testcase 001
@@ -1531,7 +1474,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYASC_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7300
      * @tc.desc   Test Js Api Query.OrderByAsc() testcase 002
@@ -1556,7 +1498,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYASC_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7400
      * @tc.desc   Test Js Api Query.OrderByAsc() testcase 003
@@ -1580,7 +1521,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYASC_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7500
      * @tc.desc   Test Js Api Query.OrderByAsc() testcase 004
@@ -1604,7 +1544,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYDESC_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7600
      * @tc.desc   Test Js Api Query.OrderByDesc() testcase 001
@@ -1630,7 +1569,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYDESC_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7700
      * @tc.desc   Test Js Api Query.OrderByDesc() testcase 002
@@ -1655,7 +1593,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYDESC_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7800
      * @tc.desc   Test Js Api Query.OrderByDesc() testcase 003
@@ -1679,7 +1616,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ORDERBYDESC_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_7900
      * @tc.desc   Test Js Api Query.OrderByDesc() testcase 004
@@ -1703,7 +1639,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIMIT_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5400
      * @tc.desc   Test Js Api Query.Limit() testcase 001
@@ -1729,7 +1664,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIMIT_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5500
      * @tc.desc   Test Js Api Query.Limit() testcase 002
@@ -1755,7 +1689,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIMIT_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5600
      * @tc.desc   Test Js Api Query.Limit() testcase 003
@@ -1779,7 +1712,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_LIMIT_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_5700
      * @tc.desc   Test Js Api Query.Limit() testcase 004
@@ -1804,7 +1736,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTNULL_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_3900
      * @tc.desc   Test Js Api Query.IsNotNull() testcase 001
@@ -1829,7 +1760,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTNULL_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4000
      * @tc.desc   Test Js Api Query.IsNotNull() testcase 002
@@ -1854,7 +1784,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_NOTNULL_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_4100
      * @tc.desc   Test Js Api Query.IsNotNull() testcase 003
@@ -1878,7 +1807,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_BEGINGROUP_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0500
      * @tc.desc   Test Js Api Query.BeginGroup() testcase 001
@@ -1905,7 +1833,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_BEGINGROUP_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0600
      * @tc.desc   Test Js Api Query.BeginGroup() testcase 002
@@ -1934,7 +1861,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_BEGINGROUP_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0700
      * @tc.desc   Test Js Api Query.BeginGroup() testcase 003
@@ -1958,7 +1884,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_BEGINGROUP_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0800
      * @tc.desc   Test Js Api Query.BeginGroup() testcase 004
@@ -1982,7 +1907,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1200
      * @tc.desc   Test Js Api Query.EndGroup() testcase 001
@@ -2008,7 +1932,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1300
      * @tc.desc   Test Js Api Query.EndGroup() testcase 002
@@ -2035,7 +1958,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1400
      * @tc.desc   Test Js Api Query.EndGroup() testcase 003
@@ -2059,7 +1981,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_ENDGROUP_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1500
      * @tc.desc   Test Js Api Query.EndGroup() testcase 004
@@ -2083,7 +2004,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_PREFIXKEY_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8000
      * @tc.desc   Test Js Api Query.PrefixKey() testcase 001
@@ -2108,7 +2028,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_PREFIXKEY_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8100
      * @tc.desc   Test Js Api Query.PrefixKey() testcase 002
@@ -2132,7 +2051,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_PREFIXKEY_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8200
      * @tc.desc   Test Js Api Query.PrefixKey() testcase 003
@@ -2156,7 +2074,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_SETSUGGESTINDEX_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8700
      * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 001
@@ -2181,7 +2098,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_SETSUGGESTINDEX_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8800
      * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 002
@@ -2205,7 +2121,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_SETSUGGESTINDEX_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_8900
      * @tc.desc   Test Js Api Query.SetSuggestIndex() testcase 003
@@ -2229,7 +2144,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_DEVICEID_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_0900
      * @tc.desc   Test Js Api Query.DeviceId() testcase 001
@@ -2255,7 +2169,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_DEVICEID_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1000
      * @tc.desc   Test Js Api Query.DeviceId() testcase 002
@@ -2280,7 +2193,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_DEVICEID_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1100
      * @tc.desc   Test Js Api Query.DeviceId() testcase 003
@@ -2304,7 +2216,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GETSQLLIKE_PROMISE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_1900
      * @tc.desc   Test Js Api Query.GetSqlLike() testcase 001
@@ -2331,7 +2242,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GETSQLLIKE_PROMISE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2000
      * @tc.desc   Test Js Api Query.GetSqlLike() testcase 002
@@ -2362,7 +2272,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GETSQLLIKE_PROMISE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2100
      * @tc.desc   Test Js Api Query.GetSqlLike() testcase 003
@@ -2387,7 +2296,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_GETSQLLIKE_PROMISE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_2200
      * @tc.desc   Test Js Api Query.GetSqlLike() testcase 004
@@ -2412,7 +2320,6 @@ describe('queryTest', function() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DDM_DKV_QUERY_SCHEMA_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_DisKVQueryJsApiTest_9300
      * @tc.desc   Schema.constructor()

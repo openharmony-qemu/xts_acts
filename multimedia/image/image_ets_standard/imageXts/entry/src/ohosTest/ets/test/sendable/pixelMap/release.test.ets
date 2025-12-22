@@ -57,12 +57,12 @@ export default function sendableReleaseTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_RELEASE_001
-     * @tc.name      : pixelMap_release_sendable_promise_001
-     * @tc.desc      : release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   pixelMap_release_sendable_promise_001
+     * @tc.number PIXEL_MAP_RELEASE_001
+     * @tc.desc   release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pixelMap_release_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'pixelMap_release_sendable_promise_001';
@@ -72,12 +72,12 @@ export default function sendableReleaseTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_RELEASE_002
-     * @tc.name      : pixelMap_release_sendable_promise_002
-     * @tc.desc      : release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   pixelMap_release_sendable_promise_002
+     * @tc.number PIXEL_MAP_RELEASE_002
+     * @tc.desc   release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('pixelMap_release_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'pixelMap_release_sendable_promise_002';

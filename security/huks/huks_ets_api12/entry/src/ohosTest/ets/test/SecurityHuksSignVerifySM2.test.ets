@@ -32,12 +32,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0100
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0100
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0100
      * @tc.desc   test sm2-noDigest signVerify, process success
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0100";
@@ -53,12 +53,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0200
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0200
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0200
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0200";
@@ -74,12 +74,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0300
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0300
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0300
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0300";
@@ -95,12 +95,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0400
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0400
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0400
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0400";
@@ -116,12 +116,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0500
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0500
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0500
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0500";
@@ -137,12 +137,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0600
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0600
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0600
      * @tc.desc   test sm2-noDigest signVerify, process success
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0600";
@@ -159,12 +159,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0700
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0700
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0700
      * @tc.desc   test sm2-noDigest signVerify with inconsistent key property, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0700";
@@ -181,12 +181,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0800
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0800
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0800
      * @tc.desc   test sm2-sm3 signVerify with inconsistent key property, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0800";
@@ -204,12 +204,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0900
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_0900
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_0900
      * @tc.desc   test sm2-sm3 signVerify, update-finish, process success
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_0900";
@@ -225,12 +225,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1000
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_1000
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1000
      * @tc.desc   test sm2-sm3 signVerify, update-update-finish, process success
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_1000";
@@ -246,12 +246,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1100
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_1100
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1100
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, update-finish, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_1100";
@@ -267,12 +267,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1200
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_1200
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1200
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, update-finish, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_1200";
@@ -288,12 +288,12 @@ export default function SecurityHuksSignVerifySM2Test() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1300
      * @tc.name   SUB_Security_HUKS_SignVerify_SM2_API22_Func_1300
+     * @tc.number SUB_Security_HUKS_SignVerify_SM2_API22_Func_1300
      * @tc.desc   test sm2-noDigest signVerify with unsupported data length, update-update-finish, process fail
-     * @tc.size   SmallTest
-     * @tc.type   Function
-     * @tc.level  Level2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_SignVerify_SM2_API22_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_SignVerify_SM2_API22_Func_1300";

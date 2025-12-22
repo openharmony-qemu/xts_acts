@@ -1028,13 +1028,12 @@ export default function PhotoAccessHelperTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0100
-      * @tc.desc    getPhotoAccessHelper with correct context
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
-      * test_status   : Pass
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0100
+     * @tc.desc   getPhotoAccessHelper with correct context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1051,13 +1050,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0200
-      * @tc.desc    getAssets with callback fetchOptions.fetchColumns = []
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
-      * test_status   : Pass
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0200
+     * @tc.desc   getAssets with callback fetchOptions.fetchColumns = []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
@@ -1074,13 +1072,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0210
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0210
-      * @tc.desc    getAssets with promise fetchOptions.fetchColumns = []
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
-      * test_status   : Pass
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0210
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0210
+     * @tc.desc   getAssets with promise fetchOptions.fetchColumns = []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0210',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -1097,12 +1094,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0300
-      * @tc.desc    getAssets with callback fetchOptions.fetchColumns = columns, all photoAccessHelper.PhotoKeys
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0300
+     * @tc.desc   getAssets with callback fetchOptions.fetchColumns = columns, all photoAccessHelper.PhotoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1113,12 +1110,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0400
-      * @tc.desc    getAssets with promise fetchOptions.fetchColumns = columns, all photoAccessHelper.PhotoKeys
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0400
+     * @tc.desc   getAssets with promise fetchOptions.fetchColumns = columns, all photoAccessHelper.PhotoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1128,12 +1125,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0500
-      * @tc.desc    getAssets with callback fetchOptions.fetchColumns = [uri,displayName,photoType]
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0500
+     * @tc.desc   getAssets with callback fetchOptions.fetchColumns = [uri,displayName,photoType]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
@@ -1145,12 +1142,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0510
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0510
-      * @tc.desc    getAssets with promise fetchOptions.fetchColumns = [uri,displayName,photoType]
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0510
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0510
+     * @tc.desc   getAssets with promise fetchOptions.fetchColumns = [uri,displayName,photoType]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0510',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
@@ -1162,12 +1159,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0600
-      * @tc.desc    createAsset callback with imageType and photoExtensions
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0600
+     * @tc.desc   createAsset callback with imageType and photoExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1178,12 +1175,12 @@ export default function PhotoAccessHelperTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0700
-      * @tc.desc    createAsset callback with videoType and videoExtensions
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0700
+     * @tc.desc   createAsset callback with videoType and videoExtensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1193,12 +1190,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0800
-      * @tc.desc    createAsset callback with imageType and photoExtensions, without options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0800
+     * @tc.desc   createAsset callback with imageType and photoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1208,12 +1205,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0900
-      * @tc.desc    createAsset callback with videoType and videoExtensions, without options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0900
+     * @tc.desc   createAsset callback with videoType and videoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_0900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1224,12 +1221,12 @@ export default function PhotoAccessHelperTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1000
-      * @tc.desc    createAsset promise with imageType and photoExtensions, without options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1000
+     * @tc.desc   createAsset promise with imageType and photoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
@@ -1239,12 +1236,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1100
-      * @tc.desc    createAsset promise with videoType and videoExtensions, without options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1100
+     * @tc.desc   createAsset promise with videoType and videoExtensions, without options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
@@ -1254,12 +1251,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1200
-      * @tc.desc    createAsset promise with imageType and photoExtensions, with options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1200
+     * @tc.desc   createAsset promise with imageType and photoExtensions, with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1272,12 +1269,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1300
-      * @tc.desc    createAsset promise with videoType and videoExtensions, with options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1300
+     * @tc.desc   createAsset promise with videoType and videoExtensions, with options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1290,12 +1287,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1400
-      * @tc.desc    createAsset promise with imageType and photoExtensions, with disallowed options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1400
+     * @tc.desc   createAsset promise with imageType and photoExtensions, with disallowed options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (done: () => void): void => {
@@ -1308,12 +1305,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1500
-      * @tc.desc    createAsset promise with videoType and videoExtensions, with disallowed options
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1500
+     * @tc.desc   createAsset promise with videoType and videoExtensions, with disallowed options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1326,13 +1323,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1600
-      * @tc.desc    registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1600
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1342,13 +1338,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1700
-      * @tc.desc    registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1700
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1358,13 +1353,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1800
-      * @tc.desc    registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1800
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1374,13 +1368,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1900
-      * @tc.desc    registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1900
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_1900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1390,13 +1383,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2000
-      * @tc.desc    registerChange promise, register photoAsset.uri,unRegister all callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2000
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1406,13 +1398,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2100
-      * @tc.desc    registerChange promise, register photoAsset.uri,unRegister all callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2100
+     * @tc.desc   registerChange promise, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1422,13 +1413,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2200
-      * @tc.desc    registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2200
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1438,13 +1428,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2300
-      * @tc.desc    registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2300
+     * @tc.desc   registerChange promise, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1454,13 +1443,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2400
-      * @tc.desc    registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2400
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1470,13 +1458,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2500
-      * @tc.desc    registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2500
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1486,13 +1473,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2600
-      * @tc.desc    registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2600
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1502,13 +1488,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2700
-      * @tc.desc    registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2700
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister prescriptive callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1518,13 +1503,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2800
-      * @tc.desc    registerChange callback, register photoAsset.uri,unRegister all callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2800
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1534,13 +1518,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2900
-      * @tc.desc    registerChange callback, register photoAsset.uri,unRegister all callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2900
+     * @tc.desc   registerChange callback, register photoAsset.uri,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_2900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1550,13 +1533,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3000
-      * @tc.desc    registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
-      forChildUris=true
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3000
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1566,13 +1548,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3100
-      * @tc.desc    registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
-      forChildUris=false
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3100
+     * @tc.desc   registerChange callback, register DEFAULT_PHOTO_URI,unRegister all callback,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1582,12 +1563,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3400
-      * @tc.desc    photoAsset.get callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3400
+     * @tc.desc   photoAsset.get callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1597,12 +1578,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3500
-      * @tc.desc    photoAsset.get promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3500
+     * @tc.desc   photoAsset.get promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1612,12 +1593,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3600
-      * @tc.desc    photoAsset.get callback, for all photoAccessHelper.PhotoKeys
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3600
+     * @tc.desc   photoAsset.get callback, for all photoAccessHelper.PhotoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1627,12 +1608,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3700
-      * @tc.desc    photoAsset.get promise, for all photoAccessHelper.PhotoKeys
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3700
+     * @tc.desc   photoAsset.get promise, for all photoAccessHelper.PhotoKeys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1642,12 +1623,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3800
-      * @tc.desc    photoAsset.set(title) callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3800
+     * @tc.desc   photoAsset.set(title) callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1657,12 +1638,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3900
-      * @tc.desc    photoAsset.set(title) promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3900
+     * @tc.desc   photoAsset.set(title) promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1672,12 +1653,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4000
-      * @tc.desc    photoAsset.commitModify callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4000
+     * @tc.desc   photoAsset.commitModify callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
@@ -1687,12 +1668,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4100
-      * @tc.desc    photoAsset.commitModify promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4100
+     * @tc.desc   photoAsset.commitModify promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
@@ -1702,12 +1683,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4400
-      * @tc.desc    getThumbnail callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4400
+     * @tc.desc   getThumbnail callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
@@ -1717,12 +1698,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4700
-      * @tc.desc    fetchResult.getCount
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4700
+     * @tc.desc   fetchResult.getCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
@@ -1732,12 +1713,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4800
-      * @tc.desc    fetchResult.isAfterLast
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4800
+     * @tc.desc   fetchResult.isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
@@ -1747,12 +1728,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4900
-      * @tc.desc    fetchResult.close
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4900
+     * @tc.desc   fetchResult.close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_4900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1762,12 +1743,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5000
-      * @tc.desc    getFirstObject callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5000
+     * @tc.desc   getFirstObject callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
@@ -1777,12 +1758,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5010
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5010
-      * @tc.desc    getFirstObject promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5010
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5010
+     * @tc.desc   getFirstObject promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5010',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
@@ -1792,12 +1773,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5100
-      * @tc.desc    getNextObject callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5100
+     * @tc.desc   getNextObject callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1807,12 +1788,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5200
-      * @tc.desc    getNextObject promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5200
+     * @tc.desc   getNextObject promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1822,12 +1803,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5300
-      * @tc.desc    getLastObject callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5300
+     * @tc.desc   getLastObject callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1837,12 +1818,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5400
-      * @tc.desc    getLastObject promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5400
+     * @tc.desc   getLastObject promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1852,12 +1833,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5600
-      * @tc.desc    getObjectByPosition promise -1 0 1
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5600
+     * @tc.desc   getObjectByPosition promise -1 0 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1867,12 +1848,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5700
-      * @tc.desc    getAllObjects callback
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5700
+     * @tc.desc   getAllObjects callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {
@@ -1882,12 +1863,12 @@ export default function PhotoAccessHelperTest() {
       })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5800
-      * @tc.desc    getAllObjects promise
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5800
+     * @tc.desc   getAllObjects promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_MEDIA_PHOTOACCESSHELPER_FUNCTION_STATIC_5800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: () => void): void => {

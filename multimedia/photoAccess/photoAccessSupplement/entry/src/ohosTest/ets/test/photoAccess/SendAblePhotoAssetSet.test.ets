@@ -68,12 +68,12 @@ export default function sendAbleSetTest() {
     }
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0001
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0001
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0001
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0001
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0001', Level.LEVEL0, async (done: Function) => {
       let member = '';
@@ -83,12 +83,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0002
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0002
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0002
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0002
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0002', Level.LEVEL0, async (done: Function) => {
       let member = 'undefined' ;
@@ -98,12 +98,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0003
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0003
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0003
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0003
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0003', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.URI ;
@@ -113,12 +113,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0004
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0004
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0004
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0004
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0004', Level.LEVEL0, async (done: Function) => {
       let member = 'abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789' ;
@@ -128,12 +128,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0005
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0005
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0005
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0005
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0005', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.DISPLAY_NAME ;
@@ -143,12 +143,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0006
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0006
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0006
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0006
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0006', Level.LEVEL0, async (done: Function) => {
       let member = '' ;
@@ -158,12 +158,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0007
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0007
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0007
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0007
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0007', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE ;
@@ -173,12 +173,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0008
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0008
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0008
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0008
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0008', Level.LEVEL0, async (done: Function) => {
       let member = 'null';
@@ -188,12 +188,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0009
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0009
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0009
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0009
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0009', Level.LEVEL0, async (done: Function) => {
       let member = '-1';
@@ -203,12 +203,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0010
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0010
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0010
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0010
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0010', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -218,12 +218,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0011
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0011
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0011
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0011
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0011', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -233,12 +233,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0012
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0012
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0012
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0012
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0012', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -248,12 +248,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0013
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0013
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0013
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0013
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0013', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -263,12 +263,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0014
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0014
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0014
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0014
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0014', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -278,12 +278,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0015
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0015
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0015
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0015
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0015', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -293,12 +293,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0016
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0016
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0016
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0016
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0016', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -308,12 +308,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0017
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0017
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0017
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0017
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0017', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -323,12 +323,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0018
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0018
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0018
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0018
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0018', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -338,12 +338,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0019
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0019
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0019
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0019
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0019', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -353,12 +353,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0020
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0020
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0020
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0020
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0020', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -368,12 +368,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0021
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0021
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0021
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0021
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0021', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -383,12 +383,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0022
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0022
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0022
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0022
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0022', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -398,12 +398,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0023
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0023
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0023
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0023
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0023', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -413,12 +413,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0024
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0024
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0024
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0024
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0024', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -428,12 +428,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0025
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0025
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0025
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0025
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0025', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -443,12 +443,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0026
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0026
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0026
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0026
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0026', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -458,12 +458,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0027
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0027
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0027
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0027
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0027', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -473,12 +473,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0028
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0028
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0028
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0028
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0028', Level.LEVEL0, async (done: Function) => {
       let member = photoAccessHelper.PhotoKeys.TITLE;
@@ -488,12 +488,12 @@ export default function sendAbleSetTest() {
     });
 
     /**
-     * @tc.number      SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029
-     * @tc.name        SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029
-     * @tc.desc        set photo title success
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029', Level.LEVEL0, async (done: Function) => {
       let member = '汉字';
@@ -502,7 +502,114 @@ export default function sendAbleSetTest() {
       })
     });
 
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0030
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0030
+     * @tc.desc   member min length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0030', Level.LEVEL0, async (done: Function) => {
+      let member = 'a';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
 
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0031
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0031
+     * @tc.desc   member max length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0031', Level.LEVEL0, async (done: Function) => {
+      let member = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0032
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0032
+     * @tc.desc   member max length + 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0032', Level.LEVEL0, async (done: Function) => {
+      let member = 'a1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0033
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0033
+     * @tc.desc   value min length -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0033', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = '';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0034
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0034
+     * @tc.desc   value min length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0034', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = 'q';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0035
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0035
+     * @tc.desc   value max length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0035', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = '1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0036
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0036
+     * @tc.desc   value max length + 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0036', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = 'a1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
 
   })
 }

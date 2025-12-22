@@ -304,12 +304,12 @@ export default function CameraSetMeterPointSuppTest() {
       await closeFd(fdNumber);
     });
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_001
-     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_001
-     * @tc.desc       test camera  photoSession setMeteringPoint null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_001
+     * @tc.desc   test camera  photoSession setMeteringPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_001', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', null);
@@ -326,12 +326,12 @@ export default function CameraSetMeterPointSuppTest() {
       done();
       })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_002
-     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_002
-     * @tc.desc       test camera  photoSession setMeteringPoint undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_002
+     * @tc.desc   test camera  photoSession setMeteringPoint undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_002', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', undefined);
@@ -348,12 +348,12 @@ export default function CameraSetMeterPointSuppTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_003
-     * @tc.name       SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_003
-     * @tc.desc       test camera  photoSession setMeteringPoint ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_003
+     * @tc.desc   test camera  photoSession setMeteringPoint ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_SETMETERINGPOINT_003', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', '');
@@ -370,12 +370,12 @@ export default function CameraSetMeterPointSuppTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001
-     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001
-     * @tc.desc       test camera VideoSession setMeteringPoint undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001
+     * @tc.desc   test camera VideoSession setMeteringPoint undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', undefined);
@@ -392,12 +392,12 @@ export default function CameraSetMeterPointSuppTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_002
-     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_002
-     * @tc.desc       test camera VideoSession setMeteringPoint null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_002
+     * @tc.desc   test camera VideoSession setMeteringPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_002', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', null);
@@ -414,12 +414,12 @@ export default function CameraSetMeterPointSuppTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_003
-     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_003
-     * @tc.desc       test camera VideoSession setMeteringPoint null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_003
+     * @tc.desc   test camera VideoSession setMeteringPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_003', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', '');

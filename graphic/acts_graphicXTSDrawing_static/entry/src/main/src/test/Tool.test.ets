@@ -52,12 +52,12 @@ export default function toolTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0100
-     * @tc.name      : testMakeColorFromResourceColorNormal01Static
-     * @tc.desc      : Test for testMakeColorFromResourceColorNormal01Static.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorNormal01Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0100
+     * @tc.desc   Test for testMakeColorFromResourceColorNormal01Static.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorNormal01Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorNormal01Static';
@@ -193,12 +193,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0200
-     * @tc.name      : testMakeColorFromResourceColorNormal02Static
-     * @tc.desc      : Test for testMakeColorFromResourceColorNormal02Static.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorNormal02Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0200
+     * @tc.desc   Test for testMakeColorFromResourceColorNormal02Static.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorNormal02Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorNormal02Static';
@@ -288,12 +288,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0300
-     * @tc.name      : testMakeColorFromResourceColorAbnormal01Static
-     * @tc.desc      : Test for testMakeColorFromResourceColorAbnormal01Static.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorAbnormal01Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0300
+     * @tc.desc   Test for testMakeColorFromResourceColorAbnormal01Static.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorAbnormal01Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorAbnormal01Static';
@@ -453,12 +453,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0400
-     * @tc.name      : testMakeColorFromResourceColorAbnormal02Static
-     * @tc.desc      : Test for testMakeColorFromResourceColorAbnormal02Static.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorAbnormal02Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0400
+     * @tc.desc   Test for testMakeColorFromResourceColorAbnormal02Static.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorAbnormal02Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorAbnormal02Static';
@@ -513,12 +513,12 @@ export default function toolTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0600
-     * @tc.name      : testMakeColorFromResourceColorMultipleCallsStatic
-     * @tc.desc      : Test for testMakeColorFromResourceColorMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testMakeColorFromResourceColorMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TOOL_STATIC_0600
+     * @tc.desc   Test for testMakeColorFromResourceColorMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMakeColorFromResourceColorMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testMakeColorFromResourceColorMultipleCallsStatic';

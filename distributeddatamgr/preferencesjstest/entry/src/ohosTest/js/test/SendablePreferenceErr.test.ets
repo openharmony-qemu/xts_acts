@@ -63,7 +63,6 @@ export default function sendablePreferencesErrTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:55
        * @tc.name   testSendablePreferencesgetpreferenceErr0100
        * @tc.number testSendablePreferencesgetpreferenceErr0100
        * @tc.desc   testSendablePreferencesgetpreferenceErr0100
@@ -93,7 +92,6 @@ export default function sendablePreferencesErrTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:55
        * @tc.name   testSendablePreferencesgetpreferencesyncErr0100
        * @tc.number testSendablePreferencesgetpreferencesyncErr0100
        * @tc.desc   testSendablePreferencesgetpreferencesyncErr0100
@@ -122,7 +120,6 @@ export default function sendablePreferencesErrTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:55
        * @tc.name   testSendablePreferencesdeletePreferencesErr0100
        * @tc.number testSendablePreferencesdeletePreferencesErr0100
        * @tc.desc   testSendablePreferencesdeletePreferencesErr0100
@@ -151,7 +148,6 @@ export default function sendablePreferencesErrTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:55
        * @tc.name   testSendablePreferencesremovePreferencesFromCacheErr0100
        * @tc.number testSendablePreferencesremovePreferencesFromCacheErr0100
        * @tc.desc   testSendablePreferencesremovePreferencesFromCacheErr0100
@@ -180,7 +176,6 @@ export default function sendablePreferencesErrTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:55
        * @tc.name   testSendablePreferencesremovePreferencesFromCacheSyncErr0100
        * @tc.number testSendablePreferencesremovePreferencesFromCacheSyncErr0100
        * @tc.desc   testSendablePreferencesremovePreferencesFromCacheSyncErr0100
@@ -209,7 +204,6 @@ export default function sendablePreferencesErrTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesRemovePreferencesFromCachePromiserr0100
          * @tc.number testPreferencesRemovePreferencesFromCachePromiserr0100
          * @tc.desc   testPreferencesRemovePreferencesFromCachePromiserr0100
@@ -246,7 +240,6 @@ export default function sendablePreferencesErrTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesRemovePreferencesFromCacheSyncErr0100
          * @tc.number testPreferencesRemovePreferencesFromCacheSyncErr0100
          * @tc.desc   testPreferencesRemovePreferencesFromCacheSyncErr0100
@@ -283,7 +276,6 @@ export default function sendablePreferencesErrTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSendablePreferencesDeletePreferencesPromiseErr0100
          * @tc.number testSendablePreferencesDeletePreferencesPromiseErr0100
          * @tc.desc   testSendablePreferencesDeletePreferencesPromiseErr0100
@@ -320,7 +312,6 @@ export default function sendablePreferencesErrTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSendablePreferencesgetPreferencesSyncErr0100
          * @tc.number testSendablePreferencesgetPreferencesSyncErr0100
          * @tc.desc   testSendablePreferencesgetPreferencesSyncErr0100
@@ -357,7 +348,6 @@ export default function sendablePreferencesErrTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testSendablePreferencesgetPreferencesPromiseErr0100
          * @tc.number testSendablePreferencesgetPreferencesPromiseErr0100
          * @tc.desc   testSendablePreferencesgetPreferencesPromiseErr0100

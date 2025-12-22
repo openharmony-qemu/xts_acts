@@ -304,13 +304,12 @@ export default function imageYuv() {
 
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0100
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0100
-          * @tc.desc    1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -319,13 +318,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0200
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0200
-          * @tc.desc    1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -334,14 +332,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300 - Promise - wrong buffer
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300 - Promise - wrong buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = new ArrayBuffer(5);
@@ -350,14 +346,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400 - Promise - wrong width
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400 - Promise - wrong width
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -371,14 +365,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500 - Promise - wrong buffer
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500 - Promise - wrong buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = new ArrayBuffer(5);
@@ -387,14 +379,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600 - Promise - wrong width
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600 - Promise - wrong width
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -408,14 +398,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700 - Promise - wrong format
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700 - Promise - wrong format
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -433,14 +421,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800 - Promise - format null
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800 - Promise - format null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_PROMISE_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -454,16 +440,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400 - Promise - wrong width
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          *                 3.create ImagePacker
-          *                 4.call packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400 - Promise - wrong width
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -479,16 +461,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600 - Promise - wrong width
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          *                 3.create ImagePacker
-          *                 4.call packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600 - Promise - wrong width
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -504,16 +482,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700 - Promise - wrong format
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          *                 3.create ImagePacker
-          *                 4.call packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700 - Promise - wrong format
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -533,16 +507,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800 - Promise - format null
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          *                 3.create ImagePacker
-          *                 4.call packing
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800 - Promise - format null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_IMAGESOURCE_PROMISE_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -558,14 +528,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0100
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0100
-          * @tc.desc    SUB_IMAGE_yuv_pixelmap_CB_001
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0100
+         * @tc.desc   SUB_IMAGE_yuv_pixelmap_CB_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -574,14 +542,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0200
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0200
-          * @tc.desc    SUB_IMAGE_yuv_pixelmap_CB_002
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0200
+         * @tc.desc   SUB_IMAGE_yuv_pixelmap_CB_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = createBuffer(4, 6);
@@ -590,14 +556,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300 - Promise - wrong buffer
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300 - Promise - wrong buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = new ArrayBuffer(5);
@@ -606,14 +570,12 @@ export default function imageYuv() {
         });
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500
-          * @tc.name    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500
-          * @tc.desc    SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500 - Promise - wrong buffer
-          *                 1.create ImageSource
-          *                 2.create pixelmap
-          * @tc.size    MEDIUM
-          * @tc.type    Functional
-          * @tc.level   level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500 - Promise - wrong buffer
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_YUV_PIXELMAP_CB_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
             let yuvData = new ArrayBuffer(5);

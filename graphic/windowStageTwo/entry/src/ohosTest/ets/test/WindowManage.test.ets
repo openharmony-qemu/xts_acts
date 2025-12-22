@@ -137,12 +137,12 @@ export default function windowManageTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name       testGetWindowsByCoordinatenullWindow
-     * @tc.desc       Get windows by coordinate.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testGetWindowsByCoordinatenullWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinatenullWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetWindowsByCoordinatenullWindow';
@@ -181,12 +181,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testGetWindowsByCoordinateWithSystemWindow
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithSystemWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithSystemWindow';
@@ -218,12 +218,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name      : testGetWindowsByCoordinateWithSubWindow
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithSubWindow';
@@ -255,12 +255,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
-     * @tc.name      : testGetWindowsByCoordinateWithWinNumberIs3
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithWinNumberIs3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithWinNumberIs3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithWinNumberIs3';
@@ -291,12 +291,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
-     * @tc.name      : testGetWindowsByCoordinateWithNegativeWinNumber
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithNegativeWinNumber
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithNegativeWinNumber', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithNegativeWinNumber';
@@ -327,12 +327,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-     * @tc.name      : testGetWindowsByCoordinateWithNegativeWinNumBerAndXY
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithNegativeWinNumBerAndXY
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithNegativeWinNumBerAndXY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithNegativeWinNumBerAndXY';
@@ -363,12 +363,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
-     * @tc.name      : testGetWindowsByCoordinateWithNegativeXY
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithNegativeXY
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithNegativeXY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'testGetWindowsByCoordinateWithNegativeXY';
@@ -399,12 +399,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
-     * @tc.name      : testGetWindowsByCoordinateWithTwoSubWindow
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithTwoSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithTwoSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithTwoSubWindow';
@@ -440,12 +440,12 @@ export default function windowManageTest() {
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-     * @tc.name      : testGetWindowsByCoordinateWithInvalidDisPlayId
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithInvalidDisPlayId
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithInvalidDisPlayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'TestGetWindowsByCoordinateWithInvalidDisPlayId';
@@ -471,12 +471,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name      : testGetWindowsByCoordinateWithNegativeX
-     * @tc.desc      : Get windows by coordinate.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowsByCoordinateWithNegativeX
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   Get windows by coordinate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowsByCoordinateWithNegativeX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName = 'testGetWindowsByCoordinateWithNegativeX';
@@ -509,29 +509,34 @@ export default function windowManageTest() {
 
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name      : testOnWindowStageClose
-     * @tc.desc      : Listener for window stage close event.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnWindowStageClose
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   Listener for window stage close event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowStageClose', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageClose';
       try {
-        let driver: Driver = Driver.create();
-        let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        let count = 0;
-        windowStage.on('windowStageClose', () => {
-          console.info(`${caseName} Succeeded in enabling the listener for window stage close event.`);
-          count++;
-          return true;
-        });
-        await closeBtn.click();
-        await sleep(1000);
-        console.info(`${caseName} count is: ${count}`);
-        expect(count).assertEqual(1);
-        done();
+        if(isFreeWindowMode){
+          let driver: Driver = Driver.create();
+          let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          let count = 0;
+          windowStage.on('windowStageClose', () => {
+            console.info(`${caseName} Succeeded in enabling the listener for window stage close event.`);
+            count++;
+            return true;
+          });
+          await closeBtn.click();
+          await sleep(1000);
+          console.info(`${caseName} count is: ${count}`);
+          expect(count).assertEqual(1);
+          done();
+        }else{
+          done();
+        }
+        
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
@@ -545,38 +550,43 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name      : testOnWindowStageCloseRepeat
-     * @tc.desc      : Listener for window stage close event.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnWindowStageCloseRepeat
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   Listener for window stage close event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowStageCloseRepeat',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageCloseRepeat';
       try {
-        let driver: Driver = Driver.create();
-        let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        let count1 = 0;
-        let count2 = 0;
-        const closeFunc1 = () => {
-          console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
-          count1++;
-          return true;
+        if(isFreeWindowMode){
+          let driver: Driver = Driver.create();
+          let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          let count1 = 0;
+          let count2 = 0;
+          const closeFunc1 = () => {
+            console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
+            count1++;
+            return true;
+          }
+          const closeFunc2 = () => {
+            console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
+            count2++;
+            return true;
+          }
+          windowStage.on('windowStageClose', closeFunc1);
+          windowStage.on('windowStageClose', closeFunc2);
+          await closeBtn.click();
+          await sleep(1000);
+          console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
+          expect(count1).assertEqual(0);
+          expect(count2).assertEqual(1);
+          done();
+        }else{
+          done();
         }
-        const closeFunc2 = () => {
-          console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
-          count2++;
-          return true;
-        }
-        windowStage.on('windowStageClose', closeFunc1);
-        windowStage.on('windowStageClose', closeFunc2);
-        await closeBtn.click();
-        await sleep(1000);
-        console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
-        expect(count1).assertEqual(0);
-        expect(count2).assertEqual(1);
-        done();
+        
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
@@ -590,39 +600,44 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1100
-     * @tc.name      : testOnWindowStageCloseOff
-     * @tc.desc      : Listener for window stage close event.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnWindowStageCloseOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1100
+     * @tc.desc   Listener for window stage close event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnWindowStageCloseOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestOnWindowStageCloseOff';
       try {
-        let driver: Driver = Driver.create();
-        let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
-        let count1 = 0;
-        let count2 = 0;
-        const closeFunc1 = () => {
-          console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
-          count1++;
-          return true;
+        if(isFreeWindowMode){
+          let driver: Driver = Driver.create();
+          let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
+          let count1 = 0;
+          let count2 = 0;
+          const closeFunc1 = () => {
+            console.info(`${caseName} func1 Succeeded in enabling the listener for window stage close event.`);
+            count1++;
+            return true;
+          }
+          const closeFunc2 = () => {
+            console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
+            count2++;
+            return true;
+          }
+          windowStage.on('windowStageClose', closeFunc2);
+          windowStage.off('windowStageClose', closeFunc2);
+          windowStage.on('windowStageClose', closeFunc1);
+          await closeBtn.click();
+          await sleep(1000);
+          console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
+          expect(count1).assertEqual(1);
+          expect(count2).assertEqual(0);
+          done();
+        }else{
+          done();
         }
-        const closeFunc2 = () => {
-          console.info(`${caseName} func2 Succeeded in enabling the listener for window stage close event.`);
-          count2++;
-          return true;
-        }
-        windowStage.on('windowStageClose', closeFunc2);
-        windowStage.off('windowStageClose', closeFunc2);
-        windowStage.on('windowStageClose', closeFunc1);
-        await closeBtn.click();
-        await sleep(1000);
-        console.info(`${caseName} count1 is: ${count1}, count2 is: ${count2}`);
-        expect(count1).assertEqual(1);
-        expect(count2).assertEqual(0);
-        done();
+        
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to listener for window stage close event.`);
@@ -636,12 +651,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
-     * @tc.name      : testSetWindowTopmost201
-     * @tc.desc      : Set the window to be top most.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowTopmost
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
+     * @tc.desc   Set the window to be top most.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowTopmost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowTopmost';
@@ -667,12 +682,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
-     * @tc.name      : testSetWindowTopmostInSubWindow
-     * @tc.desc      : Set the window to be top most.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowTopmostInSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
+     * @tc.desc   Set the window to be top most.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowTopmostInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowTopmostInSubWindow';
@@ -706,12 +721,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1400
-     * @tc.name      : testSetWindowTopmostUnauthorized
-     * @tc.desc      : Set the window to be top most.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowTopmostUnauthorized
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1400
+     * @tc.desc   Set the window to be top most.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowTopmostUnauthorized',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowTopmostUnauthorized';
@@ -744,12 +759,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1500
-     * @tc.name      : testSetWindowMaximizeButtonVisible
-     * @tc.desc      : Set whether to display the maximize, minimize buttons of main window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowMaximizeButtonVisible
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1500
+     * @tc.desc   Set whether to display the maximize, minimize buttons of main window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowMaximizeButtonVisible', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>  {
       let caseName = 'TestSetWindowMaximizeButtonVisible';
@@ -769,7 +784,11 @@ export default function windowManageTest() {
           console.info(`${caseName} The current device type does not support to set whether to display the maximize buttons of main window.`);
           windowClass.off('windowTitleButtonRectChange');
           done();
-        } else {
+        } else if(!isFreeWindowMode){
+          expect(exception.code).assertEqual(1300002);
+          done();
+        }
+        else {
           console.error(`${caseName} Failed to set whether to display the maximize buttons of main window. Cause code: ${exception.code}, message: ${exception.message}`);
           expect().assertFail();
           done();
@@ -777,12 +796,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1600
-     * @tc.name      : testSetWindowMaximizeButtonVisibleUndefined
-     * @tc.desc      : Set whether to display the maximize, minimize buttons of main window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowMaximizeButtonVisibleUndefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1600
+     * @tc.desc   Set whether to display the maximize, minimize buttons of main window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowMaximizeButtonVisibleUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>  {
       let caseName = 'TestSetWindowMaximizeButtonVisibleUndefined';
@@ -806,12 +825,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1700
-     * @tc.name      : testSetWindowMaximizeButtonVisibleInSubWindow
-     * @tc.desc      : Set whether to display the maximize, minimize buttons of main window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowMaximizeButtonVisibleInSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1700
+     * @tc.desc   Set whether to display the maximize, minimize buttons of main window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowMaximizeButtonVisibleInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowMaximizeButtonVisibleInSubWindow';
@@ -840,12 +859,12 @@ export default function windowManageTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
-     * @tc.name      : testRestoreBySubWindow
-     * @tc.desc      : After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRestoreBySubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
+     * @tc.desc   After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRestoreBySubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestRestoreBySubWindow';

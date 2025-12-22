@@ -138,7 +138,6 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutUint8Array0010
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0100
      * @tc.desc   put Uint8Array promise interface test
@@ -164,7 +163,6 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutUint8Array0020
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0200
      * @tc.desc   put Uint8Array promise interface test
@@ -190,7 +188,6 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutUint8Array0030
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0300
      * @tc.desc   put Uint8Array promise interface test
@@ -216,7 +213,6 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutUint8Array0040
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0400
      * @tc.desc   put Uint8Array promise interface test
@@ -245,7 +241,6 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutUint8Array0050
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0500
      * @tc.desc   put Uint8Array promise interface test
@@ -266,7 +261,6 @@ export default function preferencesSpecialCharacterPromiseTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPutUint8Array0060
      * @tc.number SUB_DistributedData_Preference_SDK_SpecialCharacter_0600
      * @tc.desc   put Uint8Array promise interface test

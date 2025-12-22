@@ -1644,6 +1644,70 @@ static napi_value TestUnsetPipInitialSurfaceRect(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value TestPipSetParentWindowIdwithNonExistedWindowId(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t mainWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &mainWindowId);
+    OH_LOG_INFO(LOG_APP, "TestPipSetParentWindowIdwithNonExistedWindowId windowId =%{public}d.", mainWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    int32_t ret = OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    uint32_t controllerId = 0;
+    ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    int32_t res = OH_PictureInPicture_SetParentWindowId(controllerId, mainWindowId);
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+static napi_value TestPipSetParentWindowId(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    uint32_t subWindowId;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_uint32(env, args[0], &subWindowId);
+    OH_LOG_INFO(LOG_APP, "TestPipSetParentWindowId windowId =%{public}d.", subWindowId);
+    napi_value result;
+    PictureInPicture_PipControlGroup controlGroup[1] = {
+        PictureInPicture_PipControlGroup::VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    PictureInPicture_PipTemplateType pipTemplateType = PictureInPicture_PipTemplateType::VIDEO_PLAY;
+    PictureInPicture_PipConfig pipConfig;
+    int32_t ret = OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    uint32_t controllerId = 0;
+    ret = OH_PictureInPicture_CreatePip(pipConfig, &controllerId);
+    int32_t res = OH_PictureInPicture_SetParentWindowId(controllerId, subWindowId);
+    OH_PictureInPicture_DestroyPipConfig(&pipConfig);
+    napi_create_int32(env, res, &result);
+    return result;
+}
+
+napi_value TestPictureInPicture_PipState_enum(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    napi_value retValue;
+    if (PictureInPicture_PipState::ABOUT_TO_START == 1 &&
+        PictureInPicture_PipState::STARTED == TWO &&
+        PictureInPicture_PipState::ABOUT_TO_STOP == THREE &&
+        PictureInPicture_PipState::STOPPED == FOUR &&
+        PictureInPicture_PipState::ABOUT_TO_RESTORE == FIVE) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, -1, &retValue);
+    }
+    return retValue;
+}
+
 static napi_value pipWindowInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -1694,10 +1758,25 @@ static napi_value pipWindowInit(napi_env env, napi_value exports)
     return exports;
 }
 
+static napi_value pipWindowInit2(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testPictureInPicture_PipState_enum", nullptr,
+            TestPictureInPicture_PipState_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "testPipSetParentWindowIdwithNonExistedWindowId", nullptr, TestPipSetParentWindowIdwithNonExistedWindowId,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testPipSetParentWindowId", nullptr, TestPipSetParentWindowId,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     pipWindowInit(env, exports);
+    pipWindowInit2(env, exports);
     napi_property_descriptor desc[] = {
         { "testUnregisterAllResizeListeners", nullptr, TestUnregisterAllResizeListeners,
             nullptr, nullptr, nullptr, napi_default, nullptr },

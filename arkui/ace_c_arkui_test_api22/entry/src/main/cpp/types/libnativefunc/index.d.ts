@@ -12,3 +12,57 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+export const testNodeSwiperItemFillpolocy001: () => number;
+export const testImageDrawable001: () => number;
+export const testImageDrawable002: () => number;
+export const testImageDrawable003: () => number;
+export const testImageDrawable004: () => number;
+export const Nullptr_OH_ArkUI_CreateDragActionWithContext: () => number;
+export const Nullptr_OH_ArkUI_GestureInterruptInfo_GetGestureEvent: () => number;
+export const Nullptr_OH_ArkUI_CreateDragActionWithNode: () => number;
+export const Nullptr_OH_ArkUI_GestureInterruptInfo_GetRecognizer: () => number;
+export const Nullptr_OH_ArkUI_GestureEvent_GetRawInputEvent: () => number;
+export const Nullptr_OH_ArkUI_TouchRecognizer_GetNodeHandle: () => number;
+export const Nullptr_OH_ArkUI_GestureInterrupter_GetUserData: () => number;
+export const Nullptr_OH_ArkUI_NodeEvent_GetNodeHandle: () => number;
+export const Nullptr_OH_ArkUI_NodeEvent_GetInputEvent: () => number;
+export const Nullptr_OH_ArkUI_NodeEvent_GetNodeComponentEvent: () => number;
+export const Nullptr_OH_ArkUI_NodeEvent_GetStringAsyncEvent: () => number;
+export const Nullptr_OH_ArkUI_NodeEvent_GetUserData: () => number;
+export const Nullptr_OH_ArkUI_CreateSnapshotOptions: () => number;
+export const Nullptr_OH_ArkUI_VisibleAreaEventOptions_Create: () => number;
+export const Nullptr_OH_ArkUI_UIInputEvent_GetCoastingAxisEvent: () => number;
+export const Nullptr_OH_ArkUI_CreateDragPreviewOption: () => number;
+export const Nullptr_OH_ArkUI_ParallelInnerGestureEvent_GetUserData: () => number;
+export const Nullptr_OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer: () => number;
+export const False_OH_ArkUI_GestureInterruptInfo_GetSystemFlag: () => number;
+export const True_OH_ArkUI_GestureInterruptInfo_GetSystemFlag: () => number;
+export const True_OH_ArkUI_GetGestureRecognizerEnabled: () => number;
+export const False_OH_ArkUI_GetGestureRecognizerEnabled: () => number;
+export const True_OH_ArkUI_IsBuiltInGesture: () => number;
+export const False_OH_ArkUI_IsBuiltInGesture: () => number;
+export const True_OH_ArkUI_IsGestureRecognizerValid: () => number;
+export const False_OH_ArkUI_IsGestureRecognizerValid: () => number;
+export const True_OH_ArkUI_HoverEvent_IsHovered: () => number;
+export const False_OH_ArkUI_VisibleAreaEventOptions_GetMeasureFromViewport: () => number;
+export const True_OH_ArkUI_VisibleAreaEventOptions_GetMeasureFromViewport: () => number;
+export  const  SetAllowableMovement: () => number;
+export  const  SetAllowableMovement_Invalid: () => number;
+export  const  SetAllowableMovement_notSup: () => number;
+export  const  GetAllowableMovement_Invalid: () => number;
+export  const  GetAllowableMovement: () => number;
+export  const  SetMeasureFromViewport: () => number;
+export  const  SetMeasureFromViewport_Invalid: () => number;
+export const testGridItemAlignment001: () => number;
+export const testGridItemAlignment002: () => number;
+export const testGridItemAlignment003: () => number;
+export const testGridItemStyle001: () => number;
+export const testGridItemStyle002: () => number;
+export const testGridItemStyle003: () => number;
+export const testGridLayoutOptions001: () => number;
+export const testGridLayoutOptions002: () => number;
+export const testGridLayoutOptions003: () => number;
+export const testGridLayoutOptions004: () => number;
+export const TestRegisterGetIrregularSizeByIndexCallback001: () => number;
+export const TestRegisterGetRectByIndexCallback001: () => number;

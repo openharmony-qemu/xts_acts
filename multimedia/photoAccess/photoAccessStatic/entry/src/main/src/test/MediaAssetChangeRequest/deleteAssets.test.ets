@@ -29,12 +29,12 @@ export default function deleteAssets() {
   describe("deleteAssets", (): void => {
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_STATIC_0200
-      * @tc.name    delete_assets_uri_change_request_static_002
-      * @tc.desc    delete  assets by []
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   delete_assets_uri_change_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_URI_CHANGE_REQUEST_STATIC_0200
+     * @tc.desc   delete  assets by []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('delete_assets_uri_change_request_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -55,12 +55,12 @@ export default function deleteAssets() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_STATIC_0200
-      * @tc.name    delete_assets_obj_change_request_static_002
-      * @tc.desc    delete empty
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   delete_assets_obj_change_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_DELETE_ASSETS_OBJ_CHANGE_REQUEST_STATIC_0200
+     * @tc.desc   delete empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('delete_assets_obj_change_request_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

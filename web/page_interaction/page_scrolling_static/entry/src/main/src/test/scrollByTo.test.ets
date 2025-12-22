@@ -55,14 +55,14 @@ export default function webViewSrollableJsunit(){
       console.info('scroll beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_SCTOLL_BY_TO_API_001
-    * @tc.name       : scrollByToStatic01
-    * @tc.desc       : test blurMode01 interface when choose callback mode.
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   scrollByToStatic01
+     * @tc.number SUB_SCTOLL_BY_TO_API_001
+     * @tc.desc   test blurMode01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('scrollByToStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('scrollByTo01', 10)
@@ -77,6 +77,14 @@ export default function webViewSrollableJsunit(){
       done();
     })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage1', 10)

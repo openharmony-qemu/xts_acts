@@ -32,6 +32,8 @@ import ImageSpanTest8 from './ImageSpanTest/ImageSpanTest8.test';
 import ImageSpanVisibilityTest from './ImageSpanTest/ImageSpanVisibility.test';
 import ImageTextTest from './ImageSpanTest/ImageTextTest.test';
 import OnCompleteTest from './ImageSpanTest/OnCompleteTest.test';
+import ImageSpanSupportSvg2 from './ImageSpanTest/ImageSpanSupportSvg2.test';
+import spanExample from './ImageSpanTest/ImageSpanTest9.test';
 
 import Span3JsunitTest from './SpanTest/Span3JsunitTest.test';
 import SpanApi1Test from './SpanTest/SpanApi1Test.test';
@@ -93,6 +95,13 @@ import TextTwoJsunit from './TextTest/TextTwoJsunit.test';
 import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
 import ModifierTextVerticalAlignTest from './TextTest/ModifierTextVerticalAlignTest.test';
 import TextTextDecorationTest from './TextTest/TextTextDecorationTest.test';
+import lineHeight from './TextTest/lineHeight.test';
+import TextEnableSelectedDataDetectorTest from './TextTest/TextEnableSelectedDataDetector.test';
+import customKeyboardSearchTest from './CustomKeyboardTest/search.test';
+import customKeyboardTextAreaTest from './CustomKeyboardTest/textArea.test';
+import customKeyboardTextInputTest from './CustomKeyboardTest/textInput.test';
+import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctuation.test';
+import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -115,6 +124,7 @@ export default function testsuite() {
   ImageSpanVisibilityTest()
   ImageTextTest()
   OnCompleteTest()
+  ImageSpanSupportSvg2()
   // SpanTest
   Span3JsunitTest()
   SpanApi1Test()
@@ -176,4 +186,12 @@ export default function testsuite() {
   TextVerticalAlignTest()
   ModifierTextVerticalAlignTest()
   TextTextDecorationTest()
+  lineHeight();
+  spanExample();
+  TextEnableSelectedDataDetectorTest()
+  customKeyboardSearchTest();
+  customKeyboardTextAreaTest();
+  customKeyboardTextInputTest();
+  TextCompressLeadingPunctuation();
+  TextCompressLeadingPunctuationModifier();
 }

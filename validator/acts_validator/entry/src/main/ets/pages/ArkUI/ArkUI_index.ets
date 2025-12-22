@@ -88,6 +88,7 @@ struct IndexPage {
     { title: 'Progress', uri: 'pages/ArkUI/Progress' },
     { title: 'Rating', uri: 'pages/ArkUI/Rating' },
     { title: 'Search', uri: 'pages/ArkUI/Search' },
+    { title: 'Magnifier', uri: 'pages/ArkUI/Magnifier' },
     { title: 'SegmentButton', uri: 'pages/ArkUI/SegmentButton' },
     { title: 'SharedTransition', uri: 'pages/ArkUI/SharedTransition' },
     { title: 'Swiper', uri: 'pages/ArkUI/Swiper' },
@@ -99,6 +100,7 @@ struct IndexPage {
     { title: 'NavigationEnableHoverMode', uri: 'pages/ArkUI/NavigationEnableHoverMode' },
     { title: 'AccessibilityProperty', uri: 'pages/ArkUI/AccessibilityProperty' },
     { title: 'AccessibilityOptions', uri: 'pages/ArkUI/AccessibilityOptions' },
+    { title: 'AccessibilityOptionsObjectDescription', uri: 'pages/ArkUI/AccessibilityOptionsObjectDescription' },
     { title: 'AccessibilityThirdFramework00', uri: 'pages/ArkUI/AccessibilityThirdFramework00' },
     { title: 'AccessibilityThirdFramework01', uri: 'pages/ArkUI/AccessibilityThirdFramework01' },
     { title: 'GetBarRect', uri: 'pages/ArkUI/GetBarRect' },
@@ -145,7 +147,12 @@ struct IndexPage {
     { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
     { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
     { title: 'GetDarkModeTest', uri: 'pages/ArkUI/GetDarkModeTest' },
-    { title: 'GetDarkModeTest', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
+    { title: 'TabBarIndicatorPixmap', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
+    { title: 'RichEditiorComponentContentKeyboard', uri: 'pages/ArkUI/RichEditiorComponentContentKeyboard' },
+    { title: 'WindowSizeLayoutBreakpointChange', uri: 'pages/ArkUI/WindowSizeLayoutBreakpointChange' },
+    { title: 'AccessibilityActionOptionsScrollStep', uri: 'pages/ArkUI/AccessibilityActionOptionsScrollStep' },
+    { title: 'CapiSourceType', uri: 'pages/ArkUI/CapiSourceType' },
+    { title: 'AccessiBilityStateDescription', uri: 'pages/ArkUI/AccessiBilityStateDescription' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

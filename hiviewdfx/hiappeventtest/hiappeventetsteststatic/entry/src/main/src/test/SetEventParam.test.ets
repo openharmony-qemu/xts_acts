@@ -24,12 +24,12 @@ export default function setEventParamTest() {
     hilog.info(logDomain, tag, 'describe start');
 
     /**
+     * @tc.name   testHiAppEventSetPam01
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0100
-     * @tc.name testHiAppEventSetPam01
-     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数，并通过onReceive回调获取
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数，并通过onReceive回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam01', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam01 start');
@@ -175,12 +175,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam02
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0200
-     * @tc.name testHiAppEventSetPam02
-     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数，并通过onTrigger回调获取
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数，并通过onTrigger回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam02', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam02 start');
@@ -193,7 +193,8 @@ export default function setEventParamTest() {
             {domain: hiAppEvent.domain.OS,
               names: [hiAppEvent.event.APP_LAUNCH, hiAppEvent.event.SCROLL_JANK, hiAppEvent.event.CPU_USAGE_HIGH,
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
-                hiAppEvent.event.MAIN_THREAD_JANK]}
+                hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_KILLED, hiAppEvent.event.APP_HICOLLIE,
+                hiAppEvent.event.AUDIO_JANK_FRAME]}
           ],
           onTrigger: (curRow: int, curSize: int, holder: hiAppEvent.AppEventPackageHolder) => {
             expect(holder != null).assertTrue();
@@ -254,12 +255,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam03
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0300
-     * @tc.name testHiAppEventSetPam03
-     * @tc.desc 验证setEventParam接口domain下划线结尾，返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain下划线结尾，返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam03', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam03 start');
@@ -283,12 +284,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam04
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0400
-     * @tc.name testHiAppEventSetPam04
-     * @tc.desc 验证setEventParam接口domain包含特殊字符，返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain包含特殊字符，返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam04', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam04 start');
@@ -312,12 +313,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam05
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0500
-     * @tc.name testHiAppEventSetPam05
-     * @tc.desc 验证setEventParam接口domain以数字开头，返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain以数字开头，返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam05', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam05 start');
@@ -341,12 +342,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam06
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0600
-     * @tc.name testHiAppEventSetPam06
-     * @tc.desc 验证setEventParam接口domain为空，返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain为空，返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam06', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam06 start');
@@ -370,12 +371,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam07
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0700
-     * @tc.name testHiAppEventSetPam07
-     * @tc.desc 验证setEventParam接口domain为33字节，返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain为33字节，返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam07', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam07 start');
@@ -399,12 +400,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam09
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0900
-     * @tc.name testHiAppEventSetPam09
-     * @tc.desc 验证setEventParam接口name下划线结尾，返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name下划线结尾，返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam09', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam09 start');
@@ -428,12 +429,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam10
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1000
-     * @tc.name testHiAppEventSetPam10
-     * @tc.desc 验证setEventParam接口name包含特殊字符，返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name包含特殊字符，返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam10', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam10 start');
@@ -457,12 +458,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam11
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1100
-     * @tc.name testHiAppEventSetPam11
-     * @tc.desc 验证setEventParam接口name以数字开头，返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name以数字开头，返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam11', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam11 start');
@@ -486,12 +487,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam12
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1200
-     * @tc.name testHiAppEventSetPam12
-     * @tc.desc 验证setEventParam接口name为空，成功
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name为空，成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam12', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam12 start');
@@ -517,12 +518,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam13
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1300
-     * @tc.name testHiAppEventSetPam13
-     * @tc.desc 验证setEventParam接口name49字节，返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name49字节，返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam13', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam13 start');
@@ -547,12 +548,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam15
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1500
-     * @tc.name testHiAppEventSetPam15
-     * @tc.desc 验证setEventParam接口paramname下划线结尾，返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname下划线结尾，返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam15', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam15 start');
@@ -576,12 +577,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam16
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1600
-     * @tc.name testHiAppEventSetPam16
-     * @tc.desc 验证setEventParam接口paramname包含特殊字符，返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname包含特殊字符，返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam16', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam16 start');
@@ -605,12 +606,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam17
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1700
-     * @tc.name testHiAppEventSetPam17
-     * @tc.desc 验证setEventParam接口paramname数字开头，返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname数字开头，返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam17', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam17 start');
@@ -634,12 +635,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam18
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1800
-     * @tc.name testHiAppEventSetPam18
-     * @tc.desc 验证setEventParam接口paramname为空，返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname为空，返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam18', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam18 start');
@@ -663,12 +664,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam19
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1900
-     * @tc.name testHiAppEventSetPam19
-     * @tc.desc 验证setEventParam接口paramname为33字节，返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname为33字节，返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam19', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam19 start');
@@ -692,12 +693,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam20
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2000
-     * @tc.name testHiAppEventSetPam20
-     * @tc.desc 验证setEventParam接口paramvalue为超长字符串，返回错误码11101004
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramvalue为超长字符串，返回错误码11101004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam20', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam20 start');
@@ -725,12 +726,12 @@ export default function setEventParamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam21
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2100
-     * @tc.name testHiAppEventSetPam21
-     * @tc.desc 验证setEventParam接口自定义参数设置65个，返回错误码11101007
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口自定义参数设置65个，返回错误码11101007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSetPam21', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam21 start');
@@ -754,6 +755,57 @@ export default function setEventParamTest() {
       }
     })
 
+    /**
+     * @tc.name   testHiAppEventSetPam24
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2400
+     * @tc.desc   验证setEventParam接口在关闭打点功能后,返回错误码11100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHiAppEventSetPam24', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info('testHiAppEventSetPam24 start');
+      hiAppEvent.configure({disable: true});
+      try {
+        let eventParams: Record<string, hiAppEvent.ParamType> = {
+          "test_param": true,
+        };
+        hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS).then(() => {
+          console.log('testHiAppEventSetPam24 Event parameters set successfully.');
+      }).catch((err: Error) => {
+          const bErr = err as BusinessError;
+          console.error('testHiAppEventSetPam24 Error:', bErr.message, 'testHiAppEventSetPam24 Code:', bErr.code);
+          expect(bErr.code == 11100001).assertTrue()
+          done();
+        });
+      } catch (error: BusinessError) {
+        console.error(`testHiAppEventSetPam24 > error code: ${error.code}, error msg: ${error.message}`);
+        expect(false).assertTrue()
+        done();
+      }
+      hiAppEvent.configure({disable: false});
+      done();
+    })
+
+    /**
+     * @tc.name   testHiAppEventSetPam25
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2500
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数，并通过onTrigger回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHiAppEventSetPam25', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      hilog.info(logDomain, tag, 'testHiAppEventSetPam25 start');
+      let holder = hiAppEvent.addWatcher({
+        name: "watcher1",
+      });
+      let eventPkg = holder.takeNext();
+      console.log('testHiAppEventSetPam25 done');
+      expect(eventPkg).assertNull()
+      hiAppEvent.removeWatcher({name:"watcher1"});
+      done();
+    });
   })
   hilog.info(logDomain, tag, 'setEventParamTest end');
 }

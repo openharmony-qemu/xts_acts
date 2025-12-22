@@ -33,7 +33,6 @@ export default function DeviceStatusUnitTest() {
         }
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0100
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0100
          * @tc.desc   Stationary callback interface test
@@ -47,6 +46,8 @@ export default function DeviceStatusUnitTest() {
             try {
                 p_done = done;
                 stationary.on("still", stationary.ActivityEvent.ENTER_EXIT, reportLatencyNs, pub_callback);
+                expect(stationary.ActivityState.ENTER == 1).assertTrue();
+                expect(stationary.ActivityState.EXIT == 2).assertTrue();
             } catch (error) {
                 console.error('error Log' + error);
                 expect().assertFail();
@@ -76,7 +77,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0200
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0200
          * @tc.desc   Stationary callback interface test
@@ -119,7 +119,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0300
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0300
          * @tc.desc   Stationary callback interface test
@@ -165,7 +164,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0400
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0400
          * @tc.desc   Stationary callback interface test
@@ -208,7 +206,6 @@ export default function DeviceStatusUnitTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:27
          * @tc.name   SUB_MSDP_DeviceStatus_API_Stationary_0500
          * @tc.number SUB_MSDP_DeviceStatus_API_Stationary_0500
          * @tc.desc   Stationary callback interface test

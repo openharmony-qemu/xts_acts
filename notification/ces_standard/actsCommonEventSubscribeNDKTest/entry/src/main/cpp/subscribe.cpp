@@ -21,6 +21,7 @@
 #include "BasicServicesKit/oh_commonevent_support.h"
 #include <cstdio>
 #include <cwchar>
+#include "common.h"
 
 static void OnReceive(const CommonEvent_RcvData *data) {
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "Onreceive event!");
@@ -30,9 +31,15 @@ static void OnReceive(const CommonEvent_RcvData *data) {
     const char *bundle = OH_CommonEvent_GetBundleNameFromRcvData(data);
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "event: %{public}s, code: %{public}d, data: %{public}s, bundle: %{public}s\n", event, code, retData, bundle);
     const CommonEvent_Parameters *parameters = OH_CommonEvent_GetParametersFromRcvData(data);
+    ASSERT_TRUE(parameters != nullptr);
     int intValue = OH_CommonEvent_GetIntFromParameters(parameters, "wh1", 10);
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "intValue = %{public}d", intValue);
     bool boolValue = OH_CommonEvent_GetBoolFromParameters(parameters, "wh4", false);
+    if (parameters) {
+        ASSERT_EA(boolValue, true);
+    } else {
+        ASSERT_EA(boolValue, false);
+    }
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "boolValue = %{public}d", boolValue);
     bool** boolarray = new bool*;
     int32_t boolarraysize = OH_CommonEvent_GetBoolArrayFromParameters(parameters, "wh6",boolarray);
@@ -75,7 +82,13 @@ static void OnReceive(const CommonEvent_RcvData *data) {
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "intarrarysize = %{public}d", intarrarysize);
     
     bool exists = OH_CommonEvent_HasKeyInParameters(parameters, "wh4");
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "exists = %{public}d", exists);
+    if (parameters) {
+        ASSERT_EA(exists, true);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "exists = %{public}ld", exists);
+    }
+    bool exist = OH_CommonEvent_HasKeyInParameters(parameters, "wh11");
+        ASSERT_EA(exist, false);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "exist = %{public}d", exist);
     
     long longValue = OH_CommonEvent_GetLongFromParameters(parameters, "wh9", 2147483650);
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "longValue = %{public}ld", longValue);

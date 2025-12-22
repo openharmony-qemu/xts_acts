@@ -241,12 +241,12 @@ export default function cameraCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001
-     * @tc.desc      CaptureSession  getExposureMode  0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001
+     * @tc.desc   CaptureSession  getExposureMode  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001', Level.LEVEL2, async (done: Function) => {
       captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_001', 0, (res?: number, errCode?: number) => {
@@ -260,12 +260,12 @@ export default function cameraCaptureSessionTest() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002
-     * @tc.desc      CaptureSession  getExposureMode  1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002
+     * @tc.desc   CaptureSession  getExposureMode  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002', Level.LEVEL2, async (done: Function) => {
       captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_002', 1, (res?: number, errCode?: number) => {
@@ -278,32 +278,14 @@ export default function cameraCaptureSessionTest() {
       })
       done();
     })
+
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003
-     * @tc.desc      CaptureSession  getExposureMode  1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
-    it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003', 2, (res?: number, errCode?: number) => {
-        if (res != undefined) {
-          expect(res).assertEqual(2);
-        }
-        if (errCode != undefined) {
-          expect().assertFail();
-        }
-      })
-      done();
-    })
-    /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004
-     * @tc.desc      CaptureSession  getExposureMode errorcode  -1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004
+     * @tc.desc   CaptureSession  getExposureMode errorcode  -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004', Level.LEVEL2, async (done: Function) => {
       captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004', -1, (res?: number, errCode?: number) => {
@@ -317,12 +299,12 @@ export default function cameraCaptureSessionTest() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005
-     * @tc.desc      CaptureSession  getExposureMode errorcode  max+1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005
+     * @tc.desc   CaptureSession  getExposureMode errorcode  max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_005', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue( camera.ExposureMode);
@@ -337,12 +319,12 @@ export default function cameraCaptureSessionTest() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006
-     * @tc.desc      CaptureSession  getExposureMode errorcode  123456
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006
+     * @tc.desc   CaptureSession  getExposureMode errorcode  123456
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006', Level.LEVEL2, async (done: Function) => {
       captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_006', 123456, (res?: number, errCode?: number) => {
@@ -356,12 +338,12 @@ export default function cameraCaptureSessionTest() {
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007
-     * @tc.desc      CaptureSession  getExposureMode errorcode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007
+     * @tc.desc   CaptureSession  getExposureMode errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007', Level.LEVEL2, async (done: Function) => {
       captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_007', AppStorage.get('test'), (res?: number, errCode?: number) => {

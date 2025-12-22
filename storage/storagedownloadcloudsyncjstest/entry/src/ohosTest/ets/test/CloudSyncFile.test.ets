@@ -23,14 +23,13 @@ import { BusinessError } from '@kit.BasicServicesKit';
 export default function CloudFileTest(){
 describe('cloud_file_test', () => {
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0100
-   * @tc.name Test_CloudFile_State_001
-   * @tc.desc function of API, CloudFileCache.on
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_001
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0100
+    * @tc.desc   function of API, CloudFileCache.on
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_001', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
@@ -47,14 +46,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0200
-   * @tc.name Test_CloudFile_State_002
-   * @tc.desc function of API, CloudFileCache.off
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_002
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0200
+    * @tc.desc   function of API, CloudFileCache.off
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_002', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
@@ -72,14 +70,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0300
-   * @tc.name Test_CloudFile_State_003
-   * @tc.desc function of API, CloudFileCache.startBatch, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_003
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0300
+    * @tc.desc   function of API, CloudFileCache.startBatch, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_003', Level.LEVEL3, async (done: Function) => {
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
@@ -107,14 +104,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0400
-   * @tc.name Test_CloudFile_State_004
-   * @tc.desc function of API, CloudFileCache.stopBatch, Promise
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_004
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0400
+    * @tc.desc   function of API, CloudFileCache.stopBatch, Promise
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_004', Level.LEVEL3, async (done: Function) => {
     let downloadId = 1;
     let needClean = true;
@@ -140,14 +136,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0500
-   * @tc.name Test_CloudFile_State_005
-   * @tc.desc function of API, MultiDownloadProgress
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_005
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0500
+    * @tc.desc   function of API, MultiDownloadProgress
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_005', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
@@ -176,14 +171,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0600
-   * @tc.name Test_CloudFile_State_006
-   * @tc.desc function of API, FailedFileInfo
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_006
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0600
+    * @tc.desc   function of API, FailedFileInfo
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_006', Level.LEVEL3, async (done: Function) => {
      try {
       let fileCache = new cloudSync.CloudFileCache();
@@ -206,14 +200,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0700
-   * @tc.name Test_CloudFile_State_007
-   * @tc.desc function of API, DownloadFileType
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_007
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0700
+    * @tc.desc   function of API, DownloadFileType
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_007', Level.LEVEL3, async (done: Function) => {
     let path1 = "/data/storage/el2/cloud/1.txt";
     let path2 = "/data/storage/el2/cloud/2.txt";
@@ -244,14 +237,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0800
-   * @tc.name Test_CloudFile_State_008
-   * @tc.desc function of API, cleanFileCache
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_008
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0800
+    * @tc.desc   function of API, cleanFileCache
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_008', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/1.txt";
     let uri = fileUri.getUriFromPath(path);
@@ -267,14 +259,13 @@ describe('cloud_file_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0900
-   * @tc.name Test_CloudFile_State_009
-   * @tc.desc function of API, getCoreFileSyncState
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   Test_CloudFile_State_009
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_0900
+    * @tc.desc   function of API, getCoreFileSyncState
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('Test_CloudFile_State_009', Level.LEVEL3, async (done: Function) => {
     let path = "/data/storage/el2/cloud/Test_CloudFile_State_009.txt";
     let uri = fileUri.getUriFromPath(path);

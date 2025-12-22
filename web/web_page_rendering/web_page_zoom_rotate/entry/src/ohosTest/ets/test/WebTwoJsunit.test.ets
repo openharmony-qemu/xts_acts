@@ -74,10 +74,13 @@ export default function webTwoJsunit() {
       }
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_001
-     *tc.name overviewModeAccessTrue
-     *tc.desic Sets allow the Web access overview mode
+    /**
+     * @tc.name   overviewModeAccessTrue
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_001
+     * @tc.desc   overviewModeAccessTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('overviewModeAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOverviewModeAccessTrue",153120);
@@ -85,10 +88,13 @@ export default function webTwoJsunit() {
       waitAndClickComponent("webcomponenttwo",driver);
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_002
-     *tc.name overviewModeAccessFalse
-     *tc.desic Sets not allow the Web access overview mode
+    /**
+     * @tc.name   overviewModeAccessFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV02_API_002
+     * @tc.desc   overviewModeAccessFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('overviewModeAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOverviewModeAccessFalse",153120);

@@ -24,7 +24,10 @@ static int NUMBER_5 = 5;
 static int NUMBER_19 = 19;
 static int NUMBERNO_100 = -100;
 static float NUMBER_0_5 = 0.5;
-
+static int NUMBER_106405 = 106405;
+static int NUMBER_106403 = 106403;
+static int NUMBER_106402 = 106402;
+static int NUMBER_106401 = 106401;
 
 namespace ArkUICapiTest {
 
@@ -190,7 +193,9 @@ static napi_value TestBounds(napi_env env, napi_callback_info info)
     auto ret2 = OH_ArkUI_RenderNodeUtils_SetBounds(rsNode, NUMBER_100, NUMBER_100, NUMBER_100, NUMBERNO_100);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetBounds result=%{public}d", ret2);
-//    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE, NUMBER_106405);
+    
     auto ret3 = OH_ArkUI_RenderNodeUtils_SetBounds(nullptr, NUMBER_100, NUMBER_100, NUMBER_100, NUMBER_100);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetBounds result=%{public}d", ret3);
@@ -228,7 +233,8 @@ static napi_value TestClipToBounds(napi_env env, napi_callback_info info)
     auto ret2 = OH_ArkUI_RenderNodeUtils_SetClipToBounds(rsNode, NUMBER_5);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetClipToBounds result=%{public}d", ret2);
-//    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    
     auto ret3 = OH_ArkUI_RenderNodeUtils_SetClipToBounds(nullptr, 1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetClipToBounds result=%{public}d", ret3);
@@ -267,7 +273,8 @@ static napi_value TestClipToFrame(napi_env env, napi_callback_info info)
     auto ret2 = OH_ArkUI_RenderNodeUtils_SetClipToFrame(rsNode, NUMBER_19);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetClipToFrame result=%{public}d", ret2);
-//    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    
     auto ret3 = OH_ArkUI_RenderNodeUtils_SetClipToFrame(nullptr, 1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetClipToFrame result=%{public}d", ret3);
@@ -299,7 +306,8 @@ static napi_value TestOpacity(napi_env env, napi_callback_info info)
     auto ret3 = OH_ArkUI_RenderNodeUtils_SetOpacity(rsNode, 29);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetOpacity result=%{public}d", ret3);
-//    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    
     auto ret4 = OH_ArkUI_RenderNodeUtils_SetOpacity(nullptr, 1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetOpacity result=%{public}d", ret4);
@@ -502,6 +510,10 @@ static napi_value TestShadowAlpha(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetShadowAlpha result=%{public}d", ret4);
     ASSERT_EQ(ret4, ARKUI_ERROR_CODE_PARAM_INVALID);
+    
+    auto ret5 = OH_ArkUI_RenderNodeUtils_SetShadowAlpha(rsNode, NUMBERNO_100);
+    ASSERT_EQ(ret5, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    
     NAPI_END;
 }
 
@@ -564,7 +576,7 @@ static napi_value TestShadowElevation(napi_env env, napi_callback_info info)
     auto ret3 = OH_ArkUI_RenderNodeUtils_SetShadowElevation(rsNode, NUMBERNO_100);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetShadowElevation result=%{public}d", ret3);
-//    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
  
     auto ret4 = OH_ArkUI_RenderNodeUtils_SetShadowElevation(nullptr, NUMBER_100);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -645,6 +657,10 @@ static napi_value TestShadowRadius(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetShadowRadius result=%{public}d", ret4);
     ASSERT_EQ(ret4, ARKUI_ERROR_CODE_PARAM_INVALID);
+    
+    auto ret5 = OH_ArkUI_RenderNodeUtils_SetShadowRadius(rsNode, NUMBERNO_100);
+    ASSERT_EQ(ret5, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    
     NAPI_END;
 }
 
@@ -683,6 +699,10 @@ static napi_value TestSize(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetSize result=%{public}d", ret4);
     ASSERT_EQ(ret4, ARKUI_ERROR_CODE_PARAM_INVALID);
+    
+    auto ret5 = OH_ArkUI_RenderNodeUtils_SetSize(rsNode, NUMBER_100, NUMBERNO_100);
+    ASSERT_EQ(ret5, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
+    
     NAPI_END;
 }
 
@@ -701,6 +721,11 @@ static napi_value TestTransform(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetTransform result=%{public}d", ret2);
     ASSERT_EQ(ret2, ARKUI_ERROR_CODE_PARAM_INVALID);
+    float matrix1[] = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0};
+    auto ret3 = OH_ArkUI_RenderNodeUtils_SetTransform(rsNode, matrix1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "kkk OH_ArkUI_RenderNodeUtils_SetTransform result=%{public}d", ret3);
+    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_PARAM_OUT_OF_RANGE);
     NAPI_END;
 }
 
@@ -751,7 +776,8 @@ static napi_value TestAddRenderNode001(napi_env env, napi_callback_info info)
     auto ret2 = OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom1, rsNode);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_AddRenderNode result=%{public}d", ret2);
-//    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_CHILD_EXISTED);
+    ASSERT_EQ(ret2, ARKUI_ERROR_CODE_CHILD_EXISTED);
+    ASSERT_EQ(ARKUI_ERROR_CODE_CHILD_EXISTED, NUMBER_106402);
     
     auto ret3 = OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom1, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -774,8 +800,8 @@ static napi_value TestAddRenderNode002(napi_env env, napi_callback_info info)
     auto ret5 = OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom1, rsSubSunNode);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_AddRenderNode result=%{public}d", ret5);
-//    ASSERT_EQ(ret5, ARKUI_ERROR_CODE_RENDER_PARENT_EXISTED);
-
+    ASSERT_EQ(ret5, ARKUI_ERROR_CODE_RENDER_PARENT_EXISTED);
+    ASSERT_EQ(ARKUI_ERROR_CODE_RENDER_PARENT_EXISTED, NUMBER_106403);
     NAPI_END;
 }
 
@@ -787,7 +813,8 @@ static napi_value TestAddRenderNode003(napi_env env, napi_callback_info info)
     auto ret4 = OH_ArkUI_RenderNodeUtils_AddRenderNode(column, rsNode);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_AddRenderNode result=%{public}d", ret4);
-//    ASSERT_EQ(ret4, ARKUI_ERROR_CODE_NOT_CUSTOM_NODE);
+    ASSERT_EQ(ret4, ARKUI_ERROR_CODE_NOT_CUSTOM_NODE);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NOT_CUSTOM_NODE, NUMBER_106401);
     NAPI_END;
 }
 
@@ -818,7 +845,7 @@ static napi_value TestRemoveRenderNode002(napi_env env, napi_callback_info info)
     auto ret3 = OH_ArkUI_RenderNodeUtils_RemoveRenderNode(column, rsNode);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_RemoveRenderNode result=%{public}d", ret3);
-//    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NOT_CUSTOM_NODE);
+    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NOT_CUSTOM_NODE);
 
     NAPI_END;
 }
@@ -850,7 +877,7 @@ static napi_value TestClearRenderNodeChildren002(napi_env env, napi_callback_inf
     auto ret3 = OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren(column);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_ClearRenderNodeChildren result=%{public}d", ret3);
-//    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NOT_CUSTOM_NODE);
+    ASSERT_EQ(ret3, ARKUI_ERROR_CODE_NOT_CUSTOM_NODE);
     NAPI_END;
 }
 

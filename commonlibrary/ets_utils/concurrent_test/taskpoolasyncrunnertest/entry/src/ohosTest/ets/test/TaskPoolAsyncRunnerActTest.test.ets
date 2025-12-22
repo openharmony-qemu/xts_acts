@@ -57,12 +57,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1001
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1001
-     * @tc.name taskPoolAsyncRunnerActTest1001
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -92,12 +92,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1002
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1002
-     * @tc.name taskPoolAsyncRunnerActTest1002
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       await sleep(1000)
@@ -132,12 +132,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1003
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1003
-     * @tc.name taskPoolAsyncRunnerActTest1003
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -167,12 +167,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1004
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1004
-     * @tc.name taskPoolAsyncRunnerActTest1004
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -202,12 +202,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1005
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1005
-     * @tc.name taskPoolAsyncRunnerActTest1005
-     * @tc.desc test AsyncRunner cancel
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner cancel
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -240,12 +240,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1006
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1006
-     * @tc.name taskPoolAsyncRunnerActTest1006
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);
@@ -275,12 +275,12 @@ export default function taskPoolAsyncRunnerActTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerActTest1007
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ACT_TEST_1007
-     * @tc.name taskPoolAsyncRunnerActTest1007
-     * @tc.desc test AsyncRunner
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test AsyncRunner
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerActTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let asyncRunner: taskpool.AsyncRunner = new taskpool.AsyncRunner(10, 50);

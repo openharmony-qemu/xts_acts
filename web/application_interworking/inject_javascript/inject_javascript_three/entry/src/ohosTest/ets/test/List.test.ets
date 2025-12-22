@@ -22,6 +22,10 @@ import webViewRegisterJavaScriptProxyErrorCode from './WebViewRegisterJavaScript
 import webRunJavaScriptOnHeadEndSetUndefinedOrNull from './WebRunJavaScriptOnHeadEndSetUndefinedOrNull.test';
 import webRunJavaScriptOnDocumentStartSetUndefinedOrNull from './WebRunJavaScriptOnDocumentStartSetUndefinedOrNull.test';
 import webRunJavaScriptOnDocumentEndSetUndefinedOrNull from './WebRunJavaScriptOnDocumentEndSetUndefinedOrNull.test';
+import webJavaScriptOnDocumentStartSpecial from './WebJavaScriptOnDocumentStartSpecial.test';
+import webJavaScriptOnDocumentEndSpecial from './WebJavaScriptOnDocumentEndSpecial.test';
+import webJavaScriptProxySpecial from './WebJavaScriptProxySpecial.test';
+import webJavaScriptAccessSpecial from './WebJavaScriptAccessSpecial.test';
 
 
 export default function testsuite() {
@@ -34,4 +38,8 @@ export default function testsuite() {
   webJavaScriptOnDocumentStartTest();
   webJavaScriptOnDocumentEndTest();
   webViewRegisterJavaScriptProxyErrorCode();
+  webJavaScriptOnDocumentStartSpecial();
+  webJavaScriptOnDocumentEndSpecial();
+  webJavaScriptProxySpecial();
+  webJavaScriptAccessSpecial();
 }

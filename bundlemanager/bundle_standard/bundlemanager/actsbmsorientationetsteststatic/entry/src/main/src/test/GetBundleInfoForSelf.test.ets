@@ -35,16 +35,15 @@ export default function getSignatureAInfo() {
      * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_getSignatureInfo_static_02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-      await bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
-      bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_METADATA).then((data: BundleInfo) => {
+      try{
         let datas = bundleManager.getSignatureInfo(0);
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }catch(err: BusinessError){
         hilog.error(domain, tag, `Sub_Bms_Framework_getSignatureInfo_static_02 catch failed errCode:${err.code} message:${err.message}`);
         expect(err.code).assertEqual(17700021);
         done();
-      });
+      };
     })
   })
 }

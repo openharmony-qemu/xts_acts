@@ -91,12 +91,12 @@ export default function MapKeyTest() {
     })
 
     /**
+     * @tc.name   MapKeysTest001
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0001
-     * @tc.name MapKeysTest001
-     * @tc.desc Calling keys() on an empty Map returns an iterator with no elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Calling keys() on an empty Map returns an iterator with no elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest001 = MapKeysTest001();
@@ -105,12 +105,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest002
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0002
-     * @tc.name MapKeysTest002
-     * @tc.desc Map with a single string key, keys() iterator contains that key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with a single string key, keys() iterator contains that key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest002 = MapKeysTest002();
@@ -119,12 +119,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest003
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0003
-     * @tc.name MapKeysTest003
-     * @tc.desc Map with multiple string keys, keys() maintains insertion order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with multiple string keys, keys() maintains insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest003 = MapKeysTest003();
@@ -132,12 +132,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest004
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0004
-     * @tc.name MapKeysTest004
-     * @tc.desc Map with a single number key, keys() iterator contains that key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with a single number key, keys() iterator contains that key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest004 = MapKeysTest004();
@@ -145,12 +145,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest005
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0005
-     * @tc.name MapKeysTest005
-     * @tc.desc Map with multiple number keys, keys() maintains insertion order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with multiple number keys, keys() maintains insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest005 = MapKeysTest005();
@@ -158,12 +158,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest006
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0006
-     * @tc.name MapKeysTest006
-     * @tc.desc Map with a single boolean key (true), keys() contains that key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with a single boolean key (true), keys() contains that key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest006 = MapKeysTest006();
@@ -171,12 +171,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest007
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0007
-     * @tc.name MapKeysTest007
-     * @tc.desc Map with a single boolean key (false), keys() contains that key
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with a single boolean key (false), keys() contains that key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest007 = MapKeysTest007();
@@ -184,12 +184,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest008
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0008
-     * @tc.name MapKeysTest008
-     * @tc.desc Boolean and number keys (true vs 1) coexist, both included in keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Boolean and number keys (true vs 1) coexist, both included in keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest008 = MapKeysTest008();
@@ -199,12 +199,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest009
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0009
-     * @tc.name MapKeysTest009
-     * @tc.desc Map with a single null key, keys() contains null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with a single null key, keys() contains null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest009 = MapKeysTest009();
@@ -212,12 +212,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest010
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0010
-     * @tc.name MapKeysTest010
-     * @tc.desc Map with a single undefined key, keys() contains undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Map with a single undefined key, keys() contains undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MapKeysTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let keysTest010 = MapKeysTest010();
@@ -225,12 +225,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest011
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0011
-     * @tc.name MapKeysTest011
-     * @tc.desc null and undefined keys coexist, both included in keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   null and undefined keys coexist, both included in keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest011 = MapKeysTest011();
@@ -238,12 +238,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest012
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0012
-     * @tc.name MapKeysTest012
-     * @tc.desc Map with a single Symbol key, keys() contains that Symbol
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map with a single Symbol key, keys() contains that Symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest012 = MapKeysTest012();
@@ -251,12 +251,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest013
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0013
-     * @tc.name MapKeysTest013
-     * @tc.desc Map with multiple distinct Symbol keys, keys() maintains order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map with multiple distinct Symbol keys, keys() maintains order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest013 = MapKeysTest013();
@@ -266,12 +266,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest014
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0014
-     * @tc.name MapKeysTest014
-     * @tc.desc Map with a single BigInt key, keys() contains that BigInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map with a single BigInt key, keys() contains that BigInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keysTest014 = MapKeysTest014();
@@ -281,12 +281,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest015
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0015
-     * @tc.name MapKeysTest015
-     * @tc.desc Multiple BigInt keys (same value, different instances), all included in keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple BigInt keys (same value, different instances), all included in keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest015 = MapKeysTest015();
@@ -294,12 +294,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest016
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0016
-     * @tc.name MapKeysTest016
-     * @tc.desc Map with a single object key, keys() contains that object reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map with a single object key, keys() contains that object reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest016 = MapKeysTest016();
@@ -307,12 +307,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest017
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0017
-     * @tc.name MapKeysTest017
-     * @tc.desc Multiple object keys (different references), all included in keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple object keys (different references), all included in keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest017 = MapKeysTest017();
@@ -320,12 +320,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest018
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0018
-     * @tc.name MapKeysTest018
-     * @tc.desc Map with a single array key, keys() contains that array reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map with a single array key, keys() contains that array reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest018 = MapKeysTest018();
@@ -334,12 +334,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest019
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0019
-     * @tc.name MapKeysTest019
-     * @tc.desc Multiple array keys (same value, different references), all included in keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple array keys (same value, different references), all included in keys()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest019 = MapKeysTest019();
@@ -349,12 +349,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest020
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0020
-     * @tc.name MapKeysTest020
-     * @tc.desc Map with a single function key, keys() contains that function reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Map with a single function key, keys() contains that function reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest020 = MapKeysTest020();
@@ -362,12 +362,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest021
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0021
-     * @tc.name MapKeysTest021
-     * @tc.desc Return value of keys() is an iterator object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Return value of keys() is an iterator object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest021 = MapKeysTest021();
@@ -376,12 +376,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest022
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0022
-     * @tc.name MapKeysTest022
-     * @tc.desc First next() on empty Map's iterator returns done:true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   First next() on empty Map's iterator returns done:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map: Map<string, string> = new Map();
@@ -391,12 +391,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest023
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0023
-     * @tc.name MapKeysTest023
-     * @tc.desc First next() on single-key Map's iterator returns the key value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   First next() on single-key Map's iterator returns the key value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([['key', 'value']]);
@@ -406,12 +406,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest024
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0024
-     * @tc.name MapKeysTest024
-     * @tc.desc Second next() on single-key Map's iterator returns done:true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Second next() on single-key Map's iterator returns done:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const iterator = new Map([['key', 'value']]).keys();
@@ -421,12 +421,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest025
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0025
-     * @tc.name MapKeysTest025
-     * @tc.desc Iterator of multi-key Map returns keys in insertion order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator of multi-key Map returns keys in insertion order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest025: number[] = MapKeysTest025();
@@ -434,12 +434,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest027
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0027
-     * @tc.name MapKeysTest027
-     * @tc.desc Iterator can be converted to array via Array.from
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator can be converted to array via Array.from
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[true, 1], [false, 2]]);
@@ -448,12 +448,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest028
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0028
-     * @tc.name MapKeysTest028
-     * @tc.desc Multiple calls to keys() on the same Map return different iterators
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple calls to keys() on the same Map return different iterators
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[1, 'a']]);
@@ -463,12 +463,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest029
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0029
-     * @tc.name MapKeysTest029
-     * @tc.desc New keys added during iteration are not included in the iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   New keys added during iteration are not included in the iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest029 = MapKeysTest029();
@@ -476,12 +476,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest030
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0030
-     * @tc.name MapKeysTest030
-     * @tc.desc Deleting already iterated keys during iteration doesn't affect subsequent iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Deleting already iterated keys during iteration doesn't affect subsequent iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest030 = MapKeysTest030();
@@ -489,12 +489,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest031
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0031
-     * @tc.name MapKeysTest031
-     * @tc.desc Deleting uniterated keys during iteration prevents them from being returned
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Deleting uniterated keys during iteration prevents them from being returned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest031 = MapKeysTest031();
@@ -502,12 +502,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest032
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0032
-     * @tc.name MapKeysTest032
-     * @tc.desc No results when iterating again after iterator has been traversed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No results when iterating again after iterator has been traversed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest032 = MapKeysTest032();
@@ -515,12 +515,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest033
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0033
-     * @tc.name MapKeysTest033
-     * @tc.desc When key is NaN, keys() correctly returns NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When key is NaN, keys() correctly returns NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest033: number = MapKeysTest033();
@@ -528,12 +528,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest034
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0034
-     * @tc.name MapKeysTest034
-     * @tc.desc When keys are 0 and -0, keys() treats them as the same key (only first retained)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are 0 and -0, keys() treats them as the same key (only first retained)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest034 = MapKeysTest034();
@@ -542,12 +542,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest035
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0035
-     * @tc.name MapKeysTest035
-     * @tc.desc When keys are Date objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are Date objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest035 = MapKeysTest035();
@@ -556,12 +556,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest036
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0036
-     * @tc.name MapKeysTest036
-     * @tc.desc When keys are RegExp objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are RegExp objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest036 = MapKeysTest036();
@@ -570,12 +570,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest037
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0037
-     * @tc.name MapKeysTest037
-     * @tc.desc When key is the Map itself, keys() returns self reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When key is the Map itself, keys() returns self reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest037 = MapKeysTest037();
@@ -583,12 +583,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest038
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0038
-     * @tc.name MapKeysTest038
-     * @tc.desc When keys are Set objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are Set objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest038 = MapKeysTest038();
@@ -597,12 +597,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest039
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0039
-     * @tc.name MapKeysTest039
-     * @tc.desc keys() works correctly in strict mode
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   keys() works correctly in strict mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest039 = MapKeysTest039();
@@ -610,12 +610,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest040
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0040
-     * @tc.name MapKeysTest040
-     * @tc.desc Iterator can be used with destructuring assignment
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator can be used with destructuring assignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest040 = MapKeysTest040();
@@ -624,12 +624,12 @@ export default function MapKeyTest() {
       expect(keysTest040.k3).assertEqual(3);
     });
     /**
+     * @tc.name   MapKeysTest041
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0041
-     * @tc.name MapKeysTest041
-     * @tc.desc Iterator used with spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator used with spread operator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest041 = MapKeysTest041();
@@ -637,12 +637,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest042
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0042
-     * @tc.name MapKeysTest042
-     * @tc.desc When keys are nested arrays, keys() retains original references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are nested arrays, keys() retains original references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest042 = MapKeysTest042();
@@ -651,12 +651,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest043
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0043
-     * @tc.name MapKeysTest043
-     * @tc.desc Iterator traversed step by step in a for loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator traversed step by step in a for loop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[10, 'a'], [20, 'b'], [30, 'c']]);
@@ -669,12 +669,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest044
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0044
-     * @tc.name MapKeysTest044
-     * @tc.desc Number objects (new Number()) and primitive numbers coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Number objects (new Number()) and primitive numbers coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest044 = MapKeysTest044();
@@ -685,12 +685,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest045
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0045
-     * @tc.name MapKeysTest045
-     * @tc.desc Iterator terminates after calling return()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator terminates after calling return()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
@@ -703,12 +703,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest046
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0046
-     * @tc.name MapKeysTest046
-     * @tc.desc String objects (new String()) and primitive strings coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   String objects (new String()) and primitive strings coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest046 = MapKeysTest046();
@@ -718,12 +718,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest047
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0047
-     * @tc.name MapKeysTest047
-     * @tc.desc Iteration order of keys() for large Map (1000 keys)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iteration order of keys() for large Map (1000 keys)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest047', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, async () => {
       const map: Map<number, number> = new Map();
@@ -736,12 +736,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest048
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0048
-     * @tc.name MapKeysTest048
-     * @tc.desc Boolean objects (new Boolean()) and primitive booleans coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Boolean objects (new Boolean()) and primitive booleans coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const boolObj = new Boolean(true);
@@ -753,12 +753,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest049
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0049
-     * @tc.name MapKeysTest049
-     * @tc.desc Iterator used as parameter to Array.from with mapping
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator used as parameter to Array.from with mapping
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[2, 'a'], [3, 'b'], [4, 'c']]);
@@ -767,12 +767,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest050
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0050
-     * @tc.name MapKeysTest050
-     * @tc.desc When keys are Error objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are Error objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const error = new Error('test');
@@ -782,12 +782,12 @@ export default function MapKeyTest() {
       expect(keys[0].message).assertEqual('test');
     });
     /**
+     * @tc.name   MapKeysTest051
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0051
-     * @tc.name MapKeysTest051
-     * @tc.desc When keys are array-like objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are array-like objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest051 = MapKeysTest051()
@@ -796,12 +796,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest052
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0052
-     * @tc.name MapKeysTest052
-     * @tc.desc When keys are WeakMap instances (non-iterable but usable as keys)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are WeakMap instances (non-iterable but usable as keys)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest052 = MapKeysTest052()
@@ -809,12 +809,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest053
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0053
-     * @tc.name MapKeysTest053
-     * @tc.desc Iterator compatible with for-await-of (non-async iterator scenario)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator compatible with for-await-of (non-async iterator scenario)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -826,12 +826,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest054
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0054
-     * @tc.name MapKeysTest054
-     * @tc.desc When keys are shared Symbols created with Symbol.for
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When keys are shared Symbols created with Symbol.for
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest054 = MapKeysTest054()
@@ -839,12 +839,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest055
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0055
-     * @tc.name MapKeysTest055
-     * @tc.desc When key is negative BigInt, keys() returns it correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When key is negative BigInt, keys() returns it correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const b = -42n;
@@ -854,12 +854,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest056
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0056
-     * @tc.name MapKeysTest056
-     * @tc.desc The Symbol.iterator property of the iterator points to itself
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   The Symbol.iterator property of the iterator points to itself
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest056 = MapKeysTest056()
@@ -868,12 +868,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest058
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0058
-     * @tc.name MapKeysTest058
-     * @tc.desc null and string 'null' coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   null and string 'null' coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[null, 1], ['null', 2]]);
@@ -882,12 +882,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest059
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0059
-     * @tc.name MapKeysTest059
-     * @tc.desc undefined and string 'undefined' coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   undefined and string 'undefined' coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[undefined, 1], ['undefined', 2]]);
@@ -896,12 +896,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest060
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0060
-     * @tc.name MapKeysTest060
-     * @tc.desc No results when iterating after Map is cleared
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   No results when iterating after Map is cleared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -911,12 +911,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest061
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0061
-     * @tc.name MapKeysTest061
-     * @tc.desc When keys are generator functions, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are generator functions, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest061 = MapKeysTest061()
@@ -924,12 +924,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest062
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0062
-     * @tc.name MapKeysTest062
-     * @tc.desc When keys are Promise objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are Promise objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const promise = Promise.resolve();
@@ -939,12 +939,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest063
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0063
-     * @tc.name MapKeysTest063
-     * @tc.desc When key is Infinity, keys() returns it correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When key is Infinity, keys() returns it correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const inf = Infinity;
@@ -954,12 +954,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest064
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0064
-     * @tc.name MapKeysTest064
-     * @tc.desc When key is -Infinity, keys() returns it correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When key is -Infinity, keys() returns it correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const negInf = -Infinity;
@@ -969,12 +969,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest065
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0065
-     * @tc.name MapKeysTest065
-     * @tc.desc Multiple NaN values as keys are treated as the same key (only first retained)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Multiple NaN values as keys are treated as the same key (only first retained)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[NaN, 1], [NaN, 2]]); // Two NaNs treated as same key
@@ -984,12 +984,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest066
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0066
-     * @tc.name MapKeysTest066
-     * @tc.desc Arrays and array-like objects coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Arrays and array-like objects coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest066 = MapKeysTest066();
@@ -997,12 +997,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest067
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0067
-     * @tc.name MapKeysTest067
-     * @tc.desc Iterator used with Array.prototype.map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator used with Array.prototype.map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([['a', 1], ['b', 2]]);
@@ -1011,12 +1011,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest068
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0068
-     * @tc.name MapKeysTest068
-     * @tc.desc Number objects and BigInt coexist as keys (5 vs 5n)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Number objects and BigInt coexist as keys (5 vs 5n)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest068 = MapKeysTest068();
@@ -1026,12 +1026,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest069
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0069
-     * @tc.name MapKeysTest069
-     * @tc.desc When keys are proxy objects, keys() returns proxy references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are proxy objects, keys() returns proxy references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest069 = MapKeysTest069();
@@ -1039,12 +1039,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest070
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0070
-     * @tc.name MapKeysTest070
-     * @tc.desc keys() iterator of empty Map equals empty array iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   keys() iterator of empty Map equals empty array iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest070 = MapKeysTest070();
@@ -1052,12 +1052,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest071
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0071
-     * @tc.name MapKeysTest071
-     * @tc.desc When keys are circular reference objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are circular reference objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest071 = MapKeysTest071();
@@ -1066,12 +1066,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest072
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0072
-     * @tc.name MapKeysTest072
-     * @tc.desc When keys are Intl objects (e.g., DateTimeFormat)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are Intl objects (e.g., DateTimeFormat)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const intlObj = new Intl.DateTimeFormat();
@@ -1081,12 +1081,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest073
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0073
-     * @tc.name MapKeysTest073
-     * @tc.desc Iterators remain independent after Map is copied
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterators remain independent after Map is copied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const original = new Map([[1, 'a'], [2, 'b']]);
@@ -1099,12 +1099,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest074
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0074
-     * @tc.name MapKeysTest074
-     * @tc.desc Symbols and numbers coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Symbols and numbers coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest074 = MapKeysTest074();
@@ -1115,12 +1115,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest075
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0075
-     * @tc.name MapKeysTest075
-     * @tc.desc Functions and string 'function' coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Functions and string 'function' coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest075 = MapKeysTest075();
@@ -1128,12 +1128,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest076
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0076
-     * @tc.name MapKeysTest076
-     * @tc.desc Iterator used with conditional filtering
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator used with conditional filtering
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[1, 'a'], [3, 'b'], [5, 'c']]);
@@ -1142,12 +1142,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest077
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0077
-     * @tc.name MapKeysTest077
-     * @tc.desc When keys are ArrayBuffer objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are ArrayBuffer objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const buffer = new ArrayBuffer(8);
@@ -1158,12 +1158,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest078
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0078
-     * @tc.name MapKeysTest078
-     * @tc.desc When keys are DataView objects, keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are DataView objects, keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const view = new DataView(new ArrayBuffer(8));
@@ -1173,12 +1173,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest079
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0079
-     * @tc.name MapKeysTest079
-     * @tc.desc When keys are TypedArrays (e.g., Uint8Array), keys() retains references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When keys are TypedArrays (e.g., Uint8Array), keys() retains references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const typedArr = new Uint8Array([1, 2, 3]);
@@ -1189,12 +1189,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest080
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0080
-     * @tc.name MapKeysTest080
-     * @tc.desc Keys are those returned by the Map's entries iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Keys are those returned by the Map's entries iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1204,12 +1204,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest081
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0081
-     * @tc.name MapKeysTest081
-     * @tc.desc Mix of string primitives and string objects as keys (primitive first)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Mix of string primitives and string objects as keys (primitive first)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const str = 'test';
@@ -1222,12 +1222,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest082
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0082
-     * @tc.name MapKeysTest082
-     * @tc.desc Mix of number primitives and number objects as keys (object first)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Mix of number primitives and number objects as keys (object first)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const numObj = new Number(10);
@@ -1240,12 +1240,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest083
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0083
-     * @tc.name MapKeysTest083
-     * @tc.desc Iterator works correctly in nested Maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator works correctly in nested Maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const innerMap = new Map([['a', 1]]);
@@ -1256,12 +1256,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest084
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0084
-     * @tc.name MapKeysTest084
-     * @tc.desc When key is Math object, keys() retains reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When key is Math object, keys() retains reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[Math, 'value']]);
@@ -1271,12 +1271,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest085
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0085
-     * @tc.name MapKeysTest085
-     * @tc.desc When key is JSON object, keys() retains reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   When key is JSON object, keys() retains reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[JSON, 'value']]);
@@ -1286,12 +1286,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest087
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0087
-     * @tc.name MapKeysTest087
-     * @tc.desc Date strings and Date objects coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Date strings and Date objects coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest087 = MapKeysTest087();
@@ -1299,12 +1299,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest088
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0088
-     * @tc.name MapKeysTest088
-     * @tc.desc Iterator used with Array.prototype.includes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator used with Array.prototype.includes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[10, 'a'], [20, 'b'], [30, 'c']]);
@@ -1314,12 +1314,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest089
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0089
-     * @tc.name MapKeysTest089
-     * @tc.desc RegExp and string with same pattern coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   RegExp and string with same pattern coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest089 = MapKeysTest089();
@@ -1327,12 +1327,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest090
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0090
-     * @tc.name MapKeysTest090
-     * @tc.desc Iterator returns original reference after key object's properties are modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator returns original reference after key object's properties are modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest090 = MapKeysTest090();
@@ -1341,12 +1341,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest091
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0091
-     * @tc.name MapKeysTest091
-     * @tc.desc Multiple Set objects with same content (different references) as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple Set objects with same content (different references) as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const s1 = new Set([1, 2]);
@@ -1359,12 +1359,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest094
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0094
-     * @tc.name MapKeysTest094
-     * @tc.desc Iterator used with spread operator in nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Iterator used with spread operator in nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const map = new Map([[1, 'a'], [2, 'b']]);
@@ -1373,12 +1373,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest095
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0095
-     * @tc.name MapKeysTest095
-     * @tc.desc Error objects and error message strings coexist as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Error objects and error message strings coexist as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest095 = MapKeysTest095();
@@ -1386,12 +1386,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest096
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0096
-     * @tc.name MapKeysTest096
-     * @tc.desc BigInt and its string representation coexist as keys (42n vs '42n')
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   BigInt and its string representation coexist as keys (42n vs '42n')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const keysTest096 = MapKeysTest096();
@@ -1405,12 +1405,12 @@ export default function MapKeyTest() {
 
 
     /**
+     * @tc.name   MapKeysTest097
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0097
-     * @tc.name MapKeysTest097
-     * @tc.desc Iterator returns new keys after Map keys are replaced
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Iterator returns new keys after Map keys are replaced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const map = new Map([[1, 'a']]);
@@ -1420,12 +1420,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest098
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0098
-     * @tc.name MapKeysTest098
-     * @tc.desc Multiple arrays of different lengths as keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Multiple arrays of different lengths as keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MapKeysTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const a1 = [1];
@@ -1437,12 +1437,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest099
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0099
-     * @tc.name MapKeysTest099
-     * @tc.desc When key is Symbol.iterator (special Symbol)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   When key is Symbol.iterator (special Symbol)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let keysTest099 = MapKeysTest099();
@@ -1450,12 +1450,12 @@ export default function MapKeyTest() {
     });
 
     /**
+     * @tc.name   MapKeysTest0100
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0100
-     * @tc.name MapKeysTest0100
-     * @tc.desc Verification of iteration order for mixed type keys
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verification of iteration order for mixed type keys
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('MapKeysTest0100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       let keysTest0100 = MapKeysTest0100();

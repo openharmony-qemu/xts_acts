@@ -46,7 +46,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetColorsCallbackSystem101
          * @tc.number testGetColorsCallbackSystem101
          * @tc.desc   Function test
@@ -80,7 +79,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetColorsPromiseSystem101
          * @tc.number testGetColorsPromiseSystem101
          * @tc.desc   Function test
@@ -108,7 +106,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetColorsCallbackLock102
          * @tc.number testGetColorsCallbackLock102
          * @tc.desc   Function test
@@ -141,7 +138,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetColorsPromiseLock102
          * @tc.number testGetColorsPromiseLock102
          * @tc.desc   Function test
@@ -168,7 +164,6 @@ export default function wallpaperAuthorityJSUnit() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetCallbackSystem101
          * @tc.number testResetCallbackSystem101
          * @tc.desc   Function test
@@ -197,7 +192,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetPromiseSystem101
          * @tc.number testResetPromiseSystem101
          * @tc.desc   Function test
@@ -220,7 +214,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetCallbackLock102
          * @tc.number testResetCallbackLock102
          * @tc.desc   Function test
@@ -249,7 +242,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testResetPromiseLock102
          * @tc.number testResetPromiseLock102
          * @tc.desc   Function test
@@ -272,7 +264,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLPromiseLock104
          * @tc.number testSetWallpaperURLPromiseLock104
          * @tc.desc   Function test
@@ -295,7 +286,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLCallbackSystem103
          * @tc.number testSetWallpaperURLCallbackSystem103
          * @tc.desc   Function test
@@ -324,7 +314,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLPromiseSystem103
          * @tc.number testSetWallpaperURLPromiseSystem103
          * @tc.desc   Function test
@@ -347,7 +336,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testSetWallpaperURLCallbackLock104
          * @tc.number testSetWallpaperURLCallbackLock104
          * @tc.desc   Function test
@@ -376,7 +364,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testOnCallback101
          * @tc.number testOnCallback101
          * @tc.desc   Function test
@@ -413,7 +400,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testOffCallback101
          * @tc.number testOffCallback101
          * @tc.desc   Function test
@@ -453,7 +439,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetFileCallback101
          * @tc.number testGetFileCallback101
          * @tc.desc   Function test
@@ -482,7 +467,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testGetFilePromise101
          * @tc.number testGetFilePromise101
          * @tc.desc   Function test
@@ -506,7 +490,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsChangePermittedCallback102
          * @tc.number testIsChangePermittedCallback102
          * @tc.desc   Test isChangePermitted() to checks whether to allow the application to change the
@@ -535,7 +518,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsChangePermittedPromise102
          * @tc.number testIsChangePermittedPromise102
          * @tc.desc   Test isChangePermitted() to checks whether to allow the application to change the
@@ -558,7 +540,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsOperationAllowedCallback102
          * @tc.number testIsOperationAllowedCallback102
          * @tc.desc   Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.
@@ -587,7 +568,6 @@ export default function wallpaperAuthorityJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   testIsOperationAllowedPromise102
          * @tc.number testIsOperationAllowedPromise102
          * @tc.desc   Test isOperationAllowed() to checks whether a user is allowed to set wallpapers.

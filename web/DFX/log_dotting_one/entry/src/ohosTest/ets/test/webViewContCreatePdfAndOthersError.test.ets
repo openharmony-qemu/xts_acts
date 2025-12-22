@@ -55,10 +55,13 @@ export default function webViewContCreatePdfAndOthersError() {
       console.info("webViewContCreatePdfAndOthersError beforeEach start");
       done();
     })
-    /*
-     *tc.number testCreatePdfCallbackInitErr
-     *tc.name testCreatePdfCallbackInitErr
-     *tc.desc test interface of CreatePdf with not been associated with specific Web Components
+    /**
+     * @tc.name   testCreatePdfCallbackInitErr
+     * @tc.number testCreatePdfCallbackInitErr
+     * @tc.desc   test interface of CreatePdf with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreatePdfCallbackInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCreatePdfCallbackInitErr", EVENT_ID_SET_EMIT_KEY);
@@ -66,10 +69,13 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.registerEvent("testCreatePdfCallbackInitErr", "Init error. The WebviewController must be associated with a Web component", 110670, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-     *tc.number testCreatePdfPromiseInitErr
-     *tc.name testCreatePdfPromiseInitErr
-     *tc.desc test interface of CreatePdf with not been associated with specific Web Components
+    /**
+     * @tc.name   testCreatePdfPromiseInitErr
+     * @tc.number testCreatePdfPromiseInitErr
+     * @tc.desc   test interface of CreatePdf with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreatePdfPromiseInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCreatePdfPromiseInitErr", EVENT_ID_SET_EMIT_KEY);
@@ -77,10 +83,13 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.registerEvent("testCreatePdfPromiseInitErr", "Init error. The WebviewController must be associated with a Web component", 110690, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-     *tc.number testPrefetchPageInitErr
-     *tc.name testPrefetchPageInitErr
-     *tc.desc test interface of prefetchPage with not been associated with specific Web Components
+    /**
+     * @tc.name   testPrefetchPageInitErr
+     * @tc.number testPrefetchPageInitErr
+     * @tc.desc   test interface of prefetchPage with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPrefetchPageInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPrefetchPageInitErr", EVENT_ID_SET_EMIT_KEY);
@@ -88,87 +97,111 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.registerEvent("testPrefetchPageInitErr", "Init error. The WebviewController must be associated with a Web component", 110710, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-      *tc.number testCreateWebPrintDocumentAdapterInitErr
-      *tc.name testCreateWebPrintDocumentAdapterInitErr
-      *tc.desc test interface of createWebPrintDocumentAdapter with not been associated with specific Web Components
-      */
+    /**
+     * @tc.name   testCreateWebPrintDocumentAdapterInitErr
+     * @tc.number testCreateWebPrintDocumentAdapterInitErr
+     * @tc.desc   test interface of createWebPrintDocumentAdapter with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCreateWebPrintDocumentAdapterInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCreateWebPrintDocumentAdapterInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testCreateWebPrintDocumentAdapterInitErr", "17100001", 110720, null);
       Utils.registerEvent("testCreateWebPrintDocumentAdapterInitErr", "Init error. The WebviewController must be associated with a Web component", 110730, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testSetScrollableInitErr
-    *tc.name testSetScrollableInitErr
-    *tc.desc test interface of setScrollable with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testSetScrollableInitErr
+     * @tc.number testSetScrollableInitErr
+     * @tc.desc   test interface of setScrollable with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetScrollableInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetScrollableInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetScrollableInitErr", "17100001", 110740, null);
       Utils.registerEvent("testSetScrollableInitErr", "Init error. The WebviewController must be associated with a Web component", 110750, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testGetScrollableInitErr
-    *tc.name testGetScrollableInitErr
-    *tc.desc test interface of getScrollable with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testGetScrollableInitErr
+     * @tc.number testGetScrollableInitErr
+     * @tc.desc   test interface of getScrollable with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetScrollableInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetScrollableInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetScrollableInitErr", "17100001", 110760, null);
       Utils.registerEvent("testGetScrollableInitErr", "Init error. The WebviewController must be associated with a Web component", 110770, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testSetPrintBackgroundInitErr
-    *tc.name testSetPrintBackgroundInitErr
-    *tc.desc test interface of setPrintBackground with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testSetPrintBackgroundInitErr
+     * @tc.number testSetPrintBackgroundInitErr
+     * @tc.desc   test interface of setPrintBackground with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetPrintBackgroundInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetPrintBackgroundInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetPrintBackgroundInitErr", "17100001", 110780, null);
       Utils.registerEvent("testSetPrintBackgroundInitErr", "Init error. The WebviewController must be associated with a Web component", 110790, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testGetPrintBackgroundInitErr
-    *tc.name testGetPrintBackgroundInitErr
-    *tc.desc test interface of getPrintBackground with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testGetPrintBackgroundInitErr
+     * @tc.number testGetPrintBackgroundInitErr
+     * @tc.desc   test interface of getPrintBackground with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetPrintBackgroundInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetPrintBackgroundInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetPrintBackgroundInitErr", "17100001", 110800, null);
       Utils.registerEvent("testGetPrintBackgroundInitErr", "Init error. The WebviewController must be associated with a Web component", 110810, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testStartCameraInitErr
-    *tc.name testStartCameraInitErr
-    *tc.desc test interface of startCamera with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testStartCameraInitErr
+     * @tc.number testStartCameraInitErr
+     * @tc.desc   test interface of startCamera with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testStartCameraInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitStartCameraInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testStartCameraInitErr", "17100001", 110820, null);
       Utils.registerEvent("testStartCameraInitErr", "Init error. The WebviewController must be associated with a Web component", 110830, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testStopCameraInitErr
-    *tc.name testStopCameraInitErr
-    *tc.desc test interface of stopCamera with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testStopCameraInitErr
+     * @tc.number testStopCameraInitErr
+     * @tc.desc   test interface of stopCamera with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testStopCameraInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitStopCameraInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testStopCameraInitErr", "17100001", 110840, null);
       Utils.registerEvent("testStopCameraInitErr", "Init error. The WebviewController must be associated with a Web component", 110850, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-     *tc.number testCloseCameraInitErr
-     *tc.name testCloseCameraInitErr
-     *tc.desc test interface of closeCamera with not been associated with specific Web Components
+    /**
+     * @tc.name   testCloseCameraInitErr
+     * @tc.number testCloseCameraInitErr
+     * @tc.desc   test interface of closeCamera with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCloseCameraInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCloseCameraInitErr", EVENT_ID_SET_EMIT_KEY);
@@ -176,128 +209,173 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.registerEvent("testCloseCameraInitErr", "Init error. The WebviewController must be associated with a Web component", 110870, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testStopAllMediaInitErr
-    *tc.name testStopAllMediaInitErr
-    *tc.desc test interface of stopAllMedia with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testStopAllMediaInitErr
+     * @tc.number testStopAllMediaInitErr
+     * @tc.desc   test interface of stopAllMedia with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testStopAllMediaInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitStopAllMediaInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testStopAllMediaInitErr", "17100001", 110920, null);
       Utils.registerEvent("testStopAllMediaInitErr", "Init error. The WebviewController must be associated with a Web component", 110930, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testResumeAllMediaInitErr
-    *tc.name testResumeAllMediaInitErr
-    *tc.desc test interface of resumeAllMedia with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testResumeAllMediaInitErr
+     * @tc.number testResumeAllMediaInitErr
+     * @tc.desc   test interface of resumeAllMedia with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testResumeAllMediaInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitResumeAllMediaInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testResumeAllMediaInitErr", "17100001", 110940, null);
       Utils.registerEvent("testResumeAllMediaInitErr", "Init error. The WebviewController must be associated with a Web component", 110950, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testPauseAllMediaInitErr
-    *tc.name testPauseAllMediaInitErr
-    *tc.desc test interface of pauseAllMedia with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testPauseAllMediaInitErr
+     * @tc.number testPauseAllMediaInitErr
+     * @tc.desc   test interface of pauseAllMedia with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPauseAllMediaInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPauseAllMediaInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testPauseAllMediaInitErr", "17100001", 110960, null);
       Utils.registerEvent("testPauseAllMediaInitErr", "Init error. The WebviewController must be associated with a Web component", 110970, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testCloseAllMediaPresentationsInitErr
-    *tc.name testCloseAllMediaPresentationsInitErr
-    *tc.desc test interface of closeAllMediaPresentations with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testCloseAllMediaPresentationsInitErr
+     * @tc.number testCloseAllMediaPresentationsInitErr
+     * @tc.desc   test interface of closeAllMediaPresentations with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCloseAllMediaPresentationsInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitCloseAllMediaPresentationsInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testCloseAllMediaPresentationsInitErr", "17100001", 110980, null);
       Utils.registerEvent("testCloseAllMediaPresentationsInitErr", "Init error. The WebviewController must be associated with a Web component", 110990, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testGetMediaPlaybackStateInitErr
-    *tc.name testGetMediaPlaybackStateInitErr
-    *tc.desc test interface of getMediaPlaybackState with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testGetMediaPlaybackStateInitErr
+     * @tc.number testGetMediaPlaybackStateInitErr
+     * @tc.desc   test interface of getMediaPlaybackState with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetMediaPlaybackStateInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetMediaPlaybackStateInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetMediaPlaybackStateInitErr", "17100001", 111000, null);
       Utils.registerEvent("testGetMediaPlaybackStateInitErr", "Init error. The WebviewController must be associated with a Web component", 111010, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testTerminateRenderProcessInitErr
-    *tc.name testTerminateRenderProcessInitErr
-    *tc.desc test interface of terminateRenderProcess with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testTerminateRenderProcessInitErr
+     * @tc.number testTerminateRenderProcessInitErr
+     * @tc.desc   test interface of terminateRenderProcess with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTerminateRenderProcessInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitTerminateRenderProcessInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testTerminateRenderProcessInitErr", "17100001", 111020, null);
       Utils.registerEvent("testTerminateRenderProcessInitErr", "Init error. The WebviewController must be associated with a Web component", 111030, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testPrecompileJavaScriptInitErr
-    *tc.name testPrecompileJavaScriptInitErr
-    *tc.desc test interface of precompileJavaScript with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testPrecompileJavaScriptInitErr
+     * @tc.number testPrecompileJavaScriptInitErr
+     * @tc.desc   test interface of precompileJavaScript with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPrecompileJavaScriptInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitPrecompileJavaScriptInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testPrecompileJavaScriptInitErr", "17100001", 111040, null);
       Utils.registerEvent("testPrecompileJavaScriptInitErr", "Init error. The WebviewController must be associated with a Web component", 111050, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testSetPathAllowingUniversalAccessInitErr
-    *tc.name testSetPathAllowingUniversalAccessInitErr
-    *tc.desc test interface of setPathAllowingUniversalAccess with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testSetPathAllowingUniversalAccessInitErr
+     * @tc.number testSetPathAllowingUniversalAccessInitErr
+     * @tc.desc   test interface of setPathAllowingUniversalAccess with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetPathAllowingUniversalAccessInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetPathAllowingUniversalAccessInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetPathAllowingUniversalAccessInitErr", "17100001", 111060, null);
       Utils.registerEvent("testSetPathAllowingUniversalAccessInitErr", "Init error. The WebviewController must be associated with a Web component", 111070, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testScrollByWithResultInitErr
-    *tc.name testScrollByWithResultInitErr
-    *tc.desc test interface of scrollByWithResult with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testScrollByWithResultInitErr
+     * @tc.number testScrollByWithResultInitErr
+     * @tc.desc   test interface of scrollByWithResult with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByWithResultInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitScrollByWithResultInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testScrollByWithResultInitErr", "17100001", 111080, null);
       Utils.registerEvent("testScrollByWithResultInitErr", "Init error. The WebviewController must be associated with a Web component", 111090, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-    /*
-    *tc.number testGetLastHitTestInitErr
-    *tc.name testGetLastHitTestInitErr
-    *tc.desc test interface of getLastHitTest with not been associated with specific Web Components
-    */
+    /**
+     * @tc.name   testGetLastHitTestInitErr
+     * @tc.number testGetLastHitTestInitErr
+     * @tc.desc   test interface of getLastHitTest with not been associated with specific Web Components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetLastHitTestInitErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetLastHitTestInitErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testGetLastHitTestInitErr", "17100001", 111100, null);
       Utils.registerEvent("testGetLastHitTestInitErr", "Init error. The WebviewController must be associated with a Web component", 111110, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-       /*	
-    * @tc.number      : SUB_ACE_WEBVIEW_DEINSTITUTIONALIZATION_API_0001	
-    * @tc.name        : testSetSiteIsolationModeErr	
-    * @tc.desc        : test SetSiteIsolationMode	
-    * @tc.size        : MediumTest	
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testSetSiteIsolationModeErr
+     * @tc.number SUB_ACE_WEBVIEW_DEINSTITUTIONALIZATION_API_0001
+     * @tc.desc   test SetSiteIsolationMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetSiteIsolationModeErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetSiteIsolationModeErr", EVENT_ID_SET_EMIT_KEY);
       Utils.registerEvent("testSetSiteIsolationModeErr", "17100001", 20151203, null);
       Utils.registerEvent("testSetSiteIsolationModeErr", "InitError 17100001: Site Isolation mode is already set by the developer.", 20151204, done);
+      await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
+    })
+
+    /**
+     * @tc.name   testSetSoftKeyboardBehaviorModeErr
+     * @tc.number SUB_ACE_WEBVIEW_SETSOFTKEYBOARDBEHAVIORMODE_API_0001
+     * @tc.desc   setSoftKeyboardBehaviorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL0
+     */
+    it('testSetSoftKeyboardBehaviorModeErr',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitSetSoftKeyboardBehaviorModeErr", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "17100001", 20151223, null);
+      Utils.registerEvent("testSetSoftKeyboardBehaviorModeErr", "Init error. The WebviewController must be associated with a Web component", 20151224, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
 

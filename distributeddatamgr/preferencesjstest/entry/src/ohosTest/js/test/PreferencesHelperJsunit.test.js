@@ -41,7 +41,6 @@ export default function preferencesHelperTest(){
             await dataPreferences.deletePreferences(context, NAME);
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesHelper001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_3000
          * @tc.desc   getPreferencesSync interface test
@@ -58,7 +57,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesHelper002
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2300
          * @tc.desc   getPreferences interface test
@@ -80,7 +78,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testRemovePreferencesFromCache001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2100
          * @tc.desc   removePreferencesFromCache interface test
@@ -100,7 +97,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDeletePreferencesHelper002
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_2200
          * @tc.desc   deletePreferences interface test
@@ -120,7 +116,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesRegisterObserver001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1000
          * @tc.desc   put interface test
@@ -142,7 +137,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesRegisterObserver002
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_1100
          * @tc.desc   repeat on interface test
@@ -165,7 +159,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesUnRegisterObserver001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_0900
          * @tc.desc   off interface test
@@ -186,7 +179,6 @@ export default function preferencesHelperTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetPreferencesSyncinterface001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperTest_3100
          * @tc.desc   getPreferencesSync interface test

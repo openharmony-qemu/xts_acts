@@ -48,12 +48,12 @@ export default function SharedArrayBufferApiTest() {
 
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0100
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0100
-     * @tc.name SharedArrayBufferApiTest0100
-     * @tc.desc Test SharedArrayBuffer.prototype.slice where start > end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice where start > end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0100';
@@ -81,12 +81,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0200
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0200
-     * @tc.name SharedArrayBufferApiTest0200
-     * @tc.desc Test SharedArrayBuffer.prototype.slice where start < end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice where start < end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0200';
@@ -114,12 +114,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0300
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0300
-     * @tc.name SharedArrayBufferApiTest0300
-     * @tc.desc Test SharedArrayBuffer.prototype.slice where start = end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice where start = end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0300';
@@ -147,12 +147,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0400
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0400
-     * @tc.name SharedArrayBufferApiTest0400
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=0, end=1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=0, end=1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0400';
@@ -183,12 +183,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0500
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0500
-     * @tc.name SharedArrayBufferApiTest0500
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=0, end=length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=0, end=length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0500';
@@ -218,12 +218,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0600
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0600
-     * @tc.name SharedArrayBufferApiTest0600
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=0, end=length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=0, end=length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0600';
@@ -253,12 +253,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0700
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0700
-     * @tc.name SharedArrayBufferApiTest0700
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=length, end=length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=length, end=length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0700';
@@ -280,12 +280,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0800
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0800
-     * @tc.name SharedArrayBufferApiTest0800
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=length-1, end=length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=length-1, end=length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0800';
@@ -316,12 +316,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest0900
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_0900
-     * @tc.name SharedArrayBufferApiTest0900
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest0900';
@@ -356,12 +356,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest1000
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_1000
-     * @tc.name SharedArrayBufferApiTest1000
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest1000';
@@ -386,12 +386,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest1100
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_1100
-     * @tc.name SharedArrayBufferApiTest1100
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=length+1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=length+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest1100';
@@ -416,12 +416,12 @@ export default function SharedArrayBufferApiTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferApiTest1200
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_1200
-     * @tc.name SharedArrayBufferApiTest1200
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=length-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=length-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'SharedArrayBufferApiTest1200';
@@ -453,12 +453,12 @@ export default function SharedArrayBufferApiTest() {
 
 
     /**
+     * @tc.name   SharedArrayBufferApiTest1300
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_API_TEST_1300
-     * @tc.name SharedArrayBufferApiTest1300
-     * @tc.desc Test SharedArrayBuffer.prototype.slice with start=length-1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer.prototype.slice with start=length-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SharedArrayBufferApiTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'SharedArrayBufferApiTest1300';

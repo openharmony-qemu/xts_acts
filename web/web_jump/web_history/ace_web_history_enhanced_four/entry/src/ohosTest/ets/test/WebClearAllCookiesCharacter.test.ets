@@ -57,13 +57,13 @@ export default function webClearAllCookiesCharacter() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_CLEARALLCOOKIES_CHARACTER_0100
-     * @tc.name       : testClearAllCookiesCharacterCallback
-     * @tc.desc       : test clearAllCookies callback \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testClearAllCookiesCharacterCallback
+     * @tc.number SUB_WEB_CLEARALLCOOKIES_CHARACTER_0100
+     * @tc.desc   test clearAllCookies callback \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearAllCookiesCharacterCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesCharacterCallback', 133350);
@@ -72,13 +72,13 @@ export default function webClearAllCookiesCharacter() {
       });
       sendEventByKey('webClearAllCookiesCharacterButton', 10, '');
     })
-    /*
-     * @tc.number     : SUB_WEB_CLEARALLCOOKIES_CHARACTER_0200
-     * @tc.name       : testClearAllCookiesCharacterPromise
-     * @tc.desc       : test clearAllCookies promise \n
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testClearAllCookiesCharacterPromise
+     * @tc.number SUB_WEB_CLEARALLCOOKIES_CHARACTER_0200
+     * @tc.desc   test clearAllCookies promise \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClearAllCookiesCharacterPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitClearAllCookiesCharacterPromise', 133350);

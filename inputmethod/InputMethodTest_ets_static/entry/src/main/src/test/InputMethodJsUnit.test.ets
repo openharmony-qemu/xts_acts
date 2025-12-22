@@ -53,7 +53,6 @@ export default function inputMethodTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethodNomal_test_switchInputMethod_static_001
          * @tc.number inputmethodNomal_test_switchInputMethod_static_001
          * @tc.desc   Test Indicates the input method which will replace the current one.
@@ -88,7 +87,6 @@ export default function inputMethodTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethodNomal_test_switchInputMethod_static_002
          * @tc.number inputmethodNomal_test_switchInputMethod_static_002
          * @tc.desc   Test Indicates the input method which will replace the current one.
@@ -121,7 +119,6 @@ export default function inputMethodTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_001
          * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_001
          * @tc.desc   Test Indicates the input method which will hide softboard with calback.
@@ -153,7 +150,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethodNomal_test_hideSoftKeyboard_static_002
          * @tc.number inputmethodNomal_test_hideSoftKeyboard_static_002
          * @tc.desc   Test Indicates the input method which will hide softboard with Promise.
@@ -179,7 +175,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethod_test_getCurrentInputMethod_static_001
          * @tc.number inputmethod_test_getCurrentInputMethod_static_001
          * @tc.desc   return The InputMethodProperty object of the current input method.
@@ -199,7 +194,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethod_test_getInputMethods_static_001
          * @tc.number inputmethod_test_getInputMethods_static_001
          * @tc.desc   List input methods,getInputMethods().interfaces. Callback.
@@ -231,7 +225,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethod_test_getInputMethods_static_002
          * @tc.number inputmethod_test_getInputMethods_static_002
          * @tc.desc   List input methods,getInputMethods().interfaces. Callback.
@@ -262,7 +255,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethod_test_getInputMethods_static_003
          * @tc.number inputmethod_test_getInputMethods_static_003
          * @tc.desc   List input methods,getInputMethods().interfaces.Promise
@@ -287,7 +279,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputmethod_test_getInputMethods_static_004
          * @tc.number inputmethod_test_getInputMethods_static_004
          * @tc.desc   List input methods,().interfaces.Promise
@@ -312,7 +303,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_Enable_static_0100
          * @tc.number SUB_InputMethod_IMF_Enable_static_0100
          * @tc.desc   List input methods sync.
@@ -339,7 +329,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_Enable_static_0200
          * @tc.number SUB_InputMethod_IMF_Enable_static_0200
          * @tc.desc   List input methods sync.
@@ -365,7 +354,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_Enable_static_0400
          * @tc.number SUB_InputMethod_IMF_Enable_static_0400
          * @tc.desc   List all input methods.
@@ -406,7 +394,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_Enable_static_0500
          * @tc.number SUB_InputMethod_IMF_Enable_static_0500
          * @tc.desc   List all input methods.
@@ -439,7 +426,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_Enable_static_0600
          * @tc.number SUB_InputMethod_IMF_Enable_static_0600
          * @tc.desc   List all input methods.
@@ -465,7 +451,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_getCurrentInputMethodSubtype_static_001
          * @tc.number inputMethod_test_getCurrentInputMethodSubtype_static_001
          * @tc.desc   Get the current input method subtype
@@ -488,7 +473,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_ListControl_static_0600
          * @tc.number SUB_InputMethod_IMF_ListControl_static_0600
          * @tc.desc   Function test
@@ -515,7 +499,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_Panel_static_0600
          * @tc.number SUB_InputMethod_IMF_Panel_static_0600
          * @tc.desc   Function test
@@ -542,7 +525,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_listCurrentInputMethodSubtype_static_001
          * @tc.number inputMethod_test_listCurrentInputMethodSubtype_static_001
          * @tc.desc   List subtype of the specified input method
@@ -574,7 +556,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_listCurrentInputMethodSubtype_002
          * @tc.number inputMethod_test_listCurrentInputMethodSubtype_002
          * @tc.desc   List subtype of current input method
@@ -601,7 +582,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_listInputMethodSubtype_static_001
          * @tc.number inputMethod_test_listInputMethodSubtype_static_001
          * @tc.desc   List subtype of the specified input method
@@ -635,7 +615,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_listInputMethodSubtype_static_002
          * @tc.number inputMethod_test_listInputMethodSubtype_static_002
          * @tc.desc   List subtype of the specified input method
@@ -680,7 +659,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_listInputMethodSubtype_static_003
          * @tc.number inputMethod_test_listInputMethodSubtype_static_003
          * @tc.desc   List subtype of the specified input method
@@ -714,7 +692,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   inputMethod_test_listInputMethodSubtype_static_004
          * @tc.number inputMethod_test_listInputMethodSubtype_static_004
          * @tc.desc   List subtype of the specified input method
@@ -756,7 +733,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_Direction_static_0100
          * @tc.number Sub_Misc_inputMethod_Direction_static_0100
          * @tc.desc   Function test
@@ -786,7 +762,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_TextInputType_static_0100
          * @tc.number Sub_Misc_inputMethod_TextInputType_static_0100
          * @tc.desc   Function test
@@ -829,7 +804,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_EnterKeyType_static_0100
          * @tc.number Sub_Misc_inputMethod_EnterKeyType_static_0100
          * @tc.desc   Function test
@@ -869,7 +843,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_KeyboardStatus_static_0100
          * @tc.number Sub_Misc_inputMethod_KeyboardStatus_static_0100
          * @tc.desc   Function test
@@ -891,7 +864,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_RequestKeyboardReason_static_0100
          * @tc.number Sub_Misc_inputMethod_RequestKeyboardReason_static_0100
          * @tc.desc   Function test
@@ -916,7 +888,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   SUB_InputMethod_IMF_panelInfo_static_0100
          * @tc.number SUB_InputMethod_IMF_panelInfo_static_0100
          * @tc.desc   Function test
@@ -953,7 +924,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_inputWindowInfo_static_0201
          * @tc.number Sub_Misc_inputMethod_inputWindowInfo_static_0201
          * @tc.desc   Function test
@@ -985,7 +955,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_ExtendAction_static_0100
          * @tc.number Sub_Misc_inputMethod_ExtendAction_static_0100
          * @tc.desc   Function test
@@ -1010,7 +979,6 @@ export default function inputMethodTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:53:26
          * @tc.name   Sub_Misc_inputMethod_FunctionKey_static_0100
          * @tc.number Sub_Misc_inputMethod_FunctionKey_static_0100
          * @tc.desc   Function test

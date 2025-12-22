@@ -22,12 +22,12 @@ import fileIo from '@ohos.file.fs';
 export default function HidebugJsTest() {
     describe("HidebugJsTest", (): void => {
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_0600
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_0600
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_0600
-         * @tc.desc Get total native heap memory size
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get total native heap memory size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0600 Test start***********');
@@ -42,12 +42,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_0400
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_0400
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_0400
-         * @tc.desc Get Native heap memory allocation size.
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get Native heap memory allocation size.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0400 Test start***********');
@@ -61,12 +61,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_0500
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_0500
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_0500
-         * @tc.desc Get Native heap memory free size
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get Native heap memory free size
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0500 Test start***********');
@@ -80,12 +80,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_0800
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_0800
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_0800
-         * @tc.desc Get application process proportional set size memory information
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get application process proportional set size memory information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0800 Test start***********');
@@ -106,12 +106,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_1200
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_1200
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_1200
-         * @tc.desc Obtains the size of the shared dirty memory of a process.
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Obtains the size of the shared dirty memory of a process.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '************* DFX_DFR_Hiprofiler_Interface_Static_1200 Test start*************');
@@ -125,12 +125,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_0700
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_0700
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_0700
-         * @tc.desc Get the size of the private dirty memory
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get the size of the private dirty memory
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '************* DFX_DFR_Hiprofiler_Interface_Static_0700 Test start*************');
@@ -144,12 +144,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_1700
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_1700
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_1700
-         * @tc.desc Get the cpu usage of a process
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get the cpu usage of a process
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             hilog.info(0x0000, 'testTag', '************* DFX_DFR_Hiprofiler_Interface_Static_1700 Test start*************');
@@ -171,12 +171,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_2300
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_2300
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_2300
-         * @tc.desc test getVss
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   test getVss
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_2300 Test start*************');
@@ -190,12 +190,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   testHiDebugJsStatic01
          * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_Static_0100
-         * @tc.name testHiDebugJsStatic01
-         * @tc.desc 验证获取系统内存MemTotal、MemFree、MemAvaiable内存大小能力-ts接口-getSystemMemInfo
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证获取系统内存MemTotal、MemFree、MemAvaiable内存大小能力-ts接口-getSystemMemInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -216,12 +216,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic02
          * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_Static_0200
-         * @tc.name testHiDebugJsStatic02
-         * @tc.desc 验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-ts接口-getAppNativeMemInfo
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-ts接口-getAppNativeMemInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             try {
@@ -253,12 +253,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   testHiDebugJsStatic05
          * @tc.number SUB_DFX_DFT_HiDebug_Mem_Js_Static_0500
-         * @tc.name testHiDebugJsStatic05
-         * @tc.desc 验证获取应用的Shared Clean、Private Clean的能力-ts接口-getAppNativeMemInfo
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证获取应用的Shared Clean、Private Clean的能力-ts接口-getAppNativeMemInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -276,12 +276,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic06
          * @tc.number SUB_DFX_DFT_HiDebug_CPU_Js_0100
-         * @tc.name testHiDebugJsStatic06
-         * @tc.desc 验证获取系统CPU使用率的能力-ts接口-getSystemCpuUsage
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证获取系统CPU使用率的能力-ts接口-getSystemCpuUsage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -297,12 +297,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic07
          * @tc.number SUB_DFX_DFT_HiDebug_CPU_Js_0200
-         * @tc.name testHiDebugJsStatic07
-         * @tc.desc 验证提供应用线程CPU使用率的能力-ts接口-getAppThreadCpuUsage
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证提供应用线程CPU使用率的能力-ts接口-getAppThreadCpuUsage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -323,12 +323,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic08
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0100
-         * @tc.name testHiDebugJsStatic08
-         * @tc.desc 验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-MAIN_THREAD
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-MAIN_THREAD
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -362,12 +362,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic09
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0200
-         * @tc.name testHiDebugJsStatic09
-         * @tc.desc 验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-ALL_THREADS
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证应用内动态启停采集应用trace-ts接口-startAppTraceCapture、stopAppTraceCapture-ALL_THREADS
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -397,12 +397,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic10
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0300
-         * @tc.name testHiDebugJsStatic10
-         * @tc.desc 验证应用内动态启停采集应用trace-tag无效，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证应用内动态启停采集应用trace-tag无效，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -424,12 +424,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic11
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0400
-         * @tc.name testHiDebugJsStatic11
-         * @tc.desc 验证应用内动态启停采集应用trace-limitSize小于1bytes，返回错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证应用内动态启停采集应用trace-limitSize小于1bytes，返回错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -449,12 +449,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic16
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_0900
-         * @tc.name testHiDebugJsStatic16
-         * @tc.desc 验证应用内重复开始采集应用trace，返回错误码11400102
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证应用内重复开始采集应用trace，返回错误码11400102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             try {
@@ -478,12 +478,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic17
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_1000
-         * @tc.name testHiDebugJsStatic17
-         * @tc.desc 验证应用在没有采集任务的情况下停止采集应用trace，返回错误码11400105
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   验证应用在没有采集任务的情况下停止采集应用trace，返回错误码11400105
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done:()=>void) : Promise<void> => {
             try {
@@ -500,12 +500,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic28
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_2100
-         * @tc.name testHiDebugJsStatic28
-         * @tc.desc getGraphicsMemory正常测试
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   getGraphicsMemory正常测试
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", 'testHiDebugJsStatic28 start');
@@ -523,12 +523,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   testHiDebugJsStatic29
          * @tc.number SUB_DFX_DFT_Trace_Collect_Js_2200
-         * @tc.name testHiDebugJsStatic29
-         * @tc.desc getGraphicsMemorySync正常测试
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level3
+         * @tc.desc   getGraphicsMemorySync正常测试
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHiDebugJsStatic29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
             hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", 'testHiDebugJsStatic29 start');
@@ -544,12 +544,12 @@ export default function HidebugJsTest() {
         })
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_1000
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_1000
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_1000
-         * @tc.desc getServiceDump with check system ability failed
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   getServiceDump with check system ability failed
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1000 Test start*************');
@@ -570,12 +570,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_1100
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_1100
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_1100
-         * @tc.desc Get the memory limit of the application process
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get the memory limit of the application process
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1100 Test start*************');
@@ -596,12 +596,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_2200
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_2200
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_2200
-         * @tc.desc Get information about VM memory
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get information about VM memory
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_2200 Test start*************');
@@ -620,12 +620,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_1300
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_1300
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_1300
-         * @tc.desc Get the debug status of the application process
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get the debug status of the application process
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1300 Test start*************');
@@ -640,12 +640,12 @@ export default function HidebugJsTest() {
         });
 
         /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static_1400
          * @tc.number DFX_DFR_Hiprofiler_Interface_Static_1400
-         * @tc.name DFX_DFR_Hiprofiler_Interface_Static_1400
-         * @tc.desc Get system GC statistics
-         * @tc.level  Level 2
-         * @tc.size MediumTest
-         * @tc.type  Function
+         * @tc.desc   Get system GC statistics
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('DFX_DFR_Hiprofiler_Interface_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1400 Test start*************');
@@ -675,5 +675,146 @@ export default function HidebugJsTest() {
             }
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1400 Test end*************');
         });
+
+
+        /**
+        * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_1900
+        * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_1900
+        * @tc.desc   startJsCpuProfiling/stopJsCpuProfiling
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL0
+        */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_1900 Test start*************');
+            try {
+                let timestamp = Date.now();
+                let filename = "cpuprofiler_" + timestamp.toString();
+                hidebug.startJsCpuProfiling(filename);
+                for (let i = 0; i < 3; i++) {
+                    hidebug.getSharedDirty();
+                }
+                hidebug.stopJsCpuProfiling();
+                let path = "/proc/self/root/data/storage/el2/base/files/" + filename + ".json";
+                let data = fileIo.readTextSync(path);
+                if (data.includes("napi")) {
+                    console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_1900 Test end*************');
+                } else {
+                    expect(false).assertTrue();
+                }
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_1900 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_1900 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2000
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2000
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2000 Test start*************');
+            let path: string = "/data/storage/el2/base/files/serviceInfo1.txt";
+            let file = fileIo.openSync(path, 0o102);
+            let serviceId: int = 10
+            let args: Array<string> = new Array<string>("allInfo");
+            try {
+                hidebug.getServiceDump(serviceId, file.fd, args)
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2000 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            fileIo.closeSync(file.fd);
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2000 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2100
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2100
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                let appThreadCpuUsage = hidebug.getAppThreadCpuUsage();
+                console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > length =: ${appThreadCpuUsage.length}`)
+                expect(appThreadCpuUsage.length > 0).assertTrue();
+                for (let ii = 0; ii < appThreadCpuUsage.length; ii++) {
+                    console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > threadId =: ${appThreadCpuUsage[ii].threadId}`)
+                    console.info(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > cpuUsage =: ${appThreadCpuUsage[ii].cpuUsage}`)
+                    expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
+                }
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2100 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2100 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2200
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2200
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                let result = hidebug.isDebugState();
+                expect(result).assertFalse();
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2200 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2100 Test end*************');
+        })
+
+        /**
+         * @tc.name   DFX_DFR_Hiprofiler_Interface_Static1_2300
+         * @tc.number DFX_DFR_Hiprofiler_Interface_Static1_2300
+         * @tc.desc   getServiceDump
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('DFX_DFR_Hiprofiler_Interface_Static1_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try {
+                let result = hidebug.isDebugState();
+                expect(result).assertFalse();
+                done();
+            } catch (err: BusinessError) {
+                console.error(`DFX_DFR_Hiprofiler_Interface_Static1_2300 > err code: ${err.code}, err msg: ${err.message}`)
+                expect(false).assertTrue();
+                done();
+            };
+            console.log('************* DFX_DFR_Hiprofiler_Interface_Static1_2300 Test end*************');
+        })
+
+
+        
+
+
+
+
+
+
+
+
     })
 }

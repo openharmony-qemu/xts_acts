@@ -18,6 +18,9 @@
 #include "common.h"
 #include "hilog/log.h"
 #include "napi/native_api.h"
+#include <cstdio>
+#include <cwchar>
+
 
 static napi_value CreatePublishInfo(napi_env env, napi_callback_info info)
 {
@@ -54,6 +57,7 @@ void OnReceive(const CommonEvent_RcvData *data)
 
     // 获取回调公共事件附件信息
     const CommonEvent_Parameters *parameters = OH_CommonEvent_GetParametersFromRcvData(data);
+    ASSERT_TRUE(parameters != nullptr);
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "CES_TEST",
                  "event: %{public}s, code: %{public}d, data: %{public}s, bundle: %{public}s", event, code, retData,
                  bundle);
@@ -218,6 +222,7 @@ void PublishInfoCallback005(const CommonEvent_RcvData *data)
 {
     if (data != nullptr) {
         auto parameters = OH_CommonEvent_GetParametersFromRcvData(data);
+        ASSERT_TRUE(parameters != nullptr);
         if (parameters != nullptr) {
             g_parametersInt = OH_CommonEvent_GetIntFromParameters(parameters, KEY_INT, PARAM_0);
         }

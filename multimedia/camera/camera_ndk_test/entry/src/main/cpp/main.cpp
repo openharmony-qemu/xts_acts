@@ -2974,6 +2974,15 @@ static napi_value GetMacroStatusChangeTest(napi_env env, napi_callback_info info
     return jsValue;
 }
 
+static napi_value GetIsoInfoChangeTest(napi_env env, napi_callback_info info)
+{
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->IsoInfoChangeTest(), &jsValue);
+
+    return jsValue;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2989,6 +2998,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getCameraHostType", nullptr, GetCameraHostType, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getWhiteBalanceTest", nullptr, GetWhiteBalanceTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMacroStatusChangeTest", nullptr, GetMacroStatusChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getIsoInfoChangeTest", nullptr, GetIsoInfoChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createCameraInput", nullptr, CreateCameraInput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createCameraInputWithPositionAndType", nullptr, CreateCameraInputWithPositionAndType, nullptr, nullptr,
             nullptr, napi_default, nullptr },

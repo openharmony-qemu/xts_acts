@@ -49,9 +49,12 @@ export default function EmitterTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Subscribe_Once_Static_0100
-     * @tc.name    Sub_Notification_Emitter_Subscribe_Once_Static_0100
-     * @tc.desc    emitter.EventPriority.IDLE
+     * @tc.name   Sub_Notification_Emitter_Subscribe_Once_Static_0100
+     * @tc.number Sub_Notification_Emitter_Subscribe_Once_Static_0100
+     * @tc.desc   emitter.EventPriority.IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Emitter_Subscribe_Once_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -112,9 +115,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Subscribe_Once_Static_0200
-     * @tc.name    Sub_Notification_Emitter_Subscribe_Once_Static_0200
-     * @tc.desc    emitter.EventPriority.LOW
+     * @tc.name   Sub_Notification_Emitter_Subscribe_Once_Static_0200
+     * @tc.number Sub_Notification_Emitter_Subscribe_Once_Static_0200
+     * @tc.desc   emitter.EventPriority.LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Emitter_Subscribe_Once_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -151,9 +157,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Subscribe_Once_Static_0300
-     * @tc.name    Sub_Notification_Emitter_Subscribe_Once_Static_0300
-     * @tc.desc    emitter.EventPriority.HIGH
+     * @tc.name   Sub_Notification_Emitter_Subscribe_Once_Static_0300
+     * @tc.number Sub_Notification_Emitter_Subscribe_Once_Static_0300
+     * @tc.desc   emitter.EventPriority.HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Emitter_Subscribe_Once_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -189,9 +198,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Subscribe_Once_Static_0400
-     * @tc.name    Sub_Notification_Emitter_Subscribe_Once_Static_0400
-     * @tc.desc    emitter.EventPriority.IMMEDIATE
+     * @tc.name   Sub_Notification_Emitter_Subscribe_Once_Static_0400
+     * @tc.number Sub_Notification_Emitter_Subscribe_Once_Static_0400
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Emitter_Subscribe_Once_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -227,9 +239,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Subscribe_Once_Static_0500
-     * @tc.name    Sub_Notification_Emitter_Subscribe_Once_Static_0500
-     * @tc.desc    emitter.EventPriority.IMMEDIATE
+     * @tc.name   Sub_Notification_Emitter_Subscribe_Once_Static_0500
+     * @tc.number Sub_Notification_Emitter_Subscribe_Once_Static_0500
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Notification_Emitter_Subscribe_Once_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -264,10 +279,13 @@ export default function EmitterTest() {
         done()
       })
     /**
-      * @tc.number  SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600
-      * @tc.name    SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600
-      * @tc.desc    emitter.EventPriority.IMMEDIATE
-      */
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0600'
@@ -308,9 +326,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -352,9 +373,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0800
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0800
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0800
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0800
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -397,9 +421,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0900
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0900
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0900
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0900
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -443,9 +470,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -474,10 +504,13 @@ export default function EmitterTest() {
         done()
       })
     /**
-    * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100
-    * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100
-    * @tc.desc       emitter.EventPriority.IMMEDIATE
-    */
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1100'
@@ -511,9 +544,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1200
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1200
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1200
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1200
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -549,9 +585,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1300
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1300
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1300
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1300
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -587,9 +626,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400
-     * @tc.desc       Register one string ID
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400
+     * @tc.desc   Register one string ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -623,9 +665,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500
-     * @tc.desc       Register 2 identical string ID
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500
+     * @tc.desc   Register 2 identical string ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -661,9 +706,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
-     * @tc.desc       emitter.onEventData(''),emitter.emit(''),emitter.off('')
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600
+     * @tc.desc   emitter.onEventData(''),emitter.emit(''),emitter.off('')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -700,9 +748,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
-     * @tc.desc       emitter.onEventData(' '),emitter.emit(' '),emitter.off(' ')
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700
+     * @tc.desc   emitter.onEventData(' '),emitter.emit(' '),emitter.off(' ')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -739,9 +790,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -791,9 +845,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1900
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1900
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1900
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1900
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -822,9 +879,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2000
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2000
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2000
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2000
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -853,9 +913,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2100
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2100
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2100
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2100
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -889,9 +952,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200
-     * @tc.desc       emitter.getListenerCount('23')
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200
+     * @tc.desc   emitter.getListenerCount('23')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -913,9 +979,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -940,9 +1009,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2400
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2400
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2400
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2400
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -971,9 +1043,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2500
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2500
-     * @tc.desc       emitter.getListenerCount('26')
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2500
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2500
+     * @tc.desc   emitter.getListenerCount('26')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -993,9 +1068,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600
-     * @tc.desc       Register three identical string ID
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600
+     * @tc.desc   Register three identical string ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1019,9 +1097,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700
-     * @tc.desc       Register three different string ID
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700
+     * @tc.desc   Register three different string ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1046,10 +1127,13 @@ export default function EmitterTest() {
       })
 
     /**
-      * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
-      * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
-      * @tc.desc       emitter.EventPriority.IMMEDIATE
-      */
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     async (done: () => void): Promise<void> => {
       let TEST_CASE_NAME: string = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3600'
@@ -1088,9 +1172,12 @@ export default function EmitterTest() {
     })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1139,9 +1226,12 @@ export default function EmitterTest() {
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1202,90 +1292,112 @@ export default function EmitterTest() {
 
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300';
+        let count: int = 0;
 
-        for (let i: long = 33000; i < 34000; i++) {
+        for (let i: long = 3300; i < 3400; i++) {
           let innerEvent: emitter.InnerEvent = {
             eventId: i,
             priority: emitter.EventPriority.IMMEDIATE
           }
           let EmitterCallback = (): void => {
             hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
+            count ++;
+            if (count == 100) {
+              for (let i: long = 3300; i < 3400; i++) {
+                expect(emitter.getListenerCount(i)).assertEqual(1)
+              }
+              done()
+            }
           }
           emitter.on(innerEvent, EmitterCallback)
           emitter.emit(innerEvent)
         }
-        for (let i: long = 33000; i < 34000; i++) {
-          expect(emitter.getListenerCount(i)).assertEqual(1)
-        }
-        await Utils.msSleep(1000)
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3300 END`)
-        done()
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400
-     * @tc.desc       Emit and GetListenerCount type is string
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400
+     * @tc.desc   Emit and GetListenerCount type is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400';
-
+        let countEmit: int = 0;
         let EmitterCallback = (): void => {
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success');
+          countEmit++;
+          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on success countEmit = ' + countEmit);
+          if (countEmit == 100) {
+            expect(emitter.getListenerCount("3400")).assertEqual(1);
+            done()
+          }
         }
-        emitter.onEventData("340000", EmitterCallback)
-        for (let i: number = 34000; i < 35000; i++) {
-          emitter.emit("340000")
+        emitter.onEventData("3400", EmitterCallback)
+        for (let i: number = 3400; i < 3500; i++) {
+          emitter.emit("3400")
         }
-        await Utils.msSleep(1000)
-        expect(emitter.getListenerCount("340000")).assertEqual(1)
-        console.info(`SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3400 END`)
-        done()
       })
 
     /**
-     * @tc.number     SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500
-     * @tc.name       SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500
-     * @tc.desc       emitter.EventPriority.IMMEDIATE
+     * @tc.name   SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500
+     * @tc.number SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500
+     * @tc.desc   emitter.EventPriority.IMMEDIATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 START`)
         const TEST_CASE_NAME = 'SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500';
-
-        let EmitterCallback1 = (): void => {
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on1 success');
-        }
-        let EmitterCallback2 = (): void => {
-          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on2 success');
-        }
+        let count1:int = 0;
+        let count2:int = 0;
         let innerEvent: emitter.InnerEvent = {
           eventId: 35,
           priority: emitter.EventPriority.IMMEDIATE
         }
+        let EmitterCallback1 = (): void => {
+          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on1 success');
+          count1++;
+          if(count1 == 100 &&count2 == 100 ){
+            expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
+            expect(emitter.getListenerCount("35")).assertEqual(1)
+            console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
+            done()
+          }
+        }
+        let EmitterCallback2 = (): void => {
+          hilog.info(0x000, `${tag}`, `${TEST_CASE_NAME}` + ' on2 success');
+          count2++;
+          if(count1 == 100 &&count2 == 100 ){
+            expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
+            expect(emitter.getListenerCount("35")).assertEqual(1)
+            console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
+            done()
+          }
+        }
         emitter.on(innerEvent, EmitterCallback1)
         emitter.onEventData("35", EmitterCallback2)
-        for (let i: number = 35000; i < 36000; i++) {
+        for (let i: number = 3500; i < 3600; i++) {
           emitter.emit(innerEvent)
         }
-        for (let i: number = 35000; i < 36000; i++) {
+        for (let i: number = 3500; i < 3600; i++) {
           emitter.emit("35")
         }
-        await Utils.msSleep(1000)
-        expect(emitter.getListenerCount(innerEvent.eventId)).assertEqual(1)
-        expect(emitter.getListenerCount("35")).assertEqual(1)
-        console.info(`${tag} SUB_NOTIFICATION_CES_EMITTER_TEST_Static_3500 END`)
-        done()
       })
 
   

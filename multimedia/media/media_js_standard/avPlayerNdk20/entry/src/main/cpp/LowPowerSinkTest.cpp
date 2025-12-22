@@ -97,6 +97,11 @@ struct SampleInfo {
 
 static napi_value OH_LowPowerAudioSink_Configure0100(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
     OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(mime);
     OH_AVFormat *Format = OH_AVFormat_CreateAudioFormat(mime, 0, 0);
@@ -127,6 +132,11 @@ static napi_value OH_LowPowerAudioSink_Configure0101(napi_env env, napi_callback
 
 static napi_value OH_LowPowerAudioSink_SetParameter0100(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -174,6 +184,11 @@ static napi_value OH_LowPowerAudioSink_Prepare0102(napi_env env, napi_callback_i
 
 static napi_value OH_LowPowerAudioSink_Prepare0100(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 44100;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
@@ -191,6 +206,11 @@ static napi_value OH_LowPowerAudioSink_Prepare0100(napi_env env, napi_callback_i
 
 static napi_value OH_LowPowerAudioSink_Prepare0101(napi_env env, napi_callback_info info)
 {
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     int32_t sampleRate = 16000;
     int32_t channelCount = 2;
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;

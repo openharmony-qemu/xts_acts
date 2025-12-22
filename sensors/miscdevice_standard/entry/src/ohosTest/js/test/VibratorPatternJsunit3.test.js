@@ -88,13 +88,13 @@ export default function VibratorJsTest_misc_12() {
         const PARAMETER_ERROR_CODE = 401;
         let TAG = "";
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest068
-         * @tc.desc:Trigger short and long vibrations, with short vibrations taking priority over long vibrations
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_6800
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest068
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_6800
+         * @tc.desc   Trigger short and long vibrations, with short vibrations taking priority over long vibrations
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest068";
@@ -221,13 +221,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest069
-         * @tc.desc:Simultaneously triggering long vibrations, vibrating according to priority
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_6900
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest069
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_6900
+         * @tc.desc   Simultaneously triggering long vibrations, vibrating according to priority
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest069";
@@ -301,13 +301,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest070
-         * @tc.desc:Simultaneously triggering short vibrations, vibrating according to priority
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7000
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest070
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7000
+         * @tc.desc   Simultaneously triggering short vibrations, vibrating according to priority
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest070";
@@ -351,13 +351,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest071
-         * @tc.desc:addContinuousEvent time is 0,duration is 5000
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7100
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest071
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7100
+         * @tc.desc   addContinuousEvent time is 0,duration is 5000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest071";
@@ -481,13 +481,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest072
-         * @tc.desc:addContinuousEvent
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7200
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest072
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7200
+         * @tc.desc   addContinuousEvent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest072";
@@ -524,13 +524,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest073
-         * @tc.desc:addTransientEvent
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7300
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest073
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7300
+         * @tc.desc   addTransientEvent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest073";
@@ -567,13 +567,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest074
-         * @tc.desc:addTransientEvent Cycle 1000 times
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7400
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest074
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7400
+         * @tc.desc   addTransientEvent Cycle 1000 times
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest074";
@@ -620,13 +620,13 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-         * @tc.name:VibratorProgramticHapticTest075
-         * @tc.desc:addContinuousEvent Cycle 1000 times
-         * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7500
-         * @tc.level:Level 3
-         * @tc.type:Function
-         * @tc.size:MediumTest
+        /**
+         * @tc.name   VibratorProgramticHapticTest075
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_7500
+         * @tc.desc   addContinuousEvent Cycle 1000 times
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("VibratorProgramticHapticTest075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let TAG = "====>VibratorProgramticHapticTest075";
@@ -757,14 +757,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0050
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0501
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0050
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0501
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0050";    
             try {
@@ -807,14 +807,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0060
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0601
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0060
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0601
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0060";    
             try {
@@ -857,14 +857,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0051
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0510
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0051
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0510
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0051";    
             try {
@@ -909,14 +909,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0061
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0610
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0061
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0610
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0061";    
             try {
@@ -961,14 +961,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0071
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0710
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0071
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0710
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0071";    
             try {
@@ -1013,14 +1013,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0081
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0810
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0081
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0810
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0081";    
             try {
@@ -1065,14 +1065,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0091
-        * @tc.desc:VibratorPatternBuilder Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0910
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0091
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0910
+         * @tc.desc   VibratorPatternBuilder Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0091";    
             try {
@@ -1117,14 +1117,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0040
-        * @tc.desc:VibratorEvent Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0401
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0040
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0401
+         * @tc.desc   VibratorEvent Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0040";
             try {
@@ -1145,14 +1145,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0041
-        * @tc.desc:VibratorEvent Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0410
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0041
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0410
+         * @tc.desc   VibratorEvent Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0041";
             try {
@@ -1172,14 +1172,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0042
-        * @tc.desc:VibratorEvent Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0420
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0042
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0420
+         * @tc.desc   VibratorEvent Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0042";
             try {
@@ -1199,14 +1199,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0043
-        * @tc.desc:VibratorEvent Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0430
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0043
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0430
+         * @tc.desc   VibratorEvent Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0043";
             try {
@@ -1226,14 +1226,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0044
-        * @tc.desc:VibratorTime Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0440
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0044
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0440
+         * @tc.desc   VibratorTime Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0044";
             try {
@@ -1260,14 +1260,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0045
-        * @tc.desc:VibratorTime Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0450
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0045
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0450
+         * @tc.desc   VibratorTime Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0045";
             try {
@@ -1289,14 +1289,14 @@ export default function VibratorJsTest_misc_12() {
             }
         })
 
-        /*
-        * @tc.name:VibratorProgramticHapticTest0046
-        * @tc.desc:VibratorTime Test
-        * @tc.number:SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0460
-        * @tc.level:Level 3
-        * @tc.type:Function
-        * @tc.size:MediumTest
-        */
+        /**
+         * @tc.name   VibratorProgramticHapticTest0046
+         * @tc.number SUB_SensorSystem_SmallComponentService_Miscdevice_ProgramticHaptic_0460
+         * @tc.desc   VibratorTime Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("VibratorProgramticHapticTest0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             TAG = "====>VibratorProgramticHapticTest0046";
             try {

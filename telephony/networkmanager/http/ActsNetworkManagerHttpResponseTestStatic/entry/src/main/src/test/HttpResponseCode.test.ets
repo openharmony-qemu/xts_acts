@@ -46,12 +46,12 @@ export default function HttpResponseCodeTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0100
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0100
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0100
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0100
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0100';
@@ -68,12 +68,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0200
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0200
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0200
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0200
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0200';
@@ -90,12 +90,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0300
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0300
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0300
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0300
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0300';
@@ -112,12 +112,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0400
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0400
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0400
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0400
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0400';
@@ -134,12 +134,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0500
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0500
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0500
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0500
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0500';
@@ -156,12 +156,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0600
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0600
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0600
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0600
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0600';
@@ -178,12 +178,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0700
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0700
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0700
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0700
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0700';
@@ -200,12 +200,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0800
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0800
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0800
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0800
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0800';
@@ -222,12 +222,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_0900
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_0900
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_0900
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_0900
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0900';
@@ -244,12 +244,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1000
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1000
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1000
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1000
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1000';
@@ -266,12 +266,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1100
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1100
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1100
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1100
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1100';
@@ -288,12 +288,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1200
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1200
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1200
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1200
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1200';
@@ -310,12 +310,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1300
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1300
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1300
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1300
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1300';
@@ -332,12 +332,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1400
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1400
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1400
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1400
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1400';
@@ -354,12 +354,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1500
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1500
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1500
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1500
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1500';
@@ -376,12 +376,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1600
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1600
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1600
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1600
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1600';
@@ -398,12 +398,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1700
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1700
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1700
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1700
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1700';
@@ -420,12 +420,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1800
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1800
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1800
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1800
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1800';
@@ -442,12 +442,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_1900
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_1900
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_1900
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_1900
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1900';
@@ -464,12 +464,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2000
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2000
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2000
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2000
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2000';
@@ -486,12 +486,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2100
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2100
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2100
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2100
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2100';
@@ -508,12 +508,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2200
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2200
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2200
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2200
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2200';
@@ -530,12 +530,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2300
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2300
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2300
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2300
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2300';
@@ -552,12 +552,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2400
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2400
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2400
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2400
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2400';
@@ -574,12 +574,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2500
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2500
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2500
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2500
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2500';
@@ -596,12 +596,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2600
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2600
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2600
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2600
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2600';
@@ -618,12 +618,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2700
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2700
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2700
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2700
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2700';
@@ -640,12 +640,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2800
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2800
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2800
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2800
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2800';
@@ -662,12 +662,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_2900
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_2900
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_2900
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_2900
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2900';
@@ -684,12 +684,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3000
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3000
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3000
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3000
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3000';
@@ -706,12 +706,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3100
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3100
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3100
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3100
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3100';
@@ -728,12 +728,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3200
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3200
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3200
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3200
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3200';
@@ -750,12 +750,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3300
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3300
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3300
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3300
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3300';
@@ -772,12 +772,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3400
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3400
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3400
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3400
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3400';
@@ -794,12 +794,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3500
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3500
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3500
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3500
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3500';
@@ -816,12 +816,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3600
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3600
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 0
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3600
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3600
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3600';
@@ -862,12 +862,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3700
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3700
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 0
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3700
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3700
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3700';
@@ -908,12 +908,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3800
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3800
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3800
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3800
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3800';
@@ -954,12 +954,12 @@ export default function HttpResponseCodeTest() {
         })
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_ResponseCode_3900
-         * @tc.name   : testNetworkMgrHttpResponseCode_static_3900
-         * @tc.desc   : Test ResponseCode property.
-         * @tc.level  : Level 2
-         * @tc.type   : Function
-         * @tc.size   : SmallTest
+         * @tc.name   testNetworkMgrHttpResponseCode_static_3900
+         * @tc.number SUB_NetworkMgr_Http_ResponseCode_3900
+         * @tc.desc   Test ResponseCode property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpResponseCode_static_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3900';

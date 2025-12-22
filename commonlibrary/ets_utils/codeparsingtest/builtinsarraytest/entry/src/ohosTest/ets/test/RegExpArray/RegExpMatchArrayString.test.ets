@@ -40,12 +40,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0100
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0100
-     * @tc.name builtinsRegExpMatchArrayStringTest0100
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsRegExpMatchArrayStringTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       (done: Function) => {
@@ -80,12 +80,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0200
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0200
-     * @tc.name builtinsRegExpMatchArrayStringTest0200
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -119,12 +119,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0300
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0300
-     * @tc.name builtinsRegExpMatchArrayStringTest0300
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -158,12 +158,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0400
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0400
-     * @tc.name builtinsRegExpMatchArrayStringTest0400
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -197,12 +197,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0500
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0500
-     * @tc.name builtinsRegExpMatchArrayStringTest0500
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -236,12 +236,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0600
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0600
-     * @tc.name builtinsRegExpMatchArrayStringTest0600
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -276,12 +276,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0700
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0700
-     * @tc.name builtinsRegExpMatchArrayStringTest0700
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -315,12 +315,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0800
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0800
-     * @tc.name builtinsRegExpMatchArrayStringTest0800
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -355,12 +355,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest0900
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_0900
-     * @tc.name builtinsRegExpMatchArrayStringTest0900
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -395,12 +395,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest1000
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_1000
-     * @tc.name builtinsRegExpMatchArrayStringTest1000
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -435,12 +435,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest1100
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_1100
-     * @tc.name builtinsRegExpMatchArrayStringTest1100
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {
@@ -475,12 +475,12 @@ export default function builtinsRegExpMatchArrayStringTest() {
       })
 
     /**
+     * @tc.name   builtinsRegExpMatchArrayStringTest1200
      * @tc.number SUB_BUILTINS_REG_EXP_MATCH_ARRAY_STRING_TEST_1200
-     * @tc.name builtinsRegExpMatchArrayStringTest1200
-     * @tc.desc Testing RegExpMatchArray string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing RegExpMatchArray string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpMatchArrayStringTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       (done: Function) => {

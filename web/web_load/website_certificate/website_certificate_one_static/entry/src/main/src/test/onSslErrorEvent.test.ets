@@ -34,24 +34,26 @@ export default function onCreateNativeMediaPlayer() {
       console.log('[App start')
     })
 
-    /*
-    * @tc.number      : SUB_WEB_SSlERROREVENT_0100
-    * @tc.name        : testonSslErrorEventStatic001
-    * @tc.desc        : test testonSslErrorEvent001 when start play audio
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
 
+    /**
+     * @tc.name   testonSslErrorEventStatic001
+     * @tc.number testonSslErrorEventStatic001
+     * @tc.desc   testonSslErrorEventStatic001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testonSslErrorEventStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('onCreateNativeMediaPlayer', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testonSslErrorEvent001', 1, 2025321, done);
       await Utils.msSleep(2000);
-      let button = await driver.findComponent(ON.id('WebonSslErrorEventButton'));
+      inspector.sendEventByKey('WebonSslErrorEventButton', 10, '');
       await Utils.msSleep(5000);
-      button?.click();
-      await Utils.msSleep(5000);
+      Utils.emitEvent('emitonSwitchNextPage1', 10)
+      await Utils.msSleep(1000);
+      inspector.sendEventByKey('WebonSslErrorEventButton', 10, '');
+      await Utils.msSleep(4000);
       done();
     })
   })

@@ -34,6 +34,10 @@
         "MainAbility/pages/TextAddApi1",
         "MainAbility/pages/TextMenuItemId",
         "MainAbility/pages/TextMenuItemIdEqualsTest",
-        "MainAbility/pages/TextMenuType"
+        "MainAbility/pages/TextMenuType",
+        "MainAbility/pages/RichEditorDelete/RichEditorDelete",
+        "MainAbility/pages/TextDirectionTest",
+        "MainAbility/pages/RichEditorDisplayOptimization/IncludeFontPadding",
+        "MainAbility/pages/RichEditorDisplayOptimization/FallbackLineSpacing"
     ]
 }

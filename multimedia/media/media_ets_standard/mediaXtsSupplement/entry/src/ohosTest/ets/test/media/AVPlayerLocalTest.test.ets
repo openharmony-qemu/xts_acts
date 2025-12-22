@@ -508,12 +508,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0100';
@@ -524,12 +524,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0200';
@@ -540,12 +540,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0300';
@@ -556,12 +556,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0400';
@@ -572,12 +572,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0500';
@@ -588,12 +588,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0600';
@@ -604,12 +604,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0700';
@@ -620,12 +620,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0800';
@@ -636,12 +636,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_0900';
@@ -652,12 +652,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1000
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1000
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1000
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1000', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1000';
@@ -668,12 +668,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1100';
@@ -684,12 +684,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1200';
@@ -700,12 +700,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1300';
@@ -716,12 +716,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1400';
@@ -732,12 +732,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1500';
@@ -748,12 +748,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1600';
@@ -764,12 +764,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1700';
@@ -780,12 +780,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_1800';
@@ -796,12 +796,12 @@ export default function AVPlayerLocalSuppTest() {
     })
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0100';
@@ -812,12 +812,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0200';
@@ -828,12 +828,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0300';
@@ -844,12 +844,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0400';
@@ -860,12 +860,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0500';
@@ -876,12 +876,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0600';
@@ -892,12 +892,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0700';
@@ -908,12 +908,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0800';
@@ -924,12 +924,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0900';
@@ -941,12 +941,12 @@ export default function AVPlayerLocalSuppTest() {
 
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0100';
@@ -957,12 +957,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0200';
@@ -973,12 +973,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0300';
@@ -989,12 +989,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0400';
@@ -1005,12 +1005,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0500';
@@ -1021,12 +1021,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0600';
@@ -1037,12 +1037,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0700';
@@ -1053,12 +1053,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0800';
@@ -1069,12 +1069,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3PG_0900';
@@ -1085,12 +1085,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0100';
@@ -1101,12 +1101,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0200';
@@ -1117,12 +1117,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0300';
@@ -1133,12 +1133,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0400';
@@ -1149,12 +1149,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0500';
@@ -1165,12 +1165,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0600';
@@ -1181,12 +1181,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0700';
@@ -1197,12 +1197,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0800';
@@ -1213,12 +1213,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_3G2_0900';
@@ -1229,12 +1229,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0100';
@@ -1245,12 +1245,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0200';
@@ -1261,12 +1261,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0300';
@@ -1277,12 +1277,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0400';
@@ -1293,12 +1293,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0500';
@@ -1309,12 +1309,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0600';
@@ -1325,12 +1325,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0700';
@@ -1341,12 +1341,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0800';
@@ -1357,12 +1357,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_AVI_0900';
@@ -1373,12 +1373,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0100';
@@ -1389,12 +1389,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0200';
@@ -1405,12 +1405,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0300';
@@ -1421,12 +1421,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0400';
@@ -1437,12 +1437,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0500';
@@ -1453,12 +1453,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0600';
@@ -1469,12 +1469,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0700';
@@ -1485,12 +1485,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0800';
@@ -1501,12 +1501,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_TS_0900';
@@ -1517,12 +1517,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0100';
@@ -1533,12 +1533,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0200';
@@ -1549,12 +1549,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0300';
@@ -1565,12 +1565,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0400';
@@ -1581,12 +1581,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0500';
@@ -1597,12 +1597,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0600';
@@ -1613,12 +1613,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0700';
@@ -1629,12 +1629,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0800';
@@ -1645,12 +1645,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MOV_0900';
@@ -1661,12 +1661,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0100';
@@ -1677,12 +1677,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0200';
@@ -1693,12 +1693,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0300';
@@ -1709,12 +1709,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0400';
@@ -1725,12 +1725,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0500';
@@ -1741,12 +1741,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0600';
@@ -1757,12 +1757,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0700';
@@ -1773,12 +1773,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0800';
@@ -1789,12 +1789,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_OGG_0900';
@@ -1805,12 +1805,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0100';
@@ -1821,12 +1821,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0200';
@@ -1837,12 +1837,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0300';
@@ -1853,12 +1853,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0400';
@@ -1869,12 +1869,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0500';
@@ -1885,12 +1885,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0600';
@@ -1901,12 +1901,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0700';
@@ -1917,12 +1917,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0800';
@@ -1933,12 +1933,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MKV_0900';
@@ -1949,12 +1949,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0100';
@@ -1965,12 +1965,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0200';
@@ -1981,12 +1981,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0300';
@@ -1997,12 +1997,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0400';
@@ -2013,12 +2013,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0500';
@@ -2029,12 +2029,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0600';
@@ -2045,12 +2045,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0700';
@@ -2061,12 +2061,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0800';
@@ -2077,12 +2077,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_FLAC_0900';
@@ -2093,12 +2093,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0100';
@@ -2109,12 +2109,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0200';
@@ -2125,12 +2125,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0300';
@@ -2141,12 +2141,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0400';
@@ -2157,12 +2157,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0500';
@@ -2173,12 +2173,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0600';
@@ -2189,12 +2189,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0700';
@@ -2205,12 +2205,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0800';
@@ -2221,12 +2221,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_WAV_0900';
@@ -2237,12 +2237,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0100
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0100
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0100
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0100';
@@ -2253,12 +2253,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0200
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0200
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0200
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0200', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0200';
@@ -2269,12 +2269,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0300
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0300
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0300
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0300', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0300';
@@ -2285,12 +2285,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0400
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0400
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0400
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0400';
@@ -2301,12 +2301,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0500
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0500
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0500
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0500';
@@ -2317,12 +2317,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0600
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0600
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0600
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0600';
@@ -2333,12 +2333,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0700
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0700
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0700
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0700';
@@ -2349,12 +2349,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0800
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0800
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0800
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0800', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0800';
@@ -2365,12 +2365,12 @@ export default function AVPlayerLocalSuppTest() {
     });
 
     /**
-     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900
      * @tc.desc   AudioPlayer_getTrackDescription
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900';

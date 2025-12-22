@@ -82,6 +82,7 @@ import ListItemSwipeActionStateTest from './componentapi/ListItemSwipeActionStat
 import ErrorCodeTest2 from './nativetype/ErrorCodeTest2.test'
 import ErrorCodeTest1 from './nativetype/ErrorCodeTest1.test'
 import NavigationErrorCodeTest from './nativetype/NavigationErrorCodeTest.test'
+import FinishCallbackLogicallyTest from './componentapi/FinishCallbackLogicallyTest.test'
 
 export default function testsuite() {
   NavDestinationStateTest()
@@ -151,4 +152,5 @@ export default function testsuite() {
   ErrorCodeTest()
   ListItemSwipeActionStateTest()
   NavigationErrorCodeTest()
+  FinishCallbackLogicallyTest()
 }

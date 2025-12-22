@@ -49,7 +49,6 @@ export default function storagePromiseTest() {
             });
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testClear0011
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0400
          * @tc.desc   clear promise interface test
@@ -70,7 +69,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0031
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1700
          * @tc.desc   has string interface test
@@ -90,7 +88,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0032
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1500
          * @tc.desc   has int interface test
@@ -110,7 +107,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0033
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1400
          * @tc.desc   has float interface test
@@ -130,7 +126,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0034
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1600
          * @tc.desc   has boolean interface test
@@ -150,7 +145,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0035
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1300
          * @tc.desc   has long interface test
@@ -170,7 +164,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey0036
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2600
          * @tc.desc   has long interface test
@@ -189,7 +182,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetDefValue0061
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0800
          * @tc.desc   get string promise interface test
@@ -209,7 +201,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetFloat0071
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0900
          * @tc.desc   get float promise interface test
@@ -230,7 +221,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetInt0081
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1000
          * @tc.desc   get int promise interface test
@@ -251,7 +241,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetLong0091
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1100
          * @tc.desc   get long promise interface test
@@ -272,7 +261,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetString101
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1200
          * @tc.desc   get String promise interface test
@@ -294,7 +282,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutBoolean0121
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1900
          * @tc.desc   put boolean promise interface test
@@ -316,7 +303,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutFloat0131
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2000
          * @tc.desc   put float promise interface test
@@ -338,7 +324,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutInt0141
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2100
          * @tc.desc   put int promise interface test
@@ -360,7 +345,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutLong0151
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2200
          * @tc.desc   put long promise interface test
@@ -383,7 +367,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutString0161
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2300
          * @tc.desc   put String promise interface test
@@ -406,7 +389,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutString0171
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2500
          * @tc.desc   deleteSync promise interface test
@@ -428,7 +410,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testFlush00181
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0600
          * @tc.desc   flush promise interface test
@@ -451,7 +432,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testMaxLengthofKey0200
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_1800
          * @tc.desc   Maximum length of key test
@@ -472,7 +452,6 @@ export default function storagePromiseTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testMaxLengthofValue0210
          * @tc.number testMaxLengthofValue0210
          * @tc.desc   testMaxLengthofValue0210
@@ -495,7 +474,6 @@ export default function storagePromiseTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testMaxLengthofValue0220
          * @tc.number testMaxLengthofValue0220
          * @tc.desc   testMaxLengthofValue0220
@@ -517,7 +495,6 @@ export default function storagePromiseTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testDelete0230
          * @tc.number testDelete0230
          * @tc.desc   testDelete0230
@@ -538,7 +515,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testMaxLengthofKey0240
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0200
          * @tc.desc   Maximum length of key test
@@ -560,7 +536,6 @@ export default function storagePromiseTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testMaxLengthofValue0250
          * @tc.number testMaxLengthofValue0250
          * @tc.desc   testMaxLengthofValue0250
@@ -583,7 +558,6 @@ export default function storagePromiseTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetDefValue0260
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0700
          * @tc.desc   get string promise interface test
@@ -604,7 +578,6 @@ export default function storagePromiseTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHassyncKeyTest0001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2700
          * @tc.desc   has string interface test

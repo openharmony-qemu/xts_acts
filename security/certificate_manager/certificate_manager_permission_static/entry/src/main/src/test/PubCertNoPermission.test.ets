@@ -97,12 +97,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
   describe('pubCertJsAPINoPermissionTestUnit', () => {
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0100
      * @tc.number SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0100
-     * @tc.name SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0100
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let keyUri: string = 'aabb';
@@ -117,12 +117,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0200
      * @tc.number SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0200
-     * @tc.name SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0200
-     * @tc.desc use promise type
-     * @tc.size SmallTest
-     * @tc.level Level2
-     * @tc.type Function
+     * @tc.desc   use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_CertManager_PubCertJsApi_NoPermission_Func_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let keyUri: string = 'aabb';
@@ -137,12 +137,12 @@ export default function pubCertJsAPINoPermissionTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_static_0020
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_static_0020
-     * @tc.name SUB_Security_CertManager_GetPriCertJsApi_Func_static_0020
-     * @tc.desc not use promise type
-     * @tc.size SmallTest
-     * @tc.level Level1
-     * @tc.type Function
+     * @tc.desc   not use promise type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Security_CertManager_GetPriCertJsApi_Func_static_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "%{public}s", "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0020: started.");

@@ -721,6 +721,258 @@ export default function WindowImmersiveTest() {
             }
             done();
         })
+        /**
+         * @tc.number      testMaximizePromiseErrCode1300002_static_0100
+         * @tc.name        testMaximizePromiseErrCode1300002_static_0100
+         * @tc.desc        testMaximizePromiseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testMaximizePromiseErrCode1300002_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testMaximizePromiseErrCode1300002_static_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+
+            try {
+                subWin = await windowStage.createSubWindow('testMaximizePromiseErrCode1300002_SubWindow_Promise')
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch(exception) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                await (subWin! as window.Window).maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling maximize.');
+                    expect(false).assertTrue();
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    done()
+                });
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+        
+/**
+         * @tc.number      testGetImmersiveModeEnabledStateErrCode1300002_0100
+         * @tc.name        testGetImmersiveModeEnabledStateErrCode1300002_0100
+         * @tc.desc        testGetImmersiveModeEnabledStateErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetImmersiveModeEnabledStateErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetImmersiveModeEnabledStateErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testGetImmersiveModeEnabledStateErrCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                subWin!.getImmersiveModeEnabledState();
+                console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call getImmersiveModeEnabledState. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+        /**
+         * @tc.number      testGetImmersiveModeEnabledStateErrCode1300004_0100
+         * @tc.name        testGetImmersiveModeEnabledStateErrCode1300004_0100
+         * @tc.desc        testGetImmersiveModeEnabledStateErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetImmersiveModeEnabledStateErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetImmersiveModeEnabledStateErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testGetImmersiveModeEnabledStateErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let win: window.Window | undefined = undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+            } catch (err) {
+                console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            try {
+                (win as window.Window).getImmersiveModeEnabledState();
+                console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
+                expect(false).assertTrue();
+                await (win! as window.Window).destroyWindow();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed to set the call getImmersiveModeEnabledState. Cause:' +
+                JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300004);
+                await (win! as window.Window).destroyWindow();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number      testGetWindowStatusErrCode1300004_0100
+         * @tc.name        testGetWindowStatusErrCode1300004_0100
+         * @tc.desc        testGetWindowStatusErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testGetWindowStatusErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testGetWindowStatusErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowConfig: window.Configuration = {
+                name: "testGetWindowStatusErrCode1300004_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context,
+            };
+            let win: window.Window | undefined = undefined;
+            try {
+                win = await window.createWindow(windowConfig);
+                expect(!!win).assertTrue();
+            } catch (err) {
+                console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (win! as window.Window).destroyWindow();
+            try {
+                (win as window.Window).getWindowStatus();
+                console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
+                expect(false).assertTrue();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                console.error(msgStr + 'Failed to set the call getImmersiveModeEnabledState. Cause:' +
+                JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done();
+            }
+        })
+/**
+         * @tc.number      testSetTitleAndDockHoverShownPromiseErrCode1300002_0100
+         * @tc.name        testSetTitleAndDockHoverShownPromiseErrCode1300002_0100
+         * @tc.desc        testSetTitleAndDockHoverShownPromiseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetTitleAndDockHoverShownPromiseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetTitleAndDockHoverShownPromiseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetTitleAndDockHoverShownPromiseErrCode1300002_0100');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                (subWin! as window.Window).setTitleAndDockHoverShown(true, true).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    done()
+                });
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testSetTitleAndDockHoverShownPromiseErrCode1300004_0100
+         * @tc.name        testSetTitleAndDockHoverShownPromiseErrCode1300004_0100
+         * @tc.desc        testSetTitleAndDockHoverShownPromiseErrCode1300004_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetTitleAndDockHoverShownPromiseErrCode1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetTitleAndDockHoverShownPromiseErrCode1300004_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWin: window.Window | undefined = undefined;
+            try {
+                subWin = await windowStage.createSubWindow('testSetTitleAndDockHoverShownPromiseErrCode1300004_SubWindow_Promise');
+                expect(!!subWin).assertTrue();
+                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+            } catch (err) {
+                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            expect(!!subWin).assertTrue();
+            await (subWin! as window.Window).setUIContent("pages/Index");
+            await (subWin! as window.Window).showWindow();
+            try {
+                await (subWin! as window.Window).setTitleAndDockHoverShown(true, true).then(async () => {
+                    console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
+                    expect(false).assertTrue();
+                    await (subWin! as window.Window).destroyWindow();
+                    done()
+                }).catch(async (err: BusinessError) => {
+                    console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
+                    await (subWin! as window.Window).destroyWindow();
+                    if (err.code == 801) {
+                        console.info(msgStr + '此设备不支持setTitleAndDockHoverShown能力.');
+                    } else {
+                        expect(err.code).assertEqual(1300004);
+                    }
+                    done()
+                });
+            } catch (exception) {
+                console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' +
+                JSON.stringify(exception));
+                await (subWin! as window.Window).destroyWindow();
+                expect(false).assertTrue();
+                done()
+            }
+        })
 
 
     })

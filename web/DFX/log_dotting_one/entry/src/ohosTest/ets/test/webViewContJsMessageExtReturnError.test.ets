@@ -57,10 +57,13 @@ export default function webViewContJsMessageExtReturnError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1000
-     *tc.name testJsMessageExtGetStringError
-     *tc.desc test interface of JsMessageExt getString with unmatched type
+    /**
+     * @tc.name   testJsMessageExtGetStringError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1000
+     * @tc.desc   test interface of JsMessageExt getString with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsMessageExtGetStringError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitJsMessageExtGetStringError";
@@ -69,10 +72,13 @@ export default function webViewContJsMessageExtReturnError() {
       Utils.registerEvent("testJsMessageExtGetStringError", "The type and value of the message do not match.", 111690, done);
       await Utils.waitAndClickComponent(driver, "webViewContJsMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1100
-     *tc.name testJsMessageExtGetNumberError
-     *tc.desc test interface of JsMessageExt getNumber with unmatched type
+    /**
+     * @tc.name   testJsMessageExtGetNumberError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1100
+     * @tc.desc   test interface of JsMessageExt getNumber with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsMessageExtGetNumberError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitJsMessageExtGetNumberError";
@@ -81,10 +87,13 @@ export default function webViewContJsMessageExtReturnError() {
       Utils.registerEvent("testJsMessageExtGetNumberError", "The type and value of the message do not match.", 111710, done);
       await Utils.waitAndClickComponent(driver, "webViewContJsMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1200
-     *tc.name testJsMessageExtGetBooleanError
-     *tc.desc test interface of JsMessageExt getBoolean with unmatched type
+    /**
+     * @tc.name   testJsMessageExtGetBooleanError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1200
+     * @tc.desc   test interface of JsMessageExt getBoolean with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsMessageExtGetBooleanError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitJsMessageExtGetBooleanError";
@@ -93,10 +102,13 @@ export default function webViewContJsMessageExtReturnError() {
       Utils.registerEvent("testJsMessageExtGetBooleanError", "The type and value of the message do not match.", 111730, done);
       await Utils.waitAndClickComponent(driver, "webViewContJsMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1300
-     *tc.name testJsMessageExtGetArrayBufferError
-     *tc.desc test interface of JsMessageExt getArrayBuffer with unmatched type
+    /**
+     * @tc.name   testJsMessageExtGetArrayBufferError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1300
+     * @tc.desc   test interface of JsMessageExt getArrayBuffer with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsMessageExtGetArrayBufferError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitJsMessageExtGetArrayBufferError";
@@ -105,10 +117,13 @@ export default function webViewContJsMessageExtReturnError() {
       Utils.registerEvent("testJsMessageExtGetArrayBufferError", "The type and value of the message do not match.", 111750, done);
       await Utils.waitAndClickComponent(driver, "webViewContJsMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1400
-     *tc.name testJsMessageExtGetArrayError
-     *tc.desc test interface of JsMessageExt getArray with unmatched type
+    /**
+     * @tc.name   testJsMessageExtGetArrayError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1400
+     * @tc.desc   test interface of JsMessageExt getArray with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsMessageExtGetArrayError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitJsMessageExtGetArrayError";

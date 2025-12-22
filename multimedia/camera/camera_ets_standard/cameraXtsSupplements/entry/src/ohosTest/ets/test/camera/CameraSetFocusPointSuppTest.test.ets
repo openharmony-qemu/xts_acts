@@ -306,12 +306,12 @@ export default function cameraSetFocusPointSuppTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_001
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_001
-     * @tc.desc      : test camera  photoSession SetFocusPoint null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_001
+     * @tc.desc   test camera  photoSession SetFocusPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_001', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', null);
@@ -328,12 +328,12 @@ export default function cameraSetFocusPointSuppTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_002
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_002
-     * @tc.desc      : test camera VideoSession SetFocusPoint undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_002
+     * @tc.desc   test camera VideoSession SetFocusPoint undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_002', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', undefined);
@@ -351,12 +351,12 @@ export default function cameraSetFocusPointSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_003
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_003
-     * @tc.desc      : test camera  photoSession SetFocusPoint ''
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_003
+     * @tc.desc   test camera  photoSession SetFocusPoint ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_003', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', '');
@@ -374,12 +374,12 @@ export default function cameraSetFocusPointSuppTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_001
-     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_001
-     * @tc.desc       test camera VideoSession setMeteringPoint undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_001
+     * @tc.desc   test camera VideoSession setMeteringPoint undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETMETERINGPOINT_001', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', undefined);
@@ -396,12 +396,12 @@ export default function cameraSetFocusPointSuppTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_002
-     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_002
-     * @tc.desc       test camera VideoSession setMeteringPoint null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_002
+     * @tc.desc   test camera VideoSession setMeteringPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_002', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', null);
@@ -418,12 +418,12 @@ export default function cameraSetFocusPointSuppTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_003
-     * @tc.name       SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_003
-     * @tc.desc       test camera VideoSession setMeteringPoint ''
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_003
+     * @tc.desc   test camera VideoSession setMeteringPoint ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_SETFOCUSPOINT_003', Level.LEVEL2, async (done: Function) => {
       AppStorage.setOrCreate('key', '');

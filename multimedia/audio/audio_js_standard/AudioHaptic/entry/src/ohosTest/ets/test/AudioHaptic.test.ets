@@ -125,12 +125,12 @@ export default function AudioHapticTest() {
       console.log(`afterAll come in`);
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0100
-     * @tc.name      : registerSource_Ringtone_URI
-     * @tc.desc      : registerSource_Ringtone_URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0100
+     * @tc.desc   registerSource_Ringtone_URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -153,12 +153,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0200
-     * @tc.name      : registerSource_notification_URI
-     * @tc.desc      : registerSource_notification_URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0200
+     * @tc.desc   registerSource_notification_URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0200", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -183,12 +183,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0300
-     * @tc.name      : registerSource_number_parameter_401
-     * @tc.desc      : registerSource_number_parameter_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0300
+     * @tc.desc   registerSource_number_parameter_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -210,12 +210,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0400
-     * @tc.name      : registerSource_null_parameter_401
-     * @tc.desc      : registerSource_null_parameter_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0400
+     * @tc.desc   registerSource_null_parameter_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -237,12 +237,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0100
-     * @tc.name      : unregisterSource_Notification_Uri
-     * @tc.desc      : unregisterSource_Notification_Uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0100
+     * @tc.desc   unregisterSource_Notification_Uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -275,12 +275,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0200
-     * @tc.name      : unregisterSource_Ringtone_Uri
-     * @tc.desc      : unregisterSource_Ringtone_Uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0200
+     * @tc.desc   unregisterSource_Ringtone_Uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0200", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -313,12 +313,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0300
-     * @tc.name      : unregisterSource_string_parameter_401
-     * @tc.desc      : unregisterSource_string_parameter_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0300
+     * @tc.desc   unregisterSource_string_parameter_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -341,12 +341,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0400
-     * @tc.name      : unregisterSource_null_parameter_401
-     * @tc.desc      : unregisterSource_null_parameter_401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0400
+     * @tc.desc   unregisterSource_null_parameter_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -367,12 +367,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0100
-     * @tc.name      : Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
-     * @tc.desc      : Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0100
+     * @tc.desc   Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -388,12 +388,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0200
-     * @tc.name      : Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
-     * @tc.desc      : Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0200
+     * @tc.desc   Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -410,12 +410,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0300
-     * @tc.name      : Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
-     * @tc.desc      : Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0300
+     * @tc.desc   Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -431,12 +431,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0400
-     * @tc.name      : Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
-     * @tc.desc      : Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0400
+     * @tc.desc   Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -452,12 +452,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0500
-     * @tc.name      : setAudioLatencyMode_invalid_number_parameter
-     * @tc.desc      : setAudioLatencyMode_invalid_number_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0500
+     * @tc.desc   setAudioLatencyMode_invalid_number_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 
@@ -474,12 +474,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0600
-     * @tc.name      : setAudioLatencyMode_invalid_string_parameter
-     * @tc.desc      : setAudioLatencyMode_invalid_string_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0600
+     * @tc.desc   setAudioLatencyMode_invalid_string_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = '4';
@@ -495,12 +495,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0700
-     * @tc.name      : setAudioLatencyMode_invalid_null_parameter
-     * @tc.desc      : setAudioLatencyMode_invalid_null_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0700
+     * @tc.desc   setAudioLatencyMode_invalid_null_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -514,12 +514,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0100
-     * @tc.name      : setStreamUsage_STREAM_USAGE_MUSIC
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0100
+     * @tc.desc   setStreamUsage_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
@@ -535,12 +535,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0200
-     * @tc.name      : setStreamUsage_STREAM_USAGE_UNKNOWN
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0200
+     * @tc.desc   setStreamUsage_STREAM_USAGE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0200", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_UNKNOWN;
@@ -556,12 +556,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0300
-     * @tc.name      : setStreamUsage_STREAM_USAGE_MEDIA
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0300
+     * @tc.desc   setStreamUsage_STREAM_USAGE_MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0300", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_MEDIA;
@@ -577,12 +577,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0400
-     * @tc.name      : setStreamUsage_STREAM_USAGE_VOICE_COMMUNICATION
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_VOICE_COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0400
+     * @tc.desc   setStreamUsage_STREAM_USAGE_VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION;
@@ -599,12 +599,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0500
-     * @tc.name      : setStreamUsage_STREAM_USAGE_VOICE_ASSISTANT
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0500
+     * @tc.desc   setStreamUsage_STREAM_USAGE_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT;
@@ -620,12 +620,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0600
-     * @tc.name      : setStreamUsage_STREAM_USAGE_ALARM
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0600
+     * @tc.desc   setStreamUsage_STREAM_USAGE_ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_ALARM;
@@ -641,12 +641,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0700
-     * @tc.name      : setStreamUsage_STREAM_USAGE_VOICE_MESSAGE
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0700
+     * @tc.desc   setStreamUsage_STREAM_USAGE_VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE;
@@ -662,12 +662,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0800
-     * @tc.name      : setStreamUsage_STREAM_USAGE_RINGTONE
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0800
+     * @tc.desc   setStreamUsage_STREAM_USAGE_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_RINGTONE;
@@ -683,12 +683,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0900
-     * @tc.name      : setStreamUsage_STREAM_USAGE_NOTIFICATION
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0900
+     * @tc.desc   setStreamUsage_STREAM_USAGE_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
@@ -704,12 +704,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1000
-     * @tc.name      : setStreamUsage_STREAM_USAGE_ACCESSIBILITY
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1000
+     * @tc.desc   setStreamUsage_STREAM_USAGE_ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY;
@@ -725,12 +725,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1100
-     * @tc.name      : setStreamUsage_STREAM_USAGE_MOVIE
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1100
+     * @tc.desc   setStreamUsage_STREAM_USAGE_MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_MOVIE;
@@ -746,12 +746,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1200
-     * @tc.name      : setStreamUsage_STREAM_USAGE_GAME
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1200
+     * @tc.desc   setStreamUsage_STREAM_USAGE_GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_GAME;
@@ -767,12 +767,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1300
-     * @tc.name      : setStreamUsage_STREAM_USAGE_AUDIOBOOK
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_AUDIOBOOK
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1300
+     * @tc.desc   setStreamUsage_STREAM_USAGE_AUDIOBOOK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_AUDIOBOOK;
@@ -788,12 +788,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1400
-     * @tc.name      : setStreamUsage_STREAM_USAGE_NAVIGATION
-     * @tc.desc      : setStreamUsage_STREAM_USAGE_NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1400
+     * @tc.desc   setStreamUsage_STREAM_USAGE_NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_NAVIGATION;
@@ -809,12 +809,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1500
-     * @tc.name      : setStreamUsage_invalid_number_parameter
-     * @tc.desc      : setStreamUsage_invalid_number_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1500
+     * @tc.desc   setStreamUsage_invalid_number_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = 20;
@@ -830,12 +830,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1600
-     * @tc.name      : setStreamUsage_invalid_string_parameter
-     * @tc.desc      : setStreamUsage_invalid_string_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1600
+     * @tc.desc   setStreamUsage_invalid_string_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let setStreamUsage = '20';
@@ -851,12 +851,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1700
-     * @tc.name      : setStreamUsage_invalid_null_parameter
-     * @tc.desc      : setStreamUsage_invalid_null_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1700
+     * @tc.desc   setStreamUsage_invalid_null_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -872,12 +872,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0100
-     * @tc.name      : Notification_createPlayer_release
-     * @tc.desc      : Notification_createPlayer_release
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0100
+     * @tc.desc   Notification_createPlayer_release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioHapticPlayerOptions: AudioHapticPlayerOptions = {
@@ -912,12 +912,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0200
-     * @tc.name      : createPlayer_invalid_string_parameter
-     * @tc.desc      : createPlayer_invalid_string_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0200
+     * @tc.desc   createPlayer_invalid_string_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioHapticPlayerOptions = '123'
@@ -944,12 +944,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0300
-     * @tc.name      : createPlayer_invalid_null_parameter
-     * @tc.desc      : createPlayer_invalid_null_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0300
+     * @tc.desc   createPlayer_invalid_null_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
@@ -973,12 +973,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0100
-     * @tc.name      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
-     * @tc.desc      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0100
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -1020,12 +1020,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0200
-     * @tc.name      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
-     * @tc.desc      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0200
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -1067,12 +1067,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0300
-     * @tc.name      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
-     * @tc.desc      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0300
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -1115,12 +1115,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0400
-     * @tc.name      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
-     * @tc.desc      : Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0400
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -1163,12 +1163,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0500
-     * @tc.name      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
-     * @tc.desc      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0500
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -1211,12 +1211,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0600
-     * @tc.name      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
-     * @tc.desc      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0600
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -1258,12 +1258,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0700
-     * @tc.name      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
-     * @tc.desc      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0700
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -1305,12 +1305,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0800
-     * @tc.name      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
-     * @tc.desc      : Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0800
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -1352,12 +1352,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0900
-     * @tc.name      : isMuted_invalid_number_parameter
-     * @tc.desc      : isMuted_invalid_number_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0900
+     * @tc.desc   isMuted_invalid_number_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = 3;
@@ -1397,12 +1397,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1000
-     * @tc.name      : isMuted_invalid_string_parameter
-     * @tc.desc      : isMuted_invalid_string_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1000
+     * @tc.desc   isMuted_invalid_string_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let type = '3';
@@ -1443,12 +1443,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1100
-     * @tc.name      : isMuted_invalid_null_parameter
-     * @tc.desc      : isMuted_invalid_null_parameter
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1100
+     * @tc.desc   isMuted_invalid_null_parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioHapticPlayerOptions: AudioHapticPlayerOptions = {
@@ -1487,12 +1487,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0100
-     * @tc.name      : Notification_createPlayer_start_release_normal
-     * @tc.desc      : Notification_createPlayer_start_release_normal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0100
+     * @tc.desc   Notification_createPlayer_start_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1535,12 +1535,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0200
-     * @tc.name      : Notification_createPlayer_start_stop_release_normal
-     * @tc.desc      : Notification_createPlayer_start_stop_release_normal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0200
+     * @tc.desc   Notification_createPlayer_start_stop_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1587,12 +1587,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0300
-     * @tc.name      : Notification_createPlayer_start_release_fast
-     * @tc.desc      : Notification_createPlayer_start_release_fast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0300
+     * @tc.desc   Notification_createPlayer_start_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1635,12 +1635,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0400
-     * @tc.name      : Notification_createPlayer_start_stop_release_fast
-     * @tc.desc      : Notification_createPlayer_start_stop_release_fast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0400
+     * @tc.desc   Notification_createPlayer_start_stop_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1688,12 +1688,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0500
-     * @tc.name      : Ringtone_createPlayer_start_release_normal
-     * @tc.desc      : Ringtone_createPlayer_start_release_normal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0500
+     * @tc.desc   Ringtone_createPlayer_start_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1736,12 +1736,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0600
-     * @tc.name      : Ringtone_createPlayer_start_stop_release_normal
-     * @tc.desc      : Ringtone_createPlayer_start_stop_release_normal
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0600
+     * @tc.desc   Ringtone_createPlayer_start_stop_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1788,12 +1788,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0700
-     * @tc.name      : Notification_createPlayer_start_release_fast
-     * @tc.desc      : Notification_createPlayer_start_release_fast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0700
+     * @tc.desc   Notification_createPlayer_start_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1836,12 +1836,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0800
-     * @tc.name      : Ringtone_createPlayer_start_stop_release_fast
-     * @tc.desc      : Ringtone_createPlayer_start_stop_release_fast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0800
+     * @tc.desc   Ringtone_createPlayer_start_stop_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1888,12 +1888,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0100
-     * @tc.name      : Ringtone_AudioHapticPlayer_on_endofStream
-     * @tc.desc      : Ringtone_AudioHapticPlayer_on_endofStream
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0100
+     * @tc.desc   Ringtone_AudioHapticPlayer_on_endofStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1941,12 +1941,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0200
-     * @tc.name      : Notification_AudioHapticPlayer_on_endofStream
-     * @tc.desc      : Notification_AudioHapticPlayer_on_endofStream
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0200
+     * @tc.desc   Notification_AudioHapticPlayer_on_endofStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1995,12 +1995,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_0100
-     * @tc.name      : AudioHapticPlayer_on_audioInterrupt
-     * @tc.desc      : AudioHapticPlayer_on_audioInterrupt
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_0100
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -2046,12 +2046,12 @@ export default function AudioHapticTest() {
         });
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0100
-     * @tc.desc      : AudioHapticPlayer_on_audioInterrupt
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0100
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0100", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let id = 0;
@@ -2109,12 +2109,12 @@ export default function AudioHapticTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
-     * @tc.desc      : AudioHapticPlayer_on_audioInterrupt
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_0200", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let id = 0;

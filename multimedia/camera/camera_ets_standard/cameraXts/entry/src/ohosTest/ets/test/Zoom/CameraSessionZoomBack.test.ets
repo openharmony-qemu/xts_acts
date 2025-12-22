@@ -779,12 +779,12 @@ export default function CameraSessionZoomBackTest() {
     });
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_001
-     * @tc.name      : getZoomRatioRange_photo_abnormal_back_001
-     * @tc.desc      : mode->NORMAL_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_photo_abnormal_back_001
+     * @tc.number SESSION_ZOOM_BACK_001
+     * @tc.desc   mode->NORMAL_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_photo_abnormal_back_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getZoomRatioRange_photo_abnormal_back_001';
@@ -792,12 +792,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_002
-     * @tc.name      : getZoomRatioRange_video_abnormal_back_001
-     * @tc.desc      : mode->NORMAL_VIDEO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_video_abnormal_back_001
+     * @tc.number SESSION_ZOOM_BACK_002
+     * @tc.desc   mode->NORMAL_VIDEO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_video_abnormal_back_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getZoomRatioRange_video_abnormal_back_001';
@@ -805,12 +805,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_003
-     * @tc.name      : getZoomRatioRange_secure_photo_abnormal_back_001
-     * @tc.desc      : mode->SECURE_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_secure_photo_abnormal_back_001
+     * @tc.number SESSION_ZOOM_BACK_003
+     * @tc.desc   mode->SECURE_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_secure_photo_abnormal_back_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getZoomRatioRange_secure_photo_abnormal_back_001';
@@ -818,12 +818,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_004
-     * @tc.name      : getZoomRatioRange_photo_back_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_photo_back_001
+     * @tc.number SESSION_ZOOM_BACK_004
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_photo_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_photo_back_001';
@@ -864,12 +864,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_005
-     * @tc.name      : getZoomRatioRange_video_back_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_video_back_001
+     * @tc.number SESSION_ZOOM_BACK_005
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_video_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_video_back_001';
@@ -915,12 +915,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_006
-     * @tc.name      : setZoomRatio_photo_back_001
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_back_001
+     * @tc.number SESSION_ZOOM_BACK_006
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_back_001';
@@ -928,12 +928,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_007
-     * @tc.name      : setZoomRatio_photo_back_002
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_back_002
+     * @tc.number SESSION_ZOOM_BACK_007
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_back_002';
@@ -941,12 +941,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_008
-     * @tc.name      : setZoomRatio_photo_back_003
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_back_003
+     * @tc.number SESSION_ZOOM_BACK_008
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_back_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_back_003';
@@ -954,12 +954,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_009
-     * @tc.name      : setZoomRatio_video_back_001
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_back_001
+     * @tc.number SESSION_ZOOM_BACK_009
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_back_001';
@@ -967,12 +967,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_010
-     * @tc.name      : setZoomRatio_video_back_002
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_back_002
+     * @tc.number SESSION_ZOOM_BACK_010
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_back_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_back_002';
@@ -980,12 +980,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_011
-     * @tc.name      : setZoomRatio_video_back_003
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_back_003
+     * @tc.number SESSION_ZOOM_BACK_011
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_back_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_back_003';
@@ -993,12 +993,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_012
-     * @tc.name      : getZoomRatioRange_photo_preconfig_back_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_photo_preconfig_back_001
+     * @tc.number SESSION_ZOOM_BACK_012
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_photo_preconfig_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_photo_preconfig_back_001';
@@ -1007,12 +1007,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_013
-     * @tc.name      : getZoomRatioRange_video_preconfig_back_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_video_preconfig_back_001
+     * @tc.number SESSION_ZOOM_BACK_013
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_video_preconfig_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_video_preconfig_back_001';
@@ -1021,12 +1021,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_014
-     * @tc.name      : setZoomRatio_photo_preconfig_back_001
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_preconfig_back_001
+     * @tc.number SESSION_ZOOM_BACK_014
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_preconfig_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_preconfig_back_001';
@@ -1035,12 +1035,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_015
-     * @tc.name      : setZoomRatio_video_preconfig_back_001
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_preconfig_back_001
+     * @tc.number SESSION_ZOOM_BACK_015
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_preconfig_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_preconfig_back_001';
@@ -1049,12 +1049,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_016
-     * @tc.name      : setZoomRatio_photo_abnormal_back_001
-     * @tc.desc      : setZoomRatio-min zoom ratio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_abnormal_back_001
+     * @tc.number SESSION_ZOOM_BACK_016
+     * @tc.desc   setZoomRatio-min zoom ratio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_abnormal_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_abnormal_back_001';
@@ -1062,12 +1062,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_017
-     * @tc.name      : setZoomRatio_video_abnormal_back_001
-     * @tc.desc      : setZoomRatio-min zoom ratio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_abnormal_back_001
+     * @tc.number SESSION_ZOOM_BACK_017
+     * @tc.desc   setZoomRatio-min zoom ratio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_abnormal_back_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_abnormal_back_001';
@@ -1075,12 +1075,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_018
-     * @tc.name      : setZoomRatio_photo_abnormal_back_002
-     * @tc.desc      : mode->NORMAL_PHOTO, no session, only setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_abnormal_back_002
+     * @tc.number SESSION_ZOOM_BACK_018
+     * @tc.desc   mode->NORMAL_PHOTO, no session, only setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_abnormal_back_002', Level.LEVEL0, (done: Function) => {
       const testName = 'setZoomRatio_photo_abnormal_back_002';
@@ -1088,12 +1088,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_019
-     * @tc.name      : setZoomRatio_video_abnormal_back_002
-     * @tc.desc      : mode->NORMAL_VIDEO, no session, only setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_abnormal_back_002
+     * @tc.number SESSION_ZOOM_BACK_019
+     * @tc.desc   mode->NORMAL_VIDEO, no session, only setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_abnormal_back_002', Level.LEVEL0, (done: Function) => {
       const testName = 'setZoomRatio_video_abnormal_back_002';
@@ -1101,12 +1101,12 @@ export default function CameraSessionZoomBackTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_BACK_020
-     * @tc.name      : setZoomRatio_secure_photo_abnormal_back_001
-     * @tc.desc      : mode->SECURE_PHOTO, no session, only setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_secure_photo_abnormal_back_001
+     * @tc.number SESSION_ZOOM_BACK_020
+     * @tc.desc   mode->SECURE_PHOTO, no session, only setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_secure_photo_abnormal_back_001', Level.LEVEL0, (done: Function) => {
       const testName = 'setZoomRatio_secure_photo_abnormal_back_001';

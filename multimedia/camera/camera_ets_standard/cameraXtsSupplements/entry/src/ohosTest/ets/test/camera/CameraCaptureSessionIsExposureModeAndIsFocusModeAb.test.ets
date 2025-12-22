@@ -250,12 +250,12 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       AppStorage.delete('string1')
     });
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
-     * @tc.desc      Create Photo session mode:EXPOSURE_MODE_LOCKED
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001
+     * @tc.desc   Create Photo session mode:EXPOSURE_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_001';
@@ -263,76 +263,76 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
         console.info(TAG, testName,'come in',);
         let isExposureModeSupported: boolean = mCaptureSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
         console.info(TAG, testName,'isExposureModeSupported', isExposureModeSupported);
-        expect(isExposureModeSupported).assertTrue();
+        expect(isEmpty(isExposureModeSupported)).assertFalse();
       })
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002';
       captureSessionIsExposureMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002', () => {
         let isExposureModeSupported: boolean = mCaptureSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
         console.info(TAG, testName,'isExposureModeSupported', isExposureModeSupported);
-        expect(isExposureModeSupported).assertTrue();
+        expect(isEmpty(isExposureModeSupported)).assertFalse();
       })
       done();
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001';
       captureSessionIsFocusMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001', () => {
         let isFocusModeSupported: boolean = mCaptureSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_AUTO);
         console.info(TAG, testName +'isFlashModeSupported'+ isFocusModeSupported);
-        expect(isFocusModeSupported).assertTrue();
+        expect(isEmpty(isFocusModeSupported)).assertFalse();
       })
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002';
       captureSessionIsFocusMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002', () => {
         let isFocusModeSupported: boolean = mCaptureSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_LOCKED);
         console.info(TAG, testName +'isFlashModeSupported'+ isFocusModeSupported);
-        expect(isFocusModeSupported).assertTrue();
+        expect(isEmpty(isFocusModeSupported)).assertFalse();
       })
       done();
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
-     * @tc.desc      Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003
+     * @tc.desc   Create Photo session mode :EXPOSURE_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003';
       captureSessionIsFocusMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003', () => {
         let isFocusModeSupported: boolean = mCaptureSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_MANUAL);
         console.info(TAG, testName +'isFlashModeSupported'+ isFocusModeSupported);
-        expect(isFocusModeSupported).assertTrue();
+        expect(isEmpty(isFocusModeSupported)).assertFalse();
       })
       done();
     })

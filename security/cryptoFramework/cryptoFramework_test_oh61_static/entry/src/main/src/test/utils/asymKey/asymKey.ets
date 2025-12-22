@@ -910,3 +910,16 @@ export function getKeySpecItem(pubKey: cryptoFramework.PubKey, item: cryptoFrame
     throw error as Error;
   }
 }
+
+export async function hkdfCallback(algName: string, spec: cryptoFramework.HKDFSpec): Promise<cryptoFramework.DataBlob> {
+  return new Promise<cryptoFramework.DataBlob>((resolve, reject) => {
+    let kdf = cryptoFramework.createKdf(algName);
+    kdf.generateSecret(spec, (err: BusinessError<void>|null, dataBlob: cryptoFramework.DataBlob|undefined) => {
+      if (err || dataBlob === undefined) { // success: error is null, failed: data is undefined
+        reject(err as Error);
+      } else {
+        resolve(dataBlob as cryptoFramework.DataBlob);
+      }
+    });
+  });
+}

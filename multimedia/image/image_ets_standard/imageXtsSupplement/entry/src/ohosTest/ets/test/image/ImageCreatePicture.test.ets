@@ -59,15 +59,15 @@ export default function ImageCreatePictureTest() {
       console.info(TAG, 'afterAll case.');
     });
 
-    /**
-     * @tc.number     IMAGE_CREATE_PICTURE_001
-     * @tc.name       IMAGE_CREATE_PICTURE_001
-     * @tc.desc       测试第一个参数为undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
-     */
 
+    /**
+     * @tc.name   IMAGE_CREATE_PICTURE_001
+     * @tc.number IMAGE_CREATE_PICTURE_001
+     * @tc.desc   IMAGE_CREATE_PICTURE_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('IMAGE_CREATE_PICTURE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PICTURE_001';
       await createPictureAbnormalPromiseTest(done, testName, undefined as ESObject, (errorCode: number) => {
@@ -76,12 +76,12 @@ export default function ImageCreatePictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_PICTURE_002
-     * @tc.name       IMAGE_CREATE_PICTURE_002
-     * @tc.desc       测试第一个参数为null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_PICTURE_002
+     * @tc.number IMAGE_CREATE_PICTURE_002
+     * @tc.desc   测试第一个参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PICTURE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PICTURE_002';
@@ -91,12 +91,12 @@ export default function ImageCreatePictureTest() {
     });
 
     /**
-     * @tc.number     IMAGE_CREATE_PICTURE_003
-     * @tc.name       IMAGE_CREATE_PICTURE_003
-     * @tc.desc       测试第一个参数为空值
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   IMAGE_CREATE_PICTURE_003
+     * @tc.number IMAGE_CREATE_PICTURE_003
+     * @tc.desc   测试第一个参数为空值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMAGE_CREATE_PICTURE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'IMAGE_CREATE_PICTURE_003';

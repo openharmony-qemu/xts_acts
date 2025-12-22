@@ -104,7 +104,7 @@ export default function ContextDirTest() {
           .then((ability) => {
             ability?.lastRequestWant?.abilityName !== 'TestAbility' && ability?.context?.terminateSelf();
           });
-        await sleep(600);
+        await sleep(1000);
       } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s', "close TopAbility error: " + JSON.stringify(error));
       }
@@ -112,7 +112,7 @@ export default function ContextDirTest() {
         bundleName: 'com.example.contextdirtest',
         abilityName: 'TestAbility',
       })
-      await sleep(1200);
+      await sleep(2000);
     })
 
     /**
@@ -428,32 +428,12 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent1", "getGroupDirDone"],
+      await commonEventManager.createSubscriber({
+        events: ["getGroupDirEvent1"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
-          if (data.event === "getGroupDirDone") {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
-            try {
-              abilityDelegator.startAbility({
-                bundleName: "com.example.contextdirnormaltest",
-                abilityName: "EntryAbility",
-                moduleName: 'entry',
-                parameters: {
-                  isPublish: true,
-                  areaMode: "el3"
-                }
-              }, (err) => {
-                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-              })
-            } catch (e) {
-              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-              expect().assertFail();
-              done();
-            }
-          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -472,9 +452,23 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el3/group");
           expect(err).assertNull();
-          commonEventManager.publish("getGroupDirDone", () => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
-          });
+          try {
+            abilityDelegator.startAbility({
+              bundleName: "com.example.contextdirnormaltest",
+              abilityName: "EntryAbility",
+              moduleName: 'entry',
+              parameters: {
+                isPublish: true,
+                areaMode: "el3"
+              }
+            }, (err) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+            })
+          } catch (e) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+            expect().assertFail();
+            done();
+          }
         })
       })
     })
@@ -494,32 +488,12 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent1", "getGroupDirDone"],
+      await commonEventManager.createSubscriber({
+        events: ["getGroupDirEvent1"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
-          if (data.event === "getGroupDirDone") {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
-            try {
-              abilityDelegator.startAbility({
-                bundleName: "com.example.contextdirnormaltest",
-                abilityName: "EntryAbility",
-                moduleName: 'entry',
-                parameters: {
-                  isPublish: true,
-                  areaMode: "el4"
-                }
-              }, (err) => {
-                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-              })
-            } catch (e) {
-              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-              expect().assertFail();
-              done();
-            }
-          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -538,9 +512,23 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el4/group");
           expect(err).assertNull();
-          commonEventManager.publish("getGroupDirDone", () => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
-          });
+          try {
+            abilityDelegator.startAbility({
+              bundleName: "com.example.contextdirnormaltest",
+              abilityName: "EntryAbility",
+              moduleName: 'entry',
+              parameters: {
+                isPublish: true,
+                areaMode: "el4"
+              }
+            }, (err) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+            })
+          } catch (e) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+            expect().assertFail();
+            done();
+          }
         })
       })
     })
@@ -560,32 +548,12 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent2", "getGroupDirDone"],
+      await commonEventManager.createSubscriber({
+        events: ["getGroupDirEvent2"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
-          if (data.event === "getGroupDirDone") {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
-            try {
-              abilityDelegator.startAbility({
-                bundleName: "com.example.contextdirnormaltest",
-                abilityName: "EntryAbility",
-                moduleName: 'entry',
-                parameters: {
-                  isPublish: true,
-                  areaMode: "el3"
-                }
-              }, (err) => {
-                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-              })
-            } catch (e) {
-              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-              expect().assertFail();
-              done();
-            }
-          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -604,9 +572,23 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el3/group");
           expect(err).assertNull();
-          commonEventManager.publish("getGroupDirDone", () => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
-          });
+          try {
+            abilityDelegator.startAbility({
+              bundleName: "com.example.contextdirnormaltest",
+              abilityName: "EntryAbility",
+              moduleName: 'entry',
+              parameters: {
+                isPublish: true,
+                areaMode: "el3"
+              }
+            }, (err) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+            })
+          } catch (e) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+            expect().assertFail();
+            done();
+          }
         })
       })
     })
@@ -626,32 +608,12 @@ export default function ContextDirTest() {
       let getGroupDirDataOther: string;
       let Subscriber: commonEventManager.CommonEventSubscriber;
 
-      commonEventManager.createSubscriber({
-        events: ["getGroupDirEvent2", "getGroupDirDone"],
+      await commonEventManager.createSubscriber({
+        events: ["getGroupDirEvent2"],
       }).then(async (data) => {
         console.log(TAG + "Subscriber create");
         Subscriber = data;
         commonEventManager.subscribe(Subscriber, async (_, data) => {
-          if (data.event === "getGroupDirDone") {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " receive getGroupDirDone event");
-            try {
-              abilityDelegator.startAbility({
-                bundleName: "com.example.contextdirnormaltest",
-                abilityName: "EntryAbility",
-                moduleName: 'entry',
-                parameters: {
-                  isPublish: true,
-                  areaMode: "el4"
-                }
-              }, (err) => {
-                hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
-              })
-            } catch (e) {
-              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
-              expect().assertFail();
-              done();
-            }
-          }
           if (data?.parameters?.result !== undefined) {
             hilog.info(0x0000, 'testTag', '%{public}s', TAG + " Subscriber data " + JSON.stringify(data.parameters.result));
             getGroupDirDataOther = data.parameters.result;
@@ -670,9 +632,23 @@ export default function ContextDirTest() {
           getGroupDirData = data;
           expect(getGroupDirData).assertContain("/data/storage/el4/group");
           expect(err).assertNull();
-          commonEventManager.publish("getGroupDirDone", () => {
-            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " publish getGroupDirDone event success");
-          });
+          try {
+            abilityDelegator.startAbility({
+              bundleName: "com.example.contextdirnormaltest",
+              abilityName: "EntryAbility",
+              moduleName: 'entry',
+              parameters: {
+                isPublish: true,
+                areaMode: "el4"
+              }
+            }, (err) => {
+              hilog.info(0x0000, 'testTag', '%{public}s', TAG + " startAbility err:" + JSON.stringify(err));
+            })
+          } catch (e) {
+            hilog.info(0x0000, 'testTag', '%{public}s', TAG + " error: " + JSON.stringify(e));
+            expect().assertFail();
+            done();
+          }
         })
       })
     })

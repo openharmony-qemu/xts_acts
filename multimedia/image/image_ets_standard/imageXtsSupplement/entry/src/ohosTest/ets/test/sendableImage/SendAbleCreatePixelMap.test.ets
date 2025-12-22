@@ -51,12 +51,12 @@ export default function sendableCreatePixelMap() {
     });
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0001
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0001
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0001
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0001
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0001';
@@ -68,12 +68,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0002
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0002
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0002
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0002
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0002';
@@ -85,12 +85,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0003
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0003
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0003
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0003
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0003';
@@ -102,12 +102,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0004
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0004
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0004
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0004
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0004';
@@ -120,12 +120,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0005
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0005
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0005
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0005
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0005';
@@ -138,12 +138,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0006
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0006
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0006
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0006
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0006';
@@ -156,12 +156,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0007
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0007
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0007
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0007
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0007';
@@ -174,12 +174,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0008
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0008
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0008
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0008
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0008';
@@ -192,12 +192,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0009
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0009
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0009
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0009
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0009';
@@ -210,12 +210,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0010
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0010
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0010
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0010
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0010', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0010';
@@ -228,12 +228,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0011
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0011
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0011
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0011
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0011', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0011';
@@ -246,12 +246,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0012
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0012
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0012
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0012
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0012', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0012';
@@ -264,12 +264,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0013
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0013
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0013
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0013
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0013', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0013';
@@ -282,12 +282,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0014
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0014
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0014
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0014
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0014', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0014';
@@ -300,12 +300,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0015
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0015
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0015
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0015
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0015', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0015';
@@ -318,12 +318,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0016
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0016
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0016
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0016
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0016', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0016';
@@ -336,12 +336,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0017
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0017
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0017
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0017
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0017', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0017';
@@ -354,12 +354,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0018
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0018
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0018
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0018
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0018', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0018';
@@ -372,12 +372,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0019
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0019
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0019
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0019
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0019', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0019';
@@ -390,12 +390,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0020
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0020
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0020
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0020
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0020', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0020';
@@ -408,12 +408,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0021
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0021
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0021
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0021
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0021', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0021';
@@ -426,12 +426,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0022
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0022
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0022
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0022
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0022', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0022';
@@ -443,12 +443,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0023
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0023
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0023
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0023
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0023', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0023';
@@ -460,12 +460,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0024
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0024
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0024
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0024
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0024', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0024';
@@ -477,12 +477,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0025
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0025
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0025
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0025
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0025', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0025';
@@ -495,12 +495,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0026
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0026
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0026
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0026
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0026', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0026';
@@ -513,12 +513,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0027
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0027
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0027
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0027
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0027', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0027';
@@ -531,12 +531,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0028
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0028
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0028
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0028
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0028', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0028';
@@ -549,12 +549,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0029
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0029
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0029
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0029
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0029', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0029';
@@ -567,12 +567,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0030
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0030
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0030
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0030
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0030', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0030';
@@ -585,12 +585,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0031
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0031
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0031
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0031
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0031', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0031';
@@ -603,12 +603,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0032
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0032
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0032
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0032
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0032', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0032';
@@ -621,12 +621,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0033
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0033
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0033
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0033
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0033', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0033';
@@ -639,12 +639,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0034
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0034
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0034
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0034
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0034', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0034';
@@ -657,12 +657,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0035
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0035
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0035
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0035
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0035', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0035';
@@ -675,12 +675,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0036
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0036
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0036
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0036
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0036', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0036';
@@ -693,12 +693,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0037
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0037
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0037
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0037
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0037', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0037';
@@ -711,12 +711,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0038
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0038
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0038
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0038
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0038', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0038';
@@ -729,12 +729,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0039
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0039
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0039
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0039
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0039', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0039';
@@ -747,12 +747,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0040
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0040
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0040
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0040
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0040', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0040';
@@ -765,12 +765,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0041
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0041
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0041
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0041
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0041', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0041';
@@ -783,12 +783,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0042
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0042
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0042
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0042
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0042', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0042';
@@ -801,12 +801,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0043
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0043
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0043
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0043
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0043', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0043';
@@ -818,12 +818,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0044
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0044
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0044
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0044
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0044', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0044';
@@ -835,12 +835,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0045
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0045
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0045
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0045
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0045', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0045';
@@ -852,12 +852,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0046
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0046
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0046
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0046
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0046', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0046';
@@ -870,12 +870,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0047
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0047
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0047
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0047
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0047', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0047';
@@ -888,12 +888,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0048
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0048
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0048
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0048
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0048', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0048';
@@ -906,12 +906,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0049
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0049
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0049
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0049
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0049', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0049';
@@ -924,12 +924,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0050
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0050
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0050
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0050
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0050', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0050';
@@ -942,12 +942,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0051
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0051
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0051
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0051
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0051', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0051';
@@ -960,12 +960,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0052
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0052
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0052
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0052
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0052', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0052';
@@ -978,12 +978,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0053
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0053
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0053
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0053
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0053', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0053';
@@ -996,12 +996,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0054
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0054
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0054
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0054
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0054', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0054';
@@ -1014,12 +1014,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0055
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0055
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0055
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0055
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0055', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0055';
@@ -1032,12 +1032,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0056
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0056
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0056
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0056
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0056', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0056';
@@ -1050,12 +1050,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0057
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0057
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0057
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0057
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0057', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0057';
@@ -1068,12 +1068,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0058
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0058
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0058
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0058
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0058', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0058';
@@ -1086,12 +1086,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0059
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0059
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0059
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0059
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0059', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0059';
@@ -1104,12 +1104,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0060
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0060
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0060
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0060
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0060', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0060';
@@ -1122,12 +1122,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0061
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0061
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0061
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0061
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0061', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0061';
@@ -1140,12 +1140,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0062
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0062
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0062
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0062
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0062', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0062';
@@ -1158,12 +1158,12 @@ export default function sendableCreatePixelMap() {
     })
 
     /**
-     * @tc.number    : sendableImage_createPixelMap_sendable_promise_0063
-     * @tc.name      : sendableImage_createPixelMap_sendable_promise_0063
-     * @tc.desc      : sendableImage_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   sendableImage_createPixelMap_sendable_promise_0063
+     * @tc.number sendableImage_createPixelMap_sendable_promise_0063
+     * @tc.desc   sendableImage_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sendableImage_createPixelMap_sendable_promise_0063', Level.LEVEL0, async (done: Function) => {
       const testName = 'sendableImage_createPixelMap_sendable_promise_0063';

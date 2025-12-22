@@ -58,10 +58,13 @@ describe("VibratorJsTest_misc_4", function () {
     const PERMISSION_ERROR_MSG = 'Permission denied.'
     const PARAMETER_ERROR_MSG = 'The parameter invalid.'
 
-    /*
-     * @tc.name:VibratorJsTest001
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0010
+    /**
+     * @tc.name   VibratorJsTest001
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("VibratorJsTest001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         function vibrateCallback(error) {
@@ -80,10 +83,13 @@ describe("VibratorJsTest_misc_4", function () {
         await vibrator.stopVibration();
     })
 
-    /*
-     * @tc.name:VibratorJsTest002
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0020
+    /**
+     * @tc.name   VibratorJsTest002
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -101,10 +107,13 @@ describe("VibratorJsTest_misc_4", function () {
         vibrator.vibrate(-1, vibrateCallback);
     })
 
-    /*
-     * @tc.name:VibratorJsTest003
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0030
+    /**
+     * @tc.name   VibratorJsTest003
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -122,10 +131,13 @@ describe("VibratorJsTest_misc_4", function () {
         vibrator.vibrate(1800000 + 1, vibrateCallback);
     })
 
-    /*
-     * @tc.name:VibratorJsTest004
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0040
+    /**
+     * @tc.name   VibratorJsTest004
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -144,10 +156,13 @@ describe("VibratorJsTest_misc_4", function () {
         await vibrator.stopVibration();
     })
 
-    /*
-     * @tc.name:VibratorJsTest005
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0050
+    /**
+     * @tc.name   VibratorJsTest005
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -165,10 +180,13 @@ describe("VibratorJsTest_misc_4", function () {
         vibrator.vibrate("", vibrateCallback);
     })
 
-    /*
-     * @tc.name:VibratorJsTest006
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0060
+    /**
+     * @tc.name   VibratorJsTest006
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -186,10 +204,13 @@ describe("VibratorJsTest_misc_4", function () {
         vibrator.vibrate("xxx", vibrateCallback);
     })
 
-    /*
-     * @tc.name:VibratorJsTest007
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0070
+    /**
+     * @tc.name   VibratorJsTest007
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -208,10 +229,13 @@ describe("VibratorJsTest_misc_4", function () {
         await vibrator.stopVibration();
     })
 
-    /*
-     * @tc.name:VibratorJsTest008
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0080
+    /**
+     * @tc.name   VibratorJsTest008
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function vibrateCallback(error) {
@@ -229,10 +253,13 @@ describe("VibratorJsTest_misc_4", function () {
         vibrator.stop(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET, vibrateCallback);
     })
 
-    /*
-     * @tc.name:VibratorJsTest009
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0090
+    /**
+     * @tc.name   VibratorJsTest009
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('----------------------VibratorJsTest001---------------------------');
@@ -282,10 +309,13 @@ describe("VibratorJsTest_misc_4", function () {
         done();
     })
 
-    /*
-     * @tc.name:VibratorJsTest010
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0100
+    /**
+     * @tc.name   VibratorJsTest010
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -310,10 +340,13 @@ describe("VibratorJsTest_misc_4", function () {
         }
     })
 
-    /*
-     * @tc.name:VibratorJsTest011
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0110
+    /**
+     * @tc.name   VibratorJsTest011
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         vibrator.vibrate(1000).then(() => {
@@ -332,10 +365,13 @@ describe("VibratorJsTest_misc_4", function () {
         await vibrator.stopVibration();
     })
 
-    /*
-     * @tc.name:VibratorJsTest012
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0120
+    /**
+     * @tc.name   VibratorJsTest012
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         vibrator.vibrate(-1).then(() => {
@@ -353,10 +389,13 @@ describe("VibratorJsTest_misc_4", function () {
         });
     })
 
-    /*
-     * @tc.name:VibratorJsTest013
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0130
+    /**
+     * @tc.name   VibratorJsTest013
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         vibrator.vibrate(1800000 + 1).then(() => {
@@ -374,10 +413,13 @@ describe("VibratorJsTest_misc_4", function () {
         });
     })
 
-    /*
-     * @tc.name:VibratorJsTest014
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0140
+    /**
+     * @tc.name   VibratorJsTest014
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         vibrator.vibrate(vibrator.EffectId.EFFECT_CLOCK_TIMER).then(() => {
@@ -396,11 +438,14 @@ describe("VibratorJsTest_misc_4", function () {
         await vibrator.stopVibration();
     })
 
-    /*
-     * @tc.name:VibratorJsTest015
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0150
-     */
+  /**
+   * @tc.name   VibratorJsTest015
+   * @tc.number SUB_SensorSystem_Vibrator_JsTest_0150
+   * @tc.desc   Verification results of the incorrect parameters of the test interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
+   */
 	 it("VibratorJsTest015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         vibrator.stop("preset").then(() => {
             console.log("VibratorJsTest015  off success");
@@ -417,10 +462,13 @@ describe("VibratorJsTest_misc_4", function () {
         });
     })
 
-    /*
-     * @tc.name:VibratorJsTest016
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0160
+    /**
+     * @tc.name   VibratorJsTest016
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -445,10 +493,13 @@ describe("VibratorJsTest_misc_4", function () {
         }
     })
 
-    /*
-     * @tc.name:VibratorJsTest017
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0170
+    /**
+     * @tc.name   VibratorJsTest017
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         vibrator.vibrate("").then(() => {
@@ -466,10 +517,13 @@ describe("VibratorJsTest_misc_4", function () {
         });
     })
 
-    /*
-     * @tc.name:VibratorJsTest018
-     * @tc.desc:Verification results of the incorrect parameters of the test interface.
-     * @tc.number:SUB_SensorSystem_Vibrator_JsTest_0180
+    /**
+     * @tc.name   VibratorJsTest018
+     * @tc.number SUB_SensorSystem_Vibrator_JsTest_0180
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("VibratorJsTest018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         function stopPromise() {
@@ -511,6 +565,38 @@ describe("VibratorJsTest_misc_4", function () {
         }, () => {
             console.info("VibratorJsTest018 reject");
         })
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_SensorSystem_Vibrator_Enumeration_0100
+     * @tc.number SUB_SensorSystem_Vibrator_Enumeration_0100
+     * @tc.desc   Enumeration of HapticFeedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_Enumeration_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        TAG = "====>SUB_SensorSystem_Vibrator_Enumeration_0100"
+        console.info(TAG + ' isAvailable ' + isAvailable);
+        let data1 = vibrator.HapticFeedback.EFFECT_SOFT;
+        console.info(TAG + ` data1: ${data1}`);
+        expect(data1).assertEqual('haptic.effect.soft');
+        let data2 = vibrator.HapticFeedback.EFFECT_HARD;
+        console.info(TAG + ` data2: ${data2}`);
+        expect(data2).assertEqual('haptic.effect.hard');
+        let data3 = vibrator.HapticFeedback.EFFECT_SHARP;
+        console.info(TAG + ` data3: ${data3}`);
+        expect(data3).assertEqual('haptic.effect.sharp');
+        let data4 = vibrator.HapticFeedback.EFFECT_NOTICE_SUCCESS;
+        console.info(TAG + ` data4: ${data4}`);
+        expect(data4).assertEqual('haptic.notice.success');
+        let data5 = vibrator.HapticFeedback.EFFECT_NOTICE_FAILURE;
+        console.info(TAG + ` data5: ${data5}`);
+        expect(data5).assertEqual('haptic.notice.fail');
+        let data6 = vibrator.HapticFeedback.EFFECT_NOTICE_WARNING;
+        console.info(TAG + ` data6: ${data6}`);
+        expect(data6).assertEqual('haptic.notice.warning');
         done();
     })
 })

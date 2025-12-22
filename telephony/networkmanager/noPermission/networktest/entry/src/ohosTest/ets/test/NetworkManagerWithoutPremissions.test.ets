@@ -27,13 +27,13 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
 export default function networkManagerWithoutPermissionsTest() {
   describe('NetworkManagerWithoutPermissionsTest', () => {
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Unsubscribe_0500
-     * @tc.name  : testNetworkMgrNetworkUnsubscribe0500
-     * @tc.desc  : Unsubscribe to the network connection status of the device;no permissions.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrNetworkUnsubscribe0500
+     * @tc.number SUB_NetworkMgr_Network_Unsubscribe_0500
+     * @tc.desc   Unsubscribe to the network connection status of the device;no permissions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrNetworkUnsubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkUnsubscribe0500';
@@ -62,13 +62,13 @@ export default function networkManagerWithoutPermissionsTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Subscribe_0500
-     * @tc.name  : testNetworkMgrNetworkSubscribe0500
-     * @tc.desc  : Subscribe to the network connection status of the current device;no permissions.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkSubscribe0500
+     * @tc.number SUB_NetworkMgr_Network_Subscribe_0500
+     * @tc.desc   Subscribe to the network connection status of the current device;no permissions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkSubscribe0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkSubscribe0500';
@@ -96,13 +96,13 @@ export default function networkManagerWithoutPermissionsTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_getType_0500
-     * @tc.name  : testNetworkMgrNetworkGetType0500
-     * @tc.desc  : Gets the network type of the current device;no permissions.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrNetworkGetType0500
+     * @tc.number SUB_NetworkMgr_Network_getType_0500
+     * @tc.desc   Gets the network type of the current device;no permissions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrNetworkGetType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkGetType0500';

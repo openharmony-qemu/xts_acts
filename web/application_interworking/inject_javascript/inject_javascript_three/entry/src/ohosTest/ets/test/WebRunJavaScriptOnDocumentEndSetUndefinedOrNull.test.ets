@@ -57,14 +57,14 @@ export default function ActsWebRunJavaScriptOnDocumentEndSetUndefinedOrNullTest(
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_SetUndefined
-    * @tc.name       : testRunJavaScriptOnDocumentEndSetUndefined
-    * @tc.desc       : test runJavaScriptOnDocumentEnd set undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRunJavaScriptOnDocumentEndSetUndefined
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_SetUndefined
+     * @tc.desc   test runJavaScriptOnDocumentEnd set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRunJavaScriptOnDocumentEndSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptOnDocumentEndSetUndefined", 2511251)
       Utils.registerBaseEvent('testRunJavaScriptOnDocumentEndSetUndefined', '"test msg"', 25112511, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -73,14 +73,14 @@ export default function ActsWebRunJavaScriptOnDocumentEndSetUndefinedOrNullTest(
       sendEventByKey('RunJavaScriptOnDocumentEndSetUndefinedOrNull', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_SetNull
-    * @tc.name       : testRunJavaScriptOnDocumentEndSetNull
-    * @tc.desc       : test runJavaScriptOnDocumentEnd set null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRunJavaScriptOnDocumentEndSetNull
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_SetNull
+     * @tc.desc   test runJavaScriptOnDocumentEnd set null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRunJavaScriptOnDocumentEndSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testRunJavaScriptOnDocumentEndSetNull", 2511251)
       Utils.registerBaseEvent('testRunJavaScriptOnDocumentEndSetNull', '"test msg"', 25112512, done, (backData: events_emitter.EventData, expected: Object) => {

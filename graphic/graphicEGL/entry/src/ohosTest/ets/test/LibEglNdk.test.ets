@@ -19,12 +19,12 @@ import eglndk from 'libentry.so'
 export default function libEglNdkTest() {
   describe('LibEGLTest', () => {
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCHOOSECONFIG_0100
-     * @tc.name       : testEglChooseConfig001
-     * @tc.desc       : test eglChooseConfig
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglChooseConfig001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCHOOSECONFIG_0100
+     * @tc.desc   test eglChooseConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglChooseConfig001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglChooseConfig();
@@ -33,12 +33,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCHOOSECONFIG_0200
-     * @tc.name       : testEglChooseConfig002
-     * @tc.desc       : test eglChooseConfig
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglChooseConfig002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCHOOSECONFIG_0200
+     * @tc.desc   test eglChooseConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglChooseConfig002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglChooseConfigAbnormal();
@@ -47,12 +47,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCOPYBUFFERS_0100
-     * @tc.name       : testEglCopyBuffers001
-     * @tc.desc       : test eglCopyBuffers
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCopyBuffers001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCOPYBUFFERS_0100
+     * @tc.desc   test eglCopyBuffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCopyBuffers001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCopyBuffersAbnormal();
@@ -61,12 +61,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATECONTEXT_0100
-     * @tc.name       : testEglCreateContext001
-     * @tc.desc       : test eglCreateContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateContext001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATECONTEXT_0100
+     * @tc.desc   test eglCreateContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateContext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateContext();
@@ -75,12 +75,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATECONTEXT_0200
-     * @tc.name       : testEglCreateContext002
-     * @tc.desc       : test eglCreateContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateContext002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATECONTEXT_0200
+     * @tc.desc   test eglCreateContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateContext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateContextAbnormal();
@@ -89,12 +89,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPBUFFERSURFACE_0100
-     * @tc.name       : testEglCreatePbufferSurface001
-     * @tc.desc       : test eglCreatePbufferSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreatePbufferSurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPBUFFERSURFACE_0100
+     * @tc.desc   test eglCreatePbufferSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreatePbufferSurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -104,12 +104,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPBUFFERSURFACE_0200
-     * @tc.name       : testEglCreatePbufferSurface002
-     * @tc.desc       : test eglCreatePbufferSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreatePbufferSurface002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPBUFFERSURFACE_0200
+     * @tc.desc   test eglCreatePbufferSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreatePbufferSurface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -119,12 +119,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPIXMAPSURFACE_0100
-     * @tc.name       : testEglCreatePixmapSurface001
-     * @tc.desc       : test eglCreatePixmapSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreatePixmapSurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPIXMAPSURFACE_0100
+     * @tc.desc   test eglCreatePixmapSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreatePixmapSurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreatePixmapSurfaceAbnormal();
@@ -133,12 +133,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEWINDOWSURFACE_0100
-     * @tc.name       : testEglCreateWindowSurface001
-     * @tc.desc       : test eglCreateWindowSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateWindowSurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEWINDOWSURFACE_0100
+     * @tc.desc   test eglCreateWindowSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateWindowSurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateWindowSurfaceAbnormal();
@@ -147,12 +147,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYCONTEXT_0100
-     * @tc.name       : testEglDestroyContext001
-     * @tc.desc       : test eglDestroyContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroyContext001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYCONTEXT_0100
+     * @tc.desc   test eglDestroyContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroyContext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroyContext();
@@ -161,12 +161,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYCONTEXT_0200
-     * @tc.name       : testEglDestroyContext002
-     * @tc.desc       : test eglDestroyContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroyContext002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYCONTEXT_0200
+     * @tc.desc   test eglDestroyContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroyContext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroyContextAbnormal();
@@ -175,12 +175,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSURFACE_0100
-     * @tc.name       : testEglDestroySurface001
-     * @tc.desc       : test eglDestroySurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroySurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSURFACE_0100
+     * @tc.desc   test eglDestroySurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroySurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroySurface();
@@ -189,12 +189,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSURFACE_0200
-     * @tc.name       : testEglDestroySurface002
-     * @tc.desc       : test eglDestroySurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroySurface002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSURFACE_0200
+     * @tc.desc   test eglDestroySurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroySurface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroySurfaceAbnormal();
@@ -203,12 +203,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGATTRIB_0100
-     * @tc.name       : testEglGetConfigAttrib001
-     * @tc.desc       : test eglGetConfigAttrib
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetConfigAttrib001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGATTRIB_0100
+     * @tc.desc   test eglGetConfigAttrib
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetConfigAttrib001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetConfigAttrib();
@@ -217,12 +217,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGATTRIB_0200
-     * @tc.name       : testEglGetConfigAttrib002
-     * @tc.desc       : test eglGetConfigAttrib
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetConfigAttrib002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGATTRIB_0200
+     * @tc.desc   test eglGetConfigAttrib
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetConfigAttrib002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetConfigAttribAbnormal();
@@ -231,12 +231,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGS_0100
-     * @tc.name       : testEglGetConfigs001
-     * @tc.desc       : test eglGetConfigs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetConfigs001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGS_0100
+     * @tc.desc   test eglGetConfigs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetConfigs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetConfigs();
@@ -245,12 +245,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGS_0200
-     * @tc.name       : testEglGetConfigs002
-     * @tc.desc       : test eglGetConfigs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetConfigs002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCONFIGS_0200
+     * @tc.desc   test eglGetConfigs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetConfigs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetConfigsAbnormal();
@@ -259,12 +259,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTDISPLAY_0100
-     * @tc.name       : testEglGetCurrentDisplay001
-     * @tc.desc       : test eglGetCurrentDisplay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetCurrentDisplay001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTDISPLAY_0100
+     * @tc.desc   test eglGetCurrentDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetCurrentDisplay001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetCurrentDisplay();
@@ -273,12 +273,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTDISPLAY_0200
-     * @tc.name       : testEglGetCurrentDisplay002
-     * @tc.desc       : test eglGetCurrentDisplay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetCurrentDisplay002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTDISPLAY_0200
+     * @tc.desc   test eglGetCurrentDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetCurrentDisplay002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetCurrentDisplayAbnormal();
@@ -287,12 +287,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTSURFACE_0100
-     * @tc.name       : testEglGetCurrentSurface001
-     * @tc.desc       : test eglGetCurrentSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetCurrentSurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTSURFACE_0100
+     * @tc.desc   test eglGetCurrentSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetCurrentSurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetCurrentSurface();
@@ -301,12 +301,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTSURFACE_0200
-     * @tc.name       : testEglGetCurrentSurface002
-     * @tc.desc       : test eglGetCurrentSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetCurrentSurface002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTSURFACE_0200
+     * @tc.desc   test eglGetCurrentSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetCurrentSurface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetCurrentSurfaceAbnormal();
@@ -315,12 +315,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETDISPLAY_0100
-     * @tc.name       : testEglGetDisplay001
-     * @tc.desc       : test eglGetDisplay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetDisplay001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETDISPLAY_0100
+     * @tc.desc   test eglGetDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetDisplay001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetDisplay();
@@ -329,12 +329,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETERROR_0100
-     * @tc.name       : testEglGetError001
-     * @tc.desc       : test eglGetError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetError001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETERROR_0100
+     * @tc.desc   test eglGetError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetError();
@@ -344,12 +344,12 @@ export default function libEglNdkTest() {
     
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPROCADDRESS_0100
-     * @tc.name       : testEglGetProcAddress001
-     * @tc.desc       : test eglGetProcAddress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetProcAddress001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPROCADDRESS_0100
+     * @tc.desc   test eglGetProcAddress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetProcAddress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetProcAddress();
@@ -357,13 +357,13 @@ export default function libEglNdkTest() {
       done();
     });
 
-     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPROCADDRESS_0200
-     * @tc.name       : testEglGetProcAddress002
-     * @tc.desc       : test eglGetProcAddress
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testEglGetProcAddress002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPROCADDRESS_0200
+     * @tc.desc   test eglGetProcAddress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetProcAddress002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetProcAddressAbnormal();
@@ -372,12 +372,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLINITIALIZE_0100
-     * @tc.name       : testEglInitialize001
-     * @tc.desc       : test eglInitialize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglInitialize001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLINITIALIZE_0100
+     * @tc.desc   test eglInitialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglInitialize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglInitialize();
@@ -386,12 +386,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLINITIALIZE_0200
-     * @tc.name       : testEglInitialize002
-     * @tc.desc       : test eglInitialize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglInitialize002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLINITIALIZE_0200
+     * @tc.desc   test eglInitialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglInitialize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglInitializeAbnormal();
@@ -400,12 +400,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLMAKECURRENT_0100
-     * @tc.name       : testEglMakeCurrent001
-     * @tc.desc       : test eglMakeCurrent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglMakeCurrent001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLMAKECURRENT_0100
+     * @tc.desc   test eglMakeCurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglMakeCurrent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglMakeCurrent();
@@ -414,12 +414,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLMAKECURRENT_0200
-     * @tc.name       : testEglMakeCurrent002
-     * @tc.desc       : test eglMakeCurrent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglMakeCurrent002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLMAKECURRENT_0200
+     * @tc.desc   test eglMakeCurrent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglMakeCurrent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglMakeCurrentAbnormal();
@@ -428,12 +428,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERSWITHDAMAGEKHR_0100
-     * @tc.name       : testEglSwapBuffersWithDamageKHRRect1
-     * @tc.desc       : test eglSwapBuffersWithDamageKHR with one rectangle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testEglSwapBuffersWithDamageKHRRect1
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERSWITHDAMAGEKHR_0100
+     * @tc.desc   test eglSwapBuffersWithDamageKHR with one rectangle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSwapBuffersWithDamageKHRRect1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
        async (done: Function) => {
@@ -443,12 +443,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERSWITHDAMAGEKHR_0200
-     * @tc.name       : testEglSwapBuffersWithDamageKHRRect2
-     * @tc.desc       : test eglSwapBuffersWithDamageKHR with two rectangle
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testEglSwapBuffersWithDamageKHRRect2
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERSWITHDAMAGEKHR_0200
+     * @tc.desc   test eglSwapBuffersWithDamageKHR with two rectangle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSwapBuffersWithDamageKHRRect2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
        async (done: Function) => {
@@ -458,12 +458,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERSWITHDAMAGEKHR_0300
-     * @tc.name       : testEglSwapBuffersWithDamageKHRSurfaceRectsNull
-     * @tc.desc       : testEglSwapBuffersWithDamageKHRSurfaceRectsNull
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testEglSwapBuffersWithDamageKHRSurfaceRectsNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERSWITHDAMAGEKHR_0300
+     * @tc.desc   testEglSwapBuffersWithDamageKHRSurfaceRectsNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSwapBuffersWithDamageKHRSurfaceRectsNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
        async (done: Function) => {
@@ -473,12 +473,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYCONTEXT_0100
-     * @tc.name       : testEglQueryContext001
-     * @tc.desc       : test eglQueryContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQueryContext001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYCONTEXT_0100
+     * @tc.desc   test eglQueryContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQueryContext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQueryContext();
@@ -487,12 +487,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYCONTEXT_0200
-     * @tc.name       : testEglQueryContext002
-     * @tc.desc       : test eglQueryContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQueryContext002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYCONTEXT_0200
+     * @tc.desc   test eglQueryContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQueryContext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQueryContextAbnormal();
@@ -501,12 +501,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSTRING_0100
-     * @tc.name       : testEglQueryString001
-     * @tc.desc       : test eglQueryString
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQueryString001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSTRING_0100
+     * @tc.desc   test eglQueryString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQueryString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQueryString();
@@ -515,12 +515,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSTRING_0200
-     * @tc.name       : testEglQueryString002
-     * @tc.desc       : test eglQueryString
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQueryString002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSTRING_0200
+     * @tc.desc   test eglQueryString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQueryString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQueryStringAbnormal();
@@ -529,12 +529,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSURFACE_0100
-     * @tc.name       : testEglQuerySurface001
-     * @tc.desc       : test eglQuerySurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQuerySurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSURFACE_0100
+     * @tc.desc   test eglQuerySurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQuerySurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQuerySurface();
@@ -543,12 +543,12 @@ export default function libEglNdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSURFACE_0200
-     * @tc.name       : testEglQuerySurface002
-     * @tc.desc       : test eglQuerySurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQuerySurface002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYSURFACE_0200
+     * @tc.desc   test eglQuerySurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQuerySurface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQuerySurfaceAbnormal();
@@ -557,12 +557,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERS_0100
-     * @tc.name       : testEglSwapBuffers001
-     * @tc.desc       : test eglSwapBuffers
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglSwapBuffers001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERS_0100
+     * @tc.desc   test eglSwapBuffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSwapBuffers001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglSwapBuffers();
@@ -571,12 +571,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERS_0200
-     * @tc.name       : testEglSwapBuffers002
-     * @tc.desc       : test eglSwapBuffers
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglSwapBuffers002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPBUFFERS_0200
+     * @tc.desc   test eglSwapBuffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSwapBuffers002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglSwapBuffersAbnormal();
@@ -585,12 +585,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLTERMINATE_0100
-     * @tc.name       : testEglTerminate001
-     * @tc.desc       : test eglTerminate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglTerminate001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLTERMINATE_0100
+     * @tc.desc   test eglTerminate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglTerminate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglTerminate();
@@ -599,12 +599,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLTERMINATE_0200
-     * @tc.name       : testEglTerminate002
-     * @tc.desc       : test eglTerminate
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglTerminate002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLTERMINATE_0200
+     * @tc.desc   test eglTerminate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglTerminate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglTerminateAbnormal();
@@ -613,12 +613,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITGL_0100
-     * @tc.name       : testEglWaitGL001
-     * @tc.desc       : test eglWaitGL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglWaitGL001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITGL_0100
+     * @tc.desc   test eglWaitGL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglWaitGL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglWaitGL();
@@ -627,12 +627,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITNATIVE_0100
-     * @tc.name       : testEglWaitNative001
-     * @tc.desc       : test eglWaitNative
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglWaitNative001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITNATIVE_0100
+     * @tc.desc   test eglWaitNative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglWaitNative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglWaitNative();
@@ -642,12 +642,12 @@ export default function libEglNdkTest() {
 
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDTEXIMAGE_0100
-     * @tc.name       : testEglBindTexImage001
-     * @tc.desc       : test eglBindTexImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglBindTexImage001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDTEXIMAGE_0100
+     * @tc.desc   test eglBindTexImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglBindTexImage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglBindTexImage();
@@ -656,12 +656,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDTEXIMAGE_0200
-     * @tc.name       : testEglBindTexImage002
-     * @tc.desc       : test eglBindTexImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglBindTexImage002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDTEXIMAGE_0200
+     * @tc.desc   test eglBindTexImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglBindTexImage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglBindTexImageAbnormal();
@@ -670,12 +670,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLRELEASETEXIMAGE_0100
-     * @tc.name       : testEglReleaseTexImage001
-     * @tc.desc       : test eglReleaseTexImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglReleaseTexImage001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLRELEASETEXIMAGE_0100
+     * @tc.desc   test eglReleaseTexImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglReleaseTexImage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglReleaseTexImage();
@@ -684,12 +684,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLRELEASETEXIMAGE_0200
-     * @tc.name       : testEglReleaseTexImage002
-     * @tc.desc       : test eglReleaseTexImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglReleaseTexImage002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLRELEASETEXIMAGE_0200
+     * @tc.desc   test eglReleaseTexImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglReleaseTexImage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglReleaseTexImageAbnormal();
@@ -698,12 +698,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSURFACEATTRIB_0100
-     * @tc.name       : testEglSurfaceAttrib001
-     * @tc.desc       : test eglSurfaceAttrib
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglSurfaceAttrib001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSURFACEATTRIB_0100
+     * @tc.desc   test eglSurfaceAttrib
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSurfaceAttrib001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglSurfaceAttrib();
@@ -712,12 +712,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSURFACEATTRIB_0200
-     * @tc.name       : testEglSurfaceAttrib002
-     * @tc.desc       : test eglSurfaceAttrib
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglSurfaceAttrib002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSURFACEATTRIB_0200
+     * @tc.desc   test eglSurfaceAttrib
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSurfaceAttrib002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglSurfaceAttribAbnormal();
@@ -725,22 +725,14 @@ export default function libEglNdkTest() {
       done();
     });
 
-    /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPINTERVAL_0100
-     * @tc.name       : testEglSwapInterval001
-     * @tc.desc       : test eglSwapInterval
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPINTERVAL_0200
-     * @tc.name       : testEglSwapInterval002
-     * @tc.desc       : test eglSwapInterval
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglSwapInterval002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLSWAPINTERVAL_0200
+     * @tc.desc   test eglSwapInterval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglSwapInterval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglSwapIntervalAbnormal();
@@ -749,12 +741,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDAPI_0100
-     * @tc.name       : testEglBindAPI001
-     * @tc.desc       : test eglBindAPI
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglBindAPI001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDAPI_0100
+     * @tc.desc   test eglBindAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglBindAPI001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglBindAPI();
@@ -763,12 +755,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDAPI_0200
-     * @tc.name       : testEglBindAPI002
-     * @tc.desc       : test eglBindAPI
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglBindAPI002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLBINDAPI_0200
+     * @tc.desc   test eglBindAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglBindAPI002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglBindAPIAbnormal();
@@ -777,12 +769,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYAPI_0100
-     * @tc.name       : testEglQueryAPI001
-     * @tc.desc       : test eglQueryAPI
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglQueryAPI001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLQUERYAPI_0100
+     * @tc.desc   test eglQueryAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglQueryAPI001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglQueryAPI();
@@ -791,12 +783,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPBUFFERFROMCLIENTBUFFER_0100
-     * @tc.name       : testEglCreatePbufferFromClientBuffer001
-     * @tc.desc       : test eglCreatePbufferFromClientBuffer
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreatePbufferFromClientBuffer001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPBUFFERFROMCLIENTBUFFER_0100
+     * @tc.desc   test eglCreatePbufferFromClientBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreatePbufferFromClientBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -806,12 +798,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLRELEASETHREAD_0100
-     * @tc.name       : testEglReleaseThread001
-     * @tc.desc       : test eglReleaseThread
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglReleaseThread001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLRELEASETHREAD_0100
+     * @tc.desc   test eglReleaseThread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglReleaseThread001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglReleaseThread();
@@ -820,12 +812,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITCLIENT_0100
-     * @tc.name       : testEglWaitClient001
-     * @tc.desc       : test eglWaitClient
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglWaitClient001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITCLIENT_0100
+     * @tc.desc   test eglWaitClient
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglWaitClient001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglWaitClient();
@@ -834,12 +826,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTCONTEXT_0100
-     * @tc.name       : testEglGetCurrentContext001
-     * @tc.desc       : test eglGetCurrentContext
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetCurrentContext001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETCURRENTCONTEXT_0100
+     * @tc.desc   test eglGetCurrentContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetCurrentContext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetCurrentContext();
@@ -848,12 +840,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATESYNC_0100
-     * @tc.name       : testEglCreateSync001
-     * @tc.desc       : test eglCreateSync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateSync001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATESYNC_0100
+     * @tc.desc   test eglCreateSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateSync();
@@ -862,12 +854,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATESYNC_0200
-     * @tc.name       : testEglCreateSync002
-     * @tc.desc       : test eglCreateSync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateSync002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATESYNC_0200
+     * @tc.desc   test eglCreateSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateSyncAbnormal();
@@ -876,12 +868,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSYNC_0100
-     * @tc.name       : testEglDestroySync001
-     * @tc.desc       : test eglDestroySync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroySync001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSYNC_0100
+     * @tc.desc   test eglDestroySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroySync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroySync();
@@ -890,12 +882,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSYNC_0200
-     * @tc.name       : testEglDestroySync002
-     * @tc.desc       : test eglDestroySync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroySync002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYSYNC_0200
+     * @tc.desc   test eglDestroySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroySync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroySyncAbnormal();
@@ -904,12 +896,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCLIENTWAITSYNC_0100
-     * @tc.name       : testEglClientWaitSync001
-     * @tc.desc       : test eglClientWaitSync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglClientWaitSync001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCLIENTWAITSYNC_0100
+     * @tc.desc   test eglClientWaitSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglClientWaitSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglClientWaitSync();
@@ -918,12 +910,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCLIENTWAITSYNC_0200
-     * @tc.name       : testEglClientWaitSync002
-     * @tc.desc       : test eglClientWaitSync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglClientWaitSync002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCLIENTWAITSYNC_0200
+     * @tc.desc   test eglClientWaitSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglClientWaitSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglClientWaitSyncAbnormal();
@@ -932,12 +924,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETSYNCATTRIB_0100
-     * @tc.name       : testEglGetSyncAttrib001
-     * @tc.desc       : test eglGetSyncAttrib
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetSyncAttrib001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETSYNCATTRIB_0100
+     * @tc.desc   test eglGetSyncAttrib
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetSyncAttrib001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetSyncAttrib();
@@ -946,12 +938,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETSYNCATTRIB_0200
-     * @tc.name       : testEglGetSyncAttrib002
-     * @tc.desc       : test eglGetSyncAttrib
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetSyncAttrib002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETSYNCATTRIB_0200
+     * @tc.desc   test eglGetSyncAttrib
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetSyncAttrib002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetSyncAttribAbnormal();
@@ -960,12 +952,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEIMAGE_0100
-     * @tc.name       : testEglCreateImage001
-     * @tc.desc       : test eglCreateImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateImage001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEIMAGE_0100
+     * @tc.desc   test eglCreateImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateImage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateImage();
@@ -974,12 +966,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEIMAGE_0200
-     * @tc.name       : testEglCreateImage002
-     * @tc.desc       : test eglCreateImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreateImage002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEIMAGE_0200
+     * @tc.desc   test eglCreateImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreateImage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglCreateImageAbnormal();
@@ -988,12 +980,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYIMAGE_0100
-     * @tc.name       : testEglDestroyImage001
-     * @tc.desc       : test eglDestroyImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroyImage001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYIMAGE_0100
+     * @tc.desc   test eglDestroyImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroyImage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroyImage();
@@ -1002,12 +994,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYIMAGE_0200
-     * @tc.name       : testEglDestroyImage002
-     * @tc.desc       : test eglDestroyImage
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglDestroyImage002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLDESTROYIMAGE_0200
+     * @tc.desc   test eglDestroyImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglDestroyImage002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglDestroyImageAbnormal();
@@ -1016,12 +1008,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPLATFORMDISPLAY_0100
-     * @tc.name       : testEglGetPlatformDisplay001
-     * @tc.desc       : test eglGetPlatformDisplay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetPlatformDisplay001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPLATFORMDISPLAY_0100
+     * @tc.desc   test eglGetPlatformDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetPlatformDisplay001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetPlatformDisplay();
@@ -1030,12 +1022,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPLATFORMDISPLAY_0200
-     * @tc.name       : testEglGetPlatformDisplay002
-     * @tc.desc       : test eglGetPlatformDisplay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglGetPlatformDisplay002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLGETPLATFORMDISPLAY_0200
+     * @tc.desc   test eglGetPlatformDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglGetPlatformDisplay002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglGetPlatformDisplayAbnormal();
@@ -1044,12 +1036,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPLATFORMWINDOWSURFACE_0100
-     * @tc.name       : testEglCreatePlatformWindowSurface001
-     * @tc.desc       : test eglCreatePlatformWindowSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreatePlatformWindowSurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPLATFORMWINDOWSURFACE_0100
+     * @tc.desc   test eglCreatePlatformWindowSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreatePlatformWindowSurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1059,12 +1051,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPLATFORMPIXMAPSURFACE_0100
-     * @tc.name       : testEglCreatePlatformPixmapSurface001
-     * @tc.desc       : test eglCreatePlatformPixmapSurface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglCreatePlatformPixmapSurface001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLCREATEPLATFORMPIXMAPSURFACE_0100
+     * @tc.desc   test eglCreatePlatformPixmapSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglCreatePlatformPixmapSurface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -1074,12 +1066,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITSYNC_0100
-     * @tc.name       : testEglWaitSync001
-     * @tc.desc       : test eglWaitSync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglWaitSync001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITSYNC_0100
+     * @tc.desc   test eglWaitSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglWaitSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglWaitSync();
@@ -1088,12 +1080,12 @@ export default function libEglNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITSYNC_0200
-     * @tc.name       : testEglWaitSync002
-     * @tc.desc       : test eglWaitSync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEglWaitSync002
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_LIBEGL_EGLWAITSYNC_0200
+     * @tc.desc   test eglWaitSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEglWaitSync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = eglndk.eglWaitSyncAbnormal();

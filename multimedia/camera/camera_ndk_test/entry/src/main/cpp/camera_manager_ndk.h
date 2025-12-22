@@ -389,7 +389,7 @@ public:
     Camera_ErrorCode CreatePreviewOutputByIndex(int index);
     Camera_ErrorCode CreateVideoOutputByIndex(char* videoId, int index);
     Camera_ErrorCode MacroStatusChangeTest(void);
-
+    Camera_ErrorCode IsoInfoChangeTest(void);
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,

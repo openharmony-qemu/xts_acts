@@ -19,6 +19,76 @@ import window from '@ohos.window';
 import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
+import { display } from '@kit.ArkUI';
+import { StartOptions } from '@kit.AbilityKit';
+
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+async function startAbility7(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility7'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest7') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility7(caseName: string) {
+  let pageContext = AppStorage.get('contextTest7') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
 
 export default function windowMaximizeTest() {
   describe('windowMaximize_test', () => {
@@ -76,12 +146,12 @@ export default function windowMaximizeTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name      : testPresentationDefaultArgs
-     * @tc.desc      : test the function of testPresentationDefaultArgs
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationDefaultArgs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   test the function of testPresentationDefaultArgs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationDefaultArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const message = 'TestPresentationDefaultArgs';
@@ -110,12 +180,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name      : testPresentationEnterImmersive
-     * @tc.desc      : test the function of testPresentationEnterImmersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationEnterImmersive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   test the function of testPresentationEnterImmersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationEnterImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const message = 'TestPresentationEnterImmersive';
@@ -144,12 +214,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
-     * @tc.name      : testPresentationExitImmersive
-     * @tc.desc      : test the function of testPresentationExitImmersive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationExitImmersive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
+     * @tc.desc   test the function of testPresentationExitImmersive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationExitImmersive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationExitImmersive';
@@ -180,12 +250,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
-     * @tc.name      : testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInWindowLayoutFullScreenTrue';
@@ -223,12 +293,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-     * @tc.name      : testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInWindowLayoutFullScreenFalse';
@@ -260,12 +330,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
-     * @tc.name      : testPresentationFollowAppImmersiveInLayoutFullScreenTrue
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInLayoutFullScreenTrue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationFollowAppImmersiveInLayoutFullScreenTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInLayoutFullScreenTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationFollowAppImmersiveInLayoutFullScreenTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInLayoutFullScreenTrue';
@@ -297,12 +367,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
-     * @tc.name      : testPresentationFollowAppImmersiveInLayoutFullScreenFalse
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInLayoutFullScreenFalse
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInLayoutFullScreenFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInLayoutFullScreenFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInLayoutFullScreenFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInLayoutFullScreenFalse';
@@ -334,12 +404,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-     * @tc.name      : testPresentationFollowAppImmersiveInSetImmersiveModeTrue
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInSetImmersiveModeTrue
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testPresentationFollowAppImmersiveInSetImmersiveModeTrue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInSetImmersiveModeTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPresentationFollowAppImmersiveInSetImmersiveModeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInSetImmersiveModeTrue';
@@ -377,12 +447,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name      : testPresentationFollowAppImmersiveInSetImmersiveModeFalse
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInSetImmersiveModeFalse
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInSetImmersiveModeFalse
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInSetImmersiveModeFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInSetImmersiveModeFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInSetImmersiveModeFalse';
@@ -414,12 +484,12 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name      : testPresentationFollowAppImmersiveInMaximize
-     * @tc.desc      : test the function of testPresentationFollowAppImmersiveInMaximize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPresentationFollowAppImmersiveInMaximize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   test the function of testPresentationFollowAppImmersiveInMaximize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPresentationFollowAppImmersiveInMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'TestPresentationFollowAppImmersiveInMaximize';
@@ -452,13 +522,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-    * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0100
-    * @tc.name      : testSetTitleAndDockHoverShow_subWindow_1300004
-    * @tc.desc      : testSetTitleAndDockHoverShow_subWindow_1300004
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_subWindow_1300004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0100
+     * @tc.desc   testSetTitleAndDockHoverShow_subWindow_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetTitleAndDockHoverShow_subWindow_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_subWindow_1300004';
       try {
@@ -509,13 +579,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0200
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_hide_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : LEVEL0
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_hide_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0200
+     * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_hide_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetTitleAndDockHoverShow_Title_show_dock_hide_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_1';
       try {
@@ -561,13 +631,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0300
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_hide_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : LEVEL0
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_hide_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0300
+     * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_hide_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetTitleAndDockHoverShow_Title_show_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_2';
       try {
@@ -613,13 +683,13 @@ export default function windowMaximizeTest() {
       }
     })
     /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0400
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_hide_3
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_hide_3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+     * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_hide_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0400
+     * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_hide_3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSetTitleAndDockHoverShow_Title_show_dock_hide_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetTitleAndDockHoverShow_Title_show_dock_hide_3';
       try {
@@ -665,13 +735,13 @@ export default function windowMaximizeTest() {
       }
     })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0500
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0500
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_1';
   try {
@@ -718,13 +788,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_1', TestType.FUNCTION | Si
 })
 
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0600
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : LEVEL0
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0600
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_2';
   try {
@@ -751,13 +821,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_2', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0700
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0700
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_3
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_3';
   try {
@@ -797,13 +867,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_3', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0800
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0800
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_4
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_4';
   try {
@@ -842,13 +912,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_4', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0900
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_0900
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_hide_5
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_hide_5';
   try {
@@ -888,13 +958,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_hide_5', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1000
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_show_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_show_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1000
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_1';
   try {
@@ -940,13 +1010,13 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1100
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1100
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_1';
   try {
@@ -992,13 +1062,13 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1200
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_show_dock_show_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_show_dock_show_2
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1200
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_show_dock_show_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_show_dock_show_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_show_dock_show_2';
   try {
@@ -1044,13 +1114,13 @@ it('testSetTitleAndDockHoverShow_Title_show_dock_show_2', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1300
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_show
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_show
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_show
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1300
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_show
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_show', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_show';
   try {
@@ -1097,13 +1167,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show', TestType.FUNCTION | Size
 })
 
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1400
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_show_1
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_show_1
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_show_1
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1400
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_show_1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_show_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_show_1';
   try {
@@ -1149,13 +1219,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show_1', TestType.FUNCTION | Si
   }
 })
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1500
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_dock_show_2
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_dock_show_2
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_dock_show_2
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1500
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_dock_show_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_dock_show_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_dock_show_2';
   try {
@@ -1202,13 +1272,13 @@ it('testSetTitleAndDockHoverShow_Title_hide_dock_show_2', TestType.FUNCTION | Si
 })
 
 /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1600
-        * @tc.name      : testSetTitleAndDockHoverShow_Title_hide_status
-        * @tc.desc      : testSetTitleAndDockHoverShow_Title_hide_status
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 3
-    */
+ * @tc.name   testSetTitleAndDockHoverShow_Title_hide_status
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_TITLE_AND_DOCK_HOVER_SHOW_1600
+ * @tc.desc   testSetTitleAndDockHoverShow_Title_hide_status
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetTitleAndDockHoverShow_Title_hide_status';
   try {
@@ -1255,12 +1325,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
 })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_MaximizeSupported_0100
-     * @tc.name      : test_MaximizeSupported_0100
-     * @tc.desc      : test_MaximizeSupported_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_MaximizeSupported_0100
+     * @tc.number SUB_BASIC_WMS_MaximizeSupported_0100
+     * @tc.desc   test_MaximizeSupported_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_MaximizeSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_MaximizeSupported_0100';
@@ -1305,12 +1375,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_MaximizeSupported_0200
-     * @tc.name      : test_MaximizeSupported_0200
-     * @tc.desc      : test_MaximizeSupported_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_MaximizeSupported_0200
+     * @tc.number SUB_BASIC_WMS_MaximizeSupported_0200
+     * @tc.desc   test_MaximizeSupported_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_MaximizeSupported_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_MaximizeSupported_0200';
@@ -1355,12 +1425,12 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_MaximizeSupported_0300
-     * @tc.name      : test_MaximizeSupported_0300
-     * @tc.desc      : test_MaximizeSupported_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_MaximizeSupported_0300
+     * @tc.number SUB_BASIC_WMS_MaximizeSupported_0300
+     * @tc.desc   test_MaximizeSupported_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_MaximizeSupported_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_MaximizeSupported_0300';
@@ -1402,6 +1472,227 @@ it('testSetTitleAndDockHoverShow_Title_hide_status', TestType.FUNCTION | Size.ME
           done();
         }
       });
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0100
+     * @tc.name       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithDestoryedSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testMaximizeAcrossDisplaywithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithDestoryedSubwindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        await subWindowClass.destroyWindow();
+        await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        done();
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002)
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0200
+     * @tc.name       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.desc       testMaximizeAcrossDisplaywithSubwindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testMaximizeAcrossDisplaywithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithSubwindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        let mode = subWindowClass.isInFreeWindowMode();
+        console.log(`${caseName} isInFreeWindowMode: ${mode}`);
+        if (mode) {
+          await subWindowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+        } else {
+          await subWindowClass.destroyWindow();
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300004)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+     /**
+     * @tc.name   testMaximizeAcrossDisplaywithTrue
+     * @tc.number SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0300
+     * @tc.desc   testMaximizeAcrossDisplaywithTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaximizeAcrossDisplaywithTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithTrue';
+      console.log(caseName + 'begin');
+      let windowStageStart = await startAbility3(caseName, context);
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let display999:display.Display;
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+        console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          await sleep(1000);
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
+          let CurrentFoldCreaseRegion: display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();
+          console.info(caseName + `Succeeded in obtaining current fold crease region. Data: ${JSON.stringify(CurrentFoldCreaseRegion)}`);
+          display999 = display.getDisplayByIdSync(999);
+          let displayRectArr = await display.getAllDisplayPhysicalResolution();
+          console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
+          let displays = await display.getAllDisplays();
+          console.log(caseName + ' displays: ' + JSON.stringify(displays))
+          for(let i = 0; i < displays.length; i++){
+            console.log(caseName + ' displays.id: ' + JSON.stringify(displays[i].id))
+            if(displays[i].id ==0){
+              let displayRes1 = displays[i];
+              console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+              expect(windowRect1.width).assertEqual(displayRes1.width)
+              let height = displayRectArr[i].physicalHeight-display999.height-CurrentFoldCreaseRegion.creaseRects[0].height;
+              console.log(caseName + ' height: ' + JSON.stringify(height));
+              expect(windowRect1.height).assertEqual(height)
+
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, true);
+              let windowRect2 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+              let displayRes2 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+              expect(windowRect2.width).assertEqual(displayRes2.width)
+              expect(windowRect2.height).assertEqual(height)
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+              let windowRect3 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect3: ' + JSON.stringify(windowRect3));
+              let displayRes3 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes3: ' + JSON.stringify(displayRes3));
+              expect(windowRect3.width).assertEqual(displayRes3.width)
+              expect(windowRect3.height).assertEqual(displayRes3.height)
+
+              await terminateAbility3(caseName);
+              done();
+            }
+          }
+
+        } else {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          console.log(caseName + ' maximize success  ');
+          await terminateAbility3(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await terminateAbility3(caseName);
+        if (!isSupport) {
+          expect(err.code).assertEqual(801)
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testMaximizeAcrossDisplaywithFalse
+     * @tc.number SUB_BASIC_WMS_TEST_MAXMIZE_ACROSS_DISPLAY_0400
+     * @tc.desc   testMaximizeAcrossDisplaywithFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testMaximizeAcrossDisplaywithFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testMaximizeAcrossDisplaywithFalse';
+      console.log(caseName + 'begin');
+      let windowStageStart = await startAbility3(caseName, context);
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let display999:display.Display;
+      try {
+        let mainWindow = windowStageStart.getMainWindowSync();
+        let isInFreeWindowMode = mainWindow.isInFreeWindowMode();
+        console.log(caseName + ' isInFreeWindowMode: ' + isInFreeWindowMode);
+        if (isInFreeWindowMode && display.getFoldStatus() == display.FoldStatus.FOLD_STATUS_HALF_FOLDED) {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          await sleep(1000);
+          let CurrentFoldCreaseRegion: display.FoldCreaseRegion = display.getCurrentFoldCreaseRegion();
+          console.info(caseName + `Succeeded in obtaining current fold crease region. Data: ${JSON.stringify(CurrentFoldCreaseRegion)}`);
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.log(caseName + ' windowRect1: ' + JSON.stringify(windowRect1));
+          display999 = display.getDisplayByIdSync(999);
+          let displays = await display.getAllDisplays();
+          console.log(caseName + ' displays: ' + JSON.stringify(displays))
+          for(let i = 0; i < displays.length; i++){
+            console.log(caseName + ' displays.id: ' + JSON.stringify(displays[i].id))
+            if(displays[i].id ==0){
+              let displayRes1 = displays[i];
+              console.log(caseName + ' displayRes1: ' + JSON.stringify(displayRes1));
+              let displayRectArr = await display.getAllDisplayPhysicalResolution();
+              console.log(caseName + ' displayRectArr: ' + JSON.stringify(displayRectArr));
+              for (let i = 0; i < displayRectArr.length; i++) {
+                console.log(caseName + ' displayRectArr i: ' + JSON.stringify(displayRectArr[i]));
+                expect(windowRect1.width).assertEqual(displayRectArr[i].physicalWidth)
+                let height = displayRectArr[i].physicalHeight-display999.height-CurrentFoldCreaseRegion.creaseRects[0].height;
+                console.log(caseName + ' height: ' + JSON.stringify(height));
+                expect(windowRect1.height).assertEqual(height)
+                break;
+              }
+              expect(windowRect1.width).assertEqual(displayRes1.width)
+              expect(windowRect1.height).assertEqual(displayRes1.height)
+
+              await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, false);
+              let windowRect2 = mainWindow.getWindowProperties().windowRect;
+              console.log(caseName + ' windowRect2: ' + JSON.stringify(windowRect2));
+              let displayRes2 = display.getDefaultDisplaySync();
+              console.log(caseName + ' displayRes2: ' + JSON.stringify(displayRes2));
+              expect(windowRect2.width).assertEqual(displayRes2.width)
+              expect(windowRect2.height).assertEqual(displayRes2.height)
+
+              await terminateAbility3(caseName);
+              done();
+            }
+          }
+
+        } else {
+          await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE, undefined);
+          console.log(caseName + ' maximize success  ');
+          await terminateAbility3(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err))
+        await terminateAbility3(caseName);
+        if (!isSupport) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
     });
 
   })

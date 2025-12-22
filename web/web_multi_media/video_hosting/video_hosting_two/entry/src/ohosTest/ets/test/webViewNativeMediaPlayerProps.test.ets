@@ -58,13 +58,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaError_NETWORK_ERROR_API_0002
-     *@tc.name testWebViewNativeMediaPlayerNetworkError
-     *@tc.desc test MediaError.NETWORK_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkError
+     * @tc.number SUB_ACE_WEB_MediaError_NETWORK_ERROR_API_0002
+     * @tc.desc   test MediaError.NETWORK_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewNativeMediaPlayerNetworkError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkError";
@@ -76,13 +76,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaError_FORMAT_ERROR_API_0003
-     *@tc.name testWebViewNativeMediaPlayerFORMATERROR
-     *@tc.desc test MediaError.FORMAT_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerFORMATERROR
+     * @tc.number SUB_ACE_WEB_MediaError_FORMAT_ERROR_API_0003
+     * @tc.desc   test MediaError.FORMAT_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerFORMATERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerFORMATERROR";
@@ -94,13 +94,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaError_DECODE_ERROR_API_0004
-     *@tc.name testWebViewNativeMediaPlayerDECODEERROR
-     *@tc.desc test MediaError.DECODE_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerDECODEERROR
+     * @tc.number SUB_ACE_WEB_MediaError_DECODE_ERROR_API_0004
+     * @tc.desc   test MediaError.DECODE_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerDECODEERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerDecodeERROR";
@@ -112,13 +112,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_CreateNativeMediaPlayerCallback_API_0005
-     *@tc.name testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback
-     *@tc.desc test CreateNativeMediaPlayerCallback
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback
+     * @tc.number SUB_ACE_WEB_CreateNativeMediaPlayerCallback_API_0005
+     * @tc.desc   test CreateNativeMediaPlayerCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerCreateNativeMediaPlayerCallback";
@@ -130,13 +130,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NetworkState_EMPTY_API_0006
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateEmpty
-     *@tc.desc test NetworkState EMPTY
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateEmpty
+     * @tc.number SUB_ACE_WEB_NetworkState_EMPTY_API_0006
+     * @tc.desc   test NetworkState EMPTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerNetworkStateEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkStateEmpty";
@@ -148,13 +148,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NetworkState_IDLE_API_0007
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateIDLE
-     *@tc.desc test NetworkState IDLE
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateIDLE
+     * @tc.number SUB_ACE_WEB_NetworkState_IDLE_API_0007
+     * @tc.desc   test NetworkState IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerNetworkStateIDLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkStateIDLE";
@@ -166,13 +166,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NetworkState_NETWORK_ERROR_API_0008
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateNETWORKERROR
-     *@tc.desc test NetworkState NETWORK_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateNETWORKERROR
+     * @tc.number SUB_ACE_WEB_NetworkState_NETWORK_ERROR_API_0008
+     * @tc.desc   test NetworkState NETWORK_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerNetworkStateNETWORKERROR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerNetworkStateNETWORKERROR";
@@ -184,13 +184,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ReadyState_HAVE_NOTHING_API_0009
-     *@tc.name testWebViewNativeMediaPlayerReadyStateHAVENOTHING
-     *@tc.desc test ReadyState.HAVE_NOTHING
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerReadyStateHAVENOTHING
+     * @tc.number SUB_ACE_WEB_ReadyState_HAVE_NOTHING_API_0009
+     * @tc.desc   test ReadyState.HAVE_NOTHING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewNativeMediaPlayerReadyStateHAVENOTHING', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerReadyStateHAVENOTHING";
@@ -202,13 +202,13 @@ export default function webViewNativeMediaPlayerProps() {
       await Utils.waitAndClickComponent(driver, 'webViewNativeMediaPlayerProps');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaPlayer_Preload_API_0010
-     *@tc.name testWebViewNativeMediaPlayerPreload
-     *@tc.desc test MediaPlayerProps2
-     *@tc.type Function
-     *@tc.size MediumTest
-     *@tc.level Level 1
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerPreload
+     * @tc.number SUB_ACE_WEB_MediaPlayer_Preload_API_0010
+     * @tc.desc   test MediaPlayerProps2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWebViewNativeMediaPlayerPreload', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let emitKey = "emitWebViewNativeMediaPlayerProps2";

@@ -87,7 +87,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_Event_Test_0001
          * @tc.number Communication_WiFi_Event_Test_0001
          * @tc.desc   Test wifiStateChange callback
@@ -107,7 +106,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_Event_Test_0002
          * @tc.number Communication_WiFi_Event_Test_0002
          * @tc.desc   Test wifiConnectionChange callback
@@ -127,7 +125,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_Event_Test_0003
          * @tc.number Communication_WiFi_Event_Test_0003
          * @tc.desc   Test wifiScanStateChange  callback
@@ -154,7 +151,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_Event_Test_0004
          * @tc.number Communication_WiFi_Event_Test_0004
          * @tc.desc   Test wifiRssiChange callback
@@ -174,7 +170,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   Communication_WiFi_Event_Test_0005
          * @tc.number Communication_WiFi_Event_Test_0005
          * @tc.desc   Test hotspotStateChange api.
@@ -194,7 +189,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0001
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0001
          * @tc.desc   Test enableHotspot api.
@@ -221,7 +215,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0002
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0002
          * @tc.desc   Test disableHotspot api.
@@ -248,7 +241,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0003
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0003
          * @tc.desc   Test getSupportedPowerModel api.
@@ -278,7 +270,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0004
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0004
          * @tc.desc   Test getSupportedPowerModel api.
@@ -318,7 +309,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0005
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0005
          * @tc.desc   Test getPowerModel api.
@@ -348,7 +338,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0006
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0006
          * @tc.desc   Test getPowerModel api.
@@ -388,7 +377,6 @@ export default function actsWifiEventTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0007
          * @tc.number SUB_Communication_WiFi_SysCaps_Test_0007
          * @tc.desc   Test setPowerModel api.

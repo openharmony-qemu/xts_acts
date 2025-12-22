@@ -48,14 +48,14 @@ export default function webOnInterceptReqOne() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
- * @tc.number     : SUB_ACE_BASIC_ETS_WEBPATR2_API_0100
- * @tc.name       : testOnInterceptRequestWebCStatic
- * @tc.desc       : onInterceptRequest without setting webresourceresponse
- * @tc.size       : MediumTest
- * @tc.type       : Function
- * @tc.level      : Level 3
- */
+    /**
+     * @tc.name   OnInterceptRequestWebCStatic
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR2_API_0100
+     * @tc.desc   onInterceptRequest without setting webresourceresponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OnInterceptRequestWebCStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

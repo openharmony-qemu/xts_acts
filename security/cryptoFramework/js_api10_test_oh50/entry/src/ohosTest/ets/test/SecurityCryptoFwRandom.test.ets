@@ -90,12 +90,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0100
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0100
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0100
-     * @tc.desc enable hardware entropy
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0100",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -113,12 +113,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0200
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0200
-     * @tc.desc enable hardware entropy, pthread
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy, pthread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0200",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -133,12 +133,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0300
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0300
-     * @tc.desc enable hardware entropy with seed
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy with seed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0300",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -160,12 +160,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0400
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0400
-     * @tc.desc enable hardware entropy with seed
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy with seed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -189,12 +189,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0500
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0500
-     * @tc.desc enable hardware entropy
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0500",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -212,12 +212,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0600
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0600
-     * @tc.desc enable hardware entropy
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -235,12 +235,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0700
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0700
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0700
-     * @tc.desc enable hardware entropy, pthread
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy, pthread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0700",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -255,12 +255,12 @@ export default function SecurityCryptoFwRandomTestUnit() {
       });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Random_Func_0800
      * @tc.number SUB_Security_CryptoFramework_Random_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_Random_Func_0800
-     * @tc.desc enable hardware entropy, pthread
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level1
+     * @tc.desc   enable hardware entropy, pthread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Security_CryptoFramework_Random_Func_0800",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

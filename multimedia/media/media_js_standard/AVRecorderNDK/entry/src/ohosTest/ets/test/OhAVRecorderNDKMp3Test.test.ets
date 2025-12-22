@@ -81,12 +81,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0010
-     * @tc.name       : testOhAvRecorder_mp3_success_0010
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0010
+     * @tc.number testOhAvRecorder_mp3_success_0010
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0010', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0010 test start `);
@@ -131,12 +131,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00101
-     * @tc.name       : testOhAvRecorder_mp3_success_00101
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00101
+     * @tc.number testOhAvRecorder_mp3_success_00101
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00101', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00101 test start `);
@@ -181,12 +181,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00102
-     * @tc.name       : testOhAvRecorder_mp3_success_00102
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00102
+     * @tc.number testOhAvRecorder_mp3_success_00102
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00102', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00102 test start `);
@@ -227,12 +227,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00103
-     * @tc.name       : testOhAvRecorder_mp3_success_00103
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00103
+     * @tc.number testOhAvRecorder_mp3_success_00103
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00103', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00103 test start `);
@@ -275,12 +275,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00104
-     * @tc.name       : testOhAvRecorder_mp3_success_00104
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00104
+     * @tc.number testOhAvRecorder_mp3_success_00104
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00104', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00104 test start `);
@@ -325,12 +325,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00105
-     * @tc.name       : testOhAvRecorder_mp3_success_00105
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00105
+     * @tc.number testOhAvRecorder_mp3_success_00105
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00105', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00104 test start `);
@@ -373,12 +373,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00106
-     * @tc.name       : testOhAvRecorder_mp3_success_00106
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00106
+     * @tc.number testOhAvRecorder_mp3_success_00106
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00106', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00106 test start `);
@@ -425,12 +425,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00107
-     * @tc.name       : testOhAvRecorder_mp3_success_00107
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00107
+     * @tc.number testOhAvRecorder_mp3_success_00107
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00107', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00107 test start `);
@@ -475,12 +475,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00108
-     * @tc.name       : testOhAvRecorder_mp3_success_00108
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00108
+     * @tc.number testOhAvRecorder_mp3_success_00108
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00108', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00108 test start `);
@@ -525,12 +525,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_00109
-     * @tc.name       : testOhAvRecorder_mp3_success_00109
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_00109
+     * @tc.number testOhAvRecorder_mp3_success_00109
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_00109', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_00109 test start `);
@@ -573,12 +573,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_002
-     * @tc.name       : testOhAvRecorder_mp3_success_002
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_002
+     * @tc.number testOhAvRecorder_mp3_success_002
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_002 test start `);
@@ -619,12 +619,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0021
-     * @tc.name       : testOhAvRecorder_mp3_success_0021
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0021
+     * @tc.number testOhAvRecorder_mp3_success_0021
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0021', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0021 test start `);
@@ -667,12 +667,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0022
-     * @tc.name       : testOhAvRecorder_mp3_success_0022
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0022
+     * @tc.number testOhAvRecorder_mp3_success_0022
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0022', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0022 test start `);
@@ -715,12 +715,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0023
-     * @tc.name       : testOhAvRecorder_mp3_success_0023
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0023
+     * @tc.number testOhAvRecorder_mp3_success_0023
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0023', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0023 test start `);
@@ -763,12 +763,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0024
-     * @tc.name       : testOhAvRecorder_mp3_success_0024
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0024
+     * @tc.number testOhAvRecorder_mp3_success_0024
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0024', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0024 test start `);
@@ -813,12 +813,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0025
-     * @tc.name       : testOhAvRecorder_mp3_success_0025
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0025
+     * @tc.number testOhAvRecorder_mp3_success_0025
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0025', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0025 test start `);
@@ -861,12 +861,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0026
-     * @tc.name       : testOhAvRecorder_mp3_success_0026
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0026
+     * @tc.number testOhAvRecorder_mp3_success_0026
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0026', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0026 test start `);
@@ -913,12 +913,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0027
-     * @tc.name       : testOhAvRecorder_mp3_success_0027
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0027
+     * @tc.number testOhAvRecorder_mp3_success_0027
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0027', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0027 test start `);
@@ -963,12 +963,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_0028
-     * @tc.name       : testOhAvRecorder_mp3_success_0028
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_0028
+     * @tc.number testOhAvRecorder_mp3_success_0028
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_0028', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_0028 test start `);
@@ -1008,12 +1008,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_003
-     * @tc.name       : testOhAvRecorder_mp3_success_003
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_003
+     * @tc.number testOhAvRecorder_mp3_success_003
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_003 test start `);
@@ -1062,12 +1062,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_004
-     * @tc.name       : testOhAvRecorder_mp3_success_004
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_004
+     * @tc.number testOhAvRecorder_mp3_success_004
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_004 test start `);
@@ -1126,12 +1126,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_005
-     * @tc.name       : testOhAvRecorder_mp3_success_005
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_005
+     * @tc.number testOhAvRecorder_mp3_success_005
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_005 test start `);
@@ -1192,12 +1192,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_006
-     * @tc.name       : testOhAvRecorder_mp3_success_006
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_006
+     * @tc.number testOhAvRecorder_mp3_success_006
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_006', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_006 test start `);
@@ -1242,12 +1242,12 @@ export default function OhAVRecorderNDKMp3Test() { // L2
     });
 
     /**
-     * @tc.number     : testOhAvRecorder_mp3_success_007
-     * @tc.name       : testOhAvRecorder_mp3_success_007
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvRecorder_mp3_success_007
+     * @tc.number testOhAvRecorder_mp3_success_007
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvRecorder_mp3_success_007', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvRecorder_mp3_success_007 test start `);

@@ -91,7 +91,7 @@ class TestStub extends rpc.RemoteObject {
 
 
 class MyDeathRecipient implements rpc.DeathRecipient {
-    onRemoteDied(): void {
+    onRemoteDied: () => void = () => {
         hilog.info(domain, tag, '%{public}s', 'into onRemoteDied');
     }
 }
@@ -229,7 +229,6 @@ export default function abilityTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
          * @tc.number SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
          * @tc.desc   test MessageSequence WriteInt and ReadInt
@@ -258,7 +257,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
          * @tc.number SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
          * @tc.desc   test MessageSequence WriteInterfaceToken and ReadInterfaceToken
@@ -287,7 +285,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
          * @tc.number SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
          * @tc.desc   test MessageSequence setCapacity and getCapacity
@@ -316,7 +313,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeNoException_readException_0100
          * @tc.number SUB_IPC_MessageSequence_writeNoException_readException_0100
          * @tc.desc   test MessageSequence writeNoException and readException
@@ -343,7 +339,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeLong_readLong_0100
          * @tc.number SUB_IPC_MessageSequence_writeLong_readLong_0100
          * @tc.desc   test MessageSequence writeLong and readLong
@@ -372,7 +367,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
          * @tc.number SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
          * @tc.desc   test MessageSequence writeBoolean and readBoolean
@@ -401,7 +395,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
          * @tc.number SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
          * @tc.desc   test MessageSequence writeBoolean and readBoolean
@@ -430,7 +423,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeString_readString_0100
          * @tc.number SUB_IPC_MessageSequence_writeString_readString_0100
          * @tc.desc   test MessageSequence writeString and readString
@@ -459,7 +451,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeByteArray_0100
          * @tc.number SUB_IPC_MessageSequence_writeByteArray_0100
          * @tc.desc   test MessageSequence writeByteArray
@@ -486,7 +477,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
          * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
          * @tc.desc   test MessageSequence writeIntArray and readIntArray
@@ -515,7 +505,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
          * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
          * @tc.desc   test MessageSequence writeIntArray and readIntArray
@@ -545,7 +534,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
          * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
          * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
@@ -574,7 +562,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
          * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
          * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
@@ -604,7 +591,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
          * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
          * @tc.desc   test MessageSequence writeStringArray and readStringArray
@@ -633,7 +619,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
          * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
          * @tc.desc   test MessageSequence writeStringArray and readStringArray
@@ -663,7 +648,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
          * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
          * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
@@ -692,7 +676,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
          * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
          * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
@@ -722,7 +705,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
          * @tc.number SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
          * @tc.desc   test MessageSequence writeParcelable and readParcelable
@@ -754,7 +736,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
          * @tc.number SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
          * @tc.desc   test MessageSequence writeParcelableArray and readParcelableArray
@@ -791,7 +772,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer with int32
@@ -829,7 +809,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with int32
@@ -877,7 +856,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer with uint8
@@ -912,7 +890,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with uint8
@@ -957,7 +934,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer with int8
@@ -995,7 +971,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with int8
@@ -1043,7 +1018,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer with float32
@@ -1081,7 +1055,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with float32
@@ -1129,7 +1102,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_Ashmem_create_0100
          * @tc.number SUB_IPC_Ashmem_create_0100
          * @tc.desc   test create Ashmem
@@ -1155,7 +1127,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_Ashmem_getAshmemSize_0100
          * @tc.number SUB_IPC_Ashmem_getAshmemSize_0100
          * @tc.desc   test Ashmem getAshmemSize
@@ -1183,7 +1154,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
          * @tc.number SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
          * @tc.desc   test MessageSequence writeAshmem Ashmem
@@ -1212,7 +1182,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
          * @tc.number SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
          * @tc.desc   test MessageSequence writeAshmem and readAshmem
@@ -1251,7 +1220,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageOption_create_0100
          * @tc.number SUB_IPC_MessageOption_create_0100
          * @tc.desc   test MessageOption create
@@ -1277,7 +1245,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageOption_create_one_value_0100
          * @tc.number SUB_IPC_MessageOption_create_one_value_0100
          * @tc.desc   test MessageOption create with ont input
@@ -1303,7 +1270,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageOption_isAsync_0100
          * @tc.number SUB_IPC_MessageOption_isAsync_0100
          * @tc.desc   test MessageOption is async
@@ -1331,7 +1297,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageOption_isAsync_false_0100
          * @tc.number SUB_IPC_MessageOption_isAsync_false_0100
          * @tc.desc   test MessageOption is async false
@@ -1359,7 +1324,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_Ashmem_create_with_other_ashmem_0100
          * @tc.number SUB_IPC_Ashmem_create_with_other_ashmem_0100
          * @tc.desc   test create Ashmem with other ashmem
@@ -1387,7 +1351,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_Ashmem_mapReadWriteAshmem_0100
          * @tc.number SUB_IPC_Ashmem_mapReadWriteAshmem_0100
          * @tc.desc   test create Ashmem with other ashmem
@@ -1414,7 +1377,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_IPCSkeleton_getCallingPid_0100
          * @tc.number SUB_IPC_IPCSkeleton_getCallingPid_0100
          * @tc.desc   test IPCSkeleton getCallingPid
@@ -1441,7 +1403,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_IPCSkeleton_getCallingUid_0100
          * @tc.number SUB_IPC_IPCSkeleton_getCallingUid_0100
          * @tc.desc   test IPCSkeleton getCallingUid
@@ -1468,7 +1429,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_IPCSkeleton_getCallingTokenId_0100
          * @tc.number SUB_IPC_IPCSkeleton_getCallingTokenId_0100
          * @tc.desc   test IPCSkeleton getCallingTokenId
@@ -1495,7 +1455,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_0100
          * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_0100
          * @tc.desc   test MessageSequence writeRemoteObject
@@ -1524,7 +1483,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
          * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
          * @tc.desc   test MessageSequence writeRemoteObject and readRemoteObject
@@ -1554,7 +1512,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readFileDescriptor_0100
          * @tc.number SUB_IPC_MessageSequence_readFileDescriptor_0100
          * @tc.desc   test MessageSequence readFileDescriptor
@@ -1588,7 +1545,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_0100
          * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_0100
          * @tc.desc   test MessageSequence writeFileDescriptor
@@ -1619,7 +1575,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_closeFileDescriptor_0100
          * @tc.number SUB_IPC_MessageSequence_closeFileDescriptor_0100
          * @tc.desc   test MessageSequence closeFileDescriptor
@@ -1650,7 +1605,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0100
          * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0100
          * @tc.desc   test RemoteObject sendMessageRequest
@@ -1693,7 +1647,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0200
          * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0200
          * @tc.desc   test RemoteObject sendMessageRequest SYNC
@@ -1731,7 +1684,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0300
          * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0300
          * @tc.desc   test RemoteObject sendMessageRequest ASYNC
@@ -1769,7 +1721,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0400
          * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0400
          * @tc.desc   test RemoteObject sendMessageRequest SYNC
@@ -1813,7 +1764,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
          * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
          * @tc.desc   test RemoteObject sendMessageRequest
@@ -1847,7 +1797,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_getDescriptor_0100
          * @tc.number SUB_IPC_RemoteObject_getDescriptor_0100
          * @tc.desc   test RemoteObject getDescriptor
@@ -1880,7 +1829,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_getCallingPid_0100
          * @tc.number SUB_IPC_RemoteObject_getCallingPid_0100
          * @tc.desc   test RemoteObject getCallingPid
@@ -1909,7 +1857,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteObject_getCallingUid_0100
          * @tc.number SUB_IPC_RemoteObject_getCallingUid_0100
          * @tc.desc   test RemoteObject getCallingUid
@@ -1938,7 +1885,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_registerDeathRecipient_0100
          * @tc.number SUB_IPC_registerDeathRecipient_0100
          * @tc.desc   test registerDeathRecipient
@@ -1967,7 +1913,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_registerDeathRecipient_0200
          * @tc.number SUB_IPC_registerDeathRecipient_0200
          * @tc.desc   test registerDeathRecipient
@@ -1993,7 +1938,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_0100
          * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_0100
          * @tc.desc   test RemoteProxy SendMessageRequest
@@ -2040,7 +1984,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
          * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
          * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
@@ -2094,7 +2037,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
          * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
          * @tc.desc   test RemoteProxy SendMessageRequest
@@ -2137,7 +2079,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
          * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
          * @tc.desc   test RemoteProxy SendMessageRequest  callback after write and read Proxy
@@ -2182,7 +2123,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
          * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
          * @tc.desc   test RemoteProxy SendMessageRequest  callback after write and read Proxy
@@ -2216,7 +2156,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_IsObjectDead_0100
          * @tc.number SUB_IPC_RemoteProxy_IsObjectDead_0100
          * @tc.desc   test RemoteProxy IsObjectDead
@@ -2261,7 +2200,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_getDescriptor_0100
          * @tc.number SUB_IPC_RemoteProxy_getDescriptor_0100
          * @tc.desc   test RemoteProxy getDescriptor
@@ -2301,7 +2239,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_RemoteProxy_getDescriptor_0200
          * @tc.number SUB_IPC_RemoteProxy_getDescriptor_0200
          * @tc.desc   test RemoteProxy getDescriptor RemoteProxy
@@ -2327,7 +2264,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_IRemoteBroker_asObject_0100
          * @tc.number SUB_IPC_IRemoteBroker_asObject_0100
          * @tc.desc   test asObject
@@ -2370,7 +2306,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
          * @tc.desc   test writeRemoteObject errCode
@@ -2399,7 +2334,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
          * @tc.desc   test readRemoteObject errCode
@@ -2429,7 +2363,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
          * @tc.desc   test writeInterfaceToken errCode
@@ -2457,7 +2390,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
          * @tc.number SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
          * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
@@ -2485,7 +2417,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
          * @tc.desc   test readInterfaceToken errCode
@@ -2514,7 +2445,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
          * @tc.desc   test setCapacity errCode
@@ -2542,7 +2472,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
          * @tc.desc   test writeNoException errCode
@@ -2570,7 +2499,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readException_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readException_ErrorCode_0100
          * @tc.desc   test readException errCode
@@ -2598,7 +2526,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
          * @tc.desc   test writeInt errCode
@@ -2626,7 +2553,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readInt_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readInt_ErrorCode_0100
          * @tc.desc   test readInt errCode
@@ -2655,7 +2581,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
          * @tc.desc   test writeLong errCode
@@ -2683,7 +2608,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readLong_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readLong_ErrorCode_0100
          * @tc.desc   test readLong errCode
@@ -2712,7 +2636,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
          * @tc.desc   test writeBoolean errCode
@@ -2740,7 +2663,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
          * @tc.desc   test readBoolean errCode
@@ -2769,7 +2691,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeString_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeString_ErrorCode_0100
          * @tc.desc   test writeString errCode
@@ -2797,7 +2718,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readString_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readString_ErrorCode_0100
          * @tc.desc   test readString errCode
@@ -2826,7 +2746,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
          * @tc.desc   test writeParcelable errCode
@@ -2855,7 +2774,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
          * @tc.desc   test readParcelable errCode
@@ -2887,7 +2805,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
          * @tc.desc   test writeIntArray errCode
@@ -2916,7 +2833,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
          * @tc.desc   test readIntArray errCode
@@ -2947,7 +2863,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
          * @tc.number SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
          * @tc.desc   test readIntArray errCode
@@ -2978,7 +2893,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
          * @tc.desc   test writeDoubleArray errCode
@@ -3007,7 +2921,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
          * @tc.desc   test readDoubleArray errCode
@@ -3038,7 +2951,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
          * @tc.number SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
          * @tc.desc   test readDoubleArray errCode
@@ -3069,7 +2981,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
          * @tc.desc   test writeBooleanArray errCode
@@ -3098,7 +3009,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
          * @tc.desc   test readBooleanArray errCode
@@ -3129,7 +3039,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
          * @tc.number SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
          * @tc.desc   test readBooleanArray errCode
@@ -3160,7 +3069,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
          * @tc.desc   test writeStringArray errCode
@@ -3189,7 +3097,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
          * @tc.desc   test readStringArray errCode
@@ -3220,7 +3127,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
          * @tc.number SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
          * @tc.desc   test readStringArray errCode
@@ -3251,7 +3157,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
          * @tc.desc   test writeParcelableArray errCode
@@ -3283,7 +3188,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
          * @tc.desc   test readParcelableArray errCode
@@ -3318,7 +3222,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
          * @tc.desc   test writeByteArray errCode
@@ -3347,7 +3250,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
          * @tc.desc   test MessageSequence writeAshmem Ashmem errCode
@@ -3377,7 +3279,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
          * @tc.desc   test MessageSequence writeAshmem Ashmem errCode
@@ -3408,7 +3309,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
          * @tc.desc   test MessageSequence writeRawDataBuffer errCode
@@ -3440,7 +3340,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
          * @tc.desc   test MessageSequence readRawDataBuffer errCode
@@ -3473,7 +3372,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
          * @tc.desc   test MessageSequence readFileDescriptor errCode
@@ -3508,7 +3406,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
          * @tc.desc   test MessageSequence writeFileDescriptor errCode
@@ -3541,7 +3438,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
          * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
          * @tc.desc   test MessageSequence writeFileDescriptor errCode
@@ -3574,7 +3470,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
          * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
          * @tc.desc   test MessageSequence writeFileDescriptor errCode
@@ -3601,7 +3496,6 @@ export default function abilityTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
          * @tc.number SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
          * @tc.desc   test MessageSequence closeFileDescriptor errCode

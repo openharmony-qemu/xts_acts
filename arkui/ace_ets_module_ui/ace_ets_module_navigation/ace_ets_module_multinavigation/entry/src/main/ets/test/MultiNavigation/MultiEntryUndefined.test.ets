@@ -245,5 +245,30 @@ export default function MultiEntryUndefined() {
       done();
     });
 
+    /**
+     * @tc.number    MultiEntryUndefined_0800
+     * @tc.name      MultiEntryUndefined_0800
+     * @tc.desc      Test MultiNavPathStack getParamByIndex -1
+     * @tc.level     Level 0
+     */
+    it('MultiEntryUndefined_0800', Level.LEVEL0, async (done: Function) => {
+      console.info('MultiEntryUndefined_0800 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(200);
+
+      let btn1 = await driver.findComponent(ON.text('getParamByIndex-1'));
+      await btn1.click()
+      console.info('[MultiEntryUndefined_0800] btn1 click');
+      await CommonFunc.sleep(1000);
+
+      let index: NavPathInfo | undefined = AppStorage.get('index')
+      expect(index).assertEqual(undefined);
+      AppStorage.delete('index');
+
+      console.info('MultiEntryUndefined_0800 END');
+      done();
+    });
   })
 }

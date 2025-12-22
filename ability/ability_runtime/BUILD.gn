@@ -17,6 +17,7 @@ group("ability_runtime") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsabilitystartselfulabilitytest:ActsAbilityStartSelfulAbilityTest",
       "aacommand:aacommand",
       "abilitybase:abilitybase",
       "abilitybaseerrorcode:abilitybaseerrorcode",
@@ -32,6 +33,7 @@ group("ability_runtime") {
       "abilitytoolabilitydelegatortest:abilitytoolabilitydelegatortest",
       "abilitytoolabilitydelegatorteststatic:ActsAbilityToolAbilityDelegatorStaticTest",
       "actlaunchandlatestparameter:getlaunchandlatestparameteracttest",
+      "actsSetMissionWindowIconTest:ActsSetMissionWindowIconTest",
       "actsNotificationWantAgentTest:ActsNotificationWantAgentTest",
       "actsNotificationWantAgentTestStatic:ActsNotificationWantAgentStaticTest",
       "actsaaappdebugtest:actsaaappdebugtest",
@@ -66,6 +68,7 @@ group("ability_runtime") {
       "actscrosscall:actscrosscall",
       "actsdataabilityaccessdatasharetest:dataabilityaccessdatashare",
       "actsdelegatorfaabilitytest:ActsDelegatorFAAbilityTest",
+      "actssetmissionwindowiconteststatic:ActsSetMissionWindowIconTestStatic",
       "actsfaabilitydisplayorientationtest:ActsFAAbilityDisplayOrientationTest",
       "actsfwkdataaccessortest:dataability",
       "actsgetapplicationnewtest:ActsGetApplicationNewTest",
@@ -83,6 +86,7 @@ group("ability_runtime") {
       "actsopenlinkteststatic:actsopenlinkStaticTest",
       "actsparsingparameterstest:actsparsingparameterstest",
       "actsphotoeditorextensiontest:ActsPhotoEditorExtensionTest",
+      "actsphotoeditorextensionteststatic:ActsPhotoEditorextEnsionStaticTest",
       "actsqueryfunctiontest:actsqueryfunctiontest",
       "actsrequestdialogtest:actsrequestdialogtest",
       "actsrestartapptest:ActsRestartAppTest",

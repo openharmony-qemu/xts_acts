@@ -67,7 +67,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0100', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0100', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0100 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('prBtn1'));
@@ -91,7 +91,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0200', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0200', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0200 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('prBtn2'));
@@ -115,7 +115,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0300', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0300', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0300 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('prBtn3'));
@@ -143,7 +143,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0400', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0400', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0400 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('prBtn4'));
@@ -171,7 +171,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0500', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0500', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0500 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('coBtn1'));
@@ -195,7 +195,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0600', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0600', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0600 START');
       let driver = await UiDriver.create()
       // await driver.swipe(100,500,100,100)
@@ -221,7 +221,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0700', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0700', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0700 START');
       let driver = await UiDriver.create()
       // await driver.swipe(100,500,100,100)
@@ -251,7 +251,7 @@ export default function provide2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('provide2_0800', Level.LEVEL0, async (done: Function) => {
+    it('provide2_0800', Level.LEVEL1, async (done: Function) => {
       console.info('provide2_0800 START');
       let driver = await UiDriver.create()
       // await driver.swipe(100,500,100,100)

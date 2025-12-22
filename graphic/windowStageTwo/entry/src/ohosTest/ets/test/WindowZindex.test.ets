@@ -72,12 +72,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RAISETOAPPTOP_0100
-     * @tc.name      : test_raiseToAppTop_mainWindow
-     * @tc.desc      : test_raiseToAppTop_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_raiseToAppTop_mainWindow
+     * @tc.number SUB_BASIC_WMS_RAISETOAPPTOP_0100
+     * @tc.desc   test_raiseToAppTop_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_raiseToAppTop_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_raiseToAppTop_mainWindow';
@@ -113,12 +113,12 @@ export default function windowZindexTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_RAISETOAPPTOP_0200
-     * @tc.name      : test_raiseToAppTop_subWindowDestroy
-     * @tc.desc      : test_raiseToAppTop_subWindowDestroy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_raiseToAppTop_subWindowDestroy
+     * @tc.number SUB_BASIC_WMS_RAISETOAPPTOP_0200
+     * @tc.desc   test_raiseToAppTop_subWindowDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_raiseToAppTop_subWindowDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_raiseToAppTop_subWindowDestroy';
@@ -164,12 +164,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RAISETOAPPTOP_0300
-     * @tc.name      : test_raiseToAppTop_Two_subWindow_normal
-     * @tc.desc      : test_raiseToAppTop_Two_subWindow_normal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3
+     * @tc.name   test_raiseToAppTop_Two_subWindow_normal
+     * @tc.number SUB_BASIC_WMS_RAISETOAPPTOP_0300
+     * @tc.desc   test_raiseToAppTop_Two_subWindow_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_raiseToAppTop_Two_subWindow_normal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_raiseToAppTop_Two_subWindow_normal';
@@ -250,12 +250,12 @@ export default function windowZindexTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0100
-     * @tc.name      : test_setRaiseByClickEnabled_mainWindow
-     * @tc.desc      : test_setRaiseByClickEnabled_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_setRaiseByClickEnabled_mainWindow
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0100
+     * @tc.desc   test_setRaiseByClickEnabled_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_setRaiseByClickEnabled_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_mainWindow';
@@ -289,12 +289,12 @@ export default function windowZindexTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0200
-     * @tc.name      : test_setRaiseByClickEnabled_subWindowDestroy
-     * @tc.desc      : test_setRaiseByClickEnabled_subWindowDestroy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setRaiseByClickEnabled_subWindowDestroy
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0200
+     * @tc.desc   test_setRaiseByClickEnabled_subWindowDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setRaiseByClickEnabled_subWindowDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_subWindowDestroy';
@@ -341,12 +341,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0300
-     * @tc.name      : test_setRaiseByClickEnabled_Two_subWindow_RaiseByClick
-     * @tc.desc      : test_setRaiseByClickEnabled_Two_subWindow_RaiseByClick
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setRaiseByClickEnabled_Two_subWindow_RaiseByClick
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0300
+     * @tc.desc   test_setRaiseByClickEnabled_Two_subWindow_RaiseByClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setRaiseByClickEnabled_Two_subWindow_RaiseByClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_Two_subWindow_RaiseByClick';
@@ -433,12 +433,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0400
-     * @tc.name      : test_setRaiseByClickEnabled_Two_subWindow_NoRaiseByClick
-     * @tc.desc      : test_setRaiseByClickEnabled_Two_subWindow_NoRaiseByClick
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setRaiseByClickEnabled_Two_subWindow_NoRaiseByClick
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0400
+     * @tc.desc   test_setRaiseByClickEnabled_Two_subWindow_NoRaiseByClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setRaiseByClickEnabled_Two_subWindow_NoRaiseByClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_Two_subWindow_NoRaiseByClick';
@@ -526,12 +526,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0500
-     * @tc.name      : test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop
-     * @tc.desc      : test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0500
+     * @tc.desc   test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop';
@@ -618,12 +618,12 @@ export default function windowZindexTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0600
-     * @tc.name      : test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop_false
-     * @tc.desc      : test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_setRaiseByClickEnabled_Two_subWindow_NoRaiseBy_raiseToAppTop
+     * @tc.number SUB_BASIC_WMS_SET_RAISEBY_CLICK_ENABLED_0600
+     * @tc.desc   test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setRaiseByClickEnabled_Two_subWindow_NoRaiseBy_raiseToAppTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_setRaiseByClickEnabled_Two_subWindow_NoRaiseBy_raiseToAppTop';
@@ -707,12 +707,12 @@ export default function windowZindexTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0100
-     * @tc.name      : test_shiftAppWindowPointerEvent_null
-     * @tc.desc      : test_shiftAppWindowPointerEvent_null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_shiftAppWindowPointerEvent_null
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0100
+     * @tc.desc   test_shiftAppWindowPointerEvent_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_null';
@@ -745,12 +745,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0200
-     * @tc.name      : test_shiftAppWindowPointerEvent_undifined
-     * @tc.desc      : test_shiftAppWindowPointerEvent_undifined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_shiftAppWindowPointerEvent_undifined
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0200
+     * @tc.desc   test_shiftAppWindowPointerEvent_undifined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_undifined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_undifined';
@@ -783,12 +783,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0300
-     * @tc.name      : test_shiftAppWindowPointerEvent_window_destroyed
-     * @tc.desc      : test_shiftAppWindowPointerEvent_window_destroyed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_shiftAppWindowPointerEvent_window_destroyed
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0300
+     * @tc.desc   test_shiftAppWindowPointerEvent_window_destroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_window_destroyed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_window_destroyed';
@@ -837,12 +837,12 @@ export default function windowZindexTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0400
-     * @tc.name      : test_shiftAppWindowPointerEvent_Dialog_window
-     * @tc.desc      : test_shiftAppWindowPointerEvent_Dialog_window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_shiftAppWindowPointerEvent_Dialog_window
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0400
+     * @tc.desc   test_shiftAppWindowPointerEvent_Dialog_window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_Dialog_window', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_Dialog_window';
@@ -902,12 +902,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0500
-     * @tc.name      : test_shiftAppWindowPointerEvent_Subwindow_1300004
-     * @tc.desc      : test_shiftAppWindowPointerEvent_Subwindow_1300004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_shiftAppWindowPointerEvent_Subwindow_1300004
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0500
+     * @tc.desc   test_shiftAppWindowPointerEvent_Subwindow_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_Subwindow_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_Subwindow_1300004';
@@ -962,12 +962,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0600
-     * @tc.name      : test_shiftAppWindowPointerEvent_subWindow_to_mainwindow
-     * @tc.desc      : test_shiftAppWindowPointerEvent_subWindow_to_mainwindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_shiftAppWindowPointerEvent_subWindow_to_mainwindow
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0600
+     * @tc.desc   test_shiftAppWindowPointerEvent_subWindow_to_mainwindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_subWindow_to_mainwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_subWindow_to_mainwindow';
@@ -1034,12 +1034,12 @@ export default function windowZindexTest() {
       
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0700
-     * @tc.name      : test_shiftAppWindowPointerEvent_mainwindow_to_subWindow
-     * @tc.desc      : test_shiftAppWindowPointerEvent_mainwindow_to_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_shiftAppWindowPointerEvent_mainwindow_to_subWindow
+     * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_POINTER_EVENT_0700
+     * @tc.desc   test_shiftAppWindowPointerEvent_mainwindow_to_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_shiftAppWindowPointerEvent_mainwindow_to_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_shiftAppWindowPointerEvent_mainwindow_to_subWindow';
@@ -1106,13 +1106,13 @@ export default function windowZindexTest() {
       }
       
     });
-     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0100
-     * @tc.name      : test_SetWindowDelayRaiseOnDrag_401
-     * @tc.desc      : test_SetWindowDelayRaiseOnDrag_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   test_SetWindowDelayRaiseOnDrag_401
+     * @tc.number SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0100
+     * @tc.desc   test_SetWindowDelayRaiseOnDrag_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowDelayRaiseOnDrag_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_401';
@@ -1133,13 +1133,13 @@ export default function windowZindexTest() {
         }
       }
     });
-/**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0200
-     * @tc.name      : test_SetWindowDelayRaiseOnDrag_1300002
-     * @tc.desc      : test_SetWindowDelayRaiseOnDrag_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   test_SetWindowDelayRaiseOnDrag_1300002
+     * @tc.number SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0200
+     * @tc.desc   test_SetWindowDelayRaiseOnDrag_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowDelayRaiseOnDrag_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_1300002';
@@ -1164,12 +1164,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0300
-     * @tc.name      : test_SetWindowDelayRaiseOnDrag_dialog
-     * @tc.desc      : test_SetWindowDelayRaiseOnDrag_dialog
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SetWindowDelayRaiseOnDrag_dialog
+     * @tc.number SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0300
+     * @tc.desc   test_SetWindowDelayRaiseOnDrag_dialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowDelayRaiseOnDrag_dialog', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_dialog';
@@ -1198,13 +1198,13 @@ export default function windowZindexTest() {
         
       }
     });
-/**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0400
-     * @tc.name      : test_SetWindowDelayRaiseOnDrag_true
-     * @tc.desc      : test_SetWindowDelayRaiseOnDrag_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+    /**
+     * @tc.name   test_SetWindowDelayRaiseOnDrag_true
+     * @tc.number SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0400
+     * @tc.desc   test_SetWindowDelayRaiseOnDrag_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetWindowDelayRaiseOnDrag_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_true';
@@ -1226,12 +1226,12 @@ export default function windowZindexTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0500
-     * @tc.name      : test_SetWindowDelayRaiseOnDrag_false
-     * @tc.desc      : test_SetWindowDelayRaiseOnDrag_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_SetWindowDelayRaiseOnDrag_false
+     * @tc.number SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0500
+     * @tc.desc   test_SetWindowDelayRaiseOnDrag_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SetWindowDelayRaiseOnDrag_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowDelayRaiseOnDrag_false';
@@ -1254,12 +1254,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0100
-     * @tc.name      : test_SubWindowZLevel_0100
-     * @tc.desc      : test_SubWindowZLevel_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SubWindowZLevel_0100
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0100
+     * @tc.desc   test_SubWindowZLevel_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SubWindowZLevel_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0100';
@@ -1333,12 +1333,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0200
-     * @tc.name      : test_SubWindowZLevel_0200
-     * @tc.desc      : test_SubWindowZLevel_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SubWindowZLevel_0200
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0200
+     * @tc.desc   test_SubWindowZLevel_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SubWindowZLevel_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0200';
@@ -1375,12 +1375,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0300
-     * @tc.name      : test_SubWindowZLevel_0300
-     * @tc.desc      : test_SubWindowZLevel_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SubWindowZLevel_0300
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0300
+     * @tc.desc   test_SubWindowZLevel_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SubWindowZLevel_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0300 ';
@@ -1405,12 +1405,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0400
-     * @tc.name      : test_SubWindowZLevel_0400
-     * @tc.desc      : test_SubWindowZLevel_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SubWindowZLevel_0400
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0400
+     * @tc.desc   test_SubWindowZLevel_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SubWindowZLevel_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0400';
@@ -1451,12 +1451,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0500
-     * @tc.name      : test_SubWindowZLevel_0500
-     * @tc.desc      : test_SubWindowZLevel_0500
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SubWindowZLevel_0500
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0500
+     * @tc.desc   test_SubWindowZLevel_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SubWindowZLevel_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0500';
@@ -1500,12 +1500,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0600
-     * @tc.name      : test_SubWindowZLevel_0600
-     * @tc.desc      : test_SubWindowZLevel_0600
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SubWindowZLevel_0600
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0600
+     * @tc.desc   test_SubWindowZLevel_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SubWindowZLevel_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0600';
@@ -1535,12 +1535,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0700
-     * @tc.name      : test_SubWindowZLevel_0700
-     * @tc.desc      : test_SubWindowZLevel_0700
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_SubWindowZLevel_0700
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0700
+     * @tc.desc   test_SubWindowZLevel_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_SubWindowZLevel_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SubWindowZLevel_0700 ';
@@ -1557,12 +1557,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0800
-     * @tc.name      : test_getSubWindowZLevel_1300004
-     * @tc.desc      : 验证getSubWindowZLevel的1300004错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_getSubWindowZLevel_1300004
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0800
+     * @tc.desc   验证getSubWindowZLevel的1300004错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_getSubWindowZLevel_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_getSubWindowZLevel_1300004!';
@@ -1581,12 +1581,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SubWindowZLevel_0900
-     * @tc.name      : test_subWindowWithOptions_zlevel
-     * @tc.desc      : test_subWindowWithOptions_zlevel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_subWindowWithOptions_zlevel
+     * @tc.number SUB_BASIC_WMS_SubWindowZLevel_0900
+     * @tc.desc   test_subWindowWithOptions_zlevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_subWindowWithOptions_zlevel', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_subWindowWithOptions_zlevel';
@@ -1627,12 +1627,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_createWindow_typeMain_0100
-     * @tc.name      : test_create_window_typeMain
-     * @tc.desc      : test_create_window_typeMain
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_create_window_typeMain
+     * @tc.number SUB_BASIC_WMS_createWindow_typeMain_0100
+     * @tc.desc   test_create_window_typeMain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_create_window_typeMain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_create_window_typeMain ';
@@ -1659,12 +1659,12 @@ export default function windowZindexTest() {
     });
 
     /**
-     * @tc.number    : testSetResizeByDragEnabledTrue_0200
-     * @tc.name      : testSetResizeByDragEnabledTrue_0200
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetResizeByDragEnabledTrue_0200
+     * @tc.number testSetResizeByDragEnabledTrue_0200
+     * @tc.desc   testSetResizeByDragEnabledTrue_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetResizeByDragEnabledTrue_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledTrueTest_0200';
@@ -1719,12 +1719,12 @@ export default function windowZindexTest() {
     })
 
     /**
-     * @tc.number    : testSetResizeByDragEnabledFalse_0100
-     * @tc.name      : testSetResizeByDragEnabledFalse_0100
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetResizeByDragEnabledFalse_0100
+     * @tc.number testSetResizeByDragEnabledFalse_0100
+     * @tc.desc   testSetResizeByDragEnabledFalse_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetResizeByDragEnabledFalse_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0100';
@@ -1770,12 +1770,12 @@ export default function windowZindexTest() {
     })
 
     /**
-     * @tc.number    : testSetResizeByDragEnabledFalse_0200
-     * @tc.name      : testSetResizeByDragEnabledFalse_0200
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetResizeByDragEnabledFalse_0200
+     * @tc.number testSetResizeByDragEnabledFalse_0200
+     * @tc.desc   testSetResizeByDragEnabledFalse_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetResizeByDragEnabledFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetResizeByDragEnabledFalseTest_0200';
@@ -1828,12 +1828,12 @@ export default function windowZindexTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setParentWindow_401_0200
-     * @tc.name       : testsetParentWindow401
-     * @tc.desc       : testsetParentWindow401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetParentWindow401
+     * @tc.number SUB_BASIC_WMS_setParentWindow_401_0200
+     * @tc.desc   testsetParentWindow401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetParentWindow401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetParentWindow401";
@@ -1862,12 +1862,12 @@ export default function windowZindexTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_setParentWindow_1300002_0200
-     * @tc.name       : testsetParentWindow1300002
-     * @tc.desc       : testsetParentWindow1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetParentWindow1300002
+     * @tc.number SUB_BASIC_WMS_setParentWindow_1300002_0200
+     * @tc.desc   testsetParentWindow1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetParentWindow1300002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetParentWindow1300002";
@@ -1901,12 +1901,12 @@ export default function windowZindexTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_setParentWindow_1300004_0300
-     * @tc.name       : testsetParentWindow1300004
-     * @tc.desc       : testsetParentWindow1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetParentWindow1300004
+     * @tc.number SUB_BASIC_WMS_setParentWindow_1300004_0300
+     * @tc.desc   testsetParentWindow1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetParentWindow1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetParentWindow1300004";
@@ -1949,12 +1949,12 @@ export default function windowZindexTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setParentWindow_1300009_0400
-     * @tc.name       : testsetParentWindow1300009
-     * @tc.desc       : testsetParentWindow1300009
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetParentWindow1300009
+     * @tc.number SUB_BASIC_WMS_setParentWindow_1300009_0400
+     * @tc.desc   testsetParentWindow1300009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetParentWindow1300009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetParentWindow1300009";
@@ -1991,12 +1991,12 @@ export default function windowZindexTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_getParentWindow_1300002_0100
-     * @tc.name       : testgetParentWindow1300002
-     * @tc.desc       : testgetParentWindow1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testgetParentWindow1300002
+     * @tc.number SUB_BASIC_WMS_getParentWindow_1300002_0100
+     * @tc.desc   testgetParentWindow1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testgetParentWindow1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testgetParentWindow1300002";
@@ -2024,12 +2024,12 @@ export default function windowZindexTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_getParentWindow_1300004_0200
-     * @tc.name       : testgetParentWindow1300004
-     * @tc.desc       : testgetParentWindow1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testgetParentWindow1300004
+     * @tc.number SUB_BASIC_WMS_getParentWindow_1300004_0200
+     * @tc.desc   testgetParentWindow1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testgetParentWindow1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testgetParentWindow1300004";
@@ -2060,6 +2060,164 @@ export default function windowZindexTest() {
         }
       }
 
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0100
+     * @tc.name    testSetSubWindowZLevel__10001
+     * @tc.desc    setSetSubWindowZLevel入参-10001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetSubWindowZLevel__10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetSubWindowZLevel__10001';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel__10001')
+      try {
+        let promise = subWindow.setSubWindowZLevel(-10001);
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting sub window zLevel');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
+            done()
+          }else {
+            expect(err.code).assertEqual(401);
+            expect(err.message).assertEqual('Parameter error.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
+            done();
+
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        await subWindow.destroyWindow();
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0200
+     * @tc.name    testSetSubWindowZLevel__10000
+     * @tc.desc    setSetSubWindowZLevel入参-10000
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetSubWindowZLevel__10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetSubWindowZLevel__10000';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel__10000')
+      try {
+        let promise = subWindow.setSubWindowZLevel(-10000);
+        promise.then(async () => {
+          console.info(caseName+ ' Succeeded in setting sub window zLevel');
+          await subWindow.destroyWindow();
+          expect(true).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
+            done()
+          }else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        await subWindow.destroyWindow();
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0300
+     * @tc.name    testSetSubWindowZLevel_10000
+     * @tc.desc    setSetSubWindowZLevel入参10000
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetSubWindowZLevel_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetSubWindowZLevel_10000';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel_10000')
+      try {
+        let promise = subWindow.setSubWindowZLevel(10000);
+        promise.then(async () => {
+          console.info(caseName+ ' Succeeded in setting sub window zLevel');
+          await subWindow.destroyWindow();
+          expect(true).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName+` Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
+            done()
+          }else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        await subWindow.destroyWindow();
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_SUBWINDOW_ZLEVEL_0400
+     * @tc.name    testSetSubWindowZLevel_10001
+     * @tc.desc    setSetSubWindowZLevel入参10001
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetSubWindowZLevel_10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetSubWindowZLevel_10001';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      let subWindow = await windowStage.createSubWindow('testSetSubWindowZLevel_10001')
+      try {
+        let promise = subWindow.setSubWindowZLevel(10001);
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting sub window zLevel');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(`caseName+ Failed to set sub window zLevel. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindow.destroyWindow();
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
+            done()
+          }else {
+            expect(err.code).assertEqual(401);
+            expect(err.message).assertEqual('Parameter error.[window][setSubWindowZLevel]msg: Set sub window zLevel failed');
+            done();
+
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        await subWindow.destroyWindow();
+        expect(false).assertTrue();
+        done();
+      }
     })
 
 

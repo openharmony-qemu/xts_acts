@@ -92,12 +92,12 @@ export default function ArrayEveryTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   ArrayEveryTest001
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0100
-     * @tc.name ArrayEveryTest001
-     * @tc.desc All elements > 10, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   All elements > 10, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [12, 15, 20, 18];
@@ -109,12 +109,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest002
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0200
-     * @tc.name ArrayEveryTest002
-     * @tc.desc Exists element <= 10, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Exists element <= 10, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [12, 5, 20, 18];
@@ -125,12 +125,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest003
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0300
-     * @tc.name ArrayEveryTest003
-     * @tc.desc Empty array, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Empty array, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [];
@@ -146,12 +146,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest004
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0400
-     * @tc.name ArrayEveryTest004
-     * @tc.desc Single-element array, element passes test (return true)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Single-element array, element passes test (return true)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [15];
@@ -162,12 +162,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest005
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0500
-     * @tc.name ArrayEveryTest005
-     * @tc.desc Single-element array, element fails test (return false)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Single-element array, element fails test (return false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5];
@@ -178,12 +178,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest006
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0600
-     * @tc.name ArrayEveryTest006
-     * @tc.desc All strings have length <= 6
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   All strings have length <= 6
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["spray", "elite", "quick"];
@@ -194,12 +194,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest007
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0700
-     * @tc.name ArrayEveryTest007
-     * @tc.desc All objects have active: true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   All objects have active: true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI {
@@ -219,12 +219,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest008
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0800
-     * @tc.name ArrayEveryTest008
-     * @tc.desc Exists object with active: false, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Exists object with active: false, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI {
@@ -244,12 +244,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest009
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_0900
-     * @tc.name ArrayEveryTest009
-     * @tc.desc All elements are not null
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   All elements are not null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, 2, 3];
@@ -260,12 +260,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest010
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1000
-     * @tc.name ArrayEveryTest010
-     * @tc.desc Exists null element, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Exists null element, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArrayEveryTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, null, 3];
@@ -276,12 +276,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest011
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1100
-     * @tc.name ArrayEveryTest011
-     * @tc.desc Invalid element at array start (short-circuit: 1 callback call)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Invalid element at array start (short-circuit: 1 callback call)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [5, 12, 15, 18];
@@ -297,12 +297,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest012
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1200
-     * @tc.name ArrayEveryTest012
-     * @tc.desc Invalid element in array middle (short-circuit: stop at middle)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Invalid element in array middle (short-circuit: stop at middle)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [12, 15, 5, 18];
@@ -318,12 +318,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest013
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1300
-     * @tc.name ArrayEveryTest013
-     * @tc.desc All elements valid (all callbacks called)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   All elements valid (all callbacks called)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [12, 15, 18, 20];
@@ -339,12 +339,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest014
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1400
-     * @tc.name ArrayEveryTest014
-     * @tc.desc Verify callback parameters (element, index, array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify callback parameters (element, index, array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI {
@@ -369,12 +369,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest015
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1500
-     * @tc.name ArrayEveryTest015
-     * @tc.desc Every() on sparse array (empty slots skipped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Every() on sparse array (empty slots skipped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [12, , 15, , 18];
@@ -390,48 +390,48 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest016
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1600
-     * @tc.name ArrayEveryTest016
-     * @tc.desc Every() on non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Every() on non-array object (class array) via call()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayEveryTest016()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest018
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1800
-     * @tc.name ArrayEveryTest018
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use thisArg to bind this in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayEveryTest018()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest019
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_1900
-     * @tc.name ArrayEveryTest019
-     * @tc.desc No thisArg: this is undefined in strict mode callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No thisArg: this is undefined in strict mode callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArrayEveryTest019()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   ArrayEveryTest020
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2000
-     * @tc.name ArrayEveryTest020
-     * @tc.desc Every() with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Every() with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArrayEveryTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [12n, 15n, 18n];
@@ -442,12 +442,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest021
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2100
-     * @tc.name ArrayEveryTest021
-     * @tc.desc Callback throws error during iteration (traversal interrupts)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback throws error during iteration (traversal interrupts)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [12, 15, 18];
@@ -473,12 +473,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest022
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2200
-     * @tc.name ArrayEveryTest022
-     * @tc.desc Modify array during iteration (add element beyond initial length)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify array during iteration (add element beyond initial length)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [12, 15, 18];
@@ -499,12 +499,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest023
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2300
-     * @tc.name ArrayEveryTest023
-     * @tc.desc Modify unvisited element during iteration (make it invalid)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify unvisited element during iteration (make it invalid)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [12, 15, 18];
@@ -524,12 +524,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest024
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2400
-     * @tc.name ArrayEveryTest024
-     * @tc.desc Delete unvisited element during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete unvisited element during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArrayEveryTest024();
@@ -540,24 +540,24 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest025
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2500
-     * @tc.name ArrayEveryTest025
-     * @tc.desc Every() with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest025()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest026
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2600
-     * @tc.name ArrayEveryTest026
-     * @tc.desc Every() with nested objects (check reference equality)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with nested objects (check reference equality)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -578,12 +578,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest027
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2700
-     * @tc.name ArrayEveryTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is non-function (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2];
@@ -599,24 +599,24 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest028
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2800
-     * @tc.name ArrayEveryTest028
-     * @tc.desc Every() on non-array object without length (returns true)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() on non-array object without length (returns true)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest028()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest029
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_2900
-     * @tc.name ArrayEveryTest029
-     * @tc.desc Every() with NaN elements (check if all are not NaN)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with NaN elements (check if all are not NaN)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [12, 15, 18];
@@ -632,12 +632,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest030
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3000
-     * @tc.name ArrayEveryTest030
-     * @tc.desc Comprehensive test: mixed types + dynamic modification + thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + dynamic modification + thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = ArrayEveryTest030();
@@ -647,12 +647,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest031
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3100
-     * @tc.name ArrayEveryTest031
-     * @tc.desc Every() with WeakMap elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with WeakMap elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const wm1 = new WeakMap<object, string>();
@@ -666,12 +666,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest032
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3200
-     * @tc.name ArrayEveryTest032
-     * @tc.desc Every() with WeakSet elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with WeakSet elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const ws1 = new WeakSet();
@@ -685,12 +685,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest033
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3300
-     * @tc.name ArrayEveryTest033
-     * @tc.desc Every() with DataView elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with DataView elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const buffer = new ArrayBuffer(16);
@@ -705,12 +705,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest034
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3400
-     * @tc.name ArrayEveryTest034
-     * @tc.desc Every() with ArrayBuffer elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with ArrayBuffer elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const ab1 = new ArrayBuffer(16);
@@ -724,12 +724,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest035
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3500
-     * @tc.name ArrayEveryTest035
-     * @tc.desc Every() with TypedArray elements (Int32Array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with TypedArray elements (Int32Array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const ta1 = new Int32Array([1, 2, 3]);
@@ -743,12 +743,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest036
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3600
-     * @tc.name ArrayEveryTest036
-     * @tc.desc Every() with SharedArrayBuffer elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with SharedArrayBuffer elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const sab1 = new SharedArrayBuffer(16);
@@ -762,12 +762,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest037
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3700
-     * @tc.name ArrayEveryTest037
-     * @tc.desc Every() with Promise elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Promise elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const p1 = Promise.resolve(1);
@@ -781,12 +781,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest038
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3800
-     * @tc.name ArrayEveryTest038
-     * @tc.desc Every() with Error objects (various types)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Error objects (various types)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const e1 = new Error('Generic error');
@@ -801,12 +801,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest039
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_3900
-     * @tc.name ArrayEveryTest039
-     * @tc.desc Every() with Map elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Map elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const m1 = new Map<number, string>();
@@ -820,12 +820,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest040
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4000
-     * @tc.name ArrayEveryTest040
-     * @tc.desc Every() with Set elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Set elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const s1 = new Set<number>();
@@ -839,48 +839,48 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest041
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4100
-     * @tc.name ArrayEveryTest041
-     * @tc.desc Every() with generator function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with generator function elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest041()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest042
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4200
-     * @tc.name ArrayEveryTest042
-     * @tc.desc Every() with async function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with async function elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest042()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest043
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4300
-     * @tc.name ArrayEveryTest043
-     * @tc.desc Every() with Proxy elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Proxy elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest043()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest044
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4400
-     * @tc.name ArrayEveryTest044
-     * @tc.desc Every() with Reflect objects (methods)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Reflect objects (methods)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Reflect.get, Reflect.set, Reflect.has];
@@ -892,12 +892,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest045
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4500
-     * @tc.name ArrayEveryTest045
-     * @tc.desc Every() with Math objects (methods)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Math objects (methods)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Math.sqrt, Math.abs, Math.floor];
@@ -909,12 +909,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest046
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4600
-     * @tc.name ArrayEveryTest046
-     * @tc.desc Every() with JSON objects (methods)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with JSON objects (methods)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [JSON.parse, JSON.stringify];
@@ -926,12 +926,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest047
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4700
-     * @tc.name ArrayEveryTest047
-     * @tc.desc Every() with Intl objects (various types)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Intl objects (various types)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const df = new Intl.DateTimeFormat('en-US');
@@ -946,12 +946,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest048
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4800
-     * @tc.name ArrayEveryTest048
-     * @tc.desc Every() with RegExp objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const r1 = /test/;
@@ -965,12 +965,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest049
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_4900
-     * @tc.name ArrayEveryTest049
-     * @tc.desc Every() with Date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const d1 = new Date();
@@ -984,12 +984,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest068
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_6800
-     * @tc.name ArrayEveryTest068
-     * @tc.desc Every() with console objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with console objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [console.log, console.error, console.warn];
@@ -1001,60 +1001,60 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest071
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7100
-     * @tc.name ArrayEveryTest071
-     * @tc.desc Every() with null prototype objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with null prototype objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest071()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest072
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7200
-     * @tc.name ArrayEveryTest072
-     * @tc.desc Every() with frozen objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with frozen objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest072()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest073
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7300
-     * @tc.name ArrayEveryTest073
-     * @tc.desc Every() with sealed objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with sealed objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest073()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest074
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7400
-     * @tc.name ArrayEveryTest074
-     * @tc.desc Every() with configurable: false properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with configurable: false properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest074()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest075
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7500
-     * @tc.name ArrayEveryTest075
-     * @tc.desc Every() with getter-only properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with getter-only properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class Base {
@@ -1084,144 +1084,144 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest076
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7600
-     * @tc.name ArrayEveryTest076
-     * @tc.desc Every() with setter-only properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with setter-only properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest076()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest077
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7700
-     * @tc.name ArrayEveryTest077
-     * @tc.desc Every() with non-writable properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with non-writable properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest077()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest078
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7800
-     * @tc.name ArrayEveryTest078
-     * @tc.desc Every() with enumerable: false properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with enumerable: false properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest078()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest079
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_7900
-     * @tc.name ArrayEveryTest079
-     * @tc.desc Every() with inherited properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with inherited properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest079()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest080
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8000
-     * @tc.name ArrayEveryTest080
-     * @tc.desc Every() with Symbols as property keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Symbols as property keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest080()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest081
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8100
-     * @tc.name ArrayEveryTest081
-     * @tc.desc Every() with large integer keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with large integer keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest081()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest082
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8200
-     * @tc.name ArrayEveryTest082
-     * @tc.desc Every() with negative integer keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with negative integer keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest082()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest083
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8300
-     * @tc.name ArrayEveryTest083
-     * @tc.desc Every() with string keys that look like numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string keys that look like numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest083()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest084
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8400
-     * @tc.name ArrayEveryTest084
-     * @tc.desc Every() with empty string keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with empty string keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest084()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest085
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8500
-     * @tc.name ArrayEveryTest085
-     * @tc.desc Every() with whitespace-only keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with whitespace-only keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest085()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest086
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8600
-     * @tc.name ArrayEveryTest086
-     * @tc.desc Every() with special character keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with special character keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest086()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest087
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8700
-     * @tc.name ArrayEveryTest087
-     * @tc.desc Every() with Unicode character keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Unicode character keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1240,36 +1240,36 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest088
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8800
-     * @tc.name ArrayEveryTest088
-     * @tc.desc Every() with emoji keys
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with emoji keys
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest088()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest089
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_8900
-     * @tc.name ArrayEveryTest089
-     * @tc.desc Every() with nested objects with Symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with nested objects with Symbols
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest089()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest090
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9000
-     * @tc.name ArrayEveryTest090
-     * @tc.desc Every() with deeply nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with deeply nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1300,12 +1300,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest091
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9100
-     * @tc.name ArrayEveryTest091
-     * @tc.desc Every() with arrays as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with arrays as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest091', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1324,12 +1324,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest092
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9200
-     * @tc.name ArrayEveryTest092
-     * @tc.desc Every() with functions as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with functions as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest092', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1348,24 +1348,24 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest093
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9300
-     * @tc.name ArrayEveryTest093
-     * @tc.desc Every() with generator functions as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with generator functions as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest093()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest094
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9400
-     * @tc.name ArrayEveryTest094
-     * @tc.desc Every() with async functions as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with async functions as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1384,12 +1384,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest095
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9500
-     * @tc.name ArrayEveryTest095
-     * @tc.desc Every() with Promises as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Promises as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1408,12 +1408,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest096
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9600
-     * @tc.name ArrayEveryTest096
-     * @tc.desc Every() with Maps as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Maps as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1432,12 +1432,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest097
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9700
-     * @tc.name ArrayEveryTest097
-     * @tc.desc Every() with Sets as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Sets as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1456,12 +1456,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest098
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9800
-     * @tc.name ArrayEveryTest098
-     * @tc.desc Every() with WeakMaps as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with WeakMaps as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {}
@@ -1485,12 +1485,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest099
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_9900
-     * @tc.name ArrayEveryTest099
-     * @tc.desc Every() with WeakSets as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with WeakSets as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {}
@@ -1514,12 +1514,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest100
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10000
-     * @tc.name ArrayEveryTest100
-     * @tc.desc Every() with regular expressions objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with regular expressions objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1538,12 +1538,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest101
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10100
-     * @tc.name ArrayEveryTest101
-     * @tc.desc Every() with Date objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Date objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1562,12 +1562,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest102
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10200
-     * @tc.name ArrayEveryTest102
-     * @tc.desc Every() with Error objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Error objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1586,12 +1586,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest103
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10300
-     * @tc.name ArrayEveryTest103
-     * @tc.desc Every() with ArrayBuffer objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with ArrayBuffer objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest103', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1610,12 +1610,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest104
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10400
-     * @tc.name ArrayEveryTest104
-     * @tc.desc Every() with DataView objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with DataView objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest104', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1635,12 +1635,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest105
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10500
-     * @tc.name ArrayEveryTest105
-     * @tc.desc Every() with TypedArray objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with TypedArray objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest105', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1659,24 +1659,24 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest106
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_10600
-     * @tc.name ArrayEveryTest106
-     * @tc.desc Every() with Proxy objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Proxy objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest106', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest106()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest111
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_11100
-     * @tc.name ArrayEveryTest111
-     * @tc.desc Every() with Intl.DateTimeFormat objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Intl.DateTimeFormat objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1695,12 +1695,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest112
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_11200
-     * @tc.name ArrayEveryTest112
-     * @tc.desc Every() with Intl.NumberFormat objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Intl.NumberFormat objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1719,12 +1719,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest113
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_11300
-     * @tc.name ArrayEveryTest113
-     * @tc.desc Every() with Intl.Collator objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Intl.Collator objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -1743,60 +1743,60 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest121
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12100
-     * @tc.name ArrayEveryTest121
-     * @tc.desc Every() with null prototype objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with null prototype objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest121()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest122
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12200
-     * @tc.name ArrayEveryTest122
-     * @tc.desc Every() with frozen objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with frozen objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest122()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest123
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12300
-     * @tc.name ArrayEveryTest123
-     * @tc.desc Every() with sealed objects as property values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with sealed objects as property values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest123()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest124
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12400
-     * @tc.name ArrayEveryTest124
-     * @tc.desc Every() with configurable: false properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with configurable: false properties in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest124()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest125
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12500
-     * @tc.name ArrayEveryTest125
-     * @tc.desc Every() with getter-only properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with getter-only properties in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class Base {
@@ -1834,60 +1834,60 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest126
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12600
-     * @tc.name ArrayEveryTest126
-     * @tc.desc Every() with non-writable properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with non-writable properties in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest126()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest127
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12700
-     * @tc.name ArrayEveryTest127
-     * @tc.desc Every() with enumerable: false properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with enumerable: false properties in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest127()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest128
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12800
-     * @tc.name ArrayEveryTest128
-     * @tc.desc Every() with inherited properties in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with inherited properties in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest128()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest129
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_12900
-     * @tc.name ArrayEveryTest129
-     * @tc.desc Every() with Symbols as property keys in nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Symbols as property keys in nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest129()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest130
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13000
-     * @tc.name ArrayEveryTest130
-     * @tc.desc Every() with deeply nested objects with various property descriptors
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with deeply nested objects with various property descriptors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest130()).assertEqual(true);
@@ -1898,12 +1898,12 @@ export default function ArrayEveryTest() {
     // ==============================================
 
     /**
+     * @tc.name   ArrayEveryTest131
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13100
-     * @tc.name ArrayEveryTest131
-     * @tc.desc Every() with elements that are null
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with elements that are null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [null, null, null];
@@ -1915,12 +1915,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest132
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13200
-     * @tc.name ArrayEveryTest132
-     * @tc.desc Every() with elements that are undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with elements that are undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [undefined, undefined, undefined];
@@ -1932,12 +1932,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest133
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13300
-     * @tc.name ArrayEveryTest133
-     * @tc.desc Every() with elements that are NaN
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with elements that are NaN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [NaN, NaN, NaN];
@@ -1949,12 +1949,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest134
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13400
-     * @tc.name ArrayEveryTest134
-     * @tc.desc Every() with elements that are Infinity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with elements that are Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [Infinity, Infinity, Infinity];
@@ -1966,12 +1966,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest135
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13500
-     * @tc.name ArrayEveryTest135
-     * @tc.desc Every() with elements that are -Infinity
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with elements that are -Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [-Infinity, -Infinity, -Infinity];
@@ -1983,12 +1983,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest136
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13600
-     * @tc.name ArrayEveryTest136
-     * @tc.desc Every() with mixed null and undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with mixed null and undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [null, undefined, null];
@@ -2000,12 +2000,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest137
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13700
-     * @tc.name ArrayEveryTest137
-     * @tc.desc Every() with sparse array containing only truthy values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with sparse array containing only truthy values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, , 3, , 5];
@@ -2017,12 +2017,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest138
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13800
-     * @tc.name ArrayEveryTest138
-     * @tc.desc Every() with sparse array containing falsy values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with sparse array containing falsy values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, , 0, , 5];
@@ -2034,48 +2034,48 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest139
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_13900
-     * @tc.name ArrayEveryTest139
-     * @tc.desc Every() with array-like object (arguments)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with array-like object (arguments)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest139()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest143
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14300
-     * @tc.name ArrayEveryTest143
-     * @tc.desc Every() with array-like object missing some indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with array-like object missing some indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest143()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest144
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14400
-     * @tc.name ArrayEveryTest144
-     * @tc.desc Every() with array-like object containing undefined values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with array-like object containing undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest144()).assertEqual(false);
     });
 
     /**
+     * @tc.name   ArrayEveryTest145
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14500
-     * @tc.name ArrayEveryTest145
-     * @tc.desc Every() with TypedArray
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const typedArray = new Int32Array([1, 2, 3, 4, 5]);
@@ -2087,12 +2087,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest146
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14600
-     * @tc.name ArrayEveryTest146
-     * @tc.desc Every() with DataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with DataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const buffer = new ArrayBuffer(16);
@@ -2114,12 +2114,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest147
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14700
-     * @tc.name ArrayEveryTest147
-     * @tc.desc Every() with Map values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Map values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const map = new Map([[1, 'a'], [2, 'b'], [3, 'c']]);
@@ -2132,12 +2132,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest148
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14800
-     * @tc.name ArrayEveryTest148
-     * @tc.desc Every() with Set values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Set values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set = new Set([1, 2, 3, 4]);
@@ -2150,36 +2150,36 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest149
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_14900
-     * @tc.name ArrayEveryTest149
-     * @tc.desc Every() with generator output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with generator output
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArrayEveryTest149()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest150
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15000
-     * @tc.name ArrayEveryTest150
-     * @tc.desc Every() with async generator output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with async generator output
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(await ArrayEveryTest150()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArrayEveryTest151
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15100
-     * @tc.name ArrayEveryTest151
-     * @tc.desc Every() with Promise.all output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Promise.all output
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const promises = [Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)];
@@ -2192,12 +2192,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest152
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15200
-     * @tc.name ArrayEveryTest152
-     * @tc.desc Every() with Promise.allSettled output
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Promise.allSettled output
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const promises = [Promise.resolve(1), Promise.resolve(2), Promise.reject(new Error('test'))];
@@ -2211,12 +2211,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest153
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15300
-     * @tc.name ArrayEveryTest153
-     * @tc.desc Every() with Promise.race output (wrapped in array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Promise.race output (wrapped in array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const promises = [Promise.resolve(1), new Promise<number>(resolve => setTimeout(() => resolve(2), 10))];
@@ -2230,12 +2230,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest156
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15600
-     * @tc.name ArrayEveryTest156
-     * @tc.desc Every() with Intl.Collator compare results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Intl.Collator compare results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const collator = new Intl.Collator('en-US');
@@ -2253,12 +2253,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest157
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15700
-     * @tc.name ArrayEveryTest157
-     * @tc.desc Every() with JSON.parse results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with JSON.parse results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -2275,12 +2275,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest158
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15800
-     * @tc.name ArrayEveryTest158
-     * @tc.desc Every() with Math operations results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Math operations results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const numbers = [4, 9, 16, 25];
@@ -2293,12 +2293,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest159
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_15900
-     * @tc.name ArrayEveryTest159
-     * @tc.desc Every() with Reflect operations results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Reflect operations results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI {
@@ -2318,12 +2318,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest160
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16000
-     * @tc.name ArrayEveryTest160
-     * @tc.desc Every() with Date objects' time values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with Date objects' time values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const dates = [new Date(), new Date(2023, 0, 1), new Date(2024, 11, 31)];
@@ -2336,12 +2336,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest161
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16100
-     * @tc.name ArrayEveryTest161
-     * @tc.desc Every() with RegExp exec results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with RegExp exec results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const regex = /(\d+)-(\w+)/;
@@ -2355,12 +2355,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest162
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16200
-     * @tc.name ArrayEveryTest162
-     * @tc.desc Every() with string match results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string match results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['test123', 'example456', 'demo789'];
@@ -2373,12 +2373,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest163
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16300
-     * @tc.name ArrayEveryTest163
-     * @tc.desc Every() with string split results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string split results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['a,b,c', '1,2,3', 'x,y,z'];
@@ -2391,12 +2391,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest164
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16400
-     * @tc.name ArrayEveryTest164
-     * @tc.desc Every() with string replace results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string replace results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['Hello World', 'Good Morning', 'Happy Day'];
@@ -2409,12 +2409,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest165
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16500
-     * @tc.name ArrayEveryTest165
-     * @tc.desc Every() with string search results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string search results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['test string', 'example string', 'demo string'];
@@ -2427,12 +2427,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest166
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16600
-     * @tc.name ArrayEveryTest166
-     * @tc.desc Every() with string indexOf results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string indexOf results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['apple', 'application', 'aptitude'];
@@ -2445,12 +2445,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest167
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16700
-     * @tc.name ArrayEveryTest167
-     * @tc.desc Every() with string lastIndexOf results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string lastIndexOf results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['banana', 'cucumber', 'elephant'];
@@ -2463,12 +2463,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest168
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16800
-     * @tc.name ArrayEveryTest168
-     * @tc.desc Every() with string includes results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string includes results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['javascript', 'typescript', 'coffeescript'];
@@ -2481,12 +2481,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest169
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_16900
-     * @tc.name ArrayEveryTest169
-     * @tc.desc Every() with string startsWith results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string startsWith results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['hello world', 'hello there', 'hello everyone'];
@@ -2499,12 +2499,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest170
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17000
-     * @tc.name ArrayEveryTest170
-     * @tc.desc Every() with string endsWith results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string endsWith results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['test.txt', 'document.txt', 'image.txt'];
@@ -2517,12 +2517,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest171
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17100
-     * @tc.name ArrayEveryTest171
-     * @tc.desc Every() with string repeat results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string repeat results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['a', 'b', 'c'];
@@ -2535,12 +2535,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest172
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17200
-     * @tc.name ArrayEveryTest172
-     * @tc.desc Every() with string padStart results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string padStart results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['1', '2', '3'];
@@ -2553,12 +2553,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest173
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17300
-     * @tc.name ArrayEveryTest173
-     * @tc.desc Every() with string padEnd results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string padEnd results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['1', '2', '3'];
@@ -2571,12 +2571,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest174
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17400
-     * @tc.name ArrayEveryTest174
-     * @tc.desc Every() with string trim results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string trim results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['  test  ', '  example  ', '  demo  '];
@@ -2589,12 +2589,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest175
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17500
-     * @tc.name ArrayEveryTest175
-     * @tc.desc Every() with string trimStart results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string trimStart results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['  test', '  example', '  demo'];
@@ -2607,12 +2607,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest176
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17600
-     * @tc.name ArrayEveryTest176
-     * @tc.desc Every() with string trimEnd results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string trimEnd results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['test  ', 'example  ', 'demo  '];
@@ -2625,12 +2625,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest177
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17700
-     * @tc.name ArrayEveryTest177
-     * @tc.desc Every() with string toUpperCase results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string toUpperCase results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['hello', 'world', 'test'];
@@ -2643,12 +2643,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest178
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17800
-     * @tc.name ArrayEveryTest178
-     * @tc.desc Every() with string toLowerCase results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string toLowerCase results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['HELLO', 'WORLD', 'TEST'];
@@ -2661,12 +2661,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest179
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_17900
-     * @tc.name ArrayEveryTest179
-     * @tc.desc Every() with string charAt results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string charAt results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['apple', 'banana', 'cherry'];
@@ -2679,12 +2679,12 @@ export default function ArrayEveryTest() {
     });
 
     /**
+     * @tc.name   ArrayEveryTest180
      * @tc.number SUB_BUILTINS_ARRAY_EVERY_TEST_18000
-     * @tc.name ArrayEveryTest180
-     * @tc.desc Every() with string charCodeAt results
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Every() with string charCodeAt results
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArrayEveryTest180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const strings = ['A', 'B', 'C'];

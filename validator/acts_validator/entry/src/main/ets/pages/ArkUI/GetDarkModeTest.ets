@@ -195,8 +195,8 @@ struct GetDarkModeTest {
             }
           })
 
-        Text('getDarkMode dark:' + this.isDarkMode + '')
-        Text('getDarkMode light:' + this.isLightMode + '')
+        Text('getDarkMode dark:' + this.isDarkMode + '').fontSize(10).fontColor(Color.Red)
+        Text('getDarkMode light:' + this.isLightMode + '').fontSize(10).fontColor(Color.Red)
 
       }.height('80%')
       .width('100%')

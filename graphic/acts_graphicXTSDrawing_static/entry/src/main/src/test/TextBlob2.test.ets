@@ -51,12 +51,12 @@ export default function textBlob2Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0300
-     * @tc.name      : testTextBlobMakeFromPosTextNormalStatic
-     * @tc.desc      : testTextBlobMakeFromPosTextNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTextBlobMakeFromPosTextNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0300
+     * @tc.desc   testTextBlobMakeFromPosTextNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextBlobMakeFromPosTextNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testTextBlobMakeFromPosTextNormalStatic';
@@ -119,12 +119,12 @@ export default function textBlob2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0303
-     * @tc.name      : testTextBlobMakeFromPosTextMultipleCallsStatic
-     * @tc.desc      : testTextBlobMakeFromPosTextMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromPosTextMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0303
+     * @tc.desc   testTextBlobMakeFromPosTextMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromPosTextMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromPosTextMultipleCallsStatic';
@@ -145,12 +145,12 @@ export default function textBlob2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0304
-     * @tc.name      : testTextBlobMakeFromPosTextAbNormalStatic
-     * @tc.desc      : testTextBlobMakeFromPosTextAbNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromPosTextAbNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0304
+     * @tc.desc   testTextBlobMakeFromPosTextAbNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromPosTextAbNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromPosTextAbNormalStatic';
@@ -176,12 +176,12 @@ export default function textBlob2Test() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0400
-     * @tc.name      : testTextBlobMakeFromStringNormalStatic
-     * @tc.desc      : testTextBlobMakeFromStringNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromStringNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0400
+     * @tc.desc   testTextBlobMakeFromStringNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromStringNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromStringNormalStatic';
@@ -210,12 +210,12 @@ export default function textBlob2Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0403
-     * @tc.name      : testTextBlobMakeFromStringMultipleCallsStatic
-     * @tc.desc      : testTextBlobMakeFromStringMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextBlobMakeFromStringMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0403
+     * @tc.desc   testTextBlobMakeFromStringMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTextBlobMakeFromStringMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testTextBlobMakeFromStringMultipleCallsStatic';

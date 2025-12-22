@@ -15,19 +15,63 @@
 import imageAltTest  from "./image/imageAltTest.test";
 import textMinLinesTest from './textMinLines/TextMinLinesTest.test'
 import HasAxisTest from './hasAxisTest/HasAxisTest.test'
+import RegionListCapiTest from "./InteractiveFramework/RegionListTest.test";
 import CoastingAxisTest from "./list/coastingAxisTest.test";
 import snapSpeedTest from "./list/snapSpeedTest.test";
+import lanesValueTest from "./list/lanesValueTest.test";
 import WaterFlowFillPolicyTest from "./waterFlow/WaterFlowFillPolicyTest.test"
 import imageDrawableDescriptorTest from "./image/imageDrawableDescriptorTest.test";
 import imageErrorTest from "./image/imageErrorTest.test";
+import textLineHeightTest from "./textLineHeight/TextLineHeightTest.test";
+import textAreaBarStateTest from "./textArea/TextAreaBarStateTest.test";
+import scrollBarTest from "./scrollbarTest/scrollbarTest.test";
+import ShowCounterTest from "./showCounterTest/showCounterTest.test";
+import NodeSwiperItemFillpolocyTest from "./swiper/NodeSwiperItemFillpolocy.test"
+import finishAnimationTest from "./swiper/finishAnimationTest.test";
+import imageSpanTest from "./imageSpanTest/ImageSpanTest.test";
+import customKeyboardTest from "./customKeyboard/CustomKeyboardTest.test";
+import animationControllerTest from "./image/animationControllerTest.test";
+import ImageDrawableErrorTest from "./image/drawableDescriptorError.test";
+import DragAndDropTest from "./drag/DragDragPreviewOption.test";
+import native_gesture_booleanTest from "./InteractiveFramework/native_gesture_boolean.test";
+import ui_input_event_booleanTest from "./InteractiveFramework/ui_input_event_boolean.test";
+import native_node_extented_booleanTest from "./InteractiveFramework/native_node_extented_boolean.test";
+import longPressGusture from "./InteractiveFramework/longPressGueture.test";
+import GridFillPolicyTest from "./grid/GridFillPolicyTest.test"
+import gridAttrsTest from "./grid/GridAttrsTest.test";
+import gridEventTest from './grid/GridEventTest.test';
+import clipShapeTest from "./clipShape/ClipShapeTest.test";
+import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
 
 export default function testsuite() {
   CoastingAxisTest();
   imageAltTest();
   snapSpeedTest();
+  lanesValueTest();
   textMinLinesTest();
   HasAxisTest();
+  RegionListCapiTest();
   WaterFlowFillPolicyTest();
   imageDrawableDescriptorTest();
   imageErrorTest();
+  textLineHeightTest();
+  textAreaBarStateTest();
+  scrollBarTest();
+  ShowCounterTest();
+  NodeSwiperItemFillpolocyTest();
+  finishAnimationTest();
+  imageSpanTest();
+  customKeyboardTest();
+  animationControllerTest();
+  ImageDrawableErrorTest();
+  GridFillPolicyTest();
+  DragAndDropTest();
+  native_gesture_booleanTest();
+  ui_input_event_booleanTest();
+  native_node_extented_booleanTest();
+  longPressGusture();
+  gridAttrsTest();
+  gridEventTest();
+  clipShapeTest();
+  CustomMarkDirtyTest();
 }

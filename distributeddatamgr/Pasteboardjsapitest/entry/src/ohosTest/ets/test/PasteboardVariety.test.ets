@@ -91,7 +91,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0100
      * @tc.desc   Test pasteBoard variety createData plaintext
@@ -115,7 +114,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0200
      * @tc.desc   Test pasteBoard variety createData Html
@@ -139,7 +137,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0300
      * @tc.desc   Test pasteBoard variety createData Uri
@@ -163,7 +160,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0400
      * @tc.desc   Test pasteBoard variety createData Want
@@ -187,7 +183,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0500
      * @tc.desc   Test pasteBoard variety createData PixelMap
@@ -227,7 +222,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0600
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -252,7 +246,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0700
      * @tc.desc   Test pasteBoard variety createData Variety and getData
@@ -313,7 +306,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
      * @tc.number SUB_Pasteboard_Local_SDK_PasteboardVariety_0800
      * @tc.desc   Test pasteBoard variety createData Variety and getValidTypes
@@ -358,7 +350,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_0900
      * @tc.number PasteboardVariety_0100
      * @tc.desc   Test pasteBoard variety createData Variety and getValidTypes
@@ -384,7 +375,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1100
      * @tc.number PasteboardVariety_0300
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -408,7 +398,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1200
      * @tc.number PasteboardVariety_0400
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -432,7 +421,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1300
      * @tc.number PasteboardVariety_0500
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -456,7 +444,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1400
      * @tc.number PasteboardVariety_0600
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -479,7 +466,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1500
      * @tc.number PasteboardVariety_0700
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -507,7 +493,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1600
      * @tc.number PasteboardVariety_0800
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -533,7 +518,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1700
      * @tc.number PasteboardVariety_0900
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -561,7 +545,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1800
      * @tc.number PasteboardVariety_1000
      * @tc.desc   Test pasteBoard variety createData Arraybuffer
@@ -587,7 +570,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_1900
      * @tc.number PasteboardVariety_1100
      * @tc.desc   setUnifiedData Verify the properties of the appRecordData type
@@ -610,7 +592,6 @@ export default function PasteboardVarietyTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_Pasteboard_Local_SDK_PasteboardVariety_2000
      * @tc.number PasteboardVariety_1200
      * @tc.desc   setUnifiedData Verify the properties of the appRecordData type

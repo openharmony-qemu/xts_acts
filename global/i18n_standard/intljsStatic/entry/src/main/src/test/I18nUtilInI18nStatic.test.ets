@@ -54,7 +54,6 @@ export default function I18NTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0100
      * @tc.desc   test unitConvert interface from cup to liter unit with long style
@@ -78,7 +77,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0200
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0200
      * @tc.desc   test unitConvert interface from cup to liter unit with undefined style
@@ -107,7 +105,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0300
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0300
      * @tc.desc   test unitConvert interface from cup to liter unit with null style
@@ -135,7 +132,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0400
      * @tc.desc   test unitConvert interface from cup to liter unit with medium style
@@ -164,7 +160,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0500
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0500
      * @tc.desc   test unitConvert interface from cup to liter unit with narrow style
@@ -188,7 +183,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0600
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0600
      * @tc.desc   test unitConvert interface from cup to liter unit with short style
@@ -212,7 +206,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0700
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0700
      * @tc.desc   test unitConvert interface from meter to mile unit
@@ -236,7 +229,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0800
      * @tc.desc   test unitConvert interface from hour to second unit
@@ -265,7 +257,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_0900
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0900
      * @tc.desc   test unitConvert interface from celsius to fahrenheit unit
@@ -289,7 +280,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_1000
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1000
      * @tc.desc   test unitConvert interface from acre to hectare unit
@@ -313,7 +303,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1100
      * @tc.desc   test unitConvert interface from acre to square-meter unit
@@ -337,7 +326,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1200
      * @tc.desc   test unitConvert interface from kilometer-per-hour to knot unit
@@ -361,7 +349,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_1300
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1300
      * @tc.desc   test unitConvert interface from kilometer-per-hour to meter-per-second unit
@@ -385,7 +372,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_1400
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1400
      * @tc.desc   test unitConvert interface from meter to kilometer unit
@@ -409,7 +395,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_static_1500
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1500
      * @tc.desc   test unitConvert interface from meter to meter-per-second unit
@@ -433,7 +418,6 @@ export default function I18NTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_staic_1600
      * @tc.number i18n_i18nutil_test_staic_1600
      * @tc.desc   test getDateOrder method with zh param,get the DateOrder value
@@ -449,7 +433,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_staic_1700
      * @tc.number i18n_i18nutil_test_staic_1700
      * @tc.desc   test getDateOrder method with en param,get the DateOrder value
@@ -465,7 +448,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_staic_1800
      * @tc.number i18n_i18nutil_test_staic_1800
      * @tc.desc   test getDateOrder method with th param,get the DateOrder value
@@ -481,7 +463,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_i18nutil_test_staic_1900
      * @tc.number i18n_i18nutil_test_staic_1900
      * @tc.desc   test getDateOrder method with jp param,get the DateOrder value

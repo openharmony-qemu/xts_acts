@@ -41,12 +41,12 @@ export default function shadowLayerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0100
-     * @tc.name      : testShadowLayerCreateNormalStatic
-     * @tc.desc      : Test for testShadowLayerCreateNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShadowLayerCreateNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0100
+     * @tc.desc   Test for testShadowLayerCreateNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShadowLayerCreateNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShadowLayerCreateNormalStatic';
@@ -87,12 +87,12 @@ export default function shadowLayerTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0103
-     * @tc.name      : testShadowLayerCreateMultipleCallsStatic
-     * @tc.desc      : Test for testShadowLayerCreateMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShadowLayerCreateMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0103
+     * @tc.desc   Test for testShadowLayerCreateMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShadowLayerCreateMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShadowLayerCreateMultipleCallsStatic';
@@ -119,12 +119,12 @@ export default function shadowLayerTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0104
-     * @tc.name      : testShadowLayerCreateBoundaryValueStatic
-     * @tc.desc      : Test for testShadowLayerCreateBoundaryValueStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShadowLayerCreateBoundaryValueStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_STATIC_0104
+     * @tc.desc   Test for testShadowLayerCreateBoundaryValueStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShadowLayerCreateBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShadowLayerCreateBoundaryValueStatic';

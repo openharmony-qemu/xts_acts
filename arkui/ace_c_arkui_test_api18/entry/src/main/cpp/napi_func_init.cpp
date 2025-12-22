@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "swiper/swiper_dot_indicator_test.cpp"
 #include "swiper/swiper_arrowStyle_test.cpp"
+#include "ExpectedFrameRateRange/ExpectedFrameRateRangeNullTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -40,6 +41,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSwiperArrowStyle004", nullptr, TestSwiperArrowStyle004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSwiperArrowStyle005", nullptr, TestSwiperArrowStyle005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSwiperArrowStyle006", nullptr, TestSwiperArrowStyle006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testExpectedFrameRate001", nullptr, TestExpectedFrameRateRangeNull, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

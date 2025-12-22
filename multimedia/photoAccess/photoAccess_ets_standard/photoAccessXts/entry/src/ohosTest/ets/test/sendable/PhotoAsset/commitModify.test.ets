@@ -92,12 +92,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_001
-     * @tc.name      : photoAsset_commitModify_promise_sendable_001
-     * @tc.desc      : modify image displayName
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_001
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_001
+     * @tc.desc   modify image displayName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_001';
@@ -108,12 +108,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_002
-     * @tc.name      : photoAsset_commitModify_promise_sendable_002
-     * @tc.desc      : modify image displayName '五五...' (83)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_002
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_002
+     * @tc.desc   modify image displayName '五五...' (83)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_002';
@@ -127,12 +127,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_003
-     * @tc.name      : photoAsset_commitModify_promise_sendable_003
-     * @tc.desc      : modify image displayName 'eeeeeee...' (251)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_003
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_003
+     * @tc.desc   modify image displayName 'eeeeeee...' (251)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_003';
@@ -146,12 +146,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_004
-     * @tc.name      : photoAsset_commitModify_promise_sendable_004
-     * @tc.desc      : modify image uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_004
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_004
+     * @tc.desc   modify image uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_004';
@@ -162,12 +162,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_005
-     * @tc.name      : photoAsset_commitModify_promise_sendable_005
-     * @tc.desc      : modify image photoType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_005
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_005
+     * @tc.desc   modify image photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_005', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_005';
@@ -178,12 +178,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_006
-     * @tc.name      : photoAsset_commitModify_promise_sendable_006
-     * @tc.desc      : modify image displayName '六六....jpg' (84)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_006
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_006
+     * @tc.desc   modify image displayName '六六....jpg' (84)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_006', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_006';
@@ -198,12 +198,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_007
-     * @tc.name      : photoAsset_commitModify_promise_sendable_007
-     * @tc.desc      : modify image displayName 'fffffff...' (252)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_007
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_007
+     * @tc.desc   modify image displayName 'fffffff...' (252)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_007', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_007';
@@ -218,12 +218,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_008
-     * @tc.name      : photoAsset_commitModify_promise_sendable_008
-     * @tc.desc      : modify video displayName
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_008
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_008
+     * @tc.desc   modify video displayName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_008', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_008';
@@ -234,12 +234,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_009
-     * @tc.name      : photoAsset_commitModify_promise_sendable_009
-     * @tc.desc      : modify video displayName '七七...' (83)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_009
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_009
+     * @tc.desc   modify video displayName '七七...' (83)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_009';
@@ -253,12 +253,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_010
-     * @tc.name      : photoAsset_commitModify_promise_sendable_010
-     * @tc.desc      : modify image displayName 'ggggggg...' (251)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_010
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_010
+     * @tc.desc   modify image displayName 'ggggggg...' (251)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_010', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_010';
@@ -272,12 +272,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_011
-     * @tc.name      : photoAsset_commitModify_promise_sendable_011
-     * @tc.desc      : modify image uri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_011
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_011
+     * @tc.desc   modify image uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_011', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_011';
@@ -289,12 +289,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_012
-     * @tc.name      : photoAsset_commitModify_promise_sendable_012
-     * @tc.desc      : modify image photoType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_012
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_012
+     * @tc.desc   modify image photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_012', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_012';
@@ -305,12 +305,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_013
-     * @tc.name      : photoAsset_commitModify_promise_sendable_013
-     * @tc.desc      : modify image displayName '八八...' (84)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_013
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_013
+     * @tc.desc   modify image displayName '八八...' (84)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_013', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_013';
@@ -325,12 +325,12 @@ export default function sendableCommitModifyPhotoAssetTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_014
-     * @tc.name      : photoAsset_commitModify_promise_sendable_014
-     * @tc.desc      : modify image displayName 'hhhhhhh...' (252)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   photoAsset_commitModify_promise_sendable_014
+     * @tc.number SENDABLE_PHOTO_ASSET_COMMIT_MODIFY_014
+     * @tc.desc   modify image displayName 'hhhhhhh...' (252)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('photoAsset_commitModify_promise_sendable_014', Level.LEVEL2, async (done: Function) => {
       const testName = 'photoAsset_commitModify_promise_sendable_014';

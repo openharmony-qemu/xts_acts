@@ -43,12 +43,12 @@ export default function statisticsHasNetTest() {
 
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
+         * @tc.name   testManagergetIfaceRxBytesAsync_static_0100
          * @tc.number SUB_Manager_getIfaceRxBytes_Async_0100
-         * @tc.name testManagergetIfaceRxBytesAsync_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceRxBytesAsync_static_0100';
@@ -75,12 +75,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceRxBytesAsync_static_0200
          * @tc.number SUB_Manager_getIfaceRxBytes_Async_0200
-         * @tc.name testManagergetIfaceRxBytesAsync_static_0200
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceRxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceRxBytesAsync_static_0200';
@@ -107,12 +107,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceRxBytesAsync_static_0300
          * @tc.number SUB_Manager_getIfaceRxBytes_Async_0300
-         * @tc.name testManagergetIfaceRxBytesAsync_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceRxBytesAsync_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceRxBytesAsync_static_0300';
@@ -139,12 +139,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceRxBytesPromise_static_0100
          * @tc.number SUB_Manager_getIfaceRxBytes_Promise_0100
-         * @tc.name testManagergetIfaceRxBytesPromise_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceRxBytesPromise_static_0100';
@@ -173,12 +173,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceRxBytesPromise_static_0200
          * @tc.number SUB_Manager_getIfaceRxBytes_Promise_0200
-         * @tc.name testManagergetIfaceRxBytesPromise_static_0200
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceRxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceRxBytesPromise_static_0200';
@@ -206,12 +206,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceRxBytesPromise_static_0300
          * @tc.number SUB_Manager_getIfaceRxBytes_Promise_0300
-         * @tc.name testManagergetIfaceRxBytesPromise_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceRxBytesPromise_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceRxBytesPromise_static_0300';
@@ -239,12 +239,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceTxBytesAsync_static_0100
          * @tc.number SUB_Manager_getIfaceTxBytes_Async_0100
-         * @tc.name testManagergetIfaceTxBytesAsync_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceTxBytesAsync_static_0100';
@@ -271,12 +271,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceTxBytesAsync_static_0200
          * @tc.number SUB_Manager_getIfaceTxBytes_Async_0200
-         * @tc.name testManagergetIfaceTxBytesAsync_static_0200
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceTxBytesAsync_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceTxBytesAsync_static_0200';
@@ -303,12 +303,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceTxBytesAsync_static_0300
          * @tc.number SUB_Manager_getIfaceTxBytes_Async_0300
-         * @tc.name  testManagergetIfaceTxBytesAsync_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceTxBytesAsync_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceTxBytesAsync_static_0300';
@@ -335,12 +335,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceTxBytesPromise_static_0100
          * @tc.number SUB_Manager_getIfaceTxBytes_Promise_0100
-         * @tc.name testManagergetIfaceTxBytesPromise_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceTxBytesPromise_static_0100';
@@ -368,12 +368,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceTxBytesPromise_static_0200
          * @tc.number SUB_Manager_getIfaceTxBytes_Promise_0200
-         * @tc.name testManagergetIfaceTxBytesPromise_static_0200
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceTxBytesPromise_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceTxBytesPromise_static_0200';
@@ -401,12 +401,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetIfaceTxBytesPromise_static_0300
          * @tc.number SUB_Manager_getIfaceTxBytes_Promise_0300
-         * @tc.name testManagergetIfaceTxBytesPromise_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetIfaceTxBytesPromise_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetIfaceTxBytesPromise_static_0300';
@@ -434,12 +434,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetAllTxBytesAsync_static_0100
          * @tc.number SUB_Manager_getAllTxBytes_Async_0100
-         * @tc.name testManagergetAllTxBytesAsync_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetAllTxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetAllTxBytesAsync_static_0100';
@@ -465,12 +465,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetAllTxBytesPromise_static_0100
          * @tc.number SUB_Manager_getAllTxBytes_Promise_0100
-         * @tc.name testManagergetAllTxBytesPromise_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetAllTxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetAllTxBytesPromise_static_0100';
@@ -497,12 +497,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetAllRxBytesAsync_static_0100
          * @tc.number SUB_Manager_getAllRxBytes_Async_0100
-         * @tc.name testManagergetAllRxBytesAsync_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetAllRxBytesAsync_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetAllRxBytesAsync_static_0100';
@@ -528,12 +528,12 @@ export default function statisticsHasNetTest() {
         })
 
         /**
+         * @tc.name   testManagergetAllRxBytesPromise_static_0100
          * @tc.number SUB_Manager_getAllRxBytes_Promise_0100
-         * @tc.name testManagergetAllRxBytesPromise_static_0100
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testManagergetAllRxBytesPromise_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testManagergetAllRxBytesPromise_static_0100';

@@ -22,13 +22,12 @@ export default function security_label() {
 describe('security_label', function () {
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_sync_000
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0000
-   * @tc.name securitylabel_test_set_security_label_sync_000
-   * @tc.desc Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the setSecurityLabelSync() interface, and the getSecurityLabelSync() interface to get the data label.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_sync_000', Level.LEVEL0, async function () {
 
@@ -49,13 +48,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_sync_001
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0100
-   * @tc.name securitylabel_test_set_security_label_sync_001
-   * @tc.desc Test the setSecurityLabelSync() interface, when the dataLevel is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the setSecurityLabelSync() interface, when the dataLevel is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_sync_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName("test.txt");
@@ -72,13 +70,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_sync_002
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0200
-   * @tc.name securitylabel_test_set_security_label_sync_002
-   * @tc.desc Test the setSecurityLabelSync() interface, when the path does not exist.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the setSecurityLabelSync() interface, when the path does not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_sync_002', Level.LEVEL0, async function () {
 
@@ -92,13 +89,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_sync_003
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0300
-   * @tc.name securitylabel_test_set_security_label_sync_003
-   * @tc.desc Test the setSecurityLabelSync() interface, when the dataLevel type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the setSecurityLabelSync() interface, when the dataLevel type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_sync_003', Level.LEVEL0, async function () {
     let fpath = await nextFileName("test.txt");
@@ -115,13 +111,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_sync_004
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0400
-   * @tc.name securitylabel_test_set_security_label_sync_004
-   * @tc.desc Test the setSecurityLabelSync() interface, when there is no datalevel parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test the setSecurityLabelSync() interface, when there is no datalevel parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_sync_004', Level.LEVEL0, async function () {
     let fpath = await nextFileName("test.txt");
@@ -138,14 +133,13 @@ describe('security_label', function () {
   });
 
     /**
-   * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0500
-   * @tc.name securitylabel_test_set_security_label_sync_005
-   * @tc.desc Test the setSecurityLabelSync() interface, return false when the securitylabel is lower than before.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+     * @tc.name   securitylabel_test_set_security_label_sync_005
+     * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_SYNC_0500
+     * @tc.desc   Test the setSecurityLabelSync() interface, return false when the securitylabel is lower than before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('securitylabel_test_set_security_label_sync_005', Level.LEVEL0, async function () {
       let fpath = await nextFileName("test5.txt");
       fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
@@ -162,14 +156,12 @@ describe('security_label', function () {
     });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_000
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0000
-   * @tc.name securitylabel_test_set_security_label_async_000
-   * @tc.desc Test that the setSecurityLabel() interface callback to set the data label.
-   * Test the getSecurityLabel() interface callback to get the data label.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test that the setSecurityLabel() interface callback to set the data label.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test.txt');
@@ -198,14 +190,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_001
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0100
-   * @tc.name securitylabel_test_set_security_label_async_001
-   * @tc.desc Test that the setSecurityLabel() interface callback to set the data label.
-   * Test the getSecurityLabel() interface promises to get the data label.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test that the setSecurityLabel() interface callback to set the data label.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test1.txt');
@@ -234,14 +224,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_002
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0200
-   * @tc.name securitylabel_test_set_security_label_async_002
-   * @tc.desc Test that the setSecurityLabel() interface promises to set the data label.
-   * Test the getSecurityLabel() interface callback to get the data label.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test that the setSecurityLabel() interface promises to set the data label.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test2.txt');
@@ -265,14 +253,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_003
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0300
-   * @tc.name securitylabel_test_set_security_label_async_003
-   * @tc.desc Test that the setSecurityLabel() interface promises to set the data label.
-   * Test the getSecurityLabel() interface promises to get the data label.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test that the setSecurityLabel() interface promises to set the data label.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test3.txt');
@@ -291,14 +277,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_004
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0400
-   * @tc.name securitylabel_test_set_security_label_async_004
-   * @tc.desc Test that the setSecurityLabel() interface promises to set the data label.
-   * Test the getSecurityLabel() interface promises to get the data label.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test that the setSecurityLabel() interface promises to set the data label.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test4.txt');
@@ -317,13 +301,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_005
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0500
-   * @tc.name securitylabel_test_set_security_label_async_005
-   * @tc.desc Test setSecurityLabel() interfaces, when the path type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces, when the path type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_005', Level.LEVEL0, async function (done) {
 
@@ -338,13 +321,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_006
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0600
-   * @tc.name securitylabel_test_set_security_label_async_006
-   * @tc.desc Test setSecurityLabel() interfaces, return false when the path is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces, return false when the path is invalid.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_006', Level.LEVEL0, async function (done) {
 
@@ -359,13 +341,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_007
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0700
-   * @tc.name securitylabel_test_set_security_label_async_007
-   * @tc.desc Test setSecurityLabel() interfaces. Throw exception when path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces. Throw exception when path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_007', Level.LEVEL0, async function (done) {
 
@@ -380,13 +361,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_008
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0800
-   * @tc.name securitylabel_test_set_security_label_async_008
-   * @tc.desc Test setSecurityLabel() interfaces, when the dataLevel type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces, when the dataLevel type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_008', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test5.txt');
@@ -404,13 +384,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_009
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_0900
-   * @tc.name securitylabel_test_set_security_label_async_009
-   * @tc.desc Test setSecurityLabel() interfaces, return false when the dataLevel is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces, return false when the dataLevel is invalid.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test6.txt');
@@ -428,13 +407,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_010
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1000
-   * @tc.name securitylabel_test_set_security_label_async_010
-   * @tc.desc Test setSecurityLabel() interfaces. Throw exception when dataLevel is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces. Throw exception when dataLevel is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_010', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test7.txt');
@@ -452,13 +430,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_011
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1100
-   * @tc.name securitylabel_test_set_security_label_async_011
-   * @tc.desc Test setSecurityLabel() interfaces. Throws an exception when passing multiple parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces. Throws an exception when passing multiple parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_011', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test8.txt');
@@ -477,13 +454,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_set_security_label_async_012
    * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1200
-   * @tc.name securitylabel_test_set_security_label_async_012
-   * @tc.desc Test setSecurityLabel() interfaces, return false when the path is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test setSecurityLabel() interfaces, return false when the path is invalid.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_set_security_label_async_012', Level.LEVEL0, async function (done) {
 
@@ -504,14 +480,13 @@ describe('security_label', function () {
   });
 
     /**
-   * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1300
-   * @tc.name securitylabel_test_set_security_label_async_013
-   * @tc.desc Test setSecurityLabel() interfaces, return false when the securitylabel is lower than before.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+     * @tc.name   securitylabel_test_set_security_label_async_013
+     * @tc.number SUB_DF_SECURITYLABEL_SET_SECURITY_LABEL_1300
+     * @tc.desc   Test setSecurityLabel() interfaces, return false when the securitylabel is lower than before.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('securitylabel_test_set_security_label_async_013', Level.LEVEL0, async function (done) {
       let fpath = await nextFileName('test13.txt');
       fileIO.openSync(fpath, fileIO.OpenMode.CREATE | fileIO.OpenMode.READ_WRITE);
@@ -531,13 +506,12 @@ describe('security_label', function () {
     });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_sync_000
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0000
-   * @tc.name securitylabel_test_get_security_label_sync_000
-   * @tc.desc Test getSecurityLabelSync() interfaces, return empty when path is empty string.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabelSync() interfaces, return empty when path is empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_sync_000', Level.LEVEL0, function () {
 
@@ -551,13 +525,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_sync_001
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0100
-   * @tc.name securitylabel_test_get_security_label_sync_001
-   * @tc.desc Test getSecurityLabelSync() interfaces, return empty when the path is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabelSync() interfaces, return empty when the path is invalid.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_sync_001', Level.LEVEL0, function () {
 
@@ -571,13 +544,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_sync_002
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0200
-   * @tc.name securitylabel_test_get_security_label_sync_002
-   * @tc.desc Test getSecurityLabelSync() interfaces, when there are no parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabelSync() interfaces, when there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_sync_002', Level.LEVEL0, function () {
 
@@ -591,13 +563,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_sync_003
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_SYNC_0300
-   * @tc.name securitylabel_test_get_security_label_sync_003
-   * @tc.desc Test getSecurityLabelSync() interfaces, when the path type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabelSync() interfaces, when the path type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_sync_003', Level.LEVEL0, function () {
 
@@ -611,13 +582,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_async_000
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0000
-   * @tc.name securitylabel_test_get_security_label_async_000
-   * @tc.desc Test getSecurityLabel() interfaces, when the path type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabel() interfaces, when the path type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_async_000', Level.LEVEL0, async function (done) {
 
@@ -632,13 +602,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_async_001
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0100
-   * @tc.name securitylabel_test_get_security_label_async_001
-   * @tc.desc Test getSecurityLabel() interfaces, return empty when the path is invalid.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabel() interfaces, return empty when the path is invalid.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_async_001', Level.LEVEL0, async function (done) {
 
@@ -654,13 +623,12 @@ describe('security_label', function () {
 
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_async_002
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0200
-   * @tc.name securitylabel_test_get_security_label_async_002
-   * @tc.desc Test getSecurityLabel() interfaces. Throw exception when path is empty.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabel() interfaces. Throw exception when path is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_async_002', Level.LEVEL0, async function (done) {
 
@@ -675,13 +643,12 @@ describe('security_label', function () {
   });
 
   /**
+   * @tc.name   securitylabel_test_get_security_label_async_003
    * @tc.number SUB_DF_SECURITYLABEL_GET_SECURITY_LABEL_0300
-   * @tc.name securitylabel_test_get_security_label_async_003
-   * @tc.desc Test getSecurityLabel() interfaces. Throws an exception when passing multiple parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getSecurityLabel() interfaces. Throws an exception when passing multiple parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('securitylabel_test_get_security_label_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('test9.txt');

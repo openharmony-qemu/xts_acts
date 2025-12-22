@@ -20,6 +20,7 @@ import longPressGestureJsUnit from './LongPressGestureTest/LongPressGesture.test
 import LongPressGestureLongClickTest from './LongPressGesture/LongPressGestureLongClickTest.test';
 import LongPressGestureLongClickMouseTest from './LongPressGesture/LongPressGestureLongClickMouseTest.test';
 import LongPressGestureTemplateTest from './LongPressGesture/LongPressGestureTemplateTest.test';
+import AllowableMovementTest from "./LongPressGesture/allowableMovement.test";
 
 export default function testsuite() {
   LongPressGesture1()
@@ -29,4 +30,5 @@ export default function testsuite() {
   LongPressGestureLongClickTest();
   LongPressGestureLongClickMouseTest();
   LongPressGestureTemplateTest();
+  AllowableMovementTest();
 }

@@ -9,6 +9,10 @@
       "testability/pages/WebviewRegisterJavaScriptProxyErrorCode",
       "testability/pages/WebRunJavaScriptOnDocumentEndSetUndefinedOrNull",
       "testability/pages/WebRunJavaScriptOnDocumentStartSetUndefinedOrNull",
-      "testability/pages/WebRunJavaScriptOnHeadEndSetUndefinedOrNull"
+      "testability/pages/WebRunJavaScriptOnHeadEndSetUndefinedOrNull",
+      "testability/pages/WebJavaScriptOnDocumentStartSpecial",
+      "testability/pages/WebJavaScriptOnDocumentEndSpecial",
+      "testability/pages/WebJavaScriptProxySpecial",
+      "testability/pages/WebJavaScriptAccessSpecial"
   ]
 }

@@ -16,7 +16,6 @@ import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertClose', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertCloseSuccess001
      * @tc.number assertCloseSuccess001
      * @tc.desc   assertCloseSuccess001
@@ -30,7 +29,6 @@ describe('assertClose', function () {
         expect(a).assertClose(99, b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertCloseFail002
      * @tc.number assertCloseFail002
      * @tc.desc   assertCloseFail002
@@ -44,7 +42,6 @@ describe('assertClose', function () {
         expect(a).assertClose(1, b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertCloseFail003
      * @tc.number assertCloseFail003
      * @tc.desc   assertCloseFail003
@@ -58,7 +55,6 @@ describe('assertClose', function () {
         expect(a).assertClose(null, b)
     })
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   assertCloseFail004
      * @tc.number assertCloseFail004
      * @tc.desc   assertCloseFail004

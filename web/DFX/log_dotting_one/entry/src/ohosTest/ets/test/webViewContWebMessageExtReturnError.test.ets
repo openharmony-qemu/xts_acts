@@ -58,10 +58,13 @@ export default function webViewContWebMessageExtReturnError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1500
-     *tc.name testWebMessageExtGetStringError
-     *tc.desc test interface of WebMessageExt getString with unmatched type
+    /**
+     * @tc.name   testWebMessageExtGetStringError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1500
+     * @tc.desc   test interface of WebMessageExt getString with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebMessageExtGetStringError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebMessageExtGetStringError";
@@ -70,10 +73,13 @@ export default function webViewContWebMessageExtReturnError() {
       Utils.registerEvent("testWebMessageExtGetStringError", "The type and value of the message do not match.", 112230, done);
       await Utils.waitAndClickComponent(driver, "webViewContWebMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1600
-     *tc.name testWebMessageExtGetNumberError
-     *tc.desc test interface of WebMessageExt getNumber with unmatched type
+    /**
+     * @tc.name   testWebMessageExtGetNumberError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1600
+     * @tc.desc   test interface of WebMessageExt getNumber with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebMessageExtGetNumberError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebMessageExtGetNumberError";
@@ -82,10 +88,13 @@ export default function webViewContWebMessageExtReturnError() {
       Utils.registerEvent("testWebMessageExtGetNumberError", "The type and value of the message do not match.", 112250, done);
       await Utils.waitAndClickComponent(driver, "webViewContWebMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1700
-     *tc.name testWebMessageExtGetBooleanError
-     *tc.desc test interface of WebMessageExt getBoolean with unmatched type
+    /**
+     * @tc.name   testWebMessageExtGetBooleanError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1700
+     * @tc.desc   test interface of WebMessageExt getBoolean with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebMessageExtGetBooleanError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebMessageExtGetBooleanError";
@@ -94,10 +103,13 @@ export default function webViewContWebMessageExtReturnError() {
       Utils.registerEvent("testWebMessageExtGetBooleanError", "The type and value of the message do not match.", 112270, done);
       await Utils.waitAndClickComponent(driver, "webViewContWebMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1800
-     *tc.name testWebMessageExtGetArrayBufferError
-     *tc.desc test interface of WebMessageExt getArrayBuffer with unmatched type
+    /**
+     * @tc.name   testWebMessageExtGetArrayBufferError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1800
+     * @tc.desc   test interface of WebMessageExt getArrayBuffer with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebMessageExtGetArrayBufferError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebMessageExtGetArrayBufferError";
@@ -106,10 +118,13 @@ export default function webViewContWebMessageExtReturnError() {
       Utils.registerEvent("testWebMessageExtGetArrayBufferError", "The type and value of the message do not match.", 112290, done);
       await Utils.waitAndClickComponent(driver, "webViewContWebMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1900
-     *tc.name testWebMessageExtGetArrayError
-     *tc.desc test interface of WebMessageExt getArray with unmatched type
+    /**
+     * @tc.name   testWebMessageExtGetArrayError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_1900
+     * @tc.desc   test interface of WebMessageExt getArray with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebMessageExtGetArrayError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebMessageExtGetArrayError";
@@ -118,10 +133,13 @@ export default function webViewContWebMessageExtReturnError() {
       Utils.registerEvent("testWebMessageExtGetArrayError", "The type and value of the message do not match.", 112310, done);
       await Utils.waitAndClickComponent(driver, "webViewContWebMessageExtReturnError");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_2000
-     *tc.name testWebMessageExtGetErrorError
-     *tc.desc test interface of WebMessageExt getError with unmatched type
+    /**
+     * @tc.name   testWebMessageExtGetErrorError
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWERRORHUNDRED_2000
+     * @tc.desc   test interface of WebMessageExt getError with unmatched type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebMessageExtGetErrorError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebMessageExtGetErrorError";

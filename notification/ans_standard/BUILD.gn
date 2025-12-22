@@ -18,6 +18,7 @@ group("ans_standard") {
     deps = [
       "actsNotificationBadgeTest:ActsNotificationBadgeTest",
       "actsNotificationBadgeTestStatic:ActsNotificationBadgeStaticTest",
+      "actsNotificationClassEmitterTest:ActsNotificationClassEmitterTest",
       "actsNotificationDistributedTest:ActsNotificationDistributedTest",
       "actsNotificationDistributedTestStatic:ActsNotificationDistributedStaticTest",
       "actsNotificationEmitterNewTest:ActsNotificationEmitterNewTest",
@@ -46,6 +47,9 @@ group("ans_standard") {
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
+      "actsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest:ActsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest",
+      "actsNotificationAnsThreePartyWatchThirdPartyTest:ActsNotificationAnsThreePartyWatchThirdPartyTest",
+      "actsNotificationAnsThreePartyWatchTest:ActsNotificationThreePartyWatchTest"
     ]
   }
 }

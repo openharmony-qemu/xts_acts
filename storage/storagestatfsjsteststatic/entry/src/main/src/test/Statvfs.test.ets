@@ -16,13 +16,12 @@ export default function statvfs_test() {
     hilog.info(domain, tag, '%{public}s', 'statvfs_test start');
 
     /**
+     * @tc.name   statvfs_test_get_free_size_sync_static_000
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0000
-     * @tc.name statvfs_test_get_free_size_sync_static_000
-     * @tc.desc Test getFreeSizeSync() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSizeSync() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_sync_static_000 start');
@@ -38,13 +37,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_sync_static_001
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0100
-     * @tc.name statvfs_test_get_free_size_sync_static_001
-     * @tc.desc Test getFreeSizeSync() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSizeSync() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_sync_static_001 start');
@@ -59,13 +57,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_sync_static_002
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0200
-     * @tc.name statvfs_test_get_free_size_sync_static_002
-     * @tc.desc Test getFreeSizeSync() interfaces, when the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getFreeSizeSync() interfaces, when the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('statvfs_test_get_free_size_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_sync_static_002 start');
@@ -80,13 +77,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_sync_static_003
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_SYNC_0300
-     * @tc.name statvfs_test_get_free_size_sync_static_003
-     * @tc.desc Test getFreeSizeSync() interfaces, when the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getFreeSizeSync() interfaces, when the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('statvfs_test_get_free_size_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_sync_static_003 start');
@@ -100,13 +96,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_sync_static_000
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0000
-     * @tc.name statvfs_test_get_total_size_sync_static_000
-     * @tc.desc Test getTotalSizeSync() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSizeSync() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_sync_static_000 start');
@@ -122,13 +117,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_sync_static_001
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0100
-     * @tc.name statvfs_test_get_total_size_sync_static_001
-     * @tc.desc Test getTotalSizeSync() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSizeSync() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_sync_static_001 start');
@@ -143,13 +137,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_sync_static_002
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0200
-     * @tc.name statvfs_test_get_total_size_sync_static_002
-     * @tc.desc Test getTotalSizeSync() interfaces, when the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getTotalSizeSync() interfaces, when the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('statvfs_test_get_total_size_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_sync_static_002 start');
@@ -164,13 +157,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_sync_static_003
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_SYNC_0300
-     * @tc.name statvfs_test_get_total_size_sync_static_003
-     * @tc.desc Test getTotalSizeSync() interfaces, when the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getTotalSizeSync() interfaces, when the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('statvfs_test_get_total_size_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_sync_static_003 start');
@@ -184,13 +176,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_async_static_000
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0000
-     * @tc.name statvfs_test_get_free_size_async_static_000
-     * @tc.desc Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_000 start');
@@ -207,13 +198,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_async_static_001
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0100
-     * @tc.name statvfs_test_get_free_size_async_static_001
-     * @tc.desc Test getFreeSize() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_001 start');
@@ -236,13 +226,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_async_static_002
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0200
-     * @tc.name statvfs_test_get_free_size_async_static_002
-     * @tc.desc Test getFreeSize() interfaces, when the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_002 start');
@@ -257,13 +246,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_async_static_003
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0300
-     * @tc.name statvfs_test_get_free_size_async_static_003
-     * @tc.desc Test getFreeSize() interfaces, when the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_003 start');
@@ -278,13 +266,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_free_size_async_static_004
      * @tc.number SUB_DF_STATFS_GET_FREE_SIZE_0400
-     * @tc.name statvfs_test_get_free_size_async_static_004
-     * @tc.desc Test getFreeSize() interfaces, when the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getFreeSize() interfaces, when the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_free_size_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_free_size_async_static_004 start');
@@ -303,13 +290,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_async_static_000
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0000
-     * @tc.name statvfs_test_get_total_size_async_static_000
-     * @tc.desc Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is a sandbox path, promise way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_000 start');
@@ -326,13 +312,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_async_static_001
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0100
-     * @tc.name statvfs_test_get_total_size_async_static_001
-     * @tc.desc Test getTotalSize() interfaces, when the path is dev, callback way back.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is dev, callback way back.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_001 start');
@@ -355,13 +340,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_async_static_002
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0200
-     * @tc.name statvfs_test_get_total_size_async_static_002
-     * @tc.desc Test getTotalSize() interfaces, when the parameter type is wrong.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the parameter type is wrong.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_002 start');
@@ -376,13 +360,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_async_static_003
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0300
-     * @tc.name statvfs_test_get_total_size_async_static_003
-     * @tc.desc Test getTotalSize() interfaces, when the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_003 start');
@@ -397,13 +380,12 @@ export default function statvfs_test() {
     });
 
     /**
+     * @tc.name   statvfs_test_get_total_size_async_static_004
      * @tc.number SUB_DF_STATFS_GET_TOTAL_SIZE_0400
-     * @tc.name statvfs_test_get_total_size_async_static_004
-     * @tc.desc Test getTotalSize() interfaces, when the path is empty.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getTotalSize() interfaces, when the path is empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('statvfs_test_get_total_size_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'statvfs_test_get_total_size_async_static_004 start');

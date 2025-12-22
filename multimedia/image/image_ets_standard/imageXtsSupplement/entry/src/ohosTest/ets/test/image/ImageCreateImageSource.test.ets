@@ -126,12 +126,12 @@ export default function createImageSourceTest() {
     });
 
     /**
-     * @tc.number     createImageSource_promise_001
-     * @tc.name       createImageSource_promise_001
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_001
+     * @tc.number createImageSource_promise_001
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_001';
@@ -142,12 +142,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_002
-     * @tc.name       createImageSource_promise_002
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_002
+     * @tc.number createImageSource_promise_002
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_002';
@@ -158,12 +158,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_003
-     * @tc.name       createImageSource_promise_003
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_003
+     * @tc.number createImageSource_promise_003
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_003';
@@ -174,12 +174,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_004
-     * @tc.name       createImageSource_promise_004
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_004
+     * @tc.number createImageSource_promise_004
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_004';
@@ -190,12 +190,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_005
-     * @tc.name       createImageSource_promise_005
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_005
+     * @tc.number createImageSource_promise_005
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_005';
@@ -206,12 +206,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_006
-     * @tc.name       createImageSource_promise_006
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_006
+     * @tc.number createImageSource_promise_006
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_006';
@@ -222,12 +222,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_007
-     * @tc.name       createImageSource_promise_007
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_007
+     * @tc.number createImageSource_promise_007
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_007';
@@ -238,12 +238,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_008
-     * @tc.name       createImageSource_promise_008
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_008
+     * @tc.number createImageSource_promise_008
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_008';
@@ -254,12 +254,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_009
-     * @tc.name       createImageSource_promise_009
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_009
+     * @tc.number createImageSource_promise_009
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_009';
@@ -270,12 +270,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_010
-     * @tc.name       createImageSource_promise_010
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_010
+     * @tc.number createImageSource_promise_010
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_010';
@@ -286,12 +286,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_011
-     * @tc.name       createImageSource_promise_011
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_011
+     * @tc.number createImageSource_promise_011
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_011';
@@ -302,12 +302,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_012
-     * @tc.name       createImageSource_promise_012
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_012
+     * @tc.number createImageSource_promise_012
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_012';
@@ -318,12 +318,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_013
-     * @tc.name       createImageSource_promise_013
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_013
+     * @tc.number createImageSource_promise_013
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_013';
@@ -334,12 +334,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_014
-     * @tc.name       createImageSource_promise_014
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_014
+     * @tc.number createImageSource_promise_014
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_014';
@@ -350,12 +350,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_015
-     * @tc.name       createImageSource_promise_015
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_015
+     * @tc.number createImageSource_promise_015
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_015';
@@ -366,12 +366,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_016
-     * @tc.name       createImageSource_promise_016
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_016
+     * @tc.number createImageSource_promise_016
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_016';
@@ -382,12 +382,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_017
-     * @tc.name       createImageSource_promise_017
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_017
+     * @tc.number createImageSource_promise_017
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_017';
@@ -398,12 +398,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_018
-     * @tc.name       createImageSource_promise_018
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_018
+     * @tc.number createImageSource_promise_018
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_018';
@@ -414,12 +414,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_019
-     * @tc.name       createImageSource_promise_019
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_019
+     * @tc.number createImageSource_promise_019
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_019';
@@ -430,12 +430,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_020
-     * @tc.name       createImageSource_promise_020
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_020
+     * @tc.number createImageSource_promise_020
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_020';
@@ -446,12 +446,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_021
-     * @tc.name       createImageSource_promise_021
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_021
+     * @tc.number createImageSource_promise_021
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'createImageSource_promise_021';
@@ -463,12 +463,12 @@ export default function createImageSourceTest() {
 
 
     /**
-     * @tc.number     createImageSource_promise_022
-     * @tc.name       createImageSource_promise_022
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_022
+     * @tc.number createImageSource_promise_022
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_022', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -484,12 +484,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_023
-     * @tc.name       createImageSource_promise_023
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_023
+     * @tc.number createImageSource_promise_023
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_023', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -505,12 +505,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_024
-     * @tc.name       createImageSource_promise_024
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_024
+     * @tc.number createImageSource_promise_024
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_024', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -526,12 +526,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_025
-     * @tc.name       createImageSource_promise_025
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_025
+     * @tc.number createImageSource_promise_025
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_025', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -547,12 +547,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_026
-     * @tc.name       createImageSource_promise_026
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_026
+     * @tc.number createImageSource_promise_026
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_026', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -568,12 +568,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_027
-     * @tc.name       createImageSource_promise_027
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_027
+     * @tc.number createImageSource_promise_027
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_027', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -589,12 +589,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_028
-     * @tc.name       createImageSource_promise_028
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_028
+     * @tc.number createImageSource_promise_028
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_028', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -610,12 +610,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_029
-     * @tc.name       createImageSource_promise_029
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_029
+     * @tc.number createImageSource_promise_029
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_029', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -631,12 +631,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_030
-     * @tc.name       createImageSource_promise_030
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_030
+     * @tc.number createImageSource_promise_030
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_030', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -652,12 +652,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_031
-     * @tc.name       createImageSource_promise_031
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_031
+     * @tc.number createImageSource_promise_031
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_031', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -673,12 +673,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_032
-     * @tc.name       createImageSource_promise_032
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_032
+     * @tc.number createImageSource_promise_032
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_032', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -694,12 +694,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_033
-     * @tc.name       createImageSource_promise_033
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_033
+     * @tc.number createImageSource_promise_033
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_033', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -715,12 +715,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_034
-     * @tc.name       createImageSource_promise_034
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_034
+     * @tc.number createImageSource_promise_034
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_034', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -736,12 +736,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_035
-     * @tc.name       createImageSource_promise_035
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_035
+     * @tc.number createImageSource_promise_035
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_035', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -757,12 +757,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_036
-     * @tc.name       createImageSource_promise_036
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_036
+     * @tc.number createImageSource_promise_036
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_036', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -778,12 +778,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_037
-     * @tc.name       createImageSource_promise_037
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_037
+     * @tc.number createImageSource_promise_037
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_037', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -799,12 +799,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_038
-     * @tc.name       createImageSource_promise_038
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_038
+     * @tc.number createImageSource_promise_038
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_038', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -820,12 +820,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_039
-     * @tc.name       createImageSource_promise_039
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_039
+     * @tc.number createImageSource_promise_039
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_039', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -841,12 +841,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_040
-     * @tc.name       createImageSource_promise_040
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_040
+     * @tc.number createImageSource_promise_040
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_040', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -862,12 +862,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_041
-     * @tc.name       createImageSource_promise_041
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_041
+     * @tc.number createImageSource_promise_041
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_041', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {
@@ -883,12 +883,12 @@ export default function createImageSourceTest() {
     })
 
     /**
-     * @tc.number     createImageSource_promise_042
-     * @tc.name       createImageSource_promise_042
-     * @tc.desc       createImageSource
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createImageSource_promise_042
+     * @tc.number createImageSource_promise_042
+     * @tc.desc   createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createImageSource_promise_042', Level.LEVEL0, async (done: Function) => {
       let sourceOptions: image.SourceOptions = {

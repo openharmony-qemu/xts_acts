@@ -57,13 +57,13 @@ export default function WebNetError() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_WEBNETERRORLIST_06000
-     * @tc.name       : WebNetErrorList_06000
-     * @tc.desc       : test WebSchemeHandlerResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   WebNetErrorList_06000
+     * @tc.number SUB_WEB_WEBNETERRORLIST_06000
+     * @tc.desc   test WebSchemeHandlerResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WebNetErrorList_06000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_06000", EVENT_ID_SET_EMIT_KEY);
@@ -77,13 +77,13 @@ export default function WebNetError() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_WEB_WEBNETERRORLIST_07600
-     * @tc.name       : WebNetErrorList_07600
-     * @tc.desc       : test WebSchemeHandlerResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   WebNetErrorList_07600
+     * @tc.number SUB_WEB_WEBNETERRORLIST_07600
+     * @tc.desc   test WebSchemeHandlerResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WebNetErrorList_07600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_07600", EVENT_ID_SET_EMIT_KEY);
@@ -97,13 +97,13 @@ export default function WebNetError() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_WEB_WEBNETERRORLIST_013600
-     * @tc.name       : WebNetErrorList_013600
-     * @tc.desc       : test WebSchemeHandlerResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   WebNetErrorList_013600
+     * @tc.number SUB_WEB_WEBNETERRORLIST_013600
+     * @tc.desc   test WebSchemeHandlerResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WebNetErrorList_013600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_013600", EVENT_ID_SET_EMIT_KEY);
@@ -117,13 +117,13 @@ export default function WebNetError() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_WEB_WEBNETERRORLIST_014600
-     * @tc.name       : WebNetErrorList_014600
-     * @tc.desc       : test WebSchemeHandlerResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   WebNetErrorList_014600
+     * @tc.number SUB_WEB_WEBNETERRORLIST_014600
+     * @tc.desc   test WebSchemeHandlerResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WebNetErrorList_014600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_014600", EVENT_ID_SET_EMIT_KEY);
@@ -138,13 +138,13 @@ export default function WebNetError() {
     })
 
 
-    /*
-     * @tc.number     : SUB_WEB_WEBNETERRORLIST_020800
-     * @tc.name       : WebNetErrorList_020800
-     * @tc.desc       : test WebSchemeHandlerResponse
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   WebNetErrorList_020800
+     * @tc.number SUB_WEB_WEBNETERRORLIST_020800
+     * @tc.desc   test WebSchemeHandlerResponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WebNetErrorList_020800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_020800", EVENT_ID_SET_EMIT_KEY);

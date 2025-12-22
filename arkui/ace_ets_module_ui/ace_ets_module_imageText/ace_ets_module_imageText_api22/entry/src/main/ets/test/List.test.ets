@@ -20,6 +20,9 @@ import richEditorTest from './TextChangeObserverTest/richEditor.test';
 import imageAltTest from './Image/imageAltTest.test';
 import minLines from './TextTest/minLines.test';
 import richEditorSupportSvg2Test from './richEditorSupportSvg2Test/richEditorSupportSvg2.test';
+import scrollbarTest from './scrollbarTest/scrollbarTest.test';
+import TextAreaTest from './ShowCounterTest/TextAreaTest.test';
+import TextInputTest from './ShowCounterTest/TextInputTest.test';
 
 export default function testsuite() {
   InputPresetTest();
@@ -30,4 +33,7 @@ export default function testsuite() {
   imageAltTest();
   minLines();
   richEditorSupportSvg2Test();
+  scrollbarTest();
+  TextAreaTest();
+  TextInputTest();
 }

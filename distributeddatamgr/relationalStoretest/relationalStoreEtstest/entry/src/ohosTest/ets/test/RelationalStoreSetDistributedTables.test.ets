@@ -54,7 +54,6 @@ export default function relationalStoreSetDistributedTables() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,} DistributedType is DISTRIBUTED_CLOUD
@@ -92,7 +91,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
@@ -129,7 +127,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false} DistributedType is DISTRIBUTED_CLOUD
@@ -165,7 +162,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
@@ -201,7 +197,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false} DistributedType is DISTRIBUTED_CLOUD
@@ -237,7 +232,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
@@ -274,7 +268,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
@@ -311,7 +304,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
@@ -348,7 +340,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
@@ -385,7 +376,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
@@ -422,7 +412,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
@@ -459,7 +448,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
@@ -496,7 +484,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
@@ -533,7 +520,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000
      * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
@@ -612,7 +598,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3100
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is data_relationalStore.DistributedType = 3;
@@ -646,7 +631,6 @@ export default function relationalStoreSetDistributedTables() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0100
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false} DistributedType is DISTRIBUTED_CLOUD
@@ -677,7 +661,6 @@ export default function relationalStoreSetDistributedTables() {
       }
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0200
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,} DistributedType is DISTRIBUTED_CLOUD
@@ -710,7 +693,6 @@ export default function relationalStoreSetDistributedTables() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0300
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
@@ -742,7 +724,6 @@ export default function relationalStoreSetDistributedTables() {
 
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
@@ -775,7 +756,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,} DistributedType is DISTRIBUTED_CLOUD
@@ -807,7 +787,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
@@ -840,7 +819,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
@@ -873,7 +851,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,} DistributedType is DISTRIBUTED_CLOUD
@@ -904,7 +881,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,} DistributedType is DISTRIBUTED_CLOUD
@@ -936,7 +912,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
@@ -969,7 +944,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
@@ -1002,7 +976,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
@@ -1034,7 +1007,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
@@ -1067,7 +1039,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
@@ -1100,7 +1071,6 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400 end   *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1500
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE
@@ -1133,7 +1103,6 @@ export default function relationalStoreSetDistributedTables() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600
      * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE

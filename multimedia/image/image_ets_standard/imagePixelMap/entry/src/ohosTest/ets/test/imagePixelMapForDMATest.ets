@@ -270,15 +270,12 @@ export default function imagePixelmap() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0100");
@@ -299,15 +296,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0200");
@@ -328,15 +322,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0300");
@@ -357,15 +348,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0400");
@@ -386,15 +374,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0500");
@@ -415,15 +400,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGBA_F16
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0600");
@@ -444,15 +426,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0700");
@@ -473,15 +452,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0800
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0800', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0800");
@@ -502,15 +478,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0900
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0900', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_0900");
@@ -531,15 +504,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: RGBA_1010102
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1000
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1000', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1000");
@@ -560,15 +530,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1100");
@@ -589,15 +556,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1200");
@@ -618,15 +582,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1300");
@@ -647,15 +608,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1301
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1301
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1301
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1301', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1301");
@@ -676,15 +634,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1400");
@@ -705,15 +660,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1500");
@@ -734,15 +686,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1600");
@@ -763,15 +712,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1601
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1601
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1601
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1601', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1601");
@@ -792,13 +738,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1700
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1700");
@@ -814,13 +759,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1800
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1800', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1800");
@@ -836,13 +780,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1900
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1900', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_1900");
@@ -858,13 +801,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2000
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2000', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2000");
@@ -880,13 +822,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2100
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2100");
@@ -902,15 +843,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2200
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2200");
@@ -931,15 +869,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2300");
@@ -960,15 +895,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2400");
@@ -989,15 +921,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2500
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2500");
@@ -1018,15 +947,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2600");
@@ -1047,15 +973,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGBA_F16
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2700");
@@ -1076,15 +999,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2800
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2800', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2800");
@@ -1105,15 +1025,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2900
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2900', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_2900");
@@ -1134,15 +1051,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4000, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3000
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3000', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3000");
@@ -1163,15 +1077,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: RGBA_1010102
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3100");
@@ -1192,15 +1103,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3200");
@@ -1221,15 +1129,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3300");
@@ -1250,15 +1155,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3400");
@@ -1279,15 +1181,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3401
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3401
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3401
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3401', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3401");
@@ -1308,15 +1207,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3500");
@@ -1337,15 +1233,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3600");
@@ -1366,15 +1259,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3700");
@@ -1395,15 +1285,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3701
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 256, height: 256},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3701
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3701
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3701', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3701");
@@ -1424,13 +1311,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3800
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3800', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3800");
@@ -1446,13 +1332,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3900
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3900', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_3900");
@@ -1468,13 +1353,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4000
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4000', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4000");
@@ -1490,13 +1374,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4100
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4100");
@@ -1512,13 +1395,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4200
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4200");
@@ -1534,16 +1416,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4300");
@@ -1569,16 +1447,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4400");
@@ -1604,16 +1478,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4500");
@@ -1639,16 +1509,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4600");
@@ -1674,16 +1540,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4700");
@@ -1709,16 +1571,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4800
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4800', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4800");
@@ -1744,13 +1602,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4900
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4900', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4900");
@@ -1771,13 +1628,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4901
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4901
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4901
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4901', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_4901");
@@ -1798,16 +1654,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5000
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5000', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5000");
@@ -1833,16 +1685,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5100");
@@ -1868,16 +1716,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5200");
@@ -1903,16 +1747,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5300");
@@ -1938,16 +1778,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5400");
@@ -1973,16 +1809,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5500");
@@ -2008,13 +1840,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5600
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5600");
@@ -2035,13 +1866,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     *                 2.do not specify  DecodingOptions and AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5700
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_SYNC_JPEG_5700");
@@ -2062,15 +1892,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0100");
@@ -2090,15 +1917,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0200");
@@ -2118,15 +1942,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_0300");
@@ -2146,15 +1967,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0100");
@@ -2174,15 +1992,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0200");
@@ -2202,15 +2017,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_0300");
@@ -2230,15 +2042,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0100");
@@ -2258,15 +2067,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0200");
@@ -2286,15 +2092,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_0300");
@@ -2314,15 +2117,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0100");
@@ -2342,15 +2142,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200");
@@ -2370,15 +2167,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_0200");
@@ -2399,15 +2193,12 @@ export default function imagePixelmap() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0100");
@@ -2432,15 +2223,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0200");
@@ -2465,15 +2253,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_0300");
@@ -2498,15 +2283,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0100");
@@ -2526,15 +2308,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0200");
@@ -2554,15 +2333,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_0300");
@@ -2582,15 +2358,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0100");
@@ -2615,15 +2388,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0200");
@@ -2648,15 +2418,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_0300");
@@ -2681,15 +2448,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0100");
@@ -2709,15 +2473,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0200");
@@ -2737,15 +2498,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_PNG_SYNC_0300");
@@ -2765,15 +2523,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0100");
@@ -2793,15 +2548,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0200");
@@ -2821,15 +2573,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_BMP_SYNC_0300");
@@ -2849,15 +2598,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0100");
@@ -2877,15 +2623,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0200");
@@ -2905,15 +2648,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_GIF_SYNC_0300");
@@ -2933,15 +2673,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0100");
@@ -2961,15 +2698,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0200");
@@ -2989,15 +2723,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WEBP_SYNC_0300");
@@ -3017,15 +2748,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0100");
@@ -3045,15 +2773,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0200");
@@ -3073,15 +2798,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_ICO_SYNC_0300");
@@ -3101,15 +2823,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0100");
@@ -3134,15 +2853,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0200");
@@ -3167,15 +2883,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DNG_SYNC_0300");
@@ -3200,15 +2913,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0100");
@@ -3233,15 +2943,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0200");
@@ -3266,15 +2973,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is AUTO
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_HEIF_SYNC_0300");
@@ -3299,13 +3003,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0100
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0100");
@@ -3329,13 +3032,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0200
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0200");
@@ -3359,13 +3061,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0300
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0300");
@@ -3389,13 +3090,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0400
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0400");
@@ -3419,13 +3119,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0500
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0500");
@@ -3449,13 +3148,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0600
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0600");
@@ -3479,16 +3177,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0700
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0700', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0700");
@@ -3522,16 +3216,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0800
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions
-     *                       desiredSize: {width: 3071, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010,
-     *                       desiredDynamicRange: RANGE_HDR
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0800
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0800', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0800");
@@ -3565,12 +3255,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0900
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0900
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0900', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_0900");
@@ -3594,12 +3284,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_1000
-     * @tc.name      : test Image createPixelmap
-     * @tc.desc      : 1.create pixelmap object by imageSource
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_1000
+     * @tc.desc   1.create pixelmap object by imageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_1000', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_ERROR_1000");
@@ -3623,17 +3313,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0100");
@@ -3666,17 +3351,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0200");
@@ -3709,15 +3389,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0300");
@@ -3748,15 +3425,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0400");
@@ -3787,15 +3461,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0500");
@@ -3826,15 +3497,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0600");
@@ -3865,14 +3533,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_0700");
@@ -3902,15 +3568,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 },
-     *                       desiredPixelFormat: RGB_888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0100");
@@ -3939,14 +3602,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0200");
@@ -3974,12 +3635,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_JPEG_ERROR_0300");
@@ -4004,15 +3665,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0100");
@@ -4044,15 +3702,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0200");
@@ -4084,15 +3739,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0300");
@@ -4124,15 +3776,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0400");
@@ -4164,15 +3813,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0500");
@@ -4204,14 +3850,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0600");
@@ -4242,17 +3886,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_0700");
@@ -4286,15 +3925,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 },
-     *                       desiredPixelFormat: RGB_888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0100");
@@ -4325,14 +3961,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0200");
@@ -4361,14 +3995,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0300");
@@ -4397,12 +4029,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0400");
@@ -4428,17 +4060,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_HEIC_ERROR_0500");
@@ -4470,17 +4097,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0100");
@@ -4513,15 +4135,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565,
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0200");
@@ -4552,15 +4171,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0300");
@@ -4591,15 +4207,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0400");
@@ -4630,14 +4243,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_0500");
@@ -4667,15 +4278,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 },
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0100");
@@ -4704,14 +4312,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0200");
@@ -4739,12 +4345,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_PNG_ERROR_0300");
@@ -4770,17 +4376,12 @@ export default function imagePixelmap() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0100");
@@ -4813,17 +4414,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1124, height: 1400 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0200");
@@ -4856,15 +4452,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0300");
@@ -4895,15 +4488,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0400");
@@ -4934,15 +4524,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0500");
@@ -4973,15 +4560,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0600");
@@ -5012,14 +4596,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_0700");
@@ -5049,15 +4631,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 },
-     *                       desiredPixelFormat: RGB_888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0100");
@@ -5086,14 +4665,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0200");
@@ -5121,12 +4698,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_JPEG_ERROR_0300");
@@ -5151,15 +4728,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0100");
@@ -5191,15 +4765,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0200");
@@ -5231,15 +4802,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0300");
@@ -5271,15 +4839,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV21
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0400");
@@ -5311,15 +4876,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0500");
@@ -5351,14 +4913,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0600");
@@ -5389,17 +4949,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_0700");
@@ -5433,15 +4988,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 },
-     *                       desiredPixelFormat: RGB_888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0100");
@@ -5472,14 +5024,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0200");
@@ -5508,14 +5058,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0300");
@@ -5544,12 +5092,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0400");
@@ -5575,17 +5123,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGB_565,
-     *                       cropAndScaleStrategy: SCALE_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_HEIC_ERROR_0500");
@@ -5617,17 +5160,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
-     *                       desiredPixelFormat: RGBA_8888,
-     *                       cropAndScaleStrategy: CROP_FIRST
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0100");
@@ -5655,15 +5193,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGB_565,
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0200");
@@ -5689,15 +5224,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300");
@@ -5723,15 +5255,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is SHARE_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400");
@@ -5757,14 +5286,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4096, height: 4096}
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0500");
@@ -5789,15 +5316,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 4096, height: 4096 },
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100");
@@ -5826,14 +5350,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, set AllocatorType is DMA
-     *                 2.set DecodingOptions 
-     *                       desiredSize: { width: 30000, height: 30000 }
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200
+     * @tc.desc   1.create pixelmap object by imageSource, set AllocatorType is DMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0200");
@@ -5861,12 +5383,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0300");
@@ -5890,14 +5412,13 @@ export default function imagePixelmap() {
       }
     })
 
-        /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A350.ARW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_SONY_A350.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0100");
@@ -5919,13 +5440,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A900.ARW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_SONY_A900.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ARW_0200");
@@ -5947,13 +5467,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G9.CR2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_CANON_G9.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0300");
@@ -5975,13 +5494,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G10.CR2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_CANON_G10.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR2_0400");
@@ -6003,13 +5521,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D90.NEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_D90.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0500");
@@ -6031,13 +5548,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D3300.NEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_D3300.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NEF_0600");
@@ -6059,13 +5575,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0700");
@@ -6087,13 +5602,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_NRW_0800");
@@ -6115,13 +5629,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E3.ORF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_0900");
@@ -6143,13 +5656,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E410.ORF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_ORF_1000");
@@ -6171,13 +5683,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1100");
@@ -6199,13 +5710,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_PEF_1200");
@@ -6227,13 +5737,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S6500FD.RAF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1300");
@@ -6255,13 +5764,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RAF_1400");
@@ -6283,13 +5791,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_G1.RW2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PANASONIC_G1.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1500");
@@ -6311,13 +5818,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_LX3.RW2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_RW2_1600");
@@ -6339,13 +5845,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_SRW_1700");
@@ -6367,13 +5872,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800
-     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9785.CR3
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800
+     * @tc.desc   1.create pixelMap object by imageSource -- 023A9785.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1800");
@@ -6395,13 +5899,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900
-     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9867.CR3
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900
+     * @tc.desc   1.create pixelMap object by imageSource -- 023A9867.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_RAW_CR3_1900");
@@ -6423,13 +5926,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A350.ARW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_SONY_A350.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0100");
@@ -6451,13 +5953,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SONY_A900.ARW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_SONY_A900.ARW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ARW_0200");
@@ -6479,13 +5980,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G9.CR2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_CANON_G9.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0300");
@@ -6507,13 +6007,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_CANON_G10.CR2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_CANON_G10.CR2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR2_0400");
@@ -6535,13 +6034,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D90.NEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_D90.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0500");
@@ -6563,13 +6061,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_D3300.NEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_D3300.NEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NEF_0600");
@@ -6591,13 +6088,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_COOLPIX_P340.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0700");
@@ -6619,13 +6115,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_NIKON_P6000_GPS.NRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_NRW_0800");
@@ -6647,13 +6142,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E3.ORF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_OLYMPUS_E3.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_0900");
@@ -6675,13 +6169,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_OLYMPUS_E410.ORF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_OLYMPUS_E410.ORF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_ORF_1000");
@@ -6703,13 +6196,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PENTAX_STAR_DL.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1100");
@@ -6731,13 +6223,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PENTAX_STARISTD_SRGB.PEF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_PEF_1200");
@@ -6759,13 +6250,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S6500FD.RAF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_FUJI_S6500FD.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1300");
@@ -6787,13 +6277,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_FUJI_S9500_SRGB.RAF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RAF_1400");
@@ -6815,13 +6304,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_G1.RW2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PANASONIC_G1.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1500");
@@ -6843,13 +6331,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_PANASONIC_LX3.RW2
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_PANASONIC_LX3.RW2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_RW2_1600");
@@ -6871,13 +6358,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700
-     * @tc.desc      : 1.create pixelMap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700
+     * @tc.desc   1.create pixelMap object by imageSource -- RAW_SAMSUNG_EX2F.SRW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_SRW_1700");
@@ -6899,13 +6385,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800
-     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9785.CR3
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800
+     * @tc.desc   1.create pixelMap object by imageSource -- 023A9785.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1800");
@@ -6927,13 +6412,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900
-     * @tc.desc      : 1.create pixelMap object by imageSource -- 023A9867.CR3
-     *                 2.return imageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900
+     * @tc.desc   1.create pixelMap object by imageSource -- 023A9867.CR3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900', Level.LEVEL0, async (done: () => void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_FROM_ALLOCATOR_SYNC_RAW_CR3_1900");
@@ -6955,15 +6439,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100");
@@ -6984,15 +6465,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200");
@@ -7013,15 +6491,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0300");
@@ -7042,15 +6517,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0400");
@@ -7071,15 +6543,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: YCBCR_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0500");
@@ -7100,15 +6569,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0600");
@@ -7129,15 +6595,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: RGB_565
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100");
@@ -7158,15 +6621,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: BGRA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200");
@@ -7187,15 +6647,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 4001, height: 4096},
-     *                       desiredPixelFormat: RGBA_8888
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0300");
@@ -7216,15 +6673,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 99, height: 200},
-     *                       desiredPixelFormat: NV12
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0400");
@@ -7245,15 +6699,12 @@ export default function imagePixelmap() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 512, height: 512},
-     *                       desiredPixelFormat: YCBCR_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0500");
@@ -7274,15 +6725,12 @@ export default function imagePixelmap() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600
-     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600
-     * @tc.desc      : 1.create pixelmap object by imageSource, do not specify AllocatorType type
-     *                 2.set DecodingOptions 
-     *                       desiredSize: {width: 3072, height: 4096},
-     *                       desiredPixelFormat: YCRCB_P010
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600
+     * @tc.desc   1.create pixelmap object by imageSource, do not specify AllocatorType type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600', Level.LEVEL0, async (done: Function) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0600");

@@ -29,11 +29,12 @@ import TLSSocketUpgradeTest from './TLSSocketUpgrade.test';
 import TlsSkipRemoteValidationTest from './TlsSkipRemoteValidation.test';
 import socketErrorCodeTest from './socketErrorCode.test';
 import localSocketTest from './localSocketTest.test'
+import connection from '@ohos.net.connection'
 import EmptyTest from './Empty.test';
-import sim from '@ohos.telephony.sim';
 
+let netHandle = connection.getDefaultNetSync();
 export default function testsuite() {
-  if (sim.getMaxSimCount()>1){
+  if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")){
     TLSSocketServerTest();
     socketErrorCodeTest();
     localSocketTest();

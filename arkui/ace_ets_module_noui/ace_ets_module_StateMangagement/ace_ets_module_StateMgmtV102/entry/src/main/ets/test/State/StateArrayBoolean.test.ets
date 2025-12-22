@@ -67,7 +67,7 @@ export default function StateArrayBoolean() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayBoolean_0100', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayBoolean_0100', Level.LEVEL1, async (done: Function) => {
       console.info('StateArrayBoolean_0100 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -92,7 +92,7 @@ export default function StateArrayBoolean() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayBoolean_0200', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayBoolean_0200', Level.LEVEL1, async (done: Function) => {
       console.info('StateArrayBoolean_0200 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -117,7 +117,7 @@ export default function StateArrayBoolean() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayBoolean_0300', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayBoolean_0300', Level.LEVEL1, async (done: Function) => {
       console.info('StateArrayBoolean_0300 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -142,7 +142,7 @@ export default function StateArrayBoolean() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateArrayBoolean_0400', Level.LEVEL0, async (done: Function) => {
+    it('StateArrayBoolean_0400', Level.LEVEL1, async (done: Function) => {
       console.info('StateArrayBoolean_0400 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);

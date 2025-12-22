@@ -60,12 +60,12 @@ export default function RequestDownloadStaticTest() {
     })
 
     /**
-     * @tc.number    SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010
-     * @tc.name      SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010
-     * @tc.desc      Test requestUploadTest API functionality.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010
+     * @tc.number SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010
+     * @tc.desc   Test requestUploadTest API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
      hilog.info(domain, tag, "====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_state_Static_0010 is starting-----------------------");
@@ -97,12 +97,12 @@ export default function RequestDownloadStaticTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Download_Promise_Static_0010
-     * @tc.name    SUB_Misc_REQUEST_Create_Download_Promise_Static_0010
-     * @tc.desc      create a download task.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_Misc_REQUEST_Create_Download_Promise_Static_0010
+     * @tc.number SUB_Misc_REQUEST_Create_Download_Promise_Static_0010
+     * @tc.desc   create a download task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_REQUEST_Create_Download_Promise_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "-----------------------SUB_Misc_REQUEST_Create_Download_Promise_Static_0010 is starting-----------------------");
@@ -124,12 +124,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Start_Download_Promise_Static_0010
      * @tc.number SUB_Misc_REQUEST_Start_Download_Promise_Static_0010
-     * @tc.name SUB_Misc_REQUEST_Start_Download_Promise_Static_0010
-     * @tc.desc Start the download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.desc   Start the download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Start_Download_Promise_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_Start_Download_Promise_Static_0010 is starting-----------------------");
@@ -152,12 +152,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Download_Callback_Static_0010
-     * @tc.name    SUB_Misc_REQUEST_Create_Download_Callback_Static_0010
-     * @tc.desc      create a download session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_Misc_REQUEST_Create_Download_Callback_Static_0010
+     * @tc.number SUB_Misc_REQUEST_Create_Download_Callback_Static_0010
+     * @tc.desc   create a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Misc_REQUEST_Create_Download_Callback_Static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "-----------------------SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 is starting-----------------------");
@@ -187,12 +187,12 @@ export default function RequestDownloadStaticTest() {
 
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010
      * @tc.number SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010
-     * @tc.name SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010
-     * @tc.desc Start the download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.desc   Start the download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010 is starting-----------------------");
@@ -225,12 +225,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Misc_REQUEST_On_Download_Completed_Static_0040
-     * @tc.name  SUB_Misc_REQUEST_On_Download_Completed_Static_0040
-     * @tc.desc  download task
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 1
+     * @tc.name   SUB_Misc_REQUEST_On_Download_Completed_Static_0040
+     * @tc.number SUB_Misc_REQUEST_On_Download_Completed_Static_0040
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_On_Download_Completed_Static_0040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_On_Download_Completed_Static_0040 is starting--------------");
@@ -269,12 +269,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Agent_onResponse_Static_0100
-     * @tc.name  SUB_Request_Agent_onResponse_Static_0100
-     * @tc.desc  request config saveas validate
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 1
+     * @tc.name   SUB_Request_Agent_onResponse_Static_0100
+     * @tc.number SUB_Request_Agent_onResponse_Static_0100
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Request_Agent_onResponse_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-------SUB_Request_Agent_onResponse_Static_0100 is starting-----------");
@@ -309,12 +309,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Start_Download_Callback_Static_0010
      * @tc.number SUB_Misc_REQUEST_Start_Download_Callback_Static_0010
-     * @tc.name SUB_Misc_REQUEST_Start_Download_Callback_Static_0010
-     * @tc.desc Start the download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.desc   Start the download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Start_Download_Callback_Static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>----------SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 is starting----------");
@@ -344,12 +344,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_1000
-     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_1000
-     * @tc.desc  request config saveas validate
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 2
+     * @tc.name   SUB_Request_Agent_TaskSaveas_Static_1000
+     * @tc.number SUB_Request_Agent_TaskSaveas_Static_1000
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Request_Agent_TaskSaveas_Static_1000 is starting-----------------------");
@@ -371,12 +371,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_1100
-     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_1100
-     * @tc.desc  request config saveas validate
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 2
+     * @tc.name   SUB_Request_Agent_TaskSaveas_Static_1100
+     * @tc.number SUB_Request_Agent_TaskSaveas_Static_1100
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_1100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>--------------SUB_Request_Agent_TaskSaveas_Static_1100 is starting-------------");
@@ -385,32 +385,26 @@ export default function RequestDownloadStaticTest() {
         url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
         saveas: '/data/storage/el2/base',
       };
-      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
-        hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_1100 downloadTask: " + task);
-        try {
-          if (err?.code !== 0) {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create err: " + err?.code + JSON.stringify(err));
-            expect(err?.code).assertEqual(13400001);
-            done();
-          } else {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create success: " + task);
-            expect().assertFail();
-            done();
-          }
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_1100 Succeeded in create a download task.` + err.code + JSON.stringify(err));
+      try {
+        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+          hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_1100 downloadTask: " + task);
+          expect().assertFail();
           done();
-        }
-      });
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create catch err: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(13400001);
+        done();
+      };
     });
 
     /**
-     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_0500
-     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_0500
-     * @tc.desc  request config saveas validate
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 2
+     * @tc.name   SUB_Request_Agent_TaskSaveas_Static_0500
+     * @tc.number SUB_Request_Agent_TaskSaveas_Static_0500
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Request_Agent_TaskSaveas_Static_0500 is starting-----------------------");
@@ -432,12 +426,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Request_Agent_TaskSaveas_Static_0600
-     * @tc.name  SUB_Request_Agent_TaskSaveas_Static_0600
-     * @tc.desc  request config saveas validate
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 2
+     * @tc.name   SUB_Request_Agent_TaskSaveas_Static_0600
+     * @tc.number SUB_Request_Agent_TaskSaveas_Static_0600
+     * @tc.desc   request config saveas validate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_Agent_TaskSaveas_Static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>--------------SUB_Request_Agent_TaskSaveas_Static_0600 is starting-------------");
@@ -446,32 +440,26 @@ export default function RequestDownloadStaticTest() {
         url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
         saveas: '/ request/SUB_Request_Agent_TaskSaveas_Static_0600',
       };
-      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
-        hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_0600 downloadTask: " + task);
-        try {
-          if (err?.code !== 0) {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create err: " + err?.code + JSON.stringify(err));
-            expect(err?.code).assertEqual(401);
-            done();
-          } else {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create success: " + task);
-            expect().assertFail();
-            done();
-          }
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_0600 Succeeded in create a download task.` + err.code + JSON.stringify(err));
+      try {
+        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+          hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create callback");
+          expect().assertFail();
           done();
-        }
-      });
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create catch err: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_On_Download_Progress_Static_0040
      * @tc.number SUB_Misc_REQUEST_On_Download_Progress_Static_0040
-     * @tc.name SUB_Misc_REQUEST_On_Download_Progress_Static_0040
-     * @tc.desc  listening on progress
-     * @tc.size      MEDIUMTEST
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.desc   listening on progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Download_Progress_Static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_On_Download_Progress_Static_0040 is starting-----------------------");
@@ -507,12 +495,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Download_Progress_Static_0030
-     * @tc.name    SUB_Misc_REQUEST_On_Download_Progress_Static_0030
-     * @tc.desc      listening on progress inorder
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Download_Progress_Static_0030
+     * @tc.number SUB_Misc_REQUEST_On_Download_Progress_Static_0030
+     * @tc.desc   listening on progress inorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Download_Progress_Static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----------------------SUB_Misc_REQUEST_On_Download_Progress_Static_0030 is starting-----------------------");
@@ -552,12 +540,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Misc_REQUEST_Download_overwrite_Static_0100
-     * @tc.name  SUB_Misc_REQUEST_Download_overwrite_Static_0100
-     * @tc.desc  overwrite is true
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 1
+     * @tc.name   SUB_Misc_REQUEST_Download_overwrite_Static_0100
+     * @tc.number SUB_Misc_REQUEST_Download_overwrite_Static_0100
+     * @tc.desc   overwrite is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_Download_overwrite_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_Download_overwrite_Static_0100 is starting--------------");
@@ -595,12 +583,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Misc_REQUEST_Download_overwrite_Static_0200
-     * @tc.name  SUB_Misc_REQUEST_Download_overwrite_Static_0200
-     * @tc.desc  start a err status task
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 1
+     * @tc.name   SUB_Misc_REQUEST_Download_overwrite_Static_0200
+     * @tc.number SUB_Misc_REQUEST_Download_overwrite_Static_0200
+     * @tc.desc   start a err status task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_Download_overwrite_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_Download_overwrite_Static_0200 is starting--------------");
@@ -643,12 +631,12 @@ export default function RequestDownloadStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Misc_REQUEST_Download_overwrite_Static_0300
-     * @tc.name  SUB_Misc_REQUEST_Download_overwrite_Static_0300
-     * @tc.desc  overwrite is false throw err
-     * @tc.size  MediumTest
-     * @tc.type  Function
-     * @tc.level  Level 1
+     * @tc.name   SUB_Misc_REQUEST_Download_overwrite_Static_0300
+     * @tc.number SUB_Misc_REQUEST_Download_overwrite_Static_0300
+     * @tc.desc   overwrite is false throw err
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Misc_REQUEST_Download_overwrite_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "====>-----SUB_Misc_REQUEST_Download_overwrite_Static_0300 is starting--------------");

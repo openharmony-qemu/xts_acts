@@ -23,7 +23,11 @@ group("ActsAceEtsModulePlatformTest") {
       "ace_ets_module_platform_api14:ActsAceEtsModulePlatformApi14Test",
       "ace_ets_module_platform_api20:ActsAceEtsModulePlatformApi20Test",
       "ace_ets_module_platform_api21:ActsAceEtsModulePlatformApi21Test",
-      "ace_ets_module_platform_api22:ActsAceEtsModulePlatformApi22Test",
+      "ace_ets_module_platform_xcomponent:ActsAceEtsModulePlatformXComponentTest",
+      "ace_ets_module_platform_api11_static:ActsAceEtsModulePlatformApi11StaticTest",
+      "ace_ets_module_platform_api13_static:ActsAceEtsModulePlatformApi13StaticTest",
+      "ace_ets_module_platform_api14_static:ActsAceEtsModulePlatformApi14StaticTest",
+      "ace_ets_module_platform_api12_static:ActsAceEtsModulePlatformApi12StaticTest",
     ]
   } else {
     deps = [
@@ -33,8 +37,13 @@ group("ActsAceEtsModulePlatformTest") {
       "ace_ets_module_platform_api14:ActsAceEtsModulePlatformApi14Test",
       "ace_ets_module_platform_api20:ActsAceEtsModulePlatformApi20Test",
       "ace_ets_module_platform_api21:ActsAceEtsModulePlatformApi21Test",
-      "ace_ets_module_platform_api22:ActsAceEtsModulePlatformApi22Test",
+      "ace_ets_module_platform_xcomponent:ActsAceEtsModulePlatformXComponentTest",
       "ace_ets_module_platform_nowear_api12:ActsAceEtsModulePlatformNoWearApi12Test",
+      "ace_ets_module_platform_api11_static:ActsAceEtsModulePlatformApi11StaticTest",
+      "ace_ets_module_platform_api13_static:ActsAceEtsModulePlatformApi13StaticTest",
+      "ace_ets_module_platform_api14_static:ActsAceEtsModulePlatformApi14StaticTest",
+      "ace_ets_module_platform_api12_static:ActsAceEtsModulePlatformApi12StaticTest",
+      "ace_ets_module_platform_nowear_api12_static:ActsAceEtsModulePlatformNoWearApi12StaticTest",
     ]
   }
 }

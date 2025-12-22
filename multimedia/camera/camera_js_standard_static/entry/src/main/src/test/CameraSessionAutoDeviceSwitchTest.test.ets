@@ -209,12 +209,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
-      * @tc.desc   Checks if the automatic switchover device is supported.
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100
+     * @tc.desc   Checks if the automatic switchover device is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_IS_AUTO_DEVICE_SWITCH_SUPPORTED_STATIC_0100--------------");
@@ -275,12 +275,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
-      * @tc.desc   Enables or disables the automatic switchover device.
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100
+     * @tc.desc   Enables or disables the automatic switchover device.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ENABLE_AUTO_DEVICE_SWITCH_STATIC_0100--------------");
@@ -338,12 +338,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100
-      * @tc.desc   CCheck whether the interception switchover is successful.
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100
+     * @tc.desc   CCheck whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_ON_STATIC_0100--------------");
@@ -409,12 +409,12 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100
-      * @tc.desc   CCheck whether the interception switchover is successful.
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100
+     * @tc.desc   CCheck whether the interception switchover is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_AUTO_DEVICE_SWITCH_OFF_STATIC_0100--------------");

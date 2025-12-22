@@ -77,5 +77,18 @@ export default function scrollScrollAbleTest() {
       expect(nativeFunc.testScrollScrollAble004()).assertEqual(0)
       done();
     });
+
+    /**
+     * @tc.name   testScrollScrollable005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLLABLE_0500
+     * @tc.desc   testing scroll able for scroll with ARKUI_SCROLL_DIRECTION_FREE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testScrollScrollable005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testScrollScrollAble005()).assertEqual(0)
+      done();
+    });
   })
 }

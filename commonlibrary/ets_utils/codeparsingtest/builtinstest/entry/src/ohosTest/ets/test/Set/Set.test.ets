@@ -36,12 +36,12 @@ export default function SetTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0100
-     * @tc.name       : testSetPrototypeAdd0001
-     * @tc.desc       : Test the function of the interface SetPrototypeAdd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetPrototypeAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0100
+     * @tc.desc   Test the function of the interface SetPrototypeAdd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetPrototypeAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testSetPrototypeAdd0001";
@@ -56,12 +56,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0200
-     * @tc.name       : testSetPrototypeAdd0002
-     * @tc.desc       : Test the function of the interface SetPrototypeAdd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetPrototypeAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0200
+     * @tc.desc   Test the function of the interface SetPrototypeAdd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetPrototypeAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testSetPrototypeAdd0002";
@@ -76,12 +76,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0300
-     * @tc.name       : testSetPrototypeAdd0003
-     * @tc.desc       : Test the function of the interface SetPrototypeAdd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeAdd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0300
+     * @tc.desc   Test the function of the interface SetPrototypeAdd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeAdd0003";
@@ -96,12 +96,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0400
-     * @tc.name       : testSetPrototypeAdd0004
-     * @tc.desc       : Test the function of the interface SetPrototypeAdd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeAdd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0400
+     * @tc.desc   Test the function of the interface SetPrototypeAdd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeAdd0004";
@@ -116,12 +116,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0500
-     * @tc.name       : testSetPrototypeAdd0005
-     * @tc.desc       : Test the function of the interface SetPrototypeAdd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeAdd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0500
+     * @tc.desc   Test the function of the interface SetPrototypeAdd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeAdd0005";
@@ -136,12 +136,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0600
-     * @tc.name       : testSetPrototypeClear0001
-     * @tc.desc       : Test the function of the interface SetPrototypeClear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0600
+     * @tc.desc   Test the function of the interface SetPrototypeClear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeClear0001";
@@ -157,12 +157,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0700
-     * @tc.name       : testSetPrototypeClear0002
-     * @tc.desc       : Test the function of the interface SetPrototypeClear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeClear0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0700
+     * @tc.desc   Test the function of the interface SetPrototypeClear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeClear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeClear0002";
@@ -178,12 +178,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0800
-     * @tc.name       : testSetPrototypeClear0003
-     * @tc.desc       : Test the function of the interface SetPrototypeClear.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeClear0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0800
+     * @tc.desc   Test the function of the interface SetPrototypeClear.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeClear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeClear0003";
@@ -199,12 +199,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_0900
-     * @tc.name       : testSetPrototypeDelete0001
-     * @tc.desc       : Test the function of the interface SetPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeDelete0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_0900
+     * @tc.desc   Test the function of the interface SetPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeDelete0001";
@@ -219,12 +219,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1000
-     * @tc.name       : testSetPrototypeDelete0002
-     * @tc.desc       : Test the function of the interface SetPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeDelete0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1000
+     * @tc.desc   Test the function of the interface SetPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeDelete0002";
@@ -239,12 +239,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1100
-     * @tc.name       : testSetPrototypeDelete0003
-     * @tc.desc       : Test the function of the interface SetPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeDelete0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1100
+     * @tc.desc   Test the function of the interface SetPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeDelete0003";
@@ -259,12 +259,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1200
-     * @tc.name       : testSetPrototypeDelete0004
-     * @tc.desc       : Test the function of the interface SetPrototypeDelete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeDelete0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1200
+     * @tc.desc   Test the function of the interface SetPrototypeDelete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeDelete0004";
@@ -279,12 +279,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1300
-     * @tc.name       : testSetPrototypeEntries0001
-     * @tc.desc       : Test the function of the interface SetPrototypeEntries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1300
+     * @tc.desc   Test the function of the interface SetPrototypeEntries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeEntries0001";
@@ -303,12 +303,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1400
-     * @tc.name       : testSetPrototypeEntries0002
-     * @tc.desc       : Test the function of the interface SetPrototypeEntries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeEntries0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1400
+     * @tc.desc   Test the function of the interface SetPrototypeEntries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeEntries0002";
@@ -323,12 +323,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1500
-     * @tc.name       : testSetPrototypeEntries0003
-     * @tc.desc       : Test the function of the interface SetPrototypeEntries.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeEntries0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1500
+     * @tc.desc   Test the function of the interface SetPrototypeEntries.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeEntries0003";
@@ -343,12 +343,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1600
-     * @tc.name       : testSetPrototypeHas0001
-     * @tc.desc       : Test the function of the interface SetPrototypeHas.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1600
+     * @tc.desc   Test the function of the interface SetPrototypeHas.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeHas0001";
@@ -363,12 +363,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1700
-     * @tc.name       : testSetPrototypeHas0002
-     * @tc.desc       : Test the function of the interface SetPrototypeHas.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeHas0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1700
+     * @tc.desc   Test the function of the interface SetPrototypeHas.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeHas0002";
@@ -383,12 +383,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1800
-     * @tc.name       : testSetPrototypeHas0003
-     * @tc.desc       : Test the function of the interface SetPrototypeHas.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeHas0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1800
+     * @tc.desc   Test the function of the interface SetPrototypeHas.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeHas0003";
@@ -403,12 +403,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_1900
-     * @tc.name       : testSetPrototypeHas0004
-     * @tc.desc       : Test the function of the interface SetPrototypeHas.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeHas0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_1900
+     * @tc.desc   Test the function of the interface SetPrototypeHas.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeHas0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeHas0004";
@@ -423,12 +423,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_2000
-     * @tc.name       : testSetPrototypeKeys0001
-     * @tc.desc       : Test the function of the interface SetPrototypeKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeKeys0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_2000
+     * @tc.desc   Test the function of the interface SetPrototypeKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeKeys0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeKeys0001";
@@ -448,12 +448,12 @@ export default function SetTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SET_2100
-     * @tc.name       : testSetPrototypeKeys0002
-     * @tc.desc       : Test the function of the interface SetPrototypeKeys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetPrototypeKeys0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_2100
+     * @tc.desc   Test the function of the interface SetPrototypeKeys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetPrototypeKeys0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testSetPrototypeKeys0002";

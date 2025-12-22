@@ -170,6 +170,8 @@
   "MainAbility/pages/RichEditorApi20/RichEditorTextMenuItemId",
   "MainAbility/pages/RichEditorApi21/ScrollBarColor",
   "MainAbility/pages/RichEditorApi22/richEditorObserver",
-  "MainAbility/pages/RichEditorApi22/richEditorSupportSvg2"
+  "MainAbility/pages/RichEditorApi22/richEditorSupportSvg2",
+  "MainAbility/pages/RichEditorApi22/RichEditorEnableSelectedDataDetector",
+  "MainAbility/pages/RichEditorApi22/RichEditorOnWillAttachIME"
   ]
 }

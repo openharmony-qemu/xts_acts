@@ -115,7 +115,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest001
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0010
      * @tc.desc   //getKVStore<distributedKVStore.SingleKVStore>
@@ -140,7 +139,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest0011
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0011
      * @tc.desc   //getKVStore<distributedKVStore.SingleKVStore>
@@ -165,7 +163,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest002
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0020
      * @tc.desc   //getKVStore<distributedKVStore.DeviceKVStore>
@@ -189,7 +186,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest003
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0030
      * @tc.desc   //SingleKVStore put get string
@@ -223,7 +219,6 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest005
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0050
      * @tc.desc   //SingleKVStore put get Boolean
@@ -252,7 +247,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest006
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0060
      * @tc.desc   //SingleKVStore put get Uint8Array
@@ -279,7 +273,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest007
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0070
      * @tc.desc   //SingleKVStore backup
@@ -304,7 +297,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest008
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0080
      * @tc.desc   //DeviceKVStore backup
@@ -329,7 +321,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest009
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0090
      * @tc.desc   //SingleKVStore backup  callback
@@ -355,7 +346,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest010
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0100
      * @tc.desc   //DeviceKVStore put get Uint8Array
@@ -382,7 +372,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest011
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0110
      * @tc.desc   //DeviceKVStore put get string
@@ -411,7 +400,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest012
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0120
      * @tc.desc   //DeviceKVStore put get double
@@ -425,7 +413,7 @@ export default function KvStoreEtsTestStatic() {
       let VALUE_TEST_DOUBLE_ELEMENT : double = 11;
       try {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
-        await store.put(KEY_TEST_DOUBLE_ELEMENT, 11);
+        await store.put(KEY_TEST_DOUBLE_ELEMENT, VALUE_TEST_DOUBLE_ELEMENT);
         let value = await store.get(KEY_TEST_DOUBLE_ELEMENT);
         hilog.info(domain, tag, '%{public}s', "============KvStoreTest012 VALUE_TEST_DOUBLE_ELEMENT is" + VALUE_TEST_DOUBLE_ELEMENT + " value is " + value);
         expect(VALUE_TEST_DOUBLE_ELEMENT == (value as double)).assertTrue();
@@ -439,7 +427,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest013
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0130
      * @tc.desc   //DeviceKVStore put get Boolean
@@ -467,7 +454,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest014
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0140
      * @tc.desc   //DeviceKVStore put get callback Boolean
@@ -484,7 +470,7 @@ export default function KvStoreEtsTestStatic() {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
           store?.put(KEY_TEST_BOOL_ELEMENT, VALUE_TEST_BOOL_ELEMENT, (err: BusinessError|null) => {
             hilog.info(domain, tag, '%{public}s', "============KvStoreTest014 put ");
-            store?.get(KEY_TEST_BOOL_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Double|Uint8Array) => {
+            store?.get(KEY_TEST_BOOL_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Long|Double|Uint8Array) => {
               hilog.info(domain, tag, '%{public}s', "============KvStoreTest014 get ");
               expect(VALUE_TEST_BOOL_ELEMENT == (value as boolean)).assertTrue();
               done();
@@ -500,7 +486,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest015
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0150
      * @tc.desc   //DeviceKVStore put get callback double
@@ -517,7 +502,7 @@ export default function KvStoreEtsTestStatic() {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
           store?.put(KEY_TEST_DOUBLE_ELEMENT, VALUE_TEST_DOUBLE_ELEMENT, (err: BusinessError|null) => {
             hilog.info(domain, tag, '%{public}s', "============KvStoreTest015 put ");
-            store?.get(KEY_TEST_DOUBLE_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Double|Uint8Array) => {
+            store?.get(KEY_TEST_DOUBLE_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Long|Double|Uint8Array) => {
               hilog.info(domain, tag, '%{public}s', "============KvStoreTest015 get ");
               expect(VALUE_TEST_DOUBLE_ELEMENT == (value as double)).assertTrue();
               done();
@@ -534,7 +519,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest016
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0160
      * @tc.desc   //DeviceKVStore put get callback string
@@ -550,7 +534,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
           store?.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, (err: BusinessError|null) => {
-            store?.get(KEY_TEST_STRING_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Double|Uint8Array) => {
+            store?.get(KEY_TEST_STRING_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Long|Double|Uint8Array) => {
               hilog.info(domain, tag, '%{public}s', "============KvStoreTest016 put ");
               expect(VALUE_TEST_STRING_ELEMENT == (value as string)).assertTrue();
               hilog.info(domain, tag, '%{public}s', "============done ");
@@ -566,7 +550,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest017
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0170
      * @tc.desc   //DeviceKVStore put get  callback string
@@ -582,7 +565,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
           store?.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, (err: BusinessError|null) => {
-            store?.get(KEY_TEST_STRING_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Double|Uint8Array) => {
+            store?.get(KEY_TEST_STRING_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Long|Double|Uint8Array) => {
               expect(VALUE_TEST_STRING_ELEMENT == (value as string)).assertTrue();
               hilog.info(domain, tag, '%{public}s', "============done ");
               done();
@@ -598,7 +581,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest018
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0180
      * @tc.desc   //SingleKVStore put get  callback string
@@ -614,7 +596,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         kvManager.getKVStore(TEST_SINGLE_STORE_ID, singleOptions, (err: BusinessError|null, store: distributedKVStore.SingleKVStore|undefined) => {
           store?.put(KEY_TEST_STRING_ELEMENT, VALUE_TEST_STRING_ELEMENT, (err: BusinessError|null) => {
-            store?.get(KEY_TEST_STRING_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Double|Uint8Array) => {
+            store?.get(KEY_TEST_STRING_ELEMENT, (err: BusinessError<void>|null, value:undefined|Boolean|String|Long|Double|Uint8Array) => {
               expect(VALUE_TEST_STRING_ELEMENT == (value as string)).assertTrue();
               hilog.info(domain, tag, '%{public}s', "============done ");
               done();
@@ -629,7 +611,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest019
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0190
      * @tc.desc   //DeviceKVStore get(did, key)
@@ -643,7 +624,7 @@ export default function KvStoreEtsTestStatic() {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
         hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 getKVStore ");
         let deviceId : string = "000000000000000000";
-        store.get(deviceId, 'keyno').then((data: boolean | string | number | Uint8Array) => {
+        store.get(deviceId, 'keyno').then((data: boolean | string | Long | number | Uint8Array) => {
           hilog.info(domain, tag, '%{public}s', "=======KvStoreTest019 get success");
           expect(null).assertFail();
           done();
@@ -661,7 +642,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest0191
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0191
      * @tc.desc   //DeviceKVStore get(key)
@@ -674,7 +654,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         let store : distributedKVStore.DeviceKVStore = await kvManager.getKVStore<distributedKVStore.DeviceKVStore>(TEST_DEVICE_STORE_ID, deviceOptions);
         hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 getKVStore ");
-        store.get('keyno').then((data: boolean | string | number | Uint8Array) => {
+        store.get('keyno').then((data: boolean | string | Long | number | Uint8Array) => {
           hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0191 get success");
           expect(null).assertFail();
           done();
@@ -692,7 +672,6 @@ export default function KvStoreEtsTestStatic() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest020
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0200
      * @tc.desc   //DeviceKVStore get(did,key)  callback
@@ -705,7 +684,7 @@ export default function KvStoreEtsTestStatic() {
       let deviceId : string = "000000000000000000";
       try {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
-          store?.get(deviceId, 'keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+          store?.get(deviceId, 'keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Long|Double|Uint8Array) => {
             if (err != undefined) {
               hilog.info(domain, tag, '%{public}s', `=======KvStoreTest020 fail err=${err.code},ms=${err.message}`);
               expect(err.code).assertEqual(15100004);
@@ -727,7 +706,6 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest0201
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0201
      * @tc.desc   //DeviceKVStore get(key)  callback
@@ -739,7 +717,7 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest0201 start ");
       try {
         kvManager.getKVStore(TEST_DEVICE_STORE_ID, deviceOptions, (err: BusinessError|null, store: distributedKVStore.DeviceKVStore|undefined) => {
-          store?.get('keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+          store?.get('keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Long|Double|Uint8Array) => {
             if (err != undefined) {
               hilog.info(domain, tag, '%{public}s', `=======KvStoreTest0201 fail err=${err.code},ms=${err.message}`);
               expect(err.code).assertEqual(15100004);
@@ -761,7 +739,6 @@ export default function KvStoreEtsTestStatic() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest021
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0210
      * @tc.desc   //Schema.constructor, FieldNode.constructor, Query.constructor
@@ -783,7 +760,6 @@ export default function KvStoreEtsTestStatic() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest022
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0220
      * @tc.desc   //SingleKVStore get(key)
@@ -796,7 +772,7 @@ export default function KvStoreEtsTestStatic() {
       try {
         let store : distributedKVStore.SingleKVStore = await kvManager.getKVStore<distributedKVStore.SingleKVStore>(TEST_SINGLE_STORE_ID, singleOptions);
         hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 getKVStore ");
-        store.get('keyno').then((data: boolean | string | number | Uint8Array) => {
+        store.get('keyno').then((data: boolean | string | Long | number | Uint8Array) => {
           hilog.info(domain, tag, '%{public}s', "=======KvStoreTest022 get success");
           expect(null).assertFail();
           done();
@@ -814,7 +790,6 @@ export default function KvStoreEtsTestStatic() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   KvStoreTest023
      * @tc.number SUB_DistributedData_KvStore_SDK_APITest_STATIC_0230
      * @tc.desc   //SingleKVStore get(key)  callback
@@ -826,7 +801,7 @@ export default function KvStoreEtsTestStatic() {
       hilog.info(domain, tag, '%{public}s', "=======KvStoreTest023 start ");
       try {
         kvManager.getKVStore(TEST_SINGLE_STORE_ID, singleOptions, (err: BusinessError|null, store: distributedKVStore.SingleKVStore|undefined) => {
-          store?.get('keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Double|Uint8Array) => {
+          store?.get('keyno', (err: BusinessError<void>|null, value: undefined|Boolean|String|Long|Double|Uint8Array) => {
             if (err != undefined) {
               hilog.info(domain, tag, '%{public}s', `=======KvStoreTest023 fail err=${err.code},ms=${err.message}`);
               expect(err.code).assertEqual(15100004);

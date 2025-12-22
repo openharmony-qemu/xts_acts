@@ -46,7 +46,6 @@ export default function MultimodalGestureEventTest() {
     }
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0100
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0100
      * @tc.desc   Test GestureEvent Pinch
@@ -75,7 +74,6 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0200
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0200
      * @tc.desc   Test GestureEvent Rotate
@@ -104,7 +102,6 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0300
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0300
      * @tc.desc   Test GestureEvent ThreeFingersSwipe
@@ -133,7 +130,6 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0400
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0400
      * @tc.desc   Test GestureEvent FourFingersSwipe
@@ -163,7 +159,6 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0500
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0500
      * @tc.desc   Test GestureEvent ThreeFingersTap
@@ -191,7 +186,6 @@ export default function MultimodalGestureEventTest() {
       });
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   SUB_MMI_Input_Api_GestureEvent_0600
      * @tc.number SUB_MMI_Input_Api_GestureEvent_0600
      * @tc.desc   Test GestureEvent ActionType

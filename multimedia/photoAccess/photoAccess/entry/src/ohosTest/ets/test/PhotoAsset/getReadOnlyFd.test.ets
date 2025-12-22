@@ -75,12 +75,12 @@ export default function getReadOnlyFdTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_CALLBACK_0000
-     * @tc.name      : getReadOnlyFd_callback_000
-     * @tc.desc      : image asset getReadOnlyFd
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReadOnlyFd_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_CALLBACK_0000
+     * @tc.desc   image asset getReadOnlyFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReadOnlyFd_callback_000', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getReadOnlyFd_callback_000';
@@ -89,12 +89,12 @@ export default function getReadOnlyFdTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_CALLBACK_0100
-     * @tc.name      : getReadOnlyFd_callback_001
-     * @tc.desc      : video asset getReadOnlyFd
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReadOnlyFd_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_CALLBACK_0100
+     * @tc.desc   video asset getReadOnlyFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReadOnlyFd_callback_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getReadOnlyFd_callback_001';
@@ -103,12 +103,12 @@ export default function getReadOnlyFdTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_PROMISE_0000
-     * @tc.name      : getReadOnlyFd_promise_000
-     * @tc.desc      : image asset getReadOnlyFd
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReadOnlyFd_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_PROMISE_0000
+     * @tc.desc   image asset getReadOnlyFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReadOnlyFd_promise_000', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getReadOnlyFd_promise_000';
@@ -117,12 +117,12 @@ export default function getReadOnlyFdTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_PROMISE_0100
-     * @tc.name      : getReadOnlyFd_promise_001
-     * @tc.desc      : video asset getReadOnlyFd
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getReadOnlyFd_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_GET_READONLY_FD_PROMISE_0100
+     * @tc.desc   video asset getReadOnlyFd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getReadOnlyFd_promise_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getReadOnlyFd_promise_001';

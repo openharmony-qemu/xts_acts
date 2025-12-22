@@ -52,13 +52,13 @@ export default function ActsAceWebViewAvoidArea() {
     })
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_AVOIDAREA_API_0001
-     *@tc.name testWebViewAvoidArea01
-     *@tc.desc test onViewportFitChanged contain 1
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAvoidArea01
+     * @tc.number SUB_ACE_WEB_AVOIDAREA_API_0001
+     * @tc.desc   test onViewportFitChanged contain 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAvoidArea01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebViewAvoidArea01'
@@ -66,13 +66,13 @@ export default function ActsAceWebViewAvoidArea() {
       Utils.registerEvent('testWebViewAvoidArea01', ViewportFit.CONTAINS, 153560, done);
       sendEventByKey('webViewAvoidAreaButton', 10, '');
     })
-    /*
-     *@tc.number SUB_ACE_WEB_AVOIDAREA_API_0002
-     *@tc.name testWebViewAvoidArea02
-     *@tc.desc test onViewportFitChanged auto
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAvoidArea02
+     * @tc.number SUB_ACE_WEB_AVOIDAREA_API_0002
+     * @tc.desc   test onViewportFitChanged auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAvoidArea02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebViewAvoidArea02'
@@ -80,13 +80,13 @@ export default function ActsAceWebViewAvoidArea() {
       Utils.registerEvent("testWebViewAvoidArea02", ViewportFit.AUTO, 153570, done);
       sendEventByKey('webViewAvoidAreaButton', 10, '');
     })
-    /*
-     *@tc.number SUB_ACE_WEB_AVOIDAREA_API_0003
-     *@tc.name testWebViewAvoidArea03
-     *@tc.desc test onViewportFitChanged cover 2
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAvoidArea03
+     * @tc.number SUB_ACE_WEB_AVOIDAREA_API_0003
+     * @tc.desc   test onViewportFitChanged cover 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAvoidArea03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebViewAvoidArea03'
@@ -94,13 +94,13 @@ export default function ActsAceWebViewAvoidArea() {
       Utils.registerEvent('testWebViewAvoidArea03', ViewportFit.COVER, 153580, done);
       sendEventByKey('webViewAvoidAreaButton', 10, '');
     })
-    /*
-     *@tc.number SUB_ACE_WEB_AVOIDAREA_API_0004
-     *@tc.name testWebViewAvoidArea04
-     *@tc.desc test onViewportFitChanged default
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAvoidArea04
+     * @tc.number SUB_ACE_WEB_AVOIDAREA_API_0004
+     * @tc.desc   test onViewportFitChanged default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAvoidArea04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebViewAvoidArea04'
@@ -109,13 +109,13 @@ export default function ActsAceWebViewAvoidArea() {
       sendEventByKey('webViewAvoidAreaButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AVOIDAREA_API_0006
-     *@tc.name testWebViewAvoidAreaOther
-     *@tc.desc test onAvoidAreaChange
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAvoidAreaOther
+     * @tc.number SUB_ACE_WEB_AVOIDAREA_API_0006
+     * @tc.desc   test onAvoidAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAvoidAreaOther', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebViewAvoidAreaOther'

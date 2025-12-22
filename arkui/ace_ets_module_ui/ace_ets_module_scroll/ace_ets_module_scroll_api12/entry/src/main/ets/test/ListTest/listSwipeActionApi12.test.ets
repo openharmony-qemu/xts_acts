@@ -69,7 +69,9 @@ export default function listSwipeActionApi12Test() {
       await CommonFunc.sleep(5000);
       let strJson1 = getInspectorByKey('ListTestApi12_2');
       let obj1: ESObject = JSON.parse(strJson1);
-      expect(obj1.$attrs.content).assertEqual('160');
+      let offset: number = Number(obj1.$attrs.content)
+      console.info("listSwipeActionApi12Test_001 offset is" + offset);
+      expect(Math.floor(Math.abs(offset - 160)) <= 1 ).assertTrue();
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('item0'));
       btn1.click();

@@ -64,13 +64,13 @@ class DrawingNativeTypeFaceTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0100
- * @tc.name: testTypefaceCreateDefaultNormal
- * @tc.desc: test for testTypefaceCreateDefaultNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTypefaceCreateDefaultNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0100
+ * @tc.desc   test for testTypefaceCreateDefaultNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDefaultNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -92,13 +92,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDefaultNormal, Function | 
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0101
- * @tc.name: testTypefaceCreateDefaultNull
- * @tc.desc: test for testTypefaceCreateDefaultNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateDefaultNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0101
+ * @tc.desc   test for testTypefaceCreateDefaultNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDefaultNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
@@ -126,13 +126,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDefaultNull, Function | Sm
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0200
- * @tc.name: testTypefaceCreateFromFileNormal
- * @tc.desc: test for testTypefaceCreateFromFileNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTypefaceCreateFromFileNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0200
+ * @tc.desc   test for testTypefaceCreateFromFileNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -158,13 +158,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileNormal, Function |
     OH_Drawing_TypefaceDestroy(typefaceFromFile2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0201
- * @tc.name: testTypefaceCreateFromFileNull
- * @tc.desc: test for testTypefaceCreateFromFileNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromFileNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0201
+ * @tc.desc   test for testTypefaceCreateFromFileNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
@@ -193,13 +193,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileNull, Function | S
     OH_Drawing_TypefaceDestroy(typefaceFromFile3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0300
- * @tc.name: testTypefaceCreateFromStreamNormal
- * @tc.desc: test for testTypefaceCreateFromStreamNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTypefaceCreateFromStreamNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0300
+ * @tc.desc   test for testTypefaceCreateFromStreamNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromStreamNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -224,13 +224,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromStreamNormal, Function
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0301
- * @tc.name: testTypefaceCreateFromStreamNull
- * @tc.desc: test for testTypefaceCreateFromStreamNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromStreamNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0301
+ * @tc.desc   test for testTypefaceCreateFromStreamNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromStreamNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
@@ -258,13 +258,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromStreamNull, Function |
     OH_Drawing_TypefaceDestroy(typeface3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0400
- * @tc.name: testTypefaceCreateDestroyNormal
- * @tc.desc: test for testTypefaceCreateDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTypefaceCreateDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0400
+ * @tc.desc   test for testTypefaceCreateDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDestroyNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_TypefaceCreateDefault
@@ -275,13 +275,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDestroyNormal, Function | 
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0401
- * @tc.name: testTypefaceCreateDestroyNull
- * @tc.desc: test for testTypefaceCreateDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0401
+ * @tc.desc   test for testTypefaceCreateDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TypefaceDestroy
@@ -290,13 +290,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateDestroyNull, Function | Sm
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0500
- * @tc.name: testTypefaceCreateFromFileWithArugumentsNormal
- * @tc.desc: test for testTypefaceCreateFromFileWithArugumentsNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTypefaceCreateFromFileWithArugumentsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0500
+ * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -316,13 +316,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsNorm
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0501
- * @tc.name: testTypefaceCreateFromFileWithArugumentsNull
- * @tc.desc: test for testTypefaceCreateFromFileWithArugumentsNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromFileWithArugumentsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0501
+ * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -346,13 +346,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsNull
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0502
- * @tc.name: testTypefaceCreateFromFileWithArugumentsAbnormal
- * @tc.desc: test for testTypefaceCreateFromFileWithArugumentsAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromFileWithArugumentsAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0502
+ * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -375,13 +375,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsAbno
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0503
- * @tc.name: testTypefaceCreateFromFileWithArugumentsMultipleCalls
- * @tc.desc: test for testTypefaceCreateFromFileWithArugumentsMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromFileWithArugumentsMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0503
+ * @tc.desc   test for testTypefaceCreateFromFileWithArugumentsMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -405,13 +405,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromFileWithArugumentsMult
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0600
- * @tc.name: testTypefaceCreateFromCurrentNormal
- * @tc.desc: test for testTypefaceCreateFromCurrentNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTypefaceCreateFromCurrentNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0600
+ * @tc.desc   test for testTypefaceCreateFromCurrentNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_TypefaceCreateFromFile
@@ -438,13 +438,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNormal, Functio
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0601
- * @tc.name: testTypefaceCreateFromCurrentNull
- * @tc.desc: test for testTypefaceCreateFromCurrentNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromCurrentNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0601
+ * @tc.desc   test for testTypefaceCreateFromCurrentNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TypefaceCreateFromFile
@@ -473,13 +473,13 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentNull, Function 
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0602
- * @tc.name: testTypefaceCreateFromCurrentMultipleCalls
- * @tc.desc: test for testTypefaceCreateFromCurrentMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTypefaceCreateFromCurrentMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0602
+ * @tc.desc   test for testTypefaceCreateFromCurrentMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TypefaceCreateFromFile
@@ -508,6 +508,131 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentMultipleCalls, 
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
+/**
+ * @tc.name   testTypefaceIsBoldNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0700
+ * @tc.desc   test for testTypefaceIsBoldNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsBoldNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isBold = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface1, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isBold, true);
+    errorCode = OH_Drawing_TypefaceIsBold(typeface2, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isBold, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsBoldNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0701
+ * @tc.desc   test for testTypefaceIsBoldNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsBoldNull, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isBold = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(nullptr, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isBold, false);
+    errorCode = OH_Drawing_TypefaceIsBold(typeface2, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isBold, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsBoldMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0702
+ * @tc.desc   test for testTypefaceIsBoldMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsBoldMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    bool isBold = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface, &isBold);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isBold, true);
+    }
+    OH_Drawing_TypefaceDestroy(typeface);
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0800
+ * @tc.desc   test for testTypefaceIsItalicNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsItalicNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface1, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isItalic, false);
+    errorCode = OH_Drawing_TypefaceIsItalic(typeface2, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isItalic, true);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0801
+ * @tc.desc   test for testTypefaceIsItalicNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsItalicNull, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(nullptr, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isItalic, false);
+    errorCode = OH_Drawing_TypefaceIsItalic(typeface2, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isItalic, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0802
+ * @tc.desc   test for testTypefaceIsItalicMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsItalicMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface, &isItalic);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isItalic, true);
+    }
+    OH_Drawing_TypefaceDestroy(typeface);
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

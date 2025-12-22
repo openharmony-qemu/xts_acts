@@ -56,10 +56,13 @@ export default function webViewOnInterceptReqOne() {
       done();
     })
 
-    /*
+    /**
+     * @tc.name   testOnInterceptRequest
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR2_API_0100
-     * @tc.name testOnInterceptRequest
-     * @tc.desc onInterceptRequest without setting webresourceresponse
+     * @tc.desc   onInterceptRequest without setting webresourceresponse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnInterceptRequest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const emitKey = "emitOnInterceptRequest";

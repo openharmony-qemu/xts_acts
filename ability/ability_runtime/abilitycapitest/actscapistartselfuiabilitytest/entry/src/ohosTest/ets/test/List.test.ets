@@ -21,6 +21,8 @@ import NdkGetChildArgsTest from './NdkGetChildArgsTest.test';
 import NdkStartSelfUIAbilityWithPidResultTest from './NdkStartSelfUIAbilityWithPidResult.test';
 import NdkApplicationContextGetVersionCodeTest from './NdkApplicationContextGetVersionCode.test';
 import NdkSetIsolationUidTest from './NdkSetIsolationUidTest.test';
+import NdkGetLogDirTest from './NdkGetLogDirTest.test';
+import NdkKillChildProcessTest from './NdkKillChildProcessTest.test';
 
 export default function testsuite() {
   NdkWantTest();
@@ -31,4 +33,6 @@ export default function testsuite() {
   NdkStartSelfUIAbilityWithPidResultTest();
   NdkApplicationContextGetVersionCodeTest();
   NdkSetIsolationUidTest();
+  NdkGetLogDirTest();
+  NdkKillChildProcessTest();
 }

@@ -17,7 +17,6 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level,
 
 describe('appInfoTest', function () {
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   app_info_test_001
      * @tc.number app_info_test_001
      * @tc.desc   app_info_test_001

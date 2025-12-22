@@ -191,12 +191,12 @@ export default function reflect7Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   reflect7Test001
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00100
-     * @tc.name reflect7Test001
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_1();
@@ -204,12 +204,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test002
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00200
-     * @tc.name reflect7Test002
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_2();
@@ -217,12 +217,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test003
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00300
-     * @tc.name reflect7Test003
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_3();
@@ -230,12 +230,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test004
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00400
-     * @tc.name reflect7Test004
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_4();
@@ -243,12 +243,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test005
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00500
-     * @tc.name reflect7Test005
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_5();
@@ -256,12 +256,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test006
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00600
-     * @tc.name reflect7Test006
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_6();
@@ -269,12 +269,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test007
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00700
-     * @tc.name reflect7Test007
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_7();
@@ -282,12 +282,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test008
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00800
-     * @tc.name reflect7Test008
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_8();
@@ -295,12 +295,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test009
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_00900
-     * @tc.name reflect7Test009
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_9();
@@ -308,12 +308,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test010
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01000
-     * @tc.name reflect7Test010
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_10();
@@ -321,12 +321,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test011
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01100
-     * @tc.name reflect7Test011
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_11();
@@ -334,12 +334,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test012
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01200
-     * @tc.name reflect7Test012
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_12();
@@ -347,12 +347,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test013
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01300
-     * @tc.name reflect7Test013
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_13();
@@ -360,12 +360,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test014
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01400
-     * @tc.name reflect7Test014
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_14();
@@ -373,12 +373,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test015
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01500
-     * @tc.name reflect7Test015
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_15();
@@ -386,12 +386,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test016
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01600
-     * @tc.name reflect7Test016
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_16();
@@ -399,12 +399,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test017
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01700
-     * @tc.name reflect7Test017
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_17();
@@ -412,12 +412,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test018
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01800
-     * @tc.name reflect7Test018
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_18();
@@ -425,12 +425,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test019
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_01900
-     * @tc.name reflect7Test019
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_19();
@@ -438,24 +438,24 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test020
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02000
-     * @tc.name reflect7Test020
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_20();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect7Test021
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02100
-     * @tc.name reflect7Test021
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_21();
@@ -463,12 +463,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test022
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02200
-     * @tc.name reflect7Test022
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_22();
@@ -476,12 +476,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test023
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02300
-     * @tc.name reflect7Test023
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_23();
@@ -489,12 +489,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test024
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02400
-     * @tc.name reflect7Test024
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_24();
@@ -502,12 +502,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test025
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02500
-     * @tc.name reflect7Test025
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_25();
@@ -515,12 +515,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test026
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02600
-     * @tc.name reflect7Test026
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_26();
@@ -528,12 +528,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test027
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02700
-     * @tc.name reflect7Test027
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_27();
@@ -541,12 +541,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test028
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02800
-     * @tc.name reflect7Test028
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_28();
@@ -554,12 +554,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test029
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_02900
-     * @tc.name reflect7Test029
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_29();
@@ -567,12 +567,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test030
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03000
-     * @tc.name reflect7Test030
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_30();
@@ -580,12 +580,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test031
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03100
-     * @tc.name reflect7Test031
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_31();
@@ -593,12 +593,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test032
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03200
-     * @tc.name reflect7Test032
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_32();
@@ -606,12 +606,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test033
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03300
-     * @tc.name reflect7Test033
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_33();
@@ -619,12 +619,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test034
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03400
-     * @tc.name reflect7Test034
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_34();
@@ -632,12 +632,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test035
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03500
-     * @tc.name reflect7Test035
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_35();
@@ -645,12 +645,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test036
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03600
-     * @tc.name reflect7Test036
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_36();
@@ -658,12 +658,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test037
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03700
-     * @tc.name reflect7Test037
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_37();
@@ -671,12 +671,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test038
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03800
-     * @tc.name reflect7Test038
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_38();
@@ -684,12 +684,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test039
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_03900
-     * @tc.name reflect7Test039
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_39();
@@ -697,24 +697,24 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test040
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04000
-     * @tc.name reflect7Test040
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_40();
       expect(result).assertFalse();
     });
     /**
+     * @tc.name   reflect7Test041
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04100
-     * @tc.name reflect7Test041
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_41();
@@ -722,12 +722,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test042
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04200
-     * @tc.name reflect7Test042
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_42();
@@ -735,12 +735,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test043
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04300
-     * @tc.name reflect7Test043
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_43();
@@ -748,12 +748,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test044
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04400
-     * @tc.name reflect7Test044
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_44();
@@ -761,12 +761,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test045
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04500
-     * @tc.name reflect7Test045
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_45();
@@ -774,12 +774,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test046
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04600
-     * @tc.name reflect7Test046
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_46();
@@ -787,12 +787,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test047
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04700
-     * @tc.name reflect7Test047
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_47();
@@ -800,12 +800,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test048
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04800
-     * @tc.name reflect7Test048
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_48();
@@ -813,12 +813,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test049
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_04900
-     * @tc.name reflect7Test049
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_49();
@@ -826,12 +826,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test050
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05000
-     * @tc.name reflect7Test050
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_50();
@@ -839,12 +839,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test051
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05100
-     * @tc.name reflect7Test051
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_51();
@@ -852,12 +852,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test052
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05200
-     * @tc.name reflect7Test052
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_52();
@@ -865,12 +865,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test053
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05300
-     * @tc.name reflect7Test053
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_53();
@@ -878,12 +878,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test054
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05400
-     * @tc.name reflect7Test054
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_54();
@@ -891,12 +891,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test055
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05500
-     * @tc.name reflect7Test055
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_55();
@@ -904,12 +904,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test057
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05700
-     * @tc.name reflect7Test057
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_57();
@@ -917,12 +917,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test058
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05800
-     * @tc.name reflect7Test058
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_58();
@@ -930,12 +930,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test059
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_05900
-     * @tc.name reflect7Test059
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_59();
@@ -943,24 +943,24 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test060
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06000
-     * @tc.name reflect7Test060
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = test_getPrototypeOf_60();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect7Test061
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06100
-     * @tc.name reflect7Test061
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_61();
@@ -968,12 +968,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test062
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06200
-     * @tc.name reflect7Test062
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_62();
@@ -981,12 +981,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test063
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06300
-     * @tc.name reflect7Test063
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_63();
@@ -994,12 +994,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test064
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06400
-     * @tc.name reflect7Test064
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_64();
@@ -1007,12 +1007,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test065
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06500
-     * @tc.name reflect7Test065
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_65();
@@ -1020,12 +1020,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test066
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06600
-     * @tc.name reflect7Test066
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_66();
@@ -1033,12 +1033,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test067
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06700
-     * @tc.name reflect7Test067
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_67();
@@ -1046,12 +1046,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test068
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06800
-     * @tc.name reflect7Test068
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_68();
@@ -1059,12 +1059,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test069
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_06900
-     * @tc.name reflect7Test069
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_69();
@@ -1072,12 +1072,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test070
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07000
-     * @tc.name reflect7Test070
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_70();
@@ -1085,12 +1085,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test071
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07100
-     * @tc.name reflect7Test071
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_71();
@@ -1098,12 +1098,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test072
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07200
-     * @tc.name reflect7Test072
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_72();
@@ -1111,12 +1111,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test073
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07300
-     * @tc.name reflect7Test073
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_73();
@@ -1124,12 +1124,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test074
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07400
-     * @tc.name reflect7Test074
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_74();
@@ -1137,12 +1137,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test075
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07500
-     * @tc.name reflect7Test075
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_75();
@@ -1150,12 +1150,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test076
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07600
-     * @tc.name reflect7Test076
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_76();
@@ -1163,12 +1163,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test077
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07700
-     * @tc.name reflect7Test077
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_77();
@@ -1176,12 +1176,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test078
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07800
-     * @tc.name reflect7Test078
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_78();
@@ -1189,12 +1189,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test079
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_07900
-     * @tc.name reflect7Test079
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_79();
@@ -1202,24 +1202,24 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test080
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08000
-     * @tc.name reflect7Test080
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_80();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect7Test081
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08100
-     * @tc.name reflect7Test081
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_81();
@@ -1227,12 +1227,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test082
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08200
-     * @tc.name reflect7Test082
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_82();
@@ -1240,12 +1240,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test083
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08300
-     * @tc.name reflect7Test083
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_83();
@@ -1253,12 +1253,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test084
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08400
-     * @tc.name reflect7Test084
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_84();
@@ -1266,12 +1266,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test085
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08500
-     * @tc.name reflect7Test085
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_85();
@@ -1279,12 +1279,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test086
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08600
-     * @tc.name reflect7Test086
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_86();
@@ -1292,12 +1292,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test087
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08700
-     * @tc.name reflect7Test087
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_87();
@@ -1305,12 +1305,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test088
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08800
-     * @tc.name reflect7Test088
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = test_getPrototypeOf_88();
@@ -1318,12 +1318,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test089
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_08900
-     * @tc.name reflect7Test089
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_89();
@@ -1331,12 +1331,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test090
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09000
-     * @tc.name reflect7Test090
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_90();
@@ -1344,12 +1344,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test091
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09100
-     * @tc.name reflect7Test091
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_91();
@@ -1357,12 +1357,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test092
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09200
-     * @tc.name reflect7Test092
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_92();
@@ -1370,12 +1370,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test093
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09300
-     * @tc.name reflect7Test093
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_93();
@@ -1383,12 +1383,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test094
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09400
-     * @tc.name reflect7Test094
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_94();
@@ -1396,12 +1396,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test095
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09500
-     * @tc.name reflect7Test095
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_95();
@@ -1409,12 +1409,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test096
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09600
-     * @tc.name reflect7Test096
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_96();
@@ -1422,12 +1422,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test097
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09700
-     * @tc.name reflect7Test097
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_97();
@@ -1435,12 +1435,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test098
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09800
-     * @tc.name reflect7Test098
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_98();
@@ -1448,12 +1448,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test099
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_09900
-     * @tc.name reflect7Test099
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_99();
@@ -1461,24 +1461,24 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test100
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10000
-     * @tc.name reflect7Test100
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_100();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect7Test101
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10100
-     * @tc.name reflect7Test101
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_101();
@@ -1486,12 +1486,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test102
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10200
-     * @tc.name reflect7Test102
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_102();
@@ -1499,12 +1499,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test103
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10300
-     * @tc.name reflect7Test103
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_103();
@@ -1512,12 +1512,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test104
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10400
-     * @tc.name reflect7Test104
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_104();
@@ -1525,12 +1525,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test105
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10500
-     * @tc.name reflect7Test105
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_105();
@@ -1538,12 +1538,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test106
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10600
-     * @tc.name reflect7Test106
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_106();
@@ -1551,12 +1551,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test107
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10700
-     * @tc.name reflect7Test107
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_107();
@@ -1564,12 +1564,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test108
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10800
-     * @tc.name reflect7Test108
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_108();
@@ -1577,12 +1577,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test109
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_10900
-     * @tc.name reflect7Test109
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_109();
@@ -1590,12 +1590,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test110
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11000
-     * @tc.name reflect7Test110
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_110();
@@ -1603,12 +1603,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test111
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11100
-     * @tc.name reflect7Test111
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_111();
@@ -1616,12 +1616,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test112
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11200
-     * @tc.name reflect7Test112
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_112();
@@ -1629,12 +1629,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test113
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11300
-     * @tc.name reflect7Test113
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_113();
@@ -1642,12 +1642,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test114
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11400
-     * @tc.name reflect7Test114
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_114();
@@ -1655,12 +1655,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test115
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11500
-     * @tc.name reflect7Test115
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_115();
@@ -1668,12 +1668,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test116
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11600
-     * @tc.name reflect7Test116
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_116();
@@ -1681,12 +1681,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test117
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11700
-     * @tc.name reflect7Test117
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_117();
@@ -1694,12 +1694,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test118
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11800
-     * @tc.name reflect7Test118
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_118();
@@ -1707,12 +1707,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test119
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_11900
-     * @tc.name reflect7Test119
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_119();
@@ -1720,12 +1720,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test120
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12000
-     * @tc.name reflect7Test120
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_120();
@@ -1733,12 +1733,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test124
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12400
-     * @tc.name reflect7Test124
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_124();
@@ -1746,24 +1746,24 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test125
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12500
-     * @tc.name reflect7Test125
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_125();
       expect(result).assertTrue();
     });
     /**
+     * @tc.name   reflect7Test126
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12600
-     * @tc.name reflect7Test126
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_126();
@@ -1771,12 +1771,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test127
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12700
-     * @tc.name reflect7Test127
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_127();
@@ -1784,12 +1784,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test128
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12800
-     * @tc.name reflect7Test128
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_128();
@@ -1797,12 +1797,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test129
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_12900
-     * @tc.name reflect7Test129
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_129();
@@ -1810,12 +1810,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test130
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13000
-     * @tc.name reflect7Test130
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_130();
@@ -1823,12 +1823,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test131
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13100
-     * @tc.name reflect7Test131
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_131();
@@ -1836,12 +1836,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test132
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13200
-     * @tc.name reflect7Test132
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_132();
@@ -1849,12 +1849,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test133
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13300
-     * @tc.name reflect7Test133
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_133();
@@ -1862,12 +1862,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test134
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13400
-     * @tc.name reflect7Test134
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_134();
@@ -1875,12 +1875,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test135
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13500
-     * @tc.name reflect7Test135
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_135();
@@ -1888,12 +1888,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test136
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13600
-     * @tc.name reflect7Test136
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_136();
@@ -1901,12 +1901,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test137
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13700
-     * @tc.name reflect7Test137
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_137();
@@ -1914,12 +1914,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test138
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13800
-     * @tc.name reflect7Test138
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_138();
@@ -1927,12 +1927,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test139
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_13900
-     * @tc.name reflect7Test139
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_139();
@@ -1940,12 +1940,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test140
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14000
-     * @tc.name reflect7Test140
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_140();
@@ -1953,12 +1953,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test141
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14100
-     * @tc.name reflect7Test141
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_141();
@@ -1966,12 +1966,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test142
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14200
-     * @tc.name reflect7Test142
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_142();
@@ -1979,12 +1979,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test143
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14300
-     * @tc.name reflect7Test143
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_143();
@@ -1992,12 +1992,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test144
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14400
-     * @tc.name reflect7Test144
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_144();
@@ -2005,12 +2005,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test145
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14500
-     * @tc.name reflect7Test145
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_145();
@@ -2018,12 +2018,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test146
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14600
-     * @tc.name reflect7Test146
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_146();
@@ -2031,12 +2031,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test147
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14700
-     * @tc.name reflect7Test147
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_147();
@@ -2044,12 +2044,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test148
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14800
-     * @tc.name reflect7Test148
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_148();
@@ -2057,12 +2057,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test149
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_14900
-     * @tc.name reflect7Test149
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_149();
@@ -2070,12 +2070,12 @@ export default function reflect7Test() {
     });
 
     /**
+     * @tc.name   reflect7Test150
      * @tc.number SUB_BUILTINS_REFLECT7_TEST_15000
-     * @tc.name reflect7Test150
-     * @tc.desc test reflect getPrototypeOf
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test reflect getPrototypeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('reflect7Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result = test_getPrototypeOf_150();

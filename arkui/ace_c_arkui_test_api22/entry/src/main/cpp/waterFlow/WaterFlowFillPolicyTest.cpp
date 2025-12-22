@@ -59,11 +59,18 @@ napi_value WaterFlowTest::WaterFlowFillPolicyTest(napi_env env, napi_callback_in
     btn2->RegisterOnClick([waterFlow]() {
         waterFlow->SetColumnsTemplate(PARAM_2);
     });
+    auto btn3 = std::make_shared<ButtonComponent>();
+    btn3->SetLabel("-1");
+    btn3->SetId("btn3");
+    btn3->RegisterOnClick([waterFlow]() {
+        waterFlow->SetColumnsTemplate(PARAM_NEGATIVE_1);
+    });
     auto column = new ColumnComponent();
     auto row = std::make_shared<RowComponent>();
     row->AddChild(btn);
     row->AddChild(btn1);
     row->AddChild(btn2);
+    row->AddChild(btn3);
     column->AddChild(row);
     column->AddChild(waterFlow);
 

@@ -20,10 +20,11 @@
 #include <iostream>
 
 const int COUNT = 0;
+const int ERRORCODE = 401;
 
-static void AddStringProperty(napi_env env, napi_value array, size_t* index,
-                              OH_NativeBundle_AbilityResourceInfo* module,
-                              BundleManager_ErrorCode (*getter)(OH_NativeBundle_AbilityResourceInfo*, char**))
+static void AddStringProperty(napi_env env, napi_value array, size_t *index,
+                              OH_NativeBundle_AbilityResourceInfo *module,
+                              BundleManager_ErrorCode (*getter)(OH_NativeBundle_AbilityResourceInfo *, char **))
 {
     char *str = nullptr;
     getter(module, &str);
@@ -36,16 +37,17 @@ static void AddStringProperty(napi_env env, napi_value array, size_t* index,
     }
     napi_set_element(env, array, (*index)++, strValue);
 }
-static napi_value ProcessMatchingModule(napi_env env, OH_NativeBundle_AbilityResourceInfo *modules, size_t moduleCount)
+static napi_value ProcessMatchingModule(napi_env env, OH_NativeBundle_AbilityResourceInfo *modules,
+                                        size_t moduleCount)
 {
-    const char* targetBundleName = "com.acts.getabilityresourceinfo";
+    const char *targetBundleName = "com.acts.getabilityresourceinfo";
     size_t nativeBundleSize = OH_NativeBundle_GetSize();
 
     for (size_t i = 0; i < moduleCount; i++) {
         auto module = (OH_NativeBundle_AbilityResourceInfo *)((char *)modules + nativeBundleSize * i);
         char *currentBundleName = nullptr;
         OH_NativeBundle_GetBundleName(module, &currentBundleName);
-        
+
         if (currentBundleName && strcmp(currentBundleName, targetBundleName) == 0) {
             napi_value moduleArray;
             napi_create_array(env, &moduleArray);
@@ -128,7 +130,7 @@ static napi_value GetAbilityResourceInfo(napi_env env, napi_callback_info info)
     size_t moduleCount = 0;
     OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
     BundleManager_ErrorCode ret = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
-    
+
     std::cout << "OH_NativeBundle_GetAbilityResourceInfo returned moduleCount: " << moduleCount << std::endl;
 
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
@@ -144,135 +146,382 @@ static napi_value GetAbilityResourceInfo(napi_env env, napi_callback_info info)
 
     // Call processing function
     napi_value result = ProcessMatchingModule(env, modules, moduleCount);
-    
+
     OH_AbilityResourceInfo_Destroy(modules, moduleCount);
     return result;
 }
 static napi_value GetBundleNameErrorTest(napi_env env, napi_callback_info info)
 {
-    char *bundleName = nullptr;
-    BundleManager_ErrorCode ret = OH_NativeBundle_GetBundleName(nullptr, &bundleName);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    char *bundleName = nullptr;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_GetBundleName(nullptr, &bundleName);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_GetBundleName(modules, &bundleName);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value GetModuleNameErrorTest(napi_env env, napi_callback_info info)
 {
-    char *moduleName = nullptr;
-    BundleManager_ErrorCode ret = OH_NativeBundle_GetModuleName(nullptr, &moduleName);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    char *moduleName = nullptr;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_GetModuleName(nullptr, &moduleName);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_GetModuleName(modules, &moduleName);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value GetAbilityNameErrorTest(napi_env env, napi_callback_info info)
 {
-    char *abilityName = nullptr;
-    BundleManager_ErrorCode ret = OH_NativeBundle_GetAbilityName(nullptr, &abilityName);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    char *abilityName = nullptr;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_GetAbilityName(nullptr, &abilityName);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_GetAbilityName(modules, &abilityName);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value GetLabelErrorTest(napi_env env, napi_callback_info info)
 {
-    char *label = nullptr;
-    BundleManager_ErrorCode ret = OH_NativeBundle_GetLabel(nullptr, &label);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    char *label = nullptr;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_GetLabel(nullptr, &label);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_GetLabel(modules, &label);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value GetAppIndexErrorTest(napi_env env, napi_callback_info info)
 {
-    int appIndex = -1;
-    BundleManager_ErrorCode ret = OH_NativeBundle_GetAppIndex(nullptr, &appIndex);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    int appIndex = -1;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_GetAppIndex(nullptr, &appIndex);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_GetAppIndex(modules, &appIndex);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value CheckDefaultAppErrorTest(napi_env env, napi_callback_info info)
 {
-    bool isDefaultApp = false;
-    BundleManager_ErrorCode ret = OH_NativeBundle_CheckDefaultApp(nullptr, &isDefaultApp);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    bool isDefaultApp = false;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_CheckDefaultApp(nullptr, &isDefaultApp);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_CheckDefaultApp(modules, &isDefaultApp);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value GetDrawableDescriptorErrorTest(napi_env env, napi_callback_info info)
 {
-    ArkUI_DrawableDescriptor *rawDrawable = nullptr;
-    BundleManager_ErrorCode ret = OH_NativeBundle_GetDrawableDescriptor(nullptr, &rawDrawable);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    ArkUI_DrawableDescriptor *rawDrawable = nullptr;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_NativeBundle_GetDrawableDescriptor(nullptr, &rawDrawable);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_NativeBundle_GetDrawableDescriptor(modules, &rawDrawable);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
-
     return result;
 }
 static napi_value AbilityResourceInfoDestroyErrorTest(napi_env env, napi_callback_info info)
 {
-    BundleManager_ErrorCode ret = OH_AbilityResourceInfo_Destroy(nullptr, COUNT);
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    BundleManager_ErrorCode ret;
+
+    if (valuetype == napi_null) {
+        ret = OH_AbilityResourceInfo_Destroy(nullptr, COUNT);
+    } else if (valuetype == napi_string) {
+        char fileType[256] = {0};
+        size_t strLen;
+        status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "Failed to get fileType string");
+            return nullptr;
+        }
+        size_t moduleCount = 0;
+        BundleManager_ErrorCode code = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+        if (code == BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED) {
+            napi_throw_error(env, "201", "BUNDLE_MANAGER_ERROR_CODE_PERMISSION_DENIED");
+            return nullptr;
+        }
+        ret = OH_AbilityResourceInfo_Destroy(modules, moduleCount);
+    } else {
+        napi_throw_error(env, nullptr, "Argument must be string or null");
+        return nullptr;
+    }
     napi_value result;
     if (ret == BUNDLE_MANAGER_ERROR_CODE_PARAM_INVALID) {
-        // Return error code 401
-        napi_create_int32(env, 401, &result);
-    } else {
-        // Return 0 for all other cases
+        napi_create_int32(env, ERRORCODE, &result);
+    } else if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
         napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
     }
+    return result;
+}
+static napi_value GetAbilityResourceErrorTest(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1];
+    napi_status status;
 
+    status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype;
+    status = napi_typeof(env, args[0], &valuetype);
+    char fileType[256] = {0};
+    size_t strLen;
+    status = napi_get_value_string_utf8(env, args[0], fileType, sizeof(fileType) - 1, &strLen);
+    OH_NativeBundle_AbilityResourceInfo *modules = nullptr;
+    size_t moduleCount = 0;
+    BundleManager_ErrorCode ret = OH_NativeBundle_GetAbilityResourceInfo(fileType, &modules, &moduleCount);
+    napi_value result;
+    if (ret == BUNDLE_MANAGER_ERROR_CODE_NO_ERROR) {
+        napi_create_int32(env, 0, &result);
+    } else {
+        napi_create_int32(env, ret, &result);
+    }
     return result;
 }
 
@@ -287,11 +536,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"getLabelTest", nullptr, GetLabelErrorTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getAppIndexTest", nullptr, GetAppIndexErrorTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"checkDefaultAppTest", nullptr, CheckDefaultAppErrorTest, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"getDrawableDescriptorTest", nullptr, GetDrawableDescriptorErrorTest, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+        {"getDrawableDescriptorTest", nullptr, GetDrawableDescriptorErrorTest, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"abilityResourceInfoDestroyTest", nullptr, AbilityResourceInfoDestroyErrorTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-    };
+        {"getAbilityResourceErrorTest", nullptr, GetAbilityResourceErrorTest, nullptr, nullptr, nullptr, napi_default,
+         nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

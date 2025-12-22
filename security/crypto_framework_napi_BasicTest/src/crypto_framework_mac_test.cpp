@@ -202,14 +202,6 @@ MacSpec g_macSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkMacNapiTest, MAC_TEST, ::testing::ValuesIn(g_macSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0100
-* @tc.name OHCryptoFrameworkMacNapiTest/MAC_TEST.SUB_Security_CryptoFramework_NAPI_Mac_Test_0100/x
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MAC_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Test_0100, TestSize.Level0)
 {
     MacSpec macInfo = GetParam();
@@ -241,14 +233,6 @@ HWTEST_P(MAC_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Test_0100, TestSize.Lev
     OH_CryptoMac_Destroy(ctx);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0200
-* @tc.name OHCryptoFrameworkMacNapiTest/MAC_TEST.SUB_Security_CryptoFramework_NAPI_Mac_Test_0200/x
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MAC_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Test_0200, TestSize.Level0)
 {
     MacSpec macInfo = GetParam();
@@ -281,13 +265,13 @@ HWTEST_P(MAC_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Test_0200, TestSize.Lev
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0300
-* @tc.name OHCryptoFrameworkMacNapiTest.SUB_Security_CryptoFramework_NAPI_Mac_Test_0300
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0300
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_0300, TestSize.Level0)
 {
     OH_CryptoMac *ctx = nullptr;
@@ -302,14 +286,6 @@ HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Tes
     OH_CryptoMac_Destroy(ctx);
 }
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0400
-* @tc.name OHCryptoFrameworkMacNapiTest/MAC_TEST.SUB_Security_CryptoFramework_NAPI_Mac_Test_0400/x
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MAC_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Test_0400, TestSize.Level0)
 {
     MacSpec macInfo = GetParam();
@@ -336,13 +312,13 @@ HWTEST_P(MAC_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Test_0400, TestSize.Lev
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0500
-* @tc.name OHCryptoFrameworkMacNapiTest.SUB_Security_CryptoFramework_NAPI_Mac_Test_0500
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_0500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0500
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_0500, TestSize.Level0)
 {
     OH_CryptoMac *ctx = nullptr;
@@ -358,13 +334,13 @@ HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0600
-* @tc.name OHCryptoFrameworkMacNapiTest.SUB_Security_CryptoFramework_NAPI_Mac_Test_0600
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_0600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0600
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_0600, TestSize.Level0)
 {
     MacSpec macInfo = {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA1", .paramType.degistName = "SHA1"};
@@ -388,13 +364,13 @@ HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0700
-* @tc.name OHCryptoFrameworkMacNapiTest.SUB_Security_CryptoFramework_NAPI_Mac_Test_0700
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_0700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0700
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_0700, TestSize.Level0)
 {
     MacSpec macInfo = {.type = OHTEST_MAC_CMAC, .algoKeyName = "AES128", .paramType.cipherName = "AES128"};
@@ -416,13 +392,13 @@ HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0800
-* @tc.name OHCryptoFrameworkMacNapiTest.SUB_Security_CryptoFramework_NAPI_Mac_Test_0800
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_0800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0800
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_0800, TestSize.Level0)
 {
     MacSpec macInfo = {.type = OHTEST_MAC_CMAC, .algoKeyName = "AES128", .paramType.cipherName = "AES128"};
@@ -438,13 +414,13 @@ HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0900
-* @tc.name OHCryptoFrameworkMacNapiTest.SUB_Security_CryptoFramework_NAPI_Mac_Test_0900
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Mac_Test_0900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Test_0900
+ * @tc.desc   algorithm is Mac
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkMacNapiTest, SUB_Security_CryptoFramework_NAPI_Mac_Test_0900, TestSize.Level0)
 {
     MacSpec macInfo = {.type = OHTEST_MAC_HMAC, .algoKeyName = "HMAC|SHA1", .paramType.degistName = "SHA1"};
@@ -647,14 +623,6 @@ static VectorMacSpec g_vectors[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkMacNapiTest, MAC_VECTOR_TEST, ::testing::ValuesIn(g_vectors));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Mac_Vector_Test_0100
-* @tc.name OHCryptoFrameworkMacNapiTest/MAC_VECTOR_TEST.SUB_Security_CryptoFramework_NAPI_Mac_Vector_Test_0100/x
-* @tc.desc algorithm is Mac
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(MAC_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Mac_Vector_Test_0100, TestSize.Level0)
 {
     VectorMacSpec macInfo = GetParam();

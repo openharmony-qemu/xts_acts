@@ -67,7 +67,7 @@ export default function imageAnimatorImageFrameInfoTest() {
 
     /**
      * @tc.name   testImageAniMatorImageFramelnfo004
-     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FRAMEINFO_0140
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FRAMEINFO_0400
      * @tc.desc   testing testImageAnimator interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,6 +75,32 @@ export default function imageAnimatorImageFrameInfoTest() {
      */
     it('testImageAniMatorImageFramelnfo004', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testImageAniMatorImageFramelnfo004()).assertEqual(1)
+        done()
+    })
+
+    /**
+     * @tc.name   testImageAniMatorImageFramelnfo005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FRAMEINFO_0500
+     * @tc.desc   testing testImageAnimator interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testImageAniMatorImageFramelnfo005', Level.LEVEL1, async (done: Function) => {
+        expect(nativeFunc.testImageAniMatorImageFramelnfo005()).assertEqual(0)
+        done()
+    })
+
+    /**
+     * @tc.name   testImageAniMatorImageFramelnfo006
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FRAMEINFO_0600
+     * @tc.desc   testing testImageAnimator interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testImageAniMatorImageFramelnfo006', Level.LEVEL1, async (done: Function) => {
+        expect(nativeFunc.testImageAniMatorImageFramelnfo006()).assertEqual(0)
         done()
     })
   })

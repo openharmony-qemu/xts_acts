@@ -22,12 +22,12 @@ export default function HidebugCTest() {
 describe('HidebugCTest', function () {
 
     /**
+     * @tc.name   testHiDebugC01
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_0100
-     * @tc.name testHiDebugC01
-     * @tc.desc 验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-C接口-OH_HiDebug_GetAppNativeMemInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-C接口-OH_HiDebug_GetAppNativeMemInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiDebugC01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         try {
@@ -49,12 +49,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC02
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_0200
-     * @tc.name testHiDebugC02
-     * @tc.desc 验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-C接口-OH_HiDebug_GetAppNativeMemInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的RSS、PSS、VSS内存、共享脏内存、私有脏内存的能力-C接口-OH_HiDebug_GetAppNativeMemInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -79,12 +79,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC03
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_0300
-     * @tc.name testHiDebugC03
-     * @tc.desc 验证获取应用的virtual memory、resident set size限制阈值的能力-C接口-OH_HiDebug_GetAppMemoryLimit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的virtual memory、resident set size限制阈值的能力-C接口-OH_HiDebug_GetAppMemoryLimit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -102,12 +102,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC04
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_0400
-     * @tc.name testHiDebugC04
-     * @tc.desc 验证获取应用的Shared Clean、Private Clean的能力-C接口-getAppNativeMemInfo
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用的Shared Clean、Private Clean的能力-C接口-getAppNativeMemInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -125,12 +125,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC05
      * @tc.number SUB_DFX_DFT_HiDebug_CPU_C_0100
-     * @tc.name testHiDebugC05
-     * @tc.desc 验证获取系统CPU使用率的能力-C接口-OH_HiDebug_GetSystemCpuUsage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取系统CPU使用率的能力-C接口-OH_HiDebug_GetSystemCpuUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -154,12 +154,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC06
      * @tc.number SUB_DFX_DFT_HiDebug_CPU_C_0200
-     * @tc.name testHiDebugC06
-     * @tc.desc 验证获取应用线程CPU使用率的能力-ts接口-OH_HiDebug_GetAppThreadCpuUsage、OH_HiDebug_FreeThreadCpuUsage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用线程CPU使用率的能力-ts接口-OH_HiDebug_GetAppThreadCpuUsage、OH_HiDebug_FreeThreadCpuUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -181,12 +181,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC07
      * @tc.number SUB_DFX_DFT_HiDebug_CPU_C_0300
-     * @tc.name testHiDebugC07
-     * @tc.desc 验证获取应用进程CPU使用率的能力-C接口-GetAppCpuUsage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证获取应用进程CPU使用率的能力-C接口-GetAppCpuUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -206,12 +206,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC08
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0100
-     * @tc.name testHiDebugC08
-     * @tc.desc 验证应用内动态启停采集应用trace-C接口-OH_HiDebug_StartAppTraceCapture-HIDEBUG_TRACE_FLAG_MAIN_THREAD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-C接口-OH_HiDebug_StartAppTraceCapture-HIDEBUG_TRACE_FLAG_MAIN_THREAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -238,12 +238,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC09
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0200
-     * @tc.name testHiDebugC09
-     * @tc.desc 验证应用内动态启停采集应用trace-C接口-OH_HiDebug_StartAppTraceCapture-HIDEBUG_TRACE_FLAG_ALL_THREADS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-C接口-OH_HiDebug_StartAppTraceCapture-HIDEBUG_TRACE_FLAG_ALL_THREADS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -261,12 +261,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC10
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0300
-     * @tc.name testHiDebugC10
-     * @tc.desc 验证应用内动态启停采集应用trace-C-tag无效，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-C-tag无效，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -282,12 +282,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC11
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0400
-     * @tc.name testHiDebugC11
-     * @tc.desc 验证应用内动态启停采集应用trace-C-limitSize小于1bytes，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-C-limitSize小于1bytes，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -303,12 +303,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC12
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0500
-     * @tc.name testHiDebugC12
-     * @tc.desc 验证应用内动态启停采集应用trace-C-flag无效，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内动态启停采集应用trace-C-flag无效，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -324,12 +324,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC13
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0600
-     * @tc.name testHiDebugC13
-     * @tc.desc 验证应用内重复开始采集应用trace-C，返回错误码11400102
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用内重复开始采集应用trace-C，返回错误码11400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -347,12 +347,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC14
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0700
-     * @tc.name testHiDebugC14
-     * @tc.desc 验证应用在没有采集任务的情况下停止采集应用trace-C，返回错误码11400105
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证应用在没有采集任务的情况下停止采集应用trace-C，返回错误码11400105
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -368,12 +368,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC15
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_0800
-     * @tc.name testHiDebugC15
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemory
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
@@ -388,14 +388,14 @@ describe('HidebugCTest', function () {
         }
     })
 
-    /**
-     * @tc.number SUB_DFX_DFT_Trace_Collect_C_0900
-     * @tc.name testHiDebugC16
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemory传入一个指向数组的指针
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
-     */
+      /**
+       * @tc.name   testHiDebugC16
+       * @tc.number SUB_DFX_DFT_Trace_Collect_C_0900
+       * @tc.desc   验证OH_HiDebug_GetGraphicsMemory传入一个指向数组的指针
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('testHiDebugC16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {
             let errCode = testNapi.getGraphicsMemoryArray();
@@ -410,12 +410,12 @@ describe('HidebugCTest', function () {
     })
 
     /**
+     * @tc.name   testHiDebugC17
      * @tc.number SUB_DFX_DFT_Trace_Collect_C_1100
-     * @tc.name testHiDebugC17
-     * @tc.desc 验证OH_HiDebug_GetGraphicsMemory空指针NULL，返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证OH_HiDebug_GetGraphicsMemory空指针NULL，返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHiDebugC17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         try {

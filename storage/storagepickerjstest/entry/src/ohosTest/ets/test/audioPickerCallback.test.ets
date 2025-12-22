@@ -120,12 +120,12 @@ export default function audioPickerCallback(abilityContext: Context) {
     });
 
     /**
-     * @tc.number   : SUB_STORAGE_AUDIOPICKER_SELECT_CALLBACK_0000
-     * @tc.name   : test_Audiopicker_Select_Callback_000
-     * @tc.desc   : select with option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Audiopicker_Select_Callback_000
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SELECT_CALLBACK_0000
+     * @tc.desc   select with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Audiopicker_Select_Callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Audiopicker_Select_Callback_000";
@@ -135,12 +135,12 @@ export default function audioPickerCallback(abilityContext: Context) {
       await selectWithOption(testNum, done, option, dirName, fileName);
     });
     /**
-     * @tc.number   : SUB_STORAGE_AUDIOPICKER_SELECT_CALLBACK_0100
-     * @tc.name   : test_Audiopicker_Select_Callback_001
-     * @tc.desc   : select without option
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 3
+     * @tc.name   test_Audiopicker_Select_Callback_001
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SELECT_CALLBACK_0100
+     * @tc.desc   select without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Audiopicker_Select_Callback_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Audiopicker_Select_Callback_001";
@@ -149,12 +149,12 @@ export default function audioPickerCallback(abilityContext: Context) {
       await select(testNum, done, dirName, fileName);
     });
     /**
-     * @tc.number   : SUB_STORAGE_AUDIOPICKER_SAVE_CALLBACK_0000
-     * @tc.name   : test_Audiopicker_Save_Callback_000
-     * @tc.desc   : save mp3 in Audios
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Audiopicker_Save_Callback_000
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_CALLBACK_0000
+     * @tc.desc   save mp3 in Audios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Audiopicker_Save_Callback_000", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Audiopicker_Save_Callback_000";
@@ -164,12 +164,12 @@ export default function audioPickerCallback(abilityContext: Context) {
       await saveWithOption(testNum, done, option, saveDir);
     });
     /**
-     * @tc.number   : SUB_STORAGE_AUDIOPICKER_SAVE_CALLBACK_0100
-     * @tc.name   : test_Audiopicker_Save_Callback_001
-     * @tc.desc   : save without option, cancel
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level   : Level 0
+     * @tc.name   test_Audiopicker_Save_Callback_001
+     * @tc.number SUB_STORAGE_AUDIOPICKER_SAVE_CALLBACK_0100
+     * @tc.desc   save without option, cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Audiopicker_Save_Callback_001", Level.LEVEL0, async (done: Function) => {
       let testNum = "test_Audiopicker_Save_Callback_001";

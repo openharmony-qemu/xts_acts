@@ -16,7 +16,6 @@ import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { beforeAll, beforeEach, describe, it, Level, Size, TestType, afterEach } from '../../../hypium/index';
 import Utils from './Util.test';
-import { sendEventByKey } from '@internal.full.global';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
@@ -60,13 +59,13 @@ export default function HitTest() {
     })
 
 
-    /*
-     * @tc.number     : getLastHitTest001
-     * @tc.name       : getLastHitTestStatic001
-     * @tc.desc       : test getLastHitTest001
-     * @tc.size       : getLastHitTest001
-     * @tc.type       : FunctgetLastHitTest001ion
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   getLastHitTestStatic001
+     * @tc.number getLastHitTest001
+     * @tc.desc   test getLastHitTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getLastHitTestStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

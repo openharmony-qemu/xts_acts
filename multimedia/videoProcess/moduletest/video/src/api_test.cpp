@@ -24,6 +24,7 @@
 #include "iconsumer_surface.h"
 #include "surface/window.h"
 #include "nocopyable.h"
+#include "native_avformat.h"
 using namespace std;
 using namespace OHOS;
 using namespace testing::ext;
@@ -112,9 +113,12 @@ static void OnNewOutputBufferCallback(OH_VideoProcessing* videoProcessor, uint32
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0010
- * @tc.name      : first call OH_VideoProcessing_InitializeEnvironment
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0010
+ * @tc.number VPE_VIDEO_API_TEST_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0010, TestSize.Level0)
 {
@@ -124,9 +128,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0010, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0020
- * @tc.name      : first call OH_VideoProcessing_DeinitializeEnvironment
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0020
+ * @tc.number VPE_VIDEO_API_TEST_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0020, TestSize.Level0)
 {
@@ -135,9 +142,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0020, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0030
- * @tc.name      : call OH_VideoProcessing_DeinitializeEnvironment after initialize
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0030
+ * @tc.number VPE_VIDEO_API_TEST_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0030, TestSize.Level0)
 {
@@ -148,9 +158,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0030, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0040
- * @tc.name      : call OH_VideoProcessing_IsColorSpaceConversionSupported with nullptr,nullptr
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0040
+ * @tc.number VPE_VIDEO_API_TEST_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0040, TestSize.Level0)
 {
@@ -161,9 +174,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0040, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0050
- * @tc.name      : call OH_VideoProcessing_IsColorSpaceConversionSupported
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0050
+ * @tc.number VPE_VIDEO_API_TEST_0050
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0050, TestSize.Level0)
 {
@@ -173,9 +189,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0050, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0060
- * @tc.name      : call OH_VideoProcessing_IsColorSpaceConversionSupported
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0060
+ * @tc.number VPE_VIDEO_API_TEST_0060
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0060, TestSize.Level0)
 {
@@ -185,9 +204,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0060, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0070
- * @tc.name      : call OH_VideoProcessing_IsColorSpaceConversionSupported
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0070
+ * @tc.number VPE_VIDEO_API_TEST_0070
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0070, TestSize.Level0)
 {
@@ -201,9 +223,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0070, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0080
- * @tc.name      : call OH_VideoProcessing_IsMetadataGenerationSupported
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0080
+ * @tc.number VPE_VIDEO_API_TEST_0080
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0080, TestSize.Level0)
 {
@@ -213,9 +238,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0080, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0090
- * @tc.name      : call OH_VideoProcessing_IsMetadataGenerationSupported
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0090
+ * @tc.number VPE_VIDEO_API_TEST_0090
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0090, TestSize.Level0)
 {
@@ -229,9 +257,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0090, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0100
- * @tc.name      : call OH_VideoProcessing_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0100
+ * @tc.number VPE_VIDEO_API_TEST_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0100, TestSize.Level0)
 {
@@ -242,9 +273,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0100, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0110
- * @tc.name      : call OH_VideoProcessing_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0110
+ * @tc.number VPE_VIDEO_API_TEST_0110
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0110, TestSize.Level0)
 {
@@ -256,9 +290,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0110, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0120
- * @tc.name      : call OH_VideoProcessing_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0120
+ * @tc.number VPE_VIDEO_API_TEST_0120
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0120, TestSize.Level0)
 {
@@ -270,9 +307,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0120, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0130
- * @tc.name      : call OH_VideoProcessing_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0130
+ * @tc.number VPE_VIDEO_API_TEST_0130
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0130, TestSize.Level0)
 {
@@ -289,9 +329,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0130, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0140
- * @tc.name      : call OH_VideoProcessing_Destroy
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0140
+ * @tc.number VPE_VIDEO_API_TEST_0140
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0140, TestSize.Level0)
 {
@@ -301,9 +344,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0140, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0150
- * @tc.name      : call OH_VideoProcessing_Destroy
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0150
+ * @tc.number VPE_VIDEO_API_TEST_0150
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0150, TestSize.Level0)
 {
@@ -321,9 +367,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0150, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0160
- * @tc.name      : call OH_VideoProcessing_RegisterCallback
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0160
+ * @tc.number VPE_VIDEO_API_TEST_0160
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0160, TestSize.Level0)
 {
@@ -333,9 +382,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0160, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0170
- * @tc.name      : call OH_VideoProcessing_RegisterCallback
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0170
+ * @tc.number VPE_VIDEO_API_TEST_0170
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0170, TestSize.Level0)
 {
@@ -349,9 +401,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0170, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0180
- * @tc.name      : call OH_VideoProcessing_RegisterCallback
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0180
+ * @tc.number VPE_VIDEO_API_TEST_0180
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0180, TestSize.Level0)
 {
@@ -370,9 +425,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0180, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0190
- * @tc.name      : call OH_VideoProcessing_RegisterCallback
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0190
+ * @tc.number VPE_VIDEO_API_TEST_0190
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0190, TestSize.Level0)
 {
@@ -397,9 +455,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0190, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0200
- * @tc.name      : call OH_VideoProcessing_RegisterCallback
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0200
+ * @tc.number VPE_VIDEO_API_TEST_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0200, TestSize.Level0)
 {
@@ -422,9 +483,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0200, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0210
- * @tc.name      : call OH_VideoProcessing_RegisterCallback
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0210
+ * @tc.number VPE_VIDEO_API_TEST_0210
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0210, TestSize.Level0)
 {
@@ -450,9 +514,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0210, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0220
- * @tc.name      : call OH_VideoProcessing_SetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0220
+ * @tc.number VPE_VIDEO_API_TEST_0220
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0220, TestSize.Level0)
 {
@@ -462,9 +529,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0220, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0230
- * @tc.name      : call OH_VideoProcessing_SetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0230
+ * @tc.number VPE_VIDEO_API_TEST_0230
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0230, TestSize.Level0)
 {
@@ -483,9 +553,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0230, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0240
- * @tc.name      : call OH_VideoProcessing_SetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0240
+ * @tc.number VPE_VIDEO_API_TEST_0240
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0240, TestSize.Level0)
 {
@@ -504,9 +577,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0240, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0250
- * @tc.name      : call OH_VideoProcessing_SetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0250
+ * @tc.number VPE_VIDEO_API_TEST_0250
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0250, TestSize.Level0)
 {
@@ -534,9 +610,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0250, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0260
- * @tc.name      : call OH_VideoProcessing_GetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0260
+ * @tc.number VPE_VIDEO_API_TEST_0260
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0260, TestSize.Level0)
 {
@@ -546,9 +625,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0260, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0270
- * @tc.name      : call OH_VideoProcessing_GetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0270
+ * @tc.number VPE_VIDEO_API_TEST_0270
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0270, TestSize.Level0)
 {
@@ -567,9 +649,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0270, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0280
- * @tc.name      : call OH_VideoProcessing_GetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0280
+ * @tc.number VPE_VIDEO_API_TEST_0280
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0280, TestSize.Level0)
 {
@@ -588,9 +673,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0280, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0290
- * @tc.name      : call OH_VideoProcessing_GetSurface
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0290
+ * @tc.number VPE_VIDEO_API_TEST_0290
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0290, TestSize.Level0)
 {
@@ -618,9 +706,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0290, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0300
- * @tc.name      : call OH_VideoProcessing_Start
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0300
+ * @tc.number VPE_VIDEO_API_TEST_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0300, TestSize.Level0)
 {
@@ -630,9 +721,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0300, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0310
- * @tc.name      : call OH_VideoProcessing_Start
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0310
+ * @tc.number VPE_VIDEO_API_TEST_0310
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0310, TestSize.Level0)
 {
@@ -651,9 +745,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0310, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0320
- * @tc.name      : call OH_VideoProcessing_Start
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0320
+ * @tc.number VPE_VIDEO_API_TEST_0320
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0320, TestSize.Level0)
 {
@@ -683,9 +780,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0320, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0330
- * @tc.name      : call OH_VideoProcessing_Stop
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0330
+ * @tc.number VPE_VIDEO_API_TEST_0330
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0330, TestSize.Level0)
 {
@@ -695,9 +795,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0330, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0340
- * @tc.name      : call OH_VideoProcessing_Stop
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0340
+ * @tc.number VPE_VIDEO_API_TEST_0340
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0340, TestSize.Level0)
 {
@@ -716,9 +819,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0340, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0350
- * @tc.name      : call OH_VideoProcessing_Stop
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0350
+ * @tc.number VPE_VIDEO_API_TEST_0350
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0350, TestSize.Level0)
 {
@@ -753,9 +859,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0350, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0360
- * @tc.name      : call OH_VideoProcessing_RenderOutputBuffer
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0360
+ * @tc.number VPE_VIDEO_API_TEST_0360
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0360, TestSize.Level0)
 {
@@ -765,9 +874,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0360, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0370
- * @tc.name      : call OH_VideoProcessing_RenderOutputBuffer
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0370
+ * @tc.number VPE_VIDEO_API_TEST_0370
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0370, TestSize.Level0)
 {
@@ -786,9 +898,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0370, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0380
- * @tc.name      : call OH_VideoProcessingCallback_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0380
+ * @tc.number VPE_VIDEO_API_TEST_0380
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0380, TestSize.Level0)
 {
@@ -798,9 +913,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0380, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0390
- * @tc.name      : call OH_VideoProcessingCallback_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0390
+ * @tc.number VPE_VIDEO_API_TEST_0390
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0390, TestSize.Level0)
 {
@@ -812,9 +930,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0390, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0400
- * @tc.name      : call OH_VideoProcessingCallback_Destroy
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0400
+ * @tc.number VPE_VIDEO_API_TEST_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0400, TestSize.Level0)
 {
@@ -824,9 +945,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0400, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0410
- * @tc.name      : call OH_VideoProcessingCallback_Destroy
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0410
+ * @tc.number VPE_VIDEO_API_TEST_0410
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0410, TestSize.Level0)
 {
@@ -839,9 +963,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0410, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0420
- * @tc.name      : call OH_VideoProcessingCallback_BindOnError
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0420
+ * @tc.number VPE_VIDEO_API_TEST_0420
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0420, TestSize.Level0)
 {
@@ -852,9 +979,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0420, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0430
- * @tc.name      : call OH_VideoProcessingCallback_BindOnError
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0430
+ * @tc.number VPE_VIDEO_API_TEST_0430
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0430, TestSize.Level0)
 {
@@ -869,9 +999,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0430, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0440
- * @tc.name      : call OH_VideoProcessingCallback_BindOnError
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0440
+ * @tc.number VPE_VIDEO_API_TEST_0440
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0440, TestSize.Level0)
 {
@@ -882,9 +1015,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0440, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0450
- * @tc.name      : call OH_VideoProcessingCallback_BindOnError
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0450
+ * @tc.number VPE_VIDEO_API_TEST_0450
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0450, TestSize.Level0)
 {
@@ -898,9 +1034,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0450, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0460
- * @tc.name      : call OH_VideoProcessingCallback_BindOnState
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0460
+ * @tc.number VPE_VIDEO_API_TEST_0460
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0460, TestSize.Level0)
 {
@@ -911,9 +1050,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0460, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0470
- * @tc.name      : call OH_VideoProcessingCallback_BindOnState
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0470
+ * @tc.number VPE_VIDEO_API_TEST_0470
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0470, TestSize.Level0)
 {
@@ -927,9 +1069,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0470, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0480
- * @tc.name      : call OH_VideoProcessingCallback_BindOnState
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0480
+ * @tc.number VPE_VIDEO_API_TEST_0480
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0480, TestSize.Level0)
 {
@@ -939,9 +1084,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0480, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0490
- * @tc.name      : call OH_VideoProcessingCallback_BindOnState
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0490
+ * @tc.number VPE_VIDEO_API_TEST_0490
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0490, TestSize.Level0)
 {
@@ -955,9 +1103,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0490, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0500
- * @tc.name      : call OH_VideoProcessingCallback_BindOnNewOutputBuffer
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0500
+ * @tc.number VPE_VIDEO_API_TEST_0500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0500, TestSize.Level0)
 {
@@ -968,9 +1119,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0500, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0510
- * @tc.name      : call OH_VideoProcessingCallback_BindOnNewOutputBuffer
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0510
+ * @tc.number VPE_VIDEO_API_TEST_0510
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0510, TestSize.Level0)
 {
@@ -984,9 +1138,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0510, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0520
- * @tc.name      : call OH_VideoProcessingCallback_BindOnNewOutputBuffer
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0520
+ * @tc.number VPE_VIDEO_API_TEST_0520
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0520, TestSize.Level0)
 {
@@ -997,9 +1154,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0520, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_0530
- * @tc.name      : call OH_VideoProcessingCallback_BindOnNewOutputBuffer
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0530
+ * @tc.number VPE_VIDEO_API_TEST_0530
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0530, TestSize.Level0)
 {
@@ -1013,9 +1173,12 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0530, TestSize.Level0)
 }
 
 /**
- * @tc.number    : VPE_VIDEO_API_TEST_05400
- * @tc.name      : call OH_VideoProcessing_Create
- * @tc.desc      : function test
+ * @tc.name   VPE_VIDEO_API_TEST_0540
+ * @tc.number VPE_VIDEO_API_TEST_05400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0540, TestSize.Level0)
 {
@@ -1029,5 +1192,57 @@ HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0540, TestSize.Level0)
     } else {
         ASSERT_NE(ret, VIDEO_PROCESSING_SUCCESS);
     }
+}
+
+/**
+ * @tc.name   VPE_VIDEO_API_TEST_0550
+ * @tc.number VPE_VIDEO_API_TEST_0550
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0550, TestSize.Level0)
+{
+    OH_VideoProcessing_InitializeEnvironment();
+    OH_VideoProcessing* videoProcessor = nullptr;
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&videoProcessor,
+        VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return;
+    }
+    OH_AVFormat *format = OH_AVFormat_Create();
+    int32_t metadataMode = VIDEO_METADATA_GENERATOR_CONTRAST_MODE;
+    OH_AVFormat_SetIntValue(format, VIDEO_METADATA_GENERATOR_STYLE_CONTROL, metadataMode);
+    ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
+    OH_VideoProcessing_Destroy(videoProcessor);
+    OH_AVFormat_Destroy(format);
+    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
+}
+
+/**
+ * @tc.name   VPE_VIDEO_API_TEST_0560
+ * @tc.number VPE_VIDEO_API_TEST_0560
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(VpeVideoApiTest, VPE_VIDEO_API_TEST_0560, TestSize.Level0)
+{
+    OH_VideoProcessing_InitializeEnvironment();
+    OH_VideoProcessing* videoProcessor = nullptr;
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_Create(&videoProcessor,
+        VIDEO_PROCESSING_TYPE_METADATA_GENERATION);
+    if (ret != VIDEO_PROCESSING_SUCCESS) {
+        return;
+    }
+    OH_AVFormat *format = OH_AVFormat_Create();
+    int32_t metadataMode = VIDEO_METADATA_GENERATOR_BRIGHT_MODE;
+    OH_AVFormat_SetIntValue(format, VIDEO_METADATA_GENERATOR_STYLE_CONTROL, metadataMode);
+    ret = OH_VideoProcessing_SetParameter(videoProcessor, format);
+    OH_AVFormat_Destroy(format);
+    OH_VideoProcessing_Destroy(videoProcessor);
+    ASSERT_EQ(ret, VIDEO_PROCESSING_SUCCESS);
 }
 }

@@ -34,15 +34,15 @@ export default function ImageSourceCreatePictureJpg() {
       console.info(TAG, 'afterAll case.');
     });
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_001';
       try {
@@ -57,15 +57,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_002';
       try {
@@ -80,15 +80,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_003';
       try {
@@ -105,15 +105,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_004';
       try {
@@ -129,15 +129,15 @@ export default function ImageSourceCreatePictureJpg() {
     })
 
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_005';
       try {
@@ -152,15 +152,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_006';
       try {
@@ -177,15 +177,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_007';
       try {
@@ -201,15 +201,15 @@ export default function ImageSourceCreatePictureJpg() {
     })
 
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_008';
       try {
@@ -224,15 +224,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_009';
       try {
@@ -250,15 +250,15 @@ export default function ImageSourceCreatePictureJpg() {
     })
 
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_010';
       try {
@@ -274,15 +274,15 @@ export default function ImageSourceCreatePictureJpg() {
     })
 
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_011';
       try {
@@ -297,15 +297,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_012';
       try {
@@ -321,15 +321,15 @@ export default function ImageSourceCreatePictureJpg() {
         done();
       }
     })
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_013';
       try {
@@ -345,15 +345,15 @@ export default function ImageSourceCreatePictureJpg() {
     })
 
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_014';
       try {
@@ -368,15 +368,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_015';
       try {
@@ -393,15 +393,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_016';
       try {
@@ -417,15 +417,15 @@ export default function ImageSourceCreatePictureJpg() {
     })
 
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_017';
       try {
@@ -440,15 +440,15 @@ export default function ImageSourceCreatePictureJpg() {
       }
     })
 
-    /**
-     * @tc.number    MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018
-     * @tc.name      MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018
-     * @tc.desc      Testing CreateImageTest
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
-     */
 
+    /**
+     * @tc.name   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018
+     * @tc.number MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018
+     * @tc.desc   MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'MUTI_MEDIA_IMAGE_KIT_CREATE_PICTURE_018';
       try {

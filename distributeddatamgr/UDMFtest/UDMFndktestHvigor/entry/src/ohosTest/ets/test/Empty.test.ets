@@ -18,7 +18,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 export default function EmptyTest() {
   describe('EmptyTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testTheDevicesNotSupportSyscap001
      * @tc.number testTheDevicesNotSupportSyscap001
      * @tc.desc   The Devices not support this stsCap.

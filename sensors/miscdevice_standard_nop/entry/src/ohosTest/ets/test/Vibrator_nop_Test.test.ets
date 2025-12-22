@@ -46,13 +46,13 @@ export default function vibrator_nop_Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test01
-     * @tc.name: Vibrator_Sensor_nop_Test01
-     * @tc.desc:Using the startVibration (callback) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test01
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test01
+     * @tc.desc   Using the startVibration (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test01--------');
@@ -82,13 +82,13 @@ export default function vibrator_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test02
-     * @tc.name: Vibrator_Sensor_nop_Test01
-     * @tc.desc:Using the startVibration (promise) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test02
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test02
+     * @tc.desc   Using the startVibration (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test01--------');
@@ -117,13 +117,13 @@ export default function vibrator_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test03
-     * @tc.name: Vibrator_Sensor_nop_Test01
-     * @tc.desc:Using the stopVibration (callback) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test03
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test03
+     * @tc.desc   Using the stopVibration (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test03", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test01--------');
@@ -148,13 +148,13 @@ export default function vibrator_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test04
-     * @tc.name: Vibrator_Sensor_nop_Test01
-     * @tc.desc:Using the stopVibration (promise) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test04
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test04
+     * @tc.desc   Using the stopVibration (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test04", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test01--------');
@@ -178,13 +178,13 @@ export default function vibrator_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test05
-     * @tc.name: Vibrator_Sensor_nop_Test01
-     * @tc.desc:Using the stopVibration (promise) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test05
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test05
+     * @tc.desc   Using the stopVibration (promise) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test05", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test01--------');
@@ -208,13 +208,13 @@ export default function vibrator_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test06
-     * @tc.name: Vibrator_Sensor_nop_Test06
-     * @tc.desc:Using the stopVibration (callback) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test06
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test06
+     * @tc.desc   Using the stopVibration (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test06", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test06--------');
@@ -240,13 +240,13 @@ export default function vibrator_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Vibrator_Sensor_nop_Test07
-     * @tc.name: Vibrator_Sensor_nop_Test07
-     * @tc.desc:Using the stopVibration (callback) method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   Vibrator_Sensor_nop_Test07
+     * @tc.number SUB_SensorsSystem_Vibrator_Sensor_nop_Test07
+     * @tc.desc   Using the stopVibration (callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Vibrator_Sensor_nop_Test07", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('--------Vibrator_Sensor_nop_Test07--------');

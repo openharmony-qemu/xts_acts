@@ -19,9 +19,23 @@
 #include "hasAxisTest/HasAxisTest.h"
 #include "list/CoastingAxisTest.h"
 #include "list/SnapSpeedTest.h"
+#include "list/LanesValueTest.h"
 #include "waterFlow/WaterFlowFillPolicyTest.h"
 #include "image/ImageDrawableDescriptorTest.h"
 #include "image/ImageErrorTest.h"
+#include "textLineHeight/LineHeightTest.h"
+#include "textArea/TextAreaBarStateTest.h"
+#include "scrollbarTest/ScrollBarTest.h"
+#include "showCounterTest/ShowCounterTest.h"
+#include "swiper/FinishAnimationTest.h"
+#include "imageSpanTest/ImageSpanTest.h"
+#include "customKeyboard/CustomKeyboardTest.h"
+#include "image/AnimationControllerTest.h"
+#include "grid/GridFillPolicyTest.h"
+#include "grid/GridEventTest.h"
+#include "InteractiveFramework/RegionListTest.h"
+#include "clipShape/ClipShapeTest.h"
+#include "CustomComponent/CustomMarkDirtyTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -39,17 +53,58 @@ static napi_value Init(napi_env env, napi_value exports)
         {"textMinLinesTest", nullptr, MinLinesTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hasAxisTest", nullptr, HasAxisTest::CreateNativeNode, nullptr, nullptr,
          nullptr, napi_default, nullptr},
+        {"RegionListTest", nullptr, RegionListTest::CreateNativeNode, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
         {"CoastingAxisTest_a", nullptr, CoastingAxisTest::CoastingAxisEventTest_a,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"CoastingAxisTest_b", nullptr, CoastingAxisTest::CoastingAxisEventTest_b,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_c", nullptr, CoastingAxisTest::CoastingAxisEventTest_c,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_d", nullptr, CoastingAxisTest::CoastingAxisEventTest_d,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_e", nullptr, CoastingAxisTest::CoastingAxisEventTest_e,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest", nullptr, CoastingAxisTest::CreateNativeNode,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"WaterFlowFillPolicyTest", nullptr, WaterFlowTest::WaterFlowFillPolicyTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"snapSpeedTest", nullptr, SnapSpeedTest::snapSpeedTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"LanesValueTest", nullptr, ListTest::LanesValueTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"imageDrawableDescriptorTest", nullptr, ImageDrawableDescriptorTest::imageDrawableDescriptorTest,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"imageErrorTest", nullptr, ImageErrorTest::imageErrorTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"textLineHeightTest", nullptr, LineHeightTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"textAreaBarStateTest", nullptr, TextAreaBarStateTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"scrollBarTest", nullptr, ScrollBarTest::CreateNativeNode, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+    
+        {"showCounterTest", nullptr, ShowCounterTest::showCounterTest, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"FinishAnimationTest", nullptr, SwiperFinishAnimationTest::CreateNativeNode, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"imageSpanTest", nullptr, ImageSpanTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"customKeyboardTest", nullptr, CustomKeyboardTest::CreateNativeNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"animationControllerTest", nullptr, AnimationControllerTest::animationControllerTest,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GridFillPolicyTest", nullptr, GridTest::CreateNativeNode, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"gridOnWillScrollTest", nullptr, GridEventTest::GridOnWillScrollTest, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gridOnScrollIndexTest", nullptr, GridEventTest::GridOnScrollIndexTest, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gridOnDidScrollTest", nullptr, GridEventTest::GridOnDidScrollTest, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gridOnScrollBarUpdateTest", nullptr, GridEventTest::GridOnScrollBarUpdateTest, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"clipShapeTest", nullptr, ClipShapeTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreateCustomMarkDirtyNativeRoot", nullptr, CustomMarkDirtyTest::CreateCustomMarkDirtyNativeRoot,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -56,12 +56,12 @@ export default function collectionsThirdtest() {
     })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_1400
-     * @tc.name      : collectionsThirdtest1400
-     * @tc.desc      : Int8Array toString 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest1400
+     * @tc.number SUB_COOLLECTIONTHIRD_1400
+     * @tc.desc   Int8Array toString 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -85,12 +85,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_1500
-     * @tc.name      : collectionsThirdtest1500
-     * @tc.desc      :  Int8Array.toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest1500
+     * @tc.number SUB_COOLLECTIONTHIRD_1500
+     * @tc.desc   Int8Array.toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -114,12 +114,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_1600
-     * @tc.name      : collectionsThirdtest1600
-     * @tc.desc      : Int8Array toLocaleString 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest1600
+     * @tc.number SUB_COOLLECTIONTHIRD_1600
+     * @tc.desc   Int8Array toLocaleString 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -143,12 +143,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_1700
-     * @tc.name      : collectionsThirdtest1700
-     * @tc.desc      : Int8Array.toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest1700
+     * @tc.number SUB_COOLLECTIONTHIRD_1700
+     * @tc.desc   Int8Array.toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -172,12 +172,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_1800
-     * @tc.name      : collectionsThirdtest1800
-     * @tc.desc      : Int8Array copyWithin 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest1800
+     * @tc.number SUB_COOLLECTIONTHIRD_1800
+     * @tc.desc   Int8Array copyWithin 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -200,12 +200,12 @@ export default function collectionsThirdtest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_18001
-     * @tc.name      : collectionsThirdtest18001
-     * @tc.desc      : Int8Array copyWithin 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest18001
+     * @tc.number SUB_COOLLECTIONTHIRD_18001
+     * @tc.desc   Int8Array copyWithin 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest18001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -229,12 +229,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_1900
-     * @tc.name      : collectionsThirdtest1900
-     * @tc.desc      : Int8Array.copyWithin 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest1900
+     * @tc.number SUB_COOLLECTIONTHIRD_1900
+     * @tc.desc   Int8Array.copyWithin 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -258,12 +258,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2000
-     * @tc.name      : collectionsThirdtest2000
-     * @tc.desc      : Int8Array some 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2000
+     * @tc.number SUB_COOLLECTIONTHIRD_2000
+     * @tc.desc   Int8Array some 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -287,12 +287,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2100
-     * @tc.name      : collectionsThirdtest2100
-     * @tc.desc      : Int8Array.some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2100
+     * @tc.number SUB_COOLLECTIONTHIRD_2100
+     * @tc.desc   Int8Array.some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2200
-     * @tc.name      : collectionsThirdtest2200
-     * @tc.desc      : Int8Array.every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2200
+     * @tc.number SUB_COOLLECTIONTHIRD_2200
+     * @tc.desc   Int8Array.every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -345,12 +345,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2300
-     * @tc.name      : collectionsThirdtest2300
-     * @tc.desc      : Int8Array every 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2300
+     * @tc.number SUB_COOLLECTIONTHIRD_2300
+     * @tc.desc   Int8Array every 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -375,12 +375,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2400
-     * @tc.name      : collectionsThirdtest2400
-     * @tc.desc      : Int8Array.fill 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2400
+     * @tc.number SUB_COOLLECTIONTHIRD_2400
+     * @tc.desc   Int8Array.fill 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -404,12 +404,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2500
-     * @tc.name      : collectionsThirdtest2500
-     * @tc.desc      : Int8Array fill 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2500
+     * @tc.number SUB_COOLLECTIONTHIRD_2500
+     * @tc.desc   Int8Array fill 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -433,12 +433,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2600
-     * @tc.name      : collectionsThirdtest2600
-     * @tc.desc      : Int8Array.filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2600
+     * @tc.number SUB_COOLLECTIONTHIRD_2600
+     * @tc.desc   Int8Array.filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -462,12 +462,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3200
-     * @tc.name      : collectionsThirdtest3200
-     * @tc.desc      : Int8Array filter 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3200
+     * @tc.number SUB_COOLLECTIONTHIRD_3200
+     * @tc.desc   Int8Array filter 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -492,12 +492,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2700
-     * @tc.name      : collectionsThirdtest2700
-     * @tc.desc      : Int8Array.find 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2700
+     * @tc.number SUB_COOLLECTIONTHIRD_2700
+     * @tc.desc   Int8Array.find 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -521,12 +521,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2800
-     * @tc.name      : collectionsThirdtest2800
-     * @tc.desc      : Int8Array find 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2800
+     * @tc.number SUB_COOLLECTIONTHIRD_2800
+     * @tc.desc   Int8Array find 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -551,12 +551,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_2900
-     * @tc.name      : collectionsThirdtest2900
-     * @tc.desc      : Int8Array.findIndex 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest2900
+     * @tc.number SUB_COOLLECTIONTHIRD_2900
+     * @tc.desc   Int8Array.findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -580,12 +580,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3300
-     * @tc.name      : collectionsThirdtest3300
-     * @tc.desc      : Int8Array findIndex 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3300
+     * @tc.number SUB_COOLLECTIONTHIRD_3300
+     * @tc.desc   Int8Array findIndex 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -610,12 +610,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3000
-     * @tc.name      : collectionsThirdtest3000
-     * @tc.desc      : Int8Array.forEach 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3000
+     * @tc.number SUB_COOLLECTIONTHIRD_3000
+     * @tc.desc   Int8Array.forEach 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -641,12 +641,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3100
-     * @tc.name      : collectionsThirdtest3100
-     * @tc.desc      : Int8Array forEach 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3100
+     * @tc.number SUB_COOLLECTIONTHIRD_3100
+     * @tc.desc   Int8Array forEach 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -671,12 +671,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3400
-     * @tc.name      : collectionsThirdtest3400
-     * @tc.desc      : Int8Array.indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3400
+     * @tc.number SUB_COOLLECTIONTHIRD_3400
+     * @tc.desc   Int8Array.indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -702,12 +702,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3500
-     * @tc.name      : collectionsThirdtest3500
-     * @tc.desc      : Int8Array indexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3500
+     * @tc.number SUB_COOLLECTIONTHIRD_3500
+     * @tc.desc   Int8Array indexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -731,12 +731,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3600
-     * @tc.name      : collectionsThirdtest3600
-     * @tc.desc      : Int8Array.lastIndexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3600
+     * @tc.number SUB_COOLLECTIONTHIRD_3600
+     * @tc.desc   Int8Array.lastIndexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -762,12 +762,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3700
-     * @tc.name      : collectionsThirdtest3700
-     * @tc.desc      : Int8Array lastIndexOf 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3700
+     * @tc.number SUB_COOLLECTIONTHIRD_3700
+     * @tc.desc   Int8Array lastIndexOf 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -791,12 +791,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3800
-     * @tc.name      : collectionsThirdtest3800
-     * @tc.desc      : Int8Array.join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3800
+     * @tc.number SUB_COOLLECTIONTHIRD_3800
+     * @tc.desc   Int8Array.join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -822,12 +822,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_3900
-     * @tc.name      : collectionsThirdtest3900
-     * @tc.desc      : Int8Array join 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest3900
+     * @tc.number SUB_COOLLECTIONTHIRD_3900
+     * @tc.desc   Int8Array join 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -851,12 +851,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4000
-     * @tc.name      : collectionsThirdtest4000
-     * @tc.desc      : Int8Array.map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4000
+     * @tc.number SUB_COOLLECTIONTHIRD_4000
+     * @tc.desc   Int8Array.map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -882,12 +882,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4100
-     * @tc.name      : collectionsThirdtest4100
-     * @tc.desc      : Int8Array map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4100
+     * @tc.number SUB_COOLLECTIONTHIRD_4100
+     * @tc.desc   Int8Array map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -911,12 +911,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4200
-     * @tc.name      : collectionsThirdtest4200
-     * @tc.desc      : Int8Array.reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4200
+     * @tc.number SUB_COOLLECTIONTHIRD_4200
+     * @tc.desc   Int8Array.reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -942,12 +942,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4300
-     * @tc.name      : collectionsThirdtest4300
-     * @tc.desc      : Int8Array reduce 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4300
+     * @tc.number SUB_COOLLECTIONTHIRD_4300
+     * @tc.desc   Int8Array reduce 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -971,12 +971,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4400
-     * @tc.name      : collectionsThirdtest4400
-     * @tc.desc      : Int8Array.reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4400
+     * @tc.number SUB_COOLLECTIONTHIRD_4400
+     * @tc.desc   Int8Array.reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1002,12 +1002,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4500
-     * @tc.name      : collectionsThirdtest4500
-     * @tc.desc      : Int8Array reduceRight 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4500
+     * @tc.number SUB_COOLLECTIONTHIRD_4500
+     * @tc.desc   Int8Array reduceRight 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1031,12 +1031,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4600
-     * @tc.name      : collectionsThirdtest4600
-     * @tc.desc      : Int8Array.reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4600
+     * @tc.number SUB_COOLLECTIONTHIRD_4600
+     * @tc.desc   Int8Array.reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1062,12 +1062,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4501
-     * @tc.name      : collectionsThirdtest4501
-     * @tc.desc      : Int8Array reverse 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4501
+     * @tc.number SUB_COOLLECTIONTHIRD_4501
+     * @tc.desc   Int8Array reverse 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4501', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1091,12 +1091,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4601
-     * @tc.name      : collectionsThirdtest4601
-     * @tc.desc      : Int8Array.set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4601
+     * @tc.number SUB_COOLLECTIONTHIRD_4601
+     * @tc.desc   Int8Array.set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4601', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1122,12 +1122,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4700
-     * @tc.name      : collectionsThirdtest4700
-     * @tc.desc      : Int8Array set 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4700
+     * @tc.number SUB_COOLLECTIONTHIRD_4700
+     * @tc.desc   Int8Array set 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1151,12 +1151,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4800
-     * @tc.name      : collectionsThirdtest4800
-     * @tc.desc      : Int8Array.slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4800
+     * @tc.number SUB_COOLLECTIONTHIRD_4800
+     * @tc.desc   Int8Array.slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1182,12 +1182,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_4900
-     * @tc.name      : collectionsThirdtest4900
-     * @tc.desc      : Int8Array slice 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest4900
+     * @tc.number SUB_COOLLECTIONTHIRD_4900
+     * @tc.desc   Int8Array slice 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1211,12 +1211,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5000
-     * @tc.name      : collectionsThirdtest5000
-     * @tc.desc      : Int8Array.sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5000
+     * @tc.number SUB_COOLLECTIONTHIRD_5000
+     * @tc.desc   Int8Array.sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1242,12 +1242,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5100
-     * @tc.name      : collectionsThirdtest5100
-     * @tc.desc      : Int8Array sort 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5100
+     * @tc.number SUB_COOLLECTIONTHIRD_5100
+     * @tc.desc   Int8Array sort 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1271,12 +1271,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5200
-     * @tc.name      : collectionsThirdtest5200
-     * @tc.desc      : Int8Array.subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5200
+     * @tc.number SUB_COOLLECTIONTHIRD_5200
+     * @tc.desc   Int8Array.subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1302,12 +1302,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5300
-     * @tc.name      : collectionsThirdtest5300
-     * @tc.desc      : Int8Array subarray 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5300
+     * @tc.number SUB_COOLLECTIONTHIRD_5300
+     * @tc.desc   Int8Array subarray 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1331,12 +1331,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5400
-     * @tc.name      : collectionsThirdtest5400
-     * @tc.desc      : Int8Array.at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5400
+     * @tc.number SUB_COOLLECTIONTHIRD_5400
+     * @tc.desc   Int8Array.at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1362,12 +1362,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5500
-     * @tc.name      : collectionsThirdtest5500
-     * @tc.desc      : Int8Array at 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5500
+     * @tc.number SUB_COOLLECTIONTHIRD_5500
+     * @tc.desc   Int8Array at 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1391,12 +1391,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5600
-     * @tc.name      : collectionsThirdtest5600
-     * @tc.desc      : Int8Array.includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5600
+     * @tc.number SUB_COOLLECTIONTHIRD_5600
+     * @tc.desc   Int8Array.includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1422,12 +1422,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5700
-     * @tc.name      : collectionsThirdtest5700
-     * @tc.desc      : Int8Array includes 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5700
+     * @tc.number SUB_COOLLECTIONTHIRD_5700
+     * @tc.desc   Int8Array includes 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1451,12 +1451,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5800
-     * @tc.name      : collectionsThirdtest5800
-     * @tc.desc      : Int8Array.entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5800
+     * @tc.number SUB_COOLLECTIONTHIRD_5800
+     * @tc.desc   Int8Array.entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1482,12 +1482,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_5900
-     * @tc.name      : collectionsThirdtest5900
-     * @tc.desc      : Int8Array entries 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest5900
+     * @tc.number SUB_COOLLECTIONTHIRD_5900
+     * @tc.desc   Int8Array entries 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1511,12 +1511,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_6000
-     * @tc.name      : collectionsThirdtest6000
-     * @tc.desc      : Int8Array.keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest6000
+     * @tc.number SUB_COOLLECTIONTHIRD_6000
+     * @tc.desc   Int8Array.keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1542,12 +1542,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_6100
-     * @tc.name      : collectionsThirdtest6100
-     * @tc.desc      : Int8Array keys 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest6100
+     * @tc.number SUB_COOLLECTIONTHIRD_6100
+     * @tc.desc   Int8Array keys 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1571,12 +1571,12 @@ export default function collectionsThirdtest() {
       })
 
     /**
-     * @tc.number    : SUB_COOLLECTIONTHIRD_6200
-     * @tc.name      : collectionsThirdtest6200
-     * @tc.desc      : Int8Array.values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   collectionsThirdtest6200
+     * @tc.number SUB_COOLLECTIONTHIRD_6200
+     * @tc.desc   Int8Array.values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('collectionsThirdtest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

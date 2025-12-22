@@ -33,12 +33,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
     console.log('describe interface_support_sessionManager_test start!!!')
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2510
-     * @tc.name      : testKeepKeyboardOnFocus_SubWindow_True
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focusc.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testKeepKeyboardOnFocus_SubWindow_True
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2510
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focusc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testKeepKeyboardOnFocus_SubWindow_True', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName: string = 'testKeepKeyboardOnFocus_SubWindow_True';
@@ -68,12 +68,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2520
-     * @tc.name      : testKeepKeyboardOnFocus_SubWindow_False
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focus.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testKeepKeyboardOnFocus_SubWindow_False
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2520
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focus.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testKeepKeyboardOnFocus_SubWindow_False', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName: string = 'testKeepKeyboardOnFocus_SubWindow_False';
@@ -103,12 +103,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2560
-     * @tc.name      : testKeepKeyboardOnFocus_MainWindow
-     * @tc.desc      : The soft keyboard created by other Windows is retained when the window is in focus
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testKeepKeyboardOnFocus_MainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2560
+     * @tc.desc   The soft keyboard created by other Windows is retained when the window is in focus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testKeepKeyboardOnFocus_MainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName: string = 'testKeepKeyboardOnFocus_MainWindow';
@@ -131,12 +131,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3730
-     * @tc.name      : testResize_MinLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_MinLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3730
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_MinLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_MinLimits';
@@ -183,12 +183,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3740
-     * @tc.name      : testResize_MaxLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_MaxLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3740
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_MaxLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_MaxLimits';
@@ -235,12 +235,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3750
-     * @tc.name      : testResize_MaxAndMinLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_MaxAndMinLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3750
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_MaxAndMinLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_MaxAndMinLimits';
@@ -287,12 +287,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3760
-     * @tc.name      : testResize_Over_MaxLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_Over_MaxLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3760
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_Over_MaxLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_Over_MaxLimits';
@@ -350,12 +350,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3770
-     * @tc.name      : testResize_setAndGet_MinLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_setAndGet_MinLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3770
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_setAndGet_MinLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_setAndGet_MinLimits';
@@ -421,12 +421,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3780
-     * @tc.name      : testResize_setAndGet_MaxLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_setAndGet_MaxLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3780
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_setAndGet_MaxLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_setAndGet_MaxLimits';
@@ -491,12 +491,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3790
-     * @tc.name      : testResize_setAndGet_MaxAndMinLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_setAndGet_MaxAndMinLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3790
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_setAndGet_MaxAndMinLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_setAndGet_MaxAndMinLimits';
@@ -561,12 +561,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3800
-     * @tc.name      : testResize_setAndGet_Over_MaxLimits
-     * @tc.desc      : Change the current window size
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_setAndGet_Over_MaxLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3800
+     * @tc.desc   Change the current window size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_setAndGet_Over_MaxLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_setAndGet_Over_MaxLimits';
@@ -642,12 +642,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3810
-     * @tc.name      : testResize_SubWindow_LimitMin_Callback
-     * @tc.desc      : Verify that the sub window size is limited
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_SubWindow_LimitMin_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3810
+     * @tc.desc   Verify that the sub window size is limited
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_SubWindow_LimitMin_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_SubWindow_LimitMin_Callback';
@@ -715,12 +715,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3820
-     * @tc.name      : testResize_SubWindow_LimitMax_Callback
-     * @tc.desc      : Verify that the sub window size is limited
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_SubWindow_LimitMax_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3820
+     * @tc.desc   Verify that the sub window size is limited
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_SubWindow_LimitMax_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_SubWindow_LimitMax_Callback';
@@ -788,12 +788,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3830
-     * @tc.name      : testResize_SubWindow_Over_MaxLimits
-     * @tc.desc      : Verify that the sub window size is limited
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_SubWindow_Over_MaxLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3830
+     * @tc.desc   Verify that the sub window size is limited
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_SubWindow_Over_MaxLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testResize_SubWindow_Over_MaxLimits';
@@ -851,12 +851,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await subMin!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3840
-     * @tc.name      : testResize_SubWindow_LessThan_MinLimits
-     * @tc.desc      : Verify that the sub window size is limited
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_SubWindow_LessThan_MinLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3840
+     * @tc.desc   Verify that the sub window size is limited
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_SubWindow_LessThan_MinLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testResize_SubWindow_LessThan_MinLimits';
@@ -913,12 +913,12 @@ export default function interfaceSupportSessionManagerTest(context: common.UIAbi
       await subMin!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4030
-     * @tc.name      : testGetAndSetWindowLimits
-     * @tc.desc      : Verify that get and set values are the same
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetAndSetWindowLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4030
+     * @tc.desc   Verify that get and set values are the same
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetAndSetWindowLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async ()=> {
       let caseName = 'testGetAndSetWindowLimits';

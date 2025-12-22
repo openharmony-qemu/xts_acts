@@ -57,10 +57,13 @@ export default function webenableSmoothDragResizeTestJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
-     *tc.name enableSmoothDragResize01
-     *tc.desic test enableSmoothDragResize01 interface when choose callback mode.
+    /**
+     * @tc.name   optimizeParserBudget01
+     * @tc.number SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
+     * @tc.desc   optimizeParserBudget01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('optimizeParserBudget01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       Utils.emitEvent("optimizeParserBudget01", EVENT_ID_SET_EMIT_KEY);

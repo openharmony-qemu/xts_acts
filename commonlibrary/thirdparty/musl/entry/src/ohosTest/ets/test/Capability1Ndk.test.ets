@@ -25,12 +25,12 @@ export default function CapabilityNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_CAPABILITY_CAPGET_0100
-     * @tc.name       : testMuslCapabilityCapget001
-     * @tc.desc       : test capget
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslCapabilityCapget001
+     * @tc.number SUB_THIRDPARTY_MUSL_CAPABILITY_CAPGET_0100
+     * @tc.desc   test capget
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslCapabilityCapget001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = capability.capget(0);
@@ -39,12 +39,12 @@ export default function CapabilityNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_CAPABILITY_CAPGET_0200
-     * @tc.name       : testMuslCapabilityCapget002
-     * @tc.desc       : test capget
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslCapabilityCapget002
+     * @tc.number SUB_THIRDPARTY_MUSL_CAPABILITY_CAPGET_0200
+     * @tc.desc   test capget
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslCapabilityCapget002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = capability.capget(-1);

@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,6 +65,14 @@ static napi_value OsAccountGetAccountNameC(napi_env env, napi_callback_info info
     return result;
 }
 
+static napi_value OsAccountGetAccountNameD(napi_env env, napi_callback_info info)
+{
+    OsAccount_ErrCode INTERNAL_ERROR = OS_ACCOUNT_ERR_INTERNAL_ERROR;
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, INTERNAL_ERROR == OS_ACCOUNT_ERR_INTERNAL_ERROR ? 0 : -1, &result));
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -75,6 +83,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, OsAccountGetAccountNameB, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"osAccountGetAccountNameC",
          nullptr, OsAccountGetAccountNameC, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"osAccountGetAccountNameD",
+         nullptr, OsAccountGetAccountNameD, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

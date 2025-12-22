@@ -26,7 +26,7 @@ async function setAuxiliaryPictureAbPromiseTest(done: Function, testName: string
   auxPictureData: image.AuxiliaryPicture) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(300000000);
+    let array = new ArrayBuffer(3000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, array);
@@ -54,7 +54,7 @@ async function setAuxiliaryPictureTypeAbPromiseTest(done: Function, testName: st
   AuxiliaryPictureType: image.AuxiliaryPictureType, errorCallback: (errorCode: number) => void) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(300000000);
+    let array = new ArrayBuffer(3000);
     let path = `file://${testContext.filesDir}/${pathUri}`;
     const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, array);
@@ -115,12 +115,12 @@ export default function PictureSetAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_00test_exif_v2
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_00test_exif_v2
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0test_exif_v2
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_00test_exif_v2
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0test_exif_v2', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0test_exif_v2';
@@ -133,12 +133,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0002
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0002
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0002
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0002
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0002';
@@ -151,12 +151,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0003
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0003
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0003
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0003
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0003';
@@ -169,12 +169,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0004
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0004
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0004
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0004
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0004';
@@ -187,12 +187,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0005
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0005
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0005
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0005
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0005';
@@ -205,12 +205,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0006
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0006
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0006
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0006
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0006';
@@ -224,12 +224,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0007
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0007
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0007
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0007
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0007';
@@ -243,12 +243,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0008
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0008
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0008
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0008
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0008';
@@ -261,12 +261,12 @@ export default function PictureSetAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0009
-     * @tc.name     SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0009
-     * @tc.desc     setAuxiliaryPicture
-     * @tc.size     MEDIUM
-     * @tc.type     Function
-     * @tc.level    Level 0
+     * @tc.name   SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0009
+     * @tc.number SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0009
+     * @tc.desc   setAuxiliaryPicture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_PICTURE_SET_AUXILIARY_PICTURE_ABNORMAL_0009';

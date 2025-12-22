@@ -63,13 +63,13 @@ export default function onRefreshAccessedHistoryTest() {
 
 
     /**
-    * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_ISMAINFRAME_0100
-    * @tc.name testOnRefreshAccessedHistoryEnhanced001
-    * @tc.desc test onRefreshAccessedHistory isMainFrame true
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 0
-    */
+     * @tc.name   testOnRefreshAccessedHistoryEnhanced001
+     * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_ISMAINFRAME_0100
+     * @tc.desc   test onRefreshAccessedHistory isMainFrame true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnRefreshAccessedHistoryEnhanced001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnRefreshAccessedHistoryEnhanced001", 141)
       Utils.registerBaseEvent("testOnRefreshAccessedHistoryEnhanced001", true, 25112101, done,
@@ -79,12 +79,12 @@ export default function onRefreshAccessedHistoryTest() {
       sendEventByKey('OnRefreshAccessedHistoryButton', 10, '');
     })
     /**
+     * @tc.name   testOnRefreshAccessedHistoryEnhanced002
      * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_ISMAINFRAME_0200
-     * @tc.name testOnRefreshAccessedHistoryEnhanced002
-     * @tc.desc test onRefreshAccessedHistory isMainFrame false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test onRefreshAccessedHistory isMainFrame false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnRefreshAccessedHistoryEnhanced002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnRefreshAccessedHistoryEnhanced002", 141)
@@ -95,12 +95,12 @@ export default function onRefreshAccessedHistoryTest() {
       sendEventByKey('OnRefreshAccessedHistoryButton', 10, '');
     })
     /**
+     * @tc.name   testOnRefreshAccessedHistoryEnhanced003
      * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_ISMAINFRAME_0300
-     * @tc.name testOnRefreshAccessedHistoryEnhanced003
-     * @tc.desc test refresh onRefreshAccessedHistory isMainFrame true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test refresh onRefreshAccessedHistory isMainFrame true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnRefreshAccessedHistoryEnhanced003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnRefreshAccessedHistoryEnhanced003", 141)
@@ -111,12 +111,12 @@ export default function onRefreshAccessedHistoryTest() {
       sendEventByKey('OnRefreshAccessedHistoryButton', 10, '');
     })
     /**
+     * @tc.name   testOnRefreshAccessedHistoryEnhanced004
      * @tc.number SUB_WEB_ONREFRESHACCESSEDHISTORY_ISMAINFRAME_0400
-     * @tc.name testOnRefreshAccessedHistoryEnhanced004
-     * @tc.desc test refresh onRefreshAccessedHistory isMainFrame false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test refresh onRefreshAccessedHistory isMainFrame false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnRefreshAccessedHistoryEnhanced004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnRefreshAccessedHistoryEnhanced004", 141)

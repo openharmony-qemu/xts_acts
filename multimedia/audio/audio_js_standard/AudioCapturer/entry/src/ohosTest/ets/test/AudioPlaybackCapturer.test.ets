@@ -518,12 +518,12 @@ export default function audioCapturer() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_PUBLIC
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_PUBLIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -588,12 +588,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0200
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_PUBLIC
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_PUBLIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0200
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVACY_TYPE_PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -658,12 +658,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0300
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_PUBLIC&PUBLIC
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_PUBLIC&PUBLIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0300
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_PUBLIC&PUBLIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -748,12 +748,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0400
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_PUBLIC&PRIVATE
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_PUBLIC&PRIVATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0400
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_PUBLIC&PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -838,12 +838,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0500
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVATE&PRIVATE
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVATE&PRIVATE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0500
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_PRIVATE&PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -928,12 +928,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0600
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_RINGTONE
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0600
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -1018,12 +1018,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0700
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_NO_Renderer_Create
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_NO_Renderer_Create
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0700
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_NO_Renderer_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -1067,12 +1067,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0800
-     * @tc.name      : SOURCE_TYPE_PLAYBACK_CAPTURER_NO_Renderer_Start
-     * @tc.desc      : SOURCE_TYPE_PLAYBACK_CAPTURER_NO_Renderer_Start
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0800
+     * @tc.desc   SOURCE_TYPE_PLAYBACK_CAPTURER_NO_Renderer_Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_INNER_CAPTURER_PROMISE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {

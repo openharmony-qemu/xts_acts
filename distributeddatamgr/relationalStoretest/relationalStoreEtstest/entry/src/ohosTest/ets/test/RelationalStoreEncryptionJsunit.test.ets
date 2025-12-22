@@ -98,7 +98,6 @@ export default function relationalStoreEncryptTest() {
         console.info(TAG + "*************Unit Test Begin*************")
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0100
          * @tc.desc   RelationalStore create encrypt db test
@@ -118,7 +117,6 @@ export default function relationalStoreEncryptTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest0020
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0200
          * @tc.desc   RelationalStore create unencrypted db test
@@ -141,7 +139,6 @@ export default function relationalStoreEncryptTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest0030
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0300
          * @tc.desc   RelationalStore Encrypt function test
@@ -174,7 +171,6 @@ export default function relationalStoreEncryptTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest0040
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0400
          * @tc.desc   RelationalStore Encrypt function test
@@ -198,7 +194,6 @@ export default function relationalStoreEncryptTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   RdbEncryptTest0050
          * @tc.number SUB_DistributedData_RelationalStore_SDK_EncrpytEtsAPITest_0500
          * @tc.desc   RelationalStore Encrypt function test

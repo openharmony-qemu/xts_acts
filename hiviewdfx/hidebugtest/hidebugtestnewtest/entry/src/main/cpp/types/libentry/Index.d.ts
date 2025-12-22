@@ -12,14 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 export const add: (a: number, b: number) => number;
 import hidebug from '@ohos.hidebug';
 export const getNativeMemInfoTrue: () => hidebug.NativeMemInfo;
 export const getNativeMemInfoFalse: () => hidebug.NativeMemInfo;
 export const getGraphicMemSummaryC: (interval: number, undefineTest?: boolean) => hidebug.GraphicsMemorySummary;
-export const addthread: (a: number) => number;
+export const addthread: (a: number) => void;
+export const clearthreads: () => void;
 export const start: (f: number, d: number) => number;
 export const starterrstack: () => number;
 export const starterrconfig: () => number;
 export const starterrconfigtid: () => number;
+export const CHECK_HIDEBUG_TRACE_ABNORMAL: () => boolean;
+export const CHECK_HIDEBUG_NO_PERMISSION: () => boolean;
+export const CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS: () => boolean;
+export const CHECK_HIDEBUG_NOT_SUPPORTED: () => boolean;
+export const CHECK_HIDEBUG_UNDER_SAMPLING: () => boolean;
+export const CHECK_HIDEBUG_RESOURCE_UNAVAILABLE: () => boolean;
+export const CHECK_HICOLLIE_REMOTE_FAILED: () => boolean;
+export const CHECK_ThreadCpuUsage: () => number;
+export const CHECK_OH_HiDebug_GetDefaultMallocDispatchTable: () => number;
+export const CHECK_OH_HiDebug_CreateBacktraceObject: () => number;

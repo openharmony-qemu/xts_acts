@@ -16,20 +16,47 @@ add_library(nativerender SHARED
     image/ImageAltTest.cpp
     textMinLines/MinLinesTest.cpp
     hasAxisTest/HasAxisTest.cpp
+    InteractiveFramework/RegionListTest.cpp
     list/CoastingAxisTest.cpp
     component/ButtonComponentTest.cpp
     component/ComponentTest.cpp
     component/ListComponentTest.cpp
     component/TextComponentTest.cpp
     list/SnapSpeedTest.cpp
+    list/LanesValueTest.cpp
     component/WaterFlowComponentTest.cpp
     waterFlow/WaterFlowFillPolicyTest.cpp
     image/ImageDrawableDescriptorTest.cpp
     image/ImageErrorTest.cpp
+    textLineHeight/LineHeightTest.cpp
+    textArea/TextAreaBarStateTest.cpp
+    scrollbarTest/ScrollBarTest.cpp
+    showCounterTest/ShowCounterTest.cpp
+    component/SwiperComponentTest.cpp
+    swiper/FinishAnimationTest.cpp
+    imageSpanTest/ImageSpanTest.cpp
+    customKeyboard/CustomKeyboardTest.cpp
+    image/AnimationControllerTest.cpp
+    component/GridComponentTest.cpp
+    grid/GridFillPolicyTest.cpp
+    grid/GridEventTest.cpp
+    clipShape/ClipShapeTest.cpp
+    CustomComponent/CustomMarkDirtyTest.cpp
 )
 
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
+    image/ImageDrawableErrorTest.cpp
+    drag/DragReturnNullTest.cpp
+    drag/DragReturnNullTest.h
+    InteractiveFramework/NativeGestureBooleanTest.cpp
+    InteractiveFramework/UiInputEventBooleanTest.cpp
+    InteractiveFramework/LongPressGestureTest.cpp
+    InteractiveFramework/LongPressGestureTest.h
+    grid/GridAttrsTest.cpp
+    component/ComponentTest.cpp
+    component/GridComponentTest.cpp
+    component/TextComponentTest.cpp
 )
 
 find_library(

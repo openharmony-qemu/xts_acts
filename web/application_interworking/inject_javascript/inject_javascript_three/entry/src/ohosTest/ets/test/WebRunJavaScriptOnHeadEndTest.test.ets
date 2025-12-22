@@ -60,56 +60,56 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0001
-    * @tc.name       : testWebRunJavaScriptOnHeadEnd001
-    * @tc.desc       : test runJavaScriptOnHeadEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnHeadEnd001
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0001
+     * @tc.desc   test runJavaScriptOnHeadEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebRunJavaScriptOnHeadEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd001", 173160)
       Utils.registerEvent("testWebRunJavaScriptOnHeadEnd001", '"testValue"', 173170, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0002
-    * @tc.name       : testWebRunJavaScriptOnHeadEnd002
-    * @tc.desc       : test runJavaScriptOnHeadEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnHeadEnd002
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0002
+     * @tc.desc   test runJavaScriptOnHeadEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebRunJavaScriptOnHeadEnd002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       await Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd002", 173160)
       Utils.registerEvent("testWebRunJavaScriptOnHeadEnd002", '"test msg"', 173180, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0003
-    * @tc.name       : testWebRunJavaScriptOnHeadEnd003
-    * @tc.desc       : test runJavaScriptOnHeadEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnHeadEnd003
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0003
+     * @tc.desc   test runJavaScriptOnHeadEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebRunJavaScriptOnHeadEnd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd003", 173160)
       Utils.registerEvent("testWebRunJavaScriptOnHeadEnd003", '"testValue1"', 173190, done);
       sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0004
-    * @tc.name       : testWebRunJavaScriptOnHeadEnd004
-    * @tc.desc       : test runJavaScriptOnHeadEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebRunJavaScriptOnHeadEnd004
+     * @tc.number SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0004
+     * @tc.desc   test runJavaScriptOnHeadEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebRunJavaScriptOnHeadEnd004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitWebRunJavaScriptOnHeadEnd004", 173160)
       Utils.registerEvent("testWebRunJavaScriptOnHeadEnd004", true, 173200, done);

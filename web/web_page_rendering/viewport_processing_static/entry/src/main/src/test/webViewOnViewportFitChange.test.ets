@@ -51,13 +51,13 @@ export default function webViewOnViewportFitChange() {
 
     })
 
-    /*
-     * @tc.number : SUB_ACE_WEB_OnViewportFitChange_API_0001
-     * @tc.name : testWebViewOnViewportFitChange_static_001
-     * @tc.desc :test OnViewportFitChange
-     * @tc.size :MediumTest
-     * @tc.type :Function
-     * @tc.level : Level 3
+    /**
+     * @tc.name   testWebViewOnViewportFitChange_static_001
+     * @tc.number SUB_ACE_WEB_OnViewportFitChange_API_0001
+     * @tc.desc   test OnViewportFitChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewOnViewportFitChange_static_001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitWebViewOnViewportFitChange', 10);

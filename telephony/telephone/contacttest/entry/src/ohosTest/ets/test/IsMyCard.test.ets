@@ -142,12 +142,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0100
-     * @tc.name       : testTelephonyContactIsMyCard0100
-     * @tc.desc       : Determine if it is "my business card" and use the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0100
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0100
+     * @tc.desc   Determine if it is "my business card" and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0100";
@@ -175,12 +175,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0200
-     * @tc.name       : testTelephonyContactIsMyCard0200
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0200
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0200
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0200";
@@ -206,12 +206,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0300
-     * @tc.name       : testTelephonyContactIsMyCard0300
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0300
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0300
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0300";
@@ -238,12 +238,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0500
-     * @tc.name       : testTelephonyContactIsMyCard0500
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0500
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0500
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0500";
@@ -269,12 +269,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0600
-     * @tc.name       : testTelephonyContactIsMyCard0600
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0600
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0600
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0600";
@@ -300,12 +300,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0700
-     * @tc.name       : testTelephonyContactIsMyCard0700
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0700
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0700
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0700";
@@ -331,12 +331,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0800
-     * @tc.name       : testTelephonyContactIsMyCard0800
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0800
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0800
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard0800";
@@ -362,12 +362,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_0900
-     * @tc.name       : testTelephonyContactIsMyCard0900
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard0900
+     * @tc.number SUB_Telephony_Contact_IsMyCard_0900
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let cardId: number = await addCard();
@@ -393,12 +393,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1000
-     * @tc.name       : testTelephonyContactIsMyCard1000
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1000
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1000
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1000";
@@ -424,12 +424,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1100
-     * @tc.name       : testTelephonyContactIsMyCard1100
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1100
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1100
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1100";
@@ -456,12 +456,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1200
-     * @tc.name       : testTelephonyContactIsMyCard1200
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1200
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1200
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1200";
@@ -487,12 +487,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1300
-     * @tc.name       : testTelephonyContactIsMyCard1300
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1300
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1300
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1300";
@@ -518,12 +518,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1400
-     * @tc.name       : testTelephonyContactIsMyCard1400
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1400
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1400
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1400";
@@ -549,12 +549,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1500
-     * @tc.name       : testTelephonyContactIsMyCard1500
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1500
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1500
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1500";
@@ -581,12 +581,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1600
-     * @tc.name       : testTelephonyContactIsMyCard1600
-     * @tc.desc       : Determine if it is "my business card" and use the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1600
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1600
+     * @tc.desc   Determine if it is "my business card" and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let cardId: number = await addCard();
@@ -612,12 +612,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_1700
-     * @tc.name       : testTelephonyContactIsMyCard1700
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard1700
+     * @tc.number SUB_Telephony_Contact_IsMyCard_1700
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard1700";
@@ -643,12 +643,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2000
-     * @tc.name       : testTelephonyContactIsMyCard2000
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2000
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2000
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2000";
@@ -674,12 +674,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2100
-     * @tc.name       : testTelephonyContactIsMyCard2100
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2100
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2100
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2100";
@@ -705,12 +705,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2200
-     * @tc.name       : testTelephonyContactIsMyCard2200
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2200
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2200
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2200";
@@ -736,12 +736,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2300
-     * @tc.name       : testTelephonyContactIsMyCard2300
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2300
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2300
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2300";
@@ -766,12 +766,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2400
-     * @tc.name       : testTelephonyContactIsMyCard2400
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2400
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2400
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let cardId: number = await addCard();
@@ -796,12 +796,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2500
-     * @tc.name       : testTelephonyContactIsMyCard2500
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2500
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2500
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2500";
@@ -826,12 +826,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2600
-     * @tc.name       : testTelephonyContactIsMyCard2600
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2600
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2600
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2600";
@@ -855,12 +855,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2700
-     * @tc.name       : testTelephonyContactIsMyCard2700
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2700
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2700
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2700";
@@ -884,12 +884,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2800
-     * @tc.name       : testTelephonyContactIsMyCard2800
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2800
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2800
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2800";
@@ -914,12 +914,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_2900
-     * @tc.name       : testTelephonyContactIsMyCard2900
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard2900
+     * @tc.number SUB_Telephony_Contact_IsMyCard_2900
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard2900";
@@ -944,12 +944,12 @@ export default function IsMyCardTest() {
       console.info(`${caseName} test end `);
     });
     /**
-     * @tc.number     : SUB_Telephony_Contact_IsMyCard_3000
-     * @tc.name       : testTelephonyContactIsMyCard3000
-     * @tc.desc       : Determine if it is "my business card" and use Promise method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactIsMyCard3000
+     * @tc.number SUB_Telephony_Contact_IsMyCard_3000
+     * @tc.desc   Determine if it is "my business card" and use Promise method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactIsMyCard3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testTelephonyContactIsMyCard3000";
@@ -975,12 +975,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryMyCard_0100
-     * @tc.name       : testTelephonyContactQueryMyCard0100
-     * @tc.desc       : Query "My Business Card" and use the callback method as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryMyCard0100
+     * @tc.number SUB_Telephony_Contact_QueryMyCard_0100
+     * @tc.desc   Query "My Business Card" and use the callback method as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryMyCard0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let cardId:number = await addCard();
@@ -1009,12 +1009,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryMyCard_0200
-     * @tc.name       : testTelephonyContactQueryMyCard0200
-     * @tc.desc       : Query "My Business Card" and use the callback method as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryMyCard0200
+     * @tc.number SUB_Telephony_Contact_QueryMyCard_0200
+     * @tc.desc   Query "My Business Card" and use the callback method as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryMyCard0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryMyCard0200";
@@ -1041,12 +1041,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryMyCard_0300
-     * @tc.name       : testTelephonyContactQueryMyCard0300
-     * @tc.desc       : Query "My Business Card" and use  callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryMyCard0300
+     * @tc.number SUB_Telephony_Contact_QueryMyCard_0300
+     * @tc.desc   Query "My Business Card" and use  callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryMyCard0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryMyCard0300";
@@ -1055,7 +1055,7 @@ export default function IsMyCardTest() {
         contact.queryMyCard(null, (err: BusinessError, data: contact.Contact) => {
           if (err) {
             console.log(`${caseName} callback: err>${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401 || err.code === 201);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} callback: success data>${JSON.stringify(data)}`);
@@ -1065,19 +1065,19 @@ export default function IsMyCardTest() {
         });
       } catch (err) {
         console.log(`${caseName} catch: err->${JSON.stringify(err)}`);
-        ExpectTrue(err.code === 401 || err.code === 201);
+        ExpectTrue(err.code === 401);
         done();
       }
       console.info(`${caseName} test end `);
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryMyCard_0400
-     * @tc.name       : testTelephonyContactQueryMyCard0400
-     * @tc.desc       : Query "My Business Card" and use the callback method as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testTelephonyContactQueryMyCard0400
+     * @tc.number SUB_Telephony_Contact_QueryMyCard_0400
+     * @tc.desc   Query "My Business Card" and use the callback method as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTelephonyContactQueryMyCard0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let cardId:number = await addCard();
@@ -1106,12 +1106,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryMyCard_0500
-     * @tc.name       : testTelephonyContactQueryMyCard0500
-     * @tc.desc       : Query "My Business Card" and use the callback method as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryMyCard0500
+     * @tc.number SUB_Telephony_Contact_QueryMyCard_0500
+     * @tc.desc   Query "My Business Card" and use the callback method as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryMyCard0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryMyCard0500";
@@ -1138,12 +1138,12 @@ export default function IsMyCardTest() {
     });
 
     /**
-     * @tc.number     : SUB_Telephony_Contact_QueryMyCard_0600
-     * @tc.name       : testTelephonyContactQueryMyCard0600
-     * @tc.desc       : Query "My Business Card" and use  callback as an asynchronous method 10+
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testTelephonyContactQueryMyCard0600
+     * @tc.number SUB_Telephony_Contact_QueryMyCard_0600
+     * @tc.desc   Query "My Business Card" and use  callback as an asynchronous method 10+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTelephonyContactQueryMyCard0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testTelephonyContactQueryMyCard0600";
@@ -1152,7 +1152,7 @@ export default function IsMyCardTest() {
         contact.queryMyCard(null, attr, (err: BusinessError, data: contact.Contact) => {
           if (err) {
             console.log(`${caseName} callback: err:${JSON.stringify(err)}`);
-            ExpectTrue(err.code === 401 || err.code === 201);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} callback: success data:${JSON.stringify(data)}`);

@@ -18,7 +18,7 @@ import notificationManager from '@ohos.notificationManager'
 import image from '@ohos.multimedia.image';
 import {BusinessError, RecordData} from '@ohos.base';
 import hilog from '@ohos.hilog';
-import WantAgent from '@ohos.app.ability.wantAgent';
+import WantAgent, { WantAgent as _WantAgent} from '@ohos.app.ability.wantAgent';
 import Want from '@ohos.app.ability.Want';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -77,12 +77,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2300
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2300
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 2
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_2300
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -169,12 +169,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_2700
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_2700
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_2700
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -234,12 +234,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_3200
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_3200
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_3200
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -299,12 +299,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4000
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4000
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_4000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -366,12 +366,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_4400
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_4400
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_4400
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -431,12 +431,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5100
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5100
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_5100
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -499,12 +499,12 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5400
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5400
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_5400
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -568,12 +568,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_5700
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_5700
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_5700
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -638,12 +638,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_6000
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_6000
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_6000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -708,12 +708,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_6600
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_6600
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_6600
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -782,12 +782,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7000
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7000
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_7000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -857,12 +857,12 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Live_Publish_Static_7400
      * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7400
-     * @tc.desc  test publish interface fail
-     * @tc.size  LargeTest
-     * @tc.type  Function
-     * @tc.level Level 3
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_7400
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_Live_Publish_Static_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -931,13 +931,13 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
 
     /**
-      * @tc.number Sub_Notification_Ans_Live_Publish_Static_7500
-      * @tc.name Sub_Notification_Ans_Live_Publish_Static_7500
-      * @tc.desc test publish interface fail
-      * @tc.size LargeTest
-      * @tc.type Function
-      * @tc.level Level 3
-      */
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7500
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_7500
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Live_Publish_Static_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7500'
@@ -963,7 +963,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         }
 
         //wantAgent对象
-        let wantAgent: Object = {};
+        let wantAgent: _WantAgent = {};
         //WantAgentInfo对象
         let wantAgentInfo: WantAgent.WantAgentInfo = {
           wants: [
@@ -984,7 +984,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         };
 
         try {
-          WantAgent.getWantAgent(wantAgentInfo).then((data) => {
+          WantAgent.getWantAgent(wantAgentInfo).then((data:_WantAgent) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
@@ -1064,13 +1064,13 @@ export default function ActsNotificationSystemLiveViewTest() {
 
       })
     /**
-      * @tc.number Sub_Notification_Ans_Live_Publish_Static_7600
-      * @tc.name Sub_Notification_Ans_Live_Publish_Static_7600
-      * @tc.desc test publish interface fail
-      * @tc.size LargeTest
-      * @tc.type Function
-      * @tc.level Level 3
-      */
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7600
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_7600
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Live_Publish_Static_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7600'
@@ -1086,7 +1086,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         })
 
         //wantAgent对象
-        let wantAgent: Object = {};
+        let wantAgent: _WantAgent = {};
         let parameters1: Record<String, RecordData> = {
           "mykey0": 2222,
           "mykey1": [1, 2, 3],
@@ -1116,7 +1116,7 @@ export default function ActsNotificationSystemLiveViewTest() {
           actionFlags: [WantAgent.WantAgentFlags.ONE_TIME_FLAG]
         };
         try {
-          WantAgent.getWantAgent(wantAgentInfo).then((data) => {
+          WantAgent.getWantAgent(wantAgentInfo).then((data:_WantAgent) => {
             wantAgent = data;
           }).catch((err: BusinessError): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
@@ -1208,13 +1208,13 @@ export default function ActsNotificationSystemLiveViewTest() {
 
 
     /**
-      * @tc.number Sub_Notification_Ans_Live_Publish_Static_7700
-      * @tc.name Sub_Notification_Ans_Live_Publish_Static_7700
-      * @tc.desc test publish interface success
-      * @tc.size LargeTest
-      * @tc.type Function
-      * @tc.level Level 2
-      */
+     * @tc.name   Sub_Notification_Ans_Live_Publish_Static_7700
+     * @tc.number Sub_Notification_Ans_Live_Publish_Static_7700
+     * @tc.desc   test publish interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Live_Publish_Static_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Sub_Notification_Ans_Live_Publish_Static_7700'

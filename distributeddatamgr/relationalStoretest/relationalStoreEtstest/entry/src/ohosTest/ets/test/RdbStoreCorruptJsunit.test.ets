@@ -160,7 +160,6 @@ export default function rdbStoreCorruptJSunitTest() {
     console.log(TAG + "*************JS Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0100
      * @tc.desc   rebuild the database while corrupt
@@ -200,7 +199,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltInsertTest0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0200
      * @tc.desc   insert while corrupt
@@ -230,7 +228,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltBatchInsertTest0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0300
      * @tc.desc   batchInsert while corrupt
@@ -259,7 +256,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltUpdateTest0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0400
      * @tc.desc   update while corrupt
@@ -292,7 +288,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltDeleteTest0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0500
      * @tc.desc   delete while corrupt
@@ -318,7 +313,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltExecuteTest0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0600
      * @tc.desc   execute while corrupt
@@ -341,7 +335,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltExecuteSqlTest0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_0700
      * @tc.desc   executeSql while corrupt
@@ -365,7 +358,6 @@ export default function rdbStoreCorruptJSunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   RepairedTest001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuildEtsAPITest_0100
      * @tc.desc   Repaired the database while corrupt
@@ -386,7 +378,6 @@ export default function rdbStoreCorruptJSunitTest() {
       console.log(TAG + "************* RepairedTest001 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   rebuiltTest002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RebuiltEtsAPITest_1000
      * @tc.desc   rebuild the database while corrupt

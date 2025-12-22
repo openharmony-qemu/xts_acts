@@ -51,12 +51,12 @@ export default function colorFilterTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0100
-     * @tc.name      : testColorFilterCreateBlendModeColorFilterNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateBlendModeColorFilterNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testColorFilterCreateBlendModeColorFilterNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0100
+     * @tc.desc   Test for testColorFilterCreateBlendModeColorFilterNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorFilterCreateBlendModeColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterNormalStatic';
@@ -98,12 +98,12 @@ export default function colorFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0103
-     * @tc.name      : testColorFilterCreateBlendModeColorFilterMultipleCallsStatic
-     * @tc.desc      : Test for testColorFilterCreateBlendModeColorFilterMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateBlendModeColorFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0103
+     * @tc.desc   Test for testColorFilterCreateBlendModeColorFilterMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateBlendModeColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterMultipleCallsStatic';
@@ -157,12 +157,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0104
-     * @tc.name      : testColorFilterCreateBlendModeColorFilterBoundaryValueStatic
-     * @tc.desc      : Test for testColorFilterCreateBlendModeColorFilterBoundaryValue.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateBlendModeColorFilterBoundaryValueStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0104
+     * @tc.desc   Test for testColorFilterCreateBlendModeColorFilterBoundaryValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateBlendModeColorFilterBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterBoundaryValueStatic';
@@ -244,12 +244,12 @@ export default function colorFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0200
-     * @tc.name      : testColorFilterCreateComposeColorFilterNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateComposeColorFilterNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testColorFilterCreateComposeColorFilterNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0200
+     * @tc.desc   Test for testColorFilterCreateComposeColorFilterNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorFilterCreateComposeColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateComposeColorFilterNormalStatic';
@@ -327,12 +327,12 @@ export default function colorFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0203
-     * @tc.name      : testColorFilterCreateComposeColorFilterMultipleCallsStatic
-     * @tc.desc      : Test for testColorFilterCreateComposeColorFilterMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateComposeColorFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0203
+     * @tc.desc   Test for testColorFilterCreateComposeColorFilterMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateComposeColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateComposeColorFilterMultipleCallsStatic';
@@ -358,12 +358,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0300
-     * @tc.name      : testColorFilterCreateLinearToSRGBGammaNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateLinearToSRGBGammaNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testColorFilterCreateLinearToSRGBGammaNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0300
+     * @tc.desc   Test for testColorFilterCreateLinearToSRGBGammaNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorFilterCreateLinearToSRGBGammaNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateLinearToSRGBGammaNormalStatic';
@@ -378,12 +378,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0302
-     * @tc.name      : testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic
-     * @tc.desc      : Test for testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0302
+     * @tc.desc   Test for testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic';
@@ -400,12 +400,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0400
-     * @tc.name      : testColorFilterCreateSRGBGammaToLinearNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateSRGBGammaToLinearNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testColorFilterCreateSRGBGammaToLinearNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0400
+     * @tc.desc   Test for testColorFilterCreateSRGBGammaToLinearNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorFilterCreateSRGBGammaToLinearNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateSRGBGammaToLinearNormalStatic';
@@ -420,12 +420,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0402
-     * @tc.name      : testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic
-     * @tc.desc      : Test for testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0402
+     * @tc.desc   Test for testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic';
@@ -442,12 +442,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0500
-     * @tc.name      : testColorFilterCreateLumaColorFilterNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateLumaColorFilterNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testColorFilterCreateLumaColorFilterNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0500
+     * @tc.desc   Test for testColorFilterCreateLumaColorFilterNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorFilterCreateLumaColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateLumaColorFilterNormalStatic';
@@ -462,12 +462,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0502
-     * @tc.name      : testColorFilterCreateLumaColorFilterMultipleCallsStatic
-     * @tc.desc      : Test for testColorFilterCreateLumaColorFilterMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateLumaColorFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0502
+     * @tc.desc   Test for testColorFilterCreateLumaColorFilterMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateLumaColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateLumaColorFilterMultipleCallsStatic';
@@ -484,12 +484,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0600
-     * @tc.name      : testColorFilterCreateMatrixColorFilterNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateMatrixColorFilterNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testColorFilterCreateMatrixColorFilterNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0600
+     * @tc.desc   Test for testColorFilterCreateMatrixColorFilterNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorFilterCreateMatrixColorFilterNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testColorFilterCreateMatrixColorFilterNormalStatic';
@@ -510,12 +510,12 @@ export default function colorFilterTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0603
-     * @tc.name      : testColorFilterCreateMatrixColorFilterMultipleCallsStatic
-     * @tc.desc      : Test for testColorFilterCreateMatrixColorFilterMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateMatrixColorFilterMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0603
+     * @tc.desc   Test for testColorFilterCreateMatrixColorFilterMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateMatrixColorFilterMultipleCallsStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testColorFilterCreateMatrixColorFilterMultipleCallsStatic';
@@ -540,12 +540,12 @@ export default function colorFilterTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0604
-     * @tc.name      : testColorFilterCreateMatrixColorFilterAbNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateMatrixColorFilterAbnormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testColorFilterCreateMatrixColorFilterAbnormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0604
+     * @tc.desc   Test for testColorFilterCreateMatrixColorFilterAbnormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testColorFilterCreateMatrixColorFilterAbnormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
       const msg = 'testColorFilterCreateMatrixColorFilterAbnormalStatic';

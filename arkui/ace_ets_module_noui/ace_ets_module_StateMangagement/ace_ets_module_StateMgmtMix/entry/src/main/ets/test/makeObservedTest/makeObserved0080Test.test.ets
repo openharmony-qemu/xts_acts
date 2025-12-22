@@ -63,7 +63,7 @@ export default function makeObserved0080Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('makeObserved0080Test_01', Level.LEVEL0, async (done: Function) => {
+    it('makeObserved0080Test_01', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000)
       console.info('makeObserved0080Test_01 START');
       let driver = await Driver.create()
