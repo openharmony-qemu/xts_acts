@@ -20,7 +20,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 const TABLE = 'distributedTables';
-const TAG = "[rdbErrorCode14800050]"
+const TAG = "[RdbErrorCode14800050]"
 let bigdata = 'a'.repeat(100)
 const CREATE_TABLE_TEST = 'CREATE TABLE IF NOT EXISTS test (' + 'id INTEGER PRIMARY KEY AUTOINCREMENT, ' + bigdata
   + ' text,' + '"邮箱：abc#$123@abc.com" long,' + '"@#$%^&*" text,' + '" " text,' + '年龄 long,' + '"null" text,'
@@ -77,9 +77,9 @@ async function createTest() {
   console.info(TAG + 'createTest data end');
 }
 
-export default function rdbErrorCode14800050() {
+export default function RdbErrorCode14800050() {
 
-  describe("rdbErrorCode14800050", (): void => {
+  describe("RdbErrorCode14800050", (): void => {
     beforeAll(async (): Promise<void> => {
       console.info(TAG + 'beforeAll');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();

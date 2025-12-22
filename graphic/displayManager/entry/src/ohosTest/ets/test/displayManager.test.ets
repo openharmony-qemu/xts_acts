@@ -3003,5 +3003,250 @@ export default function displayTest() {
       }
     })
 
+    /**
+     * @tc.number     SUB_BASIC_DMS_VIRTUAL_SCREEN_SUPPORT_FOCUS_0100
+     * @tc.name       testCreateVirtualScreenwithSupportsFocusIsTrue
+     * @tc.desc       testCreateVirtualScreenwithSupportsFocusIsTrue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testCreateVirtualScreenwithSupportsFocusIsTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testCreateVirtualScreenwithSupportsFocusIsTrue';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      try {
+        display.createVirtualScreen({
+          name: 'createVirtualScreen1',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+          supportsFocus: true
+        }).then(async (displayId: number) => {
+          await display.makeUnique(displayId);
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_VIRTUAL_SCREEN_SUPPORT_FOCUS_0200
+     * @tc.name       testCreateVirtualScreenwithSupportsFocusIsDefault
+     * @tc.desc       testCreateVirtualScreenwithSupportsFocusIsDefault
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testCreateVirtualScreenwithSupportsFocusIsDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testCreateVirtualScreenwithSupportsFocusIsDefault';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      try {
+        display.createVirtualScreen({
+          name: 'createVirtualScreen2',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+          supportsFocus: undefined
+        }).then(async (displayId: number) => {
+          await display.makeUnique(displayId);
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_VIRTUAL_SCREEN_SUPPORT_FOCUS_0300
+     * @tc.name       testCreateVirtualScreenwithSupportsFocusIsDefault2
+     * @tc.desc       testCreateVirtualScreenwithSupportsFocusIsDefault2
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testCreateVirtualScreenwithSupportsFocusIsDefault2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testCreateVirtualScreenwithSupportsFocusIsDefault2';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      try {
+        display.createVirtualScreen({
+          name: 'createVirtualScreen3',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+        }).then(async (displayId: number) => {
+          await display.makeUnique(displayId);
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              await terminateAbility(caseName);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            await terminateAbility(caseName);
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await terminateAbility(caseName);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_DMS_VIRTUAL_SCREEN_NOT_SUPPORT_FOCUS_0100
+     * @tc.name       testCreateVirtualScreenwithSupportsFocusIsFalse
+     * @tc.desc       testCreateVirtualScreenwithSupportsFocusIsFalse
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('testCreateVirtualScreenwithSupportsFocusIsFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testCreateVirtualScreenwithSupportsFocusIsFalse';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      try {
+        display.createVirtualScreen({
+          name: 'createVirtualScreen4',
+          width: 1080,
+          height: 2720,
+          density: 2,
+          surfaceId: '',
+          supportsFocus: false
+        }).then(async (displayId: number) => {
+          await display.makeUnique(displayId);
+          display.makeUnique(displayId).then(async () => {
+            console.log(caseName + 'succeeded in makeUnique');
+            let options: StartOptions = {
+              displayId: displayId
+            }
+            let windowStageStart = await startAbility(caseName, context, options);
+            let windowClass = windowStageStart.getMainWindowSync();
+            await windowClass.setWindowFocusable(true);
+            await terminateAbility(caseName);
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'failed in makeUnique, err : ' + JSON.stringify(err));
+            display.destroyVirtualScreen(displayId);
+            if (!isSupport) {
+              expect(err.code).assertEqual(801)
+              done();
+            } else {
+              expect(err.code).assertEqual(1300002)
+              done();
+            }
+          })
+        }).catch(async (err: BusinessError) => {
+          console.error(caseName + 'failed in createVirtualScreen, err : ' + JSON.stringify(err));
+          if (!isSupport) {
+            expect(err.code).assertEqual(801)
+            done();
+          } else {
+            expect(err.code).assertEqual(1300002)
+            done();
+          }
+        })
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(1300002)
+        done();
+      }
+    });
+
   })
 }

@@ -17,10 +17,12 @@ import nodeWaterFlow from './frameNodeTest/nodeWaterFlow.test';
 import convertPoint from './frameNodeTest/convertPoint.test';
 import convertPointError24 from './frameNodeTest/convertPointError24.test';
 import convertPointError25 from './frameNodeTest/convertPointError25.test';
+import NodeAdoptErrorCodeTest from './FrameNodeMethod/NodeAdoptErrorCodeTest.test';
+
 export default function testsuite() {
   nodeWaterFlow();
   convertPoint();
   convertPointError24();
   convertPointError25();
-
+  NodeAdoptErrorCodeTest();
 }

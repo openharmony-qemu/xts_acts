@@ -48,6 +48,7 @@ import offsetEdgeTop from './contentOffset/offsetEdgeTop.test';
 import offsetAlignEnd from './contentOffset/offsetAlignEnd.test';
 import offsetAlignStart from './contentOffset/offsetAlignStart.test';
 import listContentOffset from './contentOffset/listContentOffset.test';
+import contentOffsetMin from './contentOffset/contentOffsetMin.test';
 import childrenSizeError from './errorCode/childrenSizeError.test';
 import flingError from './errorCode/flingError.test';
 import setTest from './childrenMainSize/setTest.test'
@@ -84,6 +85,9 @@ export default function testsuite() {
   listScrollTo()
   singleHozList()
   singleHozDiff()
+  listVisibleJsunit()
+  ListItemGroupNone()
+  ListMainChildrenTest()
   focusedList()
   focusedCardList()
   ListScrollToItemInGroup()
@@ -100,6 +104,7 @@ export default function testsuite() {
   offsetAlignEnd();
   offsetAlignStart();
   listContentOffset()
+  contentOffsetMin()
   ListWillScroll()
   offsetRemain()
   listLevel1Test()

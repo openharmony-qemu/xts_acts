@@ -17,7 +17,9 @@
 #include "window_manager/oh_window_comm.h"
 #include "window_manager/oh_window.h"
 #include "window_manager/oh_window_event_filter.h"
+#include "window_manager/oh_display_info.h"
 #include "multimodalinput/oh_input_manager.h"
+#include "window_manager/oh_window_pip.h"
 #include "multimodalinput/oh_key_code.h"
 #include <bits/alltypes.h>
 #include <hilog/log.h>
@@ -37,7 +39,10 @@
             return nullptr;                                  \
         }                                                    \
     }while (0)                                               
-    
+
+#define PARAM_1300011 1300011
+#define PARAM_1300012 1300012
+#define PARAM_1300015 1300015
 static int keyCode1 = -1;
 static bool filterESC(Input_KeyEvent *event){
     auto keyCode = OH_Input_GetKeyEventKeyCode(event);
@@ -1227,6 +1232,207 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_c
     return retValue;
 }
 
+napi_value TestLockCursorwithNotExistedWindowid(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_LockCursor(windowId, false);
+    OH_LOG_INFO(LOG_APP, "TestLockCursorwithNotExistedWindowid: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestLockCursorwithDestroyedWindow(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_LockCursor(windowId, true);
+    OH_LOG_INFO(LOG_APP, "TestLockCursorwithDestroyedWindow: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestLockCursorwithUnfocusableWindow(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_LockCursor(windowId, true);
+    OH_LOG_INFO(LOG_APP, "TestLockCursorwithUnfocusableWindow: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestLockCursorandUnLockCursor1(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_LockCursor(windowId, true);
+    OH_LOG_INFO(LOG_APP, "TestLockCursorandUnLockCursor1 OH_WindowManager_LockCursor: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestLockCursorandUnLockCursor2(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_UnlockCursor(windowId);
+    OH_LOG_INFO(LOG_APP, "TestLockCursorandUnLockCursor2 OH_WindowManager_UnlockCursor: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestUnLockCursorwithNotExistedWindowid(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_UnlockCursor(windowId);
+    OH_LOG_INFO(LOG_APP, "TestUnLockCursorwithNotExistedWindowid: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestUnLockCursorwithDestroyedWindow(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_UnlockCursor(windowId);
+    OH_LOG_INFO(LOG_APP, "TestUnLockCursorwithDestroyedWindow: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestUnLockCursorwithUnfocusableWindow(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    int32_t result = OH_WindowManager_UnlockCursor(windowId);
+    OH_LOG_INFO(LOG_APP, "TestUnLockCursorwithUnfocusableWindow: %{public}d", result);
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+
+napi_value TestWindowManager_ErrorCode_enum(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    napi_value retValue;
+    if (WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_DESTROY_FAILED == PARAM_1300011 &&
+        WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL == PARAM_1300012 &&
+        WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_REPEATED_OPERATION == PARAM_1300015) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, -1, &retValue);
+    }
+    return retValue;
+}
+
 static napi_value injectTouchEventInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -1281,11 +1487,47 @@ static napi_value windowNoPermissionInit(napi_env env, napi_value exports)
     return exports;
 }
 
+static napi_value windowCursorInit(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testLockCursorwithNotExistedWindowid", nullptr,
+            TestLockCursorwithNotExistedWindowid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testLockCursorwithDestroyedWindow", nullptr,
+            TestLockCursorwithDestroyedWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testLockCursorwithUnfocusableWindow", nullptr,
+            TestLockCursorwithUnfocusableWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testLockCursorandUnLockCursor1", nullptr,
+            TestLockCursorandUnLockCursor1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testLockCursorandUnLockCursor2", nullptr,
+            TestLockCursorandUnLockCursor2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testUnLockCursorwithNotExistedWindowid", nullptr,
+            TestUnLockCursorwithNotExistedWindowid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testUnLockCursorwithDestroyedWindow", nullptr,
+            TestUnLockCursorwithDestroyedWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testUnLockCursorwithUnfocusableWindow", nullptr,
+            TestUnLockCursorwithUnfocusableWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+
+static napi_value windowEnumInit(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testWindowManager_ErrorCode_enum", nullptr,
+            TestWindowManager_ErrorCode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     injectTouchEventInit(env, exports);
     windowNoPermissionInit(env, exports);
+    windowCursorInit(env, exports);
+    windowEnumInit(env, exports);
     napi_property_descriptor desc[] = {
         {"filterKeyCode", nullptr, filterKeyCode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"unFilterKeyCode", nullptr, unFilterKeyCode, nullptr, nullptr, nullptr, napi_default, nullptr},

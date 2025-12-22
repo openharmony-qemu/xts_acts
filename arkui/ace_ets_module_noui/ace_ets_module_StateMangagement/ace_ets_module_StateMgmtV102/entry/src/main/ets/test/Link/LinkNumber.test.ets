@@ -62,7 +62,7 @@ export default function LinkNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkNumber_0100', Level.LEVEL0, async (done: Function) => {
+    it('LinkNumber_0100', Level.LEVEL1, async (done: Function) => {
       console.info('LinkNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function LinkNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkNumber_0200', Level.LEVEL0, async (done: Function) => {
+    it('LinkNumber_0200', Level.LEVEL1, async (done: Function) => {
       console.info('LinkNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -108,7 +108,7 @@ export default function LinkNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkNumber_0300', Level.LEVEL0, async (done: Function) => {
+    it('LinkNumber_0300', Level.LEVEL1, async (done: Function) => {
       console.info('LinkNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -131,7 +131,7 @@ export default function LinkNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkNumber_0400', Level.LEVEL0, async (done: Function) => {
+    it('LinkNumber_0400', Level.LEVEL1, async (done: Function) => {
       console.info('LinkNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -154,7 +154,7 @@ export default function LinkNumber() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkNumber_0500', Level.LEVEL0, async (done: Function) => {
+    it('LinkNumber_0500', Level.LEVEL1, async (done: Function) => {
       console.info('LinkNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

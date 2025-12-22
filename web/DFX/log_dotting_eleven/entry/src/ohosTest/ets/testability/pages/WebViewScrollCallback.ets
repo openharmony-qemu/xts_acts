@@ -117,6 +117,40 @@ struct Index {
                 break;
               }
 
+              case 'emitWebViewNativeWebInitFalse003': {
+                try {
+                  this.scrollResult = false;
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('keyboardAvoid.html'));
+                  await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
+                  let res1 = testNapi.nativeWebInitFalse();
+                  setTimeout(() => {
+                    Utils.emitEvent(res1, 20251227);
+                  },3000)
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
+              case 'emitWebViewNativeWebInitTrue004': {
+                try {
+                  this.scrollResult = false;
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile('keyboardAvoid.html'));
+                  await Utils.waitForExist(() => this.isPageEnd, this.str, 1, 500);
+                  let res2 = testNapi.nativeWebInitTrue(this.webTag);
+                  setTimeout(() => {
+                    Utils.emitEvent(res2, 20251228);
+                  },3000)
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
+
             }
           })
 

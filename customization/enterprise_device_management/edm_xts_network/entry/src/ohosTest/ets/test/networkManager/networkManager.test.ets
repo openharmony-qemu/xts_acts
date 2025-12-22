@@ -241,6 +241,30 @@ const HAS_ACTIVE_SIM = (): boolean => {
   return false;
 }
 
+const INTERFACE_DHCP_CONFIG: networkManager.InterfaceConfig = {
+  "ipSetMode": networkManager.IpSetMode.DHCP,
+  "ipAddress": "192.168.1.121",
+  "gateway": "192.168.1.1",
+  "netMask": "255.255.255.0",
+  "dnsServers": "8.8.8.8,192.168.1.1"
+}
+
+const INTERFACE_STATIC_CONFIG: networkManager.InterfaceConfig = {
+  "ipSetMode": networkManager.IpSetMode.STATIC,
+  "ipAddress": "192.168.1.121",
+  "gateway": "192.168.1.1",
+  "netMask": "255.255.255.0",
+  "dnsServers": "8.8.8.8,192.168.1.1"
+}
+
+const INTERFACE_INVALID_CONFIG: networkManager.InterfaceConfig = {
+  "ipSetMode": networkManager.IpSetMode.STATIC,
+  "ipAddress": "aaaaaaa",
+  "gateway": "192.168.1.1",
+  "netMask": "255.255.255.0",
+  "dnsServers": "8.8.8.8,bbbbbbb"
+}
+
 export default function networkManagerTest() {
   describe('networkManager_test', () => {
     testGetAllNetworkInterfacesSync();
@@ -273,6 +297,8 @@ export default function networkManagerTest() {
     testUpdateApn();
     testSetPreferredApn();
     testQueryApn();
+
+    testSetEthernetConfig();
   })
 }
 
@@ -3159,6 +3185,170 @@ function testQueryApn() {
     } catch (error) {
       console.info(' --- test_query_apn_0007 error 401 or 801 is expected, actually catch: ' + error.code);
       expect((error.code == 401) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetEthernetConfig() {
+  /**
+   * @tc.name   test_set_ethernet_config_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0001
+   * @tc.desc   test networkManager setEthernetConfig without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0001", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_DHCP_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0002
+   * @tc.desc   test networkManager setEthernetConfig without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0002", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200001) || (error.code == 801)).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0003
+   * @tc.desc   test networkManager setEthernetConfig with byod admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_DHCP_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0004
+   * @tc.desc   test networkManager setEthernetConfig with byod admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0004", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200002) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0005
+   * @tc.desc   test networkManager setEthernetConfig with no admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(null, "eth0", INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 401) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0006
+   * @tc.desc   test networkManager setEthernetConfig with no admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "", INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 401) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0007
+   * @tc.desc   test networkManager setEthernetConfig with no admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0007", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth0", INTERFACE_INVALID_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9200012) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_ethernet_config_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ETHERNET_CONFIG_JS_0008
+   * @tc.desc   test networkManager setEthernetConfig with no admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_ethernet_config_0008", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.setEthernetConfig(SELFWANT, "eth123", INTERFACE_STATIC_CONFIG);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect((error.code == 9201010) || (error.code == 801)).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

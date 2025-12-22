@@ -30,6 +30,7 @@ export default function telephonyManagerTest() {
     testAddIncomingCallPolicyNumbers();
     testRemoveIncomingCallPolicyNumbers();
     testGetIncomingCallPolicyNumbers();
+    testHangupCalling();
   })
 }
 
@@ -234,6 +235,29 @@ function testRemoveIncomingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = ["13112345678","13687654321"];
       telephonyManager.removeIncomingCallPolicyNumbers(SELFWANT, adminManager.Policy.BLOCK_LIST, numbers);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testHangupCalling() {
+  /**
+   * @tc.name   test_hang_up_calling_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_HANG_UP_CALLING_0100
+   * @tc.desc   test telephonyManager hangupCalling with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_hang_up_calling_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      telephonyManager.hangupCalling(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201 || error.code == 801).assertTrue();

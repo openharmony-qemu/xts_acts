@@ -1,0 +1,96 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import testNapi from "libimageEffect.so";
+
+
+const TAG = 'ImageSourceSuppXts';
+const IMAGE_RESULT_BAD_PARAMETER = -1;
+
+
+export default function ImageSourceSuppTest() {
+  describe('ImageSourceSuppTest', () => {
+    beforeAll(() => {
+    });
+    beforeEach(() => {
+    });
+    afterEach(() => {
+    });
+    afterAll(() => {
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_SOURCE_CREAT_SUPP_0001
+     * @tc.name     SUB_IMAGE_SOURCE_CREAT_SUPP_0001
+     * @tc.desc     OHImageSourceCreate-IMAGE_RESULT_BAD_PARAMETER
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_SOURCE_CREAT_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageSourceCreatTest(0);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_RESULT_BAD_PARAMETER);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_SOURCE_GET_SUPPORTED_FORMATS_SUPP_0001
+     * @tc.name     SUB_IMAGE_SOURCE_GET_SUPPORTED_FORMATS_SUPP_0001
+     * @tc.desc     OHImageSourceGetSupportedFormats-IMAGE_RESULT_BAD_PARAMETER
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_SOURCE_GET_SUPPORTED_FORMATS_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageSourceGetSupportedFormatsTest(0);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_RESULT_BAD_PARAMETER);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_SOURCE_CREAT_INCREMENTAL_SUPP_0001
+     * @tc.name     SUB_IMAGE_SOURCE_CREAT_INCREMENTAL_SUPP_0001
+     * @tc.desc     OHImageSourceCreateIncrementalTest-IMAGE_RESULT_BAD_PARAMETER
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_SOURCE_CREAT_INCREMENTAL_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageSourceCreateIncrementalTest(0);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_RESULT_BAD_PARAMETER);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_SOURCE_INIT_NATIVE_SUPP_0001
+     * @tc.name     SUB_IMAGE_SOURCE_INIT_NATIVE_SUPP_0001
+     * @tc.desc     OHImageSourceInitNativeSuppTest-nullptr
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_SOURCE_INIT_NATIVE_SUPP_0001', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: undefined = testNapi.ImageSourceInitNativeSuppTest();
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertUndefined();
+    });
+
+  });
+}

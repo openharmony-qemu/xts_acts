@@ -1933,3 +1933,66 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_AUDIO_TRACK_0190, TestSize.Level3
     }
 }
 
+/**
+ * @tc.name   DEMUXER_FUNCTION_ADD_0010
+ * @tc.number DEMUXER_FUNCTION_ADD_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_ADD_0010, TestSize.Level2)
+{
+    const char *file = "/data/test/media/test_size_large.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_2, fd);
+    ASSERT_TRUE(g_initResult);
+    ASSERT_EQ(AV_ERR_UNKNOWN, OH_AVDemuxer_SeekToTime(demuxer, 2487, SEEK_MODE_NEXT_SYNC));
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+}
+
+/**
+ * @tc.name   DEMUXER_FUNCTION_ADD_0020
+ * @tc.number DEMUXER_FUNCTION_ADD_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_ADD_0020, TestSize.Level2)
+{
+    const char *file = "/data/test/media/test_size_large.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_2, fd);
+    ASSERT_TRUE(g_initResult);
+    ASSERT_EQ(AV_ERR_UNKNOWN, OH_AVDemuxer_ReadSampleBuffer(demuxer, 1, avBuffer));
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+}
+
+/**
+ * @tc.name   DEMUXER_FUNCTION_ADD_0030
+ * @tc.number DEMUXER_FUNCTION_ADD_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_ADD_0030, TestSize.Level2)
+{
+    const char *file = "/data/test/media/test_size_large.mp4";
+    int fd = 0;
+    InitFile(file, TRACKNUM_2, fd);
+    ASSERT_TRUE(g_initResult);
+    OH_AVCodecBufferAttr attr;
+    ASSERT_EQ(AV_ERR_UNKNOWN, OH_AVDemuxer_ReadSample(demuxer, 1, memory, &attr));
+    if (fd >= 0) {
+        close(fd);
+        fd = -1;
+    }
+}

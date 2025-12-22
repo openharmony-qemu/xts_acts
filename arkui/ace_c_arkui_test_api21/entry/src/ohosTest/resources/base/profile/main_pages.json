@@ -15,6 +15,14 @@
     "MainAbility/pages/list/ListDidStopFlingTest",
     "MainAbility/pages/imageSupportSvg2/ImageSupportSvg2Page",
     "MainAbility/pages/sourceType/SourceTypeTest",
-    "MainAbility/pages/nodeUtil/TestGetPositionGetSize"
+    "MainAbility/pages/nodeUtil/TestGetPositionGetSize",
+    "MainAbility/pages/list/SourceDragTest",
+    "MainAbility/pages/list/SourceFlingTest",
+    "MainAbility/pages/list/SourceEdgeTest",
+    "MainAbility/pages/list/SourceOtherTest",
+    "MainAbility/pages/list/SourceBarTest",
+    "MainAbility/pages/list/SourceBarFlingTest",
+    "MainAbility/pages/list/SourceScrollerTest",
+    "MainAbility/pages/list/SourceAnimationTest"
   ]
 }

@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 import touchTestInfoTest from './touchTestInfo/TouchTestInfoTest.test'
+import NodeAdoptChildTest from './node/NodeAdoptChildTest.test'
+import NodeAdoptedTest from './node/NodeAdoptedTest.test'
 
 export default function testsuite() {
+  NodeAdoptChildTest(); // 此条特殊用例请放在首行，勿动
+  NodeAdoptedTest();
   touchTestInfoTest();
 }

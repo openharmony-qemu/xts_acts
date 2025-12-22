@@ -76,6 +76,10 @@ import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
 
 import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
+import AdoptChildOneTest from './FrameNodeMethod/AdoptChildOneTest.test';
+import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
+import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
+import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
 
@@ -145,7 +149,11 @@ export default function testsuite() {
 
   GetFrameNodeNullTest();
   GetFrameNodeMethodNullTest();
-
+  AdoptChildOneTest();
+  AdoptChildTwoTest();
+  AdoptChildThreeTest();
+  AdoptChildTest();
+  
   frameNodeApi();
 
   GraphicsFourBoundaryTest();

@@ -53,7 +53,7 @@ export default function ProvideConsume0040TestJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ProvideConsume0040TestJsunit_001', Level.LEVEL0, async (done: Function) => {
+    it('ProvideConsume0040TestJsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[ProvideConsume0040TestJsunit_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

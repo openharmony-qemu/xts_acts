@@ -37,6 +37,7 @@
         "MainAbility/pages/contentOffset/offsetAlignEnd",
         "MainAbility/pages/contentOffset/offsetAlignStart",
         "MainAbility/pages/contentOffset/listContentOffset",
+        "MainAbility/pages/contentOffset/contentOffsetMin",
         "MainAbility/pages/List/ListWillScroll",
         "MainAbility/pages/List/offsetRemain",
         "MainAbility/pages/List/ListLevel1",

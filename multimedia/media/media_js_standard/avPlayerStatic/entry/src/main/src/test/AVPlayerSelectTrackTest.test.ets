@@ -69,8 +69,8 @@ async function getCurrentAudioTrack() {
     for (let i = 0; i < arrList.length; i++) {
       console.info('getCurrentAudioTrack case track_name is  ' + arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX]);
       console.info('getCurrentAudioTrack case hdr_type is  ' + arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_TYPE]);
-      let propertyIndex: number |undefined = new Double(arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX]!.toString()).unboxed()
-      let propertyType: number|undefined = new Double(arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_TYPE]!.toString()).unboxed()
+      let propertyIndex: number |undefined = new Double(arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX]!.toString())
+      let propertyType: number|undefined = new Double(arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_TYPE]!.toString())
       if (propertyType == 0 && currentTrack != propertyIndex) {
         currentTrack = propertyIndex!.toInt();
         console.log("currentTrack is " + currentTrack);

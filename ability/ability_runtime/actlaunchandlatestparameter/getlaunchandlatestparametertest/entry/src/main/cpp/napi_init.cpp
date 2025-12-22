@@ -55,7 +55,21 @@ static napi_value Error_GetLaunchParameter_buffer_null(napi_env env, napi_callba
     const int32_t bufferSize = 2048;
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(nullptr, bufferSize, &writeLength);
-    if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 如果调用失败或者没有数据，返回空字符串
+        std::string errStr = "errcode:" + std::to_string(ret);
+        napi_value emptyStr;
+        napi_create_string_utf8(env, errStr.c_str(), NAPI_AUTO_LENGTH, &emptyStr);
+        return emptyStr;
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST) {
+        // 如果调用失败或者没有数据，返回空字符串
+        std::string errStr = "errcode:" + std::to_string(ret);
+        napi_value emptyStr;
+        napi_create_string_utf8(env, errStr.c_str(), NAPI_AUTO_LENGTH, &emptyStr);
+        return emptyStr;
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
         napi_value emptyStr;
@@ -155,6 +169,20 @@ static napi_value Error_GetLatestParameter_buffersize_less(napi_env env, napi_ca
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(buffer, bufferSize, &writeLength);
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        // 如果调用失败或者没有数据，返回空字符串
+        std::string errStr = "errcode:" + std::to_string(ret);
+        napi_value emptyStr;
+        napi_create_string_utf8(env, errStr.c_str(), NAPI_AUTO_LENGTH, &emptyStr);
+        return emptyStr;
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_CONTEXT_NOT_EXIST) {
+        // 如果调用失败或者没有数据，返回空字符串
+        std::string errStr = "errcode:" + std::to_string(ret);
+        napi_value emptyStr;
+        napi_create_string_utf8(env, errStr.c_str(), NAPI_AUTO_LENGTH, &emptyStr);
+        return emptyStr;
+    }
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
         napi_value emptyStr;

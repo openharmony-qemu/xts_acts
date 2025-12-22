@@ -14,10 +14,11 @@
  */
 
 import { AlertDialog } from '@ohos.arkui.advanced.Dialog';
-import { CustomColors, CustomTheme } from '@ohos.arkui.theme';
+import { CustomColors, CustomDarkColors, CustomTheme } from '@ohos.arkui.theme';
 
 class CustomThemeImpl implements CustomTheme {
   public colors?: CustomColors;
+  public darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;

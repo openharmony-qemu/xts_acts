@@ -479,12 +479,12 @@ async function encryptAndDecryptNormalProcessSuperdata(
   let globalCipherText: cryptoFramework.DataBlob;
   let globalKey: cryptoFramework.SymKey;
   let globalText: string = '';
-  let globalTextLen: number = 1025;
+  let globalTextLen: int = 1025;
   let encryptMode = cryptoFramework.CryptoMode.ENCRYPT_MODE;
   let decryptMode = cryptoFramework.CryptoMode.DECRYPT_MODE;
   let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz",n = t.length,s="";
   for (let i = 0; i < globalTextLen; i++) {
-    globalText += t.charAt(Math.floor(Math.random() * n));
+    globalText += t.charAt(Math.floor(Math.random() * n).toInt());
   }
 
   return new Promise<boolean>((resolve, reject) => {

@@ -63,7 +63,7 @@ export default function CombinationState6Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState6Jsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState6Jsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0100] START');
       let strJson = getInspectorByKey('PropObjectLink1');
@@ -83,7 +83,7 @@ export default function CombinationState6Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState6Jsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState6Jsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0200] START');
       let strJson1 = getInspectorByKey('PropObjectLink2');
@@ -103,7 +103,7 @@ export default function CombinationState6Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState6Jsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState6Jsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0300] START');
       let strJson2 = getInspectorByKey('PropObjectLink3');
@@ -123,7 +123,7 @@ export default function CombinationState6Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CombinationState6Jsunit_0500', Level.LEVEL0, async (done: Function) => {
+    it('CombinationState6Jsunit_0500', Level.LEVEL1, async (done: Function) => {
       // Get the information of the State component
       console.info('[CombinationState6Jsunit_0500] START');
       let strJson4 = getInspectorByKey('PropObjectLink5');
