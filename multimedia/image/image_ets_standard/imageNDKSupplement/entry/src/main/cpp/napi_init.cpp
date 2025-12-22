@@ -132,7 +132,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelmapNativeWritePixelsToArea", PixelmapNativeWritePixelsToArea),
     DESCRIPTOR("CreatePixelMapSuppTest", CreatePixelMapSuppTest),
     DESCRIPTOR("OHImageEffectErrorCodeSupp", OHImageEffectErrorCodeSupp),
-    DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
+    DESCRIPTOR("OHIRNdkErrorCodeTestSupp", OHIRNdkErrorCodeTestSupp),
     DESCRIPTOR("OHPixelMapTranslateSupplementTest", OHPixelMapTranslateSupplementTest),
     DESCRIPTOR("OHPixelMapRotateSupplementTest", OHPixelMapRotateSupplementTest),
     DESCRIPTOR("OHPixelmapNativeSetColorSpaceNativeSuppTest", OHPixelmapNativeSetColorSpaceNativeSuppTest),
