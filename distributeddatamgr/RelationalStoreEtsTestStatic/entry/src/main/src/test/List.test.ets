@@ -61,8 +61,8 @@ import RdbErrorCode14800050 from "./RdbErrorCode14800050.test";
 import RdbErrorCode14800051 from "./RdbErrorCode14800051.test";
 import RdbErrorCode14801001 from "./RdbErrorCode14801001.test";
 import RdbErrorCode14801002 from "./RdbErrorCode14801002.test";
-import RDBErrorCode18Test from "./RDBErrorCode18Test.test";
-import RDBErrorCode21Test from "./RDBErrorCode21Test.test";
+import RDBErrorCode14800018 from "./RDBErrorCode14800018.test";
+import RDBErrorCode14800021 from "./RDBErrorCode14800021.test";
 
 import CallbackTest from "./CallbackTest.test";
 import AsyncCallback from "./AsyncCallback.test";
@@ -115,8 +115,8 @@ export default function testsuite() {
   RdbErrorCode14800032();
   RdbErrorCode14800033();
   RdbErrorCode801();
-  RDBErrorCode18Test();
-  RDBErrorCode21Test();
+  RDBErrorCode14800018();
+  RDBErrorCode14800021();
 
   CallbackTest();
   AsyncCallback();
