@@ -284,9 +284,6 @@ export default function AVPlayerSetPlayBackStrategySuppTest() {
         }
       })
     })
-
-
-
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_STRATEGY_008
      * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_PLAY_BACK_STRATEGY_008
@@ -908,9 +905,5 @@ export default function AVPlayerSetPlayBackStrategySuppTest() {
         }
       })
     })
-
-
-
-
   })
 }
