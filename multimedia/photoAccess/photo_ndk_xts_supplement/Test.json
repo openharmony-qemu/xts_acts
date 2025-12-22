@@ -9,6 +9,28 @@
         "testcase-timeout": 700000
     },
     "kits": [
+		{
+            "type": "ShellKit",
+            "run-command": [
+                "hilog -Q pidoff",
+                "rm -rf /storage/media/100/local/files/Videos/*",
+                "power-shell wakeup",
+                "power-shell timeout -o 2147483647",
+                "uinput -T -m 300 2700 280 200",
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/ohos.photo.NdkXtsSupplement/haps/entry_test/files/",
+                "chmod -R 777 /data/app/el2/100/base/ohos.photo.NdkXtsSupplement/haps/entry_test/files/",
+                "mkdir -p /data/tmp/case",
+                "chmod -R 777 /data/tmp/case "
+            ],
+            "teardown-command": [
+                "power-shell setmode 600",
+                "rm -rf /data/app/el2/100/database/ohos.photo.NdkXtsSupplement/*",
+                "kill -9 `pidof ohos.photo.NdkXtsSupplement`",
+                "scanner",
+                "sleep 5"
+            ]
+        },
         {
             "test-file-name": [
                 "ActsPhotoXTSNdkSupplementTestMain.hap",
