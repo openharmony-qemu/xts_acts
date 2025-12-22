@@ -16,7 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Leve
 import router from '@system.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
-import { ArcButtonStatus, ArcButtonStyleMode } from '@kit.ArkUI';
+import { ArcButtonStatus, ArcButtonStyleMode, ArcButtonPosition, LevelMode, promptAction } from '@kit.ArkUI';
 
 interface optionsObj {
   uri: string
