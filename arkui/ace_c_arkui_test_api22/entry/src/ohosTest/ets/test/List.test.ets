@@ -42,6 +42,7 @@ import gridAttrsTest from "./grid/GridAttrsTest.test";
 import gridEventTest from './grid/GridEventTest.test';
 import clipShapeTest from "./clipShape/ClipShapeTest.test";
 import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
+import SwiperParamTest from './swiper/SwiperParamTest.test';
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -74,4 +75,5 @@ export default function testsuite() {
   gridEventTest();
   clipShapeTest();
   CustomMarkDirtyTest();
+  SwiperParamTest();
 }
