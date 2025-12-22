@@ -134,7 +134,6 @@ export const ImageSourceInitNativeSuppTest: () => undefined;
 export const PixelmapNativeGetNativeBuffer: (a: number) => number;
 export const TestImageScale: (a: number) => number;
 export const PixelmapNativeWritePixelsToArea: (a: number) => number;
-export const CreatePixelMapSuppTest: (a: number) => number;
 export const OHImageEffectErrorCodeSupp: (a: number) => number;
 export const OHIRNdkErrorCodeTestSupp: (a: number) => number;
 export const MediaLibraryErrorCode: (a: number) => number;
