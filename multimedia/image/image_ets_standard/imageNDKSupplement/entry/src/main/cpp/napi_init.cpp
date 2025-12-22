@@ -16,9 +16,9 @@
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
 #include "ImagePixelMapTest.h"
+#include "napi/native_api.h"
 #include "ImageReceiverNativeTest.h"
 #include "PixleMapNativeTest.h"
-#include "napi/native_api.h"
 #include "InitNativePixelMapTest.h"
 #include "ImageEffectSuppTest.h"
 #include "ImageEffectFilterSuppTest.h"
@@ -37,6 +37,7 @@
 #include "ImageInitImageNativeSuppTest.h"
 #include "OHImageEffectErrcodeSuppTest.h"
 #include "OHPixelMapSupplementTest.h"
+#include "IRNdkErrCodeSupplementTest.h"
 #include "ImageInitImageNativeSuppTest.h"
 #include "OHEffectBufferInfoSetInfoTest.h"
 #include "OHImageEffectRestoreTest.h"
@@ -44,6 +45,7 @@
 #include "OHPixelmapNativeCreatePixelmapNativeTest.h"
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
+
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -154,6 +156,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHPixelmapNativeIsReleasedSuppTest", OHPixelmapNativeIsReleasedSuppTest),
     DESCRIPTOR("OHPixelmapNativeReadPixelsFromAreaSuppTest", OHPixelmapNativeReadPixelsFromAreaSuppTest),
     DESCRIPTOR("OHPixelmapNativeWritePixelsToAreaSuppTest", OHPixelmapNativeWritePixelsToAreaSuppTest),
+    DESCRIPTOR("IRNdkErrCodeSupplementTest", IRNdkErrCodeSupplementTest),
     DESCRIPTOR("OHImageEffectCreateSupplement", OHImageEffectCreateSupplement),
     DESCRIPTOR("OHImageEffectAddFilterSupplement", OHImageEffectAddFilterSupplement),
     DESCRIPTOR("OHImageEffectInsertFilterSupplement", OHImageEffectInsertFilterSupplement),
