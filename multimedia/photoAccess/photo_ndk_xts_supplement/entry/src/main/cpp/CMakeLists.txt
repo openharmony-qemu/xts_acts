@@ -1,5 +1,5 @@
 # the minimum version of CMake.
-cmake_minimum_required(VERSION 3.4.1)
+cmake_minimum_required(VERSION 3.5.1)
 project(MyApplication)
 
 set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
@@ -12,6 +12,8 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include
                     ${NATIVERENDER_ROOT_PATH}/utils)
 
+add_library(entry SHARED main.cpp  CameraSessionNdkTEST.cpp
+    MediaAssetManagerCancelRequestTest.cpp)
 add_library(entry SHARED main.cpp
     OHMediaAssetCreateTest.cpp)
 
@@ -34,6 +36,7 @@ target_link_libraries(entry PUBLIC
     libace_napi.z.so
     libohcamera.so
     libhilog_ndk.z.so
+    libmedia_asset_manager.so
     libimage_effect.so
     libpixelmap.so
     libnative_window.so

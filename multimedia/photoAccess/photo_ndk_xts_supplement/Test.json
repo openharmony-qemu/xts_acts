@@ -18,8 +18,16 @@
             "cleanup-apps": true
         },
         {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/medialibrary/01.mp4 ->/data/tmp/case"
+            ]
+        },
+        {
             "type": "ShellKit",
             "run-command": [
+                "mediatool send /data/tmp/case/01.mp4",
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
