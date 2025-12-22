@@ -245,7 +245,7 @@ struct IndexPage {
               })
             }
 
-          }.width('130%').height('20%').justifyContent(FlexAlign.Center)
+          }.width('160%').height('20%').justifyContent(FlexAlign.Center)
         }.scrollable(ScrollDirection.Horizontal).scrollBar(BarState.On).scrollBarColor(Color.Orange)
 
 
