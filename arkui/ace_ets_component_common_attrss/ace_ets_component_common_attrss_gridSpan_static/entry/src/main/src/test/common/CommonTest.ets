@@ -32,15 +32,15 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       
-      let lastIndex: number = 0;
+      let lastIndex: Int = 0;
 
-      testValues.forEach((temp: TestValue, index: number) => {
+      testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index: number) => {
+      testValues.forEach((testValue: TestValue, index: Int) => {
 
         
         if (testValue.exceptView.indexOf(targetView) < 0) {

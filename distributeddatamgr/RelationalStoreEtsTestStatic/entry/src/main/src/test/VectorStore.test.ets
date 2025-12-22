@@ -50,7 +50,10 @@ let domain: int = 0x0000;
 let tag: string = TAG;
 const RDB_DB_ICUNAME = "VectorStoreTest.db";
 const STORE_CONFIGtest: data_Rdb.StoreConfig = {
-  name: RDB_DB_ICUNAME
+  name: RDB_DB_ICUNAME,
+  securityLevel: data_Rdb.SecurityLevel.S1,
+  tokenizer: data_Rdb.Tokenizer.ICU_TOKENIZER,
+  vector: true,
 };
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test(id INTEGER PRIMARY KEY,repr floatvector(8));";

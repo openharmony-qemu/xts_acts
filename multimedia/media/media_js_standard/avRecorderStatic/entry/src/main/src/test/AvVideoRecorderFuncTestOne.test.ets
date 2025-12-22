@@ -270,7 +270,7 @@ export function avVideoRecorderTestOne() {
             }
           }
         }
-        toList.splice(index, 0, aVvideoProfile);
+        toList.splice(index.toInt(), 0, aVvideoProfile);
         console.log('choosen aVvideoProfile: ' + JSON.stringify(aVvideoProfile));
       }
 

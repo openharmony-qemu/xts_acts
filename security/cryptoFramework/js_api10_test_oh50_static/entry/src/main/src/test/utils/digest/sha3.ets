@@ -179,7 +179,7 @@ async function doMdCallBackSplit(md: cryptoFramework.Md, message: cryptoFramewor
 async function doMd(md: cryptoFramework.Md, msg: cryptoFramework.DataBlob,
   type: asyncType = asyncType.TYPE_IS_PROMISE): Promise<cryptoFramework.DataBlob> {
   try {
-    let rawData: cryptoFramework.DataBlob = {} as cryptoFramework.DataBlob;
+    let rawData: cryptoFramework.DataBlob = { data: new Uint8Array() };
     switch (type) {
       case asyncType.TYPE_IS_SYNC:
         rawData = doMdSync(md, msg);
@@ -201,7 +201,7 @@ async function doMd(md: cryptoFramework.Md, msg: cryptoFramework.DataBlob,
 async function doMdSpilt(md: cryptoFramework.Md, msg: cryptoFramework.DataBlob, blockSize: int,
   type: asyncType = asyncType.TYPE_IS_PROMISE): Promise<cryptoFramework.DataBlob> {
   try {
-    let rawData: cryptoFramework.DataBlob = {} as cryptoFramework.DataBlob;
+    let rawData: cryptoFramework.DataBlob = { data: new Uint8Array() };
     switch (type) {
       case asyncType.TYPE_IS_SYNC:
         rawData = doMdSyncSplit(md, msg, blockSize);
