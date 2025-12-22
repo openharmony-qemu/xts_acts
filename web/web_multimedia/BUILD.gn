@@ -15,10 +15,14 @@ group("ActsWebMultiMediaTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "internet_video_playback_five:ActsAceWebInternetVideoPlaybackFiveTest",
-      "internet_video_playback_six:ActsAceWebInternetVideoPlaybackSixTest",
-      "internet_video_playback_seven:ActsAceWebInternetVideoPlaybackSevenTest",
       "internet_video_playback_eight:ActsAceWebInternetVideoPlaybackEightTest",
+      "internet_video_playback_eleven:ActsAceWebInternetVideoPlaybackElevenTest",
+      "internet_video_playback_five:ActsAceWebInternetVideoPlaybackFiveTest",
+      "internet_video_playback_nine:ActsAceWebInternetVideoPlaybackNineTest",
+      "internet_video_playback_seven:ActsAceWebInternetVideoPlaybackSevenTest",
+      "internet_video_playback_six:ActsAceWebInternetVideoPlaybackSixTest",
+      "internet_video_playback_ten:ActsAceWebInternetVideoPlaybackTenTest",
+      "internet_video_playback_twelve:ActsAceWebInternetVideoPlaybackTwelveTest",
     ]
   }
 }
