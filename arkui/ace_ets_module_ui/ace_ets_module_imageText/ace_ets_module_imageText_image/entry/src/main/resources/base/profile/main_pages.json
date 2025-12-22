@@ -68,6 +68,7 @@
         "MainAbility/pages/ImageGetUIContext/getUIContextApi04",
         "MainAbility/pages/ImageGetUIContext/getUIContextApi05",
         "MainAbility/pages/ImageGetUIContext/getUIContextApi06",
-        "MainAbility/pages/ImageGetUIContext/getUIContextApi07"
+        "MainAbility/pages/ImageGetUIContext/getUIContextApi07",
+        "MainAbility/pages/BlendMode/blendMode"
     ]
 }
