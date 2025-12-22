@@ -15,34 +15,51 @@
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import AbilityKitTest from 'libentry.so'
+import taskpool from '@ohos.taskpool';
+import hilog from '@ohos.hilog';
 
 const ABILITY_ERR_OK = 0;
+const TAG = 'testTag';
+
+@Concurrent
+function StartSelfUIAbilityWithPidResult(casesName: string): number {
+  let result = -1;
+  if(casesName == "StartSelfUIAbilityWithPidPermissionDenied_0100"){
+    result = AbilityKitTest.StartSelfUIAbilityWithPidPermissionDenied();
+  }
+
+  return result
+}
 
 export default function ActsStartNoPermissionTest() {
   describe('ActsStartNoPermissionTest', () => {
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100
-     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100
+     * @tc.name   SUB_Ability_AbilityBase_StartSelfUIAbilityWithPidPermissionDenied_0100
+     * @tc.number SUB_Ability_AbilityBase_StartSelfUIAbilityWithPidPermissionDenied_0100
      * @tc.desc   Testing StartSelfUIAbility returns 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100',
+    it('SUB_Ability_AbilityBase_StartSelfUIAbilityWithPidPermissionDenied_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        const LOG_NAME = `SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100`;
+        const LOG_NAME = `SUB_Ability_AbilityBase_StartSelfUIAbilityWithPidPermissionDenied_0100`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let result:number = AbilityKitTest.StartSelfUIAbilityPermissionDenied();
-          if(result == 801){
-            expect(801).assertEqual(result);
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidPermissionDenied_0100");
+          await taskpool.execute(task1).then((value: Object) => {
+            hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
+            if(value == 801){
+              console.info(`====>${LOG_NAME} result: ` + value);
+              expect(801).assertEqual(value);
+              done();
+              return;
+            }
+            expect(201).assertEqual(value);
+            console.info(`====>${LOG_NAME} result: ` + value);
             done();
-            return;
-          }
-          expect(201).assertEqual(result);
-          console.info(`====>${LOG_NAME} result: ` + result);
-          done();
+          });
         } catch (err) {
           console.error(`====>${LOG_NAME} catch err: ` + err);
           expect(false).assertEqual(ABILITY_ERR_OK);
