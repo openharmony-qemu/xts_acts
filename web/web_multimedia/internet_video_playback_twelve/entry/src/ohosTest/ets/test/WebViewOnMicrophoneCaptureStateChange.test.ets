@@ -71,7 +71,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange001", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange001", 2, 20251229, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange001", 1, 20251229, done);
       sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
     })
 
@@ -85,7 +85,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
      */
     it('testOnMicrophoneCaptureStateChange002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange002", 300752)
-      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", 1, 20251230, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", 2, 20251230, done);
       sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
     })
     /**
