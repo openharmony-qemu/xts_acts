@@ -60,7 +60,7 @@
 #define LOGD(...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
-#define IMAGE_DEFAULT_WIDTH_HEIGHT 1920 * 1080 * 4
+#define IMAGE_DEFAULT_WIDTH_HEIGHT (1920 * 1080 * 4)
 #define IMAGE_DEFAULT_BUFFER 10000
 #define IMAGE_DEFAULT_DATA_LENGTH 96000
 #define IMAGE_DEFAULT_DATA_LENGTH_D (-96000)
@@ -166,10 +166,10 @@ napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info in
     case CASE_INDEX_3:
         buffer[IMAGE_DEFAULT_BUFFER];
         bufferSize = IMAGE_DEFAULT_WIDTH_HEIGHT;
-        buffer = (uint8_t *)malloc(bufferSize);
-        if (buffer == nullptr) {
-            return nullptr;
+        if (bufferSize == 0 || bufferSize > IMAGE_DEFAULT_WIDTH_HEIGHT) {
+            return NULL;
         }
+        buffer = (uint8_t *)malloc(bufferSize);
         errcode = OH_PixelmapNative_GetArgbPixels(pixelmap, buffer, nullptr);
         break;
     default:
