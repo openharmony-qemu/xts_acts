@@ -26,8 +26,6 @@ using namespace OHOS::NeuralNetworkRuntime::Test;
  * @tc.type   RELIABILITY
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
- * 
- * 测试说明：循环创建模型、编译并释放资源，验证稳定性
  */
 static int BuildAndCompileModel(const OHNNGraphArgs &graphArgs,
     const OHNNCompileParam &compileParam, int iteration)
@@ -113,9 +111,8 @@ static int SubAiNnrReliabilityNorthStress0100()
  * @tc.type   RELIABILITY
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL2
- * 
- * 测试说明：创建模型和编译后，循环创建执行器并执行，验证执行器稳定性
  */
+
 static int ExecuteWithExecutor(OH_NNCompilation *compilation,
     const OHNNGraphArgs &graphArgs, int iteration)
 {

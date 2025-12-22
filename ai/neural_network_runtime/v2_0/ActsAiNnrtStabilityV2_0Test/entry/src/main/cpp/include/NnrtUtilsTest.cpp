@@ -273,7 +273,7 @@ int ExecuteGraphMock(OH_NNExecutor *executor,
             operandTem.shape.data(), quantParam, operandTem.type};
         if (std::find(graphArgs.inputIndices.begin(),
             graphArgs.inputIndices.end(), i) !=
-                graphArgs.inputIndices.end()) {
+            graphArgs.inputIndices.end()) {
             ret = OH_NNExecutor_SetInput(executor, inputIndex, &operand,
                 operandTem.data, operandTem.length);
             if (ret != OH_NN_SUCCESS) {
@@ -285,7 +285,7 @@ int ExecuteGraphMock(OH_NNExecutor *executor,
             inputIndex += 1;
         } else if (std::find(graphArgs.outputIndices.begin(),
             graphArgs.outputIndices.end(), i) !=
-                graphArgs.outputIndices.end()) {
+            graphArgs.outputIndices.end()) {
             ret = OH_NNExecutor_SetOutput(executor, outputIndex,
                 operandTem.data, operandTem.length);
             if (ret != OH_NN_SUCCESS) {
@@ -435,11 +435,13 @@ bool CreateFolder(const std::string &path)
             case PathType::DIR:
                 continue;
             case PathType::NOT_FOUND:
-                OH_LOG_INFO(LOG_APP, "mkdir: %{public}s", path.substr(0, i).c_str());
+                OH_LOG_INFO(LOG_APP, "mkdir: %{public}s",
+                    path.substr(0, i).c_str());
                 mkdir(path.substr(0, i).c_str(), mode);
                 break;
             default:
-                OH_LOG_INFO(LOG_APP, "error: %{public}s", path.substr(0, i).c_str());
+                OH_LOG_INFO(LOG_APP, "error: %{public}s",
+                    path.substr(0, i).c_str());
                 return false;
         }
     }
