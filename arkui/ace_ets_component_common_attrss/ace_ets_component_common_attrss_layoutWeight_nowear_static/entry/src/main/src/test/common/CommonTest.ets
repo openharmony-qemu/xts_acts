@@ -34,7 +34,7 @@ export default class CommonTest {
     supportView.forEach(targetView => {
       console.log('targetViewtargetView 1111' + targetView)
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: Int = 0;
+      let lastIndex: Int= 0;
 
       testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
