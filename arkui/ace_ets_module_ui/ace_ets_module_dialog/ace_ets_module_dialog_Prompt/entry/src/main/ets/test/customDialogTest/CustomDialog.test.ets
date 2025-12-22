@@ -87,7 +87,7 @@ export default function CustomDialog() {
      */
     it('CommonState_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CommonState_0100 START');
-      expect(promptAction.CommonState.UNINITIALIZED).assertEqual(0)
+      expect(CommonState.UNINITIALIZED).assertEqual(0)
       console.info('CommonState_0100 END');
       done();
     });
@@ -101,7 +101,7 @@ export default function CustomDialog() {
      */
     it('CommonState_0200', Level.LEVEL2, async (done: Function) => {
       console.info('CommonState_0200 START');
-      expect(promptAction.CommonState.INITIALIZED).assertEqual(1)
+      expect(CommonState.INITIALIZED).assertEqual(1)
       console.info('CommonState_0200 END');
       done();
     });
@@ -115,7 +115,7 @@ export default function CustomDialog() {
      */
     it('CommonState_0300', Level.LEVEL2, async (done: Function) => {
       console.info('CommonState_0300 START');
-      expect(promptAction.CommonState.APPEARING).assertEqual(2)
+      expect(CommonState.APPEARING).assertEqual(2)
       console.info('CommonState_0300 END');
       done();
     });
@@ -129,7 +129,7 @@ export default function CustomDialog() {
      */
     it('CommonState_0400', Level.LEVEL2, async (done: Function) => {
       console.info('CommonState_0400 START');
-      expect(promptAction.CommonState.APPEARED).assertEqual(3)
+      expect(CommonState.APPEARED).assertEqual(3)
       console.info('CommonState_0400 END');
       done();
     });
@@ -143,7 +143,7 @@ export default function CustomDialog() {
      */
     it('CommonState_0500', Level.LEVEL2, async (done: Function) => {
       console.info('CommonState_0500 START');
-      expect(promptAction.CommonState.DISAPPEARING).assertEqual(4)
+      expect(CommonState.DISAPPEARING).assertEqual(4)
       console.info('CommonState_0500 END');
       done();
     });
@@ -157,7 +157,7 @@ export default function CustomDialog() {
      */
     it('CommonState_0600', Level.LEVEL2, async (done: Function) => {
       console.info('CommonState_0600 START');
-      expect(promptAction.CommonState.DISAPPEARED).assertEqual(5)
+      expect(CommonState.DISAPPEARED).assertEqual(5)
       console.info('CommonState_0600 END');
       done();
     });
