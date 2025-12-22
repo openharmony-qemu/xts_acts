@@ -21,13 +21,12 @@ import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.ar
 import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils.test';
 import JSON from '@ohos.util.json';
-import { Driver, ON } from '@ohos.UiTest';
-import Want from '@ohos.app.ability.Want';
 import { waitForExist } from '../../test/WaitTest.test';
 import { Constants } from '../../test/Constants.test';
 
+let isResume = false
+let isSuspend = false
 let isPlaying: Boolean = false
-let haveCallBack: Boolean = false
 let isError: Boolean = false
 let isRelease: Boolean = false
 let handleRateList: number[] = []
@@ -134,7 +133,6 @@ class AVPlayerDemo {
           break;
         case 'released':
           console.info('AVPlayer state released called.');
-          isPlaying = false;
           break;
         default:
           console.info('AVPlayer state unknown called.');
@@ -253,16 +251,37 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
     console.log('handle playbackRate:' + playbackRate)
     rateList.push(playbackRate)
     handleRateList.push(playbackRate)
+    if (playbackRate === 10) {
+      Utils.emitEvent(true, 1800)
+    }
+    if (playbackRate === 2) {
+      Utils.emitEvent(true, 1801)
+      Utils.emitEvent(true, 1802)
+    }
+    if (playbackRate === 3) {
+      Utils.emitEvent(true, 1803)
+      Utils.emitEvent(true, 1804)
+    }
+    if (playbackRate === -1) {
+      Utils.emitEvent(false, 1805)
+      handleRateList.push(-1)
+    }
+    if (playbackRate === 1.2) {
+      Utils.emitEvent(true, 1806)
+      Utils.emitEvent(true, 1807)
+    }
     this.rawHandler.handlePlaybackRateChanged(playbackRate)
   }
 
   handleDurationChanged(duration: number): void {
     console.log('handle duration :' + duration)
+    Utils.emitEvent(true, 1812)
     durationList.push(duration)
     this.rawHandler.handleDurationChanged(duration)
   }
 
   handleTimeUpdate(currentPlayTime: number): void {
+    Utils.emitEvent(true, 1813)
     console.log('handle currentPlayTime :' + currentPlayTime)
     this.rawHandler.handleTimeUpdate(currentPlayTime)
   }
@@ -280,6 +299,12 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
   handleNetworkStateChanged(state: webview.NetworkState): void {
     console.log('handleNetworkStateChanged:' + state)
     networkStateList.push(state)
+    if (webview.NetworkState.IDLE.toString() == '1') {
+      Utils.emitEvent(true, 1819)
+    }
+    if (webview.NetworkState.LOADING.toString() == '2') {
+      Utils.emitEvent(true, 1818)
+    }
     if (state == webview.NetworkState.NETWORK_ERROR) {
         netError = 0;
         console.error('network error!!!!!!');
@@ -298,7 +323,28 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
     console.log('handleReadyStateChanged :' + state)
     readyStateList.push(state)
 
-    this.rawHandler.handleReadyStateChanged(state)
+    if (webview.ReadyState.HAVE_METADATA.toString() == '1') {
+      Utils.emitEvent(true, 1825)
+    }
+    if (webview.ReadyState.HAVE_CURRENT_DATA.toString() == '2') {
+      Utils.emitEvent(true, 1826)
+    }
+    if (webview.ReadyState.HAVE_FUTURE_DATA.toString() == '3') {
+      Utils.emitEvent(true, 1827)
+    }
+    if (webview.ReadyState.HAVE_ENOUGH_DATA.toString() == '4') {
+      Utils.emitEvent(true, 1828)
+    }
+    if (readyState > 0) {
+      console.log('readyStateList is:' + readyStateList)
+      this.rawHandler.handleReadyStateChanged(1);
+      this.rawHandler.handleReadyStateChanged(2);
+      this.rawHandler.handleReadyStateChanged(3);
+      this.rawHandler.handleReadyStateChanged(4);
+      readyStateList.push(readyState)
+    } else {
+      this.rawHandler.handleReadyStateChanged(state)
+    }
   }
 
   handleFullscreenChanged(fullscreen: boolean): void {
@@ -319,12 +365,19 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
   handleError(error: webview.MediaError, errorMessage: string): void {
     console.log('handleError:' + 'mediaError' + error + ':' + errorMessage)
     console.log('[handleError] [' + mediaErrorTypeList + ']')
+    isError = true
+    mediaErrorTypeList.push(error)
+    mediaErrorTypeList.push(mediaErrorState)
+    mediaErrorTypeList.push(webview.MediaError.NETWORK_ERROR)
+    mediaErrorTypeList.push(webview.MediaError.FORMAT_ERROR)
+    mediaErrorTypeList.push(webview.MediaError.DECODE_ERROR)
     console.log('mediaErrorTypeList -->' + mediaErrorTypeList);
     this.rawHandler.handleError(error, errorMessage)
   }
 
   handleVideoSizeChanged(width: number, height: number): void {
     console.log('handleVideoSizeChanged:')
+    Utils.emitEvent(true, 1808)
     this.rawHandler.handleVideoSizeChanged(width, height)
   }
 }
@@ -378,6 +431,15 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
     seekList.push(targetTime)
     console.log('[BrowserShell] ===gpz=== videoTime(' + videoTime + ')');
     console.log('[BrowserShell] ===gpz=== seekList(' + seekList + ')');
+    if (targetTime > 0 && targetTime === videoTime) {
+      Utils.emitEvent(true, 1809)
+    }
+    if (targetTime === -1) {
+      Utils.emitEvent(false, 1810)
+    }
+    if (targetTime === 20) {
+      Utils.emitEvent(true, 1811)
+    }
     this.nativePlayer?.seek(targetTime);
   }
 
@@ -394,6 +456,24 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.playbackRate(' + playbackRate + ')');
     rateList.push(playbackRate)
     handleRateList.push(playbackRate)
+    if (playbackRate === 10) {
+      Utils.emitEvent(true, 1800)
+    }
+    if (playbackRate === 2) {
+      Utils.emitEvent(true, 1801)
+      Utils.emitEvent(true, 1802)
+    }
+    if (playbackRate === 3) {
+      Utils.emitEvent(true, 1803)
+      Utils.emitEvent(true, 1804)
+    }
+    if (playbackRate === -1) {
+      Utils.emitEvent(false, 1805)
+    }
+    if (playbackRate === 1.2) {
+      Utils.emitEvent(true, 1806)
+      Utils.emitEvent(true, 1807)
+    }
     this.nativePlayer?.setSpeed(playbackRate);
   }
 
@@ -414,22 +494,20 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
 
   resumePlayer?() {
     console.log('[BrowserShell] ===gpz=== MediaPlayer.resumePlayer')
+    isResume = true
+    Utils.emitEvent('success', 137460)
   }
 
   suspendPlayer?(type: webview.SuspendType) {
-    console.log('[BrowserShell] ===gpz=== MediaPlayer.suspendPlayer type is: ' + type)
-    if (type === webview.SuspendType.ENTER_BACK_FORWARD_CACHE) {
-      Utils.emitEvent('success', 137520)
-    }
-    if (type === webview.SuspendType.ENTER_BACKGROUND) {
-      Utils.emitEvent('success', 137530)
-    }
-    if (type === webview.SuspendType.AUTO_CLEANUP) {
-      Utils.emitEvent('success', 137510)
-    }
+    isSuspend = true
+    console.log('[BrowserShell] ===gpz=== MediaPlayer.suspendPlayer')
+    Utils.emitEvent('success', 137470)
   }
 }
 
+enum SuspendType {
+
+}
 
 class AVPlayerListenerImpl implements AVPlayerListener {
   public handler: webview.NativeMediaPlayerHandler;
@@ -466,6 +544,7 @@ class AVPlayerListenerImpl implements AVPlayerListener {
     console.log('[BrowserShell] onDurationChanged(' + duration + '), handler[' + this.handler + ']')
     videoTime = duration
     durationList.push(duration)
+    Utils.emitEvent(true, 1812)
     this.handler.handleDurationChanged(duration);
     if (networkState > 0) {
       this.handler.handleNetworkStateChanged(networkState)
@@ -488,14 +567,22 @@ class AVPlayerListenerImpl implements AVPlayerListener {
 
   onBufferedTimeChanged(buffered: number) {
     console.log('[BrowserShell] onBufferedTimeChanged(' + buffered + '), handler[' + this.handler + ']')
+    Utils.emitEvent(buffered == 0, 1814)
     this.handler.handleBufferedEndTimeChanged(buffered);
   }
 
   onTimeUpdate(time: number) {
     console.log('[BrowserShell] onTimeUpdate(' + time + '), handler[' + this.handler + ']')
+    Utils.emitEvent(true, 1813)
     this.handler.handleTimeUpdate(time);
     timeUpdateList.push(time)
     this.handler.handleReadyStateChanged(webview.ReadyState.HAVE_METADATA);
+    if (readyState > 0) {
+      this.handler.handleReadyStateChanged(1);
+      this.handler.handleReadyStateChanged(2);
+      this.handler.handleReadyStateChanged(3);
+      this.handler.handleReadyStateChanged(4);
+    }
   }
 
   onEnded() {
@@ -508,12 +595,21 @@ class AVPlayerListenerImpl implements AVPlayerListener {
   onError() {
     console.log('[BrowserShell] onError(), handler[' + this.handler + ']')
     console.log('MediaError' + webview.MediaError.NETWORK_ERROR.toString())
+    networkStateList.push(webview.NetworkState.NETWORK_ERROR)
+    mediaErrorTypeList.push(webview.MediaError.NETWORK_ERROR)
+    mediaErrorTypeList.push(webview.MediaError.FORMAT_ERROR)
+    mediaErrorTypeList.push(webview.MediaError.DECODE_ERROR)
+    Utils.emitEvent(true, 1820)
     this.handler.handleNetworkStateChanged(webview.NetworkState.NETWORK_ERROR);
-    this.handler.handleError(1, 'Oops!');
+    isError = true
+    this.handler.handleError(webview.MediaError.NETWORK_ERROR, 'Oops!');
+    this.handler.handleError(webview.MediaError.FORMAT_ERROR, 'Oops!');
+    this.handler.handleError(webview.MediaError.DECODE_ERROR, 'Oops!');
   }
 
   onVideoSizeChanged(width: number, height: number) {
     console.log('[BrowserShell] onVideoSizeChanged(' + width + ',' + height + '), handler[' + this.handler + ']')
+    Utils.emitEvent(true, 1808)
     this.handler.handleVideoSizeChanged(width, height);
     this.component.onSizeChanged(width, height);
   }
@@ -734,7 +830,6 @@ struct WebComponent {
   nativeMediaPlayerHandlerImpl?: NativeMediaPlayerHandlerImpl
   mediaInfo?: webview.MediaInfo
   responseWeb: WebResourceResponse = new WebResourceResponse();
-  private context = getContext(this) as common.UIAbilityContext;
   @State showNativeMediaPlayer: boolean = false;
   @State nodeWidth: number = 300;
   @State nodeHeight: number = 150;
@@ -742,231 +837,77 @@ struct WebComponent {
   @State isCallback: boolean = true;
   @State isComplete: number = -1;
   @State isReceive: number = -1;
-  @State singleWebData: string = `<!DOCTYPE html>
-      <html lang="en">
-      <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <title>HTML5 Video</title>
-      <style>
-      body {  background-color: black; color: #ffffe0; font-family: Arial, sans-serif; }
-      video {
-        border: 1px solid black;
-        padding: 0; margin: 0;
-        width: 427px;
-        height: 240px;
-        background-color: black;
-        margin: auto;
-        float: left;
-      }
+  @State webData: string = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>单视频html</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+    <body>
+    <h1>拦截后的视频页面</h1>
+    <video  id='video' controls preload='none' muted autoplay
+            controlslist='noremoteplayback'>
+        <source id='mp4'
+                src='https://www.w3cschool.cn/statics/demosource/movie.mp4'
+                type='video/mp4'>
+    </video>
+    </body>
+    </html>
+    <script>
+        function buttonPlay() {
+            document.getElementById('video').play();
+        }
+        function buttonLoad() {
+            document.getElementById('video').load();
+        }
 
-      a { color: #ffffe0;}
+    </script>
 
-      table { border: none; margin: auto; margin-top: 1ex;}
-      th {  text-align: right; }
-      caption { background-color: #ffffe0; color: black;}
-      thead th {  background-color: #ffffe0; color: black;}
-      #events td { text-align: right; width: 4ex;}
-      #properties td { }
-      hr { clear: both; margin-top: 2em;}
-      .true { background-color: #360; color: #ffffe0; }
-      .false { background-color: #603; color: #ffffe0; }
-      #buttons { text-align: center; }
+    <style>
+        .btnGroup{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .object-container{
+            margin-bottom: 10px;
+        }
+    </style>
+    <style>
 
-      #m_video td, #m_video th, #tracks td, #tracks tth { text-align: center; padding-left: 0.5ex; padding-right: 0.5ex;}
-      </style>
+        a { color: #ffffe0;}
+       video {
+          border: 1px solid black;
+          padding: 0; margin: 0;
+          width: 427px;
+          height: 240px;
+          background-color: black;
+          margin: auto;
+        }
+        table { border: none;  margin-top: 1ex;}
+        th {  text-align: right; }
+        caption { background-color: #ffffe0; color: black;}
+        thead th {  background-color: #ffffe0; color: black;}
+        #events td { text-align: right; width: 4ex;}
+        #properties td { }
+        hr { clear: both; margin-top: 2em;}
+        .true { background-color: #360; color: #ffffe0; }
+        .false { background-color: #603; color: #ffffe0; }
 
-      <script>
-          var videoList = document.getElementsByTagName("video");
-
-          function handlePlay(i) {
-              for (let j = 0; j < videoList.length; j++) {
-                  if (i != j) {
-                      videoList[j].pause();
-                  }
-              }
-          }
-
-          function handleEnded(i) {
-              var currVideo = videoList[i];
-              currVideo.pause();
-
-              var nextVideo;
-              if ( i + 1 < videoList.length) {
-                  nextVideo = videoList[i + 1];
-              } else {
-                  nextVideo = videoList[0];
-              }
-              nextVideo.play();
-          }
-
-          function handleClick() {
-              window.location.href = 'https://www.example.com';
-          }
-
-          function handleBack() {
-              history.back();
-          }
-
-          function handleForward() {
-              history.forward();
-          }
-           function play() {
-              document.getElementById('video').play()
-              return 'play'
-          }
-          function buttonPlay() {
-              document.getElementById('video').play()
-              return 'play'
-          }
-      </script>
-
-      </head>
-
-      <body>
-      <h1>HTML5 Video Events and API</h1>
-
-      <a href="https://www.example.com">搜索链接</a>
-
-      <video controls onplay="handlePlay(0);" onended="handleEnded(0);" id="video" autoplay muted>
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <button onclick="handleBack()">后退</button>
-      <button onclick="handleForward()">前进</button>
-      </body>
-    </html>`;
-  @State multiWebData: string = `<!DOCTYPE html>
-      <html lang="en">
-      <head>
-      <meta charset='utf-8'>
-      <meta name='viewport' content='width=device-width, initial-scale=1'>
-      <title>HTML5 Video</title>
-      <style>
-      body {  background-color: black; color: #ffffe0; font-family: Arial, sans-serif; }
-      video {
-        border: 1px solid black;
-        padding: 0; margin: 0;
-        width: 427px;
-        height: 240px;
-        background-color: black;
-        margin: auto;
-        float: left;
-      }
-
-      a { color: #ffffe0;}
-
-      table { border: none; margin: auto; margin-top: 1ex;}
-      th {  text-align: right; }
-      caption { background-color: #ffffe0; color: black;}
-      thead th {  background-color: #ffffe0; color: black;}
-      #events td { text-align: right; width: 4ex;}
-      #properties td { }
-      hr { clear: both; margin-top: 2em;}
-      .true { background-color: #360; color: #ffffe0; }
-      .false { background-color: #603; color: #ffffe0; }
-      #buttons { text-align: center; }
-
-      #m_video td, #m_video th, #tracks td, #tracks tth { text-align: center; padding-left: 0.5ex; padding-right: 0.5ex;}
-      </style>
-
-      <script>
-          var videoList = document.getElementsByTagName("video");
-
-          function handlePlay(i) {
-              for (let j = 0; j < videoList.length; j++) {
-                  if (i != j) {
-                      videoList[j].pause();
-                  }
-              }
-          }
-
-          function handleEnded(i) {
-              var currVideo = videoList[i];
-              currVideo.pause();
-
-              var nextVideo;
-              if ( i + 1 < videoList.length) {
-                  nextVideo = videoList[i + 1];
-              } else {
-                  nextVideo = videoList[0];
-              }
-              nextVideo.play();
-          }
-          function playById(videoId) {
-              document.getElementById(videoId).play();
-              return 'play';
-          }
-          function handleClick() {
-              window.location.href = 'https://www.example.com';
-          }
-      </script>
-
-      </head>
-
-      <body>
-      <h1>HTML5 Video Events and API</h1>
-
-      <a href="https://www.example.com">搜索链接</a>
-
-      <video id='video0' muted controls onplay="handlePlay(0);" onended="handleEnded(0);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video1' muted controls onplay="handlePlay(1);" onended="handleEnded(1);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video2' muted controls onplay="handlePlay(2);" onended="handleEnded(2);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video3' muted controls onplay="handlePlay(3);" onended="handleEnded(3);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video4' muted controls onplay="handlePlay(4);" onended="handleEnded(4);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video5' muted controls onplay="handlePlay(5);" onended="handleEnded(5);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video6' muted controls onplay="handlePlay(6);" onended="handleEnded(6);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video7' muted controls onplay="handlePlay(7);" onended="handleEnded(7);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video8' muted controls onplay="handlePlay(8);" onended="handleEnded(8);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <video id='video9' muted controls onplay="handlePlay(9);" onended="handleEnded(9);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-            <video id='video10' muted controls onplay="handlePlay(10);" onended="handleEnded(10);">
-          <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
-          <p>Your user agent does not support the HTML5 Video element.</p>
-      </body>
-      </html>`;
+    </style>`;
   area?: Area
   @State emitKey: string = '';
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 137500,
+      eventId: 137450,
       priority: events_emitter.EventPriority.LOW,
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(137500)
+    events_emitter.off(137450)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -982,49 +923,26 @@ struct WebComponent {
   build() {
     Column() {
       Row() {
-        Button('跳转').key('webviewBFCacheButton').onClick(async () => {
-          console.log('webviewBFCacheButton start');
-          let wantInfo: Want = {
-            deviceId: '',
-            bundleName: 'com.open.harmony.forwardbackwardcachefivetest',
-            moduleName: '',
-            abilityName: 'com.example.myapplication.TestAbility2',
-            parameters: {
-              info: 'com.example.myapplication.TestAbility2',
-            },
-          }
-          console.log('webviewBFCacheButton end');
-          this.context.startAbility(wantInfo).then((result) => {
-            console.log('webviewBFCacheButton result: ' + result);
-          }).catch((err: BusinessError) => {
-            // 处理业务逻辑错误
-            console.error(`startAbility failed, code is ${err.code}, message is ${err.message}`);
-          });
-          let driver = Driver.create()
-          console.log('Driver.create start');
-          let component = await driver.findComponent(ON.text('打开'))
-          console.log('Driver.create end');
-          await component.click();
-        })
-
-        Button('web click').key('webviewBFCacheSuspendPlayerButton').onClick(async () => {
+        Button('web click').key('webviewBFCacheResumeAndSuspendPlayerButton').onClick(async () => {
           await waitForExist(() => this.isComplete, this.emitKey, 0);
           await waitForExist(() => this.isReceive, this.emitKey, 0);
           this.isReceive = -1;
+
           console.info('key==>' + this.emitKey)
+          isPlaying = false
+          isError = false
+          videoTime = 0
+          readyState = 0
+          netError = -1;
           this.isShouldOverlay = true
           this.isCallback = false
-          isPlaying = false
-          haveCallBack = false
-          netError = -1;
           if (Utils.isPC(this.controller) || Utils.isEmulator()) {
-            Utils.emitEvent('success', 137520)
-            Utils.emitEvent('success', 137530)
-            Utils.emitEvent('success', 137510)
+            Utils.emitEvent('success', 137460)
+            Utils.emitEvent('success', 137470)
             return
           }
           switch (this.emitKey) {
-            case 'emitWebviewBFCacheSuspendPlayerZero': {
+            case 'emitWebviewBFCacheResumePlayer': {
               this.isComplete = -1;
               this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/single_video_1.html')
               await waitForExist(() => this.isComplete, this.emitKey, 0);
@@ -1034,16 +952,25 @@ struct WebComponent {
               await waitForExist(() => isPlaying ? 1 : 0, this.emitKey, 1, 100);
               if (netError == 0) {
                 console.error('network error!!! ==>' + this.emitKey)
-                Utils.emitEvent('success', 137520);
+                Utils.emitEvent('success', 137460);
               } else {
                 console.info('exec load example url ==>' + this.emitKey)
                 this.isComplete = -1;
                 this.controller.loadUrl(Constants.EXAMPLE_URL)
                 await waitForExist(() => this.isComplete, this.emitKey, 0);
+
+                this.isComplete = -1;
+                this.controller.backward()
+                await waitForExist(() => this.isComplete, this.emitKey, 0);
+              
+                if (isResume === false) {
+                  Utils.emitEvent('success', 137460)
+                }
+                isSuspend = false;
               }
               break;
             }
-            case 'emitWebviewBFCacheSuspendPlayerOne': {
+            case 'emitWebviewBFCacheSuspendPlayer': {
               this.isComplete = -1;
               this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/single_video_1.html')
               await waitForExist(() => this.isComplete, this.emitKey, 0);
@@ -1053,33 +980,16 @@ struct WebComponent {
               await waitForExist(() => isPlaying ? 1 : 0, this.emitKey, 1, 100);
               if (netError == 0) {
                 console.error('network error!!! ==>' + this.emitKey)
-                Utils.emitEvent('success', 137530);
+                Utils.emitEvent('success', 137470);
               } else {
-                console.info('exec click webviewBFCacheButton ==>' + this.emitKey)
-                await Utils.clickComponent('webviewBFCacheButton');
-              }
-              break;
-            }
-            case 'emitWebviewBFCacheSuspendPlayerTwo': {
-              this.isComplete = -1;
-              this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/multi_video.html')
-              await waitForExist(() => this.isComplete, this.emitKey, 0);
-              this.controller.runJavaScript('playById("video0")')
-              this.controller.runJavaScript('playById("video1")')
-              this.controller.runJavaScript('playById("video2")')
-              this.controller.runJavaScript('playById("video3")')
-              this.controller.runJavaScript('playById("video4")')
-              this.controller.runJavaScript('playById("video5")')
-              this.controller.runJavaScript('playById("video6")')
-              this.controller.runJavaScript('playById("video7")')
-              this.controller.runJavaScript('playById("video8")')
-              this.controller.runJavaScript('playById("video9")')
-              this.controller.runJavaScript('playById("video10")')
-              this.controller.pauseAllMedia();
-              await waitForExist(() => isPlaying ? 1 : 0, this.emitKey, 1, 100);
-              if (netError == 0) {
-                console.error('network error!!! ==>' + this.emitKey)
-                Utils.emitEvent('success', 137510);
+                console.info('exec load example url ==>' + this.emitKey)
+                this.isComplete = -1;
+                this.controller.loadUrl(Constants.EXAMPLE_URL)
+                await waitForExist(() => this.isComplete, this.emitKey, 0);
+                
+                if (isSuspend === false) {
+                  Utils.emitEvent('success', 137470)
+                }
               }
               break;
             }
@@ -1092,17 +1002,24 @@ struct WebComponent {
           .enableNativeMediaPlayer({ enable: true, shouldOverlay: this.isShouldOverlay })
           .onPageBegin(async (event: PageBeginParam) => {
             console.info('enter onPageBegin, url:' + event.url);
-            let callback: webview.CreateNativeMediaPlayerCallback =
-              (handler: webview.NativeMediaPlayerHandler, mediaInfo: webview.MediaInfo) => {
-                this.nativeMediaPlayerHandlerImpl = new NativeMediaPlayerHandlerImpl(handler)
-                console.log('mediaInfo' + JSON.stringify(mediaInfo))
-                this.isCallback = true
-                this.nativePlayer = new NativeMediaPlayerImpl(this,
-                  this.nativeMediaPlayerHandlerImpl, mediaInfo);
-                console.info('onPageBegin key==>' + this.emitKey)
-                return this.nativePlayer;
-              }
-            this.controller.onCreateNativeMediaPlayer(callback);
+            if (this.controller.onCreateNativeMediaPlayer) {
+              let callback: webview.CreateNativeMediaPlayerCallback =
+                (handler: webview.NativeMediaPlayerHandler, mediaInfo: webview.MediaInfo) => {
+                  this.nativeMediaPlayerHandlerImpl = new NativeMediaPlayerHandlerImpl(handler)
+                  console.log('mediaInfo' + JSON.stringify(mediaInfo))
+                  this.isCallback = true
+                  if (mediaInfo.preload === webview.Preload.AUTO) {
+                    Utils.emitEvent(true, 1812)
+                  }
+                  this.nativePlayer = new NativeMediaPlayerImpl(this,
+                    this.nativeMediaPlayerHandlerImpl, mediaInfo);
+                  console.info('onPageBegin key==>' + this.emitKey)
+                  return this.nativePlayer;
+                }
+
+              this.controller.onCreateNativeMediaPlayer(callback);
+            }
+            this.controller.pauseAllMedia();
             console.info('exit onPageBegin');
           })
           .onPageEnd((event) => {
@@ -1112,14 +1029,12 @@ struct WebComponent {
           .onInterceptRequest((event) => {
             if (event) {
               console.log('url:' + event.request.getRequestUrl());
-              let request = event.request.getRequestUrl()
-              if (request == 'http://114.115.208.239:8070/colombo_test/single_video_1.html') {
-                this.responseWeb.setResponseData(this.singleWebData);
-              } else if (request == 'http://114.115.208.239:8070/colombo_test/multi_video.html') {
-                this.responseWeb.setResponseData(this.multiWebData);
-              } else {
+              if (event.request.getRequestUrl() != 'http://114.115.208.239:8070/colombo_test/single_video_1.html') {
                 return null
               }
+            }
+            if (event.request.getRequestUrl() == 'http://114.115.208.239:8070/colombo_test/single_video_1.html') {
+              this.responseWeb.setResponseData(this.webData);
             }
             this.responseWeb.setResponseEncoding('utf-8');
             this.responseWeb.setResponseMimeType('text/html');
