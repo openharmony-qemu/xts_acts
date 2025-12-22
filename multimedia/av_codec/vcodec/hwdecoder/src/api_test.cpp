@@ -2442,4 +2442,42 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_ADD_0020, TestSize.Level2)
 {
     ASSERT_EQ(nullptr, OH_AVBuffer_GetNativeBuffer(nullptr));
 }
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0030
+ * @tc.number VIDEO_HWDEC_API_ADD_0030
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_ADD_0030, TestSize.Level2)
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    OH_AVCodecBufferAttr attr;
+    attr.pts = -1;
+    attr.size = -1;
+    attr.offset = -1;
+    attr.flags = AVCODEC_BUFFER_FLAGS_DISPOSABLE;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_PushInputData(vdec_, 0, attr));
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_API_ADD_0040
+ * @tc.number VIDEO_HWDEC_API_ADD_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_ADD_0040, TestSize.Level2)
+{
+    vdec_ = OH_VideoDecoder_CreateByName(g_codecName.c_str());
+    OH_AVCodecBufferAttr attr;
+    attr.pts = -1;
+    attr.size = -1;
+    attr.offset = -1;
+    attr.flags = AVCODEC_BUFFER_FLAGS_INCOMPLETE_FRAME;
+    ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoDecoder_PushInputData(vdec_, 0, attr));
+}
 } // namespace
