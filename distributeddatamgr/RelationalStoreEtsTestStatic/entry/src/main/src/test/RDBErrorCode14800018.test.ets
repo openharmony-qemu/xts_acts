@@ -51,8 +51,8 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
 
 let rdbStore: relationalStore.RdbStore;
 
-export default function RDBErrorCode18Test() {
-  describe('RDBErrorCode18Test', (): void => {
+export default function RDBErrorCode14800018() {
+  describe('RDBErrorCode14800018', (): void => {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll');
       await Utils.msSleep(2000)
