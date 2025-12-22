@@ -74,6 +74,7 @@ group("ActsAceEtsModuleNavigationTest") {
       "ace_ets_module_router_nowear:ActsAceEtsModuleRouterNoWearTest",
       "ace_ets_module_navigation_api11_static:ActsAceEtsModuleNavigationApi11StaticTest",
       "ace_ets_module_navigation_api18_static:ActsAceEtsModuleNavigationApi18StaticTest",
+      "ace_ets_module_navigation_api16_static:ActsAceEtsModuleNavigationApi16StaticTest",
     ]
   }
 }
