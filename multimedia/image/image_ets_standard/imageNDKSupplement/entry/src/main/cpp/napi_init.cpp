@@ -36,6 +36,8 @@
 #include "ImageSourceTest.h"
 #include "OHPixelMapSupplementTest.h"
 #include "ImageInitImageNativeSuppTest.h"
+#include "ImageNdkErrCodeTest.h"
+
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -167,6 +169,7 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
     DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
     DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
+    DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
