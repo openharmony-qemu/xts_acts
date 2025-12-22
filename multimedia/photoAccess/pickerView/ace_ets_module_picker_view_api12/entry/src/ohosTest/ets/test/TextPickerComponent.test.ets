@@ -98,6 +98,7 @@ function getDefaultPickerOptions(): PickerOptions {
   pickerOptions.maxVideoSelectNumber = 500;
   pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.AUTO;
   pickerOptions.orientation = PickerOrientation.HORIZONTAL;
+  pickerOptions.edgeEffect = EdgeEffect.Spring;
   return pickerOptions;
 }
 
@@ -2737,6 +2738,7 @@ export default function TextPicker() {
         let expectedBrowserColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedIsSlidingSupported: boolean = true;
+        let expectedEdgeEffect: EdgeEffect = EdgeEffect.None;
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -2749,6 +2751,7 @@ export default function TextPicker() {
         expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
         expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
         expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
+        expect(expectedEdgeEffect).assertEqual(msg.edgeEffect);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -2988,5 +2991,52 @@ export default function TextPicker() {
       events_emitter.off(event.eventId);
       done();
     });
+
+    /**
+      * @tc.number      testPicker60
+      * @tc.name        testPicker60
+      * @tc.desc        Testing EdgeEffect
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
+      */
+    it('testPicker60', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.edgeEffect = EdgeEffect.None;
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: EdgeEffect = EdgeEffect.None;
+        let result: PhotoPickerResult = event?.data?.msg.edgeEffect ?? EdgeEffect.Spring;
+        console.info('testPicker60 result event.data.msg=:' + result);
+        console.info('testPicker60 result expect =:' + expectResult);
+        expect(result).assertEqual(expectResult);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker60 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickResultButton(driver);
+      router.back();
+      console.info("testPicker60 finish");
+      events_emitter.off(event.eventId);
+      done();
+    });
+
   })
 }

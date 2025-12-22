@@ -31,5 +31,6 @@ export class PhotoPickerResult {
   public uiComponentColorMode: number = 0;
   public pickerIndex: number = -1;
   public preselectedInfos: PreselectedInfo[] = [];
-   public isSlidingSupported: boolean = false;
+  public isSlidingSupported: boolean = false;
+  public edgeEffect: EdgeEffect = EdgeEffect.Spring;
 }
