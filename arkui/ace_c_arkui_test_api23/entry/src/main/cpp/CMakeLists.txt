@@ -28,6 +28,9 @@ add_library(nativerender SHARED
     row/RowSpaceTest.cpp
     column/ColumnReverseTest.cpp
     row/RowReverseTest.cpp
+    text/TextCompressLeadingPunctuationTest.cpp
+    textArea/TextAreaCompressLeadingPunctuationTest.cpp
+    textInput/TextInputCompressLeadingPunctuationTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -7812,6 +7812,7 @@ export default function windowPropertiesTest() {
             expect(res.firstDrawFrame).assertEqual(false);
             expect(res.vsyncTimestamp).assertLarger(0);
             expect(res.inputHandlingDuration).assertLarger(0);
+            expect(res.layoutMeasureDuration).assertLarger(0);
             windowClass?.off('frameMetricsMeasured');
             await windowClass?.destroyWindow()
             done();

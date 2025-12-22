@@ -135,16 +135,19 @@ bool IsNNRTAvailable()
 bool IsNPU()
 {
     size_t num = 0;
-    auto desc = OH_AI_GetAllNNRTDeviceDescs(&num);
-    if (desc == nullptr) {
+    auto descs = OH_AI_GetAllNNRTDeviceDescs(&num);
+    if (descs == nullptr) {
         return false;
     }
-    auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
-    const std::string npuNamePrefix = "NPU_";
-    if (strncmp(npuNamePrefix.c_str(), name, npuNamePrefix.size()) != 0) {
-        return false;
+    for (size_t i = 0; i < num; i++) {
+        auto desc = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
+        const std::string npuNamePrefix = "NPU_";
+        if (strncmp(npuNamePrefix.c_str(), name, npuNamePrefix.size()) == 0) {
+            return true;
+        }
     }
-    return true;
+    return false;
 }
 
 // add nnrt device info
@@ -155,7 +158,7 @@ void AddContextDeviceNNRT(OH_AI_ContextHandle context)
     if (descs == nullptr) {
         return;
     }
-
+    NNRTDeviceDesc* desc_1 = nullptr;
     std::cout << "found " << num << " nnrt devices" << std::endl;
     for (size_t i = 0; i < num; i++) {
         auto desc = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
@@ -163,11 +166,17 @@ void AddContextDeviceNNRT(OH_AI_ContextHandle context)
         auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc);
         auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
         auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc);
+        const std::string npuNamePrefix = "NPU_";
+        if (strncmp(npuNamePrefix.c_str(), name, npuNamePrefix.size()) == 0) {
+            desc_1 = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        }
         std::cout << "NNRT device: id = " << id << ", name: " << name << ", type:" << type << std::endl;
     }
-
-    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(descs);
-
+    if (desc_1 == nullptr) {
+        return;
+    }
+    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
+    std::cout << "NNRT device: id = " << id << std::endl;
     OH_AI_DeviceInfoHandle nnrtDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
     ASSERT_NE(nnrtDeviceInfo, nullptr);
     OH_AI_DeviceInfoSetDeviceId(nnrtDeviceInfo, id);
@@ -192,7 +201,7 @@ void AddContextDeviceNNRTWithCache(OH_AI_ContextHandle context, const char* cach
     if (descs == nullptr) {
         return;
     }
-
+    NNRTDeviceDesc* desc_1 = nullptr;
     std::cout << "found " << num << " nnrt devices" << std::endl;
     for (size_t i = 0; i < num; i++) {
         auto desc = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
@@ -200,10 +209,17 @@ void AddContextDeviceNNRTWithCache(OH_AI_ContextHandle context, const char* cach
         auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc);
         auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
         auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc);
+        const std::string npuNamePrefix = "NPU_";
+        if (strncmp(npuNamePrefix.c_str(), name, npuNamePrefix.size()) == 0) {
+            desc_1 = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        }
         std::cout << "NNRT device: id = " << id << ", name: " << name << ", type:" << type << std::endl;
     }
-
-    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(descs);
+    if (desc_1 == nullptr) {
+        return;
+    }
+    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
+    std::cout << "NNRT device: id = " << id << std::endl;
 
     OH_AI_DeviceInfoHandle nnrtDeviceInfo = OH_AI_DeviceInfoCreate(OH_AI_DEVICETYPE_NNRT);
     ASSERT_NE(nnrtDeviceInfo, nullptr);
@@ -228,20 +244,36 @@ void AddContextDeviceNNRTWithCache(OH_AI_ContextHandle context, const char* cach
 void AddContextDeviceNNRTByType(OH_AI_ContextHandle context)
 {
     size_t num = 0;
-    auto desc = OH_AI_GetAllNNRTDeviceDescs(&num);
+    auto descs = OH_AI_GetAllNNRTDeviceDescs(&num);
     // 返回值desc是NNRTDeviceDesc结构体数组首地址
-    if (desc == nullptr) {
+    if (descs == nullptr) {
         return;
     }
+
+    NNRTDeviceDesc* desc_1 = nullptr;
     // 目前nnrt仅提供了rk3568的驱动，只有cpu一个设备，故不用判断
     std::cout << "found " << num << " nnrt devices" << std::endl;
-    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc);
-    auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
-    auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc);
-    std::cout << "NNRT device: id = " << id << ", name: " << name << ", type:" << type << std::endl;
+    for (size_t i = 0; i < num; i++) {
+        auto desc = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        ASSERT_NE(desc, nullptr);
+        auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc);
+        auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
+        auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc);
+        const std::string npuNamePrefix = "NPU_";
+        if (strncmp(npuNamePrefix.c_str(), name, npuNamePrefix.size()) == 0) {
+            desc_1 = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        }
+        std::cout << "NNRT device: id = " << id << ", name: " << name << ", type:" << type << std::endl;
+    }
+    if (desc_1 == nullptr) {
+        return;
+    }
+    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
+    std::cout << "NNRT device: id = " << id << std::endl;
+    auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc_1);
 
     auto nnrtDeviceInfo = OH_AI_CreateNNRTDeviceInfoByType(type);
-    OH_AI_DestroyAllNNRTDeviceDescs(&desc);
+    OH_AI_DestroyAllNNRTDeviceDescs(&descs);
     ASSERT_NE(nnrtDeviceInfo, nullptr);
 
     OH_AI_DeviceType deviceType = OH_AI_DeviceInfoGetDeviceType(nnrtDeviceInfo);
@@ -256,20 +288,34 @@ void AddContextDeviceNNRTByType(OH_AI_ContextHandle context)
 void AddContextDeviceNNRTByName(OH_AI_ContextHandle context)
 {
     size_t num = 0;
-    auto desc = OH_AI_GetAllNNRTDeviceDescs(&num);
+    auto descs = OH_AI_GetAllNNRTDeviceDescs(&num);
     // 返回值desc是NNRTDeviceDesc结构体数组首地址
-    if (desc == nullptr) {
+    if (descs == nullptr) {
         return;
     }
-    // 目前nnrt仅提供了rk3568的驱动，只有cpu一个设备，故不用判断
+    NNRTDeviceDesc* desc_1 = nullptr;
     std::cout << "found " << num << " nnrt devices" << std::endl;
-    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc);
-    auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
-    auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc);
-    std::cout << "NNRT device: id = " << id << ", name: " << name << ", type:" << type << std::endl;
+    for (size_t i = 0; i < num; i++) {
+        auto desc = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        ASSERT_NE(desc, nullptr);
+        auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc);
+        auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc);
+        auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc);
+        const std::string npuNamePrefix = "NPU_";
+        if (strncmp(npuNamePrefix.c_str(), name, npuNamePrefix.size()) == 0) {
+            desc_1 = OH_AI_GetElementOfNNRTDeviceDescs(descs, i);
+        }
+        std::cout << "NNRT device: id = " << id << ", name: " << name << ", type:" << type << std::endl;
+    }
+    if (desc_1 == nullptr) {
+        return;
+    }
+    auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
+    std::cout << "NNRT device: id = " << id << std::endl;
+    auto name = OH_AI_GetNameFromNNRTDeviceDesc(desc_1);
 
     auto nnrtDeviceInfo = OH_AI_CreateNNRTDeviceInfoByName(name);
-    OH_AI_DestroyAllNNRTDeviceDescs(&desc);
+    OH_AI_DestroyAllNNRTDeviceDescs(&descs);
     ASSERT_NE(nnrtDeviceInfo, nullptr);
 
     OH_AI_DeviceType deviceType = OH_AI_DeviceInfoGetDeviceType(nnrtDeviceInfo);

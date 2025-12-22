@@ -13,6 +13,9 @@
     "MainAbility/pages/column/ColumnSpaceTest",
     "MainAbility/pages/row/RowSpaceTest",
     "MainAbility/pages/column/ColumnReverseTest",
-    "MainAbility/pages/row/RowReverseTest"
+    "MainAbility/pages/row/RowReverseTest",
+    "MainAbility/pages/text/TextCompressLeadingPunctuationTest",
+    "MainAbility/pages/textArea/TextAreaCompressLeadingPunctuationTest",
+    "MainAbility/pages/textInput/TextInputCompressLeadingPunctuationTest"
   ]
 }

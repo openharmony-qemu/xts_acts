@@ -49,6 +49,7 @@ import VelocityFields from './Particle/VelocityFields.test';
 import UIContextAnimateToImmediately from './AnimatorResultTest/UIContextAnimateToImmediately.test'
 import StepsCurveComponent from './StepsCurveComponent.test';
 import CurvesSpringMotion from './CurvesSpringMotion.test';
+import AnimatorEase from './Animation/AnimatorEase.test';
 
 export default function testsuite() {
   animateJsunit();
@@ -87,4 +88,5 @@ export default function testsuite() {
   UIContextAnimateToImmediately();
   StepsCurveComponent();
   CurvesSpringMotion();
+  AnimatorEase();
 }

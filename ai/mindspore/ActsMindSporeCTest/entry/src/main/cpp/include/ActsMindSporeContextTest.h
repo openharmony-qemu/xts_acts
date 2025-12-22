@@ -77,6 +77,16 @@ int SUBAIMindSporeContextCreate0055();
 int SUBAIMindSporeContextCreate0056();
 int SUBAIMindSporeContextCreate0057();
 int SUBAIMindSporeContextCreate0058();
+int SUBAIMindSporeContextCreate0059();
+int SUBAIMindSporeContextCreate0060();
+int SUBAIMindSporeContextCreate0061();
+int SUBAIMindSporeContextCreate0062();
+int SUBAIMindSporeContextCreate0063();
+int SUBAIMindSporeContextCreate0064();
+int SUBAIMindSporeContextCreate0065();
+int SUBAIMindSporeContextCreate0066();
+int SUBAIMindSporeContextDestroy0001();
+int SUBAIMindSporeContextDestroy0002();
 } // namespace MindSpore
 } // namespace Acts
 
