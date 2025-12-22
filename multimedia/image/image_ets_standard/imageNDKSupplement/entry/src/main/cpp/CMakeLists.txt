@@ -44,7 +44,7 @@ add_library(imageEffect SHARED
     OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp
-    IRNdkErrCodeSupplementTest.cpp)
+    IRNdkErrCodeSupplementTest.cpp
     ImageResultIRNdkErrCodeTest.cpp
     ImageNdkErrCodeTest.cpp)
 
