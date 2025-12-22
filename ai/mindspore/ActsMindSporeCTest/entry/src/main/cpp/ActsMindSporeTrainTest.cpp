@@ -156,6 +156,8 @@ int SUBAIMindSporeTrainUpdateWeights0002()
         model, OH_AI_MODELTYPE_MINDIR, FilePath("lenet_train_infer.ms").c_str(), OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OH_AI_TensorHandleArray exportUpdateWeights = OH_AI_ModelGetWeights(model);
+    ASSERT_NE(exportUpdateWeights.handle_list, nullptr);
+    ASSERT_NE(exportUpdateWeights.handle_num, 0);
     for (size_t i = 0; i < exportUpdateWeights.handle_num; ++i) {
         OH_AI_TensorHandle weightsTensor = exportUpdateWeights.handle_list[i];
         if (strcmp(OH_AI_TensorGetName(weightsTensor), "fc3.bias") == 0) {
@@ -201,7 +203,7 @@ int SUBAIMindSporeTrainUpdateWeights0003()
     vecInputs.push_back(tensor);
     OH_AI_TensorHandleArray updateWeights = { 1, vecInputs.data() };
     status = OH_AI_ModelUpdateWeights(model, updateWeights);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -240,7 +242,7 @@ int SUBAIMindSporeTrainUpdateWeights0004()
     vecInputs.push_back(tensor);
     OH_AI_TensorHandleArray updateWeights = { 1, vecInputs.data() };
     status = OH_AI_ModelUpdateWeights(model, updateWeights);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -285,10 +287,34 @@ int SUBAIMindSporeTrainUpdateWeights0005()
     }
     OHPrintf("==========OH_AI_TrainModel updateWeights==========\n");
     status = OH_AI_ModelUpdateWeights(model, { featureMaps.size(), featureMaps.data() });
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
+}
+void RunStepErrorCodeTest()
+{
+    // OH_AI_RunStep异常测试
+    OHPrintf("==========Init Context==========\n");
+    OH_AI_ContextHandle context01 = OH_AI_ContextCreate();
+    ASSERT_NE(context01, nullptr);
+    AddContextDeviceCPU(context01);
+    OHPrintf("==========Create model==========\n");
+    OH_AI_ModelHandle model01 = OH_AI_ModelCreate();
+    ASSERT_NE(model01, nullptr);
+    OHPrintf("==========Build model==========\n");
+    OH_AI_Status ret = OH_AI_ModelBuildFromFile(
+        model01, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context01);
+    OHPrintf("==========build model return code:%d\n", ret);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    auto status01 = OH_AI_RunStep(model01, nullptr, nullptr);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_INPUT_TENSOR_ERROR);
+    auto status02 = OH_AI_RunStep(nullptr, nullptr, nullptr);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_PARAM_INVALID);
+    auto status03 = OH_AI_ModelSetLearningRate(model01, 1000.0f);
+    ASSERT_EQ(status03, OH_AI_STATUS_LITE_ERROR);
+    OH_AI_ContextDestroy(&context01);
+    OH_AI_ModelDestroy(&model01);
 }
 // 异常场景：更新权重tensor name错误一个
 /**
@@ -330,9 +356,12 @@ int SUBAIMindSporeTrainUpdateWeights0006()
     OHPrintf("==========OH_AI_TrainModel updateWeights==========\n");
     OH_AI_TensorSetName(featureMaps.at(1), "AAAA");
     status = OH_AI_ModelUpdateWeights(model, { featureMaps.size(), featureMaps.data() });
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
+    auto status01 = OH_AI_ModelUpdateWeights(nullptr, { featureMaps.size(), featureMaps.data() });
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    RunStepErrorCodeTest();
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：设置学习率为0.01
@@ -407,6 +436,8 @@ int SUBAIMindSporeTrainSetLearningRate0002()
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     auto learingRate = OH_AI_ModelGetLearningRate(model);
     std::cout << "learingRate:" << learingRate << std::endl;
+    auto status01 = OH_AI_ModelSetLearningRate(nullptr, 1000.0f);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     status = OH_AI_ModelSetLearningRate(model, EXTREME_LEARNING_RATE);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     learingRate = OH_AI_ModelGetLearningRate(model);
@@ -418,12 +449,37 @@ int SUBAIMindSporeTrainSetLearningRate0002()
     FillInputsData(inputs, "lenet_train", false);
     status = OH_AI_ModelSetTrainMode(model, true);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    auto status02 = OH_AI_ModelSetTrainMode(nullptr, true);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_PARAM_INVALID);
     OHPrintf("==========Model RunStep==========\n");
     status = OH_AI_RunStep(model, nullptr, nullptr);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
+}
+void SetupVirtualBatchErrorCodeTest()
+{
+    printf("==========error code==========\n");
+    constexpr size_t setupVirtualBatchArg1 = 2;
+    constexpr float setupVirtualBatchArg2 = -1.0f;
+    constexpr float setupVirtualBatchArg3 = -1.0f;
+    printf("==========Init Context==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    printf("==========Create model==========\n");
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    printf("==========Build model==========\n");
+    OH_AI_Status ret = OH_AI_ModelBuildFromFile(model, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context);
+    printf("==========build model return code:%d\n", ret);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    auto status = OH_AI_ModelSetupVirtualBatch(
+        model, setupVirtualBatchArg1, setupVirtualBatchArg2, setupVirtualBatchArg3);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
 }
 // 正常场景：设置虚拟batch_size为2
 /**
@@ -439,51 +495,74 @@ int SUBAIMindSporeTrainSetupVirtualBatch0001()
     constexpr size_t setupVirtualBatchArg1 = 2;
     constexpr float setupVirtualBatchArg2 = -1.0f;
     constexpr float setupVirtualBatchArg3 = -1.0f;
-    OHPrintf("==========OH_AI_ContextCreate==========\n");
+    OHPrintf("==========OH_AI_ModelCreate and OH_AI_ContextCreate==========\n");
     OH_AI_ContextHandle context = OH_AI_ContextCreate();
     ASSERT_NE(context, nullptr);
     AddContextDeviceCPU(context);
-    OHPrintf("==========OH_AI_ModelCreate==========\n");
     OH_AI_ModelHandle model = OH_AI_ModelCreate();
     ASSERT_NE(model, nullptr);
-    OHPrintf("==========OH_AI_TrainCfgCreate==========\n");
     OH_AI_TrainCfgHandle trainCfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(trainCfg, nullptr);
     OHPrintf("==========OH_AI_TrainModelBuildFromFile==========\n");
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("lenet_train.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    status = OH_AI_ModelSetupVirtualBatch(model, setupVirtualBatchArg1, setupVirtualBatchArg2, setupVirtualBatchArg3);
+    status = OH_AI_ModelSetupVirtualBatch(
+        model, setupVirtualBatchArg1, setupVirtualBatchArg2, setupVirtualBatchArg3);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    auto status01 = OH_AI_ModelSetupVirtualBatch(
+        nullptr, setupVirtualBatchArg1, setupVirtualBatchArg2, setupVirtualBatchArg3);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OHPrintf("==========GetInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
     FillInputsData(inputs, "lenet_train", false);
     status = OH_AI_ModelSetTrainMode(model, true);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OHPrintf("==========Model RunStep==========\n");
+    OHPrintf("==========Model RunStep and OH_AI_ExportModel==========\n");
     status = OH_AI_RunStep(model, nullptr, nullptr);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OHPrintf("==========OH_AI_ExportModel==========\n");
     status = OH_AI_ExportModel(
         model, OH_AI_MODELTYPE_MINDIR, FilePath("lenet_train_infer.ms").c_str(), OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========OH_AI_ModelSetTrainMode==========\n");
     status = OH_AI_ModelSetTrainMode(model, false);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OHPrintf("==========OH_AI_ContextCreate2==========\n");
+    OHPrintf("==========OH_AI_ModelCreate2 and OH_AI_ContextCreate2==========\n");
     OH_AI_ContextHandle context2 = OH_AI_ContextCreate();
     ASSERT_NE(context2, nullptr);
     AddContextDeviceCPU(context2);
-    OHPrintf("==========OH_AI_ModelCreate2==========\n");
     OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
     ASSERT_NE(model2, nullptr);
     OHPrintf("==========ModelPredict==========\n");
     ModelPredict(model2, context2, ModelPredictOptions("lenet_train_infer", {}, false, false, false));
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    SetupVirtualBatchErrorCodeTest();
     return OH_AI_STATUS_SUCCESS;
 }
+void SetTrainCfgOptimizationLevel(OH_AI_TrainCfgHandle trainCfg)
+{
+    auto optLevel = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
+    std::cout << "optLevel:" << optLevel << std::endl;
+    OH_AI_TrainCfgSetOptimizationLevel(trainCfg, OH_AI_KO0);
+    auto setOptLevel01 = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
+    ASSERT_EQ(setOptLevel01, OH_AI_KO0);
+    OH_AI_TrainCfgSetOptimizationLevel(trainCfg, OH_AI_KO3);
+    auto setOptLevel02 = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
+    ASSERT_EQ(setOptLevel02, OH_AI_KO3);
+    OH_AI_TrainCfgSetOptimizationLevel(trainCfg, OH_AI_KAUTO);
+    auto setOptLevel03 = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
+    ASSERT_EQ(setOptLevel03, OH_AI_KAUTO);
+    OH_AI_TrainCfgSetOptimizationLevel(trainCfg, OH_AI_KOPTIMIZATIONTYPE);
+    auto setOptLevel04 = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
+    ASSERT_EQ(setOptLevel04, OH_AI_KOPTIMIZATIONTYPE);
+    OH_AI_TrainCfgSetOptimizationLevel(trainCfg, OH_AI_KO2);
+    auto setOptLevel05 = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
+    ASSERT_EQ(setOptLevel05, OH_AI_KO2);
+    std::cout << "setOptLevel:" << setOptLevel05 << std::endl;
+}
+
 // 正常场景：设置优化等级
 /**
  * @tc.name   SUBAIMindSporeTrainSetOptimizationLevel0001
@@ -505,11 +584,7 @@ int SUBAIMindSporeTrainSetOptimizationLevel0001()
     OHPrintf("==========OH_AI_TrainCfgCreate==========\n");
     OH_AI_TrainCfgHandle trainCfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(trainCfg, nullptr);
-    auto optLevel = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
-    std::cout << "optLevel:" << optLevel << std::endl;
-    OH_AI_TrainCfgSetOptimizationLevel(trainCfg, OH_AI_KO2);
-    auto setOptLevel = OH_AI_TrainCfgGetOptimizationLevel(trainCfg);
-    std::cout << "setOptLevel:" << setOptLevel << std::endl;
+    SetTrainCfgOptimizationLevel(trainCfg);
     OHPrintf("==========OH_AI_TrainModelBuildFromFile==========\n");
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("lenet_train.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
@@ -764,8 +839,15 @@ int SUBAIMindSporeTrainModelBuild0002()
     OH_AI_TrainCfgHandle trainCfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(trainCfg, nullptr);
     OHPrintf("==========Build model by graphBuf==========\n");
-    auto status = OH_AI_TrainModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    size_t size;
+    size_t *ptrSize = &size;
+    char *graphBuf = ReadFile("/data/test/lenet_train.ms", ptrSize);
+    auto status01 = OH_AI_TrainModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_NULLPTR);
+    auto status02 = OH_AI_TrainModelBuild(model, graphBuf, 0, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_ERROR);
+    auto status03 = OH_AI_TrainModelBuild(model, graphBuf, size, OH_AI_MODELTYPE_INVALID, context, trainCfg);
+    ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -793,7 +875,7 @@ int SUBAIMindSporeTrainModelBuild0003()
     ASSERT_NE(trainCfg, nullptr);
     auto status = OH_AI_TrainModelBuildFromFile(
         model, FilePath("not_exist/lenet_train.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -819,8 +901,13 @@ int SUBAIMindSporeTrainModelBuild0004()
     OHPrintf("==========OH_AI_TrainCfgCreate==========\n");
     OH_AI_TrainCfgHandle trainCfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(trainCfg, nullptr);
-    auto status = OH_AI_TrainModelBuildFromFile(model, "", OH_AI_MODELTYPE_MINDIR, context, trainCfg);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    auto status01 = OH_AI_TrainModelBuildFromFile(model, "", OH_AI_MODELTYPE_MINDIR, context, trainCfg);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_ERROR);
+    auto status02 = OH_AI_TrainModelBuildFromFile(model, nullptr, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_NULLPTR);
+    auto status03 = OH_AI_TrainModelBuildFromFile(
+        model, "/data/test/lenet_train.ms", OH_AI_MODELTYPE_INVALID, context, trainCfg);
+    ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -1131,7 +1218,7 @@ int SUBAIMindSporeTrainExportModel0007()
     OHPrintf("==========OH_AI_ExportModel==========\n");
     auto status = OH_AI_ExportModel(
         model, OH_AI_MODELTYPE_INVALID, FilePath("lenet_train_infer.ms").c_str(), OH_AI_NO_QUANT, true, nullptr, 0);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -1167,7 +1254,7 @@ int SUBAIMindSporeTrainExportModel0008()
                                     true,
                                     outputTensorName,
                                     1);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -1324,15 +1411,37 @@ int SUBAIMindSporeTrainExportModel0013()
     auto status = OH_AI_ExportModel(
         model, OH_AI_MODELTYPE_MINDIR, FilePath("lenet_train_infer.ms").c_str(), OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    OHPrintf("==========OH_AI_ModelSetTrainMode==========\n");
+    OHPrintf("==========OH_AI_ModelSetTrainMode:false==========\n");
     status = OH_AI_ModelSetTrainMode(model, false);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     auto trainMode = OH_AI_ModelGetTrainMode(model);
     ASSERT_EQ(trainMode, false);
+    OHPrintf("==========OH_AI_ModelSetTrainMode:true==========\n");
+    status = OH_AI_ModelSetTrainMode(model, true);
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    auto train_mode_02 = OH_AI_ModelGetTrainMode(model);
+    ASSERT_EQ(train_mode_02, true);
     OHPrintf("=========OH_AI_ModelDestroy===========\n");
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     OHPrintf("=========OH_AI_ModelDestroy End===========\n");
+    OHPrintf("==========error code==========\n");
+    OHPrintf("==========Init Context==========\n");
+    OH_AI_ContextHandle context01 = OH_AI_ContextCreate();
+    ASSERT_NE(context01, nullptr);
+    AddContextDeviceCPU(context01);
+    OHPrintf("==========Create model==========\n");
+    OH_AI_ModelHandle model01 = OH_AI_ModelCreate();
+    ASSERT_NE(model01, nullptr);
+    OHPrintf("==========Build model==========\n");
+    OH_AI_Status ret01 = OH_AI_ModelBuildFromFile(
+        model01, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context01);
+    OHPrintf("==========build model return code:%d\n", ret01);
+    ASSERT_EQ(ret01, OH_AI_STATUS_SUCCESS);
+    auto status02 = OH_AI_ModelSetTrainMode(model01, true);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_ERROR);
+    OH_AI_ContextDestroy(&context01);
+    OH_AI_ModelDestroy(&model01);
     return OH_AI_STATUS_SUCCESS;
 }
 // 正常场景：OH_AI_ExportModelBuffer
@@ -1359,15 +1468,17 @@ int SUBAIMindSporeTrainExportModel0014()
     OHPrintf("==========OH_AI_ExportModel==========\n");
     char* modelData;
     size_t dataSize;
-    auto status =
-        OH_AI_ExportModelBuffer(model, OH_AI_MODELTYPE_MINDIR, &modelData, &dataSize, OH_AI_NO_QUANT, true, nullptr, 0);
+    auto status = OH_AI_ExportModelBuffer(
+        model, OH_AI_MODELTYPE_MINDIR, &modelData, &dataSize, OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     ASSERT_NE(modelData, nullptr);
     ASSERT_NE(dataSize, EXPECT_SUCCESS);
+    auto status01 = OH_AI_ExportModelBuffer(
+        nullptr, OH_AI_MODELTYPE_MINDIR, &modelData, &dataSize, OH_AI_NO_QUANT, true, nullptr, 0);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OHPrintf("==========OH_AI_ModelCreate2==========\n");
     OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
     ASSERT_NE(model2, nullptr);
-
     OH_AI_ContextHandle context2 = OH_AI_ContextCreate();
     ASSERT_NE(context2, nullptr);
     AddContextDeviceCPU(context2);
@@ -1387,8 +1498,7 @@ int SUBAIMindSporeTrainExportModel0014()
     OHPrintf("=========model01 context and Model destroy===========\n");
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
-    OHPrintf("=========model01 context and Model destroy End===========\n");
-    OHPrintf("=========model02 context and Model destroy===========\n");
+    OHPrintf("=========model01 context and Model destroy End and model02 context and Model destroy===========\n");
     OH_AI_ContextDestroy(&context2);
     OH_AI_ModelDestroy(&model2);
     OHPrintf("=========model02 context and Model destroy End===========\n");
@@ -1634,7 +1744,7 @@ int SUBAIMindSporeTrainExportWeights0003()
                                                      true,
                                                      setChangebleWeightsName,
                                                      changebleWeightsName.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -1687,7 +1797,7 @@ int SUBAIMindSporeTrainExportWeights0004()
     char** setChangebleWeightsName = TransStrVectorToCharArrays(changebleWeightsName);
     status = OH_AI_ExportWeightsCollaborateWithMicro(
         model, OH_AI_MODELTYPE_MINDIR, "", true, true, setChangebleWeightsName, changebleWeightsName.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -1745,7 +1855,7 @@ int SUBAIMindSporeTrainExportWeights0005()
                                                      true,
                                                      setChangebleWeightsName,
                                                      changebleWeightsName.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;
@@ -1781,13 +1891,9 @@ int SUBAIMindSporeTrainExportWeights0006()
         model, FilePath("xiaoyi_train_codegen.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OHPrintf("==========OH_AI_ExportModel==========\n");
-    status = OH_AI_ExportModel(model,
-                               OH_AI_MODELTYPE_MINDIR,
-                               FilePath("xiaoyi_train_codegen_gru_model1.ms").c_str(),
-                               OH_AI_NO_QUANT,
-                               true,
-                               nullptr,
-                               0);
+    status = OH_AI_ExportModel(
+        model, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_gru_model1.ms").c_str(),
+        OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     const std::vector<std::string> changebleWeightsName = {
         "app_usage_statistic_30_cell.embedding.embedding_table",
@@ -1796,14 +1902,14 @@ int SUBAIMindSporeTrainExportWeights0006()
         "data-57"
     };
     char** setChangebleWeightsName = TransStrVectorToCharArrays(changebleWeightsName);
-    status = OH_AI_ExportWeightsCollaborateWithMicro(model,
-                                                     OH_AI_MODELTYPE_MINDIR,
-                                                     FilePath("xiaoyi_train_codegen_net1.bin").c_str(),
-                                                     false,
-                                                     true,
-                                                     setChangebleWeightsName,
-                                                     changebleWeightsName.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    status = OH_AI_ExportWeightsCollaborateWithMicro(
+        model, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_net1.bin").c_str(),
+        false, true, setChangebleWeightsName, changebleWeightsName.size());
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_NOT_SUPPORT);
+    auto status01 = OH_AI_ExportWeightsCollaborateWithMicro(
+        model, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_net1.bin").c_str(),
+        false, true, setChangebleWeightsName, changebleWeightsName.size());
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     return OH_AI_STATUS_SUCCESS;

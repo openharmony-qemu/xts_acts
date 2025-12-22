@@ -344,6 +344,7 @@ int OHOSContextCPU0010()
     size_t retCoreNum;
     int32_t* retCoreList = nullptr;
     retCoreList = const_cast<int32_t*>(OH_AI_ContextGetThreadAffinityCoreList(context, &retCoreNum));
+    ASSERT_NE(retCoreList, nullptr);
     ASSERT_EQ(retCoreNum, coreNum);
     for (size_t i = 0; i < retCoreNum; i++) {
         OHPrintf("==========retCoreList:%d\n", retCoreList[i]);
@@ -1665,6 +1666,7 @@ int OHOSTensorCreate0008()
     OH_AI_TensorSetShape(tensor, newShape, newShapeNum);
     size_t newRetShapeNum;
     const int64_t* newRetShape = OH_AI_TensorGetShape(tensor, &newRetShapeNum);
+    ASSERT_NE(newRetShape, nullptr);
     ASSERT_EQ(newRetShapeNum, newShapeNum);
     for (size_t i = 0; i < newRetShapeNum; i++) {
         ASSERT_EQ(newRetShape[i], newShape[i]);

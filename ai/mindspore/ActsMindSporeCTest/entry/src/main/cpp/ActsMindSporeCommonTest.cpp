@@ -271,7 +271,7 @@ void AddContextDeviceNNRTByType(OH_AI_ContextHandle context)
     auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
     std::cout << "NNRT device: id = " << id << std::endl;
     auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc_1);
-
+    ASSERT_EQ(type, OH_AI_NNRTDEVICE_ACCELERATOR);
     auto nnrtDeviceInfo = OH_AI_CreateNNRTDeviceInfoByType(type);
     OH_AI_DestroyAllNNRTDeviceDescs(&descs);
     ASSERT_NE(nnrtDeviceInfo, nullptr);

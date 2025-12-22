@@ -236,8 +236,10 @@ void AddContextDeviceNNRTByType(OH_AI_ContextHandle context) {
         return;
     }
     auto id = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
+
     std::cout << "NNRT device: id = " << id << std::endl;
     auto type = OH_AI_GetTypeFromNNRTDeviceDesc(desc_1);
+    ASSERT_EQ(type, OH_AI_NNRTDEVICE_ACCELERATOR);
     auto nnrt_device_info = OH_AI_CreateNNRTDeviceInfoByType(type);
     OH_AI_DestroyAllNNRTDeviceDescs(&descs);
     ASSERT_NE(nnrt_device_info, nullptr);
@@ -593,6 +595,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_UpdateWeights_0002, Function | MediumT
         true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OH_AI_TensorHandleArray export_update_weights = OH_AI_ModelGetWeights(model);
+    ASSERT_NE(export_update_weights.handle_list, nullptr);
+    ASSERT_NE(export_update_weights.handle_num, 0);
     for (size_t i = 0; i < export_update_weights.handle_num; ++i) {
         OH_AI_TensorHandle weights_tensor = export_update_weights.handle_list[i];
         if (strcmp(OH_AI_TensorGetName(weights_tensor), "fc3.bias") == 0){
@@ -634,7 +638,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_UpdateWeights_0003, Function | MediumT
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     status = OH_AI_ModelUpdateWeights(model, update_weights);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -669,7 +673,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_UpdateWeights_0004, Function | MediumT
     vec_inputs.push_back(tensor);
     OH_AI_TensorHandleArray update_weights = {1, vec_inputs.data()};
     status = OH_AI_ModelUpdateWeights(model, update_weights);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -711,9 +715,32 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_UpdateWeights_0005, Function | MediumT
     }
     printf("==========OH_AI_TrainModel updateWeights==========\n");
     status = OH_AI_ModelUpdateWeights(model, {feature_maps.size(), feature_maps.data()});
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+}
+void RunStepErrorCodeTest(){
+    // OH_AI_RunStep异常测试
+    printf("==========Init Context==========\n");
+    OH_AI_ContextHandle context01 = OH_AI_ContextCreate();
+    ASSERT_NE(context01, nullptr);
+    AddContextDeviceCPU(context01);
+    printf("==========Create model==========\n");
+    OH_AI_ModelHandle model01 = OH_AI_ModelCreate();
+    ASSERT_NE(model01, nullptr);
+    printf("==========Build model==========\n");
+    OH_AI_Status ret = OH_AI_ModelBuildFromFile(
+        model01, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context01);
+    printf("==========build model return code:%d\n", ret);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    auto status01 = OH_AI_RunStep(model01, nullptr, nullptr);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_INPUT_TENSOR_ERROR);
+    auto status02 = OH_AI_RunStep(nullptr, nullptr, nullptr);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_PARAM_INVALID);
+    auto status03 = OH_AI_ModelSetLearningRate(model01, 1000.0f);
+    ASSERT_EQ(status03, OH_AI_STATUS_LITE_ERROR);
+    OH_AI_ContextDestroy(&context01);
+    OH_AI_ModelDestroy(&model01);
 }
 // 异常场景：更新权重tensor name错误一个
 /**
@@ -753,9 +780,12 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_UpdateWeights_0006, Function | MediumT
     printf("==========OH_AI_TrainModel updateWeights==========\n");
     OH_AI_TensorSetName(feature_maps.at(1), "AAAA");
     status = OH_AI_ModelUpdateWeights(model, {feature_maps.size(), feature_maps.data()});
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
+    auto status01 = OH_AI_ModelUpdateWeights(nullptr, { feature_maps.size(), feature_maps.data() });
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    RunStepErrorCodeTest();
 }
 // 正常场景：设置学习率为0.01
 /**
@@ -824,6 +854,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_SetLearningRate_0002, Function | Mediu
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     auto learing_rate = OH_AI_ModelGetLearningRate(model);
     std::cout << "learing_rate:" << learing_rate << std::endl;
+    auto status01 = OH_AI_ModelSetLearningRate(nullptr, 1000.0f);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     status = OH_AI_ModelSetLearningRate(model, 1000.0f);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     learing_rate = OH_AI_ModelGetLearningRate(model);
@@ -835,9 +867,29 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_SetLearningRate_0002, Function | Mediu
     FillInputsData(inputs, "lenet_train", false);
     status = OH_AI_ModelSetTrainMode(model, true);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    auto status02 = OH_AI_ModelSetTrainMode(nullptr, true);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_PARAM_INVALID);
     printf("==========Model RunStep==========\n");
     status = OH_AI_RunStep(model, nullptr, nullptr);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    OH_AI_ContextDestroy(&context);
+    OH_AI_ModelDestroy(&model);
+}
+void SetupVirtualBatchErrorCodeTest(){
+    printf("==========error code==========\n");
+    printf("==========Init Context==========\n");
+    OH_AI_ContextHandle context = OH_AI_ContextCreate();
+    ASSERT_NE(context, nullptr);
+    AddContextDeviceCPU(context);
+    printf("==========Create model==========\n");
+    OH_AI_ModelHandle model = OH_AI_ModelCreate();
+    ASSERT_NE(model, nullptr);
+    printf("==========Build model==========\n");
+    OH_AI_Status ret = OH_AI_ModelBuildFromFile(model, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context);
+    printf("==========build model return code:%d\n", ret);
+    ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
+    auto status = OH_AI_ModelSetupVirtualBatch(model, 2, -1.0f, -1.0f);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -866,6 +918,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_SetupVirtualBatch_0001, Function | Med
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     status = OH_AI_ModelSetupVirtualBatch(model, 2, -1.0f, -1.0f);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    auto status01 = OH_AI_ModelSetupVirtualBatch(nullptr, 2, -1.0f, -1.0f);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     printf("==========GetInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
@@ -892,6 +946,27 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_SetupVirtualBatch_0001, Function | Med
     ModelPredict(model2, context2, "lenet_train_infer", {}, false, false, false);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
+    SetupVirtualBatchErrorCodeTest();
+}
+void SetTrainCfgOptimizationLevel(OH_AI_TrainCfgHandle train_cfg){
+    auto opt_level = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
+    std::cout << "opt_level:" << opt_level << std::endl;
+    OH_AI_TrainCfgSetOptimizationLevel(train_cfg, OH_AI_KO0);
+    auto set_opt_level01 = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
+    ASSERT_EQ(set_opt_level01, OH_AI_KO0);
+    OH_AI_TrainCfgSetOptimizationLevel(train_cfg, OH_AI_KO3);
+    auto set_opt_level02 = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
+    ASSERT_EQ(set_opt_level02, OH_AI_KO3);
+    OH_AI_TrainCfgSetOptimizationLevel(train_cfg, OH_AI_KAUTO);
+    auto set_opt_level03 = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
+    ASSERT_EQ(set_opt_level03, OH_AI_KAUTO);
+    OH_AI_TrainCfgSetOptimizationLevel(train_cfg, OH_AI_KOPTIMIZATIONTYPE);
+    auto set_opt_level04 = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
+    ASSERT_EQ(set_opt_level04, OH_AI_KOPTIMIZATIONTYPE);
+    OH_AI_TrainCfgSetOptimizationLevel(train_cfg, OH_AI_KO2);
+    auto set_opt_level = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
+    ASSERT_EQ(set_opt_level, OH_AI_KO2);
+    std::cout << "set_opt_level:" << set_opt_level << std::endl;
 }
 // 正常场景：设置优化等级
 /**
@@ -913,11 +988,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_SetOptimizationLevel_0001, Function | 
     printf("==========OH_AI_TrainCfgCreate==========\n");
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(train_cfg, nullptr);
-    auto opt_level = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
-    std::cout << "opt_level:" << opt_level << std::endl;
-    OH_AI_TrainCfgSetOptimizationLevel(train_cfg, OH_AI_KO2);
-    auto set_opt_level = OH_AI_TrainCfgGetOptimizationLevel(train_cfg);
-    std::cout << "set_opt_level:" << set_opt_level << std::endl;
+    SetTrainCfgOptimizationLevel(train_cfg);
     printf("==========OH_AI_TrainModelBuildFromFile==========\n");
     auto status = OH_AI_TrainModelBuildFromFile(model, "/data/test/lenet_train.ms", OH_AI_MODELTYPE_MINDIR, context, train_cfg);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
@@ -1130,7 +1201,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ModelBuild_0001, Function | MediumTest
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
-// 异常场景：加载模型buffer为空
+// 异常场景：训练加载模型buffer异常用例
 /**
  * @tc.name   SUB_AI_MindSpore_Train_ModelBuild_0002
  * @tc.number SUB_AI_MindSpore_Train_ModelBuild_0002
@@ -1151,8 +1222,15 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ModelBuild_0002, Function | MediumTest
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(train_cfg, nullptr);
     printf("==========Build model by graphBuf==========\n");
-    auto status = OH_AI_TrainModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context, train_cfg); 
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    size_t size;
+    size_t *ptr_size = &size;
+    char *graphBuf = ReadFile("/data/test/lenet_train.ms", ptr_size);
+    auto status01 = OH_AI_TrainModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_NULLPTR);
+    auto status02 = OH_AI_TrainModelBuild(model, graphBuf, 0, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_ERROR);
+    auto status03 = OH_AI_TrainModelBuild(model, graphBuf, size, OH_AI_MODELTYPE_INVALID, context, train_cfg);
+    ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1177,7 +1255,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ModelBuild_0003, Function | MediumTest
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(train_cfg, nullptr);
     auto status = OH_AI_TrainModelBuildFromFile(model, "/data/not_exist/lenet_train.ms", OH_AI_MODELTYPE_MINDIR, context, train_cfg);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1201,8 +1279,13 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ModelBuild_0004, Function | MediumTest
     printf("==========OH_AI_TrainCfgCreate==========\n");
     OH_AI_TrainCfgHandle train_cfg = OH_AI_TrainCfgCreate();
     ASSERT_NE(train_cfg, nullptr);
-    auto status = OH_AI_TrainModelBuildFromFile(model, "", OH_AI_MODELTYPE_MINDIR, context, train_cfg);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    auto status01 = OH_AI_TrainModelBuildFromFile(model, "", OH_AI_MODELTYPE_MINDIR, context, train_cfg);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_ERROR);
+    auto status02 = OH_AI_TrainModelBuildFromFile(model, nullptr, OH_AI_MODELTYPE_MINDIR, context, train_cfg);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_NULLPTR);
+    auto status03 = OH_AI_TrainModelBuildFromFile(
+        model, "/data/test/lenet_train.ms", OH_AI_MODELTYPE_INVALID, context, train_cfg);
+    ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1470,7 +1553,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportModel_0007, Function | MediumTes
     ModelTrain(model, context, "lenet_train", {}, false, false, false);
     printf("==========OH_AI_ExportModel==========\n");
     auto status = OH_AI_ExportModel(model, OH_AI_MODELTYPE_INVALID, "/data/test/lenet_train_infer.ms", OH_AI_NO_QUANT, true, nullptr, 0);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1497,7 +1580,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportModel_0008, Function | MediumTes
     const std::vector<std::string> output_name = {"aaa"};
     auto output_tensor_name = TransStrVectorToCharArrays(output_name);
     auto status = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/test/lenet_train_infer.ms", OH_AI_NO_QUANT, true, output_tensor_name, 1);
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1625,15 +1708,36 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportModel_0013, Function | MediumTes
     printf("==========OH_AI_ExportModel==========\n");
     auto status = OH_AI_ExportModel(model, OH_AI_MODELTYPE_MINDIR, "/data/test/lenet_train_infer.ms", OH_AI_NO_QUANT, true, nullptr, 0);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
-    printf("==========OH_AI_ModelSetTrainMode==========\n");
+    printf("==========OH_AI_ModelSetTrainMode:false==========\n");
     status = OH_AI_ModelSetTrainMode(model, false);
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     auto train_mode = OH_AI_ModelGetTrainMode(model);
     ASSERT_EQ(train_mode, false);
+    printf("==========OH_AI_ModelSetTrainMode:true==========\n");
+    status = OH_AI_ModelSetTrainMode(model, true);
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
+    auto train_mode02 = OH_AI_ModelGetTrainMode(model);
+    ASSERT_EQ(train_mode02, true);
     printf("=========OH_AI_ModelDestroy===========\n");
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
     printf("=========OH_AI_ModelDestroy End===========\n");
+    printf("==========error code==========\n");
+    printf("==========Init Context==========\n");
+    OH_AI_ContextHandle context01 = OH_AI_ContextCreate();
+    ASSERT_NE(context01, nullptr);
+    AddContextDeviceCPU(context01);
+    printf("==========Create model==========\n");
+    OH_AI_ModelHandle model01 = OH_AI_ModelCreate();
+    ASSERT_NE(model01, nullptr);
+    printf("==========Build model==========\n");
+    OH_AI_Status ret01 = OH_AI_ModelBuildFromFile(model01, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context01);
+    printf("==========build model return code:%d\n", ret01);
+    ASSERT_EQ(ret01, OH_AI_STATUS_SUCCESS);
+    auto status02 = OH_AI_ModelSetTrainMode(model01, true);
+    ASSERT_EQ(status02, OH_AI_STATUS_LITE_ERROR);
+    OH_AI_ContextDestroy(&context01);
+    OH_AI_ModelDestroy(&model01);
 }
 // 正常场景：OH_AI_ExportModelBuffer
 /**
@@ -1662,10 +1766,12 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportModel_0014, Function | MediumTes
     ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     ASSERT_NE(modelData, nullptr);
     ASSERT_NE(data_size, 0);
+    auto status01 = OH_AI_ExportModelBuffer(
+        nullptr, OH_AI_MODELTYPE_MINDIR, &modelData, &data_size, OH_AI_NO_QUANT, true, nullptr, 0);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     printf("==========OH_AI_ModelCreate2==========\n");
     OH_AI_ModelHandle model2 = OH_AI_ModelCreate();
     ASSERT_NE(model2, nullptr);
-
     OH_AI_ContextHandle context2 = OH_AI_ContextCreate();
     ASSERT_NE(context2, nullptr);
     AddContextDeviceCPU(context2);
@@ -1861,7 +1967,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportWeights_0003, Function | MediumT
                                                  "data-57"};
     char **set_changeble_weights_name = TransStrVectorToCharArrays(changeble_weights_name);
     status = OH_AI_ExportWeightsCollaborateWithMicro(model, OH_AI_MODELTYPE_MINDIR, "/data/not_exist/xiaoyi_train_codegen_net1.bin", true, true, set_changeble_weights_name, changeble_weights_name.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1900,7 +2006,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportWeights_0004, Function | MediumT
                                                  "data-57"};
     char **set_changeble_weights_name = TransStrVectorToCharArrays(changeble_weights_name);
     status = OH_AI_ExportWeightsCollaborateWithMicro(model, OH_AI_MODELTYPE_MINDIR, "", true, true, set_changeble_weights_name, changeble_weights_name.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1939,7 +2045,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportWeights_0005, Function | MediumT
                                                  "data-57"};
     char **set_changeble_weights_name = TransStrVectorToCharArrays(changeble_weights_name);
     status = OH_AI_ExportWeightsCollaborateWithMicro(model, OH_AI_MODELTYPE_MINDIR, "/data/test/", true, true, set_changeble_weights_name, changeble_weights_name.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_ERROR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -1978,7 +2084,9 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_Train_ExportWeights_0006, Function | MediumT
                                                  "data-57"};
     char **set_changeble_weights_name = TransStrVectorToCharArrays(changeble_weights_name);
     status = OH_AI_ExportWeightsCollaborateWithMicro(model, OH_AI_MODELTYPE_MINDIR, "/data/test/xiaoyi_train_codegen_net1.bin", false, true, set_changeble_weights_name, changeble_weights_name.size());
-    ASSERT_NE(status, OH_AI_STATUS_SUCCESS);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_NOT_SUPPORT);
+    auto status01 = OH_AI_ExportWeightsCollaborateWithMicro(nullptr, OH_AI_MODELTYPE_MINDIR, "/data/test/xiaoyi_train_codegen_net1.bin", true, true, set_changeble_weights_name, changeble_weights_name.size());
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
 }
@@ -2273,6 +2381,7 @@ HWTEST(MSLiteTest, OHOS_Context_CPU_0010, Function | MediumTest | Level0) {
     size_t ret_core_num;
     int32_t *ret_core_list = nullptr;
     ret_core_list = const_cast<int32_t *>(OH_AI_ContextGetThreadAffinityCoreList(context, &ret_core_num));
+    ASSERT_NE(ret_core_list, nullptr);
     ASSERT_EQ(ret_core_num, core_num);
     for (size_t i = 0; i < ret_core_num; i++) {
         printf("==========ret_core_list:%d\n", ret_core_list[i]);
@@ -3498,6 +3607,7 @@ HWTEST(MSLiteTest, OHOS_Tensor_Create_0008, Function | MediumTest | Level0) {
     ASSERT_NE(tensor, nullptr);
     size_t ret_shape_num;
     const int64_t *ret_shape = OH_AI_TensorGetShape(tensor, &ret_shape_num);
+    ASSERT_NE(ret_shape, nullptr);
     ASSERT_EQ(ret_shape_num, create_shape_num);
     for (size_t i = 0; i < ret_shape_num; i++) {
         ASSERT_EQ(ret_shape[i], create_shape[i]);
@@ -4917,7 +5027,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_NNRT_copy_free_0003, Function | MediumTest |
         OH_AI_TensorHandle in_tensor = OH_AI_TensorCreate(OH_AI_TensorGetName(ori_tensor),
                                         OH_AI_TensorGetDataType(ori_tensor), shape, shapeNum, nullptr, 0);
         OH_AI_Status ret = OH_AI_TensorSetAllocator(in_tensor, nullptr);
-        ASSERT_NE(ret, OH_AI_STATUS_SUCCESS);
+        ASSERT_EQ(ret, OH_AI_STATUS_LITE_PARAM_INVALID);
         in_tensor_array.handle_list[i] = in_tensor;
     }
     OH_AI_ContextDestroy(&context);
@@ -5175,8 +5285,8 @@ void AddContextDeviceHIAI(OH_AI_ContextHandle context) {
     auto id_1 = OH_AI_GetDeviceIdFromNNRTDeviceDesc(desc_1);
     OH_AI_DeviceInfoSetDeviceId(nnrt_device_info, id_1);
     const char *band_mode = "HIAI_BANDMODE_HIGH";
-    OH_AI_DeviceInfoAddExtension(nnrt_device_info, "BandMode", band_mode, strlen(band_mode));
-
+    auto status = OH_AI_DeviceInfoAddExtension(nnrt_device_info, "BandMode", band_mode, strlen(band_mode));
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     OH_AI_ContextAddDeviceInfo(context, nnrt_device_info);
 }
 
@@ -7005,6 +7115,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0022, Function | MediumTest | L
     ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_FLOAT16);
     OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_NUMBERTYPE_UINT8);
     ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_NUMBERTYPE_UINT8);
+    OH_AI_TensorSetDataType(tensor, OH_AI_DATATYPE_UNKNOWN);
+    ASSERT_EQ(OH_AI_TensorGetDataType(tensor), OH_AI_DATATYPE_UNKNOWN);
     OH_AI_TensorDestroy(&tensor);
 }
 
@@ -7445,7 +7557,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0043, Function | MediumTest | L
     printf("==========OH_AI_TensorCreate==========\n");
     constexpr size_t data_len = 6;
     float data[data_len] = {1, 2, 3, 4, 5, 6};
-    OH_AI_TensorSetUserData(nullptr, data, 6 * 4);
+    auto status = OH_AI_TensorSetUserData(nullptr, data, 6 * 4);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_NULLPTR);
 }
 
 // OH_AI_TensorSetUserData接口，data为空指针nullptr
@@ -7466,7 +7579,10 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0044, Function | MediumTest | L
     OH_AI_TensorHandle tensor = OH_AI_TensorCreate("data", OH_AI_DATATYPE_NUMBERTYPE_FLOAT32, createShape,
         create_shape_num, data, 6*4);
     ASSERT_NE(tensor, nullptr);
-    OH_AI_TensorSetUserData(tensor, nullptr, 0);
+    auto status = OH_AI_TensorSetUserData(tensor, nullptr, 0);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_PARAM_INVALID);
+    auto status01 = OH_AI_TensorSetUserData(tensor, data, 0);
+    ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_TensorDestroy(&tensor);
 }
 
@@ -7489,7 +7605,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0045, Function | MediumTest | L
         create_shape_num, data, 6*4);
     ASSERT_NE(tensor, nullptr);
     float data2[data_len] = {12, 22, 32, 42, 52, 62};
-    OH_AI_TensorSetUserData(tensor, data2, 6*4);
+    auto status = OH_AI_TensorSetUserData(tensor, data2, 6*4);
+    ASSERT_EQ(status, OH_AI_STATUS_SUCCESS);
     const float *ret_data = static_cast<const float *>(OH_AI_TensorGetData(tensor));
     ASSERT_NE(ret_data, nullptr);
     printf("return data is:");
@@ -7520,8 +7637,10 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0046, Function | MediumTest | L
     ASSERT_NE(tensor, nullptr);
     float data2[data_len] = {12, 22, 32, 42, 52, 62};
     float data3[data_len] = {13, 23, 33, 43, 53, 63};
-    OH_AI_TensorSetUserData(tensor, data2, 6*4);
-    OH_AI_TensorSetUserData(tensor, data3, 6*4);
+    auto status01 = OH_AI_TensorSetUserData(tensor, data2, 6*4);
+    ASSERT_EQ(status01, OH_AI_STATUS_SUCCESS);
+    auto status02 = OH_AI_TensorSetUserData(tensor, data3, 6*4);
+    ASSERT_EQ(status02, OH_AI_STATUS_SUCCESS);
     const float *ret_data = static_cast<const float *>(OH_AI_TensorGetData(tensor));
     ASSERT_NE(ret_data, nullptr);
     printf("return data is:");
@@ -7551,7 +7670,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0047, Function | MediumTest | L
         create_shape_num, data, 6*4);
     ASSERT_NE(tensor, nullptr);
     void *inAllocator = OH_AI_TensorGetAllocator(tensor);
-    OH_AI_TensorSetAllocator(nullptr, inAllocator);
+    auto status = OH_AI_TensorSetAllocator(nullptr, inAllocator);
+    ASSERT_EQ(status, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_TensorDestroy(&tensor);
 }
 
@@ -7574,6 +7694,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0048, Function | MediumTest | L
         create_shape_num, data, 6*4);
     ASSERT_NE(tensor, nullptr);
     void *inAllocator = OH_AI_TensorGetAllocator(tensor);
+    ASSERT_EQ(inAllocator, nullptr);
     OH_AI_TensorSetAllocator(tensor, inAllocator);
     OH_AI_TensorDestroy(&tensor);
 }
@@ -7602,7 +7723,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_TensorCreate_0049, Function | MediumTest | L
     OH_AI_TensorDestroy(&tensor);
 }
 
-// OH_AI_TensorSetAllocator接口，tensor为nullptr
+// OH_AI_TensorGetAllocator接口，tensor为nullptr
 /**
  * @tc.name   SUB_AI_MindSpore_TensorCreate_0050
  * @tc.number SUB_AI_MindSpore_TensorCreate_0050
@@ -7638,6 +7759,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_ContextCreate_0001, Function | MediumTest | 
     printf("==========OH_AI_ModelGetInputs==========\n");
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     ASSERT_NE(inputs.handle_list, nullptr);
+    ASSERT_NE(inputs.handle_num, 0);
     FillInputsData(inputs, "ml_face_isface", true);
     printf("==========OH_AI_ModelPredict==========\n");
     OH_AI_TensorHandleArray outputs;
@@ -10039,6 +10161,8 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_ModelCreate_0032, Function | MediumTest | Le
     FillInputsData(inputs, "ml_face_isface", true);
     printf("==========Model Predict==========\n");
     OH_AI_TensorHandleArray outputs = OH_AI_ModelGetOutputs(model);
+    ASSERT_NE(outputs.handle_list, nullptr);
+    ASSERT_NE(outputs.handle_num, 0);
     OH_AI_Status predict_ret = OH_AI_ModelPredict(model, inputs, &outputs, nullptr, nullptr);
     ASSERT_EQ(predict_ret, OH_AI_STATUS_SUCCESS);
     printf("==========CompareModelOutputs==========\n");
@@ -10435,7 +10559,7 @@ HWTEST(MSLiteTest, SUB_AI_MindSpore_ModelLoadConfig_0002, Function | MediumTest 
     std::cout << "load_status is " << load_status << std::endl;
     ASSERT_EQ(load_status, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_Status load_status_01 = OH_AI_ModelLoadConfig(nullptr, "/data/test/ml_face_isface.config");
-    std::cout << "load_status is " << load_status_01 << std::endl;
+    std::cout << "load_status_01 is " << load_status_01 << std::endl;
     ASSERT_EQ(load_status_01, OH_AI_STATUS_LITE_NULLPTR);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
