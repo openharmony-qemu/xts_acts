@@ -311,5 +311,371 @@ export default function uitestDriverErrorTest() {
       }
       console.log(`${TestTag}, test_driver_crownRotate_17000007_static end`);
     })
+
+    /**
+     * @tc.name test_belongingDisplay_17000007_static
+     * @tc.number Uitest_Api20ErrorTest_018
+     * @tc.desc belongingDisplay 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_belongingDisplay_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_belongingDisplay_17000007_static start`);
+      try {
+        ON.belongingDisplay(-1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_belongingDisplay_17000007_static d=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 17000007).assertTrue();
+      }
+      console.log(`${TestTag}, test_belongingDisplay_17000007_static end`);
+    })
+
+    /**
+     * @tc.name test_triggerCombineKeys_17000007_static
+     * @tc.number Uitest_Api20ErrorTest_019
+     * @tc.desc triggerCombineKeys 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_triggerCombineKeys_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_triggerCombineKeys_17000007_static start`);
+      try {
+        await driver.triggerCombineKeys(-1, 2017);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static key0=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.triggerCombineKeys(2072, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static key1=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.triggerCombineKeys(2072, 2017, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static key2=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.triggerCombineKeys(2072, 2017, 2019, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      console.log(`${TestTag}, test_triggerCombineKeys_17000007_static end`);
+    })
+
+    /**
+     * @tc.name test_driver_dragBetween_17000007_static
+     * @tc.number Uitest_Api20ErrorTest_020
+     * @tc.desc dragBetween 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_driver_dragBetween_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_driver_dragBetween_17000007_static start`);
+      try {
+        await driver.dragBetween({x: -1, y: 100}, {x: 200, y: 200});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, from.x = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: -1}, {x: 200, y: 200});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, from.y = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100, displayId: -1}, {x: 200, y: 200});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, from.displayId = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100}, {x: -1, y: 200});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.x = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: -1});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.y = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100, displayId: -1});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.displayId = -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static,diff error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, 600, 1499);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag} test_driver_dragBetween_17000007_static, duration = 1499 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, test_driver_dragBetween_17000007_static end`);
+    })
+
+    /**
+     * @tc.name test_screenCap_401_static
+     * @tc.number Uitest_Api20ErrorTest_021
+     * @tc.desc screenCap 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_screenCap_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_screenCap_401_static start`);
+      let savePath = '/data/storage/el2/base/cache/testScreenCaptureWithId_static.png';
+      try {
+        let success = await driver.screenCap(savePath, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_screenCap_401_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      console.log(`${TestTag}, test_screenCap_401_static end`);
+    })
+
+    /**
+     * @tc.name testGetDisplayRotationWithId_17000005_static
+     * @tc.number Uitest_Api20ErrorTest_022
+     * @tc.desc getDisplayRotation 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetDisplayRotationWithId_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testGetDisplayRotationWithId_17000005_static start`);
+      try {
+        await driver.getDisplayRotation(-1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, testGetDisplayRotationWithId_17000005_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 17000007).assertTrue();
+      }
+      console.log(`${TestTag}, testGetDisplayRotationWithId_17000005_static end`);
+    })
+
+    /**
+     * @tc.name testGetDisplayDensity_17000005_static
+     * @tc.number Uitest_Api20ErrorTest_023
+     * @tc.desc getDisplayDensity 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetDisplayDensity_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testGetDisplayDensity_17000005_static start`);
+      try {
+        await driver.getDisplayDensity(-1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, testGetDisplayDensity_17000005_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 17000007).assertTrue();
+      }
+      console.log(`${TestTag}, testGetDisplayDensity_17000005_static end`);
+    })
+
+    /**
+     * @tc.name test_mouseLongClick_401_static
+     * @tc.number Uitest_Api20ErrorTest_024
+     * @tc.desc mouseLongClick 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_mouseLongClick_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_mouseLongClick_401_static start`);
+      try {
+        await driver.mouseLongClick({x: -1, y: 100}, MouseButton.MOUSE_BUTTON_LEFT);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static p.x=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseLongClick({x: 100, y: -1}, MouseButton.MOUSE_BUTTON_LEFT);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static p.y=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseLongClick({x: 100, y: 100, displayId: -1}, MouseButton.MOUSE_BUTTON_LEFT);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static p.displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static key1=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, 0, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static key2=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, 0, 0, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static d=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseLongClick({x: 100, y: 100}, MouseButton.MOUSE_BUTTON_LEFT, 0, 0, 1499);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static d=1499 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      console.log(`${TestTag}, test_mouseLongClick_401_static end`);
+    })
+
+    /**
+     * @tc.name test_mouseDrag_401_static
+     * @tc.number Uitest_Api20ErrorTest_025
+     * @tc.desc mouseLongClick 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_mouseDrag_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_mouseDrag_401_static start`);
+      try {
+        await driver.mouseDrag({x: -1, y: 100}, {x: 100, y: 100});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static from.x=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: -1}, {x: 100, y: 100});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static from.y=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100, displayId: -1}, {x: 100, y: 100});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static from.displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: -1, y: 100});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static to.x=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: -1});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static to.y=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100, displayId: -1});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static to.displayId=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1});
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static diff error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static s=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 600, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static d=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, 600, 1499);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_mouseLongClick_401_static d=1499 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      console.log(`${TestTag}, test_mouseLongClick_401_static end`);
+    })
+
+    /**
+     * @tc.name test_UiWindow_getDisplayId_17000004_static
+     * @tc.number Uitest_Api20ErrorTest_002
+     * @tc.desc getDisplayId 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_UiWindow_getDisplayId_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let window = await driver.findWindow({bundleName:'com.uitestScene.acts'});
+        await driver.delayMs(waitUiReadyMs);
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        if (window != null) {
+          await window.getDisplayId();
+        }
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(InvisibleErrorCode);
+      }
+      await stopApplication('com.uitestScene.acts');
+      console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static end`);
+    })
+
   })
 }

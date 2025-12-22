@@ -1567,5 +1567,86 @@ export default function uitestDriverTestApi22() {
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static end`);
     })
+
+    /**
+     * @tc.name   testToastShow_static
+     * @tc.number uitestDriverTest_Api22_020
+     * @tc.desc   monitor toast appearance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testToastShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testToastShow_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let isCallBack = false;
+      let observer = driver.createUIEventObserver()
+      let callback = (elementInfo : UIElementInfo) => {
+        try {
+          console.log(`${TestTag}, testToastShow_static elementInfo, ${JSON.stringify(elementInfo)}`);
+          let isCallBack = true;
+          console.info('elementInfo bundleName:'+ elementInfo.bundleName)
+          console.info('elementInfo text:'+ elementInfo.text)
+          console.info('elementInfo type:'+ elementInfo.type)
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+          expect(elementInfo.text == 'toastShow').assertTrue()
+          expect(elementInfo.type == 'Toast').assertTrue()
+        } catch (err) {
+          console.info(err)
+        }
+      }
+      observer.onceToastShow(callback);
+      let btn = await driver.findComponent(ON.text('toast'));
+      if (btn != null) {
+        await btn.click()
+      }
+      await driver.delayMs(5000);
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testToastShow_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      console.log(`${TestTag}, testToastShow_static end`);
+    })
+
+    /**
+     * @tc.name   testDialogShow_static
+     * @tc.number uitestDriverTest_Api22_021
+     * @tc.desc   monitor dialog appearance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDialogShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDialogShow_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let isCallBack = false;
+      let observer = driver.createUIEventObserver()
+      let callback = (elementInfo : UIElementInfo) => {
+        try {
+          console.log(`${TestTag}, testDialogShow_static elementInfo, ${JSON.stringify(elementInfo)}`);
+          isCallBack = true;
+          console.info('elementInfo bundleName:'+ elementInfo.bundleName)
+          console.info('UIElementInfo text:'+ elementInfo.text)
+          console.info('UIElementInfo type:'+ elementInfo.type)
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+          expect(elementInfo.text == 'dialogShow').assertTrue()
+          expect(elementInfo.type == 'AlertDialog').assertTrue()
+        } catch (err) {
+          console.log(`${TestTag}, testDialogShow_static callback, ${JSON.stringify(elementInfo)}`);
+          console.info(err)
+        }
+      }
+      observer.onceDialogShow(callback);
+      let btn = await driver.findComponent(ON.text('dialog'));
+      if (btn != null) {
+        await btn.click()
+      }
+      await driver.delayMs(5000);
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testDialogShow_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      console.log(`${TestTag}, testDialogShow_static end`);
+    })
   })
 }
