@@ -26,7 +26,7 @@ add_library(nativerender SHARED
     component/image_component.cpp
     image/ImageDraggableEventTest.cpp
     drag/DragEventFuncTest.cpp
-    InteractiveFramework/drag_getPreDragStatus.cpp
+    InteractiveFramework/DragGetPreDragStatusTest.cpp
 )
 
 add_library(nativefunc SHARED

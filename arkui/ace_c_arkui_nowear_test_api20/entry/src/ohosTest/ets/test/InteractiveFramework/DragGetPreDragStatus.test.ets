@@ -29,7 +29,7 @@ export default function DragGetPreDragStatusTest() {
       await Utils.pushPage(`InteractiveFramework/${PAGE_TAG}`, done);
     });
 
-    /*
+    /**
      * @tc.number     : SUB_ARKUI_CAPI_DragGetPreDragStatus_0100
      * @tc.name       : DragGetPreDragStatusTest001
      * @tc.desc       : testing GetPreDragStatus DragEvent
@@ -49,7 +49,7 @@ export default function DragGetPreDragStatusTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number     : SUB_ARKUI_CAPI_DragGetPreDragStatus_0200
      * @tc.name       : DragGetPreDragStatusTest002
      * @tc.desc       : testing GetPreDragStatus return
@@ -69,7 +69,7 @@ export default function DragGetPreDragStatusTest() {
       done();
     })
 
-    /*
+    /**
      * @tc.number     : SUB_ARKUI_CAPI_DragGetPreDragStatus_0300
      * @tc.name       : DragGetPreDragStatusTest003
      * @tc.desc       : testing GetPreDragStatus return

@@ -78,8 +78,6 @@ namespace ArkUICapiTest
             napi_default, nullptr},
             {"dragEventFuncTest024", nullptr, DragEventFuncTest::dragEventFuncTest024, nullptr, nullptr, nullptr, 
             napi_default, nullptr},
-//            {"dragEventFuncTest025", nullptr, DragEventFuncTest::dragEventFuncTest025, nullptr, nullptr, nullptr, 
-//            napi_default, nullptr},
             {"dragEventFuncTest026", nullptr, DragEventFuncTest::dragEventFuncTest026, nullptr, nullptr, nullptr, 
             napi_default, nullptr},
             {"dragEventFuncTest027", nullptr, DragEventFuncTest::dragEventFuncTest027, nullptr, nullptr, nullptr, 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "drag_getPreDragStatus.h"
+#include "DragGetPreDragStatusTest.h"
 #include "../manager/plugin_manager.h"
 #include <arkui/drag_and_drop.h>
 #include <string>

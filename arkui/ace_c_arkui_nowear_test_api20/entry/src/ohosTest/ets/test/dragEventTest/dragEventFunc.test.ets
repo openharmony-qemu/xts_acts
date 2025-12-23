@@ -58,7 +58,6 @@ export default function dragEventFuncTest() {
       await Utils.sleep(500);
       let g_Node = await driver.findComponent(ON.id('keyevent'));
       await Utils.sleep(500);
-      //let rect = await g_Node.click();
       let point = await g_Node.getBoundsCenter();
       await Utils.sleep(500);
       await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2017);
@@ -87,14 +86,13 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number   dragEventFuncTest000
-     * @tc.name     dragEventFuncTest000
-     * @tc.desc     testing errorCode
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   dragEventFuncTest000
+     * @tc.number dragEventFuncTest000
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-
     it('dragEventFuncTest000', Level.LEVEL1, async (done: Function) => {
       console.info('dragEventFuncTest000 START');
       await Utils.pushPage(`dragEvent/dragEventFuncTest`)
@@ -123,12 +121,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest002
-     * @tc.name      dragEventFuncTest002
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest002
+     * @tc.number dragEventFuncTest002
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest002 START-----');
@@ -138,12 +136,12 @@ export default function dragEventFuncTest() {
 
 
     /**
-     * @tc.number    dragEventFuncTest003
-     * @tc.name      dragEventFuncTest003
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest003
+     * @tc.number dragEventFuncTest003
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest003 START-----');
@@ -152,12 +150,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest004
-     * @tc.name      dragEventFuncTest004
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest004
+     * @tc.number dragEventFuncTest004
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest004 START-----');
@@ -166,12 +164,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest005
-     * @tc.name      dragEventFuncTest005
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest005
+     * @tc.number dragEventFuncTest005
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest005 START-----');
@@ -180,12 +178,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest006
-     * @tc.name      dragEventFuncTest006
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest006
+     * @tc.number dragEventFuncTest006
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest006 START-----');
@@ -194,12 +192,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest007
-     * @tc.name      dragEventFuncTest007
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest007
+     * @tc.number dragEventFuncTest007
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest007', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest007 START-----');
@@ -208,12 +206,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest008
-     * @tc.name      dragEventFuncTest008
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest008
+     * @tc.number dragEventFuncTest008
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest008 START-----');
@@ -222,12 +220,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest009
-     * @tc.name      dragEventFuncTest009
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest009
+     * @tc.number dragEventFuncTest009
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest009 START-----');
@@ -236,12 +234,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest010
-     * @tc.name      dragEventFuncTest010
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest010
+     * @tc.number dragEventFuncTest010
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest010 START-----');
@@ -250,12 +248,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest011
-     * @tc.name      dragEventFuncTest011
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest011
+     * @tc.number dragEventFuncTest011
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest011', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest011 START-----');
@@ -264,12 +262,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest012
-     * @tc.name      dragEventFuncTest012
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest012
+     * @tc.number dragEventFuncTest012
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest012', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest012 START-----');
@@ -278,12 +276,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest013
-     * @tc.name      dragEventFuncTest013
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest013
+     * @tc.number dragEventFuncTest013
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest013', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest013 START-----');
@@ -292,12 +290,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest015
-     * @tc.name      dragEventFuncTest015
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest015
+     * @tc.number dragEventFuncTest015
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest015', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest015 START-----');
@@ -306,12 +304,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest016
-     * @tc.name      dragEventFuncTest016
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest016
+     * @tc.number dragEventFuncTest016
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest016', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest016 START-----');
@@ -320,12 +318,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest017
-     * @tc.name      dragEventFuncTest017
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest017
+     * @tc.number dragEventFuncTest017
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest017', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest017 START-----');
@@ -334,12 +332,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest018
-     * @tc.name      dragEventFuncTest018
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest018
+     * @tc.number dragEventFuncTest018
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest018', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest018 START-----');
@@ -348,12 +346,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest019
-     * @tc.name      dragEventFuncTest019
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest019
+     * @tc.number dragEventFuncTest019
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest019', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest019 START-----');
@@ -362,12 +360,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest020
-     * @tc.name      dragEventFuncTest020
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest020
+     * @tc.number dragEventFuncTest020
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest020 START-----');
@@ -376,12 +374,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest021
-     * @tc.name      dragEventFuncTest021
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest021
+     * @tc.number dragEventFuncTest021
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest021', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest021 START-----');
@@ -390,12 +388,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest022
-     * @tc.name      dragEventFuncTest022
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest022
+     * @tc.number dragEventFuncTest022
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest022', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest022 START-----');
@@ -404,12 +402,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest023
-     * @tc.name      dragEventFuncTest023
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest023
+     * @tc.number dragEventFuncTest023
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest023', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest023 START-----');
@@ -418,12 +416,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest024
-     * @tc.name      dragEventFuncTest024
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest024
+     * @tc.number dragEventFuncTest024
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest024', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest024 START-----');
@@ -432,26 +430,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest025
-     * @tc.name      dragEventFuncTest025
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
-     */
-    it('dragEventFuncTest025', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('dragEventFuncTest025 START-----');
-      // expect(native.dragEventFuncTest025()).assertEqual(0)
-      done();
-    });
-
-    /**
-     * @tc.number    dragEventFuncTest026
-     * @tc.name      dragEventFuncTest026
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest026
+     * @tc.number dragEventFuncTest026
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest026', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest026 START-----');
@@ -460,12 +444,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest027
-     * @tc.name      dragEventFuncTest027
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest027
+     * @tc.number dragEventFuncTest027
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest027', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest027 START-----');
@@ -474,12 +458,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest028
-     * @tc.name      dragEventFuncTest028
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest028
+     * @tc.number dragEventFuncTest028
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest028', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest028 START-----');
@@ -488,12 +472,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest029
-     * @tc.name      dragEventFuncTest029
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest029
+     * @tc.number dragEventFuncTest029
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest029', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest029 START-----');
@@ -502,12 +486,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest030
-     * @tc.name      dragEventFuncTest030
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest030
+     * @tc.number dragEventFuncTest030
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest030 START-----');
@@ -516,12 +500,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest031
-     * @tc.name      dragEventFuncTest031
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest031
+     * @tc.number dragEventFuncTest031
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest031', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest031 START-----');
@@ -530,12 +514,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest032
-     * @tc.name      dragEventFuncTest032
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest032
+     * @tc.number dragEventFuncTest032
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest032', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest032 START-----');
@@ -544,12 +528,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest033
-     * @tc.name      dragEventFuncTest033
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest033
+     * @tc.number dragEventFuncTest033
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest033', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest033 START-----');
@@ -558,12 +542,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest034
-     * @tc.name      dragEventFuncTest034
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest034
+     * @tc.number dragEventFuncTest034
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest034', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest034 START-----');
@@ -572,12 +556,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest035
-     * @tc.name      dragEventFuncTest035
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest035
+     * @tc.number dragEventFuncTest035
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest035', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest035 START-----');
@@ -586,12 +570,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest036
-     * @tc.name      dragEventFuncTest036
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest036
+     * @tc.number dragEventFuncTest036
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest036', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest036 START-----');
@@ -612,12 +596,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest037
-     * @tc.name      dragEventFuncTest037
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest037
+     * @tc.number dragEventFuncTest037
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest037', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest037 START-----');
@@ -638,12 +622,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest038
-     * @tc.name      dragEventFuncTest038
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest038
+     * @tc.number dragEventFuncTest038
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest038', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest038 START-----');
@@ -652,12 +636,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest039
-     * @tc.name      dragEventFuncTest039
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest039
+     * @tc.number dragEventFuncTest039
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest039', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest039 START-----');
@@ -681,12 +665,12 @@ export default function dragEventFuncTest() {
     });
 
     /**
-     * @tc.number    dragEventFuncTest040
-     * @tc.name      dragEventFuncTest040
-     * @tc.desc
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   dragEventFuncTest040
+     * @tc.number dragEventFuncTest040
+     * @tc.desc   testing errorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragEventFuncTest040', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('dragEventFuncTest040 START-----');

@@ -53,7 +53,6 @@ class DragEventFuncTest {
         static napi_value dragEventFuncTest022(napi_env env, napi_callback_info info);
         static napi_value dragEventFuncTest023(napi_env env, napi_callback_info info);
         static napi_value dragEventFuncTest024(napi_env env, napi_callback_info info);
-//        static napi_value dragEventFuncTest025(napi_env env, napi_callback_info info);
         static napi_value dragEventFuncTest026(napi_env env, napi_callback_info info);
         static napi_value dragEventFuncTest027(napi_env env, napi_callback_info info);
         static napi_value dragEventFuncTest028(napi_env env, napi_callback_info info);

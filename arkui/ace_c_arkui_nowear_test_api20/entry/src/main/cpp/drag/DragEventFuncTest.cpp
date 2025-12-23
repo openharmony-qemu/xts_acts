@@ -24,7 +24,7 @@
 #include <arkui/native_gesture.h>
 #include <arkui/native_type.h>
 #include <arkui/native_node_napi.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <arkui/native_type.h>
 #include <arkui/ui_input_event.h>
 #define PARAM_150 150
@@ -467,48 +467,7 @@ napi_value DragEventFuncTest::dragEventFuncTest024(napi_env env, napi_callback_i
     NAPI_END;
 }
 
-//napi_value DragEventFuncTest::dragEventFuncTest025(napi_env env, napi_callback_info info) {
-//    auto nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
-//        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
-//    auto(text) = nodeAPI->createNode(ARKUI_NODE_TEXT);
-//    do {
-//        if ((env == nullptr) || (info == nullptr)) {
-//            return nullptr;
-//        }
-//    } while (0);
-//    ArkUI_AttributeItem content_item = {};
-//    content_item.string = "drag_DragAction Test";
-//    nodeAPI->setAttribute(text, NODE_TEXT_CONTENT, &content_item);
-//    float size = PARAM_50;
-//    ArkUI_NumberValue value[] = {{.f32 = size}};
-//    ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-//    nodeAPI->setAttribute(text, NODE_FONT_SIZE, &valueItem);
-//
-//    uint8_t data[PARAM_960000];
-//    size_t dataSize = PARAM_960000;
-//    for (int i = 0; i < dataSize; i++) {
-//        data[i] = i + 1;
-//    }
-//    OH_Pixelmap_InitializationOptions *createOpts;
-//    OH_PixelmapInitializationOptions_Create(&createOpts);
-//    OH_PixelmapInitializationOptions_SetWidth(createOpts, PARAM_200);
-//    OH_PixelmapInitializationOptions_SetHeight(createOpts, PARAM_400);
-//    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_BGRA_8888);
-//    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
-//    OH_PixelmapNative *pixelmap = nullptr;
-//    OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &pixelmap);
-//    std::vector<OH_PixelmapNative *> pixelVector;
-//    pixelVector.push_back(pixelmap);
-//
-//    auto *dragAction = OH_ArkUI_CreateDragActionWithNode(text);
-//    int ret = OH_ArkUI_DragAction_SetPixelMaps(dragAction, pixelVector.data(), pixelVector.size());
-//    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "dragEventFuncTest025", "ret is %{public}d------", ret);
-//    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
-//    NAPI_END;
-//}
-
 napi_value DragEventFuncTest::dragEventFuncTest026(napi_env env, napi_callback_info info) {
-    // NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     OH_UdmfDataLoadParams *dataLoadParams = OH_UdmfDataLoadParams_Create();
     auto nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
@@ -609,7 +568,6 @@ napi_value DragEventFuncTest::dragEventFuncTest034(napi_env env, napi_callback_i
 
 napi_value DragEventFuncTest::dragEventFuncTest035(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    // ArkUI_ParallelInnerGestureEvent *event = new ArkUI_ParallelInnerGestureEvent();
     ArkUI_GestureRecognizerHandleArray array;
     int32_t size = PARAM_0;
     auto node = nodeAPI->createNode(ARKUI_NODE_TEXT);
@@ -621,7 +579,6 @@ napi_value DragEventFuncTest::dragEventFuncTest035(napi_env env, napi_callback_i
 }
 int g_aaa_036ret = PARAM_NEGATIVE_1;
 napi_value DragEventFuncTest::dragEventFuncTest036(napi_env env, napi_callback_info info) {
-    // aaa = new int(1);
     size_t argc = PARAM_1;
     napi_value args[PARAM_1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);

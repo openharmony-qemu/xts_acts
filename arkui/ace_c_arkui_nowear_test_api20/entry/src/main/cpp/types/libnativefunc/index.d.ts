@@ -60,8 +60,6 @@ export  const  dragEventFuncTest023: () => number;
 
 export  const  dragEventFuncTest024: () => number;
 
-// export  const  dragEventFuncTest025: () => number;
-
 export  const  dragEventFuncTest026: () => number;
 
 export  const  dragEventFuncTest027: () => number;

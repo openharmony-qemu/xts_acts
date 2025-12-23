@@ -21,7 +21,7 @@
 #include "drag/GetDragSourceTest.h"
 #include "drag/GetTouchPointGlobalDisplayTest.h"
 #include "drag/DragEventFuncTest.h"
-#include "InteractiveFramework/drag_getPreDragStatus.h"
+#include "InteractiveFramework/DragGetPreDragStatusTest.h"
 #include "dropBadge/EnableDropDisallowedBadgeTest.h"
 #include "dialog/DialogGetStateTest.h"
 #include "image/ImageDraggableEventTest.h"

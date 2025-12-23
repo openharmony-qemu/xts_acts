@@ -124,14 +124,14 @@ static napi_value Enum_GESTURE_EVENT_ACTION_ACCEPT(napi_env env, napi_callback_i
     NAPI_END;
 }
 
-struct ArkUI_NodeEvent_ {
+struct ArkUI_NodeEvent_I {
     int32_t category;
     int32_t kind;
 };
 
 static napi_value Enum_OH_ArkUI_NodeEvent_GetEventType(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_NodeEvent_ *event = new ArkUI_NodeEvent_;
+    ArkUI_NodeEvent_I *event = new ArkUI_NodeEvent_I;
     event ->category = PARAM_0;
     int eventTypes[] = {
         NODE_TOUCH_EVENT,
