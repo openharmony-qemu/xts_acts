@@ -14,7 +14,7 @@
  */
 
 #include "common.h"
-#include "oh_commonevent.h"
+#include "BasicServicesKit/oh_commonevent.h"
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
@@ -37,13 +37,11 @@ static napi_value testCommonEventInvalidParameter(napi_env env, napi_callback_in
     napi_value result;
     const char *events[] = {CesCapiTest::COMMON_EVENT_TEST};
     int32_t eventsNum = sizeof(events) / sizeof(char *);
-    CommonEvent_ErrCode invalidParameter = COMMONEVENT_ERR_INVALID_PARAMETER;
-    ASSERT_EQ(invalidParameter, COMMONEVENT_ERR_INVALID_PARAMETER);
     g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
     g_subscriber = OH_CommonEvent_CreateSubscriber(nullptr, IsOrderedCallback001);
     int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
-    napi_create_int32(env,  retResult == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
-    return result;
+    ASSERT_EQ(retResult, COMMONEVENT_ERR_INVALID_PARAMETER);
+    NAPI_END;
 }
 
 static napi_value SetPublisherPermissionSuccess(napi_env env, napi_callback_info info)
@@ -54,8 +52,6 @@ static napi_value SetPublisherPermissionSuccess(napi_env env, napi_callback_info
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
-    CommonEvent_ErrCode permissionError = COMMONEVENT_ERR_PERMISSION_ERROR;
-    ASSERT_EQ(permissionError, COMMONEVENT_ERR_PERMISSION_ERROR);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublisherPermission(g_subscribeInfo, str);
     napi_create_int32(env, ret == COMMONEVENT_ERR_OK ? 0 : -1, &result);
@@ -67,8 +63,6 @@ static napi_value SetPublisherPermissionError(napi_env env, napi_callback_info i
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
-    CommonEvent_ErrCode sendingLimit = COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED;
-    ASSERT_EQ(sendingLimit, COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublisherPermission(nullptr, nullptr);
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
@@ -83,8 +77,6 @@ static napi_value SetPublisherBundleNameSuccess(napi_env env, napi_callback_info
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
-    CommonEvent_ErrCode systemSerivce = COMMONEVENT_ERR_NOT_SYSTEM_SERVICE;
-    ASSERT_EQ(systemSerivce, COMMONEVENT_ERR_NOT_SYSTEM_SERVICE);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublisherBundleName(g_subscribeInfo, str);
     napi_create_int32(env, ret == COMMONEVENT_ERR_OK ? 0 : -1, &result);
@@ -96,8 +88,6 @@ static napi_value SetPublisherBundleNameError(napi_env env, napi_callback_info i
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
-    CommonEvent_ErrCode obtainSystem = COMMONEVENT_ERR_OBTAIN_SYSTEM_PARAMS;
-    ASSERT_EQ(obtainSystem, COMMONEVENT_ERR_OBTAIN_SYSTEM_PARAMS);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublisherBundleName(nullptr, str);
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
@@ -109,8 +99,6 @@ static napi_value SetPublishInfoBundleNameInvalidParameter(napi_env env, napi_ca
     napi_value result;
     char str[1024] = {0};
     size_t strLen = 0;
-    CommonEvent_ErrCode requestFailed = COMMONEVENT_ERR_SENDING_REQUEST_FAILED;
-    ASSERT_EQ(requestFailed, COMMONEVENT_ERR_SENDING_REQUEST_FAILED);
     napi_get_value_string_utf8(env, result, str, MAX_STRING_LENGTH - 1, &strLen);
     int32_t ret = OH_CommonEvent_SetPublishInfoBundleName(nullptr, str);
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
@@ -124,8 +112,6 @@ static napi_value SetPublishInfoPermissionSuccess(napi_env env, napi_callback_in
     auto publishInfo = OH_CommonEvent_CreatePublishInfo(ordered);
     const char* permissions[] = {"ohos.permission.RECEIVER_STARTUP_COMPLETED"};
     int32_t num = PARAM_1;
-    CommonEvent_ErrCode initUndone = COMMONEVENT_ERR_INIT_UNDONE;
-    ASSERT_EQ(initUndone, COMMONEVENT_ERR_INIT_UNDONE);
     int32_t ret = OH_CommonEvent_SetPublishInfoPermissions(publishInfo, permissions, num);
     napi_create_int32(env, ret == COMMONEVENT_ERR_OK ? 0 : -1, &result);
     return result;
@@ -136,11 +122,21 @@ static napi_value SetPublishInfoPermissionError(napi_env env, napi_callback_info
     napi_value result;
     const char* permissions[] = {"ohos.permission.RECEIVER_STARTUP_COMPLETED"};
     int32_t num = PARAM_1;
-    CommonEvent_ErrCode memoryFailed = COMMONEVENT_ERR_ALLOC_MEMORY_FAILED;
-    ASSERT_EQ(memoryFailed, COMMONEVENT_ERR_ALLOC_MEMORY_FAILED);
     int32_t ret = OH_CommonEvent_SetPublishInfoPermissions(nullptr, permissions, num);
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
+}
+
+static napi_value SetPublishInfoWithoutPermission(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char* permissions[] = {""};
+    bool ordered = true;
+    auto publishInfo = OH_CommonEvent_CreatePublishInfo(ordered);
+    int32_t num = PARAM_1;
+    int32_t ret = OH_CommonEvent_SetPublishInfoPermissions(publishInfo, permissions, num);
+    ASSERT_EQ(ret, COMMONEVENT_ERR_PERMISSION_ERROR);
+    NAPI_END;
 }
 
 static napi_value SetPublishInfoCodeSuccess(napi_env env, napi_callback_info info)
@@ -490,8 +486,6 @@ static napi_value SubscriberNumExceeded(napi_env env, napi_callback_info info)
         int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
         napi_create_int32(env, retResult == COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED ? 0 : -1, &result);
     }
-    CommonEvent_ErrCode subscriberExceeded = COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED;
-    ASSERT_EQ(subscriberExceeded, COMMONEVENT_ERR_SUBSCRIBER_NUM_EXCEEDED);
     return result;
 }
 
@@ -543,6 +537,24 @@ static napi_value UnSubscribeInvalidParameter(napi_env env, napi_callback_info i
     int32_t retResult = OH_CommonEvent_UnSubscribe(g_subscriber);
     napi_create_int32(env,  retResult == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
+}
+static napi_value PublisherLimitExceeded(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t lastErr = COMMONEVENT_ERR_OK;
+    int32_t successCount = 0;
+    const char* event = CesCapiTest::COMMON_EVENT_TEST;
+    bool ordered = false;
+    auto publishInfo = OH_CommonEvent_CreatePublishInfo(ordered);
+    for (int i = 0; i <= MAX_SUBSCRIBER_LIMIT; ++i) {
+        lastErr = OH_CommonEvent_PublishWithInfo(event, publishInfo);
+        if (lastErr == COMMONEVENT_ERR_OK) {
+            successCount++;     }else if (lastErr == COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED) {
+            break;
+        }
+    }
+    ASSERT_EQ(lastErr, COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED);
+    NAPI_END;
 }
 
 napi_property_descriptor desc[] = {
