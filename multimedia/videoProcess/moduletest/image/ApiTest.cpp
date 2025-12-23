@@ -70,6 +70,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0010, TestSize.Level0)
     CreateEmptyPixelmap(&srcImg, 720, 960, PIXEL_FORMAT_RGBA_8888);
     CreateEmptyPixelmap(&dstImg, 720, 960, PIXEL_FORMAT_BGRA_8888);
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
+    OH_PixelmapNative_Destroy(&srcImg);
+    OH_PixelmapNative_Destroy(&dstImg);
     ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
 }
 
@@ -110,6 +112,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0030, TestSize.Level0)
     OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION);
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_ConvertColorSpace(instance, srcImg, dstImg);
     OH_ImageProcessing_Destroy(instance);
+    OH_PixelmapNative_Destroy(&srcImg);
+    OH_PixelmapNative_Destroy(&dstImg);
     ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
 }
 
@@ -137,6 +141,8 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0040, TestSize.Level0)
     OH_NativeColorSpaceManager_Destroy(srcColorspace);
     OH_NativeColorSpaceManager_Destroy(dstColorspace);
     OH_ImageProcessing_Destroy(instance);
+    OH_PixelmapNative_Destroy(&srcImg);
+    OH_PixelmapNative_Destroy(&dstImg);
     ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
 }
 
@@ -181,6 +187,9 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0060, TestSize.Level0)
     OH_NativeColorSpaceManager_Destroy(srcColorspace);
     OH_NativeColorSpaceManager_Destroy(dstColorspace);
     OH_ImageProcessing_Destroy(instance);
+    OH_PixelmapNative_Destroy(&srcImg);
+    OH_PixelmapNative_Destroy(&srcGainmap);
+    OH_PixelmapNative_Destroy(&dstImg);
     ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
 }
 
@@ -211,6 +220,9 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0070, TestSize.Level0)
     OH_NativeColorSpaceManager_Destroy(srcColorspace);
     OH_NativeColorSpaceManager_Destroy(dstColorspace);
     OH_ImageProcessing_Destroy(instance);
+    OH_PixelmapNative_Destroy(&srcImg);
+    OH_PixelmapNative_Destroy(&srcGainmap);
+    OH_PixelmapNative_Destroy(&dstImg);
     ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
 }
 
@@ -233,6 +245,7 @@ HWTEST_F(VpeImageApiTest, VPE_IMAGE_API_TEST_0080, TestSize.Level0)
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_GenerateMetadata(instance, srcImg);
     OH_NativeColorSpaceManager_Destroy(srcColorspace);
     OH_ImageProcessing_Destroy(instance);
+    OH_PixelmapNative_Destroy(&srcImg);
     ASSERT_EQ(ret, IMAGE_PROCESSING_ERROR_UNSUPPORTED_PROCESSING);
 }
 
