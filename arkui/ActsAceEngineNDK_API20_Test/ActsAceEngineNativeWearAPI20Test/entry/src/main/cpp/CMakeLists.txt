@@ -54,3 +54,12 @@ find_library(
 
 target_link_libraries(nativexcomponent PUBLIC
     ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so libace_napi.z.so libpixelmap.so librawfile.z.so)
+    
+add_library(noderenderndk SHARED
+    nodeEvent/NapiRenderInitTest.cpp
+    common/CommonTest.cpp
+    nodeEvent/NodeEventTest.cpp
+)
+
+target_link_libraries(noderenderndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libos_account_ndk.so libohinput.so
+libace_ndk.z.so libpixelmap.so)
