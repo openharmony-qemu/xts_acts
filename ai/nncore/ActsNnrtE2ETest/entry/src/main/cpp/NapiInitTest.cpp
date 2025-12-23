@@ -127,7 +127,6 @@ static napi_value sub_AI_NNRt_Core_Func_North_Reliability(napi_env env, napi_cal
     
     status = napi_create_async_work(env, nullptr, resourceName, executeAsyncWork,
         completeAsyncWork, workData, &workData->asyncWork);
-    
     if (status != napi_ok) {
         delete workData;
         return createResultValue(env, -1);

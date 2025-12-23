@@ -66,65 +66,70 @@ static void BuildModelWithQuantParams(OH_NNModel **model)
     BuildSingleOpGraphWithQuantParams(*model, graphArgs);
 }
 
-// 辅助函数：构建编译对象
-static OH_NNCompilation* ConstructCompilation(OH_NNModel* model, size_t deviceId,
-    bool isUseCache = true)
+// 辅助函数：配置编译选项
+static OH_NN_ReturnCode ConfigureCompilation(OH_NNCompilation* compilation, bool isUseCache)
 {
-    OH_LOG_INFO(LOG_APP, "[Helper] ConstructCompilation: deviceId=%{public}zu, isUseCache=%{public}d",
-        deviceId, isUseCache);
-    
-    OH_NNCompilation* compilation = nullptr;
-    if (model == nullptr) {
-        OH_LOG_INFO(LOG_APP, "[Helper] Constructing compilation for cache");
-        compilation = OH_NNCompilation_ConstructForCache();
-        if (compilation == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_ConstructForCache failed");
-            return nullptr;
-        }
-    } else {
-        OH_LOG_INFO(LOG_APP, "[Helper] Constructing compilation from model");
-        compilation = OH_NNCompilation_Construct(model);
-        if (compilation == nullptr) {
-            OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_Construct failed");
-            return nullptr;
-        }
-    }
-
-    OH_NN_ReturnCode returnCode = OH_NNCompilation_SetDevice(compilation, deviceId);
+    OH_NN_ReturnCode returnCode = OH_NNCompilation_SetPerformanceMode(compilation,
+        OH_NN_PERFORMANCE_EXTREME);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetDevice failed, ret=%{public}d", returnCode);
-        return nullptr;
-    }
-    
-    if (isUseCache) {
-        OH_LOG_INFO(LOG_APP, "[Helper] Setting cache directory: %s", CACHE_DIR.c_str());
-        returnCode = OH_NNCompilation_SetCache(compilation, CACHE_DIR.c_str(), 1);
-    }
-
-    returnCode = OH_NNCompilation_SetPerformanceMode(compilation, OH_NN_PERFORMANCE_EXTREME);
-    if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetPerformanceMode failed, ret=%{public}d", returnCode);
-        return nullptr;
+        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetPerformanceMode failed, ret=%{public}d",
+            returnCode);
+        return returnCode;
     }
 
     returnCode = OH_NNCompilation_SetPriority(compilation, OH_NN_PRIORITY_HIGH);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetPriority failed, ret=%{public}d", returnCode);
-        return nullptr;
+        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetPriority failed, ret=%{public}d",
+            returnCode);
+        return returnCode;
     }
 
     returnCode = OH_NNCompilation_EnableFloat16(compilation, false);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_EnableFloat16 failed, ret=%{public}d", returnCode);
+        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_EnableFloat16 failed, ret=%{public}d",
+            returnCode);
+        return returnCode;
+    }
+    return OH_NN_SUCCESS;
+}
+
+// 辅助函数：构建编译对象
+static OH_NNCompilation* ConstructCompilation(OH_NNModel* model, size_t deviceId,
+    bool isUseCache = true)
+{
+    OH_NNCompilation* compilation = nullptr;
+    if (model == nullptr) {
+        compilation = OH_NNCompilation_ConstructForCache();
+    } else {
+        compilation = OH_NNCompilation_Construct(model);
+    }
+    if (compilation == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_Construct failed");
         return nullptr;
     }
+
+    OH_NN_ReturnCode returnCode = OH_NNCompilation_SetDevice(compilation, deviceId);
+    if (returnCode != OH_NN_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetDevice failed, ret=%{public}d",
+            returnCode);
+        return nullptr;
+    }
+
+    if (isUseCache) {
+        returnCode = OH_NNCompilation_SetCache(compilation, CACHE_DIR.c_str(), 1);
+    }
+
+    returnCode = ConfigureCompilation(compilation, isUseCache);
+    if (returnCode != OH_NN_SUCCESS) {
+        return nullptr;
+    }
+
     returnCode = OH_NNCompilation_Build(compilation);
     if (returnCode != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_Build failed, ret=%{public}d", returnCode);
         return nullptr;
     }
-    
-    OH_LOG_INFO(LOG_APP, "[Helper] Compilation built successfully!");
+
     return compilation;
 }
 
@@ -283,34 +288,28 @@ static OH_NN_ReturnCode DestroyInputAndOutputTensor(NN_Tensor** inputTensors, si
 static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId,
     bool isDynamic = false)
 {
-    OH_LOG_INFO(LOG_APP, "[Helper] RunExecutor: deviceId=%{public}zu, isDynamic=%{public}d",
-        deviceId, isDynamic);
-    
-    OH_LOG_INFO(LOG_APP, "[Helper] Constructing executor...");
     OH_NNExecutor *executor = OH_NNExecutor_Construct(compilation);
     if (executor == nullptr) {
         OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNExecutor_Construct failed");
         return nullptr;
     }
-    
+
     size_t inputCount = 0;
     std::vector<NN_TensorDesc*> inputTensorDescs;
     size_t outputCount = 0;
     std::vector<NN_TensorDesc*> outputTensorDescs;
-    
-    OH_NN_ReturnCode returnCode = GetInputAndOutputTensorDesc(executor, &inputCount, inputTensorDescs,
-                                                              &outputCount, outputTensorDescs);
+
+    OH_NN_ReturnCode returnCode = GetInputAndOutputTensorDesc(executor, &inputCount,
+        inputTensorDescs, &outputCount, outputTensorDescs);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] GetInputAndOutputTensorDesc failed, ret=%{public}d", returnCode);
         return nullptr;
     }
-    
+
     returnCode = GetInputDimAndSetShape(executor, inputTensorDescs, outputTensorDescs, isDynamic);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] GetInputDimAndSetShape failed, ret=%{public}d", returnCode);
         return nullptr;
     }
-    
+
     NN_Tensor* inputTensors[inputCount];
     OH_NN_ReturnCode returnCodeTmp = CreateTensorAndDestroyTensorDesc(inputTensors, inputCount,
         inputTensorDescs, deviceId);
@@ -318,30 +317,24 @@ static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId
     returnCode = CreateTensorAndDestroyTensorDesc(outputTensors, outputCount,
         outputTensorDescs, deviceId);
     if (returnCode != OH_NN_SUCCESS || returnCodeTmp != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP,
-            "[Helper] CreateTensorAndDestroyTensorDesc failed, ret=%{public}d, retTmp=%{public}d",
-            returnCode, returnCodeTmp);
         return nullptr;
     }
-    
+
     returnCode = SetInputData(inputTensors, inputCount);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] SetInputData failed, ret=%{public}d", returnCode);
         return nullptr;
     }
-    
+
     returnCode = OH_NNExecutor_RunSync(executor, inputTensors, inputCount, outputTensors, outputCount);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNExecutor_RunSync failed, ret=%{public}d", returnCode);
         return nullptr;
     }
-    
+
     returnCode = DestroyInputAndOutputTensor(inputTensors, inputCount, outputTensors, outputCount);
     if (returnCode != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] DestroyInputAndOutputTensor failed, ret=%{public}d", returnCode);
         return nullptr;
     }
-    
+
     return executor;
 }
 
