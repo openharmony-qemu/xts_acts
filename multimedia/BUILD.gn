@@ -203,6 +203,7 @@ group("multimedia") {
       "photoAccess/photoAccessStatic:photoAccess_js_static_hap",
       "videoProcess/detail_enhancer_image_ndk:ActsDetailEnhancerImageNdkUnitTest",
       "videoProcess/detail_enhancer_video_ndk:ActsDetailEnhancerVideoNdkUnitTest",
+      "videoProcess/moduletest/image:ActsVpeImageNativModuleTest",
       "videoProcess/moduletest/video:ActsVpeVideoNativModuleTest",
     ]
   } else {
