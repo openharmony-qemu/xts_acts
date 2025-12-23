@@ -29,6 +29,10 @@ import columnSpaceTest from './column/ColumnSpaceTest.test'
 import rowSpaceTest from './row/RowSpaceTest.test'
 import columnReverseTest from './column/ColumnReverseTest.test'
 import rowReverseTest from './row/RowReverseTest.test'
+import TextCompressLeadingPunctuationTest from "./text/TextCompressLeadingPunctuationTest.test";
+import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressLeadingPunctuationTest.test";
+import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
+
 
 export default function testsuite() {
   ContainerPickerCanLoop();
@@ -48,4 +52,7 @@ export default function testsuite() {
   rowSpaceTest();
   columnReverseTest();
   rowReverseTest();
+  TextCompressLeadingPunctuationTest();
+  TextAreaCompressLeadingPunctuationTest();
+  TextInputCompressLeadingPunctuationTest();
 }

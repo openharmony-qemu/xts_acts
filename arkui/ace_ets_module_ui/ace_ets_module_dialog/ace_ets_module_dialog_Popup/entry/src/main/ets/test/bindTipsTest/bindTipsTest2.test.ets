@@ -64,5 +64,7 @@ export default function bindTips2Test() {
       await Utils.sleep(5000);
       done();
     });
+
+
   })
 }

@@ -79,3 +79,34 @@ napi_value AbilityRuntimeErrorCodeMultiAppNotSupportCode(napi_env env, napi_call
     napi_create_int32(env, ret, &napiRet);
     return napiRet;
 }
+napi_value StartSelfUIAbilityWithPidMultiAppNotSupport(napi_env env, napi_callback_info info)
+{
+    AbilityBase_Element element;
+    int32_t pid = 123;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.actscapimultiappnotsupport");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    const char* key = "ohos.extra.param.key.appInstance";
+    const char* value = "app_instance_0";
+    OH_AbilityBase_SetWantCharParam(want, key, value);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_AbilityBase_DestroyWant(want);
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_MULTI_APP_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    } else if (ret == ABILITY_RUNTIME_ERROR_CODE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    } else if (ret == ABILITY_RUNTIME_ERROR_MULTI_INSTANCE_NOT_SUPPORTED) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
+}

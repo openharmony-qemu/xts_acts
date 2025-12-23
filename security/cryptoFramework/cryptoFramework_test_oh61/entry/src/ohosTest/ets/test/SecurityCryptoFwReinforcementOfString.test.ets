@@ -1297,6 +1297,33 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           done();
         }
       });
+      
+    /**
+     * @tc.number SUB_Security_CryptoFramework_Reinforcement_Func_5100
+     * @tc.name SUB_Security_CryptoFramework_Reinforcement_Func_5100
+     * @tc.desc Test Cipher.createCipher containing algName string
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_Reinforcement_Func_5100",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+            cryptoFramework.createCipher("AES128/ECB/PKCS7");
+            expect(null).assertFail();
+        } catch (err) {
+            console.error("[XTS] Reinforcement_Func_5100 err is :" + err.code);
+            expect(err.code).assertEqual(801);
+        }
+        try {
+            cryptoFramework.createCipher("AES128ECBPKCS7");
+            expect(null).assertFail();
+        } catch (err) {
+            console.error("[XTS] Reinforcement_Func_5100 err is :" + err.code);
+            expect(err.code).assertEqual(801);
+        }
+        done();
+      });
 
   });
 

@@ -558,7 +558,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0100
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0100
-     * @tc.desc   IMAGE_RESULT_MEDIA_SOURCE_NOT_SET
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_SOURCE_NOT_SET
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -572,7 +572,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0200
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0200
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_INIT
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_INIT
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -586,7 +586,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0300
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0300
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_EXIST
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_ADAPTER_NOT_EXIST
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -600,7 +600,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0400
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0400
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_SURFACE_UNSUPPORT
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -614,7 +614,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0500
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0500
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_CAPTURE_NOT_INIT
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_CAPTURE_NOT_INIT
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -628,7 +628,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0600
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0600
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_SOURCE_URL_INVALID
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_SOURCE_URL_INVALID
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -642,7 +642,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0700
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0700
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_VIDEO_TRACK_NOT_FOUND
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_VIDEO_TRACK_NOT_FOUND
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -656,7 +656,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0800
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0800
-     * @tc.desc   IMAGE_RESULT_MEDIA_RTSP_CAMERA_NUM_REACH_MAX
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_RTSP_CAMERA_NUM_REACH_MAX
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -670,7 +670,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_0900
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_0900
-     * @tc.desc   IMAGE_RESULT_MEDIA_SET_VOLUME
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_SET_VOLUME
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -684,7 +684,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1000
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1000
-     * @tc.desc   IMAGE_RESULT_MEDIA_NUMBER_OVERFLOW
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_NUMBER_OVERFLOW
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -698,7 +698,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1100
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1100
-     * @tc.desc   IMAGE_RESULT_MEDIA_DIS_PLAYER_UNSUPPORTED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_DIS_PLAYER_UNSUPPORTED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -712,7 +712,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1200
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1200
-     * @tc.desc   IMAGE_RESULT_MEDIA_DENCODE_ICC_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_DENCODE_ICC_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -726,7 +726,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1300
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1300
-     * @tc.desc   IMAGE_RESULT_MEDIA_ENCODE_ICC_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_ENCODE_ICC_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -740,7 +740,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1400
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1400
-     * @tc.desc   IMAGE_RESULT_MEDIA_READ_PIXELMAP_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_READ_PIXELMAP_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -754,7 +754,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1500
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1500
-     * @tc.desc   IMAGE_RESULT_MEDIA_WRITE_PIXELMAP_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_WRITE_PIXELMAP_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -768,7 +768,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1600
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1600
-     * @tc.desc   IMAGE_RESULT_MEDIA_PIXELMAP_NOT_ALLOW_MODIFY
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_PIXELMAP_NOT_ALLOW_MODIFY
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -782,7 +782,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1700
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1700
-     * @tc.desc   IMAGE_RESULT_MEDIA_CONFIG_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_MEDIA_CONFIG_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -796,7 +796,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1800
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1800
-     * @tc.desc   IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_SURFACE_GRALLOC_BUFFER_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -810,7 +810,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_1900
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_1900
-     * @tc.desc   IMAGE_RESULT_CREATE_SURFACE_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_CREATE_SURFACE_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0
@@ -824,7 +824,7 @@ export default function ImageEffectSuppTest() {
     /**
      * @tc.number SUB_IR_NDK_ERRCODE_SUPPLEMENT_2000
      * @tc.name   SUB_IR_NDK_ERRCODE_SUPPLEMENT_2000
-     * @tc.desc   IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED
+     * @tc.desc   IR_NDK_ERRCODE -IMAGE_RESULT_SURFACE_GET_PARAMETER_FAILED
      * @tc.type   FUNCTION
      * @tc.size   Function
      * @tc.level  LEVEL0

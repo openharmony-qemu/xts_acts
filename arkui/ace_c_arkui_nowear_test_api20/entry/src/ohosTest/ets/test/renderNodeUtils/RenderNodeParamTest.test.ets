@@ -481,5 +481,18 @@ export default function RenderNodeParamTest(){
       expect(nativeFunc.RenderNodeParam035()).assertEqual(0)
       done()
     })
+
+    /**
+     * @tc.name   RenderNodeParamTest_036
+     * @tc.number RenderNodeParamTest_036
+     * @tc.desc   RenderNodeParamTest_036
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('RenderNodeParamTest_036', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.RenderNodeParam036()).assertEqual(0)
+      done()
+    })
   })
 }

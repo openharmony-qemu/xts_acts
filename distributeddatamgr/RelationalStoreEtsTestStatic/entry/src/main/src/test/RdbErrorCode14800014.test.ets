@@ -788,32 +788,32 @@ export default function RdbErrorCode14800014() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    // it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    //   async (done: () => void) => {
-    //     rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
-    //     await rdbStore!.execute(CREATE_TABLE_TEST1);
-    //
-    //     try {
-    //       await rdbStore!.close();
-    //       console.info(`${TAG} close succeeded`);
-    //     } catch (err: Error) {
-    //       console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-    //     }
-    //
-    //     try {
-    //       rdbStore!.onDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
-    //         (devices: Array<string>) => {
-    //           expect().assertFail();
-    //         })
-    //     } catch (err: Error) {
-    //       console.log(TAG + "err.code:" + err.code);
-    //       expect(14800014).assertEqual(err.code);
-    //     }
-    //
-    //     rdbStore = undefined;
-    //     await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
-    //     done();
-    //   })
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        await rdbStore!.execute(CREATE_TABLE_TEST1);
+
+        try {
+          await rdbStore!.close();
+          console.info(`${TAG} close succeeded`);
+        } catch (err: Error) {
+          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
+        }
+
+        try {
+          rdbStore!.onDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+            (devices: Array<string>) => {
+              expect().assertFail();
+            })
+        } catch (err: Error) {
+          console.log(TAG + "err.code:" + err.code);
+          expect(14800014).assertEqual(err.code);
+        }
+
+        rdbStore = undefined;
+        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        done();
+      })
 
     /**
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200
@@ -823,34 +823,34 @@ export default function RdbErrorCode14800014() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    // it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    //   async (done: () => void) => {
-    //     hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200 start *************");
-    //     rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
-    //     await rdbStore!.execute(CREATE_TABLE_TEST1);
-    //
-    //     try {
-    //       await rdbStore!.close();
-    //       console.info(`${TAG} close succeeded`);
-    //     } catch (err: Error) {
-    //       console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-    //     }
-    //
-    //     try {
-    //       rdbStore!.onDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
-    //         (devices: Array<data_relationalStore.ChangeInfo>) => {
-    //           expect().assertFail();
-    //         });
-    //     } catch (err: Error) {
-    //       console.log(TAG + "err.code:" + err.code);
-    //       expect(14800014).assertEqual(err.code);
-    //     }
-    //
-    //     rdbStore = undefined;
-    //     await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
-    //     hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200 end *************");
-    //     done();
-    //   })
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+        hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200 start *************");
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        await rdbStore!.execute(CREATE_TABLE_TEST1);
+
+        try {
+          await rdbStore!.close();
+          console.info(`${TAG} close succeeded`);
+        } catch (err: Error) {
+          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
+        }
+
+        try {
+          rdbStore!.onDataChange(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_REMOTE,
+            (devices: Array<data_relationalStore.ChangeInfo>) => {
+              expect().assertFail();
+            });
+        } catch (err: Error) {
+          console.log(TAG + "err.code:" + err.code);
+          expect(14800014).assertEqual(err.code);
+        }
+
+        rdbStore = undefined;
+        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        hilog.info(domain, tag, '%{public}s', "************* SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3200 end *************");
+        done();
+      })
 
     /**
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3300
@@ -860,30 +860,30 @@ export default function RdbErrorCode14800014() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    // it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    //   async (done: () => void) => {
-    //     rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
-    //     await rdbStore!.execute(CREATE_TABLE_TEST1);
-    //
-    //     try {
-    //       await rdbStore!.close();
-    //       console.info(`${TAG} close succeeded`);
-    //     } catch (err: Error) {
-    //       console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-    //     }
-    //
-    //     try {
-    //       rdbStore!.on('statistics', (sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
-    //         expect().assertFail();
-    //       });
-    //     } catch (err: Error) {
-    //       console.log(TAG + "err.code:" + err.code);
-    //       expect(14800014).assertEqual(err.code);
-    //     }
-    //     rdbStore = undefined;
-    //     await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
-    //     done();
-    //   })
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        await rdbStore!.execute(CREATE_TABLE_TEST1);
+
+        try {
+          await rdbStore!.close();
+          console.info(`${TAG} close succeeded`);
+        } catch (err: Error) {
+          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
+        }
+
+        try {
+          rdbStore!.onStatistics((sqlExecutionInfo: data_relationalStore.SqlExecutionInfo) => {
+            expect().assertFail();
+          });
+        } catch (err: Error) {
+          console.log(TAG + "err.code:" + err.code);
+          expect(14800014).assertEqual(err.code);
+        }
+        rdbStore = undefined;
+        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        done();
+      })
 
     /**
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3400
@@ -893,31 +893,31 @@ export default function RdbErrorCode14800014() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    // it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-    //   async (done: () => void) => {
-    //     rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
-    //     await rdbStore!.execute(CREATE_TABLE_TEST1);
-    //
-    //     try {
-    //       await rdbStore!.close();
-    //       console.info(`${TAG} close succeeded`);
-    //     } catch (err: Error) {
-    //       console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
-    //     }
-    //
-    //     try {
-    //       rdbStore!.on('storeObserver', false, () => {
-    //         expect().assertFail();
-    //       });
-    //     } catch (err: Error) {
-    //       console.log(TAG + "err.code:" + err.code);
-    //       expect(14800014).assertEqual(err.code);
-    //     }
-    //
-    //     rdbStore = undefined;
-    //     await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
-    //     done();
-    //   })
+    it('SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+        rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
+        await rdbStore!.execute(CREATE_TABLE_TEST1);
+
+        try {
+          await rdbStore!.close();
+          console.info(`${TAG} close succeeded`);
+        } catch (err: Error) {
+          console.error(`${TAG} close failed, code is ${err.code},message is ${err.message}`);
+        }
+
+        try {
+          rdbStore!.on('storeObserver', false, () => {
+            expect().assertFail();
+          });
+        } catch (err: Error) {
+          console.log(TAG + "err.code:" + err.code);
+          expect(14800014).assertEqual(err.code);
+        }
+
+        rdbStore = undefined;
+        await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
+        done();
+      })
 
     /**
      * @tc.name   SUB_DistributedData_RDB_SDK_ErrorCode14800014Test_0700

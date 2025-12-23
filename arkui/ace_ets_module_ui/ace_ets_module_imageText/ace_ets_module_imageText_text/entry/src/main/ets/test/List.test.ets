@@ -102,6 +102,7 @@ import customKeyboardTextAreaTest from './CustomKeyboardTest/textArea.test';
 import customKeyboardTextInputTest from './CustomKeyboardTest/textInput.test';
 import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctuation.test';
 import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
+import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -194,4 +195,5 @@ export default function testsuite() {
   customKeyboardTextInputTest();
   TextCompressLeadingPunctuation();
   TextCompressLeadingPunctuationModifier();
+  TextMenuItemIdTest();
 }

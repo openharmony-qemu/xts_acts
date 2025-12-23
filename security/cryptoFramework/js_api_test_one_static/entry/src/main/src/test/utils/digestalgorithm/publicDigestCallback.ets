@@ -165,7 +165,7 @@ async function testMDDigestCallbackLen(MDAlgoName: string, DatablobLen: number):
   let globalText: string = "";
   let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz0123456789";
   for (let i = 0; i < DatablobLen; i++) {
-    globalText += t.charAt(Math.floor(Math.random() * t.length));
+    globalText += t.charAt(Math.floor(Math.random() * t.length).toInt());
   }
   console.warn("Datablob = " + globalText);
   let ginBlob: cryptoFramework.DataBlob = {

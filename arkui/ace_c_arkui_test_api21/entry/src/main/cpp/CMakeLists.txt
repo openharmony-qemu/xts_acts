@@ -27,6 +27,7 @@ add_library(nativerender SHARED
     list/SourceFlingEdgeTest.cpp
     list/SourceScrollBarTest.cpp
     list/SourceBtnScrollerTest.cpp
+    custom/CustomNodeEventTest.cpp
 )
 
 add_library(nativefunc SHARED

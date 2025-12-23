@@ -26,7 +26,9 @@
 #include "row/RowSpaceTest.h"
 #include "column/ColumnReverseTest.h"
 #include "row/RowReverseTest.h"
-
+#include "text/TextCompressLeadingPunctuationTest.h"
+#include "textArea/TextAreaCompressLeadingPunctuationTest.h"
+#include "textInput/TextInputCompressLeadingPunctuationTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -64,6 +66,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"rowReverseTest", nullptr, RowReverseTest::CreateNativeNode, nullptr,
             nullptr, nullptr, napi_default, nullptr},
+        {"TextAreaCompressLeadingPunctuationTest", nullptr, TextAreaCompressLeadingPunctuationTest::CreateNativeNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr}, 
+        {"TextCompressLeadingPunctuationTest", nullptr, TextCompressLeadingPunctuationTest::CreateNativeNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr}, 
+        {"TextInputCompressLeadingPunctuationTest", nullptr, TextInputCompressLeadingPunctuationTest::CreateNativeNode, 
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -34,13 +34,13 @@ export default class CommonTest {
 
       
       let lastIndex: int = 0;
-      testValues.forEach((temp: TestValue, index: double) => {
+      testValues.forEach((temp: TestValue, index: Int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
         }
       });
 
-      testValues.forEach((testValue: TestValue, index: double) => {
+      testValues.forEach((testValue: TestValue, index: Int) => {
 
         
         if (testValue.exceptView.indexOf(targetView) < 0) {
