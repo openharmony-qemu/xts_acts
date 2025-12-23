@@ -70,24 +70,24 @@ static void BuildModelWithQuantParams(OH_NNModel **model)
 static OH_NN_ReturnCode ConfigureCompilation(OH_NNCompilation* compilation, bool isUseCache)
 {
     OH_NN_ReturnCode returnCode = OH_NNCompilation_SetPerformanceMode(compilation,
-            OH_NN_PERFORMANCE_EXTREME);
+        OH_NN_PERFORMANCE_EXTREME);
     if (returnCode != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetPerformanceMode failed, ret=%{public}d",
-                returnCode);
+            returnCode);
         return returnCode;
     }
 
     returnCode = OH_NNCompilation_SetPriority(compilation, OH_NN_PRIORITY_HIGH);
     if (returnCode != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetPriority failed, ret=%{public}d",
-                returnCode);
+            returnCode);
         return returnCode;
     }
 
     returnCode = OH_NNCompilation_EnableFloat16(compilation, false);
     if (returnCode != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_EnableFloat16 failed, ret=%{public}d",
-                returnCode);
+            returnCode);
         return returnCode;
     }
     return OH_NN_SUCCESS;
@@ -111,7 +111,7 @@ static OH_NNCompilation* ConstructCompilation(OH_NNModel* model, size_t deviceId
     OH_NN_ReturnCode returnCode = OH_NNCompilation_SetDevice(compilation, deviceId);
     if (returnCode != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_SetDevice failed, ret=%{public}d",
-                returnCode);
+            returnCode);
         return nullptr;
     }
 
