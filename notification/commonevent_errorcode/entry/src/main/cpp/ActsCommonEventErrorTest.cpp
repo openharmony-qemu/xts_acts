@@ -549,8 +549,7 @@ static napi_value PublisherLimitExceeded(napi_env env, napi_callback_info info)
     for (int i = 0; i <= MAX_SUBSCRIBER_LIMIT; ++i) {
         lastErr = OH_CommonEvent_PublishWithInfo(event, publishInfo);
         if (lastErr == COMMONEVENT_ERR_OK) {
-            successCount++;
-        }else if (lastErr == COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED) {
+            successCount++;     }else if (lastErr == COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED) {
             break;
         }
     }
