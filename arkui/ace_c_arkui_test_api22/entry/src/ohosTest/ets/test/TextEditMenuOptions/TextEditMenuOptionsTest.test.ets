@@ -29,7 +29,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions01
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions01
+     * @tc.name    TextEditMenuOptionsTest001
      * @tc.desc    testing TextEditMenuOptions CAPI creat & dispose
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -42,7 +42,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions02
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions02
+     * @tc.name    TextEditMenuOptionsTest002
      * @tc.desc    testing TextEditMenuOptions CAPI RegisterOnCreateMenu success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -55,7 +55,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions03
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions03
+     * @tc.name    TextEditMenuOptionsTest003
      * @tc.desc    testing TextEditMenuOptions CAPI RegisterOnCreateMenu failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -68,7 +68,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions04
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions04
+     * @tc.name    TextEditMenuOptionsTest004
      * @tc.desc    testing TextEditMenuOptions CAPI RegisterOnPrepareMenu success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -81,7 +81,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions05
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions05
+     * @tc.name    TextEditMenuOptionsTest005
      * @tc.desc    testing TextEditMenuOptions CAPI RegisterOnPrepareMenu failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -94,7 +94,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions06
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions06
+     * @tc.name    TextEditMenuOptionsTest006
      * @tc.desc    testing TextEditMenuOptions CAPI RegisterOnMenuItemClick success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -108,7 +108,7 @@ export default function TextEditMenuOptionsTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextEditMenuOptions07
-     * @tc.name    Test_OH_ArkUI_TextEditMenuOptions07
+     * @tc.name    TextEditMenuOptionsTest007
      * @tc.desc    testing TextEditMenuOptions CAPI RegisterOnMenuItemClick failed
      * @tc.size    MediumTest
      * @tc.type    Function

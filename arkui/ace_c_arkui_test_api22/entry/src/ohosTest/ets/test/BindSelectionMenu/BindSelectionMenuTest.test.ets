@@ -29,7 +29,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions01
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions01
+     * @tc.name    BindSelectionMenuTest001
      * @tc.desc    testing TextSelectionMenuOption CAPI creat & dispose
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -42,7 +42,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions02
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions02
+     * @tc.name    BindSelectionMenuTest002
      * @tc.desc    testing TextSelectionMenuOption CAPI SetSpanType success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -55,7 +55,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions03
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions03
+     * @tc.name    BindSelectionMenuTest003
      * @tc.desc    testing TextSelectionMenuOption CAPI SetSpanType failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -68,7 +68,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions04
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions04
+     * @tc.name    BindSelectionMenuTest004
      * @tc.desc    testing TextSelectionMenuOption CAPI GetSpanType success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -81,7 +81,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions05
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions05
+     * @tc.name    BindSelectionMenuTest005
      * @tc.desc    testing TextSelectionMenuOption CAPI GetSpanType failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -94,7 +94,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions06
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions06
+     * @tc.name    BindSelectionMenuTest006
      * @tc.desc    testing TextSelectionMenuOption CAPI SetContentNode success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -108,7 +108,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions07
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions07
+     * @tc.name    BindSelectionMenuTest007
      * @tc.desc    testing TextSelectionMenuOption CAPI SetContentNode failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -122,7 +122,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions08
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions08
+     * @tc.name    BindSelectionMenuTest008
      * @tc.desc    testing TextSelectionMenuOption CAPI GetContentNode success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -135,7 +135,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions09
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions09
+     * @tc.name    BindSelectionMenuTest009
      * @tc.desc    testing TextSelectionMenuOption CAPI GetContentNode failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -149,7 +149,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions10
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions10
+     * @tc.name    BindSelectionMenuTest010
      * @tc.desc    testing TextSelectionMenuOption CAPI SetResponseType success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -162,7 +162,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions11
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions11
+     * @tc.name    BindSelectionMenuTest011
      * @tc.desc    testing TextSelectionMenuOption CAPI SetResponseType failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -175,7 +175,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions12
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions12
+     * @tc.name    BindSelectionMenuTest012
      * @tc.desc    testing TextSelectionMenuOption CAPI GetResponseType success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -188,7 +188,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions13
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions13
+     * @tc.name    BindSelectionMenuTest013
      * @tc.desc    testing TextSelectionMenuOption CAPI GetResponseType failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -201,7 +201,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions14
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions14
+     * @tc.name    BindSelectionMenuTest014
      * @tc.desc    testing TextSelectionMenuOption CAPI RegisterOnMenuShowCallback success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -214,7 +214,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions15
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions15
+     * @tc.name    BindSelectionMenuTest015
      * @tc.desc    testing TextSelectionMenuOption CAPI RegisterOnMenuShowCallback failed
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -227,7 +227,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions16
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions16
+     * @tc.name    BindSelectionMenuTest016
      * @tc.desc    testing TextSelectionMenuOption CAPI RegisterOnMenuHideCallback success
      * @tc.size    MediumTest
      * @tc.type    Function
@@ -240,7 +240,7 @@ export default function BindSelectionMenuTest() {
 
     /**
      * @tc.number  Test_OH_ArkUI_TextSelectionMenuOptions17
-     * @tc.name    Test_OH_ArkUI_TextSelectionMenuOptions17
+     * @tc.name    BindSelectionMenuTest017
      * @tc.desc    testing TextSelectionMenuOption CAPI RegisterOnMenuHideCallback failed
      * @tc.size    MediumTest
      * @tc.type    Function
