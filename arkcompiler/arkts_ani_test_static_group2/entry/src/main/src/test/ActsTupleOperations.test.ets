@@ -1949,6 +1949,1011 @@ export default function tupleOperationsTest() {
         console.log('test_TupleValue_SetItem_Byte_0004 end');
       });
 
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_BYTE_0500
+     * @tc.name      test_TupleValue_SetItem_Byte_0005
+     * @tc.desc      tuple value set byte -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Byte_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Byte_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Byte_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Byte_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Byte_0005 end');
+      });
 
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_BYTE_0600
+     * @tc.name      test_TupleValue_SetItem_Byte_0006
+     * @tc.desc      tuple value setitem byte repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Byte_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Byte_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Byte_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Byte_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Byte_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_SHORT_0100
+     * @tc.name      test_TupleValue_SetItem_Short_0001
+     * @tc.desc      tuple value set short and get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Short_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Short();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Short_0001 done');
+        done();
+        console.log('test_TupleValue_SetItem_Short_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_SHORT_0200
+     * @tc.name      test_TupleValue_SetItem_Short_0002
+     * @tc.desc      tuple value null env, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Short_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Short_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Short_0002 done');
+        done();
+        console.log('test_TupleValue_SetItem_Short_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_SHORT_0300
+     * @tc.name      test_TupleValue_SetItem_Short_0003
+     * @tc.desc      tuple value null tuple, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Short_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Short_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Short_0003 done');
+        done();
+        console.log('test_TupleValue_SetItem_Short_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_SHORT_0400
+     * @tc.name      test_TupleValue_SetItem_Short_0004
+     * @tc.desc      tuple value set short 6U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Short_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Short_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Short_0004 done');
+        done();
+        console.log('test_TupleValue_SetItem_Short_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_SHORT_0500
+     * @tc.name      test_TupleValue_SetItem_Short_0005
+     * @tc.desc      tuple value set short -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Short_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Short_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Short_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Short_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_SHORT_0600
+     * @tc.name      test_TupleValue_SetItem_Short_0006
+     * @tc.desc      tuple value setitem short repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Short_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Short_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Short_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Short_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Short_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_INT_0100
+     * @tc.name      test_TupleValue_SetItem_Int_0001
+     * @tc.desc      tuple value set int and get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Int_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Int();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Int_0001 done');
+        done();
+        console.log('test_TupleValue_SetItem_Int_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_INT_0200
+     * @tc.name      test_TupleValue_SetItem_Int_0002
+     * @tc.desc      tuple value null env, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Int_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Int_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Int_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Int_0002 done');
+        done();
+        console.log('test_TupleValue_SetItem_Int_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_INT_0300
+     * @tc.name      test_TupleValue_SetItem_Int_0003
+     * @tc.desc      tuple value null tuple, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Int_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Int_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Int_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Int_0003 done');
+        done();
+        console.log('test_TupleValue_SetItem_Int_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_INT_0400
+     * @tc.name      test_TupleValue_SetItem_Int_0004
+     * @tc.desc      tuple value set int 6U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Int_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Int_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Int_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Int_0004 done');
+        done();
+        console.log('test_TupleValue_SetItem_Int_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_INT_0500
+     * @tc.name      test_TupleValue_SetItem_Int_0005
+     * @tc.desc      tuple value set int -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Int_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Int_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Int_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Int_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Int_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_INT_0600
+     * @tc.name      test_TupleValue_SetItem_Int_0006
+     * @tc.desc      tuple value setitem int repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Int_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Int_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Int_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Int_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Int_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_LONG_0100
+     * @tc.name      test_TupleValue_SetItem_Long_0001
+     * @tc.desc      tuple value set long and get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Long_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Long_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Long();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Long_0001 done');
+        done();
+        console.log('test_TupleValue_SetItem_Long_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_LONG_0200
+     * @tc.name      test_TupleValue_SetItem_Long_0002
+     * @tc.desc      tuple value null env, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Long_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Long_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Long_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Long_0002 done');
+        done();
+        console.log('test_TupleValue_SetItem_Long_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_LONG_0300
+     * @tc.name      test_TupleValue_SetItem_Long_0003
+     * @tc.desc      tuple value null tuple, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Long_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Long_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Long_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Long_0003 done');
+        done();
+        console.log('test_TupleValue_SetItem_Long_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_LONG_0400
+     * @tc.name      test_TupleValue_SetItem_Long_0004
+     * @tc.desc      tuple value set long 6U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Long_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Long_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Long_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Long_0004 done');
+        done();
+        console.log('test_TupleValue_SetItem_Long_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_LONG_0500
+     * @tc.name      test_TupleValue_SetItem_Long_0005
+     * @tc.desc      tuple value set long -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Long_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Long_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Long_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Long_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Long_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_LONG_0600
+     * @tc.name      test_TupleValue_SetItem_Long_0006
+     * @tc.desc      tuple value setitem long repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Long_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Long_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Long_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Long_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Long_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_FLOAT_0100
+     * @tc.name      test_TupleValue_SetItem_Float_0001
+     * @tc.desc      tuple value set float and get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Float_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Float_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Float();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Float_0001 done');
+        done();
+        console.log('test_TupleValue_SetItem_Float_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_FLOAT_0200
+     * @tc.name      test_TupleValue_SetItem_Float_0002
+     * @tc.desc      tuple value null env, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Float_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Float_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Float_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Float_0002 done');
+        done();
+        console.log('test_TupleValue_SetItem_Float_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_FLOAT_0300
+     * @tc.name      test_TupleValue_SetItem_Float_0003
+     * @tc.desc      tuple value null tuple, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Float_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Float_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Float_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Float_0003 done');
+        done();
+        console.log('test_TupleValue_SetItem_Float_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_FLOAT_0400
+     * @tc.name      test_TupleValue_SetItem_Float_0004
+     * @tc.desc      tuple value set float 6U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Float_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Float_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Float_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Float_0004 done');
+        done();
+        console.log('test_TupleValue_SetItem_Float_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_FLOAT_0500
+     * @tc.name      test_TupleValue_SetItem_Float_0005
+     * @tc.desc      tuple value set float -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Float_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Float_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Float_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Float_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Float_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_FLOAT_0600
+     * @tc.name      test_TupleValue_SetItem_Float_0006
+     * @tc.desc      tuple value setitem float repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Float_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Float_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Float_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Float_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Float_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_DOUBLE_0100
+     * @tc.name      test_TupleValue_SetItem_Double_0001
+     * @tc.desc      tuple value set double and get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Double_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Double();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Double_0001 done');
+        done();
+        console.log('test_TupleValue_SetItem_Double_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_DOUBLE_0200
+     * @tc.name      test_TupleValue_SetItem_Double_0002
+     * @tc.desc      tuple value null env, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Double_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Double_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Double_0002 done');
+        done();
+        console.log('test_TupleValue_SetItem_Double_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_DOUBLE_0300
+     * @tc.name      test_TupleValue_SetItem_Double_0003
+     * @tc.desc      tuple value null tuple, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Double_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Double_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Double_0003 done');
+        done();
+        console.log('test_TupleValue_SetItem_Double_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_DOUBLE_0400
+     * @tc.name      test_TupleValue_SetItem_Double_0004
+     * @tc.desc      tuple value set double 6U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Double_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Double_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Double_0004 done');
+        done();
+        console.log('test_TupleValue_SetItem_Double_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_DOUBLE_0500
+     * @tc.name      test_TupleValue_SetItem_Double_0005
+     * @tc.desc      tuple value set double -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Double_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Double_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Double_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Double_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_DOUBLE_0600
+     * @tc.name      test_TupleValue_SetItem_Double_0006
+     * @tc.desc      tuple value setitem double repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Double_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Double_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Double_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Double_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Double_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0100
+     * @tc.name      test_TupleValue_SetItem_Ref_0001
+     * @tc.desc      tuple value set ref and get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0001 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0200
+     * @tc.name      test_TupleValue_SetItem_Ref_0002
+     * @tc.desc      tuple value null env, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0002 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0300
+     * @tc.name      test_TupleValue_SetItem_Ref_0003
+     * @tc.desc      tuple value char tuple, return invalid type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0003 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0400
+     * @tc.name      test_TupleValue_SetItem_Ref_0004
+     * @tc.desc      tuple value null tuple, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0004 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0500
+     * @tc.name      test_TupleValue_SetItem_Ref_0005
+     * @tc.desc      tuple value set ref 4U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0005 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0600
+     * @tc.name      test_TupleValue_SetItem_Ref_0006
+     * @tc.desc      tuple value set ref -1U, index out of range
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0006 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0700
+     * @tc.name      test_TupleValue_SetItem_Ref_0007
+     * @tc.desc      tuple value set ref null result, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0007 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_07();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0007 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0007 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_SETITEM_REF_0800
+     * @tc.name      test_TupleValue_SetItem_Ref_0008
+     * @tc.desc      tuple value setitem ref repeat three times
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_SetItem_Ref_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_SetItem_Ref_0008 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_SetItem_Ref_08();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_SetItem_Ref_0008 done');
+        done();
+        console.log('test_TupleValue_SetItem_Ref_0008 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0100
+     * @tc.name      test_TupleValue_GetNumberOfItems_0001
+     * @tc.desc      tuple value get empty tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0001 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0001 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0001 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0200
+     * @tc.name      test_TupleValue_GetNumberOfItems_0002
+     * @tc.desc      tuple value get test primitive tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0002 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_02();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0002 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0002 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0300
+     * @tc.name      test_TupleValue_GetNumberOfItems_0003
+     * @tc.desc      tuple value get test char tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0003 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_03();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0003 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0003 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0400
+     * @tc.name      test_TupleValue_GetNumberOfItems_0004
+     * @tc.desc      tuple value get test many tuple(char,byte,bool,short), return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0004 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_04();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0004 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0004 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0500
+     * @tc.name      test_TupleValue_GetNumberOfItems_0005
+     * @tc.desc      tuple value get test many tuple(int,long,float,double), return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0005 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_05();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0005 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0005 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0600
+     * @tc.name      test_TupleValue_GetNumberOfItems_0006
+     * @tc.desc      tuple value get test boolean tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0006 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_06();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0006 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0006 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0700
+     * @tc.name      test_TupleValue_GetNumberOfItems_0007
+     * @tc.desc      tuple value get test char tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0007 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_07();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0007 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0007 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0800
+     * @tc.name      test_TupleValue_GetNumberOfItems_0008
+     * @tc.desc      tuple value get test byte tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0008 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_08();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0008 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0008 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_0900
+     * @tc.name      test_TupleValue_GetNumberOfItems_0009
+     * @tc.desc      tuple value get test short tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0009 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_09();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0009 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0009 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_1000
+     * @tc.name      test_TupleValue_GetNumberOfItems_0010
+     * @tc.desc      tuple value get test int tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0010 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_10();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0010 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0010 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_1100
+     * @tc.name      test_TupleValue_GetNumberOfItems_0011
+     * @tc.desc      tuple value get test long tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0011 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_11();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0011 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0011 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_1200
+     * @tc.name      test_TupleValue_GetNumberOfItems_0012
+     * @tc.desc      tuple value get test float tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0012 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_12();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0012 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0012 end');
+      });
+
+    /**
+     * @tc.number    TUPLEVALUE_GETNUMBEROFITEMS_1300
+     * @tc.name      test_TupleValue_GetNumberOfItems_0013
+     * @tc.desc      tuple value get test double tuple, return ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_TupleValue_GetNumberOfItems_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_TupleValue_GetNumberOfItems_0013 start');
+        let cls = new Foo();
+        let result = cls.test_TupleValue_GetNumberOfItems_13();
+        expect(result).assertTrue();
+        console.log('test_TupleValue_GetNumberOfItems_0013 done');
+        done();
+        console.log('test_TupleValue_GetNumberOfItems_0013 end');
+      });
   })
 }
