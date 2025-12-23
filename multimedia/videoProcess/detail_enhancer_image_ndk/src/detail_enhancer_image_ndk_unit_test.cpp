@@ -27,13 +27,6 @@
 using namespace std;
 using namespace testing::ext;
 
-const int32_t IMAGE_PROCESSING_TYPE_COLOR_SPACE_CONVERSION = 0x1;
-const int32_t IMAGE_PROCESSING_TYPE_COMPOSITION = 0x2;
-const int32_t IMAGE_PROCESSING_TYPE_DECOMPOSITION = 0x4;
-const int32_t IMAGE_PROCESSING_TYPE_METADATA_GENERATION = 0x8;
-const int32_t IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER = 0x10;
-const char* IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL = "QualityLevel";
-
 namespace OHOS {
 namespace Media {
 namespace VideoProcessingEngine {
@@ -447,6 +440,93 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_1, TestSize.Level1)
     ImageProcessing_ErrorCode ret = instance->GetImageProcessing()->GetParameter(parameter);
     EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
     OH_ImageProcessing::Destroy(instance);
+}
+
+// get parameter after set parameter: level none
+/**
+ * @tc.name   vpeImageNdk_11_2
+ * @tc.number vpeImageNdk_11_2
+ * @tc.desc   vpeImageNdk_11_2
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_2, TestSize.Level1)
+{
+    OH_ImageProcessing* instance = nullptr;
+    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
+    OH_AVFormat* parameter = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL,
+        IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_NONE);
+    OH_ImageProcessing_SetParameter(instance, parameter);
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_GetParameter(instance, parameter);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+    OH_ImageProcessing_Destroy(instance);
+}
+
+// get parameter after set parameter: level low
+/**
+ * @tc.name   vpeImageNdk_11_3
+ * @tc.number vpeImageNdk_11_3
+ * @tc.desc   vpeImageNdk_11_3
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_3, TestSize.Level1)
+{
+    OH_ImageProcessing* instance = nullptr;
+    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
+    OH_AVFormat* parameter = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL,
+        IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_LOW);
+    OH_ImageProcessing_SetParameter(instance, parameter);
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_GetParameter(instance, parameter);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+    OH_ImageProcessing_Destroy(instance);
+}
+
+// get parameter after set parameter: level medium
+/**
+ * @tc.name   vpeImageNdk_11_4
+ * @tc.number vpeImageNdk_11_4
+ * @tc.desc   vpeImageNdk_11_4
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_4, TestSize.Level1)
+{
+    OH_ImageProcessing* instance = nullptr;
+    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
+    OH_AVFormat* parameter = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL,
+        IMAGE_DETAIL_ENHANCER_QUALITY_LEVEL_MEDIUM);
+    OH_ImageProcessing_SetParameter(instance, parameter);
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_GetParameter(instance, parameter);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+    OH_ImageProcessing_Destroy(instance);
+}
+
+// get parameter after set parameter: invalid param
+/**
+ * @tc.name   vpeImageNdk_11_5
+ * @tc.number vpeImageNdk_11_5
+ * @tc.desc   vpeImageNdk_11_5
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_4, TestSize.Level1)
+{
+    OH_ImageProcessing* instance = nullptr;
+    OH_ImageProcessing_Create(&instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
+    OH_AVFormat* parameter = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL, -1); // -1 invalid param
+    OH_ImageProcessing_SetParameter(instance, parameter);
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_GetParameter(instance, parameter);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_SUCCESS);
+    OH_ImageProcessing_Destroy(instance);
 }
 
 // get parameter but parameter is null
@@ -1346,6 +1426,68 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_43_1, TestSize.Level1)
     OH_ImageProcessing_DeinitializeEnvironment();
 }
 
+// DeinitializeEnvironment without initialization
+/**
+ * @tc.name   vpeImageNdk_44
+ * @tc.number vpeImageNdk_44
+ * @tc.desc   vpeImageNdk_44
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_44, TestSize.Level1)
+{
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_DeinitializeEnvironment();
+    EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_OPERATION_NOT_PERMITTED);
+}
+
+// invalid parameter to create
+/**
+ * @tc.name   vpeImageNdk_45
+ * @tc.number vpeImageNdk_45
+ * @tc.desc   vpeImageNdk_45
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_45, TestSize.Level1)
+{
+    OH_ImageProcessing* instance = nullptr;
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(&instance, -1); // -1 invalid type
+    EXPECT_EQ(ret, IMAGE_PROCESS_ERROR_INVALID_PARAMETER);
+}
+
+// invalid instance to create
+/**
+ * @tc.name   vpeImageNdk_46
+ * @tc.number vpeImageNdk_46
+ * @tc.desc   vpeImageNdk_46
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_46, TestSize.Level1)
+{
+    OH_ImageProcessing** instance = nullptr;
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Create(instance, IMAGE_PROCESSING_TYPE_DETAIL_ENHANCER);
+    EXPECT_EQ(ret, IMAGE_PROCESS_ERROR_INVALID_INSTANCE);
+}
+
+// invalid instance to destroy
+/**
+ * @tc.name   vpeImageNdk_47
+ * @tc.number vpeImageNdk_47
+ * @tc.desc   vpeImageNdk_47
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_47, TestSize.Level1)
+{
+    OH_ImageProcessing** instance = nullptr;
+    ImageProcessing_ErrorCode ret = OH_ImageProcessing_Destroy(instance);
+    EXPECT_EQ(ret, IMAGE_PROCESS_ERROR_INVALID_INSTANCE);
+}
 }
 } // namespace Media
 } // namespace OHOS
