@@ -252,6 +252,28 @@ struct webRegisterCustomsComponent {
               }
               break;
             }
+            case 'testArkWebHttpBodyStream_IsInMemory_True': {
+              this.isComplete = -1
+              this.controller.loadUrl(URL_BAIDU_HTTPS+'/InMemory.html')
+              await waitForExist(() => this.isComplete, 'testArkWebHttpBodyStream_IsInMemory_isPageEnd', 0, 1000)
+              this.isEnd = -1;
+              this.controller.runJavaScript('testInMemory()', (error, result) => {
+                if (error) {
+                  console.info(' run JavaScript error:' + JSON.stringify(error));
+                  return;
+                }
+                if (result) {
+                  this.isEnd = 0
+                  console.info(' run JavaScript return value is:' + result);
+                }
+              })
+              await waitForExist(() => this.isEnd, 'testArkWebHttpBodyStream_IsInMemory_js', 0, 1000)
+              await waitForExist(() => testNapi.arkWebHttpBodyStreamIsInMemoryTrue(), 'arkWebHttpBodyStreamIsInMemoryTrue', 1, 1000)
+              let result: number = testNapi.arkWebHttpBodyStreamIsInMemoryTrue();
+              console.log('arkWebHttpBodyStreamIsInMemoryTrue ==>' + String(result));
+              Utils.emitEvent(result, 147870);
+              break;
+            }
           }
         })
       }

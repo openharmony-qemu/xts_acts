@@ -265,6 +265,23 @@ export default function webviewApi() {
       await Utils.waitAndClickComponent('webHostingButton',driver);
     })
 
+     /**
+      * @tc.name   testArkWebHttpBodyStream_IsInMemory_True
+      * @tc.number SUB_ACE_WEB_OH_ArkWebHttpBodyStream_IsInMemory_RETURNTRUE
+      * @tc.desc   test OH_ArkWebHttpBodyStream_IsInMemory  return true
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it('testArkWebHttpBodyStream_IsInMemory_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+       hilog.info(0x0000, 'testTag', '%{public}s', 'testArkWebHttpBodyStream_IsInMemory_True PASS');
+       Utils.emitEvent("testArkWebHttpBodyStream_IsInMemory_True", 147701)
+       Utils.registerBaseEvent('testArkWebHttpBodyStream_IsInMemory_True', 1, 147870, done, (backData: events_emitter.EventData, expected: Object) => {
+             expect(backData?.data?.ACTION).assertEqual(expected)
+         })
+       await Utils.waitAndClickComponent('webHostingButton',driver);
+     })
+
     /**
      * @tc.name   testArkWebGetNativeApiReturnNullptr
      * @tc.number SUB_ACE_WEB_OH_ARKWEB_GETNATIVEAPI_RETURNNULLPTR

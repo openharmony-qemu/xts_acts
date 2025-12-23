@@ -42,3 +42,4 @@ export const arkWebSetSchemeHandlerReturnFalse: () => number;
 export const arkWebServiceWorkerSetSchemeHandlerReturnTrue: () => number;
 export const arkWebServiceWorkerSetSchemeHandlerReturnFalse: () => number;
 export const arkWebResourceRequestIsMainFrameReturnTrue: () => number;
+export const arkWebHttpBodyStreamIsInMemoryTrue: () => number;
