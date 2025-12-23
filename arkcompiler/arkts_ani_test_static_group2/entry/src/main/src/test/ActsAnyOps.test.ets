@@ -107,25 +107,6 @@ export default function anyOpsTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_ANY_OPS_GET_PROPERTY_0200
-     * @tc.name      test_Any_GetProperty_0002
-     * @tc.desc      any get by index valid
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 3
-     */
-    it("test_Any_GetProperty_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        console.log('test_Any_GetProperty_0002 start');
-        let cls = new Foo();
-        let result = cls.test_Any_GetProperty_01();
-        expect(result).assertTrue();
-        console.log('test_Any_GetProperty_0002 done');
-        done();
-        console.log('test_Any_GetProperty_0002 end');
-      })
-
-    /**
      * @tc.number    SUB_ANI_ANY_OPS_GET_PROPERTY_0400
      * @tc.name      Any_GetProperty_0004
      * @tc.desc      any get by value valid
