@@ -105,5 +105,5 @@ export const testSwiperParam002: () => number;
 export const testSwiperParam003: () => number;
 export const testSwiperParam004: () => number;
 export const testSwiperParam005: () => number;
-export const Enum_Image_OH_ArkUI_NodeEvent_GetEventType: () => number;
-export const Enum_Text_OH_ArkUI_NodeEvent_GetEventType: () => number;
+export const textEnumTest010: () => number;
+export const imageEnumTest010: () => number;

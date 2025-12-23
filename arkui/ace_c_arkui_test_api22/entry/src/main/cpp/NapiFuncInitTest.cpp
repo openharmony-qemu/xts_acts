@@ -220,10 +220,10 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testSwiperParam005", nullptr, SetShowBackgroundTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"Enum_Image_OH_ArkUI_NodeEvent_GetEventType", nullptr, Enum_Image_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
+        {"imageEnumTest010", nullptr, Enum_Image_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"Enum_Text_OH_ArkUI_NodeEvent_GetEventType", nullptr, Enum_Text_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
-         napi_default, nullptr},   
+        {"textEnumTest010", nullptr, Enum_Text_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

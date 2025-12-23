@@ -13,11 +13,14 @@
  * limitations under the License.
  */
 #include "common/common.h"
-#include <arkui/native_key_event.h>
+#include "manager/PluginManagerTest.h"
 #include <arkui/native_node.h>
-#include <arkui/drag_and_drop.h>
+#include <arkui/native_type.h>
+#include <arkui/native_animate.h>
 #include <arkui/native_gesture.h>
-#include <multimedia/image_framework/image/pixelmap_native.h>
+#include <arkui/native_node_napi.h>
+#include <ace/xcomponent/native_interface_xcomponent.h>
+#include "arkui/native_interface.h"
 
 namespace ArkUICapiTest {
 
