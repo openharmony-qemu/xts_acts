@@ -26,6 +26,12 @@ export const TestImageContentTransitionEffect001: () => number;
 
 export const TestImageContentTransitionEffect002: () => number;
 
+export const enum_GetEventType_Scroll: () => number;
+export const enum_GetEventType_List: () => number;
+export const enum_GetEventType_Refresh: () => number;
+export const enum_GetEventType_WaterFlow: () => number;
+export const enum_GetEventType_Grid: () => number;
+
 export const TestMethodReturnValue001: () => number;
 export const TestMethodReturnValue002: () => number;
 export const TestMethodReturnValue003: () => number;
