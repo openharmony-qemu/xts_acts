@@ -20,6 +20,7 @@ group("ActsAceEtsModuleGlobalTest") {
     deps = [
       "ace_ets_module_global_api11:ActsAceEtsModuleGlobalApi11Test",
       "ace_ets_module_global_no_wear_api11:ActsAceEtsModuleGlobalNoWearApi11Test",
+      "ace_ets_module_global_api11_static:ActsAceEtsModuleGlobalApi11StaticTest",
     ]
   }
 }
