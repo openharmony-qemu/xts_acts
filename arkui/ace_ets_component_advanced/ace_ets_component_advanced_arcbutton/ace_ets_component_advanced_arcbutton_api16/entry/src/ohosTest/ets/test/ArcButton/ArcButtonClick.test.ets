@@ -16,7 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Leve
 import router from '@system.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
-import { ArcButtonStatus, ArcButtonStyleMode } from '@kit.ArkUI';
+import { ArcButtonStatus, ArcButtonStyleMode, ArcButtonPosition, LevelMode, promptAction } from '@kit.ArkUI';
 
 interface optionsObj {
   uri: string
@@ -266,6 +266,20 @@ export default function ChipOnClose() {
       console.info('ArcButtonStyleMode_007 START');
       expect(ArcButtonStatus.DISABLED+'').assertEqual('2');
       console.info("[ArcButtonStyleMode_007] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonPosition_001
+     * @tc.number ArcButtonPosition_001
+     * @tc.desc   ArcButtonPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonPosition_001', Level.LEVEL0, async (done: Function) => {
+      console.info('ArcButtonPosition_001 START');
+      expect(ArcButtonPosition.BOTTOM_EDGE).assertEqual(1);
+      console.info("[ArcButtonPosition_001] end");
       done();
     });
   })
