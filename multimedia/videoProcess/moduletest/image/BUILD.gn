@@ -51,7 +51,7 @@ ohos_moduletest_suite("ActsVpeImageNativModuleTest") {
   include_dirs += [ "./" ]
   cflags = image_moduletest_cflags
 
-  sources = [ "./api_test.cpp" ]
+  sources = [ "./ApiTest.cpp" ]
 
   deps = [ "$VIDEO_PROCESSING_ENGINE_ROOT_DIR/framework:image_processing" ]
 
