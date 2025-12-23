@@ -23,6 +23,7 @@
     "MainAbility/pages/list/SourceBarTest",
     "MainAbility/pages/list/SourceBarFlingTest",
     "MainAbility/pages/list/SourceScrollerTest",
-    "MainAbility/pages/list/SourceAnimationTest"
+    "MainAbility/pages/list/SourceAnimationTest",
+    "MainAbility/pages/custom/CustomNodeEventTest"
   ]
 }

@@ -167,16 +167,14 @@ it('ActsScrollThemeColors_static_0200', Level.LEVEL2, async (done: () => void): 
 }
       done();
     })
+
     /**
-     * @tc.number    : ActsScrollThemeColors_static_0300
-     * @tc.name      : ActsScrollThemeColors_static_0300
-     * @tc.desc      : Сheck custom colors values of the Scroll
-    after change theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.number   ActsScrollThemeColors_static_0300
+     * @tc.name     ActsScrollThemeColors_static_0300
+     * @tc.desc     ActsScrollThemeColors_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it(`ActsScrollThemeColors_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ActsScrollThemeColors_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
               try {
       const CASE: string = `ActsScrollThemeColors_static_0300`
       console.info(`${SUITE} ${CASE} START`)
@@ -199,16 +197,14 @@ it('ActsScrollThemeColors_static_0200', Level.LEVEL2, async (done: () => void): 
 }
       done();
     })
+
     /**
-     * @tc.number    : ActsScrollThemeColors_static_0400
-     * @tc.name      : ActsScrollThemeColors_static_0400
-     * @tc.desc      : Сheck system colors values of the Scroll
-    after reset theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.number   ActsScrollThemeColors_static_0400
+     * @tc.name     ActsScrollThemeColors_static_0400
+     * @tc.desc     ActsScrollThemeColors_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it(`ActsScrollThemeColors_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ActsScrollThemeColors_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
               try {
       const CASE: string = `ActsScrollThemeColors_static_0400`
       console.info(`${SUITE} ${CASE} START`)

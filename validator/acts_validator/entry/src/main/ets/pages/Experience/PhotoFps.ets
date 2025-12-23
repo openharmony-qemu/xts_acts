@@ -207,7 +207,7 @@ struct CustomContainerUser {
       }
     }
     .width('100%')
-    .height('80%')
+    .height('65%')
     .backgroundColor(Color.Black)
     .justifyContent(FlexAlign.SpaceEvenly)
   }

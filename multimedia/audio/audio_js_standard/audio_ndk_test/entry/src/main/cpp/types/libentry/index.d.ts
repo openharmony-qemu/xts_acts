@@ -319,3 +319,4 @@ export const AudioSessionManagerAvailableDevices_012: () => number;
 export const AudioSessionManagerAvailableDevices_013: () => number;
 export const AudioSessionManagerAvailableDevices_014: () => number;
 export const bluetoothAndNearlinkPreferredRecordCategory_001: () => number;
+export const AudioCommonResult_001: () => number;

@@ -29,6 +29,7 @@
 #include "list/SourceFlingEdgeTest.h"
 #include "list/SourceScrollBarTest.h"
 #include "list/SourceBtnScrollerTest.h"
+#include "custom/CustomNodeEventTest.h"
 
 namespace ArkUICapiTest
 {
@@ -140,6 +141,8 @@ namespace ArkUICapiTest
             {"sourceBarFlingTest", nullptr, SourceScrollBarTest::SourceBarFlingTest, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"sourceScrollerTest", nullptr, SourceBtnScrollerTest::SourceScrollerTest, nullptr, nullptr, nullptr, napi_default, nullptr},
             {"sourceAnimationTest", nullptr, SourceBtnScrollerTest::SourceAnimationTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"testCustomNodeEvent001", nullptr, CustomNodeEventTest::testCustomNodeEvent001,
+               nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

@@ -22,5 +22,7 @@ group("ActsAceEtsModuleDrawTest") {
     "ace_ets_module_draw_shape:ActsAceEtsModuleDrawShapeTest",
     "ace_ets_module_draw_api13_static:ActsAceEtsModuleDrawApi13StaticTest",
     "ace_ets_module_draw_api20_static:ActsAceEtsModuleDrawApi20StaticTest",
+    "ace_ets_module_draw_api11_static:ActsAceEtsModuleDrawApi11StaticTest",
+    "ace_ets_module_draw_api12_static:ActsAceEtsModuleDrawApi12StaticTest",
   ]
 }
