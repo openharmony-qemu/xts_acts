@@ -301,7 +301,7 @@ static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId
     std::vector<NN_TensorDesc*> outputTensorDescs;
 
     OH_NN_ReturnCode returnCode = GetInputAndOutputTensorDesc(executor, &inputCount,
-        inputTensorDescs, &outputCount, outputTensorDescs);
+            inputTensorDescs, &outputCount, outputTensorDescs);
     if (returnCode != OH_NN_SUCCESS) {
         return nullptr;
     }
@@ -313,10 +313,10 @@ static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId
 
     NN_Tensor* inputTensors[inputCount];
     OH_NN_ReturnCode returnCodeTmp = CreateTensorAndDestroyTensorDesc(inputTensors, inputCount,
-        inputTensorDescs, deviceId);
+            inputTensorDescs, deviceId);
     NN_Tensor* outputTensors[outputCount];
     returnCode = CreateTensorAndDestroyTensorDesc(outputTensors, outputCount,
-        outputTensorDescs, deviceId);
+            outputTensorDescs, deviceId);
     if (returnCode != OH_NN_SUCCESS || returnCodeTmp != OH_NN_SUCCESS) {
         return nullptr;
     }
@@ -398,7 +398,7 @@ static int SubAiNnRtCoreFuncNorthEndToEnd0300()
     BuildModelWithQuantParams(&model);
     if (model == nullptr) {
         OH_LOG_ERROR(LOG_APP,
-                "[Test] FAILED: BuildModelWithQuantParams returned nullptr");
+            "[Test] FAILED: BuildModelWithQuantParams returned nullptr");
         return -1;
     }
     OH_NNCompilation* compilation = ConstructCompilation(model, deviceId, false);
