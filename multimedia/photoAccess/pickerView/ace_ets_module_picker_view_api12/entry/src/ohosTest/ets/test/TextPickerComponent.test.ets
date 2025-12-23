@@ -83,6 +83,7 @@ function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
   sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
   sheetPickerOptions.isPhotoTakingSupported = false;
   sheetPickerOptions.maxSelectNumber = 10;
+  sheetPickerOptions.isDestroyedWithNavigation = true;
   return sheetPickerOptions;
 }
 
@@ -99,7 +100,6 @@ function getDefaultPickerOptions(): PickerOptions {
   pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.AUTO;
   pickerOptions.orientation = PickerOrientation.HORIZONTAL;
   pickerOptions.edgeEffect = EdgeEffect.Spring;
-  pickerOptions.isDestroyedWithNavigation = true;
   return pickerOptions;
 }
 
