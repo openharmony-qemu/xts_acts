@@ -79,6 +79,7 @@
         "MainAbility/pages/Draw/DrawModifierOneTest",
         "MainAbility/pages/Draw/DrawModifierTwoTest",
         "MainAbility/pages/Draw/DrawForegroundTest",
+        "MainAbility/pages/Draw/DrawOverlayTest",
         "MainAbility/pages/useEffect/useEffectIndex"
     ]
 }
