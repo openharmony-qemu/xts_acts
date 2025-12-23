@@ -25,6 +25,7 @@ group("builtin_static") {
       "builtin006_standard_test_static:ActsBuiltin6StaticTest",
       "esbuiltin002_standard_test_static:ActsEsBuiltin2StaticTest",
       "regexp_standard_test_static:ActsRegExpStaticTest",
+      "typeArray_standard_test_static:ActsTypeArrayStaticTest",
     ]
   }
 }
