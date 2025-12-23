@@ -71,7 +71,7 @@ struct playVideo {
           .onFinish(() => {
             this.Vue = true;
           })
-      }.width('100%').height('80%').onClick(() => {
+      }.width('100%').height('65%').onClick(() => {
         this.showControls = !this.showControls
       })
       .margin({ bottom: '-10vp' })
