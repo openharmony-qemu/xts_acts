@@ -223,9 +223,9 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testSwiperEnum001", nullptr, Enum_Swiper_GetEventType, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"enum_GetEventType_Image", nullptr, Enum_Image_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
+        {"enum_GetEventType_Image", nullptr, Enum_GetEventType_Image, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"enum_GetEventType_Text", nullptr, Enum_Text_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
+        {"enum_GetEventType_Text", nullptr, Enum_GetEventType_Text, nullptr, nullptr, nullptr,
          napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
