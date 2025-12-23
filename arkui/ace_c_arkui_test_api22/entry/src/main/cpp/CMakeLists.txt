@@ -53,6 +53,7 @@ add_library(nativefunc SHARED
     InteractiveFramework/UiInputEventBooleanTest.cpp
     InteractiveFramework/LongPressGestureTest.cpp
     InteractiveFramework/LongPressGestureTest.h
+    InteractiveFramework/EnumTest.cpp
     grid/GridAttrsTest.cpp
     component/ComponentTest.cpp
     component/GridComponentTest.cpp

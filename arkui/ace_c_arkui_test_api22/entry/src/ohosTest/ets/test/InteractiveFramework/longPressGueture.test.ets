@@ -103,6 +103,21 @@ export default function longPressGusture(){
     })
 
     /**
+     * @tc.number   GetAllowableMovement_SUPPORTED
+     * @tc.name     GetAllowableMovement_SUPPORTED
+     * @tc.desc     testing interface
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('GetAllowableMovement_SUPPORTED',  Level.LEVEL0, async (done: Function) => {
+      expect(native.GetAllowableMovement_SUPPORTED()).assertEqual(0)
+      console.log('GetAllowableMovement End')
+      await Utils.sleep(200)
+      done()
+    })
+
+    /**
      * @tc.number   SetMeasureFromViewport
      * @tc.name     SetMeasureFromViewport
      * @tc.desc     testing interface
