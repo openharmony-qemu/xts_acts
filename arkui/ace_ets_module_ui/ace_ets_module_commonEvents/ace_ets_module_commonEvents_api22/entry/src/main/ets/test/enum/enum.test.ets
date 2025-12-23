@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 
-export default function EnumTest(){
+export default function EnumTest() {
 
   describe('EnumTest', () => {
 
@@ -366,6 +366,36 @@ export default function EnumTest(){
       console.info('GesturePriority_003 START');
       expect(GesturePriority.NORMAL).assertEqual(0);
       console.info("[GesturePriority_003] end");
+      done();
+    });
+
+    /**
+     * @tc.number    SourceType_001
+     * @tc.name      SourceType_001
+     * @tc.desc      GesturePriority
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('SourceType_001', Level.LEVEL3, async (done: Function) => {
+      console.info('SourceType_001 START');
+      expect(SourceType.KEY).assertEqual(4);
+      console.info("[SourceType_001] end");
+      done();
+    });
+
+    /**
+     * @tc.number    SourceType_002
+     * @tc.name      SourceType_002
+     * @tc.desc      GesturePriority
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('SourceType_002', Level.LEVEL3, async (done: Function) => {
+      console.info('SourceType_002 START');
+      expect(SourceType.JOYSTICK).assertEqual(5);
+      console.info("[SourceType_002] end");
       done();
     });
   })

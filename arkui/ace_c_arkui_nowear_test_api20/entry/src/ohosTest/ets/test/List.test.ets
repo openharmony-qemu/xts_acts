@@ -19,6 +19,8 @@ import buttonGetTypeTest from './button/ButtonGetTypeTest.test'
 import focusWrapModeTest from './grid/FocusWrapModeTest.test'
 import dragEventGetDisplayIdTest from './dragEventTest/dragEventGetDisplayId.test'
 import dragEventGetDragSourceTest from './dragEventTest/dragEventGetDragSource.test'
+import dragEventFuncTest from './dragEventTest/dragEventFunc.test'
+import DragGetPreDragStatusTest from "./InteractiveFramework/DragGetPreDragStatus.test";
 import enableDropDisallowedBadgeTest from './dropBadge/enableDropDisallowedBadge.test'
 import dialogGetStateTest from './dialog/DialogGetStateTest.test'
 import imageDraggableEventTest from './image/ImageDraggableEventTest.test'
@@ -33,6 +35,8 @@ export default function testsuite() {
   focusWrapModeTest();
   dragEventGetDisplayIdTest();
   dragEventGetDragSourceTest();
+  dragEventFuncTest();
+  DragGetPreDragStatusTest();
   dialogGetStateTest();
   imageDraggableEventTest();
   RenderNodeParamTest();

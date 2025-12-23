@@ -25,10 +25,14 @@ add_library(nativerender SHARED
     dialog/DialogGetStateTest.cpp
     component/image_component.cpp
     image/ImageDraggableEventTest.cpp
+    drag/DragEventFuncTest.cpp
+    InteractiveFramework/drag_getPreDragStatus.cpp
 )
 
 add_library(nativefunc SHARED
     napi_func_init.cpp
+    manager/plugin_manager.cpp
+    drag/DragEventFuncTest.cpp
 )
 
 find_library(

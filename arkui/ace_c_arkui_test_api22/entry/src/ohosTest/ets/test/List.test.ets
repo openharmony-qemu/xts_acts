@@ -42,6 +42,7 @@ import gridAttrsTest from "./grid/GridAttrsTest.test";
 import gridEventTest from './grid/GridEventTest.test';
 import clipShapeTest from "./clipShape/ClipShapeTest.test";
 import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
+import enumTest from "./InteractiveFramework/enum.test";
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test'
 import SwiperParamTest from './swiper/SwiperParamTest.test';
 import SwiperEnumTest from './swiper/SwiperEnumTest.test';
@@ -79,6 +80,7 @@ export default function testsuite() {
   gridEventTest();
   clipShapeTest();
   CustomMarkDirtyTest();
+  enumTest();
   TextMenuItemIdTest();
   SwiperParamTest();
   SwiperEnumTest();
