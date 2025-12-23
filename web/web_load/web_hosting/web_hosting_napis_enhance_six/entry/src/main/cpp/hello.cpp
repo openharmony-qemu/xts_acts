@@ -98,7 +98,7 @@ void OnURLRequestStop(const ArkWeb_SchemeHandler *schemeHandler, const ArkWeb_Re
     testIsEof = rawfileRequest->httpBodyStreamIsEof();
     testIsChunked = rawfileRequest->httpBodyStreamIsChunked();
     testIsInMemory = rawfileRequest->httpBodyStreamIsInMemory();
-    g_testIsInMemoryTrue = rawfileRequest->httpBodyStreamIsInMemoryTrue();
+    g_testIsInMemoryTrue = rawfileRequest->HttpBodyStreamIsInMemoryTrue();
     testHttpBodyStreamGetPosition = rawfileRequest->httpBodyStreamGetPosition();
     testHttpBodyStreamGetSize = rawfileRequest->httpBodyStreamGetSize();
     testHttpBodyStreamSetReadCallBack = rawfileRequest->httpBodyStreamSetReadCallback();

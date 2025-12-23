@@ -46,7 +46,7 @@ public:
     
     bool httpBodyStreamIsEof() { return httpBodyStreamIsEof_; }
     bool httpBodyStreamIsInMemory() { return httpBodyStreamIsInMemory_; }
-    bool httpBodyStreamIsInMemoryTrue() { return httpBodyStreamIsInMemoryTrue_; }
+    bool HttpBodyStreamIsInMemoryTrue() { return httpBodyStreamIsInMemoryTrue_; }
     bool httpBodyStreamIsChunked() { return httpBodyStreamIsChunked_; }
     uint64_t httpBodyStreamGetPosition() { return httpBodyStreamGetPosition_; }
     uint64_t httpBodyStreamGetSize() { return httpBodyStreamGetSize_; }
