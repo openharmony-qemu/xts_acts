@@ -338,7 +338,7 @@ export default function BigIntTest() {
         try {
             const bigint1 = 123456789123456789n;
             console.log('result ' + bigint1.toLocaleString("de-DE"));
-            expect(bigint.toLocaleString("de-DE")).assertEqual('123.456.789.123.456.789');
+            expect(bigint1.toLocaleString("de-DE")).assertEqual('123.456.789.123.456.789');
         } catch (err) {
             console.error(`${TAG} failed, error: ${err.message}`);
             expect(false).assertFail();

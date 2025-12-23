@@ -513,10 +513,7 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 4;
         let flag1 = sentence.charAt(index);
-        let c: Char = new Char(c
-        'q'
-        )
-        ;
+        let c: Char = new Char(c'q');
         expect(flag1).assertEqual(c);
       } catch (err) {
         err = err as BusinessError;
@@ -539,10 +536,7 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 3;
         let flag1 = sentence.charAt(index);
-        let c: Char = new Char(c
-        ' '
-        )
-        ;
+        let c: Char = new Char(c' ');
         expect(flag1).assertEqual(c);
       } catch (err) {
         err = err as BusinessError;
@@ -590,10 +584,7 @@ export default function StringTest() {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         let index = 0;
         let flag1 = sentence.charAt(index);
-        let c: Char = new Char(c
-        'T'
-        )
-        ;
+        let c: Char = new Char(c'T');
         expect(flag1).assertEqual(c);
       } catch (err) {
         err = err as BusinessError;
@@ -1978,13 +1969,13 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_2500
-     * @tc.name      : testPrototypeIndexOf0001
-     * @tc.desc      : The indexOf() method of String values searches this string and returns
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_2500
+     * @tc.name testPrototypeIndexOf0001
+     * @tc.desc The indexOf() method of String values searches this string and returns
      *                 the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0001';
@@ -1999,12 +1990,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_2600
-     * @tc.name      : testPrototypeIndexOf0002
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_2600
+     * @tc.name testPrototypeIndexOf0002
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0002';
@@ -2019,12 +2010,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_2700
-     * @tc.name      : testPrototypeIndexOf0003
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_2700
+     * @tc.name testPrototypeIndexOf0003
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0003';
@@ -2039,12 +2030,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_2800
-     * @tc.name      : testPrototypeIndexOf0004
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_2800
+     * @tc.name testPrototypeIndexOf0004
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0004';
@@ -2059,12 +2050,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_2900
-     * @tc.name      : testPrototypeIndexOf0005
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_2900
+     * @tc.name testPrototypeIndexOf0005
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0005';
@@ -2079,12 +2070,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3000
-     * @tc.name      : testPrototypeIndexOf0006
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3000
+     * @tc.name testPrototypeIndexOf0006
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0006';
@@ -2099,12 +2090,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3110
-     * @tc.name      : testPrototypeIndexOf0007
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3110
+     * @tc.name testPrototypeIndexOf0007
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello world";
@@ -2119,12 +2110,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3210
-     * @tc.name      : testPrototypeIndexOf0008
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3210
+     * @tc.name testPrototypeIndexOf0008
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeIndexOf0008';
@@ -2139,12 +2130,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3300
-     * @tc.name      : testPrototypeIndexOf0009
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3300
+     * @tc.name testPrototypeIndexOf0009
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Brave new world";
@@ -2159,12 +2150,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3400
-     * @tc.name      : testPrototypeIndexOf0010
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3400
+     * @tc.name testPrototypeIndexOf0010
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Brave new world";
@@ -2179,12 +2170,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3500
-     * @tc.name      : testPrototypeIndexOf0011
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3500
+     * @tc.name testPrototypeIndexOf0011
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "brie, pepper jack, cheddar";
@@ -2199,12 +2190,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3600
-     * @tc.name      : testPrototypeIndexOf0012
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3600
+     * @tc.name testPrototypeIndexOf0012
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Brie, Pepper Jack, Cheddar";
@@ -2219,12 +2210,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3700
-     * @tc.name      : testPrototypeIndexOf0013
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3700
+     * @tc.name testPrototypeIndexOf0013
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale";
@@ -2239,12 +2230,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3810
-     * @tc.name      : testPrototypeIndexOf0014
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3810
+     * @tc.name testPrototypeIndexOf0014
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale";
@@ -2259,12 +2250,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_3900
-     * @tc.name      : testPrototypeIndexOf0015
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_3900
+     * @tc.name testPrototypeIndexOf0015
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale";
@@ -2279,12 +2270,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4110
-     * @tc.name      : testPrototypeIndexOf0016
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4110
+     * @tc.name testPrototypeIndexOf0016
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale";
@@ -2299,12 +2290,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4120
-     * @tc.name      : testPrototypeIndexOf0017
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4120
+     * @tc.name testPrototypeIndexOf0017
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale";
@@ -2319,12 +2310,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4200
-     * @tc.name      : testPrototypeIndexOf0018
-     * @tc.desc      : The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4200
+     * @tc.name testPrototypeIndexOf0018
+     * @tc.desc The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeIndexOf0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale";
@@ -2339,12 +2330,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4300
-     * @tc.name      : testPrototypeLastIndexOf0001
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4300
+     * @tc.name testPrototypeLastIndexOf0001
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2359,12 +2350,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4400
-     * @tc.name      : testPrototypeLastIndexOf0002
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4400
+     * @tc.name testPrototypeLastIndexOf0002
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2379,12 +2370,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4500
-     * @tc.name      : testPrototypeLastIndexOf0003
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4500
+     * @tc.name testPrototypeLastIndexOf0003
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2399,12 +2390,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4600
-     * @tc.name      : testPrototypeLastIndexOf0004
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4600
+     * @tc.name testPrototypeLastIndexOf0004
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2419,12 +2410,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4700
-     * @tc.name      : testPrototypeLastIndexOf0005
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4700
+     * @tc.name testPrototypeLastIndexOf0005
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2439,12 +2430,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_4800
-     * @tc.name      : testPrototypeLastIndexOf0006
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_4800
+     * @tc.name testPrototypeLastIndexOf0006
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2459,12 +2450,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5000
-     * @tc.name      : testPrototypeLastIndexOf0008
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5000
+     * @tc.name testPrototypeLastIndexOf0008
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2479,12 +2470,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5100
-     * @tc.name      : testPrototypeLastIndexOf0009
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5100
+     * @tc.name testPrototypeLastIndexOf0009
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeLastIndexOf0009';
@@ -2499,12 +2490,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5210
-     * @tc.name      : testPrototypeLastIndexOf0010
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5210
+     * @tc.name testPrototypeLastIndexOf0010
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2519,12 +2510,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5300
-     * @tc.name      : testPrototypeLastIndexOf0011
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5300
+     * @tc.name testPrototypeLastIndexOf0011
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2539,12 +2530,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5400
-     * @tc.name      : testPrototypeLastIndexOf0012
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5400
+     * @tc.name testPrototypeLastIndexOf0012
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2559,12 +2550,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5500
-     * @tc.name      : testPrototypeLastIndexOf0013
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5500
+     * @tc.name testPrototypeLastIndexOf0013
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "canal";
@@ -2579,12 +2570,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5600
-     * @tc.name      : testPrototypeLastIndexOf0014
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5600
+     * @tc.name testPrototypeLastIndexOf0014
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2599,12 +2590,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5700
-     * @tc.name      : testPrototypeLastIndexOf0015
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5700
+     * @tc.name testPrototypeLastIndexOf0015
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2619,12 +2610,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5800
-     * @tc.name      : testPrototypeLastIndexOf0016
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5800
+     * @tc.name testPrototypeLastIndexOf0016
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2639,12 +2630,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_5900
-     * @tc.name      : testPrototypeLastIndexOf0017
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_5900
+     * @tc.name testPrototypeLastIndexOf0017
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2659,12 +2650,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6000
-     * @tc.name      : testPrototypeLastIndexOf0018
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6000
+     * @tc.name testPrototypeLastIndexOf0018
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2679,12 +2670,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6100
-     * @tc.name      : testPrototypeLastIndexOf0019
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6100
+     * @tc.name testPrototypeLastIndexOf0019
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2699,12 +2690,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6300
-     * @tc.name      : testPrototypeLastIndexOf0021
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6300
+     * @tc.name testPrototypeLastIndexOf0021
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2719,12 +2710,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6400
-     * @tc.name      : testPrototypeLastIndexOf0022
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6400
+     * @tc.name testPrototypeLastIndexOf0022
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2739,12 +2730,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6500
-     * @tc.name      : testPrototypeLastIndexOf0023
-     * @tc.desc      : The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6500
+     * @tc.name testPrototypeLastIndexOf0023
+     * @tc.desc The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLastIndexOf0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Blue Whale, Killer Whale";
@@ -2759,12 +2750,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6600
-     * @tc.name      : testPrototypeLocaleCompare0001
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6600
+     * @tc.name testPrototypeLocaleCompare0001
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Banana";
@@ -2779,12 +2770,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6700
-     * @tc.name      : testPrototypeLocaleCompare0002
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6700
+     * @tc.name testPrototypeLocaleCompare0002
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Banana";
@@ -2799,12 +2790,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6800
-     * @tc.name      : testPrototypeLocaleCompare0003
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6800
+     * @tc.name testPrototypeLocaleCompare0003
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Banana";
@@ -2819,12 +2810,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_6900
-     * @tc.name      : testPrototypeLocaleCompare0004
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_6900
+     * @tc.name testPrototypeLocaleCompare0004
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Banana";
@@ -2839,12 +2830,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7000
-     * @tc.name      : testPrototypeLocaleCompare0005
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7000
+     * @tc.name testPrototypeLocaleCompare0005
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "B";
@@ -2859,12 +2850,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7100
-     * @tc.name      : testPrototypeLocaleCompare0006
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7100
+     * @tc.name testPrototypeLocaleCompare0006
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "B";
@@ -2879,12 +2870,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7200
-     * @tc.name      : testPrototypeLocaleCompare0007
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7200
+     * @tc.name testPrototypeLocaleCompare0007
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "B";
@@ -2899,12 +2890,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7300
-     * @tc.name      : testPrototypeLocaleCompare0008
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7300
+     * @tc.name testPrototypeLocaleCompare0008
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "B";
@@ -2919,12 +2910,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7400
-     * @tc.name      : testPrototypeLocaleCompare0009
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7400
+     * @tc.name testPrototypeLocaleCompare0009
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "B";
@@ -2939,12 +2930,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7500
-     * @tc.name      : testPrototypeLocaleCompare0010
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7500
+     * @tc.name testPrototypeLocaleCompare0010
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "ä";
@@ -2959,12 +2950,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7600
-     * @tc.name      : testPrototypeLocaleCompare0011
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7600
+     * @tc.name testPrototypeLocaleCompare0011
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "ä";
@@ -2979,12 +2970,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7700
-     * @tc.name      : testPrototypeLocaleCompare0012
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7700
+     * @tc.name testPrototypeLocaleCompare0012
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "2";
@@ -2998,13 +2989,14 @@ export default function StringTest() {
         expect(false).assertFail();
       }
     })
+    
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7800
-     * @tc.name      : testPrototypeLocaleCompare0013
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7800
+     * @tc.name testPrototypeLocaleCompare0013
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeLocaleCompare0013';
@@ -3019,12 +3011,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_7900
-     * @tc.name      : testPrototypeLocaleCompare0014
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_7900
+     * @tc.name testPrototypeLocaleCompare0014
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "2";
@@ -3041,12 +3033,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8000
-     * @tc.name      : testPrototypeLocaleCompare0015
-     * @tc.desc      : The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8000
+     * @tc.name testPrototypeLocaleCompare0015
+     * @tc.desc The localeCompare() method of String values returns a number indicating whether this string comes before, or after, or is the same as the given string in sort order.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeLocaleCompare0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "2";
@@ -3061,12 +3053,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8100
-     * @tc.name      : testPrototypeMatch0001
-     * @tc.desc      : The match() method of String values retrieves the result of matching this string against a regular expression.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8100
+     * @tc.name testPrototypeMatch0001
+     * @tc.desc The match() method of String values retrieves the result of matching this string against a regular expression.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "For more information, see Chapter 3.4.5.1";
@@ -3083,12 +3075,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8200
-     * @tc.name      : testPrototypeMatch0002
-     * @tc.desc      : The match() method of String values retrieves the result of matching this string against a regular expression.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8200
+     * @tc.name testPrototypeMatch0002
+     * @tc.desc The match() method of String values retrieves the result of matching this string against a regular expression.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "ABCDEFGHIJKLMNOPQRSTUVWHIZabcdefghijklmnopqrstuvwxyz";
@@ -3105,12 +3097,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8300
-     * @tc.name      : testPrototypeMatch0003
-     * @tc.desc      : The match() method of String values retrieves the result of matching this string against a regular expression.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8300
+     * @tc.name testPrototypeMatch0003
+     * @tc.desc The match() method of String values retrieves the result of matching this string against a regular expression.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatch0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The quick brown fox jumps over the lazy dog. It barked.";
@@ -3127,12 +3119,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8400
-     * @tc.name      : testPrototypeMatch0004
-     * @tc.desc      : The match() method of String values retrieves the result of matching this string against a regular expression.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8400
+     * @tc.name testPrototypeMatch0004
+     * @tc.desc The match() method of String values retrieves the result of matching this string against a regular expression.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatch0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeMatch0004';
@@ -3147,12 +3139,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8500
-     * @tc.name      : testPrototypeMatch0005
-     * @tc.desc      : The match() method of String values retrieves the result of matching this string against a regular expression.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8500
+     * @tc.name testPrototypeMatch0005
+     * @tc.desc The match() method of String values retrieves the result of matching this string against a regular expression.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatch0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeMatch0005';
@@ -3167,12 +3159,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8600
-     * @tc.name      : testPrototypeMatch0006
-     * @tc.desc      : The match() method of String values retrieves the result of matching this string against a regular expression.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8600
+     * @tc.name testPrototypeMatch0006
+     * @tc.desc The match() method of String values retrieves the result of matching this string against a regular expression.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatch0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeMatch0006';
@@ -3188,12 +3180,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8700
-     * @tc.name      : testPrototypeMatchAll0001
-     * @tc.desc      : The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8700
+     * @tc.name testPrototypeMatchAll0001
+     * @tc.desc The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     // it('testPrototypeMatchAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPrototypeMatchAll0001';
@@ -3217,12 +3209,12 @@ export default function StringTest() {
     //   }
     // })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8800
-     * @tc.name      : testPrototypeMatchAll0002
-     * @tc.desc      : The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8800
+     * @tc.name testPrototypeMatchAll0002
+     * @tc.desc The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     // it('testPrototypeMatchAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const str = "table football, foosball";
@@ -3246,12 +3238,12 @@ export default function StringTest() {
     //   }
     // })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_8900
-     * @tc.name      : testPrototypeMatchAll0003
-     * @tc.desc      : The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_8900
+     * @tc.name testPrototypeMatchAll0003
+     * @tc.desc The matchAll() method of String values returns an iterator of all results matching this string against a regular expression, including capturing groups.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeMatchAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -3269,12 +3261,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9000
-     * @tc.name      : testPrototypeNormalize0001
-     * @tc.desc      : The normalize() method of String values returns the Unicode Normalization Form of this string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9000
+     * @tc.name testPrototypeNormalize0001
+     * @tc.desc The normalize() method of String values returns the Unicode Normalization Form of this string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeNormalize0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str1 = "\u00F1";
@@ -3292,12 +3284,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9100
-     * @tc.name      : testPrototypeNormalize0002
-     * @tc.desc      : The normalize() method of String values returns the Unicode Normalization Form of this string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9100
+     * @tc.name testPrototypeNormalize0002
+     * @tc.desc The normalize() method of String values returns the Unicode Normalization Form of this string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeNormalize0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str1 = "\u00F1";
@@ -3315,12 +3307,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9200
-     * @tc.name      : testPrototypeNormalize0003
-     * @tc.desc      : The normalize() method of String values returns the Unicode Normalization Form of this string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9200
+     * @tc.name testPrototypeNormalize0003
+     * @tc.desc The normalize() method of String values returns the Unicode Normalization Form of this string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeNormalize0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "\uFB00";
@@ -3335,12 +3327,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9300
-     * @tc.name      : testPrototypeNormalize0004
-     * @tc.desc      : The normalize() method of String values returns the Unicode Normalization Form of this string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9300
+     * @tc.name testPrototypeNormalize0004
+     * @tc.desc The normalize() method of String values returns the Unicode Normalization Form of this string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeNormalize0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str1 = "\u1E9B\u0323";
@@ -3357,12 +3349,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9400
-     * @tc.name      : testPrototypeNormalize0005
-     * @tc.desc      : The normalize() method of String values returns the Unicode Normalization Form of this string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9400
+     * @tc.name testPrototypeNormalize0005
+     * @tc.desc The normalize() method of String values returns the Unicode Normalization Form of this string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeNormalize0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "\u1E9B\u0323";
@@ -3377,12 +3369,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9500
-     * @tc.name      : testPrototypePadEnd0001
-     * @tc.desc      : The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9500
+     * @tc.name testPrototypePadEnd0001
+     * @tc.desc The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadEnd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "test";
@@ -3397,12 +3389,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9600
-     * @tc.name      : testPrototypePadEnd0002
-     * @tc.desc      : The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9600
+     * @tc.name testPrototypePadEnd0002
+     * @tc.desc The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadEnd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "test";
@@ -3417,12 +3409,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9700
-     * @tc.name      : testPrototypePadEnd0003
-     * @tc.desc      : The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9700
+     * @tc.name testPrototypePadEnd0003
+     * @tc.desc The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadEnd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "test";
@@ -3437,12 +3429,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9800
-     * @tc.name      : testPrototypePadEnd0004
-     * @tc.desc      : The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9800
+     * @tc.name testPrototypePadEnd0004
+     * @tc.desc The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadEnd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "test";
@@ -3457,12 +3449,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_9900
-     * @tc.name      : testPrototypePadEnd0005
-     * @tc.desc      : The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_9900
+     * @tc.name testPrototypePadEnd0005
+     * @tc.desc The padEnd() method of String values pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadEnd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "test";
@@ -3477,12 +3469,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10000
-     * @tc.name      : testPrototypePadStart0001
-     * @tc.desc      : The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10000
+     * @tc.name testPrototypePadStart0001
+     * @tc.desc The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadStart0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "red";
@@ -3497,12 +3489,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10100
-     * @tc.name      : testPrototypePadStart0002
-     * @tc.desc      : The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10100
+     * @tc.name testPrototypePadStart0002
+     * @tc.desc The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadStart0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "red";
@@ -3517,12 +3509,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10200
-     * @tc.name      : testPrototypePadStart0003
-     * @tc.desc      : The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10200
+     * @tc.name testPrototypePadStart0003
+     * @tc.desc The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadStart0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "red";
@@ -3537,12 +3529,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10300
-     * @tc.name      : testPrototypePadStart0004
-     * @tc.desc      : The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10300
+     * @tc.name testPrototypePadStart0004
+     * @tc.desc The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadStart0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "red";
@@ -3557,12 +3549,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10400
-     * @tc.name      : testPrototypePadStart0005
-     * @tc.desc      : The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10400
+     * @tc.name testPrototypePadStart0005
+     * @tc.desc The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadStart0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "red";
@@ -3577,12 +3569,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10500
-     * @tc.name      : testPrototypePadStart0006
-     * @tc.desc      : The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10500
+     * @tc.name testPrototypePadStart0006
+     * @tc.desc The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypePadStart0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let str = "red";
@@ -3597,12 +3589,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10600
-     * @tc.name      : testPrototypeRepeat0001
-     * @tc.desc      : The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10600
+     * @tc.name testPrototypeRepeat0001
+     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeRepeat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeRepeat0001';
@@ -3620,12 +3612,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10700
-     * @tc.name      : testPrototypeRepeat0002
-     * @tc.desc      : The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10700
+     * @tc.name testPrototypeRepeat0002
+     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeRepeat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -3640,12 +3632,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10800
-     * @tc.name      : testPrototypeRepeat0003
-     * @tc.desc      : The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10800
+     * @tc.name testPrototypeRepeat0003
+     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeRepeat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const string1 = 'abc';
@@ -3660,12 +3652,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_10900
-     * @tc.name      : testPrototypeRepeat0004
-     * @tc.desc      : The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_10900
+     * @tc.name testPrototypeRepeat0004
+     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeRepeat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const string1 = 'abc';
@@ -3680,12 +3672,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11000
-     * @tc.name      : testPrototypeRepeat0005
-     * @tc.desc      : The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11000
+     * @tc.name testPrototypeRepeat0005
+     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeRepeat0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const string1 = 'abc';
@@ -3700,12 +3692,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11100
-     * @tc.name      : testPrototypeRepeat0006
-     * @tc.desc      : The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11100
+     * @tc.name testPrototypeRepeat0006
+     * @tc.desc The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeRepeat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeRepeat0006';
@@ -3723,12 +3715,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11200
-     * @tc.name      : testPrototypeReplace0001
-     * @tc.desc      : The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11200
+     * @tc.name testPrototypeReplace0001
+     * @tc.desc The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeReplace0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo";
@@ -3743,12 +3735,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11300
-     * @tc.name      : testPrototypeReplace0002
-     * @tc.desc      : The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11300
+     * @tc.name testPrototypeReplace0002
+     * @tc.desc The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeReplace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo";
@@ -3763,12 +3755,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11400
-     * @tc.name      : testPrototypeReplace0003
-     * @tc.desc      : The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11400
+     * @tc.name testPrototypeReplace0003
+     * @tc.desc The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeReplace0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo";
@@ -3783,12 +3775,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11500
-     * @tc.name      : testPrototypeReplaceAll0001
-     * @tc.desc      : The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11500
+     * @tc.name testPrototypeReplaceAll0001
+     * @tc.desc The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeReplaceAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aabbcc";
@@ -3803,12 +3795,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11600
-     * @tc.name      : testPrototypeReplaceAll0002
-     * @tc.desc      : The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11600
+     * @tc.name testPrototypeReplaceAll0002
+     * @tc.desc The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeReplaceAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aabbcc";
@@ -3823,12 +3815,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11700
-     * @tc.name      : testPrototypeReplaceAll0003
-     * @tc.desc      : The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11700
+     * @tc.name testPrototypeReplaceAll0003
+     * @tc.desc The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeReplaceAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testPrototypeReplaceAll0003';
@@ -3846,12 +3838,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11800
-     * @tc.name      : testPrototypeSearch0001
-     * @tc.desc      : The search() method of String values executes a search for a match between a regular expression and this string, returning the index of the first match in the string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11800
+     * @tc.name testPrototypeSearch0001
+     * @tc.desc The search() method of String values executes a search for a match between a regular expression and this string, returning the index of the first match in the string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSearch0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hey JudE";
@@ -3867,12 +3859,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_11900
-     * @tc.name      : testPrototypeSearch0002
-     * @tc.desc      : The search() method of String values executes a search for a match between a regular expression and this string, returning the index of the first match in the string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_11900
+     * @tc.name testPrototypeSearch0002
+     * @tc.desc The search() method of String values executes a search for a match between a regular expression and this string, returning the index of the first match in the string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSearch0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hey JudE";
@@ -3888,12 +3880,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12000
-     * @tc.name      : testPrototypeSlice0001
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12000
+     * @tc.name testPrototypeSlice0001
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -3908,12 +3900,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12100
-     * @tc.name      : testPrototypeSlice0002
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12100
+     * @tc.name testPrototypeSlice0002
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -3928,12 +3920,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12200
-     * @tc.name      : testPrototypeSlice0003
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12200
+     * @tc.name testPrototypeSlice0003
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -3948,12 +3940,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12300
-     * @tc.name      : testPrototypeSlice0004
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12300
+     * @tc.name testPrototypeSlice0004
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -3968,12 +3960,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12400
-     * @tc.name      : testPrototypeSlice0005
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12400
+     * @tc.name testPrototypeSlice0005
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -3988,12 +3980,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12500
-     * @tc.name      : testPrototypeSlice0006
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12500
+     * @tc.name testPrototypeSlice0006
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -4008,12 +4000,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12600
-     * @tc.name      : testPrototypeSlice0007
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12600
+     * @tc.name testPrototypeSlice0007
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -4028,12 +4020,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12700
-     * @tc.name      : testPrototypeSlice0008
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12700
+     * @tc.name testPrototypeSlice0008
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -4048,12 +4040,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12800
-     * @tc.name      : testPrototypeSlice0009
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12800
+     * @tc.name testPrototypeSlice0009
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -4068,12 +4060,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_12900
-     * @tc.name      : testPrototypeSlice0010
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_12900
+     * @tc.name testPrototypeSlice0010
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";
@@ -4088,12 +4080,12 @@ export default function StringTest() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_STRING_13000
-     * @tc.name      : testPrototypeSlice0011
-     * @tc.desc      : The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRING_13000
+     * @tc.name testPrototypeSlice0011
+     * @tc.desc The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testPrototypeSlice0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "The morning is upon us.";

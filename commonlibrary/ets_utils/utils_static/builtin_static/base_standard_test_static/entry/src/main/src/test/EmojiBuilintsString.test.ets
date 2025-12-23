@@ -2856,7 +2856,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -2881,7 +2881,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -2907,7 +2907,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -2933,7 +2933,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -2959,7 +2959,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -2985,7 +2985,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3011,7 +3011,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3037,7 +3037,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3063,7 +3063,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3089,7 +3089,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3115,7 +3115,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3141,7 +3141,7 @@ export default function EmojiString() {
         expect(results[0]).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(true).assertTrue();
+          expect(err.name).assertEqual('RangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();

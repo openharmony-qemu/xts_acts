@@ -485,7 +485,7 @@ export default function numberTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4100
-     * @tc.name testNumberToLocaleString0004
+     * @tc.name testNumberToLocaleString0009
      * @tc.desc Test the function of the interface toString().
      * @tc.size MediumTest
      * @tc.type Function
@@ -736,7 +736,7 @@ export default function numberTest() {
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof ArgumentOutOfRangeError) {
-          expect(true).assertTrue();
+          eexpect(err.name).assertEqual('ArgumentOutOfRangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
