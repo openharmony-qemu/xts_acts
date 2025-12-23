@@ -3065,6 +3065,7 @@ export default function TextPicker() {
           .assertEqual(sheetPickerOptions.maxVideoSelectNumber);
         expect(result.maxPhotoSelectNumber)
           .assertEqual(sheetPickerOptions.maxPhotoSelectNumber);
+        done();
       };
       let event: events_emitter.InnerEvent = {
         eventId: code,

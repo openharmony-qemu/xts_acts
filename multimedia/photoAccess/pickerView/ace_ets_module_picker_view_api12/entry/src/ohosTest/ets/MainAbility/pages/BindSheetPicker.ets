@@ -28,10 +28,10 @@ struct BindSheetPicker {
     this.photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
     this.photoSelectOptions.maxSelectNumber = 3;
     let parameter: object = router.getParams();
-    if (parameter['eventId'] != undefined) {
+    if (parameter && parameter['eventId'] != undefined) {
       this.eventId = Number(parameter['eventId']);
     }
-    if (parameter['pickerOptions'] != undefined) {
+    if (parameter && parameter['pickerOptions'] != undefined) {
       this.photoSelectOptions = parameter['pickerOptions'];
     }
   }
