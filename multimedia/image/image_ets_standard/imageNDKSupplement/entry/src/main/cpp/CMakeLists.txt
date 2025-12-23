@@ -96,7 +96,6 @@ target_link_libraries(imageEffect PUBLIC
     libimage_source_ndk.z.so
     libpicture.so
     libimage_receiver.so
-    libimage_ndk.z.so
     ${EGL-lib}
     ${GLES-lib}
     libmedia_asset_manager.so

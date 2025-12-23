@@ -83,7 +83,7 @@ napi_value OHPixelMapSetDensity(napi_env env, napi_callback_info info)
     
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, PixelMapToSetDensity(env,info));
+    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, PixelMapToSetDensity(env, info));
     if (native == nullptr) {
         LOGI("OH_PixelMap_SetDensity error2");
         return result;

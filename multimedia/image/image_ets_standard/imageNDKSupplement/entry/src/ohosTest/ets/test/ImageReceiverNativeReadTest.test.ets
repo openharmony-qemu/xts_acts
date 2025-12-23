@@ -47,7 +47,7 @@ export default function ImageReceiverNativeReadTest() {
      * @tc.level     Level 0
      */
     it("SUB_IMAGE_RICEIVER_NATIVE_READ_TEST_001", Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_MEDIA_MANAGER_CANCEL_REQUEST_001';
+      let testNum = 'SUB_IMAGE_RICEIVER_NATIVE_READ_TEST_001';
       try {
         let result: number =
           testNapi.ImageReceiverNativeReadLatestImageSuccessTest(CASE_INDEX_1, (receiver: image.ImageReceiver) => {
