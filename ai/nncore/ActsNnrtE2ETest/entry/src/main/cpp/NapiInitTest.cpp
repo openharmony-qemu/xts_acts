@@ -49,10 +49,10 @@ static void executeAsyncWork(napi_env env, void* data)
 static void completeAsyncWork(napi_env env, napi_status status, void* data)
 {
     AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
-    
+
     napi_value result;
     napi_create_int32(env, workData->result, &result);
-    
+
     // 根据结果 resolve 或 reject Promise
     if (workData->result == 0) {
         napi_resolve_deferred(env, workData->deferred, result);
@@ -91,10 +91,10 @@ static napi_value sub_AI_NNRt_Core_Func_North_EndToEnd(napi_env env, napi_callba
     int result = -1;
     switch (testCase) {
         case TEST_CASE_END_TO_END_0100:
-            result = sub_AI_NNRt_Core_Func_North_EndToEnd_0100();
+            result = SubAiNnRtCoreFuncNorthEndToEnd0100();
             break;
         case TEST_CASE_END_TO_END_0300:
-            result = sub_AI_NNRt_Core_Func_North_EndToEnd_0300();
+            result = SubAiNnRtCoreFuncNorthEndToEnd0300();
             break;
         default:
             result = -1;
@@ -115,11 +115,11 @@ static napi_value sub_AI_NNRt_Core_Func_North_Reliability(napi_env env, napi_cal
     if (status != napi_ok) {
         return createResultValue(env, -1);
     }
-    
+
     // 创建异步工作数据
     AsyncWorkData* workData = new AsyncWorkData();
     workData->deferred = deferred;
-    workData->testFunc = sub_AI_NNRt_Core_Func_North_Reliability_0100;
+    workData->testFunc = SubAiNnRtCoreFuncNorthReliability0100;
     
     // 创建异步工作任务
     napi_value resourceName;

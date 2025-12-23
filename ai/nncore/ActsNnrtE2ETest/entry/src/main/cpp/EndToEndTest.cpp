@@ -120,6 +120,7 @@ static OH_NNCompilation* ConstructCompilation(OH_NNModel* model, size_t deviceId
     }
     returnCode = OH_NNCompilation_Build(compilation);
     if (returnCode != OH_NN_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "[Helper] OH_NNCompilation_Build failed, ret=%{public}d", returnCode);
         return nullptr;
     }
     
@@ -312,9 +313,10 @@ static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId
     
     NN_Tensor* inputTensors[inputCount];
     OH_NN_ReturnCode returnCodeTmp = CreateTensorAndDestroyTensorDesc(inputTensors, inputCount,
-                                                                      inputTensorDescs, deviceId);
+        inputTensorDescs, deviceId);
     NN_Tensor* outputTensors[outputCount];
-    returnCode = CreateTensorAndDestroyTensorDesc(outputTensors, outputCount, outputTensorDescs, deviceId);
+    returnCode = CreateTensorAndDestroyTensorDesc(outputTensors, outputCount,
+        outputTensorDescs, deviceId);
     if (returnCode != OH_NN_SUCCESS || returnCodeTmp != OH_NN_SUCCESS) {
         OH_LOG_ERROR(LOG_APP,
             "[Helper] CreateTensorAndDestroyTensorDesc failed, ret=%{public}d, retTmp=%{public}d",
@@ -347,7 +349,7 @@ static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId
  * @tc.name   sub_AI_NNRt_Core_Func_North_EndToEnd_0100
  * @tc.desc   定长模型编译端到端测试
  */
-static int sub_AI_NNRt_Core_Func_North_EndToEnd_0100()
+static int SubAiNnRtCoreFuncNorthEndToEnd0100()
 {
     OH_LOG_INFO(LOG_APP, "[Test] ========== sub_AI_NNRt_Core_Func_North_EndToEnd_0100 START ==========");
     
@@ -387,7 +389,7 @@ static int sub_AI_NNRt_Core_Func_North_EndToEnd_0100()
  * @tc.name   sub_AI_NNRt_Core_Func_North_EndToEnd_0300
  * @tc.desc   定长模型编译带量化参数端到端测试
  */
-static int sub_AI_NNRt_Core_Func_North_EndToEnd_0300()
+static int SubAiNnRtCoreFuncNorthEndToEnd0300()
 {
     OH_LOG_INFO(LOG_APP, "[Test] ========== sub_AI_NNRt_Core_Func_North_EndToEnd_0300 START ==========");
     
@@ -432,7 +434,7 @@ static int sub_AI_NNRt_Core_Func_North_EndToEnd_0300()
  * @tc.name   sub_AI_NNRt_Core_Func_North_Reliability_0100
  * @tc.desc   定长模型编译长稳测试
  */
-static int sub_AI_NNRt_Core_Func_North_Reliability_0100()
+static int SubAiNnRtCoreFuncNorthReliability0100()
 {
     OH_LOG_INFO(LOG_APP, "[Test] ========== sub_AI_NNRt_Core_Func_North_Reliability_0100 START ==========");
     OH_LOG_INFO(LOG_APP, "[Test] Reliability test: Running %d iterations", STRESS_COUNT);

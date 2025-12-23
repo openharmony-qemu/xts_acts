@@ -191,7 +191,8 @@ OH_NN_ReturnCode GetDeviceID(size_t *deviceId)
         name = nullptr;
         ret = OH_NNDevice_GetName(devicesID[i], &name);
         if (ret == OH_NN_SUCCESS && name != nullptr) {
-            OH_LOG_INFO(LOG_APP, "[NNRtTest] Device[%{public}u]: ID=%{public}zu, Name=%{public}s", i, devicesID[i], name);
+            OH_LOG_INFO(LOG_APP, "[NNRtTest] Device[%{public}u]: ID=%{public}zu, Name=%{public}s",
+                i, devicesID[i], name);
         }
     }
 
