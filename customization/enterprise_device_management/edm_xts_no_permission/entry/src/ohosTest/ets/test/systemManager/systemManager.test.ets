@@ -36,9 +36,9 @@ export default function systemManagerTest() {
     testRemoveDisallowedNearLinkProtocols();
     testSetInstallLocalEnterpriseAppEnabled();
     testGetInstallLocalEnterpriseAppEnabled();
-    testSetKeyEventPolicy();
-    testRemoveKeyEventPolicy();
-    testGetKeyEventPolicy();
+    testAddKeyEventPolicies();
+    testRemoveKeyEventPolicies();
+    testGetKeyEventPolicies();
   })
 }
 
@@ -377,23 +377,23 @@ function testGetInstallLocalEnterpriseAppEnabled() {
   });
 }
 
-function testSetKeyEventPolicy() {
+function testAddKeyEventPolicies() {
   /**
-   * @tc.name   test_set_key_event_policy_0001
-   * @tc.number SUB_CUSTOMIZATION_EDM_SET_KEY_EVENT_POLICY_JS_0001
-   * @tc.desc   test systemManager setKeyEventPolicy with normal admin
+   * @tc.name   test_add_key_event_policies_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_KEY_EVENT_POLICIES_JS_0001
+   * @tc.desc   test systemManager addKeyEventPolicies with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-  it("test_set_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+  it("test_add_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = [
+      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
         {keyCode:1, keyPolicy:1},
-        {keyCode:18, keyPolicy:1}
+        {keyCode:2, keyPolicy:1}
       ]
-      systemManager.setKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
@@ -404,20 +404,20 @@ function testSetKeyEventPolicy() {
   });
 }
 
-function testRemoveKeyEventPolicy() {
+function testRemoveKeyEventPolicies() {
   /**
-   * @tc.name   test_remove_key_event_policy_0001
-   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICY_JS_0001
-   * @tc.desc   test systemManager removeKeyEventPolicy with normal admin
+   * @tc.name   test_remove_key_event_policies_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICIES_JS_0001
+   * @tc.desc   test systemManager removeKeyEventPolicies with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-  it("test_remove_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+  it("test_remove_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let keyCodes: Array<number> = [1, 18]
-      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
+      let keyCodes: Array<number> = [1, 2]
+      systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
@@ -428,20 +428,20 @@ function testRemoveKeyEventPolicy() {
   });
 }
 
-function testGetKeyEventPolicy() {
+function testGetKeyEventPolicies() {
   /**
-   * @tc.name   test_get_key_event_policy_0001
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICY_JS_0001
-   * @tc.desc   test systemManager getKeyEventPolicy with normal admin
+   * @tc.name   test_get_key_event_policies_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0001
+   * @tc.desc   test systemManager getKeyEventPolicies with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-  it("test_get_key_event_policy_0001", Level.LEVEL2, async (done: Function) => {
+  it("test_get_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let keyPolicyInstances: Array<systemManager.keyPolicyInstance> = []
-      systemManager.getKeyEventPolicy(SELFWANT, keyPolicyInstances);
+      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = []
+      systemManager.getKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();
