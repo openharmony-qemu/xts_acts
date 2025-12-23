@@ -44,6 +44,7 @@ import clipShapeTest from "./clipShape/ClipShapeTest.test";
 import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test'
 import SwiperParamTest from './swiper/SwiperParamTest.test';
+import SwiperEnumTest from './swiper/SwiperEnumTest.test';
 import ImageEnumTest from "./image/enum.test";
 import TextEnumTest from "./TextTest/enum.test";
 
@@ -80,6 +81,7 @@ export default function testsuite() {
   CustomMarkDirtyTest();
   TextMenuItemIdTest();
   SwiperParamTest();
+  SwiperEnumTest();
   ImageEnumTest();
   TextEnumTest();
 }

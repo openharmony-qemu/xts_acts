@@ -23,6 +23,7 @@
 #include "grid/GridAttrsTest.h"
 #include "Text/TextMenuItemIdTest.cpp"
 #include "swiper/SwiperParamTest.cpp"
+#include "swiper/SwiperEnumTest.cpp"
 #include "image/EnumTest.cpp"
 #include "Text/EnumTest.cpp"
 
@@ -219,6 +220,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSwiperParam004", nullptr, SetMaxDisplayCountParamTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testSwiperParam005", nullptr, SetShowBackgroundTest, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testSwiperEnum001", nullptr, Enum_Swiper_GetEventType, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"enum_GetEventType_Image", nullptr, Enum_Image_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
          napi_default, nullptr},

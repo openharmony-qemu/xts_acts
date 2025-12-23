@@ -109,3 +109,10 @@ napi_value DialogModelTest_002(napi_env env, napi_callback_info info)
         return result;
     } while (0);
 }
+napi_value DialogModelTest_003(napi_env env, napi_callback_info info)
+{
+    auto descriptor = OH_ArkUI_DialogDismissEvent_GetUserData(nullptr);
+    ASSERT_OBJ(descriptor, nullptr);
+ 
+    NAPI_END;
+}

@@ -20,6 +20,7 @@ import penTest from "./Pen.test";
 import penPart2Test from "./PenPart2.test";
 import PenPart3 from './PenPart3.test';
 import DrawingTsRegionTest from "./Region.test";
+import drawingTsRegionPart2Test from "./Region2.test";
 import DrawingTsLatticeTest from "./Lattice.test";
 import maskFilterTest from './MaskFilter.test';
 import drawingTsCanvasTest from "./Canvas.test";
@@ -65,6 +66,7 @@ export default function testsuite() {
   penPart2Test();
   PenPart3();
   DrawingTsRegionTest();
+  drawingTsRegionPart2Test();
   DrawingTsLatticeTest();
   maskFilterTest();
   drawingTsCanvasTest();

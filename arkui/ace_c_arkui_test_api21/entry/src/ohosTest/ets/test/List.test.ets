@@ -24,6 +24,11 @@ import ColumnMatchParentTest from './Column/ColumnMatchParentTest'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest'
 import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
 import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
+import ScrollEventTypeTest from './scroll/ScrollEventTypeTest.test'
+import ListEventTypeTest from './list/ListEventTypeTest.test'
+import RefreshEventTypeTest from './refresh/RefreshEventTypeTest.test'
+import WaterFlowEventTypeTest from './waterFlow/WaterFlowEventTypeTest.test'
+import GridEventTypeTest from './grid/GridEventTypeTest.test'
 import ListDraggingEventTest from './list/ListDraggingEventTest.test'
 import ListFlingEventTest from './list/ListFlingEventTest.test'
 import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
@@ -46,6 +51,11 @@ export default function testsuite() {
   ColumnWrapContentTest();
   ColumnFixAtiDealSizeTest();
   ImageContentTransitionEffectTest();
+  ScrollEventTypeTest();
+  ListEventTypeTest();
+  RefreshEventTypeTest();
+  WaterFlowEventTypeTest();
+  GridEventTypeTest();
   ListDraggingEventTest();
   ListFlingEventTest();
   ImageSupportSvg2Test();

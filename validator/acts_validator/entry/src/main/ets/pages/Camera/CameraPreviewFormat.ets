@@ -151,34 +151,36 @@ struct cameraFormat {
 
   build() {
     Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back'))
-            .width('20vp')
-            .height('18vp')
-            .margin({ left: '20vp' })
+      Scroll(){
+        Row({space:20}) {
+          Button() {
+            Image($r('app.media.ic_public_back'))
+              .width('20vp')
+              .height('18vp')
+              .margin({ left: '20vp' })
+          }
+          .backgroundColor(Color.Black)
+          .size({ width: '40vp', height: '30vp' })
+          .onClick(() => {
+            router.back({
+              url: 'pages/Camera/Camera_index',
+              params: { result: 'None', }
+            })
+          })
+
+          Text(this.name)
+            .fontColor(Color.White)
+            .fontSize('18fp')
+            .margin({ left: '-20vp' })
+          Text('hello')
+            .fontColor(Color.White)
+            .visibility(Visibility.Hidden)
         }
         .backgroundColor(Color.Black)
-        .size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/Camera/Camera_index',
-            params: { result: 'None', }
-          })
-        })
-
-        Text(this.name)
-          .fontColor(Color.White)
-          .fontSize('18fp')
-          .margin({ left: '-20vp' })
-        Text('hello')
-          .fontColor(Color.White)
-          .visibility(Visibility.Hidden)
-      }
-      .backgroundColor(Color.Black)
-      .height('10%')
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceBetween)
+        .height('20%')
+        .width('160%')
+        .justifyContent(FlexAlign.Center)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
       Scroll() {
           Column() {
@@ -285,7 +287,7 @@ struct cameraFormat {
               }.size({ width: '100%', height: '30%' }).justifyContent(FlexAlign.SpaceEvenly)
             }.size({ width: '100%', height: '20%' })
           }
-        }.height('75%').width('100%')
+        }.height('65%').width('100%')
       }.scrollBarColor(Color.White) // 滚动条颜色
       .scrollBarWidth(10)
 

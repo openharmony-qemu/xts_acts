@@ -105,5 +105,6 @@ export const testSwiperParam002: () => number;
 export const testSwiperParam003: () => number;
 export const testSwiperParam004: () => number;
 export const testSwiperParam005: () => number;
+export const testSwiperEnum001: () => number;
 export const enum_GetEventType_Image: () => number;
 export const enum_GetEventType_Text: () => number;

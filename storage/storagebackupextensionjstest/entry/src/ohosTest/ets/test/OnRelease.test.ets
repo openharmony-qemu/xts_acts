@@ -132,5 +132,25 @@ describe('onRelease_js_test',async () => {
          expect(false).assertTrue();
       }
    });
+
+   /**
+    * @tc.name   test_Backup_onRelease_003
+    * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0300
+    * @tc.desc   Test onRelease() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+   it("test_Backup_onRelease_003", Level.LEVEL1, () => {
+      try {
+         let backupext = new MyBackupExtAbility();
+         let ret = backupext.onRelease(20);
+         console.log('test_Backup_onRelease_003 restore-onRelease run ok');
+         expect(ret !== null).assertTrue();
+      } catch (error) {
+         console.info(`test_Backup_onRelease_003 error: ${JSON.stringify(error)}`);
+         expect(false).assertTrue();
+      }
+   });
 });
 }
