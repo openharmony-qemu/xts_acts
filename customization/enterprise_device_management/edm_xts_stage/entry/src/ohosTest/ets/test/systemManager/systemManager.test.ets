@@ -1637,7 +1637,7 @@ function testAddKeyEventPolicies() {
         {keyCode: 1, keyPolicy: 1},
         {keyCode: 1, keyPolicy: 0}
       ]
-      systemManager.setKeyEventPolicy(SELFWANT, keyEventPolicies);
+      systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200010).assertTrue();
@@ -1786,7 +1786,7 @@ function testGetKeyEventPolicies() {
   it("test_get_key_event_policies_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.getKeyEventPolicy(INVALID_WANT);
+      systemManager.getKeyEventPolicies(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401).assertTrue();
