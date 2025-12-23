@@ -41,9 +41,19 @@ static napi_value OH_Rdb_CreateCryptoParam0200(napi_env env, napi_callback_info)
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
     const uint8_t key[] = "12345678";
     auto ret = OH_Crypto_SetEncryptionKey(nullptr, key, sizeof(key) - 1);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey1 is fail.");
     ret = OH_Crypto_SetEncryptionKey(obj, key, sizeof(key) - 1);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionKey2 is fail.");
+
+    int32_t length2 = 6;
+    ret = OH_Crypto_SetEncryptionKey(obj, nullptr, length2);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionKey5 is fail.");
+    
+    const uint8_t key1[] = "";
+    int32_t length1 = 0;
+    ret = OH_Crypto_SetEncryptionKey(obj, key1, length1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionKey4 is fail.");
+
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
@@ -56,10 +66,15 @@ static napi_value OH_Rdb_CreateCryptoParam0300(napi_env env, napi_callback_info)
 {
     OH_Rdb_CryptoParam *obj = OH_Rdb_CreateCryptoParam();
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
-    auto ret = OH_Crypto_SetIteration(obj, -1);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
-    ret = OH_Crypto_SetIteration(obj, 1000);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
+    int64_t iteration = -1;
+    auto ret = OH_Crypto_SetIteration(obj, iteration);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetIteration1 is fail.");
+    int64_t iteration1 = 1000;
+    ret = OH_Crypto_SetIteration(obj, iteration1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetIteration2 is fail.");
+    int64_t iteration2 = 0;
+    ret = OH_Crypto_SetIteration(obj, iteration2);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetIteration3 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
@@ -72,10 +87,18 @@ static napi_value OH_Rdb_CreateCryptoParam0400(napi_env env, napi_callback_info)
 {
     OH_Rdb_CryptoParam *obj = OH_Rdb_CreateCryptoParam();
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
-    auto ret = OH_Crypto_SetEncryptionAlgo(obj, 3);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
+    int32_t algo = 3;
+    auto ret = OH_Crypto_SetEncryptionAlgo(obj, algo);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionAlgo1 is fail.");
+    int32_t algo1 = -1;
+    ret = OH_Crypto_SetEncryptionAlgo(obj, algo1);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionAlgo2 is fail.");
     ret = OH_Crypto_SetEncryptionAlgo(obj, RDB_AES_256_CBC);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionAlgo3 is fail.");
+    ret = OH_Crypto_SetEncryptionAlgo(obj, RDB_AES_256_GCM);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionAlgo4 is fail.");
+    ret = OH_Crypto_SetEncryptionAlgo(obj, RDB_PLAIN_TEXT);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionAlgo5 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
@@ -89,10 +112,18 @@ static napi_value OH_Rdb_CreateCryptoParam0500(napi_env env, napi_callback_info)
 {
     OH_Rdb_CryptoParam *obj = OH_Rdb_CreateCryptoParam();
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
-    auto ret = OH_Crypto_SetHmacAlgo(obj, 3);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
+    int32_t algo = 3;
+    auto ret = OH_Crypto_SetHmacAlgo(obj, algo);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetHmacAlgo1 is fail.");
+    int32_t algo1 = -1;
+    ret = OH_Crypto_SetHmacAlgo(obj, algo1);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetHmacAlgo2 is fail.");
     ret = OH_Crypto_SetHmacAlgo(obj, RDB_HMAC_SHA512);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetEncryptionKey is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetHmacAlgo3 is fail.");
+    ret = OH_Crypto_SetHmacAlgo(obj, RDB_HMAC_SHA1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetHmacAlgo4 is fail.");
+    ret = OH_Crypto_SetHmacAlgo(obj, RDB_HMAC_SHA256);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetHmacAlgo5 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
@@ -105,10 +136,18 @@ static napi_value OH_Rdb_CreateCryptoParam0600(napi_env env, napi_callback_info)
 {
     OH_Rdb_CryptoParam *obj = OH_Rdb_CreateCryptoParam();
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
-    auto ret = OH_Crypto_SetKdfAlgo(obj, 3);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
+    int32_t algo = 3;
+    auto ret = OH_Crypto_SetKdfAlgo(obj, algo);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetKdfAlgo1 is fail.");
+    int32_t algo1 = -1;
+    ret = OH_Crypto_SetKdfAlgo(obj, algo1);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetKdfAlgo2 is fail.");
     ret = OH_Crypto_SetKdfAlgo(obj, RDB_KDF_SHA512);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetKdfAlgo3 is fail.");
+    ret = OH_Crypto_SetKdfAlgo(obj, RDB_KDF_SHA1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetKdfAlgo4 is fail.");
+    ret = OH_Crypto_SetKdfAlgo(obj, RDB_KDF_SHA256);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetKdfAlgo5 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
@@ -123,19 +162,19 @@ static napi_value OH_Rdb_CreateCryptoParam0700(napi_env env, napi_callback_info)
     NAPI_ASSERT(env, obj != NULL, "OH_Rdb_CreateCryptoParam is fail.");
     int64_t pageSize = -1;
     auto ret = OH_Crypto_SetCryptoPageSize(obj, pageSize);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
-    pageSize = 1023;
-    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
-    pageSize = 0;
-    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetEncryptionKey is fail.");
-    pageSize = 1024;
-    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
-    pageSize = 4096;
-    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetCryptoPageSize1 is fail.");
+    int64_t pageSize1 = 1023;
+    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize1);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetCryptoPageSize2 is fail.");
+    int64_t pageSize2 = 0;
+    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize2);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetCryptoPageSize3 is fail.");
+    int64_t pageSize3 = 1024;
+    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize3);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetCryptoPageSize4 is fail.");
+    int64_t pageSize4 = 4096;
+    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize4);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetCryptoPageSize5 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
