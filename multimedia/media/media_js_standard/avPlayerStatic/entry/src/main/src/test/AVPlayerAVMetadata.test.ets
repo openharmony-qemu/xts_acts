@@ -373,7 +373,7 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, trackCount: ${metadata!!.trackCount}`);
-        expect(metadata!!.trackCount).assertEqual('1');
+        expect(metadata!!.trackCount).assertEqual("2");
         avMetadataExtractor!!.release();
       }).catch((error: Error) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
@@ -445,7 +445,7 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, videoHeight: ${metadata!!.videoHeight}`);
-        expect(metadata!!.videoHeight).assertEqual("");
+        expect(metadata!!.videoHeight).assertEqual("1276");
         avMetadataExtractor!!.release();
       }).catch((error: Error) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
@@ -469,7 +469,7 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor!!.fetchMetadata().then((metadata: media.AVMetadata | undefined) => {
         console.info(TAG, `fetchMetadata callback success, videoWidth: ${metadata!!.videoWidth}`);
-        expect(metadata!!.videoWidth).assertEqual("");
+        expect(metadata!!.videoWidth).assertEqual("1702");
         avMetadataExtractor!!.release();
       }).catch((error: Error) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
