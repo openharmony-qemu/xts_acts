@@ -440,8 +440,7 @@ function testGetKeyEventPolicies() {
   it("test_get_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = []
-      systemManager.getKeyEventPolicies(SELFWANT, keyEventPolicies);
+      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 201).assertTrue();

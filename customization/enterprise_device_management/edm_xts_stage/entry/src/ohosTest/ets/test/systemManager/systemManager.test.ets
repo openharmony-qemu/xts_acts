@@ -1746,8 +1746,7 @@ function testGetKeyEventPolicies() {
    */
   it("test_get_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     try {
-      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = []
-      systemManager.getKeyEventPolicies(SELFWANT, keyEventPolicies);
+      systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200001).assertTrue();
@@ -1766,8 +1765,7 @@ function testGetKeyEventPolicies() {
   it("test_get_key_event_policies_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = []
-      systemManager.getKeyEventPolicies(SELFWANT, keyEventPolicies);
+      systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200002).assertTrue();
@@ -1788,8 +1786,7 @@ function testGetKeyEventPolicies() {
   it("test_get_key_event_policies_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = []
-      systemManager.getKeyEventPolicy(INVALID_WANT, keyEventPolicies);
+      systemManager.getKeyEventPolicy(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401).assertTrue();
@@ -1816,12 +1813,12 @@ function testGetKeyEventPolicies() {
       ]
       let keyInstances: Array<systemManager.KeyEventPolicy> = []
       let keyCodes: Array<number> = [1]
-      systemManager.setKeyEventPolicy(SELFWANT, keyEventPolicies);
-      systemManager.getKeyEventPolicy(SELFWANT, keyInstances);
-      expect(keyInstances.length == 2).assertTrue();
-      systemManager.removeKeyEventPolicy(SELFWANT, keyCodes);
-      expect(keyInstances.length == 1).assertTrue();
-      expect(false).assertTrue();
+      systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
+      let keyInstances1: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances1.length == 2).assertTrue();
+      systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
+      let keyInstances2: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances2.length == 1).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
