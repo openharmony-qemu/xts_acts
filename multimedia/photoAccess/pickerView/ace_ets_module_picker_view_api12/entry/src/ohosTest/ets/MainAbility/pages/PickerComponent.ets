@@ -312,11 +312,11 @@ struct PickerComponent {
         updatedOptions.isSlidingSupported = true;
         updatedOptions.edgeEffect = EdgeEffect.None;
         updatedOptions.mimeType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
-        updatedOptions.mimeTypeFilter = { mimeTypeArray: ["*/*"] }
+        updatedOptions.mimeTypeFilter = { mimeTypeArray: ['*/*'] }
         updatedOptions.isRepeatSelectSupported = true;
         updatedOptions.selectMode = 0;
         updatedOptions.singleSelectionMode = 2;
-        updatedOptions.preselectedUris = ["file:img//sample"];
+        updatedOptions.preselectedUris = ['file:img//sample'];
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
