@@ -1991,3 +1991,354 @@ export function testProxySliceNoCrossMidpoint() {
         return e.message === 'Cannot cross midpoint';
     }
 }
+
+/**
+ * 测试点 88: slice 时自动将 Date 对象转为时间戳（毫秒）
+ */
+export function testProxySliceDateToTimestamp() {
+    const now = Date.now();
+    const arr = [1, new Date(now), 2];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    return Array.prototype.slice.call(target, ...args).map(x =>
+                    x instanceof Date ? x.getTime() : x
+                    );
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([1, now, 2]);
+}
+
+/**
+ * 测试点 89: slice 时如果所有元素为数字则返回总和（作为单元素数组）
+ */
+export function testProxySliceSumIfAllNumbers() {
+    const arr = [1, 2, 3];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const sliced = Array.prototype.slice.call(target, ...args);
+                    if (sliced.length > 0 && sliced.every(x => typeof x === 'number')) {
+                        return [sliced.reduce((a, b) => a + b, 0)];
+                    }
+                    return sliced;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([6]);
+}
+
+/**
+ * 测试点 90: slice 时移除所有重复值（全局去重，基于 JSON.stringify）
+ */
+export function testProxySliceGlobalDedupeByJSON() {
+    const arr = [{ a: 1 }, { b: 2 }, { a: 1 }, 'x', 'x'];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const sliced = Array.prototype.slice.call(target, ...args);
+                    const seen = new Set();
+                    return sliced.filter(item => {
+                        const key = typeof item === 'object' && item !== null ? JSON.stringify(item) : item;
+                        if (seen.has(key)) {
+                            return false;
+                        }
+                        seen.add(key);
+                        return true;
+                    });
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([{ a: 1 }, { b: 2 }, 'x']);
+}
+
+/**
+ * 测试点 91: slice 时自动将 undefined 和 null 视为相等并去重（保留第一个）
+ */
+export function testProxySliceDedupeNullish() {
+    const arr = [1, null, undefined, 2, null, undefined];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const sliced = Array.prototype.slice.call(target, ...args);
+                    const result = [];
+                    let hasSeenNullish = false;
+                    for (const item of sliced) {
+                        if (item == null) {
+                            if (!hasSeenNullish) {
+                                result.push(item);
+                                hasSeenNullish = true;
+                            }
+                        } else {
+                            result.push(item);
+                        }
+                    }
+                    return result;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+
+    return JSON.stringify(proxy.slice()) === JSON.stringify([1, null, 2]);
+}
+
+/**
+ * 测试点 92: slice 时如果包含非 ASCII 字符串则拒绝
+ */
+export function testProxySliceRejectNonAsciiStrings() {
+    const arr = ['hello', 'café', '123'];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const sliced = Array.prototype.slice.call(target, ...args);
+                    const hasNonAscii = sliced.some(x =>
+                    typeof x === 'string' && !/^[\x00-\x7F]*$/.test(x)
+                    );
+                    if (hasNonAscii) {
+                        throw new Error('Non-ASCII string not allowed');
+                    }
+                    return sliced;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+
+    try {
+        proxy.slice();
+        return false;
+    } catch (e) {
+        return e.message === 'Non-ASCII string not allowed';
+    }
+}
+
+/**
+ * 测试点 93: slice 时自动将数组元素按类型分组（返回 { number: [...], string: [...] }）
+ * —— 此处简化：仅当全为基本类型时才分组，否则原样返回
+ */
+export function testProxySliceGroupByTypeIfPrimitive() {
+    const arr = [1, 'a', 2, 'b'];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const sliced = Array.prototype.slice.call(target, ...args);
+                    const allPrimitive = sliced.every(x =>
+                    x === null || (typeof x !== 'object' && typeof x !== 'function')
+                    );
+                    if (allPrimitive) {
+                        const groups = {
+                            number: [],
+                            string: [],
+                            boolean: [],
+                            bigint: [],
+                            undefined: [],
+                            symbol: []
+                        };
+                        for (const x of sliced) {
+                            const t = x === null ? 'object' : typeof x;
+                            if (t in groups) {
+                                groups[t].push(x);
+                            }
+                        }
+
+                        return [...groups.number, ...groups.string, ...groups.boolean];
+                    }
+                    return sliced;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([1, 2, 'a', 'b']);
+}
+
+/**
+ * 测试点 94: slice 时如果调用发生在“只读模式”下则冻结结果（通过闭包控制）
+ */
+export function testProxySliceFreezeInReadOnlyMode() {
+    const readOnly = true;
+    const arr = [1, 2];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const res = Array.prototype.slice.call(target, ...args);
+                    if (readOnly) {
+                        return Object.freeze(res);
+                    }
+                    return res;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+
+    const result = proxy.slice();
+    return Object.isFrozen(result) && JSON.stringify(result) === JSON.stringify([1, 2]);
+}
+
+/**
+ * 测试点 95: slice 时自动跳过索引能被 3 整除的位置（基于原始索引）
+ */
+export function testProxySliceSkipIndexDivisibleByThree() {
+    const arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (start = 0, end = arr.length) {
+                    const result = [];
+                    for (let i = start; i < end; i++) {
+                        if (i % 3 !== 0) {
+                            result.push(arr[i]);
+                        }
+                    }
+                    return result;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify(['b', 'c', 'e', 'f']);
+}
+
+/**
+ * 测试点 96: slice 时如果包含 NaN、Infinity 或 -Infinity 则全部替换为 0
+ */
+export function testProxySliceSanitizeFloatSpecialValues() {
+    const arr = [1, NaN, Infinity, -Infinity, 2];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    return Array.prototype.slice.call(target, ...args).map(x =>
+                    typeof x === 'number' && (!isFinite(x) || isNaN(x)) ? 0 : x
+                    );
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([1, 0, 0, 0, 2]);
+}
+
+/**
+ * 测试点 97: slice 时自动将布尔值和数字互转（true→1, false→0, 1→true, 0→false）
+ */
+export function testProxySliceToggleBooleanNumber() {
+    const arr = [true, false, 1, 0, 2];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    return Array.prototype.slice.call(target, ...args).map(x => {
+                        if (x === true) {
+                            return 1;
+                        }
+                        if (x === false) {
+                            return 0;
+                        }
+                        if (x === 1) {
+                            return true;
+                        }
+                        if (x === 0) {
+                            return false;
+                        }
+                        return x;
+                    });
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([1, 0, true, false, 2]);
+}
+
+/**
+ * 测试点 98: slice 时如果结果包含对象，则为其添加 __source: 'proxy' 属性
+ */
+export function testProxySliceTagObjects() {
+    const arr = [1, { a: 1 }, 2];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    return Array.prototype.slice.call(target, ...args).map(x => {
+                        if (x && typeof x === 'object' && !Array.isArray(x)) {
+                            const copy = { ...x, __source: 'proxy' };
+                            return copy;
+                        }
+                        return x;
+                    });
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([1, { a: 1, __source: 'proxy' }, 2]);
+}
+
+/**
+ * 测试点 99: slice 时模拟“视图缓存”——相同参数返回相同引用
+ */
+export function testProxySliceCachesSameArgs() {
+    const arr = [1, 2, 3];
+    const cache = new Map();
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const key = JSON.stringify(args);
+                    if (cache.has(key)) {
+                        return cache.get(key);
+                    }
+                    const res = Array.prototype.slice.call(target, ...args);
+                    cache.set(key, res);
+                    return res;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+
+    const r1 = proxy.slice(1);
+    const r2 = proxy.slice(1);
+    return r1 === r2 && JSON.stringify(r1) === JSON.stringify([2, 3]);
+}
+
+/**
+ * 测试点 100: slice 时自动验证数组是否为“纯数字升序”，若是则返回 reversed
+ */
+export function testProxySliceReverseIfSortedAscendingNumbers() {
+    const arr = [1, 2, 3, 4];
+    const proxy = new Proxy(arr, {
+        get(target, prop) {
+            if (prop === 'slice') {
+                return function (...args) {
+                    const sliced = Array.prototype.slice.call(target, ...args);
+                    const isPureNumbers = sliced.every(x => typeof x === 'number');
+                    const isAscending = isPureNumbers && sliced.every((x, i) => i === 0 || x >= sliced[i - 1]);
+                    if (isPureNumbers && isAscending) {
+                        return [...sliced].reverse();
+                    }
+                    return sliced;
+                };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    return JSON.stringify(proxy.slice()) === JSON.stringify([4, 3, 2, 1]);
+}
