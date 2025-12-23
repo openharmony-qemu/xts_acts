@@ -432,7 +432,7 @@ export default function UtilTypeTest() {
     it('Util1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
       const obj3 = 'obj.func';
-      expect(type.isAsyncFunction(obj3)).assertEqual(true);
+      expect(type.isAsyncFunction(obj3)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_2600
@@ -1488,7 +1488,7 @@ export default function UtilTypeTest() {
     it('Util1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
       const obj11 = '{ gen: () => 2 } as numberObj';
-      expect(type.isGeneratorFunction(obj11)).assertEqual(true);
+      expect(type.isGeneratorFunction(obj11)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10600
