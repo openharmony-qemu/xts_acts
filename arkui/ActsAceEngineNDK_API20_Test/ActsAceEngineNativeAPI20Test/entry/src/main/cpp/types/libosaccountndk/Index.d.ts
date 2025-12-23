@@ -25,6 +25,9 @@ export const DialogDismissSlideDown: () => number;
 export const DialogModelTest_001: () => number;
 
 export const DialogModelTest_002: () => number;
+
+export const DialogModelTest_003: () => number;
+
 export const GetDefaultDisplayRotation0: () => number;
 
 export const GetDefaultDisplayRotation1: () => number;

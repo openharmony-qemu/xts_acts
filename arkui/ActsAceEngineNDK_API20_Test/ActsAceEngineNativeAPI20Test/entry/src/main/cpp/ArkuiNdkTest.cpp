@@ -186,6 +186,7 @@ napi_property_descriptor desc[] = {
     {"DialogDismissSlideDown", nullptr, DialogDismissSlideDown, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"DialogModelTest_001", nullptr, DialogModelTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"DialogModelTest_002", nullptr, DialogModelTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"DialogModelTest_003", nullptr, DialogModelTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"GetDefaultDisplayRotation0", nullptr, GetDefaultDisplayRotation0, nullptr, nullptr, nullptr, napi_default,
      nullptr},
     {"GetDefaultDisplayRotation1", nullptr, GetDefaultDisplayRotation1, nullptr, nullptr, nullptr, napi_default,

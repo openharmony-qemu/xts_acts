@@ -671,10 +671,69 @@ export default function drawingTsRegionTest() {
         }
       }
     })
-
+    /**
+     * @tc.name   testRegionOffsetNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1500
+     * @tc.desc   testRegionOffsetNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegionOffsetNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testRegionOffsetNormalStatic';
+      let region = new drawing.Region();
+      try {
+        region.offset(10,20);
+        console.info(msg + `Region offset 1 success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `Region offset 1 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      region.setRect(50, 50, 300, 300);
+      try {
+        region.offset(-50,-50);
+        console.info(msg + `Region offset 2 success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `Region offset 2 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+      try {
+        region.offset((Number.MAX_VALUE).toInt(), (Number.MAX_VALUE).toInt());
+        console.info(msg + `Region offset 6 success`);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `Region offset 6 error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
+      }
+    });
+    /**
+     * @tc.name   testRegionOffsetMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1501
+     * @tc.desc   testRegionOffsetMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegionOffsetMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testRegionOffsetMultipleCallsStatic';
+      let region = new drawing.Region();
+      region.setRect(100, 100, 400, 400);
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          region.offset(100,100);
+          console.info(msg + `region offset success step: ` + i);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `drawing region offset error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
     /**
      * @tc.name   testRegionEmptyNormalStatic
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1900
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1700
      * @tc.desc   testRegionEmptyNormalStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -693,7 +752,7 @@ export default function drawingTsRegionTest() {
 
     /**
      * @tc.name   testRegionEmptyMultipleCallsStatic
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1901
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1701
      * @tc.desc   testRegionEmptyMultipleCallsStatic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

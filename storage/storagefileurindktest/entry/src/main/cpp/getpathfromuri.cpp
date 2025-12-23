@@ -82,6 +82,17 @@ static napi_value GetFileName(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value IsValidUriInvalid(napi_env env, napi_callback_info info)
+{
+    char uri[] =
+"com.acts.storage.fileurindk/data/storage/el2/base/files/test6.txt";
+    unsigned int length = strlen(uri);
+    bool falgs = OH_FileUri_IsValidUri(uri, length);
+    napi_value result = nullptr;
+    napi_create_int32(env, falgs, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -91,6 +102,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "GetFullDirectoryUri", nullptr, GetFullDirectoryUri, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "IsValidUri", nullptr, IsValidUri, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetFileName", nullptr, GetFileName, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "IsValidUriInvalid", nullptr, IsValidUriInvalid, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
