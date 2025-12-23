@@ -891,7 +891,7 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.name testScreenCaptureId_static
+     * @tc.name testScreenCapId_static
      * @tc.desc capture the specified area of current screen.
      * @tc.number UitestTest_Api20_017
      * @tc.type   FUNCTION
@@ -903,7 +903,7 @@ export default function uitestEnumTest() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs)
       let disPlay = display.getDefaultDisplaySync();
-      let savePath = '/data/storage/el2/base/cache/testScreenCaptureId_static.png';
+      let savePath = '/data/storage/el2/base/cache/testScreenCapId_static.png';
       let success = await driver.screenCap(savePath, disPlay.id.toInt());
       console.log(`${TestTag}, testScreenCapId_static success: ${JSON.stringify(success)}`);
       expect(success).assertTrue();

@@ -333,7 +333,7 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name test_triggerCombineKeys_17000007_static
+     * @tc.name test_triggerCombineKeys_401_static
      * @tc.number Uitest_Api20ErrorTest_019
      * @tc.desc triggerCombineKeys 401 test.
      * @tc.type   FUNCTION
@@ -341,36 +341,36 @@ export default function uitestDriverErrorTest() {
      * @tc.level  LEVEL3
      */
     it('test_triggerCombineKeys_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_triggerCombineKeys_17000007_static start`);
+      console.log(`${TestTag}, test_triggerCombineKeys_401_static start`);
       try {
         await driver.triggerCombineKeys(-1, 2017);
         expect().assertFail();
       }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static key0=-1 error is: ${JSON.stringify(e)}`);
+        console.log(`${TestTag}, test_triggerCombineKeys_401_static key0=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code == 401).assertTrue();
       }
       try {
         await driver.triggerCombineKeys(2072, -1);
         expect().assertFail();
       }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static key1=-1 error is: ${JSON.stringify(e)}`);
+        console.log(`${TestTag}, test_triggerCombineKeys_401_static key1=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code == 401).assertTrue();
       }
       try {
         await driver.triggerCombineKeys(2072, 2017, -1);
         expect().assertFail();
       }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static key2=-1 error is: ${JSON.stringify(e)}`);
+        console.log(`${TestTag}, test_triggerCombineKeys_401_static key2=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code == 401).assertTrue();
       }
       try {
         await driver.triggerCombineKeys(2072, 2017, 2019, -1);
         expect().assertFail();
       }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_triggerCombineKeys_17000007_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        console.log(`${TestTag}, test_triggerCombineKeys_401_static displayId=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code == 401).assertTrue();
       }
-      console.log(`${TestTag}, test_triggerCombineKeys_17000007_static end`);
+      console.log(`${TestTag}, test_triggerCombineKeys_401_static end`);
     })
 
     /**
@@ -650,7 +650,7 @@ export default function uitestDriverErrorTest() {
 
     /**
      * @tc.name test_UiWindow_getDisplayId_17000004_static
-     * @tc.number Uitest_Api20ErrorTest_002
+     * @tc.number Uitest_Api20ErrorTest_026
      * @tc.desc getDisplayId 17000004 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
