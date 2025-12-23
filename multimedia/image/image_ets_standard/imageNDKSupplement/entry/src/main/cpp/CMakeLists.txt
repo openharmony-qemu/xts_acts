@@ -31,7 +31,6 @@ add_library(imageEffect SHARED
     ImageSourceNativeCreateTest.cpp
     InitNativePixelMapTest.cpp
     ImagePackerCreateTest.cpp
-    ImagePixelMapTest.cpp
     ImageInitImageNativeSuppTest.cpp
     ImageReceiverNativeTest.cpp
     PixleMapNativeTest.cpp
@@ -44,9 +43,21 @@ add_library(imageEffect SHARED
     OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
     ImageSourceTest.cpp
+    ImagePixelMapTest.cpp
+    ImageEffectSuppTest.cpp
+    OHPixelMapGetBytesNumberPerRowTest.cpp
+    OHPixelMapGetIsEditableTest.cpp
+    OHPixelMapIsSupportAlphaTest.cpp
+    OHPixelMapSetAlphaAbleTest.cpp
+    OHPixelMapSetDensityTest.cpp
+    OHImageEffectSetOutputTextureIdTest.cpp
+    OHImageEffectStartTest.cpp
+    OHPictureMetadataTest.cpp
+    ImageSourceTest.cpp
     IRNdkErrCodeSupplementTest.cpp
     ImageResultIRNdkErrCodeTest.cpp
-    ImageNdkErrCodeTest.cpp)
+    ImageNdkErrCodeTest.cpp
+    ImageReceiverNativeReadTest.cpp)
 
 
 find_library(
@@ -89,4 +100,6 @@ target_link_libraries(imageEffect PUBLIC
     ${EGL-lib}
     ${GLES-lib}
     libmedia_asset_manager.so
+    libohcamera.so
+    libohimage.so
 )

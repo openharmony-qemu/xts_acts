@@ -38,9 +38,19 @@ import OHImageSizeTest from './OHImageSizeTest.test';
 import OHPixelmapNativeCreatePixelmapNativeTest from './OHPixelmapNativeCreatePixelmapNativeTest.test';
 import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
 import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
+import OHImageEffectSetOutputTexture from './OHImageEffectSetOutputTexture.test';
+import OHImageEffectStartTest from './OHImageEffectStart.test';
+import OHPictureMetadata from './OHPictureMetadata.test';
+import PixelMapGetIsEditableTest from './OHPixelMapGetIsEditable.test';
+import PixelMapIsSupportAlphaTest from './OHPixelMapIsSupportAlpha.test';
+import PixelMapSetAlphaAbleTest from './OHPixelMapSetAlphaAble.test';
+import PixelMapSetDensityTest from './OHPixelMapSetDensity.test';
+import ImagePixelmapTest from './PixelMapGetBytesNumberPerRow.test';
+import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
 import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
 import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
+import ImageReceiverNativeReadTest from './ImageReceiverNativeReadTest.test';
 
 
 export default function testsuite() {
@@ -70,8 +80,16 @@ export default function testsuite() {
   OHPixelmapNativeCreatePixelmapNativeTest();
   ImageEffectErrorCodeSuppTest();
   OHPixelMapSupplementTest();
+  ImagePixelmapTest();
+  PixelMapGetIsEditableTest();
+  PixelMapIsSupportAlphaTest();
+  PixelMapSetAlphaAbleTest();
+  PixelMapSetDensityTest();
+  OHImageEffectStartTest();
+  OHImageEffectSetOutputTexture();
+  OHPictureMetadata();
   IRNdkErrCodeSupplementTest();
   ImageResultIRNdkErrCodeTest();
   IRNdkErrCode();
-
+  ImageReceiverNativeReadTest();
 }
