@@ -24,14 +24,14 @@
 
 namespace ArkUICapiTest {
 
-struct ArkUI_NodeEvent_ {
+struct ArkUI_NodeEvent_Image {
     int32_t category;
     int32_t kind;
 };
 
 static napi_value Enum_Image_OH_ArkUI_NodeEvent_GetEventType(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_NodeEvent_ *event = new ArkUI_NodeEvent_;
+    ArkUI_NodeEvent_Image *event = new ArkUI_NodeEvent_Image;
     event ->category = 0;
     int eventTypes[] = {
         NODE_DATE_PICKER_EVENT_ON_DATE_CHANGE,
