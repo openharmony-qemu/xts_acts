@@ -1991,3 +1991,272 @@ export function testConstructArgsBigInt64Array() {
     const ProxyConstructor = new Proxy(Target, handler);
     return new ProxyConstructor(new BigInt64Array([10n])).value === 10n;
 }
+
+/**
+ * 测试点94: 代理参数为DataView（数据视图）
+ * 说明：参数必须是 DataView 实例
+ */
+export function testConstructArgsDataView() {
+    class Target {
+        constructor(dv) {
+            this.value = dv.getInt32(0);
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (!(args[0] instanceof DataView)) {
+                throw new Error('Argument must be DataView');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    const ab = new ArrayBuffer(4);
+    const dv = new DataView(ab);
+    dv.setInt32(0, 10);
+    return new ProxyConstructor(dv).value === 10;
+}
+
+/**
+ * 测试点95: 代理参数为Uint8Array（TypedArray）
+ * 说明：参数必须是 Uint8Array 实例
+ */
+export function testConstructArgsUint8Array() {
+    class Target {
+        constructor(uint8) {
+            this.value = uint8[0];
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (!(args[0] instanceof Uint8Array)) {
+                throw new Error('Argument must be Uint8Array');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor(new Uint8Array([10])).value === 10;
+}
+
+/**
+ * 测试点96: 代理参数为AsyncFunction（异步函数）
+ * 说明：参数必须是 AsyncFunction 实例
+ */
+export function testConstructArgsAsyncFunction() {
+    class Target {
+        constructor(fn) {
+            this.type = fn.constructor.name;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (args[0].constructor.name !== 'AsyncFunction') {
+                throw new Error('Argument must be AsyncFunction');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor(async () => {
+    }).type === 'AsyncFunction';
+}
+
+/**
+ * 测试点97: 代理参数为GeneratorFunction（生成器函数）
+ * 说明：参数必须是 GeneratorFunction 实例
+ */
+export function testConstructArgsGeneratorFunction2() {
+    class Target {
+        constructor(fn) {
+            this.type = fn.constructor.name;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (args[0].constructor.name !== 'GeneratorFunction') {
+                throw new Error('Argument must be GeneratorFunction');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor(function* () {
+    }).type === 'GeneratorFunction';
+}
+
+/**
+ * 测试点98: 代理参数为Class（类对象）
+ * 说明：参数必须是 Class 实例
+ */
+export function testConstructArgsClass() {
+    class Target {
+        constructor(cls) {
+            this.type = cls.name;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (typeof args[0] !== 'function' || !args[0].name) {
+                throw new Error('Argument must be Class');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+
+    class MyClass {
+    }
+
+    return new ProxyConstructor(MyClass).type === 'MyClass';
+}
+
+/**
+ * 测试点100: 代理参数为String（基础类型）
+ * 说明：参数必须是 String 实例（非基本类型）
+ */
+export function testConstructArgsString() {
+    class Target {
+        constructor(str) {
+            this.type = typeof str;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (typeof args[0] !== 'string') {
+                throw new Error('Argument must be string');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor('test').type === 'string';
+}
+
+/**
+ * 测试点103: 代理参数为Error实例（基础错误对象）
+ * 说明：参数必须是 Error 实例（非Error子类）
+ */
+export function testConstructArgsErrorInstance() {
+    class Target {
+        constructor(err) {
+            this.name = err.name;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (!(args[0] instanceof Error)) {
+                throw new Error('Argument must be Error instance');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor(new Error('Test')).name === 'Error';
+}
+
+/**
+ * 测试点104: 代理参数为URIError实例（URI处理错误）
+ * 说明：参数必须是 URIError 实例（ES2015新增错误类型）
+ */
+export function testConstructArgsURIErrorInstance() {
+    class Target {
+        constructor(uriErr) {
+            this.message = uriErr.message;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (args[0] instanceof URIError) {
+                return Reflect.construct(target, args, newTarget);
+            }
+            throw new Error('Argument must be URIError');
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor(new URIError('Invalid URI')).message === 'Invalid URI';
+}
+
+/**
+ * 测试点105: 代理参数为自定义错误类（继承自Error）
+ * 说明：参数必须是自定义错误类实例（如 class CustomError extends Error）
+ */
+export function testConstructArgsCustomError() {
+    class CustomError extends Error {
+    }
+
+    class Target {
+        constructor(err) {
+            this.type = err instanceof CustomError ? 'CustomError' : 'not CustomError';
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (!(args[0] instanceof CustomError)) {
+                throw new Error('Argument must be CustomError');
+            }
+            return Reflect.construct(target, args, newTarget);
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor(new CustomError('Custom')).type === 'CustomError';
+}
+
+/**
+ * 测试点109: 代理处理URIError（错误类型捕获）
+ * 说明：在代理中捕获并处理 URIError（与测试点104区分：参数 vs 捕获）
+ */
+export function testConstructURIError2() {
+    class Target {
+        constructor() {
+            throw new URIError('Invalid URI');
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            try {
+                return Reflect.construct(target, args, newTarget);
+            } catch (e) {
+                if (e instanceof URIError) {
+                    return { error: 'URIError Handled' };
+                }
+                throw e;
+            }
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor().error === 'URIError Handled';
+}
+
+/**
+ * 测试点110: 代理参数为Object实例（基础对象）
+ * 说明：参数必须是 Object 实例（非原始类型）
+ */
+export function testConstructArgsObjectInstance() {
+    class Target {
+        constructor(obj) {
+            this.type = typeof obj;
+        }
+    }
+
+    const handler = {
+        construct: (target, args, newTarget) => {
+            if (typeof args[0] === 'object' && args[0] !== null) {
+                return Reflect.construct(target, args, newTarget);
+            }
+            throw new Error('Argument must be Object instance');
+        }
+    };
+    const ProxyConstructor = new Proxy(Target, handler);
+    return new ProxyConstructor({ key: 'value' }).type === 'object';
+}
