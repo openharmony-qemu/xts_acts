@@ -99,6 +99,7 @@ function getDefaultPickerOptions(): PickerOptions {
   pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.AUTO;
   pickerOptions.orientation = PickerOrientation.HORIZONTAL;
   pickerOptions.edgeEffect = EdgeEffect.Spring;
+  pickerOptions.isDestroyedWithNavigation = true;
   return pickerOptions;
 }
 
