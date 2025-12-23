@@ -61,7 +61,7 @@ export default function bindTips1Test() {
       await driver.mouseMoveTo({
         x: 0, y: 0
       });
-      await Utils.sleep(5000);
+      await Utils.sleep(7000);
       done();
     });
   })

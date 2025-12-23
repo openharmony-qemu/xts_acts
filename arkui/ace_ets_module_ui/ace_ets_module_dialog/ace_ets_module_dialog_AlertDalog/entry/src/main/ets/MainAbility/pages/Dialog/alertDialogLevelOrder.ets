@@ -111,6 +111,51 @@ struct alertDialogLevelOrder {
           })
       }
 
+      Row({ space: 5 }) {
+        Button('100000')
+          .id('100000')
+          .height('5%')
+          .onClick(() => {
+            this.uiContext.showAlertDialog({
+              message: 'text',
+              autoCancel: true,
+              isModal: false,
+              levelOrder: LevelOrder.clamp(100000),
+              alignment: DialogAlignment.Center,
+              confirm: {
+                value: 'button',
+                action: () => {
+                  console.info('Button-clicking callback')
+                }
+              },
+              cancel: () => {
+                console.info('Closed callbacks')
+              }
+            })
+          })
+        Button('-100000')
+          .id('-100000')
+          .height('5%')
+          .onClick(() => {
+            this.uiContext.showAlertDialog({
+              message: 'text',
+              autoCancel: true,
+              isModal: false,
+              levelOrder: LevelOrder.clamp(-100000),
+              alignment: DialogAlignment.Center,
+              confirm: {
+                value: 'button',
+                action: () => {
+                  console.info('Button-clicking callback')
+                }
+              },
+              cancel: () => {
+                console.info('Closed callbacks')
+              }
+            })
+          })
+      }
+
       Button('get showAlertDialogOrder')
         .id('myOrder')
         .height('5%')

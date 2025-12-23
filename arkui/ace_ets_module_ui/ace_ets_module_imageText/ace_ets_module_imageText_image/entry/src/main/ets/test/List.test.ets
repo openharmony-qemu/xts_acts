@@ -55,6 +55,7 @@ import getUIContextApi04 from './ImageGetUIContext/getUIContextApi04.test';
 import getUIContextApi05 from './ImageGetUIContext/getUIContextApi05.test';
 import getUIContextApi06 from './ImageGetUIContext/getUIContextApi06.test';
 import getUIContextApi07 from './ImageGetUIContext/getUIContextApi07.test';
+import blendNodeTest from './BlendModeTest/blendNodeTest.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -100,4 +101,5 @@ export default function testsuite() {
   ImageHdrBrightnessTest();
   ImageLoaderTest();
   BorderImageTest();
+  blendNodeTest();
 }

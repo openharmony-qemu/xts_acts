@@ -172,5 +172,59 @@ export default function customDialogLevelOrder() {
       console.info('customDialogLevelOrder_0400 END');
       done();
     });
+    /**
+     * @tc.number SUB_ACE_customDialogLevelOrder_0500
+     * @tc.name customDialogLevelOrder_0500
+     * @tc.desc To test the LevelOrder attribute of customDialog,LevelOrder.clamp(100000)
+     * @tc.level: Level 1
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it('customDialogLevelOrder_0500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
+      console.info('customDialogLevelOrder_0500 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('100000'));
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let button1 = await driver.findComponent(ON.id('myOrder'));
+      await button1.click();
+      await CommonFunc.sleep(1000);
+      let top = AppStorage.get('customLevel') as number
+      expect(top).assertEqual(100000)
+      await CommonFunc.sleep(1000);
+      let button2 = await driver.findComponent(ON.id('close'));
+      await button2.click();
+      await CommonFunc.sleep(1000);
+      console.info('customDialogLevelOrder_0500 END');
+      done();
+    });
+    /**
+     * @tc.number SUB_ACE_customDialogLevelOrder_0600
+     * @tc.name customDialogLevelOrder_0600
+     * @tc.desc To test the LevelOrder attribute of customDialog,LevelOrder.clamp(-100000)
+     * @tc.level: Level 1
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it('customDialogLevelOrder_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
+      console.info('customDialogLevelOrder_0600 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('-100000'));
+      await button.click();
+      await CommonFunc.sleep(1000);
+      let button1 = await driver.findComponent(ON.id('myOrder'));
+      await button1.click();
+      await CommonFunc.sleep(1000);
+      let top = AppStorage.get('customLevel') as number
+      expect(top).assertEqual(-100000)
+      await CommonFunc.sleep(1000);
+      let button2 = await driver.findComponent(ON.id('close'));
+      await button2.click();
+      await CommonFunc.sleep(1000);
+      console.info('customDialogLevelOrder_0600 END');
+      done();
+    });
   })
 }

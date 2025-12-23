@@ -36,7 +36,7 @@ export struct CustomContainer {
           .width('20vp')
           .height('20vp')
       }
-      .width('30%')
+      .width('20%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .opacity(0.4)
@@ -50,7 +50,7 @@ export struct CustomContainer {
           .width('20vp')
           .height('20vp')
       }
-      .width('30%')
+      .width('20%')
       .height('30vp')
       .backgroundColor(Color.Grey)
       .onClick(() => {
@@ -74,7 +74,7 @@ export struct CustomContainer {
         .width('20vp')
         .height('20vp')
     }
-    .width('30%')
+    .width('20%')
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
@@ -92,21 +92,19 @@ export struct CustomContainer {
 
   build() {
     Column() {
-      Flex({
-        justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center
-      }) {
-        this.PassBtn($r('app.string.btn_fullscreen'), true);
-        Button() {
-          Image($r('app.media.ic_public_help'))
-            .width('20vp')
-            .height('20vp')
-        }
-        .width('30%')
-        .height('30vp')
-        .backgroundColor(Color.Grey)
-        .onClick(() => {
-          AlertDialog.show(
-            {
+      Scroll() {
+        Row({space:12}) {
+          this.PassBtn($r('app.string.btn_fullscreen'), true);
+          Button() {
+            Image($r('app.media.ic_public_help'))
+              .width('20vp')
+              .height('20vp')
+          }
+          .width('20%')
+          .height('30vp')
+          .backgroundColor(Color.Grey)
+          .onClick(() => {
+            AlertDialog.show({
               title: '操作提示',
               message: this.StepTips,
               confirm: {
@@ -114,15 +112,15 @@ export struct CustomContainer {
                 action: () => {
                 }
               }
-            }
-          )
-        })
+            })
+          })
 
-        this.FailBtn($r('app.string.btn_fullscreen'), true);
-      }
-      .height('98%')
-      .width('100%')
-      .backgroundColor(Color.Black)
+          this.FailBtn($r('app.string.btn_fullscreen'), true);
+        }
+        .width('160%')
+        .justifyContent(FlexAlign.Center)
+        .backgroundColor(Color.Black)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
     }
     .height('98%')
     .width('100%')
