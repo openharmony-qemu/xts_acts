@@ -1698,7 +1698,7 @@ function testRemoveKeyEventPolicies() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-  it("test_remove_key_event_policy_0003", Level.LEVEL2, async (done: Function) => {
+  it("test_remove_key_event_policies_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let keyCodes: Array<number> = [1]
@@ -1763,7 +1763,7 @@ function testGetKeyEventPolicies() {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
    */
-  it("test_get_key_event_policy_0002", Level.LEVEL2, async (done: Function) => {
+  it("test_get_key_event_policies_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = []
@@ -1801,7 +1801,7 @@ function testGetKeyEventPolicies() {
 
   /**
    * @tc.name   test_get_key_event_policies_0004
-   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0004
    * @tc.desc   test systemManager getKeyEventPolicies without super admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
