@@ -853,3 +853,472 @@ export default function GetProtoTypeOfTest() {
       let result: boolean = testGetPrototypeOfIndependentOfToString();
       expect(result).assertEqual(true);
     });
+
+    /**
+     * @tc.name testCache_object3_059
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_5900
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeletingGetPrototypeOfTrapRestoresDefault();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_060
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6000
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfBehaviorIsStrictModeInvariant();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_061
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6100
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsNullProtoObject();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_062
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6200
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testObjectAndReflectGetPrototypeOfConsistencyOnProxy();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_063
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6300
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfPromiseInstancePrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_064
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6400
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsJSONPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_065
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6500
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxySetAsOwnPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_066
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6600
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testModifyingHandlerInsideGetPrototypeOfTrapDoesNotAffectCurrentCall();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_067
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6700
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfClassInstancePrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_069
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_6900
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsObjectWithGetterDoesNotInvokeIt();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_070
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7000
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testFrozenHandlerStillAllowsGetPrototypeOf();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_071
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7100
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfNumberWrapperPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_072
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7200
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfDoesNotTriggerHasTrap();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_073
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7300
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfReturnsProxyWithItsOwnTrapNotInvoked();
+      expect(result).assertEqual(true);
+    });
+    /**
+     * @tc.name testCache_object3_074
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7400
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfStrictModeArgumentsPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_075
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7500
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfWorksEvenIfTargetVariableIsDeleted();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_076
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7600
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsCrossContextLikeObject();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_077
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7700
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfDoesNotAlterPropertyDescriptors();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_078
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7800
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsSymbolThrows();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_079
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_7900
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfDOMLikeObjectPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_080
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8000
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testMassProxyGetPrototypeOfConsistency();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_081
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8100
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testHandlerIsTargetItself();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_082
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8200
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfDoesNotTriggerOwnKeysTrap();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_083
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8300
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsObjectWithNonConfigurableProps();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_085
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8500
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapAccessesGlobalThisSafely();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_086
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8600
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsObjectLiteral();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_089
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_8900
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfClassWithPrivateFieldSimulation();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_090
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9000
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfDoesNotAffectIsFrozenStatus();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_091
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9100
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsObjectInheritingFromNull();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_092
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9200
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfSharedArrayBufferPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_093
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9300
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfDoesNotTriggerDefinePropertyTrap();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_094
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9400
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfReturnsProxyWhoseTargetIsFunction();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_095
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9500
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testProxyOfErrorWithCustomStackPrototype();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_096
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9600
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testHandlerIsProxyAndDelegatesGetPrototypeOf();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_097
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_9700
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsIterableObjectDoesNotInvokeIterator();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object3_100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT3_10000
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object3_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testGetPrototypeOfTrapReturnsUndefinedThrowsTypeError();
+      expect(result).assertEqual(true);
+    });
+  })
+}
