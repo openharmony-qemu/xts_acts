@@ -1,3 +1,17 @@
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { FrameNode, NodeController, NodeAdapter, typeNode } from '@kit.ArkUI';
 
 // 自定义NodeAdapter管理数据
@@ -160,52 +174,61 @@ struct NodeAdapter001 {
     Column() {
       Text('ListNode Adapter');
       NodeContainer(this.adapterController)
-        .width(300).height(300)
+        .width(300).height('30%')
         .borderWidth(1).borderColor(Color.Black);
 
       Column(){
         Button('reloadItemTest')
           .id('NodeAdapter001_btn01')
+          .height('5%')
           .onClick(() => {
             this.adapterController.nodeAdapter?.reloadItemTest(0,2,-1, -1);
           })
         Button('reloadItem')
+          .height('5%')
           .onClick(() => {
             this.adapterController.nodeAdapter?.reloadItemTest(0,2,0,2);
           })
         Button('removeItemTest')
+          .height('5%')
           .id('NodeAdapter001_btn02')
           .onClick(() => {
             this.adapterController.nodeAdapter?.removeItem(-1, -1);
             this.adapterController.nodeAdapter?.removeItem(0, 0);
           })
         Button('removeItem')
+          .height('5%')
           .onClick(() => {
             this.adapterController.nodeAdapter?.removeItem(0, 1);
           })
         Button('insertItemTest')
+          .height('5%')
           .id('NodeAdapter001_btn03')
           .onClick(() => {
             this.adapterController.nodeAdapter?.insertItem(0, 0);
             this.adapterController.nodeAdapter?.insertItem(-1, -1);
           })
         Button('insertItem')
+          .height('5%')
           .onClick(() => {
             this.adapterController.nodeAdapter?.insertItem(0, 1);
           })
         Button('moveItemTest')
+          .height('5%')
           .id('NodeAdapter001_btn04')
           .onClick(() => {
             this.adapterController.nodeAdapter?.moveItem(0, 0);
             this.adapterController.nodeAdapter?.moveItem(-1, -1);
           })
         Button('moveItem')
+          .height('5%')
           .onClick(() => {
             this.adapterController.nodeAdapter?.moveItem(0, 1);
           })
       }
+      .height('70%')
     }.borderWidth(1)
     .width('100%')
-
+    .height('100%')
   }
 }
