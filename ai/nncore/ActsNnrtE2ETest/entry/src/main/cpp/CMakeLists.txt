@@ -14,7 +14,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(nnrt_e2e_test SHARED 
     NapiInitTest.cpp
-    include/NNcoreUtils.cpp
+    include/NNcoreUtilsTest.cpp
 )
 
 target_link_libraries(nnrt_e2e_test PUBLIC libace_napi.z.so libhilog_ndk.z.so libneural_network_runtime.so libneural_network_core.so )

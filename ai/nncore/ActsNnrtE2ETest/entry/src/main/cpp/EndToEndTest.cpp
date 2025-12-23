@@ -46,7 +46,9 @@ static void BuildModel(OH_NNModel **model)
 static void BuildDynamicModel(OH_NNModel **model)
 {
     *model = OH_NNModel_Construct();
-    if (*model == nullptr) return;
+    if (*model == nullptr) {
+        return;
+    }
     AvgPoolDynamicModel avgModel;
     OHNNGraphArgs graphArgs = avgModel.graphArgs;
     BuildSingleOpGraph(*model, graphArgs);
@@ -56,16 +58,20 @@ static void BuildDynamicModel(OH_NNModel **model)
 static void BuildModelWithQuantParams(OH_NNModel **model)
 {
     *model = OH_NNModel_Construct();
-    if (*model == nullptr) return;
+    if (*model == nullptr) {
+        return;
+    }
     AddModel addModel;
     OHNNGraphArgs graphArgs = addModel.graphArgs;
     BuildSingleOpGraphWithQuantParams(*model, graphArgs);
 }
 
 // 辅助函数：构建编译对象
-static OH_NNCompilation* ConstructCompilation(OH_NNModel* model, size_t deviceId, bool isUseCache = true)
+static OH_NNCompilation* ConstructCompilation(OH_NNModel* model, size_t deviceId,
+    bool isUseCache = true)
 {
-    OH_LOG_INFO(LOG_APP, "[Helper] ConstructCompilation: deviceId=%{public}zu, isUseCache=%{public}d", deviceId, isUseCache);
+    OH_LOG_INFO(LOG_APP, "[Helper] ConstructCompilation: deviceId=%{public}zu, isUseCache=%{public}d",
+        deviceId, isUseCache);
     
     OH_NNCompilation* compilation = nullptr;
     if (model == nullptr) {
@@ -168,8 +174,8 @@ static OH_NN_ReturnCode SetInputData(NN_Tensor* inputTensor[], size_t inputSize)
 
 // 辅助函数：获取输入输出张量描述符
 static OH_NN_ReturnCode GetInputAndOutputTensorDesc(OH_NNExecutor *executor,
-                                             size_t *inputCount, std::vector<NN_TensorDesc*>& inputTensorDescs,
-                                             size_t *outputCount, std::vector<NN_TensorDesc*>& outputTensorDescs)
+    size_t *inputCount, std::vector<NN_TensorDesc*>& inputTensorDescs,
+    size_t *outputCount, std::vector<NN_TensorDesc*>& outputTensorDescs)
 {
     OH_NN_ReturnCode returnCode = OH_NNExecutor_GetInputCount(executor, inputCount);
     if (returnCode != OH_NN_SUCCESS) {
@@ -199,8 +205,9 @@ static OH_NN_ReturnCode GetInputAndOutputTensorDesc(OH_NNExecutor *executor,
 }
 
 // 辅助函数：获取输入维度并设置形状
-static OH_NN_ReturnCode GetInputDimAndSetShape(OH_NNExecutor *executor, std::vector<NN_TensorDesc*>& inputTensorDescs,
-                                        std::vector<NN_TensorDesc*>& outputTensorDescs, bool isDynamic)
+static OH_NN_ReturnCode GetInputDimAndSetShape(OH_NNExecutor *executor,
+    std::vector<NN_TensorDesc*>& inputTensorDescs,
+    std::vector<NN_TensorDesc*>& outputTensorDescs, bool isDynamic)
 {
     if (isDynamic) {
         size_t *minInputDims = nullptr;
@@ -232,7 +239,7 @@ static OH_NN_ReturnCode GetInputDimAndSetShape(OH_NNExecutor *executor, std::vec
 
 // 辅助函数：创建张量并销毁张量描述符
 static OH_NN_ReturnCode CreateTensorAndDestroyTensorDesc(NN_Tensor* tensors[], size_t count,
-                                                  std::vector<NN_TensorDesc*>& tensorDescs, size_t deviceId)
+    std::vector<NN_TensorDesc*>& tensorDescs, size_t deviceId)
 {
     NN_Tensor* tensor = nullptr;
     for (size_t i = 0; i < count; ++i) {
@@ -253,7 +260,7 @@ static OH_NN_ReturnCode CreateTensorAndDestroyTensorDesc(NN_Tensor* tensors[], s
 
 // 辅助函数：销毁输入输出张量
 static OH_NN_ReturnCode DestroyInputAndOutputTensor(NN_Tensor** inputTensors, size_t inputCount,
-                                             NN_Tensor** outputTensors, size_t outputCount)
+    NN_Tensor** outputTensors, size_t outputCount)
 {
     OH_NN_ReturnCode returnCode = OH_NN_SUCCESS;
     for (size_t i = 0; i < inputCount; ++i) {
@@ -272,9 +279,11 @@ static OH_NN_ReturnCode DestroyInputAndOutputTensor(NN_Tensor** inputTensors, si
 }
 
 // 辅助函数：运行执行器
-static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId, bool isDynamic = false)
+static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId,
+    bool isDynamic = false)
 {
-    OH_LOG_INFO(LOG_APP, "[Helper] RunExecutor: deviceId=%{public}zu, isDynamic=%{public}d", deviceId, isDynamic);
+    OH_LOG_INFO(LOG_APP, "[Helper] RunExecutor: deviceId=%{public}zu, isDynamic=%{public}d",
+        deviceId, isDynamic);
     
     OH_LOG_INFO(LOG_APP, "[Helper] Constructing executor...");
     OH_NNExecutor *executor = OH_NNExecutor_Construct(compilation);
@@ -307,7 +316,9 @@ static OH_NNExecutor* RunExecutor(OH_NNCompilation* compilation, size_t deviceId
     NN_Tensor* outputTensors[outputCount];
     returnCode = CreateTensorAndDestroyTensorDesc(outputTensors, outputCount, outputTensorDescs, deviceId);
     if (returnCode != OH_NN_SUCCESS || returnCodeTmp != OH_NN_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "[Helper] CreateTensorAndDestroyTensorDesc failed, ret=%{public}d, retTmp=%{public}d", returnCode, returnCodeTmp);
+        OH_LOG_ERROR(LOG_APP,
+            "[Helper] CreateTensorAndDestroyTensorDesc failed, ret=%{public}d, retTmp=%{public}d",
+            returnCode, returnCodeTmp);
         return nullptr;
     }
     
@@ -390,7 +401,8 @@ static int sub_AI_NNRt_Core_Func_North_EndToEnd_0300()
     OH_NNModel* model = nullptr;
     BuildModelWithQuantParams(&model);
     if (model == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "[Test] FAILED: BuildModelWithQuantParams returned nullptr");
+        OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED: BuildModelWithQuantParams returned nullptr");
         return -1;
     }
     OH_NNCompilation* compilation = ConstructCompilation(model, deviceId, false);
@@ -442,13 +454,15 @@ static int sub_AI_NNRt_Core_Func_North_Reliability_0100()
     for (int i = 0; i < STRESS_COUNT; i++) {
         OH_NNCompilation* compilation = ConstructCompilation(model, deviceId, false);
         if (nullptr == compilation) {
-            OH_LOG_ERROR(LOG_APP, "[Test] FAILED at iteration %d: ConstructCompilation returned nullptr", i);
+            OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED at iteration %d: ConstructCompilation returned nullptr", i);
             OH_NNModel_Destroy(&model);
             return -1;
         }
         OH_NNExecutor* executor = RunExecutor(compilation, deviceId);
         if (nullptr == executor) {
-            OH_LOG_ERROR(LOG_APP, "[Test] FAILED at iteration %d: RunExecutor returned nullptr", i);
+            OH_LOG_ERROR(LOG_APP,
+            "[Test] FAILED at iteration %d: RunExecutor returned nullptr", i);
             OH_NNCompilation_Destroy(&compilation);
             OH_NNModel_Destroy(&model);
             return -1;

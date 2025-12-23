@@ -16,6 +16,11 @@
 #include "napi/native_api.h"
 #include "EndToEndTest.cpp"
 
+namespace {
+const int32_t TEST_CASE_END_TO_END_0100 = 100;
+const int32_t TEST_CASE_END_TO_END_0300 = 300;
+}
+
 static napi_value createResultValue(napi_env env, int result)
 {
     napi_value resultValue;
@@ -85,17 +90,17 @@ static napi_value sub_AI_NNRt_Core_Func_North_EndToEnd(napi_env env, napi_callba
 
     int result = -1;
     switch (testCase) {
-        case 100:
+        case TEST_CASE_END_TO_END_0100:
             result = sub_AI_NNRt_Core_Func_North_EndToEnd_0100();
             break;
-        case 300:
+        case TEST_CASE_END_TO_END_0300:
             result = sub_AI_NNRt_Core_Func_North_EndToEnd_0300();
             break;
         default:
             result = -1;
             break;
     }
-    
+
     return createResultValue(env, result);
 }
 
@@ -120,15 +125,8 @@ static napi_value sub_AI_NNRt_Core_Func_North_Reliability(napi_env env, napi_cal
     napi_value resourceName;
     napi_create_string_utf8(env, "NNRtReliabilityTest", NAPI_AUTO_LENGTH, &resourceName);
     
-    status = napi_create_async_work(
-        env,
-        nullptr,
-        resourceName,
-        executeAsyncWork,
-        completeAsyncWork,
-        workData,
-        &workData->asyncWork
-    );
+    status = napi_create_async_work(env, nullptr, resourceName, executeAsyncWork,
+        completeAsyncWork, workData, &workData->asyncWork);
     
     if (status != napi_ok) {
         delete workData;
@@ -150,8 +148,10 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"sub_AI_NNRt_Core_Func_North_EndToEnd", nullptr, sub_AI_NNRt_Core_Func_North_EndToEnd, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"sub_AI_NNRt_Core_Func_North_Reliability", nullptr, sub_AI_NNRt_Core_Func_North_Reliability, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"sub_AI_NNRt_Core_Func_North_EndToEnd", nullptr,
+            sub_AI_NNRt_Core_Func_North_EndToEnd, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"sub_AI_NNRt_Core_Func_North_Reliability", nullptr,
+            sub_AI_NNRt_Core_Func_North_Reliability, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

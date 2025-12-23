@@ -274,7 +274,8 @@ void DeleteFolder(const std::string &path)
     DIR *dir = opendir(path.c_str());
     // check is dir ?
     if (dir == nullptr) {
-        OH_LOG_ERROR(LOG_APP, "[NNRtTest] Can not open dir. Check path or permission! path: %{public}s", path.c_str());
+        OH_LOG_ERROR(LOG_APP,
+            "[NNRtTest] Can not open dir. Check path or permission! path: %{public}s", path.c_str());
         return;
     }
     struct dirent *file;
