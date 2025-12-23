@@ -125,6 +125,20 @@ export default function ActsOsAccountNdkTest() {
         }
       })
     /**
+     * @tc.name   DialogModelTest_003
+     * @tc.number DialogModelTest_003
+     * @tc.desc   test OH_ArkUI_DialogDismissEvent_GetUserData return nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('DialogModelTest_003', Level.LEVEL1, async (done: Function) => {
+      let ret = osAccountNdk.DialogModelTest_003()
+      console.error("====>DialogModelTest_003 err: " + ret)
+      expect(ret).assertEqual(0)
+      done()
+    })
+    /**
      * @tc.name   ArkUiDialogDismissEventGetDismissReason001
      * @tc.number SUB_ARKUI_DIALOGDISMISSEVENTGETDISMISSREASON_0100
      * @tc.desc   testing ArkUI_DIALOGDISMISSEVENT_GETDISMISSREASON

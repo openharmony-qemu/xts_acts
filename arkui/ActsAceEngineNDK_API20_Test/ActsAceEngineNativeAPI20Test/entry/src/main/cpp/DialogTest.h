@@ -39,5 +39,6 @@ napi_value DialogDismissSlideDown(napi_env env, napi_callback_info info);
 napi_value DialogDismissTouchOutside(napi_env env, napi_callback_info info);
 napi_value DialogModelTest_001(napi_env env, napi_callback_info info);
 napi_value DialogModelTest_002(napi_env env, napi_callback_info info);
+napi_value DialogModelTest_003(napi_env env, napi_callback_info info);
 
 #endif //ACTSACEENGINENATIVEAPI20TEST_DIALOGTEST_H
