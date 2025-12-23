@@ -34,22 +34,29 @@
 #define CASE_INDEX_4 4
 #define CASE_INDEX_5 5
 
-napi_value CreatePixelMapCreat(napi_env env, napi_callback_info info) {
+#define OPTION_WIDTH 4
+#define OPTION_HEIGHT 6
+#define OPTION_PIXEL_FORMAT 9
+#define OPTION_ALPHA_ZERO 0
+
+napi_value CreatePixelMapCreat(napi_env env, napi_callback_info info)
+{
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 9;
-    createOps.alphaType = 0;
+    createOps.width = OPTION_WIDTH;
+    createOps.height = OPTION_HEIGHT;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT;
+    createOps.alphaType = OPTION_ALPHA_ZERO;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
     int32_t res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
     free(buff);
@@ -59,7 +66,8 @@ napi_value CreatePixelMapCreat(napi_env env, napi_callback_info info) {
     return pixelMap;
 }
 
-napi_value OHPixelMapGetBytesNumberPerRow(napi_env env, napi_callback_info info) {
+napi_value OHPixelMapGetBytesNumberPerRow(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_GetBytesNumberPerRow start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -76,14 +84,14 @@ napi_value OHPixelMapGetBytesNumberPerRow(napi_env env, napi_callback_info info)
     
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, CreatePixelMapCreat(env,info));
+    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, CreatePixelMapCreat(env, info));
     if (native == nullptr) {
         LOGI("OH_PixelMap_GetBytesNumberPerRow error2");
         return result;
     }
-int32_t rowBytes;
-int32_t imageResult;
- switch (index) {
+    int32_t rowBytes;
+    int32_t imageResult;
+    switch (index) {
     case CASE_INDEX_1:
         imageResult = OH_PixelMap_GetBytesNumberPerRow(native, &rowBytes);
         break;

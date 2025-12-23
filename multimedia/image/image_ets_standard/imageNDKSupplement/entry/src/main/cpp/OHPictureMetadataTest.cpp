@@ -53,17 +53,17 @@ napi_value PictureMetadataGetProperty(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value argValue[NUM_1] = {0};
-    
+
     char key[MAX_STRING_SIZE] = {0};
     size_t keySize = 0;
     napi_get_value_string_utf8(env, argValue[NUM_0], key, MAX_STRING_SIZE, &keySize);
-    OH_PictureMetadata* metadata = metadata;
+    OH_PictureMetadata *metadata = metadata;
     Image_String imageKey = {key, keySize};
     Image_String imageValue = {nullptr, 0};
     napi_create_string_utf8(env, (const char *)imageValue.data, imageValue.size, &result);
-      Image_ErrorCode errorCode = OH_PictureMetadata_GetProperty(metadata, &imageKey, &imageValue);
-     int32_t index;
-     Image_ErrorCode code;
+    Image_ErrorCode errorCode = OH_PictureMetadata_GetProperty(metadata, &imageKey, &imageValue);
+    int32_t index;
+    Image_ErrorCode code;
     switch (index) {
     case CASE_INDEX_1:
         code = OH_PictureMetadata_GetProperty(metadata, 0, 0);
@@ -104,8 +104,7 @@ napi_value PictureMetadataSetProperty(napi_env env, napi_callback_info info)
     return ret;
 }
 
-
- napi_value ClonedMetadataGetProperty(napi_env env, napi_callback_info info)
+napi_value ClonedMetadataGetProperty(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value argValue[NUM_1] = {0};
@@ -117,8 +116,6 @@ napi_value PictureMetadataSetProperty(napi_env env, napi_callback_info info)
     OH_PictureMetadata **newMetadata = newMetadata;
     Image_String imageKey = {key, keySize};
     Image_String imageValue = {nullptr, 0};
-  
-
     napi_create_string_utf8(env, (const char *)imageValue.data, imageValue.size, &result);
     
     int32_t index;
@@ -134,4 +131,3 @@ napi_value PictureMetadataSetProperty(napi_env env, napi_callback_info info)
     napi_create_int32(env, code, &ret);
     return ret;
 }
-

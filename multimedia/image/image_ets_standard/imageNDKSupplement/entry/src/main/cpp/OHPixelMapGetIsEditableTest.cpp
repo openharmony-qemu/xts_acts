@@ -33,23 +33,29 @@
 #define CASE_INDEX_4 4
 #define CASE_INDEX_5 5
 
-napi_value PixelMapTest(napi_env env, napi_callback_info info) {
+#define OPTION_WIDTH 4
+#define OPTION_HEIGHT 6
+#define OPTION_PIXEL_FORMAT 9
+#define OPTION_ALPHA_ZERO 0
+
+napi_value PixelMapTest(napi_env env, napi_callback_info info)
+{
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
     struct OhosPixelMapCreateOps createOps;
-    createOps.width = 4;
-    createOps.height = 6;
-    createOps.pixelFormat = 9;
-    createOps.alphaType = 0;
+    createOps.width = OPTION_WIDTH;
+    createOps.height = OPTION_HEIGHT;
+    createOps.pixelFormat = OPTION_PIXEL_FORMAT;
+    createOps.alphaType = OPTION_ALPHA_ZERO;
     size_t bufferSize = createOps.width * createOps.height * 4;
     void *buff = malloc(bufferSize);
     if (buff == nullptr) {
         return udfVar;
     }
 
-    char *cc = (char *)buff;
-    for (int i = 0; i < 96; i++) {
-        *(cc++) = (char)i;
+    char *cc = reinterpret_cast<char *>(buff);
+    for (int i = 0; i < bufferSize; ++i) {
+        *(cc++) = static_cast<char>(i);
     }
     int32_t res = OH_PixelMap_CreatePixelMap(env, createOps, (uint8_t *)buff, bufferSize, &pixelMap);
     free(buff);
@@ -59,7 +65,8 @@ napi_value PixelMapTest(napi_env env, napi_callback_info info) {
     return pixelMap;
 }
 
-napi_value OHPixelMapGetIsEditable(napi_env env, napi_callback_info info) {
+napi_value OHPixelMapGetIsEditable(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_GetIsEditable start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -76,25 +83,25 @@ napi_value OHPixelMapGetIsEditable(napi_env env, napi_callback_info info) {
     
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, PixelMapTest(env,info));
+    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, PixelMapTest(env, info));
     if (native == nullptr) {
         LOGI("OH_PixelMap_GetIsEditable error2");
         return result;
     }
-int32_t editable;
-int32_t imageResult;
- switch (index) {
+    int32_t editable;
+    int32_t imageResult;
+    switch (index) {
     case CASE_INDEX_1:
         imageResult = OH_PixelMap_GetIsEditable(native, &editable);
-            if (imageResult == 0) {
-                LOGI("OH_PixelMap_GetIsEditable可编辑 值：%{public}d", imageResult);
-            }
+        if (imageResult == 0) {
+            LOGI("OH_PixelMap_GetIsEditable可编辑 值：%{public}d", imageResult);
+        }
         break;
     case CASE_INDEX_2:
         imageResult = OH_PixelMap_GetIsEditable(nullptr, &editable);
-            if (imageResult == -1) {
-                LOGI("OH_PixelMap_GetIsEditable不可编辑 值：%{public}d", imageResult);
-            }
+        if (imageResult == -1) {
+            LOGI("OH_PixelMap_GetIsEditable不可编辑 值：%{public}d", imageResult);
+        }
         break;
     default:
         break;

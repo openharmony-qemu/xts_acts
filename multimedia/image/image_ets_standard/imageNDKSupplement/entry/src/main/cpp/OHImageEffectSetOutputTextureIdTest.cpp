@@ -39,9 +39,6 @@
 #define IMAGE_EFFECT_1080 1080
 #define IMAGE_EFFECT_1920 1920
 
-
-
-
 napi_value OHImageEffectSetOutputTextureId(napi_env env, napi_callback_info info)
 {
     OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
@@ -50,17 +47,18 @@ napi_value OHImageEffectSetOutputTextureId(napi_env env, napi_callback_info info
             OH_ImageEffect_Release(imageEffect);
         }
     });
-    std::shared_ptr<RenderTexture> output = std::make_shared<RenderTexture>(IMAGE_EFFECT_1920, IMAGE_EFFECT_1080, GL_RGBA8);
+    std::shared_ptr<RenderTexture> output =
+        std::make_shared<RenderTexture>(IMAGE_EFFECT_1920, IMAGE_EFFECT_1080, GL_RGBA8);
     output->Init();
     ImageEffect_ErrorCode code = OH_ImageEffect_SetOutputTextureId(imageEffect, output->GetName());
     int32_t textureId = 0;
     int32_t index;
-   switch (index) {
+    switch (index) {
     case CASE_INDEX_1:
-        code= OH_ImageEffect_SetOutputTextureId(nullptr, textureId);
+        code = OH_ImageEffect_SetOutputTextureId(nullptr, textureId);
         break;
     case CASE_INDEX_2:
-        code= OH_ImageEffect_SetOutputTextureId(imageEffect, textureId);
+        code = OH_ImageEffect_SetOutputTextureId(imageEffect, textureId);
         break;
     default:
         break;

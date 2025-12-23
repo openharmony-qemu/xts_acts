@@ -49,7 +49,6 @@ import ImagePixelmapTest from './PixelMapGetBytesNumberPerRow.test';
 import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
 import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
-import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 import ImageReceiverNativeReadTest from './ImageReceiverNativeReadTest.test';
 
 

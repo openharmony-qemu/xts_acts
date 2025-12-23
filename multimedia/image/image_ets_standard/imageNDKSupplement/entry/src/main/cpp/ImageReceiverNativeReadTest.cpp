@@ -67,7 +67,7 @@ bool IsSupportedSceneMode(Camera_Device camera, Camera_SceneMode sceneMode)
     uint32_t sceneModeSize = 0;
     Camera_ErrorCode ret = OH_CameraManager_GetSupportedSceneModes(&camera, &sceneModes, &sceneModeSize);
     if (sceneModes == nullptr || ret != CAMERA_OK) {
-        LOGI( "OH_CameraManager_GetSupportedSceneModes failed.");
+        LOGI("OH_CameraManager_GetSupportedSceneModes failed.");
         return false;
     }
     for (uint32_t index = 0; index < sceneModeSize; index++) {
@@ -114,7 +114,7 @@ void CreateAndOpenCamera()
     LOGI("camer input 创建成功");
 }
 
-void createPhotoOutput(const char *surfaceID)
+void CreatePhotoOutput(const char *surfaceID)
 {
     const Camera_Device camera = cameras[0];
     Camera_OutputCapability *cameraOutputCapability = nullptr;
@@ -212,21 +212,20 @@ napi_value ImageReceiverNativeReadLatestImageSuccessTest(napi_env env, napi_call
     OH_ImageReceiverOptions_Create(&options);
     LOGI("OptionsCreate SUCCEED");
     OH_ImageReceiverNative* receiver = nullptr;
-//    int32_t receiverKey = 0;
     OH_ImageReceiverNative_Create(options, &receiver);
     LOGI("ReceiverCreate SUCCEED");
     uint64_t surfaceId = 0;
     OH_ImageReceiverNative_GetReceivingSurfaceId(receiver, &surfaceId);
     LOGI("surfaceId is:%{public}d", surfaceId);
-    auto MyImageReceiverCallback = [](OH_ImageReceiverNative *receiver) {
+    auto myImageReceiverCallback = [](OH_ImageReceiverNative *receiver) {
         LOGI("ImageReceiverNativeCTest buffer available.");
     };
-    Image_ErrorCode errCode = OH_ImageReceiverNative_On(receiver, MyImageReceiverCallback);
+    Image_ErrorCode errCode = OH_ImageReceiverNative_On(receiver, myImageReceiverCallback);
     LOGI("OH_ImageReceiverNative_On SUCCEED");
     std::string surfaceIDStr = std::to_string(surfaceId);
-    const char* const_char_ptr = surfaceIDStr.c_str();
+    const char *constCharPtr = surfaceIDStr.c_str();
     CreateAndOpenCamera();
-    createPhotoOutput(const_char_ptr);
+    CreatePhotoOutput(constCharPtr);
     CreateCaptureSession();
     std::this_thread::sleep_for(std::chrono::seconds(1));
     OH_ImageNative *image = nullptr;

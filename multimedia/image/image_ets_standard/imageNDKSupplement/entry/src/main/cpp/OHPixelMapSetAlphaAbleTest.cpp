@@ -34,7 +34,8 @@
 #define CASE_INDEX_4 4
 #define CASE_INDEX_5 5
 
-napi_value PixelMapToSetAlphaAble(napi_env env, napi_callback_info info) {
+napi_value PixelMapToSetAlphaAble(napi_env env, napi_callback_info info)
+{
     napi_value udfVar = nullptr;
     napi_value pixelMap = nullptr;
     struct OhosPixelMapCreateOps createOps;
@@ -60,7 +61,8 @@ napi_value PixelMapToSetAlphaAble(napi_env env, napi_callback_info info) {
     return pixelMap;
 }
 
-napi_value OHPixelMapSetAlphaAble(napi_env env, napi_callback_info info) {
+napi_value OHPixelMapSetAlphaAble(napi_env env, napi_callback_info info)
+{
     LOGI("OH_PixelMap_SetAlphaAble start");
     napi_value thisVar = nullptr;
     napi_value argValue[1] = {0};
@@ -77,21 +79,21 @@ napi_value OHPixelMapSetAlphaAble(napi_env env, napi_callback_info info) {
     
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, PixelMapToSetAlphaAble(env,info));
+    NativePixelMap *native = OH_PixelMap_InitNativePixelMap(env, PixelMapToSetAlphaAble(env, info));
     if (native == nullptr) {
         LOGI("OH_PixelMap_SetAlphaAble error2");
         return result;
     }
-int32_t alphaAble;
-int32_t imageResult;
- switch (index) {
+    int32_t alphaAble;
+    int32_t imageResult;
+    switch (index) {
     case CASE_INDEX_1:
         imageResult = OH_PixelMap_SetAlphaAble(native, alphaAble);
-        LOGI("值：%{public}d" ,imageResult);
+        LOGI("值：%{public}d", imageResult);
         break;
     case CASE_INDEX_2:
         imageResult = OH_PixelMap_SetAlphaAble(nullptr, alphaAble);
-        LOGI("值：%{public}d" ,imageResult);
+        LOGI("值：%{public}d", imageResult);
         break;
     default:
         break;
