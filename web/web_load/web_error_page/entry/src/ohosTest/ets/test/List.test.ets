@@ -15,7 +15,9 @@
 
 
 import webErrorPage from './WebErrorPage.test';
+import WebEumClassTest from './WebEumClassTest.test'
 
 export default function testsuite() {
   webErrorPage();
+  WebEumClassTest()
 }
