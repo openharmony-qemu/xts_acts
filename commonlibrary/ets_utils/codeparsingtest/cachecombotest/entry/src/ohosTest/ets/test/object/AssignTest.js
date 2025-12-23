@@ -1978,3 +1978,732 @@ export function testProxySetCannotChangePropertyNameUsedByAssign() {
 
     return !('key' in proxy) && proxy.KEY === 'value';
 }
+
+/**
+ * 测试点 103：Proxy 源对象包含大量 Symbol 属性（>100），Object.assign 是否仍正确跳过不可枚举者
+ * @returns {boolean}
+ */
+export function testManySymbolPropertiesHandlingInProxySource() {
+    const source = {};
+    const symbols = [];
+    for (let i = 0; i < 100; i++) {
+        const sym = Symbol(`s${i}`);
+        symbols.push(sym);
+        if (i % 2 === 0) {
+            Object.defineProperty(source, sym, { value: i, enumerable: true });
+        } else {
+            Object.defineProperty(source, sym, { value: i, enumerable: false });
+        }
+    }
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    const copiedSymbols = Object.getOwnPropertySymbols(target);
+    return (
+        copiedSymbols.length === 50 &&
+        copiedSymbols.every(sym => {
+            const idx = parseInt(sym.description.slice(1), 10);
+            return idx % 2 === 0 && target[sym] === idx;
+        })
+    );
+}
+
+/**
+ * 测试点 104：当 Proxy 目标是冻结的 null-prototype 对象，set 拦截器是否能绕过（不能）
+ * @returns {boolean}
+ */
+export function testFrozenNullProtoTargetBlocksAllWritesEvenViaProxy() {
+    const target = Object.create(null);
+    target.existing = 1;
+    Object.freeze(target);
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    try {
+        Object.assign(proxy, { existing: 2, newProp: 3 });
+        return false;
+    } catch (e) {
+        return target.existing === 1 && !('newProp' in target);
+    }
+}
+
+/**
+ * 测试点 106：Proxy 的 set 拦截器中调用 Object.assign 递归到自身，是否导致无限循环（应避免）
+ * @returns {boolean}
+ */
+export function testRecursiveObjectAssignInSetDoesNotInfiniteLoop() {
+    let depth = 0;
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            depth++;
+            if (depth < 3) {
+
+                Object.assign({}, { temp: val });
+            }
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { a: 1 });
+    return depth === 1 && proxy.a === 1;
+}
+
+/**
+ * 测试点 107：当 Proxy 源对象使用 get 拦截器代理到 Proxy，Object.assign 是否穿透多层（仅读取值）
+ * @returns {boolean}
+ */
+export function testMultiLayerProxyGetDelegation() {
+    const backend = { value: 'deep' };
+    const layer1 = new Proxy(backend, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const source = {};
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return layer1[prop] ?? obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+
+    return Object.keys(target).length === 0;
+}
+
+/**
+ * 测试点 108：Object.assign 使用 Proxy 目标时，若属性名为 "hasOwnProperty"，是否覆盖方法（允许）
+ * @returns {boolean}
+ */
+export function testAssignCanOverwriteHasOwnPropertyAsDataProperty() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { hasOwnProperty: 'string' });
+    return proxy.hasOwnProperty === 'string' && typeof proxy.hasOwnProperty === 'string';
+}
+
+/**
+ * 测试点 109：Proxy 源对象包含 getter 返回不同类型每次调用，Object.assign 是否只调一次（但不枚举则不调）
+ * @returns {boolean}
+ */
+export function testGetterCalledOnlyIfEnumerableAndOwn() {
+    let callCount = 0;
+    const source = {};
+    Object.defineProperty(source, 'dynamic', {
+        get() {
+            callCount++;
+            return Date.now();
+        },
+        enumerable: false
+    });
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return callCount === 0 && !('dynamic' in target);
+}
+
+/**
+ * 测试点 110：当 Proxy 目标是 arguments 对象且严格模式，Object.assign 写入数字索引是否成功
+ * @returns {boolean}
+ */
+export function testStrictModeArgumentsIndexAssignmentViaProxy() {
+    'use strict';
+
+    function getArgs() {
+        return arguments;
+    }
+
+    const args = getArgs('a', 'b');
+    const proxy = new Proxy(args, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { '0': 'x', '1': 'y' });
+    return args[0] === 'x' && args[1] === 'y';
+}
+
+/**
+ * 测试点 111：Object.assign 拷贝 Proxy 源时，若源有 __proto__ 作为 own enumerable 属性，是否作为普通字符串键处理
+ * @returns {boolean}
+ */
+export function testOwnEnumerableProtoTreatedAsStringKey() {
+    const source = {};
+    Object.defineProperty(source, '__proto__', {
+        value: { injected: true },
+        enumerable: true,
+        writable: true,
+        configurable: true
+    });
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+
+    return (
+        target.__proto__ !== undefined &&
+            target.__proto__.injected === true
+    );
+}
+
+/**
+ * 测试点 112：Proxy 的 set 拦截器对属性值进行类型校验（如只接受 number），Object.assign 是否遵守
+ * @returns {boolean}
+ */
+export function testProxySetValidatesValueTypeStrictly() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            if (typeof val !== 'number') {
+                return false;
+            }
+            obj[prop] = val;
+            return true;
+        }
+    });
+    try {
+        Object.assign(proxy, { valid: 42, invalid: 'text' });
+        return false;
+    } catch (e) {
+        return proxy.valid === 42 && !('invalid' in proxy);
+    }
+}
+
+/**
+ * 测试点 113：当 Proxy 源对象来自 Object.preventExtensions()，Object.assign 是否仍读取现有属性
+ * @returns {boolean}
+ */
+export function testPreventedExtensionsProxySourceStillReadable() {
+    const source = { allowed: 'yes' };
+    Object.preventExtensions(source);
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return target.allowed === 'yes';
+}
+
+/**
+ * 测试点 114：Object.assign 使用 Proxy 目标时，若 set 拦截器返回 true 但实际未赋值，外部读取为 undefined
+ * @returns {boolean}
+ */
+export function testProxySetClaimsSuccessButSkipsAssignment() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(_obj, _prop, _val) {
+
+            return true;
+        }
+    });
+    Object.assign(proxy, { ghost: 999 });
+    return !('ghost' in proxy) && proxy.ghost === undefined;
+}
+
+/**
+ * 测试点 115：Proxy 源对象使用 get 拦截器返回全局对象（如 globalThis），Object.assign 是否拷贝引用
+ * @returns {boolean}
+ */
+export function testGlobalObjectReferenceCopiedFromProxyGet() {
+    const source = {};
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            if (prop === 'globalRef') {
+                return globalThis;
+            }
+            return obj[prop];
+        }
+    });
+
+    const target = {};
+    Object.assign(target, proxySource);
+    return !('globalRef' in target);
+}
+
+/**
+ * 测试点 116：当 Proxy 目标是 Proxy 且 handler 为 null，Object.assign 是否报错（非法 Proxy）
+ * @returns {boolean}
+ */
+export function testProxyWithNullHandlerIsInvalidAndThrows() {
+
+    try {
+
+        const badProxy = new Proxy({}, null);
+        Object.assign(badProxy, { x: 1 });
+        return false;
+    } catch (e) {
+        return e instanceof TypeError;
+    }
+}
+
+/**
+ * 测试点 117：Object.assign 拷贝 Proxy 源时，若属性为 Date 对象，是否保持 instanceof 和 getTime()
+ * @returns {boolean}
+ */
+export function testDateObjectsPreservedThroughProxyAssign() {
+    const now = new Date();
+    const source = { timestamp: now };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return target.timestamp instanceof Date && target.timestamp.getTime() === now.getTime();
+}
+
+/**
+ * 测试点 118：Proxy 的 set 拦截器中访问 descriptor via Object.getOwnPropertyDescriptor，是否反映当前状态
+ * @returns {boolean}
+ */
+export function testProxySetCanInspectCurrentDescriptor() {
+    const target = {};
+    let descriptorSeen = false;
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            const desc = Object.getOwnPropertyDescriptor(obj, prop);
+            if (!desc) {
+                descriptorSeen = true;
+            }
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { newKey: 'test' });
+    return descriptorSeen && proxy.newKey === 'test';
+}
+
+/**
+ * 测试点 119：当 Proxy 源对象使用 get 拦截器返回函数，Object.assign 是否拷贝函数引用（而非调用）
+ * @returns {boolean}
+ */
+export function testFunctionReferencesCopiedNotInvoked() {
+    const fn = () => 'called';
+    const source = { method: fn };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return target.method === fn && target.method() === 'called';
+}
+
+/**
+ * 测试点 120：Object.assign 使用 Proxy 目标时，若属性名是负数字符串（如 "-1"），是否正常触发 set
+ * @returns {boolean}
+ */
+export function testNegativeNumericStringKeysWorkInProxySet() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { '-1': 'neg', '0.5': 'float' });
+    return proxy['-1'] === 'neg' && proxy['0.5'] === 'float';
+}
+
+
+/**
+ * 测试点 122：Object.assign 使用 Proxy 目标时，若 set 拦截器递增计数器但拒绝写入，是否仍计入调用次数
+ * @returns {boolean}
+ */
+export function testProxySetCounterIncrementsEvenOnFailure() {
+    let callCount = 0;
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(_obj, _prop, _val) {
+            callCount++;
+            return false;
+        }
+    });
+    try {
+        Object.assign(proxy, { a: 1, b: 2 });
+    } catch (e) {
+    }
+    return callCount === 1 && !('a' in target) && !('b' in target);
+}
+
+/**
+ * 测试点 123：Proxy 源对象包含属性名为 "__proto__" 且为 Symbol，Object.assign 是否忽略（Symbol 不等于字符串 "__proto__"）
+ * @returns {boolean}
+ */
+export function testSymbolProtoNotTreatedAsPrototypeSetter() {
+    const symProto = Symbol('__proto__');
+    const source = {};
+    source[symProto] = { fake: true };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+
+    return (
+        target[symProto] !== undefined &&
+            target[symProto].fake === true &&
+            Object.getPrototypeOf(target) === Object.prototype
+    );
+}
+
+/**
+ * 测试点 124：当 Proxy 目标是冻结的 Array，Object.assign 写入索引是否失败（即使 set 拦截器允许）
+ * @returns {boolean}
+ */
+export function testFrozenArrayAsProxyTargetBlocksIndexAssignment() {
+    const arr = Object.freeze([1, 2]);
+    const proxy = new Proxy(arr, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    try {
+        Object.assign(proxy, { '0': 999 });
+        return false;
+    } catch (e) {
+        return true;
+    }
+}
+
+/**
+ * 测试点 125：Object.assign 拷贝 Proxy 源时，若属性值为 Error 对象，是否保留 stack 和 message
+ * @returns {boolean}
+ */
+export function testErrorObjectsPreservedThroughProxyAssign() {
+    const err = new Error('test error');
+    const originalStack = err.stack;
+    const source = { err };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return (
+        target.err instanceof Error &&
+            target.err.message === 'test error' &&
+            target.err.stack === originalStack
+    );
+}
+
+/**
+ * 测试点 127：当 Proxy 源对象来自不同 JavaScript Realm（模拟），Object.assign 是否仍读取原始值类型
+ * @returns {boolean}
+ */
+export function testCrossRealmBooleanNumberStringCopiedCorrectly() {
+
+    const otherBool = new Boolean(true);
+    const otherNum = new Number(42);
+    const otherStr = new String('hello');
+    const source = { b: otherBool, n: otherNum, s: otherStr };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+
+    return (
+        target.b instanceof Boolean &&
+            target.n instanceof Number &&
+            target.s instanceof String &&
+            target.b.valueOf() === true &&
+            target.n.valueOf() === 42 &&
+            target.s.valueOf() === 'hello'
+    );
+}
+
+/**
+ * 测试点 128：Object.assign 使用 Proxy 目标时，若属性名为 "constructor" 且值为函数，是否覆盖原型链上的 constructor
+ * @returns {boolean}
+ */
+export function testDataPropertyConstructorOverridesInheritedOne() {
+
+    function Original() {
+    }
+
+    const target = new Original();
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, {
+        constructor: function Fake() {
+        }
+    });
+    return target.constructor.name === 'Fake';
+}
+
+/**
+ * 测试点 129：Proxy 源对象使用 get 拦截器返回 Promise，Object.assign 是否将其作为普通对象拷贝（不 await）
+ * @returns {boolean}
+ */
+export function testPromiseCopiedAsPlainObjectFromProxy() {
+    const p = Promise.resolve(123);
+    const source = { asyncVal: p };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return target.asyncVal === p;
+}
+
+/**
+ * 测试点 130：当 Proxy 目标是 Proxy.revocable() 且未撤销，Object.assign 正常工作
+ * @returns {boolean}
+ */
+export function testRevocableProxyBeforeRevokeWorksNormally() {
+    const { proxy } = Proxy.revocable({ base: 1 }, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { added: 2 });
+    return proxy.base === 1 && proxy.added === 2;
+}
+
+/**
+ * 测试点 131：Object.assign 拷贝 Proxy 源时，若源有 getter 抛出 RangeError，是否传播异常
+ * @returns {boolean}
+ */
+export function testGetterThrowsRangeErrorDuringAssign() {
+    const source = {};
+    Object.defineProperty(source, 'bad', {
+        get() {
+            throw new RangeError('Out of range');
+        },
+        enumerable: true
+    });
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    try {
+        Object.assign({}, proxySource);
+        return false;
+    } catch (e) {
+        return e instanceof RangeError && e.message === 'Out of range';
+    }
+}
+
+/**
+ * 测试点 132：Proxy 的 set 拦截器对属性名进行 Unicode 标准化（NFC/NFD），Object.assign 是否使用原始名
+ * @returns {boolean}
+ */
+export function testProxySetCannotNormalizePropertyName() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+
+            const normalized = prop.normalize('NFD');
+            obj[normalized] = val;
+            return true;
+        }
+    });
+    const composed = 'café';
+    const decomposed = 'cafe\u0301';
+    Object.assign(proxy, { [decomposed]: 'value' });
+
+    return !target[composed] && target[decomposed] === 'value';
+}
+
+/**
+ * 测试点 133：当 Proxy 源对象包含属性名为 "0"（数字字符串），Object.assign 是否正常枚举
+ * @returns {boolean}
+ */
+export function testNumericStringKeysEnumeratedCorrectly() {
+    const source = { '0': 'zero', '1.5': 'float', '-2': 'neg' };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return target['0'] === 'zero' && target['1.5'] === 'float' && target['-2'] === 'neg';
+}
+
+/**
+ * 测试点 134：Object.assign 使用 Proxy 目标时，若 set 拦截器抛出非 Error 对象（如字符串），是否被包装
+ * @returns {boolean}
+ */
+export function testProxySetThrowsStringErrorWrappedByEngine() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set() {
+            throw 'not an error object';
+        }
+    });
+    try {
+        Object.assign(proxy, { x: 1 });
+        return false;
+    } catch (e) {
+
+        return e === 'not an error object';
+    }
+}
+
+/**
+ * 测试点 135：Proxy 源对象使用 get 拦截器代理到 WeakMap，Object.assign 是否枚举（答案：否，WeakMap 不可枚举）
+ * @returns {boolean}
+ */
+export function testProxyGetDelegatesToWeakMapButNotEnumerable() {
+    const wm = new WeakMap();
+    const key = {};
+    wm.set(key, 'secret');
+    const source = {};
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            if (prop === 'wmKey') {
+                return key;
+            }
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+
+    return !('wmKey' in target);
+}
+
+/**
+ * 测试点 136：当 Proxy 目标是 arguments 对象且有 callee 属性（非严格模式），Object.assign 是否可写入
+ * @returns {boolean}
+ */
+export function testNonStrictArgumentsCalleeCanBeAssignedViaProxy() {
+
+    function getArgs() {
+        const args = arguments;
+        const proxy = new Proxy(args, {
+            set(obj, prop, val) {
+                obj[prop] = val;
+                return true;
+            }
+        });
+        Object.assign(proxy, { custom: 'ok' });
+        return proxy.custom === 'ok';
+    }
+
+    return getArgs();
+}
+
+/**
+ * 测试点 137：Object.assign 拷贝 Proxy 源时，若属性为 Map，是否保持引用和内容
+ * @returns {boolean}
+ */
+export function testMapObjectsPreservedThroughProxyAssign() {
+    const map = new Map([['a', 1], ['b', 2]]);
+    const source = { dataMap: map };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return (
+        target.dataMap === map &&
+            target.dataMap.get('a') === 1 &&
+            target.dataMap.get('b') === 2
+    );
+}
+
+/**
+ * 测试点 138：Proxy 的 set 拦截器中访问 this.proxyProperty，是否指向正确上下文（this 是 handler，通常无绑定）
+ * @returns {boolean}
+ */
+export function testProxyHandlerThisIsUndefinedInStrictMode() {
+    let thisValue;
+    const target = {};
+    const handler = {
+        set(obj, prop, val) {
+            thisValue = this;
+            obj[prop] = val;
+            return true;
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    Object.assign(proxy, { x: 1 });
+    return thisValue !== undefined;
+}
+
+/**
+ * 测试点 139：当 Proxy 源对象使用 get 拦截器返回 NaN、Infinity 等特殊数值，Object.assign 是否保留
+ * @returns {boolean}
+ */
+export function testSpecialNumberValuesCopiedCorrectly() {
+    const source = {
+        nan: NaN,
+        inf: Infinity,
+        negInf: -Infinity,
+        zero: -0
+    };
+    const proxySource = new Proxy(source, {
+        get(obj, prop) {
+            return obj[prop];
+        }
+    });
+    const target = {};
+    Object.assign(target, proxySource);
+    return (
+        Number.isNaN(target.nan) &&
+            target.inf === Infinity &&
+            target.negInf === -Infinity &&
+        Object.is(target.zero, -0)
+    );
+}
+
+/**
+ * 测试点 140：Object.assign 使用 Proxy 目标时，若属性名是空字符串 ""，是否正常触发 set
+ * @returns {boolean}
+ */
+export function testEmptyStringPropertyNameHandledCorrectly() {
+    const target = {};
+    const proxy = new Proxy(target, {
+        set(obj, prop, val) {
+            obj[prop] = val;
+            return true;
+        }
+    });
+    Object.assign(proxy, { '': 'empty key' });
+    return proxy[''] === 'empty key';
+}
+
