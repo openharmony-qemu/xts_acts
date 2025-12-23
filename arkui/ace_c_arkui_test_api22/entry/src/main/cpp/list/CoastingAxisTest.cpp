@@ -85,7 +85,7 @@ struct ContactsGroup {
 const std::vector<ContactsGroup> staticContacts = {
     {"A", {{Contact("Alice")}, {Contact("Alan")}, {Contact("Amy")}, {Contact("Andy")}, {Contact("Anna")}}},
     {"B", {{Contact("Bob")}, {Contact("Betty")}, {Contact("Bruce")}, {Contact("Bella")}, {Contact("Brian")}}},
-    {"C", {{Contact("Charlie")}, {Contact("Cindy")}, {Contact("Chris")}, {Contact("Clara")}, {Contact("Carter")}}},
+    {"C", {{Contact("Charlie")}, {Contact("Cindy")}, {Contact("Clara")}, {Contact("Carter")}}},
     {"D", {{Contact("David")}, {Contact("Diana")}, {Contact("Dan")}, {Contact("Daisy")}, {Contact("Dora")}}},
     {"E", {{Contact("Emma")}, {Contact("Eric")}, {Contact("Eva")}, {Contact("Ethan")}, {Contact("Elise")}}},
     {"F", {{Contact("Frank")}, {Contact("Fiona")}, {Contact("Felix")},

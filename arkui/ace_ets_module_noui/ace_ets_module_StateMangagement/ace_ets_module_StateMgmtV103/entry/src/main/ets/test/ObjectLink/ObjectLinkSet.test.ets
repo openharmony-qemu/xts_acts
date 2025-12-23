@@ -62,7 +62,7 @@ export default function ObjectLinkSet() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSet_0100', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSet_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ObjectLinkSet_0100 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -87,7 +87,7 @@ export default function ObjectLinkSet() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSet_0200', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSet_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ObjectLinkSet_0200 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -112,7 +112,7 @@ export default function ObjectLinkSet() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ObjectLinkSet_0300', Level.LEVEL0, async (done: Function) => {
+    it('ObjectLinkSet_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ObjectLinkSet_0300 START');
       let driver: Driver = await Driver.create()
       await CommonFunc.sleep(1000);

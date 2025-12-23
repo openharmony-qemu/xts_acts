@@ -106,3 +106,7 @@ export const CheckAvPlayerPlaybackRate: (a:NdkUser) => number;
 export const setup: (filePath: string, type: number, offset: number, size: number) => number;
 export const release: () => number;
 export const setLoudnessGain: (loudness:number) => number;
+export const getMediaDescription: () => number;
+export const getMediaDescriptionOne: () => number;
+export const getTrackDescription: (loudness:number) => number;
+export const getTrackDescriptionOne: (loudness:number) => number;

@@ -12,11 +12,66 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import ImageEffectFilterRenderSuppTest from './ImageEffectFilterRenderSupp.test';
+import ImageEffectFilterSuppTest from './ImageEffectFilterSupp.test';
 import ImageEffectSuppTest from './ImageEffectSupp.test';
+import imageFrameworkPixelMapNativeCreateSuppTest from './ImageFrameworkPixelMapNativeCreateSupp.test';
+import imageFrameworkImageSourceNativeCreateSuppTest from './ImageSourceNativeCreateTest.test';
+import OHEffectBufferInfoGetTextureIdTest from './OHEffectBufferInfoGetTextureIdTest.test';
+import OHEffectBufferInfoGetTimestampTest from './OHEffectBufferInfoGetTimestampTest.test';
+import OHEffectBufferInfoSetTextureIdTest from './OHEffectBufferInfoSetTextureIdTest.test';
+import OHEffectBufferInfoSetTimestampTest from './OHEffectBufferInfoSetTimestampTest.test';
+import ImageErrorSuppTest from './ImageErrorSupp.test';
 import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
+import OHImagePixelMapCreateTest from './ImagePixelMapCreateTest.test';
+import OHImagePackerCreateTest from './OHImagePackerCreateTest.test';
+import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
+import ImageInitImageNativeSuppTest from './ImageInitImageNativeSupp.test';
+import ImageReceiverNativeTest from './ImageReceiverNativeTest.test';
+import PixelMapNativeTest from './PixelMapNativeTest.test';
+import ImageEffectsSuppTest from './ImageEffectsSupp.test';
+import AccessPixelsSuppTest from './AccessPixelsSupp.test';
+import ImageSourceSuppTest from './ImageSourceSupp.test';
+import OHEffectBufferInfoSetInfoTest from './OHEffectBufferInfoSetInfoTest.test';
+import OHImageEffectRestoreTest from './OHImageEffectRestoreTest.test';
+import OHImageSizeTest from './OHImageSizeTest.test';
+import OHPixelmapNativeCreatePixelmapNativeTest from './OHPixelmapNativeCreatePixelmapNativeTest.test';
+import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
+import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
+import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
+import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
+import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 
 
 export default function testsuite() {
   ImageEffectSuppTest();
+  OHEffectBufferInfoSetTimestampTest();
+  OHEffectBufferInfoGetTimestampTest();
+  OHEffectBufferInfoSetTextureIdTest();
+  OHEffectBufferInfoGetTextureIdTest();
+  ImageEffectFilterSuppTest();
+  ImageEffectFilterRenderSuppTest();
+  imageFrameworkPixelMapNativeCreateSuppTest();
+  imageFrameworkImageSourceNativeCreateSuppTest();
+  ImageErrorSuppTest();
   ImageEffectInfoSupplementTest();
+  PixelMapInitNativePixelMap();
+  OHImagePackerCreateTest();
+  OHImagePixelMapCreateTest();
+  ImageInitImageNativeSuppTest();
+  ImageReceiverNativeTest();
+  PixelMapNativeTest();
+  ImageEffectsSuppTest();
+  AccessPixelsSuppTest();
+  ImageSourceSuppTest();
+  OHEffectBufferInfoSetInfoTest();
+  OHImageEffectRestoreTest();
+  OHImageSizeTest();
+  OHPixelmapNativeCreatePixelmapNativeTest();
+  ImageEffectErrorCodeSuppTest();
+  OHPixelMapSupplementTest();
+  IRNdkErrCodeSupplementTest();
+  ImageResultIRNdkErrCodeTest();
+  IRNdkErrCode();
+
 }

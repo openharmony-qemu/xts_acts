@@ -28,6 +28,7 @@
 #include <window_manager/oh_window_event_filter.h>
 #include <window_manager/oh_window_pip.h>
 #include <window_manager/oh_display_capture.h>
+#include <window_manager/oh_display_manager.h>
 #include <multimedia/image_framework/image/pixelmap_native.h>
 #include <random>
 #include <list>
@@ -78,6 +79,13 @@
 #define PARAM_1000 1000
 #define PARAM_10000 10000
 #define PARAM_1755494223 1755494223
+#define PARAM_4294967294 4294967294
+#define PARAM_4294967295 4294967295
+#define PARAM_4294967296 4294967296
+#define PARAM_2147483647 2147483647
+#define PARAM_18446744073709551614 18446744073709551614
+#define PARAM_18446744073709551615 18446744073709551615
+#define PARAM_NEGATIVE_2147483648 (-2147483648)
 #define PARAM_NEGATIVE_1 (-1)
 #define PARAM_NEGATIVE_2 (-2)
 #define PARAM_NEGATIVE_3 (-3)

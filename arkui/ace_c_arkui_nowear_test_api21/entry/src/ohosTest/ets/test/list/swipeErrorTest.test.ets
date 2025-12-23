@@ -19,9 +19,9 @@ import hilog from '@ohos.hilog';
 const distance = 500;
 const SLEEP_TIME = 1000;
 const SLEEP_TIME_2000 = 2000;
-const PARAMETER_ERROR_CODE = 401;
-const PARAMETER_ERROR_CODE_1 = 100023;
-const PARAMETER_ERROR_CODE_2 = 106203;
+const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
+const ARKUI_ERROR_CODE_PARAM_ERROR = 100023;
+const ARKUI_ERROR_CODE_NODE_NOT_ON_MAIN_TREE = 106203;
 
 export default function SwipeErrorTest(){
 
@@ -71,7 +71,7 @@ export default function SwipeErrorTest(){
       } catch (err) {
         hilog.error(0x0000, "Error expand item:",
           `listSwipeAction, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(PARAMETER_ERROR_CODE_2);
+        expect(err.code).assertEqual(ARKUI_ERROR_CODE_NODE_NOT_ON_MAIN_TREE);
       };
       done();
     });
@@ -98,7 +98,7 @@ export default function SwipeErrorTest(){
       } catch (err) {
         hilog.error(0x0000, "Error expand item:",
           `listSwipeAction, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(err.code).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
       };
       done();
     });
@@ -125,7 +125,7 @@ export default function SwipeErrorTest(){
       } catch (err) {
         hilog.error(0x0000, "Error expand item:",
           `listSwipeAction, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(PARAMETER_ERROR_CODE_1);
+        expect(err.code).assertEqual(ARKUI_ERROR_CODE_PARAM_ERROR);
       };
       done();
     });

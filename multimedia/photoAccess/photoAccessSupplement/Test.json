@@ -41,6 +41,7 @@
                 "./resource/medialibrary/01.mpeg ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/medialibrary/01.gif ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/medialibrary/stm_RAW.dng ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
+                "./resource/media/1vp9_320x240_30.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.photoAccess.supp.xts/haps/entry_test/files/",
                 "./resource/medialibrary/01.jpg ->/data/tmp/case",
                 "./resource/medialibrary/test_exif.jpg ->/data/tmp/case",
                 "./resource/medialibrary/01.gif ->/data/tmp/case",
@@ -60,7 +61,21 @@
                 "mediatool send /data/tmp/case/stm_RAW.dng"
             ],
             "teardown-command": [
-                "rm -rf /data/tmp/case/*"
+                "power-shell setmode 600",
+                "hilog -Q pidon",
+                "hilog -Q domainon",
+                "rm -rf /data/tmp/case/*",
+                "rm -rf /storage/media/100/local/files/Pictures",
+                "rm -rf /storage/media/100/local/files/Videos",
+                "rm -rf /storage/media/100/local/files/Camera",
+                "rm -rf /storage/media/100/local/files/Audios",
+                "rm -rf /storage/media/100/local/files/Docs/Documents/*",
+                "rm -rf /storage/media/100/local/files/Docs/Documents/.*",
+                "rm -rf /storage/media/100/local/files/entry_test/*",
+                "rm -rf /storage/media/100/local/files/Photo/*",
+                "sleep 5",
+                "rm -rf /data/app/el2/100/database/com.ohos.medialibrary.medialibrarydata/*",
+                "kill -9 `pidof com.ohos.medialibrary.medialibrarydata`"
             ]
         },
         {

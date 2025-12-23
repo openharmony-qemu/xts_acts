@@ -148,7 +148,6 @@ export default function addContextAndAbilityJsunit() {
       console.log('------------------ ' + TAG_TEST_0300 + ' end -------------------');
     })
 
-
     /**
      * @tc.name   TAG_TEST_0400
      * @tc.number context_printDrawnCompleted_test_0200
@@ -162,17 +161,15 @@ export default function addContextAndAbilityJsunit() {
       console.info(TAG_TEST_0400 + 'callBack START');
       let startTime = await Utils.getNowTime();
       let context = ability_featureAbility.getContext();
-      await context.printDrawnCompleted().then((data) => {
+      context.printDrawnCompleted((err, data) => {
         let endTime = Utils.getNowTime();
         Utils.getDurationTime(TAG_TEST_0400, startTime, endTime);
         detailed = data;
         console.info(TAG_TEST_0400 + ' callBack succeeded. data is:' + JSON.stringify(data));
-      }).catch((error: BusinessError) =>
-      {
-        console.error(TAG_TEST_0400 + 'Operation failed. Cause: ' + JSON.stringify(error));
+        expect(detailed).assertEqual(null);
+        done();
       })
-      expect(detailed).assertEqual(null);
-      done();
+
       console.log('------------------ ' + TAG_TEST_0400 + ' end -------------------');
     })
 

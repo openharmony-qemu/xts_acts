@@ -4,14 +4,15 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Ability.AbilityRuntime.Core",
-                    "SystemCapability.Ability.AbilityRuntime.FAModel",
-                    "SystemCapability.Ability.AbilityRuntime.AbilityCore",
-                    "SystemCapability.Ability.AbilityRuntime.Mission",
-                    "SystemCapability.Ability.AbilityRuntime.QuickFix",
-                    "SystemCapability.Ability.AbilityTools.AbilityAssistant",
-                    "SystemCapability.Ability.AppStartup",
-                    "SystemCapability.Ability.AppExtension.PhotoEditorExtension"
+                    "SystemCapability.BundleManager.BundleFramework",
+                    "SystemCapability.BundleManager.Zlib",
+                    "SystemCapability.BundleManager.BundleFramework.AppControl",
+                    "SystemCapability.BundleManager.BundleFramework.Core",
+                    "SystemCapability.BundleManager.BundleFramework.FreeInstall",
+                    "SystemCapability.BundleManager.BundleFramework.Launcher",
+                    "SystemCapability.BundleManager.BundleFramework.DefaultApp",
+                    "SystemCapability.BundleManager.BundleFramework.Resource",
+                    "SystemCapability.BundleManager.BundleFramework.Overlay"
                 ]
             }
         ]

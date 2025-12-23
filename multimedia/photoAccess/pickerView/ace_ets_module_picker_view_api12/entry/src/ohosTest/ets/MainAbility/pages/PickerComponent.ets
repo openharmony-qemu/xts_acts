@@ -91,7 +91,8 @@ struct PickerComponent {
     result.maxVideoSelectNumber = this.pickerOptions.maxVideoSelectNumber ?? 500;
     result.pickerIndex = this.pickerOptions.pickerIndex ?? -1;
     result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
-     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
+    result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
+    result.edgeEffect = this.pickerOptions.edgeEffect ?? EdgeEffect.Spring;
     return result;
   }
 
@@ -107,7 +108,7 @@ struct PickerComponent {
     result.photoBrowserBackgroundColorMode = config.photoBrowserBackgroundColorMode ?? 0;
     result.uiComponentColorMode = config.uiComponentColorMode ?? 0;
     result.isSlidingSupported = config.isSlidingSupported ?? false;
-
+    result.edgeEffect = config.edgeEffect ?? EdgeEffect.Spring;
     return result;
   }
 
@@ -152,6 +153,14 @@ struct PickerComponent {
   private onVideoPlayStateChanged(state: VideoPlayerState): void {
     console.info('onVideoPlayStateChanged', state)
     this.vedioCallBackState = state;
+  }
+
+  private onScrollStopAtEndCallback(): void {
+    console.info('onScrollStopAtEnd')
+  }
+
+    private onScrollStopAtStartCallback(): void {
+    console.info('onScrollStopAtStart')
   }
 
   private onAlbumClick(albumInfo: AlbumInfo): boolean {
@@ -295,7 +304,7 @@ struct PickerComponent {
         updatedOptions.photoBrowserBackgroundColorMode = PickerColorMode.DARK;
         updatedOptions.uiComponentColorMode = PickerColorMode.DARK;
         updatedOptions.isSlidingSupported = true;
-
+        updatedOptions.edgeEffect = EdgeEffect.None;
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
@@ -331,6 +340,8 @@ struct PickerComponent {
         onExceedMaxSelected: this.exceedMaxSeletedCallback,
         onCurrentAlbumDeleted: this.currentAlbumDeletedCallback,
         onVideoPlayStateChanged: this.videoPlayStateChangedCallback,
+        onScrollStopAtEnd: this.onScrollStopAtEndCallback,
+        onScrollStopAtStart: this.onScrollStopAtStartCallback,
         pickerController: this.pickerController,
       })
         .height('70%')

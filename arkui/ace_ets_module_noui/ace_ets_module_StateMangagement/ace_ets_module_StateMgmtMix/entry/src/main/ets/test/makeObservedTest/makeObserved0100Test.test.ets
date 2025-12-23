@@ -63,7 +63,7 @@ export default function makeObserved0100Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('makeObserved0100Test_01', Level.LEVEL0, async (done: Function) => {
+    it('makeObserved0100Test_01', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000)
 
       console.info('makeObserved0100Test_01 START');

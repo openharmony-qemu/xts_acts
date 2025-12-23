@@ -205,7 +205,7 @@ struct CustomContainerUser {
         }.scrollBarColor(Color.White) // 滚动条颜色
         .scrollBarWidth(10)
       }
-    }.width('100%').height('80%').backgroundColor(Color.Black)
+    }.width('100%').height('65%').backgroundColor(Color.Black)
     .justifyContent(FlexAlign.SpaceEvenly)
   }
 

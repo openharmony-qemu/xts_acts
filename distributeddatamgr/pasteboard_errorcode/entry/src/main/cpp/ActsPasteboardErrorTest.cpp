@@ -82,6 +82,50 @@ static napi_value PasteboardClearDataInvalidParameter(napi_env env, napi_callbac
     return result;
 }
 
+static napi_value PasteboardErrDeviceNotSupported(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    PASTEBOARD_ErrCode pasteBoardErrCode = ERR_DEVICE_NOT_SUPPORTED;
+    OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    int32_t ret = OH_PasteboardObserver_Destroy(observer);
+    napi_create_int32(env, ret == ERR_OK ? 0 : -1, &result);
+    napi_create_int32(env, pasteBoardErrCode == ERR_DEVICE_NOT_SUPPORTED ? 0 : -1, &result);
+    return result;
+}
+
+static napi_value PasteboardErrBusy(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    PASTEBOARD_ErrCode pasteBoardErrCode = ERR_BUSY;
+    OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    int32_t ret = OH_PasteboardObserver_Destroy(observer);
+    napi_create_int32(env, ret == ERR_OK ? 0 : -1, &result);
+    napi_create_int32(env, pasteBoardErrCode == ERR_BUSY ? 0 : -1, &result);
+    return result;
+}
+
+static napi_value PasteboardErrPateboardProgressStartError(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    PASTEBOARD_ErrCode pasteBoardErrCode = ERR_PASTEBOARD_PROGRESS_START_ERROR;
+    OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    int32_t ret = OH_PasteboardObserver_Destroy(observer);
+    napi_create_int32(env, ret == ERR_OK ? 0 : -1, &result);
+    napi_create_int32(env, pasteBoardErrCode == ERR_PASTEBOARD_PROGRESS_START_ERROR ? 0 : -1, &result);
+    return result;
+}
+
+static napi_value PasteboardErrPasteBoardProgressAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    PASTEBOARD_ErrCode pasteBoardErrCode = ERR_PASTEBOARD_PROGRESS_ABNORMAL;
+    OH_PasteboardObserver* observer = OH_PasteboardObserver_Create();
+    int32_t ret = OH_PasteboardObserver_Destroy(observer);
+    napi_create_int32(env, ret == ERR_OK ? 0 : -1, &result);
+    napi_create_int32(env, pasteBoardErrCode == ERR_PASTEBOARD_PROGRESS_ABNORMAL ? 0 : -1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -97,7 +141,15 @@ static napi_value Init(napi_env env, napi_value exports)
         {"PasteboardSetDataInvalidParameter",
             nullptr, PasteboardSetDataInvalidParameter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PasteboardClearDataInvalidParameter",
-            nullptr, PasteboardClearDataInvalidParameter, nullptr, nullptr, nullptr, napi_default, nullptr}
+            nullptr, PasteboardClearDataInvalidParameter, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PasteboardErrDeviceNotSupported", nullptr, PasteboardErrDeviceNotSupported,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PasteboardErrBusy", nullptr, PasteboardErrBusy,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PasteboardErrPateboardProgressStartError", nullptr, PasteboardErrPateboardProgressStartError,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PasteboardErrPasteBoardProgressAbnormal", nullptr, PasteboardErrPasteBoardProgressAbnormal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

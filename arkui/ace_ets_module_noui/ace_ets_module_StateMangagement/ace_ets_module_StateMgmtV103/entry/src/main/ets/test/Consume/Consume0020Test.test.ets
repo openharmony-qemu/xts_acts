@@ -54,7 +54,7 @@ export default function Consume0020Test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Consume0020Test_001', Level.LEVEL0, async (done: Function) => {
+    it('Consume0020Test_001', Level.LEVEL1, async (done: Function) => {
       console.info('[Consume0020Test_001] START');
       await CommonFunc.sleep(1000);
       let obj: ESObject = JSON.parse(getInspectorByKey('tvConsume0020'));

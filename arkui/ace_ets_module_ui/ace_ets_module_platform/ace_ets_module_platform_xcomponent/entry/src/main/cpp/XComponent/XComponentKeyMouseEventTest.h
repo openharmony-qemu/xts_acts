@@ -46,6 +46,13 @@ public:
     static napi_value TestRegisterKeyEventCallbackWithResult_02(napi_env env, napi_callback_info info);
     static napi_value TestGetTouchPointErrorCode_01(napi_env env, napi_callback_info info);
     static napi_value TestGetTouchPointErrorCode_02(napi_env env, napi_callback_info info);
+
+    static napi_value TestRegisterUIInputEventCallbackErrorCode_01(napi_env env, napi_callback_info info);
+    static napi_value TestRegisterUIInputEventCallbackErrorCode_02(napi_env env, napi_callback_info info);
+    static napi_value TestRegisterOnTouchInterceptCallbackErrorCode_01(napi_env env, napi_callback_info info);
+    static napi_value TestRegisterOnTouchInterceptCallbackErrorCode_02(napi_env env, napi_callback_info info);
+    static napi_value TestGetNativeAccessibilityProviderErrorCode_01(napi_env env, napi_callback_info info);
+    static napi_value TestGetNativeAccessibilityProviderErrorCode_02(napi_env env, napi_callback_info info);
 };
 } // namespace NativeXComponentSample
 #endif // NATIVEXCOMPONENT_KEY_MOUSE_EVENT_TEST_H

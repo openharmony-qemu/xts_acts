@@ -44,14 +44,6 @@
           }
         ]
       }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.ACCESS_DDK_DRIVERS"
-      },
-      {
-        "name": "ohos.permission.MANAGE_USB_CONFIG"
-      }
     ]
   }
 }

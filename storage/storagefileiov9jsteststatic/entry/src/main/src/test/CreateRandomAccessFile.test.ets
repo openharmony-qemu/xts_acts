@@ -549,7 +549,7 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         let fpath = await Utils.nextFileName('fileIO_create_randomaccessfile_async_static_001');
         fs.createRandomAccessFile(fpath, 0o102, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
-          expect(typeof randomaccessfile?.fd == 'number').assertTrue();
+          expect(typeof randomaccessfile?.fd == 'int').assertTrue();
           randomaccessfile?.setFilePointer(10);
           let filePointer = randomaccessfile?.filePointer;
           expect(filePointer == 10).assertTrue();
@@ -577,7 +577,7 @@ export default function fileIOCreateRandomAccessFile() {
       try {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         fs.createRandomAccessFile(file, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) => {
-          expect(typeof randomaccessfile?.fd == 'number').assertTrue();
+          expect(typeof randomaccessfile?.fd == 'int').assertTrue();
           randomaccessfile?.close();
           fs.closeSync(file.fd);
           fs.unlinkSync(fpath);
@@ -678,12 +678,12 @@ export default function fileIOCreateRandomAccessFile() {
 
       try {
         fs.createRandomAccessFile(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE, (err: BusinessError|null, randomaccessfile: fs.RandomAccessFile|undefined) =>{
-          expect(typeof randomaccessfile?.fd == 'number').assertTrue();
+          expect(typeof randomaccessfile?.fd == 'int').assertTrue();
           randomaccessfile?.close();
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_create_randomaccessfile_async_static_008 end error' + JSON.stringify(err));
         expect(false).assertTrue();
       }

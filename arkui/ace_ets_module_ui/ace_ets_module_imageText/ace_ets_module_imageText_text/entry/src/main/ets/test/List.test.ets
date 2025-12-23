@@ -96,11 +96,13 @@ import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
 import ModifierTextVerticalAlignTest from './TextTest/ModifierTextVerticalAlignTest.test';
 import TextTextDecorationTest from './TextTest/TextTextDecorationTest.test';
 import lineHeight from './TextTest/lineHeight.test';
+import TextEnableSelectedDataDetectorTest from './TextTest/TextEnableSelectedDataDetector.test';
 import customKeyboardSearchTest from './CustomKeyboardTest/search.test';
 import customKeyboardTextAreaTest from './CustomKeyboardTest/textArea.test';
 import customKeyboardTextInputTest from './CustomKeyboardTest/textInput.test';
 import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctuation.test';
 import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
+import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -187,9 +189,11 @@ export default function testsuite() {
   TextTextDecorationTest()
   lineHeight();
   spanExample();
+  TextEnableSelectedDataDetectorTest()
   customKeyboardSearchTest();
   customKeyboardTextAreaTest();
   customKeyboardTextInputTest();
   TextCompressLeadingPunctuation();
   TextCompressLeadingPunctuationModifier();
+  TextMenuItemIdTest();
 }

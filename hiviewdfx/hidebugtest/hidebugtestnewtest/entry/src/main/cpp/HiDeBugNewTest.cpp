@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "hidebug/hidebug.h"
 #include "hidebug/hidebug_type.h"
+#include "hicollie/hicollie.h"
 #include <string>
 #include "hilog/log.h"
 #include <cstdint>
@@ -367,6 +368,85 @@ static napi_value Add(napi_env env, napi_callback_info info)
 
 }
 
+static napi_value CHECK_HIDEBUG_NO_PERMISSION(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_NO_PERMISSION == 11400103;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_TRACE_ABNORMAL(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_TRACE_ABNORMAL == 11400104;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS == 11400200;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_NOT_SUPPORTED(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_NOT_SUPPORTED == 11400300;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_UNDER_SAMPLING(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_UNDER_SAMPLING == 11400301;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_RESOURCE_UNAVAILABLE(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_RESOURCE_UNAVAILABLE == 11400302;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HICOLLIE_REMOTE_FAILED(napi_env env, napi_callback_info info){
+    bool res =  HiCollie_ErrorCode::HICOLLIE_REMOTE_FAILED == 29800002;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+
+static napi_value CHECK_ThreadCpuUsage(napi_env env, napi_callback_info info){
+    napi_value result;
+    HiDebug_ThreadCpuUsagePtr threadCpuUsage = OH_HiDebug_GetAppThreadCpuUsage() ;
+    if(threadCpuUsage == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+static napi_value CHECK_OH_HiDebug_GetDefaultMallocDispatchTable(napi_env env, napi_callback_info info){
+
+    napi_value result;
+    HiDebug_MallocDispatch* original = (HiDebug_MallocDispatch*)OH_HiDebug_GetDefaultMallocDispatchTable();
+    if(original == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+static napi_value CHECK_OH_HiDebug_CreateBacktraceObject(napi_env env, napi_callback_info info){
+
+    napi_value result;
+    HiDebug_Backtrace_Object backtraceObject = OH_HiDebug_CreateBacktraceObject();
+    if(backtraceObject == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -382,6 +462,16 @@ static napi_value Init(napi_env env, napi_value exports)
         {"starterrstack", nullptr, StartErrStack, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrconfig", nullptr, StartErrConfig, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrconfigtid", nullptr, StartErrConfigtid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_TRACE_ABNORMAL", nullptr, CHECK_HIDEBUG_TRACE_ABNORMAL, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_NO_PERMISSION", nullptr, CHECK_HIDEBUG_NO_PERMISSION, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS", nullptr, CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_NOT_SUPPORTED", nullptr, CHECK_HIDEBUG_NOT_SUPPORTED, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_UNDER_SAMPLING", nullptr, CHECK_HIDEBUG_UNDER_SAMPLING, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_RESOURCE_UNAVAILABLE", nullptr, CHECK_HIDEBUG_RESOURCE_UNAVAILABLE, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HICOLLIE_REMOTE_FAILED", nullptr, CHECK_HICOLLIE_REMOTE_FAILED, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_ThreadCpuUsage", nullptr, CHECK_ThreadCpuUsage, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_OH_HiDebug_GetDefaultMallocDispatchTable", nullptr, CHECK_OH_HiDebug_GetDefaultMallocDispatchTable, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_OH_HiDebug_CreateBacktraceObject", nullptr, CHECK_OH_HiDebug_CreateBacktraceObject, nullptr, nullptr, nullptr, napi_default, nullptr},
         
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

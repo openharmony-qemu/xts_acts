@@ -74,7 +74,7 @@ function contentChanges() {
 
 export default function pasteBoardJEtsunitTest() {
   console.info('beforeAll PasteBoardTest start');
-  describe('PasteBoardTest', () => {
+  describe('pasteBoardJEtsunitTest', () => {
     console.info('beforeAll PasteBoardTest start2');
     beforeAll(async (done:Function) => {
       console.info('start################################start');

@@ -28,6 +28,10 @@ import ListDraggingEventTest from './list/ListDraggingEventTest.test'
 import ListFlingEventTest from './list/ListFlingEventTest.test'
 import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
 import SourceTypeTest from './sourceType/SourceTypeTest.test'
+import SourceFlingEdgeTest from './list/SourceFlingEdgeTest.test'
+import SourceScrollBarTest from './list/SourceScrollBarTest.test'
+import SourceBtnScrollerTest from './list/SourceBtnScrollerTest.test'
+import CustomNodeEventTest from './custom/CustomNodeEventTest.test'
 
 export default function testsuite() {
   NodeUtilsMethodTest(); // 此条特殊用例请放在首行，勿动
@@ -46,4 +50,8 @@ export default function testsuite() {
   ListFlingEventTest();
   ImageSupportSvg2Test();
   SourceTypeTest();
+  SourceFlingEdgeTest();
+  SourceScrollBarTest();
+  SourceBtnScrollerTest();
+  CustomNodeEventTest();
 }

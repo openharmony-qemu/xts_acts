@@ -196,6 +196,8 @@ static napi_value ErrorModuleNameNull(napi_env env, napi_callback_info info)
     napi_create_int32(env, code, &result);
     return result;
 }
+
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {

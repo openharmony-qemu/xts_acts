@@ -19,5 +19,8 @@ group("ActsAceEtsModuleCommonAttrsVisualTest") {
     "ace_ets_module_commonAttrsVisual_api14:ActsAceEtsModuleCommonAttrsVisualApi14Test",
     "ace_ets_module_commonAttrsVisual_api20:ActsAceEtsModuleCommonAttrsVisualApi20Test",
     "ace_ets_module_commonAttrsVisual1:ActsAceEtsModuleCommonAttrsVisual1Test",
+    "ace_ets_module_commonAttrsVisual_api11_static:ActsAceEtsModuleCommonAttrsVisualApi11StaticTest",
+    "ace_ets_module_commonAttrsVisual_api12_static:ActsAceEtsModuleCommonAttrsVisualApi12StaticTest",
+    "ace_ets_module_commonAttrsVisual_api14_static:ActsAceEtsModuleCommonAttrsVisualApi14StaticTest",
   ]
 }

@@ -16,7 +16,7 @@ import("//test/xts/tools/build/suite.gni")
 ohos_app_assist_suite("Image_ndk_Supplement") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsMediaImageEffectNDKMainTest"
+  hap_name = "ActsMediaImageNDKSupplementMainTest"
   subsystem_name = "multimedia"
   part_name = "image_framework"
   js_build_mode = "debug"

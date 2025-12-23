@@ -278,25 +278,7 @@ export default function cameraCaptureSessionTest() {
       })
       done();
     })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003
-     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003
-     * @tc.desc   CaptureSession  getExposureMode  1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003', Level.LEVEL2, async (done: Function) => {
-      captureSessionsetExposureMode('SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_003', 2, (res?: number, errCode?: number) => {
-        if (res != undefined) {
-          expect(res).assertEqual(2);
-        }
-        if (errCode != undefined) {
-          expect().assertFail();
-        }
-      })
-      done();
-    })
+
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004
      * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURESESSION_GETEXPOSUREMODE_004

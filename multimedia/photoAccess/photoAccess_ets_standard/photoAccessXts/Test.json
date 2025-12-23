@@ -20,6 +20,7 @@
         "rm -rf /storage/media/100/local/files/Docs/Documents/*",
         "rm -rf /storage/media/100/local/files/Docs/Documents/.*",
         "rm -rf /storage/media/100/local/files/entry_test/*",
+        "rm -rf /storage/media/100/local/files/Photo/*",
         "sleep 5",
         "rm -rf /data/app/el2/100/database/ohos.acts.multimedia.photoaccess.xts/*",
         "kill -9 `pidof ohos.acts.multimedia.photoaccess.xts`"
@@ -113,6 +114,7 @@
         "rm -rf /storage/media/100/local/files/Docs/Documents/*",
         "rm -rf /storage/media/100/local/files/Docs/Documents/.*",
         "rm -rf /storage/media/100/local/files/entry_test/*",
+        "rm -rf /storage/media/100/local/files/Photo/*",
         "sleep 5",
         "rm -rf /data/app/el2/100/database/com.ohos.medialibrary.medialibrarydata/*",
         "kill -9 `pidof com.ohos.medialibrary.medialibrarydata`"

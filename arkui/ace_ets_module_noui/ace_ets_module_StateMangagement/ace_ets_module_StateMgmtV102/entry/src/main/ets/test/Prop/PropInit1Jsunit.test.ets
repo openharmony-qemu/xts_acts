@@ -70,7 +70,7 @@ export default function PropInit1Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropInit1Jsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropInit1Jsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropInit1Jsunit_0200 START');
       let driver = await UiDriver.create()
@@ -100,7 +100,7 @@ export default function PropInit1Jsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropInit1Jsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('PropInit1Jsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropInit1Jsunit_0400 START');
       let driver = await UiDriver.create()

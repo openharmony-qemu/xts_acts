@@ -53,7 +53,7 @@ export default function StateTest0080() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateTest0080_001', Level.LEVEL0, async (done: Function) => {
+    it('StateTest0080_001', Level.LEVEL1, async (done: Function) => {
       console.info('[StateTest0080_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
