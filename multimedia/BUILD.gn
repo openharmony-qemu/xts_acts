@@ -205,6 +205,7 @@ group("multimedia") {
       "photoAccess/mediaLibraryTestApi20:ActsMediaLibraryApi20Test",
       "photoAccess/photoAccessSupplement:photoAccessXts_supp_ets_hap",
       "photoAccess/photoAccessStatic:photoAccess_js_static_hap",
+      "photoAccess/photo_ndk_xts_supplement:ActsPhotoXTSNdkSupplementTest",
       "videoProcess/detail_enhancer_image_ndk:ActsDetailEnhancerImageNdkUnitTest",
       "videoProcess/detail_enhancer_video_ndk:ActsDetailEnhancerVideoNdkUnitTest",
       "videoProcess/moduletest/image:ActsVpeImageNativModuleTest",
