@@ -29,8 +29,10 @@ import locationManagerTest from './locationManager/locationManager.test.ets';
 import usbManagerTest from './usbManager/usbManager.test.ets';
 import afterAllTest from './afterAll/afterAll.test.ets';
 import telephonyManagerTest from './telephonyManager/telephonyManager.test.ets';
+import beforeAllTest from './beforeAll/beforeAll.test.ets';
 
 export default function testsuite() {
+  beforeAllTest();
   systemManagerTest();
   wifiManagerTest();
   deviceControlTest();
@@ -46,6 +48,6 @@ export default function testsuite() {
   applicationManagerTest();
   bundleManagerTest();
   restrictionsTest();
-  afterAllTest();
   telephonyManagerTest();
+  afterAllTest();
 }

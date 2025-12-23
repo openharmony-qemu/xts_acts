@@ -40,6 +40,8 @@ export default function textAreaOnInsertTest() {
       await Utils.sleep(1000)
       await Utils.triggerKey(2040)
       await Utils.sleep(1000)
+      await Utils.triggerKey(2047)
+      await Utils.sleep(1000)
       let dataArray: number[][] = nativeRender.getTextAreaInsertData();
       console.log('testTextAreaOnInsert001', JSON.stringify(dataArray))
       let textAreaInsertData: number[] = dataArray[0];

@@ -58,6 +58,9 @@ typedef enum CommonEvent_ErrCode {
     /** @error invalid input parameter. */
     COMMONEVENT_ERR_INVALID_PARAMETER = 401,
 
+    /** @error the application sending frequency too high*/
+    COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED = 1500003,
+
     /** @error the application cannot send system common events. */
     COMMONEVENT_ERR_NOT_SYSTEM_SERVICE = 1500004,
 

@@ -649,8 +649,7 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_STATE_CHANGE', Level.LEVEL0, async (done: Function) => {
-      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_STATE_CHANGE start')
-
+     console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_STATE_CHANGE start');
       let mySteps = new Array(
         // create
         mediaTestBase.CREATE_EVENT,
@@ -666,7 +665,8 @@ export default function AVScreenCaptureRecorderTest() {
         //release recorder
         //close fd
         // mediaTestBase.RELEASECORDER_EVENT,
-        mediaTestBase.END_EVENT);
+        mediaTestBase.END_EVENT
+      );
 
       let avConfig: media.AVScreenCaptureRecordConfig = {
         fd: -1,
@@ -677,17 +677,17 @@ export default function AVScreenCaptureRecorderTest() {
         audioChannelCount: 1,
         audioBitrate: 96000,
         preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
-        fillMode: 1,
-      }
+        fillMode: media.AVScreenCaptureFillMode.SCALE_TO_FILL,
+      };
 
       try {
-        await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+        await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
         expect(mediaTestBase.isOnStateChange).assertTrue();
       } catch (error) {
         console.error(`test presentPicker error, error message: ${error.message}`);
-        expect().assertFail()
+        expect().assertFail();
       }
-      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_STATE_CHANGE end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_STATE_CHANGE end');
     })
   })
 }

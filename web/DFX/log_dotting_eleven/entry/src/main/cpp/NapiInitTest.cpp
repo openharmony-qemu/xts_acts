@@ -73,17 +73,80 @@ void ScrollCallback(const char* webTag, void* userData, double x, double y) {
 void SetComponentCallback(ArkWeb_ComponentAPI* component,
                           const char* webTagValue,
                           std::shared_ptr<ComponentCallback> component_callback_ptr) {
-//     if (!ARKWEB_MEMBER_MISSING(component, onPageBegin)) {
-//         component->onPageBegin(webTagValue, LoadStartCallback,
-//             static_cast<void *>(component_callback_ptr->GetWeakPtr()));
-//     } else {
-//         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "component onPageBegin func not exist");
-//     }
     if (component_callback_ptr) {
         OH_ArkWeb_RegisterScrollCallback(
             webTagValue, ScrollCallback, static_cast<void *>(component_callback_ptr->GetWeakPtr()));
     }
 }
+
+bool SetComponentCallbackFalse() {
+      bool result = false;
+      result =  OH_ArkWeb_RegisterScrollCallback("per", nullptr, nullptr);
+      return result;
+
+}
+
+static napi_value NativeWebInitFalse(napi_env env, napi_callback_info info) {
+      bool result =  SetComponentCallbackFalse();
+      napi_value results;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "ndk NativeWebInit end");
+    napi_get_boolean(env, result, &results);
+    return results;
+    }
+
+
+bool  SetComponentCallbackTrue(ArkWeb_ComponentAPI* component,
+  const char* webTagValue,
+std::shared_ptr<ComponentCallback> component_callback_ptr) {
+  bool result = false;
+  if (component_callback_ptr) {
+    result = OH_ArkWeb_RegisterScrollCallback(
+      webTagValue, ScrollCallback, static_cast<void *>(component_callback_ptr->GetWeakPtr()));
+  }
+  return result;
+}
+
+static napi_value NativeWebInitTrue(napi_env env, napi_callback_info info) {
+  napi_value results;
+  //    return sum;
+  OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "ndk NativeWebInit start");
+  size_t argc = 1;
+  napi_value args[1] = {nullptr};
+  napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+  // 获取第一个参数webTag
+  size_t webTagSize = 0;
+  napi_get_value_string_utf8(env, args[0], nullptr, 0, &webTagSize);
+  char *webTagValue = new (std::nothrow) char[webTagSize + 1];
+  size_t webTagLength = 0;
+  napi_get_value_string_utf8(env, args[0], webTagValue, webTagSize + 1, &webTagLength);
+  OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "ndk NativeWebInit webTag:%{public}s", webTagValue);
+
+  controller = reinterpret_cast<ArkWeb_ControllerAPI *>(OH_ArkWeb_GetNativeAPI((ArkWeb_NativeAPIVariantKind)200));
+  if (controller) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "get ArkWeb_ControllerAPI success");
+  }
+
+  component = reinterpret_cast<ArkWeb_ComponentAPI *>(OH_ArkWeb_GetNativeAPI(ARKWEB_NATIVE_COMPONENT));
+  if (component) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "get ArkWeb_ComponentAPI success");
+  }
+
+  std::shared_ptr<ComponentCallback> component_callback_ptr = std::make_shared<ComponentCallback>(webTagValue);
+  if (component_callback_ptr) {
+    component_callback_ptr->Init();
+    component_callback_ptrs.emplace(webTagValue, component_callback_ptr);
+  }
+  // 方法1：ui线程调用
+  bool result =  SetComponentCallbackTrue(component, webTagValue, component_callback_ptr);
+  //  bool result =  SetComponentCallbackThread( webTagValue, component_callback_ptr);
+  // 方法2：创建线程调用
+  // std::thread threadObj(SetComponentCallbackThread, webTagValue, component_callback_ptr);
+  // threadObj.join();
+  OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, LOG_PRINT_COMPONENT, "ndk NativeWebInit end");
+  napi_get_boolean(env, result, &results);
+  return results;
+}
+
 
 // SetComponentCallbackThread
 void SetComponentCallbackThread(const char* webTagValue,
@@ -180,6 +243,8 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"nativeWebInit", nullptr, NativeWebInit, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setScrollCallback", nullptr, NAPI_Global_setScrollCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"nativeWebInitFalse", nullptr, NativeWebInitFalse, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"nativeWebInitTrue", nullptr, NativeWebInitTrue, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

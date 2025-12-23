@@ -949,10 +949,10 @@ static napi_value OHAudioDecoderPushInputBuffer(napi_env env, napi_callback_info
     OH_AudioCodec_RegisterCallback(audioDec, callback, signal_);
     OH_AudioCodec_Configure(audioDec, format);
     OH_AudioCodec_Start(audioDec);
-	{
-	    unique_lock<mutex> lock(signal_->inMutex_);
-	    signal_->inCond_.wait(lock, []() { return (signal_->inQueue_.size() > 0);});
-	}
+    {
+        unique_lock<mutex> lock(signal_->inMutex_);
+        signal_->inCond_.wait(lock, []() { return (signal_->inQueue_.size() > 0);});
+    }
     if (signal_->inQueue_.front() == 0) {
         backParam = SUCCESS;
     }
@@ -1238,6 +1238,56 @@ static napi_value OHAudioDecoderOutputFormatChange(napi_env env, napi_callback_i
     return result;
 }
 
+static napi_value OHAudioDecoderOutputFormatChangeSync(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    uint32_t inputIndex = 0;
+    uint32_t outputIndex = 0;
+    int64_t timeout = 20000;
+    OH_AVErrCode checkParam;
+    OH_AVFormat *format = nullptr;
+    OH_AVCodecBufferAttr attr;
+    uint64_t needSize;
+    format = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLERATE);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, SAMPLE_S16LE);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    // not match actual channels
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, 1);
+    g_audioDec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AAC, false);
+
+    OH_AudioCodec_Configure(g_audioDec, format);
+    OH_AudioCodec_Start(g_audioDec);
+    
+    g_inputFile.open("/data/storage/el2/base/haps/entry_test/files/aac_2c_44100hz_199k_lc.dat", std::ios::binary);
+    if (!g_inputFile.is_open()) {
+        napi_create_int32(env, backParam, &result);
+        return result;
+    }
+    OH_AudioCodec_QueryInputBuffer(g_audioDec, &inputIndex, timeout);
+    OH_AVBuffer *buffer = OH_AudioCodec_GetInputBuffer(g_audioDec, inputIndex);
+    if (buffer != nullptr) {
+        g_inputFile.read(reinterpret_cast<char *>(&needSize), sizeof(needSize));
+        attr.size = (int32_t)needSize;
+        g_inputFile.read(reinterpret_cast<char *>(&attr.pts), sizeof(attr.pts));
+        attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
+        OH_AVBuffer_SetBufferAttr(buffer, &attr);
+        g_inputFile.read((char *)OH_AVBuffer_GetAddr(buffer), attr.size);
+        OH_AudioCodec_PushInputBuffer(g_audioDec, inputIndex);
+        
+        checkParam = OH_AudioCodec_QueryOutputBuffer(g_audioDec, &outputIndex, timeout);
+        if (checkParam == AV_ERR_STREAM_CHANGED) {
+            backParam = SUCCESS;
+        }
+    }
+    g_inputFile.close();
+    
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1330,6 +1380,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"OHAudioDecoderOutputFormatChange", nullptr, OHAudioDecoderOutputFormatChange, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"OHAudioDecoderOutputFormatChangeSync", nullptr, OHAudioDecoderOutputFormatChangeSync, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

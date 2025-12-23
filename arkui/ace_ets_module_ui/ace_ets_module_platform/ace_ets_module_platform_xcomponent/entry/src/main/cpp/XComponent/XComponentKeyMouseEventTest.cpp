@@ -477,6 +477,25 @@ void DispatchKeyEventCB(OH_NativeXComponent *component, void *window)
     OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "key: %{public}s", stateString.c_str());
 }
 
+void DispatchAxisEventCB(OH_NativeXComponent *component, ArkUI_UIInputEvent *event, ArkUI_UIInputEvent_Type type) {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Callback", "DispatchAxisEventCB");
+    if (component == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Callback", "DispatchAxisEventCB: component is null");
+        return;
+    }
+    if (type == ArkUI_UIInputEvent_Type::ARKUI_UIINPUTEVENT_TYPE_AXIS) {
+        int32_t actionValue = OH_ArkUI_AxisEvent_GetAxisAction(event);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Callback", "DispatchAxisEventCB actionValue %{public}d",
+                     actionValue);
+    }
+}
+
+HitTestMode OnTouchInterceptCallback(OH_NativeXComponent* component, ArkUI_UIInputEvent* event)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Callback", "OnTouchInterceptCallback");
+    return HTM_BLOCK;
+}
+
 ArkUI_NodeHandle CreateKeyMouseEventNodeHandle(const std::string &tag)
 {
     // 创建XC组件
@@ -815,6 +834,79 @@ napi_value XComponentKeyMouseEventTest::TestGetTouchPointErrorCode_02(napi_env e
     ASSERT_EQ(ret2, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
     ASSERT_EQ(ret3, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
     ASSERT_EQ(ret4, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestRegisterUIInputEventCallbackErrorCode_01(napi_env env, napi_callback_info info)
+{
+    NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
+
+    OH_NativeXComponent* nativeXComponent = OH_NativeXComponent_GetNativeXComponent(xcomponent);
+    int32_t ret = OH_NativeXComponent_RegisterUIInputEventCallback(nativeXComponent, DispatchAxisEventCB,
+        ArkUI_UIInputEvent_Type::ARKUI_UIINPUTEVENT_TYPE_AXIS);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestRegisterUIInputEventCallbackErrorCode_01: %{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestRegisterUIInputEventCallbackErrorCode_02(napi_env env, napi_callback_info info)
+{
+    int32_t ret = OH_NativeXComponent_RegisterUIInputEventCallback(nullptr, DispatchAxisEventCB,
+        ArkUI_UIInputEvent_Type::ARKUI_UIINPUTEVENT_TYPE_AXIS);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestRegisterUIInputEventCallbackErrorCode_02: %{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestRegisterOnTouchInterceptCallbackErrorCode_01(napi_env env, napi_callback_info info)
+{
+    NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
+
+    OH_NativeXComponent* nativeXComponent = OH_NativeXComponent_GetNativeXComponent(xcomponent);
+    int32_t ret = OH_NativeXComponent_RegisterOnTouchInterceptCallback(nativeXComponent, OnTouchInterceptCallback);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestRegisterOnTouchInterceptCallbackErrorCode_01: %{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestRegisterOnTouchInterceptCallbackErrorCode_02(napi_env env, napi_callback_info info)
+{
+    int32_t ret = OH_NativeXComponent_RegisterOnTouchInterceptCallback(nullptr, OnTouchInterceptCallback);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestRegisterOnTouchInterceptCallbackErrorCode_02: %{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestGetNativeAccessibilityProviderErrorCode_01(napi_env env, napi_callback_info info)
+{
+    NAPI_START(xcomponent, ARKUI_NODE_XCOMPONENT);
+
+    ArkUI_AccessibilityProvider* handle;
+    OH_NativeXComponent* nativeXComponent = OH_NativeXComponent_GetNativeXComponent(xcomponent);
+    int32_t ret = OH_NativeXComponent_GetNativeAccessibilityProvider(nativeXComponent, &handle);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetNativeAccessibilityProviderErrorCode_01: %{public}d", ret);
+
+    ASSERT_EQ(ret, OH_NATIVEXCOMPONENT_RESULT_SUCCESS);
+
+    NAPI_END;
+}
+
+napi_value XComponentKeyMouseEventTest::TestGetNativeAccessibilityProviderErrorCode_02(napi_env env, napi_callback_info info)
+{
+    ArkUI_AccessibilityProvider* handle;
+    int32_t ret = OH_NativeXComponent_GetNativeAccessibilityProvider(nullptr, &handle);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestGetNativeAccessibilityProviderErrorCode_02: %{public}d", ret);
+
+    ASSERT_EQ(ret, OH_NATIVEXCOMPONENT_RESULT_BAD_PARAMETER);
 
     NAPI_END;
 }

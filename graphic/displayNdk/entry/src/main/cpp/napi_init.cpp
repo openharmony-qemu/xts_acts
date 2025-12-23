@@ -20,7 +20,18 @@
 #include <hilog/log.h>
 #include <window_manager/oh_display_info.h>
 #include <window_manager/oh_display_manager.h>
-
+#define PARAM_0 0
+#define PARAM_1 1
+#define PARAM_2 2
+#define PARAM_3 3
+#define PARAM_4 4
+#define PARAM_5 5
+#define PARAM_6 6
+#define PARAM_7 7
+#define PARAM_8 8
+#define PARAM_9 9
+#define PARAM_202 202
+#define PARAM_1400002 1400002
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -640,37 +651,60 @@ static napi_value RegisterDisplayRemoveListener_ErrCode140004(napi_env env, napi
     return errorCode;
 }
 
-EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports)
+napi_value TestNativeDisplayManager_ErrorCode_enum(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    napi_value retValue;
+    if (NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_ERROR_NOT_SYSTEM_APP == PARAM_202 &&
+        NativeDisplayManager_ErrorCode::DISPLAY_MANAGER_ERROR_INVALID_CALL == PARAM_1400002) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, -1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value TestNativeDisplayManager_FoldDisplayMode_enum(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    napi_value retValue;
+    if (NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_UNKNOWN == PARAM_0 &&
+        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_FULL == PARAM_1 &&
+        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_MAIN == PARAM_2 &&
+        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_SUB == PARAM_3 &&
+        NativeDisplayManager_FoldDisplayMode::DISPLAY_MANAGER_FOLD_DISPLAY_MODE_COORDINATION == PARAM_4) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, -1, &retValue);
+    }
+    return retValue;
+}
+
+napi_value TestNativeDisplayManager_SourceMode_enum(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    napi_value retValue;
+    if (NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_NONE == PARAM_0 &&
+        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_MAIN == PARAM_1 &&
+        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_MIRROR == PARAM_2 &&
+        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_EXTEND == PARAM_3 &&
+        NativeDisplayManager_SourceMode::DISPLAY_SOURCE_MODE_ALONE == PARAM_4) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, -1, &retValue);
+    }
+    return retValue;
+}
+
+static napi_value displayInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getId", nullptr, GetDefaultDisplayId, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getWidth", nullptr, GetDefaultDisplayWidth, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getHeight", nullptr, GetDefaultDisplayHeight, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getRotation", nullptr, GetDefaultDisplayRotation, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getOrientation", nullptr, GetDefaultDisplayOrientation, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getVirtualPixelRatio", nullptr, GetDefaultDisplayVirtualPixelRatio, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "getRefreshRate", nullptr, GetDefaultDisplayRefreshRate, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getDensityDpi", nullptr, GetDefaultDisplayDensityDpi, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getDensityPixels", nullptr, GetDefaultDisplayDensityPixels, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "getScaledDensity", nullptr, GetDefaultDisplayScaledDensity, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "getDensityXdpi", nullptr, GetDefaultDisplayDensityXdpi, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getDensityYdpi", nullptr, GetDefaultDisplayDensityYdpi, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getCutoutInfo", nullptr, CreateDefaultDisplayCutoutInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "checkIsFoldDevice", nullptr, IsFoldable, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getDisplayMode", nullptr, GetFoldDisplayMode, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "registerDisplayChange", nullptr, RegisterDisplayChangeListener, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "unregisterDisplayChange", nullptr, UnregisterDisplayChangeListener, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "registerFoldDisplayModeChange", nullptr, RegisterFoldDisplayModeChangeListener, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
-        { "unregisterFoldDisplayModeChange", nullptr, UnregisterFoldDisplayModeChangeListener, nullptr, nullptr,
-            nullptr, napi_default, nullptr },
         { "createAvailableArea", nullptr, CreateAvailableArea, nullptr, nullptr,
             nullptr, napi_default, nullptr },
         { "createAvailableArea_ErrCode140004", nullptr, CreateAvailableArea_ErrCode140004, nullptr, nullptr,
@@ -707,7 +741,58 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "registerDisplayRemoveListener_ErrCode140004", nullptr, RegisterDisplayRemoveListener_ErrCode140004,
             nullptr, nullptr, nullptr, napi_default, nullptr },
-        
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+
+static napi_value windowEnumInit(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"testNativeDisplayManager_ErrorCode_enum", nullptr,
+            TestNativeDisplayManager_ErrorCode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testNativeDisplayManager_FoldDisplayMode_enum", nullptr,
+            TestNativeDisplayManager_FoldDisplayMode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testNativeDisplayManager_SourceMode_enum", nullptr,
+            TestNativeDisplayManager_SourceMode_enum, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    displayInit(env, exports);
+    windowEnumInit(env, exports);
+    napi_property_descriptor desc[] = {
+        { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getId", nullptr, GetDefaultDisplayId, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getWidth", nullptr, GetDefaultDisplayWidth, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getHeight", nullptr, GetDefaultDisplayHeight, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getRotation", nullptr, GetDefaultDisplayRotation, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getOrientation", nullptr, GetDefaultDisplayOrientation, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getVirtualPixelRatio", nullptr, GetDefaultDisplayVirtualPixelRatio, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getRefreshRate", nullptr, GetDefaultDisplayRefreshRate, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getDensityDpi", nullptr, GetDefaultDisplayDensityDpi, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getDensityPixels", nullptr, GetDefaultDisplayDensityPixels, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getScaledDensity", nullptr, GetDefaultDisplayScaledDensity, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getDensityXdpi", nullptr, GetDefaultDisplayDensityXdpi, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getDensityYdpi", nullptr, GetDefaultDisplayDensityYdpi, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getCutoutInfo", nullptr, CreateDefaultDisplayCutoutInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkIsFoldDevice", nullptr, IsFoldable, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getDisplayMode", nullptr, GetFoldDisplayMode, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "registerDisplayChange", nullptr, RegisterDisplayChangeListener, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "unregisterDisplayChange", nullptr, UnregisterDisplayChangeListener, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "registerFoldDisplayModeChange", nullptr, RegisterFoldDisplayModeChangeListener, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "unregisterFoldDisplayModeChange", nullptr, UnregisterFoldDisplayModeChangeListener, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

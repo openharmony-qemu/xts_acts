@@ -30,6 +30,42 @@ import RelationStoreError17Test from "./RelationStoreError17Api.test";
 import RelationStoreError33Test from './RelationStoreError33Api.test';
 import RelationStoreError801Test from "./RelationStoreError801Api.test";
 import RelationStoreError1001Test from "./RelationStoreError1001Api.test";
+import RelationalStoreSyncApiTest from "./RelationalStoreSyncApiTest.test"; 
+import RelationalStoreCloudSync from "./RelationalStoreCloudSync.test";
+import RelationalStoreDistributedJsunit from "./RelationalStoreDistributedJsunit.test";
+import RelationalStoreCloudSyncEts from "./RelationalStoreCloudSyncEts.test";
+import VectorStore from "./VectorStore.test";
+
+import RelationStoreSqlExecTimeTest from "./RelationStoreSqlExecTimeTest.test";
+import RdbStoreAttachEtsunit from "./RdbStoreAttachEtsunit.test";
+
+import RelationalStorePredicatesJsunit from "./RelationalStorePredicatesJsunit.test";
+import RelationalStoreCloudCursor from "./RelationalStoreCloudCursor.test";
+import RelationalStoreResultSetSync from "./RelationalStoreResultSetSync.test";
+import RelationalStoreInterfaceTest from  "./RelationalStore.test";
+import RelationalStoreBackupRestoreWithFAContextJsunit from "./RelationalStoreBackupRestoreWithFAContextJsunit.test";
+
+import RdbErrorCode14800011 from "./RdbErrorCode14800011.test";
+import RdbErrorCode14800010 from "./RdbErrorCode14800010.test";
+import RdbErrorCode14800032 from "./RdbErrorCode14800032.test";
+import RdbErrorCode14800014 from "./RdbErrorCode14800014.test";
+import RdbErrorCode14800012 from "./RdbErrorCode14800012.test";
+import RdbErrorCode14800013 from "./RdbErrorCode14800013.test";
+import RdbErrorCode14800015 from "./RdbErrorCode14800015.test";
+import RdbErrorCode14800016 from "./RdbErrorCode14800016.test";
+import RdbErrorCode14800024 from "./RdbErrorCode14800024.test";
+import RdbErrorCode14800033 from "./RdbErrorCode14800033.test";
+import RdbErrorCode14800033 from "./RdbErrorCode14800033.test";
+import RdbErrorCode801 from "./RdbErrorCode801.test";
+import RdbErrorCode14800050 from "./RdbErrorCode14800050.test";
+import RdbErrorCode14800051 from "./RdbErrorCode14800051.test";
+import RdbErrorCode14801001 from "./RdbErrorCode14801001.test";
+import RdbErrorCode14801002 from "./RdbErrorCode14801002.test";
+import RDBErrorCode18Test from "./RDBErrorCode18Test.test";
+import RDBErrorCode21Test from "./RDBErrorCode21Test.test";
+
+import CallbackTest from "./CallbackTest.test";
+import AsyncCallback from "./AsyncCallback.test";
 
 export default function testsuite() {
   RelationStoreRdbStoreTest();
@@ -48,4 +84,40 @@ export default function testsuite() {
   RelationStoreError17Test();
   RelationStoreError801Test();
   RelationStoreError1001Test();
+
+  RelationalStoreSyncApiTest();  
+  RelationalStoreCloudSync();  
+  RelationalStoreDistributedJsunit();
+  RelationalStoreCloudSyncEts();
+  
+  RelationalStoreResultSetSync(); 
+  
+  RelationalStoreInterfaceTest();
+  RelationalStoreBackupRestoreWithFAContextJsunit();
+  RelationalStorePredicatesJsunit();
+  VectorStore();
+  RelationalStoreCloudCursor();
+  RdbStoreAttachEtsunit();
+  RelationStoreSqlExecTimeTest();
+  
+  RdbErrorCode14800010();
+  RdbErrorCode14800013();
+  RdbErrorCode14800015();
+  RdbErrorCode14800024();
+  RdbErrorCode14800050();
+  RdbErrorCode14800051();
+  RdbErrorCode14801002();
+  RdbErrorCode14800016();
+  RdbErrorCode14801001();
+  RdbErrorCode14800012();
+  RdbErrorCode14800014();
+  RdbErrorCode14800011();
+  RdbErrorCode14800032();
+  RdbErrorCode14800033();
+  RdbErrorCode801();
+  RDBErrorCode18Test();
+  RDBErrorCode21Test();
+
+  CallbackTest();
+  AsyncCallback();
 }

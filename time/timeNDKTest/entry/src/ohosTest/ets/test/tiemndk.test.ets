@@ -110,5 +110,26 @@ export default function timeNdkTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_Time_TimeService_ErrCode_0100
+     * @tc.number SUB_Time_TimeService_ErrCode_0100
+     * @tc.desc   SUB_Time_TimeService_ErrCode_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Time_TimeService_ErrCode_0100', Level.LEVEL2, (done: Function) => {
+      try {
+        let result = testNapi.getTimezone_0500();
+        console.info(`====>SUB_Time_TimeService_ErrCode_0100 result: ${result}`);
+        expect(result == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Time_TimeService_ErrCode_0100 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    })
+
   })
 }

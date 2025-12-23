@@ -250,7 +250,7 @@ export default function TaskpoolTest() {
           taskpool.execute(taskArray[i], i % 3).then((res: Object) => {
             console.info(`${caseName}: result: ${i % 3}`);
             num++;
-            if (num == 120) {
+            if (res == 119) {
               console.info(`${caseName}: result: ${i % 3}`);
               expect(i % 3 == 2).assertTrue();
             }

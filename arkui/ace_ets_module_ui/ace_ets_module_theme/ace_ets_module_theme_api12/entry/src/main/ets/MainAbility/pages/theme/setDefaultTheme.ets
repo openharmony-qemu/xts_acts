@@ -14,7 +14,7 @@
  */
 
 
-import { CustomTheme, CustomColors, ThemeControl } from '@ohos.arkui.theme';
+import { CustomTheme, CustomColors, CustomDarkColors, ThemeControl } from '@ohos.arkui.theme';
 
 // 自定义主题颜色
 class BlueColors implements CustomColors {
@@ -24,6 +24,7 @@ class BlueColors implements CustomColors {
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors;
+  darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;

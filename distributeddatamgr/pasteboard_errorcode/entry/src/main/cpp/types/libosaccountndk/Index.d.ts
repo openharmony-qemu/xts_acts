@@ -18,3 +18,7 @@ export const PasteboardDestroyError: () => number;
 export const PasteboardGetDataSourceInvalidParameter: () => number;
 export const PasteboardSetDataInvalidParameter: () => number;
 export const PasteboardClearDataInvalidParameter: () => number;
+export const PasteboardErrDeviceNotSupported: () => number;
+export const PasteboardErrBusy: () => number;
+export const PasteboardErrPateboardProgressStartError: () => number;
+export const PasteboardErrPasteBoardProgressAbnormal: () => number;

@@ -48,7 +48,7 @@ export default function twoWayBindTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('twoWayBindTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('twoWayBindTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('twoWayBindTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

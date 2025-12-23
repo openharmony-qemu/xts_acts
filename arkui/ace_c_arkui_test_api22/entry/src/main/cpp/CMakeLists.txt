@@ -16,6 +16,7 @@ add_library(nativerender SHARED
     image/ImageAltTest.cpp
     textMinLines/MinLinesTest.cpp
     hasAxisTest/HasAxisTest.cpp
+    InteractiveFramework/RegionListTest.cpp
     list/CoastingAxisTest.cpp
     component/ButtonComponentTest.cpp
     component/ComponentTest.cpp
@@ -39,6 +40,8 @@ add_library(nativerender SHARED
     component/GridComponentTest.cpp
     grid/GridFillPolicyTest.cpp
     grid/GridEventTest.cpp
+    clipShape/ClipShapeTest.cpp
+    CustomComponent/CustomMarkDirtyTest.cpp
 )
 
 add_library(nativefunc SHARED

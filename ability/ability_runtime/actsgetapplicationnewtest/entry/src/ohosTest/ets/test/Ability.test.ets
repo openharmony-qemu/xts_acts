@@ -10,7 +10,9 @@ import { bundleManager } from '@kit.AbilityKit';
 let ACTS_CallFunction: commonEventManager.CommonEventSubscribeInfo = {
   events: ['0100', '0200', '0300', '0400', '0500', '0600', '0700', '0800', '0900', '1000', '1100', '1200', '1300']
 };
-
+let ACTS_CallFunction2: commonEventManager.CommonEventSubscribeInfo = {
+  events: ['Instance_0100']
+};
 const TAG = 'ActsGetApplicationNewTest';
 
 let subscriber: commonEventManager.CommonEventSubscriber;
@@ -990,6 +992,82 @@ export default function abilityTest() {
         }, 1000);
       } catch (err) {
         console.log('SUB_Ability_AbilityRuntime_GetApplicationContext_1300 error: ', JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100
+     * @tc.desc   Call the global GetApplicationContextInstance function to obtain applicationInfo and sandbox path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.log(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 start');
+        commonEventManager.createSubscriber(ACTS_CallFunction2).then(async (data) => {
+          console.info(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 createSubscriber data');
+          subscriber = data;
+          commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
+            console.info(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 subscribe');
+            getContextEntry().terminateSelf();
+            if (data.event == 'Instance_0100') {
+              console.info(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 data event');
+              expect(data.parameters?.data1?.applicationInfoname).assertEqual("com.example.contexttest");
+              expect(data.parameters?.data1?.applicationInfoname).assertEqual(data.parameters?.data2?.applicationInfoname);
+              expect(data.parameters?.data1?.applicationInfodescription).assertEqual(data.parameters?.data2?.applicationInfodescription);
+              expect(data.parameters?.data1?.applicationInfodescriptionId).assertEqual(data.parameters?.data2?.applicationInfodescriptionId);
+              expect(data.parameters?.data1?.applicationInfoenabled).assertEqual(data.parameters?.data2?.applicationInfoenabled);
+              expect(data.parameters?.data1?.applicationInfolabel).assertEqual(data.parameters?.data2?.applicationInfolabel);
+              expect(data.parameters?.data1?.applicationInfolabelId).assertEqual(data.parameters?.data2?.applicationInfolabelId);
+              expect(data.parameters?.data1?.applicationInfoicon).assertEqual(data.parameters?.data2?.applicationInfoicon);
+              expect(data.parameters?.data1?.applicationInfoiconId).assertEqual(data.parameters?.data2?.applicationInfoiconId);
+              expect(data.parameters?.data1?.applicationInfoprocess).assertEqual(data.parameters?.data2?.applicationInfoprocess);
+              expect(data.parameters?.data1?.applicationInfocodePath).assertEqual(data.parameters?.data2?.applicationInfocodePath);
+              expect(data.parameters?.data1?.applicationInforemovable).assertEqual(data.parameters?.data2?.applicationInforemovable);
+              expect(data.parameters?.data1?.applicationInfoaccessTokenId).assertEqual(data.parameters?.data2?.applicationInfoaccessTokenId);
+              expect(data.parameters?.data1?.applicationInfoappDistributionType).assertEqual(data.parameters?.data2?.applicationInfoappDistributionType);
+              expect(data.parameters?.data1?.applicationInfoappProvisionType).assertEqual(data.parameters?.data2?.applicationInfoappProvisionType);
+              expect(data.parameters?.data1?.applicationInfosystemApp).assertEqual(data.parameters?.data2?.applicationInfosystemApp);
+              expect(data.parameters?.data1?.applicationInfodebug).assertEqual(data.parameters?.data2?.applicationInfodebug);
+              expect(data.parameters?.data1?.applicationInfonativeLibraryPath).assertEqual(data.parameters?.data2?.applicationInfonativeLibraryPath);
+              expect(data.parameters?.data1?.applicationInfoappIndex).assertEqual(data.parameters?.data2?.applicationInfoappIndex);
+              expect(data.parameters?.data1?.applicationInfoinstallSource).assertEqual(data.parameters?.data2?.applicationInfoinstallSource);
+              expect(data.parameters?.data1?.applicationInforeleaseType).assertEqual(data.parameters?.data2?.applicationInforeleaseType);
+              expect(data.parameters?.data1?.applicationInfocloudFileSyncEnabled).assertEqual(data.parameters?.data2?.applicationInfocloudFileSyncEnabled);
+              expect(data.parameters?.data1?.cacheDir).assertEqual(data.parameters?.data2?.cacheDir);
+              expect(data.parameters?.data1?.tempDir).assertEqual(data.parameters?.data2?.tempDir);
+              expect(data.parameters?.data1?.filesDir).assertEqual(data.parameters?.data2?.filesDir);
+              expect(data.parameters?.data1?.databaseDir).assertEqual(data.parameters?.data2?.databaseDir);
+              expect(data.parameters?.data1?.preferencesDir).assertEqual(data.parameters?.data2?.preferencesDir);
+              expect(data.parameters?.data1?.bundleCodeDir).assertEqual(data.parameters?.data2?.bundleCodeDir);
+              expect(data.parameters?.data1?.distributedFilesDir).assertEqual(data.parameters?.data2?.distributedFilesDir);
+              expect(data.parameters?.data1?.resourceDir).assertEqual(data.parameters?.data2?.resourceDir);
+              expect(data.parameters?.data1?.cloudFileDir).assertEqual(data.parameters?.data2?.cloudFileDir);
+              done();
+            }
+          });
+        });
+
+        console.log(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 StartAbility start');
+        let want: Want = {
+          bundleName: 'com.example.contexttest',
+          abilityName: 'EntryAbilityThree'
+        };
+        console.log(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 getAbilityDelegator end');
+        setTimeout(() => {
+          AbilityDelegatorRegistry.getAbilityDelegator().startAbility(want).then(() => {
+            console.log(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 StartAbility successfully.');
+          }).catch((err: BusinessError) => {
+            console.error(TAG, 'SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 StartAbility err: ' + err.code);
+          })
+        }, 1000);
+      } catch (err) {
+        console.log('SUB_Ability_AbilityRuntime_GetApplicationContextInstance_0100 error: ', JSON.stringify(err));
         expect().assertFail();
         done();
       }

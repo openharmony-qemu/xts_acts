@@ -52,7 +52,7 @@ export default function VOneToVTwoTest0010() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('VOneToVTwoTest0010_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('VOneToVTwoTest0010_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[VOneToVTwoTest0010_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

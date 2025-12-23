@@ -42,6 +42,7 @@ let openDialog = async (dialogKey: string, text: string) => {
   if (allowed) {
     if (dialogKey.indexOf('选择打开方式') >= 0) {
       let moreButtons = await driver.findComponents(ON.text('更多打开方式', MatchPattern.CONTAINS));
+      hilog.info(DOMAIN, LOG_TAG, 'moreButtons : %{public}s', JSON.stringify(moreButtons));
       if (moreButtons && moreButtons.length > 0) {
         hilog.info(DOMAIN, LOG_TAG, 'clicking 更多打开方式');
         await moreButtons[moreButtons.length -1].click();
@@ -50,6 +51,7 @@ let openDialog = async (dialogKey: string, text: string) => {
       await sleep(500);
     }
     let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
+    hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);

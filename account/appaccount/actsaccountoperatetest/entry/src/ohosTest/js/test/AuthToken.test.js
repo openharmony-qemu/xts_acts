@@ -2314,15 +2314,15 @@ export default function ActsAccountAuthToken() {
          */
         it('ActsAccountAuthToken_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function(done) {
             console.info("====>ActsAccountAuthToken_4500 start====");
-            var nameLimit = '';
+            let nameLimit = '';
             for (let i = 0; i < LENGTHLIMIT + 1; i++) {
                 nameLimit += 't';
             }
-            var appAccountManager = account.createAppAccountManager();
+            let appAccountManager = account.createAppAccountManager();
             console.info("====>ActsAccountAuthToken_4500 create finish====");
             appAccountManager.deleteAuthToken(nameLimit,"com.example.actsaccounttest","authType","account_notExist_token", (err)=>{
                 console.info("====>clearauthToken ActsAccountAuthToken_4500 err:" + JSON.stringify(err));
-                expect(err.code!=0).assertEqual(true);
+                expect(err.code).assertEqual(12300002);
                 console.info("====>ActsAccountAuthToken_4500 end====");
                 done();
             });

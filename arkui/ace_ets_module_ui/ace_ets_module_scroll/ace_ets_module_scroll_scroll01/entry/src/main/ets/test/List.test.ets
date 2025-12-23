@@ -56,6 +56,8 @@ import scrollZoomModifier from './Scroll/scrollZoomModifier.test';
 import scrollDraggingFling from './Scroll/scrollDraggingFling.test';
 import scrollScrollbarColor from './Scroll/scrollScrollbarColor.test';
 import ScrollContentSize from './Scroll/ScrollContentSize.test';
+import scrollFlingMin from './Scroll/scrollFlingMin.test';
+import scrollFrictionMin from './Scroll/scrollFrictionMin.test';
 import scrollFrictionRes from './Scroll/scrollFrictionRes.test';
 import scrollOffsetRes from './Scroll/scrollOffsetRes.test';
 import scrollContentOffset from './Scroll/scrollContentOffset.test';
@@ -104,6 +106,8 @@ export default function testsuite() {
   scrollDraggingFling()
   scrollScrollbarColor()
   ScrollContentSize()
+  scrollFlingMin()
+  scrollFrictionMin()
   scrollFrictionRes()
   scrollOffsetRes()
   scrollContentOffset()

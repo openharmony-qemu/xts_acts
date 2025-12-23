@@ -241,5 +241,143 @@ export default function typefaceTest() {
         expect().assertFail();
       }
     });
+    /**
+     * @tc.name   testTypeFaceIsBoldNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0700
+     * @tc.desc   testTypeFaceIsBoldNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTypeFaceIsBoldNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const msg = 'testTypeFaceIsBoldNormalStatic';
+      const font = new drawing.Font();
+      try {
+        let typeface = font.getTypeface() as drawing.Typeface;
+        let result = typeface.isBold() ;
+        console.info(msg + ' isBold 1 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 1 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/NotoSansBengaliUI-Bold.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isBold();
+        console.info(msg + ' isBold 2 success ' + JSON.stringify(result));
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isBold();
+        console.info(msg + ' isBold 3 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 3 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsBoldMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0701
+     * @tc.desc   Test for testTypeFaceIsBoldMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceIsBoldMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsBoldMultipleCallsStatic';
+      const font = new drawing.Font();
+      let str = "/system/fonts/NotoSansBengaliUI-Bold.ttf";
+      let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let result = typeface.isBold();
+          console.info(msg + ' isBold successed step is: ' + i + "result is: " + result);
+          expect(result).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` isBold errorCode is:  ${e.code} + errormsg is: ${e.message} step is: ${i}`);
+          expect().assertFail();
+        }
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsItalicNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0800
+     * @tc.desc   testTypeFaceIsItalicNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTypeFaceIsItalicNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const msg = 'testTypeFaceIsItalicNormalStatic';
+      const font = new drawing.Font();
+      try {
+        let typeface = font.getTypeface() as drawing.Typeface;
+        let result = typeface.isItalic() ;
+        console.info(msg + ' isItalic 1 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 1 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isItalic();
+        console.info(msg + ' isItalic 2 success ' + JSON.stringify(result));
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isItalic();
+        console.info(msg + ' isItalic 3 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 3 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsItalicMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_STATIC_0801
+     * @tc.desc   Test for testTypeFaceIsItalicMultipleCallsStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceIsItalicMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsItalicMultipleCallsStatic';
+      const font = new drawing.Font();
+      let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+      let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let result = typeface.isItalic();
+          console.info(msg + ' isItalic successed step is: ' + i + "result is: " + result);
+          expect(result).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` isItalic errorCode is:  ${e.code} + errormsg is: ${e.message} step is: ${i}`);
+          expect().assertFail();
+        }
+      }
+    });
   })
 }

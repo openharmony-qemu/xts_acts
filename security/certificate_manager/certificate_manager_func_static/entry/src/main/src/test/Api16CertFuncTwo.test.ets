@@ -770,12 +770,29 @@ export default function api16CertFuncTestTwoUnit() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
       }
+      let credential : certManager.Credential = {
+        type: 'string',
+        alias: 'string',
+        keyUri: 'string',
+        certNum: 1,
+        keyNum: 1,
+        credentialData: new Uint8Array(),
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+
       try {
-        await certManager.getUkeyCertificate(keyUri, ukeyInfo);
+        let result : certManager.CMResult = await certManager.getUkeyCertificate(keyUri, ukeyInfo);
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credentialList is: ${result.credentialList}`)
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credentialDetailList is: ${result.credentialDetailList}`)
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 credential is: ${credential.certPurpose}`)
         expect(null).assertFail();
       } catch (err:BusinessError) {
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 error.code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(17500001);
+        if (err.code == 801) {
+          done();
+        } else {
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0800 error.code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(17500001);
+        }
       }
       done();
     });
@@ -798,11 +815,17 @@ export default function api16CertFuncTestTwoUnit() {
       let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
 
       try {
-        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        let result : certManagerDialog.CertReference = await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 certType is: ${result.certType}`)
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 keyUri is: ${result.keyUri}`)
         expect(null).assertFail();
       } catch (error:BusinessError) {
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 error.code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700001);
+        if (error.code == 801) {
+          done();
+        } else {
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_0400 error.code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700001);
+        }
       }
       done();
     });
@@ -825,11 +848,41 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openUkeyAuthDialog(context, ukeyAuthRequest);
         expect(null).assertFail();
       } catch (err:BusinessError) {
-        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 error.code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(29700003);
+        if (err.code == 801) {
+          done();
+        } else {
+          hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1200 error.code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(29700003);
+        }
       }
       done();
     });
 
+    /**
+     * @tc.number SUB_Security_CertManager_Ukey_Static_1300
+     * @tc.name SUB_Security_CertManager_Ukey_Static_1300
+     * @tc.desc abnormal test
+     * @tc.size MediumTest
+     * @tc.level Level3
+     * @tc.type Function
+     */
+    it('SUB_Security_CertManager_Ukey_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_Ukey_Static_1300: started ");
+      const context :common.Context = await GlobalContext.getContext();
+      let certTypes: Array<certManagerDialog.CertificateType> = [
+        certManagerDialog.CertificateType.CREDENTIAL_USER
+      ];
+      let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
+      let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
+
+      try {
+        await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
+        expect(null).assertFail();
+      } catch (error:BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(29700007);
+      }
+      done();
+    });
   })
 }

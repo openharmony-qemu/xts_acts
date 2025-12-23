@@ -105,6 +105,16 @@
         "exported": true
       },
       {
+        "name": "EntryAbilityThree",
+        "srcEntry": "./ets/entryabilitythree/EntryAbilityThree.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      },
+      {
         "name": "WorkerAbility",
         "srcEntry": "./ets/MainAbility/WorkerAbility.ets",
         "description": "$string:EntryAbility_desc",

@@ -128,8 +128,7 @@ export const testData: TestAttributes[] = [
   },
 ]
 interface itemType {
-  text: string,
-  backgroundColor: Color
+  text: string
 }
 
 @Entry
@@ -151,33 +150,27 @@ struct TabsAnimationExample {
   }
   @State data: itemType[] = [
     {
-      text: 'Red',
-      backgroundColor: Color.Red
+      text: 'Red'
     },
     {
-      text: 'Yellow',
-      backgroundColor: Color.Yellow
+      text: 'Yellow'
     },
     {
-      text: 'Blue',
-      backgroundColor: Color.Blue
+      text: 'Blue'
     }]
   @State data1: itemType[] = [
     {
-      text: 'Black',
-      backgroundColor: Color.Black
+      text: 'Black'
     },
     {
-      text: 'Blue',
-      backgroundColor: Color.Blue
+      text: 'Blue'
     },
     {
-      text: 'Green',
-      backgroundColor: Color.Green
+      text: 'Green'
+
     },
     {
-      text: 'Orange',
-      backgroundColor: Color.Orange
+      text: 'Orange'
     }]
   @State opacityList: number[] = [];
   @State scaleList: number[] = [];
@@ -185,6 +178,7 @@ struct TabsAnimationExample {
   @State currentIndex: number = 0;
   @State currentIndexOri: number = 0;
   private controller: TabsController = new TabsController();
+  private controller1: TabsController = new TabsController();
   @State textIndex:string = '111';
   @State textTabContentId:string = '111';
   @State textTabContentUniqueId:string = '111';
@@ -194,21 +188,22 @@ struct TabsAnimationExample {
   @State textLastIndex:string = '111';
   build() {
     Column() {
-      Text(this.textIndex)
-        .id('textIndex')
-      Text(this.textTabContentId)
-        .id('textTabContentId')
-      Text(this.textTabContentUniqueId)
-        .id('textTabContentUniqueId')
-      Text(this.textState)
-        .id('textState')
-      Text(this.textId)
-        .id('textId')
-      Text(this.textUniqueId)
-        .id('textUniqueId')
-      Text(this.textLastIndex)
-        .id('textLastIndex')
-
+      Row(){
+        Text(this.textIndex)
+          .id('textIndex')
+        Text(this.textTabContentId)
+          .id('textTabContentId')
+        Text(this.textTabContentUniqueId)
+          .id('textTabContentUniqueId')
+        Text(this.textState)
+          .id('textState')
+        Text(this.textId)
+          .id('textId')
+        Text(this.textUniqueId)
+          .id('textUniqueId')
+        Text(this.textLastIndex)
+          .id('textLastIndex')
+      }
       Row() {
         Button('get')
           .id('idGet')
@@ -221,11 +216,22 @@ struct TabsAnimationExample {
             this.textUniqueId = (AppStorage.get('uniqueId') as string) + '';
             this.textLastIndex = (AppStorage.get('lastIndex') as string) + '';
           })
-        Button('off')
+        Button('off1')
           .id('idOff')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
             observer.off('tabChange', { id: 'tab1' }, this.changeCallbackFunc);
+          })
+        Button('on2')
+          .id('idOn2')
+          .onClick(() => {
+            let observer = this.getUIContext().getUIObserver();
+            observer.on('tabChange', { id: 'tab2' }, this.changeCallbackFunc);
+          })
+        Button('增')
+          .id('add1')
+          .onClick(() => {
+            this.changeIndex1(this.currentIndexOri + 1)
           })
       }
       Row({ space: 5 }) {
@@ -241,19 +247,29 @@ struct TabsAnimationExample {
             this.changeIndex(this.currentIndex - 1)
           })
       }
-      
+
       Tabs({ controller: this.controller }) {
         ForEach(this.data1, (item: itemType, index: number) => {
           TabContent() {
           }
           .tabBar(item.text)
-          .backgroundColor(item.backgroundColor)
         })
       }
+      .height('10%')
       .id('tab1')
+      .width('50%')
+      Tabs({ controller: this.controller1 }) {
+        ForEach(this.data, (item: itemType, index: number) => {
+          TabContent() {
+          }
+          .tabBar(item.text)
+        })
+      }
+      .id('tab2')
       .backgroundColor(0xf1f3f5)
-      .width('100%')
-      .height('25%')
+      .width('50%')
+      .height('10%')
+      .vertical(true)
     }
   }
 
@@ -262,10 +278,21 @@ struct TabsAnimationExample {
     if (index < 0) {
       index = 0;
     }
-    index = index % this.data.length;
+    index = index % this.data1.length;
     console.log('changeIndex debug|index:' + index + ', length' + this.data1.length);
     this.controller.changeIndex(index);
     this.currentIndex = index;
+    console.log('changeIndex leave|currentIndex:' + index);
+  }
+  private changeIndex1(index: number) {
+    console.log('changeIndex enter|index:' + index);
+    if (index < 0) {
+      index = 0;
+    }
+    index = index % this.data.length;
+    console.log('changeIndex debug|index:' + index + ', length' + this.data1.length);
+    this.controller1.changeIndex(index);
+    this.currentIndexOri = index;
     console.log('changeIndex leave|currentIndex:' + index);
   }
 }
