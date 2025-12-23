@@ -1570,7 +1570,7 @@ export default function uitestDriverTestApi22() {
 
     /**
      * @tc.name   testToastShow_static
-     * @tc.number uitestDriverTest_Api22_020
+     * @tc.number uitestDriverTest_Api22_0281
      * @tc.desc   monitor toast appearance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1585,7 +1585,7 @@ export default function uitestDriverTestApi22() {
       let callback = (elementInfo : UIElementInfo) => {
         try {
           console.log(`${TestTag}, testToastShow_static elementInfo, ${JSON.stringify(elementInfo)}`);
-          let isCallBack = true;
+          isCallBack = true;
           console.info('elementInfo bundleName:'+ elementInfo.bundleName)
           console.info('elementInfo text:'+ elementInfo.text)
           console.info('elementInfo type:'+ elementInfo.type)
