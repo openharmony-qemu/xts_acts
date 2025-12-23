@@ -889,3 +889,358 @@ export function testSealedProxyGetOwnPropertyDescriptorMustMatchNonConfigurable(
         return true;
     }
 }
+
+/**
+ * 测试点72：在严格模式下，Proxy set 陷阱返回 false 会导致 TypeError（即使属性存在）
+ */
+export function testSealedProxySetTrapReturnsFalseThrowsInStrictMode() {
+    const obj = { a: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        set() {
+            return false;
+        }
+    });
+    try {
+        (function () {
+            'use strict';
+            proxy.a = 2;
+        })();
+        return false;
+    } catch (e) {
+        return e instanceof TypeError && obj.a === 1;
+    }
+}
+
+/**
+ * 测试点73：Proxy 的 has 陷阱返回 true 对不存在属性，in 操作符受骗，但不影响 seal 状态
+ */
+export function testSealedProxyHasTrapLiesAboutNonExistentProperty() {
+    const obj = { real: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        has(target, prop) {
+            return prop === 'fake' || Reflect.has(target, prop);
+        }
+    });
+    return ('fake' in proxy) === true && !('fake' in obj);
+}
+
+/**
+ * 测试点74：Object.seal 后，Proxy 无法通过扩展运算符 {...proxy} 添加属性（只复制自有可枚举）
+ */
+export function testSealedProxySpreadOperatorOnlyCopiesOwnEnumerable() {
+    const obj = { a: 1 };
+    Object.defineProperty(obj, 'b', { value: 2, enumerable: false });
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    const copy = { ...proxy };
+    return 'a' in copy && !('b' in copy);
+}
+
+/**
+ * 测试点76：sealed 对象的 Proxy 在 for...in 中不遍历 Symbol 属性（符合规范）
+ */
+export function testSealedProxyForInDoesNotEnumerateSymbolProperties() {
+    const sym = Symbol('s');
+    const obj = { strKey: 1, [sym]: 2 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    const keys = [];
+    for (const k in proxy) {
+        keys.push(k);
+    }
+    return keys.length === 1 && keys[0] === 'strKey';
+}
+
+/**
+ * 测试点77：Proxy 的 ownKeys 包含不可枚举属性，for...in 仍只遍历可枚举（正常）
+ */
+export function testSealedProxyOwnKeysIncludesNonEnumerableButForInDoesNot() {
+    const obj = {};
+    Object.defineProperty(obj, 'nonEnum', { value: 1, enumerable: false });
+    Object.defineProperty(obj, 'enum', { value: 2, enumerable: true });
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        ownKeys(target) {
+            return Reflect.ownKeys(target);
+        }
+    });
+    const forInKeys = [];
+    for (const k in proxy) {
+        forInKeys.push(k);
+    }
+    return forInKeys.length === 1 && forInKeys[0] === 'enum';
+}
+
+/**
+ * 测试点78：尝试通过 Proxy 修改 sealed 对象的 length（数组），若超出范围应失败
+ */
+export function testSealedArrayProxyCannotShrinkLengthBelowItems() {
+    const arr = [1, 2, 3];
+    Object.seal(arr);
+    const proxy = new Proxy(arr, {});
+    let success = true;
+    try {
+        proxy.length = 1;
+    } catch (e) {
+        success = false;
+    }
+    return arr.length === 3 && success === false;
+}
+
+/**
+ * 测试点79：Proxy 的 get 陷阱中 this 指向 proxy，而非 target（除非显式绑定）
+ */
+export function testSealedProxyGetTrapThisIsProxyNotTarget() {
+    const obj = { val: 1 };
+    Object.seal(obj);
+    let thisIsProxy = false;
+    const proxy = new Proxy(obj, {
+        get(target, prop, receiver) {
+            if (prop === 'val') {
+                thisIsProxy = receiver === proxy;
+            }
+            return Reflect.get(target, prop, receiver);
+        }
+    });
+    void proxy.val;
+    return thisIsProxy;
+}
+
+/**
+ * 测试点80：多个 Proxy 共享同一 sealed target，修改通过任一 Proxy 均同步
+ */
+export function testMultipleProxiesShareSameSealedTargetState() {
+    const obj = { shared: 0 };
+    Object.seal(obj);
+    const p1 = new Proxy(obj, {});
+    const p2 = new Proxy(obj, {});
+    p1.shared = 100;
+    return p2.shared === 100 && obj.shared === 100;
+}
+
+/**
+ * 测试点81：对 Object.create(null) 创建的对象 seal 后，Proxy 行为正常
+ */
+export function testSealedProxyOnNullPrototypeObject() {
+    const obj = Object.create(null);
+    obj.key = 'value';
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    proxy.key = 'updated';
+    proxy.newKey = 'fail';
+    return obj.key === 'updated' && !('newKey' in obj);
+}
+
+/**
+ * 测试点82：Proxy 的 set 陷阱中修改 target 的 prototype，应被拒绝（因 sealed）
+ */
+export function testSealedProxySetTrapCannotModifyPrototypeViaTarget() {
+    const obj = { a: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        set(target, prop, value) {
+            Object.setPrototypeOf(target, {});
+            target[prop] = value;
+            return true;
+        }
+    });
+    try {
+        proxy.a = 2;
+        return false;
+    } catch (e) {
+        return obj.a === 1;
+    }
+}
+
+/**
+ * 测试点83：Object.seal 后，Proxy 无法通过 Object.setPrototypeOf 修改 [[Prototype]]
+ */
+export function testSealedProxySetPrototypeOfViaObjectMethodFails() {
+    const obj = { x: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    let success = true;
+    try {
+        Object.setPrototypeOf(proxy, {});
+    } catch (e) {
+        success = false;
+    }
+    return success === false && Object.getPrototypeOf(proxy) === Object.prototype;
+}
+
+/**
+ * 测试点84：Proxy 拦截 get 时返回非原始值，不影响 sealed 状态
+ */
+export function testSealedProxyGetReturnsComputedObject() {
+    const obj = { base: 5 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        get(target, prop) {
+            if (prop === 'computed') {
+                return { value: target.base * 2 };
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+    const comp = proxy.computed;
+    return comp.value === 10 && obj.base === 5;
+}
+
+/**
+ * 测试点87：尝试通过 Proxy 访问 sealed 对象的 constructor 属性（来自原型），应成功
+ */
+export function testSealedProxyCanAccessInheritedConstructor() {
+    const obj = { data: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    return proxy.constructor === Object;
+}
+
+/**
+ * 测试点89：Object.seal 后，Proxy 无法通过 defineProperties 添加新属性
+ */
+export function testSealedProxyDefinePropertiesCannotAddNew() {
+    const obj = { a: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    try {
+        Object.defineProperties(proxy, { b: { value: 2 } });
+    } catch (e) {
+
+    }
+    return !('b' in obj);
+}
+
+/**
+ * 测试点90：Proxy 的 deleteProperty 陷阱在删除不存在属性时仍被调用
+ */
+export function testSealedProxyDeletePropertyTrapCalledForNonExistentProp() {
+    const obj = { a: 1 };
+    Object.seal(obj);
+    let trapCalled = false;
+    const proxy = new Proxy(obj, {
+        deleteProperty(target, prop) {
+            if (prop === 'missing') {
+                trapCalled = true;
+            }
+            return Reflect.deleteProperty(target, prop);
+        }
+    });
+    delete proxy.missing;
+    return trapCalled;
+}
+
+export function testSealedProxyAccessInNestedFunctionWorks() {
+    const obj = { nested: 100 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+
+    function inner() {
+        return proxy.nested;
+    }
+
+    return inner() === 100;
+}
+
+/**
+ * 测试点92：Proxy 的 handler 被 freeze，不影响对 sealed target 的操作
+ */
+export function testFrozenHandlerStillOperatesOnSealedTarget() {
+    const obj = { x: 1 };
+    Object.seal(obj);
+    const handler = {
+        get(target, prop) {
+            return prop === 'x' ? 'intercepted' : Reflect.get(target, prop);
+        }
+    };
+    Object.freeze(handler);
+    const proxy = new Proxy(obj, handler);
+    return proxy.x === 'intercepted';
+}
+
+/**
+ * 测试点94：Proxy 的 set 陷阱中抛出非 Error 对象，应被包装或传播
+ */
+export function testSealedProxySetTrapThrowsStringError() {
+    const obj = { a: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        set() {
+            throw 'not an error object';
+        }
+    });
+    try {
+        proxy.a = 2;
+        return false;
+    } catch (e) {
+        return e === 'not an error object' && obj.a === 1;
+    }
+}
+
+/**
+ * 测试点95：sealed 对象的 Proxy 在 try/catch 中安全使用
+ */
+export function testSealedProxySafeInTryCatch() {
+    const obj = { safe: true };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    let result = false;
+    try {
+        if (proxy.safe) {
+            proxy.safe = false;
+            result = proxy.safe;
+        }
+    } catch (e) {
+        return false;
+    }
+    return result === false && obj.safe === false;
+}
+
+/**
+ * 测试点96：Proxy 拦截 has 时抛出异常，in 操作符应传播错误
+ */
+export function testSealedProxyHasTrapThrowsCausesInToThrow() {
+    const obj = { a: 1 };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {
+        has() {
+            throw new Error('has failed');
+        }
+    });
+    try {
+        'a' in proxy;
+        return false;
+    } catch (e) {
+        return e.message === 'has failed';
+    }
+}
+
+/**
+ * 测试点98：Proxy 的 ownKeys 包含 Symbol.iterator，for...of 可工作（若定义）
+ */
+export function testSealedProxyWithCustomSymbolIteratorWorks() {
+    const obj = {};
+    obj[Symbol.iterator] = function* () {
+        yield 1;
+        yield 2;
+    };
+    Object.seal(obj);
+    const proxy = new Proxy(obj, {});
+    const arr = [...proxy];
+    return JSON.stringify(arr) === '[1,2]';
+}
+
+/**
+ * 测试点99：多个层级的 Proxy + seal，最内层对象状态一致
+ */
+export function testDeepNestedProxySealedInnermostObject() {
+    const obj = { level: 0 };
+    Object.seal(obj);
+    const p1 = new Proxy(obj, {});
+    const p2 = new Proxy(p1, {});
+    const p3 = new Proxy(p2, {});
+    p3.level = 99;
+    return obj.level === 99 && p1.level === 99 && p2.level === 99;
+}
