@@ -352,7 +352,7 @@ export default function audioFramework() {
         capturerInfo: audioCapturerInfo
       };
 
-      let audioCapturer: audio.AudioCapturer;
+      let audioCapturer: audio.AudioCapturer | null;
 
       audio.createAudioCapturer(audioCapturerOptions).then((data) => {
         audioCapturer = data;
@@ -399,7 +399,7 @@ export default function audioFramework() {
         data!.release().then(() => {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
-          console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer.state}`);
+          console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer!.state}`);
         }).catch(async(err: BusinessError) => {
           console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
           expect(true).assertFalse();

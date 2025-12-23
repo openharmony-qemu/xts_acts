@@ -180,7 +180,7 @@ export default function audioCapturerChange() {
 
       let resultFlag = false;
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
           audioCap = data;
@@ -204,7 +204,7 @@ export default function audioCapturerChange() {
             console.info(`${Tag}: ${Tag}: [CAPTURER-CHANGE-ON-002] ######### CapturerChange Off is called #########`);
 
             try {
-              await audioCap.release().then(() => {
+              await audioCap!.release().then(() => {
                 console.info(`${Tag}: ${Tag}: Capturer release : SUCCESS`);
               });
               done();
@@ -216,7 +216,7 @@ export default function audioCapturerChange() {
       });
 
       try {
-        await audioCap.start().then(() => {
+        await audioCap!.start().then(() => {
           console.info(`${Tag}: ${Tag}: Capturer started :Success `);
         });
       } catch (err: BusinessError) {
