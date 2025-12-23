@@ -2036,7 +2036,6 @@ export default function PhotoCreateAssetSuppTest() {
       });
     });
 
-    ////////////////////////////////////////////////////////第2个参数缺少空值""覆盖;第3个参数缺少空值undefined/null覆盖;//////////////////////////////////////
     /**
      * @tc.number     SUB_PHOTO_ACCESS_HELPER_CALLBACK_CREATE_PHOTO_00001
      * @tc.name       SUB_PHOTO_ACCESS_HELPER_CALLBACK_CREATE_PHOTO_00001
@@ -2424,8 +2423,6 @@ export default function PhotoCreateAssetSuppTest() {
       }
     });
 
-
-    ////////////////////////////////sendAble--PhotoAccessHelper--createAsset--第2个参数缺少空值""覆盖;第3个参数缺少空值undefined/null覆盖;第1个参数未覆盖枚举:['VIDEO']；第2个参数检查结果：字符串长度检查： 最小长度不满足,最小长度减1不满足,最大长度不满足,最大长度加1不满足,/////////////////////////////////////////
     /**
      * @tc.number     SUB_SEND_ABLE_PHOTO_ACCESS_HELPER_CALLBACK_CREATE_IMAGE_0001
      * @tc.name       SUB_SEND_ABLE_PHOTO_ACCESS_HELPER_CALLBACK_CREATE_IMAGE_0001
