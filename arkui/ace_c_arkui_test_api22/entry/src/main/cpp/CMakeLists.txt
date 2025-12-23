@@ -57,6 +57,8 @@ add_library(nativefunc SHARED
     component/ComponentTest.cpp
     component/GridComponentTest.cpp
     component/TextComponentTest.cpp
+    image/EnumTest.cpp
+    Text/EnumTest.cpp
 )
 
 find_library(
