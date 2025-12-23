@@ -14,7 +14,6 @@
  */
 
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
-import Utils from './Util.test';
 import {
   afterAll,
   afterEach,
@@ -27,14 +26,13 @@ import {
   Size,
   TestType
 } from "../../../hypium/index";
-class C{
 
-}
+class C{}
 export default function arrayTest() {
   describe("arrayTest", (): void => {
-    afterEach(() => {
-      await Utils.msSleep(20);
-    })
+    // afterEach(() => {
+    //   await Utils.msSleep(20);
+    // })
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_0100
      * @tc.name        testConstructor0001
@@ -277,17 +275,18 @@ export default function arrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testIsArray0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testIsArray0008";
-    //   try {
-    //     let result = Array.isArray(new C());
-    //     console.log(`${TAG} result:` + result);
-    //     expect(String(result)).assertEqual('false');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testIsArray0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testIsArray0008";
+      try {
+        let result = Array.isArray(new C());
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('false');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_1500
      * @tc.name        testIsArray0009
@@ -608,20 +607,20 @@ export default function arrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testPrototypeConcat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeConcat0006";
-    //   try {
-    const num1 = new Array<Number[]|Number>([1]);
-    const num2 = new Array<Number[]|Number>(2, 3);
-    const obj = (num1 as Array<Number[]|Number>).concat(num2 as Array<Number[]|Number>);
-    //     console.log(`${TAG} result:` + JSON.stringify(obj));
-    //     expect(JSON.stringify(obj)).assertEqual('[[1],2,3]');
-    //     expect(obj.length).assertEqual(3);
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testPrototypeConcat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testPrototypeConcat0006";
+      try {
+        const num1 = new Array<Number[]|Number>([1]);
+        const num2 = new Array<Number[]|Number>(2, 3);
+        const obj = (num1 as Array<Number[]|Number>).concat(num2 as Array<Number[]|Number>);
+        console.log(`${TAG} result:` + JSON.stringify(obj));
+        expect(JSON.stringify(obj)).assertEqual('[[1],2,3]');
+        expect(obj.length).assertEqual(3);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_3300
      * @tc.name        testPrototypeConcat0007
@@ -1012,18 +1011,19 @@ export default function arrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testPrototypeFlat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeFlat0001";
-    //   try {
-    //     const arr1 = new Array<number | number[]>(0, 1, 2, [3, 4]);
-    //     const obj = arr1.flat();
-    //     console.log(`${TAG} result:` + JSON.stringify(found));
-    //     expect(JSON.stringify(found)).assertEqual('[0,1,2,3,4]');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testPrototypeFlat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testPrototypeFlat0001";
+      try {
+        const arr1 = new Array<number | number[]>(0, 1, 2, [3, 4]);
+        const obj = arr1.flat();
+        console.log(`${TAG} result:` + JSON.stringify(obj));
+        expect(JSON.stringify(obj)).assertEqual('[0,1,2,3,4]');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_5300
      * @tc.name        testPrototypeFlat0002
@@ -1031,19 +1031,20 @@ export default function arrayTest() {
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 1
-    //  */
-    // it('testPrototypeFlat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeFlat0002";
-    //   try {
-    //     const arr2 = new Array<Number | (Number | Number[])[]>(1, 2, [3, 4, [5, 6]]);
-    //     let obj = arr2.flat();
-    //     console.log(`${TAG} result:` + JSON.stringify(arr2.flat()));
-    //     expect(JSON.stringify(arr2.flat())).assertEqual('[1,2,3,4,[5,6]]');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+     */
+    it('testPrototypeFlat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testPrototypeFlat0002";
+      try {
+        const arr2 = new Array<Number | (Number | Number[])[]>(1, 2, [3, 4, [5, 6]]);
+        let obj = arr2.flat();
+        console.log(`${TAG} result:` + JSON.stringify(obj));
+        expect(JSON.stringify(obj)).assertEqual('[1,2,3,4,[5,6]]');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_5400
      * @tc.name        testPrototypeFlat0003
@@ -1052,18 +1053,19 @@ export default function arrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testPrototypeFlat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeFlat0003";
-    //   try {
-    //     const arr3 = new Array<Number | (Number | Number[])[]>(1, 2, [3, 4, [5, 6]]);
-    //     let obj = arr3.flat(2);
-    //     console.log(`${TAG} result:` + JSON.stringify(arr3.flat(2)));
-    //     expect(JSON.stringify(arr3.flat(2))).assertEqual('[1,2,3,4,5,6]');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testPrototypeFlat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testPrototypeFlat0003";
+      try {
+        const arr3 = new Array<Number | (Number | Number[])[]>(1, 2, [3, 4, [5, 6]]);
+        let obj = arr3.flat(2);
+        console.log(`${TAG} result:` + JSON.stringify(arr3.flat(2)));
+        expect(JSON.stringify(arr3.flat(2))).assertEqual('[1,2,3,4,5,6]');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_5600
      * @tc.name        testPrototypeFlat0005
@@ -1092,18 +1094,19 @@ export default function arrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testPrototypeFlat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeFlat0006";
-    //   try {
-    //     const arr5: (number | undefined | (string | undefined))[] = [1,2 , 3, ["a", "b", "c"]];
-    //     let obj = arr5.flat();
-    //     console.log(`${TAG} result:` + JSON.stringify(obj));
-    //     expect(JSON.stringify(obj)).assertEqual('[1,2,3,"a","b","c"]');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testPrototypeFlat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testPrototypeFlat0006";
+      try {
+        const arr5: (number | undefined | (string[] | undefined[]))[] = [1,2 , 3, ["a", "b", "c"]];
+        let obj = arr5.flat();
+        console.log(`${TAG} result:` + JSON.stringify(obj));
+        expect(JSON.stringify(obj)).assertEqual('[1,2,3,"a","b","c"]');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_5800
      * @tc.name        testPrototypeFlat0007
@@ -1124,26 +1127,6 @@ export default function arrayTest() {
         expect(false).assertFail();
       }
     })
-    // /**
-    //  * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_5900
-    //  * @tc.name        testPrototypeFlat0008
-    //  * @tc.desc        Test the function of the interface PrototypeFlat
-    //  * @tc.size        MediumTest
-    //  * @tc.type        Function
-    //  * @tc.level       Level 1
-    //  */
-    // it('testPrototypeFlat0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeFlat0008";
-    //   try {
-    //     const array2: (number | undefined | (string | undefined | (string | undefined)[])[])[] = [1, , 3, ["a", , ["d", , "e"]]];
-    //     let obj = array2.flat(2);
-    //     console.log(`${TAG} result:` + JSON.stringify(obj));
-    //     expect(JSON.stringify(obj)).assertEqual('[1,3,"a","d","e"]');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_6000
      * @tc.name        testPrototypeFlat0009
@@ -1184,6 +1167,7 @@ export default function arrayTest() {
         expect(false).assertFail();
       }
     })
+    
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_6200
      * @tc.name        testPrototypeFlatMap0001
@@ -1192,17 +1176,18 @@ export default function arrayTest() {
      * @tc.type        Function
      * @tc.level       Level 1
      */
-    // it('testPrototypeFlatMap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testPrototypeFlatMap0001";
-    //   try {
-    //     const arr1 = new Array<number>(1, 2, 1);
-    //     const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
-    //     expect(JSON.stringify(result)).assertEqual('[1,2,2,1]');
-    //   } catch (err) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    it('testPrototypeFlatMap0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testPrototypeFlatMap0001";
+      try {
+        const arr1 = new Array<number>(1, 2, 1);
+        const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
+        expect(JSON.stringify(result)).assertEqual('[1,2,2,1]');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
     /**
      * @tc.number      SUB_COMMONLIBRARY_UTIL_BASE_ARRAY_6300
      * @tc.name        testPrototypeFlatMap0002
