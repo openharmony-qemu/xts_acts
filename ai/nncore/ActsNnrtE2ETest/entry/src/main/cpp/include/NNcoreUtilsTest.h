@@ -88,23 +88,27 @@ struct AddModel {
 };
 
 struct AvgPoolDynamicModel {
-    // ADD MODEL (Dynamic shape)
-    float inputValue0[4] = {0, 1, 2, 3};
-    float inputValue1[4] = {0, 1, 2, 3};
+    // AVG POOL MODEL
+    float inputValue[9] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+    uint64_t kernelValue[2] = {2, 2};
+    uint64_t strideValue[2] = {1, 1};
+    int8_t padValue = 1;
     int8_t activationValue = OH_NN_FUSED_NONE;
     float outputValue[4] = {0};
-    float expectValue[4] = {0, 2, 4, 6};
+    float expectValue[4] = {2, 3, 5, 6};
 
-    // 修改为2维动态形状 {-1, -1}，匹配4个元素的数据
-    OHNNOperandTest input0 = {OH_NN_FLOAT32, OH_NN_TENSOR, {-1, -1}, inputValue0, ADD_DATA_LENGTH};
-    OHNNOperandTest input1 = {OH_NN_FLOAT32, OH_NN_TENSOR, {-1, -1}, inputValue1, ADD_DATA_LENGTH};
-    OHNNOperandTest activation = {OH_NN_INT8, OH_NN_ADD_ACTIVATIONTYPE, {}, &activationValue, sizeof(int8_t)};
-    OHNNOperandTest output = {OH_NN_FLOAT32, OH_NN_TENSOR, {-1, -1}, outputValue, ADD_DATA_LENGTH};
-    OHNNGraphArgs graphArgs = {.operationType = OH_NN_OPS_ADD,
-                               .operands = {input0, input1, activation, output},
-                               .paramIndices = {2},
-                               .inputIndices = {0, 1},
-                               .outputIndices = {3}};
+    OHNNOperandTest dynamicInput = {OH_NN_FLOAT32, OH_NN_TENSOR, {-1, -1, -1, -1}, inputValue, AVG_INPUT_LENGTH};
+    OHNNOperandTest kernel = {OH_NN_INT64, OH_NN_AVG_POOL_KERNEL_SIZE, {2}, kernelValue, sizeof(kernelValue)};
+    OHNNOperandTest strides = {OH_NN_INT64, OH_NN_AVG_POOL_STRIDE, {2}, strideValue, sizeof(strideValue)};
+    OHNNOperandTest padMode = {OH_NN_INT8, OH_NN_AVG_POOL_PAD_MODE, {}, &padValue, sizeof(padValue)};
+    OHNNOperandTest activation = {OH_NN_INT8, OH_NN_AVG_POOL_ACTIVATION_TYPE, {}, &activationValue, sizeof(int8_t)};
+    OHNNOperandTest output = {OH_NN_FLOAT32, OH_NN_TENSOR, {-1, -1, -1, -1}, outputValue, sizeof(outputValue)};
+
+    OHNNGraphArgs graphArgs = {.operationType = OH_NN_OPS_AVG_POOL,
+                               .operands = {dynamicInput, kernel, strides, padMode, activation, output},
+                               .paramIndices = {1, 2, 3, 4},
+                               .inputIndices = {0},
+                               .outputIndices = {5}};
 };
 
 struct TopKModel {
