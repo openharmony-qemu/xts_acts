@@ -1241,405 +1241,405 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 
-function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: BadgeAttribute, componentKey: string): this {
+function commonStyle(this: BadgeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: BlankAttribute, componentKey: string): this {
+function commonStyle(this: BlankAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
 function commonStyleButton(this: ButtonAttribute, componentKey: string,
-  _radialGradient: RadialGradientOptions | undefined): this {
+  _radialGradient: RadialGradientOptions | undefined) {
   this.radialGradient(_radialGradient)
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+function commonStyle(this: CalendarPickerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+function commonStyle(this: CheckboxAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+function commonStyle(this: ColumnSplitAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: CounterAttribute, componentKey: string): this {
+function commonStyle(this: CounterAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+function commonStyle(this: DataPanelAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+function commonStyle(this: DatePickerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: EllipseAttribute, componentKey: string): this {
+function commonStyle(this: EllipseAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: FlexAttribute, componentKey: string): this {
+function commonStyle(this: FlexAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+function commonStyle(this: FlowItemAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+function commonStyle(this: FormLinkAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: GaugeAttribute, componentKey: string): this {
+function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: GridAttribute, componentKey: string): this {
+function commonStyle(this: GridAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: GridColAttribute, componentKey: string): this {
+function commonStyle(this: GridColAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: GridItemAttribute, componentKey: string): this {
+function commonStyle(this: GridItemAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: GridRowAttribute, componentKey: string): this {
+function commonStyle(this: GridRowAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+function commonStyle(this: HyperlinkAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ImageAttribute, componentKey: string): this {
+function commonStyle(this: ImageAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: LineAttribute, componentKey: string): this {
+function commonStyle(this: LineAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ListItemAttribute, componentKey: string): this {
+function commonStyle(this: ListItemAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+function commonStyle(this: ListItemGroupAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+function commonStyle(this: LoadingProgressAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+function commonStyle(this: MarqueeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: MenuAttribute, componentKey: string): this {
+function commonStyle(this: MenuAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+function commonStyle(this: MenuItemAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+function commonStyle(this: NavDestinationAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: NavigationAttribute, componentKey: string): this {
+function commonStyle(this: NavigationAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: PathAttribute, componentKey: string): this {
+function commonStyle(this: PathAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: PolygonAttribute, componentKey: string): this {
+function commonStyle(this: PolygonAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: PolylineAttribute, componentKey: string): this {
+function commonStyle(this: PolylineAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ProgressAttribute, componentKey: string): this {
+function commonStyle(this: ProgressAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+function commonStyle(this: QRCodeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RadioAttribute, componentKey: string): this {
+function commonStyle(this: RadioAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RatingAttribute, componentKey: string): this {
+function commonStyle(this: RatingAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RectAttribute, componentKey: string): this {
+function commonStyle(this: RectAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RefreshAttribute, componentKey: string): this {
+function commonStyle(this: RefreshAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+function commonStyle(this: RelativeContainerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+function commonStyle(this: RemoteWindowAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+function commonStyle(this: RichEditorAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RichTextAttribute, componentKey: string): this {
+function commonStyle(this: RichTextAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RowAttribute, componentKey: string): this {
+function commonStyle(this: RowAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+function commonStyle(this: RowSplitAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ScrollAttribute, componentKey: string): this {
+function commonStyle(this: ScrollAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+function commonStyle(this: ScrollBarAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: SearchAttribute, componentKey: string): this {
+function commonStyle(this: SearchAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: SelectAttribute, componentKey: string): this {
+function commonStyle(this: SelectAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ShapeAttribute, componentKey: string): this {
+function commonStyle(this: ShapeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: SliderAttribute, componentKey: string): this {
+function commonStyle(this: SliderAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: SpanAttribute, componentKey: string): this {
+function commonStyle(this: SpanAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: StackAttribute, componentKey: string): this {
+function commonStyle(this: StackAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: StepperAttribute, componentKey: string): this {
+function commonStyle(this: StepperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+function commonStyle(this: StepperItemAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: SwiperAttribute, componentKey: string): this {
+function commonStyle(this: SwiperAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+function commonStyle(this: SideBarContainerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ToggleAttribute, componentKey: string): this {
+function commonStyle(this: ToggleAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TabsAttribute, componentKey: string): this {
+function commonStyle(this: TabsAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+function commonStyle(this: TextAreaAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TextClockAttribute, componentKey: string): this {
+function commonStyle(this: TextClockAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TextInputAttribute, componentKey: string): this {
+function commonStyle(this: TextInputAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+function commonStyle(this: TextPickerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+function commonStyle(this: TextTimerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+function commonStyle(this: TimePickerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: VideoAttribute, componentKey: string): this {
+function commonStyle(this: VideoAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+function commonStyle(this: WaterFlowAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: WebAttribute, componentKey: string): this {
+function commonStyle(this: WebAttribute, componentKey: string) {
 
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+function commonStyle(this: WindowSceneAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: CanvasAttribute, componentKey: string): this {
+function commonStyle(this: CanvasAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: XComponentAttribute, componentKey: string): this {
+function commonStyle(this: XComponentAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TextAttribute, componentKey: string): this {
+function commonStyle(this: TextAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: DividerAttribute, componentKey: string): this {
+function commonStyle(this: DividerAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: CircleAttribute, componentKey: string): this {
+function commonStyle(this: CircleAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ColumnAttribute, componentKey: string): this {
+function commonStyle(this: ColumnAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: ListAttribute, componentKey: string): this {
+function commonStyle(this: ListAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
 
-function commonStyle(this: TabContentAttribute, componentKey: string): this {
+function commonStyle(this: TabContentAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
