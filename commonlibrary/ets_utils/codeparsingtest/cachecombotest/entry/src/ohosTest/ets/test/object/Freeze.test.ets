@@ -920,3 +920,32 @@ export default function FreezeTest() {
       let result: boolean = testSetPrototypeOfToNullFailsOnFrozen();
       expect(result).assertEqual(true);
     });
+
+    /**
+     * @tc.name testCache_object2_095
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT2_9500
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object2_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testWithStatementSecurityWithFrozenProxy();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_object2_097
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CACHE_OBJECT2_9700
+     * @tc.desc Testing Cache Combo by Object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_object2_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testCallApplyOnMethodOfFrozenObject();
+      expect(result).assertEqual(true);
+    });
+
+  })
+}
