@@ -88,6 +88,7 @@ import listNestedScrollJsunit from './ListNestedScroll.test';
 import DrawModifierOneTest from './DrawTest/DrawModifierOneTest.test';
 import DrawModifierTwoTest from './DrawTest/DrawModifierTwoTest.test';
 import DrawForegroundTest from './DrawTest/DrawForegroundTest.test';
+import DrawOverlayTest from './DrawTest/DrawOverlayTest.test';
 import UseEffectIndexTest from './useEffect/UseEffectIndex.test';
 
 export default function testsuite() {
@@ -166,5 +167,6 @@ export default function testsuite() {
   DrawModifierOneTest();
   DrawModifierTwoTest();
   DrawForegroundTest();
+  DrawOverlayTest();
   UseEffectIndexTest();
 }
