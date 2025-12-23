@@ -524,7 +524,7 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_11_5, TestSize.Level1)
     OH_AVFormat* parameter = OH_AVFormat_Create();
     OH_AVFormat_SetIntValue(parameter, IMAGE_DETAIL_ENHANCER_PARAMETER_KEY_QUALITY_LEVEL, -1); // -1 invalid param
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_SetParameter(instance, parameter);
-    EXPECT_NE(ret, IMAGE_PROCESS_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_PARAMETER);
     OH_ImageProcessing_Destroy(instance);
 }
 
@@ -1483,7 +1483,7 @@ HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_46, TestSize.Level1)
  */
 HWTEST_F(DetailEnhancerImageNdkUnitTest, vpeImageNdk_47, TestSize.Level1)
 {
-    OH_ImageProcessing** instance = nullptr;
+    OH_ImageProcessing* instance = nullptr;
     ImageProcessing_ErrorCode ret = OH_ImageProcessing_Destroy(instance);
     EXPECT_EQ(ret, IMAGE_PROCESSING_ERROR_INVALID_INSTANCE);
 }
