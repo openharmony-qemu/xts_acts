@@ -3056,14 +3056,11 @@ export default function TextPicker() {
       sheetPickerOptions.maxVideoSelectNumber = 5;
       sheetPickerOptions.maxPhotoSelectNumber = 7;
       let code: number = EventType.PHOTO_PICKER_INFO;
-
       let callback = (eventData: events_emitter.EventData) => {
         let result: PhotoPickerResult = eventData?.data?.msg;
-
         console.info(
           `testPicker61 result maxVideo=${result.maxVideoSelectNumber}, maxPhoto=${result.maxPhotoSelectNumber}`
         );
-
         expect(result.maxVideoSelectNumber)
           .assertEqual(sheetPickerOptions.maxVideoSelectNumber);
         expect(result.maxPhotoSelectNumber)
