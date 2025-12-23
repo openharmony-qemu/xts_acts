@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include "common/common.h"
 #include "manager/PluginManagerTest.h"
 #include <arkui/native_node.h>
 #include <arkui/native_type.h>
