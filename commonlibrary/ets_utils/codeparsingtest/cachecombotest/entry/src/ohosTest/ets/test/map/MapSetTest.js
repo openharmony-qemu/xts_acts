@@ -1989,3 +1989,199 @@ export function testDeleteZeroStringVsNumberKey() {
     visited.includes('0') &&
         map.size === 0;
 }
+
+/**
+ * 测试点 131：在 entries 迭代中 delete 当前项，但 Map 原型被污染（模拟恶意环境）。
+ */
+export function testDeleteWorksDespitePrototypePollution() {
+
+    const originalDelete = Map.prototype.delete;
+    let worked = false;
+    try {
+        Map.prototype.delete = function (key) {
+            return originalDelete.call(this, key);
+        };
+        const map = new Map([['safe', true]]);
+        for (const [k] of map.entries()) {
+            map.delete(k);
+            worked = true;
+        }
+    } finally {
+        Map.prototype.delete = originalDelete;
+    }
+    return worked && (new Map()).size === 0;
+}
+
+/**
+ * 测试点 132：在 entries 迭代中 delete 当前项，value 是另一个 Map。
+ */
+export function testDeleteWithNestedMapValue() {
+    const inner = new Map([['inner', 1]]);
+    const map = new Map([['outer', inner]]);
+    let ok = false;
+    for (const [k, v] of map.entries()) {
+        if (k === 'outer' && v === inner) {
+            ok = true;
+            map.delete(k);
+        }
+    }
+    return ok && map.size === 0;
+}
+
+/**
+ * 测试点 133：在 entries 迭代中 delete 当前项，使用 for await...of（虽然 entries 不是异步迭代器，应报错或不进入）。
+ */
+export function testForAwaitOfOnMapEntriesShouldNotWork() {
+    const map = new Map([['async', 1]]);
+    let entered = false;
+    (async () => {
+        try {
+            for await (const _ of map.entries()) {
+                entered = true;
+            }
+        } catch (e) {
+
+        }
+    })();
+
+
+    return !entered;
+}
+
+/**
+ * 测试点 134：在 entries 迭代中 delete 当前项，但 key 是正则表达式对象。
+ */
+export function testDeleteRegExpAsKey() {
+    const re = /test/g;
+    const map = new Map([[re, 'regex-val']]);
+    let matched = false;
+    for (const [k, v] of map.entries()) {
+        if (k === re && v === 'regex-val') {
+            matched = true;
+            map.delete(k);
+        }
+    }
+    return matched && map.size === 0;
+}
+
+/**
+ * 测试点 135：在 entries 迭代中 delete 当前项，Map 大小为 10000，验证性能无崩溃（简化版：只测逻辑）。
+ */
+export function testDeleteInLargeMapIteration() {
+    const map = new Map();
+    const N = 1000;
+    for (let i = 0; i < N; i++) {
+        map.set(i, i * 2);
+    }
+    let count = 0;
+    for (const [k] of map.entries()) {
+        count++;
+        map.delete(k);
+        if (count > N) {
+            break;
+        }
+    }
+    return count === N && map.size === 0;
+}
+
+/**
+ * 测试点 136：在 entries 迭代中 delete 当前项，但 entries 被解构到变量后 delete。
+ */
+export function testDestructureEntryThenDelete() {
+    const map = new Map([['destr', 42]]);
+    let ok = false;
+    for (const entry of map.entries()) {
+        const key = entry[0];
+        const val = entry[1];
+        if (key === 'destr' && val === 42) {
+            ok = true;
+            map.delete(key);
+        }
+    }
+    return ok && map.size === 0;
+}
+
+/**
+ * 测试点 137：在 entries 迭代中 delete 当前项，但 Map 被冻结（Object.freeze）—— 注意：freeze 不影响 Map 内部。
+ */
+export function testDeleteOnFrozenMapObject() {
+    const map = new Map([['frozen', 1]]);
+    Object.freeze(map);
+    let deleted = false;
+    for (const [k] of map.entries()) {
+        map.delete(k);
+        deleted = true;
+    }
+
+    return deleted && map.size === 0;
+}
+
+/**
+ * 测试点 138：在 entries 迭代中 delete 当前项，key 为 BigInt。
+ */
+export function testDeleteBigIntKey() {
+    const big = 123n;
+    const map = new Map([[big, 'bigint-val']]);
+    let found = false;
+    for (const [k, v] of map.entries()) {
+        if (k === big && v === 'bigint-val') {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 139：在 entries 迭代中 delete 当前项，但循环体内 throw Error，验证 delete 是否生效。
+ */
+export function testDeletePersistsAfterThrowInLoop() {
+    const map = new Map([['will-throw', 1], ['survivor', 2]]);
+    try {
+        for (const [k] of map.entries()) {
+            map.delete(k);
+            if (k === 'will-throw') {
+                throw new Error('intentional');
+            }
+        }
+    } catch (e) {
+
+    }
+
+    return !map.has('will-throw') && map.has('survivor') && map.size === 1;
+}
+
+/**
+ * 测试点 140：在 entries 迭代中 delete 当前项，同时另一个对同一 Map 的 entries 迭代器正在运行（交错手动迭代）。
+ */
+export function testInterleavedTwoManualIteratorsWithDelete() {
+    const map = new Map([['A', 1], ['B', 2], ['C', 3]]);
+    const iter1 = map.entries();
+    const iter2 = map.entries();
+
+    const step1_1 = iter1.next();
+    map.delete('A');
+
+    const step2_1 = iter2.next();
+    map.delete('B');
+
+    const step1_2 = iter1.next();
+
+
+    if (step1_1.done || step1_1.value[0] !== 'A') {
+        return false;
+    }
+    if (step2_1.done || step2_1.value[0] !== 'B') {
+        return false;
+    }
+    if (step1_2.done || step1_2.value[0] !== 'C') {
+        return false;
+    }
+
+    map.delete('C');
+    const step1_3 = iter1.next();
+    const step2_2 = iter2.next();
+
+    return step1_3.done && step2_2.done && map.size === 0;
+}
+

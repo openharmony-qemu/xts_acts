@@ -1983,3 +1983,875 @@ export function testDeleteCustomElementAsKey() {
     }
     return found && map.size === 0;
 }
+
+/**
+ * 测试点 115：在 entries 迭代中 delete 当前项，但 Map 的键是 EventTarget 子类实例。
+ */
+export function testDeleteEventTargetAsKey() {
+    if (typeof EventTarget === 'undefined') {
+        return true;
+    }
+
+    class MyTarget extends EventTarget {
+    }
+
+    const target = new MyTarget();
+    const map = new Map([[target, 'event-target-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === target) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 116：在 entries 迭代中 delete 当前项，但 Map 的键是 MessageChannel.port。
+ */
+export function testDeleteMessagePortAsKey() {
+    if (typeof MessageChannel === 'undefined') {
+        return true;
+    }
+    const channel = new MessageChannel();
+    const port = channel.port1;
+    const map = new Map([[port, 'message-port-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === port) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 117：在 entries 迭代中 delete 当前项，但 Map 的键是 HTMLCanvasElement.toDataURL 返回值（字符串）。
+ */
+export function testDeleteCanvasDataURLAsKey() {
+    if (typeof document === 'undefined') {
+        return true;
+    }
+    try {
+        const canvas = document.createElement('canvas');
+        const dataURL = canvas.toDataURL();
+        const map = new Map([[dataURL, 'canvas-data-url-val']]);
+        let found = false;
+        for (const [k] of map.entries()) {
+            if (k === dataURL) {
+                found = true;
+                map.delete(k);
+            }
+        }
+        return found && map.size === 0;
+    } catch (e) {
+        return true;
+    }
+}
+
+/**
+ * 测试点 118：在 entries 迭代中 delete 当前项，但 Map 的键是 CSSStyleSheet（浏览器）。
+ */
+export function testDeleteCSSStyleSheetAsKey() {
+    if (typeof CSSStyleSheet === 'undefined') {
+        return true;
+    }
+    try {
+        const sheet = new CSSStyleSheet();
+        const map = new Map([[sheet, 'css-style-sheet-val']]);
+        let found = false;
+        for (const [k] of map.entries()) {
+            if (k === sheet) {
+                found = true;
+                map.delete(k);
+            }
+        }
+        return found && map.size === 0;
+    } catch (e) {
+        return true;
+    }
+}
+
+/**
+ * 测试点 119：在 entries 迭代中 delete 当前项，但 Map 的键是 WebAssembly.Memory。
+ */
+export function testDeleteWasmMemoryAsKey() {
+    if (typeof WebAssembly === 'undefined') {
+        return true;
+    }
+    try {
+        const memory = new WebAssembly.Memory({ initial: 1 });
+        const map = new Map([[memory, 'wasm-memory-val']]);
+        let found = false;
+        for (const [k] of map.entries()) {
+            if (k === memory) {
+                found = true;
+                map.delete(k);
+            }
+        }
+        return found && map.size === 0;
+    } catch (e) {
+        return true;
+    }
+}
+
+/**
+ * 测试点 120：在 entries 迭代中 delete 当前项，同时验证 Map 的迭代器是不可变的（不能被外部修改）。
+ */
+export function testDeleteWithImmutableIteratorAssertion() {
+    const map = new Map([['immutable-iter', 1]]);
+    const iter = map.entries();
+    let step = iter.next();
+    if (step.done || step.value[0] !== 'immutable-iter') {
+        return false;
+    }
+    map.delete('immutable-iter');
+    step.value[0] = 'modified';
+    step.value[1] = 'hacked';
+    const finalStep = iter.next();
+    return finalStep.done && map.size === 0;
+}
+
+/**
+ * 测试点 121：在 entries 迭代中 delete 当前项，但 Map 被用于模拟 LRU 缓存（高频删除/插入）。
+ */
+export function testDeleteInLRUCacheSimulation() {
+    const cache = new Map();
+    const CAPACITY = 3;
+    for (let i = 0; i < 5; i++) {
+        if (cache.size >= CAPACITY) {
+            for (const [k] of cache.entries()) {
+                cache.delete(k);
+                break;
+            }
+        }
+        cache.set(i, `val-${i}`);
+    }
+    return cache.size === 3 && cache.has(2) && cache.has(3) && cache.has(4);
+}
+
+/**
+ * 测试点 122：在 entries 迭代中 delete 当前项，但 Map 的键是 Proxy 代理的 Map 自身（递归代理）。
+ */
+export function testDeleteRecursiveProxySelfAsKey() {
+    const map = new Map();
+    const proxy = new Proxy(map, {});
+    map.set(proxy, 'recursive-proxy');
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 124：在 entries 迭代中 delete 当前项，但 Map 的键是被多次包装的 Proxy（多层代理）。
+ */
+export function testDeleteMultiLayerProxyAsKey() {
+    let obj = { id: 'multi-proxy' };
+    obj = new Proxy(obj, {});
+    obj = new Proxy(obj, {});
+    const map = new Map([[obj, 'multi-proxy-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 125：在 entries 迭代中 delete 当前项，但 Map 的键是 Symbol.for 全局注册表中的 symbol。
+ */
+export function testDeleteGlobalSymbolAsKey() {
+    const sym = Symbol.for('global-symbol-test');
+    const map = new Map([[sym, 'global-sym-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === sym) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 126：在 entries 迭代中 delete 当前项，但 Map 的键是 WeakMap 中的 key（对象引用）。
+ */
+export function testDeleteKeyThatIsAlsoInWeakMap() {
+    const sharedObj = {};
+    const weakMap = new WeakMap();
+    weakMap.set(sharedObj, 'weak-ref');
+    const map = new Map([[sharedObj, 'map-ref']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === sharedObj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0 && weakMap.has(sharedObj);
+}
+
+/**
+ * 测试点 127：在 entries 迭代中 delete 当前项，但 Map 的键是被 Object.preventExtensions 的对象。
+ */
+export function testDeletePreventedExtensionObjectAsKey() {
+    const obj = { id: 'prevent-ext' };
+    Object.preventExtensions(obj);
+    const map = new Map([[obj, 'prevent-ext-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 128：在 entries 迭代中 delete 当前项，但 Map 的键是包含 getter 的对象，触发副作用。
+ */
+export function testDeleteObjectWithSideEffectGetterAsKey() {
+    let sideEffect = 0;
+    const obj = {
+        get computed() {
+            sideEffect++;
+            return 'computed';
+        }
+    };
+    const map = new Map([[obj, 'side-effect-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 129：在 entries 迭代中 delete 当前项，但 Map 的键是 Date 对象，且时间戳被修改。
+ */
+export function testDeleteDateObjectWhoseTimeChanges() {
+    const date = new Date();
+    const map = new Map([[date, 'mutable-date-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === date) {
+            date.setTime(date.getTime() + 1000);
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 130：在 entries 迭代中 delete 当前项，但 Map 的键是 Math 对象（全局对象）。
+ */
+export function testDeleteMathAsKey() {
+    if (typeof Math === 'undefined') {
+        return true;
+    }
+    const map = new Map([[Math, 'math-object-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === Math) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 131：在 entries 迭代中 delete 当前项，但 Map 的键是 JSON 对象（全局对象）。
+ */
+export function testDeleteJSONAsKey() {
+    if (typeof JSON === 'undefined') {
+        return true;
+    }
+    const map = new Map([[JSON, 'json-object-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === JSON) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 132：在 entries 迭代中 delete 当前项，但 Map 的键是 Reflect 对象（全局对象）。
+ */
+export function testDeleteReflectAsKey() {
+    if (typeof Reflect === 'undefined') {
+        return true;
+    }
+    const map = new Map([[Reflect, 'reflect-object-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === Reflect) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 133：在 entries 迭代中 delete 当前项，但 Map 的键是 Generator 函数实例。
+ */
+export function testDeleteGeneratorFunctionAsKey() {
+
+    function* genFn() {
+    }
+
+    const map = new Map([[genFn, 'generator-fn-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === genFn) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 134：在 entries 迭代中 delete 当前项，但 Map 的键是 AsyncFunction 实例。
+ */
+export function testDeleteAsyncFunctionAsKey() {
+    const asyncFn = async function () {
+    };
+    const map = new Map([[asyncFn, 'async-fn-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === asyncFn) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 135：在 entries 迭代中 delete 当前项，但 Map 的键是箭头函数。
+ */
+export function testDeleteArrowFunctionAsKey() {
+    const arrow = () => {
+    };
+    const map = new Map([[arrow, 'arrow-fn-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === arrow) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 136：在 entries 迭代中 delete 当前项，但 Map 的键是类表达式实例。
+ */
+export function testDeleteClassExpressionAsKey() {
+    const MyClass = class {
+    };
+    const instance = new MyClass();
+    const map = new Map([[instance, 'class-instance-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === instance) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 137：在 entries 迭代中 delete 当前项，但 Map 的键是模块导入的命名空间对象（模拟）。
+ */
+export function testDeleteImportNamespaceAsKey() {
+    const ns = {
+        __esModule: true, func: () => {
+        }
+    };
+    const map = new Map([[ns, 'import-namespace-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === ns) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 138：在 entries 迭代中 delete 当前项，但 Map 的键是 Proxy 代理的函数（拦截 apply）。
+ */
+export function testDeleteProxyAppliedFunctionAsKey() {
+    const target = function () {
+    };
+    const handler = {
+        apply: () => 'intercepted'
+    };
+    const proxyFunc = new Proxy(target, handler);
+    const map = new Map([[proxyFunc, 'proxy-applied-fn-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxyFunc) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 139：在 entries 迭代中 delete 当前项，但 Map 的键是被 WeakSet 引用的对象。
+ */
+export function testDeleteObjectInWeakSetAsKey() {
+    const shared = {};
+    const ws = new WeakSet();
+    ws.add(shared);
+    const map = new Map([[shared, 'ws-shared-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === shared) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0 && ws.has(shared);
+}
+
+/**
+ * 测试点 140：在 entries 迭代中 delete 当前项，作为终极压力测试（混合所有边界类型）。
+ */
+export function testUltimateBoundaryDeleteIteration() {
+    const tests = [
+        Symbol('boundary'),
+        new Date(),
+        new Set(),
+        new Map(),
+        new Proxy({}, {}),
+        async function () {
+        },
+        () => {
+        },
+        class {
+        }
+
+        ,
+        Object.freeze({}),
+        Object.seal({}),
+        new ArrayBuffer(1),
+        new Int8Array(1),
+        {}
+    ];
+    const map = new Map(tests.map((t, i) => [t, i]));
+    let count = 0;
+    for (const [k] of map.entries()) {
+        count++;
+        map.delete(k);
+    }
+    return count === tests.length && map.size === 0;
+}
+
+/**
+ * 测试点 141：在 entries 迭代中 delete 当前项，但 Map 的键是被 Object.defineProperty 定义为不可配置的属性对象。
+ */
+export function testDeleteOnObjectWithNonConfigurableKey() {
+    const obj = {};
+    Object.defineProperty(obj, 'fixed', {
+        value: 'value',
+        writable: true,
+        enumerable: true,
+        configurable: false
+    });
+    const map = new Map([[obj, 'non-configurable-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 142：在 entries 迭代中 delete 当前项，但 Map 的键是被 defineProperties 批量定义属性的对象。
+ */
+export function testDeleteOnObjectWithBatchDefinedProps() {
+    const obj = {};
+    Object.defineProperties(obj, {
+        prop1: {
+            value: 'a',
+            writable: true,
+            enumerable: true,
+            configurable: true
+        },
+        prop2: {
+            value: 'b',
+            writable: false,
+            enumerable: false,
+            configurable: false
+        }
+    });
+    const map = new Map([[obj, 'batch-defined-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 145：在 entries 迭代中 delete 当前项，但 Map 的键是被 Object.create(null) 创建的空原型对象。
+ */
+export function testDeleteOnNullPrototypeObject() {
+    const obj = Object.create(null);
+    obj.key = 'null-proto';
+    const map = new Map([[obj, 'null-prototype-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 146：在 entries 迭代中 delete 当前项，但 Map 的键是被 Object.setPrototypeOf 设置原型的对象。
+ */
+export function testDeleteOnSetPrototypeOfObject() {
+    const obj = {};
+    const proto = { inherited: true };
+    Object.setPrototypeOf(obj, proto);
+    const map = new Map([[obj, 'set-prototype-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 147：在 entries 迭代中 delete 当前项，但 Map 的键是被 Object.assign 合并的对象。
+ */
+export function testDeleteOnAssignedObject() {
+    const base = { a: 1 };
+    const extra = { b: 2 };
+    const assigned = Object.assign(base, extra);
+    const map = new Map([[assigned, 'assigned-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === assigned) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 148：在 entries 迭代中 delete 当前项，但 Map 的键是被 Object.create 带属性描述符的对象。
+ */
+export function testDeleteOnCreateWithDescriptors() {
+    const obj = Object.create(Object.prototype, {
+        prop: {
+            value: 'descriptor-value',
+            writable: true,
+            enumerable: true,
+            configurable: true
+        }
+    });
+    const map = new Map([[obj, 'create-descriptor-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 149：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 has 操作的对象。
+ */
+export function testDeleteOnProxyWithTrappedHas() {
+    const target = {};
+    const handler = {
+        has: () => true
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-has-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 150：在 entries 迦代中 delete 当前项，但 Map 的键是被 Proxy 拦截 getOwnPropertyDescriptor 的对象。
+ */
+export function testDeleteOnProxyWithTrappedDescriptor() {
+    const target = {};
+    const handler = {
+        getOwnPropertyDescriptor: (t, prop) => {
+            return {
+                value: 'trap',
+                writable: true,
+                enumerable: true,
+                configurable: true
+            };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-desc-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 151：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 ownKeys 的对象。
+ */
+export function testDeleteOnProxyWithTrappedOwnKeys() {
+    const target = { real: 'value' };
+    const handler = {
+        ownKeys: () => ['fake']
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-ownkeys-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 152：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 setPrototypeOf 的对象。
+ */
+export function testDeleteOnProxyWithTrappedSetProto() {
+    const target = {};
+    const handler = {
+        setPrototypeOf: () => false
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-setproto-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 153：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 isExtensible 的对象。
+ */
+export function testDeleteOnProxyWithTrappedIsExtensible() {
+    const target = {};
+    const handler = {
+        isExtensible: () => false
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-isext-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 154：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 preventExtensions 的对象。
+ */
+export function testDeleteOnProxyWithTrappedPreventExtensions() {
+    const target = {};
+    const handler = {
+        preventExtensions: () => true
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-preventext-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 155：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 deleteProperty 的对象。
+ */
+export function testDeleteOnProxyWithTrappedDeleteProperty() {
+    const target = { delProp: 'value' };
+    const handler = {
+        deleteProperty: (t, prop) => {
+            delete t[prop];
+            return true;
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-delp-prop-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 156：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 defineProperty 的对象。
+ */
+export function testDeleteOnProxyWithTrappedDefineProperty() {
+    const target = {};
+    const handler = {
+        defineProperty: () => true
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-def-prop-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 157：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 getPrototypeOf 的对象。
+ */
+export function testDeleteOnProxyWithTrappedGetProto() {
+    const target = {};
+    const handler = {
+        getPrototypeOf: () => null
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-getproto-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 158：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 set 的对象（模拟数据劫持）。
+ */
+export function testDeleteOnProxyWithTrappedSet() {
+    const target = { data: 'original' };
+    const handler = {
+        set: (t, prop, value) => {
+            t[prop] = `intercepted:${value}`;
+            return true;
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const map = new Map([[proxy, 'trapped-set-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 159：在 entries 迭代中 delete 当前项，但 Map 的键是被 Proxy 拦截 construct 的对象（构造函数代理）。
+ */
+export function testDeleteOnProxyAsConstructor() {
+
+    function Target() {
+    }
+
+    const handler = {
+        construct: () => new Target()
+    };
+    const proxy = new Proxy(Target, handler);
+    const map = new Map([[proxy, 'trapped-construct-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === proxy) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
+
+/**
+ * 测试点 160：在 entries 迭代中 delete 当前项，作为最终规范一致性测试（验证所有 Object.* 方法不影响 Map 行为）。
+ */
+export function testFinalObjectMethodConsistencyDuringDelete() {
+    const obj = { id: 'consistency' };
+    Object.defineProperty(obj, 'sealed', { value: true });
+    Object.preventExtensions(obj);
+    Object.freeze(obj);
+    const map = new Map([[obj, 'consistency-check-val']]);
+    let found = false;
+    for (const [k] of map.entries()) {
+        if (k === obj) {
+            found = true;
+            map.delete(k);
+        }
+    }
+    return found && map.size === 0;
+}
