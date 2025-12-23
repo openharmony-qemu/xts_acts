@@ -1987,6 +1987,80 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0005 end');
       });
 
+     /**
+     * @tc.number    STRING_NEW_UTF16_0600
+     * @tc.name      test_String_New_Utf16_0006
+     * @tc.desc      new string new UTF16 non ascii string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_String_New_Utf16_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_String_New_Utf16_0006 start');
+        let cls = new Foo();
+        let result = cls.test_String_New_UTF16_06();
+        expect(result).assertTrue();
+        console.log('test_String_New_Utf16_0006 done');
+        done();
+        console.log('test_String_New_Utf16_0006 end');
+      });
 
+     /**
+     * @tc.number    STRING_NEW_UTF16_0700
+     * @tc.name      test_String_New_Utf16_0007
+     * @tc.desc      new string new UTF16 mixed string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_String_New_Utf16_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_String_New_Utf16_0007 start');
+        let cls = new Foo();
+        let result = cls.test_String_New_UTF16_07();
+        expect(result).assertTrue();
+        console.log('test_String_New_Utf16_0007 done');
+        done();
+        console.log('test_String_New_Utf16_0007 end');
+      });
+
+     /**
+     * @tc.number    STRING_NEW_UTF16_0800
+     * @tc.name      test_String_New_Utf16_0008
+     * @tc.desc      new string new UTF16 too long string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_String_New_Utf16_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_String_New_Utf16_0008 start');
+        let cls = new Foo();
+        let result = cls.test_String_New_UTF16_08();
+        expect(result).assertTrue();
+        console.log('test_String_New_Utf16_0008 done');
+        done();
+        console.log('test_String_New_Utf16_0008 end');
+      });
+
+     /**
+     * @tc.number    STRING_NEW_UTF16_0900
+     * @tc.name      test_String_New_Utf16_0009
+     * @tc.desc      new string new UTF16 repeat
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_String_New_Utf16_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_String_New_Utf16_0009 start');
+        let cls = new Foo();
+        let result = cls.test_String_New_UTF16_09();
+        expect(result).assertTrue();
+        console.log('test_String_New_Utf16_0009 done');
+        done();
+        console.log('test_String_New_Utf16_0009 end');
+      });
   })
 }

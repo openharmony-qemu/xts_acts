@@ -1854,6 +1854,232 @@ export default function variableOperationsTest() {
         console.log('test_Variable_GetValue_Byte_0003 end');
       });
 
+    /**
+     * @tc.number    VARIABLE_GETVALUE_BYTE_0400
+     * @tc.name      test_Variable_GetValue_Byte_0004
+     * @tc.desc      variable is nullptr, invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Byte_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Byte_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Byte_04();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Byte_0004 done');
+        done();
+        console.log('test_Variable_GetValue_Byte_0004 end');
+      });
 
+    /**
+     * @tc.number    VARIABLE_GETVALUE_BYTE_0500
+     * @tc.name      test_Variable_GetValue_Byte_0005
+     * @tc.desc      find variable byte, result is nullptr, invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Byte_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Byte_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Byte_05();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Byte_0005 done');
+        done();
+        console.log('test_Variable_GetValue_Byte_0005 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_SHORT_0100
+     * @tc.name      test_Variable_GetValue_Short_0001
+     * @tc.desc      find variable short, get value is normal
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Short_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Short_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Short();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Short_0001 done');
+        done();
+        console.log('test_Variable_GetValue_Short_0001 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_SHORT_0200
+     * @tc.name      test_Variable_GetValue_Short_0002
+     * @tc.desc      find variable short, three args, first is nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Short_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Short_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Short_02();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Short_0002 done');
+        done();
+        console.log('test_Variable_GetValue_Short_0002 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_SHORT_0300
+     * @tc.name      test_Variable_GetValue_Short_0003
+     * @tc.desc      find variable bool, return invalid type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Short_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Short_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Short_03();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Short_0003 done');
+        done();
+        console.log('test_Variable_GetValue_Short_0003 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_SHORT_0400
+     * @tc.name      test_Variable_GetValue_Short_0004
+     * @tc.desc      find variable nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Short_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Short_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Short_04();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Short_0004 done');
+        done();
+        console.log('test_Variable_GetValue_Short_0004 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_SHORT_0500
+     * @tc.name      test_Variable_GetValue_Short_0005
+     * @tc.desc      find variable short, result is nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Short_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Short_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Short_05();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Short_0005 done');
+        done();
+        console.log('test_Variable_GetValue_Short_0005 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_FLOAT_0100
+     * @tc.name      test_Variable_GetValue_Float_0001
+     * @tc.desc      find variable float, get value ok
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Float_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Float_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Float();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Float_0001 done');
+        done();
+        console.log('test_Variable_GetValue_Float_0001 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_FLOAT_0200
+     * @tc.name      test_Variable_GetValue_Float_0002
+     * @tc.desc      find variable float, three args, first is nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Float_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Float_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Float_02();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Float_0002 done');
+        done();
+        console.log('test_Variable_GetValue_Float_0002 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_FLOAT_0300
+     * @tc.name      test_Variable_GetValue_Float_0003
+     * @tc.desc      find variable bool, return invalid type args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Float_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Float_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Float_03();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Float_0003 done');
+        done();
+        console.log('test_Variable_GetValue_Float_0003 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_FLOAT_0400
+     * @tc.name      test_Variable_GetValue_Float_0004
+     * @tc.desc      find variable nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Float_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Float_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Float_04();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Float_0004 done');
+        done();
+        console.log('test_Variable_GetValue_Float_0004 end');
+      });
+
+    /**
+     * @tc.number    VARIABLE_GETVALUE_FLOAT_0500
+     * @tc.name      test_Variable_GetValue_Float_0005
+     * @tc.desc      find variable float, result is nullptr, return invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("test_Variable_GetValue_Float_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Variable_GetValue_Float_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Variable_GetValue_Float_05();
+        expect(result).assertTrue();
+        console.log('test_Variable_GetValue_Float_0005 done');
+        done();
+        console.log('test_Variable_GetValue_Float_0005 end');
+      });
   })
 }
