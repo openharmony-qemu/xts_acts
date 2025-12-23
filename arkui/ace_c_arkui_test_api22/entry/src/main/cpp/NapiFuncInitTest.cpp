@@ -24,6 +24,8 @@
 #include "Text/TextMenuItemIdTest.cpp"
 #include "swiper/SwiperParamTest.cpp"
 #include "swiper/SwiperEnumTest.cpp"
+#include "image/EnumTest.cpp"
+#include "Text/EnumTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -220,7 +222,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSwiperParam005", nullptr, SetShowBackgroundTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testSwiperEnum001", nullptr, Enum_Swiper_GetEventType, nullptr, nullptr, nullptr,
-         napi_default, nullptr}, 
+         napi_default, nullptr},
+        {"enum_GetEventType_Image", nullptr, Enum_GetEventType_Image, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"enum_GetEventType_Text", nullptr, Enum_GetEventType_Text, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
