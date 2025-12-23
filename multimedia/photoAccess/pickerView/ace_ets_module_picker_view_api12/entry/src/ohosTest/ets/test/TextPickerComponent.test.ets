@@ -2739,6 +2739,12 @@ export default function TextPicker() {
         let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedIsSlidingSupported: boolean = true;
         let expectedEdgeEffect: EdgeEffect = EdgeEffect.None;
+        let expectedMimeType: photoAccessHelper.PhotoViewMIMETypes = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+        let expectedMimeTypeFilter: photoAccessHelper.MimeTypeFilter = { mimeTypeArray: ["*/*"] }
+        let expectedRepeatSelectSupported = true;
+        let expectedSelectMode = 0;
+        let expectedSingleSelectionMode = 2;
+        let expectedPreselectedUris = ["file:img//sample"];
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -2752,6 +2758,12 @@ export default function TextPicker() {
         expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
         expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
         expect(expectedEdgeEffect).assertEqual(msg.edgeEffect);
+        expect(expectedMimeType).assertEqual(msg.mimeType);
+        expect(expectedMimeTypeFilter).assertDeepEquals(msg.mimeTypeFilter);
+        expect(expectedRepeatSelectSupported).assertEqual(msg.isRepeatSelectSupported);
+        expect(expectedSelectMode).assertEqual(msg.selectMode);
+        expect(expectedSingleSelectionMode).assertEqual(msg.singleSelectionMode);
+        expect(expectedPreselectedUris).assertDeepEquals(msg.preselectedUris);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,

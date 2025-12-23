@@ -109,6 +109,12 @@ struct PickerComponent {
     result.uiComponentColorMode = config.uiComponentColorMode ?? 0;
     result.isSlidingSupported = config.isSlidingSupported ?? false;
     result.edgeEffect = config.edgeEffect ?? EdgeEffect.Spring;
+    result.mimeType = config.mimeType ?? photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+    result.mimeTypeFilter = config.mimeTypeFilter ?? { mimeTypeArray: [] }
+    result.isRepeatSelectSupported = config.isRepeatSelectSupported ?? false;
+    result.selectMode = config.selectMode ?? 0;
+    result.singleSelectionMode = config.singleSelectionMode ?? 2;
+    result.preselectedUris = config.preselectedUris ?? [];
     return result;
   }
 
@@ -305,6 +311,12 @@ struct PickerComponent {
         updatedOptions.uiComponentColorMode = PickerColorMode.DARK;
         updatedOptions.isSlidingSupported = true;
         updatedOptions.edgeEffect = EdgeEffect.None;
+        updatedOptions.mimeType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+        updatedOptions.mimeTypeFilter = { mimeTypeArray: ["*/*"] }
+        updatedOptions.isRepeatSelectSupported = true;
+        updatedOptions.selectMode = 0;
+        updatedOptions.singleSelectionMode = 2;
+        updatedOptions.preselectedUris = ["file:img//sample"];
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);

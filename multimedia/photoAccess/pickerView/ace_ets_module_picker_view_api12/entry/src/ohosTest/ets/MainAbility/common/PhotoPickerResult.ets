@@ -33,4 +33,8 @@ export class PhotoPickerResult {
   public preselectedInfos: PreselectedInfo[] = [];
   public isSlidingSupported: boolean = false;
   public edgeEffect: EdgeEffect = EdgeEffect.Spring;
+  public mimeType: photoAccessHelper.PhotoViewMIMETypes = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+  public mimeTypeFilter: photoAccessHelper.MimeTypeFilter = { mimeTypeArray:[] };
+  public singleSelectionMode: photoAccessHelper.SingleSelectionMode = photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE;
+  public preselectedUris: Array<string> = [];
 }
