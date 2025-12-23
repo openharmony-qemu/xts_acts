@@ -18,6 +18,11 @@
 #include "allowForceDark/AllowForceDarkTest.cpp"
 #include "Image/ImageContentTransitionEffectTest.cpp"
 #include "nodeUtil/NodeUtilsMethodTest.cpp"
+#include "scroll/ScrollEventTypeTest.cpp"
+#include "list/ListEventTypeTest.cpp"
+#include "refresh/RefreshEventTypeTest.cpp"
+#include "waterFlow/WaterFlowEventTypeTest.cpp"
+#include "grid/GridEventTypeTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -44,6 +49,16 @@ namespace ArkUICapiTest
             {"TestImageContentTransitionEffect001", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestImageContentTransitionEffect002", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_Scroll", nullptr, Enum_GetEventType_Scroll, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_List", nullptr, Enum_GetEventType_List, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_Refresh", nullptr, Enum_GetEventType_Refresh, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_WaterFlow", nullptr, Enum_GetEventType_WaterFlow, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_Grid", nullptr, Enum_GetEventType_Grid, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestMethodReturnValue001", nullptr, TestMethodReturnValue001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
