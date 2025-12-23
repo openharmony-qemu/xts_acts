@@ -505,7 +505,7 @@ export default function numberTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NUMBER_4200
-     * @tc.name testNumberToLocaleString0005
+     * @tc.name testNumberToLocaleString0010
      * @tc.desc Test the function of the interface toString().
      * @tc.size MediumTest
      * @tc.type Function

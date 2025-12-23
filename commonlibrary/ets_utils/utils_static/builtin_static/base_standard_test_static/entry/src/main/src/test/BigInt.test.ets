@@ -261,7 +261,7 @@ export default function BigIntTest() {
         expect(false).assertFail();
       }
     })
-    //
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_1200
      * @tc.name testBigIntToLocaleString0002
