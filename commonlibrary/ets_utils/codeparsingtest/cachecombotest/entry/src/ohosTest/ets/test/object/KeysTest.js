@@ -797,3 +797,650 @@ export function testZeroStringKeyPreserved() {
     const keys = Object.keys(proxy);
     return JSON.stringify(keys) === JSON.stringify(['0']);
 }
+
+/**
+ * 测试点 47：Proxy 的 ownKeys 返回属性，但 getOwnPropertyDescriptor 返回 descriptor 的 enumerable 是字符串 "true"，应视为 false
+ */
+export function testEnumerableAsStringTreatedAsFalse() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['badEnum'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: 'true', configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys.includes('badEnum');
+}
+
+/**
+ * 测试点 49：Proxy 的 ownKeys 返回属性名是负数字符串（如 "-1"），Object.keys 应保留
+ */
+export function testNegativeIndexAsStringKeyIncluded() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['-1', '-10'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy).sort();
+    return JSON.stringify(keys) === JSON.stringify(['-1', '-10'].sort());
+}
+
+/**
+ * 测试点 50：Proxy 的 ownKeys 返回属性名是小数字符串（如 "1.5"），Object.keys 应保留
+ */
+export function testFloatStringKeyPreserved() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['1.5', '2.7'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy).sort();
+    return JSON.stringify(keys) === JSON.stringify(['1.5', '2.7'].sort());
+}
+
+/**
+ * 测试点 51：Proxy 的 ownKeys 返回属性名是 "constructor" 来自 Object.prototype，但自有属性中无，应被忽略
+ */
+export function testInheritedConstructorNotIncluded() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['constructor'];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 52：Proxy 的 ownKeys 返回属性，但目标对象已被 delete 删除，getOwnPropertyDescriptor 返回 undefined，应忽略
+ */
+export function testDeletedPropertySkippedEvenIfInOwnKeys() {
+    const target = { temp: 1 };
+    delete target.temp;
+    const handler = {
+        ownKeys() {
+            return ['temp'];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 53：Proxy 的 ownKeys 返回属性名是 "hasOwnProperty"，可枚举，Object.keys 应包含
+ */
+export function testHasOwnPropertyAsEnumerablePropertyIncluded() {
+    const target = {};
+    target.hasOwnProperty = function () {
+        return true;
+    };
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('hasOwnProperty');
+}
+
+/**
+ * 测试点 54：Proxy 的 ownKeys 返回属性名包含 Unicode ZWJ（零宽连接符），Object.keys 应保留
+ */
+export function testUnicodeZWJPropertyNamePreserved() {
+    const zwjName = 'a\u200Db';
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return [zwjName];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys.length === 1 && keys[0] === zwjName;
+}
+
+/**
+ * 测试点 55：Proxy 的 ownKeys 返回属性，但 getOwnPropertyDescriptor 抛出非 Error 对象，Object.keys 应抛出
+ */
+export function testGetOwnPropertyDescriptorThrowsNonErrorCausesThrow() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['bad'];
+        },
+        getOwnPropertyDescriptor() {
+            throw 'string error';
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    try {
+        Object.keys(proxy);
+        return false;
+    } catch (e) {
+        return true;
+    }
+}
+
+/**
+ * 测试点 57：Proxy 的 ownKeys 返回属性名是 "valueOf"，可枚举，Object.keys 应包含
+ */
+export function testValueOfAsEnumerablePropertyIncluded() {
+    const target = {};
+    Object.defineProperty(target, 'valueOf', {
+        value: () => 42,
+        enumerable: true,
+        configurable: true
+    });
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('valueOf');
+}
+
+/**
+ * 测试点 58：Proxy 的 ownKeys 返回属性名是空 Symbol（Symbol()），Object.keys 忽略
+ */
+export function testEmptySymbolIgnoredByObjectKeys() {
+    const sym = Symbol();
+    const target = { [sym]: 1 };
+    const handler = {
+        ownKeys() {
+            return [sym];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 59：Proxy 的 ownKeys 返回属性名是 "prototype"，可枚举，Object.keys 应包含
+ */
+export function testPrototypeAsEnumerablePropertyIncluded() {
+    const target = { prototype: {} };
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('prototype');
+}
+
+/**
+ * 测试点 60：Proxy 的 ownKeys 返回属性名是 "arguments" 和 "caller"（严格模式下禁止），但作为普通属性可枚举，Object.keys 应包含
+ */
+export function testArgumentsAndCallerAsRegularPropertiesIncluded() {
+    const target = {};
+    Object.defineProperty(target, 'arguments', { value: [1], enumerable: true, configurable: true });
+    Object.defineProperty(target, 'caller', { value: null, enumerable: true, configurable: true });
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy).sort();
+    return JSON.stringify(keys) === JSON.stringify(['arguments', 'caller'].sort());
+}
+
+
+/**
+ * 测试点 61：Proxy 的 ownKeys 返回属性名是 "toString" 来自 Object.prototype，但非自有，应被忽略
+ */
+export function testInheritedToStringNotIncluded() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['toString'];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 62：Proxy 的 ownKeys 返回属性名是 "__proto__"（字符串），但 getOwnPropertyDescriptor 返回 { enumerable: false }，应被忽略
+ */
+export function testStringProtoNonEnumerableIgnored() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['__proto__'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: {}, enumerable: false, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 64：Proxy 的 ownKeys 返回属性名是 "constructor"，但目标是数组，Object.keys 不应包含 constructor（因数组的 constructor 不可枚举）
+ */
+export function testArrayConstructorNotEnumerableSoNotInKeys() {
+    const arr = [];
+    const handler = {
+        ownKeys(target) {
+            return Reflect.ownKeys(target);
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(arr, handler);
+    const keys = Object.keys(proxy);
+    return !keys.includes('constructor');
+}
+
+/**
+ * 测试点 65：Proxy 的 ownKeys 返回属性名是 "length" for non-array object, enumerable: true → included
+ */
+export function testNonArrayLengthEnumerableIncluded() {
+    const obj = { length: 3 };
+    const proxy = new Proxy(obj, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('length') && keys.length === 1;
+}
+
+/**
+ * 测试点 66：Proxy 的 ownKeys 返回属性名是 Symbol.iterator，Object.keys 忽略（Symbol）
+ */
+export function testSymbolIteratorIgnoredByObjectKeys() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return [Symbol.iterator];
+        },
+        getOwnPropertyDescriptor() {
+            return {
+                value: function* () {
+                }, enumerable: true, configurable: true
+            };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 68：Proxy 的 ownKeys 返回属性名是 "\0"（空字符），Object.keys 应保留
+ */
+export function testNullCharacterPropertyNamePreserved() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['\0'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys.length === 1 && keys[0] === '\0';
+}
+
+/**
+ * 测试点 69：Proxy 的 ownKeys 返回属性名是 "eval"，可枚举，Object.keys 应包含
+ */
+export function testEvalAsEnumerablePropertyIncluded() {
+    const target = {
+        eval: function () {
+        }
+    };
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('eval');
+}
+
+/**
+ * 测试点 70：Proxy 的 ownKeys 返回属性名是 "undefined" 字符串，Object.keys 应包含
+ */
+export function testStringUndefinedPropertyNameIncluded() {
+    const target = { undefined: 'value' };
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('undefined');
+}
+
+/**
+ * 测试点 71：Proxy 的 ownKeys 返回属性名是 "NaN"，Object.keys 应包含
+ */
+export function testStringNaNPropertyNameIncluded() {
+    const target = { NaN: 42 };
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('NaN');
+}
+
+/**
+ * 测试点 72：Proxy 的 ownKeys 返回属性名是 "Infinity"，Object.keys 应包含
+ */
+export function testStringInfinityPropertyNameIncluded() {
+    const target = { Infinity: 1 / 0 };
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('Infinity');
+}
+
+/**
+ * 测试点 73：Proxy 的 ownKeys 返回属性名是 "-0"，Object.keys 应包含字符串 "-0"
+ */
+export function testNegativeZeroStringKeyPreserved() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['-0'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify(['-0']);
+}
+
+/**
+ * 测试点 74：Proxy 的 ownKeys 返回属性名是 "__proto__" and "prototype"，both enumerable → both included
+ */
+export function testProtoAndPrototypeBothIncludedIfEnumerable() {
+    const target = {};
+    Object.defineProperty(target, '__proto__', { value: {}, enumerable: true });
+    Object.defineProperty(target, 'prototype', { value: {}, enumerable: true });
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy).sort();
+    return JSON.stringify(keys) === JSON.stringify(['__proto__', 'prototype'].sort());
+}
+
+/**
+ * 测试点 75：Proxy 的 ownKeys 返回属性名是 "constructor" on Object.create(null)，no prototype → still included if enumerable
+ */
+export function testConstructorOnNullProtoObjectIncludedIfEnumerable() {
+    const target = Object.create(null);
+    target.constructor = 'fake';
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('constructor');
+}
+
+/**
+ * 测试点 76：Proxy 的 ownKeys 返回属性名是 "hasOwnProperty" from Object.prototype, not own → ignored
+ */
+export function testInheritedHasOwnPropertyNotIncluded() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['hasOwnProperty'];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 77：Proxy 的 ownKeys 返回属性名是 "valueOf", inherited → ignored
+ */
+export function testInheritedValueOfNotIncluded() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['valueOf'];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return Reflect.getOwnPropertyDescriptor(target, prop);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 78：Proxy 的 ownKeys 返回属性名是 empty string and whitespace strings, all preserved
+ */
+export function testWhitespacePropertyNamesPreserved() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['', ' ', '\t', '\n'];
+        },
+        getOwnPropertyDescriptor(target, prop) {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy).sort();
+    return JSON.stringify(keys) === JSON.stringify(['', ' ', '\t', '\n'].sort());
+}
+
+/**
+ * 测试点 81：Proxy 的 ownKeys 返回属性名是 "__proto__"，但目标对象是 Object.create(null)，仍可作为普通属性包含
+ */
+export function testProtoOnNullPrototypeObjectIncludedIfEnumerable() {
+    const target = Object.create(null);
+    target.__proto__ = 'not prototype';
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('__proto__');
+}
+
+/**
+ * 测试点 82：Proxy 的 ownKeys 返回属性名是 "constructor"，但目标是冻结对象，Object.keys 仍应包含（若 enumerable）
+ */
+export function testFrozenObjectKeysUnaffected() {
+    const target = { constructor: 'frozen' };
+    Object.freeze(target);
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('constructor');
+}
+
+/**
+ * 测试点 84：Proxy 的 ownKeys 返回属性名是 "\uFFFF"（Unicode 最大 BMP 字符），应保留
+ */
+export function testMaxBMPUnicodePropertyNamePreserved() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['\uFFFF'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys[0] === '\uFFFF';
+}
+
+/**
+ * 测试点 85：Proxy 的 ownKeys 返回属性名是代理陷阱中动态生成的随机字符串，Object.keys 正确捕获
+ */
+export function testDynamicallyGeneratedPropertyNamesWork() {
+    const target = {};
+    let counter = 0;
+    const handler = {
+        ownKeys() {
+            return [`prop${++counter}`];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys1 = Object.keys(proxy);
+    const keys2 = Object.keys(proxy);
+    return (
+        keys1.length === 1 &&
+            typeof keys1[0] === 'string' &&
+        keys1[0].startsWith('prop')
+    );
+}
+
+/**
+ * 测试点 86：Proxy 的 ownKeys 返回属性名是 "arguments" on non-function object, enumerable → included
+ */
+export function testArgumentsOnPlainObjectIncludedIfEnumerable() {
+    const obj = { arguments: [1, 2] };
+    const proxy = new Proxy(obj, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('arguments');
+}
+
+/**
+ * 测试点 87：Proxy 的 ownKeys 返回属性名是 "caller" on plain object, enumerable → included
+ */
+export function testCallerOnPlainObjectIncludedIfEnumerable() {
+    const obj = { caller: null };
+    const proxy = new Proxy(obj, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('caller');
+}
+
+/**
+ * 测试点 89：Proxy 的 ownKeys 返回属性名是 Symbol.toStringTag，Object.keys 忽略（Symbol）
+ */
+export function testSymbolToStringTagIgnoredByObjectKeys() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return [Symbol.toStringTag];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 'MyClass', enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) === JSON.stringify([]);
+}
+
+/**
+ * 测试点 90：Proxy 的 ownKeys 返回属性名是 "0" for non-array, Object.keys includes it as string
+ */
+export function testZeroOnNonArrayObjectIncludedAsString() {
+    const obj = { 0: 'zero' };
+    const proxy = new Proxy(obj, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('0') && typeof keys[0] === 'string';
+}
+
+/**
+ * 测试点 91：Proxy 的 ownKeys 返回属性名是 "999999999999999999999" (larger than MAX_SAFE_INTEGER), preserved as string
+ */
+export function testHugeNumericStringKeyPreserved() {
+    const huge = '999999999999999999999';
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return [huge];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys[0] === huge;
+}
+
+/**
+ * 测试点 92：Proxy 的 ownKeys 返回属性名是 "__proto__" with data descriptor, enumerable → included
+ */
+export function testProtoWithDataDescriptorEnumerableIncluded() {
+    const target = {};
+    Object.defineProperty(target, '__proto__', {
+        value: { nested: true },
+        enumerable: true,
+        configurable: true
+    });
+    const proxy = new Proxy(target, {});
+    const keys = Object.keys(proxy);
+    return keys.includes('__proto__');
+}
+
+/**
+ * 测试点 93：Proxy 的 ownKeys 返回属性名是 empty Symbol description, ignored by Object.keys
+ */
+export function testSymbolWithEmptyDescriptionIgnored() {
+    const sym = Symbol('');
+    const target = { [sym]: 42 };
+    const handler = {
+        ownKeys() {
+            return [sym];
+        },
+        getOwnPropertyDescriptor(t, p) {
+            return Reflect.getOwnPropertyDescriptor(t, p);
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys.length === 0;
+}
+
+/**
+ * 测试点 96：Proxy 的 ownKeys 返回属性名 is -Infinity string, preserved
+ */
+export function testNegativeInfinityStringKeyPreserved() {
+    const target = {};
+    const handler = {
+        ownKeys() {
+            return ['-Infinity'];
+        },
+        getOwnPropertyDescriptor() {
+            return { value: 1, enumerable: true, configurable: true };
+        }
+    };
+    const proxy = new Proxy(target, handler);
+    const keys = Object.keys(proxy);
+    return keys.includes('-Infinity');
+}
+
+/**
+ * 测试点 97：Proxy 的 ownKeys 返回属性名 is "constructor" on Date instance, normally non-enumerable → not included
+ */
+export function testDateConstructorNotEnumerableSoNotInKeys() {
+    const date = new Date();
+    const proxy = new Proxy(date, {});
+    const keys = Object.keys(proxy);
+    return !keys.includes('constructor');
+}
+
+/**
+ * 测试点 98：Proxy 的 ownKeys 返回属性名 is "message" on Error object, enumerable → included
+ */
+export function testErrorMessageEnumerableIncluded() {
+    const err = new Error('test');
+
+    const proxy = new Proxy(err, {});
+    const keys = Object.keys(proxy);
+    return JSON.stringify(keys) == JSON.stringify([]);
+}
