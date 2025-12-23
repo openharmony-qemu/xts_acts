@@ -697,3 +697,642 @@ export default function ActsProxyAndReflect6Test() {
       let result: boolean = test46();
       expect(result).assertEqual(true);
     })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_047
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_4700
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test47();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_048
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_4800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test48();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_049
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_4900
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test49();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_050
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5000
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test50();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_051
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5100
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test51();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_052
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5200
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test52();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_053
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5300
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test53();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_054
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5400
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test54();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_055
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5500
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test55();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_056
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5600
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test56();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_057
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5700
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test57();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_058
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test58();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_059
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_5900
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test59();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_060
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6000
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test60();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_061
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6100
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test61();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_062
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6200
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test62();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_063
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6300
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test63();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_064
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6400
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test64();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_065
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6500
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test65();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_066
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6600
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test66();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_067
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6700
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test67();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_068
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test68();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_069
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_6900
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test69();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_070
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7000
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test70();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_071
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7100
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test71();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_074
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7400
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test74();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_075
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7500
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test75();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_076
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7600
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test76();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_077
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7700
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test77();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_078
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_7800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test78();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_084
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_8400
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test84();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_085
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_8500
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test85();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_086
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_8600
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test86();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_087
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_8700
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test87();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_088
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_8800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test88();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_089
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_8900
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test89();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_091
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9100
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test91();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_092
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9200
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test92();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_093
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9300
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test93();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_095
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9500
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test95();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_096
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9600
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test96();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_098
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test98();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_099
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_9900
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test99();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_100
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10000
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test100();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_101
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10100
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test101();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_102
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10200
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test102();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_103
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10300
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test103();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_108
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10800
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test108();
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.name   testCacheProxyReflectTarget_109
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_PROXYREFLECTTARGET_10900
+     * @tc.desc   Test proxy as a combination scenario of Reflect target and Reflect.get.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCacheProxyReflectTarget_109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = test109();
+      expect(result).assertEqual(true);
+    })
+  })
+}
