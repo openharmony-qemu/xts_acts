@@ -23,14 +23,14 @@
 
 namespace ArkUICapiTest {
 
-struct ArkUI_NodeEvent_ {
+struct ArkUI_NodeEvent_Scroll {
     int32_t category;
     int32_t kind;
 };
 
 static napi_value Enum_GetEventType_Scroll(napi_env env, napi_callback_info info) {
     NAPI_START(scroll, ARKUI_NODE_SCROLL);
-    ArkUI_NodeEvent_ *event = new ArkUI_NodeEvent_;
+    ArkUI_NodeEvent_Scroll *event = new ArkUI_NodeEvent_Scroll;
     event ->category = 0;
     int eventTypes[] = {
         NODE_SCROLL_EVENT_ON_SCROLL,
@@ -53,7 +53,7 @@ static napi_value Enum_GetEventType_Scroll(napi_env env, napi_callback_info info
     };
     for (int i = 0; i < sizeof(eventTypes) / sizeof(eventTypes[0]); i++) {
         event->kind = eventTypes[i];
-        auto eventType = OH_ArkUI_NodeEvent_GetEventType((ArkUI_NodeEvent*)event);
+        auto eventType = OH_ArkUI_NodeEvent_GetEventType((ArkUI_NodeEvent*) event);
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Scroll GetEventType", "result:%{public}d", eventType);
         ASSERT_EQ(eventType, eventTypes[i]);
     }

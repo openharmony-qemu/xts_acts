@@ -23,14 +23,14 @@
 
 namespace ArkUICapiTest {
 
-struct ArkUI_NodeEvent_ {
+struct ArkUI_NodeEvent_Refresh {
     int32_t category;
     int32_t kind;
 };
 
 static napi_value Enum_GetEventType_Refresh(napi_env env, napi_callback_info info) {
     NAPI_START(refresh, ARKUI_NODE_REFRESH);
-    ArkUI_NodeEvent_ *event = new ArkUI_NodeEvent_;
+    ArkUI_NodeEvent_Refresh *event = new ArkUI_NodeEvent_Refresh;
     event ->category = 0;
     int eventTypes[] = {
         NODE_REFRESH_STATE_CHANGE,
@@ -39,7 +39,7 @@ static napi_value Enum_GetEventType_Refresh(napi_env env, napi_callback_info inf
     };
     for (int i = 0; i < sizeof(eventTypes) / sizeof(eventTypes[0]); i++) {
         event->kind = eventTypes[i];
-        auto eventType = OH_ArkUI_NodeEvent_GetEventType((ArkUI_NodeEvent*)event);
+        auto eventType = OH_ArkUI_NodeEvent_GetEventType((ArkUI_NodeEvent*) event);
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Refresh GetEventType", "result:%{public}d", eventType);
         ASSERT_EQ(eventType, eventTypes[i]);
     }
