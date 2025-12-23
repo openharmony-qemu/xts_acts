@@ -2740,11 +2740,11 @@ export default function TextPicker() {
         let expectedIsSlidingSupported: boolean = true;
         let expectedEdgeEffect: EdgeEffect = EdgeEffect.None;
         let expectedMimeType: photoAccessHelper.PhotoViewMIMETypes = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
-        let expectedMimeTypeFilter: photoAccessHelper.MimeTypeFilter = { mimeTypeArray: ["*/*"] }
-        let expectedRepeatSelectSupported = true;
-        let expectedSelectMode = 0;
-        let expectedSingleSelectionMode = 2;
-        let expectedPreselectedUris = ["file:img//sample"];
+        let expectedMimeTypeFilter: photoAccessHelper.MimeTypeFilter = { mimeTypeArray: ['*/*'] }
+        let expectedRepeatSelectSupported: boolean = true;
+        let expectedSelectMode: number = 0;
+        let expectedSingleSelectionMode: number = 2;
+        let expectedPreselectedUris: Array<string> = ['file:img//sample'];
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
