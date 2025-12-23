@@ -1993,3 +1993,125 @@ export default function MapCache1Test() {
       let result: boolean = testDeleteOnProxyWithTrappedOwnKeys();
       expect(result).assertEqual(true);
     });
+
+    /**
+     * @tc.name testCache_map1_152
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15200
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedSetProto();
+      expect(result).assertEqual(true);
+    });
+    /**
+     * @tc.name testCache_map1_153
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15300
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedIsExtensible();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_154
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15400
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedPreventExtensions();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_155
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15500
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedDeleteProperty();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_156
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15600
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedDefineProperty();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_157
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15700
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedGetProto();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_158
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15800
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyWithTrappedSet();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_159
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_15900
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testDeleteOnProxyAsConstructor();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_map1_160
+     * @tc.number SUB_COMMONLIBRARY_BASE_CACHE_MAP1_16000
+     * @tc.desc Testing Cache Combo by map
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_map1_160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testFinalObjectMethodConsistencyDuringDelete();
+      expect(result).assertEqual(true);
+    });
+
+  })
+}
+
+
+
