@@ -1986,3 +1986,97 @@ export default function ArrayCache1Test() {
       let result: boolean = testExecuteArrowFunctionsAfterPop();
       expect(result).assertEqual(true);
     });
+
+    /**
+     * @tc.name testCache_Array1_134
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_13400
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testAtAfterPopInEntries();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_Array1_135
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_13500
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testLargeObjectPropertiesAfterPop();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_Array1_136
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_13600
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testReduceRightAfterPopInEntries();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_Array1_137
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_13700
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testCircularReferenceAfterPop();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_Array1_138
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_13800
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testFindIndexAfterPopInEntries();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_Array1_139
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_13900
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testTypedArrayAfterPop();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.name testCache_Array1_140
+     * @tc.number SUB_COMMONLIBRARY_CACHE_BASE_ARRAY1_14000
+     * @tc.desc Testing Cache Combo by Array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('testCache_Array1_140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: boolean = testIsPrototypeOfAfterPopInEntries();
+      expect(result).assertEqual(true);
+    });
+  })
+}
+
