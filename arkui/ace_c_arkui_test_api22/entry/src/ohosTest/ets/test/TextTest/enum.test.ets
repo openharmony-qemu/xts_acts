@@ -27,15 +27,15 @@ export default function textEnumTest() {
     });
 
     /**
-     * @tc.number   Enum_Text_OH_ArkUI_NodeEvent_GetEventType
+     * @tc.number   textEnumTest010
      * @tc.name     textEnumTest010
-     * @tc.desc     testing enum
+     * @tc.desc     testing enum text
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
      */
     it('textEnumTest010', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.Enum_Text_OH_ArkUI_NodeEvent_GetEventType()).assertEqual(0)
+      expect(nativeFunc.enum_GetEventType_Text()).assertEqual(0)
       await Utils.sleep(200)
       done()
     })

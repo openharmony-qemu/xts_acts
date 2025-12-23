@@ -27,15 +27,15 @@ export default function imageEnumTest() {
     });
 
     /**
-     * @tc.number   Enum_Image_OH_ArkUI_NodeEvent_GetEventType
+     * @tc.number   imageEnumTest010
      * @tc.name     imageEnumTest010
-     * @tc.desc     testing enum
+     * @tc.desc     testing enum image
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
      */
     it('imageEnumTest010', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.Enum_Image_OH_ArkUI_NodeEvent_GetEventType()).assertEqual(0)
+      expect(nativeFunc.enum_GetEventType_Image()).assertEqual(0)
       await Utils.sleep(200)
       done()
     })

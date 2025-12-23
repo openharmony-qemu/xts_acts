@@ -24,14 +24,14 @@
 
 namespace ArkUICapiTest {
 
-struct ArkUI_NodeEvent_ {
+struct ArkUI_NodeEvent_Text {
     int32_t category;
     int32_t kind;
 };
 
-static napi_value Enum_Text_OH_ArkUI_NodeEvent_GetEventType(napi_env env, napi_callback_info info) {
+static napi_value Enum_GetEventType_Text(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    ArkUI_NodeEvent_ *event = new ArkUI_NodeEvent_;
+    ArkUI_NodeEvent_Text *event = new ArkUI_NodeEvent_Text;
     event ->category = 0;
     int eventTypes[] = {
         NODE_TOGGLE_ON_CHANGE,

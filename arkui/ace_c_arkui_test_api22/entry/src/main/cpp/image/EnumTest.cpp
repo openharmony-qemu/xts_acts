@@ -29,7 +29,7 @@ struct ArkUI_NodeEvent_Image {
     int32_t kind;
 };
 
-static napi_value Enum_Image_OH_ArkUI_NodeEvent_GetEventType(napi_env env, napi_callback_info info) {
+static napi_value Enum_GetEventType_Image(napi_env env, napi_callback_info info) {
     NAPI_START(text, ARKUI_NODE_TEXT);
     ArkUI_NodeEvent_Image *event = new ArkUI_NodeEvent_Image;
     event ->category = 0;
