@@ -759,14 +759,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0002
-     * @tc.number testUrlParams9Entries9Escape0002
-     * @tc.desc   testUrlParams9Entries9Escape0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0002";
     //   try {
@@ -790,14 +782,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0003
-     * @tc.number testUrlParams9Entries9Escape0003
-     * @tc.desc   testUrlParams9Entries9Escape0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0003";
     //   try {
@@ -821,14 +805,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0004
-     * @tc.number testUrlParams9Entries9Escape0004
-     * @tc.desc   testUrlParams9Entries9Escape0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0004";
     //   try {
@@ -852,14 +828,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0005
-     * @tc.number testUrlParams9Entries9Escape0005
-     * @tc.desc   testUrlParams9Entries9Escape0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0005";
     //   try {
@@ -883,14 +851,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0006
-     * @tc.number testUrlParams9Entries9Escape0006
-     * @tc.desc   testUrlParams9Entries9Escape0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0006";
     //   try {
@@ -914,14 +874,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0007
-     * @tc.number testUrlParams9Entries9Escape0007
-     * @tc.desc   testUrlParams9Entries9Escape0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0007";
     //   try {
@@ -945,14 +897,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0008
-     * @tc.number testUrlParams9Entries9Escape0008
-     * @tc.desc   testUrlParams9Entries9Escape0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0008";
     //   try {
@@ -976,14 +920,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0009
-     * @tc.number testUrlParams9Entries9Escape0009
-     * @tc.desc   testUrlParams9Entries9Escape0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0009";
     //   try {
@@ -1007,14 +943,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0010
-     * @tc.number testUrlParams9Entries9Escape0010
-     * @tc.desc   testUrlParams9Entries9Escape0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0010";
     //   try {
@@ -1038,14 +966,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Entries9Escape0011
-     * @tc.number testUrlParams9Entries9Escape0011
-     * @tc.desc   testUrlParams9Entries9Escape0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Entries9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Entries9Escape0011";
     //   try {
@@ -2082,14 +2002,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0002
-     * @tc.number testUrlParams9Keys9Escape0002
-     * @tc.desc   testUrlParams9Keys9Escape0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0002";
     //   try {
@@ -2110,14 +2022,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0003
-     * @tc.number testUrlParams9Keys9Escape0003
-     * @tc.desc   testUrlParams9Keys9Escape0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0003";
     //   try {
@@ -2138,14 +2042,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0004
-     * @tc.number testUrlParams9Keys9Escape0004
-     * @tc.desc   testUrlParams9Keys9Escape0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0004";
     //   try {
@@ -2166,14 +2062,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0005
-     * @tc.number testUrlParams9Keys9Escape0005
-     * @tc.desc   testUrlParams9Keys9Escape0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0005";
     //   try {
@@ -2194,14 +2082,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0006
-     * @tc.number testUrlParams9Keys9Escape0006
-     * @tc.desc   testUrlParams9Keys9Escape0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0006";
     //   try {
@@ -2222,14 +2102,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0007
-     * @tc.number testUrlParams9Keys9Escape0007
-     * @tc.desc   testUrlParams9Keys9Escape0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0007";
     //   try {
@@ -2250,14 +2122,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0008
-     * @tc.number testUrlParams9Keys9Escape0008
-     * @tc.desc   testUrlParams9Keys9Escape0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0008";
     //   try {
@@ -2278,14 +2142,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0009
-     * @tc.number testUrlParams9Keys9Escape0009
-     * @tc.desc   testUrlParams9Keys9Escape0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0009";
     //   try {
@@ -2306,14 +2162,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0010
-     * @tc.number testUrlParams9Keys9Escape0010
-     * @tc.desc   testUrlParams9Keys9Escape0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0010";
     //   try {
@@ -2334,14 +2182,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlParams9Keys9Escape0011
-     * @tc.number testUrlParams9Keys9Escape0011
-     * @tc.desc   testUrlParams9Keys9Escape0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlParams9Keys9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlParams9Keys9Escape0011";
     //   try {
@@ -2362,14 +2202,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0001
-     * @tc.number testUrlValues9Escape0001
-     * @tc.desc   testUrlValues9Escape0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0001";
     //   try {
@@ -2390,14 +2222,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0002
-     * @tc.number testUrlValues9Escape0002
-     * @tc.desc   testUrlValues9Escape0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0002";
     //   try {
@@ -2418,14 +2242,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0003
-     * @tc.number testUrlValues9Escape0003
-     * @tc.desc   testUrlValues9Escape0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0003";
     //   try {
@@ -2446,14 +2262,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0004
-     * @tc.number testUrlValues9Escape0004
-     * @tc.desc   testUrlValues9Escape0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0004";
     //   try {
@@ -2474,14 +2282,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0005
-     * @tc.number testUrlValues9Escape0005
-     * @tc.desc   testUrlValues9Escape0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0005";
     //   try {
@@ -2502,14 +2302,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0006
-     * @tc.number testUrlValues9Escape0006
-     * @tc.desc   testUrlValues9Escape0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0006";
     //   try {
@@ -2530,14 +2322,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0007
-     * @tc.number testUrlValues9Escape0007
-     * @tc.desc   testUrlValues9Escape0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0007";
     //   try {
@@ -2558,14 +2342,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0008
-     * @tc.number testUrlValues9Escape0008
-     * @tc.desc   testUrlValues9Escape0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0008";
     //   try {
@@ -2586,14 +2362,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0009
-     * @tc.number testUrlValues9Escape0009
-     * @tc.desc   testUrlValues9Escape0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0009";
     //   try {
@@ -2613,14 +2381,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0010
-     * @tc.number testUrlValues9Escape0010
-     * @tc.desc   testUrlValues9Escape0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0010";
     //   try {
@@ -2641,14 +2401,6 @@ export default function Escape_Url() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrlValues9Escape0011
-     * @tc.number testUrlValues9Escape0011
-     * @tc.desc   testUrlValues9Escape0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlValues9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrlValues9Escape0011";
     //   try {
@@ -3355,7 +3107,7 @@ export default function Escape_Url() {
         let urlString2 = '/\\b/path2';
         let url1 = Url.URL.parseURL(urlString1, 'https://www.example.com/test/test1');
         let url2 = Url.URL.parseURL(urlString2, 'https://www.example.com/test/test1');
-        let temp1 = '%5Cb/path2';
+        let temp1 = '\\b/path2';
         let rstUrl1 = 'https://www.example.com/test/' + temp1;
         let rstUrl2 = 'https://b/path2';
         expect(url1.toString()).assertEqual(rstUrl1);

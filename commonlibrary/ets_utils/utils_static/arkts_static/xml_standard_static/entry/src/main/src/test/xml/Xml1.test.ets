@@ -1320,7 +1320,7 @@ export default function xmlTest1() {
       let options: xml.ParseOptions = { supportDoctype: true, ignoreNameSpace: true, tagValueCallbackFunction: func52 }
       that.parseXml(options);
       let str3 = '  note [\n<!ENTITY foo "baa">] note      ' +
-        '\\r\\nfuncrion matchwo(a,6)\\r\\n{\\r\\nreturn 1;\\r\\n}\\r\\n      Hello, World!      company John ' +
+        '\r\nfuncrion matchwo(a,6)\r\n{\r\nreturn 1;\r\n}\r\n      Hello, World!      company John ' +
         '& Hans company      title Happy title      title Happy title      lens Work lens      ' +
         'lens Play lens      go there      a b b a      h:table          h:tr              h:td Apples h:td' +
         '              h:td Bananas h:td          h:tr      h:table note  ';
@@ -1641,7 +1641,7 @@ export default function xmlTest1() {
       let options: xml.ParseOptions =
         { supportDoctype: true, ignoreNameSpace: true, tokenValueCallbackFunction: func63 }
       that.parseXml(options);
-      let result = 'This is a \\r CDATA\\n section';
+      let result = 'This is a \r CDATA\n section';
       expect(str).assertEqual(result);
     })
     /**
@@ -1668,7 +1668,7 @@ export default function xmlTest1() {
       let options: xml.ParseOptions =
         { supportDoctype: true, ignoreNameSpace: true, tokenValueCallbackFunction: func64 }
       that.parseXml(options);
-      let result = 'Hello\nWorld\nWork\nThis is a \\r\\n CDATA section';
+      let result = 'Hello\nWorld\nWork\nThis is a \r\n CDATA section';
       expect(str).assertEqual(result);
     })
 

@@ -478,9 +478,6 @@ export default function DequeTest() {
       const TAG = "tesGetLast0018";
       try {
         let deque: Deque<number | string | object> = new Deque<number | string | object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
         let a: C1 = new C1("Dylon", "13");
         let b = 'a';
         let c = 1;

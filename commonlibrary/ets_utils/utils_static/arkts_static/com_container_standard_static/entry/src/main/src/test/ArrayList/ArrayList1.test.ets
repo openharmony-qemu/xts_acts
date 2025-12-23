@@ -318,7 +318,6 @@ export default function ArraylistTest1() {
       }
     });
 
-
     /**
      * @tc.name   testArray0015
      * @tc.number testArray0015
@@ -327,25 +326,25 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<Number> = new ArrayList<Number>();
-    //   arrayList.add(4);
-    //   arrayList.add(3);
-    //   arrayList.add(1);
-    //   arrayList.add(2);
-    //   arrayList.add(14);
-    //   arrayList.replaceAllElements((item, index) => {
-    //     return (item = 2 * item);
-    //   });
-    //   let arr: Array<Number> = new Array<Number>();
-    //   arrayList.forEach((item: Number, index) => {
-    //     arr.push(item);
-    //   });
-    //   let a: Array<Number> = new Array<Number>(8, 6, 2, 4, 28);
-    //   for (let i = 0; i < a.length; i++) {
-    //     expect(String(arr[i])).assertEqual(String(a[i]));
-    //   }
-    // });
+    it("testArray0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<Number> = new ArrayList<Number>();
+      arrayList.add(4);
+      arrayList.add(3);
+      arrayList.add(1);
+      arrayList.add(2);
+      arrayList.add(14);
+      arrayList.replaceAllElements((item, index) => {
+        return (item = 2 * item);
+      });
+      let arr: Array<Number> = new Array<Number>();
+      arrayList.forEach((item: Number, index) => {
+        arr.push(item);
+      });
+      let a: Array<Number> = new Array<Number>(8, 6, 2, 4, 28);
+      for (let i = 0; i < a.length; i++) {
+        expect(String(arr[i])).assertEqual(String(a[i]));
+      }
+    });
 
 
     /**
@@ -618,21 +617,21 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("四");
-    //   arrayList.add("三");
-    //   arrayList.add(1);
-    //   arrayList.add("a");
-    //   try {
-    //     let res = arrayList.insert(8, -1);
-    //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200001');
-    //     expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: -1`);
-    //   }
-    // });
+    it("testArray0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
+      arrayList.add("四");
+      arrayList.add("三");
+      arrayList.add(1);
+      arrayList.add("a");
+      try {
+        arrayList.insert(8, -1);
+        expect('true').assertEqual('false')
+      } catch (err: BusinessError) {
+        expect(err.name).assertEqual("BusinessError");
+        expect(String(err.code)).assertEqual('10200001');
+        expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: -1`);
+      }
+    });
 
     /**
      * @tc.name   testArray0028
@@ -642,21 +641,21 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("四");
-    //   arrayList.add("三");
-    //   arrayList.add(1);
-    //   arrayList.add("a");
-    //   try {
-    //     let res = arrayList.insert(8, 10);
-    //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200001');
-    //     expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 10`);
-    //   }
-    // });
+    it("testArray0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
+      arrayList.add("四");
+      arrayList.add("三");
+      arrayList.add(1);
+      arrayList.add("a");
+      try {
+        arrayList.insert(8, 10);
+        expect('true').assertEqual('false')
+      } catch (err: BusinessError) {
+        expect(err.name).assertEqual("BusinessError");
+        expect(String(err.code)).assertEqual('10200001');
+        expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 10`);
+      }
+    });
 
     /**
      * @tc.name   testArray0029
@@ -666,21 +665,21 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("四");
-    //   arrayList.add("三");
-    //   arrayList.add(1);
-    //   arrayList.add("a");
-    //   try {
-    //     let res = arrayList.insert(8, 11);
-    //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200001');
-    //     expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 11`);
-    //   }
-    // });
+    it("testArray0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
+      arrayList.add("四");
+      arrayList.add("三");
+      arrayList.add(1);
+      arrayList.add("a");
+      try {
+        arrayList.insert(8, 11);
+        expect('true').assertEqual('false')
+      } catch (err: BusinessError) {
+        expect(err.name).assertEqual("BusinessError");
+        expect(String(err.code)).assertEqual('10200001');
+        expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 11`);
+      }
+    });
 
     /**
      * @tc.name   testArray0030
@@ -842,25 +841,25 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("四");
-    //   arrayList.add("三");
-    //   arrayList.add(1);
-    //   arrayList.add("a");
-    //   arrayList.add(1);
-    //   arrayList.add("b");
-    //   arrayList.add("c");
-    //   arrayList.add(1);
-    //   try {
-    //     let res = arrayList.removeByRange(3, 1);
-    //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200001');
-    //     expect(err.message).assertEqual(`The value of "fromIndex" is out of range. It must be >= 0 && <= 0. Received value is: 3`);
-    //   }
-    // });
+    it("testArray0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
+      arrayList.add("四");
+      arrayList.add("三");
+      arrayList.add(1);
+      arrayList.add("a");
+      arrayList.add(1);
+      arrayList.add("b");
+      arrayList.add("c");
+      arrayList.add(1);
+      try {
+        arrayList.removeByRange(3, 1);
+        expect('true').assertEqual('false')
+      } catch (err: BusinessError) {
+        expect(err.name).assertEqual("BusinessError");
+        expect(String(err.code)).assertEqual('10200001');
+        expect(err.message).assertEqual(`The value of "fromIndex" is out of range. It must be >= 0 && <= 0. Received value is: 3`);
+      }
+    });
 
     /**
      * @tc.name   testArray0038
@@ -870,22 +869,22 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("四");
-    //   arrayList.add("三");
-    //   arrayList.add(1);
-    //   arrayList.add("a");
-    //   arrayList.add(1);
-    //   try {
-    //     let res = arrayList.removeByRange(6, 8);
-    //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200001');
-    //     expect(err.message).assertEqual(`The value of "fromIndex" is out of range. It must be >= 0 && <= 4. Received value is: 6`);
-    //   }
-    // });
+    it("testArray0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
+      arrayList.add("四");
+      arrayList.add("三");
+      arrayList.add(1);
+      arrayList.add("a");
+      arrayList.add(1);
+      try {
+        arrayList.removeByRange(6, 8);
+        expect('true').assertEqual('false')
+      } catch (err: BusinessError) {
+        expect(err.name).assertEqual("BusinessError");
+        expect(String(err.code)).assertEqual('10200001');
+        expect(err.message).assertEqual(`The value of "fromIndex" is out of range. It must be >= 0 && <= 4. Received value is: 6`);
+      }
+    });
 
     /**
      * @tc.name   testArray0039

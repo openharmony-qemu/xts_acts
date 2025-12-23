@@ -108,14 +108,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsAppend006
-     * @tc.number testParamsAppend006
-     * @tc.desc   testParamsAppend006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -137,14 +129,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsAppend007
-     * @tc.number testParamsAppend007
-     * @tc.desc   testParamsAppend007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsAppend007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -248,14 +232,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsDelete006
-     * @tc.number testParamsDelete006
-     * @tc.desc   testParamsDelete006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsDelete006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -277,14 +253,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsDelete007
-     * @tc.number testParamsDelete007
-     * @tc.desc   testParamsDelete007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsDelete007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let that = Url.URL.parseURL('https://example.com?foo=1&bar=2');
@@ -306,14 +274,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testNewURLParams001
-     * @tc.number testNewURLParams001
-     * @tc.desc   testNewURLParams001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testNewURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(undefined);
     //   let result = params.toString();
@@ -643,14 +603,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsForEach006
-     * @tc.number testParamsForEach006
-     * @tc.desc   testParamsForEach006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("foo=bar&jss=txt");
@@ -674,14 +626,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsForEach007
-     * @tc.number testParamsForEach007
-     * @tc.desc   testParamsForEach007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams("key1=value1&key2=value2")
     //   let arr:string[] = [];
@@ -778,14 +722,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsGet006
-     * @tc.number testParamsGet006
-     * @tc.desc   testParamsGet006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = new Url.URLParams("key1=value1&key2=value2")
@@ -883,14 +819,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsGetAll006
-     * @tc.number testParamsGetAll006
-     * @tc.desc   testParamsGetAll006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsGetAll006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("key1=value1&key2=value2&key3=大")
@@ -985,14 +913,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsHas006
-     * @tc.number testParamsHas006
-     * @tc.desc   testParamsHas006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams("小=value1&￥=value2&key3=大")
     //   try {
@@ -1202,14 +1122,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsSet007
-     * @tc.number testParamsSet007
-     * @tc.desc   testParamsSet007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1234,14 +1146,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsSet007
-     * @tc.number testParamsSet007
-     * @tc.desc   testParamsSet007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsSet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -1523,14 +1427,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsConstruction002
-     * @tc.number testParamsConstruction002
-     * @tc.desc   testParamsConstruction002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     //   it('testParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //  class c1 {
     //    user: string;
@@ -1570,14 +1466,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsConstruction004
-     * @tc.number testParamsConstruction004
-     * @tc.desc   testParamsConstruction004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let map: Map<string, string> = new Map<string, string>();
     //   map.set('user', 'abc');
@@ -1629,14 +1517,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsConstruction007
-     * @tc.number testParamsConstruction007
-     * @tc.desc   testParamsConstruction007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(param)
     //   params.append('abcde','fghki')
@@ -1652,14 +1532,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsConstruction008
-     * @tc.number testParamsConstruction008
-     * @tc.desc   testParamsConstruction008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     const param = 123456789;
@@ -1679,14 +1551,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testParamsConstruction009
-     * @tc.number testParamsConstruction009
-     * @tc.desc   testParamsConstruction009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParamsConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     const param = [
@@ -1708,14 +1572,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testNewURLSearchParams001
-     * @tc.number testNewURLSearchParams001
-     * @tc.desc   testNewURLSearchParams001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testNewURLSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(undefined);
     //   let result = params.toString()
@@ -1813,14 +1669,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlAppend006
-     * @tc.number testUrlAppend006
-     * @tc.desc   testUrlAppend006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlAppend006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let params = new Url.URLParams(that.search)
@@ -2476,14 +2324,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlHas006
-     * @tc.number testUrlHas006
-     * @tc.desc   testUrlHas006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams("小=value1&￥=value2&key3=大")
     //   params.append("￥","ACA")
@@ -2679,14 +2519,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSet006
-     * @tc.number testUrlSet006
-     * @tc.desc   testUrlSet006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try {
     //     let params = new Url.URLParams("1=value1&2=value2&key3=3");
@@ -2981,14 +2813,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParamsConstruction002
-     * @tc.number testUrlSearchParamsConstruction002
-     * @tc.desc   testUrlSearchParamsConstruction002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams({
     //     user: 'abc',
@@ -3024,14 +2848,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParamsConstruction004
-     * @tc.number testUrlSearchParamsConstruction004
-     * @tc.desc   testUrlSearchParamsConstruction004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const map: Map<K,V> = new Map<K,V>();
     //   map.set('user', 'abc');
@@ -3049,14 +2865,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParamsConstruction005
-     * @tc.number testUrlSearchParamsConstruction005
-     * @tc.desc   testUrlSearchParamsConstruction005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const getQueryPairs = () => [
     //     ['user', 'abc'],
@@ -3091,14 +2899,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParamsConstruction007
-     * @tc.number testUrlSearchParamsConstruction007
-     * @tc.desc   testUrlSearchParamsConstruction007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParamsConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(param)
     //   params.append('abcde','fghki')
@@ -4062,14 +3862,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParams001
-     * @tc.number testUrlSearchParams001
-     * @tc.desc   testUrlSearchParams001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
     //   const params = that.searchParams
@@ -4085,14 +3877,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParams002
-     * @tc.number testUrlSearchParams002
-     * @tc.desc   testUrlSearchParams002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let params = that.searchParams
@@ -4109,14 +3893,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParams003
-     * @tc.number testUrlSearchParams003
-     * @tc.desc   testUrlSearchParams003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
     //   let params = that.searchParams
@@ -4132,14 +3908,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParams004
-     * @tc.number testUrlSearchParams004
-     * @tc.desc   testUrlSearchParams004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let params = that.searchParams
@@ -4156,14 +3924,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParams005
-     * @tc.number testUrlSearchParams005
-     * @tc.desc   testUrlSearchParams005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
     //   let params = that.searchParams
@@ -4179,14 +3939,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlURLParams001
-     * @tc.number testUrlURLParams001
-     * @tc.desc   testUrlURLParams001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
     //   const seach = that.params
@@ -4202,14 +3954,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlURLParams002
-     * @tc.number testUrlURLParams002
-     * @tc.desc   testUrlURLParams002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let seach = that.params
@@ -4226,14 +3970,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlURLParams003
-     * @tc.number testUrlURLParams003
-     * @tc.desc   testUrlURLParams003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
     //   let seach = that.params
@@ -4249,14 +3985,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlURLParams004
-     * @tc.number testUrlURLParams004
-     * @tc.desc   testUrlURLParams004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlURLParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
     //   let seach = that.params
@@ -4273,14 +4001,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlURLParams005
-     * @tc.number testUrlURLParams005
-     * @tc.desc   testUrlURLParams005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlURLParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
     //   let seach = that.params
@@ -4635,14 +4355,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlConstruction014
-     * @tc.number testUrlConstruction014
-     * @tc.desc   testUrlConstruction014
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlConstruction014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
     //   const result = params.searchParams.toString();
@@ -4657,14 +4369,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL001
-     * @tc.number testUrlparseURL001
-     * @tc.desc   testUrlparseURL001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4681,14 +4385,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL002
-     * @tc.number testUrlparseURL002
-     * @tc.desc   testUrlparseURL002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4705,14 +4401,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL003
-     * @tc.number testUrlparseURL003
-     * @tc.desc   testUrlparseURL003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4729,14 +4417,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL004
-     * @tc.number testUrlparseURL004
-     * @tc.desc   testUrlparseURL004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4753,14 +4433,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL005
-     * @tc.number testUrlparseURL005
-     * @tc.desc   testUrlparseURL005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4777,14 +4449,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL006
-     * @tc.number testUrlparseURL006
-     * @tc.desc   testUrlparseURL006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4801,14 +4465,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL007
-     * @tc.number testUrlparseURL007
-     * @tc.desc   testUrlparseURL007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4831,14 +4487,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL008
-     * @tc.number testUrlparseURL008
-     * @tc.desc   testUrlparseURL008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4862,14 +4510,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL009
-     * @tc.number testUrlparseURL009
-     * @tc.desc   testUrlparseURL009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4893,14 +4533,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0010
-     * @tc.number testUrlparseURL0010
-     * @tc.desc   testUrlparseURL0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -4924,14 +4556,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0011
-     * @tc.number testUrlparseURL0011
-     * @tc.desc   testUrlparseURL0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4951,14 +4575,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0012
-     * @tc.number testUrlparseURL0012
-     * @tc.desc   testUrlparseURL0012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4975,14 +4591,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0013
-     * @tc.number testUrlparseURL0013
-     * @tc.desc   testUrlparseURL0013
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -4999,14 +4607,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0014
-     * @tc.number testUrlparseURL0014
-     * @tc.desc   testUrlparseURL0014
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5023,14 +4623,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0015
-     * @tc.number testUrlparseURL0015
-     * @tc.desc   testUrlparseURL0015
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5047,14 +4639,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0016
-     * @tc.number testUrlparseURL0016
-     * @tc.desc   testUrlparseURL0016
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5071,14 +4655,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0017
-     * @tc.number testUrlparseURL0017
-     * @tc.desc   testUrlparseURL0017
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5095,14 +4671,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0018
-     * @tc.number testUrlparseURL0018
-     * @tc.desc   testUrlparseURL0018
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5119,14 +4687,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0019
-     * @tc.number testUrlparseURL0019
-     * @tc.desc   testUrlparseURL0019
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5143,14 +4703,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0020
-     * @tc.number testUrlparseURL0020
-     * @tc.desc   testUrlparseURL0020
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = Url.URL.parseURL()
     //   expect(params != null).assertTrue()
@@ -5167,14 +4719,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0021
-     * @tc.number testUrlparseURL0021
-     * @tc.desc   testUrlparseURL0021
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -5197,14 +4741,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0022
-     * @tc.number testUrlparseURL0022
-     * @tc.desc   testUrlparseURL0022
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -5227,14 +4763,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0023
-     * @tc.number testUrlparseURL0023
-     * @tc.desc   testUrlparseURL0023
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -5257,14 +4785,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0024
-     * @tc.number testUrlparseURL0024
-     * @tc.desc   testUrlparseURL0024
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -5287,14 +4807,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0025
-     * @tc.number testUrlparseURL0025
-     * @tc.desc   testUrlparseURL0025
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   try{
     //     let params = Url.URL.parseURL()
@@ -5426,7 +4938,7 @@ export default function urlTest2() {
         '94&from=al&x-expires=19&x-sie=FI%2BJ","https://ssse?iz=67594"]';
       let urlObj =  Url.URL.parseURL(strUrl)
       const result = JSON.stringify(urlObj.params.getAll("url"))
-      expect(result).assertEqual(JSON.stringify(res))
+      expect(result).assertEqual(res)
     })
 
     /**
@@ -5602,14 +5114,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0041
-     * @tc.number testUrlparseURL0041
-     * @tc.desc   testUrlparseURL0041
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86`)
     //   const phone2 = u2.params.get('phone')
@@ -5625,14 +5129,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0042
-     * @tc.number testUrlparseURL0042
-     * @tc.desc   testUrlparseURL0042
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86+9`)
     //   const phone2 = u2.params.get('phone')
@@ -5685,7 +5181,7 @@ export default function urlTest2() {
     it('testUrlparseURL0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
       expect(uu2.pathname).assertEqual('/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa');
       expect(uu2.params.get('xx')).assertEqual('&优优');
@@ -5702,7 +5198,7 @@ export default function urlTest2() {
     it('testUrlparseURL0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
     })
 
@@ -5807,7 +5303,7 @@ export default function urlTest2() {
     it('testUrlparseURL0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uu = Url.URL.parseURL('http://www.baidu.com/sajd中文测试/aa?xx=%26优优');
       let uu2 = Url.URL.parseURL(uu.toString());
-      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26优优';
+      let res = 'http://www.baidu.com/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa?xx=%26%E4%BC%98%E4%BC%98';
       expect(uu2.toString()).assertEqual(res);
       expect(uu2.pathname).assertEqual('/sajd%E4%B8%AD%E6%96%87%E6%B5%8B%E8%AF%95/aa');
       expect(uu2.params.get('xx')).assertEqual('&优优');
@@ -5989,14 +5485,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlparseURL0064
-     * @tc.number testUrlparseURL0064
-     * @tc.desc   testUrlparseURL0064
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlparseURL0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const obj = new Url.URLParams('')
     //   obj.sort();
@@ -6452,7 +5940,7 @@ export default function urlTest2() {
         + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
         + "¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
       let obj = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
-      const pathnameEncode = "/%20!%22#$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%5C[]%5E_%60abcde"
+      const pathnameEncode = "/%20!%22#$%&'()*+,-./0123456789:;%3C=%3E?@ABCDEFGHIJKLMNOPQRSTUVWXYZ/[]%5E_%60abcde"
         + "fghijklmnopqrstuvwxyz%7B|%7D~%E2%82%AC%E2%80%9A%C6%92%E2%80%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80"
         + "%B0%C5%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2"
         + "%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2"
@@ -6532,14 +6020,6 @@ export default function urlTest2() {
     //  * @tc.type: Function
     //  * @tc.level: Level 1
     //  */
-    /**
-     * @tc.name   testUrlSearchParams006
-     * @tc.number testUrlSearchParams006
-     * @tc.desc   testUrlSearchParams006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrlSearchParams006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let str = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ\\[]"
     //     + "^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸"
@@ -6631,7 +6111,7 @@ export default function urlTest2() {
         + "%E2%80%99%E2%80%9C%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5"
         + "%B8%C2%A1%C2%A2%C2%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2%AB%C2%AC%C2%AD%C2%AE%C2%AF%C2%B0"
         + "%C2%B1%C2%B2%C2%B3%C2%B4%C2%B5%C2%B6%C2%B7%C2%B8%C2%B9%C2%BA%C2%BB%C2%BC%C2%BD%C2%BE%C2%BF%C3%80%C3"
-        + "%81@host:8080/%20!%22#$%&'()*+,-./09:;%3C=%3E?@A%5C[]%5E_%60a%7B|%7D~%E2%82%AC%E2%80%9A%C6%92%E2%80"
+        + "%81@host:8080/%20!%22#$%&'()*+,-./09:;%3C=%3E?@A/[]%5E_%60a%7B|%7D~%E2%82%AC%E2%80%9A%C6%92%E2%80"
         + "%9E%E2%80%A6%E2%80%A0%E2%80%A1%CB%86%E2%80%B0%C5%A0%E2%80%B9%C5%92%C5%BD%E2%80%98%E2%80%99%E2%80%9C"
         + "%E2%80%9D%E2%80%A2%E2%80%93%E2%80%94%CB%9C%E2%84%A2%C5%A1%E2%80%BA%C5%93%C5%BE%C5%B8%C2%A1%C2%A2%C2"
         + "%A3%C2%A4%C2%A5%C2%A6%C2%A7%C2%A8%C2%A9%C2%AA%C2%AB%C2%AC%C2%AD%C2%AE%C2%AF%C2%B0%C2%B1%C2%B2%C2%B3"
@@ -6677,8 +6157,8 @@ export default function urlTest2() {
      */
     it('testNewURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let params = new Url.URLParams('aa=bc%F0%9F%98%82%F0Ad');
-      expect(params).assertEqual('aa=bc%F0%9F%98%82%25F0Ad');
-      expect(params.get('aa')).assertEqual('bc😂%F0Ad');
+      expect(params.toString()).assertEqual('aa=bc%F0%9F%98%82%EF%BF%BDAd');
+      expect(params.get('aa')).assertEqual('bc😂�Ad');
     })
 
     /**

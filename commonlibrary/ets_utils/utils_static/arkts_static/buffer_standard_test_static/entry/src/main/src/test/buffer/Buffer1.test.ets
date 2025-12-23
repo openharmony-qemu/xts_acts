@@ -560,14 +560,6 @@ export default function BufferTest1() {
     //  * @tc.type  : Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testIsBuffer0003
-     * @tc.number testIsBuffer0003
-     * @tc.desc   testIsBuffer0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testIsBuffer0003";
     //   try {
@@ -4033,14 +4025,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testToJSON0001
-     * @tc.number testToJSON0001
-     * @tc.desc   testToJSON0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testToJSON0001";
     //   try {
@@ -5489,14 +5473,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobConstructor0002
-     * @tc.number testBlobConstructor0002
-     * @tc.desc   testBlobConstructor0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobConstructor0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0002";
     //   try {
@@ -5531,14 +5507,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobConstructor0003
-     * @tc.number testBlobConstructor0003
-     * @tc.desc   testBlobConstructor0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobConstructor0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0003";
     //   try {
@@ -5571,14 +5539,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobConstructor0004
-     * @tc.number testBlobConstructor0004
-     * @tc.desc   testBlobConstructor0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobConstructor0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0004";
     //   try {
@@ -5665,14 +5625,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobArrayBuffer0100
-     * @tc.number testBlobArrayBuffer0100
-     * @tc.desc   testBlobArrayBuffer0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobArrayBuffer0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobArrayBuffer0100";
     //   try {
@@ -5736,14 +5688,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobSlice0001
-     * @tc.number testBlobSlice0001
-     * @tc.desc   testBlobSlice0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobSlice0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobSlice0001";
     //   try {
@@ -5775,14 +5719,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobSlice0002
-     * @tc.number testBlobSlice0002
-     * @tc.desc   testBlobSlice0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobSlice0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobSlice0002";
     //   try {
@@ -5876,14 +5812,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobType0001
-     * @tc.number testBlobType0001
-     * @tc.desc   testBlobType0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testBlobType0001";
     //   try {

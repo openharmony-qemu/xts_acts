@@ -24,15 +24,15 @@ class Temp1 {
   }
 }
 
+interface Person {
+  age: number;
+  name: string;
+}
+
 class Temp {
   age: number = 0
   name: string = ""
 }
-
-interface Person {
-          age: number;
-          name: string;
-        }
 
 export default function ArkListTest() {
   describe('arkListTest', (): void => {
@@ -72,7 +72,6 @@ export default function ArkListTest() {
     it('testListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testListAdd0001';
       try {
-
         let list: List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person> =
           new List<number | string | Array<number | string | boolean | undefined> | boolean | undefined | null | Person>();
 
@@ -1087,18 +1086,22 @@ export default function ArkListTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let list: List<int> = new List<int>();
-      list.add(2);
-      list.add(4);
-      list.add(5);
-      let obj: List<int> = new List<int>();
-      obj.add(2);
-      obj.add(4);
-      obj.add(5);
-      let result = list.equal(obj);
-      expect(result).assertEqual(true);
-    })
+    it('testListEqual001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let list: List<number> = new List<number>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        let obj: List<number> = new List<number>();
+        obj.add(2);
+        obj.add(4);
+        obj.add(5);
+        let result = list.equal(obj);
+        expect(result).assertEqual(true);
+      } catch (err: BusinessError) {
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testUtil3_011
@@ -1108,18 +1111,21 @@ export default function ArkListTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let list: List<int> = new List<int>();
-      list.add(2);
-      list.add(4);
-      list.add(5);
-      let obj: List<int> = new List<int>();
-      obj.add(2);
-      obj.add(4);
-      obj.add(5);
-      obj.add(6);
-      let result = list.equal(obj);
-      expect(result).assertEqual(false);
-    })
+    it('testListEqual002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let list: List<number> = new List<number>();
+        list.add(2);
+        list.add(4);
+        list.add(5);
+        let obj: List<number> = new List<number>();
+        obj.add(1);
+        obj.add(2);
+        obj.add(3);
+        let result = list.equal(obj);
+        expect(result).assertEqual(false);
+      } catch (err: BusinessError) {
+        expect(false).assertFail();
+      }
+    });
   });
 }

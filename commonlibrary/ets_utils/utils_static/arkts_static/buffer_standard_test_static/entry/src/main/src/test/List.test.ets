@@ -22,4 +22,5 @@ export default function testsuite() {
   BufferTest();
   buffer1Test();
   buffer2Test();
+  buffer3Test();
 }
