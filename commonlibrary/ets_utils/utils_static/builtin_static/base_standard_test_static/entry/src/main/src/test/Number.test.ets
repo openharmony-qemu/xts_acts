@@ -736,7 +736,7 @@ export default function numberTest() {
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof ArgumentOutOfRangeError) {
-          eexpect(err.name).assertEqual('ArgumentOutOfRangeError');
+          expect(err.name).assertEqual('ArgumentOutOfRangeError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
