@@ -221,21 +221,22 @@ static OH_NN_ReturnCode GetInputDimAndSetShape(OH_NNExecutor *executor,
         size_t shapeLength = ZERO;
         for (size_t i = 0; i < inputTensorDescs.size(); ++i) {
             if (OH_NN_SUCCESS != OH_NNExecutor_GetInputDimRange(executor, i, &minInputDims,
-                                                                &maxInputDims, &shapeLength)) {
+                &maxInputDims, &shapeLength)) {
                 return OH_NN_FAILED;
             }
             std::vector<int32_t> minInputDimsT;
             for (size_t j = 0; j < shapeLength; ++j) {
                 minInputDimsT.emplace_back(static_cast<int32_t>(minInputDims[j]));
             }
-            if (OH_NN_SUCCESS != OH_NNTensorDesc_SetShape(inputTensorDescs[i], minInputDimsT.data(), shapeLength)) {
+            if (OH_NN_SUCCESS != OH_NNTensorDesc_SetShape(inputTensorDescs[i],
+                minInputDimsT.data(), shapeLength)) {
                 return OH_NN_FAILED;
             }
         }
         std::vector<int32_t> outputShape{1, 2, 2, 1};
         for (size_t i = 0; i < outputTensorDescs.size(); ++i) {
             if (OH_NN_SUCCESS != OH_NNTensorDesc_SetShape(outputTensorDescs[i],
-                                                          outputShape.data(), outputShape.size())) {
+                outputShape.data(), outputShape.size())) {
                 return OH_NN_FAILED;
             }
         }
@@ -397,7 +398,7 @@ static int SubAiNnRtCoreFuncNorthEndToEnd0300()
     BuildModelWithQuantParams(&model);
     if (model == nullptr) {
         OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED: BuildModelWithQuantParams returned nullptr");
+                "[Test] FAILED: BuildModelWithQuantParams returned nullptr");
         return -1;
     }
     OH_NNCompilation* compilation = ConstructCompilation(model, deviceId, false);
@@ -450,14 +451,14 @@ static int SubAiNnRtCoreFuncNorthReliability0100()
         OH_NNCompilation* compilation = ConstructCompilation(model, deviceId, false);
         if (nullptr == compilation) {
             OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED at iteration %d: ConstructCompilation returned nullptr", i);
+                "[Test] FAILED at iteration %d: ConstructCompilation returned nullptr", i);
             OH_NNModel_Destroy(&model);
             return -1;
         }
         OH_NNExecutor* executor = RunExecutor(compilation, deviceId);
         if (nullptr == executor) {
             OH_LOG_ERROR(LOG_APP,
-            "[Test] FAILED at iteration %d: RunExecutor returned nullptr", i);
+                "[Test] FAILED at iteration %d: RunExecutor returned nullptr", i);
             OH_NNCompilation_Destroy(&compilation);
             OH_NNModel_Destroy(&model);
             return -1;
