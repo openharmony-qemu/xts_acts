@@ -30,11 +30,11 @@ import window from '@ohos.window';
 struct TabBarIndicatorPixmap {
   @State name: string = 'RichEditior ComponentContent Keyboard';
   @State stepTips: string = '操作步骤:\n' + '1.注册窗口尺寸布局断点变化监听 \n' +
-    '2.点击横屏 最上方出现文本，文本信息搜索log.\n' +'3.点击竖屏 最上方出现文本，文本信息搜索log.\n'+
-    '预期结果：\n' + '2.触发widthBreakpoint和heightBreakpoint的callback回调，具体值与demo上方text文本一致\n' +
-    '3.触发widthBreakpoint和heightBreakpoint的callback回调，具体值与demo上方text文本一致\n'
+    '2.点击横屏 最上方出现文本，文本信息搜索log.\n' +'3.点击竖屏 最上方出现文本，文本信息搜索log.\n'+ '4.如果在非手机设备上进行测试，不使用23步。通过手动调整窗口大小来进行打印\n'+
+    '预期结果：\n' + '234.触发widthBreakpoint和heightBreakpoint的callback回调，具体值与demo上方text文本一致\n'
   @State intervalNum: number = 0;
   @State text: string = '文本';
+  @State isOk: boolean = false;
   @State barMode: BarMode = BarMode.Fixed;
   private changeOrientation(isLandscape: boolean) {
     let context = getContext(this) as common.UIAbilityContext;
@@ -52,6 +52,55 @@ struct TabBarIndicatorPixmap {
     this.message = 'page1--widthBpt:' + this.widthBreakpoint.toString() + 'heightBpt:' + this.heightBreakpoint.toString();
     console.log('GBR page1 widthBpt：'+ this.widthBreakpoint.toString() + ' ' +'heightBpt:'+ this.heightBreakpoint.toString())
   }
+
+    @Builder
+  PassBtn(text: Resource, isFullScreen: boolean) {
+    Button({ stateEffect: this.isOk }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
+    }
+    .margin({ bottom: '20vp' })
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .onClick(() => {
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
+      })
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
+  }
+
+  @Builder
+  FailBtn(text: Resource, isFullScreen: boolean) {
+    Button() {
+      Image($r('app.media.ic_public_fail'))
+        .width('20vp')
+        .height('20vp')
+    }
+    .margin({ bottom: '20vp' })
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .onClick(() => {
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'false', title: this.name,
+        }
+      });
+      promptAction.showToast({
+        message: '失败', duration: 1000
+      });
+    })
+  }
+  
   aboutToAppear(): void {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
