@@ -42,6 +42,7 @@ add_library(nativerender SHARED
     grid/GridEventTest.cpp
     clipShape/ClipShapeTest.cpp
     CustomComponent/CustomMarkDirtyTest.cpp
+    LayoutManager/LayoutManagerTest.cpp
 )
 
 add_library(nativefunc SHARED
@@ -57,6 +58,8 @@ add_library(nativefunc SHARED
     component/ComponentTest.cpp
     component/GridComponentTest.cpp
     component/TextComponentTest.cpp
+    BindSelectionMenu/BindSelectionMenuTest.cpp
+    TextEditMenuOptions/TextEditMenuOptionsTest.cpp
 )
 
 find_library(
