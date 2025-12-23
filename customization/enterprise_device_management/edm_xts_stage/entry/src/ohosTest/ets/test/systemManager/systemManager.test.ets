@@ -1612,7 +1612,7 @@ function testAddKeyEventPolicies() {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
         {keyCode: 10, keyPolicy: 1},
       ]
-      systemManager.addKeyEventPolicies(INVALID_WANT, keyEventPolicies);
+      systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200012).assertTrue();
