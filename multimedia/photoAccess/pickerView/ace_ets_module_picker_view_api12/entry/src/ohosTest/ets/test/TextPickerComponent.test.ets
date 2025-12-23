@@ -3066,13 +3066,11 @@ export default function TextPicker() {
         expect(result.maxPhotoSelectNumber)
           .assertEqual(sheetPickerOptions.maxPhotoSelectNumber);
       };
-
       let event: events_emitter.InnerEvent = {
         eventId: code,
         priority: events_emitter.EventPriority.LOW
       };
       events_emitter.on(event, callback);
-
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
         params: {
