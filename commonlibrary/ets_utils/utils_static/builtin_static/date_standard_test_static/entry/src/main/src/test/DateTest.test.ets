@@ -5448,5 +5448,1579 @@ export default function dateTest() {
       }
     });
 
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_241000
+     * @tc.name       testSetUTCSeconds0006
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0006";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(3, 0);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_242000
+     * @tc.name       testSetUTCSeconds0007
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0007";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(3, 999);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24300
+     * @tc.name       testSetUTCSeconds0008
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0008";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(3, 1000);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24400
+     * @tc.name       testDateToDateString0001
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0001";
+      try {
+        const event = new Date(1993, 6, 28, 14, 39, 7);
+        hilog.info(2, TAG, '%{public}s', 'testDateToDateString0001 jzl flag1 is:' + event);
+        expect(event.toString()).assertEqual("Wed Jul 28 1993 14:39:07 GMT+0800");
+        expect(event.toDateString()).assertEqual("Wed Jul 28 1993");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24500
+     * @tc.name       testDateToDateString0002
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0002";
+      try {
+        const event = new Date(1993, 6, 28);
+        expect(event.toDateString()).assertEqual("Wed Jul 28 1993");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24600
+     * @tc.name       testDateToDateString0003
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0003";
+      try {
+        const event = new Date();
+        const now = new Date();
+        const eventTimeString = event.toString();
+        const nowTimeString = now.toString();
+        const eventDateString = event.toDateString();
+        const nowDateString = now.toDateString();
+        expect(eventTimeString.includes(nowTimeString.slice(0, 24))).assertTrue();
+        expect(eventDateString).assertEqual(nowDateString);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24700
+     * @tc.name       testDateToDateString0004
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0004";
+      try {
+        const event = new Date("");
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ''");
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24800
+     * @tc.name       testDateToDateString0005
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0005";
+      try {
+        const event = new Date(1996, 1, 29);
+        expect(event.toDateString()).assertEqual("Thu Feb 29 1996");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_24900
+     * @tc.name       testDateToDateString0006
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0006";
+      try {
+        const event = new Date(1997, 1, 29);
+        expect(event.toDateString()).assertEqual("Sat Mar 01 1997");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25000
+     * @tc.name       testDateToDateString0007
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0007";
+      try {
+        const event = new Date(2024, 7, 32);
+        expect(event.toDateString()).assertEqual("Sun Sep 01 2024");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25100
+     * @tc.name       testDateToDateString0008
+     * @tc.desc       Test the function of the Interface toDateString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToDateString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToDateString0008";
+      try {
+        const event = new Date(2024, 8, 31);
+        expect(event.toDateString()).assertEqual("Tue Oct 01 2024");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25200
+     * @tc.name       testDateToISOString0001
+     * @tc.desc       Test the function of the Interface toISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0001';
+      try {
+        const event = new Date('05 October 2011 14:48 UTC');
+        expect(event.toString()).assertEqual("Wed Oct 05 2011 22:48:00 GMT+0800");
+        expect(event.toISOString()).assertEqual("2011-10-05T14:48:00.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25300
+     * @tc.name       testDateToISOString0002
+     * @tc.desc       Test the function of the Interface toISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0002';
+      try {
+        const event = new Date();
+        const now = event.toISOString();
+        const expected = event.toISOString();
+        expect(now).assertEqual(expected);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25400
+     * @tc.name       testDateToISOString0003
+     * @tc.desc       Test the function of the Interface toISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0003';
+      try {
+        const event = new Date(0);
+        expect(event.toISOString()).assertEqual("1970-01-01T00:00:00.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25500
+     * @tc.name       testDateToISOString0004
+     * @tc.desc       Test the function of the Interface ToISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0004';
+      try {
+        const event = new Date('');
+        event.toISOString();
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ''");
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25600
+     * @tc.name       testDateToISOString0005
+     * @tc.desc       Test the function of the Interface ToISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0005';
+      try {
+        const event = new Date('32 October 2011 14:48 UTC');
+        event.toISOString();
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: '32 October 2011 14:48 UTC'");
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25700
+     * @tc.name       testDateToISOString0006
+     * @tc.desc       Test the function of the Interface ToISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0006';
+      try {
+        const event = new Date('05 October 2011 14:48:01.123 UTC');
+        expect(event.toISOString()).assertEqual("2011-10-05T14:48:01.123Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25800
+     * @tc.name       testDateToISOString0007
+     * @tc.desc       Test the function of the Interface ToISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0007';
+      try {
+        const event = new Date('05 October 2011 14:48:02 UTC');
+        expect(event.toISOString()).assertEqual("2011-10-05T14:48:02.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_25900
+     * @tc.name       testDateToISOString0008
+     * @tc.desc       Test the function of the Interface ToISOString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToISOString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = 'testDateToISOString0008';
+      try {
+        const event = new Date('05 October 2011 14:48:03.1 UTC');
+        expect(event.toISOString()).assertEqual("2011-10-05T14:48:03.100Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26000
+     * @tc.name       testDateToJSON0001
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0001";
+      try {
+        const event = new Date(1993, 6, 28, 14, 39, 7);
+        expect(event.toJSON()).assertEqual('1993-07-28T06:39:07.000Z');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26100
+     * @tc.name       testDateToJSON0002
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0002";
+      try {
+        const event = new Date(1993, 6, 28);
+        expect(event.toJSON()).assertEqual('1993-07-27T16:00:00.000Z');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26200
+     * @tc.name       testDateToJSON0003
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0003";
+      try {
+        const event = new Date();
+        const expectedISOString = event.toISOString();
+        expect(event.toJSON()).assertEqual(expectedISOString);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26300
+     * @tc.name       testDateToJSON0004
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0004";
+      try {
+        const event = new Date("");
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ''");
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26400
+     * @tc.name       testDateToJSON0005
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0005";
+      try {
+        const event = new Date(1996, 1, 29);
+        expect(event.toJSON()).assertEqual("1996-02-28T16:00:00.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26500
+     * @tc.name       testDateToJSON0006
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0006";
+      try {
+        const event = new Date(1997, 1, 29);
+        expect(event.toJSON()).assertEqual("1997-02-28T16:00:00.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26600
+     * @tc.name       testDateToJSON0007
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0007";
+      try {
+        const event = new Date(2024, 7, 32);
+        expect(event.toJSON()).assertEqual("2024-08-31T16:00:00.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26700
+     * @tc.name       testDateToJSON0008
+     * @tc.desc       Test the function of the Interface toJSON().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToJSON0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToJSON0008";
+      try {
+        const event = new Date(2024, 8, 31);
+        expect(event.toJSON()).assertEqual("2024-09-30T16:00:00.000Z");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26800
+     * @tc.name       testDateToLocaleDateString0001
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0001";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString()).assertEqual('12/20/2012');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**  toLocaleDateString 接口有问题已经提单
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_26900
+     * @tc.name       testDateToLocaleDateString0002
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0002";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString('de-DE')).assertEqual('20.12.2012');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27000
+     * @tc.name       testDateToLocaleDateString0003
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0003";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const options: Intl.DateTimeFormatOptions = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        };
+        expect(event.toLocaleDateString('de-DE', options)).assertEqual('Donnerstag, 20. Dezember 2012');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27100
+     * @tc.name       testDateToLocaleDateString0004
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0004";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const options: Intl.DateTimeFormatOptions = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        };
+        expect(event.toLocaleDateString('ar-EG', options)).assertEqual('الخميس، ٢٠ ديسمبر ٢٠١٢');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27200
+     * @tc.name       testDateToLocaleDateString0005
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0005";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const options: Intl.DateTimeFormatOptions = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        };
+        expect(event.toLocaleDateString(undefined, options)).assertEqual('Thursday, December 20, 2012');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27300
+     * @tc.name       testDateToLocaleDateString0006
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0006";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        event.toLocaleDateString('');
+      } catch (err) {
+        err = err as RangeError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Incorrect locale information provided");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27400
+     * @tc.name       testDateToLocaleDateString0007
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0007";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString("en-US")).assertEqual("12/20/2012");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27500
+     * @tc.name       testDateToLocaleDateString0008
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0008";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString("en-GB")).assertEqual("20/12/2012");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27600
+     * @tc.name       testDateToLocaleDateString0009
+     * @tc.desc       Test the function of the Interface Date.toLocaleDateString()
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it("testDateToLocaleDateString0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleDateString0009";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString("ko-KR")).assertEqual("2012. 12. 20.");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27700
+     * @tc.name       testDataToUTCString0001
+     * @tc.desc       Return the primitive value of a Date object. Overrides the Object.prototype.valueOf() method.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDataToUTCString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDataToUTCString0001";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString("fa-IR")).assertEqual("۱۳۹۱/۹/۳۰");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27800
+     * @tc.name       testDataValueOf0001
+     * @tc.desc       Translate to English: "Convert a Dateobject to a string using the UTC time zone.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDataValueOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDataValueOf0001";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString("ar-EG")).assertEqual("٢٠‏/١٢‏/٢٠١٢");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_27900
+     * @tc.name       testDataValueOf0002
+     * @tc.desc       Translate to English: "Convert a Dateobject to a string using the UTC time zone.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDataValueOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDataValueOf0002";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString("ja-JP-u-ca-japanese")).assertEqual("H24/12/20");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28000
+     * @tc.name       testDataValueOf0003
+     * @tc.desc       Translate to English: "Convert a Dateobject to a string using the UTC time zone.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDataValueOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDataValueOf0003";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(event.toLocaleDateString(["ban", "id"])).assertEqual("20/12/2012");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28100
+     * @tc.name       testDateToLocaleStringConstEvent0001
+     * @tc.desc       Test the function of the interface ToLocaleString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringConstEvent0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleStringConstEvent0001';
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const formattedDate = event.toLocaleString('en-GB', {
+          timeZone: 'UTC'
+        });
+        expect(formattedDate).assertEqual("20/12/2012, 03:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28200
+     * @tc.name       testDateToLocaleStringConstEvent0002
+     * @tc.desc       Test the function of the interface ToLocaleString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringConstEvent0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleStringConstEvent0002';
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const formattedDate = event.toLocaleString('ko-KR', {
+          timeZone: 'UTC'
+        });
+        expect(formattedDate).assertEqual("2012. 12. 20. 오전 3:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28300
+     * @tc.name       testDateToLocaleStringConstEvent0003
+     * @tc.desc       Test the function of the interface ToLocaleString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringConstEvent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringConstEvent0003";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const result = event.toLocaleString();
+        expect(result).assertEqual("12/20/2012, 11:00:00 AM");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28400
+     * @tc.name       testDateToLocaleStringConstEvent0004
+     * @tc.desc       Test the function of the interface ToLocaleString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringConstEvent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringConstEvent0004";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const result = event.toLocaleString("");
+      } catch (err) {
+        err = err as RangeError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Incorrect locale information provided");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28500
+     * @tc.name       testDateToLocaleStringConstEvent0005
+     * @tc.desc       Test the function of the interface ToLocaleString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringConstEvent0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringConstEvent0005";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const result = event.toLocaleString('en-GB');
+        expect(result).assertEqual("20/12/2012, 11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28600
+     * @tc.name       testDateToLocaleStringConstEvent0006
+     * @tc.desc       Test the function of the interface ToLocaleString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringConstEvent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringConstEvent0006";
+      try {
+        const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const result = event.toLocaleString(undefined, {
+          timeZone: 'UTC'
+        });
+        expect(result).assertEqual("12/20/2012, 3:00:00 AM");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28700
+     * @tc.name       testDateToLocaleStringDate0001
+     * @tc.desc       Test the function of the interface toLocaleString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringDate0001";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(date.toLocaleString("en-US")).assertEqual("12/20/2012, 11:00:00 AM");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28800
+     * @tc.name       testDateToLocaleStringDate0002
+     * @tc.desc       Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringDate0002";
+      try {
+        let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let value = date.toLocaleString("en-GB");
+        expect(value).assertEqual("20/12/2012, 11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_28900
+     * @tc.name       testDateToLocaleStringDate0003
+     * @tc.desc       Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringDate0003";
+      try {
+        let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let value = date.toLocaleString("ko-KR");
+        expect(value).assertEqual("2012. 12. 20. 오전 11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29000
+     * @tc.name       testDateToLocaleStringDate0004
+     * @tc.desc       Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringDate0004";
+      try {
+        let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let value = date.toLocaleString("ar-EG");
+        expect(value).assertEqual("٢٠‏/١٢‏/٢٠١٢، ١١:٠٠:٠٠ ص");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29100
+     * @tc.name       testDateToLocaleStringDate0005
+     * @tc.desc       Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringDate0005";
+      try {
+        let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let value = date.toLocaleString("ja-JP-u-ca-japanese");
+        expect(value).assertEqual("H24/12/20 11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29200
+     * @tc.name       testDateToLocaleStringDate0006
+     * @tc.desc       Test the function of the interface BigInt.prototype.toString with 254n.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleStringDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleStringDate0006";
+      try {
+        let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        date.toLocaleString(date.toLocaleString(["ban", "id"]));
+      } catch (err) {
+        err = err as RangeError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Incorrect locale information provided");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29300
+     * @tc.name       testDateToLocaleTimeString0001
+     * @tc.desc       Test the function of the interface ToLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleTimeString0001';
+      try {
+        const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
+        expect(event.toLocaleTimeString('en-US')).assertEqual("7:15:30 AM");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29400
+     * @tc.name       testDateToLocaleTimeString0002
+     * @tc.desc       Test the function of the interface ToLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleTimeString0002';
+      try {
+        const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
+        expect(event.toLocaleTimeString('it-IT')).assertEqual("07:15:30");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29500
+     * @tc.name       testDateToLocaleTimeString0003
+     * @tc.desc       Test the function of the interface ToLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleTimeString0003';
+      try {
+        const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
+        expect(event.toLocaleTimeString('ar-EG')).assertEqual("٧:١٥:٣٠ ص");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29600
+     * @tc.name       testDateToLocaleTimeString0004
+     * @tc.desc       Test the function of the interface ToLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleTimeString0004';
+      try {
+        const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
+        event.toLocaleTimeString('');
+      } catch (err) {
+        err = err as RangeError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Incorrect locale information provided");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29700
+     * @tc.name       testDateToLocaleTimeString0005
+     * @tc.desc       Test the function of the interface ToLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleTimeString0005';
+      try {
+        const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
+        const result = event.toLocaleTimeString();
+        const expectedTime = new Date(event.getTime()).toLocaleTimeString();
+        expect(result).assertEqual(expectedTime);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29800
+     * @tc.name       testDateToLocaleTimeString0006
+     * @tc.desc       Test the function of the interface ToLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testDateToLocaleTimeString0006';
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        expect(date.toLocaleTimeString("en-US")).assertEqual("11:00:00 AM");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_29900
+     * @tc.name       testDateToLocaleTimeString0007
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0007";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let result = date.toLocaleTimeString("en-GB");
+        expect(result).assertEqual("11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30000
+     * @tc.name       testDateToLocaleTimeString0008
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0008";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let result = date.toLocaleTimeString("ko-KR");
+        expect(result).assertEqual("오전 11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30100
+     * @tc.name       testDateToLocaleTimeString0009
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0009";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let result = date.toLocaleTimeString("ar-EG");
+        expect(result).assertEqual("١١:٠٠:٠٠ ص");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30200
+     * @tc.name       testDateToLocaleTimeString0010
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0010";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        let result = date.toLocaleTimeString(["ban", "id"]);
+        expect(result).assertEqual("11.00.00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30300
+     * @tc.name       testDateToLocaleTimeString0011
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0011";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const options: Intl.DateTimeFormatOptions = {
+          timeZone: "UTC",
+          timeZoneName: "short"
+        };
+        const result = date.toLocaleTimeString("en-US", options);
+        expect(result).assertEqual("3:00:00 AM UTC");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30400
+     * @tc.name       testDateToLocaleTimeString0012
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0012";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const options: Intl.DateTimeFormatOptions = {
+          hour12: false
+        };
+        const result = date.toLocaleTimeString("en-US", options);
+        expect(result).assertEqual("11:00:00");
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30500
+     * @tc.name       testDateToLocaleTimeString0013
+     * @tc.desc       Test the function of the interface toLocaleTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToLocaleTimeString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToLocaleTimeString0013";
+      try {
+        const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+        const options: Intl.DateTimeFormatOptions = {
+          timeZone: "UTC",
+          timeZoneName: "short",
+          hour: "2-digit",
+          minute: "2-digit"
+        };
+        const str: string[] = []
+        const result = date.toLocaleTimeString(str, options);
+        expect(result).assertEqual('03:00 AM UTC');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30600
+     * @tc.name       testDateToString0001
+     * @tc.desc       Test the function of the interface toString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToString0001";
+      try {
+        const event: Date = new Date('August 19, 1975 23:15:30');
+        expect(event.toString()).assertEqual('Tue Aug 19 1975 23:15:30 GMT+0800');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30700
+     * @tc.name       testDateToString0002
+     * @tc.desc       Test the function of the interface toString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToString0002";
+      try {
+        const x: Date = new Date();
+        expect(x.toString()).assertEqual(new Date().toString());
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30800
+     * @tc.name       testDateToString0003
+     * @tc.desc       Test the function of the interface toString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToString0003";
+      try {
+        const x: Date = new Date(' ');
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ' '");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_30900
+     * @tc.name       testDateToTimeString0001
+     * @tc.desc       Test the function of the interface toTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToTimeString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToTimeString0001";
+      try {
+        const event: Date = new Date('August 19, 1975 23:15:30');
+        expect(event.toTimeString()).assertEqual('23:15:30 GMT+0800');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31000
+     * @tc.name       testDateToTimeString0002
+     * @tc.desc       Test the function of the interface toTimeString().
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToTimeString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToTimeString0002";
+      try {
+        const x: Date = new Date();
+        expect(x.toTimeString()).assertEqual(new Date().toTimeString());
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31100
+     * @tc.name       testDateToTimeString0003
+     * @tc.desc       Test the function of the interface ToTimeString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToTimeString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToTimeString0003";
+      try {
+        const x = new Date(' ');
+        const result = x.toTimeString();
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ' '");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31200
+     * @tc.name       testDateToUTCString0001
+     * @tc.desc       Test the function of the interface ToUTCString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToUTCString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToUTCString0001";
+      try {
+        const event = new Date('14 Jun 2017 00:00:00 PDT');
+        const result = event.toUTCString();
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: '14 Jun 2017 00:00:00 PDT'");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31300
+     * @tc.name       testDateToUTCString0002
+     * @tc.desc       Test the function of the interface ToUTCString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToUTCString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const TAG = "testDateToUTCString0002";
+      try {
+        const x: Date = new Date();
+        expect(x.toUTCString()).assertEqual(new Date().toUTCString());
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31400
+     * @tc.name       testDateToUTCString0003
+     * @tc.desc       Test the function of the interface ToUTCString.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateToUTCString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateToUTCString0003";
+      try {
+        const x = new Date(' ');
+        const result = x.toUTCString();
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ' '");
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31500
+     * @tc.name       testDateValueOf0001
+     * @tc.desc       Test the function of the interface ValueOf.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateValueOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateValueOf0001";
+      try {
+        const date1 = new Date(Date.UTC(96, 1, 2, 3, 4, 5));
+        const result = date1.valueOf();
+        expect(result).assertEqual(823230245000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31600
+     * @tc.name       testDateValueOf0002
+     * @tc.desc       Test the function of the interface ValueOf.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateValueOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
+      const TAG = "testDateValueOf0002";
+      try {
+        const x1 = new Date();
+        // await sleep(1);
+        const x2 = new Date();
+        const value1 = x1.valueOf();
+        const value2 = x2.valueOf();
+        const result = value2 > value1;
+        expect(String(result)).assertEqual('false');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_31700
+     * @tc.name       testDateValueOf0003
+     * @tc.desc       Test the function of the interface ValueOf.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testDateValueOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testDateValueOf0003";
+      try {
+        const x = new Date(' ');
+        const result = x.valueOf();
+      } catch (err) {
+        err = err as FormatError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(err.message).assertEqual("Invalid time value: ' '");
+      }
+    })
+	
   })
 }
