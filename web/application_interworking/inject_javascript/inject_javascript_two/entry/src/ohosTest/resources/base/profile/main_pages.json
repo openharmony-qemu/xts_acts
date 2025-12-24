@@ -2,6 +2,9 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/webRegisterJavaScriptProxyJsunit",
-    "testability/pages/WebRegisterAsyncThreadJavaScriptProxy"
+    "testability/pages/WebRegisterAsyncThreadJavaScriptProxy",
+    "testability/pages/WebUrlRegexRules",
+    "testability/pages/WebUrlRegexRulesSetNull",
+    "testability/pages/WebUrlRegexRulesSetUndefined"
   ]
 }

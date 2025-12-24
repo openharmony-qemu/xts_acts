@@ -12,8 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-export const add: (a: number, b: number) => number;
 export const nativeWebInit: (webName: string) => string;
 export const runJavaScript: (webName: string, jsCode: string) => string;
 export const registerJavaScriptProxy: (webName: string) => string;
@@ -21,3 +19,9 @@ export const unregisterJavaScriptProxy: (webName: string) => string;
 export const nativeWebInitTwo: (webTag: string) => string;
 export const registerAsyncThreadJavaScriptProxy: (webTag: string, permission: string) => string;
 export const getPidResult: () => number;
+export const registerForHeadReady: () => string;
+export const getResultOne: () => string;
+export const getResultTwo: () => string;
+export const getResultThree: () => string;
+export const getResultFour: () => string;
+export const resetResult: () => void;
