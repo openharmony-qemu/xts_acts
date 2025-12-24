@@ -64,7 +64,10 @@ export default function WebConsoleMessageSource() {
      */
     it('testWebConsoleMessageGetSource0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebConsoleMessageGetSource0001", 119060)
-      Utils.registerEvent("testWebConsoleMessageGetSource0001", ConsoleMessageSource.CONSOLE_API, 119100, done);
+      Utils.registerBaseEvent('testWebConsoleMessageGetSource0001', ConsoleMessageSource.CONSOLE_API, 119100, done,
+      (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
       sendEventByKey('WebConsoleMessageGetSourceButton', 10, '');
     })
 
