@@ -464,43 +464,43 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name testGetDisplayRotationWithId_17000005_static
+     * @tc.name testGetDisplayRotationWithId_17000007_static
      * @tc.number Uitest_Api20ErrorTest_022
      * @tc.desc getDisplayRotation 17000007 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetDisplayRotationWithId_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testGetDisplayRotationWithId_17000005_static start`);
+    it('testGetDisplayRotationWithId_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testGetDisplayRotationWithId_17000007_static start`);
       try {
         await driver.getDisplayRotation(-1);
         expect().assertFail();
       }catch (e: BusinessError) {
-        console.log(`${TestTag}, testGetDisplayRotationWithId_17000005_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        console.log(`${TestTag}, testGetDisplayRotationWithId_17000007_static displayId=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code == 17000007).assertTrue();
       }
-      console.log(`${TestTag}, testGetDisplayRotationWithId_17000005_static end`);
+      console.log(`${TestTag}, testGetDisplayRotationWithId_17000007_static end`);
     })
 
     /**
-     * @tc.name testGetDisplayDensity_17000005_static
+     * @tc.name testGetDisplayDensity_17000007_static
      * @tc.number Uitest_Api20ErrorTest_023
      * @tc.desc getDisplayDensity 17000007 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetDisplayDensity_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testGetDisplayDensity_17000005_static start`);
+    it('testGetDisplayDensity_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testGetDisplayDensity_17000007_static start`);
       try {
         await driver.getDisplayDensity(-1);
         expect().assertFail();
       }catch (e: BusinessError) {
-        console.log(`${TestTag}, testGetDisplayDensity_17000005_static displayId=-1 error is: ${JSON.stringify(e)}`);
+        console.log(`${TestTag}, testGetDisplayDensity_17000007_static displayId=-1 error is: ${JSON.stringify(e)}`);
         expect(e.code == 17000007).assertTrue();
       }
-      console.log(`${TestTag}, testGetDisplayDensity_17000005_static end`);
+      console.log(`${TestTag}, testGetDisplayDensity_17000007_static end`);
     })
 
     /**
@@ -675,6 +675,27 @@ export default function uitestDriverErrorTest() {
       }
       await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static end`);
+    })
+
+
+    /**
+     * @tc.name test_delayMs_401_static
+     * @tc.number Uitest_Api20ErrorTest_0233
+     * @tc.desc getDisplayDensity 401 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_delayMs_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_delayMs_401_static start`);
+      try {
+        await driver.delayMs(-1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_delayMs_401_static num=-1 error is: ${JSON.stringify(e)}`);
+        expect(e.code == 401).assertTrue();
+      }
+      console.log(`${TestTag}, test_delayMs_401_static end`);
     })
 
   })
