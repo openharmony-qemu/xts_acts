@@ -48,7 +48,7 @@ import {
 //   .backgroundColor(color)
 // }
 
-function pictureRendering(this: TextAttribute, weightValue:int, color:Color): this {
+function pictureRendering(this: TextAttribute, weightValue:int, color:Color) {
   this.fontStyle(FontStyle.Italic)
   this.fontWeight(weightValue)
   this.backgroundColor(color)
