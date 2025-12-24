@@ -1710,6 +1710,1627 @@ export default function expressionTest6() {
       expect(isNaN(result4)).assertTrue();
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1006
+     * @tc.name ExpressionTest1006
+     * @tc.desc Test bitwise operations with negative boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minInt: int = -2147483648;
+      let result1: int = minInt >> 1;
+      let result2: int = minInt << 1;
+      expect(result1).assertEqual(-1073741824);
+      expect(result2).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1007
+     * @tc.name ExpressionTest1007
+     * @tc.desc Test Infinity operations with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let num: number = -5;
+
+      let result1: number = inf + negInf; // NaN
+      let result2: number = inf * num; // -Infinity
+      let result3: number = negInf / num; // Infinity
+
+      expect(isNaN(result1)).assertTrue();
+      expect(result2).assertEqual(-Infinity);
+      expect(result3).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1008
+     * @tc.name ExpressionTest1008
+     * @tc.desc Test comparison with NaN values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let num: number = 0;
+
+      let result1: boolean = nanVal === nanVal; // false
+      let result2: boolean = nanVal < num; // false
+      let result3: boolean = nanVal > num; // false
+      let result4: boolean = isNaN(nanVal); // true
+
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
+      expect(result3).assertFalse();
+      expect(result4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1009
+     * @tc.name ExpressionTest1009
+     * @tc.desc Test exponentiation with negative base and fractional exponent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let baseNumber: number = -8.0;
+      let exponent: number = 1.0 / 3; // Cube root
+
+      let result: number = baseNumber**exponent;
+      // In JavaScript, this results in NaN for negative bases with fractional exponents
+      expect(isNaN(result)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1010
+     * @tc.name ExpressionTest1010
+     * @tc.desc Test arithmetic with zero boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let zero: number = 0.0;
+      let negZero: number = -0.0;
+
+      let result1: number = zero + negZero;
+      let result2: number = zero * negZero;
+      let result3: number = 1 / negZero;
+
+      expect(result1).assertEqual(0);
+      expect(1 / result2).assertEqual(-Infinity);
+      expect(result3).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1011
+     * @tc.name ExpressionTest1011
+     * @tc.desc Test unary operators with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let minVal: number = Number.MIN_VALUE;
+      let inf: number = Infinity;
+
+      let result1: number = -maxVal; // Negative maximum value
+      let result2: number = -minVal; // Negative minimum value
+      let result3: number = -inf; // -Infinity
+
+      expect(result1).assertEqual(-maxVal);
+      expect(result2).assertEqual(-minVal);
+      expect(result3).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1012
+     * @tc.name ExpressionTest1012
+     * @tc.desc Test bitwise NOT with boundary integers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxInt: number = 2147483647; // Maximum 32-bit signed integer
+      let minInt: number = -2147483648; // Minimum 32-bit signed integer
+
+      let result1: number = ~maxInt; // -2147483648
+      let result2: number = ~minInt; // 2147483647
+
+      expect(result1).assertEqual(minInt);
+      expect(result2).assertEqual(maxInt);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1013
+     * @tc.name ExpressionTest1013
+     * @tc.desc Test comparison with Infinity and negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let largeNeg: number = -1e308;
+
+      let result1: boolean = negInf < largeNeg; // true
+      let result2: boolean = inf > -largeNeg; // true
+      let result3: boolean = negInf === -inf; // true
+
+      expect(result1).assertTrue();
+      expect(result2).assertTrue();
+      expect(result3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1014
+     * @tc.name ExpressionTest1014
+     * @tc.desc Test NaN in conditional expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let num: number = 10;
+
+      let result1: number = nanVal ? 1 : 0; // 0 (NaN is falsy)
+      let result2: number = isNaN(nanVal) ? num : 0; // 10
+
+      expect(result1).assertEqual(0);
+      expect(result2).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1015
+     * @tc.name ExpressionTest1015
+     * @tc.desc Test array access with boundary indices
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let arr: int[] = [1, 2, 3, 4, 5];
+      let len: int = arr.length;
+      let result3: int | undefined = arr[len - 1];
+      expect(result3).assertEqual(5);
+      try {
+        let result1: int | undefined = arr[len];
+      } catch(e) {
+        expect(e.name).assertEqual("RangeError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1016
+     * @tc.name ExpressionTest1016
+     * @tc.desc Test division with very small negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let tinyNeg: number = -Number.MIN_VALUE;
+      let result1: number = 1 / tinyNeg;
+      let result2: number = tinyNeg / 2;
+
+      expect(result1).assertEqual(-Infinity);
+      expect(1 / result2).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1017
+     * @tc.name ExpressionTest1017
+     * @tc.desc Test modulus with Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let num: number = 10;
+      let negNum: number = -5;
+
+      let result1: number = inf % num; // NaN
+      let result2: number = num % inf; // 10
+      let result3: number = negNum % inf; // -5
+
+      expect(isNaN(result1)).assertTrue();
+      expect(result2).assertEqual(10);
+      expect(result3).assertEqual(-5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1018
+     * @tc.name ExpressionTest1018
+     * @tc.desc Test exponentiation with Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let num: number = 2;
+
+      let result1: number = inf**num; // Infinity
+      let result2: number = inf**-num; // 0
+      let result3: number = negInf**num; // Infinity
+
+      expect(result1).assertEqual(Infinity);
+      expect(result2).assertEqual(0);
+      expect(result3).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1019
+     * @tc.name ExpressionTest1019
+     * @tc.desc Test bitwise operations with NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let num: number = 0b1010;
+
+      let result1: number = nanVal & num; // 0 (NaN treated as 0 in bitwise ops)
+      let result2: number = nanVal | num; // 10 (0b1010)
+      let result3: number = nanVal ^ num; // 10 (0b1010)
+
+      expect(result1).assertEqual(0);
+      expect(result2).assertEqual(10);
+      expect(result3).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1020
+     * @tc.name ExpressionTest1020
+     * @tc.desc Test string conversion with boundary numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let nanVal: number = NaN;
+
+      let result1: string = inf + ""; // "Infinity"
+      let result2: string = negInf + ""; // "-Infinity"
+      let result3: string = nanVal + ""; // "NaN"
+
+      expect(result1).assertEqual("Infinity");
+      expect(result2).assertEqual("-Infinity");
+      expect(result3).assertEqual("NaN");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1021
+     * @tc.name ExpressionTest1021
+     * @tc.desc Test arithmetic with Number.MAX_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxSafe: number = Number.MAX_SAFE_INTEGER;
+
+      let result1: number = maxSafe + 1; // Still accurate
+      let result2: number = maxSafe + 2; // May lose precision
+      let result3: number = maxSafe * 2; // Loses precision
+
+      expect(result1).assertEqual(9007199254740992);
+      expect(result2).assertEqual(9007199254740993);
+      expect(result3).assertEqual(18014398509481982);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1022
+     * @tc.name ExpressionTest1022
+     * @tc.desc Test arithmetic with Number.MIN_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minSafe: number = Number.MIN_SAFE_INTEGER;
+
+      let result1: number = minSafe - 1; // Still accurate
+      let result2: number = minSafe - 2; // May lose precision
+
+      expect(result1).assertEqual(-9007199254740992);
+      expect(result2).assertEqual(-9007199254740993);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1023
+     * @tc.name ExpressionTest1023
+     * @tc.desc Test increment/decrement with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let minVal: number = Number.MIN_VALUE;
+      let inf: number = Infinity;
+
+      let result1: number = maxVal++;
+      let result2: number = ++maxVal;
+      let result3: number = --minVal;
+      let result4: number = inf++;
+
+      expect(result1).assertEqual(Number.MAX_VALUE);
+      expect(result2).assertEqual(Number.MAX_VALUE);
+      expect(1 / result3).assertEqual(-1);
+      expect(result4).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1024
+     * @tc.name ExpressionTest1024
+     * @tc.desc Test logical operations with NaN and Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+
+      let result1: boolean = Boolean(nanVal) && true;
+      let result2: boolean = Boolean(inf) || false;
+      let result3: boolean = !Boolean(negInf);
+      expect(result1).assertFalse();
+      expect(result2).assertTrue();
+      expect(result3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1025
+     * @tc.name ExpressionTest1025
+     * @tc.desc Test comparison with -0 and 0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let zero: number = 0.0;
+      let negZero: number = -0.0;
+
+      let result1: boolean = zero === negZero;
+      let result2: boolean = 1 / zero === 1 / negZero;
+      let result3: boolean = zero < negZero;
+
+      expect(result1).assertTrue();
+      expect(result2).assertFalse();
+      expect(result3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1026
+     * @tc.name ExpressionTest1026
+     * @tc.desc Test array length boundary (2^32 - 1)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxArrayLength: number = 2**32 - 1;
+      let arr: number[] = [1, 2, 3];
+      let result1: boolean = arr.length < maxArrayLength;
+      let result2: number = maxArrayLength + 1;
+      expect(result1).assertTrue();
+      expect(result2).assertEqual(4294967296);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1027
+     * @tc.name ExpressionTest1027
+     * @tc.desc Test remainder with very large negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let largeNeg: number = -1e300;
+      let divisor: number = 1e299;
+      let result: number = largeNeg % divisor;
+      expect(result).assertEqual(-0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1028
+     * @tc.name ExpressionTest1028
+     * @tc.desc Test NaN in template literals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let inf: number = Infinity;
+      let str: string = `Calculation result: ${nanVal}, Limit: ${inf}`;
+      expect(str).assertEqual("Calculation result: NaN, Limit: Infinity");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1029
+     * @tc.name ExpressionTest1029
+     * @tc.desc Test bitwise shift with maximum values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxInt: int = 2147483647;
+      let shift: int = 31;
+      let result1: int = 1 << shift;
+      let result2: int = maxInt << 1;
+      expect(result1).assertEqual(-2147483648);
+      expect(result2).assertEqual(-2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1030
+     * @tc.name ExpressionTest1030
+     * @tc.desc Test division of Infinity by negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negNum: number = -5;
+      let negSmall: number = -0.0001;
+
+      let result1: number = inf / negNum;
+      let result2: number = inf / negSmall;
+      let result3: number = negNum / inf;
+
+      expect(result1).assertEqual(-Infinity);
+      expect(result2).assertEqual(-Infinity);
+      expect(1 / result3).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1031
+     * @tc.name ExpressionTest1031
+     * @tc.desc Test conditional expressions with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let nanVal: number = NaN;
+
+      let result1: string = inf > 1e308 ? "Large" : "Small";
+      let result2: string = negInf < -1e308 ? "Small" : "Large";
+      let result3: string = isNaN(nanVal) ? "Invalid" : "Valid";
+
+      expect(result1).assertEqual("Large");
+      expect(result2).assertEqual("Small");
+      expect(result3).assertEqual("Invalid");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1032
+     * @tc.name ExpressionTest1032
+     * @tc.desc Test exponentiation with negative exponents
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let base: number = -2;
+      let exp1: number = -3;
+      let exp2: number = -4;
+
+      let result1: number = base**exp1;
+      let result2: number = base**exp2;
+
+      expect(result1).assertEqual(-0.125);
+      expect(result2).assertEqual(0.0625);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1033
+     * @tc.name ExpressionTest1033
+     * @tc.desc Test modulo with negative divisors
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 17;
+      let negDiv: number = -5;
+
+      let result1: number = num % negDiv;
+      let result2: number = -num % negDiv;
+
+      expect(result1).assertEqual(2);
+      expect(result2).assertEqual(-2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1034
+     * @tc.name ExpressionTest1034
+     * @tc.desc Test arithmetic with Infinity and negative Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+
+      let result1: number = inf + inf;
+      let result2: number = negInf + negInf;
+      let result3: number = inf * negInf;
+      let result4: number = inf + negInf;
+
+      expect(result1).assertEqual(Infinity);
+      expect(result2).assertEqual(-Infinity);
+      expect(result3).assertEqual(-Infinity);
+      expect(isNaN(result4)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1035
+     * @tc.name ExpressionTest1035
+     * @tc.desc Test zero division with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = -5;
+      let zero: number = 0;
+
+      let result1: number = num / zero;
+      let result2: number = num / -zero;
+      let result3: number = zero / num;
+
+      expect(result1).assertEqual(-Infinity);
+      expect(result2).assertEqual(Infinity);
+      expect(1 / result3).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1036
+     * @tc.name ExpressionTest1036
+     * @tc.desc Test NaN with compound assignment operators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 10;
+      let nanVal: number = NaN;
+
+      num += nanVal;
+      expect(isNaN(num)).assertTrue();
+
+      num = 10;
+      num *= nanVal;
+      expect(isNaN(num)).assertTrue();
+
+      num = 10;
+      num -= nanVal;
+      expect(isNaN(num)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1037
+     * @tc.name ExpressionTest1037
+     * @tc.desc Test bitwise operations with Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf_init: number = Infinity;
+      let inf: int = inf_init.toInt();
+      let num: int = 0b1111;
+      let result1: number = inf & num;
+      let result2: number = inf | num;
+      let result3: number = inf ^ num;
+
+      expect(result1).assertEqual(15);
+      expect(result2).assertEqual(2147483647);
+      expect(result3).assertEqual(2147483632);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1038
+     * @tc.name ExpressionTest1038
+     * @tc.desc Test comparison with MAX_VALUE and Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let inf: number = Infinity;
+
+      let result1: boolean = inf > maxVal;
+      let result2: boolean = maxVal < inf;
+      let result3: boolean = maxVal === inf;
+
+      expect(result1).assertTrue();
+      expect(result2).assertTrue();
+      expect(result3).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1039
+     * @tc.name ExpressionTest1039
+     * @tc.desc Test negative numbers with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let negNum: int = -5;
+
+      let result1: int = negNum & 0b1111;
+      let result2: int = negNum << 1;
+      let result3: int = negNum >>> 2;
+
+      expect(result1).assertEqual(11);
+      expect(result2).assertEqual(-10);
+      expect(result3).assertEqual(1073741822);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1040
+     * @tc.name ExpressionTest1040
+     * @tc.desc Test string concatenation with negative boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minInt: number = -2147483648;
+      let maxInt: number = 2147483647;
+      let str: string = "Min int: " + minInt + ", Max int: " + maxInt;
+      expect(str).assertEqual("Min int: -2147483648, Max int: 2147483647");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1041
+     * @tc.name ExpressionTest1041
+     * @tc.desc Test exponentiation with boundary exponents
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let base: number = 2;
+      let largeExp: number = 1024;
+      let result1: number = base**largeExp;
+      base = 1.1;
+      result1 = base**largeExp;
+      expect(result1).assertEqual(2.432817896953684e+42);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1042
+     * @tc.name ExpressionTest1042
+     * @tc.desc Test modulo with zero and negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = -10;
+      let zero: number = 0;
+
+      let result1: number = num % zero;
+      let result2: number = zero % num;
+
+      expect(isNaN(result1)).assertTrue();
+      expect(result2).assertEqual(0);
+    });
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1044
+     * @tc.name ExpressionTest1044
+     * @tc.desc Test increment/decrement with negative zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let negZero: number = -0.0;
+
+      let result1: number = negZero++;
+      let result2: number = ++negZero;
+
+      expect(1 / result1).assertEqual(-Infinity);
+      expect(result2).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1045
+     * @tc.name ExpressionTest1045
+     * @tc.desc Test array operations with boundary indices
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let arr: int[] = new Array<int>(3);
+      arr[0] = 1;
+      arr[2] = 3;
+      try {
+        let result1: int | undefined = arr[1];
+      } catch(err) {
+        expect(err.name).assertEqual("ClassCastError");
+      }
+      try {
+        let result2: int = arr.length;
+        arr[result2] = 4;
+      } catch(err) {
+        expect(err.name).assertEqual("RangeError");
+      }
+      let result3: int = arr.length;
+      expect(result3).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1046
+     * @tc.name ExpressionTest1046
+     * @tc.desc Test division of negative numbers near zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let x: number = -1e-308;
+      let y: number = -1e-308;
+
+      let result1: number = x / y;
+      let result2: number = x / 2;
+
+      expect(result1).assertEqual(1);
+      expect(1 / result2).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1047
+     * @tc.name ExpressionTest1047
+     * @tc.desc Test comparison with NaN in ternary operator
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let value: number = NaN;
+      let result: string = isNaN(value) ? "Not a number" : value.toString();
+      expect(result).assertEqual("Not a number");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1048
+     * @tc.name ExpressionTest1048
+     * @tc.desc Test bitwise XOR with negative boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minInt: number = -2147483648;
+      let maxInt: number = 2147483647;
+
+      let result1: number = minInt ^ maxInt;
+      let result2: number = minInt ^ -1;
+
+      expect(result1).assertEqual(-1);
+      expect(result2).assertEqual(maxInt);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1049
+     * @tc.name ExpressionTest1049
+     * @tc.desc Test Infinity in arithmetic with very large numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let large: number = 1e308;
+      let inf: number = Infinity;
+
+      let result1: number = large + large;
+      let result2: number = inf - large;
+      let result3: number = large * 2;
+
+      expect(result1).assertEqual(Infinity);
+      expect(result2).assertEqual(Infinity);
+      expect(result3).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1050
+     * @tc.name ExpressionTest1050
+     * @tc.desc Test NaN and Infinity in comma operator expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let inf: number = Infinity;
+      let result: number;
+
+      result = 5;
+      expect(result).assertEqual(5);
+
+      let i: number, sum: number;
+      for (i = 0, sum = 0; i < 3; i++, sum += i) {
+      }
+      expect(sum).assertEqual(6);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1071
+     * @tc.name ExpressionTest1071
+     * @tc.desc Test nullish coalescing with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let zero: number = 0.0;
+      let negZero: number = -0.0;
+      let negInf: number = -Infinity;
+
+      let result1: number = nanVal ?? 10;
+      let result2: number = zero ?? 20;
+      let result3: number = negZero ?? 30;
+      let result4: number = negInf ?? 40;
+
+      expect(result1).assertNaN();
+      expect(result2).assertEqual(0);
+      expect(1 / result3).assertEqual(-Infinity);
+      expect(result4).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1075
+     * @tc.name ExpressionTest1075
+     * @tc.desc Test conditional operator with NaN and Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let nanVal: number = NaN;
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+
+      let result1: string = isNaN(nanVal) ? "invalid" : "valid"; // "invalid"
+      let result2: number = inf > 1e308 ? inf - 1e308 : inf; // Infinity
+      let result3: number = negInf < -1e308 ? negInf + 1e308 : 0; // -Infinity
+
+      expect(result1).assertEqual("invalid");
+      expect(result2).assertEqual(Infinity);
+      expect(result3).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1077
+     * @tc.name ExpressionTest1077
+     * @tc.desc Test unary plus with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let negNum: number = -100;
+      let negInf: number = -Infinity;
+      let nanVal: number = NaN;
+      let minVal: number = Number.MIN_VALUE;
+
+      let result1: number = +negNum; // -100
+      let result2: number = +negInf; // -Infinity
+      let result3: number = +nanVal; // NaN
+      let result4: number = +minVal; // MIN_VALUE
+
+      expect(result1).assertEqual(-100);
+      expect(result2).assertEqual(-Infinity);
+      expect(isNaN(result3)).assertTrue();
+      expect(result4).assertEqual(Number.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1078
+     * @tc.name ExpressionTest1078
+     * @tc.desc Test unary negation with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let inf: number = Infinity;
+      let zero: number = 0;
+      let nanVal: number = NaN;
+
+      let result1: number = -maxVal; // -MAX_VALUE
+      let result2: number = -inf; // -Infinity
+      let result3: number = -zero; // -0
+      let result4: number = -nanVal; // NaN
+
+      expect(result1).assertEqual(-maxVal);
+      expect(result2).assertEqual(-Infinity);
+      expect(1 / result3).assertEqual(-Infinity); // Verify -0
+      expect(isNaN(result4)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1079
+     * @tc.name ExpressionTest1079
+     * @tc.desc Test prefix and postfix increment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxSafe: number = Number.MAX_SAFE_INTEGER;
+      let minSafe: number = Number.MIN_SAFE_INTEGER;
+
+      let result1: number = ++maxSafe; // MAX_SAFE_INTEGER + 1 (loses precision)
+      let result2: number = minSafe--; // MIN_SAFE_INTEGER (postfix)
+      let result3: number = minSafe; // MIN_SAFE_INTEGER - 1 (loses precision)
+
+      expect(result1).assertEqual(9007199254740992);
+      expect(result2).assertEqual(-9007199254740991);
+      expect(result3).assertEqual(-9007199254740992);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1080
+     * @tc.name ExpressionTest1080
+     * @tc.desc Test prefix and postfix decrement with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxSafe: number = Number.MAX_SAFE_INTEGER;
+      let minSafe: number = Number.MIN_SAFE_INTEGER;
+      let zero: number = 0;
+
+      let result1: number = --maxSafe;
+      let result2: number = minSafe--;
+      let result3: number = --zero;
+
+      expect(result1).assertEqual(9007199254740990);
+      expect(result2).assertEqual(-9007199254740991);
+      expect(result3).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1081
+     * @tc.name ExpressionTest1081
+     * @tc.desc Test exponentiation assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num1: number = 2;
+      let num2: number = 0.5;
+      let num3: number = -3;
+      num1 **= 53;
+      num2 **= 1000;
+      num3 **= 3;
+      expect(num1).assertEqual(9007199254740992);
+      expect(num2).assertEqual(9.332636185032189e-302);
+      expect(num3).assertEqual(-27);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1082
+     * @tc.name ExpressionTest1082
+     * @tc.desc Test division assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let inf: number = Infinity;
+      let negNum: number = -100;
+
+      maxVal /= 2; // MAX_VALUE / 2
+      inf /= 1000; // Still Infinity
+      negNum /= 3; // -33.333...
+
+      expect(maxVal).assertEqual(Number.MAX_VALUE / 2);
+      expect(inf).assertEqual(Infinity);
+      expect(negNum).assertEqual(-33.333333333333336);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1083
+     * @tc.name ExpressionTest1083
+     * @tc.desc Test multiplication assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let halfMax: number = Number.MAX_VALUE / 2;
+      let tiny: number = Number.MIN_VALUE;
+      let negTiny: number = -Number.MIN_VALUE;
+
+      halfMax *= 2; // MAX_VALUE
+      tiny *= 0.5; // 0 (underflow)
+      negTiny *= 0.5; // -0 (underflow)
+
+      expect(halfMax).assertEqual(Number.MAX_VALUE);
+      expect(tiny).assertEqual(0);
+      expect(1 / negTiny).assertEqual(-Infinity); // Verify -0
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1084
+     * @tc.name ExpressionTest1084
+     * @tc.desc Test subtraction assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let zero: number = 0;
+      let minVal: number = Number.MIN_VALUE;
+      let maxVal: number = Number.MAX_VALUE;
+
+      zero -= minVal; // -MIN_VALUE
+      minVal -= minVal; // 0
+      maxVal -= Number.MAX_VALUE / 2; // MAX_VALUE / 2
+
+      expect(zero).assertEqual(-Number.MIN_VALUE);
+      expect(minVal).assertEqual(0);
+      expect(maxVal).assertEqual(Number.MAX_VALUE / 2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1085
+     * @tc.name ExpressionTest1085
+     * @tc.desc Test addition assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let halfMax: number = Number.MAX_VALUE / 2;
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+
+      halfMax += halfMax;
+      inf += 1e308;
+      negInf += -1e308;
+
+      expect(halfMax).assertEqual(Number.MAX_VALUE);
+      expect(inf).assertEqual(Infinity);
+      expect(negInf).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1086
+     * @tc.name ExpressionTest1086
+     * @tc.desc Test modulus assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let large: number = 1e308;
+      let mod: number = 1e307;
+      let negLarge: number = -1e308;
+      large %= mod;
+      negLarge %= mod;
+      expect(large).assertEqual(2.4948003869184e+291);
+      expect(1 / negLarge).assertEqual(-4.008336720017946e-292);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1087
+     * @tc.name ExpressionTest1087
+     * @tc.desc Test bitwise AND assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxInt: number = 2147483647;
+      let minInt: number = -2147483648;
+      let mask: number = 0x0000FFFF;
+
+      maxInt &= mask;
+      minInt &= mask;
+
+      expect(maxInt).assertEqual(65535);
+      expect(minInt).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1088
+     * @tc.name ExpressionTest1088
+     * @tc.desc Test bitwise OR assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 0;
+      let maxInt: number = 2147483647;
+      let mask: number = 0x80000000;
+      num |= maxInt;
+      num |= mask;
+      expect(num).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1089
+     * @tc.name ExpressionTest1089
+     * @tc.desc Test bitwise XOR assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxInt: number = 2147483647;
+      let allOnes: number = -1;
+
+      maxInt ^= allOnes;
+
+      expect(maxInt).assertEqual(-2147483648);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1090
+     * @tc.name ExpressionTest1090
+     * @tc.desc Test left shift assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: int = 1;
+      let negNum: int = -1;
+
+      num <<= 31;
+      negNum <<= 31;
+
+      expect(num).assertEqual(-2147483648);
+      expect(negNum).assertEqual(-2147483648);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1091
+     * @tc.name ExpressionTest1091
+     * @tc.desc Test right shift assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minInt: number = -2147483648;
+      let maxInt: number = 2147483647;
+      minInt >>= 31;
+      maxInt >>= 30;
+      expect(minInt).assertEqual(-1);
+      expect(maxInt).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1092
+     * @tc.name ExpressionTest1092
+     * @tc.desc Test unsigned right shift assignment with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minInt: int = -2147483648;
+      let maxInt: int = 2147483647;
+      minInt >>>= 1;
+      maxInt >>>= 30;
+      expect(minInt).assertEqual(1073741824);
+      expect(maxInt).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1093
+     * @tc.name ExpressionTest1093
+     * @tc.desc Test greater than and less than with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let minVal: number = Number.MIN_VALUE;
+
+      let result1: boolean = inf > maxVal;
+      let result2: boolean = negInf < -maxVal;
+      let result3: boolean = 0 > minVal;
+      let result4: boolean = -0 < 0;
+
+      expect(result1).assertTrue();
+      expect(result2).assertTrue();
+      expect(result3).assertFalse();
+      expect(result4).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1094
+     * @tc.name ExpressionTest1094
+     * @tc.desc Test greater than or equal and less than or equal with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxSafe: number = Number.MAX_SAFE_INTEGER;
+      let aboveSafe: number = maxSafe + 1;
+      let zero: number = 0;
+      let negZero: number = -0;
+
+      let result1: boolean = aboveSafe >= maxSafe;
+      let result2: boolean = maxSafe <= aboveSafe;
+      let result3: boolean = zero >= negZero;
+      let result4: boolean = negZero <= zero;
+
+      expect(result1).assertTrue();
+      expect(result2).assertTrue();
+      expect(result3).assertTrue();
+      expect(result4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1095
+     * @tc.name ExpressionTest1095
+     * @tc.desc Test equality and identity with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let zero: number = 0;
+      let negZero: number = -0;
+      let nanVal: number = NaN;
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+
+      let result1: boolean = zero === negZero;
+      let result2: boolean = nanVal === nanVal;
+      let result3: boolean = inf === -inf;
+      let result4: boolean = (1 / zero) === inf;
+
+      expect(result1).assertTrue();
+      expect(result2).assertFalse();
+      expect(result3).assertFalse();
+      expect(result4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1096
+     * @tc.name ExpressionTest1096
+     * @tc.desc Test inequality with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let inf: number = Infinity;
+      let zero: number = 0;
+      let negZero: number = -0;
+      let nanVal: number = NaN;
+
+      let result1: boolean = maxVal !== inf;
+      let result2: boolean = zero !== negZero;
+      let result3: boolean = nanVal !== 0;
+      let result4: boolean = nanVal !== nanVal;
+
+      expect(result1).assertTrue();
+      expect(result2).assertFalse();
+      expect(result3).assertTrue();
+      expect(result4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1097
+     * @tc.name ExpressionTest1097
+     * @tc.desc Test string concatenation operator with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let nanVal: number = NaN;
+      let maxVal: number = Number.MAX_VALUE;
+
+      let result1: string = "Value: " + inf;
+      let result2: string = negInf + " is small";
+      let result3: string = nanVal + "";
+      let result4: string = maxVal + " is big";
+
+      expect(result1).assertEqual("Value: Infinity");
+      expect(result2).assertEqual("-Infinity is small");
+      expect(result3).assertEqual("NaN");
+      expect(result4).assertEqual(Number.MAX_VALUE + " is big");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1098
+     * @tc.name ExpressionTest1098
+     * @tc.desc Test typeof operator with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let nanVal: number = NaN;
+      let zero: number = 0;
+      let negZero: number = -0;
+
+      let result1: string = typeof inf;
+      let result2: string = typeof negInf;
+      let result3: string = typeof nanVal;
+      let result4: string = typeof negZero;
+
+      expect(result1).assertEqual("number");
+      expect(result2).assertEqual("number");
+      expect(result3).assertEqual("number");
+      expect(result4).assertEqual("number");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1100
+     * @tc.name ExpressionTest1100
+     * @tc.desc Test instanceof operator with boundary objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let numObj: Number = new Number(Number.MAX_VALUE);
+      let arr: number[] = new Array<number>(0);
+      let strObj: String = new String("");
+
+      let result1: boolean = numObj instanceof Number;
+      let result2: boolean = arr instanceof Array;
+      let result3: boolean = strObj instanceof String;
+
+      expect(result1).assertTrue();
+      expect(result2).assertTrue();
+      expect(result3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1101
+     * @tc.name ExpressionTest1101
+     * @tc.desc Test bitwise NOT with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxInt: number = 2147483647;
+      let minInt: number = -2147483648;
+      let zero: number = 0;
+      let one: number = 1;
+
+      let result1: number = ~maxInt;
+      let result2: number = ~minInt;
+      let result3: number = ~zero;
+      let result4: number = ~one;
+
+      expect(result1).assertEqual(-2147483648);
+      expect(result2).assertEqual(2147483647);
+      expect(result3).assertEqual(-1);
+      expect(result4).assertEqual(-2);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1102
+     * @tc.name ExpressionTest1102
+     * @tc.desc Test ternary operator with multiple boundary conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let val1: number = Infinity;
+      let val2: number = -Infinity;
+      let val3: number = NaN;
+
+      let result1: string = val1 > 1e308 ? "infinite" : "finite";
+      let result2: string = val2 < -1e308 ? "negative infinite" : "finite";
+      let result3: string = isNaN(val3) ? "not a number" : val3.toString();
+
+      expect(result1).assertEqual("infinite");
+      expect(result2).assertEqual("negative infinite");
+      expect(result3).assertEqual("not a number");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1103
+     * @tc.name ExpressionTest1103
+     * @tc.desc Test compound assignment with mixed boundary operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 1;
+      num <<= 30;
+      num *= 2;
+      num /= 2;
+      num -= 1;
+      num &= 0xFF;
+      expect(num).assertEqual(255);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1104
+     * @tc.name ExpressionTest1104
+     * @tc.desc Test operator precedence with boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxVal: number = Number.MAX_VALUE;
+      let halfMax: number = maxVal / 2;
+
+      // Without parentheses
+      let result1: number = maxVal + halfMax * 2;
+      // With parentheses
+      let result2: number = (maxVal + halfMax) * 2;
+
+      expect(result1).assertEqual(Infinity);
+      expect(result2).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1106
+     * @tc.name ExpressionTest1106
+     * @tc.desc Test logical operators with mixed boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let inf: number = Infinity;
+      let negInf: number = -Infinity;
+      let nanVal: number = NaN;
+      let zero: number = 0;
+
+      let result1: number = inf && negInf;
+      let result2: number = nanVal || inf;
+      let result3: boolean = !(zero);
+
+      expect(result1).assertEqual(-Infinity);
+      expect(result2).assertEqual(Infinity);
+      expect(result3).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1107
+     * @tc.name ExpressionTest1107
+     * @tc.desc Test exponentiation with mixed boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let base1: number = 2;
+      let base2: number = 0.5;
+      let exp1: number = 1023;
+      let exp2: number = 1024;
+
+      let result1: number = base1**exp1;
+      let result2: number = base1**exp2;
+      let result3: number = base2**exp1;
+      let result4: number = base2**exp2;
+
+      expect(result1).assertLess(Infinity);
+      expect(result2).assertEqual(Infinity);
+      expect(result3).assertLarger(0);
+      expect(result4).assertEqual(5.562684646268003e-309);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1108
+     * @tc.name ExpressionTest1108
+     * @tc.desc Test bitwise operations with mixed boundary values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let maxInt: number = 2147483647;
+      let minInt: number = -2147483648;
+      let mask: number = 0x0F;
+
+      let result1: number = (maxInt ^ minInt) & mask;
+      let result2: number = (minInt >> 28) | mask;
+
+      expect(result1).assertEqual(15);
+      expect(result2).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1109
+     * @tc.name ExpressionTest1109
+     * @tc.desc Test string operators with boundary string lengths
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let longStr: string = "a".repeat(10000);
+      let emptyStr: string = "";
+
+      let result1: string = longStr + emptyStr;
+      let result2: number = result1.length;
+      let result3: string = emptyStr + longStr;
+
+      expect(result1).assertEqual(longStr);
+      expect(result2).assertEqual(10000);
+      expect(result3).assertEqual(longStr);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST1110
+     * @tc.name ExpressionTest1110
+     * @tc.desc Test array operators with boundary indices and values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest1110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let arr: number[] = new Array<number>(3);
+      let maxSafe: number = Number.MAX_SAFE_INTEGER;
+      arr[0] = maxSafe;
+      arr[1] = maxSafe + 1;
+      arr[2] = -maxSafe;
+      let result1: number = arr[0];
+      let result2: number = arr[1];
+      let result3: number = arr[2];
+      expect(result1).assertEqual(9007199254740991);
+      expect(result2).assertEqual(9007199254740992);
+      expect(result3).assertEqual(-9007199254740991);
+    });
   }
   )
 }
