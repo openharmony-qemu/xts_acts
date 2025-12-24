@@ -22,6 +22,7 @@ import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from 
 
 const CAN_NOT_BUILD_STAGE = -1;
 const OK = 0;
+const WS_OK = 0;
 const WINDOW_MANAGER_ERRORCODE_NO_PERMISSION = 201;
 const WINDOW_MANAGER_ERRORCODE_INVALID_PARAM = 401;
 const DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED = 801;
