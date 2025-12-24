@@ -137,13 +137,15 @@ HWTEST_F(DrawingNativeRectTest, testRectIntersectNull, Function | SmallTest | Le
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectIntersect with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectIntersect(nullptr, other);
+    bool ret = OH_Drawing_RectIntersect(nullptr, other);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_RectIntersect with the second parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectIntersect(rect, nullptr);
+    ret = OH_Drawing_RectIntersect(rect, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
@@ -197,9 +199,9 @@ HWTEST_F(DrawingNativeRectTest, testRectJoinNormal, Function | SmallTest | Level
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 8. Call OH_Drawing_RectJoin to take the union of the two rectangles
     bool ret = OH_Drawing_RectJoin(rect, other);
-    EXPECT_TRUE(ret);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
     // 9. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
@@ -224,13 +226,15 @@ HWTEST_F(DrawingNativeRectTest, testRectJoinNull, Function | SmallTest | Level3)
     EXPECT_NE(other, nullptr);
     // 3. Call OH_Drawing_RectJoin with the first parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectJoin(nullptr, other);
+    bool ret = OH_Drawing_RectJoin(nullptr, other);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_RectJoin with the second parameter as nullptr, Returns error code
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_RectJoin(rect, nullptr);
+    ret = OH_Drawing_RectJoin(rect, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_RectDestroy(other);
@@ -1133,7 +1137,7 @@ HWTEST_F(DrawingNativeRectTest, testRectInsetAbNormal, Function | SmallTest | Le
 
 /**
  * @tc.name   testRectInsetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602 
  * @tc.desc   Test for testRectInsetNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -1222,30 +1226,16 @@ HWTEST_F(DrawingNativeRectTest, testRectContainsNull, Function | SmallTest | Lev
     OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
     EXPECT_NE(rect, nullptr);
     EXPECT_NE(other, nullptr);
-    bool isContains;
+    bool isContains = false;
     OH_Drawing_ErrorCode code = OH_Drawing_RectContains(nullptr, other, &isContains);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isContains, false);
-    // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
-    OH_Drawing_RectDestroy(rect);
-    OH_Drawing_RectDestroy(other);
-}
-/**
- * @tc.name   testRectContainsNull1
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1702
- * @tc.desc   Test for testRectContainsNull1
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
-HWTEST_F(DrawingNativeRectTest, testRectContainsNull1, Function | SmallTest | Level3) {
-    // 1. Call OH_Drawing_RectCreate to create a rectangle object
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(100, 100, 500, 500);
-    OH_Drawing_Rect *other = OH_Drawing_RectCreate(200, 200, 300, 300);
-    EXPECT_NE(rect, nullptr);
-    EXPECT_NE(other, nullptr);
-    bool isContains;
-    OH_Drawing_ErrorCode code = OH_Drawing_RectContains(rect, nullptr, &isContains);
+
+    code = OH_Drawing_RectContains(rect, nullptr, &isContains);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isContains, false);
+
+    code = OH_Drawing_RectContains(rect, other, nullptr);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     EXPECT_EQ(isContains, false);
     // 3. Call OH_Drawing_RectDestroy to destroy the rectangle object
