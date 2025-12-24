@@ -58,4 +58,7 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   onStart() {
     console.log('EnterpriseAdminExtensionAbility onStart');
   }
+  onKeyEvent(keyEvent: systemManager.KeyEvent) {
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: ${JSON.stringify(keyEvent)}`);
+  }
 }

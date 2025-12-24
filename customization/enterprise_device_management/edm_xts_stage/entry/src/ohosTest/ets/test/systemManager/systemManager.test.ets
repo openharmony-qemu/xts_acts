@@ -1808,17 +1808,88 @@ function testGetKeyEventPolicies() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode: 1, keyPolicy: 1},
-        {keyCode: 2, keyPolicy: 1}
+        {keyCode: systemManager.KeyCode.POWER, keyPolicy: systemManager.KeyPolicy.INTERCEPTION},
+        {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       let keyInstances: Array<systemManager.KeyEventPolicy> = []
-      let keyCodes: Array<number> = [1]
+      let keyCodes: Array<number> = new Array();
+      keyCodes.push(systemManager.KeyCode.VOLUME_UP);
+      let keyInstances0: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances0.length == 0).assertTrue();
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       let keyInstances1: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(keyInstances1.length == 2).assertTrue();
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       let keyInstances2: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(keyInstances2.length == 1).assertTrue();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_key_event_policies_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0005
+   * @tc.desc   test systemManager getKeyEventPolicies with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policies_0005", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
+        {keyCode: systemManager.KeyCode.VOLUME_DOWN, keyPolicy: systemManager.KeyPolicy.INTERCEPTION},
+        {keyCode: systemManager.KeyCode.BACK, keyPolicy: systemManager.KeyPolicy.CUSTOM}
+      ]
+      let keyInstances: Array<systemManager.KeyEventPolicy> = []
+      let keyCodes: Array<number> = new Array();
+      keyCodes.push(systemManager.KeyCode.BACK);
+      keyCodes.push(systemManager.KeyCode.VOLUME_DOWN);
+      let keyInstances0: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances0.length == 0).assertTrue();
+      systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
+      let keyInstances1: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances1.length == 2).assertTrue();
+      systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
+      let keyInstances2: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances2.length == 0).assertTrue();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_key_event_policies_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0006
+   * @tc.desc   test systemManager getKeyEventPolicies with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_key_event_policies_0006", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
+        {keyCode: systemManager.KeyCode.HOME, keyPolicy: systemManager.KeyPolicy.INTERCEPTION},
+        {keyCode: systemManager.KeyCode.RECENT, keyPolicy: systemManager.KeyPolicy.CUSTOM}
+      ]
+      let keyInstances: Array<systemManager.KeyEventPolicy> = []
+      let keyCodes: Array<number> = new Array();
+      keyCodes.push(systemManager.KeyCode.HOME);
+      keyCodes.push(systemManager.KeyCode.RECENT);
+      systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
+      let keyInstances0: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances0.length == 2).assertTrue();
+      systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
+      let keyInstances1: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
+      expect(keyInstances1.length == 0).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
