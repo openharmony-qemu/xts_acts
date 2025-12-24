@@ -123,7 +123,7 @@ static napi_value OHScanExit(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value CreateEnumType()
+static napi_value CreateScanEnumType()
 {
     Scan_ErrorCode errorCode;
     errorCode = Scan_ErrorCode::SCAN_ERROR_NONE;

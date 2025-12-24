@@ -245,6 +245,7 @@ static napi_value CreateEnumType()
 
 static napi_value CreateStruct()
 {
+    char* str = "test";
     auto printerInfo = new Print_PrinterInfo;
     memset(printerInfo, 0, sizeof(Print_PrinterInfo));
     printerInfo->printerState = Print_PrinterState::PRINTER_IDLE;
@@ -253,25 +254,25 @@ static napi_value CreateStruct()
     Print_DefaultValue defaultValue;
     printerInfo->defaultValue = defaultValue;
     printerInfo->isDefaultPrinter = false;
-    printerInfo->printerId = "1";
-    printerInfo->printerName = "1";
-    printerInfo->description = "1";
-    printerInfo->location = "1";
-    printerInfo->makeAndModel = "1";
-    printerInfo->printerUri = "1";
-    printerInfo->detailInfo = "1";
+    printerInfo->printerId = str;
+    printerInfo->printerName = str;
+    printerInfo->description = str;
+    printerInfo->location = str;
+    printerInfo->makeAndModel = str;
+    printerInfo->printerUri = str;
+    printerInfo->detailInfo = str;
     
     auto printJob = new Print_PrintJob;
     memset(printJob, 0, sizeof(Print_PrintJob));
-    printJob->jobName = "1";
+    printJob->jobName = str;
     uint32_t fdList[] = {1, 2};
     printJob->fdList = fdList;
     printJob->fdListCount = 1;
-    printJob->printerId = "1";
+    printJob->printerId = str;
     printJob->copyNumber = 1;
-    printJob->paperSource = "1";
-    printJob->mediaType = "1";
-    printJob->pageSizeId = "1";
+    printJob->paperSource = str;
+    printJob->mediaType = str;
+    printJob->pageSizeId = str;
     printJob->colorMode = Print_ColorMode::COLOR_MODE_MONOCHROME;
     printJob->duplexMode = Print_DuplexMode::DUPLEX_MODE_ONE_SIDED;
     Print_Resolution resolution;
@@ -284,5 +285,5 @@ static napi_value CreateStruct()
     printJob->orientationMode = Print_OrientationMode::ORIENTATION_MODE_PORTRAIT;
     printJob->printQuality = Print_Quality::PRINT_QUALITY_DRAFT;
     printJob->documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
-    printJob->advancedOptions = "1";
+    printJob->advancedOptions = str;
 }
