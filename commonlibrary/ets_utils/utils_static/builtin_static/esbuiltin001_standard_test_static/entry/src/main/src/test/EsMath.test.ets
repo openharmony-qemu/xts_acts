@@ -1572,5 +1572,608 @@ export default function EsMathTest(){
       console.info(`${caseName}, test end`);
     });
 
+    /**
+     * @tc.number ES_BUILTINS_MATH_0080
+     * @tc.name ESMathTest0080
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0080';
+      console.info(`${caseName}, test start`);
+      expect(Math.round(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0081
+     * @tc.name ESMathTest0081
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0081';
+      console.info(`${caseName}, test start`);
+      expect(Math.round(-0)).assertEqual(-0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0082
+     * @tc.name ESMathTest0082
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0082';
+      console.info(`${caseName}, test start`);
+      let x = +Infinity;
+      expect(Math.round(x)).assertEqual(+Infinity);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0083
+     * @tc.name ESMathTest0083
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0083';
+      console.info(`${caseName}, test start`);
+      let x = -Infinity;
+      expect(Math.round(x)).assertEqual(-Infinity);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0084
+     * @tc.name ESMathTest0084
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0084';
+      console.info(`${caseName}, test start`);
+      for (let i = 0; i <= 500; i++)
+      {
+        let x = i / 10.0;
+        expect(Math.round(x)).assertEqual(Math.floor(x + 0.5));
+      }
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0084_2
+     * @tc.name ESMathTest0084_2
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0084_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0084_2';
+      console.info(`${caseName}, test start`);
+      for (let i = 500; i <= 1000; i++)
+      {
+        let x = i / 10.0;
+        expect(Math.round(x)).assertEqual(Math.floor(x + 0.5));
+      }
+      console.info(`${caseName}, test end`);
+    });
+
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0084_3
+     * @tc.name ESMathTest0084_3
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0084_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0084_3';
+      console.info(`${caseName}, test start`);
+      for (let i = -5; i >= -500; i--)
+      {
+        let x = 0.0;
+        if (i === -5)
+        {
+          x = -0.500000000000001;
+        } else
+        {
+          x = i / 10.0;
+        }
+        console.log(Math.round(x)+'',Math.floor(x + 0.5)+'','Math.round(i / 10.0) must return the same value returned by Math.floor(x + 0.5)')
+        expect(Math.round(x)).assertEqual(Math.floor(x + 0.5));
+      }
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0084_4
+     * @tc.name ESMathTest0084_4
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0084_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0084_4';
+      console.info(`${caseName}, test start`);
+      for (let i = -500; i >= -1000; i--)
+      {
+        let x = 0.0;
+        if (i === -5)
+        {
+          x = -0.500000000000001;
+        } else
+        {
+          x = i / 10.0;
+        }
+        console.log(Math.round(x)+'',Math.floor(x + 0.5)+'','Math.round(i / 10.0) must return the same value returned by Math.floor(x + 0.5)')
+        expect(Math.round(x)).assertEqual(Math.floor(x + 0.5));
+      }
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0085
+     * @tc.name ESMathTest0085
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0085';
+      console.info(`${caseName}, test start`);
+      expect(1 / Math.round(-0.5)).assertEqual(1 / -0.0);
+      expect(1 / Math.round(-0.25)).assertEqual(1 / -0.0);
+      expect(1 / Math.round(-0.0)).assertEqual(1 / -0.0);
+      let x: number = 0.0;
+      x = 0.5 - Number.EPSILON / 4;
+      expect(1 / Math.round(x)).assertEqual(1 / 0.0);
+      x = -(2 / Number.EPSILON - 1);
+      expect(Math.round(x)).assertEqual(x);
+      x = -(1.5 / Number.EPSILON - 1);
+      expect(Math.round(x)).assertEqual(x);
+      x = -(1 / Number.EPSILON + 1);
+      expect(Math.round(x)).assertEqual(x);
+      x = 1 / Number.EPSILON + 1;
+      expect(Math.round(x)).assertEqual(x);
+      x = 1.5 / Number.EPSILON - 1;
+      expect(Math.round(x)).assertEqual(x);
+      x = 2 / Number.EPSILON - 1;
+      expect(Math.round(x)).assertEqual(x);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0086
+     * @tc.name ESMathTest0086
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0086';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sign(NaN))).assertEqual(Number.isNaN(NaN))
+      expect(Math.sign(-0)).assertEqual(-0)
+      expect(Math.sign(0)).assertEqual(0)
+      expect(Math.sign(-0.000001)).assertEqual(-1)
+      expect(Math.sign(-1)).assertEqual(-1)
+      expect(Math.sign(-Infinity)).assertEqual(-1)
+      expect(Math.sign(0.000001)).assertEqual(1)
+      expect(Math.sign(1)).assertEqual(1)
+      expect(Math.sign(Infinity)).assertEqual(1)
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0087
+     * @tc.name ESMathTest0087
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0087';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sin(NaN))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0088
+     * @tc.name ESMathTest0088
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0088';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sin(Infinity))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0089
+     * @tc.name ESMathTest0089
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0089';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sin(-Infinity))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0090
+     * @tc.name ESMathTest0090
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0090';
+      console.info(`${caseName}, test start`);
+      expect(Math.sin(0)).assertEqual(0);
+      expect(Math.sin(-0)).assertEqual(-0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0091
+     * @tc.name ESMathTest0091
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0091';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sinh(NaN))).assertEqual(Number.isNaN(NaN));
+      expect(Math.sinh(Number.NEGATIVE_INFINITY)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(Math.sinh(Number.POSITIVE_INFINITY)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.sinh(-0.0)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(1 / Math.sinh(0.0)).assertEqual(Number.POSITIVE_INFINITY);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0092
+     * @tc.name ESMathTest0092
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0092';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sqrt(NaN))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0093
+     * @tc.name ESMathTest0093
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0093';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.sqrt(-0.000000000000001))).assertEqual(Number.isNaN(NaN))
+      expect(Number.isNaN(Math.sqrt(-1))).assertEqual(Number.isNaN(NaN))
+      expect(Number.isNaN(Math.sqrt(-Infinity))).assertEqual(Number.isNaN(NaN))
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0094
+     * @tc.name ESMathTest0094
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0094';
+      console.info(`${caseName}, test start`);
+      expect(Math.sqrt(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0095
+     * @tc.name ESMathTest0095
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0095';
+      console.info(`${caseName}, test start`);
+      expect(Math.sqrt(-0)).assertEqual(-0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0096
+     * @tc.name ESMathTest0096
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0096';
+      console.info(`${caseName}, test start`);
+      let x = +Infinity;
+      expect(Math.sqrt(x)).assertEqual(+Infinity);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0097
+     * @tc.name ESMathTest0097
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0097';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.tan(NaN))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0098
+     * @tc.name ESMathTest0098
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0098';
+      console.info(`${caseName}, test start`);
+      expect(Math.tan(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0099
+     * @tc.name ESMathTest0099
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0099';
+      console.info(`${caseName}, test start`);
+      expect(Math.tan(-0)).assertEqual(-0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0100
+     * @tc.name ESMathTest0100
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0100';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.tan(Infinity))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0101
+     * @tc.name ESMathTest0101
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0101';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.tan(-Infinity))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0102
+     * @tc.name ESMathTest0102
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0102';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.tanh(NaN))).assertEqual(Number.isNaN(NaN))
+      expect(Math.tanh(Number.NEGATIVE_INFINITY)).assertEqual(-1)
+      expect(Math.tanh(Number.POSITIVE_INFINITY)).assertEqual(1)
+      expect(1 / Math.tanh(-0.0)).assertEqual(Number.NEGATIVE_INFINITY)
+      expect(1 / Math.tanh(0.0)).assertEqual(Number.POSITIVE_INFINITY)
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0103
+     * @tc.name ESMathTest0103
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0103';
+      console.info(`${caseName}, test start`);
+      expect(Math.trunc(Infinity)).assertEqual(Infinity);
+      expect(Math.trunc(-Infinity)).assertEqual(-Infinity);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0104
+     * @tc.name ESMathTest0104
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0104';
+      console.info(`${caseName}, test start`);
+      expect(Number.isNaN(Math.trunc(NaN))).assertEqual(Number.isNaN(NaN));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0105
+     * @tc.name ESMathTest0105
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0105';
+      console.info(`${caseName}, test start`);
+      expect(Math.trunc(-.9)).assertEqual(-0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0106
+     * @tc.name ESMathTest0106
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0106';
+      console.info(`${caseName}, test start`);
+      expect(Math.trunc(.9)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0107
+     * @tc.name ESMathTest0107
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0107';
+      console.info(`${caseName}, test start`);
+      expect(Math.trunc(4578.584949)).assertEqual(4578);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0108
+     * @tc.name ESMathTest0108
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0108';
+      console.info(`${caseName}, test start`);
+      expect(Math.trunc(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0109
+     * @tc.name ESMathTest0109
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0109';
+      console.info(`${caseName}, test start`);
+      expect(1 / Math.trunc(0.02047410048544407)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.trunc(0.00000000000000001)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.trunc(0.9999999999999999)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.trunc(Number.EPSILON)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.trunc(Number.MIN_VALUE)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.trunc(-0.02047410048544407)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(1 / Math.trunc(-0.00000000000000001)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(1 / Math.trunc(-0.9999999999999999)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(1 / Math.trunc(-Number.EPSILON)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(1 / Math.trunc(-Number.MIN_VALUE)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(Math.trunc(Number.MAX_VALUE)).assertEqual(Math.floor(Number.MAX_VALUE));
+      expect(Math.trunc(10)).assertEqual(Math.floor(10));
+      expect(Math.trunc(3.9)).assertEqual(Math.floor(3.9));
+      expect(Math.trunc(4.9)).assertEqual(Math.floor(4.9));
+      expect(Math.trunc(-Number.MAX_VALUE)).assertEqual(Math.ceil(-Number.MAX_VALUE));
+      expect(Math.trunc(-10)).assertEqual(Math.ceil(-10));
+      expect(Math.trunc(-3.9)).assertEqual(Math.ceil(-3.9));
+      expect(Math.trunc(-4.9)).assertEqual(Math.ceil(-4.9));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_MATH_0110
+     * @tc.name ESMathTest0110
+     * @tc.desc Test ES Builtins-Api in Math
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESMathTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESMathTest0110';
+      console.info(`${caseName}, test start`);
+      expect(Math.trunc(Number.NEGATIVE_INFINITY)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(Math.trunc(Number.POSITIVE_INFINITY)).assertEqual(Number.POSITIVE_INFINITY);
+      expect(1 / Math.trunc(-0.0)).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(1 / Math.trunc(0.0)).assertEqual(Number.POSITIVE_INFINITY);
+      console.info(`${caseName}, test end`);
+    });
+
   })
 }
