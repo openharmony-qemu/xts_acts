@@ -100,7 +100,7 @@ export default function windowPropertiesTest() {
         let windowStage: ohosWindow.WindowStage;
         let isAutoWindow: string = '';
         let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             context = AppStorage.get('context') as common.UIAbilityContext;
             console.log('windowTest context: ' + JSON.stringify(context))
             windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
