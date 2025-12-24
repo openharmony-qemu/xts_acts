@@ -649,3 +649,53 @@ napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info i
     napi_create_int32(env, code, &ret);
     return ret;
 }
+void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
+
+}
+napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode error;
+    switch (index) {
+    case CASE_INDEX_1:
+        error = OH_CaptureSession_RegisterIsoChangeCallback(captureSession, OnIsoValueChanged);
+        break;
+    case CASE_INDEX_2:
+        error = OH_CaptureSession_RegisterIsoChangeCallback(nullptr, OnIsoValueChanged);
+        break;
+    default:
+        break;
+    }
+
+    napi_value ret;
+    napi_create_int32(env, error, &ret);
+    return ret;
+}
+
+napi_value captureSessionUnregisterIsoChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+    Camera_ErrorCode error;
+    switch (index) {
+    case CASE_INDEX_1:
+        error = OH_CaptureSession_UnregisterIsoChangeCallback(captureSession, OnIsoValueChanged);
+        break;
+    case CASE_INDEX_2:
+        error = OH_CaptureSession_UnregisterIsoChangeCallback(nullptr, OnIsoValueChanged);
+        break;
+    default:
+        break;
+    }
+
+    napi_value ret;
+    napi_create_int32(env, error, &ret);
+    return ret;
+}

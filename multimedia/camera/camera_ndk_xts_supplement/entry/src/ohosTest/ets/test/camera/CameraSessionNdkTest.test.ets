@@ -393,5 +393,69 @@ export default function CameraFunctionTest() {
       expect(result).assertEqual(EFFECT_SUCCESS);
     });
 
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00001
+     * @tc.desc        OH_CaptureSession_OnIsoChange--EFFECT_SUCCESS
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00001';
+      console.info(TAG, testName, 'start');
+      let res = cameraObj.captureSessionRegisterIsoChangeCallback(1);
+      expect(res).assertEqual(EFFECT_SUCCESS);
+      console.info(TAG, testName, res);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00002
+     * @tc.name        SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00002
+     * @tc.desc        OH_CaptureSession_OnIsoChange--CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAPTURE_SESSION_ON_ISO_CHANGE_00002';
+      console.info(TAG, testName, 'start');
+      let res = cameraObj.captureSessionRegisterIsoChangeCallback(2);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+      console.info(TAG, testName, res);
+    });
+
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00001
+     * @tc.name        SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00001
+     * @tc.desc        OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK--EFFECT_SUCCESS
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00001', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00001';
+      console.info(TAG, testName, 'start');
+      let res = cameraObj.captureSessionUnregisterIsoChangeCallback(1);
+      expect(res).assertEqual(EFFECT_SUCCESS);
+      console.info(TAG, testName, res);
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00002
+     * @tc.name        SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00002
+     * @tc.desc        OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK--CAMERA_INVALID_ARGUMENT
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00002', Level.LEVEL0, async () => {
+      const testName = 'SUB_MULTIMEDIA_OH_CAPTURE_SESSION_UNREGISTER_ISO_CHANGE_CALLBACK_00002';
+      console.info(TAG, testName, 'start');
+      let res = cameraObj.captureSessionUnregisterIsoChangeCallback(2);
+      expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
+      console.info(TAG, testName, res);
+    });
   })
 }
