@@ -170,7 +170,7 @@ napi_value OHPackingOptionsCreateSupp(napi_env env, napi_callback_info info)
 
     OH_PackingOptions *options;
     Image_ErrorCode res;
-    switch (index){
+    switch (index) {
     case CASE_INDEX_1:
          res = OH_PackingOptions_Create(&options);
         break;

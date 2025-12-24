@@ -150,5 +150,3 @@ napi_value OH_PixelmapNative_ConvertAlphaFormatTest(napi_env env, napi_callback_
     napi_create_int32(env, errCode, &result);
     return result;
 }
-
-

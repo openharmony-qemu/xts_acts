@@ -54,14 +54,16 @@
 #define IMAGE_EFFECT_5120 5120
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
-#define PIXELMAP_TEST_DATA_SIZE      2400
+#define PIXELMAP_TEST_DATA_SIZE 2400
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "OHCreatePixelmapNativeNDK"
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGD(...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGW(...) ((void)OH_LOG_Print(LOG_APP, LOG_WARN, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, LOG_TAG, __VA_ARGS__))
-
+#define IMAGE_BUFFER_SIZE (1920 * 1080 * 4)
+#define IMAGE_DATA_LENGTH (-2400)
+#define IMAGE_DEFAULT_BUFFER 10000
 
 napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_info info)
 {
@@ -100,7 +102,7 @@ napi_value OHPixelmapNativeCreatePixelmapNativeTest(napi_env env, napi_callback_
     case CASE_INDEX_3:
         dataLength = PIXELMAP_TEST_DATA_SIZE;
         data = (uint8_t *)malloc(dataLength);
-        dataLength = -2400;
+        dataLength = IMAGE_DATA_LENGTH;
         code =
             OH_PixelmapNative_CreatePixelmapUsingAllocator(data, dataLength, ops, IMAGE_ALLOCATOR_MODE_AUTO, &pixelMap);
         break;
@@ -160,8 +162,8 @@ napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info in
     Image_ErrorCode errcode;
     switch (index) {
     case CASE_INDEX_1:
-        buffer[10000];
-        bufferSize = 1920 * 1080 * 4;
+        buffer[IMAGE_DEFAULT_BUFFER];
+        bufferSize = IMAGE_BUFFER_SIZE;
         buffer = (uint8_t *)malloc(bufferSize);
         code = OH_PixelmapNative_CreatePixelmap(data, dataLength, ops, &pixelmap);
         LOGI("get 7 %{public}d", code);
@@ -171,22 +173,22 @@ napi_value OHPixelmapNativeGetArgbPixelsTest(napi_env env, napi_callback_info in
         break;
     case CASE_INDEX_2:
         buffer = nullptr;
-        bufferSize = 1920 * 1080 * 4;
+        bufferSize = IMAGE_BUFFER_SIZE;
         code = OH_PixelmapNative_CreatePixelmap(data, dataLength, ops, &pixelmap);
         LOGI("get 7 %{public}d", code);
         errcode = OH_PixelmapNative_GetArgbPixels(pixelmap, buffer, &bufferSize);
         break;
     case CASE_INDEX_3:
-        buffer[10000];
-        bufferSize = 1920 * 1080 * 4;
+        buffer[IMAGE_DEFAULT_BUFFER];
+        bufferSize = IMAGE_BUFFER_SIZE;
         buffer = (uint8_t *)malloc(bufferSize);
         code = OH_PixelmapNative_CreatePixelmap(data, dataLength, ops, &pixelmap);
         LOGI("get 7 %{public}d", code);
         errcode = OH_PixelmapNative_GetArgbPixels(pixelmap, buffer, nullptr);
         break;
     case CASE_INDEX_4:
-        buffer[10000];
-        bufferSize = 1920 * 1080 * 4;
+        buffer[IMAGE_DEFAULT_BUFFER];
+        bufferSize = IMAGE_BUFFER_SIZE;
         buffer = (uint8_t *)malloc(bufferSize);
         code = OH_PixelmapInitializationOptions_SetPixelFormat(ops, PIXEL_FORMAT_ALPHA_8);
         code = OH_PixelmapNative_CreatePixelmap(data, dataLength, ops, &pixelmap);
