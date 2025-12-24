@@ -650,7 +650,6 @@ napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info i
     return ret;
 }
 void OnIsoValueChanged(Camera_CaptureSession* session, int32_t isoValue) {
-
 }
 napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info)
 {
