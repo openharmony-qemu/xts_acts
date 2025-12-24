@@ -3986,5 +3986,20 @@ ani_boolean test_FindModule([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_
     return ANI_TRUE;
 }
 
+ani_boolean test_FindNamespace([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns{};
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.ClassOperations.test001", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_FindEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_enum aniEnum{};
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ClassOperations.Color", &aniEnum), ANI_OK);
+    ASSERT_NE(aniEnum, nullptr);
+    return ANI_TRUE;
+}
 
 #endif // ARKTS_ANI_TEST_CLASSOPERATIONS_H
