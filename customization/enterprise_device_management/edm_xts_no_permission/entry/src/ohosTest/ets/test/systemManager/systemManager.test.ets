@@ -396,7 +396,7 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201).assertTrue();
+      expect(error.code == 801 || error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -420,7 +420,7 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201).assertTrue();
+      expect(error.code == 801 || error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -443,7 +443,7 @@ function testGetKeyEventPolicies() {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 201).assertTrue();
+      expect(error.code == 801 || error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

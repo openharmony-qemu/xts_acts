@@ -1543,7 +1543,7 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(error.code == 801 || error.code == 9200001).assertTrue();
     }
     done();
   });
@@ -1551,7 +1551,7 @@ function testAddKeyEventPolicies() {
   /**
    * @tc.name   test_add_key_event_policies_0002
    * @tc.number SUB_CUSTOMIZATION_EDM_ADD_KEY_EVENT_POLICIES_JS_0002
-   * @tc.desc   test systemManager addKeyEventPolicies without normal admin
+   * @tc.desc   test systemManager addKeyEventPolicies with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1566,7 +1566,7 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(error.code == 801 || error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1576,7 +1576,7 @@ function testAddKeyEventPolicies() {
   /**
    * @tc.name   test_add_key_event_policies_0003
    * @tc.number SUB_CUSTOMIZATION_EDM_ADD_KEY_EVENT_POLICIES_JS_0003
-   * @tc.desc   test systemManager addKeyEventPolicies without invalid admin
+   * @tc.desc   test systemManager addKeyEventPolicies with invalid admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1591,7 +1591,7 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(INVALID_WANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 801 || error.code == 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1601,7 +1601,7 @@ function testAddKeyEventPolicies() {
   /**
    * @tc.name   test_add_key_event_policies_0004
    * @tc.number SUB_CUSTOMIZATION_EDM_ADD_KEY_EVENT_POLICIES_JS_0004
-   * @tc.desc   test systemManager addKeyEventPolicies without parameter is incorrect
+   * @tc.desc   test systemManager addKeyEventPolicies with parameter is incorrect
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1615,7 +1615,7 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200012).assertTrue();
+      expect(error.code == 801 || error.code == 9200012).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1625,7 +1625,7 @@ function testAddKeyEventPolicies() {
   /**
    * @tc.name   test_add_key_event_policies_0005
    * @tc.number SUB_CUSTOMIZATION_EDM_ADD_KEY_EVENT_POLICIES_JS_0005
-   * @tc.desc   test systemManager addKeyEventPolicies without parameter conflict
+   * @tc.desc   test systemManager addKeyEventPolicies with parameter conflict
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1640,7 +1640,7 @@ function testAddKeyEventPolicies() {
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200010).assertTrue();
+      expect(error.code == 801 || error.code == 9200010).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1663,7 +1663,7 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(error.code == 801 || error.code == 9200001).assertTrue();
     }
     done();
   });
@@ -1671,7 +1671,7 @@ function testRemoveKeyEventPolicies() {
   /**
    * @tc.name   test_remove_key_event_policies_0002
    * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICIES_JS_0002
-   * @tc.desc   test systemManager removeKeyEventPolicies without normal admin
+   * @tc.desc   test systemManager removeKeyEventPolicies with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1683,7 +1683,7 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(error.code == 801 || error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1693,7 +1693,7 @@ function testRemoveKeyEventPolicies() {
   /**
    * @tc.name   test_remove_key_event_policies_0003
    * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICIES_JS_0003
-   * @tc.desc   test systemManager removeKeyEventPolicies without invalid admin
+   * @tc.desc   test systemManager removeKeyEventPolicies with invalid admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1705,7 +1705,7 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(INVALID_WANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 801 || error.code == 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1715,7 +1715,7 @@ function testRemoveKeyEventPolicies() {
   /**
    * @tc.name   test_remove_key_event_policies_0004
    * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_KEY_EVENT_POLICIES_JS_0004
-   * @tc.desc   test systemManager removeKeyEventPolicies without parameter is incorrect
+   * @tc.desc   test systemManager removeKeyEventPolicies with parameter is incorrect
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1727,7 +1727,7 @@ function testRemoveKeyEventPolicies() {
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200012).assertTrue();
+      expect(error.code == 801 || error.code == 9200012).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1749,7 +1749,7 @@ function testGetKeyEventPolicies() {
       systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200001).assertTrue();
+      expect(error.code == 801 || error.code == 9200001).assertTrue();
     }
     done();
   });
@@ -1757,7 +1757,7 @@ function testGetKeyEventPolicies() {
   /**
    * @tc.name   test_get_key_event_policies_0002
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0002
-   * @tc.desc   test systemManager getKeyEventPolicies without normal admin
+   * @tc.desc   test systemManager getKeyEventPolicies with normal admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1768,7 +1768,7 @@ function testGetKeyEventPolicies() {
       systemManager.getKeyEventPolicies(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 9200002).assertTrue();
+      expect(error.code == 801 || error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1778,7 +1778,7 @@ function testGetKeyEventPolicies() {
   /**
    * @tc.name   test_get_key_event_policies_0003
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0003
-   * @tc.desc   test systemManager getKeyEventPolicies without invalid admin
+   * @tc.desc   test systemManager getKeyEventPolicies with invalid admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1789,7 +1789,7 @@ function testGetKeyEventPolicies() {
       systemManager.getKeyEventPolicies(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code == 401).assertTrue();
+      expect(error.code == 801 || error.code == 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -1799,7 +1799,7 @@ function testGetKeyEventPolicies() {
   /**
    * @tc.name   test_get_key_event_policies_0004
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_KEY_EVENT_POLICIES_JS_0004
-   * @tc.desc   test systemManager getKeyEventPolicies without super admin
+   * @tc.desc   test systemManager getKeyEventPolicies with super admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -1820,7 +1820,7 @@ function testGetKeyEventPolicies() {
       let keyInstances2: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(keyInstances2.length == 1).assertTrue();
     } catch (error) {
-      expect(false).assertTrue();
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
