@@ -1709,5 +1709,425 @@ export default function Date4Test() {
       expect(testDate80.getTime()).assertEqual(1732982340999);
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8100
+     * @tc.name Date4Test_081
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate81 = new Date(2023, 1, 1, 7, 25, 30, 140);
+      expect(testDate81.getDate()).assertEqual(1);
+      expect(testDate81.getDay()).assertEqual(3);
+      expect(testDate81.getFullYear()).assertEqual(2023);
+      expect(testDate81.getHours()).assertEqual(7);
+      expect(testDate81.getMilliseconds()).assertEqual(140);
+      expect(testDate81.getMinutes()).assertEqual(25);
+      expect(testDate81.getMonth()).assertEqual(1);
+      expect(testDate81.getSeconds()).assertEqual(30);
+      expect(testDate81.getTime()).assertEqual(1675207530140);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8200
+     * @tc.name Date4Test_082
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate82 = new Date(2024, 1, 1, 15, 50, 15, 680);
+      expect(testDate82.getDate()).assertEqual(1);
+      expect(testDate82.getDay()).assertEqual(4);
+      expect(testDate82.getFullYear()).assertEqual(2024);
+      expect(testDate82.getHours()).assertEqual(15);
+      expect(testDate82.getMilliseconds()).assertEqual(680);
+      expect(testDate82.getMinutes()).assertEqual(50);
+      expect(testDate82.getMonth()).assertEqual(1);
+      expect(testDate82.getSeconds()).assertEqual(15);
+      expect(testDate82.getTime()).assertEqual(1706773815680);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8300
+     * @tc.name Date4Test_083
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate83 = new Date(2024, 11, 30, 10, 15, 40, 370);
+      expect(testDate83.getDate()).assertEqual(30);
+      expect(testDate83.getDay()).assertEqual(1);
+      expect(testDate83.getFullYear()).assertEqual(2024);
+      expect(testDate83.getHours()).assertEqual(10);
+      expect(testDate83.getMilliseconds()).assertEqual(370);
+      expect(testDate83.getMinutes()).assertEqual(15);
+      expect(testDate83.getMonth()).assertEqual(11);
+      expect(testDate83.getSeconds()).assertEqual(40);
+      expect(testDate83.getTime()).assertEqual(1735524940370);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8400
+     * @tc.name Date4Test_084
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate84 = new Date(2023, 8, 15, 2, 29, 30, 500);
+      expect(testDate84.getDate()).assertEqual(15);
+      expect(testDate84.getDay()).assertEqual(5);
+      expect(testDate84.getFullYear()).assertEqual(2023);
+      expect(testDate84.getHours()).assertEqual(2);
+      expect(testDate84.getMilliseconds()).assertEqual(500);
+      expect(testDate84.getMinutes()).assertEqual(29);
+      expect(testDate84.getMonth()).assertEqual(8);
+      expect(testDate84.getSeconds()).assertEqual(30);
+      expect(testDate84.getTime()).assertEqual(1694716170500);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8500
+     * @tc.name Date4Test_085
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate85 = new Date(2025, 5, 15, 16, 39, 45, 750);
+      expect(testDate85.getDate()).assertEqual(15);
+      expect(testDate85.getDay()).assertEqual(0);
+      expect(testDate85.getFullYear()).assertEqual(2025);
+      expect(testDate85.getHours()).assertEqual(16);
+      expect(testDate85.getMilliseconds()).assertEqual(750);
+      expect(testDate85.getMinutes()).assertEqual(39);
+      expect(testDate85.getMonth()).assertEqual(5);
+      expect(testDate85.getSeconds()).assertEqual(45);
+      expect(testDate85.getTime()).assertEqual(1749976785750);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8600
+     * @tc.name Date4Test_086
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate86 = new Date("2023-11-01T20:00:00.000Z");
+      expect(testDate86.getDate()).assertEqual(2);
+      expect(testDate86.getDay()).assertEqual(4);
+      expect(testDate86.getFullYear()).assertEqual(2023);
+      expect(testDate86.getHours()).assertEqual(4);
+      expect(testDate86.getMilliseconds()).assertEqual(0);
+      expect(testDate86.getMinutes()).assertEqual(0);
+      expect(testDate86.getMonth()).assertEqual(10);
+      expect(testDate86.getSeconds()).assertEqual(0);
+      expect(testDate86.getTime()).assertEqual(1698868800000);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8700
+     * @tc.name Date4Test_087
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate87 = new Date(2024, 2, 31, 19, 45, 20, 290);
+      expect(testDate87.getDate()).assertEqual(31);
+      expect(testDate87.getDay()).assertEqual(0);
+      expect(testDate87.getFullYear()).assertEqual(2024);
+      expect(testDate87.getHours()).assertEqual(19);
+      expect(testDate87.getMilliseconds()).assertEqual(290);
+      expect(testDate87.getMinutes()).assertEqual(45);
+      expect(testDate87.getMonth()).assertEqual(2);
+      expect(testDate87.getSeconds()).assertEqual(20);
+      expect(testDate87.getTime()).assertEqual(1711885520290);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8800
+     * @tc.name Date4Test_088
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate88 = new Date(2023, 5, 30, 11, 10, 55, 860);
+      expect(testDate88.getDate()).assertEqual(30);
+      expect(testDate88.getDay()).assertEqual(5);
+      expect(testDate88.getFullYear()).assertEqual(2023);
+      expect(testDate88.getHours()).assertEqual(11);
+      expect(testDate88.getMilliseconds()).assertEqual(860);
+      expect(testDate88.getMinutes()).assertEqual(10);
+      expect(testDate88.getMonth()).assertEqual(5);
+      expect(testDate88.getSeconds()).assertEqual(55);
+      expect(testDate88.getTime()).assertEqual(1688094655860);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_8900
+     * @tc.name Date4Test_089
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate89 = new Date(2025, 0, 15, 11, 29, 30, 480);
+      expect(testDate89.getDate()).assertEqual(15);
+      expect(testDate89.getDay()).assertEqual(3);
+      expect(testDate89.getFullYear()).assertEqual(2025);
+      expect(testDate89.getHours()).assertEqual(11);
+      expect(testDate89.getMilliseconds()).assertEqual(480);
+      expect(testDate89.getMinutes()).assertEqual(29);
+      expect(testDate89.getMonth()).assertEqual(0);
+      expect(testDate89.getSeconds()).assertEqual(30);
+      expect(testDate89.getTime()).assertEqual(1736911770480);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9000
+     * @tc.name Date4Test_090
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate90 = new Date(2024, 7, 31, 23, 29, 45, 999);
+      expect(testDate90.getDate()).assertEqual(31);
+      expect(testDate90.getDay()).assertEqual(6);
+      expect(testDate90.getFullYear()).assertEqual(2024);
+      expect(testDate90.getHours()).assertEqual(23);
+      expect(testDate90.getMilliseconds()).assertEqual(999);
+      expect(testDate90.getMinutes()).assertEqual(29);
+      expect(testDate90.getMonth()).assertEqual(7);
+      expect(testDate90.getSeconds()).assertEqual(45);
+      expect(testDate90.getTime()).assertEqual(1725118185999);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9100
+     * @tc.name Date4Test_091
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate91 = new Date(2025, 1, 21, 8, 35, 20, 170);
+      expect(testDate91.getDate()).assertEqual(21);
+      expect(testDate91.getDay()).assertEqual(5);
+      expect(testDate91.getFullYear()).assertEqual(2025);
+      expect(testDate91.getHours()).assertEqual(8);
+      expect(testDate91.getMilliseconds()).assertEqual(170);
+      expect(testDate91.getMinutes()).assertEqual(35);
+      expect(testDate91.getMonth()).assertEqual(1);
+      expect(testDate91.getSeconds()).assertEqual(20);
+      expect(testDate91.getTime()).assertEqual(1740098120170);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9200
+     * @tc.name Date4Test_092
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate92 = new Date(2024, 1, 21, 17, 10, 45, 710);
+      expect(testDate92.getDate()).assertEqual(21);
+      expect(testDate92.getDay()).assertEqual(3);
+      expect(testDate92.getFullYear()).assertEqual(2024);
+      expect(testDate92.getHours()).assertEqual(17);
+      expect(testDate92.getMilliseconds()).assertEqual(710);
+      expect(testDate92.getMinutes()).assertEqual(10);
+      expect(testDate92.getMonth()).assertEqual(1);
+      expect(testDate92.getSeconds()).assertEqual(45);
+      expect(testDate92.getTime()).assertEqual(1708506645710);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9300
+     * @tc.name Date4Test_093
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate93 = new Date(2023, 0, 5, 6, 50, 15, 350);
+      expect(testDate93.getDate()).assertEqual(5);
+      expect(testDate93.getDay()).assertEqual(4);
+      expect(testDate93.getFullYear()).assertEqual(2023);
+      expect(testDate93.getHours()).assertEqual(6);
+      expect(testDate93.getMilliseconds()).assertEqual(350);
+      expect(testDate93.getMinutes()).assertEqual(50);
+      expect(testDate93.getMonth()).assertEqual(0);
+      expect(testDate93.getSeconds()).assertEqual(15);
+      expect(testDate93.getTime()).assertEqual(1672872615350);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9400
+     * @tc.name Date4Test_094
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate94 = new Date(2024, 3, 25, 3, 19, 59, 520);
+      expect(testDate94.getDate()).assertEqual(25);
+      expect(testDate94.getDay()).assertEqual(4);
+      expect(testDate94.getFullYear()).assertEqual(2024);
+      expect(testDate94.getHours()).assertEqual(3);
+      expect(testDate94.getMilliseconds()).assertEqual(520);
+      expect(testDate94.getMinutes()).assertEqual(19);
+      expect(testDate94.getMonth()).assertEqual(3);
+      expect(testDate94.getSeconds()).assertEqual(59);
+      expect(testDate94.getTime()).assertEqual(1713986399520);
+    });
+	
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9500
+     * @tc.name Date4Test_095
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate95 = new Date(2025, 8, 25, 15, 49, 59, 890);
+      expect(testDate95.getDate()).assertEqual(25);
+      expect(testDate95.getDay()).assertEqual(4);
+      expect(testDate95.getFullYear()).assertEqual(2025);
+      expect(testDate95.getHours()).assertEqual(15);
+      expect(testDate95.getMilliseconds()).assertEqual(890);
+      expect(testDate95.getMinutes()).assertEqual(49);
+      expect(testDate95.getMonth()).assertEqual(8);
+      expect(testDate95.getSeconds()).assertEqual(59);
+      expect(testDate95.getTime()).assertEqual(1758786599890);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9600
+     * @tc.name Date4Test_096
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate96 = new Date("2024-12-31T10:00:00.000Z");
+      expect(testDate96.getDate()).assertEqual(31);
+      expect(testDate96.getDay()).assertEqual(2);
+      expect(testDate96.getFullYear()).assertEqual(2024);
+      expect(testDate96.getHours()).assertEqual(18);
+      expect(testDate96.getMilliseconds()).assertEqual(0);
+      expect(testDate96.getMinutes()).assertEqual(0);
+      expect(testDate96.getMonth()).assertEqual(11);
+      expect(testDate96.getSeconds()).assertEqual(0);
+      expect(testDate96.getTime()).assertEqual(1735639200000);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9700
+     * @tc.name Date4Test_097
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate97 = new Date(2023, 6, 5, 10, 5, 30, 260);
+      expect(testDate97.getDate()).assertEqual(5);
+      expect(testDate97.getDay()).assertEqual(3);
+      expect(testDate97.getFullYear()).assertEqual(2023);
+      expect(testDate97.getHours()).assertEqual(10);
+      expect(testDate97.getMilliseconds()).assertEqual(260);
+      expect(testDate97.getMinutes()).assertEqual(5);
+      expect(testDate97.getMonth()).assertEqual(6);
+      expect(testDate97.getSeconds()).assertEqual(30);
+      expect(testDate97.getTime()).assertEqual(1688522730260);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9800
+     * @tc.name Date4Test_098
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate98 = new Date(2024, 8, 5, 20, 35, 15, 840);
+      expect(testDate98.getDate()).assertEqual(5);
+      expect(testDate98.getDay()).assertEqual(4);
+      expect(testDate98.getFullYear()).assertEqual(2024);
+      expect(testDate98.getHours()).assertEqual(20);
+      expect(testDate98.getMilliseconds()).assertEqual(840);
+      expect(testDate98.getMinutes()).assertEqual(35);
+      expect(testDate98.getMonth()).assertEqual(8);
+      expect(testDate98.getSeconds()).assertEqual(15);
+      expect(testDate98.getTime()).assertEqual(1725539715840);
+
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_9900
+     * @tc.name Date4Test_099
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate99 = new Date(2025, 2, 15, 9, 59, 30, 470);
+      expect(testDate99.getDate()).assertEqual(15);
+      expect(testDate99.getDay()).assertEqual(6);
+      expect(testDate99.getFullYear()).assertEqual(2025);
+      expect(testDate99.getHours()).assertEqual(9);
+      expect(testDate99.getMilliseconds()).assertEqual(470);
+      expect(testDate99.getMinutes()).assertEqual(59);
+      expect(testDate99.getMonth()).assertEqual(2);
+      expect(testDate99.getSeconds()).assertEqual(30);
+      expect(testDate99.getTime()).assertEqual(1742003970470);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date4_TEST_10000
+     * @tc.name Date4Test_100
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date4Test_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const testDate100 = new Date(2023, 11, 15, 23, 59, 30, 999);
+      expect(testDate100.getDate()).assertEqual(15);
+      expect(testDate100.getDay()).assertEqual(5);
+      expect(testDate100.getFullYear()).assertEqual(2023);
+      expect(testDate100.getHours()).assertEqual(23);
+      expect(testDate100.getMilliseconds()).assertEqual(999);
+      expect(testDate100.getMinutes()).assertEqual(59);
+      expect(testDate100.getMonth()).assertEqual(11);
+      expect(testDate100.getSeconds()).assertEqual(30);
+      expect(testDate100.getTime()).assertEqual(1702655970999);
+    });
+	
   })
 }
