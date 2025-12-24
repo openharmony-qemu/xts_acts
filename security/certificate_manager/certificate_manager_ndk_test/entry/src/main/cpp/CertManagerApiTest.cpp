@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 #include "napi/native_api.h"
 #include "device_certificate/certmanager/cm_native_api.h"
 #include "device_certificate/certmanager/cm_native_type.h"
@@ -41,6 +56,11 @@ static napi_value OHCertManagerNativeApiUkeyErr0100(napi_env env, napi_callback_
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -72,6 +92,11 @@ static napi_value OHCertManagerNativeApiUkeyErr0200(napi_env env, napi_callback_
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -103,7 +128,7 @@ static napi_value OHCertManagerNativeApiPrivateFunc0100(napi_env env, napi_callb
     napi_typeof(env, args[0], &valuetype0);
     
     if (valuetype0 != napi_string) {
-        napi_throw_type_error(env, nullptr, "参数必须是字符串类型");
+        napi_throw_type_error(env, nullptr, "value type error");
         return nullptr;
     }
     
@@ -111,6 +136,11 @@ static napi_value OHCertManagerNativeApiPrivateFunc0100(napi_env env, napi_callb
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -142,7 +172,7 @@ static napi_value OHCertManagerNativeApiPrivateErr0100(napi_env env, napi_callba
     napi_typeof(env, args[0], &valuetype0);
     
     if (valuetype0 != napi_string) {
-        napi_throw_type_error(env, nullptr, "参数必须是字符串类型");
+        napi_throw_type_error(env, nullptr, "value type error");
         return nullptr;
     }
     
@@ -150,6 +180,11 @@ static napi_value OHCertManagerNativeApiPrivateErr0100(napi_env env, napi_callba
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -189,6 +224,11 @@ static napi_value OHCertManagerNativeApiPrivateErr0200(napi_env env, napi_callba
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -223,6 +263,11 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -257,6 +302,11 @@ static napi_value OHCertManagerNativeApiPublicErr0200(napi_env env, napi_callbac
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
@@ -291,6 +341,11 @@ static napi_value OHCertManagerNativeApiPublicErr0300(napi_env env, napi_callbac
     napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
+    if (buffer == nullptr) {
+        napi_throw_error(env, nullptr, "malloc buffer error");
+        return nullptr;
+    }
+
     size_t copied;
     napi_get_value_string_utf8(env, args[0], buffer, str_length + 1, &copied);
     std::string identity = buffer;
