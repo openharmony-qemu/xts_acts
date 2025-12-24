@@ -28,7 +28,7 @@ struct ChipCloseOptions {
       })
 
       Button('get')
-        .id('getChipPadding').onClick(() => {
+        .id('getChipCloseOptions').onClick(() => {
         let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
         let chip0CloseOptionsFontSize: string = result.$children[0].$children[0].$children[0].$children[1].$children[0].$attrs.fontSize;
         AppStorage.setOrCreate<string>('chip0CloseOptionsFontSize', chip0CloseOptionsFontSize)

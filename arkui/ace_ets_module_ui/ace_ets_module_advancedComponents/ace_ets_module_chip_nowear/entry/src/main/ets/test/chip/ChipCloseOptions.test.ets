@@ -29,7 +29,7 @@ export default function ChipCloseOptions() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("Chip0010" == pages.name)) {
+        if (!("ChipCloseOptions" == pages.name)) {
           console.info("get ChipCloseOptions pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -59,12 +59,13 @@ export default function ChipCloseOptions() {
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChipPadding'));
+      let button1 = await driver.findComponent(ON.id('getChipCloseOptions'));
       await button1.click();
       await CommonFunc.sleep(2000);
       let test1 = AppStorage.get<string>('chip0CloseOptionsFontSize')
       console.log("ChipCloseOptions_001 test1 ", test1)
       expect(test1).assertEqual('35.00px');
+      AppStorage.delete('chip0CloseOptionsFontSize');
       console.info('[ChipCloseOptions_001] END');
       done();
     });

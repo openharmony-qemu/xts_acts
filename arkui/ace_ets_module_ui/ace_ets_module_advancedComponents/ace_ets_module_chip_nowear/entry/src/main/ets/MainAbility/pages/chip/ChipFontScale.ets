@@ -43,7 +43,7 @@ struct ChipFontScale {
       })
 
       Button('get')
-        .id('getChip').onClick(() => {
+        .id('getChipFontScale').onClick(() => {
         let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
         let chip1: ESObject = result.$children[0].$children[0].$children[0].$children[0].$attrs;
         AppStorage.setOrCreate<number>('chip1_minFontScale', Number.parseFloat(chip1.minFontScale))

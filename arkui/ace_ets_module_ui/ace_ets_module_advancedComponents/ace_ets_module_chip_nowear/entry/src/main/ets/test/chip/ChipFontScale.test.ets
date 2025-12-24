@@ -29,7 +29,7 @@ export default function ChipFontScale() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("Chip0010" == pages.name)) {
+        if (!("ChipFontScale" == pages.name)) {
           console.info("get ChipFontScale pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -59,7 +59,7 @@ export default function ChipFontScale() {
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChip'));
+      let button1 = await driver.findComponent(ON.id('getChipFontScale'));
       await button1.click();
       await CommonFunc.sleep(2000);
       let test1 = AppStorage.get<number>('chip1_minFontScale');
@@ -75,6 +75,12 @@ export default function ChipFontScale() {
       expect(test4).assertEqual(2);
       expect(test5).assertEqual(0);
       expect(test6).assertEqual(1);
+      AppStorage.delete('chip1_minFontScale');
+      AppStorage.delete('chip1_maxFontScale');
+      AppStorage.delete('chip2_minFontScale');
+      AppStorage.delete('chip2_maxFontScale');
+      AppStorage.delete('chip3_minFontScale');
+      AppStorage.delete('chip3_maxFontScale');
       console.info('[ChipFontScale_001] END');
       done();
     });

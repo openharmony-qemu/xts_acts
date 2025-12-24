@@ -29,7 +29,7 @@ export default function ChipPadding() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("Chip0010" == pages.name)) {
+        if (!("ChipPadding" == pages.name)) {
           console.info("get ChipPadding pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -71,6 +71,10 @@ export default function ChipPadding() {
       expect(test2).assertEqual('30.00px');
       expect(test3).assertEqual('20.00px');
       expect(test4).assertEqual('30.00px');
+      AppStorage.delete('chip0_padding_top');
+      AppStorage.delete('chip0_padding_bottom');
+      AppStorage.delete('chip0_padding_left');
+      AppStorage.delete('chip0_padding_right');
       console.info('[ChipPadding_001] END');
       done();
     });

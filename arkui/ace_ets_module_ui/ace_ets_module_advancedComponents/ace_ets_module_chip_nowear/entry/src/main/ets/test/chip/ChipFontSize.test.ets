@@ -29,7 +29,7 @@ export default function ChipFontSize() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("Chip0010" == pages.name)) {
+        if (!("ChipFontSize" == pages.name)) {
           console.info("get ChipFontSize pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -71,6 +71,11 @@ export default function ChipFontSize() {
       expect(test1).assertEqual('10.00px');
       expect(test2).assertEqual(test4);
       expect(test3).assertEqual(test5);
+      AppStorage.delete('chip1FontSize');
+      AppStorage.delete('chip2FontSize');
+      AppStorage.delete('chip3FontSize');
+      AppStorage.delete('chip4FontSize');
+      AppStorage.delete('chip5FontSize');
       console.info('[ChipFontSize_001] END');
       done();
     });
