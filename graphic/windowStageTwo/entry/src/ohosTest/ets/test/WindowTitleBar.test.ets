@@ -2452,18 +2452,16 @@ export default function windowTitleBarTest() {
           bundleManager.SupportWindowMode.FLOATING
         ]
       };
-      try {
-        mainWindow.setWindowTitleButtonVisible(false,true,true);
-        let windowStageStart = await startAbility(caseName, context, options);
-        await sleep(200);
-        
-        let windowClass = windowStageStart.getMainWindowSync();
-        let windowRect = mainWindow.getWindowProperties().windowRect;
-        console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}`);
-        windowClass.moveWindowToAsync(windowRect.left,windowRect.top);
-        windowClass.setWindowTitleButtonVisible(false,true,true);
-        await sleep(1000);
-        if (isFreeWindowMode == true) {
+      if (isFreeWindowMode == true) {
+        try {
+          mainWindow.setWindowTitleButtonVisible(false,true,true);
+          let windowStageStart = await startAbility(caseName, context, options);        
+          let windowClass = windowStageStart.getMainWindowSync();
+          let windowRect = mainWindow.getWindowProperties().windowRect;
+          console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}`);
+          windowClass.moveWindowToAsync(windowRect.left,windowRect.top);
+          windowClass.setWindowTitleButtonVisible(false,true,true);
+          await sleep(1000);
           let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
           await sleep(200);
           console.log(`${caseName} button: ${button}`);
@@ -2474,14 +2472,14 @@ export default function windowTitleBarTest() {
           }
           console.log(`${caseName} test1: ${test}`);
           expect(test).assertFalse();
-        }
-        await windowStageStart.setSupportedWindowModes([ bundleManager.SupportWindowMode.FLOATING, bundleManager.SupportWindowMode.SPLIT], true);
-        await sleep(200);
-        if (isFreeWindowMode == true) {
-          let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+         
+          await windowStageStart.setSupportedWindowModes([ bundleManager.SupportWindowMode.FLOATING, bundleManager.SupportWindowMode.SPLIT], true);
           await sleep(200);
-          console.log(`${caseName} button: ${button}`);
-          if(button){
+  
+          let button2 = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button2}`);
+          if(button2){
             test = true
           }else{
             test = false
@@ -2495,22 +2493,19 @@ export default function windowTitleBarTest() {
           
           await terminateAbility(caseName);
           expect(false).assertTrue();
-
+  
+          done();
+          
+        } catch (error) {
+          console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
+          await terminateAbility(caseName);
+          expect(error.code).assertEqual(1300002)
           done();
         }
-      } catch (error) {
-        console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
-        if(error.code == 801){
-          expect(error.code).assertEqual(801)
-        }else{
-          expect(error.code).assertEqual(1300002)
-        }
-        
-        if (windowStageStart != undefined) {
-          await terminateAbility(caseName);
-        } 
+      }else{
         done();
       }
+      
     })
     /**
      * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_WINDOW_DECORHEIGHT_0100

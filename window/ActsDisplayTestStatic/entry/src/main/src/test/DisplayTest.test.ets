@@ -712,7 +712,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -749,7 +749,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -757,7 +757,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -779,7 +779,7 @@ export default function DisplayTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {

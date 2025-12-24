@@ -22,6 +22,7 @@ import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from 
 
 const CAN_NOT_BUILD_STAGE = -1;
 const OK = 0;
+const WS_OK = 0;
 const WINDOW_MANAGER_ERRORCODE_NO_PERMISSION = 201;
 const WINDOW_MANAGER_ERRORCODE_INVALID_PARAM = 401;
 const DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED = 801;
@@ -892,7 +893,7 @@ export default function WindowTest() {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
           let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
-          expect(Result).assertEqual(OK);
+          expect(Result).assertEqual(WS_OK);
           done()
         } catch (err) {
           console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 catch err: ` + err);
@@ -1102,7 +1103,7 @@ export default function WindowTest() {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 windowId: ${windowId}`);
           let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0800(windowId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 Result: ${Result}`);
-          expect(Result).assertEqual(OK);
+          expect(Result).assertEqual(WS_OK);
           done()
         } catch (err) {
           console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 catch err: ` + err);
