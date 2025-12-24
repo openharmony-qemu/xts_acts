@@ -1601,5 +1601,1303 @@ export default function expressionTest1() {
       expect(result).assertEqual(expected);
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0111
+     * @tc.name ExpressionTest0111
+     * @tc.desc Test assignment with calculation result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 10;
+      let b: number = 4;
+      let result: number = 0;
+      result = a * 2 + b / 2;
+      let expected: number = 22;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0112
+     * @tc.name ExpressionTest0112
+     * @tc.desc Test addition assignment with negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 5;
+      let b: number = -3;
+      a += b;
+      let expected: number = 2;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0113
+     * @tc.name ExpressionTest0113
+     * @tc.desc Test subtraction assignment with negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 5;
+      let b: number = -3;
+      a -= b;
+      let expected: number = 8;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0114
+     * @tc.name ExpressionTest0114
+     * @tc.desc Test multiplication assignment with decimal
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 6;
+      let b: number = 0.5;
+      a *= b;
+      let expected: number = 3;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0115
+     * @tc.name ExpressionTest0115
+     * @tc.desc Test division assignment with decimal result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 15;
+      let b: number = 2;
+      a /= b;
+      let expected: number = 7.5;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0116
+     * @tc.name ExpressionTest0116
+     * @tc.desc Test modulus assignment with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -17;
+      let b: number = 5;
+      a %= b;
+      let expected: number = -2;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0117
+     * @tc.name ExpressionTest0117
+     * @tc.desc Test exponentiation assignment with negative exponent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 2;
+      let b: number = -3;
+      a **= b;
+      let expected: number = 0.125;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0118
+     * @tc.name ExpressionTest0118
+     * @tc.desc Test strict equality with decimal numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 1.5;
+      let b: number = 1.5;
+      let result: boolean = a === b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0119
+     * @tc.name ExpressionTest0119
+     * @tc.desc Test strict inequality with different decimal values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 1.5;
+      let b: number = 2.5;
+      let result: boolean = a !== b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0121
+     * @tc.name ExpressionTest0121
+     * @tc.desc Test greater than with decimal numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 3.7;
+      let b: number = 3.2;
+      let result: boolean = a > b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0122
+     * @tc.name ExpressionTest0122
+     * @tc.desc Test less than with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -5;
+      let b: number = -3;
+      let result: boolean = a < b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0123
+     * @tc.name ExpressionTest0123
+     * @tc.desc Test greater than or equal with same values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 7.5;
+      let b: number = 7.5;
+      let result: boolean = a >= b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0124
+     * @tc.name ExpressionTest0124
+     * @tc.desc Test less than or equal with negative decimals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -2.3;
+      let b: number = -2.1;
+      let result: boolean = a <= b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0125
+     * @tc.name ExpressionTest0125
+     * @tc.desc Test logical AND with truthy numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 5;
+      let b: number = 10;
+      let result: number = a && b;
+      let expected: number = 10;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0126
+     * @tc.name ExpressionTest0126
+     * @tc.desc Test logical AND with falsy number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let b: number = 10;
+      let result: number = a && b;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0127
+     * @tc.name ExpressionTest0127
+     * @tc.desc Test logical OR with falsy number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let b: number = 10;
+      let result: number = a || b;
+      let expected: number = 10;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0128
+     * @tc.name ExpressionTest0128
+     * @tc.desc Test logical NOT with zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let result: boolean = !a;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0129
+     * @tc.name ExpressionTest0129
+     * @tc.desc Test bitwise AND with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -5;
+      let b: number = -3;
+      let result: number = a & b;
+      let expected: number = -7;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0130
+     * @tc.name ExpressionTest0130
+     * @tc.desc Test bitwise OR with large numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0xffff;
+      let b: number = 0xff00;
+      let result: number = a | b;
+      let expected: number = 0xffff;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0131
+     * @tc.name ExpressionTest0131
+     * @tc.desc Test bitwise XOR with zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 255;
+      let b: number = 0;
+      let result: number = a ^ b;
+      let expected: number = 255;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0132
+     * @tc.name ExpressionTest0132
+     * @tc.desc Test bitwise NOT with maximum integer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 2147483647;
+      let result: number = ~a;
+      let expected: number = -2147483648;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0133
+     * @tc.name ExpressionTest0133
+     * @tc.desc Test left shift with maximum shift amount
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: int = 1;
+      let result: int = a << 31;
+      let expected: int = -2147483648;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0134
+     * @tc.name ExpressionTest0134
+     * @tc.desc Test right shift with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -2147483648;
+      let result: number = a >> 31;
+      let expected: number = -1;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0135
+     * @tc.name ExpressionTest0135
+     * @tc.desc Test unsigned right shift with large number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: int = 0xffffffff;
+      let result: int = a >>> 1;
+      let expected: int = 0x7fffffff;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0136
+     * @tc.name ExpressionTest0136
+     * @tc.desc Test conditional operator with numeric result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 15;
+      let b: number = 20;
+      let result: number = a > b ? a : b;
+      let expected: number = 20;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0137
+     * @tc.name ExpressionTest0137
+     * @tc.desc Test comma operator in for loop initialization
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: number = 0;
+      let i: number, j: number;
+      for (i = 0, j = 10; i < 5; i++, j--) {
+        result += i + j;
+      }
+      let expected: number = 50;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0138
+     * @tc.name ExpressionTest0138
+     * @tc.desc Test typeof with bigint
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: bigint = BigInt(9007199254740991);
+      let result: string = typeof a;
+      let expected: string = "bigint";
+      expect(result).assertEqual(expected);
+      expect(result).assertContain(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0139
+     * @tc.name ExpressionTest0139
+     * @tc.type Function
+     * @tc.desc Test typeof with function
+     * @tc.size MediumTest
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let testFunc: () => void = (): void => {
+      };
+      let result: string = typeof testFunc;
+      let expected: string = "function";
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0140
+     * @tc.name ExpressionTest0140
+     * @tc.desc Test unary plus with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -5;
+      let result: number = +a;
+      let expected: number = -5;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0141
+     * @tc.name ExpressionTest0141
+     * @tc.desc Test unary minus with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -5;
+      let result: number = -a;
+      let expected: number = 5;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0146
+     * @tc.name ExpressionTest0146
+     * @tc.desc Test array destructuring with default values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let arr: number[] = [1];
+      let a: number = arr.length > 0 ? arr[0] : 0;
+      let b: number = arr.length > 1 ? arr[1] : 0;
+      let expectedA: number = 1;
+      let expectedB: number = 0;
+      expect(a).assertEqual(expectedA);
+      expect(b).assertEqual(expectedB);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0147
+     * @tc.name ExpressionTest0147
+     * @tc.desc Test rest operator in array destructuring with empty array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let arr: number[] = [];
+      let a: number = arr.length > 0 ? arr[0] : 0;
+      let rest: number[] = arr.length > 1 ? arr.slice(1) : [];
+      let expectedA: number = 0;
+      let expectedRestLength: number = 0;
+      expect(a).assertEqual(expectedA);
+      expect(rest.length).assertEqual(expectedRestLength);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0148
+     * @tc.name ExpressionTest0148
+     * @tc.desc Test operator precedence with unary and multiplication
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 5;
+      let b: number = 3;
+      let result: number = -a * b;
+      let expected: number = -15;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0149
+     * @tc.name ExpressionTest0149
+     * @tc.desc Test optional chaining with method call
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let obj: TestClass3 | null = new TestClass3();
+      let result1 = obj?.getValue();
+      obj = null;
+      let expected1 = 42;
+      expect(result1).assertEqual(expected1);
+    });
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0150
+     * @tc.name ExpressionTest0150
+     * @tc.desc Test comma operator in for loop update with multiple operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let x: number = 0;
+      let y: number = 100;
+      for (let i = 0; i < 5; i++, x += 5, y -= 10) {
+      }
+      let expectedX: number = 25;
+      let expectedY: number = 50;
+      expect(x).assertEqual(expectedX);
+      expect(y).assertEqual(expectedY);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0151
+     * @tc.name ExpressionTest0151
+     * @tc.desc Test addition with minimum safe integer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let minInt: number = -9007199254740991;
+      let result: number = minInt + (-1);
+      let expected: number = -9007199254740992;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0152
+     * @tc.name ExpressionTest0152
+     * @tc.desc Test subtraction resulting in positive overflow
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 9007199254740991;
+      let b: number = -2;
+      let result: number = a - b;
+      let expected: number = 9007199254740993;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0153
+     * @tc.name ExpressionTest0153
+     * @tc.desc Test multiplication with very small decimals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0.0000001;
+      let b: number = 0.0000002;
+      let result: number = a * b;
+      let expected: number = 2e-14;
+      let tolerance: number = 1e-20;
+      expect(Math.abs(result - expected) < tolerance).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0154
+     * @tc.name ExpressionTest0154
+     * @tc.desc Test division of small number by large number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 1;
+      let b: number = 1000000;
+      let result: number = a / b;
+      let expected: number = 0.000001;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0155
+     * @tc.name ExpressionTest0155
+     * @tc.desc Test modulus with zero dividend
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let b: number = 5;
+      let result: number = a % b;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0156
+     * @tc.name ExpressionTest0156
+     * @tc.desc Test exponentiation with large exponent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 2;
+      let b: number = 30;
+      let result: number = a**b;
+      let expected: number = 1073741824;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0157
+     * @tc.name ExpressionTest0157
+     * @tc.desc Test prefix increment in nested expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 3;
+      let result: number = 2 * ++a + 5;
+      let expected: number = 13;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0158
+     * @tc.name ExpressionTest0158
+     * @tc.desc Test postfix increment in nested expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 3;
+      let result: number = 2 * a++ + 5;
+      let expected: number = 11;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0159
+     * @tc.name ExpressionTest0159
+     * @tc.desc Test prefix decrement in complex calculation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 10;
+      let b: number = 4;
+      let result: number = (--a * 2) / b + 3;
+      let expected: number = 7.5;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0160
+     * @tc.name ExpressionTest0160
+     * @tc.desc Test postfix decrement in complex calculation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 10;
+      let b: number = 4;
+      let result: number = (a-- * 2) / b + 3;
+      let expected: number = 8;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0161
+     * @tc.name ExpressionTest0161
+     * @tc.desc Test assignment with multiple operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 5;
+      let b: number = 3;
+      let c: number = 2;
+      let result: number = 0;
+      result = (a + b) * (c / a) + b;
+      let expected: number = 6.2;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0162
+     * @tc.name ExpressionTest0162
+     * @tc.desc Test addition assignment with large numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 9007199254740990;
+      let b: number = 3;
+      a += b;
+      let expected: number = 9007199254740993;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0163
+     * @tc.name ExpressionTest0163
+     * @tc.desc Test subtraction assignment with very small numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0.0000001;
+      let b: number = 0.00000005;
+      a -= b;
+      let expected: number = 0.00000005;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0164
+     * @tc.name ExpressionTest0164
+     * @tc.desc Test multiplication assignment with negative decimals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -2.5;
+      let b: number = 0.5;
+      a *= b;
+      let expected: number = -1.25;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0165
+     * @tc.name ExpressionTest0165
+     * @tc.desc Test division assignment with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -15;
+      let b: number = -3;
+      a /= b;
+      let expected: number = 5;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0166
+     * @tc.name ExpressionTest0166
+     * @tc.desc Test modulus assignment with decimal values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 7.2;
+      let b: number = 2.5;
+      a %= b;
+      let expected: number = 2.2;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0167
+     * @tc.name ExpressionTest0167
+     * @tc.desc Test exponentiation assignment with fractional exponent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 81;
+      let b: number = 0.25;
+      a **= b;
+      let expected: number = 3;
+      expect(a).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0168
+     * @tc.name ExpressionTest0168
+     * @tc.desc Test strict equality with Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = Infinity;
+      let b: number = Infinity;
+      let result: boolean = a === b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0169
+     * @tc.name ExpressionTest0169
+     * @tc.desc Test strict inequality between Infinity and -Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = Infinity;
+      let b: number = -Infinity;
+      let result: boolean = a !== b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0170
+     * @tc.name ExpressionTest0170
+     * @tc.desc Test non-strict equality with NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = NaN;
+      let b: number = NaN;
+      let result: boolean = a == b;
+      let expected: boolean = false;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0171
+     * @tc.name ExpressionTest0171
+     * @tc.desc Test greater than with Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = Infinity;
+      let b: number = 1000000000;
+      let result: boolean = a > b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0172
+     * @tc.name ExpressionTest0172
+     * @tc.desc Test less than with -Infinity
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -Infinity;
+      let b: number = -1000000000;
+      let result: boolean = a < b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0173
+     * @tc.name ExpressionTest0173
+     * @tc.desc Test greater than or equal with NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = NaN;
+      let b: number = 5;
+      let result: boolean = a >= b;
+      let expected: boolean = false;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0174
+     * @tc.name ExpressionTest0174
+     * @tc.desc Test less than or equal with mixed signs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -3;
+      let b: number = 2;
+      let result: boolean = a <= b;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0175
+     * @tc.name ExpressionTest0175
+     * @tc.desc Test logical AND with zero and negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let b: number = -5;
+      let result: number = a && b;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0176
+     * @tc.name ExpressionTest0176
+     * @tc.desc Test logical AND with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -3;
+      let b: number = -5;
+      let result: number = a && b;
+      let expected: number = -5;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0177
+     * @tc.name ExpressionTest0177
+     * @tc.desc Test logical OR with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -3;
+      let b: number = -5;
+      let result: number = a || b;
+      let expected: number = -3;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0178
+     * @tc.name ExpressionTest0178
+     * @tc.desc Test logical NOT with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = -5;
+      let result: boolean = !a;
+      let expected: boolean = false;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0179
+     * @tc.name ExpressionTest0179
+     * @tc.desc Test bitwise AND with zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 255;
+      let b: number = 0;
+      let result: number = a & b;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0180
+     * @tc.name ExpressionTest0180
+     * @tc.desc Test bitwise OR with all ones
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 123;
+      let b: number = 0xff;
+      let result: number = a | b;
+      let expected: number = 255;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0181
+     * @tc.name ExpressionTest0181
+     * @tc.desc Test bitwise XOR with same number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 42;
+      let result: number = a ^ a;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0182
+     * @tc.name ExpressionTest0182
+     * @tc.desc Test bitwise NOT with zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let result: number = ~a;
+      let expected: number = -1;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0183
+     * @tc.name ExpressionTest0183
+     * @tc.desc Test left shift with shift amount larger than 31
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: int = 1;
+      let result: int = a << 32;
+      let expected: int = 1;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0184
+     * @tc.name ExpressionTest0184
+     * @tc.desc Test right shift with large shift amount
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 255;
+      let result: number = a >> 10;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0185
+     * @tc.name ExpressionTest0185
+     * @tc.desc Test unsigned right shift with negative number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: int = -1;
+      let result: int = a >>> 0;
+      let expected: int = -1;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0186
+     * @tc.name ExpressionTest0186
+     * @tc.desc Test conditional operator with NaN condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = NaN;
+      let result: string = a ? "truthy" : "falsy";
+      let expected: string = "falsy";
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0187
+     * @tc.name ExpressionTest0187
+     * @tc.desc Test comma operator in for loop with multiple variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let sum: number = 0;
+      let product: number = 1;
+      let i: number, j: number;
+      for (i = 1, j = 5; i <= 5; i++, j--) {
+        sum += i + j;
+        product *= i;
+      }
+      let expectedSum: number = 30;
+      let expectedProduct: number = 120;
+      expect(sum).assertEqual(expectedSum);
+      expect(product).assertEqual(expectedProduct);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0188
+     * @tc.name ExpressionTest0188
+     * @tc.desc Test typeof with symbol
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let symbolCounter = 0;
+      let createSymbol: (description: string) => string = (description: string): string => {
+        return `Symbol(${description})_${symbolCounter++}`;
+      };
+      let sym: string = createSymbol("test");
+      let result: string = typeof sym;
+      let expected: string = "string";
+      expect(result).assertEqual(expected);
+      expect(sym).assertContain("test");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0189
+     * @tc.name ExpressionTest0189
+     * @tc.desc Test typeof with number
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 42;
+      let result: string = typeof a;
+      let expected: string = "number";
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0190
+     * @tc.name ExpressionTest0190
+     * @tc.desc Test unary plus with zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let result: number = +a;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0191
+     * @tc.name ExpressionTest0191
+     * @tc.desc Test unary minus with zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let result: number = -a;
+      let expected: number = 0;
+      expect(result).assertEqual(expected);
+    });
+
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0196
+     * @tc.name ExpressionTest0196
+     * @tc.desc Test operator precedence with bitwise and logical operators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 5;
+      let b: number = 3;
+      let c: number = 7;
+      let bitwiseResult: number = a & b;
+      let comparisonResult: boolean = c > 5;
+      let result: boolean = (bitwiseResult !== 0) || comparisonResult;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0197
+     * @tc.name ExpressionTest0197
+     * @tc.desc Test optional chaining with nested properties
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let obj: OuterClass5 | null = new OuterClass5();
+      let result1: number | undefined = obj?.inner?.value;
+      obj = null;
+      let expected1: number = 10;
+      expect(result1).assertEqual(expected1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0198
+     * @tc.name ExpressionTest0198
+     * @tc.desc Test comma operator in for loop with complex updates
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 0;
+      let b: number = 1;
+      for (let i = 0; i < 5; i++, a += b, b *= 2) {
+      }
+      let expectedA: number = 31;
+      let expectedB: number = 32;
+      expect(a).assertEqual(expectedA);
+      expect(b).assertEqual(expectedB);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0199
+     * @tc.name ExpressionTest0199
+     * @tc.desc Test operator precedence with arithmetic and comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let a: number = 10;
+      let b: number = 5;
+      let c: number = 3;
+      let result: boolean = a / b > c;
+      let expected: boolean = false;
+      expect(result).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0200
+     * @tc.name ExpressionTest0200
+     * @tc.desc Test comma operator in for loop initialization with complex expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: number = 0;
+      let i: number, j: number;
+      for (i = (5 - 2), j = (3 * 4); i < j; i++, j--) {
+        result += i + j;
+      }
+      let expected: number = 75;
+      expect(result).assertEqual(expected);
+    });
+
   })
 }
