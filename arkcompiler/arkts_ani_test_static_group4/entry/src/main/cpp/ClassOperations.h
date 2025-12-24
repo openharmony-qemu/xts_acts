@@ -8384,3 +8384,1329 @@ ani_boolean test_Class_Get_Field_By_Name_Long_02([[maybe_unused]] ani_env *env, 
     ASSERT_EQ(age, static_cast<ani_long>(20L));
     return ANI_TRUE;
 }
+
+ani_boolean test_Class_Get_Field_By_Name_Long_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+
+    ani_long age = 0L;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "name", &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+    ani_long age = 0L;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(nullptr, "name", &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+    ani_long age = 0L;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "name", nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+    ani_long age = 0L;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "", &age), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "\n", &age), ANI_NOT_FOUND);
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Long(nullptr, cls, "age", &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+    ani_long single = 0L;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "specia1", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "specia3", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "specia4", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "specia5", &single), ANI_INVALID_TYPE);
+    ani_long max = std::numeric_limits<ani_long>::max();
+    ani_long min = std::numeric_limits<ani_long>::min();
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "min", &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_long>(min));
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "max", &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_long>(max));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    const ani_long setTarget = 2L;
+    const ani_long setTarget2 = 3L;
+    ani_long single = 0L;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", &cls), ANI_OK);
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; i++) {
+        ASSERT_EQ(env->Class_SetStaticFieldByName_Long(cls, "age", setTarget2), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "age", &single), ANI_OK);
+        ASSERT_EQ(single, setTarget2);
+    }
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Long(cls, "age", setTarget), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Long(cls, "age", &single), ANI_OK);
+    ASSERT_EQ(single, setTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.GetLongStatic", "age");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.PackageStaticA", "long_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Long_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetLong(env, "entry.src.main.src.ets.ClassOperationsMethodByName.PackageStaticFinal", "long_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueGetShort(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    const ani_short setTarget = 2U;
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Short(cls, fieldName, setTarget), ANI_OK);
+    ani_short resultValue = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, fieldName, &resultValue), ANI_OK);
+    ASSERT_EQ(resultValue, setTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ani_short age = 1U;
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Short(env, cls, "age", &age), ANI_OK);
+    ASSERT_EQ(age, static_cast<ani_short>(20U));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ani_short age = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "age", &age), ANI_OK);
+    ASSERT_EQ(age, static_cast<ani_short>(20U));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+
+    ani_short age = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "name", &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ani_short age = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(nullptr, "name", &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ani_short age = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "name", nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ani_short age = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "", &age), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "\n", &age), ANI_NOT_FOUND);
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Short(nullptr, cls, "age", &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    ani_short single = 1U;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "specia1", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "specia3", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "specia4", &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "specia5", &single), ANI_INVALID_TYPE);
+    ani_short max = std::numeric_limits<ani_short>::max();
+    ani_short min = std::numeric_limits<ani_short>::min();
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "min", &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_short>(min));
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "max", &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_short>(max));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    const ani_short setTarget = 2U;
+    const ani_short setTarget2 = 3U;
+    ani_short single = 1U;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", &cls), ANI_OK);
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; i++) {
+        ASSERT_EQ(env->Class_SetStaticFieldByName_Short(cls, "age", setTarget2), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "age", &single), ANI_OK);
+        ASSERT_EQ(single, setTarget2);
+    }
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Short(cls, "age", setTarget), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Short(cls, "age", &single), ANI_OK);
+    ASSERT_EQ(single, setTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.GetShortStatic", "age");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.ShortStaticA", "short_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Short_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetShort(env, "entry.src.main.src.ets.ClassOperationsMethodByName.ShortStaticFinal", "short_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueGetRef(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+
+    ani_string string {};
+    ASSERT_EQ(env->String_NewUTF8("abcdef", 6U, &string), ANI_OK);
+
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Ref(cls, fieldName, string), ANI_OK);
+    ani_ref resultValue = nullptr;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, fieldName, &resultValue), ANI_OK);
+
+    auto name = static_cast<ani_string>(resultValue);
+    std::array<char, 7U> buffer {};
+    ani_size resSize = 0U;
+    ASSERT_EQ(env->String_GetUTF8SubString(name, 0U, 6U, buffer.data(), buffer.size(), &resSize), ANI_OK);
+    ASSERT_EQ(resSize, 6U);
+    ASSERT_STREQ(buffer.data(), "abcdef");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+
+    ani_ref nameRef = nullptr;
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Ref(env, cls, "name", &nameRef), ANI_OK);
+
+    auto name = static_cast<ani_string>(nameRef);
+    std::array<char, 6U> buffer {};
+    ani_size nameSize = 0U;
+    ASSERT_EQ(env->String_GetUTF8SubString(name, 0U, 3U, buffer.data(), buffer.size(), &nameSize), ANI_OK);
+    ASSERT_EQ(nameSize, 3U);
+    ASSERT_STREQ(buffer.data(), "Bob");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+
+    ani_ref nameRef = nullptr;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "name", &nameRef), ANI_OK);
+
+    auto name = static_cast<ani_string>(nameRef);
+    std::array<char, 6U> buffer {};
+    ani_size nameSize = 0U;
+    ASSERT_EQ(env->String_GetUTF8SubString(name, 0U, 3U, buffer.data(), buffer.size(), &nameSize), ANI_OK);
+    ASSERT_EQ(nameSize, 3U);
+    ASSERT_STREQ(buffer.data(), "Bob");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+    ani_ref nameRef = nullptr;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "age", &nameRef), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+    ani_ref nameRef = nullptr;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(nullptr, "name", &nameRef), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+    ani_ref nameRef = nullptr;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, nullptr, &nameRef), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "name", nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+    ani_ref nameRef = nullptr;
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "", &nameRef), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "\n", &nameRef), ANI_NOT_FOUND);
+    ASSERT_EQ(env->c_api->Class_GetStaticFieldByName_Ref(nullptr, cls, "name", &nameRef), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperationsMethodByName.Man", &cls), ANI_OK);
+    ani_ref resultValue = nullptr;
+    ani_string string {};
+    ani_string string2 {};
+    ani_size resSize = 0U;
+    ASSERT_EQ(env->String_NewUTF8("abcdef", 6U, &string), ANI_OK);
+    ASSERT_EQ(env->String_NewUTF8("fedcba", 6U, &string2), ANI_OK);
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount - 1; i++) {
+        ASSERT_EQ(env->Class_SetStaticFieldByName_Ref(cls, "name", string), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "name", &resultValue), ANI_OK);
+        auto name = static_cast<ani_string>(resultValue);
+        std::array<char, 30U> buffer {};
+        ASSERT_EQ(env->String_GetUTF8SubString(name, 0U, 6U, buffer.data(), buffer.size(), &resSize), ANI_OK);
+        ASSERT_EQ(resSize, 6U);
+        ASSERT_STREQ(buffer.data(), "abcdef");
+    }
+    ASSERT_EQ(env->Class_SetStaticFieldByName_Ref(cls, "name", string2), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticFieldByName_Ref(cls, "name", &resultValue), ANI_OK);
+    auto name = static_cast<ani_string>(resultValue);
+    std::array<char, 30U> buffer {};
+    ASSERT_EQ(env->String_GetUTF8SubString(name, 0U, 6U, buffer.data(), buffer.size(), &resSize), ANI_OK);
+    ASSERT_EQ(resSize, 6U);
+    ASSERT_STREQ(buffer.data(), "fedcba");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetRef(env, "entry.src.main.src.ets.ClassOperationsMethodByName.Man", "name");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetRef(env, "entry.src.main.src.ets.ClassOperationsMethodByName.BoxStaticA", "string_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Field_By_Name_Ref_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueGetRef(env, "entry.src.main.src.ets.ClassOperationsMethodByName.BoxStaticFinal", "string_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueByte(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, fieldName, &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_byte result = 0U;
+    const ani_byte target = 126;
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    const ani_byte setTar = 127;
+    ASSERT_EQ(env->Class_SetStaticField_Byte(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_byte result = 0;
+    const ani_byte target = 126;
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_byte result = 0;
+    const ani_byte target = 126;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Byte(env, cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_byte result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &result), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_byte result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Byte(nullptr, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_byte result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, nullptr, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ani_static_field field;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_byte result = 0;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Byte(nullptr, cls, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+
+    ani_static_field field {};
+    ani_byte single = 0;
+    const int32_t fieldNum = 11;
+    for (int32_t i = 1; i <= fieldNum; ++i) {
+        std::string fieldName = "special" + std::to_string(i);
+        ASSERT_EQ(env->Class_FindStaticField(cls, fieldName.c_str(), &field), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &single), ANI_INVALID_TYPE);
+    }
+
+    const ani_byte maxTarget = 127;
+    const ani_byte minTarget = -128;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byteMax", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, maxTarget);
+
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byteMin", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, minTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_field field {};
+    const ani_byte setTarget = 127;
+    ani_byte single = 0U;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ASSERT_EQ(env->Class_SetStaticField_Byte(cls, field, setTarget), ANI_OK);
+
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, setTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_field field {};
+    const ani_byte setTarget = 127;
+    const ani_byte setTarget2 = 125;
+    ani_byte single = 0U;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestByte", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "byte_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    const int32_t loopNum = 3;
+    for (int32_t i = 0; i < loopNum - 1; i++) {
+        ASSERT_EQ(env->Class_SetStaticField_Byte(cls, field, setTarget), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &single), ANI_OK);
+        ASSERT_EQ(single, setTarget);
+    }
+    ASSERT_EQ(env->Class_SetStaticField_Byte(cls, field, setTarget2), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Byte(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, setTarget2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueByte(env, "entry.src.main.src.ets.ClassOperations.TestByteA", "byte_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Byte_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueByte(env, "entry.src.main.src.ets.ClassOperations.TestByteFinal", "byte_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueChar(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, fieldName, &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_char result = 0U;
+    const ani_char target = 'c';
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    const ani_char setTar = 'a';
+    ASSERT_EQ(env->Class_SetStaticField_Char(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_char result = '\0';
+    const ani_char target = 'c';
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_char result = '\0';
+    const ani_char target = 'c';
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Char(env, cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_char result = '\0';
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &result), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_char result = '\0';
+    ASSERT_EQ(env->Class_GetStaticField_Char(nullptr, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_char result = '\0';
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, nullptr, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_static_field field;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_char result = '\0';
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Char(nullptr, cls, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ani_char single = '\0';
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "special1", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_INVALID_TYPE);
+
+    ASSERT_EQ(env->Class_FindStaticField(cls, "special2", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_INVALID_TYPE);
+
+    ASSERT_EQ(env->Class_FindStaticField(cls, "special3", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_INVALID_TYPE);
+
+    std::array<char, 5U> expectedValues = {'\n', '\r', '\t', '\b', '\0'};
+    for (size_t i = 0; i < expectedValues.size(); ++i) {
+        std::string fieldName = "special" + std::to_string(i + 4);
+        ASSERT_EQ(env->Class_FindStaticField(cls, fieldName.c_str(), &field), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_OK);
+        ASSERT_EQ(single, expectedValues[i]);
+    }
+
+    const ani_char maxTarget = std::numeric_limits<ani_char>::max();
+    const ani_char minTarget = std::numeric_limits<ani_char>::min();
+    ASSERT_EQ(env->Class_FindStaticField(cls, "charMax", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, maxTarget);
+
+    ASSERT_EQ(env->Class_FindStaticField(cls, "charMin", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, minTarget);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ani_static_field field {};
+    const ani_char setTarget = 'a';
+    const ani_char setTarget2 = 'b';
+    ani_char single;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestChar", &cls), ANI_OK);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "char_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    const int32_t loopNum = 3;
+    for (int32_t i = 0; i < loopNum - 1; i++) {
+        ASSERT_EQ(env->Class_SetStaticField_Char(cls, field, setTarget), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_OK);
+        ASSERT_EQ(single, setTarget);
+    }
+    ASSERT_EQ(env->Class_SetStaticField_Char(cls, field, setTarget2), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Char(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, setTarget2);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueChar(env, "entry.src.main.src.ets.ClassOperations.TestCharA", "char_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Char_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueChar(env, "entry.src.main.src.ets.ClassOperations.TestCharFinal", "char_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueDouble(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, fieldName, &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0U;
+    const ani_double target = 18.0;
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    const ani_double setTar = 20.0;
+    ASSERT_EQ(env->Class_SetStaticField_Double(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0.0;
+    const ani_double target = 18.0;
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0.0;
+    const ani_double target = 18.0;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Double(env, cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0.0;
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &result), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0.0;
+    ASSERT_EQ(env->Class_GetStaticField_Double(nullptr, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_double result = 0.0;
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, nullptr, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field = nullptr;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0.0;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Double(nullptr, cls, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    ani_double single = 0.0;
+    const int32_t fieldNum = 4;
+    for (int32_t i = 1; i <= fieldNum; ++i) {
+        std::string fieldName = "special" + std::to_string(i);
+        ASSERT_EQ(env->Class_FindStaticField(cls, fieldName.c_str(), &field), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &single), ANI_INVALID_TYPE);
+    }
+
+    ani_double max = std::numeric_limits<ani_double>::max();
+    ani_double minpositive = std::numeric_limits<ani_double>::min();
+    ani_double min = -std::numeric_limits<ani_double>::max();
+    ASSERT_EQ(env->Class_FindStaticField(cls, "doubleMin", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_double>(min));
+    ASSERT_EQ(env->Class_FindStaticField(cls, "doubleMax", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_double>(max));
+    ASSERT_EQ(env->Class_FindStaticField(cls, "minpositive", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_double>(minpositive));
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestDouble", &cls), ANI_OK);
+    ani_static_field field {};
+    const ani_double setTar = 28.0;
+    const ani_double setTar2 = 18.0;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "double_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_double result = 0.0;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; i++) {
+        ASSERT_EQ(env->Class_SetStaticField_Double(cls, field, setTar2), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &result), ANI_OK);
+        ASSERT_EQ(result, setTar2);
+    }
+    ASSERT_EQ(env->Class_SetStaticField_Double(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Double(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueDouble(env, "entry.src.main.src.ets.ClassOperations.TestDoubleA", "double_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueDouble(env, "entry.src.main.src.ets.ClassOperations.TestDoubleA", "double_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Double_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueDouble(env, "entry.src.main.src.ets.ClassOperations.TestDoubleFinal", "double_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueFloat(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, fieldName, &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0U;
+    const ani_float target = 18.0F;
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    const ani_float setTar = 20.0F;
+    ASSERT_EQ(env->Class_SetStaticField_Float(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0.0F;
+    const ani_float target = 18.0F;
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0.0F;
+    const ani_float target = 18.0F;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Float(env, cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0.0F;
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &result), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0.0F;
+    ASSERT_EQ(env->Class_GetStaticField_Float(nullptr, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_float result = 0.0F;
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, nullptr, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field = nullptr;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0.0F;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Float(nullptr, cls, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    ani_float single = 0.0F;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia1", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia3", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia4", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia5", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_INVALID_TYPE);
+    ani_float max = std::numeric_limits<ani_float>::max();
+    ani_float minpositive = std::numeric_limits<ani_float>::min();
+    ani_float min = -std::numeric_limits<ani_float>::max();
+    ASSERT_EQ(env->Class_FindStaticField(cls, "floatMin", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, min);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "floatMax", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, max);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "minpositive", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, minpositive);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestFloat", &cls), ANI_OK);
+    ani_static_field field {};
+    const ani_float setTar = 28.0F;
+    const ani_float setTar2 = 18.0F;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "float_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_float result = 0.0;
+    const int32_t loopCount = 3;
+    for (int32_t i = 0; i < loopCount; i++) {
+        ASSERT_EQ(env->Class_SetStaticField_Float(cls, field, setTar2), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &result), ANI_OK);
+        ASSERT_EQ(result, setTar2);
+    }
+    ASSERT_EQ(env->Class_SetStaticField_Float(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Float(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueFloat(env, "entry.src.main.src.ets.ClassOperations.TestFloat", "float_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueFloat(env, "entry.src.main.src.ets.ClassOperations.TestFloatA", "float_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Float_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueFloat(env, "entry.src.main.src.ets.ClassOperations.TestFloatFinal", "float_value");
+    return ANI_TRUE;
+}
+
+ani_boolean CheckFieldValueInt(ani_env *env, const char *className, const char *fieldName)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass(className, &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, fieldName, &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0U;
+    const ani_int target = 3U;
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, target);
+    const ani_int setTar = 2U;
+    ASSERT_EQ(env->Class_SetStaticField_Int(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, 3U);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Int(env, cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, 3U);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "string_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &result), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Int(nullptr, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_int result = 0;
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, nullptr, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field = nullptr;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0;
+    ASSERT_EQ(env->c_api->Class_GetStaticField_Int(nullptr, cls, field, &result), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    ani_int single = 0;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia1", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, static_cast<ani_int>(0));
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia3", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia4", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &single), ANI_INVALID_TYPE);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "specia5", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &single), ANI_INVALID_TYPE);
+    ani_int max = std::numeric_limits<ani_int>::max();
+    ani_int min = std::numeric_limits<ani_int>::min();
+    ASSERT_EQ(env->Class_FindStaticField(cls, "min", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, min);
+    ASSERT_EQ(env->Class_FindStaticField(cls, "max", &field), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &single), ANI_OK);
+    ASSERT_EQ(single, max);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.TestInt", &cls), ANI_OK);
+    ani_static_field field {};
+    const ani_int setTar = 1024;
+    const ani_int setTar2 = 10;
+    ASSERT_EQ(env->Class_FindStaticField(cls, "int_value", &field), ANI_OK);
+    ASSERT_NE(field, nullptr);
+    ani_int result = 0;
+    const int32_t loopNum = 3;
+    for (int32_t i = 0; i < loopNum; i++) {
+        ASSERT_EQ(env->Class_SetStaticField_Int(cls, field, setTar2), ANI_OK);
+        ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &result), ANI_OK);
+        ASSERT_EQ(result, setTar2);
+    }
+    ASSERT_EQ(env->Class_SetStaticField_Int(cls, field, setTar), ANI_OK);
+    ASSERT_EQ(env->Class_GetStaticField_Int(cls, field, &result), ANI_OK);
+    ASSERT_EQ(result, setTar);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueInt(env, "entry.src.main.src.ets.ClassOperations.TestInt", "int_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueInt(env, "entry.src.main.src.ets.ClassOperations.TestIntA", "int_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_Get_Static_Field_Int_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    CheckFieldValueInt(env, "entry.src.main.src.ets.ClassOperations.TestIntFinal", "int_value");
+    return ANI_TRUE;
+}
+
+ani_boolean test_Class_FindMethod([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls = {};
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
+    ASSERT_EQ(status, ANI_TRUE);
+    const char *name = "func";
+    const char *signature = "ii:i";
+    ani_method result;
+    status = env->Class_FindMethod(cls, name, signature, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int NativeMethodsFooNative(ani_env *, ani_class)
+{
+    const ani_int answer = 42U;
+    return answer;
+}
+
+ani_boolean test_Class_BindNativeMethods([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls = {};
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Person", &cls);
+    ASSERT_EQ(status, ANI_OK);
+    std::array methods = {
+        ani_native_function{"foo", ":i", reinterpret_cast<void *>(NativeMethodsFooNative)},
+    };
+    status = env->Class_BindNativeMethods(cls, methods.data(), methods.size());
+    ASSERT_EQ(status, ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Type_GetSuperClass([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls = nullptr;
+    auto status = env->FindClass("entry.src.main.src.ets.ClassOperations.Son", &cls);
+    ASSERT_EQ(status, ANI_OK);
+    ani_class result = nullptr;
+    status = env->Type_GetSuperClass(cls, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+    return true;
+}
+
+ani_boolean test_Type_IsAssignableFrom([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class fromCls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.A", &fromCls), ANI_OK);
+    ASSERT_NE(fromCls, nullptr);
+    ani_class toCls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ClassOperations.I", &toCls), ANI_OK);
+    ASSERT_NE(toCls, nullptr);
+    ani_boolean result;
+    ASSERT_EQ(env->Type_IsAssignableFrom(fromCls, toCls, &result), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_boolean test_FindModule([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_module module{};
+    ASSERT_EQ(env->FindModule("entry.src.main.src.ets.ClassOperations", &module), ANI_OK);
+    ASSERT_NE(module, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_FindNamespace([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_namespace ns{};
+    ASSERT_EQ(env->FindNamespace("entry.src.main.src.ets.ClassOperations.test001", &ns), ANI_OK);
+    ASSERT_NE(ns, nullptr);
+    return ANI_TRUE;
+}
+
+ani_boolean test_FindEnum([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_enum aniEnum{};
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ClassOperations.Color", &aniEnum), ANI_OK);
+    ASSERT_NE(aniEnum, nullptr);
+    return ANI_TRUE;
+}
+
+#endif // ARKTS_ANI_TEST_CLASSOPERATIONS_H
