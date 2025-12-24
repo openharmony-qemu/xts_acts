@@ -390,8 +390,8 @@ function testAddKeyEventPolicies() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode:1, keyPolicy:1},
-        {keyCode:2, keyPolicy:1}
+        {keyCode:systemManager.KeyCode.POWER, keyPolicy:systemManager.KeyPolicy.CUSTOM},
+        {keyCode:systemManager.KeyCode.RECENT, keyPolicy:systemManager.KeyPolicy.CUSTOM}
       ]
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
@@ -416,7 +416,7 @@ function testRemoveKeyEventPolicies() {
   it("test_remove_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      let keyCodes: Array<number> = [1, 2]
+      let keyCodes: Array<number> = [systemManager.KeyCode.POWER, systemManager.KeyCode.HOME]
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {

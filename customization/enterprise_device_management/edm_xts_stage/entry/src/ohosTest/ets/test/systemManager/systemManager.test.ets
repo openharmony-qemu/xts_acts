@@ -1537,8 +1537,8 @@ function testAddKeyEventPolicies() {
   it("test_add_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode: 1, keyPolicy: 1},
-        {keyCode: 2, keyPolicy: 1}
+        {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.CUSTOM},
+        {keyCode: systemManager.KeyCode.POWER, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
@@ -1560,8 +1560,8 @@ function testAddKeyEventPolicies() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode: 1, keyPolicy: 1},
-        {keyCode: 2, keyPolicy: 1}
+        {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.CUSTOM},
+        {keyCode: systemManager.KeyCode.POWER, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
@@ -1585,8 +1585,8 @@ function testAddKeyEventPolicies() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode: 1, keyPolicy: 1},
-        {keyCode: 2, keyPolicy: 1}
+        {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.CUSTOM},
+        {keyCode: systemManager.KeyCode.POWER, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       systemManager.addKeyEventPolicies(INVALID_WANT, keyEventPolicies);
       expect(false).assertTrue();
@@ -1610,7 +1610,7 @@ function testAddKeyEventPolicies() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode: 10, keyPolicy: 1},
+        {keyCode: 10, keyPolicy: systemManager.KeyPolicy.CUSTOM},
       ]
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
@@ -1634,8 +1634,8 @@ function testAddKeyEventPolicies() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let keyEventPolicies: Array<systemManager.KeyEventPolicy> = [
-        {keyCode: 1, keyPolicy: 1},
-        {keyCode: 1, keyPolicy: 0}
+        {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.INTERCEPTION},
+        {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       expect(false).assertTrue();
@@ -1659,7 +1659,7 @@ function testRemoveKeyEventPolicies() {
    */
   it("test_remove_key_event_policies_0001", Level.LEVEL2, async (done: Function) => {
     try {
-      let keyCodes: Array<number> = [1]
+      let keyCodes: Array<number> = [systemManager.KeyCode.VOLUME_UP]
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
@@ -1679,7 +1679,7 @@ function testRemoveKeyEventPolicies() {
   it("test_remove_key_event_policies_0002", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
-      let keyCodes: Array<number> = [1]
+      let keyCodes: Array<number> = [systemManager.KeyCode.VOLUME_UP]
       systemManager.removeKeyEventPolicies(SELFWANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
@@ -1701,7 +1701,7 @@ function testRemoveKeyEventPolicies() {
   it("test_remove_key_event_policies_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let keyCodes: Array<number> = [1]
+      let keyCodes: Array<number> = [systemManager.KeyCode.VOLUME_UP]
       systemManager.removeKeyEventPolicies(INVALID_WANT, keyCodes);
       expect(false).assertTrue();
     } catch (error) {
