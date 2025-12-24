@@ -176,6 +176,7 @@ async function genTestOptionalDlpProperty(): Promise<dlpPermission.DLPProperty> 
     ownerAccountType: 1,
     contactAccount: accountInfo.distributedInfo.name,
     offlineAccess: true,
+    waterMarkConfig: true,
   };
   return property;
 }
