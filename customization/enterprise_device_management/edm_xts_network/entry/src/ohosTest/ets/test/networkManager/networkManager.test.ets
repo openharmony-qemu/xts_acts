@@ -156,6 +156,43 @@ const FIREWALL_RULE13: networkManager.FirewallRule = {
   family: 2
 }
 
+const FIREWALL_RULE14: networkManager.FirewallRule = {
+  srcAddr: '2409:8c54:871:1003::26-2409:8c54:871:1003::30',
+  destAddr: 'fe80::7068:b5ff:febd:5492',
+  srcPort: '8080',
+  destPort: '8080',
+  appUid: '9696',
+  direction: networkManager.Direction.OUTPUT,
+  action: networkManager.Action.DENY,
+  protocol: networkManager.Protocol.UDP,
+  family: 2,
+  logType: networkManager.LogType.NFLOG
+}
+
+const FIREWALL_RULE15: networkManager.FirewallRule = {
+  srcAddr: '2409:8c54:871:1003::26-2409:8c54:871:1003::30',
+  destAddr: 'fe80::7068:b5ff:febd:5492',
+  srcPort: '8080',
+  destPort: '8080',
+  appUid: '9696',
+  direction: networkManager.Direction.FORWARD,
+  action: networkManager.Action.REJECT,
+  protocol: networkManager.Protocol.UDP,
+  family: 2,
+  logType: networkManager.LogType.NFLOG
+}
+
+const FIREWALL_RULE16: networkManager.FirewallRule = {
+  srcAddr: '192.168.1.1-192.168.1.22',
+  destAddr: '192.168.2.1',
+  srcPort: '8080',
+  destPort: '8080',
+  direction: networkManager.Direction.FORWARD,
+  action: networkManager.Action.REJECT,
+  protocol: networkManager.Protocol.UDP,
+  logType: networkManager.LogType.NFLOG
+}
+
 const DOMAIN_FILTER_RULE: networkManager.DomainFilterRule = {
   domainName: 'www.example.com',
   appUid: '9696',
@@ -212,6 +249,43 @@ const DOMAIN_FILTER_RULE8: networkManager.DomainFilterRule = {
 
 const DOMAIN_FILTER_RULE9: networkManager.DomainFilterRule = {
   family: 2
+};
+
+const DOMAIN_FILTER_RULE10: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  appUid: '9696',
+  action: networkManager.Action.DENY,
+  family: 2,
+  logType: networkManager.LogType.NFLOG
+};
+
+const DOMAIN_FILTER_RULE11: networkManager.DomainFilterRule = {
+  domainName: 'www.6666.com',
+  appUid: '9797',
+  action: networkManager.Action.ALLOW,
+  family: 2,
+  logType: networkManager.LogType.NFLOG
+};
+
+const DOMAIN_FILTER_RULE12: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  appUid: '9696',
+  direction: networkManager.Direction.FORWARD,
+  action: networkManager.Action.REJECT,
+  family: 2,
+  logType: networkManager.LogType.NFLOG
+};
+
+const DOMAIN_FILTER_RULE13: networkManager.DomainFilterRule = {
+  domainName: 'www.example.com',
+  direction: networkManager.Direction.FORWARD,
+  action: networkManager.Action.REJECT,
+  logType: networkManager.LogType.NFLOG
+};
+
+const DOMAIN_FILTER_RULE14: networkManager.DomainFilterRule = {
+  family: 2,
+  logType: networkManager.LogType.NFLOG
 };
 
 const ADD_APN_INFO: Record<string, string> = {
@@ -1250,6 +1324,112 @@ function testAddFirewallRule() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0116
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0116
+   * @tc.desc   test networkManager addFirewallRule without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0116", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.addFirewallRule(SELFWANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0117
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0117
+   * @tc.desc   test networkManager addFirewallRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0117", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.addFirewallRule(SELFWANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0118
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0118
+   * @tc.desc   test networkManager addFirewallRule with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0118", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0119
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0119
+   * @tc.desc   test networkManager addFirewallRule with invalid param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0119", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(INVALID_WANT, FIREWALL_RULE15);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_firewall_rule_0120
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_FIREWALL_RULE_JS_0120
+   * @tc.desc   test networkManager addFirewallRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_firewall_rule_0120", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(SELFWANT, FIREWALL_RULE16);
+      let firewallRules: Array<networkManager.FirewallRule>;
+      firewallRules = networkManager.getFirewallRules(SELFWANT);
+      expect(firewallRules.length == 1).assertTrue();
+    } catch (e) {
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE16);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
 }
 
 function testRemoveFirewallRule() {
@@ -1544,6 +1724,151 @@ function testRemoveFirewallRule() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0114
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0114
+   * @tc.desc   test networkManager removeFirewallRule without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0114", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0115
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0115
+   * @tc.desc   test networkManager removeFirewallRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0115", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0116
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0116
+   * @tc.desc   test networkManager removeFirewallRule with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0116", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeFirewallRule(INVALID_WANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0117
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0117
+   * @tc.desc   test networkManager removeFirewallRule with invalid param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0117", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE15);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0118
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0118
+   * @tc.desc   test networkManager removeFirewallRule without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0118", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0119
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0119
+   * @tc.desc   test networkManager removeFirewallRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0119", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_firewall_rule_0120
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_FIREWALL_RULE_JS_0120
+   * @tc.desc   test networkManager removeFirewallRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_firewall_rule_0120", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addFirewallRule(SELFWANT, FIREWALL_RULE16);
+      networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE16);
+      let firewallRules: Array<networkManager.FirewallRule>;
+      firewallRules = networkManager.getFirewallRules(SELFWANT);
+      expect(firewallRules.length == 0).assertTrue();
+    } catch (e) {
+      expect(false).assertTrue();
+    }
+    finally {
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
 }
 
 function testGetFirewallRules() {
@@ -1816,6 +2141,112 @@ function testAddDomainFilterRule() {
     }
     finally {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0110
+   * @tc.desc   test networkManager addDomainFilterRule without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0110", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE10);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0111
+   * @tc.desc   test networkManager addDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0111", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE11);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0112
+   * @tc.desc   test networkManager addDomainFilterRule with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0112", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE10);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0113
+   * @tc.desc   test networkManager addDomainFilterRule with invalid param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_domain_filter_rule_0113", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE12);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_domain_filter_rule_0114
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOMAIN_FILTER_RULE_JS_0114
+   * @tc.desc   test networkManager addDomainFilterRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_add_domain_filter_rule_0114", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE13);
+      let domainFilterRules: Array<networkManager.DomainFilterRule>;
+      domainFilterRules = networkManager.getDomainFilterRules(SELFWANT);
+      expect(domainFilterRules.length == 1).assertTrue();
+    } catch (e) {
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE13);
       await adminManager.disableSuperAdmin(SELFWANT.bundleName);
     }
     done();
@@ -2104,6 +2535,152 @@ function testRemoveDomainFilterRule() {
     try {
       networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE8);
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE8);
+      let domainFilterRules: Array<networkManager.DomainFilterRule>;
+      domainFilterRules = networkManager.getDomainFilterRules(SELFWANT);
+      expect(domainFilterRules.length == 0).assertTrue();
+    } catch (e) {
+      expect(false).assertTrue();
+    }
+    finally {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
+      await adminManager.disableSuperAdmin(SELFWANT.bundleName);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0114
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0114
+   * @tc.desc   test networkManager removeDomainFilterRule without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0114", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0115
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0115
+   * @tc.desc   test networkManager removeDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0115", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0116
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0116
+   * @tc.desc   test networkManager removeDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0116", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE12);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0117
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0117
+   * @tc.desc   test networkManager removeDomainFilterRule without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0117", Level.LEVEL2, async (done: Function) => {
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE10);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0118
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0118
+   * @tc.desc   test networkManager removeDomainFilterRule with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0118", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE10);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0119
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0119
+   * @tc.desc   test networkManager removeDomainFilterRule with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0119", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.removeDomainFilterRule(INVALID_WANT, DOMAIN_FILTER_RULE14);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_domain_filter_rule_0120
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOMAIN_FILTER_RULE_JS_0120
+   * @tc.desc   test networkManager removeDomainFilterRule
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_domain_filter_rule_0120", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE13);
+      networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE13);
       let domainFilterRules: Array<networkManager.DomainFilterRule>;
       domainFilterRules = networkManager.getDomainFilterRules(SELFWANT);
       expect(domainFilterRules.length == 0).assertTrue();
