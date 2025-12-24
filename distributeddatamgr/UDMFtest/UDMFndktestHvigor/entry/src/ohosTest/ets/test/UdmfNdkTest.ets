@@ -1442,11 +1442,12 @@ export default function UdmfNdkTest() {
       plainText.textContent = 'this is textContent';
       let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
       try {
-        await unifiedDataChannel.insertData(Options, unifiedData).then((data)=>{
+        await unifiedDataChannel.insertData(Options, unifiedData).then(async (data)=>{
           console.info(TAG + `OH_UdmfData_CreateAndGetUnifiedDataByOptions_001 data = ${data}, options = ${Options}`);
           let res = testNapi.OH_UdmfData_CreateAndGetUnifiedDataByOptions_001(data,"DATA_HUB");
           console.info(TAG + 'OH_UdmfData_CreateAndGetUnifiedDataByOptions_001 res= ' + JSON.stringify(res));
           expect(res).assertEqual(1);
+          await unifiedDataChannel.deleteData(Options);
           done();
         }).catch((err:BusinessError) => {
           console.error(TAG, `Failed, code is ${err.code},message is ${err.message} `);
@@ -1699,5 +1700,66 @@ export default function UdmfNdkTest() {
       console.info(TAG + 'OH_UdmfDataLoadParams_SetLoadHandler001 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     });
+
+    /**
+     * @tc.name   OH_UdmfOptions_GetKey_004
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_GetKey_004
+     * @tc.desc   OH_UdmfOptions_GetKey_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdmfOptions_GetKey_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdmfOptions_GetKey_004');
+      let data = testNapi.OH_UdmfOptions_GetKey_004();
+      console.info(TAG + 'OH_UdmfOptions_GetKey_004 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdmfOptions_GetIntention_003
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_GetIntention_003
+     * @tc.desc   OH_UdmfOptions_GetIntention_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdmfOptions_GetIntention_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdmfOptions_GetIntention_003');
+      let data = testNapi.OH_UdmfOptions_GetIntention_003();
+      console.info(TAG + 'OH_UdmfOptions_GetIntention_003 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_Udmf_SetUnifiedDataByOptions_013
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_SetUnifiedDataByOptions_013
+     * @tc.desc   OH_Udmf_SetUnifiedDataByOptions_013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Udmf_SetUnifiedDataByOptions_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_Udmf_SetUnifiedDataByOptions_013');
+      let data = testNapi.OH_Udmf_SetUnifiedDataByOptions_013();
+      console.info(TAG + 'OH_Udmf_SetUnifiedDataByOptions_013 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_Udmf_GetDataElementAt_001
+     * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_GetDataElementAt_001
+     * @tc.desc   OH_Udmf_GetDataElementAt_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_Udmf_GetDataElementAt_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_Udmf_GetDataElementAt_001');
+      let data = testNapi.OH_Udmf_GetDataElementAt_001();
+      console.info(TAG + 'OH_Udmf_GetDataElementAt_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
   })
 }
