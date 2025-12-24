@@ -1812,8 +1812,7 @@ function testGetKeyEventPolicies() {
         {keyCode: systemManager.KeyCode.VOLUME_UP, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       let keyInstances: Array<systemManager.KeyEventPolicy> = []
-      let keyCodes: Array<number> = new Array();
-      keyCodes.push(systemManager.KeyCode.VOLUME_UP);
+      let keyCodes: Array<number> = [systemManager.KeyCode.VOLUME_UP]
       let keyInstances0: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(keyInstances0.length == 0).assertTrue();
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
@@ -1846,9 +1845,7 @@ function testGetKeyEventPolicies() {
         {keyCode: systemManager.KeyCode.BACK, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       let keyInstances: Array<systemManager.KeyEventPolicy> = []
-      let keyCodes: Array<number> = new Array();
-      keyCodes.push(systemManager.KeyCode.BACK);
-      keyCodes.push(systemManager.KeyCode.VOLUME_DOWN);
+      let keyCodes: Array<number> = [systemManager.KeyCode.BACK, systemManager.KeyCode.VOLUME_DOWN]
       let keyInstances0: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(keyInstances0.length == 0).assertTrue();
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
@@ -1881,9 +1878,7 @@ function testGetKeyEventPolicies() {
         {keyCode: systemManager.KeyCode.RECENT, keyPolicy: systemManager.KeyPolicy.CUSTOM}
       ]
       let keyInstances: Array<systemManager.KeyEventPolicy> = []
-      let keyCodes: Array<number> = new Array();
-      keyCodes.push(systemManager.KeyCode.HOME);
-      keyCodes.push(systemManager.KeyCode.RECENT);
+      let keyCodes: Array<number> = [systemManager.KeyCode.HOME, systemManager.KeyCode.RECENT]
       systemManager.addKeyEventPolicies(SELFWANT, keyEventPolicies);
       let keyInstances0: Array<systemManager.KeyEventPolicy> = systemManager.getKeyEventPolicies(SELFWANT);
       expect(keyInstances0.length == 2).assertTrue();
