@@ -8268,6 +8268,37 @@ static napi_value BluetoothAndNearlinkPreferredRecordCategory_001(napi_env env, 
     napi_create_int32(env, TEST_PASS, &res);
     return res;
 }
+
+static napi_value AudioCommonResult_001(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    int32_t streamErrorSystem = 3;
+    int32_t errorUnsupported = 6800104;
+    int32_t errorTimeout = 6800105;
+    int32_t errorLimit = 6800201;
+    if (streamErrorSystem != AUDIOSTREAM_ERROR_SYSTEM) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSTREAM_ERROR_SYSTEM fail, result is: %{public}d", AUDIOSTREAM_ERROR_SYSTEM);
+        return res;
+    }
+    if (errorUnsupported != AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED fail, result is: %{public}d", AUDIOCOMMON_RESULT_ERROR_UNSUPPORTED);
+        return res;
+    }
+    if (errorTimeout != AUDIOCOMMON_RESULT_ERROR_TIMEOUT) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOCOMMON_RESULT_ERROR_TIMEOUT fail, result is: %{public}d", AUDIOCOMMON_RESULT_ERROR_TIMEOUT);
+        return res;
+    }
+    if (errorLimit != AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT fail, result is: %{public}d", AUDIOCOMMON_RESULT_ERROR_STREAM_LIMIT);
+        return res;
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"audioManagerGetAudioStreamManagerTest_001", nullptr, AudioManagerGetAudioStreamManagerTest_001,
@@ -8744,6 +8775,7 @@ napi_property_descriptor desc2[] = {
         AudioSessionManagerAvailableDevices_014, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"bluetoothAndNearlinkPreferredRecordCategory_001", nullptr,
         BluetoothAndNearlinkPreferredRecordCategory_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AudioCommonResult_001", nullptr, AudioCommonResult_001, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 napi_property_descriptor desc3[] = {
     {"audioManagerGetAudioVolumeManager_001", nullptr, AudioManagerGetAudioVolumeManager_001,

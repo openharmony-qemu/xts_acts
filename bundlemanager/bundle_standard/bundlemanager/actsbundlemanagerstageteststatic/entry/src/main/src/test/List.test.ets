@@ -17,10 +17,12 @@ import GetBundleInfoForSelf from "./GetBundleInfoForSelf.test";
 import GetBundleInfo from "./GetBundleInfo.test";
 import abilityTest from "./GetLauncherAbilityInfostatic.test";
 import isDefaultApplicationTest from "./IsDefaultApplication.test.ets"
+import GetBundleNameByUidTest from "./GetBundleNameByUid.test.ets"
 
 export default function testsuite() {
   GetBundleInfoForSelf();
   GetBundleInfo();
   abilityTest();
   isDefaultApplicationTest();
+  GetBundleNameByUidTest();
 }

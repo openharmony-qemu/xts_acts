@@ -37,6 +37,7 @@
         "MainAbility/pages/List/ListFillPolicyModifier",
         "MainAbility/pages/List/ListFillPolicy",
         "MainAbility/pages/List/ListContentSize",
-        "MainAbility/pages/List/listNoMakeObserved"
+        "MainAbility/pages/List/listNoMakeObserved",
+        "MainAbility/pages/List/listCacheCount"
     ]
 }

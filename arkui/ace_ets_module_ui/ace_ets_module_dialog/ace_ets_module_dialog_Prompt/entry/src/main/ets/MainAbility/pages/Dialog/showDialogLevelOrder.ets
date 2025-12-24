@@ -97,6 +97,42 @@ struct showDialogLevelOrder {
           })
       }
 
+      Row({ space: 5 }) {
+        Button('100000')
+          .id('100000')
+          .height('5%')
+          .onClick(() => {
+            this.promptAction.showDialog({
+              title: 'showDialog',
+              levelOrder: LevelOrder.clamp(100000),
+              alignment: DialogAlignment.Center,
+              isModal: false,
+              buttons: [
+                {
+                  text: 'button1',
+                  color: '#000000'
+                }
+              ]
+            })
+          })
+        Button('-100000')
+          .id('-100000')
+          .height('5%')
+          .onClick(() => {
+            this.promptAction.showDialog({
+              title: 'showDialog',
+              levelOrder: LevelOrder.clamp(-100000),
+              alignment: DialogAlignment.Center,
+              isModal: false,
+              buttons: [
+                {
+                  text: 'button1',
+                  color: '#000000'
+                }
+              ]
+            })
+          })
+      }
 
       Button('get showDialogOrder')
         .id('myOrder')

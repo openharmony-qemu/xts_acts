@@ -212,6 +212,7 @@ ani_boolean test_Create_Escape_Local_Scope_09([[maybe_unused]] ani_env *env, [[m
         ASSERT_EQ(env->CreateLocalScope(specifiedCap), ANI_OK);
         ani_string objectRef {};
         ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
+        ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
     }
     return ANI_TRUE;
 }
@@ -228,6 +229,7 @@ ani_boolean test_Create_Escape_Local_Scope_10([[maybe_unused]] ani_env *env, [[m
             ani_string objectRef {};
             ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
         }
+        ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
     }
     return ANI_TRUE;
 }
@@ -253,6 +255,7 @@ ani_boolean test_Create_Escape_Local_Scope_12([[maybe_unused]] ani_env *env, [[m
         ani_string objectRef {};
         ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
         ASSERT_EQ(env->Reference_Delete(objectRef), ANI_OK);
+        ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
     }
     return ANI_TRUE;
 }
@@ -263,6 +266,7 @@ ani_boolean test_Create_Escape_Local_Scope_13([[maybe_unused]] ani_env *env, [[m
     const ani_size specifiedCap = 60;
     for (ani_size i = 1; i <= loopCount; i++) {
         ASSERT_EQ(env->CreateLocalScope(specifiedCap), ANI_OK);
+        ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
     }
     return ANI_TRUE;
 }
@@ -273,6 +277,8 @@ ani_boolean test_Create_Escape_Local_Scope_14([[maybe_unused]] ani_env *env, [[m
     ASSERT_EQ(env->CreateLocalScope(specifiedCap), ANI_OK);
     ASSERT_EQ(env->CreateLocalScope(specifiedCap), ANI_OK);
     ASSERT_EQ(env->CreateLocalScope(specifiedCap), ANI_OK);
+    ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
+    ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
     ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
     return ANI_TRUE;
 }
@@ -292,10 +298,12 @@ ani_boolean test_Create_Escape_Local_Scope_16([[maybe_unused]] ani_env *env, [[m
 {
     const ani_size specifiedCap = 60;
     const std::string_view testString = "test";
+    ani_ref result {};
     ASSERT_EQ(env->CreateEscapeLocalScope(specifiedCap), ANI_OK);
 
     ani_string objectRef {};
     ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     return ANI_TRUE;
 }
 
@@ -304,12 +312,14 @@ ani_boolean test_Create_Escape_Local_Scope_17([[maybe_unused]] ani_env *env, [[m
     const ani_size minCapacity = 1;
     const ani_size specifiedCap = 60;
     const std::string_view testString = "test";
-    ASSERT_EQ(env->CreateEscapeLocalScope(minCapacity), ANI_OK);
+    ani_ref result {};
 
+    ASSERT_EQ(env->CreateEscapeLocalScope(minCapacity), ANI_OK);
+    ani_string objectRef {};
     for (ani_size i = 1; i <= specifiedCap; i++) {
-        ani_string objectRef {};
         ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
     }
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     return ANI_TRUE;
 }
 
@@ -330,11 +340,13 @@ ani_boolean test_Create_Escape_Local_Scope_19([[maybe_unused]] ani_env *env, [[m
 {
     const ani_size specifiedCap = 60;
     const std::string_view testString = "test";
+    ani_ref result {};
     ASSERT_EQ(env->CreateEscapeLocalScope(specifiedCap), ANI_OK);
 
     ani_string objectRef {};
     ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
     ASSERT_EQ(env->Reference_Delete(objectRef), ANI_OK);
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     return ANI_TRUE;
 }
 
@@ -342,8 +354,13 @@ ani_boolean test_Create_Escape_Local_Scope_20([[maybe_unused]] ani_env *env, [[m
 {
     const ani_size loopCount = 3;
     const ani_size specifiedCap = 60;
+    const std::string_view testString = "test";
+    ani_ref result {};
+    ani_string objectRef {};
     for (ani_size i = 1; i <= loopCount; i++) {
         ASSERT_EQ(env->CreateEscapeLocalScope(specifiedCap), ANI_OK);
+        ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
+        ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     }
     return ANI_TRUE;
 }
@@ -360,6 +377,8 @@ ani_boolean test_Create_Escape_Local_Scope_21([[maybe_unused]] ani_env *env, [[m
     ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
 
     ani_ref result {};
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     return ANI_TRUE;
 }
@@ -441,9 +460,11 @@ ani_boolean test_Create_Escape_Local_Scope_25([[maybe_unused]] ani_env *env, [[m
     const ani_size refNum = 10;
     const std::string_view testString = "test";
     ani_string stringRef {};
+    ani_ref result {};
     ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &stringRef), ANI_OK);
 
     ASSERT_EQ(env->CreateEscapeLocalScope(refNum), ANI_OK);
+    ASSERT_EQ(env->DestroyEscapeLocalScope(stringRef, &result), ANI_OK);
     return ANI_TRUE;
 }
 
@@ -590,11 +611,13 @@ ani_boolean test_Create_Escape_Local_Scope_34([[maybe_unused]] ani_env *env, [[m
 {
     const std::string_view testString = "test";
     const ani_size refNum = 10;
+    ani_ref result {};
+
     ASSERT_EQ(env->CreateEscapeLocalScope(refNum), ANI_OK);
     ani_string objectRef {};
     ASSERT_EQ(env->String_NewUTF8(testString.data(), testString.size(), &objectRef), ANI_OK);
-    ani_ref result {};
     ASSERT_EQ(env->c_api->DestroyEscapeLocalScope(nullptr, objectRef, &result), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->DestroyEscapeLocalScope(objectRef, &result), ANI_OK);
     return ANI_TRUE;
 }
 

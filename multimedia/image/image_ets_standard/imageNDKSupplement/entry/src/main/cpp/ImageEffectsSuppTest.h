@@ -31,6 +31,7 @@ napi_value CreatOutPixelMapForPathSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectSetOutputPixelmapSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectSetInputUriSupp(napi_env env, napi_callback_info info);
 napi_value OHImageEffectSetOutputUriSupp(napi_env env, napi_callback_info info);
+napi_value OIRNdkErrCodeEmuSupp(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

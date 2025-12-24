@@ -35,3 +35,9 @@ export const rowSpaceTest: (a: string) => void;
 export const columnReverseTest: (a: string) => void;
 
 export const rowReverseTest: (a: string) => void;
+
+export const TextAreaCompressLeadingPunctuationTest: (a: string) => void;
+
+export const TextCompressLeadingPunctuationTest: (a: string) => void;
+
+export const TextInputCompressLeadingPunctuationTest: (a: string) => void;

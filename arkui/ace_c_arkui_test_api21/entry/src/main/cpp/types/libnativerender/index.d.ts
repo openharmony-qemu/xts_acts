@@ -83,3 +83,4 @@ export const sourceBarTest: (a: string) => void;
 export const sourceBarFlingTest: (a: string) => void;
 export const sourceScrollerTest: (a: string) => void;
 export const sourceAnimationTest: (a: string) => void;
+export const testCustomNodeEvent001: (a: string) => void;

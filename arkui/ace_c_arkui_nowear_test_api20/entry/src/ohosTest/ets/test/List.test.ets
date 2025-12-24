@@ -22,6 +22,7 @@ import dragEventGetDragSourceTest from './dragEventTest/dragEventGetDragSource.t
 import enableDropDisallowedBadgeTest from './dropBadge/enableDropDisallowedBadge.test'
 import dialogGetStateTest from './dialog/DialogGetStateTest.test'
 import imageDraggableEventTest from './image/ImageDraggableEventTest.test'
+import RenderNodeParamTest from "./renderNodeUtils/RenderNodeParamTest.test"
 
 export default function testsuite() {
   RenderNodeTest(); // 此条特殊用例请放在首行，勿动
@@ -34,4 +35,5 @@ export default function testsuite() {
   dragEventGetDragSourceTest();
   dialogGetStateTest();
   imageDraggableEventTest();
+  RenderNodeParamTest();
 }

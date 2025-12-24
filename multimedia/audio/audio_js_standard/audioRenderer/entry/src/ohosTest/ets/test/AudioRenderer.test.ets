@@ -2737,6 +2737,53 @@ export default function audioRendererTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGE_0300
+     * @tc.desc   on_outputDeviceChange INPUT_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_ON_OUTPUTDEVICECHANGE_0300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      let audioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+
+      let audioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+
+      let audioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+
+      let outputDeviceChangeCallback = (deviceInfo: audio.AudioDeviceDescriptors) => {
+        console.info(`DeviceInfo id: ${deviceInfo[0].id}`);
+        console.info(`DeviceInfo name: ${deviceInfo[0].name}`);
+        console.info(`DeviceInfo address: ${deviceInfo[0].address}`);
+      };
+      
+      let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let flag: boolean = false;
+      try{
+          audioRenderer.on('outputDeviceChange', outputDeviceChangeCallback);
+          audioRenderer.off('outputDeviceChange', outputDeviceChangeCallback);
+          flag = true;
+      }catch(error){
+          console.error(`OUTPUTDEVICECHANGE_0300 ERROR Code: ${error.code}, ${error.massage}`);
+          flag = false;
+      }
+      await audioRenderer.release();
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMDEVICECHANGEREASON_0100
      * @tc.desc   AudioStreamDeviceChangeReason

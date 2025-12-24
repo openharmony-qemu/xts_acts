@@ -4762,7 +4762,7 @@ function mustCall(fn?: Function, times: number = 1) {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
-  let wrappedFn: Function = (...args: NullishType[]) => {
+  let wrappedFn: Function = (...args: Any[]) => {
     callCount ++;
     return fn!.unsafeCall(args);
   }

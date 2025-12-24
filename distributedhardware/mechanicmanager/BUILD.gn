@@ -18,6 +18,6 @@ ohos_js_app_suite("ActsmechanicManagerTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsmechanicManagerTest"
-  part_name = "device_manager"
+  part_name = "mechbody_controller"
   subsystem_name = "distributedhardware"
 }

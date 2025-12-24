@@ -547,7 +547,7 @@ export default function ErrormangerTest() {
       errorManager.off("globalUnhandledRejectionDetected", func)
       expect(result).assertEqual("throw error");
       console.info("====> testErrorManger_1500 result instaceType " + JSON.stringify(instanceType2))
-      expect(instanceType2==0 ).assertTrue();
+      expect(instanceType2==errorManager.InstanceType.MAIN).assertTrue();
       done();
     })
 
@@ -583,8 +583,10 @@ export default function ErrormangerTest() {
       console.info("====> testErrorManger_1600 wait end");
       errorManager.off("globalErrorOccurred", func)
       expect(result).assertEqual("throw error");
-      expect(instanceType2==2).assertTrue();
-      console.info("====> testErrorManger_1600 end");
+      expect(instanceType2==errorManager.InstanceType.TASKPOOL).assertTrue();
+      console.info("====> testErrorManger_1600 end1");
+      expect(errorManager.InstanceType.CUSTOM  == 3).assertTrue();
+      console.info("====> testErrorManger_1600 end2");
       done();
     })
 
@@ -618,7 +620,7 @@ export default function ErrormangerTest() {
       expect(result.indexOf("throw error task19") != -1).assertTrue()
       errorManager.off("globalErrorOccurred", func)
       console.info("====> testErrorManger_1700 result instaceType " + JSON.stringify(instanceType2))
-      expect(instanceType2==1).assertTrue();
+      expect(instanceType2==errorManager.InstanceType.WORKER).assertTrue();
       done();
     })
 

@@ -50,6 +50,7 @@ import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
 import listNoMakeObserved from './List/listNoMakeObserved.test';
+import listCacheCount from './List/listCacheCount.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -89,4 +90,5 @@ export default function testsuite() {
   ListContentSize()
   ListFillPolicy()
   listNoMakeObserved()
+  listCacheCount()
 }

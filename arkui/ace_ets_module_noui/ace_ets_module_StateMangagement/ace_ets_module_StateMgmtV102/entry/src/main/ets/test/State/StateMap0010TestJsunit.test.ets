@@ -53,7 +53,7 @@ export default function StateMap0010TestJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('StateMap0010TestJsunit_001', Level.LEVEL0, async (done: Function) => {
+    it('StateMap0010TestJsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[StateMap0010TestJsunit_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

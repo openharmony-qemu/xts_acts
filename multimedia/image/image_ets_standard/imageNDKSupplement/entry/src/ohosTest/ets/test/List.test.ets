@@ -26,9 +26,31 @@ import ImageEffectInfoSupplementTest from './OHEffectFilterInfoSupplement.test';
 import OHImagePixelMapCreateTest from './ImagePixelMapCreateTest.test';
 import OHImagePackerCreateTest from './OHImagePackerCreateTest.test';
 import PixelMapInitNativePixelMap from './PixelMapInitNativePixelMap.test';
+import ImageInitImageNativeSuppTest from './ImageInitImageNativeSupp.test';
+import ImageReceiverNativeTest from './ImageReceiverNativeTest.test';
+import PixelMapNativeTest from './PixelMapNativeTest.test';
 import ImageEffectsSuppTest from './ImageEffectsSupp.test';
 import AccessPixelsSuppTest from './AccessPixelsSupp.test';
 import ImageSourceSuppTest from './ImageSourceSupp.test';
+import OHEffectBufferInfoSetInfoTest from './OHEffectBufferInfoSetInfoTest.test';
+import OHImageEffectRestoreTest from './OHImageEffectRestoreTest.test';
+import OHImageSizeTest from './OHImageSizeTest.test';
+import OHPixelmapNativeCreatePixelmapNativeTest from './OHPixelmapNativeCreatePixelmapNativeTest.test';
+import ImageEffectErrorCodeSuppTest from './ImageEffectErrcodeSupp.test';
+import OHPixelMapSupplementTest from './OHPixelMapSupplement.test';
+import OHImageEffectSetOutputTexture from './OHImageEffectSetOutputTexture.test';
+import OHImageEffectStartTest from './OHImageEffectStart.test';
+import OHPictureMetadata from './OHPictureMetadata.test';
+import PixelMapGetIsEditableTest from './OHPixelMapGetIsEditable.test';
+import PixelMapIsSupportAlphaTest from './OHPixelMapIsSupportAlpha.test';
+import PixelMapSetAlphaAbleTest from './OHPixelMapSetAlphaAble.test';
+import PixelMapSetDensityTest from './OHPixelMapSetDensity.test';
+import ImagePixelmapTest from './PixelMapGetBytesNumberPerRow.test';
+import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
+import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
+import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
+import ImageReceiverNativeReadTest from './ImageReceiverNativeReadTest.test';
+
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -43,9 +65,30 @@ export default function testsuite() {
   ImageErrorSuppTest();
   ImageEffectInfoSupplementTest();
   PixelMapInitNativePixelMap();
-  OHImagePackerCreateTest()
+  OHImagePackerCreateTest();
   OHImagePixelMapCreateTest();
+  ImageInitImageNativeSuppTest();
+  ImageReceiverNativeTest();
+  PixelMapNativeTest();
   ImageEffectsSuppTest();
   AccessPixelsSuppTest();
   ImageSourceSuppTest();
+  OHEffectBufferInfoSetInfoTest();
+  OHImageEffectRestoreTest();
+  OHImageSizeTest();
+  OHPixelmapNativeCreatePixelmapNativeTest();
+  ImageEffectErrorCodeSuppTest();
+  OHPixelMapSupplementTest();
+  ImagePixelmapTest();
+  PixelMapGetIsEditableTest();
+  PixelMapIsSupportAlphaTest();
+  PixelMapSetAlphaAbleTest();
+  PixelMapSetDensityTest();
+  OHImageEffectStartTest();
+  OHImageEffectSetOutputTexture();
+  OHPictureMetadata();
+  IRNdkErrCodeSupplementTest();
+  ImageResultIRNdkErrCodeTest();
+  IRNdkErrCode();
+  ImageReceiverNativeReadTest();
 }

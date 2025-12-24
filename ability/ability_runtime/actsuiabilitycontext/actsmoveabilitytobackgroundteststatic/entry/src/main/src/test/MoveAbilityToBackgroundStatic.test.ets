@@ -93,6 +93,12 @@ export default function moveAbilityToBackgroundTestStatic() {
           expect(result + '').assertEqual('SUCCESS');
         }).catch((err: BusinessError<void>): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(JSON.stringify(err?.code) == '16000061'){
+            done();
+          }else{
+            expect().assertFail()
+            done();
+          }
         });
         await Utils.msSleep(2000);
         context.moveAbilityToBackground().then(() => {

@@ -17,6 +17,13 @@ group("builtin_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "array_standard_test_static:ActsArrayStaticTest",
+      "builtin002_standard_test_static:ActsBuiltin2StaticTest",
+      "builtin003_standard_test_static:ActsBuiltin3StaticTest",
+      "builtin004_standard_test_static:ActsBuiltin4StaticTest",
+      "builtin005_standard_test_static:ActsBuiltin5StaticTest",
+      "builtin006_standard_test_static:ActsBuiltin6StaticTest",
+      "esbuiltin002_standard_test_static:ActsEsBuiltin2StaticTest",
       "regexp_standard_test_static:ActsRegExpStaticTest",
     ]
   }

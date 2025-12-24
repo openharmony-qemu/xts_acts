@@ -11,6 +11,7 @@
         "MainAbility/pages/Grid/gridNode",
         "MainAbility/pages/Grid/gridItemNode",
         "MainAbility/pages/Grid/nodeTypeGrid",
+        "MainAbility/pages/Grid/rowColumnMin",
         "MainAbility/pages/Grid/cellLengthMin",
         "MainAbility/pages/Grid/cachedGridMin",
         "MainAbility/pages/Grid/cachedShowGridMin",

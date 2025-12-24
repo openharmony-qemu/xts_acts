@@ -50,7 +50,10 @@ let domain: int = 0x0000;
 let tag: string = TAG;
 const RDB_DB_ICUNAME = "VectorStoreTest.db";
 const STORE_CONFIGtest: data_Rdb.StoreConfig = {
-  name: RDB_DB_ICUNAME
+  name: RDB_DB_ICUNAME,
+  securityLevel: data_Rdb.SecurityLevel.S1,
+  tokenizer: data_Rdb.Tokenizer.ICU_TOKENIZER,
+  vector: true,
 };
 
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test(id INTEGER PRIMARY KEY,repr floatvector(8));";
@@ -86,6 +89,29 @@ export default function VectorStoreTest() {
       await data_Rdb.deleteRdbStore(context, STORE_CONFIG);
     });
     console.info(TAG + "*************Unit Test Begin*************");
+    /**
+     * @tc.name   VectorStoreTest0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0600
+     * @tc.desc   isVectorSupported test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('VectorStoreTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> =>  {
+      let TAGTEST = TAG + " VectorStoreTest0600 ";
+      const res = data_Rdb.isVectorSupported();
+      console.info(TAGTEST + "res=" + res);
+      if (res == false) {
+        console.info(TAGTEST + "false res =" + res);
+        expect(res).assertEqual(false);
+        done();
+      } else {
+        console.info(TAGTEST + "true res111111=" + res);
+        expect(res).assertEqual(true);
+        done();
+      }
+      console.info(TAGTEST + " ************* End*************");
+    });
     console.info(TAG + " *************Unit Test End*************");
   })
 }

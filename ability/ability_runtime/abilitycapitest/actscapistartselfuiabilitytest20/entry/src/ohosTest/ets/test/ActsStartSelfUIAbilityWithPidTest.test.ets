@@ -21,6 +21,10 @@ import hilog from '@ohos.hilog';
 const ABILITY_ERR_OK = 0;
 const TAG = 'testTag';
 
+function sleep(ms: number) {
+  return new Promise<number>(resolve => setTimeout(resolve, ms));
+}
+
 @Concurrent
 function StartSelfUIAbilityWithPidResult(casesName: string): number {
   let result = -1;
@@ -67,6 +71,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200`;
         try {
           console.info(`====>${LOG_NAME} start====`);
+          await sleep(2000)
           let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0200");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
@@ -101,7 +106,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0300");
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0100");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){

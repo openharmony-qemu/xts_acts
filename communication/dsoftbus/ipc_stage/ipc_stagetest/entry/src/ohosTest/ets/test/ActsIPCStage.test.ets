@@ -29,6 +29,38 @@ function checkResult(num:number, str:string) {
   expect(str).assertEqual("rpcListenerTest");
 };
 
+function sendMessageRequestCallback(err: BusinessError | null, result: rpc.RequestResult | undefined) {
+  try {
+    if (result != null) {
+      console.info(logTag + '%{public}s', 'sendMessageRequest Callback');
+      expect(result.errCode).assertEqual(0);
+      let res = result.reply.readString();
+      console.info(logTag + 'sendMessageRequest Callback read result ' + res);
+      expect(res).assertEqual("a");
+    }
+  } catch(error) {
+    console.info(logTag + '%{public}s', 'sendMessageRequest Callback err is ' + error);
+  }
+}
+
+function sendRequestCallback(err: BusinessError | null, result: rpc.SendRequestResult | undefined) {
+  try {
+    if (result != null) {
+      console.info(logTag + '%{public}s', 'sendRequest Callback');
+      expect(result.errCode).assertEqual(0);
+      let res = result.reply.readString();
+      console.info(logTag + 'sendRequest Callback read result ' + res);
+      expect(res).assertEqual("a");
+    }
+  } catch(error) {
+    console.info(logTag + '%{public}s', 'sendRequest Callback err is ' + error);
+  }
+}
+
+async function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 class TestListener extends rpc.RemoteObject {
   checkResult:Function;
   constructor(descriptor: string, checkResult: Function) {
@@ -169,6 +201,8 @@ export default function ActsRpcClientEtsTest() {
     const CODE_WRITE_REMOTEOBJECTARRAY_2 = 31;
     const CODE_FILESDIR = 32;
     const CODE_WRITE_ARRAYBUFFER = 33;
+    const CODE_MAX = 16777215;
+    const CODE_MIN = 0;
 
     beforeAll(async () => {
       console.info(logTag + 'beforeAll called');
@@ -7316,6 +7350,596 @@ export default function ActsRpcClientEtsTest() {
     });
 
     /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2240
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2240
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_2240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_2240---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        data.writeString("a");
+        let res = data.readString();
+        expect(res).assertEqual("a");
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_2240 error is:" + error);
+        expect(error == null).assertTrue();
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_2240---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let input ='';
+        const targetLength = 40960;
+        for (let i = 0; i < targetLength; i++) {
+          input += 'a';
+        }
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250 input.length is:" + input.length);
+        data.writeString(input);
+        let res = data.readString();
+        expect(res).assertEqual(input);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_2250---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageSequence_2260
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageSequence_2260
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageSequence_2260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageSequence_2260---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      try {
+        let input ='';
+        const targetLength = 40960 - 1;
+        for (let i = 0; i < targetLength; i++) {
+          input += 'a';
+        }
+        data.writeString(input);
+        let res = data.readString();
+        expect(res).assertEqual(input);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_MessageSequence_2260 error is:" + error);
+        expect(error == null).assertTrue();
+      } finally {
+        console.info(logTag + "reclaim done");
+        data.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageSequence_2260---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MAX, data, reply, option)
+        .then((result) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010 CODE_MAX sendMessageRequest success');
+         expect(result.errCode).assertEqual(0);
+          let res = result.reply.readString();
+          expect(res).assertEqual("a");
+        }).catch((err: BusinessError) => {
+          console.info(logTag +  'SUB_IPC_RemoteObject_sendMessageRequest_0100 err in catch is: ' + err);
+          expect(err == null).assertTrue();
+        }).finally(() => {
+          data.reclaim();
+          reply.reclaim();
+          console.info(logTag +  'SUB_IPC_RemoteObject_sendMessageRequest_0100 reclaim done');
+        })
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0010---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MAX + 1, data, reply, option)
+        .then((result) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 CODE_MAX + 1 sendMessageRequest success');
+          expect(result.errCode).assertEqual(0);
+          let res = result.reply.readString();
+          expect(res).assertEqual("a");
+        }).catch((err: BusinessError) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 err in catch is: ' + err);
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 error code is: ' + err.code);
+          expect(err != null).assertTrue();
+        }).finally(() => {
+          data.reclaim();
+          reply.reclaim();
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 reclaim done');
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020 error code is: ' + err.code);
+        expect(err == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0020---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MIN - 1, data, reply, option)
+        .then((result) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 CODE_MIN - 1 sendMessageRequest success');
+          expect(result.errCode).assertEqual(0);
+          let res = result.reply.readString();
+          expect(res).assertEqual("a");
+        }).catch((err: BusinessError) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 err in catch is: ' + err);
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 error code is: ' + err.code);
+          expect(err != null).assertTrue();
+        }).finally(() => {
+          data.reclaim();
+          reply.reclaim();
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 reclaim done');
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030 error code is: ' + err.code);
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0030---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0040
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0040
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0040---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MAX, data, reply, option, sendMessageRequestCallback)
+        await sleep(2000);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0040 error is:" + error);
+        expect(error == null).assertTrue();
+      } finally {
+         data.reclaim();
+         reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0040---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MAX + 1, data, reply, option, sendMessageRequestCallback)
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050 sendMessageRequestCallback is done');
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050 error code is: ' + err.code);
+        expect(err.message != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0050---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MIN, data, reply, option, sendMessageRequestCallback)
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060 error code is: ' + err.code);
+        expect(err == null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0060---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MIN -1, data, reply, option, sendMessageRequestCallback)
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070 sendMessageRequestCallback is done');
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070 error code is: ' + err.code);
+        expect(err.message != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0070---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0080
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0080
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0080---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MAX, data, reply, option)
+        await sleep(2000);
+        let res = reply.readString();
+        expect(res).assertEqual("a");
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0080 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0080---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MAX + 1, data, reply, option)
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090 error code is: ' + err.code);
+        expect(err != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0090---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MIN - 1, data, reply, option)
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100 error code is: ' + err.code);
+        expect(err != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0100---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0110
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0110
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0110---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MAX, data, reply, option, sendRequestCallback)
+        await sleep(2000);
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0110 error is:" + error);
+        expect(error == null).assertTrue();
+      } finally {
+         data.reclaim();
+         reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0110---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MAX + 1, data, reply, option, sendRequestCallback)
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120 sendRequestCallback is done');
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120 error code is: ' + err.code);
+        expect(err.message != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0120---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MIN, data, reply, option, sendRequestCallback)
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130 error code is: ' + err.code);
+        expect(err == null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0130---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MIN - 1, data, reply, option, sendRequestCallback)
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140 sendRequestCallback is done');
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140 error code is: ' + err.code);
+        expect(err.message != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0140---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendMessageRequest(CODE_MIN, data, reply, option)
+        .then((result) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150 CODE_MIN sendMessageRequest success');
+         expect(result.errCode).assertEqual(0);
+          let res = result.reply.readString();
+          expect(res).assertEqual("a");
+        }).catch((err: BusinessError) => {
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150 err in catch is: ' + err);
+          expect(err == null).assertTrue();
+        }).finally(() => {
+          data.reclaim();
+          reply.reclaim();
+          console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150 reclaim done');
+        })
+      } catch (error) {
+        console.info(logTag + "SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0150---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160---------------------------");
+      let data: rpc.MessageParcel = rpc.MessageParcel.create();
+      let reply: rpc.MessageParcel = rpc.MessageParcel.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try{
+        data.writeString("a");
+        await gIRemoteObject.sendRequest(CODE_MIN, data, reply, option)
+        await sleep(2000);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160 error is: ' + err);
+        console.info(logTag +  'SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160 error code is: ' + err.code);
+        expect(err != null).assertTrue();
+      } finally {
+        data.reclaim();
+        reply.reclaim();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_RemoteObject_0160---------------------------");
+    });
+
+    /**
      * @tc.name   SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010
      * @tc.number SUB_DSoftbus_IPC_API_Stage_RemoteProxy_0010
      * @tc.desc   [G-DISTRIBUTED-0212]禁止修改RPC中定义的数据结构和接口，并提供对应完整实现
@@ -8002,6 +8626,37 @@ export default function ActsRpcClientEtsTest() {
         reply.reclaim();
       }
       console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0160---------------------------");
+    })
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_MessageOption_0170
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_MessageOption_0170
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_MessageOption_0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_MessageOption_0170---------------------------");
+      let option : rpc.MessageOption = new rpc.MessageOption();
+      let tftime : number = rpc.MessageOption.TF_WAIT_TIME;
+      try {
+        let time = option.getWaitTime();
+        expect(time).assertEqual(tftime);
+        option.setWaitTime(0);
+        let time2 = option.getWaitTime();
+        expect(time2).assertEqual(tftime);
+        option.setWaitTime(3000);
+        let time3 = option.getWaitTime();
+        expect(time3).assertEqual(3000);
+        option.setWaitTime(3000 + 1);
+        let time4 = option.getWaitTime();
+        expect(time4).assertEqual(3000);
+      } catch (error) {
+        console.info("SUB_DSoftbus_IPC_API_Stage_MessageOption_0170 error is:" + error);
+        expect(error == null).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_MessageOption_0170---------------------------");
     })
 
     /**

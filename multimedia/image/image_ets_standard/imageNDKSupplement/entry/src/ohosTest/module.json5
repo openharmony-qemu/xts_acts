@@ -44,6 +44,26 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.CAMERA",
+        "usedScene": {
+          "abilities": [
+            "TestAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "usedScene": {
+          "abilities": [
+            "TestAbility"
+          ],
+          "when": "inuse"
+        }
+      },
     ]
   }
 }

@@ -1196,3 +1196,43 @@ HWTEST_F(ParamCheckTest, PARAM_CHECK_026, TestSize.Level2)
 
     delete aDecBufferDemo;
 }
+
+/**
+ * @tc.name   PARAM_CHECK_027
+ * @tc.number PARAM_CHECK_027
+ * @tc.desc   param check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(ParamCheckTest, PARAM_CHECK_027, TestSize.Level2)
+{
+    OH_AVCodec *codec = nullptr;
+    OH_AVErrCode result0;
+    OH_AVFormat *format = OH_AVFormat_Create();
+    int32_t channel = 1;
+    int32_t sampleRate = 8000;  // 8000hz
+    uint32_t index = 0;
+    ADecBufferDemo *aDecBufferDemo = new ADecBufferDemo();
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+    ASSERT_EQ(result0, AV_ERR_OK);
+    result0 = aDecBufferDemo->Start(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+    
+    // use all buffer
+    for (int32_t i = 0; i < 8; i++) {
+        result0 = OH_AudioCodec_QueryInputBuffer(codec, &index, 20000);
+    }
+    
+    result0 = OH_AudioCodec_QueryInputBuffer(codec, &index, 20000);
+    ASSERT_EQ(result0, AV_ERR_TRY_AGAIN_LATER);
+    
+    result0 = OH_AudioCodec_QueryOutputBuffer(codec, &index, 20000);
+    ASSERT_EQ(result0, AV_ERR_TRY_AGAIN_LATER);
+    
+    result0 = aDecBufferDemo->Destroy(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+    delete aDecBufferDemo;
+}
