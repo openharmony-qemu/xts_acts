@@ -1524,5 +1524,766 @@ export default function Date6Test() {
       expect(utcDate.getUTCFullYear()).assertEqual(2024);
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10000
+     * @tc.name Date6Test_100
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 5, 30, 23, 59, 59, 999));
+      expect(utcDate.getUTCMonth()).assertEqual(5);
+      expect(utcDate.getUTCDate()).assertEqual(30);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(999);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10100
+     * @tc.name Date6Test_101
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 7, 20, 17, 59, 59, 600));
+      expect(utcDate.getUTCDay()).assertEqual(2);
+      expect(utcDate.getUTCHours()).assertEqual(17);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10200
+     * @tc.name Date6Test_102
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 2, 22, 9, 59, 59, 700));
+      expect(utcDate.getUTCHours()).assertEqual(9);
+      expect(utcDate.getUTCMinutes()).assertEqual(59);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10300
+     * @tc.name Date6Test_103
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 4, 1, 4, 15, 30, 200));
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCMonth()).assertEqual(4);
+      expect(utcDate.getUTCMinutes()).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10400
+     * @tc.name Date6Test_104
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 6, 25, 11, 39, 59, 800));
+      expect(utcDate.getUTCMinutes()).assertEqual(39);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(800);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10500
+     * @tc.name Date6Test_105
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 3, 15, 16, 25, 39, 300));
+      expect(utcDate.getUTCSeconds()).assertEqual(39);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(300);
+      expect(utcDate.getUTCMinutes()).assertEqual(25);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10600
+     * @tc.name Date6Test_106
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 8, 1, 18, 0, 0, 500));
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCMonth()).assertEqual(8);
+      expect(utcDate.getUTCHours()).assertEqual(18)
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10700
+     * @tc.name Date6Test_107
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 10, 8, 15, 15, 15, 700));
+      expect(utcDate.getUTCMilliseconds()).assertEqual(700);
+      expect(utcDate.getUTCSeconds()).assertEqual(15);
+      expect(utcDate.getUTCMinutes()).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10800
+     * @tc.name Date6Test_108
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 9, 31, 23, 59, 59, 999));
+      expect(utcDate.getUTCMonth()).assertEqual(9);
+      expect(utcDate.getUTCDate()).assertEqual(31);
+      expect(utcDate.getUTCFullYear()).assertEqual(2024);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_10900
+     * @tc.name Date6Test_109
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 8, 26, 23, 59, 59, 100));
+      expect(utcDate.getUTCDay()).assertEqual(4);
+      expect(utcDate.getUTCDate()).assertEqual(26);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11000
+     * @tc.name Date6Test_110
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(2024, 11, 12, 21, 59, 59, 400));
+      expect(utcDate.getUTCHours()).assertEqual(21);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(400);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11100
+     * @tc.name Date6Test_111
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-1, 5, 15, 10, 30, 20, 500));
+      expect(utcDate.getUTCFullYear()).assertEqual(-1);
+      expect(utcDate.getUTCDate()).assertEqual(15);
+      expect(utcDate.getUTCMonth()).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11200
+     * @tc.name Date6Test_112
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-31536000000);
+      expect(utcDate.getUTCHours()).assertEqual(0);
+      expect(utcDate.getUTCFullYear()).assertEqual(1969);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11300
+     * @tc.name Date6Test_113
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-100, 11, 25, 18, 45, 30, 700));
+      expect(utcDate.getUTCMonth()).assertEqual(11);
+      expect(utcDate.getUTCDate()).assertEqual(25);
+      expect(utcDate.getUTCFullYear()).assertEqual(-100);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11400
+     * @tc.name Date6Test_114
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-63115199000);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCFullYear()).assertEqual(1968);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11500
+     * @tc.name Date6Test_115
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-50, 2, 20, 8, 15, 0, 200));
+      expect(utcDate.getUTCHours()).assertEqual(8);
+      expect(utcDate.getUTCMinutes()).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11600
+     * @tc.name Date6Test_116
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-2208988799700);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(300);
+      expect(utcDate.getUTCSeconds()).assertEqual(0);
+      expect(utcDate.getUTCHours()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11700
+     * @tc.name Date6Test_117
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-200, 8, 5, 14, 20, 59, 900));
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+      expect(utcDate.getUTCMinutes()).assertEqual(20);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(900);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11800
+     * @tc.name Date6Test_118
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-788918399500);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCFullYear()).assertEqual(1945);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_11900
+     * @tc.name Date6Test_119
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-300, 6, 10, 5, 59, 30, 400));
+      expect(utcDate.getUTCMinutes()).assertEqual(59);
+      expect(utcDate.getUTCHours()).assertEqual(5);
+      expect(utcDate.getUTCSeconds()).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12000
+     * @tc.name Date6Test_120
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-1262303999200);
+      expect(utcDate.getUTCFullYear()).assertEqual(1930);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12100
+     * @tc.name Date6Test_121
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-500, 1, 28, 19, 30, 45, 600));
+      expect(utcDate.getUTCDate()).assertEqual(28);
+      expect(utcDate.getUTCMonth()).assertEqual(1);
+      expect(utcDate.getUTCFullYear()).assertEqual(-500);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12200
+     * @tc.name Date6Test_122
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-31556736000000);
+      expect(utcDate.getUTCFullYear()).assertEqual(970);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCDate()).assertEqual(3)
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12300
+     * @tc.name Date6Test_123
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-150, 10, 15, 23, 59, 59, 100));
+      expect(utcDate.getUTCHours()).assertEqual(23);
+      expect(utcDate.getUTCDate()).assertEqual(15);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12400
+     * @tc.name Date6Test_124
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-1893453840000);
+      expect(utcDate.getUTCDay()).assertEqual(6);
+      expect(utcDate.getUTCHours()).assertEqual(0);
+      expect(utcDate.getUTCMinutes()).assertEqual(36);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12500
+     * @tc.name Date6Test_125
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-250, 4, 20, 12, 34, 56, 999));
+      expect(utcDate.getUTCMilliseconds()).assertEqual(999);
+      expect(utcDate.getUTCSeconds()).assertEqual(56);
+      expect(utcDate.getUTCMinutes()).assertEqual(34);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12600
+     * @tc.name Date6Test_126
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-946943999800);
+      expect(utcDate.getUTCDate()).assertEqual(30);
+      expect(utcDate.getUTCMonth()).assertEqual(11);
+      expect(utcDate.getUTCFullYear()).assertEqual(1939);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12700
+     * @tc.name Date6Test_127
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-800, 11, 31, 22, 10, 30, 600));
+      expect(utcDate.getUTCMonth()).assertEqual(11);
+      expect(utcDate.getUTCDate()).assertEqual(31);
+      expect(utcDate.getUTCFullYear()).assertEqual(-800);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12800
+     * @tc.name Date6Test_128
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-5679935999001);
+      expect(utcDate.getUTCSeconds()).assertEqual(0);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(999);
+      expect(utcDate.getUTCMinutes()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_12900
+     * @tc.name Date6Test_129
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-350, 7, 5, 9, 59, 45, 400));
+      expect(utcDate.getUTCMinutes()).assertEqual(59);
+      expect(utcDate.getUTCHours()).assertEqual(9);
+      expect(utcDate.getUTCSeconds()).assertEqual(45);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13000
+     * @tc.name Date6Test_130
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-2177452799500);
+      expect(utcDate.getUTCFullYear()).assertEqual(1901);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13100
+     * @tc.name Date6Test_131
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-600, 3, 20, 16, 30, 15, 0));
+      expect(utcDate.getUTCMilliseconds()).assertEqual(0);
+      expect(utcDate.getUTCSeconds()).assertEqual(15);
+      expect(utcDate.getUTCMinutes()).assertEqual(30);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13200
+     * @tc.name Date6Test_132
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-7985567999300);
+      expect(utcDate.getUTCHours()).assertEqual(10);
+      expect(utcDate.getUTCMinutes()).assertEqual(40);
+      expect(utcDate.getUTCSeconds()).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13300
+     * @tc.name Date6Test_133
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-900, 10, 5, 23, 45, 20, 800));
+      expect(utcDate.getUTCDate()).assertEqual(5);
+      expect(utcDate.getUTCHours()).assertEqual(23);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13400
+     * @tc.name Date6Test_134
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-12622780799700);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCFullYear()).assertEqual(1570);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13500
+     * @tc.name Date6Test_135
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-1000, 6, 15, 5, 59, 59, 100));
+      expect(utcDate.getUTCHours()).assertEqual(5);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13600
+     * @tc.name Date6Test_136
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-1577836799400);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCDate()).assertEqual(2);
+      expect(utcDate.getUTCFullYear()).assertEqual(1920);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13700
+     * @tc.name Date6Test_137
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-400, 4, 25, 13, 20, 29, 900));
+      expect(utcDate.getUTCSeconds()).assertEqual(29);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(900);
+      expect(utcDate.getUTCMinutes()).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13800
+     * @tc.name Date6Test_138
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-15768000000600);
+      expect(utcDate.getUTCMinutes()).assertEqual(59);
+      expect(utcDate.getUTCHours()).assertEqual(23);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_13900
+     * @tc.name Date6Test_139
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-700, 1, 28, 19, 30, 45, 500));
+      expect(utcDate.getUTCDate()).assertEqual(28);
+      expect(utcDate.getUTCMonth()).assertEqual(1);
+      expect(utcDate.getUTCFullYear()).assertEqual(-700);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14000
+     * @tc.name Date6Test_140
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-4733856000000 + 54645500);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(500);
+      expect(utcDate.getUTCSeconds()).assertEqual(45);
+      expect(utcDate.getUTCMinutes()).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14100
+     * @tc.name Date6Test_141
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-978307199200);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCFullYear()).assertEqual(1939);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14200
+     * @tc.name Date6Test_142
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-1200, 8, 20, 17, 59, 30, 300));
+      expect(utcDate.getUTCHours()).assertEqual(17);
+      expect(utcDate.getUTCSeconds()).assertEqual(30);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(300);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14300
+     * @tc.name Date6Test_143
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-9466848000000 + 51615600);
+      expect(utcDate.getUTCDate()).assertEqual(3);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCFullYear()).assertEqual(1670);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14400
+     * @tc.name Date6Test_144
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-550, 2, 15, 10, 14, 59, 700));
+      expect(utcDate.getUTCMinutes()).assertEqual(14);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(700);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14500
+     * @tc.name Date6Test_145
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-1893407999800);
+      expect(utcDate.getUTCMonth()).assertEqual(0);
+      expect(utcDate.getUTCDate()).assertEqual(1);
+      expect(utcDate.getUTCFullYear()).assertEqual(1910);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14600
+     * @tc.name Date6Test_146
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-850, 6, 25, 16, 30, 44, 900));
+      expect(utcDate.getUTCSeconds()).assertEqual(44);
+      expect(utcDate.getUTCMinutes()).assertEqual(30);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(900);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14700
+     * @tc.name Date6Test_147
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-11045376000000 + 33320200);
+      expect(utcDate.getUTCMilliseconds()).assertEqual(200);
+      expect(utcDate.getUTCHours()).assertEqual(9);
+      expect(utcDate.getUTCSeconds()).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14800
+     * @tc.name Date6Test_148
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-1100, 11, 31, 23, 59, 59, 500));
+      expect(utcDate.getUTCFullYear()).assertEqual(-1100);
+      expect(utcDate.getUTCDate()).assertEqual(31);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_14900
+     * @tc.name Date6Test_149
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(-5679936000000 + 730483199600);
+      expect(utcDate.getUTCHours()).assertEqual(15);
+      expect(utcDate.getUTCDate()).assertEqual(27);
+      expect(utcDate.getUTCMonth()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Date6_TEST_15000
+     * @tc.name Date6Test_150
+     * @tc.desc test date
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('Date6Test_150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const utcDate = new Date(Date.UTC(-750, 4, 10, 13, 39, 59, 100));
+      expect(utcDate.getUTCMinutes()).assertEqual(39);
+      expect(utcDate.getUTCHours()).assertEqual(13);
+      expect(utcDate.getUTCSeconds()).assertEqual(59);
+    });
+
   })
 }
