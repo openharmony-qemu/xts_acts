@@ -466,5 +466,343 @@ export default function TextMenuItemIdTest(){
       expect(nativeFunc.TextMenuItemId_034()).assertEqual(0)
       done()
     })
+
+      /**
+     * @tc.name   TextMenuItemId_035
+     * @tc.number TextMenuItemId_035
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_035', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_035()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_036
+     * @tc.number TextMenuItemId_036
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_036', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_036()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_037
+     * @tc.number TextMenuItemId_037
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_037', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_037()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_038
+     * @tc.number TextMenuItemId_038
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_038', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_038()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_039
+     * @tc.number TextMenuItemId_039
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_039', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_039()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_040
+     * @tc.number TextMenuItemId_040
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_040', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_040()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_041
+     * @tc.number TextMenuItemId_041
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_041', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_041()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_042
+     * @tc.number TextMenuItemId_042
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_042', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_042()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_043
+     * @tc.number TextMenuItemId_043
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_043', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_043()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_044
+     * @tc.number TextMenuItemId_044
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_044', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_044()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_045
+     * @tc.number TextMenuItemId_045
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_045', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_045()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_046
+     * @tc.number TextMenuItemId_046
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_046', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_046()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_047
+     * @tc.number TextMenuItemId_047
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_047', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_047()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_048
+     * @tc.number TextMenuItemId_048
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_048', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_048()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_049
+     * @tc.number TextMenuItemId_049
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_049', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_049()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_050
+     * @tc.number TextMenuItemId_050
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_050', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_050()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_051
+     * @tc.number TextMenuItemId_051
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_051', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_051()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_052
+     * @tc.number TextMenuItemId_052
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_052', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_052()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_053
+     * @tc.number TextMenuItemId_053
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_053', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_053()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_054
+     * @tc.number TextMenuItemId_054
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_054', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_054()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_055
+     * @tc.number TextMenuItemId_055
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_055', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_055()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_056
+     * @tc.number TextMenuItemId_056
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_056', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_056()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_057
+     * @tc.number TextMenuItemId_057
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_057', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_057()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_058
+     * @tc.number TextMenuItemId_058
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_058', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_058()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_059
+     * @tc.number TextMenuItemId_059
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_059', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_059()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   TextMenuItemId_060
+     * @tc.number TextMenuItemId_060
+     * @tc.desc   test TextMenuItemId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TextMenuItemId_060', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TextMenuItemId_060()).assertEqual(0)
+      done()
+    })
   })
 }

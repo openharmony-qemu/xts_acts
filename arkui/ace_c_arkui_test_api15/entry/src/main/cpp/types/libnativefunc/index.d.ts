@@ -13,6 +13,11 @@
  * limitations under the License.
  */
 export const columnBackDropBlurTest001: () => number;
+export const ProgressLinearStyleOptionTest_001: () => number;
+export const ProgressLinearStyleOptionTest_002: () => number;
+export const ProgressLinearStyleOptionTest_003: () => number;
+export const ProgressLinearStyleOptionTest_004: () => number;
+export const ProgressLinearStyleOptionTest_005: () => number;
 export const testListItemGroupNodeAdapter001: () => number;
 export const testListItemGroupNodeAdapter002: () => number;
 export const testListItemGroupNodeAdapter003: () => number;

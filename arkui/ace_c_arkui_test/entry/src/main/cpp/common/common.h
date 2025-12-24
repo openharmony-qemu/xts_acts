@@ -300,5 +300,12 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         }                                                                                                              \
     } while (0)
 
+#define ASSERT_OBJ_NE(result, expect)                                                                                  \
+    do {                                                                                                               \
+        if ((result) == (expect)) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H

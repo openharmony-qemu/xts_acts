@@ -14,33 +14,17 @@
  */
 #include "common/common.h"
 #include "../manager/PluginManagerTest.h"
-#include <asm-generic/stat.h>
-#include <bits/alltypes.h>
+
 #include <cstdint>
-#include <iostream>
-#include <linux/if.h>
-#include <linux/if_link.h>
-#include <linux/mroute6.h>
-#include <linux/quota.h>
-#include <sound/hdsp.h>
 #include <string>
-#include <cstdio>
 #include "napi/native_api.h"
 #include <ace/xcomponent/native_interface_xcomponent.h>
 #include <arkui/native_node.h>
 #include <arkui/native_animate.h>
 #include <arkui/native_node_napi.h>
 #include <arkui/native_type.h>
-#include <arkui/native_interface.h>
 #include <arkui/native_render.h>
-#include <bits/alltypes.h>
 #include <hilog/log.h>
-#include <linux/nubus.h>
-#include <sys/types.h>
-#include <thread>
-#include <unistd.h>
-#include <vector>
-#include <hitrace/trace.h>
 
 #define PARAM_106109 106109
 #define PARAM_180101 180101
@@ -426,6 +410,387 @@ static napi_value TextMenuItemId_034(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "TextMenuItemId_034 result=%{public}d", ARKUI_TEXT_RESPONSE_TYPE_DEFAULT);
     ASSERT_EQ(ARKUI_TEXT_RESPONSE_TYPE_DEFAULT, PARAM_3);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_035(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    std::string contents = "CAPI创建的菜单";
+    auto ret = OH_ArkUI_TextMenuItem_SetContent(newMenuItem, contents.c_str());
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextMenuItemId_035 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_036(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetContent(newMenuItem, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextMenuItemId_036 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_037(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    char *buffer = new char[20];
+    int writeLength = -1;
+    std::string contents = "CAPI创建的菜单";
+    auto ret = OH_ArkUI_TextMenuItem_SetContent(newMenuItem, contents.c_str());
+    ret = OH_ArkUI_TextMenuItem_GetContent(newMenuItem, buffer, 20, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextMenuItemId_037 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_038(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    int writeLength = 20;
+    auto ret = OH_ArkUI_TextMenuItem_GetContent(newMenuItem, nullptr, writeLength, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_038 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_039(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    char *buffer = new char[2];
+    int writeLength = -1;
+    std::string contents = "CAPI创建的菜单";
+    auto ret = OH_ArkUI_TextMenuItem_SetContent(newMenuItem, contents.c_str());
+    ret = OH_ArkUI_TextMenuItem_GetContent(newMenuItem, buffer, 2, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextMenuItemId_037 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_040(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetIcon(newMenuItem, "common/icon.png");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextMenuItemId_039 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_041(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetIcon(newMenuItem, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_041 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_042(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetIcon(newMenuItem, "common/icon.png");
+    int32_t bufferSize = 1024, writeLength = -1;
+    char *iconBuffer = new char[bufferSize];
+    ret = OH_ArkUI_TextMenuItem_GetIcon(newMenuItem, iconBuffer, bufferSize, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_042 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_043(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetIcon(newMenuItem, "common/icon.png");
+    int32_t bufferSize = 1, writeLength = -1;
+    char *iconBuffer = new char[bufferSize];
+    ret = OH_ArkUI_TextMenuItem_GetIcon(newMenuItem, iconBuffer, bufferSize, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_043 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_044(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetIcon(newMenuItem, "common/icon.png");
+    int32_t bufferSize = 1, writeLength = -1;
+    char *iconBuffer = new char[bufferSize];
+    ret = OH_ArkUI_TextMenuItem_GetIcon(nullptr, iconBuffer, bufferSize, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_044 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_045(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    auto ret = OH_ArkUI_TextMenuItem_SetLabelInfo(nullptr, "ctrl+P");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_045 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_046(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetLabelInfo(newMenuItem, "ctrl+P");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_046 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+
+static napi_value TextMenuItemId_047(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetLabelInfo(newMenuItem, "ctrl+P");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_047 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_048(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetLabelInfo(newMenuItem, "ctrl+P");
+    int bufferSize = 1024, writeLength = -1;
+    char *labelInfo = new char[bufferSize];
+    ret =  OH_ArkUI_TextMenuItem_GetLabelInfo(newMenuItem, labelInfo, bufferSize, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_048 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_049(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetLabelInfo(newMenuItem, "ctrl+P");
+    int bufferSize = 1024, writeLength = -1;
+    char *labelInfo = nullptr;
+    ret =  OH_ArkUI_TextMenuItem_GetLabelInfo(newMenuItem, labelInfo, bufferSize, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_049 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_050(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetLabelInfo(newMenuItem, "ctrl+P");
+    int bufferSize = 1, writeLength = -1;
+    char *labelInfo =  new char[bufferSize];
+    ret =  OH_ArkUI_TextMenuItem_GetLabelInfo(newMenuItem, labelInfo, bufferSize, &writeLength);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_050 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_051(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetId(newMenuItem, 111);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_051 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_052(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    auto ret = OH_ArkUI_TextMenuItem_SetId(nullptr, 111);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_052 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_053(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *newMenuItem = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItem_SetId(newMenuItem, 111);
+    int id = -1;
+    ret = OH_ArkUI_TextMenuItem_GetId(newMenuItem, &id);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_053 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_054(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    int id = -1;
+    auto ret = OH_ArkUI_TextMenuItem_GetId(nullptr, &id);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_054 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_055(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    int id = -1;
+    auto ret = OH_ArkUI_TextMenuItemArray_GetSize(nullptr, &id);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_055 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_056(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem* arr[5] = {0};
+    for (int i = 0; i < 5; i++) {
+        arr[i] = OH_ArkUI_TextMenuItem_Create();
+    }
+    int size = -1;
+    auto ret = OH_ArkUI_TextMenuItemArray_GetSize((ArkUI_TextMenuItemArray*)arr, &size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_056 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_057(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem *item = nullptr;
+    auto ret = OH_ArkUI_TextMenuItemArray_GetItem(nullptr, 2, &item);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_057 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_058(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    auto ret = OH_ArkUI_TextMenuItemArray_Erase(nullptr, 1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_058 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_059(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    auto ret = OH_ArkUI_TextMenuItemArray_Clear(nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_059 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_060(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem* arr[5] = {0};
+    for (int i = 0; i < 5; i++) {
+        arr[i] = OH_ArkUI_TextMenuItem_Create();
+    }
+    int size = -1;
+    OH_ArkUI_TextMenuItemArray_GetSize((ArkUI_TextMenuItemArray*)arr, &size);
+    ArkUI_TextMenuItem *item = nullptr;
+    auto ret2 = OH_ArkUI_TextMenuItemArray_Insert((ArkUI_TextMenuItemArray*)arr, item, size);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_060 result=%{public}d", ret2);
+    ASSERT_EQ(ARKUI_ERROR_CODE_PARAM_INVALID, ret2);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_061(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem* arr[5] = {0};
+    for (int i = 0; i < 5; i++) {
+        arr[i] = OH_ArkUI_TextMenuItem_Create();
+    }
+    auto ret = OH_ArkUI_TextMenuItemArray_Erase((ArkUI_TextMenuItemArray*)arr, 1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_061 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_062(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem* arr[5] = {0};
+    for (int i = 0; i < 5; i++) {
+        arr[i] = OH_ArkUI_TextMenuItem_Create();
+    }
+    ArkUI_TextMenuItem *item = OH_ArkUI_TextMenuItem_Create();
+    auto ret = OH_ArkUI_TextMenuItemArray_GetItem((ArkUI_TextMenuItemArray*)arr, 2, &item);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_062 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_063(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem* arr[5] = {0};
+    for (int i = 0; i < 5; i++) {
+        arr[i] = OH_ArkUI_TextMenuItem_Create();
+    }
+    ArkUI_TextMenuItem *item = OH_ArkUI_TextMenuItem_Create();
+    auto ret2 = OH_ArkUI_TextMenuItemArray_Insert((ArkUI_TextMenuItemArray*)arr, item, 1);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_063 result=%{public}d", ret2);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret2);
+    NAPI_END;
+}
+
+static napi_value TextMenuItemId_064(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    ArkUI_TextMenuItem* arr[5] = {0};
+    for (int i = 0; i < 5; i++) {
+        arr[i] = OH_ArkUI_TextMenuItem_Create();
+    }
+    auto ret = OH_ArkUI_TextMenuItemArray_Clear((ArkUI_TextMenuItemArray*)arr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+                "TextMenuItemId_064 result=%{public}d", ret);
+    ASSERT_EQ(ARKUI_ERROR_CODE_NO_ERROR, ret);
     NAPI_END;
 }
 }
