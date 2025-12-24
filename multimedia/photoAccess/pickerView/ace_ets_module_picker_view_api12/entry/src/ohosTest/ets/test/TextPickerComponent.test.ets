@@ -3038,6 +3038,59 @@ export default function TextPicker() {
       events_emitter.off(event.eventId);
       done();
     });
-
+    
+    /**
+     * @tc.number     testPicker61
+     * @tc.name       testPicker61
+     * @tc.desc       Testing maxVideoSelectNumber and maxPhotoSelectNumber
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPicker61', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      console.info('testPicker61 started');
+      let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+      sheetPickerOptions.maxVideoSelectNumber = 5;
+      sheetPickerOptions.maxPhotoSelectNumber = 7;
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let callback = (eventData: events_emitter.EventData) => {
+        let result: PhotoPickerResult = eventData?.data?.msg;
+        console.info(
+          `testPicker61 result maxVideo=${result.maxVideoSelectNumber}, maxPhoto=${result.maxPhotoSelectNumber}`
+        );
+        expect(result.maxVideoSelectNumber)
+          .assertEqual(sheetPickerOptions.maxVideoSelectNumber);
+        expect(result.maxPhotoSelectNumber)
+          .assertEqual(sheetPickerOptions.maxPhotoSelectNumber);
+        done();
+      };
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/BindSheetPicker',
+        params: {
+          eventId: code,
+          pickerOptions: sheetPickerOptions,
+        }
+      };
+      await routeToUrl(options);
+      await CommonFunc.sleep(2000);
+      let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
+      await CommonFunc.sleep(1000);
+      await button.click();
+      console.info('testPicker61 Clicked select button');
+      await CommonFunc.sleep(2000);
+      router.back();
+      events_emitter.off(event.eventId);
+      console.info('testPicker61 finished');
+      done();
+    });
   })
 }
