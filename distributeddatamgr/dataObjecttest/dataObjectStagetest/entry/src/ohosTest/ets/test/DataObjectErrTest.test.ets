@@ -1812,7 +1812,7 @@ export default function DataObjectErrTest() {
      */
     it('DataObjectErrTest74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.info(TAG + '************ DataObjectErrTest74 start ************')
-      let g_object: distributedDataObject.DataObject = distributedDataObject.createDistributedObject(context, note);
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
       let str = "c".repeat(128);
       g_object.setSessionId(str, (err) => {
         if(err){
@@ -1835,7 +1835,7 @@ export default function DataObjectErrTest() {
      */
     it('DataObjectErrTest75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.info(TAG + '************ DataObjectErrTest75 start ************')
-      let g_object: distributedDataObject.DataObject = distributedDataObject.createDistributedObject(context, note);
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
       let str = "d".repeat(129);
       try {
         g_object.setSessionId(str, (err) => {
@@ -1862,7 +1862,7 @@ export default function DataObjectErrTest() {
      */
     it('DataObjectErrTest76', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + '************ DataObjectErrTest76 start ************')
-      let g_object: distributedDataObject.DataObject = distributedDataObject.createDistributedObject(context, note);
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
       let str = "e".repeat(129);
       try {
         let count = 0;
@@ -1886,7 +1886,7 @@ export default function DataObjectErrTest() {
      */
     it('DataObjectErrTest77', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + '************ DataObjectErrTest77 start ************')
-      let g_object: distributedDataObject.DataObject = distributedDataObject.createDistributedObject(context, note);
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
       let str = "e".repeat(129);
       try {
         await g_object.setSessionId(str);

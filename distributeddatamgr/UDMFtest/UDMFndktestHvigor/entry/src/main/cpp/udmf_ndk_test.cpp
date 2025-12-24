@@ -2686,13 +2686,14 @@ static napi_value OH_UdmfDataLoadParams_SetLoadHandler001(napi_env env, napi_cal
 static napi_value OH_UdmfOptions_GetKey_004(napi_env env, napi_callback_info info)
 {
     OH_UdmfOptions* options = OH_UdmfOptions_Create();
-    std::string str(256, 'A');
+    int strMax = 256;
+    std::string str(strMax, 'A');
     const char* testKey = str.c_str();
     int result = OH_UdmfOptions_SetKey(options, testKey);
     NAPI_ASSERT(env, result == UDMF_E_OK, "OH_UdmfOptions_SetKey is fail.");
     const char* getKey = OH_UdmfOptions_GetKey(options);
     NAPI_ASSERT(env, strcmp(getKey, str.c_str()) == 0, "OH_UdmfOptions_GetKey is fail.");
-    NAPI_ASSERT(env, std::strlen(getKey) == 256, "OH_UdmfOptions_GetKey is fail.");
+    NAPI_ASSERT(env, std::strlen(getKey) == strMax, "OH_UdmfOptions_GetKey is fail.");
     OH_UdmfOptions_Destroy(options);
     napi_value res;
     napi_create_int32(env, 1, &res);
@@ -2806,7 +2807,8 @@ static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info 
     int getRes = OH_Udmf_GetUnifiedDataByOptions(options, &dataArray, &dataSize);
     NAPI_ASSERT(env, getRes == UDMF_E_OK, "OH_Udmf_GetUnifiedDataByOptions is fail.");
     NAPI_ASSERT(env, dataArray != nullptr, "OH_Udmf_GetUnifiedDataByOptions is fail.");
-    // NAPI_ASSERT(env, dataSize == 2, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+    int sizeNum = 2;
+    NAPI_ASSERT(env, dataSize == sizeNum, "OH_Udmf_GetUnifiedDataByOptions is fail.");
     NAPI_ASSERT(env, OH_UDMF_GetDataElementAt(nullptr, 0) == nullptr, "OH_Udmf_GetUnifiedDataByOptions is fail.");
     auto readData = OH_UDMF_GetDataElementAt(&dataArray, 0);
     NAPI_ASSERT(env, readData != nullptr, "OH_UDMF_GetDataElementAt is fail.");
@@ -3058,10 +3060,14 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, napi_default, nullptr},
         {"OH_UdmfDataLoadParams_SetLoadHandler001", nullptr, OH_UdmfDataLoadParams_SetLoadHandler001, nullptr,
          nullptr, nullptr, napi_default, nullptr},
-        {"OH_UdmfOptions_GetKey_004", nullptr, OH_UdmfOptions_GetKey_004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_UdmfOptions_GetIntention_003", nullptr, OH_UdmfOptions_GetIntention_003, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_Udmf_SetUnifiedDataByOptions_013", nullptr, OH_Udmf_SetUnifiedDataByOptions_013, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"OH_Udmf_GetDataElementAt_001", nullptr, OH_Udmf_GetDataElementAt_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfOptions_GetKey_004", nullptr, OH_UdmfOptions_GetKey_004, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfOptions_GetIntention_003", nullptr, OH_UdmfOptions_GetIntention_003, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetUnifiedDataByOptions_013", nullptr, OH_Udmf_SetUnifiedDataByOptions_013, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_GetDataElementAt_001", nullptr, OH_Udmf_GetDataElementAt_001, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
