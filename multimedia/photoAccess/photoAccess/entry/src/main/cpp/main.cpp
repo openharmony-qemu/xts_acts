@@ -904,6 +904,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testChangeRequestRelease", nullptr, TestChangeRequestRelease, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"testManagerRequestImage", nullptr, TestManagerRequestImage, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testManagerQuickRequestImage", nullptr, TestManagerQuickRequestImage, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testMediaAccessHelperApplyChanges", nullptr, TestMediaAccessHelperApplyChanges, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"testManagerRequestMovingPhoto", nullptr, TestManagerRequestMovingPhoto, nullptr, nullptr, nullptr,
