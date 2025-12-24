@@ -1798,7 +1798,7 @@ export default function DataObjectErrTest() {
       let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
       let str = "b".repeat(129);
       let result = g_object.setSessionId(str);
-      expect(result).assertEqual(true);
+      expect(result).assertEqual(false);
       console.info(TAG + '************ DataObjectErrTest73 end ************');
     })
 
@@ -1860,10 +1860,10 @@ export default function DataObjectErrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DataObjectErrTest76', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('DataObjectErrTest76', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ DataObjectErrTest76 start ************')
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
-      let str = "e".repeat(129);
+      let str = "e".repeat(128);
       try {
         let count = 0;
         await g_object.setSessionId(str);
@@ -1884,7 +1884,7 @@ export default function DataObjectErrTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DataObjectErrTest77', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('DataObjectErrTest77', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ DataObjectErrTest77 start ************')
       let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
       let str = "e".repeat(129);
