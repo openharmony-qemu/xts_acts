@@ -38,7 +38,7 @@ export default function DisplayNdkTest() {
     let orientation:string[];
     let code:number;
     let displayFoldStatus:number;
-    beforeAll(() => {
+    beforeAll(async () => {
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
