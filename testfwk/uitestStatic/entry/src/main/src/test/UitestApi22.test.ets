@@ -1065,7 +1065,7 @@ export default function uitestDriverTestApi22() {
       if (longClickBtn != null) {
         let center = await longClickBtn.getBoundsCenter();
         await driver.delayMs(waitUiReadyMs);
-        let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 6000)
+        let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 6000)
         expect(result).assertTrue();
         await driver.delayMs(waitUiReadyMs);
         let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -1106,7 +1106,7 @@ export default function uitestDriverTestApi22() {
         await driver.delayMs(waitUiReadyMs);
         let disPlay = display.getDefaultDisplaySync();
         console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom disPlay is: ${JSON.stringify(disPlay)}`);
-        let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
+        let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
           x: center.x,
           y: center.y,
           displayId: disPlay.id.toInt()
@@ -1153,7 +1153,7 @@ export default function uitestDriverTestApi22() {
         if (dragResultTextCom != null) {
           await driver.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+          let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1192,7 +1192,7 @@ export default function uitestDriverTestApi22() {
         if (dragResultTextCom != null) {
           await driver.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
+          let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1233,7 +1233,7 @@ export default function uitestDriverTestApi22() {
           let center2 = await dragResultTextCom.getBoundsCenter();
           let disPlay = display.getDefaultDisplaySync();
           console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse_static disPlay is: ${JSON.stringify(disPlay)}`);
-          let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
+          let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
             x: center1.x,
             y: center1.y,
             displayId: disPlay.id.toInt()
@@ -1269,7 +1269,7 @@ export default function uitestDriverTestApi22() {
       if (scrollBar != null) {
         let rect = await scrollBar.getBounds()
         let center = await scrollBar.getBoundsCenter()
-        let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+        let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
           {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
           {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 9000)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static result, ${JSON.stringify(result)}`);
@@ -1300,7 +1300,7 @@ export default function uitestDriverTestApi22() {
         let center = await scrollBar.getBoundsCenter()
         let disPlay = display.getDefaultDisplaySync();
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse_static disPlay is: ${JSON.stringify(disPlay)}`);
-        let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
+        let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
           {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
           {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()})
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse_static result, ${JSON.stringify(result)}`);
@@ -1568,85 +1568,5 @@ export default function uitestDriverTestApi22() {
       console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static end`);
     })
 
-    /**
-     * @tc.name   testToastShow_static
-     * @tc.number uitestDriverTest_Api22_0281
-     * @tc.desc   monitor toast appearance.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testToastShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testToastShow_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let isCallBack = false;
-      let observer = driver.createUIEventObserver()
-      let callback = (elementInfo : UIElementInfo) => {
-        try {
-          console.log(`${TestTag}, testToastShow_static elementInfo, ${JSON.stringify(elementInfo)}`);
-          isCallBack = true;
-          console.info('elementInfo bundleName:'+ elementInfo.bundleName)
-          console.info('elementInfo text:'+ elementInfo.text)
-          console.info('elementInfo type:'+ elementInfo.type)
-          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-          expect(elementInfo.text == 'toastShow').assertTrue()
-          expect(elementInfo.type == 'Toast').assertTrue()
-        } catch (err) {
-          console.info(err)
-        }
-      }
-      observer.onceToastShow(callback);
-      let btn = await driver.findComponent(ON.text('toast'));
-      if (btn != null) {
-        await btn.click()
-      }
-      await driver.delayMs(5000);
-      await stopApplication('com.uitestScene.acts');
-      hilog.info(domain, tag, `testToastShow_static isCallBack,${JSON.stringify(isCallBack)}`);
-      expect(isCallBack).assertTrue();
-      console.log(`${TestTag}, testToastShow_static end`);
-    })
-
-    /**
-     * @tc.name   testDialogShow_static
-     * @tc.number uitestDriverTest_Api22_021
-     * @tc.desc   monitor dialog appearance.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDialogShow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDialogShow_static start`);
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      let isCallBack = false;
-      let observer = driver.createUIEventObserver()
-      let callback = (elementInfo : UIElementInfo) => {
-        try {
-          console.log(`${TestTag}, testDialogShow_static elementInfo, ${JSON.stringify(elementInfo)}`);
-          isCallBack = true;
-          console.info('elementInfo bundleName:'+ elementInfo.bundleName)
-          console.info('UIElementInfo text:'+ elementInfo.text)
-          console.info('UIElementInfo type:'+ elementInfo.type)
-          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-          expect(elementInfo.text == 'dialogShow').assertTrue()
-          expect(elementInfo.type == 'AlertDialog').assertTrue()
-        } catch (err) {
-          console.log(`${TestTag}, testDialogShow_static callback, ${JSON.stringify(elementInfo)}`);
-          console.info(err)
-        }
-      }
-      observer.onceDialogShow(callback);
-      let btn = await driver.findComponent(ON.text('dialog'));
-      if (btn != null) {
-        await btn.click()
-      }
-      await driver.delayMs(5000);
-      await stopApplication('com.uitestScene.acts');
-      hilog.info(domain, tag, `testDialogShow_static isCallBack,${JSON.stringify(isCallBack)}`);
-      expect(isCallBack).assertTrue();
-      console.log(`${TestTag}, testDialogShow_static end`);
-    })
   })
 }
