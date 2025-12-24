@@ -62,12 +62,12 @@ export default function ChipFontScale() {
       let chip2: ESObject = result.$children[0].$children[1].$children[0].$children[0].$attrs;
       let chip3: ESObject = result.$children[0].$children[2].$children[0].$children[0].$attrs;
       await CommonFunc.sleep(2000);
-      let test1 = Number.parseFloat(chip1.minFontScale);
-      let test2 = Number.parseFloat(chip1.maxFontScale);
-      let test3 = Number.parseFloat(chip2.minFontScale);
-      let test4 = Number.parseFloat(chip2.maxFontScale);
-      let test5 = Number.parseFloat(chip3.minFontScale);
-      let test6 = Number.parseFloat(chip3.maxFontScale);
+      let test1: number = Number.parseFloat(chip1.minFontScale);
+      let test2: number = Number.parseFloat(chip1.maxFontScale);
+      let test3: number = Number.parseFloat(chip2.minFontScale);
+      let test4: number = Number.parseFloat(chip2.maxFontScale);
+      let test5: number = Number.parseFloat(chip3.minFontScale);
+      let test6: number = Number.parseFloat(chip3.maxFontScale);
       console.log("ChipFontScale_001 test1:", test1," test2: ", test2, " test3: ", test3, " test4: ", test4, " test5: ", test5, " test6: ", test6 )
       expect(test1).assertEqual(0);
       expect(test2).assertEqual(1);

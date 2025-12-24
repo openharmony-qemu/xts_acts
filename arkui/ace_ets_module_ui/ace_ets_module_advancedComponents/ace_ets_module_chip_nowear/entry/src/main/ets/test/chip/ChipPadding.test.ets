@@ -60,10 +60,10 @@ export default function ChipPadding() {
       let result: ESObject = getInspectorTree();
       let chip0Padding: ESObject = JSON.parse(result.$children[0].$children[0].$children[0].$attrs.padding);
       await CommonFunc.sleep(1000);
-      let test1 = chip0Padding.top;
-      let test2 = chip0Padding.bottom;
-      let test3 = chip0Padding.left;
-      let test4 = chip0Padding.right;
+      let test1: string = chip0Padding.top;
+      let test2: string = chip0Padding.bottom;
+      let test3: string = chip0Padding.left;
+      let test4: string = chip0Padding.right;
       console.log("ChipPadding_001 test1:", test1," test2: ", test2, " test3: ", test3, " test4: ", test4 )
       expect(test1).assertEqual('20.00px');
       expect(test2).assertEqual('30.00px');
