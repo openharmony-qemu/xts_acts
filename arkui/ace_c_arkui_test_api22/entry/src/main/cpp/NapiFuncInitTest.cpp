@@ -24,6 +24,8 @@
 #include "Text/TextMenuItemIdTest.cpp"
 #include "swiper/SwiperParamTest.cpp"
 #include "swiper/SwiperEnumTest.cpp"
+#include "image/EnumTest.cpp"
+#include "Text/EnumTest.cpp"
 #include "BindSelectionMenu/BindSelectionMenuTest.cpp"
 #include "TextEditMenuOptions/TextEditMenuOptionsTest.cpp"
 
@@ -222,6 +224,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSwiperParam005", nullptr, SetShowBackgroundTest, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testSwiperEnum001", nullptr, Enum_Swiper_GetEventType, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"enum_GetEventType_Image", nullptr, Enum_GetEventType_Image, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"enum_GetEventType_Text", nullptr, Enum_GetEventType_Text, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
          napi_default, nullptr}, 
         {"Test_OH_ArkUI_TextSelectionMenuOptions01", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions01,
          nullptr, nullptr, nullptr, napi_default, nullptr},

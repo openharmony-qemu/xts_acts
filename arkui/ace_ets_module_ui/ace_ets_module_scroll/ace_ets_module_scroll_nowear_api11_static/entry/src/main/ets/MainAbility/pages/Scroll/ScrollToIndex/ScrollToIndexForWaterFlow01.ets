@@ -20,7 +20,7 @@ import { Entry, Column, Component, Flex, FlexDirection,ClickEvent,Scroller,Color
 import router from '@ohos.router'
 import { WaterFlowDataSource } from './WaterFlowDataSource'
 import { State } from '@ohos.arkui.stateManagement';
-function buttonStyles(this: ButtonAttribute): this {
+function buttonStyles(this: ButtonAttribute) {
   this.borderRadius(8)
   this.backgroundColor(0x317aff)
   this.width(200)

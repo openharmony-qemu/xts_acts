@@ -312,7 +312,11 @@ export default function httpFetchTest() {
       runFetchTestCase(caseName, {
         url: TEST_URL, method: 'POST', responseType: 'json'
       }, done, (data: FetchResponse) => {
-        ExpectTrue(data.data['method'] === 'POST');
+        if (data && data.data) {
+          ExpectTrue(data.data['method'] === 'POST');
+        } else {
+          ExpectTrue(false);
+        }
       }, () => {
         ExpectTrue(false);
       });

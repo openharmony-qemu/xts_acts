@@ -34,7 +34,7 @@ import {
 import { State, Link } from '@ohos.arkui.stateManagement';
 
 
-function superFancyText(this: TextAttribute): this {
+function superFancyText(this: TextAttribute) {
   this.fontSize(36);
   this.fontColor('#182431')
   this.fontWeight(500)

@@ -45,6 +45,8 @@ import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test'
 import SwiperParamTest from './swiper/SwiperParamTest.test';
 import SwiperEnumTest from './swiper/SwiperEnumTest.test';
+import ImageEnumTest from "./image/enum.test";
+import TextEnumTest from "./TextTest/enum.test";
 import BindSelectionMenuTest from './BindSelectionMenu/BindSelectionMenuTest.test'
 import LayoutManagerTest from './LayoutManager/LayoutManagerTest.test'
 import TextEditMenuOptionsTest from './TextEditMenuOptions/TextEditMenuOptionsTest.test'
@@ -83,6 +85,8 @@ export default function testsuite() {
   TextMenuItemIdTest();
   SwiperParamTest();
   SwiperEnumTest();
+  ImageEnumTest();
+  TextEnumTest();
   BindSelectionMenuTest();
   LayoutManagerTest();
   TextEditMenuOptionsTest();

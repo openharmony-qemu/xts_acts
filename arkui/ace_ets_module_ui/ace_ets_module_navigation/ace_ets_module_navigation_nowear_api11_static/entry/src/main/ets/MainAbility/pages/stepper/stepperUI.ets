@@ -18,7 +18,7 @@ import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Te
 import { State,AppStorage } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 
-function itemStyle(this: ColumnAttribute): this {
+function itemStyle(this: ColumnAttribute) {
   this.width(336)
   this.height(621)
   this.margin({ top: 48, left: 12 } as Margin)
@@ -26,7 +26,7 @@ function itemStyle(this: ColumnAttribute): this {
   this.backgroundColor('#FFFFFF')
   return this;
 }
-function itemTextStyle(this: TextAttribute): this {
+function itemTextStyle(this: TextAttribute) {
   this.fontColor('#182431')
   this.fontSize(36)
   this.fontWeight(500)
