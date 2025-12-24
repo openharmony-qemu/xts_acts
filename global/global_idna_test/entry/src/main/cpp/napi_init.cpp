@@ -2987,7 +2987,7 @@ static napi_value testutf8_prevCharSafeBody(napi_env env, napi_callback_info inf
     return nValue;
 }
 
-static napi_value testOH_i18n_GetTimeZoneRules_0100(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetTimeZoneRules_0100(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
@@ -3019,7 +3019,7 @@ static napi_value testOH_i18n_GetTimeZoneRules_0200(napi_env env, napi_callback_
     return nValue;
 }
 
-static napi_value testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRules_0300(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRules_0300(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
@@ -3032,7 +3032,7 @@ static napi_value testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRules_0300(napi_
     return nValue;
 }
 
-static napi_value testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRules_0400(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRules_0400(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
@@ -3045,7 +3045,7 @@ static napi_value testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRules_0400(napi_
     return nValue;
 }
 
-static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
@@ -3058,7 +3058,7 @@ static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500(napi_e
     return nValue;
 }
 
-static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
@@ -3071,7 +3071,7 @@ static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600(napi_e
     return nValue;
 }
 
-static napi_value testOH_i18n_GetStartTimeAt_0700(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetStartTimeAt_0700(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
@@ -3084,7 +3084,7 @@ static napi_value testOH_i18n_GetStartTimeAt_0700(napi_env env, napi_callback_in
     return nValue;
 }
 
-static napi_value testOH_i18n_GetTimeZoneRules_0800(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetTimeZoneRules_0800(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("America/Santiago", &rules);
@@ -3114,7 +3114,7 @@ static napi_value testOH_i18n_GetTimeZoneRules_0800(napi_env env, napi_callback_
     return nValue;
 }
 
-static napi_value testOH_i18n_GetFirstStartFromAnnualTimeZoneRules_0900(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetFirstStartFromAnnualTimeZoneRules_0900(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("America/Santiago", &rules);
@@ -3127,7 +3127,7 @@ static napi_value testOH_i18n_GetFirstStartFromAnnualTimeZoneRules_0900(napi_env
     return nValue;
 }
 
-static napi_value testOH_i18n_GetFinalStartFromAnnualTimeZoneRules_1000(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetFinalStartFromAnnualTimeZoneRules_1000(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("America/Santiago", &rules);
@@ -3140,7 +3140,7 @@ static napi_value testOH_i18n_GetFinalStartFromAnnualTimeZoneRules_1000(napi_env
     return nValue;
 }
 
-static napi_value testOH_i18n_GetNextStartFromAnnualTimeZoneRules_1100(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetNextStartFromAnnualTimeZoneRules_1100(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("America/Santiago", &rules);
@@ -3156,7 +3156,7 @@ static napi_value testOH_i18n_GetNextStartFromAnnualTimeZoneRules_1100(napi_env 
     return nValue;
 }
 
-static napi_value testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("America/Santiago", &rules);
@@ -3172,7 +3172,7 @@ static napi_value testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200(napi_env 
     return nValue;
 }
 
-static napi_value testOH_i18n_GetStartInYear_1300(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetStartInYear_1300(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("America/Santiago", &rules);
