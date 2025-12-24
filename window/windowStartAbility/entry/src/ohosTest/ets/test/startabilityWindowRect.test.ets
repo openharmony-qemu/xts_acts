@@ -19,6 +19,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { StartOptions } from '@kit.AbilityKit';
 import { display } from '@kit.ArkUI';
+import { Driver, ON } from '@kit.TestKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -64,7 +65,7 @@ export default function startabilityWindowRect() {
     let isAutoWindow: string = '';
     let isPCStatus: string = ''
 
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
@@ -72,6 +73,16 @@ export default function startabilityWindowRect() {
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
 
     /**

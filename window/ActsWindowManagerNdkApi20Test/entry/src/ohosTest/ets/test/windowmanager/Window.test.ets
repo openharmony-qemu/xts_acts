@@ -90,6 +90,16 @@ export default function WindowTest() {
       await ClickButtonDriver();
       await sleep(200);
       await Utils.pushPageNoClear("Window/Window", done);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
 
     beforeEach(async () => {

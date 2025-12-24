@@ -111,7 +111,16 @@ export default function windowPropertiesTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             console.info(`beforeAll isPCStatus: `+ isPCStatus);
-
+            try {
+              let driver = Driver.create();
+              let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+              console.log('findComponent allowed: ' + JSON.stringify(allowed));
+              if(allowed){
+                await allowed.click();
+              }
+            } catch (err) {
+              console.error('findComponent allowed failed: ' + JSON.stringify(err));
+            }
 
         })
         beforeEach(() => {
