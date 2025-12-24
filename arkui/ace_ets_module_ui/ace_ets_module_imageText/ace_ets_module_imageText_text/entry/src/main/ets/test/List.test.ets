@@ -103,6 +103,7 @@ import customKeyboardTextInputTest from './CustomKeyboardTest/textInput.test';
 import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctuation.test';
 import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
+import TextFontWeightTest from './TextTest/TextFontWeightTest.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -196,4 +197,5 @@ export default function testsuite() {
   TextCompressLeadingPunctuation();
   TextCompressLeadingPunctuationModifier();
   TextMenuItemIdTest();
+  TextFontWeightTest();
 }

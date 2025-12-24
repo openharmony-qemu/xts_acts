@@ -91,6 +91,7 @@
         "MainAbility/pages/CustomKeyboard/textArea",
         "MainAbility/pages/CustomKeyboard/textInput",
         "MainAbility/pages/Text/TextCompressLeadingPunctuation",
-        "MainAbility/pages/Text/TextCompressLeadingPunctuationModifier"
+        "MainAbility/pages/Text/TextCompressLeadingPunctuationModifier",
+        "MainAbility/pages/Text/TextFontWeightTest"
     ]
 }
