@@ -57,17 +57,17 @@ export default function ChipFontScale() {
     it('ChipFontScale_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ChipFontScale_001] START');
       await CommonFunc.sleep(1000);
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChipFontScale'));
-      await button1.click();
+      let result: ESObject = getInspectorTree();
+      let chip1: ESObject = result.$children[0].$children[0].$children[0].$children[0].$attrs;
+      let chip2: ESObject = result.$children[0].$children[1].$children[0].$children[0].$attrs;
+      let chip3: ESObject = result.$children[0].$children[2].$children[0].$children[0].$attrs;
       await CommonFunc.sleep(2000);
-      let test1 = AppStorage.get<number>('chip1_minFontScale');
-      let test2 = AppStorage.get<number>('chip1_maxFontScale');
-      let test3 = AppStorage.get<number>('chip2_minFontScale');
-      let test4 = AppStorage.get<number>('chip2_maxFontScale');
-      let test5 = AppStorage.get<number>('chip3_minFontScale');
-      let test6 = AppStorage.get<number>('chip3_maxFontScale');
+      let test1 = Number.parseFloat(chip1.minFontScale);
+      let test2 = Number.parseFloat(chip1.maxFontScale);
+      let test3 = Number.parseFloat(chip2.minFontScale);
+      let test4 = Number.parseFloat(chip2.maxFontScale);
+      let test5 = Number.parseFloat(chip3.minFontScale);
+      let test6 = Number.parseFloat(chip3.maxFontScale);
       console.log("ChipFontScale_001 test1:", test1," test2: ", test2, " test3: ", test3, " test4: ", test4, " test5: ", test5, " test6: ", test6 )
       expect(test1).assertEqual(0);
       expect(test2).assertEqual(1);
@@ -75,12 +75,6 @@ export default function ChipFontScale() {
       expect(test4).assertEqual(2);
       expect(test5).assertEqual(0);
       expect(test6).assertEqual(1);
-      AppStorage.delete('chip1_minFontScale');
-      AppStorage.delete('chip1_maxFontScale');
-      AppStorage.delete('chip2_minFontScale');
-      AppStorage.delete('chip2_maxFontScale');
-      AppStorage.delete('chip3_minFontScale');
-      AppStorage.delete('chip3_maxFontScale');
       console.info('[ChipFontScale_001] END');
       done();
     });

@@ -57,15 +57,12 @@ export default function ChipCloseOptions() {
     it('ChipCloseOptions_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ChipCloseOptions_001] START');
       await CommonFunc.sleep(1000);
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChipCloseOptions'));
-      await button1.click();
+      let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let chip0CloseOptionsFontSize: string = 
+        result.$children[0].$children[0].$children[0].$children[1].$children[0].$attrs.fontSize;
       await CommonFunc.sleep(2000);
-      let test1 = AppStorage.get<string>('chip0CloseOptionsFontSize')
-      console.log("ChipCloseOptions_001 test1 ", test1)
-      expect(test1).assertEqual('35.00px');
-      AppStorage.delete('chip0CloseOptionsFontSize');
+      console.log("ChipCloseOptions_001 chip0CloseOptionsFontSize ", chip0CloseOptionsFontSize)
+      expect(chip0CloseOptionsFontSize).assertEqual('35.00px');
       console.info('[ChipCloseOptions_001] END');
       done();
     });

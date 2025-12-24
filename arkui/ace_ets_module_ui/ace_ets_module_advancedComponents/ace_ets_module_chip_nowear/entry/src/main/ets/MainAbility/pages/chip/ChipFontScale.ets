@@ -42,19 +42,7 @@ struct ChipFontScale {
         maxFontScale: 0,
       })
 
-      Button('get')
-        .id('getChipFontScale').onClick(() => {
-        let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-        let chip1: ESObject = result.$children[0].$children[0].$children[0].$children[0].$attrs;
-        AppStorage.setOrCreate<number>('chip1_minFontScale', Number.parseFloat(chip1.minFontScale))
-        AppStorage.setOrCreate<number>('chip1_maxFontScale', Number.parseFloat(chip1.maxFontScale))
-        let chip2: ESObject = result.$children[0].$children[1].$children[0].$children[0].$attrs;
-        AppStorage.setOrCreate<number>('chip2_minFontScale', Number.parseFloat(chip2.minFontScale))
-        AppStorage.setOrCreate<number>('chip2_maxFontScale', Number.parseFloat(chip2.maxFontScale))
-        let chip3: ESObject = result.$children[0].$children[2].$children[0].$children[0].$attrs;
-        AppStorage.setOrCreate<number>('chip3_minFontScale', Number.parseFloat(chip3.minFontScale))
-        AppStorage.setOrCreate<number>('chip3_maxFontScale', Number.parseFloat(chip3.maxFontScale))
-      })
+
     }
     .height('90%')
     .margin({

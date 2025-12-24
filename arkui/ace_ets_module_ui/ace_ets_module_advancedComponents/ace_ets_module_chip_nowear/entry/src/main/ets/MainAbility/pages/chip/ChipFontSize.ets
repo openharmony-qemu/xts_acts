@@ -52,20 +52,6 @@ struct ChipFontSize {
         },
         fontSize: $r('sys.float.chip_small_font_size')
       })
-      Button('get')
-        .id('getChipFontSize').onClick(() =>{
-        let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-        let chip1FontSize:string  = result.$children[0].$children[0].$children[0].$children[0].$attrs.fontSize;
-        AppStorage.setOrCreate<string>('chip1FontSize', chip1FontSize)
-        let chip2FontSize:string  = result.$children[0].$children[1].$children[0].$children[0].$attrs.fontSize;
-        AppStorage.setOrCreate<string>('chip2FontSize', chip2FontSize)
-        let chip3FontSize:string  = result.$children[0].$children[2].$children[0].$children[0].$attrs.fontSize;
-        AppStorage.setOrCreate<string>('chip3FontSize', chip3FontSize)
-        let chip4FontSize:string  = result.$children[0].$children[3].$children[0].$children[0].$attrs.fontSize;
-        AppStorage.setOrCreate<string>('chip4FontSize', chip4FontSize)
-        let chip5FontSize:string  = result.$children[0].$children[4].$children[0].$children[0].$attrs.fontSize;
-        AppStorage.setOrCreate<string>('chip5FontSize', chip5FontSize)
-      })
     }
     .height('90%')
     .margin({top: '2%', bottom: '2%', left: '5%', right: '5%'})

@@ -57,25 +57,17 @@ export default function ChipFontSize() {
     it('ChipFontSize_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ChipFontSize_001] START');
       await CommonFunc.sleep(1000);
-      let driver = await Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChipFontSize'));
-      await button1.click();
+      let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let test1:string  = result.$children[0].$children[0].$children[0].$children[0].$attrs.fontSize;
+      let test2:string  = result.$children[0].$children[1].$children[0].$children[0].$attrs.fontSize;
+      let test3:string  = result.$children[0].$children[2].$children[0].$children[0].$attrs.fontSize;
+      let test4:string  = result.$children[0].$children[3].$children[0].$children[0].$attrs.fontSize;
+      let test5:string  = result.$children[0].$children[4].$children[0].$children[0].$attrs.fontSize;
       await CommonFunc.sleep(2000);
-      let test1 = AppStorage.get<string>('chip1FontSize');
-      let test2 = AppStorage.get<string>('chip2FontSize');
-      let test3 = AppStorage.get<string>('chip3FontSize');
-      let test4 = AppStorage.get<string>('chip4FontSize');
-      let test5 = AppStorage.get<string>('chip5FontSize');
       console.log("ChipFontSize_001 test1:", test1," test2: ", test2, " test3: ", test3, " test4: ", test4, " test5: ", test5 )
       expect(test1).assertEqual('10.00px');
       expect(test2).assertEqual(test4);
       expect(test3).assertEqual(test5);
-      AppStorage.delete('chip1FontSize');
-      AppStorage.delete('chip2FontSize');
-      AppStorage.delete('chip3FontSize');
-      AppStorage.delete('chip4FontSize');
-      AppStorage.delete('chip5FontSize');
       console.info('[ChipFontSize_001] END');
       done();
     });

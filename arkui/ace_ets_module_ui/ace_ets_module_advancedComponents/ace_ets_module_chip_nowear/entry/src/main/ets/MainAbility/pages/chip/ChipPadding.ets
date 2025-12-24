@@ -34,15 +34,6 @@ struct ChipPadding {
         padding: this.testPadding
       })
 
-      Button('get')
-        .id('getChipPadding').onClick(() => {
-        let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-        let chip0Padding: ESObject = JSON.parse(result.$children[0].$children[0].$children[0].$attrs.padding);
-        AppStorage.setOrCreate<string>('chip0_padding_top', chip0Padding.top)
-        AppStorage.setOrCreate<string>('chip0_padding_bottom', chip0Padding.bottom)
-        AppStorage.setOrCreate<string>('chip0_padding_left', chip0Padding.left)
-        AppStorage.setOrCreate<string>('chip0_padding_right', chip0Padding.right)
-      })
     }
     .height('90%')
     .margin({

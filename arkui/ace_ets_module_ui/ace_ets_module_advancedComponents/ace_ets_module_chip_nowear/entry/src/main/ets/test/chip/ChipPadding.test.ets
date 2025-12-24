@@ -57,24 +57,18 @@ export default function ChipPadding() {
     it('ChipPadding_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ChipPadding_001] START');
       await CommonFunc.sleep(1000);
-      let driver = await Driver.create()
+      let result: ESObject = getInspectorTree();
+      let chip0Padding: ESObject = JSON.parse(result.$children[0].$children[0].$children[0].$attrs.padding);
       await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('getChipPadding'));
-      await button1.click();
-      await CommonFunc.sleep(2000);
-      let test1 = AppStorage.get<string>('chip0_padding_top');
-      let test2 = AppStorage.get<string>('chip0_padding_bottom');
-      let test3 = AppStorage.get<string>('chip0_padding_left');
-      let test4 = AppStorage.get<string>('chip0_padding_right');
+      let test1 = chip0Padding.top;
+      let test2 = chip0Padding.bottom;
+      let test3 = chip0Padding.left;
+      let test4 = chip0Padding.right;
       console.log("ChipPadding_001 test1:", test1," test2: ", test2, " test3: ", test3, " test4: ", test4 )
       expect(test1).assertEqual('20.00px');
       expect(test2).assertEqual('30.00px');
       expect(test3).assertEqual('20.00px');
       expect(test4).assertEqual('30.00px');
-      AppStorage.delete('chip0_padding_top');
-      AppStorage.delete('chip0_padding_bottom');
-      AppStorage.delete('chip0_padding_left');
-      AppStorage.delete('chip0_padding_right');
       console.info('[ChipPadding_001] END');
       done();
     });
