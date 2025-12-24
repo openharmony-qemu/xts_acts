@@ -131,14 +131,6 @@ static napi_value OHCertManagerNativeApiPrivateFunc0100(napi_env env, napi_callb
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-    
-    if (valuetype0 != napi_string) {
-        napi_throw_type_error(env, nullptr, "value type error");
-        return nullptr;
-    }
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
@@ -179,14 +171,6 @@ static napi_value OHCertManagerNativeApiPrivateErr0100(napi_env env, napi_callba
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-    
-    if (valuetype0 != napi_string) {
-        napi_throw_type_error(env, nullptr, "value type error");
-        return nullptr;
-    }
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
@@ -227,14 +211,6 @@ static napi_value OHCertManagerNativeApiPrivateErr0200(napi_env env, napi_callba
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-    
-    if (valuetype0 != napi_string) {
-        napi_throw_type_error(env, nullptr, "参数必须是字符串类型");
-        return nullptr;
-    }
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
@@ -275,9 +251,6 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
@@ -318,9 +291,6 @@ static napi_value OHCertManagerNativeApiPublicErr0200(napi_env env, napi_callbac
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
@@ -361,9 +331,6 @@ static napi_value OHCertManagerNativeApiPublicErr0300(napi_env env, napi_callbac
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {

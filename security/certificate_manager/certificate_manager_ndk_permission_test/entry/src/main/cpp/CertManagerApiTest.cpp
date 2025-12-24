@@ -92,14 +92,6 @@ static napi_value OHCertManagerNativeApiPrivatePermission0100(napi_env env, napi
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-    
-    if (valuetype0 != napi_string) {
-        napi_throw_type_error(env, nullptr, "value type error");
-        return nullptr;
-    }
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
@@ -140,9 +132,6 @@ static napi_value OHCertManagerNativeApiPublicPermission0100(napi_env env, napi_
     napi_value args[2] = {nullptr};
 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
     
     size_t str_length;
     if (str_length >= SIZE_MAX) {
