@@ -2506,7 +2506,7 @@ export default function windowTitleBarTest() {
           expect(error.code).assertEqual(1300002)
         }
         
-        if (windowStageStart != undefined) {
+        if (isFreeWindowMode == true) {
           await terminateAbility(caseName);
         } 
         done();
