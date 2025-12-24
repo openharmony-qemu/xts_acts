@@ -757,6 +757,21 @@ static napi_value DestroyChildProcessConfigsNullptr(napi_env env, napi_callback_
     return napiRet;
 }
 
+static napi_value KillChildProcessWithPid(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t pid;
+    napi_get_value_int32(env, args[0], &pid);
+    Ability_NativeChildProcess_ErrCode ret = OH_Ability_KillChildProcess(pid);
+    if (ret != NCP_NO_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "KillChildProcess failed, errCode=%{public}d, pid=%{public}d ", ret, pid);
+    }
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -814,6 +829,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "DestroyChildProcessConfigs", nullptr, DestroyChildProcessConfigs,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "DestroyChildProcessConfigsNullptr", nullptr, DestroyChildProcessConfigsNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "KillChildProcessWithPid", nullptr, KillChildProcessWithPid,
             nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
