@@ -171,3 +171,118 @@ static napi_value OHPrintStartPrintByNative(napi_env env, napi_callback_info inf
     napi_create_int32(env, static_cast<int32_t>(errorCode), &result);
     return result;
 }
+
+static napi_value CreateEnumType()
+{
+    Print_ErrorCode errorCode;
+    errorCode = Print_ErrorCode::PRINT_ERROR_NONE;
+    errorCode = Print_ErrorCode::PRINT_ERROR_NO_PERMISSION;
+    errorCode = Print_ErrorCode::PRINT_ERROR_INVALID_PARAMETER;
+    errorCode = Print_ErrorCode::PRINT_ERROR_GENERIC_FAILURE;
+    errorCode = Print_ErrorCode::PRINT_ERROR_RPC_FAILURE;
+    errorCode = Print_ErrorCode::PRINT_ERROR_SERVER_FAILURE;
+    errorCode = Print_ErrorCode::PRINT_ERROR_INVALID_EXTENSION;
+    errorCode = Print_ErrorCode::PRINT_ERROR_INVALID_PRINTER;
+    errorCode = Print_ErrorCode::PRINT_ERROR_INVALID_PRINT_JOB;
+    errorCode = Print_ErrorCode::PRINT_ERROR_FILE_IO;
+    errorCode = Print_ErrorCode::PRINT_ERROR_UNKNOWN;
+    
+    Print_PrinterState printerState;
+    printerState = Print_PrinterState::PRINTER_IDLE;
+    printerState = Print_PrinterState::PRINTER_BUSY;
+    printerState = Print_PrinterState::PRINTER_UNAVAILABLE;
+    
+    Print_DiscoveryEvent discoveryEvent;
+    discoveryEvent = Print_DiscoveryEvent::PRINTER_DISCOVERED;
+    discoveryEvent = Print_DiscoveryEvent::PRINTER_LOST;
+    discoveryEvent = Print_DiscoveryEvent::PRINTER_CONNECTING;
+    discoveryEvent = Print_DiscoveryEvent::PRINTER_CONNECTED;
+    
+    Print_PrinterEvent printerEvent;
+    printerEvent = Print_PrinterEvent::PRINTER_ADDED;
+    printerEvent = Print_PrinterEvent::PRINTER_DELETED;
+    printerEvent = Print_PrinterEvent::PRINTER_STATE_CHANGED;
+    printerEvent = Print_PrinterEvent::PRINTER_INFO_CHANGED;
+    
+    Print_DuplexMode duplexMode;
+    duplexMode = Print_DuplexMode::DUPLEX_MODE_ONE_SIDED;
+    duplexMode = Print_DuplexMode::DUPLEX_MODE_TWO_SIDED_LONG_EDGE;
+    duplexMode = Print_DuplexMode::DUPLEX_MODE_TWO_SIDED_SHORT_EDGE;
+    
+    Print_ColorMode colorMode;
+    colorMode = Print_ColorMode::COLOR_MODE_MONOCHROME;
+    colorMode = Print_ColorMode::COLOR_MODE_COLOR;
+    colorMode = Print_ColorMode::COLOR_MODE_AUTO;
+    
+    Print_OrientationMode orientationMode;
+    orientationMode = Print_OrientationMode::ORIENTATION_MODE_PORTRAIT;
+    orientationMode = Print_OrientationMode::ORIENTATION_MODE_LANDSCAPE;
+    orientationMode = Print_OrientationMode::ORIENTATION_MODE_REVERSE_LANDSCAPE;
+    orientationMode = Print_OrientationMode::ORIENTATION_MODE_REVERSE_PORTRAIT;
+    orientationMode = Print_OrientationMode::ORIENTATION_MODE_NONE;
+    
+    Print_Quality quality;
+    quality = Print_Quality::PRINT_QUALITY_DRAFT;
+    quality = Print_Quality::PRINT_QUALITY_NORMAL;
+    quality = Print_Quality::PRINT_QUALITY_HIGH;
+    
+    Print_DocumentFormat documentFormat;
+    documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
+    documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_JPEG;
+    documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_PDF;
+    documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_POSTSCRIPT;
+    documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_TEXT;
+    
+    Print_JobDocAdapterState jobDocAdapterState;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_SUCCEED;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_FAIL;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_CANCEL;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_BLOCK;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY_FOR_CANCELED;
+    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY_FOR_STARTED;
+}
+
+static napi_value CreateStruct()
+{
+    auto printerInfo = new Print_PrinterInfo;
+    memset(printerInfo, 0, sizeof(Print_PrinterInfo));
+    printerInfo->printerState = Print_PrinterState::PRINTER_IDLE;
+    Print_PrinterCapability capability;
+    printerInfo->capability = capability;
+    Print_DefaultValue defaultValue;
+    printerInfo->defaultValue = defaultValue;
+    printerInfo->isDefaultPrinter = false;
+    printerInfo->printerId = "1";
+    printerInfo->printerName = "1";
+    printerInfo->description = "1";
+    printerInfo->location = "1";
+    printerInfo->makeAndModel = "1";
+    printerInfo->printerUri = "1";
+    printerInfo->detailInfo = "1";
+    
+    auto printJob = new Print_PrintJob;
+    memset(printJob, 0, sizeof(Print_PrintJob));
+    printJob->jobName = "1";
+    uint32_t fdList[] = {1, 2};
+    printJob->fdList = fdList;
+    printJob->fdListCount = 1;
+    printJob->printerId = "1";
+    printJob->copyNumber = 1;
+    printJob->paperSource = "1";
+    printJob->mediaType = "1";
+    printJob->pageSizeId = "1";
+    printJob->colorMode = Print_ColorMode::COLOR_MODE_MONOCHROME;
+    printJob->duplexMode = Print_DuplexMode::DUPLEX_MODE_ONE_SIDED;
+    Print_Resolution resolution;
+    resolution.horizontalDpi = 1;
+    printJob->resolution = resolution;
+    Print_Margin margin;
+    margin.leftMargin = 1;
+    printJob->printMargin = margin;
+    printJob->borderless = false;
+    printJob->orientationMode = Print_OrientationMode::ORIENTATION_MODE_PORTRAIT;
+    printJob->printQuality = Print_Quality::PRINT_QUALITY_DRAFT;
+    printJob->documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
+    printJob->advancedOptions = "1";
+}
