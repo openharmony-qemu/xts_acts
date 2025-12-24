@@ -1831,5 +1831,1671 @@ export default function EsDataViewTest(){
       expect(sample.getInt32(4, false)).assertEqual(0);
       console.info(`${caseName}, test end`);
     });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0056
+     * @tc.name ESDataViewTest0056
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0056';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 39);
+      sample.setUint8(1, 2);
+      sample.setUint8(2, 6);
+      sample.setUint8(3, 2);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 0);
+      sample.setUint8(6, 128);
+      sample.setUint8(7, 1);
+      sample.setUint8(8, 127);
+      sample.setUint8(9, 0);
+      sample.setUint8(10, 127);
+      sample.setUint8(11, 1);
+      sample = new DataView(buffer, 4);
+      expect(sample.getInt32(0, false)).assertEqual(-2147450879);
+      expect(sample.getInt32(1, false)).assertEqual(8388991);
+      expect(sample.getInt32(2, false)).assertEqual(-2147385600);
+      expect(sample.getInt32(3, false)).assertEqual(25100415);
+      expect(sample.getInt32(0, true)).assertEqual(25165952);
+      expect(sample.getInt32(1, true)).assertEqual(2130804736);
+      expect(sample.getInt32(2, true)).assertEqual(8323456);
+      expect(sample.getInt32(3, true)).assertEqual(2130738945);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0057
+     * @tc.name ESDataViewTest0057
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0057';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 255);
+      sample.setUint8(3, 255);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 0);
+      sample.setUint8(6, 0);
+      sample.setUint8(7, 0);
+      sample.setUint8(8, 1);
+      sample.setUint8(9, 0);
+      sample.setUint8(10, 0);
+      sample.setUint8(11, 0);
+      expect(sample.getInt32(0, false)).assertEqual(2147483647);
+      expect(sample.getInt32(1, false)).assertEqual(-128);
+      expect(sample.getInt32(2, false)).assertEqual(-32768);
+      expect(sample.getInt32(3, false)).assertEqual(-8388608);
+      expect(sample.getInt32(4, false)).assertEqual(-2147483648);
+      expect(sample.getInt32(5, false)).assertEqual(1);
+      expect(sample.getInt32(6, false)).assertEqual(256);
+      expect(sample.getInt32(7, false)).assertEqual(65536);
+      expect(sample.getInt32(8, false)).assertEqual(16777216);
+      expect(sample.getInt32(0, true)).assertEqual(-129);
+      expect(sample.getInt32(1, true)).assertEqual(-2130706433);
+      expect(sample.getInt32(2, true)).assertEqual(8454143);
+      expect(sample.getInt32(3, true)).assertEqual(33023);
+      expect(sample.getInt32(4, true)).assertEqual(128);
+      expect(sample.getInt32(5, true)).assertEqual(16777216);
+      expect(sample.getInt32(6, true)).assertEqual(65536);
+      expect(sample.getInt32(7, true)).assertEqual(256);
+      expect(sample.getInt32(8, true)).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0058
+     * @tc.name ESDataViewTest0058
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0058';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 0);
+      sample.setUint8(1, 17);
+      sample.setUint8(2, 4);
+      sample.setUint8(3, 0);
+      expect(sample.getInt32(0)).assertEqual(1115136);
+      expect(sample.getInt32(0, undefined)).assertEqual(1115136);
+      expect(sample.getInt32(0, false)).assertEqual(1115136);
+      expect(sample.getInt32(0, true)).assertEqual(266496);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0059
+     * @tc.name ESDataViewTest0059
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0059';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 255);
+      sample.setUint8(3, 255);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 255);
+      sample.setUint8(6, 255);
+      sample.setUint8(7, 255);
+      expect(sample.getInt32(-0)).assertEqual(2147483647);
+      expect(sample.getInt32(0)).assertEqual(2147483647);
+      expect(sample.getInt32(1)).assertEqual(-128);
+      expect(sample.getInt32(2)).assertEqual(-32513);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0060
+     * @tc.name ESDataViewTest0060
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0060';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      let expectError = (sample: DataView, offset: int, msg: string): void =>{
+        let threw = false;
+        try {
+          sample.getInt8(offset)
+          expect(false).assertEqual(true);
+        } catch (err) {
+          if (err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      expectError(sample, 13, "13 + 1 > 12");
+      expectError(sample, 12, "12 + 1 > 12");
+      expect(sample.getInt8(11)).assertEqual(0);
+      sample = new DataView(buffer, 11);
+      expectError(sample, 1, "1 + 1 > 1 (offset)");
+      sample = new DataView(buffer, 0, 1);
+      expectError(sample, 1, "1 + 1 > 1 (length)");
+      sample = new DataView(buffer, 4, 1);
+      expectError(sample, 1, "1 + 1 > 1 (offset+length)");
+      sample = new DataView(buffer, 4, 0);
+      expectError(sample, 0, "0 + 1 > 0 (offset+length)");
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0061
+     * @tc.name ESDataViewTest0061
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0061';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try {
+        sample.getInt8(-1);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0062
+     * @tc.name ESDataViewTest0062
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0062';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      expect(sample.getInt8(0)).assertEqual(0);
+      expect(sample.getInt8(1)).assertEqual(0);
+      expect(sample.getInt8(2)).assertEqual(0);
+      expect(sample.getInt8(3)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0063
+     * @tc.name ESDataViewTest0063
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0063';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 7);
+      sample.setUint8(1, 7);
+      sample.setUint8(2, 7);
+      sample.setUint8(3, 7);
+      sample.setUint8(4, 1);
+      sample.setUint8(5, 127);
+      sample.setUint8(6, 128);
+      sample.setUint8(7, 255);
+      sample = new DataView(buffer, 4);
+      expect(sample.getInt8(0)).assertEqual(1);
+      expect(sample.getInt8(1)).assertEqual(127);
+      expect(sample.getInt8(2)).assertEqual(-128);
+      expect(sample.getInt8(3)).assertEqual(-1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0064
+     * @tc.name ESDataViewTest0064
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0064';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 0);
+      sample.setUint8(3, 1);
+      expect(sample.getInt8(0)).assertEqual(127);
+      expect(sample.getInt8(1)).assertEqual(-1);
+      expect(sample.getInt8(2)).assertEqual(0);
+      expect(sample.getInt8(3)).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0065
+     * @tc.name ESDataViewTest0065
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0065';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 39);
+      sample.setUint8(1, 42);
+      sample.setUint8(2, 7);
+      sample.setUint8(3, 77);
+      expect(sample.getInt8(-0)).assertEqual(39);
+      expect(sample.getInt8(0)).assertEqual(39);
+      expect(sample.getInt8(1)).assertEqual(42);
+      expect(sample.getInt8(2)).assertEqual(7);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0066
+     * @tc.name ESDataViewTest0066
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0066';
+      console.info(`${caseName}, test start`);
+      let expectError = (sample: DataView, offset: int, msg: string): void =>{
+        let threw = false;
+        try {
+          sample.getUint16(offset);
+          expect(false).assertEqual(true);
+        } catch (err){
+          if(err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      expectError(sample, 13, "13 + 2 > 12");
+      expectError(sample, 11, "11 + 2 > 12");
+      expect(sample.getUint16(10)).assertEqual(0);
+      sample = new DataView(buffer, 10);
+      expectError(sample, 1, "1 + 2 > 2 (offset)");
+      sample = new DataView(buffer, 11);
+      expectError(sample, 0, "0 + 2 > 1 (offset)");
+      sample = new DataView(buffer, 0, 2);
+      expectError(sample, 1, "1 + 2 > 2 (length)");
+      sample = new DataView(buffer, 0, 1);
+      expectError(sample, 0, "0 + 2 > 1 (length)");
+      sample = new DataView(buffer, 4, 2);
+      expectError(sample, 1, "1 + 2 > 2 (offset+length)");
+      sample = new DataView(buffer, 4, 1);
+      expectError(sample, 0, "0 + 2 > 1 (offset+length)");
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0067
+     * @tc.name ESDataViewTest0067
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0067';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.getUint16(-1);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0068
+     * @tc.name ESDataViewTest0068
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0068';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(6);
+      let sample = new DataView(buffer, 0);
+      expect(sample.getUint16(0, true)).assertEqual(0);
+      expect(sample.getUint16(1, true)).assertEqual(0);
+      expect(sample.getUint16(2, true)).assertEqual(0);
+      expect(sample.getUint16(3, true)).assertEqual(0);
+      expect(sample.getUint16(4, true)).assertEqual(0);
+      expect(sample.getUint16(0, false)).assertEqual(0);
+      expect(sample.getUint16(1, false)).assertEqual(0);
+      expect(sample.getUint16(2, false)).assertEqual(0);
+      expect(sample.getUint16(3, false)).assertEqual(0);
+      expect(sample.getUint16(4, false)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0069
+     * @tc.name ESDataViewTest0069
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0069';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 0);
+      sample.setUint8(1, 2);
+      sample.setUint8(2, 6);
+      sample.setUint8(3, 2);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 42);
+      sample.setUint8(6, 128);
+      sample.setUint8(7, 39);
+      sample = new DataView(buffer, 4);
+      expect(sample.getUint16(0, false)).assertEqual(32810);
+      expect(sample.getUint16(1, false)).assertEqual(10880);
+      expect(sample.getUint16(2, false)).assertEqual(32807);
+      expect(sample.getUint16(0, true)).assertEqual(10880);
+      expect(sample.getUint16(1, true)).assertEqual(32810);
+      expect(sample.getUint16(2, true)).assertEqual(10112);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0070
+     * @tc.name ESDataViewTest0070
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0070';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 255);
+      sample.setUint8(3, 255);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 0);
+      sample.setUint8(6, 1);
+      sample.setUint8(7, 0);
+      expect(sample.getUint16(0, false)).assertEqual(32767);
+      expect(sample.getUint16(1, false)).assertEqual(65535);
+      expect(sample.getUint16(2, false)).assertEqual(65535);
+      expect(sample.getUint16(3, false)).assertEqual(65408);
+      expect(sample.getUint16(4, false)).assertEqual(32768);
+      expect(sample.getUint16(5, false)).assertEqual(1);
+      expect(sample.getUint16(6, false)).assertEqual(256);
+      expect(sample.getUint16(0, true)).assertEqual(65407);
+      expect(sample.getUint16(1, true)).assertEqual(65535);
+      expect(sample.getUint16(2, true)).assertEqual(65535);
+      expect(sample.getUint16(3, true)).assertEqual(33023);
+      expect(sample.getUint16(4, true)).assertEqual(128);
+      expect(sample.getUint16(5, true)).assertEqual(256);
+      expect(sample.getUint16(6, true)).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0071
+     * @tc.name ESDataViewTest0071
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0071';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(2);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 0);
+      sample.setUint8(1, 42);
+      expect(sample.getUint16(0)).assertEqual(42);
+      expect(sample.getUint16(0, undefined)).assertEqual(42);
+      expect(sample.getUint16(0, false)).assertEqual(42);
+      expect(sample.getUint16(0, true)).assertEqual(10752);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0072
+     * @tc.name ESDataViewTest0072
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0072';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 1);
+      sample.setUint8(3, 127);
+      sample.setUint8(4, 255);
+      sample.setUint8(5, 1);
+      expect(sample.getUint16(-0)).assertEqual(32767);
+      expect(sample.getUint16(0)).assertEqual(32767);
+      expect(sample.getUint16(1)).assertEqual(65281);
+      expect(sample.getUint16(2)).assertEqual(383);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0073
+     * @tc.name ESDataViewTest0073
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0073';
+      console.info(`${caseName}, test start`);
+      let expectError = (sample: DataView, offset: int, msg: string): void => {
+        let threw = false;
+        try {
+          sample.getUint32(offset);
+          expect(false).assertEqual(true);
+        } catch (err){
+          if (err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      expectError(sample, 13, "13 + 4 > 12");
+      expectError(sample, 12, "12 + 4 > 12");
+      expectError(sample, 11, "11 + 4 > 12");
+      expectError(sample, 10, "10 + 4 > 12");
+      expectError(sample, 9, "9 + 4 > 12");
+      expect(sample.getUint32(8)).assertEqual(0);
+      sample = new DataView(buffer, 8);
+      expectError(sample, 1, "1 + 4 > 4 (offset)");
+      sample = new DataView(buffer, 9);
+      expectError(sample, 0, "0 + 4 > 3 (offset)");
+      sample = new DataView(buffer, 0, 4);
+      expectError(sample, 1, "1 + 4 > 4 (length)");
+      sample = new DataView(buffer, 0, 3);
+      expectError(sample, 0, "0 + 4 > 3 (length)");
+      sample = new DataView(buffer, 4, 4);
+      expectError(sample, 1, "1 + 4 > 4 (offset+length)");
+      sample = new DataView(buffer, 4, 3);
+      expectError(sample, 0, "0 + 4 > 3 (offset+length)");
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0074
+     * @tc.name ESDataViewTest0074
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0074';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.getUint32(-1);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0075
+     * @tc.name ESDataViewTest0075
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0075';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      expect(sample.getUint32(0, true)).assertEqual(0);
+      expect(sample.getUint32(1, true)).assertEqual(0);
+      expect(sample.getUint32(2, true)).assertEqual(0);
+      expect(sample.getUint32(3, true)).assertEqual(0);
+      expect(sample.getUint32(4, true)).assertEqual(0);
+      expect(sample.getUint32(0, false)).assertEqual(0);
+      expect(sample.getUint32(1, false)).assertEqual(0);
+      expect(sample.getUint32(2, false)).assertEqual(0);
+      expect(sample.getUint32(3, false)).assertEqual(0);
+      expect(sample.getUint32(4, false)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0076
+     * @tc.name ESDataViewTest0076
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0076';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 39);
+      sample.setUint8(1, 2);
+      sample.setUint8(2, 6);
+      sample.setUint8(3, 2);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 0);
+      sample.setUint8(6, 128);
+      sample.setUint8(7, 1);
+      sample.setUint8(8, 127);
+      sample.setUint8(9, 0);
+      sample.setUint8(10, 127);
+      sample.setUint8(11, 1);
+      sample = new DataView(buffer, 4);
+      expect(sample.getUint32(0, false)).assertEqual(2147516417);
+      expect(sample.getUint32(1, false)).assertEqual(8388991);
+      expect(sample.getUint32(2, false)).assertEqual(2147581696);
+      expect(sample.getUint32(3, false)).assertEqual(25100415);
+      expect(sample.getUint32(0, true)).assertEqual(25165952);
+      expect(sample.getUint32(1, true)).assertEqual(2130804736);
+      expect(sample.getUint32(2, true)).assertEqual(8323456);
+      expect(sample.getUint32(3, true)).assertEqual(2130738945);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0077
+     * @tc.name ESDataViewTest0077
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0077';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 255);
+      sample.setUint8(3, 255);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 0);
+      sample.setUint8(6, 0);
+      sample.setUint8(7, 0);
+      sample.setUint8(8, 1);
+      sample.setUint8(9, 0);
+      sample.setUint8(10, 0);
+      sample.setUint8(11, 0);
+      expect(sample.getUint32(0, false)).assertEqual(2147483647);
+      expect(sample.getUint32(1, false)).assertEqual(4294967168);
+      expect(sample.getUint32(2, false)).assertEqual(4294934528);
+      expect(sample.getUint32(3, false)).assertEqual(4286578688);
+      expect(sample.getUint32(4, false)).assertEqual(2147483648);
+      expect(sample.getUint32(5, false)).assertEqual(1);
+      expect(sample.getUint32(6, false)).assertEqual(256);
+      expect(sample.getUint32(7, false)).assertEqual(65536);
+      expect(sample.getUint32(8, false)).assertEqual(16777216);
+      expect(sample.getUint32(0, true)).assertEqual(4294967167);
+      expect(sample.getUint32(1, true)).assertEqual(2164260863);
+      expect(sample.getUint32(2, true)).assertEqual(8454143);
+      expect(sample.getUint32(3, true)).assertEqual(33023);
+      expect(sample.getUint32(4, true)).assertEqual(128);
+      expect(sample.getUint32(5, true)).assertEqual(16777216);
+      expect(sample.getUint32(6, true)).assertEqual(65536);
+      expect(sample.getUint32(7, true)).assertEqual(256);
+      expect(sample.getUint32(8, true)).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0078
+     * @tc.name ESDataViewTest0078
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0078';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 0);
+      sample.setUint8(1, 17);
+      sample.setUint8(2, 4);
+      sample.setUint8(3, 0);
+      expect(sample.getUint32(0)).assertEqual(1115136);
+      expect(sample.getUint32(0, undefined)).assertEqual(1115136);
+      expect(sample.getUint32(0, false)).assertEqual(1115136);
+      expect(sample.getUint32(0, true)).assertEqual(266496);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0079
+     * @tc.name ESDataViewTest0079
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0079';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 255);
+      sample.setUint8(3, 255);
+      sample.setUint8(4, 128);
+      sample.setUint8(5, 255);
+      sample.setUint8(6, 128);
+      expect(sample.getUint32(-0)).assertEqual(2147483647);
+      expect(sample.getUint32(0)).assertEqual(2147483647);
+      expect(sample.getUint32(1)).assertEqual(4294967168);
+      expect(sample.getUint32(2)).assertEqual(4294934783);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0080
+     * @tc.name ESDataViewTest0080
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0080';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      let expectError = (sample: DataView, offset: int, msg: string): void => {
+        let threw = false;
+        try {
+          sample.getUint8(offset)
+          expect(false).assertEqual(true);
+        } catch (err) {
+          if (err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      expectError(sample, 13, "13 + 1 > 12");
+      expectError(sample, 12, "12 + 1 > 12");
+      expect(sample.getUint8(11)).assertEqual(0);
+      sample = new DataView(buffer, 11);
+      expectError(sample, 1, "1 + 1 > 1 (offset)");
+      sample = new DataView(buffer, 0, 1);
+      expectError(sample, 1, "1 + 1 > 1 (length)");
+      sample = new DataView(buffer, 4, 1);
+      expectError(sample, 1, "1 + 1 > 1 (offset+length)");
+      sample = new DataView(buffer, 4, 0);
+      expectError(sample, 0, "0 + 1 > 0 (offset+length)");
+
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0081
+     * @tc.name ESDataViewTest0081
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0081';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.getUint8(-1);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0082
+     * @tc.name ESDataViewTest0082
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0082';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      expect(sample.getUint8(0)).assertEqual(0);
+      expect(sample.getUint8(1)).assertEqual(0);
+      expect(sample.getUint8(2)).assertEqual(0);
+      expect(sample.getUint8(3)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0083
+     * @tc.name ESDataViewTest0083
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0083';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 7);
+      sample.setUint8(1, 7);
+      sample.setUint8(2, 7);
+      sample.setUint8(3, 7);
+      sample.setUint8(4, 1);
+      sample.setUint8(5, 127);
+      sample.setUint8(6, 128);
+      sample.setUint8(7, 255);
+      sample = new DataView(buffer, 4);
+      expect(sample.getUint8(0)).assertEqual(1);
+      expect(sample.getUint8(1)).assertEqual(127);
+      expect(sample.getUint8(2)).assertEqual(128);
+      expect(sample.getUint8(3)).assertEqual(255);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0084
+     * @tc.name ESDataViewTest0084
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0084';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 127);
+      sample.setUint8(1, 255);
+      sample.setUint8(2, 0);
+      sample.setUint8(3, 1);
+      expect(sample.getUint8(0)).assertEqual(127);
+      expect(sample.getUint8(1)).assertEqual(255);
+      expect(sample.getUint8(2)).assertEqual(0);
+      expect(sample.getUint8(3)).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0085
+     * @tc.name ESDataViewTest0085
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0085';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setUint8(0, 39);
+      sample.setUint8(1, 42);
+      sample.setUint8(2, 7);
+      sample.setUint8(3, 77);
+      expect(sample.getUint8(-0)).assertEqual(39);
+      expect(sample.getUint8(0)).assertEqual(39);
+      expect(sample.getUint8(1)).assertEqual(42);
+      expect(sample.getUint8(2)).assertEqual(7);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0086
+     * @tc.name ESDataViewTest0086
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0086';
+      console.info(`${caseName}, test start`);
+      let expectError = (sample: DataView, offset: int, msg: string): void => {
+        let threw = false;
+        try {
+          sample.setBigInt64(offset, 39n);
+          expect(false).assertEqual(true);
+        } catch (err) {
+          if (err instanceof RangeError) threw = true;
+        }
+      expect(threw).assertEqual(true);
+      }
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      expectError(sample, 13, "13 + 8 > 12");
+      expectError(sample, 12, "12 + 8 > 12");
+      expectError(sample, 11, "11 + 8 > 12");
+      expectError(sample, 10, "10 + 8 > 12");
+      expectError(sample, 9, "9 + 8 > 12");
+      expectError(sample, 8, "8 + 8 > 12");
+      expectError(sample, 7, "7 + 8 > 12");
+      expectError(sample, 6, "6 + 8 > 12");
+      expectError(sample, 5, "5 + 8 > 12");
+      sample = new DataView(buffer, 8);
+      expectError(sample, 1, "1 + 8 > 4");
+      sample = new DataView(buffer, 9);
+      expectError(sample, 0, "0 + 8 > 3");
+      sample = new DataView(buffer, 0, 8);
+      expectError(sample, 1, "1 + 8 > 8");
+      sample = new DataView(buffer, 4, 8);
+      expectError(sample, 1, "1 + 8 > 7");
+      sample = new DataView(buffer, 4, 7);
+      expectError(sample, 0, "0 + 8 > 7");
+      sample = new DataView(buffer, 0);
+      expect(sample.getBigInt64(0)).assertEqual(0n);
+      expect(sample.getBigInt64(4)).assertEqual(0n);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0087
+     * @tc.name ESDataViewTest0087
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0087';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.setBigInt64(-1, 39);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      expect(sample.getBigInt64(0)).assertEqual(0n);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0088
+     * @tc.name ESDataViewTest0088
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0088';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setBigInt64(0, 0n - getBI(0x6f80ff08), true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(-0x7ff806f00000001));
+      sample.setBigInt64(0, 0n - getBI(0x7ff8070), true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(-0x6f80ff0700000001));
+      sample.setBigInt64(0, getBI(0x6f80ff08), true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x8ff806f00000000));
+      sample.setBigInt64(0, getBI(0x8ff806f), true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x6f80ff0800000000));
+      sample.setBigInt64(0, getBI(0xf8007f90), true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(-0x6f80ff0800000000));
+      sample.setBigInt64(0, getBI(0x907f00f8), true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(-0x7ff807000000000));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0089
+     * @tc.name ESDataViewTest0089
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0089';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setBigInt64(0, 1n);
+      expect(sample.getBigInt64(0)).assertEqual(1n);
+      sample.setBigInt64(0, 2n, undefined);
+      expect(sample.getBigInt64(0)).assertEqual(2n);
+      sample.setBigInt64(0, 3n, false);
+      expect(sample.getBigInt64(0)).assertEqual(3n);
+      sample.setBigInt64(0, 6n, true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x600000000000000));
+      sample.setBigInt64(0, 7n, true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x700000000000000));
+      sample.setBigInt64(0, 8n, true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x800000000000000));
+      sample.setBigInt64(0, 9n, true);
+      expect(sample.getBigInt64(0)).assertEqual(new BigInt(0x900000000000000));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0090
+     * @tc.name ESDataViewTest0090
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0090';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setBigInt64(0, 0n);
+      sample.setBigInt64(-0, 42n);
+      expect(sample.getBigInt64(0)).assertEqual(42n);
+      sample.setBigInt64(0, 0n);
+      sample.setBigInt64(0, 42n);
+      expect(sample.getBigInt64(0)).assertEqual(42n);
+      sample.setBigInt64(1, 0n);
+      sample.setBigInt64(1, 42n);
+      expect(sample.getBigInt64(1)).assertEqual(42n);
+      sample.setBigInt64(2, 0n);
+      sample.setBigInt64(2, 42n);
+      expect(sample.getBigInt64(2)).assertEqual(42n);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0091
+     * @tc.name ESDataViewTest0091
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0091';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      let expectError = (sample: DataView, offset: int, msg: string): void =>{
+        let threw = false;
+        try {
+          sample.setFloat32(offset, 39);
+          expect(false).assertEqual(true);
+        } catch (err){
+          if(err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      expectError(sample, 13, "13 + 4 > 12");
+      expectError(sample, 11, "11 + 4 > 12");
+      expectError(sample, 9, "9 + 4 > 12");
+      sample = new DataView(buffer, 8);
+      expectError(sample, 1, "1 + 4 > 4");
+      sample = new DataView(buffer, 9);
+      expectError(sample, 0, "0 + 4 > 3");
+      sample = new DataView(buffer, 0, 4);
+      expectError(sample, 1, "1 + 4 > 4");
+      sample = new DataView(buffer, 0, 3);
+      expectError(sample, 0, "0 + 4 > 3");
+      sample = new DataView(buffer, 4, 4);
+      expectError(sample, 1, "1 + 4 > 4");
+      sample = new DataView(buffer, 4, 3);
+      expectError(sample, 0, "0 + 4 > 3");
+      sample = new DataView(buffer, 0);
+      expect(sample.getFloat32(0)).assertEqual(0);
+      expect(sample.getFloat32(4)).assertEqual(0);
+      expect(sample.getFloat32(8)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0092
+     * @tc.name ESDataViewTest0092
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0092';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.setFloat32(-1, 39);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      expect(sample.getFloat32(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0093
+     * @tc.name ESDataViewTest0093
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0093';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setFloat32(0, 42, true);
+      expect(sample.getFloat32(0)).assertEqual(1.4441781973331565e-41);
+      sample.setFloat32(0, 1.4441781973331565e-41, true);
+      expect(sample.getFloat32(0)).assertEqual(42);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0094
+     * @tc.name ESDataViewTest0094
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0094';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(4);
+      let sample = new DataView(buffer, 0);
+      sample.setFloat32(0, 1);
+      expect(sample.getFloat32(0)).assertEqual(1);
+      sample.setFloat32(0, 2, undefined);
+      expect(sample.getFloat32(0)).assertEqual(2);
+      sample.setFloat32(0, 3, false);
+      expect(sample.getFloat32(0)).assertEqual(3);
+      sample.setFloat32(0, 6, true);
+      expect(sample.getFloat32(0)).assertEqual(6.89663052202102e-41);
+      sample.setFloat32(0, 7, true);
+      expect(sample.getFloat32(0)).assertEqual(8.04457422399591e-41);
+      sample.setFloat32(0, 8, true);
+      expect(sample.getFloat32(0)).assertEqual(9.10844001811131e-44);
+      sample.setFloat32(0, 9, true);
+      expect(sample.getFloat32(0)).assertEqual(5.830802910055564e-42);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0095
+     * @tc.name ESDataViewTest0095
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0095';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setFloat32(0, 0);
+      sample.setFloat32(-0, 42);
+      expect(sample.getFloat32(0)).assertEqual(42);
+      sample.setFloat32(0, 0);
+      sample.setFloat32(0, 42);
+      expect(sample.getFloat32(0)).assertEqual(42);
+      sample.setFloat32(1, 0);
+      sample.setFloat32(1, 42);
+      expect(sample.getFloat32(1)).assertEqual(42);
+      sample.setFloat32(2, 0);
+      sample.setFloat32(2, 42);
+      expect(sample.getFloat32(2)).assertEqual(42);
+      sample.setFloat32(2, 42.2);
+      expect(sample.getFloat32(2) >= 42.2 - 0.00001).assertEqual(true);
+      expect(sample.getFloat32(2) <= 42.2 + 0.00001).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0096
+     * @tc.name ESDataViewTest0096
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0096';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      let expectError = (sample: DataView, offset: int, msg: string): void =>{
+        let threw = false;
+        try {
+          sample.setFloat64(offset, 39)
+          expect(false).assertEqual(true);
+        } catch (err) {
+          if (err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      expectError(sample, 13, "13 + 8 > 12");
+      expectError(sample, 9, "9 + 8 > 12");
+      expectError(sample, 5, "5 + 8 > 12");
+      sample = new DataView(buffer, 8);
+      expectError(sample, 1, "1 + 8 > 4 (offset)");
+      sample = new DataView(buffer, 9);
+      expectError(sample, 0, "0 + 8 > 3 (offset)");
+      sample = new DataView(buffer, 0, 8);
+      expectError(sample, 1, "1 + 8 > 8");
+      sample = new DataView(buffer, 0, 7);
+      expectError(sample, 0, "0 + 8 > 7");
+      sample = new DataView(buffer, 4, 8);
+      expectError(sample, 1, "1 + 8 > 7");
+      sample = new DataView(buffer, 4, 7);
+      expectError(sample, 0, "0 + 8 > 7");
+      sample = new DataView(buffer, 0);
+      expect(sample.getFloat64(0)).assertEqual(0);
+      expect(sample.getFloat64(4)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0097
+     * @tc.name ESDataViewTest0097
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0097';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.setFloat64(-1, 39);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      expect(sample.getFloat64(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0098
+     * @tc.name ESDataViewTest0098
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0098';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setFloat64(0, 42, true);
+      expect(sample.getFloat64(0)).assertEqual(8.759e-320);
+      sample.setFloat64(0, 8.759e-320, true);
+      expect(sample.getFloat64(0)).assertEqual(42);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0099
+     * @tc.name ESDataViewTest0099
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0099';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setFloat64(0, 1);
+      expect(sample.getFloat64(0)).assertEqual(1);
+      sample.setFloat64(0, 2, undefined);
+      expect(sample.getFloat64(0)).assertEqual(2);
+      sample.setFloat64(0, 3, false);
+      expect(sample.getFloat64(0)).assertEqual(3);
+      sample.setFloat64(0, 3.067e-320, true);
+      expect(sample.getFloat64(0)).assertEqual(6);
+      sample.setFloat64(0, 3.573e-320, true);
+      expect(sample.getFloat64(0)).assertEqual(7);
+      sample.setFloat64(0, 4.079e-320, true);
+      expect(sample.getFloat64(0)).assertEqual(8);
+      sample.setFloat64(0, 4.332e-320, true);
+      expect(sample.getFloat64(0)).assertEqual(9);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0100
+     * @tc.name ESDataViewTest0100
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0100';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setFloat64(0, 0);
+      sample.setFloat64(-0, 42);
+      expect(sample.getFloat64(0)).assertEqual(42);
+      sample.setFloat64(0, 0);
+      sample.setFloat64(0, 42);
+      expect(sample.getFloat64(0)).assertEqual(42);
+      sample.setFloat64(1, 0);
+      sample.setFloat64(1, 42);
+      expect(sample.getFloat64(1)).assertEqual(42);
+      sample.setFloat64(2, 0);
+      sample.setFloat64(2, 42);
+      expect(sample.getFloat64(2)).assertEqual(42);
+      sample.setFloat64(2, 42.2);
+      expect(sample.getFloat64(2)).assertEqual(42.2);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0101
+     * @tc.name ESDataViewTest0101
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0101';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      let expectError = (sample: DataView, offset: int, msg: string): void =>{
+        let threw = false;
+        try {
+          sample.setInt16(offset, 39);
+          expect(false).assertEqual(true);
+        } catch (err) {
+          if (err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      expectError(sample, 13, "13 + 2 > 12");
+      expectError(sample, 11, "11 + 2 > 12");
+      sample = new DataView(buffer, 10);
+      expectError(sample, 1, "1 + 2 > 2 (offset)");
+      sample = new DataView(buffer, 11);
+      expectError(sample, 0, "0 + 2 > 1 (offset)");
+      sample = new DataView(buffer, 0, 2);
+      expectError(sample, 1, "1 + 2 > 2 (length)");
+      sample = new DataView(buffer, 0, 1);
+      expectError(sample, 0, "0 + 2 > 1 (length)");
+      sample = new DataView(buffer, 4, 2);
+      expectError(sample, 1, "1 + 2 > 2 (offset+length)");
+      sample = new DataView(buffer, 4, 1);
+      expectError(sample, 0, "0 + 2 > 1 (offset+length)");
+      sample = new DataView(buffer, 0);
+      expect(sample.getInt16(0)).assertEqual(0);
+      expect(sample.getInt16(2)).assertEqual(0);
+      expect(sample.getInt16(4)).assertEqual(0);
+      expect(sample.getInt16(6)).assertEqual(0);
+      expect(sample.getInt16(8)).assertEqual(0);
+      expect(sample.getInt16(10)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0102
+     * @tc.name ESDataViewTest0102
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0102';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.setInt16(-1, 39);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      expect(sample.getInt16(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0103
+     * @tc.name ESDataViewTest0103
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0103';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setInt16(0, -1870724872, true);
+      expect(sample.getInt16(0)).assertEqual(-2048);
+      sample.setInt16(0, -134185072, true);
+      expect(sample.getInt16(0)).assertEqual(-28545);
+      sample.setInt16(0, 1870724872, true);
+      expect(sample.getInt16(0)).assertEqual(2303);
+      sample.setInt16(0, 150962287, true);
+      expect(sample.getInt16(0)).assertEqual(28544);
+      sample.setInt16(0, 4160782224, true);
+      expect(sample.getInt16(0)).assertEqual(-28545);
+      sample.setInt16(0, 2424242424, true);
+      expect(sample.getInt16(0)).assertEqual(-2048);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0104
+     * @tc.name ESDataViewTest0104
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0104';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setInt16(0, 1);
+      expect(sample.getInt16(0)).assertEqual(1);
+      sample.setInt16(0, 2, undefined);
+      expect(sample.getInt16(0)).assertEqual(2);
+      sample.setInt16(0, 3, false);
+      expect(sample.getInt16(0)).assertEqual(3);
+      sample.setInt16(0, 1536, true);
+      expect(sample.getInt16(0)).assertEqual(6);
+      sample.setInt16(0, 1792, true);
+      expect(sample.getInt16(0)).assertEqual(7);
+      sample.setInt16(0, 2048, true);
+      expect(sample.getInt16(0)).assertEqual(8);
+      sample.setInt16(0, 2304, true);
+      expect(sample.getInt16(0)).assertEqual(9);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0105
+     * @tc.name ESDataViewTest0105
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0105';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setInt16(0, 0);
+      sample.setInt16(-0, 42);
+      expect(sample.getInt16(0)).assertEqual(42);
+      sample.setInt16(0, 0);
+      sample.setInt16(0, 42);
+      expect(sample.getInt16(0)).assertEqual(42);
+      sample.setInt16(1, 0);
+      sample.setInt16(1, 42);
+      expect(sample.getInt16(1)).assertEqual(42);
+      sample.setInt16(2, 0);
+      sample.setInt16(2, 42);
+      expect(sample.getInt16(2)).assertEqual(42);
+      sample.setInt16(2, 42.2);
+      expect(sample.getInt16(2)).assertEqual(42);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0106
+     * @tc.name ESDataViewTest0106
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0106';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      let expectError = (sample: DataView, offset: int, msg: string): void =>{
+        let threw = false;
+        try {
+          sample.setInt32(offset, 39)
+          expect(false).assertEqual(true);
+        } catch (err) {
+          if (err instanceof RangeError) threw = true;
+        }
+        expect(threw).assertEqual(true);
+      }
+      expectError(sample, 13, "13 + 4 > 12");
+      expectError(sample, 12, "12 + 4 > 12");
+      expectError(sample, 11, "11 + 4 > 12");
+      expectError(sample, 10, "10 + 4 > 12");
+      expectError(sample, 9, "9 + 4 > 12");
+      sample = new DataView(buffer, 8);
+      expectError(sample, 1, "1 + 4 > 4 (offset)");
+      sample = new DataView(buffer, 9);
+      expectError(sample, 0, "0 + 4 > 3 (offset)");
+      sample = new DataView(buffer, 0, 4);
+      expectError(sample, 1, "1 + 4 > 4 (length)");
+      sample = new DataView(buffer, 0, 3);
+      expectError(sample, 0, "0 + 4 > 3 (length)");
+      sample = new DataView(buffer, 4, 4);
+      expectError(sample, 1, "1 + 4 > 4 (offset+length)");
+      sample = new DataView(buffer, 4, 3);
+      expectError(sample, 0, "0 + 4 > 3 (offset+length)");
+      sample = new DataView(buffer, 0);
+      expect(sample.getInt32(0)).assertEqual(0);
+      expect(sample.getInt32(4)).assertEqual(0);
+      expect(sample.getInt32(8)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0107
+     * @tc.name ESDataViewTest0107
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0107';
+      console.info(`${caseName}, test start`);
+      let threw = false;
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      try{
+        sample.setInt32(-1, 39);
+        expect(false).assertEqual(true);
+      } catch (err) {
+        if (err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      expect(sample.getInt32(0)).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0108
+     * @tc.name ESDataViewTest0108
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0108';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setInt32(0, -1870724872, true);
+      expect(sample.getInt32(0)).assertEqual(-134185072);
+      sample.setInt32(0, -134185072, true);
+      expect(sample.getInt32(0)).assertEqual(-1870724872);
+      sample.setInt32(0, 1870724872, true);
+      expect(sample.getInt32(0)).assertEqual(150962287);
+      sample.setInt32(0, 150962287, true);
+      expect(sample.getInt32(0)).assertEqual(1870724872);
+      sample.setInt32(0, 2424242424, true);
+      expect(sample.getInt32(0)).assertEqual(-134185072);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0109
+     * @tc.name ESDataViewTest0109
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0109';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(8);
+      let sample = new DataView(buffer, 0);
+      sample.setInt32(0, 1);
+      expect(sample.getInt32(0)).assertEqual(1);
+      sample.setInt32(0, 2, undefined);
+      expect(sample.getInt32(0)).assertEqual(2);
+      sample.setInt32(0, 3, false);
+      expect(sample.getInt32(0)).assertEqual(3);
+      sample.setInt32(0, 6, true);
+      expect(sample.getInt32(0)).assertEqual(100663296);
+      sample.setInt32(0, 7, true);
+      expect(sample.getInt32(0)).assertEqual(117440512);
+      sample.setInt32(0, 8, true);
+      expect(sample.getInt32(0)).assertEqual(134217728);
+      sample.setInt32(0, 9, true);
+      expect(sample.getInt32(0)).assertEqual(150994944);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_DATAVIEW_0110
+     * @tc.name ESDataViewTest0110
+     * @tc.desc Test ES Builtins-Api in DataView
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESDataViewTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESDataViewTest0110';
+      console.info(`${caseName}, test start`);
+      let buffer = new ArrayBuffer(12);
+      let sample = new DataView(buffer, 0);
+      sample.setInt32(0, 0);
+      sample.setInt32(-0, 42);
+      expect(sample.getInt32(0)).assertEqual(42);
+      sample.setInt32(0, 0);
+      sample.setInt32(0, 42);
+      expect(sample.getInt32(0)).assertEqual(42);
+      sample.setInt32(1, 0);
+      sample.setInt32(1, 42);
+      expect(sample.getInt32(1)).assertEqual(42);
+      sample.setInt32(2, 0);
+      sample.setInt32(2, 42);
+      expect(sample.getInt32(2)).assertEqual(42);
+      sample.setInt32(2, 42.2);
+      expect(sample.getInt32(2)).assertEqual(42);
+      console.info(`${caseName}, test end`);
+    });
+
   })
 }
