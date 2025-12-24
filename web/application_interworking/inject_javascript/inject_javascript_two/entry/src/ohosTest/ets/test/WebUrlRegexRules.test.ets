@@ -182,7 +182,7 @@ export default function WebUrlRegexRules() {
     /**
      * @tc.name   testUrlRegexRules008
      * @tc.number SUB_WEB_URLREGEXRULES_0800
-     * @tc.desc   test ndk jsbridge UrlRegexRules ok
+     * @tc.desc   test UrlRegexRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -199,7 +199,7 @@ export default function WebUrlRegexRules() {
     /**
      * @tc.name   testUrlRegexRules009
      * @tc.number SUB_WEB_URLREGEXRULES_0900
-     * @tc.desc   test ndk NdkAsyncJsBridge UrlRegexRules ok
+     * @tc.desc   test UrlRegexRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -216,7 +216,7 @@ export default function WebUrlRegexRules() {
     /**
      * @tc.name   testUrlRegexRules010
      * @tc.number SUB_WEB_URLREGEXRULES_1000
-     * @tc.desc   test ndk NdkJsBridgeEx UrlRegexRules ok
+     * @tc.desc   test UrlRegexRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -233,7 +233,7 @@ export default function WebUrlRegexRules() {
     /**
      * @tc.name   testUrlRegexRules011
      * @tc.number SUB_WEB_URLREGEXRULES_1100
-     * @tc.desc   test ndk NdkAsyncJsBridgeEx UrlRegexRules ok
+     * @tc.desc   test UrlRegexRules
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

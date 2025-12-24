@@ -233,7 +233,7 @@ struct WebUrlRegexRules {
                   break
                 }
                 case 'testUrlRegexRules004': {
-                  this.matchUrlRegexRulesEmpty = "no match"
+                  this.matchUrlRegexRulesEmpty = 'no match'
                   this.isPageEnd = -1
                   this.controller.loadUrl(URL_BAIDU)
                   await waitForExist(()=>this.isPageEnd, 'testUrlRegexRules004_isPageEnd', 1, 1000)
@@ -242,7 +242,7 @@ struct WebUrlRegexRules {
                   break
                 }
                 case 'testUrlRegexRules005': {
-                  this.matchSecondLevelDomainEmpty = "no match"
+                  this.matchSecondLevelDomainEmpty = 'no match'
                   this.isPageEnd = -1
                   this.controller.loadUrl(URL_BAIDU)
                   await waitForExist(()=>this.isPageEnd, 'testUrlRegexRules005_isPageEnd', 1, 1000)
@@ -251,7 +251,7 @@ struct WebUrlRegexRules {
                   break
                 }
                 case 'testUrlRegexRules006': {
-                  this.matchRuleEmpty = "no match"
+                  this.matchRuleEmpty = 'no match'
                   this.isPageEnd = -1
                   this.controller.loadUrl(URL_BAIDU)
                   await waitForExist(()=>this.isPageEnd, 'testUrlRegexRules006_isPageEnd', 1, 1000)
@@ -260,7 +260,7 @@ struct WebUrlRegexRules {
                   break
                 }
                 case 'testUrlRegexRules007': {
-                  this.matchSecondLevelDomainRuleEmpty = "no match"
+                  this.matchSecondLevelDomainRuleEmpty = 'no match'
                   this.isPageEnd = -1
                   this.controller.loadUrl(URL_BAIDU)
                   await waitForExist(()=>this.isPageEnd, 'testUrlRegexRules007_isPageEnd', 1, 1000)
