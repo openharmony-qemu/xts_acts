@@ -22,6 +22,29 @@
 #define IMAGE_EFFECT_50F 50.f
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define CASE_INDEX_1 1
+#define CASE_INDEX_2 2
+#define OPTION_SET_WIDTH 6
+#define OPTION_SET_HEIGHT 4
+
+OH_PixelmapNative* getPixelMap()
+{
+    uint8_t length = OPTION_SET_WIDTH * OPTION_SET_HEIGHT * 4;
+    uint8_t data[length];
+    size_t dataSize = length;
+    for (int i = 0; i < dataSize; i++) {
+        data[i] = i + 1;
+    }
+    OH_Pixelmap_InitializationOptions *createOpts;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_SET_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_SET_HEIGHT);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
+    OH_PixelmapNative *srcPixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &srcPixelmap);
+    OH_PixelmapInitializationOptions_Release(createOpts);
+    return srcPixelmap;
+}
+
 
 napi_value OHImageEffectStart(napi_env env, napi_callback_info info)
 {
@@ -31,17 +54,22 @@ napi_value OHImageEffectStart(napi_env env, napi_callback_info info)
     value.dataType = ImageEffect_DataType::EFFECT_DATA_TYPE_FLOAT;
     value.dataValue.floatValue = IMAGE_EFFECT_50F;
     ImageEffect_ErrorCode OH_ImageEffect_Start(OH_ImageEffect *imageEffect);
+    ImageEffect_ErrorCode errorCode;
+    OH_PixelmapNative *SetInputpixelmap = getPixelMap();
+    OH_PixelmapNative *SetOutputpixelmap = getPixelMap();
+    errorCode = OH_ImageEffect_SetInputPixelmap(imageEffect, SetInputpixelmap);
+    errorCode = OH_ImageEffect_SetOutputPixelmap(imageEffect, SetOutputpixelmap);
+    
     int32_t index;
-    int32_t code;
     switch (index) {
     case CASE_INDEX_1:
-        code = OH_ImageEffect_Start(imageEffect);
+        errorCode = OH_ImageEffect_Start(imageEffect);
         break;
     default:
         break;
     }
     OH_ImageEffect_Release(imageEffect);
     napi_value ret;
-    napi_create_int32(env, code, &ret);
+    napi_create_int32(env, errorCode, &ret);
     return ret;
 }

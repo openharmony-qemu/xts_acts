@@ -70,6 +70,28 @@ napi_value ImageSourceCreatTest(napi_env env, napi_callback_info info)
     return ret;
 }
 
+napi_value ImageSourceCreatSuccessTest(napi_env env, napi_callback_info info)
+{
+    napi_value thisVar = nullptr;
+    napi_value argValue[SIZE_TWO];
+    size_t argCount = SIZE_TWO;
+    if (napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr) != napi_ok || argCount < 1 ||
+        argValue[0] == nullptr) {
+        return nullptr;
+    }
+    int32_t index;
+    napi_get_value_int32(env, argValue[0], &index);
+    int32_t fdNumber;
+    napi_get_value_int32(env, argValue[1], &fdNumber);
+    struct OhosImageSourceOps options = {.density = 0, .pixelFormat = 0, .size = {.width = 0, .height = 0}};
+    napi_value imageSource = nullptr;
+    int32_t code = OH_ImageSource_CreateFromFd(env, fdNumber, &options, &imageSource);
+    
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 napi_value ImageSourceGetSupportedFormatsTest(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;

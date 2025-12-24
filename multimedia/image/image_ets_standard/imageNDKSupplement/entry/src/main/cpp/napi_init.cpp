@@ -54,6 +54,7 @@
 #include "OHPixelmapNativeCreatePixelmapNativeTest.h"
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
+#include "OHImageNdkFrameworkTest.h"
 
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
@@ -216,6 +217,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
     DESCRIPTOR("ImageReceiverNativeReadLatestImageSuccessTest", ImageReceiverNativeReadLatestImageSuccessTest),
+    DESCRIPTOR("ImagePackerNativeCreateTest", ImagePackerNativeCreateTest),
+    DESCRIPTOR("OHDecodingOptionsCreateTest", OHDecodingOptionsCreateTest),
+    DESCRIPTOR("OH_PixelmapNative_GetImageInfoTest", OH_PixelmapNative_GetImageInfoTest),
+    DESCRIPTOR("OH_PixelmapNative_ConvertAlphaFormatTest", OH_PixelmapNative_ConvertAlphaFormatTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

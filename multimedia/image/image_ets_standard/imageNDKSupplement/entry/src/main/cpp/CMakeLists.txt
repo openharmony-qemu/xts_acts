@@ -42,7 +42,6 @@ add_library(imageEffect SHARED
     OHPixelmapNativeCreatePixelmapNativeTest.cpp
     OHImageEffectErrcodeSuppTest.cpp
     OHPixelMapSupplementTest.cpp
-    ImageSourceTest.cpp
     ImagePixelMapTest.cpp
     ImageEffectSuppTest.cpp
     OHPixelMapGetBytesNumberPerRowTest.cpp
@@ -57,7 +56,8 @@ add_library(imageEffect SHARED
     IRNdkErrCodeSupplementTest.cpp
     ImageResultIRNdkErrCodeTest.cpp
     ImageNdkErrCodeTest.cpp
-    ImageReceiverNativeReadTest.cpp)
+    ImageReceiverNativeReadTest.cpp
+    OHImageNdkFrameworkTest.cpp)
 
 
 find_library(

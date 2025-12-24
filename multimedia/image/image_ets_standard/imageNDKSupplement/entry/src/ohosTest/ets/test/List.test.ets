@@ -50,6 +50,7 @@ import IRNdkErrCode from './OHIRNdkErrCodeTest.test';
 import IRNdkErrCodeSupplementTest from './IRNdkErrCodeSupplement.test';
 import ImageResultIRNdkErrCodeTest from './ImageResultIRNdkErrCodeTest.test';
 import ImageReceiverNativeReadTest from './ImageReceiverNativeReadTest.test';
+import OHImageNdkFrameworkTest from './OHImageNdkFrameworkTest.test';
 
 
 export default function testsuite() {
@@ -91,4 +92,5 @@ export default function testsuite() {
   ImageResultIRNdkErrCodeTest();
   IRNdkErrCode();
   ImageReceiverNativeReadTest();
+  OHImageNdkFrameworkTest();
 }

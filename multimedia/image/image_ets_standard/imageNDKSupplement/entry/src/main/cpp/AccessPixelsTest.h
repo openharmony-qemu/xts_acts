@@ -25,6 +25,7 @@ napi_value TestUnAccessPixels(napi_env env, napi_callback_info info);
 napi_value PixelmapNativeGetNativeBuffer(napi_env env, napi_callback_info info);
 napi_value TestImageScale(napi_env env, napi_callback_info info);
 napi_value PixelmapNativeWritePixelsToArea(napi_env env, napi_callback_info info);
+napi_value PixelmapNativeGetNativeBufferNotExist(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif

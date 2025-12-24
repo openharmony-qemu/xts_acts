@@ -267,8 +267,7 @@ napi_value OHEffectBufferInfoSetAddrSupplementTest(napi_env env, napi_callback_i
     default:
         break;
     }
-    ImageEffect_ErrorCode code = OH_EffectBufferInfo_SetAddr(bufferInfo, addr);
-    free(addr);
+    ImageEffect_ErrorCode code = OH_EffectBufferInfo_SetAddr(bufferInfo);
     OH_EffectBufferInfo_Release(bufferInfo);
 
     napi_value ret;
@@ -438,26 +437,68 @@ napi_value OHPixelmapNativeCreateAlphaPixelmapSuppTest(napi_env env, napi_callba
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (status != napi_ok || argc < 1) {
+        napi_value ret;
+        napi_create_int32(env, IMAGE_BAD_PARAMETER, &ret);
+        return ret;
+    }
     int32_t index;
-    napi_get_value_int32(env, args[0], &index);
-    
+    status = napi_get_value_int32(env, args[0], &index);
+    if (status != napi_ok) {
+        napi_value ret;
+        napi_create_int32(env, IMAGE_BAD_PARAMETER, &ret);
+        return ret;
+    }
+    napi_value ret;
     OH_PixelmapNative *srcPixelmap = nullptr;
     OH_PixelmapNative *dstPixelmap = nullptr;
-    Image_ErrorCode returnValue;
+    Image_ErrorCode returnValue = IMAGE_UNKNOWN_ERROR;
+
+    auto CreateValidPixelmap = [](OH_PixelmapNative **pixelmap) -> Image_ErrorCode {
+        OH_Pixelmap_InitializationOptions *options = nullptr;
+        Image_ErrorCode err = OH_PixelmapInitializationOptions_Create(&options);
+        if (err != IMAGE_SUCCESS) {
+            return err;
+        }
+        OH_PixelmapInitializationOptions_SetWidth(options, 100);
+        OH_PixelmapInitializationOptions_SetHeight(options, 100);
+        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+
+        uint8_t *dummyData = new (std::nothrow) uint8_t[100 * 100 * 4]();
+        if (dummyData == nullptr) {
+            OH_PixelmapInitializationOptions_Release(options);
+            return IMAGE_ALLOC_FAILED;
+        }
+
+        err = OH_PixelmapNative_CreatePixelmap(dummyData, 100 * 100 * 4, options, pixelmap);
+        delete[] dummyData;
+        OH_PixelmapInitializationOptions_Release(options);
+        return err;
+    };
+    Image_ErrorCode code;
     switch (index) {
     case CASE_INDEX_1:
         srcPixelmap = nullptr;
-        returnValue = OH_PixelmapNative_CreateAlphaPixelmap(srcPixelmap, &dstPixelmap);
+        code = OH_PixelmapNative_CreateAlphaPixelmap(srcPixelmap, &dstPixelmap);
         break;
+    case CASE_INDEX_2: {
+        returnValue = CreateValidPixelmap(&srcPixelmap);
+        if (returnValue != IMAGE_SUCCESS) {
+            break;
+        }
+        returnValue = OH_PixelmapNative_CreateAlphaPixelmap(srcPixelmap, &dstPixelmap);
+        code = IMAGE_SUCCESS;
+    } break;
     default:
         break;
     }
 
     OH_PixelmapNative_Release(srcPixelmap);
-   
+
     napi_value result = nullptr;
-    napi_create_int32(env, returnValue, &result);
+    napi_create_int32(env, code, &result);
     return result;
 }
 napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info info)
@@ -467,22 +508,46 @@ napi_value OHPixelmapNativeGetUniqueIdSuppTest(napi_env env, napi_callback_info 
     napi_status napiStatus = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t testIndex = 0;
     napiStatus = napi_get_value_int32(env, args[0], &testIndex);
-    
-    OH_PixelmapNative* pixelmap = nullptr;
+
+    OH_PixelmapNative *pixelmap = nullptr;
     uint32_t uniqueId = 0;
+    uint32_t *pUniqueId = &uniqueId;
     Image_ErrorCode returnValue;
-    
+
     switch (testIndex) {
     case CASE_INDEX_1:
         pixelmap = nullptr;
         returnValue = OH_PixelmapNative_GetUniqueId(pixelmap, &uniqueId);
         break;
+    case CASE_INDEX_2: {
+        OH_Pixelmap_InitializationOptions *options = nullptr;
+        returnValue = OH_PixelmapInitializationOptions_Create(&options);
+        if (returnValue != IMAGE_SUCCESS) {
+            break;
+        }
+        OH_PixelmapInitializationOptions_SetWidth(options, 100);
+        OH_PixelmapInitializationOptions_SetHeight(options, 100);
+        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        uint8_t *dummyData = new (std::nothrow) uint8_t[100 * 100 * 4]();
+        if (dummyData == nullptr) {
+            returnValue = IMAGE_ALLOC_FAILED;
+            OH_PixelmapInitializationOptions_Release(options);
+            break;
+        }
+        returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, 100 * 100 * 4, options, &pixelmap);
+        if (returnValue == IMAGE_SUCCESS) {
+            returnValue = OH_PixelmapNative_GetUniqueId(pixelmap, pUniqueId);
+        }
+        delete[] dummyData;
+        OH_PixelmapInitializationOptions_Release(options);
+    } break;
     default:
         break;
     }
 
     OH_PixelmapNative_Release(pixelmap);
-   
+
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -494,47 +559,130 @@ napi_value OHPixelmapNativeIsReleasedSuppTest(napi_env env, napi_callback_info i
     napi_status napiStatus = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t testIndex = 0;
     napiStatus = napi_get_value_int32(env, args[0], &testIndex);
-    
-    OH_PixelmapNative* pixelmap = nullptr;
-    bool isReleased = false;
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    bool released = false;
+    bool *pReleased = &released;
     Image_ErrorCode returnValue;
-    
+
     switch (testIndex) {
     case CASE_INDEX_1:
         pixelmap = nullptr;
-        returnValue = OH_PixelmapNative_IsReleased(pixelmap, &isReleased);
+        returnValue = OH_PixelmapNative_IsReleased(pixelmap, pReleased);
         break;
+    case CASE_INDEX_2: {
+        OH_Pixelmap_InitializationOptions *options = nullptr;
+        returnValue = OH_PixelmapInitializationOptions_Create(&options);
+        if (returnValue != IMAGE_SUCCESS) {
+            break;
+        }
+        OH_PixelmapInitializationOptions_SetWidth(options, 80);
+        OH_PixelmapInitializationOptions_SetHeight(options, 80);
+        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        uint8_t *dummyData = new (std::nothrow) uint8_t[80 * 80 * 4]();
+        if (dummyData == nullptr) {
+            returnValue = IMAGE_ALLOC_FAILED;
+            OH_PixelmapInitializationOptions_Release(options);
+            break;
+        }
+        returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, 80 * 80 * 4, options, &pixelmap);
+        if (returnValue == IMAGE_SUCCESS) {
+            returnValue = OH_PixelmapNative_IsReleased(pixelmap, pReleased);
+        }
+        delete[] dummyData;
+        OH_PixelmapInitializationOptions_Release(options);
+    } break;
     default:
         break;
     }
 
     OH_PixelmapNative_Release(pixelmap);
-   
+
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
 }
-napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callback_info info)
+napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callback_info info) 
 {
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_status napiStatus = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    int32_t index = 0;
-    napiStatus = napi_get_value_int32(env, args[0], &index);
+    int32_t testIndex = 0;
+    napiStatus = napi_get_value_int32(env, args[0], &testIndex);
 
-    OH_PixelmapNative* pixelmap = nullptr;
-    Image_PositionArea *area = nullptr;
-    Image_ErrorCode code;
-    switch (index) {
-    case CASE_INDEX_1:
-        code = OH_PixelmapNative_ReadPixelsFromArea(pixelmap, area);
-        break;
+    OH_PixelmapNative *pixelmap = nullptr;
+    Image_PositionArea area = {0, 0, 0, 0};
+    uint8_t *outBuffer = nullptr;
+    int outBufferSize = 0;
+    Image_ErrorCode returnValue;
+
+    switch (testIndex) {
+    case CASE_INDEX_1: {
+        OH_Pixelmap_InitializationOptions *options = nullptr;
+        returnValue = OH_PixelmapInitializationOptions_Create(&options);
+        if (returnValue != IMAGE_SUCCESS)
+            break;
+        OH_PixelmapInitializationOptions_SetWidth(options, 100);
+        OH_PixelmapInitializationOptions_SetHeight(options, 100);
+        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        uint8_t *dummyData = new (std::nothrow) uint8_t[100 * 100 * 4]();
+        if (dummyData == nullptr) {
+            returnValue = IMAGE_ALLOC_FAILED;
+            OH_PixelmapInitializationOptions_Release(options);
+            break;
+        }
+        returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, 100 * 100 * 4, options, &pixelmap);
+        delete[] dummyData;
+        OH_PixelmapInitializationOptions_Release(options);
+    } break;
+    case CASE_INDEX_2: {
+        pixelmap = nullptr;
+        area = {0, 0, 50, 50};
+        outBufferSize = 50 * 50 * 4;
+        outBuffer = new (std::nothrow) uint8_t[outBufferSize];
+        if (outBuffer != nullptr) {
+            returnValue = OH_PixelmapNative_ReadPixelsFromArea(pixelmap, &area);
+            delete[] outBuffer;
+        }
+    } break;
+    case CASE_INDEX_3: {
+        OH_Pixelmap_InitializationOptions *options = nullptr;
+        returnValue = OH_PixelmapInitializationOptions_Create(&options);
+        if (returnValue != IMAGE_SUCCESS)
+            break;
+        OH_PixelmapInitializationOptions_SetWidth(options, 100);
+        OH_PixelmapInitializationOptions_SetHeight(options, 100);
+        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_UNKNOWN);
+        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_UNKNOWN);
+        uint8_t *dummyData = new (std::nothrow) uint8_t[100 * 100]();
+        if (dummyData == nullptr) {
+            returnValue = IMAGE_ALLOC_FAILED;
+            OH_PixelmapInitializationOptions_Release(options);
+            break;
+        }
+        returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, 100 * 100, options, &pixelmap);
+        if (returnValue == IMAGE_SUCCESS) {
+            area = {0, 0, 50, 50};
+            outBufferSize = 50 * 50 * 4;
+            outBuffer = new (std::nothrow) uint8_t[outBufferSize];
+            if (outBuffer != nullptr) {
+                returnValue = OH_PixelmapNative_ReadPixelsFromArea(pixelmap, &area);
+                delete[] outBuffer;
+            }
+        }
+        delete[] dummyData;
+        OH_PixelmapInitializationOptions_Release(options);
+    } break;
     default:
         break;
     }
-    
-    napi_value result;
-    napi_create_int32(env, code, &result);
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
     return result;
 }
 napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback_info info)
@@ -545,17 +693,36 @@ napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback
     int32_t index = 0;
     napiStatus = napi_get_value_int32(env, args[0], &index);
 
-    OH_PixelmapNative* pixelmap = nullptr;
-    Image_PositionArea *area = nullptr;
+    OH_PixelmapNative *pixelmap = nullptr;
+    Image_PositionArea area = {0, 0, 0, 0};
+    uint8_t *inBuffer = nullptr;
+    int inBufferSize = 0;
+    Image_ErrorCode returnValue;
     Image_ErrorCode code;
     switch (index) {
-    case CASE_INDEX_1:
-        code = OH_PixelmapNative_WritePixelsToArea(pixelmap, area);
-        break;
+    case CASE_INDEX_1: {
+        OH_Pixelmap_InitializationOptions *options = nullptr;
+        returnValue = OH_PixelmapInitializationOptions_Create(&options);
+        if (returnValue != IMAGE_SUCCESS)
+            break;
+        OH_PixelmapInitializationOptions_SetWidth(options, 100);
+        OH_PixelmapInitializationOptions_SetHeight(options, 100);
+        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
+        uint8_t *dummyData = new (std::nothrow) uint8_t[100 * 100 * 4]();
+        if (dummyData == nullptr) {
+            returnValue = IMAGE_ALLOC_FAILED;
+            OH_PixelmapInitializationOptions_Release(options);
+            break;
+        }
+        returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, 100 * 100 * 4, options, &pixelmap);
+        delete[] dummyData;
+        OH_PixelmapInitializationOptions_Release(options);
+    } break;
     default:
         break;
     }
-    
+
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
