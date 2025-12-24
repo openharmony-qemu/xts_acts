@@ -249,14 +249,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasKey0002
-     * @tc.number testHashMapHasKey0002
-     * @tc.desc   testHashMapHasKey0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasKey0002';
     //   try {
@@ -276,14 +268,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasKey0003
-     * @tc.number testHashMapHasKey0003
-     * @tc.desc   testHashMapHasKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasKey0003';
     //   try {
@@ -423,14 +407,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasValue0002
-     * @tc.number testHashMapHasValue0002
-     * @tc.desc   testHashMapHasValue0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasValue0002';
     //   try {
@@ -450,14 +426,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapHasValue0003
-     * @tc.number testHashMapHasValue0003
-     * @tc.desc   testHashMapHasValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapHasValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapHasValue0003';
     //   try {
@@ -576,14 +544,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapGet0002
-     * @tc.number testHashMapGet0002
-     * @tc.desc   testHashMapGet0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapGet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapGet0002';
     //   try {
@@ -603,14 +563,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapGet0003
-     * @tc.number testHashMapGet0003
-     * @tc.desc   testHashMapGet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapGet0003';
     //   try {
@@ -889,14 +841,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0003
-     * @tc.number testHashMapSet0003
-     * @tc.desc   testHashMapSet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0003';
     //   try {
@@ -918,14 +862,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0004
-     * @tc.number testHashMapSet0004
-     * @tc.desc   testHashMapSet0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0004';
     //   try {
@@ -968,14 +904,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0006
-     * @tc.number testHashMapSet0006
-     * @tc.desc   testHashMapSet0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0006';
     //   try {
@@ -1018,14 +946,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapSet0008
-     * @tc.number testHashMapSet0008
-     * @tc.desc   testHashMapSet0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapSet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapSet0008';
     //   try {
@@ -1114,14 +1034,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapRemove0002
-     * @tc.number testHashMapRemove0002
-     * @tc.desc   testHashMapRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapRemove0002';
     //   try {
@@ -1141,14 +1053,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapRemove0003
-     * @tc.number testHashMapRemove0003
-     * @tc.desc   testHashMapRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapRemove0003';
     //   try {
@@ -1436,14 +1340,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapReplace0002
-     * @tc.number testHashMapReplace0002
-     * @tc.desc   testHashMapReplace0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapReplace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapReplace0002';
     //   try {
@@ -1463,14 +1359,6 @@ export default function HashMapTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashMapReplace0003
-     * @tc.number testHashMapReplace0003
-     * @tc.desc   testHashMapReplace0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashMapReplace0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashMapReplace0003';
     //   try {
@@ -1937,7 +1825,6 @@ export default function HashMapTest2() {
       const TAG = 'testHashMapSymbolIterator0001';
       try {
         const hashMap = new HashMap<number, number>();
-        // let iter = hashMap[Symbol.iterator]();
         let iter = hashMap.$_iterator();
           let temp: IteratorResult<[Number, Number]> = iter.next();
         while (!temp.done) {
@@ -1965,9 +1852,8 @@ export default function HashMapTest2() {
         hashMap.set(0, 0);
         hashMap.set(1, 1);
         hashMap.set(2, 2);
-        // let iter = hashMap[Symbol.iterator]();
         let iter = hashMap.$_iterator();
-          let temp: IteratorResult<[Number, Number]> = iter.next();
+        let temp: IteratorResult<[Number, Number]> = iter.next();
         let index = 0;
         while (!temp.done) {
           if (!temp.value) {

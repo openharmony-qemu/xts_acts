@@ -262,14 +262,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetHas0002
-     * @tc.number testHashSetHas0002
-     * @tc.desc   testHashSetHas0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetHas0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetHas0002';
     //   try {
@@ -289,14 +281,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetHas0003
-     * @tc.number testHashSetHas0003
-     * @tc.desc   testHashSetHas0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetHas0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetHas0003';
     //   try {
@@ -439,14 +423,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetAdd0003
-     * @tc.number testHashSetAdd0003
-     * @tc.desc   testHashSetAdd0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetAdd0003';
     //   try {
@@ -468,14 +444,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetAdd0004
-     * @tc.number testHashSetAdd0004
-     * @tc.desc   testHashSetAdd0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetAdd0004';
     //   try {
@@ -586,14 +554,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetRemove0002
-     * @tc.number testHashSetRemove0002
-     * @tc.desc   testHashSetRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetRemove0002';
     //   try {
@@ -613,14 +573,6 @@ export default function hasSetTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testHashSetRemove0003
-     * @tc.number testHashSetRemove0003
-     * @tc.desc   testHashSetRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testHashSetRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testHashSetRemove0003';
     //   try {
@@ -922,14 +874,6 @@ export default function hasSetTest2() {
       }
     });
 
-    // /**
-    //  * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_HASHSET_FOREACH_0500
-    //  * @tc.name      : testHashSetForEach0005
-    //  * @tc.desc      : Testing HashSet has data and ArgThis
-    //  * @tc.size      : MediumTest
-    //  * @tc.type      : Function
-    //  * @tc.level     : Level 1
-    //  */
     /**
      * @tc.name   testHashSetForEach0005
      * @tc.number testHashSetForEach0005
@@ -938,24 +882,24 @@ export default function hasSetTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testHashSetForEach0005';
-    //   try {
-    //     const hashSet = new HashSet<number>();
-    //     const hashSetNew = new HashSet<number>();
-    //     hashSetNew.add(1);
-    //     hashSet.add(1);
-    //     hashSet.forEach((value?: number) => {
-    //       hashSet.clear();
-    //       expect(String(hashSet.length)).assertEqual('0');
-    //     }, hashSetNew);
-    //     expect(hashSetNew.length).assertEqual(1);
-    //     expect(hashSetNew.has(1)).assertTrue();
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testHashSetForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testHashSetForEach0005';
+      try {
+        const hashSet = new HashSet<number>();
+        const hashSetNew = new HashSet<number>();
+        hashSetNew.add(1);
+        hashSet.add(1);
+        hashSet.forEach((value : number, hashSetNew) => {
+          hashSet.clear();
+          expect(String(hashSet.length)).assertEqual('0');
+        });
+        expect(hashSetNew.length).assertEqual(1);
+        expect(hashSetNew.has(1)).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testHashSetForEach0006

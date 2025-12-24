@@ -1894,9 +1894,9 @@ export default function BufferTest() {
      * @tc.name   testEntries0250
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_12500
      * @tc.desc   Creates and returns an iterator of [index, byte] pairs from the contents of buf.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("testEntries0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("1234");
@@ -1918,9 +1918,10 @@ export default function BufferTest() {
      * @tc.name   testEntries0255
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_12600
      * @tc.desc   Creates and returns an iterator of [index, byte] pairs from the contents of buf
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     *            which is contructed from an Uint8Array.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it("testEntries0255", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uarr = new Uint8Array(4);

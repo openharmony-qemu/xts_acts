@@ -272,14 +272,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGet0003
-     * @tc.number testPlainArrayGet0003
-     * @tc.desc   testPlainArrayGet0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPlainArrayGet0003';
     //   try {
@@ -301,14 +293,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGet0004
-     * @tc.number testPlainArrayGet0004
-     * @tc.desc   testPlainArrayGet0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPlainArrayGet0004';
     //   try {
@@ -403,14 +387,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetIndexOfKey0003
-     * @tc.number testPlainArrayGetIndexOfKey0003
-     * @tc.desc   testPlainArrayGetIndexOfKey0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetIndexOfKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testPlainArrayGetIndexOfKey0003';
     //   try {
@@ -503,14 +479,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetIndexOfValue0003
-     * @tc.number testPlainArrayGetIndexOfValue0003
-     * @tc.desc   testPlainArrayGetIndexOfValue0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetIndexOfValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetIndexOfValue0003';
     //   try {
@@ -602,14 +570,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetKeyAt0003
-     * @tc.number testPlainArrayGetKeyAt0003
-     * @tc.desc   testPlainArrayGetKeyAt0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetKeyAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetKeyAt0003';
     //   try {
@@ -632,14 +592,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetKeyAt0004
-     * @tc.number testPlainArrayGetKeyAt0004
-     * @tc.desc   testPlainArrayGetKeyAt0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetKeyAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetKeyAt0004';
     //   try {
@@ -729,14 +681,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetValueAt0003
-     * @tc.number testPlainArrayGetValueAt0003
-     * @tc.desc   testPlainArrayGetValueAt0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetValueAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetValueAt0003';
     //   try {
@@ -759,14 +703,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayGetValueAt0004
-     * @tc.number testPlainArrayGetValueAt0004
-     * @tc.desc   testPlainArrayGetValueAt0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayGetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayGetValueAt0004';
     //   try {
@@ -922,14 +858,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayClone0006
-     * @tc.number testPlainArrayClone0006
-     * @tc.desc   testPlainArrayClone0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayClone0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayClone0006';
     //   try {
@@ -993,14 +921,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayAdd0003
-     * @tc.number testPlainArrayAdd0003
-     * @tc.desc   testPlainArrayAdd0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayAdd0003';
     //   try {
@@ -1044,14 +964,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayRemove0002
-     * @tc.number testPlainArrayRemove0002
-     * @tc.desc   testPlainArrayRemove0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayRemove0002';
     //   try {
@@ -1072,14 +984,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayRemove0003
-     * @tc.number testPlainArrayRemove0003
-     * @tc.desc   testPlainArrayRemove0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayRemove0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayRemove0003';
     //   try {
@@ -1387,14 +1291,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySetValueAt0004
-     * @tc.number testPlainArraySetValueAt0004
-     * @tc.desc   testPlainArraySetValueAt0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySetValueAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySetValueAt0004';
     //   try {
@@ -1419,14 +1315,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySetValueAt0005
-     * @tc.number testPlainArraySetValueAt0005
-     * @tc.desc   testPlainArraySetValueAt0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySetValueAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySetValueAt0005';
     //   try {
@@ -1450,14 +1338,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySetValueAt0006
-     * @tc.number testPlainArraySetValueAt0006
-     * @tc.desc   testPlainArraySetValueAt0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySetValueAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySetValueAt0006';
     //   try {
@@ -1504,14 +1384,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayToString0002
-     * @tc.number testPlainArrayToString0002
-     * @tc.desc   testPlainArrayToString0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayToString0002';
     //   try {
@@ -1694,14 +1566,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayClear0004
-     * @tc.number testPlainArrayClear0004
-     * @tc.desc   testPlainArrayClear0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayClear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayClear0004';
     //   try {
@@ -1793,14 +1657,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayForEach0004
-     * @tc.number testPlainArrayForEach0004
-     * @tc.desc   testPlainArrayForEach0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayForEach0004';
     //   try {
@@ -1825,14 +1681,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArrayForEach0005
-     * @tc.number testPlainArrayForEach0005
-     * @tc.desc   testPlainArrayForEach0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArrayForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArrayForEach0005';
     //   try {
@@ -1986,14 +1834,6 @@ export default function PlainArrayTest2() {
     //  * @tc.type      : Function
     //  * @tc.level     : Level 1
     //  */
-    /**
-     * @tc.name   testPlainArraySymbolIterator0004
-     * @tc.number testPlainArraySymbolIterator0004
-     * @tc.desc   testPlainArraySymbolIterator0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testPlainArraySymbolIterator0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  (): void => {
     //   const TAG = 'testPlainArraySymbolIterator0004';
     //   try {

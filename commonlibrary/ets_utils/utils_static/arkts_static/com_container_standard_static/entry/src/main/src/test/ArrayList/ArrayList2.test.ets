@@ -692,27 +692,27 @@ export default function ArrayListTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testArrayListReplaceAllElement0001';
-    //   try {
-    //     let arrayList: ArrayList<string> = new ArrayList<string>();
-    //     arrayList.add("zhang san");
-    //     arrayList.add("");
-    //     arrayList.add("`");
-    //     arrayList.add("%");
-    //     arrayList.add(`"`);
-    //     arrayList.replaceAllElements((value: string, index: number) => {
-    //       let tmp = value;
-    //       value = tmp + value;
-    //       let result = arrayList[index];
-    //       expect(String(value)).assertEqual(String(result + result))
-    //       return value;
-    //     })
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testArrayListReplaceAllElement0001';
+      try {
+        let arrayList: ArrayList<string> = new ArrayList<string>();
+        arrayList.add("zhang san");
+        arrayList.add("");
+        arrayList.add("`");
+        arrayList.add("%");
+        arrayList.add(`"`);
+        arrayList.replaceAllElements((value: string, index: int) => {
+          let tmp = value;
+          value = tmp + value;
+          let result = arrayList[index];
+          expect(String(value)).assertEqual(String(result + result))
+          return value;
+        })
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testArrayListReplaceAllElement0002
@@ -722,43 +722,43 @@ export default function ArrayListTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testArrayListReplaceAllElement0002';
-    //   try {
-    //     let arrayList: ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     arrayList.add("zhang san");
-    //     arrayList.add(1);
-    //     let temp: Temp = {
-    //       age: 10, name: "zhang"
-    //     };
-    //     arrayList.add(temp);
-    //     arrayList.add(undefined);
-    //     arrayList.add(null);
-    //     arrayList.add(true);
-    //     let array = [0, 1, 2, undefined];
-    //     arrayList.add(array);
-    //     arrayList.add("");
-    //     arrayList.add("`");
-    //     arrayList.add("%");
-    //     arrayList.add(`"`);
-    //
-    //     arrayList.replaceAllElements((value, index, tempList) => {
-    //       let indexValue = (index == null) ? 0 : index;
-    //       let length = tempList ? tempList.length - 1 : 0;
-    //       if (indexValue === length) {
-    //         let tmp = value as string;
-    //         value = tmp + "add last index";
-    //       }
-    //       return value;
-    //     })
-    //     expect(String(arrayList.has(`"add last index`))).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testArrayListReplaceAllElement0002';
+      try {
+        let arrayList: ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        arrayList.add("zhang san");
+        arrayList.add(1);
+        let temp: Temp = {
+          age: 10, name: "zhang"
+        };
+        arrayList.add(temp);
+        arrayList.add(undefined);
+        arrayList.add(null);
+        arrayList.add(true);
+        let array = [0, 1, 2, undefined];
+        arrayList.add(array);
+        arrayList.add("");
+        arrayList.add("`");
+        arrayList.add("%");
+        arrayList.add(`"`);
+
+        arrayList.replaceAllElements((value, index, tempList) => {
+          let indexValue = (index == null) ? 0 : index;
+          let length = tempList ? tempList.length - 1 : 0;
+          if (indexValue === length) {
+            let tmp = value as string;
+            value = tmp + "add last index";
+          }
+          return value;
+        })
+        expect(String(arrayList.has(`"add last index`))).assertEqual('true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testArrayListForEach0001

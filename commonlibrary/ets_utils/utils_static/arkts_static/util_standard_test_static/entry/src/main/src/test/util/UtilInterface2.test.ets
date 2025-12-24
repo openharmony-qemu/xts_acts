@@ -14,7 +14,16 @@
  */
 
 import {
-  afterEach, describe, expect, it, Level, Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import util from '@ohos.util';
 import { BusinessError } from '@ohos.base';
@@ -22,14 +31,13 @@ import Utils from '../Util.test';
 
 class Temperature implements util.ScopeType<Temperature> {
   n: number
-
   constructor(n: number) {
     this.n = n
   }
-
   compareTo(other: Object): boolean {
     return this.compareTo(other as Temperature)
   }
+
   compareTo(other: Temperature): boolean {
     return this.n >= other.n
   }
@@ -184,10 +192,7 @@ export default function Util2Test() {
       } catch (e : BusinessError) {
         expect(e.code).assertEqual(401)
       }
-      catch(e :
-      Error
-      )
-      {
+      catch(e :Error){
         expect().assertFail();
       }
     })
@@ -410,10 +415,7 @@ export default function Util2Test() {
       } catch (e : BusinessError) {
         expect(e.code).assertEqual(401)
       }
-      catch(e :
-      Error
-      )
-      {
+      catch(e :Error){
         expect().assertFail();
       }
     })
@@ -561,11 +563,11 @@ export default function Util2Test() {
         'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
       base64Helper.decode(array).then((val) => {
         expect(val.toString())
-          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121," +
-            "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97," +
-            "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108," +
-            "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104," +
-            "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
+          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,"+
+          "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,"+
+          "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,"+
+          "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,"+
+          "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
       })
     })
     /**
@@ -582,11 +584,11 @@ export default function Util2Test() {
         'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
       base64Helper.decode(array, util.Type.BASIC).then((val) => {
         expect(val.toString())
-          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121," +
-            "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97," +
-            "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108," +
-            "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104," +
-            "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
+          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,"+
+          "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,"+
+          "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,"+
+          "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,"+
+          "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
       })
     })
 
@@ -604,11 +606,11 @@ export default function Util2Test() {
         'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
       base64Helper.decode(array, util.Type.MIME).then((val) => {
         expect(val.toString())
-          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121," +
-            "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97," +
-            "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108," +
-            "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104," +
-            "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
+          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,"+
+          "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,"+
+          "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,"+
+          "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,"+
+          "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
       })
     })
     /**
@@ -625,11 +627,11 @@ export default function Util2Test() {
         'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
       base64Helper.decode(array, util.Type.BASIC_URL_SAFE).then((val) => {
         expect(val.toString())
-          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121," +
-            "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97," +
-            "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108," +
-            "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104," +
-            "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
+          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,"+
+          "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,"+
+          "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,"+
+          "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,"+
+          "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
       })
     })
     /**
@@ -646,11 +648,11 @@ export default function Util2Test() {
         'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25seWJ5aGlzcmVhc29uYnV0Ynl0aGlzc2luZ3VsYXJwYXNz\r\naW9uZnJvbW90aGVyYW5pbWFsc3doaWNoaXNhbHVzdG9mdGhlbWluZGV4Y2VlZHN0aGVzaG9ydHZl\r\naGVtZW5jZW9mYW55Y2FybmFscGxlYXN1cmU=\r\n';
       base64Helper.decode(array, util.Type.MIME_URL_SAFE).then((val) => {
         expect(val.toString())
-          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121," +
-            "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97," +
-            "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108," +
-            "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104," +
-            "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
+          .assertEqual("77,97,110,105,115,100,105,115,116,105,110,103,117,105,115,104,101,100,110,111,116,111,110,108,121,"+
+          "98,121,104,105,115,114,101,97,115,111,110,98,117,116,98,121,116,104,105,115,115,105,110,103,117,108,97,114,112,97,"+
+          "115,115,105,111,110,102,114,111,109,111,116,104,101,114,97,110,105,109,97,108,115,119,104,105,99,104,105,115,97,108,"+
+          "117,115,116,111,102,116,104,101,109,105,110,100,101,120,99,101,101,100,115,116,104,101,115,104,111,114,116,118,101,104,"+
+          "101,109,101,110,99,101,111,102,97,110,121,99,97,114,110,97,108,112,108,101,97,115,117,114,101");
       })
     })
 
@@ -1142,7 +1144,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let that = new util.LRUCache<number, number>(21.0);
+      let that = new util.LRUCache<number, number>(21);
       let res: number = that.getCapacity();
       expect(res).assertEqual(21);
     })
@@ -1190,7 +1192,7 @@ export default function Util2Test() {
       pro.put(2, 10);
       let pair = pro.entries();
       for (let value of pair) {
-        res = value[0] + ', ' + value[1];
+        res = value[0]+ ', '+ value[1];
       }
       expect(res).assertEqual("2, 10");
     })
@@ -1210,7 +1212,7 @@ export default function Util2Test() {
       pro.put(3, 15);
       let pair = pro.entries();
       for (let value of pair) {
-        res = value[0] + ', ' + value[1];
+        res = value[0]+ ', '+ value[1];
       }
       expect(res).assertEqual("3, 15");
     })
@@ -1230,7 +1232,7 @@ export default function Util2Test() {
       pro.put(3, 15);
       let pair = pro.$_iterator();
       for (let value of pair) {
-        res = value[0] + ', ' + value[1];
+        res = value[0]+ ', '+ value[1];
       }
       expect(res).assertEqual("3, 15");
     })
@@ -1260,9 +1262,9 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let textDecoderOptions: util.TextDecoderOptions = {
+      let textDecoderOptions : util.TextDecoderOptions = {
         fatal: false,
-        ignoreBOM: true
+        ignoreBOM : true
       };
       let textDecode = util.TextDecoder.create('utf-8', textDecoderOptions);
       let retStr = textDecode.encoding;
@@ -1278,7 +1280,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let textDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: false });
+      let textDecoder = util.TextDecoder.create('utf-8', {ignoreBOM:false});
       let uint8 = new Uint8Array();
       let resStr = textDecoder.decodeToString(uint8);
       let res = '';
@@ -1338,11 +1340,11 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let textDecoderOptions: util.TextDecoderOptions = {
+      let textDecoderOptions : util.TextDecoderOptions = {
         fatal: false,
-        ignoreBOM: false
+        ignoreBOM : false
       };
-      let decodeWithStreamOptions: util.DecodeToStringOptions = {
+      let decodeWithStreamOptions : util.DecodeToStringOptions = {
         stream: false
       };
       let textDecode = util.TextDecoder.create('utf-16le', textDecoderOptions);
@@ -1429,7 +1431,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       expect(rationalNumber.valueOf()).assertEqual(0.5);
     })
 
@@ -1455,7 +1457,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       let rational = util.RationalNumber.createRationalFromString("3/4");
       let result = rationalNumber.compare(rational);
       expect(result).assertEqual(-1);
@@ -1470,7 +1472,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(10, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(10,2);
       let result = rationalNumber.valueOf();
       expect(result).assertEqual(5);
     })
@@ -1484,7 +1486,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let result = util.RationalNumber.getCommonFactor(4, 6);
+      let result = util.RationalNumber.getCommonFactor(4,6);
       expect(result).assertEqual(2);
     })
 
@@ -1497,7 +1499,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       let result = rationalNumber.getNumerator();
       expect(result).assertEqual(1);
     })
@@ -1511,7 +1513,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2)
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2)
       let result = rationalNumber.getDenominator();
       expect(result).assertEqual(2);
     })
@@ -1525,7 +1527,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       let result = rationalNumber.isZero();
       expect(result).assertEqual(false);
     })
@@ -1538,7 +1540,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       let result = rationalNumber.isNaN();
       expect(result).assertEqual(false);
     })
@@ -1552,7 +1554,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       let result = rationalNumber.isFinite();
       expect(result).assertEqual(true);
     })
@@ -1566,7 +1568,7 @@ export default function Util2Test() {
      * @tc.level  LEVEL1
      */
     it('testUtil_083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+      let rationalNumber = util.RationalNumber.parseRationalNumber(1,2);
       let result = rationalNumber.toString();
       expect(result).assertEqual("1/2");
     })
@@ -1581,54 +1583,9 @@ export default function Util2Test() {
      */
     it('testUtil_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let type = new util.types();
-      const set: Set<number> = new Set<number>();
+      const set : Set<number> = new Set<number>();
       let result = type.isSetIterator(set.keys());
       expect(result).assertEqual(true);
     })
-
-    /**
-     * @tc.name   testUtil3_001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_001
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let base64Helper = new util.Base64Helper();
-      let buff = 'TWFuaXNkaXN0aW5ndWlzaGVkbm90b25ZnJvb';
-      let result = base64Helper.decodeSync(buff, util.Type.MIME);
-      expect(JSON.stringify(result))
-        .assertEqual('{"0":77,"1":97,"2":110,"3":105,"4":115,"5":100,"6":105,"7":115,"8":116,"9":105,' +
-          '"10":110,"11":103,"12":117,"13":105,"14":115,"15":104,"16":101,"17":100,"18":110,"19":111,"20"' +
-          ':116,"21":111,"22":110,"23":89,"24":156,"25":155,"26":219}');
-    })
-
-    /**
-     * @tc.name   testUtil3_002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_002
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let lru = new ChildLRUCache4();
-      lru.put(2, 10);
-      lru.get(3);
-      lru.get(5);
-      let res = lru.getCreateCount();
-      expect(res).assertEqual(2);
-    })
   });
-}
-
-class ChildLRUCache4 extends util.LRUCache<int, int> {
-  constructor() {
-    super();
-  }
-
-  createDefault(key: int): int {
-    return key;
-  }
 }

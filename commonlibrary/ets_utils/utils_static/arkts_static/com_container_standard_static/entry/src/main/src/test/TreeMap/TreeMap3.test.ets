@@ -2626,14 +2626,6 @@ export default function TreemapTest3() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_100000
-    //  * @tc.name       : testTreeMapForEach0010
-    //  * @tc.desc       : Test the testTreeMap of the interface forEach.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
     /**
      * @tc.name   testTreeMapForEach0010
      * @tc.number testTreeMapForEach0010
@@ -2642,20 +2634,20 @@ export default function TreemapTest3() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTreeMapForEach0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testTreeMapForEach0010";
-    //   try {
-    //     let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
-    //     treeMap.set('AAA', 123);
-    //     treeMap.forEach((value, index, treeMap: TreeMap<string, number>): void => {
-    //       expect(treeMap.hasValue(value)).assertTrue();
-    //     }, treeMap);
-    //     expect(treeMap.get('AAA')).assertEqual(123);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.code}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testTreeMapForEach0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testTreeMapForEach0010";
+      try {
+        let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
+        treeMap.set('AAA', 123);
+        treeMap.forEach((value, index, treeMap: TreeMap<string, number>): void => {
+          expect(treeMap.hasValue(value)).assertTrue();
+        });
+        expect(treeMap.get('AAA')).assertEqual(123);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err.code}`);
+        expect(false).assertFail();
+      }
+    });
 
   })
 }

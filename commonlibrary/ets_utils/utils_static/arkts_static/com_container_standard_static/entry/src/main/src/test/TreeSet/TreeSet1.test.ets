@@ -435,16 +435,16 @@ describe("TreeSetTest1", (): void => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  // it("testTreeSet024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("e");
-  //   let res = treeSet.popFirst();
-  //   expect(res).assertEqual("a");
-  // });
+  it("testTreeSet024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("e");
+    let res = treeSet.popFirst();
+    expect(res).assertEqual("a");
+  });
 
   /**
    * @tc.name   testTreeSet025
@@ -468,16 +468,16 @@ describe("TreeSetTest1", (): void => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  // it("testTreeSet026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("e");
-  //   let res = treeSet.popLast();
-  //   expect(String(res)).assertEqual("e");
-  // });
+  it("testTreeSet026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("e");
+    let res = treeSet.popLast();
+    expect(String(res)).assertEqual("e");
+  });
 
   /**
    * @tc.name   testTreeSet027
@@ -604,20 +604,20 @@ describe("TreeSetTest1", (): void => {
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  // it("testTreeSet034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("g");
-  //   let res = treeSet.values();
-  //   expect(String(res.next().value)).assertEqual("a");
-  //   expect(String(res.next().value)).assertEqual("b");
-  //   expect(String(res.next().value)).assertEqual("c");
-  //   expect(String(res.next().value)).assertEqual("d");
-  //   expect(String(res.next().value)).assertEqual("g");
-  // });
+  it("testTreeSet034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("g");
+    let res = treeSet.values();
+    expect(String(res.next().value)).assertEqual("a");
+    expect(String(res.next().value)).assertEqual("b");
+    expect(String(res.next().value)).assertEqual("c");
+    expect(String(res.next().value)).assertEqual("d");
+    expect(String(res.next().value)).assertEqual("g");
+  });
 
   /**
    * @tc.name   testTreeSet035
@@ -904,28 +904,5 @@ describe("TreeSetTest1", (): void => {
       expect(key).assertEqual("sparrow");
     });
   });
-
-    /**
-     * @tc.name   testUtil3_014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_014
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let res = "";
-      let treeSet: TreeSet<string> = new TreeSet<string>();
-      treeSet.add("squirrel");
-      treeSet.add("sparrow");
-
-      let iter = treeSet.$_iterator();
-      let temp = iter.next().value;
-      while (temp != undefined) {
-        res = res + temp;
-        temp = iter.next().value;
-      }
-      expect(res).assertEqual("sparrowsquirrel");
-    })
 });
 }

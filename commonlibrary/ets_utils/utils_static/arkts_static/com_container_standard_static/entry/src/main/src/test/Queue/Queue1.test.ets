@@ -128,14 +128,6 @@ export default function queueTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testQueueAdd0005
-     * @tc.number testQueueAdd0005
-     * @tc.desc   testQueueAdd0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testQueueAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testQueueAdd0005";
     //   try {
@@ -184,14 +176,6 @@ export default function queueTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testQueuePop0007
-     * @tc.number testQueuePop0007
-     * @tc.desc   testQueuePop0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testQueuePop0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testQueuePop0007";
     //   try {
@@ -253,11 +237,10 @@ export default function queueTest1() {
       }
     });
 
-
     /**
      * @tc.name   testQueueForeach0010
-     * @tc.number testQueueForeach0010
-     * @tc.desc   testQueueForeach0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_FOREACH_1000
+     * @tc.desc   Testing Queue foreach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -348,11 +331,10 @@ export default function queueTest1() {
       }
     });
 
-
     /**
      * @tc.name   testQueueForeach0013
-     * @tc.number testQueueForeach0013
-     * @tc.desc   testQueueForeach0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_FOREACH_1300
+     * @tc.desc   Testing Queue foreach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -378,11 +360,10 @@ export default function queueTest1() {
       }
     });
 
-
     /**
      * @tc.name   testQueueForeach0014
-     * @tc.number testQueueForeach0014
-     * @tc.desc   testQueueForeach0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_FOREACH_1400
+     * @tc.desc   Testing Queue foreach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -404,11 +385,10 @@ export default function queueTest1() {
       }
     });
 
-
     /**
      * @tc.name   testQueueForeach0015
-     * @tc.number testQueueForeach0015
-     * @tc.desc   testQueueForeach0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_FOREACH_1500
+     * @tc.desc   Testing Queue foreach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -430,11 +410,10 @@ export default function queueTest1() {
       }
     });
 
-
     /**
      * @tc.name   testQueueForeach0016
-     * @tc.number testQueueForeach0016
-     * @tc.desc   testQueueForeach0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_FOREACH_1600
+     * @tc.desc   Testing Queue foreach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
