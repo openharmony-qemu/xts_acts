@@ -26,6 +26,14 @@
     "MainAbility/pages/grid/GridOnDidScrollTest",
     "MainAbility/pages/grid/GridOnScrollIndexTest",
     "MainAbility/pages/clipShape/ClipShapeTest",
-    "MainAbility/pages/CustomComponent/CustomMarkDirty"
+    "MainAbility/pages/CustomComponent/CustomMarkDirty",
+    "MainAbility/pages/LayoutManager/LayoutManager1Test",
+    "MainAbility/pages/LayoutManager/LayoutManager2Test",
+    "MainAbility/pages/LayoutManager/LayoutManager3Test",
+    "MainAbility/pages/LayoutManager/LayoutManager4Test",
+    "MainAbility/pages/LayoutManager/LayoutManager5Test",
+    "MainAbility/pages/LayoutManager/LayoutManager6Test",
+    "MainAbility/pages/LayoutManager/LayoutManager7Test",
+    "MainAbility/pages/LayoutManager/LayoutManager8Test"
   ]
 }

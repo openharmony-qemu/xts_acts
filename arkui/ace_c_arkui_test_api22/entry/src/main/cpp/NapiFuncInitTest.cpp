@@ -26,6 +26,8 @@
 #include "swiper/SwiperEnumTest.cpp"
 #include "image/EnumTest.cpp"
 #include "Text/EnumTest.cpp"
+#include "BindSelectionMenu/BindSelectionMenuTest.cpp"
+#include "TextEditMenuOptions/TextEditMenuOptionsTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -227,6 +229,54 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"enum_GetEventType_Text", nullptr, Enum_GetEventType_Text, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions01", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions02", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions03", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions03,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions04", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions04,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions05", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions05,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions06", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions06,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions07", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions07,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions08", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions08,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions09", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions09,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions10", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions10,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions11", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions11,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions12", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions12,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions13", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions13,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions14", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions14,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions15", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions15,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions16", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions16,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextSelectionMenuOptions17", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions17,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions01", nullptr, Test_OH_ArkUI_TextEditMenuOptions01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions02", nullptr, Test_OH_ArkUI_TextEditMenuOptions02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions03", nullptr, Test_OH_ArkUI_TextEditMenuOptions03,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions04", nullptr, Test_OH_ArkUI_TextEditMenuOptions04,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions05", nullptr, Test_OH_ArkUI_TextEditMenuOptions05,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions06", nullptr, Test_OH_ArkUI_TextEditMenuOptions06,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"Test_OH_ArkUI_TextEditMenuOptions07", nullptr, Test_OH_ArkUI_TextEditMenuOptions07,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
