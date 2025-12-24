@@ -3598,5 +3598,1855 @@ export default function dateTest() {
       }
     })
 
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_161000
+     * @tc.name       testSetMonth0008
+     * @tc.desc       Test the function of the interface SetMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetMonth0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetMonth0008";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setMonth(9, 16);
+        const result = 'Thu Oct 16 1975 23:15:30 GMT+0800';
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_162000
+     * @tc.name       testSetMonth0009
+     * @tc.desc       Test the function of the interface SetMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetMonth0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetMonth0009";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setMonth(7, 31);
+        const result = 'Sun Aug 31 1975 23:15:30 GMT+0800';
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_163000
+     * @tc.name       testSetMonth0010
+     * @tc.desc       Test the function of the interface SetMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetMonth0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetMonth0010";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setMonth(7, 32);
+        const result = 'Mon Sep 01 1975 23:15:30 GMT+0800';
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_164000
+     * @tc.name       testSetSeconds0001
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(-1);
+        const result = 'Tue Aug 19 1975 23:14:59 GMT+0800';
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_165000
+     * @tc.name       testSetSeconds0002
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(0);
+        const result = 'Tue Aug 19 1975 23:15:00 GMT+0800';
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_166000
+     * @tc.name       testSetSeconds0003
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(59);
+        const result = "Tue Aug 19 1975 23:15:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_167000
+     * @tc.name       testSetSeconds0004
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(60);
+        const result = "Tue Aug 19 1975 23:16:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_168000
+     * @tc.name       testSetSeconds0005
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(3, -1);
+        const result = event.getMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_169000
+     * @tc.name       testSetSeconds0006
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0006";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(3, 0);
+        const result = event.getMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_170000
+     * @tc.name       testSetSeconds0007
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0007";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(3, 999);
+        const result = event.getMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_171000
+     * @tc.name       testSetSeconds0008
+     * @tc.desc       Test the function of the interface SetSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetSeconds0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetSeconds0008";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setSeconds(3, 1000);
+        const result = event.getMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_172000
+     * @tc.name       testSetTime0001
+     * @tc.desc       Test the function of the interface SetTime.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetTime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetTime0001";
+      try {
+        const launchDate = new Date('July 1, 1999, 12:00:00');
+        const futureDate = new Date();
+        futureDate.setTime(launchDate.getTime());
+        const result = "Thu Jul 01 1999 12:00:00 GMT+0800";
+        console.log(`${TAG} result:` + futureDate);
+        expect(futureDate.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_173000
+     * @tc.name       testSetTime0002
+     * @tc.desc       Test the function of the interface SetTime.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetTime0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetTime0002";
+      try {
+        const launchDate = new Date('July 1, 1999, 12:00:00');
+        const futureDate = new Date();
+        futureDate.setTime(launchDate.getTime());
+        const fiveMinutesInMillis = 5 * 60 * 1000;
+        futureDate.setTime(futureDate.getTime() + fiveMinutesInMillis);
+        const result = "Thu Jul 01 1999 12:05:00 GMT+0800";
+        console.log(`${TAG} result:` + futureDate);
+        expect(futureDate.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_174000
+     * @tc.name       testSetTime0003
+     * @tc.desc       Test the function of the interface SetTime.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetTime0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetTime0003";
+      try {
+        const launchDate = new Date('July 1, 1999, 12:00:00');
+        const futureDate = new Date();
+        futureDate.setTime(launchDate.getTime());
+        const result = "Thu Jul 01 1999 12:00:00 GMT+0800";
+        console.log(`${TAG} result:` + futureDate);
+        expect(futureDate.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_175000
+     * @tc.name       testSetTime0004
+     * @tc.desc       Test the function of the interface SetTime.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetTime0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetTime0004";
+      try {
+        const launchDate = new Date('July 1, 1999, 12:00:00');
+        const futureDate = new Date();
+        futureDate.setTime(launchDate.getTime());
+        const fiveMinutesInMillis = 5 * 60 * 1000;
+        futureDate.setTime(futureDate.getTime() - fiveMinutesInMillis);
+        const result = "Thu Jul 01 1999 11:55:00 GMT+0800";
+        console.log(`${TAG} result:` + futureDate);
+        expect(futureDate.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_176000
+     * @tc.name       testSetTime0005
+     * @tc.desc       Test the function of the interface SetTime.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetTime0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetTime0005";
+      try {
+        const launchDate = new Date('July 1, 1999, 12:00:00');
+        const futureDate = new Date();
+        futureDate.setTime(999);
+        const result = "Thu Jan 01 1970 08:00:00 GMT+0800";
+        console.log(`${TAG} result:` + futureDate);
+        expect(futureDate.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_177000
+     * @tc.name       testSetTime0006
+     * @tc.desc       Test the function of the interface SetTime.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetTime0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetTime0006";
+      try {
+        const launchDate = new Date('July 1, 1999, 12:00:00');
+        const futureDate = new Date();
+        futureDate.setTime(1000);
+        const result = "Thu Jan 01 1970 08:00:01 GMT+0800";
+        console.log(`${TAG} result:` + futureDate);
+        expect(futureDate.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_178000
+     * @tc.name       testSetUTCDate0001
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCDate(0);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('31');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_179000
+     * @tc.name       testSetUTCDate0002
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCDate(1);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('1');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_180000
+     * @tc.name       testSetUTCDate0003
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCDate(14);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('14');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_181000
+     * @tc.name       testSetUTCDate0004
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCDate(31);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('31');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_182000
+     * @tc.name       testSetUTCDate0005
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCDate(32);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('1');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_183000
+     * @tc.name       testSetUTCDate0006
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0006";
+      try {
+        const event = new Date('February 19, 1975 23:15:30');
+        event.setUTCDate(28);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('28');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_184000
+     * @tc.name       testSetUTCDate0007
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0007";
+      try {
+        const event = new Date('February 19, 1975 23:15:30');
+        event.setUTCDate(29);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('1');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_185000
+     * @tc.name       testSetUTCDate0008
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0008";
+      try {
+        const event = new Date('June 19, 1975 23:15:30');
+        event.setUTCDate(30);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('30');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_186000
+     * @tc.name       testSetUTCDate0009
+     * @tc.desc       Test the function of the interface SetUTCDate.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCDate0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCDate0009";
+      try {
+        const event = new Date('June 19, 1975 23:15:30');
+        event.setUTCDate(31);
+        const result = event.getUTCDate();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('1');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_187000
+     * @tc.name       testSetUTCFullYear0001
+     * @tc.desc       Test the function of the interface SetUTCFullYear.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCFullYear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCFullYear0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCFullYear(0);
+        const result = event.getUTCFullYear();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_188000
+     * @tc.name       testSetUTCFullYear0002
+     * @tc.desc       Test the function of the interface SetUTCFullYear.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCFullYear0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCFullYear0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCFullYear(1969);
+        const result = event.getUTCFullYear();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('1969');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_189000
+     * @tc.name       testSetUTCFullYear0003
+     * @tc.desc       Test the function of the interface SetUTCFullYear.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCFullYear0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCFullYear0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCFullYear(9999);
+        const result = event.getUTCFullYear();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('9999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_190000
+     * @tc.name       testSetUTCFullYear0004
+     * @tc.desc       Test the function of the interface SetUTCFullYear.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCFullYear0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCFullYear0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCFullYear(1999, 11, 3);
+        const result = event.getUTCFullYear();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('1999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_191000
+     * @tc.name       testSetUTCFullYear0005
+     * @tc.desc       Test the function of the interface SetUTCFullYear.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCFullYear0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCFullYear0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCFullYear(1999, 12, 30);
+        const result = event.getUTCFullYear();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('2000');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_192000
+     * @tc.name       testSetUTCFullYear0006
+     * @tc.desc       Test the function of the interface SetUTCFullYear.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCFullYear0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCFullYear0006";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCFullYear(1999, 11, 32);
+        const result = event.getUTCFullYear();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('2000');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_193000
+     * @tc.name       testSetUTCHours0001
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(-1);
+        const result = "Tue Aug 19 1975 07:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_194000
+     * @tc.name       testSetUTCHours0002
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(0);
+        const result = "Tue Aug 19 1975 08:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_195000
+     * @tc.name       testSetUTCHours0003
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(23);
+        const result = "Wed Aug 20 1975 07:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_196000
+     * @tc.name       testSetUTCHours0004
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(24);
+        const result = "Wed Aug 20 1975 08:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_197000
+     * @tc.name       testSetUTCHours0005
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, -1);
+        const result = "Tue Aug 19 1975 08:59:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_198000
+     * @tc.name       testSetUTCHours0006
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0006";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 0);
+        const result = "Tue Aug 19 1975 09:00:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_19900
+     * @tc.name       testSetUTCHours0007
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0007";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 59);
+        const result = "Tue Aug 19 1975 09:59:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20000
+     * @tc.name       testSetUTCHours0008
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0008";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 60);
+        const result = "Tue Aug 19 1975 10:00:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20100
+     * @tc.name       testSetUTCHours0009
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0009";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, -1);
+        const result = "Tue Aug 19 1975 09:01:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20200
+     * @tc.name       testSetUTCHours0010
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0010";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 0);
+        const result = "Tue Aug 19 1975 09:02:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20300
+     * @tc.name       testSetUTCHours0011
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0011";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 59);
+        const result = "Tue Aug 19 1975 09:02:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20400
+     * @tc.name       testSetUTCHours0012
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0012";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 60);
+        const result = "Tue Aug 19 1975 09:03:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20500
+     * @tc.name       testSetUTCHours0013
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0013";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 3, -1);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20600
+     * @tc.name       testSetUTCHours0014
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0014";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 3, 0);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20700
+     * @tc.name       testSetUTCHours0015
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0015";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 3, 999);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20800
+     * @tc.name       testSetUTCHours0016
+     * @tc.desc       Test the function of the interface SetUTCHours.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCHours0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCHours0016";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCHours(1, 2, 3, 1000);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_20900
+     * @tc.name       testSetUTCMilliseconds0001
+     * @tc.desc       Test the function of the interface SetUTCMilliseconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMilliseconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMilliseconds0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMilliseconds(-1);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21000
+     * @tc.name       testSetUTCMilliseconds0002
+     * @tc.desc       Test the function of the interface SetUTCMilliseconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMilliseconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMilliseconds0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMilliseconds(0);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21100
+     * @tc.name       testSetUTCMilliseconds0003
+     * @tc.desc       Test the function of the interface SetUTCMilliseconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMilliseconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMilliseconds0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMilliseconds(456);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('456');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21200
+     * @tc.name       testSetUTCMilliseconds0004
+     * @tc.desc       Test the function of the interface SetUTCMilliseconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMilliseconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMilliseconds0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMilliseconds(999);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21300
+     * @tc.name       testSetUTCMilliseconds0005
+     * @tc.desc       Test the function of the interface SetUTCMilliseconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMilliseconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMilliseconds0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMilliseconds(1000);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21400
+     * @tc.name       testSetUTCMinutes0001
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(-1);
+        const result = "Tue Aug 19 1975 22:59:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21500
+     * @tc.name       testSetUTCMinutes0002
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(0);
+        const result = "Tue Aug 19 1975 23:00:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21600
+     * @tc.name       testSetUTCMinutes0003
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(59);
+        const result = "Tue Aug 19 1975 23:59:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21700
+     * @tc.name       testSetUTCMinutes0004
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(60);
+        const result = "Wed Aug 20 1975 00:00:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21800
+     * @tc.name       testSetUTCMinutes0005
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, -1);
+        const result = "Tue Aug 19 1975 23:01:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_21900
+     * @tc.name       testSetUTCMinutes0006
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0006";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 0);
+        const result = "Tue Aug 19 1975 23:02:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_22000
+     * @tc.name       testSetUTCMinutes0007
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0007";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 59);
+        const result = "Tue Aug 19 1975 23:02:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_221000
+     * @tc.name       testSetUTCMinutes0008
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0008";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 60);
+        const result = "Tue Aug 19 1975 23:03:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_222000
+     * @tc.name       testSetUTCMinutes0009
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0009";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 3, -1);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_223000
+     * @tc.name       testSetUTCMinutes0010
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0010";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 3, 0);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_224000
+     * @tc.name       testSetUTCMinutes0011
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0011";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 3, 999);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_225000
+     * @tc.name       testSetUTCMinutes0012
+     * @tc.desc       Test the function of the interface SetUTCMinutes.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMinutes0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMinutes0012";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMinutes(2, 3, 1000);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_226000
+     * @tc.name       testSetUTCMonth0001
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(-1);
+        const result = event.getUTCMonth();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('11');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_227000
+     * @tc.name       testSetUTCMonth0002
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(0);
+        const result = event.getUTCMonth();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_228000
+     * @tc.name       testSetUTCMonth0003
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(3);
+        const result = event.getUTCMonth();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('3');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_229000
+     * @tc.name       testSetUTCMonth0004
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(11);
+        const result = event.getUTCMonth();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('11');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_230000
+     * @tc.name       testSetUTCMonth0005
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(12);
+        const result = event.getUTCMonth();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('0');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_231000
+     * @tc.name       testSetUTCMonth0006
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0006";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(8, 0);
+        const result = "Sun Aug 31 1975 23:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_232000
+     * @tc.name       testSetUTCMonth0007
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0007";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(8, 1);
+        const result = "Mon Sep 01 1975 23:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_233000
+     * @tc.name       testSetUTCMonth0008
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0008";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(9, 16);
+        const result = "Thu Oct 16 1975 23:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_234000
+     * @tc.name       testSetUTCMonth0009
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0009";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(7, 31);
+        const result = "Sun Aug 31 1975 23:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_235000
+     * @tc.name       testSetUTCMonth0010
+     * @tc.desc       Test the function of the interface SetUTCMonth.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCMonth0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCMonth0010";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCMonth(7, 32);
+        const result = "Mon Sep 01 1975 23:15:30 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_236000
+     * @tc.name       testSetUTCSeconds0001
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0001";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(-1);
+        const result = "Tue Aug 19 1975 23:14:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_237000
+     * @tc.name       testSetUTCSeconds0002
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0002";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(0);
+        const result = "Tue Aug 19 1975 23:15:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_238000
+     * @tc.name       testSetUTCSeconds0003
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0003";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(59);
+        const result = "Tue Aug 19 1975 23:15:59 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_239000
+     * @tc.name       testSetUTCSeconds0004
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0004";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(60);
+        const result = "Tue Aug 19 1975 23:16:00 GMT+0800";
+        console.log(`${TAG} result:` + event);
+        expect(event.toString()).assertEqual(result);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_DATE_240000
+     * @tc.name       testSetUTCSeconds0005
+     * @tc.desc       Test the function of the interface SetUTCSeconds.
+     * @tc.size       MediumTest
+     * @tc.type        Function
+     * @tc.level      Level 1
+     */
+    it('testSetUTCSeconds0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSetUTCSeconds0005";
+      try {
+        const event = new Date('August 19, 1975 23:15:30');
+        event.setUTCSeconds(3, -1);
+        const result = event.getUTCMilliseconds();
+        console.log(`${TAG} result:` + result);
+        expect(String(result)).assertEqual('999');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
   })
 }
