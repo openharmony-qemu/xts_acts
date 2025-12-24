@@ -34,6 +34,7 @@ bool testIsEof;
 bool testIsInMemory;
 bool testIsChunked;
 bool g_testIsMainFrame;
+bool g_testIsInMemoryTrue;
 uint64_t testHttpBodyStreamGetPosition = 0;
 uint64_t testHttpBodyStreamGetSize = -1;
 int32_t testHttpBodyStreamSetReadCallBack = -1;
@@ -97,6 +98,7 @@ void OnURLRequestStop(const ArkWeb_SchemeHandler *schemeHandler, const ArkWeb_Re
     testIsEof = rawfileRequest->httpBodyStreamIsEof();
     testIsChunked = rawfileRequest->httpBodyStreamIsChunked();
     testIsInMemory = rawfileRequest->httpBodyStreamIsInMemory();
+    g_testIsInMemoryTrue = rawfileRequest->HttpBodyStreamIsInMemoryTrue();
     testHttpBodyStreamGetPosition = rawfileRequest->httpBodyStreamGetPosition();
     testHttpBodyStreamGetSize = rawfileRequest->httpBodyStreamGetSize();
     testHttpBodyStreamSetReadCallBack = rawfileRequest->httpBodyStreamSetReadCallback();
@@ -443,6 +445,18 @@ napi_value ArkWebResourceRequestIsMainFrameReturnTrue(napi_env env, napi_callbac
     return result;
 }
 
+napi_value ArkWebHttpBodyStreamIsInMemoryTrue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_LOG_ERROR(LOG_APP, "ArkWebHttpBodyStreamIsInMemoryTrue start ");
+    if (g_testIsInMemoryTrue) {
+        napi_create_int32(env, 1, &result);
+    } else {
+        napi_create_int32(env, 0, &result);
+    }
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports) {
     napi_property_descriptor desc[] = {
@@ -480,7 +494,9 @@ static napi_value Init(napi_env env, napi_value exports) {
         {"arkWebServiceWorkerSetSchemeHandlerReturnFalse", nullptr, ArkWebServiceWorkerSetSchemeHandlerReturnFalse,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"arkWebResourceRequestIsMainFrameReturnTrue", nullptr, ArkWebResourceRequestIsMainFrameReturnTrue,
-            nullptr, nullptr, nullptr, napi_default, nullptr}
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"arkWebHttpBodyStreamIsInMemoryTrue", nullptr, ArkWebHttpBodyStreamIsInMemoryTrue,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
