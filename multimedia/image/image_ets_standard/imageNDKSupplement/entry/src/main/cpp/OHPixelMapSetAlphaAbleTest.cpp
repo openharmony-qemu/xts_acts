@@ -89,7 +89,7 @@ napi_value OHPixelMapSetAlphaAble(napi_env env, napi_callback_info info)
         LOGI("OH_PixelMap_SetAlphaAble error2");
         return result;
     }
-    int32_t alphaAble = 0;
+    int32_t alphaAble = 1;
     int32_t imageResult;
     switch (index) {
     case CASE_INDEX_1:
