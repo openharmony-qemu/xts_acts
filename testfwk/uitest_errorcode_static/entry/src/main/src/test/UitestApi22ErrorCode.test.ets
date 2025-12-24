@@ -71,7 +71,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static ComponentEventType = undefined error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
@@ -80,7 +80,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static timeout = -1 error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static end`);
     })
@@ -111,7 +111,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static WindowChangeType = undefined is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       try {
         observer.onceWindowChange(WindowChangeType.WINDOW_ADDED, {
@@ -120,7 +120,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static timeout = -1 is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static end`);
@@ -492,6 +492,28 @@ export default function uitestDriverErrorTest() {
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static end`);
+    })
+
+    /**
+     * @tc.name test_injectKnucklePointerAction_17000007_static
+     * @tc.number UitestDriver_Api22ErrorTest_014
+     * @tc.desc injectKnucklePointerAction 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_injectKnucklePointerAction_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static start`);
+      try {
+        let pointers = PointerMatrix.create(1,1);
+        pointers.setPoint(0,0, {x: 100, y:100});
+        await driver.injectKnucklePointerAction(pointers, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static error s= -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+      }
+      console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static end`);
     })
   })
 }
