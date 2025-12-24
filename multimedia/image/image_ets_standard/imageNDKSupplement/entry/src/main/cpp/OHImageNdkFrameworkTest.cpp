@@ -75,7 +75,7 @@ napi_value OHDecodingOptionsCreateTest(napi_env env, napi_callback_info info)
     return ret;
 }
 
-OH_PixelmapNative* getPixelMap()
+static OH_PixelmapNative* getPixelMap()
 {
     uint8_t length = OPTION_SET_WIDTH * OPTION_SET_HEIGHT * 4;
     uint8_t data[length];
