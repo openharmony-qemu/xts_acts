@@ -749,7 +749,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display..offFoldAngleChange();
+                display.offFoldAngleChange();
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -757,7 +757,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display..offFoldAngleChange();
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {
