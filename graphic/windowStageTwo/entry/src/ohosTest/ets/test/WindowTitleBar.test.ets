@@ -2455,7 +2455,6 @@ export default function windowTitleBarTest() {
       try {
         mainWindow.setWindowTitleButtonVisible(false,true,true);
         let windowStageStart = await startAbility(caseName, context, options);
-        await sleep(200);
         
         let windowClass = windowStageStart.getMainWindowSync();
         let windowRect = mainWindow.getWindowProperties().windowRect;
