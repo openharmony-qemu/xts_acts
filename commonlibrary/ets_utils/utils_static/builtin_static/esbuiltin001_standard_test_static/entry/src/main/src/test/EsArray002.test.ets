@@ -3753,5 +3753,676 @@ export default function EsArrayTest002(){
       console.info(`${caseName}, test end`);
     });
 
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0150
+     * @tc.name ESArrayPrototypeTest20150
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20150';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1);
+      let arr: Array<number> = x.splice(0, -1);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(2);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0151
+     * @tc.name ESArrayPrototypeTest20151
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20151';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1);
+      let arr: Array<number> = x.splice(0, -1);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(2);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0152
+     * @tc.name ESArrayPrototypeTest20152
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20152';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1);
+      let arr: Array<number> = x.splice(2, -1);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(2);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0153
+     * @tc.name ESArrayPrototypeTest20153
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20153';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1);
+      let arr: Array<number> = x.splice(0, -1, 2, 3);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(4);
+      expect(x[0]).assertEqual(2);
+      expect(x[1]).assertEqual(3);
+      expect(x[2]).assertEqual(0);
+      expect(x[3]).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0154
+     * @tc.name ESArrayPrototypeTest20154
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20154';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1);
+      let arr: Array<number> = x.splice(2, -1, 2, 3);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(4);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(1);
+      expect(x[2]).assertEqual(2);
+      expect(x[3]).assertEqual(3);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0155
+     * @tc.name ESArrayPrototypeTest20155
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20155';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1);
+      let arr: Array<number> = x.splice(3, -1, 2, 3);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(4);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(1);
+      expect(x[2]).assertEqual(2);
+      expect(x[3]).assertEqual(3);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0156
+     * @tc.name ESArrayPrototypeTest20156
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20156';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1, 2, 3);
+      let arr: Array<number> = x.splice(-4, 3);
+
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(2);
+
+      expect(x.length).assertEqual(1);
+      expect(x[0]).assertEqual(3);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0157
+     * @tc.name ESArrayPrototypeTest20157
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20157';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1, 2, 3);
+      let arr: Array<number> = x.splice(-4, 3, 4, 5);
+
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(2);
+
+      expect(x.length).assertEqual(3);
+      expect(x[0]).assertEqual(4);
+      expect(x[1]).assertEqual(5);
+      expect(x[2]).assertEqual(3);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0158
+     * @tc.name ESArrayPrototypeTest20158
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20158';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1, 2, 3);
+      let arr: Array<number> = x.splice(-5, 4);
+
+      expect(arr.length).assertEqual(4);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(2);
+      expect(arr[3]).assertEqual(3);
+
+      expect(x.length).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0159
+     * @tc.name ESArrayPrototypeTest20159
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20159';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1, 2, 3);
+      let arr: Array<number> = x.splice(-3, 3, 4, 5);
+
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+
+      expect(x.length).assertEqual(3);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(4);
+      expect(x[2]).assertEqual(5);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0160
+     * @tc.name ESArrayPrototypeTest20160
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20160';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1, 2, 3);
+      let arr: Array<number> = x.splice(-9, 5);
+
+      expect(arr.length).assertEqual(4);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(2);
+      expect(arr[3]).assertEqual(3);
+
+      expect(x.length).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0161
+     * @tc.name ESArrayPrototypeTest20161
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20161';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>(0, 1, 2, 3);
+      let arr: Array<number> = x.splice(-3, 4, 4, 5);
+
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+
+      expect(x.length).assertEqual(3);
+      expect(x[0]).assertEqual(0);
+      expect(x[1]).assertEqual(4);
+      expect(x[2]).assertEqual(5);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0162
+     * @tc.name ESArrayPrototypeTest20162
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20162';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = [0, 1, 2, 3];
+      let arr: Array<number> = x.splice(1, undefined);
+
+      expect(arr.length).assertEqual(0);
+      expect(x.length).assertEqual(4);
+      expect(x[1]).assertEqual(1);
+      expect(x[2]).assertEqual(2);
+      expect(x[3]).assertEqual(3);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0163
+     * @tc.name ESArrayPrototypeTest20163
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest20163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest20163';
+      console.info(`${caseName}, test start`);
+      let a: Array<number> = new Array<number>(0, 1, 2);
+
+      a.splice(1, 2, 4);
+
+      expect(a.length).assertEqual( 2);
+      expect(a[0]).assertEqual(0);
+      expect(a[1]).assertEqual(4);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0164
+     * @tc.name ESArrayPrototypeTest0164
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0164';
+      console.info(`${caseName}, test start`);
+      let array: Array<number> = new Array<number>();
+      let res = array.toLocaleString();
+      expect(res.length).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0165
+     * @tc.name ESArrayPrototypeTest0165
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0165';
+      console.info(`${caseName}, test start`);
+      let obj = new A_165();
+      let arr: Array<object> = new Array<object>(obj, obj, obj);
+      arr.toLocaleString();
+      expect(n_165).assertEqual(3);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0166
+     * @tc.name ESArrayPrototypeTest0166
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0166';
+      console.info(`${caseName}, test start`);
+      let arr = new Array<number>(1,2,3);
+      arr[2] = 42;
+      let res = arr.length;
+      expect(res).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(42);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0167
+     * @tc.name ESArrayPrototypeTest0167
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0167';
+      console.info(`${caseName}, test start`);
+      let arr: Array<number> = new Array<number>();
+      let res = arr.length;
+      expect(res).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0168
+     * @tc.name ESArrayPrototypeTest0168
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0168';
+      console.info(`${caseName}, test start`);
+      let array: Array<number> = new Array<number>();
+      let res = array.toString();
+      expect(res.length).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0169
+     * @tc.name ESArrayPrototypeTest0169
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0169';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>();
+      expect(x.toString()).assertEqual(x.join());
+      if (x.toString() !== "") {
+        expect(x.toString()).assertEqual("");
+      }
+      x = new Array<number>();
+      expect(x.toString()).assertEqual(x.join());
+      if (x.toString() !== "") {
+        expect(x.toString()).assertEqual("");
+      }
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0170
+     * @tc.name ESArrayPrototypeTest0170
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0170';
+      console.info(`${caseName}, test start`);
+      let x: Array<number | undefined | null> = new Array<number | undefined | null>(0, 1, 2, 3);
+      expect(x.toString()).assertEqual(x.join());
+      expect(x.toString()).assertEqual("0,1,2,3");
+      x = new Array<number | undefined | null>();
+      let threw = false;
+      try{
+        x[0] = 0;
+        x[3] = 3;
+        expect(false).assertTrue();
+      } catch (err) {
+        if(err instanceof RangeError) threw = true;
+      }
+      expect(threw).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0171
+     * @tc.name ESArrayPrototypeTest0171
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0171';
+      console.info(`${caseName}, test start`);
+      let x: Array<string> = new Array<string>("", "", "");
+      expect(x.toString()).assertEqual(x.join());
+      expect(x.toString()).assertEqual(",,");
+      let x1: Array<string> = new Array<string>("\\", "\\", "\\");
+      expect(x1.toString()).assertEqual(x1.join());
+      expect(x1.toString()).assertEqual("\\,\\,\\");
+      let x2: Array<string> = new Array<string>("&", "&", "&");
+      expect(x2.toString()).assertEqual(x2.join());
+      expect(x2.toString()).assertEqual("&,&,&");
+      let x3: Array<boolean> = new Array<boolean>(true, true, true);
+      expect(x3.toString()).assertEqual(x3.join());
+      expect(x3.toString()).assertEqual("true,true,true");
+      let x4: Array<null> = new Array<null>(null, null, null);
+      expect(x4.toString()).assertEqual(x4.join());
+      expect(x4.toString()).assertEqual(",,");
+
+      let x5: Array<undefined> = new Array<undefined>(undefined, undefined, undefined);
+      expect(x5.toString()).assertEqual(x5.join());
+      expect(x5.toString()).assertEqual(",,");
+
+      let x6: Array<number> = new Array<number>(Infinity, Infinity, Infinity);
+      expect(x6.toString()).assertEqual(x6.join());
+      expect(x6.toString()).assertEqual("Infinity,Infinity,Infinity");
+
+      let x7: Array<number> = new Array<number>(NaN, NaN, NaN);
+      expect(x7.toString()).assertEqual(x7.join());
+      expect(x7.toString()).assertEqual("NaN,NaN,NaN");
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0172
+     * @tc.name ESArrayPrototypeTest0172
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0172';
+      console.info(`${caseName}, test start`);
+
+      let object1: A_172 = {
+        valueOf: (): string => {
+          return "+"
+        }
+      };
+      let x1: Array<object> = new Array<object>(object1);
+      expect(x1.toString()).assertEqual(x1.join());
+      let object2: A_172 = {
+        valueOf: (): string => {
+          return "+"
+        },
+        toString1: (): string => {
+          return "*"
+        }
+      };
+      let x2: Array<object> = new Array<object>(object2);
+      expect(x2.toString()).assertEqual(x2.join());
+      let object3: B_172 = {
+        valueOf: (): string => {
+          return "+"
+        },
+        toString1: (): object => {
+          return {} as AA_172
+        }
+      };
+      let x3: Array<object> = new Array<object>(object3);
+      expect(x3.toString()).assertEqual(x3.join());
+      let object4: A_172 = {
+        valueOf: (): string => {
+          throw new Error("error")
+        },
+        toString1: (): string => {
+          return "*"
+        }
+      };
+      let x4: Array<object> = new Array<object>(object4);
+      expect(x4.toString()).assertEqual(x4.join());
+      let object5: C_172 = {
+        toString1: (): string => {
+          return "*"
+        }
+      };
+      let x5: Array<object> = new Array<object>(object5);
+      expect(x5.toString()).assertEqual(x5.join());
+      let object6: D_172 = {
+        valueOf: (): object => {
+          return {} as AA_172
+        },
+        toString1: (): string => {
+          return "*"
+        }
+      }
+      let x6: Array<object> = new Array<object>(object6);
+      expect(x6.toString()).assertEqual(x6.join());
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0173
+     * @tc.name ESArrayPrototypeTest0173
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0173';
+      console.info(`${caseName}, test start`);
+      let x: Array<number> = new Array<number>();
+      let unshift3 = x.unshift(1);
+      expect(unshift3).assertEqual(1);
+      expect(x[0]).assertEqual(1);
+      let unshift2 = x.unshift(-1);
+      expect(unshift2).assertEqual(2);
+      expect(x[1]).assertEqual(1);
+      expect(x.length).assertEqual(2);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0174
+     * @tc.name ESArrayPrototypeTest0174
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0174';
+      console.info(`${caseName}, test start`);
+      let x: Array<number | boolean | string> = new Array<number | boolean | string>();
+      expect(x.length).assertEqual(0);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0175
+     * @tc.name ESArrayPrototypeTest0175
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0175';
+      console.info(`${caseName}, test start`);
+      let array = new Array<string>();
+      let iterator = array.values();
+      let result: IteratorResult<string>;
+      array.push('a');
+      result = iterator.next();
+      expect(result.done).assertEqual(false);
+      expect(result.value).assertEqual('a');
+      result = iterator.next();
+      expect(result.done).assertEqual(true);
+      expect(result.value).assertEqual(undefined);
+      array.push('b');
+      result = iterator.next();
+      expect(result.done).assertEqual(true);
+      expect(result.value).assertEqual(undefined);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.number ES_BUILTINS_ARRAY_PROTOTYPE2_0176
+     * @tc.name ESArrayPrototypeTest0176
+     * @tc.desc Test ES Builtins-Api in Array.Prototype
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ESArrayPrototypeTest0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
+      const caseName = 'ESArrayPrototypeTest0176';
+      console.info(`${caseName}, test start`);
+      let array: Array<string> = new Array<string>('a', 'b', 'c');
+      let iterator = array.values();
+      let result: IteratorResult<string>;
+      result = iterator.next();
+      expect(result.value).assertEqual('a');
+      expect(result.done).assertEqual(false);
+      result = iterator.next();
+      expect(result.value).assertEqual('b');
+      expect(result.done).assertEqual(false);
+      result = iterator.next();
+      expect(result.value).assertEqual('c');
+      expect(result.done).assertEqual(false);
+      result = iterator.next();
+      expect(result.value).assertEqual(undefined);
+      expect(result.done).assertEqual(true);
+      console.info(`${caseName}, test end`);
+    });
+
   })
 }
