@@ -55,7 +55,7 @@ export default function TextFontWeightTest() {
       let strJson1 = getInspectorByKey('textFontWeightTest01');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[TextFontWeightTest_0010] value: ' + JSON.stringify(obj1.$attrs.fontWeight));
-      expect(JSON.stringify(obj1.$attrs.fontWeight)).assertEqual('FontWeight.Normal');
+      expect(obj1.$attrs.fontWeight).assertEqual('FontWeight.Normal');
       console.info('TextFontWeightTest_0010 END');
       done();
     });
@@ -73,7 +73,7 @@ export default function TextFontWeightTest() {
       let strJson1 = getInspectorByKey('textFontWeightTest02');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[TextFontWeightTest_002] value: ' + JSON.stringify(obj1.$attrs.fontWeight));
-      expect(JSON.stringify(obj1.$attrs.fontWeight)).assertEqual('FontWeight.Normal');
+      expect(obj1.$attrs.fontWeight).assertEqual('FontWeight.Normal');
       console.info('TextFontWeightTest_002 END');
       done();
     });
@@ -91,7 +91,7 @@ export default function TextFontWeightTest() {
       let strJson1 = getInspectorByKey('textFontWeightTest03');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[TextFontWeightTest_003] value: ' + JSON.stringify(obj1.$attrs.fontWeight));
-      expect(JSON.stringify(obj1.$attrs.fontWeight)).assertEqual('FontWeight.Normal');
+      expect(obj1.$attrs.fontWeight).assertEqual('FontWeight.Normal');
       console.info('TextFontWeightTest_003 END');
       done();
     });
@@ -109,7 +109,7 @@ export default function TextFontWeightTest() {
       let strJson1 = getInspectorByKey('textFontWeightTest04');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[TextFontWeightTest_004] value: ' + JSON.stringify(obj1.$attrs.fontWeight));
-      expect(JSON.stringify(obj1.$attrs.fontWeight)).assertEqual('FontWeight.Normal');
+      expect(obj1.$attrs.fontWeight).assertEqual('FontWeight.Normal');
       console.info('TextFontWeightTest_004 END');
       done();
     });
@@ -127,7 +127,7 @@ export default function TextFontWeightTest() {
       let strJson1 = getInspectorByKey('textFontWeightTest05');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[TextFontWeightTest_005] value: ' + JSON.stringify(obj1.$attrs.fontWeight));
-      expect(JSON.stringify(obj1.$attrs.fontWeight)).assertEqual('FontWeight.Normal');
+      expect(obj1.$attrs.fontWeight).assertEqual('FontWeight.Normal');
       console.info('TextFontWeightTest_005 END');
       done();
     });
@@ -145,7 +145,7 @@ export default function TextFontWeightTest() {
       let strJson1 = getInspectorByKey('textFontWeightTest06');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[TextFontWeightTest_006] value: ' + JSON.stringify(obj1.$attrs.fontWeight));
-      expect(JSON.stringify(obj1.$attrs.fontWeight)).assertEqual('FontWeight.Normal');
+      expect(obj1.$attrs.fontWeight).assertEqual('FontWeight.Normal');
       console.info('TextFontWeightTest_006 END');
       done();
     });

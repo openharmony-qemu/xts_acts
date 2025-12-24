@@ -131,7 +131,7 @@ export default function MaxLinesOptionsTest() {
       let strJson5 = getInspectorByKey('TextAreaMaxLinesNegative');
       let obj5: ESObject = JSON.parse(strJson5);
       console.log('TextAreaMaxLinesMode------' + obj5.$attrs.scrollable);
-      expect(obj5.$attrs.scrollable).assertEqual('false');
+      expect(''+obj5.$attrs.scrollable).assertEqual('false');
       console.info("[MaxLinesOptionsTest0005] end");
       done();
     });
