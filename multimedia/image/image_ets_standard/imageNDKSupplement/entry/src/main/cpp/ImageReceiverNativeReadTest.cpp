@@ -227,7 +227,7 @@ napi_value ImageReceiverNativeReadLatestImageSuccessTest(napi_env env, napi_call
     CreateAndOpenCamera();
     CreatePhotoOutput(constCharPtr);
     CreateCaptureSession();
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::seconds(3));
     OH_ImageNative *image = nullptr;
     errCode = OH_ImageReceiverNative_ReadNextImage(receiver, &image);
     if (errCode != IMAGE_SUCCESS) {
