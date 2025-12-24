@@ -32,68 +32,6 @@
 
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
-#define SUCCESS 0
-#define FAIL (-1)
-#define NUMBER_MINUS_1 (-1)
-#define NUMBER_0 0
-#define NUMBER_1 1
-#define NUMBER_2 2
-#define NUMBER_3 3
-#define NUMBER_4 4
-#define NUMBER_5 5
-#define NUMBER_6 6
-#define NUMBER_7 7
-#define NUMBER_8 8
-#define NUMBER_9 9
-#define NUMBER_10 10
-#define NUMBER_11 11
-#define NUMBER_12 12
-#define NUMBER_13 13
-#define NUMBER_14 14
-#define NUMBER_15 15
-#define NUMBER_16 16
-#define NUMBER_17 17
-#define NUMBER_18 18
-#define NUMBER_19 19
-#define NUMBER_20 20
-#define NUMBER_32 32
-#define NUMBER_50 50
-#define NUMBER_60 60
-#define NUMBER_100 100
-#define NUMBER_200 200
-#define NUMBER_500 500
-#define NUMBER_1000 1000
-#define NUMBER_1001 1001
-#define NUMBER_1002 1002
-#define NUMBER_2001 2001
-#define NUMBER_2002 2002
-#define NUMBER_2999 2999
-#define NUMBER_3000 3000
-#define NUMBER_3001 3001
-#define NUMBER_3002 3002
-#define NUMBER_3003 3003
-#define NUMBER_4001 4001
-#define NUMBER_4002 4002
-#define NUMBER_4003 4003
-#define NUMBER_5000 5000
-#define NUMBER_5001 5001
-#define NUMBER_5002 5002
-#define NUMBER_5003 5003
-#define NUMBER_6001 6001
-#define NUMBER_6002 6002
-#define NUMBER_6003 6003
-#define NUMBER_7001 7001
-#define NUMBER_7002 7002
-#define NUMBER_8001 8001
-#define NUMBER_8002 8002
-#define NUMBER_8003 8003
-#define NUMBER_10000 10000
-#define NUMBER_100000000 100000000
-#define NUMBER_40001000 40001000
-#define NUMBER_50002000 50002000
-#define NUMBER_50007000 50007000
-#define NUMBER_50102000 50102000
-
 static OH_NativeBuffer *getBuffer()
 {
     OH_NativeBuffer_Config config = {
@@ -112,7 +50,7 @@ napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info)
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
     if (buffer != nullptr) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_create_int32(env, backInfo, &result);
     OH_NativeBuffer_Unreference(buffer);
@@ -126,7 +64,7 @@ napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info info)
     OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(nullptr);
 
     if (buffer != nullptr) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_create_int32(env, backInfo, &result);
     OH_NativeBuffer_Unreference(buffer);
@@ -152,7 +90,7 @@ napi_value OHNativeBufferReferenceAbnormal(napi_env env, napi_callback_info info
     int backInfo = FAIL;
     int32_t ret = OH_NativeBuffer_Reference(nullptr);
     if (ret == 0) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
@@ -180,7 +118,7 @@ napi_value OHNativeBufferUnreferenceAbnormal(napi_env env, napi_callback_info in
 
     int32_t ret = OH_NativeBuffer_Unreference(nullptr);
     if (ret == 0) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
@@ -199,7 +137,7 @@ napi_value OHNativeBufferGetConfig(napi_env env, napi_callback_info info)
         checkConfig.usage = 0x0;
         OH_NativeBuffer_GetConfig(buffer, &checkConfig);
         if (&checkConfig != nullptr) {
-            backInfo = SUCCESS;
+            backInfo = NATIVE_ERROR_OK;
         }
     }
     napi_value result = nullptr;
@@ -230,7 +168,7 @@ napi_value OHNativeBufferMapAbnormal(napi_env env, napi_callback_info info)
     void *virAddr = nullptr;
     int32_t ret = OH_NativeBuffer_Map(nullptr, &virAddr);
     if (ret == 0) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
@@ -257,7 +195,7 @@ napi_value OHNativeBufferUnmapAbnormal(napi_env env, napi_callback_info info)
     int backInfo = FAIL;
     int32_t ret = OH_NativeBuffer_Unmap(nullptr);
     if (ret == 0) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
@@ -272,7 +210,7 @@ napi_value OHNativeBufferGetSeqNum(napi_env env, napi_callback_info info)
     if (buffer != nullptr) {
         uint32_t id = OH_NativeBuffer_GetSeqNum(buffer);
         if (id > 0) {
-            backInfo = SUCCESS;
+            backInfo = NATIVE_ERROR_OK;
         }
     }
     napi_value result = nullptr;
@@ -286,7 +224,7 @@ napi_value OHNativeBufferGetSeqNumAbnormal(napi_env env, napi_callback_info info
     int backInfo = FAIL;
     uint32_t id = OH_NativeBuffer_GetSeqNum(nullptr);
     if (id > 0 && id != UINT_MAX) {
-        backInfo = SUCCESS;
+        backInfo = NATIVE_ERROR_OK;
     }
     napi_value result = nullptr;
     napi_create_int32(env, backInfo, &result);
@@ -300,7 +238,7 @@ napi_value OHNativeBufferAllocNullptr(napi_env env, napi_callback_info info)
     if (ptr == nullptr) {
         napi_create_int32(env, FAIL, &result);
     } else {
-        napi_create_int32(env, SUCCESS, &result);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
     }
     return result;
 }
@@ -314,7 +252,7 @@ void nativeBufferConfigArrTest(napi_env &env, napi_value &result,
         if (ptr == NULL) {
             napi_create_int32(env, FAIL, &resultIndex);
         } else {
-            napi_create_int32(env, SUCCESS, &result);
+            napi_create_int32(env, NATIVE_ERROR_OK, &result);
         }
         napi_set_element(env, result, index, resultIndex);
     }
@@ -410,7 +348,7 @@ napi_value OHNativeBufferAllocAbormal(napi_env env, napi_callback_info info)
         if (ptr == NULL) {
             napi_create_int32(env, FAIL, &resultIndex);
         } else {
-            napi_create_int32(env, SUCCESS, &result);
+            napi_create_int32(env, NATIVE_ERROR_OK, &result);
         }
         napi_set_element(env, result, index, resultIndex);
     }
@@ -433,7 +371,7 @@ napi_value OHNativeBufferAllocMuch(napi_env env, napi_callback_info info)
             napi_create_int32(env, FAIL, &result);
             break;
         } else {
-            napi_create_int32(env, SUCCESS, &result);
+            napi_create_int32(env, NATIVE_ERROR_OK, &result);
         }
     }
     for (uint32_t index = 0; index < NUMBER_500; index++) {
@@ -509,7 +447,7 @@ napi_value OHNativeBufferFromNativeWindowBufferNormal(napi_env env, napi_callbac
 
     // nativeWindowBuffer和nativeBuffer是否一致 一致返回success,失败返回fail
     if (buffer != nullptr) {
-        napi_create_int32(env, SUCCESS, &result1);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result1);
     } else {
         napi_create_int32(env, FAIL, &result1);
     }
@@ -532,7 +470,7 @@ napi_value OHNativeBufferGetConfigNullptr(napi_env env, napi_callback_info info)
     OH_NativeBuffer_GetConfig(nullptr, nativeBufferConfig);
     // 怎么做判断？
     if (nativeBufferConfig != nullptr) {
-        napi_create_int32(env, SUCCESS, &result);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
     }
@@ -566,7 +504,7 @@ napi_value OHNativeBufferGetConfigNormal(napi_env env, napi_callback_info info)
     }
 
     if (areEqual) {
-        napi_create_int32(env, SUCCESS, &result);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
     }
@@ -595,7 +533,7 @@ napi_value OHNativeBufferGetSeqNumNormal(napi_env env, napi_callback_info info)
     uint32_t ret = 0;
     ret = OH_NativeBuffer_GetSeqNum(nativeBuffer);
     if (ret > 0 && ret != UINT_MAX) {
-        napi_create_int32(env, SUCCESS, &result);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
     }
@@ -625,7 +563,7 @@ napi_value OHNativeBufferMapNormal(napi_env env, napi_callback_info info)
     void *virAddr = nullptr;
     uint32_t ret = OH_NativeBuffer_Map(nativeBuffer, &virAddr);
     if (virAddr != nullptr) {
-        napi_create_int32(env, SUCCESS, &result);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
     }
@@ -671,7 +609,7 @@ napi_value OHNativeBufferMapPlanesAbNormal(napi_env env, napi_callback_info info
     void *virAddr = nullptr;
     OH_NativeBuffer_Planes outPlanes;
     int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, &outPlanes);
-    if (ret != NUMBER_50007000) {
+    if (ret != NATIVE_ERROR_HDI_ERROR) {
         napi_create_int32(env, NUMBER_1001, &result);
         return result;
     } else {
@@ -702,11 +640,52 @@ napi_value OHNativeBufferMapPlanesNormal(napi_env env, napi_callback_info info)
         void *virAddr = nullptr;
         OH_NativeBuffer_Planes outPlanes;
         int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, &outPlanes);
-        if (ret != SUCCESS) {
+        if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, NUMBER_1000 * (i + 1) + NUMBER_1, &result);
             return result;
         } else {
-            napi_create_int32(env, SUCCESS, &result);
+            napi_create_int32(env, NATIVE_ERROR_OK, &result);
+        }
+        OH_NativeBuffer_Unreference(nativeBuffer);
+    }
+    return result;
+}
+
+napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_create_array_with_length(env, NUMBER_3, &result);
+    OH_NativeBuffer_Format format[] = {
+        NATIVEBUFFER_PIXEL_FMT_YCBCR_420_SP,
+        NATIVEBUFFER_PIXEL_FMT_YCRCB_420_SP,
+        NATIVEBUFFER_PIXEL_FMT_YCBCR_420_P,
+        NATIVEBUFFER_PIXEL_FMT_YCRCB_420_P
+    };
+    for (int i = 0; i < sizeof(format) / sizeof(format[0]); i++) {
+        OH_NativeBuffer_Config nativeBufferConfig = {
+            .width = 0x100,
+            .height = 0x100,
+            .format = format[i],
+            .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        };
+        OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
+        void *virAddr = nullptr;
+        OH_NativeBuffer_Planes* outPlanes;
+        outPlanes->planeCount = 2;
+        // 平面0：Y分量
+        outPlanes->planes[0].offset = 0;        // 偏移量0
+        outPlanes->planes[0].rowStride = 1920;  // 假设宽度1920，行步长1920字节
+        outPlanes->planes[0].columnStride = 1080;// 假设高度1080，列步长1080字节
+        // 平面1：UV分量
+        outPlanes->planes[1].offset = 1920 * 1080; // 偏移量为Y分量大小
+        outPlanes->planes[1].rowStride = 1920;     // UV行步长与Y相同
+        outPlanes->planes[1].columnStride = 540;
+        int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, outPlanes);
+        if (ret != NATIVE_ERROR_OK) {
+            napi_create_int32(env, NUMBER_1000 * (i + 1) + NUMBER_1, &result);
+            return result;
+        } else {
+            napi_create_int32(env, NATIVE_ERROR_OK, &result);
         }
         OH_NativeBuffer_Unreference(nativeBuffer);
     }
@@ -781,7 +760,7 @@ napi_value OHNativeBufferUnreferenceNormal(napi_env env, napi_callback_info info
         napi_create_int32(env, NUMBER_4001, &result);
         return result;
     }
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -821,12 +800,12 @@ napi_value OHNativeBufferGetColorSpaceFirst(napi_env env, napi_callback_info inf
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
     OH_NativeBuffer_ColorSpace colorSpace;
     int32_t ret = OH_NativeBuffer_GetColorSpace(nativeBuffer, &colorSpace);
-    if (ret != NUMBER_50002000 && ret != NUMBER_50102000) {
+    if (ret != NATIVE_ERROR_UNKNOWN && ret != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_1001, &result);
         return result;
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -859,7 +838,7 @@ napi_value OHNativeBufferSetColorSpaceNormal(napi_env env, napi_callback_info in
         }
         OH_NativeBuffer_Unreference(nativeBuffer);
     }
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -933,11 +912,11 @@ napi_value OHNativeBufferGetMetadataValueFirst(napi_env env, napi_callback_info 
     int32_t size = 0;
     uint8_t *metadata = nullptr;
     int32_t ret = OH_NativeBuffer_GetMetadataValue(nativeBuffer, metadataKey, &size, &metadata);
-    if (ret != NUMBER_50002000 && ret != NUMBER_50102000) {
+    if (ret != NATIVE_ERROR_UNKNOWN && ret != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_1001, &result);
         return result;
     }
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
@@ -950,23 +929,23 @@ napi_value OHNativeBufferSetDynamicMetadataValue1(napi_env env, OH_NativeBuffer 
     int32_t x = NUMBER_MINUS_1;
     uint8_t metaData[NUMBER_60];
     auto flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_DYNAMIC_METADATA, x, metaData);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_1001, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != NUMBER_50002000 && flag != NUMBER_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_1002, &result);
         return result;
     }
     x = 0;
     flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_DYNAMIC_METADATA, x, metaData);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_2001, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_DYNAMIC_METADATA, &bufferSize, &buffer);
-    if (flag != NUMBER_50002000 && flag != NUMBER_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_2002, &result);
         return result;
     }
@@ -987,7 +966,7 @@ napi_value OHNativeBufferSetDynamicMetadataValue1(napi_env env, OH_NativeBuffer 
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1035,7 +1014,7 @@ napi_value OHNativeBufferSetDynamicMetadataValue2(napi_env env, OH_NativeBuffer 
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1086,7 +1065,7 @@ napi_value OHNativeBufferSetDynamicMetadataValue3(napi_env env, OH_NativeBuffer 
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1116,7 +1095,7 @@ napi_value OHNativeBufferSetDynamicMetadataValue(napi_env env, napi_callback_inf
     }
 
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1150,11 +1129,11 @@ napi_value OHNativeBufferSetMetadataValueTimes(napi_env env, napi_callback_info 
             napi_create_int32(env, FAIL, &result);
             break;
         } else {
-            napi_create_int32(env, SUCCESS, &result);
+            napi_create_int32(env, NATIVE_ERROR_OK, &result);
         }
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1166,23 +1145,23 @@ napi_value OHNativeBufferSetStaticMetadataValue1(napi_env env, OH_NativeBuffer *
     int32_t x = NUMBER_MINUS_1;
     uint8_t metaData[NUMBER_60];
     auto flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_STATIC_METADATA, x, metaData);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_1001, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != NUMBER_50002000 && flag != NUMBER_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_1002, &result);
         return result;
     }
     x = 0;
     flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_STATIC_METADATA, x, metaData);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_2001, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_STATIC_METADATA, &bufferSize, &buffer);
-    if (flag != NUMBER_50002000 && flag != NUMBER_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_2002, &result);
         return result;
     }
@@ -1203,7 +1182,7 @@ napi_value OHNativeBufferSetStaticMetadataValue1(napi_env env, OH_NativeBuffer *
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1251,7 +1230,7 @@ napi_value OHNativeBufferSetStaticMetadataValue2(napi_env env, OH_NativeBuffer *
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1302,7 +1281,7 @@ napi_value OHNativeBufferSetStaticMetadataValue3(napi_env env, OH_NativeBuffer *
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1331,7 +1310,7 @@ napi_value OHNativeBufferSetStaticMetadataValue(napi_env env, napi_callback_info
     }
 
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1343,24 +1322,24 @@ napi_value OHNativeBufferSetMetadataValue1(napi_env env, OH_NativeBuffer *native
     int32_t x = NUMBER_MINUS_1;
     uint8_t metaData[NUMBER_60];
     auto flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, x, metaData);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_1001, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != NUMBER_50002000 && flag != NUMBER_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_1002, &result);
         return result;
     }
     // 2. x=0 set调用失败 get调用失败
     x = 0;
     flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, x, metaData);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_2001, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-    if (flag != NUMBER_50002000 && flag != NUMBER_50102000) {
+    if (flag != NATIVE_ERROR_UNKNOWN && flag != NATIVE_ERROR_UNSUPPORTED) {
         napi_create_int32(env, NUMBER_2002, &result);
         return result;
     }
@@ -1382,7 +1361,7 @@ napi_value OHNativeBufferSetMetadataValue1(napi_env env, OH_NativeBuffer *native
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1431,7 +1410,7 @@ napi_value OHNativeBufferSetMetadataValue2(napi_env env, OH_NativeBuffer *native
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1476,7 +1455,7 @@ napi_value OHNativeBufferSetMetadataValue3(napi_env env, OH_NativeBuffer *native
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1502,7 +1481,7 @@ napi_value OHNativeBufferSetMetadataValue4(napi_env env, OH_NativeBuffer *native
         return result;
     }
     delete[] buffer;
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1536,7 +1515,7 @@ napi_value OHNativeBufferSetMetadataValue(napi_env env, napi_callback_info info)
     }
 
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1630,23 +1609,23 @@ napi_value OHNativeBufferGetMetadataValueNullptr(napi_env env, napi_callback_inf
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nullptr, OH_HDR_DYNAMIC_METADATA, &ret1, &ret2);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_2, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_DYNAMIC_METADATA, nullptr, &ret2);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_3, &result);
         return result;
     }
     flag = OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_DYNAMIC_METADATA, &ret1, nullptr);
-    if (flag != NUMBER_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_4, &result);
         return result;
     }
     delete[] buffer;
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1675,7 +1654,7 @@ napi_value OHNativeBufferY8Y16USAGEandAlloc(napi_env env, napi_callback_info inf
     OH_NativeBuffer_GetConfig(nativeBuffer1, &Config3);
     if (Config.format == Config2.format && Config1.format == Config3.format && Config.usage == Config2.usage &&
         Config1.usage == Config3.usage) {
-        napi_create_int32(env, SUCCESS, &result);
+        napi_create_int32(env, NATIVE_ERROR_OK, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
         return result;
@@ -1718,7 +1697,7 @@ napi_value OHNativeBufferMapWaitFence0ms(napi_env env, napi_callback_info info)
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    if (errorCode != SUCCESS) {
+    if (errorCode != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1726,7 +1705,7 @@ napi_value OHNativeBufferMapWaitFence0ms(napi_env env, napi_callback_info info)
     close(fenceFd);
     OH_NativeBuffer_Unmap(nativeBuffer);
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1764,7 +1743,7 @@ napi_value OHNativeBufferMapWaitFence100ms(napi_env env, napi_callback_info info
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    if (errorCode != SUCCESS) {
+    if (errorCode != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1776,7 +1755,7 @@ napi_value OHNativeBufferMapWaitFence100ms(napi_env env, napi_callback_info info
     close(fenceFd);
     OH_NativeBuffer_Unmap(nativeBuffer);
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1814,7 +1793,7 @@ napi_value OHNativeBufferMapWaitFence5000ms(napi_env env, napi_callback_info inf
         napi_create_int32(env, FAIL, &result);
         return result;
     }
-    if (errorCode != SUCCESS) {
+    if (errorCode != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1822,7 +1801,7 @@ napi_value OHNativeBufferMapWaitFence5000ms(napi_env env, napi_callback_info inf
     close(fenceFd);
     OH_NativeBuffer_Unmap(nativeBuffer);
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1853,12 +1832,12 @@ napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_info in
     });
     void *virAddr = nullptr;
     int32_t errorCode1 = OH_NativeBuffer_MapWaitFence(nullptr, fenceFd, &virAddr);
-    if (errorCode1 != NUMBER_40001000) {
+    if (errorCode1 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     int32_t errorCode2 = OH_NativeBuffer_MapWaitFence(nativeBuffer, fenceFd, nullptr);
-    if (errorCode2 != NUMBER_40001000) {
+    if (errorCode2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1866,7 +1845,7 @@ napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_info in
     close(fenceFd);
     OH_NativeBuffer_Unmap(nativeBuffer);
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1897,12 +1876,12 @@ napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback_info i
     });
     void *virAddr = nullptr;
     int32_t errorCode1 = OH_NativeBuffer_MapWaitFence(nativeBuffer, -1, &virAddr);
-    if (errorCode1 != NUMBER_40001000) {
+    if (errorCode1 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     int32_t errorCode2 = OH_NativeBuffer_MapWaitFence(nativeBuffer, 0xFFFFFFFF+1, nullptr);
-    if (errorCode2 != NUMBER_40001000) {
+    if (errorCode2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1910,7 +1889,7 @@ napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback_info i
     close(fenceFd);
     OH_NativeBuffer_Unmap(nativeBuffer);
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1937,7 +1916,7 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
         uint8_t type = hdr_type[i];
         int32_t errorCode = OH_NativeBuffer_SetMetadataValue(
             nativeBuffer, OH_HDR_METADATA_TYPE, sizeof(OH_NativeBuffer_MetadataType), &type);
-        if (errorCode != SUCCESS) {
+        if (errorCode != NATIVE_ERROR_OK) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
@@ -1948,7 +1927,7 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
         }
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
 
@@ -1972,6 +1951,6 @@ napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info
         return result;
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, SUCCESS, &result);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
     return result;
 }
