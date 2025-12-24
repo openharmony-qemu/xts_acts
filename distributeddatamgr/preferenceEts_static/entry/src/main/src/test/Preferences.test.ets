@@ -802,7 +802,7 @@ export default function preferenceTest() {
       });
       done();
     });
-    
+
     
     /**
      * @tc.name   testPreferencesGetAllCallBackTest0001
@@ -1004,7 +1004,7 @@ export default function preferenceTest() {
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
 
-        await Utils.msSleep(1000);
+        await Utils.msSleep(100);
         mPreferences.offMultiProcessChange(testObserver);
       } catch (err : BusinessError) {
         expect().assertFail();
@@ -1066,7 +1066,7 @@ export default function preferenceTest() {
         mPreferences.onDataChange(keys, testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
-        await Utils.msSleep(1000);
+        await Utils.msSleep(100);
         mPreferences.offDataChange(keys, testObserver);
       } catch (err : BusinessError) {
         expect().assertFail();
@@ -1551,7 +1551,7 @@ export default function preferenceTest() {
         mPreferences.onMultiProcessChange(func);
         mPreferences.putSync(KEY_TEST_STRING_ELEMENT, 'abc');
         await mPreferences.flush();
-        await Utils.msSleep(1000);
+        await Utils.msSleep(100);
       } catch (err: BusinessError) {
         hilog.info(domain, tag, '%{public}s', "clear err =" + err + ", code =" + err.code + ", message =" + err.message);
         expect('401').assertEqual(err.code);
@@ -1665,7 +1665,7 @@ export default function preferenceTest() {
         await mPreferences.flush();
         hilog.info(domain, tag, '%{public}s', TAG + "start sleep");
 
-        await Utils.msSleep(1000);
+        await Utils.msSleep(100);
         mPreferences.offChange(testObserver);
       } catch (err : BusinessError) {
         expect().assertFail();
@@ -1694,7 +1694,7 @@ export default function preferenceTest() {
       await mPreferences.flush();
       hilog.info(domain, tag, '%{public}s', `Register002. flush sync`);
 
-      await Utils.msSleep(1500);
+      await Utils.msSleep(100);
       mPreferences.offChange(observer);
       done();
     });
@@ -1712,12 +1712,12 @@ export default function preferenceTest() {
         expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
       }
       mPreferences.onChange(observer);
-      await Utils.msSleep(500);
+      await Utils.msSleep(100);
       await mPreferences.put(KEY_TEST_STRING_ELEMENT, "");
       await mPreferences.flush();
       hilog.info(domain, tag, '%{public}s', `UnRegister001. flush sync`);
 
-      await Utils.msSleep(1500);
+      await Utils.msSleep(100);
       mPreferences.offChange(observer);
       done();
     });
@@ -1781,16 +1781,14 @@ export default function preferenceTest() {
     it('testPreferencesPutNumberArray0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await mPreferences.clear();
-        let numberArr = new Array<double>(11, 22, 33, 44, 55);
+        await mPreferences.flush();
+        let numberArr = new Array<double>(11.1, 22.2, 33.3, 44.4, 55.5);
         await mPreferences.put(KEY_TEST_NUMBER_ARRAY_ELEMENT, numberArr);
-        await mPreferences.get(KEY_TEST_NUMBER_ARRAY_ELEMENT, [123, 321]).then((pre : Object) :  Promise<void> => {
-          let preTemp = pre as Array<number>;
-          for (let i = 0; i < numberArr.length; i++) {
-            expect(numberArr[i]).assertEqual(preTemp[i] as Double);
-          }
-        }).catch((err) => {
-          expect(null).assertFail();
-        })
+        let nArrObj = mPreferences.getSync(KEY_TEST_NUMBER_ARRAY_ELEMENT, new Array<double>()) as Array<double>;
+        expect(nArrObj != null).assertEqual(true);
+        for (let i = 0; i < nArrObj.length; i++) {
+          expect(nArrObj[i]).assertEqual(numberArr[i]);
+        }
       } catch (err : BusinessError) {
         expect().assertFail();
       } finally {
@@ -1809,17 +1807,14 @@ export default function preferenceTest() {
     it('testPreferencesPutLongArray0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await mPreferences.clear();
+        await mPreferences.flush();
         let longArr = new Array<long>(1111, 2222, 3333, 4444, 5555);
         await mPreferences.put(KEY_TEST_NUMBER_ARRAY_ELEMENT, longArr);
-        await mPreferences.get(KEY_TEST_NUMBER_ARRAY_ELEMENT, [12345, 54321]).then((pre : Object) :  Promise<void> => {
-          let preTemp = pre as Array<long>;
-          for (let i = 0; i < longArr.length; i++) {
-            hilog.info(domain, tag, '%{public}s', `testPreferencesPutLongArray0132. longarr = ` + longArr[i] + ` preTemp[i] = ` +  preTemp[i]);
-            expect(longArr[i]).assertEqual(preTemp[i] as Long);
-          }
-        }).catch((err) => {
-          expect(null).assertFail();
-        })
+        let nArrObj = mPreferences.getSync(KEY_TEST_NUMBER_ARRAY_ELEMENT, new Array<long>()) as Array<long>;
+        expect(nArrObj != null).assertEqual(true);
+        for (let i = 0; i < nArrObj.length; i++) {
+          expect(nArrObj[i]).assertEqual(longArr[i]);
+        }
       } catch (err : BusinessError) {
         expect().assertFail();
       } finally {
@@ -1838,16 +1833,14 @@ export default function preferenceTest() {
     it('testPreferencesPutBoolArray0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         await mPreferences.clear();
+        await mPreferences.flush();
         let boolArr = new Array<boolean>(true, false, false, true);
         await mPreferences.put(KEY_TEST_BOOL_ARRAY_ELEMENT, boolArr);
-        await mPreferences.get(KEY_TEST_BOOL_ARRAY_ELEMENT, [false, true]).then((pre : Object) :  Promise<void> => {
-          let preTemp = pre as Array<boolean>;
-          for (let i = 0; i < boolArr.length; i++) {
-            expect(boolArr[i]).assertEqual(preTemp[i]);
-          }
-        }).catch((err) => {
-          expect(null).assertFail();
-        })
+        let nArrObj = mPreferences.getSync(KEY_TEST_BOOL_ARRAY_ELEMENT, new Array<boolean>()) as Array<boolean>;
+        expect(nArrObj != null).assertEqual(true);
+        for (let i = 0; i < nArrObj.length; i++) {
+          expect(nArrObj[i]).assertEqual(boolArr[i]);
+        }
       } catch (err : BusinessError) {
         expect().assertFail();
       } finally {
