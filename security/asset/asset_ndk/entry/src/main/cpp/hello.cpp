@@ -95,7 +95,7 @@ static napi_value Asset_AddCE(napi_env env, napi_callback_info info)
         Asset_Attr *secret = OH_Asset_ParseAttr(resultSet.results + 0, ASSET_TAG_SECRET);
         if (secret == nullptr) {
             ret = -1;
-        } else if (memcmp(secret->value.blob.data, reinterpret_cast<uint8_t *>(secretBuffer), 
+        } else if (memcmp(secret->value.blob.data, reinterpret_cast<uint8_t *>(secretBuffer),
             secret->value.blob.size) == 0) {
             ret = MAGIC_RET;
         } else {
