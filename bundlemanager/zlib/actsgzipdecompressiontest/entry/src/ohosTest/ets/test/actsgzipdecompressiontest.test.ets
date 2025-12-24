@@ -1185,6 +1185,10 @@ export default function ActsGzipDecompressionTest() {
                 await gzip.gzsetparams(zlib.CompressLevel.COMPRESS_LEVEL_NO_COMPRESSION,
                     zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then((errcode) => {
                         expect(errcode).assertEqual(zlib.ReturnStatus.OK);
+                        expect(-1).assertEqual(zlib.ReturnStatus.ERRNO);
+                        expect(-2).assertEqual(zlib.ReturnStatus.STREAM_ERROR);
+                        expect(-4).assertEqual(zlib.ReturnStatus.MEM_ERROR);
+                        expect(-5).assertEqual(zlib.ReturnStatus.BUF_ERROR);
                     })
                 await gzip.gzsetparams(zlib.CompressLevel.COMPRESS_LEVEL_BEST_SPEED,
                     zlib.CompressStrategy.COMPRESS_STRATEGY_FILTERED).then((errcode) => {
