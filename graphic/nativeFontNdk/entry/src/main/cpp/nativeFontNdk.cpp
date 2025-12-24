@@ -192,7 +192,7 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingSetTextStyleAttributeInt001", nullptr, OHDrawingSetTextStyleAttributeInt001,
      nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"oHDrawingGetFontFullDescriptorsFromPath001", nullptr, OHDrawingSetTextStyleAttributeInt001,
+    {"oHDrawingGetFontFullDescriptorsFromPath001", nullptr, OHDrawingGetFontFullDescriptorsFromPath001,
      nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
