@@ -74,7 +74,7 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
       try {
         let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
-        let extension: string = 'abcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoa';
+        let extension: string = 'qabcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoa';
         let options: photoAccessHelper.CreateOptions = {
           title: 'testPhoto'
         }
@@ -101,7 +101,7 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
       let phAccessHelper: sendablePhotoAccessHelper.PhotoAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(testContext);
       try {
         let photoType: sendablePhotoAccessHelper.PhotoType = sendablePhotoAccessHelper.PhotoType.IMAGE;
-        let extension: string = 'abcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoaq';
+        let extension: string = 'qabcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoaq';
         let options: photoAccessHelper.CreateOptions = {
           title: 'testPhoto'
         }
@@ -191,7 +191,7 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
           await phAccessHelper.getAssets(fetchOption);
         console.info(TAG, testName, 'sendablePhotoAccessHelper.FetchResult success: ', fetchResult);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let title: string = 'abcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoa';
+        let title: string = 'qabcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoa';
         let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
         console.info(TAG,testName,'photoAsset.PhotoAsset :' +newAsset);
       } catch (err) {
@@ -222,7 +222,7 @@ export default function sendablePhotoAccessHelperSuppAllTest() {
           await phAccessHelper.getAssets(fetchOption);
         console.info(TAG, testName, 'sendablePhotoAccessHelper.FetchResult success: ', fetchResult);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-        let title: string = '1abcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoa';
+        let title: string = 'q1abcd123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BC890DE123FG456HI789JK012LM345NO678PQ901RS234TU567VW890XY012ZA345BC678DE901FG234HI567JK890LM012NO345PQ678RS901TU234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnoa';
         let newAsset: photoAccessHelper.PhotoAsset = await photoAsset.clone(title);
         console.info(TAG,testName,'photoAsset.PhotoAsset :' +newAsset);
       } catch (err) {
