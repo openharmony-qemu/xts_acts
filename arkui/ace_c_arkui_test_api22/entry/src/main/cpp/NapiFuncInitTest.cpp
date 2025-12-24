@@ -229,7 +229,6 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"enum_GetEventType_Text", nullptr, Enum_GetEventType_Text, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-         napi_default, nullptr}, 
         {"Test_OH_ArkUI_TextSelectionMenuOptions01", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions01,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Test_OH_ArkUI_TextSelectionMenuOptions02", nullptr, Test_OH_ArkUI_TextSelectionMenuOptions02,
