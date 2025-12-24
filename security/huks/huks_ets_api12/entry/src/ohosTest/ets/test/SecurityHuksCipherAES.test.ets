@@ -14,6 +14,7 @@
  */
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
+import * as huksCallback from './utils/huks/HuksCallbackUtils.ets';
 import { Logger } from './utils/common/Logger.ets';
 import { StringToUint8Array } from './utils/common/CommonUtils.ets';
 import { MergeOptions, SetParam, SetMultiParam, DeleteParam, CheckSoftware } from './utils/huks/HuksOptionsUtils.ets';
@@ -803,6 +804,35 @@ export default function SecurityHuksCipherAesTest() {
       try {
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(encryptResult.finishData!.length - 15) as Uint8Array);
         await huks.initSession(testNumber, cipherOptions);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Cipher_AES_API22_Func_3110
+     * @tc.number SUB_Security_HUKS_Cipher_AES_API22_Func_3110
+     * @tc.desc   test aes ccm noPadding cipher with unsupported ae tag length, error code 12000018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_Cipher_AES_API22_Func_3110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_Cipher_AES_API22_Func_3110";
+      let cipherData: CipherData = BuildCipherData([64]);
+      await huks.generateKeyItem(testNumber, genKeyOptions);
+      let encryptResult: CipherData;
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+      PrintCipherData(cipherData);
+      encryptResult = await DoCipher(testNumber, cipherOptions, cipherData);
+      PrintCipherData(encryptResult);
+      SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+      encryptResult.updateDataArr = new Array();
+      try {
+        SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AE_TAG, encryptResult.finishData!.slice(encryptResult.finishData!.length - 15) as Uint8Array);
+        await huksCallback.initSession(testNumber, cipherOptions);
         expect(null).assertFail();
       } catch (err) {
         Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
