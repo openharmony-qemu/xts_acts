@@ -3009,7 +3009,7 @@ static napi_value testOH_i18n_GetTimeZoneRules_0100(napi_env env, napi_callback_
     return nValue;
 }
 
-static napi_value testOH_i18n_GetTimeZoneRules_0200(napi_env env, napi_callback_info info) 
+static napi_value testOH_i18n_GetTimeZoneRules_0200(napi_env env, napi_callback_info info)
 {
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("aaa", &rules);
