@@ -3079,5 +3079,927 @@ export default function expressionTest4() {
       expect(num).assertEqual(12);
     });
 
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0681
+     * @tc.name ExpressionTest0681
+     * @tc.desc Test string concatenation with loop conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0681', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: string = "";
+      const str: string = "abcdefghijklmno";
+      for (let i = 0; i < str.length; i++) {
+        if (i > 5 && i < 10) {
+          result += str[i];
+        }
+      }
+      expect(result).assertEqual("ghij");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0682
+     * @tc.name ExpressionTest0682
+     * @tc.desc Test modulus with range check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0682', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const num: number = 38;
+      const mod: number = 7;
+      const remainder: number = num % mod;
+      const result: boolean = remainder >= 3 && remainder <= 5;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0683
+     * @tc.name ExpressionTest0683
+     * @tc.desc Test string concatenation with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0683', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 11;
+      const b: number = 5;
+      const result: string = a + " & " + b + " = " + (a & b);
+      expect(result).assertEqual("11 & 5 = 1");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0684
+     * @tc.name ExpressionTest0684
+     * @tc.desc Test comparison with bitwise complement
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0684', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const num: number = 5;
+      const result: boolean = ~num === -6;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0685
+     * @tc.name ExpressionTest0685
+     * @tc.desc Test template string with logical expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0685', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 8;
+      const b: number = 3;
+      const result: string = `${a} > ${b}: ${a > b}, ${a} / ${b} = ${a / b}, ${a} % ${b} = ${a % b}`;
+      expect(result).assertEqual("8 > 3: true, 8 / 3 = 2.6666666666666665, 8 % 3 = 2");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0686
+     * @tc.name ExpressionTest0686
+     * @tc.desc Test string length with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0686', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghij";
+      const result: number = str.length | 0x0F;
+      // 10 | 15 = 15
+      expect(result).assertEqual(15);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0687
+     * @tc.name ExpressionTest0687
+     * @tc.desc Test string index with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0687', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "0123456789abcdef";
+      const a: int = 7;
+      const b: int = 3;
+      const result: string = str[a ^ b];
+      expect(result).assertEqual("4");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0688
+     * @tc.name ExpressionTest0688
+     * @tc.desc Test template string with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0688', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 15;
+      const b: number = 4;
+      const result: string = `${a} >> ${b} = ${a >> b}, ${a} >>> ${b} = ${a >>> b}`;
+      expect(result).assertEqual("15 >> 4 = 0, 15 >>> 4 = 0");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0689
+     * @tc.name ExpressionTest0689
+     * @tc.desc Test comparison with bitwise shift
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0689', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 32;
+      const b: number = 3;
+      const result: boolean = (a >> b) === 4;
+      // 32 >> 3 = 4
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0690
+     * @tc.name ExpressionTest0690
+     * @tc.desc Test string concatenation with multiple conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const count: number = 7;
+      const result: string = "Count " + count + ": " +
+        (count > 10 ? "many" :
+          count > 5 ? "several" :
+            count > 1 ? "a few" : "one");
+      expect(result).assertEqual("Count 7: several");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0691
+     * @tc.name ExpressionTest0691
+     * @tc.desc Test range check with logical operators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0691', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const temperature: number = 98.6;
+      const result: boolean = temperature >= 97 && temperature <= 99;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0692
+     * @tc.name ExpressionTest0692
+     * @tc.desc Test string length with arithmetic and bitwise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0692', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghijklmnopqrstuvwxyz";
+      const result: number = (str.length - 6) & 0x1F;
+      // 20 & 31 = 20
+      expect(result).assertEqual(20);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0693
+     * @tc.name ExpressionTest0693
+     * @tc.desc Test nested ternary with multiple conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0693', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const score: number = 89;
+      const result: string = score >= 95 ? "A+" :
+        score >= 90 ? "A" :
+          score >= 85 ? "A-" :
+            score >= 80 ? "B+" : "B";
+      expect(result).assertEqual("A-");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0694
+     * @tc.name ExpressionTest0694
+     * @tc.desc Test comma operator in for loop with multiple variables
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0694', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: number = 0;
+      let i: number, j: number;
+      for (i = 1, j = 1; i <= 5; i++, j *= 2) {
+        result += i * j;
+      }
+      expect(result).assertEqual(1 * 1 + 2 * 2 + 3 * 4 + 4 * 8 + 5 * 16);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0695
+     * @tc.name ExpressionTest0695
+     * @tc.desc Test string comparison with substring
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0695', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "Hello World";
+      const substr: string = "lo W";
+      const result: boolean = str.substring(3, 7) === substr;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0696
+     * @tc.name ExpressionTest0696
+     * @tc.desc Test unary operators with arithmetic
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0696', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 4;
+      const result: number = ~num + (-num) * 2;
+      // -5 + (-4) * 2 = -5 - 8 = -13
+      expect(result).assertEqual(-13);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0697
+     * @tc.name ExpressionTest0697
+     * @tc.desc Test bitwise operations in conditional
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0697', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const value: number = 0b1101;
+      const mask: number = 0b1000;
+      const result: boolean = (value & mask) !== 0;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0698
+     * @tc.name ExpressionTest0698
+     * @tc.desc Test string concatenation with increment in loop
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0698', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: string = "";
+      let count: number = 1;
+      while (count <= 5) {
+        result += (count % 2 === 0 ? "even" : "odd") + count + " ";
+        count++;
+      }
+      expect(result).assertEqual("odd1 even2 odd3 even4 odd5 ");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0699
+     * @tc.name ExpressionTest0699
+     * @tc.desc Test comparison with bitwise results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0699', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 22;
+      const b: number = 15;
+      const result: boolean = (a ^ b) > (a & b);
+      // 27 > 14 is true
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0700
+     * @tc.name ExpressionTest0700
+     * @tc.desc Test comma operator in for loop with string manipulation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghijklmnop";
+      let result: string = "";
+      let i: number, chunkSize: number;
+      for (i = 0, chunkSize = 1; i < str.length; i += chunkSize, chunkSize = Math.min(chunkSize + 1, 4)) {
+        result += str.substr(i, chunkSize) + "|";
+      }
+      expect(result).assertEqual("a|bc|def|ghij|klmn|op|");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0701
+     * @tc.name ExpressionTest0701
+     * @tc.desc Test string concatenation with logical operators
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "Hello";
+      const result: string = str + (str.length > 3 || str.startsWith("X") ? " is valid" : " is invalid");
+      expect(result).assertEqual("Hello is valid");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0702
+     * @tc.name ExpressionTest0702
+     * @tc.desc Test unary plus with arithmetic operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0702', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: string = "25";
+      const b: string = "7";
+      const result: number = (+Number(a) % +Number(b)) * 2;
+      expect(result).assertEqual(8);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0703
+     * @tc.name ExpressionTest0703
+     * @tc.desc Test comma operator in for loop with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0703', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: number = 0;
+      let i: number, mask: number;
+      for (i = 0, mask = 1; i < 8; i++, mask <<= 1) {
+        if (i % 2 === 0) {
+          result |= mask;
+        }
+      }
+      expect(result).assertEqual(1 + 4 + 16 + 64);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0704
+     * @tc.name ExpressionTest0704
+     * @tc.desc Test logical NOT with numeric condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0704', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const num: number = 7;
+      const result: boolean = !(num % 2 === 0);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0705
+     * @tc.name ExpressionTest0705
+     * @tc.desc Test bitwise AND with equality check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0705', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 22;
+      const b: number = 15;
+      const result: boolean = (a & b) === 14;
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0706
+     * @tc.name ExpressionTest0706
+     * @tc.desc Test string concatenation with nested ternary
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0706', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const value: number = 3.7;
+      let result: string = "Value " + value + " is ";
+      result += value > 5 ? "high" : value > 3 ? "medium" : "low";
+      expect(result).assertEqual("Value 3.7 is medium");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0707
+     * @tc.name ExpressionTest0707
+     * @tc.desc Test unary minus with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0707', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 15;
+      const result: number = -(a >>> 2);
+      expect(result).assertEqual(-3);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0708
+     * @tc.name ExpressionTest0708
+     * @tc.desc Test string length with arithmetic in loop
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0708', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghijklmnopqrstuvwxyz";
+      let result: string = "";
+      for (let i = 0; i < str.length; i += Math.floor(str.length / 5)) {
+        result += str[i];
+      }
+      expect(result).assertEqual("afkpuz");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0709
+     * @tc.name ExpressionTest0709
+     * @tc.desc Test logical AND with multiple conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0709', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 18;
+      const b: number = 12;
+      const result: boolean = a > 15 && b < 15 && a - b > 5;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0710
+     * @tc.name ExpressionTest0710
+     * @tc.desc Test logical OR with multiple conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "typescript";
+      const num: number = 5;
+      const result: boolean = str.length < 5 || num < 3 || str.includes("script");
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0711
+     * @tc.name ExpressionTest0711
+     * @tc.desc Test compound assignment with bitwise XOR
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0711', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let value: number = 0b1100;
+      value ^= 0b0101; // 0b1001
+      value ^= 0b1110; // 0b0111
+      expect(value).assertEqual(0b0111);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0712
+     * @tc.name ExpressionTest0712
+     * @tc.desc Test string template with arithmetic operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0712', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 3;
+      const b: number = 4;
+      const c: number = 5;
+      const result: string = `${a}^2 + ${b}^2 = ${c}^2: ${a**2 + b**2 === c**2}`;
+      expect(result).assertEqual("3^2 + 4^2 = 5^2: true");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0713
+     * @tc.name ExpressionTest0713
+     * @tc.desc Test prefix increment in arithmetic expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0713', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 2;
+      const result: number = ++num * 2 + ++num * 3;
+      // 3 * 2 + 4 * 3 = 6 + 12 = 18
+      expect(result).assertEqual(18);
+      expect(num).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0714
+     * @tc.name ExpressionTest0714
+     * @tc.desc Test postfix decrement in expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0714', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 15;
+      const result: number = num--
+      / 3 + num-- * 2;
+      // 15 / 3 + 14 * 2 = 5 + 28 = 33
+      expect(result).assertEqual(33);
+      expect(num).assertEqual(13);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0715
+     * @tc.name ExpressionTest0715
+     * @tc.desc Test comma operator in for loop with string indices
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0715', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "0123456789abcdefghijklmnopqrstuvwxyz";
+      let result: string = "";
+      let i: int, step: int;
+      for (i = 0, step = 3; i < str.length; i += step, step = step < 5 ? step + 1 : 3) {
+        result += str[i];
+      }
+      expect(result).assertEqual("037cfjorv");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0716
+     * @tc.name ExpressionTest0716
+     * @tc.desc Test string comparison with transformed values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0716', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str1: string = "Hello World";
+      const str2: string = "hello world";
+      const result: boolean = str1.toUpperCase() === str2.toUpperCase();
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0717
+     * @tc.name ExpressionTest0717
+     * @tc.desc Test modulus with conditional in loop
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0717', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: string = "";
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0) {
+          result += "Fizz";
+        }
+        if (i % 5 === 0) {
+          result += "Buzz";
+        }
+        if (i % 3 !== 0 && i % 5 !== 0) {
+          result += i;
+        }
+        result += " ";
+      }
+      expect(result).assertEqual("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz ");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0718
+     * @tc.name ExpressionTest0718
+     * @tc.desc Test nullish coalescing with default values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0718', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const config: GeneratedTypeLiteralInterface_4 = {};
+      const defaultTimeout: number = 5000;
+      const result: number = config.timeout ?? defaultTimeout;
+      expect(result).assertEqual(5000);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0719
+     * @tc.name ExpressionTest0719
+     * @tc.desc Test bitwise operations with negative numbers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0719', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = -12;
+      const b: number = -8;
+      const result: number = a ^ b;
+      expect(result).assertEqual(12);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0720
+     * @tc.name ExpressionTest0720
+     * @tc.desc Test string index with arithmetic expression
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghijklmnopqrstuvwxyz";
+      let index: int = 1;
+      index = index * 5 + 3;
+      const result: string = str[index];
+      expect(result).assertEqual("i");
+    });
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0723
+     * @tc.name ExpressionTest0723
+     * @tc.desc Test comparison with left shift results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0723', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 9;
+      const result: boolean = (a << 2) === 36;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0724
+     * @tc.name ExpressionTest0724
+     * @tc.desc Test string concatenation with exponentiation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0724', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const base: number = 4;
+      const exp: number = 3;
+      const result: string = base + " raised to " + exp + " is " + (base**exp);
+      expect(result).assertEqual("4 raised to 3 is 64");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0725
+     * @tc.name ExpressionTest0725
+     * @tc.desc Test operator precedence with multiple operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0725', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 15;
+      const b: number = 5;
+      const c: number = 2;
+      const result1: number = a / b + c;
+      const result2: number = a / (b + c);
+      expect(result1).assertEqual(5);
+      expect(result2).assertClose(2.1428571, 0.0000001);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0726
+     * @tc.name ExpressionTest0726
+     * @tc.desc Test grouped expressions in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0726', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const x: number = 7;
+      const y: number = 3;
+      const result: string = `${x} * ${y} + 5 = ${x * y + 5}, ${x} * (${y} + 5) = ${x * (y + 5)}`;
+      expect(result).assertEqual("7 * 3 + 5 = 26, 7 * (3 + 5) = 56");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0727
+     * @tc.name ExpressionTest0727
+     * @tc.desc Test string method with arithmetic parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0727', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghijklmnopqrstuvwxyz";
+      const position: number = 4;
+      const result: string = str.slice(position, position + 6);
+      expect(result).assertEqual("efghij");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0728
+     * @tc.name ExpressionTest0728
+     * @tc.desc Test unary minus with arithmetic in template
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0728', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 18;
+      const b: number = 7;
+      const result: string = `-${a} / ${b} = ${-a / b}`;
+      expect(result).assertEqual("-18 / 7 = -2.5714285714285716");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0729
+     * @tc.name ExpressionTest0729
+     * @tc.desc Test comparison with unary operator results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0729', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 9;
+      const b: number = 5;
+      const result: boolean = ~a < -b;
+      // -10 < -5 is true
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0730
+     * @tc.name ExpressionTest0730
+     * @tc.desc Test compound assignment with subtraction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0730', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let num: number = 30;
+      num -= 5; // 25
+      num /= 5; // 5
+      num += 8; // 13
+      expect(num).assertEqual(13);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0731
+     * @tc.name ExpressionTest0731
+     * @tc.desc Test string concatenation with loop conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0731', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      let result: string = "";
+      const str: string = "abcdefghijklmnopqrstuvwxyz";
+      for (let i = 0; i < str.length; i++) {
+        if (i === 5 || i === 10 || i === 15 || i === 20) {
+          result += str[i];
+        }
+      }
+      expect(result).assertEqual("fkpu");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0732
+     * @tc.name ExpressionTest0732
+     * @tc.desc Test modulus with range check
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0732', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const num: number = 47;
+      const mod: number = 9;
+      const remainder: number = num % mod;
+      const result: boolean = remainder < 3 || remainder > 7;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0733
+     * @tc.name ExpressionTest0733
+     * @tc.desc Test string concatenation with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0733', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 21;
+      const b: number = 13;
+      const result: string = a + " | " + b + " = " + (a | b);
+      expect(result).assertEqual("21 | 13 = 29");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0734
+     * @tc.name ExpressionTest0734
+     * @tc.desc Test comparison with bitwise complement
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0734', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const num: number = 8;
+      const result: boolean = ~num === -9;
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0735
+     * @tc.name ExpressionTest0735
+     * @tc.desc Test template string with logical expressions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0735', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 12;
+      const b: number = 5;
+      const result: string = `${a} > ${b}: ${a > b}, ${a} * 2 = ${a * 2}, ${b} + ${a} = ${b + a}`;
+      expect(result).assertEqual("12 > 5: true, 12 * 2 = 24, 5 + 12 = 17");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0736
+     * @tc.name ExpressionTest0736
+     * @tc.desc Test string length with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0736', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "abcdefghijklmnopqrstuvwxyz";
+      const result: number = str.length ^ 0x1F;
+      // 26 ^ 31 = 5
+      expect(result).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0737
+     * @tc.name ExpressionTest0737
+     * @tc.desc Test string index with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0737', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const str: string = "0123456789abcdefghijklmnopqrstuvwxyz";
+      const a: int = 10;
+      const b: int = 3;
+      const result: string = str[a >> b];
+      expect(result).assertEqual("1");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0738
+     * @tc.name ExpressionTest0738
+     * @tc.desc Test template string with bitwise operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0738', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 25;
+      const b: number = 3;
+      const result: string = `${a} << ${b} = ${a << b}, ${a} >> ${b} = ${a >> b}`;
+      expect(result).assertEqual("25 << 3 = 200, 25 >> 3 = 3");
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0739
+     * @tc.name ExpressionTest0739
+     * @tc.desc Test comparison with bitwise shift
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0739', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const a: number = 48;
+      const b: number = 4;
+      const result: boolean = (a >> b) === 3;
+      // 48 >> 4 = 3
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EXPRESSION_TEST0740
+     * @tc.name ExpressionTest0740
+     * @tc.desc Test string concatenation with multiple conditions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('ExpressionTest0740', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const value: number = 0.75;
+      const result: string = "Value " + value + ": " +
+        (value > 0.8 ? "high" :
+          value > 0.5 ? "medium" :
+            value > 0.2 ? "low" : "very low");
+      expect(result).assertEqual("Value 0.75: medium");
+    });
+
   })
 }
