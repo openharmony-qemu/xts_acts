@@ -115,7 +115,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_CloseAllMediaPresentations_0400
-    * @tc.name        testCloseAllMediaPresentations0400
+    * @tc.name        CloseAllMediaPresentations0400
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -134,7 +134,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_CloseAllMediaPresentations_0500
-    * @tc.name        testCloseAllMediaPresentations0500
+    * @tc.name        CloseAllMediaPresentations0500
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -153,7 +153,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0100
-    * @tc.name        testGetMediaPlaybackState0100
+    * @tc.name        GetMediaPlaybackState0100
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -172,7 +172,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0200
-    * @tc.name        testGetMediaPlaybackState0200
+    * @tc.name        GetMediaPlaybackState0200
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -191,7 +191,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0300
-    * @tc.name        testGetMediaPlaybackState0300
+    * @tc.name        GetMediaPlaybackState0300
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -210,7 +210,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0400
-    * @tc.name        testGetMediaPlaybackState0400
+    * @tc.name        GetMediaPlaybackState0400
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -229,7 +229,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0500
-    * @tc.name        testGetMediaPlaybackState0500
+    * @tc.name        GetMediaPlaybackState0500
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -248,7 +248,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0600
-    * @tc.name        testGetMediaPlaybackState0600
+    * @tc.name        GetMediaPlaybackState0600
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -267,7 +267,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0700
-    * @tc.name        testGetMediaPlaybackState0700
+    * @tc.name        GetMediaPlaybackState0700
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -286,7 +286,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0800
-    * @tc.name        testGetMediaPlaybackState0800
+    * @tc.name        GetMediaPlaybackState0800
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -305,7 +305,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_0900
-    * @tc.name        testGetMediaPlaybackState0900
+    * @tc.name        GetMediaPlaybackState0900
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -324,7 +324,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_1000
-    * @tc.name        testGetMediaPlaybackState1000
+    * @tc.name        GetMediaPlaybackState1000
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -343,7 +343,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_1100
-    * @tc.name        testGetMediaPlaybackState1100
+    * @tc.name        GetMediaPlaybackState1100
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -362,7 +362,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_1200
-    * @tc.name        testGetMediaPlaybackState1200
+    * @tc.name        GetMediaPlaybackState1200
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -381,7 +381,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_GetMediaPlaybackState_1300
-    * @tc.name        testGetMediaPlaybackState1300
+    * @tc.name        GetMediaPlaybackState1300
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
