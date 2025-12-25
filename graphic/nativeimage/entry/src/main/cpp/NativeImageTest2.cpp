@@ -655,7 +655,8 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal(napi_env env, na
     int32_t ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(nullptr, &NativeWindowBuffer, &fenceFd);
     int32_t ret2 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, nullptr, &fenceFd);
     int32_t ret3 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, NULL);
-    if (ret1 != NATIVE_ERROR_INVALID_ARGUMENTS || ret2 != NATIVE_ERROR_INVALID_ARGUMENTS || ret3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+    if (ret1 != NATIVE_ERROR_INVALID_ARGUMENTS || ret2 != NATIVE_ERROR_INVALID_ARGUMENTS ||
+        ret3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, ARR_NUMBER_1, &result);
         return result;
     }
@@ -691,7 +692,8 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
     int32_t ret2 = initNative->OH_FlushBuffer();
     int32_t ret3 = initNative->OH_FlushBuffer();
     int32_t ret4 = initNative->OH_FlushBuffer();
-    if (ret != NATIVE_ERROR_NO_BUFFER || ret1 != NATIVE_ERROR_NO_BUFFER || ret2 != 0 || ret3 != 0 || ret4 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+    if (ret != NATIVE_ERROR_NO_BUFFER || ret1 != NATIVE_ERROR_NO_BUFFER ||
+        ret2 != 0 || ret3 != 0 || ret4 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, ARR_NUMBER_2, &result);
         return result;
     }
