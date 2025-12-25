@@ -151,6 +151,21 @@ import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+import ImageSourceMeteringModeSupp from './image/ImageSourceMeteringMode.test';
+import ImageSourceLightSourceSupp from './image/ImageSourceLightSource.test';
+import ImageSourceFlashSupp from './image/ImageSourceFlash.test';
+import ImageSourceFocalLengthSupp from './image/ImageSourceFocalLength.test';
+import ImageSourceSubjectAreaSupp from './image/ImageSourceSubjectArea.test';
+import ImageSourceMakerNoteSupp from './image/ImageSourceMakerNote.test';
+import ImageSourceUserCommentSupp from './image/ImageSourceUserComment.test';
+import ImageSourceSubsecTimeSupp from './image/ImageSourceSubsecTime.test';
+import ImageSourceSubsecTimeOriginalSupp from './image/ImageSourceSubsecTimeOriginal.test';
+import ImageSourceSubsecTimeDigitizedSupp from './image/ImageSourceSubsecTimeDigitized.test';
+import ImageSourceFlashpixVersionSupp from './image/ImageSourceFlashpixVersion.test';
+import ImageSourceColorSpaceSupp from './image/ImageSourceColorSpace.test';
+import ImageSourcePixelXDimensionSupp from './image/ImageSourcePixelXDimension.test';
+import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.test';
+import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
 
 
 export default function testsuite() {
@@ -288,4 +303,19 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
+  ImageSourceMeteringModeSupp();
+  ImageSourceLightSourceSupp();
+  ImageSourceFlashSupp();
+  ImageSourceFocalLengthSupp();
+  ImageSourceSubjectAreaSupp();
+  ImageSourceMakerNoteSupp();
+  ImageSourceUserCommentSupp();
+  ImageSourceSubsecTimeSupp();
+  ImageSourceSubsecTimeOriginalSupp();
+  ImageSourceSubsecTimeDigitizedSupp();
+  ImageSourceFlashpixVersionSupp();
+  ImageSourceColorSpaceSupp();
+  ImageSourcePixelXDimensionSupp();
+  ImageSourcePixelYDimensionSupp();
+  ImageSourceRelatedSoundFileSupp();
 }
