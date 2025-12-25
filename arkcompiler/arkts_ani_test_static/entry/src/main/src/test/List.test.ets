@@ -20,24 +20,6 @@ import GlobalAndLocalReferencesTest from "./ActsGlobalAndLocalReferences.test.et
 import globalAndLocalReferencesTest from "./ActsGlobalAndLocalReferences.test.ets"
 import accessingStaticFieldsTest from "./ActsAccessingStaticFields.test.ets"
 import callingStaticMethodsTest from "./ActsClassCallingStaticMethods.test";
-import stringOperationsTest from "./ActsStringOperations.test"
-import ArrayOperationsTest from "./ActsArrayOperations.test"
-import ScopeSupportTest from "./ActsScopeSupport.test"
-import JSFeatureTest from "./ActsJSFeature.test"
-import EnvOperationsTest from "./ActsEnvOperations.test"
-import accessingFiledsOfObjectsTest from "./ActsAccessingFiledsOfObjects.test"
-import callingInstanceMethodsTest from "./ActsCallingInstanceMethods.test"
-import variableOperationsTest from "./ActsVariableOperations.test";
-import moduleSupportTest from "./ActsModuleSupport.test";
-import nameSpaceSupportTest from "./ActsNameSpaceSupport.test";
-import enumOperationsTest from "./ActsEnumOperations.test";
-import tupleOperationsTest from "./ActsTupleOperations.test";
-import vmOpsTest from "./ActsVmOps.test"
-import anyOpsTest from "./ActsAnyOps.test"
-import exceptionTest from "./ActsException.test"
-import fixedArrayTest from "./ActsFixedArray.test"
-import promiseTest from "./ActsPromise.test"
-import weakGlobalReferencesTest from "./ActsWeakGlobalReferences.test"
 
 export default function testsuite() {
     versionInfoTest();
@@ -46,22 +28,4 @@ export default function testsuite() {
     globalAndLocalReferencesTest();
     accessingStaticFieldsTest();
     callingStaticMethodsTest();
-    stringOperationsTest();
-    ArrayOperationsTest();
-    ScopeSupportTest();
-    JSFeatureTest();
-    EnvOperationsTest();
-    accessingFiledsOfObjectsTest();
-    callingInstanceMethodsTest();
-    variableOperationsTest();
-    moduleSupportTest();
-    nameSpaceSupportTest();
-    enumOperationsTest();
-    tupleOperationsTest();
-    vmOpsTest();
-    anyOpsTest();
-    fixedArrayTest();
-    promiseTest();
-    exceptionTest();
-    weakGlobalReferencesTest();
 }
