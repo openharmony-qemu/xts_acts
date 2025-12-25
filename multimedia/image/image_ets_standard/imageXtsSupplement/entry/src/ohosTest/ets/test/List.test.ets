@@ -151,6 +151,7 @@ import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+import ImageFlashEnergySupp from './image/ImageFlashEnergySupp.test';
 import ImageSourceMeteringModeSupp from './image/ImageSourceMeteringMode.test';
 import ImageSourceLightSourceSupp from './image/ImageSourceLightSource.test';
 import ImageSourceFlashSupp from './image/ImageSourceFlash.test';
@@ -305,6 +306,7 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
+  ImageFlashEnergySupp();
   ImageSourceMeteringModeSupp();
   ImageSourceLightSourceSupp();
   ImageSourceFlashSupp();
