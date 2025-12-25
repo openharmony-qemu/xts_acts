@@ -24,7 +24,7 @@ export class Event {
 
 export class BaseClass {
   private count: number = 0;
-  lock_: AsyncLock = new AsyncLock()
+  public lock_: AsyncLock = new AsyncLock()
 
   public async getCount(): Promise<number> {
     return this.lock_.lockAsync((): number => {

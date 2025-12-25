@@ -774,8 +774,6 @@ export default function asyncRunnerTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-
-
     it('TaskPoolTestClass241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let terminate = false;
