@@ -16,25 +16,13 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_lock_test_static_WRXcgnKmyvyI1gT1wD5MMRts5Fg3tf6I87ON4esr58I=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B973CF8E23F41AE7999E025F6C00570773CD44AEDA43C02D799E0D24685F5978D567CBEB174F94A",
-          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_lock_test_static_WRXcgnKmyvyI1gT1wD5MMRts5Fg3tf6I87ON4esr58I=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_lock_test_static_WRXcgnKmyvyI1gT1wD5MMRts5Fg3tf6I87ON4esr58I=.p12",
-          "storePassword": "0000001B3A8A2A0251BF48EE21361A737AFA8A8E9C9E7CF38822A930BC9BCFDE35992965B764AAF260EA98"
-        }
-      }
     ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": 20,
-        "compileSdkVersion": 22,
+        "compatibleSdkVersion": "20",
+        "compileSdkVersion": "23",
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
