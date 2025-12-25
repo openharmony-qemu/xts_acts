@@ -41,7 +41,7 @@ export class BaseClass {
 
 
 export class CountClass {
-  count: int = 0
+  public count: int = 0
 
   public setCount(value: int) {
     this.count = value

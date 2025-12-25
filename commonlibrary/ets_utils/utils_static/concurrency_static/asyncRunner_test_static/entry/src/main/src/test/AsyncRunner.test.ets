@@ -86,12 +86,12 @@ import HashMap from '@ohos.util.HashMap';
 export default function asyncRunnerTest() {
   describe('asyncRunnerTest', () => {
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0207
-     * @tc.name      : TaskPoolTestClass207
-     * @tc.desc      : Create AsyncRunner error
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0207
+     * @tc.name  TaskPoolTestClass207
+     * @tc.desc Create AsyncRunner error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -125,12 +125,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0208
-     * @tc.name      : TaskPoolTestClass208
-     * @tc.desc      : Create AsyncRunner error
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0208
+     * @tc.name  TaskPoolTestClass208
+     * @tc.desc Create AsyncRunner error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -152,12 +152,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0209
-     * @tc.name      : TaskPoolTestClass209
-     * @tc.desc      : AsyncRunner execute error
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0209
+     * @tc.name  TaskPoolTestClass209
+     * @tc.desc AsyncRunner execute error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -179,12 +179,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0210
-     * @tc.name      : TaskPoolTestClass210
-     * @tc.desc      : AsyncRunner cancel task
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0210
+     * @tc.name  TaskPoolTestClass210
+     * @tc.desc AsyncRunner cancel task
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -210,12 +210,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0211
-     * @tc.name      : TaskPoolTestClass211
-     * @tc.desc      : AsyncRunner cannot execute seqRunnerTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0211
+     * @tc.name  TaskPoolTestClass211
+     * @tc.desc AsyncRunner cannot execute seqRunnerTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -234,12 +234,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0212
-     * @tc.name      : TaskPoolTestClass212
-     * @tc.desc      : AsyncRunner cannot execute groupTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0212
+     * @tc.name  TaskPoolTestClass212
+     * @tc.desc AsyncRunner cannot execute groupTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -257,12 +257,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0213
-     * @tc.name      : TaskPoolTestClass213
-     * @tc.desc      : AsyncRunner cannot execute dependent task
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0213
+     * @tc.name  TaskPoolTestClass213
+     * @tc.desc AsyncRunner cannot execute dependent task
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -280,12 +280,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0214
-     * @tc.name      : TaskPoolTestClass214
-     * @tc.desc      : AsyncRunner cannot execute asyncRunnerTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0214
+     * @tc.name  TaskPoolTestClass214
+     * @tc.desc AsyncRunner cannot execute asyncRunnerTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -303,12 +303,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0215
-     * @tc.name      : TaskPoolTestClass215
-     * @tc.desc      : AsyncRunner cannot execute executedTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0215
+     * @tc.name  TaskPoolTestClass215
+     * @tc.desc AsyncRunner cannot execute executedTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -325,12 +325,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0216
-     * @tc.name      : TaskPoolTestClass216
-     * @tc.desc      : AsyncRunner cannot execute periodicTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0216
+     * @tc.name  TaskPoolTestClass216
+     * @tc.desc AsyncRunner cannot execute periodicTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -349,12 +349,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0217
-     * @tc.name      : TaskPoolTestClass217
-     * @tc.desc      : sequenceRunner cannot execute asyncRunnerTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0217
+     * @tc.name  TaskPoolTestClass217
+     * @tc.desc sequenceRunner cannot execute asyncRunnerTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -371,12 +371,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0218
-     * @tc.name      : TaskPoolTestClass218
-     * @tc.desc      : taskGroup cannot execute asyncRunnerTask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0218
+     * @tc.name  TaskPoolTestClass218
+     * @tc.desc taskGroup cannot execute asyncRunnerTask
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -394,12 +394,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0219
-     * @tc.name      : TaskPoolTestClass219
-     * @tc.desc      : asyncRunnerTask cannot execute outside
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0219
+     * @tc.name  TaskPoolTestClass219
+     * @tc.desc asyncRunnerTask cannot execute outside
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -416,12 +416,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0220
-     * @tc.name      : TaskPoolTestClass220
-     * @tc.desc      : asyncRunnerTask cannot execute outside
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0220
+     * @tc.name  TaskPoolTestClass220
+     * @tc.desc asyncRunnerTask cannot execute outside
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -441,12 +441,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0221
-     * @tc.name      : TaskPoolTestClass221
-     * @tc.desc      : asyncRunnerTask cannot executed periodically
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0221
+     * @tc.name  TaskPoolTestClass221
+     * @tc.desc asyncRunnerTask cannot executed periodically
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -462,12 +462,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0222
-     * @tc.name      : TaskPoolTestClass222
-     * @tc.desc      : asyncRunnerTask cannot executeDelayed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0222
+     * @tc.name  TaskPoolTestClass222
+     * @tc.desc asyncRunnerTask cannot executeDelayed
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -483,12 +483,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0223
-     * @tc.name      : TaskPoolTestClass223
-     * @tc.desc      : asyncRunner task discarded
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0223
+     * @tc.name  TaskPoolTestClass223
+     * @tc.desc asyncRunner task discarded
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -514,12 +514,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0224
-     * @tc.name      : TaskPoolTestClass224
-     * @tc.desc      : asyncRunner task has been canceled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0224
+     * @tc.name  TaskPoolTestClass224
+     * @tc.desc asyncRunner task has been canceled
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -557,12 +557,12 @@ export default function asyncRunnerTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0228
-     * @tc.name      : TaskPoolTestClass228
-     * @tc.desc      : cancel by taskId
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0228
+     * @tc.name  TaskPoolTestClass228
+     * @tc.desc cancel by taskId
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -590,12 +590,12 @@ export default function asyncRunnerTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0234
-     * @tc.name      : TaskPoolTestClass234
-     * @tc.desc      : Test asyncRunnerTask cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0234
+     * @tc.name  TaskPoolTestClass234
+     * @tc.desc Test asyncRunnerTask cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -634,12 +634,12 @@ export default function asyncRunnerTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0235
-     * @tc.name      : TaskPoolTestClass235
-     * @tc.desc      : Test task cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0235
+     * @tc.name  TaskPoolTestClass235
+     * @tc.desc Test task cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('TaskPoolTestClass235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -698,12 +698,12 @@ export default function asyncRunnerTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0236
-     * @tc.name      : TaskPoolTestClass236
-     * @tc.desc      : Test waiting task cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0236
+     * @tc.name  TaskPoolTestClass236
+     * @tc.desc Test waiting task cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('TaskPoolTestClass236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -735,12 +735,12 @@ export default function asyncRunnerTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0240
-     * @tc.name      : TaskPoolTestClass240
-     * @tc.desc      : Test running asyncTask cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0240
+     * @tc.name  TaskPoolTestClass240
+     * @tc.desc Test running asyncTask cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('TaskPoolTestClass240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -767,12 +767,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0241
-     * @tc.name      : TaskPoolTestClass241
-     * @tc.desc      : Test running asyncTask cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0241
+     * @tc.name  TaskPoolTestClass241
+     * @tc.desc Test running asyncTask cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
 
 
@@ -801,12 +801,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0242
-     * @tc.name      : TaskPoolTestClass242
-     * @tc.desc      : Test waiting asyncTask cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0242
+     * @tc.name  TaskPoolTestClass242
+     * @tc.desc Test waiting asyncTask cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('TaskPoolTestClass242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -835,12 +835,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0243
-     * @tc.name      : TaskPoolTestClass243
-     * @tc.desc      : Test running asyncTask cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0243
+     * @tc.name  TaskPoolTestClass243
+     * @tc.desc Test running asyncTask cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('TaskPoolTestClass243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -870,12 +870,12 @@ export default function asyncRunnerTest() {
       })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0244
-     * @tc.name      : TaskPoolTestClass244
-     * @tc.desc      : Test running sequenceTask cancel
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0244
+     * @tc.name  TaskPoolTestClass244
+     * @tc.desc Test running sequenceTask cancel
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
      */
     it('TaskPoolTestClass244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
