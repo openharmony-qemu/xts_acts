@@ -74,6 +74,8 @@ napi_property_descriptor desc[] = {
      napi_default, nullptr},
     {"oHNativeBufferMapPlanesNormal", nullptr, OHNativeBufferMapPlanesNormal, nullptr, nullptr, nullptr,
      napi_default, nullptr},
+    {"oHNativeBufferMapPlanesNormal1", nullptr, OHNativeBufferMapPlanesNormal1, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
     {"oHNativeBuffeReferenceNullptr", nullptr, OHNativeBuffeReferenceNullptr, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHNativeBuffeUnreferenceNullptr", nullptr, OHNativeBuffeUnreferenceNullptr, nullptr, nullptr, nullptr,

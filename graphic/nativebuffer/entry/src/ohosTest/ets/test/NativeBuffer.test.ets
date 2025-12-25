@@ -456,6 +456,27 @@ export default function nativeBufferTest() {
       }
     });
 
+
+    /**
+     * @tc.name   testNativeBufferMapPlanesNormal1
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0603
+     * @tc.desc   test OH_NativeBuffer_MapPlanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeBufferMapPlanesNormal1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        if (deviceTypeInfo == "default") {
+          expect(0).assertEqual(0);
+          done();
+        } else {
+          let result: Array<number> = nativebuffer.oHNativeBufferMapPlanesNormal1();
+          console.info('testNativeBufferMapPlanesNormal1 result: ' + result);
+          expect(result).assertEqual(0);
+          done();
+        }
+      });
     /**
      * @tc.name   testNativeBuffeReferenceNullptr
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_BUFFER_0700

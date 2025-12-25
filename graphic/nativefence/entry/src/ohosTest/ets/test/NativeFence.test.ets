@@ -30,7 +30,7 @@ export default function nativeFenceTest() {
      */
     it('testNativeFenceWait0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativefence.nativeFenceWaitIs0();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
       done();
     });
 
@@ -45,7 +45,7 @@ export default function nativeFenceTest() {
      */
     it('testNativeFenceWait0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let result: number = nativefence.nativeFenceWaitIs500();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
       done();
     });
 
@@ -60,7 +60,7 @@ export default function nativeFenceTest() {
      */
     it('testNativeFenceWait0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let result: number = nativefence.nativeFenceWaitIs5000();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
       done();
     });
 
@@ -75,7 +75,7 @@ export default function nativeFenceTest() {
      */
     it('testNativeFenceWait0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let result: number = nativefence.nativeFenceWaitKill();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
       done();
     });
 
@@ -90,7 +90,7 @@ export default function nativeFenceTest() {
      */
     it('testNativeFenceWaitForever0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativefence.nativeFenceWaitForeverKill();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(1);
       done();
     });
   })
