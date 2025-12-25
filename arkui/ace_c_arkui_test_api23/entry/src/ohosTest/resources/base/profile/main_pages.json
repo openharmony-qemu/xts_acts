@@ -16,6 +16,9 @@
     "MainAbility/pages/row/RowReverseTest",
     "MainAbility/pages/text/TextCompressLeadingPunctuationTest",
     "MainAbility/pages/textArea/TextAreaCompressLeadingPunctuationTest",
-    "MainAbility/pages/textInput/TextInputCompressLeadingPunctuationTest"
+    "MainAbility/pages/textInput/TextInputCompressLeadingPunctuationTest",
+    "MainAbility/pages/distance/DistanceTest",
+    "MainAbility/pages/hoverEffect/HoverEffectTest",
+    "MainAbility/pages/monopolize/MonopolizeTest"
   ]
 }

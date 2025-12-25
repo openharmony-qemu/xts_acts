@@ -15,9 +15,11 @@
 import touchTestInfoTest from './touchTestInfo/TouchTestInfoTest.test'
 import NodeAdoptChildTest from './node/NodeAdoptChildTest.test'
 import NodeAdoptedTest from './node/NodeAdoptedTest.test'
+import focusScopeTest from './focusScope/FocusScopeTest.test'
 
 export default function testsuite() {
   NodeAdoptChildTest(); // 此条特殊用例请放在首行，勿动
   NodeAdoptedTest();
   touchTestInfoTest();
+  focusScopeTest();
 }

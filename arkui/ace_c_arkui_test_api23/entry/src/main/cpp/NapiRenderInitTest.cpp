@@ -29,6 +29,9 @@
 #include "text/TextCompressLeadingPunctuationTest.h"
 #include "textArea/TextAreaCompressLeadingPunctuationTest.h"
 #include "textInput/TextInputCompressLeadingPunctuationTest.h"
+#include "distance/DistanceTest.h"
+#include "hoverEffect/HoverEffectTest.h"
+#include "monopolize/MonopolizeTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -72,6 +75,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr}, 
         {"TextInputCompressLeadingPunctuationTest", nullptr, TextInputCompressLeadingPunctuationTest::CreateNativeNode, 
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"distanceTest", nullptr, DistanceTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"hoverEffectTest", nullptr, HoverEffectTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"monopolizeTest", nullptr, MonopolizeTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
