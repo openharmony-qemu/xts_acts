@@ -102,6 +102,9 @@ import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPix
 import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
 import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
 import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
+import ImageGPSMeasureMode from './image/ImageGPSMeasureMode.test';
+import ImageGPSDOP from './image/ImageGPSDOP.test';
+import ImageGPSSpeedRef from './image/ImageGPSSpeedRef.test';
 import ImageAuxiliaryPictureSetMetadataTest from './image/ImageAuxiliaryPictureSetMetadata.Test.test';
 import imagePackerPackingTest from './image/ImagePackerPacking.Test.test';
 import SendableImagePixelMapApplyColorSpaceTest from './sendableImage/SendableImagePixelMapApplyColorSpace.Test.test';
@@ -152,6 +155,17 @@ import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 
+
+import ImageGPSSpeed from './image/ImageGPSSpeed.test';
+import ImageGPSTrackRef from './image/ImageGPSTrackRef.test';
+import ImageGPSTrack from './image/ImageGPSTrack.test';
+import ImageGPSImgDirectionRef from './image/ImageGPSImgDirectionRef.test';
+import ImageGPSIMGDirection from './image/ImageGPSImgDirection.test';
+import ImageGPSMapDatum from './image/ImageGPSMapDatum.test';
+import ImageGPSDestLatitudeRef from './image/ImageGPSDestLatitudeRef.test';
+import ImageGPSDestLongitudeRef from './image/ImageGPSDestLongitudeRef.test';
+import ImageGPSDestBearingRef from './image/ImageGPSDestBearingRef.test';
+import ImageGPSDestBearing from './image/ImageGPSDestBearing.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -239,6 +253,9 @@ export default function testsuite() {
   ImagePixelMapCropSyncTest();
   ImagePixelMapMarshallingTest();
   ImagePixelMapUnmarshallingTest();
+  ImageGPSMeasureMode();
+  ImageGPSDOP();
+  ImageGPSSpeedRef();
   ImageAuxiliaryPictureSetMetadataTest();
   imagePackerPackingTest();
   SendableImagePixelMapApplyColorSpaceTest();
@@ -279,6 +296,16 @@ export default function testsuite() {
   sendableWritePixelsTest();
   UpdateDataTest();
   SendableImageTest();
+  ImageGPSSpeed();
+  ImageGPSTrackRef();
+  ImageGPSTrack();
+  ImageGPSImgDirectionRef();
+  ImageGPSIMGDirection();
+  ImageGPSMapDatum();
+  ImageGPSDestLatitudeRef();
+  ImageGPSDestLongitudeRef();
+  ImageGPSDestBearingRef();
+  ImageGPSDestBearing();
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImagePixmapSetColorSpaceTest();
   ImageSourcePropertyKeyTest();
