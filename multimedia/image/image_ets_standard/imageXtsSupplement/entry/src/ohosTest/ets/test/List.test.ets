@@ -109,7 +109,7 @@ import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMap
 import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
-import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+
 import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
@@ -143,6 +143,16 @@ import ImagePixmapSetColorSpaceTest from './image/ImagePixmapSetColorSpace.test'
 import GetImagePropertyJPGNullTest from './image/GetImagePropertyJPGNull.test';
 import GetImagePropertyPNGNullTest from './image/GetImagePropertyPNGNull.test';
 import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultipliedPixelMap.test';
+import ImageSourcePropertyKeyTest from './image/ImageSourcePropertyKeyTest.test';
+import ImageSourcePropertyKeyStringTest from './image/ImagePropertyKeyStringTest.test';
+import ImagePropertyKeyArrayTest from './image/ImagePropertyKeyArrayTest.test';
+import ImageContrastTypeSupp from './image/ImageExifContrast.test';
+import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
+import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
+import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
+import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+
+
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
   GetImagePropertyPNGNullTest();
@@ -271,4 +281,11 @@ export default function testsuite() {
   SendableImageTest();
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImagePixmapSetColorSpaceTest();
+  ImageSourcePropertyKeyTest();
+  ImageSourcePropertyKeyStringTest();
+  ImagePropertyKeyArrayTest();
+  ImageContrastTypeSupp();
+  ImageNewSubFileTypeSupp();
+  ImageMakeModelCompressionSupp();
+  ImageRowsPerStripSamplesPerPixelSupp();
 }
