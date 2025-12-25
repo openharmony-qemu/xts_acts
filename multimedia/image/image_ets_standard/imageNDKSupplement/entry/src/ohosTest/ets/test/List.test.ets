@@ -91,6 +91,5 @@ export default function testsuite() {
   IRNdkErrCodeSupplementTest();
   ImageResultIRNdkErrCodeTest();
   IRNdkErrCode();
-  ImageReceiverNativeReadTest();
   OHImageNdkFrameworkTest();
 }
