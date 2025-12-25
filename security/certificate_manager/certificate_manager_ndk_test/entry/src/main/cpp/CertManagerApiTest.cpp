@@ -53,11 +53,11 @@ static napi_value OHCertManagerNativeApiUkeyErr0100(napi_env env, napi_callback_
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
@@ -93,12 +93,12 @@ static napi_value OHCertManagerNativeApiUkeyErr0200(napi_env env, napi_callback_
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
-    
+
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
         napi_throw_error(env, nullptr, "malloc buffer error");
@@ -133,12 +133,12 @@ static napi_value OHCertManagerNativeApiPrivateFunc0100(napi_env env, napi_callb
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
-    
+
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
         napi_throw_error(env, nullptr, "malloc buffer error");
@@ -173,11 +173,11 @@ static napi_value OHCertManagerNativeApiPrivateErr0100(napi_env env, napi_callba
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
@@ -213,11 +213,11 @@ static napi_value OHCertManagerNativeApiPrivateErr0200(napi_env env, napi_callba
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
@@ -253,11 +253,11 @@ static napi_value OHCertManagerNativeApiPublicErr0100(napi_env env, napi_callbac
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
@@ -293,11 +293,11 @@ static napi_value OHCertManagerNativeApiPublicErr0200(napi_env env, napi_callbac
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
@@ -333,11 +333,11 @@ static napi_value OHCertManagerNativeApiPublicErr0300(napi_env env, napi_callbac
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     
     size_t str_length;
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     if (str_length >= SIZE_MAX) {
         napi_throw_error(env, nullptr, "string length range error");
         return nullptr;
     }
-    napi_get_value_string_utf8(env, args[0], nullptr, 0, &str_length);
     
     char* buffer = (char*)malloc(str_length + 1);
     if (buffer == nullptr) {
