@@ -28,12 +28,12 @@ import * as module from '../utils/promise/PromiseLazyInDynamicModule';
 export default function promiseLazyTest() {
   describe('PromiseLazyTest', () => {
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0001
-     * @tc.name: testPromiseExecutorLazy
-     * @tc.desc: The lazy object is used in Promise Executor
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0001
+     * @tc.name testPromiseExecutorLazy
+     * @tc.desc The lazy object is used in Promise Executor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseExecutorLazy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await promiseExecutorLazy();
@@ -45,12 +45,12 @@ export default function promiseLazyTest() {
       expect(msgExecutor[3]).assertEqual('promiseExecutorLazy asyncFunc then 4');
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0002
-     * @tc.name: testPromiseBeforeLazy
-     * @tc.desc: The lazy object is used before Promise
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0002
+     * @tc.name testPromiseBeforeLazy
+     * @tc.desc The lazy object is used before Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseBeforeLazy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await promiseBeforeLazy();
@@ -62,12 +62,12 @@ export default function promiseLazyTest() {
       expect(msgBefore[3]).assertEqual('promiseBeforeLazy asyncFunc then 4');
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0003
-     * @tc.name: testPromiseThenLazy
-     * @tc.desc: The lazy object is used in Promise then
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0003
+     * @tc.name testPromiseThenLazy
+     * @tc.desc The lazy object is used in Promise then
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseThenLazy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await promiseThenLazy();
@@ -79,12 +79,12 @@ export default function promiseLazyTest() {
       expect(msgThen[3]).assertEqual('promiseThenLazy asyncFunc then 4');
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0004
-     * @tc.name: testPromiseAfterLazy
-     * @tc.desc: The lazy object is used after Promise
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0004
+     * @tc.name testPromiseAfterLazy
+     * @tc.desc The lazy object is used after Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseAfterLazy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await promiseAfterLazy();
@@ -96,12 +96,12 @@ export default function promiseLazyTest() {
       expect(msgAfter[3]).assertEqual('promiseAfterLazy asyncFunc then 4');
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0005
-     * @tc.name: testPromiseCatchLazy
-     * @tc.desc: The lazy object is used in Promise catch
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0005
+     * @tc.name testPromiseCatchLazy
+     * @tc.desc The lazy object is used in Promise catch
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseCatchLazy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await promiseCatchLazy();
@@ -114,12 +114,12 @@ export default function promiseLazyTest() {
       expect(msgCatch[4]).assertEqual('promiseCatchLazy asyncFunc finally 5');
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0006
-     * @tc.name: testPromiseFinallyLazy
-     * @tc.desc: The lazy object is used in Promise finally
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0006
+     * @tc.name testPromiseFinallyLazy
+     * @tc.desc The lazy object is used in Promise finally
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseFinallyLazy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await promiseFinallyLazy();
@@ -132,12 +132,12 @@ export default function promiseLazyTest() {
       expect(msgFinally[4]).assertEqual('promiseFinallyLazy asyncFunc finally 5');
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_Promise_0007
-     * @tc.name: testPromiseLazyInDynamicModule
-     * @tc.desc: The lazy object is used in dynamic module Promise Executor
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.number SUB_Runtime_Language_Lazy_Import_Promise_0007
+     * @tc.name testPromiseLazyInDynamicModule
+     * @tc.desc The lazy object is used in dynamic module Promise Executor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it('testPromiseLazyInDynamicModule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await module.promiseLazyInDynamicModule();
