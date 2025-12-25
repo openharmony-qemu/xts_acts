@@ -193,6 +193,7 @@ group("multimedia") {
       "media/media_ndk_standard/AVImageGeneratorNDK:OhAVImageGeneratorNDK",
       "media/media_ndk_standard/AVMetadataExtractorNDK:OhAVMetadataExtractorNDK",
       "media/media_ndk_standard/AVPlayerNDK:OhAVPlayerNDK",
+      "media/media_ndk_standard/AVPlayerNDKSupplement:OhAVPlayersupNDK",
       "media/media_ndk_standard/LowPowerPlayerNDK:LowPower_Player_hap",
       "media/media_js_standard/soundPoolStatic:soundpool_js_static_hap",
       "media/media_js_standard/avRecorderStatic:av_recorder_js_static_hap",
