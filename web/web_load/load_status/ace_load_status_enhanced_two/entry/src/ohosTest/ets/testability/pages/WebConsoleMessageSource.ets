@@ -40,7 +40,7 @@ struct WebConsoleMessageSource {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
@@ -67,7 +67,7 @@ struct WebConsoleMessageSource {
             console.info('key==>' + this.str);
             this.isReceive = -1;
             switch (this.str) {
-              case "emitWebConsoleMessageGetSource0001": {
+              case 'emitWebConsoleMessageGetSource0001': {
                 try {
                   this.testConsole = true
                   this.isPageEnd = -1;
