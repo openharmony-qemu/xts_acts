@@ -166,6 +166,8 @@ import ImageSourceColorSpaceSupp from './image/ImageSourceColorSpace.test';
 import ImageSourcePixelXDimensionSupp from './image/ImageSourcePixelXDimension.test';
 import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.test';
 import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
+import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
+import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
 
 
 export default function testsuite() {
@@ -318,4 +320,6 @@ export default function testsuite() {
   ImageSourcePixelXDimensionSupp();
   ImageSourcePixelYDimensionSupp();
   ImageSourceRelatedSoundFileSupp();
+  ImageWidthLengthSupp();
+  ImageDescriptionSupp();
 }
