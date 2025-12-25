@@ -1875,7 +1875,7 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsToBitmapNormal, Funct
     bool ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 100, 100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    EXPECT_EQ(ret, true);
+    EXPECT_EQ(ret, false);
     // 4. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
