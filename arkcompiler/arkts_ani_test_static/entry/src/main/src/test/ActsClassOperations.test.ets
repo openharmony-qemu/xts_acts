@@ -26,17 +26,17 @@ export default function classOperationsTest() {
   describe("ActsClassOperationsTest", (): void => {
     try {
       loadLibrary("entry")
-    } catch(e: Error) {
+    } catch (e) {
       console.log('loadFailed', e.message);
     }
 
     /**
-     * @tc.name   call_StaticMethodBool_0001
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0100
-     * @tc.desc   call static method bool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0100
+     * @tc.name      call_StaticMethodBool_0001
+     * @tc.desc      call static method bool
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function classOperationsTest() {
     })
 
     /**
-     * @tc.name   call_StaticMethodBool_0002
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0200
-     * @tc.desc   call static method bool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0200
+     * @tc.name      call_StaticMethodBool_0002
+     * @tc.desc      call static method bool
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0003
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0300
-     * @tc.desc   call static method bool V
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0300
+     * @tc.name      call_StaticMethodBool_0003
+     * @tc.desc      call static method bool V
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0004
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0400
-     * @tc.desc   call static method bool A
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0400
+     * @tc.name      call_StaticMethodBool_0004
+     * @tc.desc      call static method bool A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0005
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0500
-     * @tc.desc   call static method bool from null class
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0500
+     * @tc.name      call_StaticMethodBool_0005
+     * @tc.desc      call static method bool from null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0006
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0600
-     * @tc.desc   call static method bool from null method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0600
+     * @tc.name      call_StaticMethodBool_0006
+     * @tc.desc      call static method bool from null method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0007
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0700
-     * @tc.desc   call static method bool from A null result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0700
+     * @tc.name      call_StaticMethodBool_0007
+     * @tc.desc      call static method bool from A null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -163,13 +163,13 @@ export default function classOperationsTest() {
         console.log('call_StaticMethodBool_0007 end');
       })
 
-    /**
-     * @tc.name   call_StaticMethodBool_0008
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0800
-     * @tc.desc   call static method bool from A null class
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+   /**
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0800
+     * @tc.name      call_StaticMethodBool_0008
+     * @tc.desc      call static method bool from A null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0009
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0900
-     * @tc.desc   call static method bool from A null method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_0900
+     * @tc.name      call_StaticMethodBool_0009
+     * @tc.desc      call static method bool from A null method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0010
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1000
-     * @tc.desc   call static method bool from A null result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1000
+     * @tc.name      call_StaticMethodBool_0010
+     * @tc.desc      call static method bool from A null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0011
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1100
-     * @tc.desc   call static method bool from A null args
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1100
+     * @tc.name      call_StaticMethodBool_0011
+     * @tc.desc      call static method bool from A null args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0012
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1200
-     * @tc.desc   DISABLED call static method bool overflow
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1200
+     * @tc.name      call_StaticMethodBool_0012
+     * @tc.desc      DISABLED call static method bool overflow
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0013
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1300
-     * @tc.desc   call static method bool combine scenes 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1300
+     * @tc.name      call_StaticMethodBool_0013
+     * @tc.desc      call static method bool combine scenes 1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0014
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1400
-     * @tc.desc   call static method bool combine scenes 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1400
+     * @tc.name      call_StaticMethodBool_0014
+     * @tc.desc      call static method bool combine scenes 2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0015
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1500
-     * @tc.desc   call static method bool combine scenes 3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1500
+     * @tc.name      call_StaticMethodBool_0015
+     * @tc.desc      call static method bool combine scenes 3
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0016
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1600
-     * @tc.desc   call static method bool null env
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1600
+     * @tc.name      call_StaticMethodBool_0016
+     * @tc.desc      call static method bool null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0017
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1700
-     * @tc.desc   call static method bool combine scenes 4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1700
+     * @tc.name      call_StaticMethodBool_0017
+     * @tc.desc      call static method bool combine scenes 4
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0018
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1800
-     * @tc.desc   call static method bool combine scenes 5
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1800
+     * @tc.name      call_StaticMethodBool_0018
+     * @tc.desc      call static method bool combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function classOperationsTest() {
       })
       
     /**
-     * @tc.name   call_StaticMethodBool_0019
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1900
-     * @tc.desc   call static method bool combine scenes 6
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_1900
+     * @tc.name      call_StaticMethodBool_0019
+     * @tc.desc      call static method bool combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0020
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2000
-     * @tc.desc   call static method bool combine scenes 7
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2000
+     * @tc.name      call_StaticMethodBool_0020
+     * @tc.desc      call static method bool combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0021
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2100
-     * @tc.desc   call static method bool combine scenes 8
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2100
+     * @tc.name      call_StaticMethodBool_0021
+     * @tc.desc      call static method bool combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0022
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2200
-     * @tc.desc   check initialization bool
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2200
+     * @tc.name      call_StaticMethodBool_0022
+     * @tc.desc      check initialization bool
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodBool_0023
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2300
-     * @tc.desc   check initialization bool a
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBOOL_2300
+     * @tc.name      call_StaticMethodBool_0023
+     * @tc.desc      check initialization bool a
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodBool_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0001
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0100
-     * @tc.desc   call static method int
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0100
+     * @tc.name      call_StaticMethodInt_0001
+     * @tc.desc      call static method int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function classOperationsTest() {
     })
 
     /**
-     * @tc.name   call_StaticMethodInt_0002
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0200
-     * @tc.desc   call static method int
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0200
+     * @tc.name      call_StaticMethodInt_0002
+     * @tc.desc      call static method int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0003
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0300
-     * @tc.desc   call static method int v
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0300
+     * @tc.name      call_StaticMethodInt_0003
+     * @tc.desc      call static method int v
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0004
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0400
-     * @tc.desc   call static method int A
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0400
+     * @tc.name      call_StaticMethodInt_0004
+     * @tc.desc      call static method int A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0005
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0500
-     * @tc.desc   call static method int invalid cls
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0500
+     * @tc.name      call_StaticMethodInt_0005
+     * @tc.desc      call static method int invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0006
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0600
-     * @tc.desc   call static method int invalid method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0600
+     * @tc.name      call_StaticMethodInt_0006
+     * @tc.desc      call static method int invalid method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0007
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0700
-     * @tc.desc   call static method int invalid result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0700
+     * @tc.name      call_StaticMethodInt_0007
+     * @tc.desc      call static method int invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -601,12 +601,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0008
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0800
-     * @tc.desc   call static method int v invalid cls
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0800
+     * @tc.name      call_StaticMethodInt_0008
+     * @tc.desc      call static method int v invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0009
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0900
-     * @tc.desc   call static method int v invalid method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_0900
+     * @tc.name      call_StaticMethodInt_0009
+     * @tc.desc      call static method int v invalid method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,12 +639,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0010
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1000
-     * @tc.desc   call static method int v invalid result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1000
+     * @tc.name      call_StaticMethodInt_0010
+     * @tc.desc      call static method int v invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -658,12 +658,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0011
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1100
-     * @tc.desc   call static method int a invalid cls
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1100
+     * @tc.name      call_StaticMethodInt_0011
+     * @tc.desc      call static method int a invalid cls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0012
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1200
-     * @tc.desc   call static method int a invalid method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1200
+     * @tc.name      call_StaticMethodInt_0012
+     * @tc.desc      call static method int a invalid method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0013
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1300
-     * @tc.desc   call static method int a invalid result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1300
+     * @tc.name      call_StaticMethodInt_0013
+     * @tc.desc      call static method int a invalid result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -715,12 +715,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0014
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1400
-     * @tc.desc   call static method int a invalid args
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1400
+     * @tc.name      call_StaticMethodInt_0014
+     * @tc.desc      call static method int a invalid args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -734,12 +734,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0015
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1500
-     * @tc.desc   call static method int combine scenes 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1500
+     * @tc.name      call_StaticMethodInt_0015
+     * @tc.desc      call static method int combine scenes 1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -753,12 +753,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0016
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1600
-     * @tc.desc   call static method int combine scenes 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1600
+     * @tc.name      call_StaticMethodInt_0016
+     * @tc.desc      call static method int combine scenes 2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -772,12 +772,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0017
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1700
-     * @tc.desc   call static method int combine scenes 3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1700
+     * @tc.name      call_StaticMethodInt_0017
+     * @tc.desc      call static method int combine scenes 3
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -791,12 +791,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0018
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1800
-     * @tc.desc   call static method int null env
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1800
+     * @tc.name      call_StaticMethodInt_0018
+     * @tc.desc      call static method int null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -810,12 +810,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0019
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1900
-     * @tc.desc   call static method int combine scenes 4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_1900
+     * @tc.name      call_StaticMethodInt_0019
+     * @tc.desc      call static method int combine scenes 4
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -829,12 +829,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0020
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2000
-     * @tc.desc   call static method int combine scenes 5
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2000
+     * @tc.name      call_StaticMethodInt_0020
+     * @tc.desc      call static method int combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -848,12 +848,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0021
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2100
-     * @tc.desc   call static method int combine scenes 6
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2100
+     * @tc.name      call_StaticMethodInt_0021
+     * @tc.desc      call static method int combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -867,12 +867,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0022
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2200
-     * @tc.desc   call static method int combine scenes 7
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2200
+     * @tc.name      call_StaticMethodInt_0022
+     * @tc.desc      call static method int combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -886,12 +886,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0023
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2300
-     * @tc.desc   call static method int combine scenes 8
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2300
+     * @tc.name      call_StaticMethodInt_0023
+     * @tc.desc      call static method int combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -905,12 +905,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0024
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2400
-     * @tc.desc   check initialization int
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2400
+     * @tc.name      call_StaticMethodInt_0024
+     * @tc.desc      check initialization int
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -924,12 +924,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodInt_0025
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2500
-     * @tc.desc   check initialization int a
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODINT_2500
+     * @tc.name      call_StaticMethodInt_0025
+     * @tc.desc      check initialization int a
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodInt_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -943,12 +943,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0001
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0100
-     * @tc.desc   call static method short
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0100
+     * @tc.name      call_StaticMethodShort_0001
+     * @tc.desc      call static method short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0002
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0200
-     * @tc.desc   call static method short v
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0200
+     * @tc.name      call_StaticMethodShort_0002
+     * @tc.desc      call static method short v
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -981,12 +981,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0003
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0300
-     * @tc.desc   call static method short A
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0300
+     * @tc.name      call_StaticMethodShort_0003
+     * @tc.desc      call static method short A
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1000,12 +1000,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0004
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0400
-     * @tc.desc   call static method short from null class
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0400
+     * @tc.name      call_StaticMethodShort_0004
+     * @tc.desc      call static method short from null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1019,12 +1019,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0005
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0500
-     * @tc.desc   call static method short from null method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0500
+     * @tc.name      call_StaticMethodShort_0005
+     * @tc.desc      call static method short from null method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1038,12 +1038,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0006
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0600
-     * @tc.desc   call static method short from null result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0600
+     * @tc.name      call_StaticMethodShort_0006
+     * @tc.desc      call static method short from null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1057,12 +1057,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0007
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0700
-     * @tc.desc   call static method short from A null class
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0700
+     * @tc.name      call_StaticMethodShort_0007
+     * @tc.desc      call static method short from A null class
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1076,12 +1076,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0008
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0800
-     * @tc.desc   call static method short from A null method
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0800
+     * @tc.name      call_StaticMethodShort_0008
+     * @tc.desc      call static method short from A null method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1095,12 +1095,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0009
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0900
-     * @tc.desc   call static method short from A null result
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_0900
+     * @tc.name      call_StaticMethodShort_0009
+     * @tc.desc      call static method short from A null result
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1114,12 +1114,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0010
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1000
-     * @tc.desc   call static method short from A null args
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1000
+     * @tc.name      call_StaticMethodShort_0010
+     * @tc.desc      call static method short from A null args
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1133,12 +1133,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0011
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1100
-     * @tc.desc   call static method short from combine scenes 1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1100
+     * @tc.name      call_StaticMethodShort_0011
+     * @tc.desc      call static method short from combine scenes 1
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1152,12 +1152,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0012
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1200
-     * @tc.desc   call static method short from combine scenes 2
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1200
+     * @tc.name      call_StaticMethodShort_0012
+     * @tc.desc      call static method short from combine scenes 2
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1171,12 +1171,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   call_StaticMethodShort_0013
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1300
-     * @tc.desc   call static method short from combine scenes 3
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1300
+     * @tc.name      call_StaticMethodShort_0013
+     * @tc.desc      call static method short from combine scenes 3
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("call_StaticMethodShort_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1190,12 +1190,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0014
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1400
-     * @tc.desc   call static method short from null env
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1400
+     * @tc.name      class_FindStaticMethodShort_0014
+     * @tc.desc      call static method short from null env
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1209,12 +1209,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0015
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1500
-     * @tc.desc   call static method short from combine scenes 4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1500
+     * @tc.name      class_FindStaticMethodShort_0015
+     * @tc.desc      call static method short from combine scenes 4
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1228,12 +1228,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0016
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1600
-     * @tc.desc   call static method short from combine scenes 5
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1600
+     * @tc.name      class_FindStaticMethodShort_0016
+     * @tc.desc      call static method short from combine scenes 5
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1247,12 +1247,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0017
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1700
-     * @tc.desc   call static method short from combine scenes 6
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1700
+     * @tc.name      class_FindStaticMethodShort_0017
+     * @tc.desc      call static method short from combine scenes 6
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1266,12 +1266,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0018
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1800
-     * @tc.desc   call static method short from combine scenes 7
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1800
+     * @tc.name      class_FindStaticMethodShort_0018
+     * @tc.desc      call static method short from combine scenes 7
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1285,12 +1285,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0019
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1900
-     * @tc.desc   call static method short from combine scenes 8
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_1900
+     * @tc.name      class_FindStaticMethodShort_0019
+     * @tc.desc      call static method short from combine scenes 8
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1304,12 +1304,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0020
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_2000
-     * @tc.desc   check initialization short
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_2000
+     * @tc.name      class_FindStaticMethodShort_0020
+     * @tc.desc      check initialization short
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1323,12 +1323,12 @@ export default function classOperationsTest() {
       })
 
     /**
-     * @tc.name   class_FindStaticMethodShort_0021
-     * @tc.number SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_2100
-     * @tc.desc   check initialization short a
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODSHORT_2100
+     * @tc.name      class_FindStaticMethodShort_0021
+     * @tc.desc      check initialization short a
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
      */
     it("class_FindStaticMethodShort_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1609,7 +1609,7 @@ export default function classOperationsTest() {
 
     /**
      * @tc.number    SUB_ANI_CLASS_OPERATIONS_STATICMETHODBYTE_1500
-     * @tc.name      class_FindStaticMethodShort_0015
+     * @tc.name      call_StaticMethodByte_0015
      * @tc.desc      call static method short from combine scenes 4
      * @tc.size      MediumTest
      * @tc.type      Function

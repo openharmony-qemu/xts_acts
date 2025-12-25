@@ -146,7 +146,7 @@ export default function objectOperationsTest() {
 
     /**
      * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0400
-     * @tc.name        test_Object_Call_Method_Boolean_0002
+     * @tc.name        test_Object_Call_Method_Boolean_0004
      * @tc.desc        call method boolean v invalid method
      * @tc.size        Function
      * @tc.type        Function test
