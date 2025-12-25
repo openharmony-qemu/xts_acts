@@ -494,5 +494,57 @@ export default function PowerTest() {
           done();
         }
       })
-  })
+
+    /**
+     * @tc.name   testPowerTest_static_2000
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0200
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2000';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          ohos_power.registerShutdownCallback((isReboot: boolean) => {
+            hilog.info(domain, tag, `${TAG} isReboot:${isReboot}`);
+          });
+          expect().assertFail();
+        } catch (error) {
+          hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPowerTest_static_2100
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0210
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2100';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          ohos_power.unregisterShutdownCallback(() => {
+            hilog.info(domain, tag, `${TAG} unregisterShutdownCallback`);
+          });
+          expect().assertFail();
+        } catch (error) {
+          hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+  });
 }
