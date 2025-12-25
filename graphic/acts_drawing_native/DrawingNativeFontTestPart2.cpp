@@ -1371,6 +1371,8 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesAddFeatureAbNormal, Functio
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
     code = OH_Drawing_FontFeaturesAddFeature(features, nullptr, 0.1f);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    code = OH_Drawing_FontFeaturesAddFeature(features, "", 0.0f);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     code = OH_Drawing_FontFeaturesAddFeature(features, "aaaa", 0.0f);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     OH_Drawing_FontFeaturesDestroy(features);
