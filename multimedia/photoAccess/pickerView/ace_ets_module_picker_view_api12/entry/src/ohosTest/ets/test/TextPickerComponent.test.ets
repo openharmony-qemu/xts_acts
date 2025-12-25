@@ -2462,7 +2462,7 @@ export default function TextPicker() {
       if (checkboxs?.length) {
         await checkboxs[0].click();
         await CommonFunc.sleep(1000);
-        const finishBtn = await driver.findComponent(ON.text('完成'));
+        const finishBtn = await driver.findComponent(ON.id('Complete));
         await finishBtn.click();
       }
 
