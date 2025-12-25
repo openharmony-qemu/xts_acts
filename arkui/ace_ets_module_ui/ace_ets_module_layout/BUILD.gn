@@ -43,6 +43,7 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_blank:ActsAceEtsModuleLayoutBlankTest",
       "ace_ets_module_layout_divider:ActsAceEtsModuleLayoutDividerTest",
       "ace_ets_module_layout_common_custom:ActsAceEtsModuleLayoutCommonCustomTest",
+      "ace_ets_module_layout_api12_static:ActsAceEtsModuleLayoutApi12StaticTest",
       "ace_ets_module_layout_api14_static:ActsAceEtsModuleLayoutApi14StaticTest",
       "ace_ets_module_layout_api18_static:ActsAceEtsModuleLayoutApi18StaticTest",
     ]
@@ -78,6 +79,7 @@ group("ActsAceEtsModuleLayoutTest") {
       "ace_ets_module_layout_nowear_folderStack:ActsAceEtsModuleLayoutNowearFolderStackTest",
       "ace_ets_module_layout_nowear_columnSplit_rowSplit:ActsAceEtsModuleLayoutNowearColumnSplitRowSplitTest",
       "ace_ets_module_layout_common_custom:ActsAceEtsModuleLayoutCommonCustomTest",
+      "ace_ets_module_layout_api12_static:ActsAceEtsModuleLayoutApi12StaticTest",
       "ace_ets_module_layout_api14_static:ActsAceEtsModuleLayoutApi14StaticTest",
       "ace_ets_module_layout_api18_static:ActsAceEtsModuleLayoutApi18StaticTest",
     ]
