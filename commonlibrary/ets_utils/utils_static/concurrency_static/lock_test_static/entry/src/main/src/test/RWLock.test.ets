@@ -27,7 +27,7 @@ import {
 } from '../../../hypium/index';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
-import { BaseClass, Event } from './Model';
+import { BaseClass, Event } from '../utils/Model';
 
 
 export default function RWLockTest() {

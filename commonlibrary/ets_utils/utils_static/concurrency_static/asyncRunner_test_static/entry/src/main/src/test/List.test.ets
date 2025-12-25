@@ -27,7 +27,7 @@ import taskPoolAsyncRunnerMultipleGCTest from "./TaskPoolAsyncRunnerMultipleGCTe
 
 import TaskPoolErrorCodeTest from './TaskpoolErrorCode.test';
 
-import abilityTest from './Ability.test';
+import asyncRunnerTest from './AsyncRunner.test';
 
 
 
@@ -46,7 +46,7 @@ export default function testsuite() {
   taskPoolAsyncRunnerMultipleGCTest();
   
   TaskPoolErrorCodeTest();
-  
-  abilityTest();
+
+  asyncRunnerTest();
 
 }

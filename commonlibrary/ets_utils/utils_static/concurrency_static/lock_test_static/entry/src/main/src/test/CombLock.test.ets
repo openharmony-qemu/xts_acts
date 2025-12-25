@@ -27,7 +27,7 @@ import {
 } from '../../../hypium/index';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
-import { BaseClass, CountClass, Event, SharedJob, sleep } from './Model';
+import { BaseClass, CountClass, Event, SharedJob, sleep } from '../utils/Model';
 
 export let concurrentNum = 1
 
