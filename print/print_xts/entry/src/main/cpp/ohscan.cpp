@@ -20,11 +20,11 @@
 #define ASSERT_EQ(env, ret, equal) \
     do {\
      if (ret == equal) {\
-        napi_Value result;\
+        napi_value result;\
         napi_create_int32(env, 0, &result);\
         return result;\
      } else {\
-        napi_Value result;\
+        napi_value result;\
         napi_create_int32(env, -1, &result);\
         return result;\
      }\
