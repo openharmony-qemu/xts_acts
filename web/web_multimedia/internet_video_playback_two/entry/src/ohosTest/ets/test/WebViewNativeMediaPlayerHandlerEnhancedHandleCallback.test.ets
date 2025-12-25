@@ -127,7 +127,6 @@ export default function webViewNativeMediaPlayerHandlerEnhancedHandleCallback() 
      * @tc.type   Function
      * @tc.level  Level 1
      */
-
     it('testWebViewNativeMediaPlayerSurfaceInfoRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerSurfaceInfoRect"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
