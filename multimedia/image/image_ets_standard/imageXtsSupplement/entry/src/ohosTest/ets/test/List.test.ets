@@ -146,6 +146,7 @@ import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultiplied
 import ImageSourcePropertyKeyTest from './image/ImageSourcePropertyKeyTest.test';
 import ImageSourcePropertyKeyStringTest from './image/ImagePropertyKeyStringTest.test';
 import ImagePropertyKeyArrayTest from './image/ImagePropertyKeyArrayTest.test';
+import ImageContrastTypeSupp from './image/ImageExifContrast.test';
 import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
@@ -283,6 +284,7 @@ export default function testsuite() {
   ImageSourcePropertyKeyTest();
   ImageSourcePropertyKeyStringTest();
   ImagePropertyKeyArrayTest();
+  ImageContrastTypeSupp();
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
