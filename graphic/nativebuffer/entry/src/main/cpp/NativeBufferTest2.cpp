@@ -671,15 +671,17 @@ napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info)
         OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
         void *virAddr = nullptr;
         OH_NativeBuffer_Planes* outPlanes;
-        outPlanes->planeCount = 2;
+        outPlanes->planeCount = 2;    //设置2个平面分量
         // 平面0：Y分量
-        outPlanes->planes[0].offset = 0;        // 偏移量0
-        outPlanes->planes[0].rowStride = 1920;  // 假设宽度1920，行步长1920字节
-        outPlanes->planes[0].columnStride = 1080;// 假设高度1080，列步长1080字节
+        outPlanes->planes[0].offset = 0;          // 偏移量0
+        outPlanes->planes[0].rowStride = 1920;    // 假设宽度1920，行步长1920字节
+        outPlanes->planes[0].columnStride = 1080; // 假设高度1080，列步长1080字节
         // 平面1：UV分量
-        outPlanes->planes[1].offset = 1920 * 1080; // 偏移量为Y分量大小
-        outPlanes->planes[1].rowStride = 1920;     // UV行步长与Y相同
-        outPlanes->planes[1].columnStride = 540;
+        const int width = 1920;
+        const int height = 1080;
+        outPlanes->planes[1].offset = width * height; // 偏移量为Y分量大小
+        outPlanes->planes[1].rowStride = width;     // UV行步长与Y相同
+        outPlanes->planes[1].columnStride = 540;   //UV列步长
         int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, outPlanes);
         if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, NUMBER_1000 * (i + 1) + NUMBER_1, &result);
