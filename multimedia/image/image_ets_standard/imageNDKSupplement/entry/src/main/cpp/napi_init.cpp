@@ -17,6 +17,7 @@
 #include "ImagePackerCreateTest.h"
 #include "ImagePixelMapTest.h"
 #include "napi/native_api.h"
+#include "ImageReceiverNativeReadTest.h"
 #include "ImageReceiverNativeTest.h"
 #include "PixleMapNativeTest.h"
 #include "InitNativePixelMapTest.h"
@@ -35,6 +36,14 @@
 #include "ImageEffectsSuppTest.h"
 #include "ImageSourceTest.h"
 #include "ImageInitImageNativeSuppTest.h"
+#include "OHPixelMapGetBytesNumberPerRowTest.h"
+#include "OHPixelMapGetIsEditableTest.h"
+#include "OHPixelMapIsSupportAlphaTest.h"
+#include "OHPixelMapSetAlphaAbleTest.h"
+#include "OHPixelMapSetDensityTest.h"
+#include "OHImageEffectSetOutputTextureIdTest.h"
+#include "OHImageEffectStartTest.h"
+#include "OHPictureMetadataTest.h"
 #include "OHImageEffectErrcodeSuppTest.h"
 #include "OHPixelMapSupplementTest.h"
 #include "IRNdkErrCodeSupplementTest.h"
@@ -45,6 +54,7 @@
 #include "OHPixelmapNativeCreatePixelmapNativeTest.h"
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
+#include "OHImageNdkFrameworkTest.h"
 
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
@@ -190,11 +200,29 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("CreateCroppedAndScaledPixelMapTest", CreateCroppedAndScaledPixelMapTest),
     DESCRIPTOR("CreatePixelmapFromSurfaceTest", CreatePixelmapFromSurfaceTest),
     DESCRIPTOR("CreatePixelmapFromNativeBufferTest", CreatePixelmapFromNativeBufferTest),
+    DESCRIPTOR("OHPixelMapGetBytesNumberPerRow", OHPixelMapGetBytesNumberPerRow),
+    DESCRIPTOR("OHPixelMapGetIsEditable", OHPixelMapGetIsEditable),
+    DESCRIPTOR("OHPixelMapIsSupportAlpha", OHPixelMapIsSupportAlpha),
+    DESCRIPTOR("OHPixelMapSetAlphaAble", OHPixelMapSetAlphaAble),
+    DESCRIPTOR("OHPixelMapSetDensity", OHPixelMapSetDensity),
+    DESCRIPTOR("OHImageEffectStart", OHImageEffectStart),
+    DESCRIPTOR("OHImageEffectSetOutputTextureId", OHImageEffectSetOutputTextureId),
+    DESCRIPTOR("PictureMetadataGetProperty", PictureMetadataGetProperty),
+    DESCRIPTOR("PictureMetadataSetProperty", PictureMetadataSetProperty),
+    DESCRIPTOR("ClonedMetadataGetProperty", ClonedMetadataGetProperty),
+    DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
     DESCRIPTOR("ImageResultIRNdkErrCodeTest", ImageResultIRNdkErrCodeTest),
     DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
     DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
     DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
+    DESCRIPTOR("ImageReceiverNativeReadLatestImageSuccessTest", ImageReceiverNativeReadLatestImageSuccessTest),
+    DESCRIPTOR("ImagePackerNativeCreateTest", ImagePackerNativeCreateTest),
+    DESCRIPTOR("OHDecodingOptionsCreateTest", OHDecodingOptionsCreateTest),
+    DESCRIPTOR("OH_PixelmapNative_GetImageInfoTest", OH_PixelmapNative_GetImageInfoTest),
+    DESCRIPTOR("OH_PixelmapNative_ConvertAlphaFormatTest", OH_PixelmapNative_ConvertAlphaFormatTest),
+    DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
+    DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

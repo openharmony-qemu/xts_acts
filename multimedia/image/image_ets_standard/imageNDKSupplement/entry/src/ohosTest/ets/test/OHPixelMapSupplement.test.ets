@@ -19,12 +19,14 @@ import { JSON } from '@kit.ArkTS';
 
 
 const EFFECT_SUCCESS = 0;
-
+const IMAGE_SUCCESS = 0;
 const IMAGE_RESULT_BAD_PARAMETER = -1;
 
 const EFFECT_ERROR_PARAM_INVALID = 401;
 
 const IMAGE_BAD_PARAMETER = 401
+
+const IMAGE_UNKNOWN_ERROR =7600901
 
 const CASE_INDEX_1 = 1;
 const CASE_INDEX_2 = 2;
@@ -369,6 +371,20 @@ export default function OHPixelMapSupplementTest() {
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
     });
     /**
+     * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_CREATE_ALPHA_PIXEL_MAP_002
+     * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_CREATE_ALPHA_PIXEL_MAP_002
+     * @tc.desc    OHPixelmapNativeCreateAlphaPixelmap IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_OH_PIXEL_MAP_NATIVE_CREATE_ALPHA_PIXEL_MAP_002', Level.LEVEL0, () => {
+      console.info(TAG,'Start')
+      let result: number = testNapi.OHPixelmapNativeCreateAlphaPixelmapSuppTest(CASE_INDEX_2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
+    });
+    /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_GET_UNIQUE_ID_001
      * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_GET_UNIQUE_ID_001
      * @tc.desc    OHPixelmapNativeGetUniqueId IMAGE_BAD_PARAMETER
@@ -381,6 +397,20 @@ export default function OHPixelMapSupplementTest() {
       let result: number = testNapi.OHPixelmapNativeGetUniqueIdSuppTest(CASE_INDEX_1);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+    });
+    /**
+     * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_GET_UNIQUE_ID_002
+     * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_GET_UNIQUE_ID_002
+     * @tc.desc    OHPixelmapNativeGetUniqueId IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_OH_PIXEL_MAP_NATIVE_GET_UNIQUE_ID_002', Level.LEVEL0, () => {
+      console.info(TAG,'Start')
+      let result: number = testNapi.OHPixelmapNativeGetUniqueIdSuppTest(CASE_INDEX_2);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_IS_RELEASED_001
@@ -406,9 +436,23 @@ export default function OHPixelMapSupplementTest() {
      */
     it('SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_001', Level.LEVEL0, () => {
       console.info(TAG,'Start')
-      let result: number = testNapi.OHPixelmapNativeReadPixelsFromAreaSuppTest(CASE_INDEX_1);
+      let result: number = testNapi.OHPixelmapNativeReadPixelsFromAreaSuppTest(CASE_INDEX_2);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+    });
+    /**
+     * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_002
+     * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_002
+     * @tc.desc    OHPixelmapNativeReadPixelsFromArea IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_002', Level.LEVEL0, () => {
+      console.info(TAG,'Start')
+      let result: number = testNapi.OHPixelmapNativeReadPixelsFromAreaSuppTest(CASE_INDEX_1);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_WRITE_PIXELS_TO_AREA_001
@@ -422,7 +466,7 @@ export default function OHPixelMapSupplementTest() {
       console.info(TAG,'Start')
       let result: number = testNapi.OHPixelmapNativeWritePixelsToAreaSuppTest(CASE_INDEX_1);
       console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+      expect(result).assertEqual(IMAGE_SUCCESS);
     });
   })
 }

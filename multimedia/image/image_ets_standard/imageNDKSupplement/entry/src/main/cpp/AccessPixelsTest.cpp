@@ -146,6 +146,45 @@ napi_value PixelmapNativeGetNativeBuffer(napi_env env, napi_callback_info info)
     return ret;
 }
 
+napi_value PixelmapNativeGetNativeBufferNotExist(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_get_undefined(env, &result);
+
+    napi_value thisVar = nullptr;
+    napi_value argValue[1] = {0};
+    size_t argCount = 1;
+
+    napi_get_cb_info(env, info, &argCount, argValue, &thisVar, nullptr);
+    
+    OH_PixelmapNative *pixelmapNative = nullptr;
+    uint8_t data[96];
+    size_t dataSize = 96;
+    for (int i = 0; i < dataSize; i++) {
+        data[i] = i + 1;
+    }
+    OH_Pixelmap_InitializationOptions *createOpts;
+    OH_PixelmapInitializationOptions_Create(&createOpts);
+    OH_PixelmapInitializationOptions_SetWidth(createOpts, OPTION_SET_WIDTH);
+    OH_PixelmapInitializationOptions_SetHeight(createOpts, OPTION_SET_HEIGHT);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOpts, PIXELMAP_ALPHA_TYPE_UNKNOWN);
+    OH_PixelmapNative *srcPixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_CreatePixelmap(data, dataSize, createOpts, &srcPixelmap);
+    
+    OH_NativeBuffer_Config config {
+        .width = 256,
+        .height = 256,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE,
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
+    Image_ErrorCode returnValue = OH_PixelmapNative_GetNativeBuffer(srcPixelmap, &nativeBuffer);
+    napi_value ret;
+    napi_create_int32(env, returnValue, &ret);
+    return ret;
+}
+
 napi_value TestImageScale(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;

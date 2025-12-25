@@ -20,6 +20,7 @@ import testNapi from "libimageEffect.so";
 const TAG = 'AccessPixelsSuppXts';
 const IMAGE_RESULT_SUCCESS = 0;
 const IMAGE_BAD_PARAMETER = 401;
+const IMAGE_DMA_NOT_EXIST = 7600173;
 const CASE_INDEX_1 = 1;
 
 
@@ -77,6 +78,21 @@ export default function AccessPixelsSuppTest() {
       let result: number = testNapi.PixelmapNativeGetNativeBuffer(0);
       console.info(TAG,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_BAD_PARAMETER);
+    });
+
+    /**
+     * @tc.number   SUB_IMAGE_PIXEL_MAP_NATIVE_GET_NATIVE_SUPP_0002
+     * @tc.name     SUB_IMAGE_PIXEL_MAP_NATIVE_GET_NATIVE_SUPP_0002
+     * @tc.desc     OHPixelmapNativeGetNativeBuffer-IMAGE_DMA_NOT_EXIST
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('SUB_IMAGE_PIXEL_MAP_NATIVE_GET_NATIVE_SUPP_0002', Level.LEVEL0, () => {
+      console.info(TAG,'Start',);
+      let result: number = testNapi.PixelmapNativeGetNativeBufferNotExist(0);
+      console.info(TAG,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_DMA_NOT_EXIST);
     });
 
     /**
