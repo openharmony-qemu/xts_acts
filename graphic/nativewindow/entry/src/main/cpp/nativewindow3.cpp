@@ -100,7 +100,8 @@ napi_value testNativeWindowNativeWindowSetSetScalingMode(napi_env env, napi_call
     int32_t flag2 =
         OH_NativeWindow_NativeWindowSetScalingMode(nativeWindow, sequence, static_cast<OHScalingMode>(CONSTANT_100));
     int32_t flag3 = OH_NativeWindow_NativeWindowSetScalingMode(nativeWindow, 0, OH_SCALING_MODE_FREEZE);
-    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS && flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS &&
+        flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -125,7 +126,8 @@ napi_value testNativeWindowNativeWindowSetMetaData(napi_env env, napi_callback_i
     int32_t flag1 = OH_NativeWindow_NativeWindowSetMetaData(nullptr, sequence, sizeof(metaData), metaData);
     int32_t flag2 = OH_NativeWindow_NativeWindowSetMetaData(nativeWindow, sequence, sizeof(metaData), nullptr);
     int32_t flag3 = OH_NativeWindow_NativeWindowSetMetaData(nativeWindow, 0, sizeof(metaData), metaData);
-    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS && flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS &&
+        flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -152,7 +154,8 @@ napi_value testNativeWindowNativeWindowSetMetaDataSet(napi_env env, napi_callbac
     int32_t flag2 = OH_NativeWindow_NativeWindowSetMetaDataSet(nativeWindow, sequence, key, sizeof(metaData), nullptr);
     int32_t flag3 = OH_NativeWindow_NativeWindowSetMetaDataSet(
         nativeWindow, sequence, static_cast<OHHDRMetadataKey>(CONSTANT_100), sizeof(metaData), metaData);
-    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS && flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS &&
+        flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1000, &result);
         return result;
     }
@@ -676,7 +679,8 @@ napi_value testNativeWindowPreAllocBufferAbnormal(napi_env env, napi_callback_in
     ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_1]);
     ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_2]);
     int32_t ret4 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
-    if (ret2 != NATIVE_ERROR_BUFFER_QUEUE_FULL || ret3 != NATIVE_ERROR_BUFFER_QUEUE_FULL || ret4 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
+    if (ret2 != NATIVE_ERROR_BUFFER_QUEUE_FULL || ret3 != NATIVE_ERROR_BUFFER_QUEUE_FULL ||
+        ret4 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
@@ -724,7 +728,8 @@ napi_value testNativeWindowPreAllocBufferDetachAttach(napi_env env, napi_callbac
     int32_t ret6 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
     // buffer队列已满再次PreAlloc
     int32_t ret7 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_1);
-    if (ret4 != NATIVE_ERROR_OK || ret5 != NATIVE_ERROR_OK || ret6 != NATIVE_ERROR_OK || ret7 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
+    if (ret4 != NATIVE_ERROR_OK || ret5 != NATIVE_ERROR_OK || ret6 != NATIVE_ERROR_OK ||
+        ret7 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
         napi_create_int32(env, CONSTANT_4, &result);
         return result;
     }
