@@ -295,7 +295,7 @@ HWTEST_F(DrawingNativeRegionTest, testRegionOpRegionNull, Function | SmallTest |
     bool ret = OH_Drawing_RegionOp(nullptr, dst, REGION_OP_MODE_DIFFERENCE);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
-    ret = OH_Drawing_RegionOp(region, nullptr, REGION_OP_MODE_DIFFERENCE);
+    ret = OH_Drawing_RegionOp(src, nullptr, REGION_OP_MODE_DIFFERENCE);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
     OH_Drawing_RegionDestroy(src);
