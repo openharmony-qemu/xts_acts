@@ -1137,7 +1137,7 @@ HWTEST_F(DrawingNativeRectTest, testRectInsetAbNormal, Function | SmallTest | Le
 
 /**
  * @tc.name   testRectInsetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602 
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602
  * @tc.desc   Test for testRectInsetNull
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

@@ -411,7 +411,7 @@ HWTEST_F(DrawingNativePathPart3Test, testPathOpNull, Function | SmallTest | Leve
     bool pathOp = OH_Drawing_PathOp(nullptr, src, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    EXPECT_EQ(pathOp, false); 
+    EXPECT_EQ(pathOp, false);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathOp with the second parameter as nullptr, expect OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
     pathOp = OH_Drawing_PathOp(path, nullptr, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
