@@ -8921,4 +8921,1469 @@ ani_int test_Object_Call_Method_Void_By_Name_20([[maybe_unused]] ani_env *env, [
     ASSERT_EQ(res, value1 + value6);
     return ANI_TRUE;
 }
+
+ani_int test_Object_Call_Method_Void_By_Name_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameVoid.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 10;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int res = 0;
+    const ani_int value = 10;
+    ASSERT_EQ(env->Object_CallMethodByName_Void(obj, "jf", "i:", value), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "getIntValue", ":i", &res), ANI_OK);
+    ASSERT_EQ(res, arg + value);
+
+    ani_value args[1U];
+    args[0U].i = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Void_A(obj, "jf", "i:", args), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "getIntValue", ":i", &res), ANI_OK);
+    ASSERT_EQ(res, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Void_By_Name_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    const ani_long VAL1 = 1000000;
+    const ani_long VAL2 = 2000000;
+    ani_object object {};
+    GetMethodDataVoid(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Void(nullptr, object, "voidMethod", "ll:", VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Void_A(nullptr, object, "voidMethod", "ll:", args),
+              ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Void(nullptr, "voidMethod", "ll:", VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Void_A(nullptr, "voidMethod", "ll:", args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Void(object, nullptr, "ll:", VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Void_A(object, nullptr, "ll:", args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Void(object, "voidMethod", nullptr, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Void_A(object, "voidMethod", nullptr, args), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Void_By_Name_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    const ani_long VAL1 = 1000000;
+    const ani_long VAL2 = 2000000;
+    ani_object object {};
+    GetMethodDataVoid(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Void(object, methodName.data(), "ll:", VAL1, VAL2), ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Void_A(object, methodName.data(), "ll:", args), ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Void_By_Name_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    const ani_long VAL1 = 1000000;
+    const ani_long VAL2 = 2000000;
+    ani_object object {};
+    GetMethodDataVoid(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Void(object, methodName.data(), "", VAL1, VAL2), ANI_INVALID_DESCRIPTOR);
+        ASSERT_EQ(env->Object_CallMethodByName_Void_A(object, methodName.data(), "", args), ANI_INVALID_DESCRIPTOR);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL = 2;
+    const ani_int VAL1 = 3;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_value args[2U];
+    ani_int arg1 = VAL;
+    ani_int arg2 = VAL1;
+    args[0U].i = arg1;
+    args[1U].i = arg2;
+
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "nihao");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL = 2;
+    const ani_int VAL1 = 3;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_int arg1 = VAL;
+    ani_int arg2 = VAL1;
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1, arg2), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "nihao");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL2 = 5;
+    const ani_int VAL3 = 6;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_ref result {};
+    ani_int arg1 = VAL2;
+    ani_int arg2 = VAL3;
+    ASSERT_EQ(env->c_api->Object_CallMethod_Ref(nullptr, object, method, &result, arg1, arg2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL2 = 5;
+    const ani_int VAL3 = 6;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_ref result {};
+    ani_int arg1 = VAL2;
+    ani_int arg2 = VAL3;
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, nullptr, &result, arg1, arg2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL2 = 5;
+    const ani_int VAL3 = 6;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_int arg1 = VAL2;
+    ani_int arg2 = VAL3;
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, nullptr, arg1, arg2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL2 = 5;
+    const ani_int VAL3 = 6;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_ref result {};
+    ani_int arg1 = VAL2;
+    ani_int arg2 = VAL3;
+    ASSERT_EQ(env->Object_CallMethod_Ref(nullptr, method, &result, arg1, arg2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethodVoidParam";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello world");
+
+    ani_value args[2U];
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello world");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL = 2;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethodMultipleParam";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_value args[5U] = {};
+    ani_int arg1 = VAL;
+    ani_boolean arg2 = ANI_TRUE;
+    ani_float arg3 = 3.0F;
+    ani_short arg4 = 4U;
+    ani_double arg5 = 5.0F;
+    args[0U].i = arg1;
+    args[1U].z = arg2;
+    args[2U].f = arg3;
+    args[3U].s = arg4;
+    args[4U].d = arg5;
+
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1, arg2, arg3, arg4, arg5), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "china");
+
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "china");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethodVoidParam";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello world");
+
+    ani_value args[2U];
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello world");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    const ani_int VAL3 = 6;
+    const ani_int VAL4 = 11;
+    ani_class clsC {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodRef.C", &clsC), ANI_OK);
+    ASSERT_NE(clsC, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(clsC, "func", nullptr, &method), ANI_OK);
+    ASSERT_NE(method, nullptr);
+
+    ani_class clsD {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodRef.D", &clsD), ANI_OK);
+    ASSERT_NE(clsD, nullptr);
+    ani_method ctor {};
+    ASSERT_EQ(env->Class_FindMethod(clsD, "<ctor>", ":", &ctor), ANI_OK);
+
+    ani_object object {};
+    ASSERT_EQ(env->Object_New(clsD, ctor, &object), ANI_OK);
+    ASSERT_NE(object, nullptr);
+
+    ani_value args[2U] = {};
+    ani_int arg1 = VAL3;
+    ani_int arg2 = VAL4;
+    args[0U].i = arg1;
+    args[1U].i = arg2;
+
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1, arg2), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "nihao");
+
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "nihao");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL2 = 5;
+    const ani_int VAL3 = 6;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.E";
+    paramObjOperation.methodName = "func";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    ani_value args[2U] = {};
+    ani_int arg1 = VAL3;
+    ani_int arg2 = VAL2;
+    args[0U].i = arg1;
+    args[1U].i = arg2;
+
+    std::string str {};
+    ani_ref result {};
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1, arg2), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello world");
+
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello world");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 3;
+    const ani_int VAL3 = 6;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "stringMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    std::string str {};
+    ani_ref result {};
+    ani_value args[2U] = {};
+    ani_int arg1 = VAL1;
+    ani_int arg2 = VAL1;
+    args[0U].i = arg1;
+    args[1U].i = arg2;
+    for (ani_int i = 0; i < VAL3; i++) {
+        ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1, arg2), ANI_OK);
+        ASSERT_NE(result, nullptr);
+        GetStdString(env, static_cast<ani_string>(result), str);
+        ASSERT_STREQ(str.c_str(), "nihao");
+
+        ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+        ASSERT_NE(result, nullptr);
+        GetStdString(env, static_cast<ani_string>(result), str);
+        ASSERT_STREQ(str.c_str(), "nihao");
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 3;
+    const ani_int VAL2 = 5;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "nestedMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    std::string str {};
+    ani_ref result {};
+    ani_value args[2U] = {};
+    ani_int arg1 = VAL1;
+    ani_int arg2 = VAL2;
+    args[0U].i = arg1;
+    args[1U].i = arg2;
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1, arg2), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "nihao");
+
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "nihao");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    const ani_int VAL1 = 3;
+    ani_method method {};
+    ParamObj paramObjOperation;
+    paramObjOperation.className = "entry.src.main.src.ets.ObjectOperationsMethodRef.A";
+    paramObjOperation.methodName = "recursionMethod";
+    paramObjOperation.signature = nullptr;
+    GetMethodAndObject(env, &paramObjOperation, &object, &method);
+
+    std::string str {};
+    ani_ref result {};
+    ani_value args[1U] = {};
+    ani_int arg1 = VAL1;
+    args[0U].i = arg1;
+    ASSERT_EQ(env->Object_CallMethod_Ref(object, method, &result, arg1), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello");
+
+    ASSERT_EQ(env->Object_CallMethod_Ref_A(object, method, &result, args), ANI_OK);
+    ASSERT_NE(result, nullptr);
+    GetStdString(env, static_cast<ani_string>(result), str);
+    ASSERT_STREQ(str.c_str(), "hello");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_New([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls = {};
+    ani_object obj = {};
+    ASSERT_EQ(GetClsData(env, &obj, &cls), ANI_TRUE);
+
+    ani_method ctor {};
+    ani_object objResult {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", ":", &ctor), ANI_OK);
+    ASSERT_EQ(env->Object_New(cls, ctor, &objResult), ANI_OK);
+    ASSERT_NE(objResult, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_InstanceOf([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    auto status = env->String_NewUTF8("a", 1U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_type type {};
+    ani_boolean res = ANI_FALSE;
+    ASSERT_EQ(env->Object_GetType(result, &type), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_GetType([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_string result = nullptr;
+    auto status = env->String_NewUTF8("a", 1U, &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_NE(result, nullptr);
+
+    ani_type type {};
+    ani_boolean res = ANI_FALSE;
+    ASSERT_EQ(env->Object_GetType(result, &type), ANI_OK);
+    ASSERT_EQ(env->Object_InstanceOf(result, type, &res), ANI_OK);
+    ASSERT_EQ(res, ANI_TRUE);
+    return ANI_TRUE;
+}
+
+ani_int test_Reference_IsNull([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ASSERT_EQ(env->CreateEscapeLocalScope(SPECIFIED_CAPACITY), ANI_OK);
+    ani_ref nullRef;
+    ASSERT_EQ(env->GetNull(&nullRef), ANI_OK);
+    ani_ref result;
+    ASSERT_EQ(env->DestroyEscapeLocalScope(nullRef, &result), ANI_OK);
+    ani_boolean isNull = ANI_FALSE;
+    ASSERT_EQ(env->Reference_IsNull(result, &isNull), ANI_OK);
+    ASSERT_EQ(isNull, ANI_TRUE);
+    return ANI_TRUE;
+}
+
+ani_int test_Reference_IsUndefined([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ASSERT_EQ(env->CreateEscapeLocalScope(SPECIFIED_CAPACITY), ANI_OK);
+    ani_ref undefined;
+    ASSERT_EQ(env->GetUndefined(&undefined), ANI_OK);
+    ani_ref result;
+    ASSERT_EQ(env->DestroyEscapeLocalScope(undefined, &result), ANI_OK);
+    ani_boolean isUndefined = ANI_FALSE;
+    ASSERT_EQ(env->Reference_IsUndefined(result, &isUndefined), ANI_OK);
+    ASSERT_EQ(isUndefined, ANI_TRUE);
+    return ANI_TRUE;
+}
+
+ani_int test_Reference_Equals([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_enum aniEnum {};
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ObjectOperations.ToFind", &aniEnum), ANI_OK);
+    ASSERT_NE(aniEnum, nullptr);
+
+    ani_enum_item redName {};
+    ASSERT_EQ(env->Enum_GetEnumItemByName(aniEnum, "RED", &redName), ANI_OK);
+    ani_enum_item redIndex {};
+    ASSERT_EQ(env->Enum_GetEnumItemByIndex(aniEnum, 0U, &redIndex), ANI_OK);
+    ani_boolean isRedEqual = ANI_FALSE;
+    ASSERT_EQ(env->Reference_Equals(redName, redIndex, &isRedEqual), ANI_OK);
+    ASSERT_EQ(isRedEqual, ANI_TRUE);
+    return ANI_TRUE;
+}
+
+ani_int test_Array_New([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_ref undefinedRef {};
+    ASSERT_EQ(env->GetUndefined(&undefinedRef), ANI_OK);
+
+    ani_array array = nullptr;
+    ASSERT_EQ(env->Array_New(LENGTH_5, undefinedRef, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_New_A([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_int weight = 200;
+    const char m[] = "Pure P60";
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.MobilePhone", &cls), ANI_OK);
+    ani_method ctor {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "C{std.core.String}i:", &ctor), ANI_OK);
+    ani_string model {};
+    ASSERT_EQ(env->String_NewUTF8(m, strlen(m), &model), ANI_OK);
+    ani_value args[2U];
+    args[0U].r = model;
+    args[1U].i = weight;
+    ani_object phone {};
+    ASSERT_EQ(env->Object_New_A(cls, ctor, &phone, args), ANI_OK);
+    return ANI_TRUE;
+}
+
+// NOLINTBEGIN(cppcoreguidelines-pro-type-vararg)
+template <typename R, typename... Args>
+ani_int DoCallFunctionV(ani_env *env, std::optional<R> *result, ani_function fn, Args &&...args)
+{
+    std::conditional_t<std::is_same_v<R, void>, std::nullopt_t, R> value {};
+    ani_status status;
+
+    if constexpr (std::is_same_v<R, ani_boolean>) {
+        status = env->Function_Call_Boolean(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_byte>) {
+        status = env->Function_Call_Byte(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_char>) {
+        status = env->Function_Call_Char(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_short>) {
+        status = env->Function_Call_Short(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_int>) {
+        status = env->Function_Call_Int(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_long>) {
+        status = env->Function_Call_Long(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_float>) {
+        status = env->Function_Call_Float(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, ani_double>) {
+        status = env->Function_Call_Double(fn, &value, std::forward<Args>(args)...);
+    } else if constexpr (std::is_same_v<R, void>) {
+        status = env->Function_Call_Void(fn, std::forward<Args>(args)...);
+        value = std::nullopt;
+    } else if constexpr (std::is_same_v<R, ani_ref> || std::is_same_v<R, ani_tuple_value> ||
+        std::is_same_v<R, ani_object>) {
+        ani_ref resultRef {};
+        status = env->Function_Call_Ref(fn, &resultRef, std::forward<Args>(args)...);
+        value = static_cast<R>(resultRef);
+    } else {
+        enum { INCORRECT_TEMPLATE_TYPE = false };
+        static_assert(INCORRECT_TEMPLATE_TYPE, "Incorrect template type");
+    }
+
+    if (status == ANI_PENDING_ERROR) {
+        ASSERT_EQ(env->DescribeError(), ANI_OK);
+    }
+    ASSERT_EQ(status, ANI_OK);
+
+    result->emplace(value);
+    return ANI_TRUE;
+}
+// NOLINTEND(cppcoreguidelines-pro-type-vararg)
+
+template <typename R, typename... Args>
+ani_int CallEtsFunctionImplV(ani_env *env, std::optional<R> *result, const std::string &moduleDescriptor,
+                             const std::string &fnName, Args &&...args)
+{
+    ani_module mod {};
+    ASSERT_EQ(env->FindModule(moduleDescriptor.c_str(), &mod), ANI_OK);
+    ani_function fn {};
+    ASSERT_EQ(env->Module_FindFunction(mod, fnName.c_str(), nullptr, &fn), ANI_OK);
+    ASSERT_EQ(DoCallFunctionV(env, result, fn, std::forward<Args>(args)...), ANI_TRUE);
+    return ANI_TRUE;
+}
+
+/// Call function with name `fnName` from module denoted by `moduleDescriptor`
+template <typename R, typename... Args>
+R CallEtsFunctionV(ani_env *env, const std::string &moduleName, const std::string &fnName, Args &&...args)
+{
+    std::optional<R> result;
+    //auto moduleDescriptor = "L" + moduleName + ";";
+    CallEtsFunctionImplV(env, &result, moduleName, fnName, std::forward<Args>(args)...);
+    if constexpr (!std::is_same_v<R, void>) {
+        return result.value();
+    }
+}
+
+ani_status TestFuncV(ani_env *env, ani_class cls, ani_method method, ani_object *result,
+                     ...)
+{
+    va_list args {};
+    va_start(args, result);
+    ani_status aniResult = ANI_ERROR;
+    aniResult = env->c_api->Object_New_V(env, cls, method, result, args);
+    va_end(args);
+    return aniResult;
+}
+
+ani_int GetTestString(ani_env *env, ani_string *tag)
+{
+    const char model[] = "Pure P60";
+    ASSERT_EQ(env->String_NewUTF8(model, strlen(model), tag), ANI_OK);
+    ASSERT_NE(*tag, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_New_V([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Test", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method ctor {};
+    const char *tmpName = "iC{std.core.String}C{entry.src.main.src.ets.ObjectOperations.Animal}:";
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", tmpName, &ctor), ANI_OK);
+    ASSERT_NE(ctor, nullptr);
+
+    ani_string tag {};
+    ASSERT_EQ(GetTestString(env, &tag), ANI_TRUE);
+    auto animalRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newAnimalObject");
+
+    ani_object tmpObj {};
+    ani_int value1 = 200;
+    ASSERT_EQ(TestFuncV(env, cls, ctor, &tmpObj, value1, tag, animalRef), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_int test_Reference_IsNullishValue([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    auto ref = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "getNull");
+    ani_boolean isUndefined = ANI_FALSE;
+    ASSERT_EQ(env->Reference_IsNullishValue(ref, &isUndefined), ANI_OK);
+    ASSERT_EQ(isUndefined, ANI_TRUE);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledBool(ani_env *env,
+                             ani_object *objectResult,
+                             ani_field *fieldNameResult,
+                             ani_field *fieldMarriedResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldMarried;
+    ASSERT_EQ(env->Class_FindField(cls, "married", &fieldMarried), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldMarriedResult = fieldMarried;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Boolean_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldMarried {};
+    GetTestDataFiledBool(env, &sarah, &field, &fieldMarried);
+
+    ani_boolean married = ANI_FALSE;
+    ASSERT_EQ(env->Object_GetField_Boolean(sarah, fieldMarried, &married), ANI_OK);
+    ASSERT_EQ(married, true);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Boolean_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldMarried {};
+    GetTestDataFiledBool(env, &sarah, &field, &fieldMarried);
+
+    ani_boolean married = ANI_FALSE;
+    ASSERT_EQ(env->c_api->Object_GetField_Boolean(nullptr, sarah, fieldMarried, &married), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Boolean_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldMarried {};
+    GetTestDataFiledBool(env, &sarah, &field, &fieldMarried);
+
+    ani_boolean married = ANI_FALSE;
+    ASSERT_EQ(env->Object_GetField_Boolean(sarah, field, &married), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Boolean_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldMarried {};
+    GetTestDataFiledBool(env, &sarah, &field, &fieldMarried);
+
+    ani_boolean married = ANI_FALSE;
+    ASSERT_EQ(env->Object_GetField_Boolean(nullptr, field, &married), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Boolean_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldMarried {};
+    GetTestDataFiledBool(env, &sarah, &field, &fieldMarried);
+
+    ani_boolean married = ANI_FALSE;
+    ASSERT_EQ(env->Object_GetField_Boolean(sarah, nullptr, &married), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Boolean_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldMarried {};
+    GetTestDataFiledBool(env, &sarah, &field, &fieldMarried);
+
+    ASSERT_EQ(env->Object_GetField_Boolean(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledByte(ani_env *env,
+                             ani_object *objectResult,
+                             ani_field *fieldNameResult,
+                             ani_field *fieldAgeResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject2");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman2", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldAge;
+    ASSERT_EQ(env->Class_FindField(cls, "age", &fieldAge), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Byte_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledByte(env, &sarah, &field, &fieldAge);
+
+    ani_byte age {};
+    ASSERT_EQ(env->Object_GetField_Byte(sarah, fieldAge, &age), ANI_OK);
+    ASSERT_EQ(age, 24L);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Byte_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledByte(env, &sarah, &field, &fieldAge);
+
+    ani_byte age {};
+    ASSERT_EQ(env->c_api->Object_GetField_Byte(nullptr, sarah, fieldAge, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Byte_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledByte(env, &sarah, &field, &fieldAge);
+
+    ani_byte age {};
+    ASSERT_EQ(env->Object_GetField_Byte(sarah, field, &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Byte_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledByte(env, &sarah, &field, &fieldAge);
+
+    ani_byte age {};
+    ASSERT_EQ(env->Object_GetField_Byte(nullptr, field, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Byte_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledByte(env, &sarah, &field, &fieldAge);
+
+    ani_byte age {};
+    ASSERT_EQ(env->Object_GetField_Byte(sarah, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Byte_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledByte(env, &sarah, &field, &fieldAge);
+
+    ASSERT_EQ(env->Object_GetField_Byte(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledChar(ani_env *env,
+                             ani_object *objectResult,
+                             ani_field *fieldNameResult,
+                             ani_field *fieldIndexResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject3");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman3", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldIndex;
+    ASSERT_EQ(env->Class_FindField(cls, "index", &fieldIndex), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldIndexResult = fieldIndex;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Char_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldIndex {};
+    GetTestDataFiledChar(env, &sarah, &field, &fieldIndex);
+
+    ani_char index = '\0';
+    ani_char xx = 'a';
+    ASSERT_EQ(env->Object_GetField_Char(sarah, fieldIndex, &index), ANI_OK);
+    ASSERT_EQ(index, xx);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Char_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldIndex {};
+    GetTestDataFiledChar(env, &sarah, &field, &fieldIndex);
+
+    ani_char index = '\0';
+    ASSERT_EQ(env->c_api->Object_GetField_Char(nullptr, sarah, fieldIndex, &index), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Char_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldIndex {};
+    GetTestDataFiledChar(env, &sarah, &field, &fieldIndex);
+
+    ani_char index = '\0';
+    ASSERT_EQ(env->Object_GetField_Char(sarah, field, &index), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Char_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldIndex {};
+    GetTestDataFiledChar(env, &sarah, &field, &fieldIndex);
+
+    ani_char index = '\0';
+    ASSERT_EQ(env->Object_GetField_Char(nullptr, field, &index), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Char_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldIndex {};
+    GetTestDataFiledChar(env, &sarah, &field, &fieldIndex);
+
+    ani_char index = '\0';
+    ASSERT_EQ(env->Object_GetField_Char(sarah, nullptr, &index), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Char_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldIndex {};
+    GetTestDataFiledChar(env, &sarah, &field, &fieldIndex);
+
+    ASSERT_EQ(env->Object_GetField_Char(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledDouble(ani_env *env,
+                               ani_object *objectResult,
+                               ani_field *fieldNameResult,
+                               ani_field *fieldAgeResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject4");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman4", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldAge;
+    ASSERT_EQ(env->Class_FindField(cls, "age", &fieldAge), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Double_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledDouble(env, &sarah, &field, &fieldAge);
+
+    ani_double age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Double(sarah, fieldAge, &age), ANI_OK);
+    ASSERT_EQ(age, 24.0F);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Double_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledDouble(env, &sarah, &field, &fieldAge);
+
+    ani_double age = 0.0F;
+    ASSERT_EQ(env->c_api->Object_GetField_Double(nullptr, sarah, fieldAge, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Double_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledDouble(env, &sarah, &field, &fieldAge);
+
+    ani_double age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Double(sarah, field, &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Double_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledDouble(env, &sarah, &field, &fieldAge);
+
+    ani_double age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Double(nullptr, field, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Double_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledDouble(env, &sarah, &field, &fieldAge);
+
+    ani_double age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Double(sarah, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Double_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledDouble(env, &sarah, &field, &fieldAge);
+
+    ASSERT_EQ(env->Object_GetField_Double(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledFloat(ani_env *env,
+                              ani_object *objectResult,
+                              ani_field *fieldNameResult,
+                              ani_field *fieldAgeResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject5");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman5", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldAge;
+    ASSERT_EQ(env->Class_FindField(cls, "age", &fieldAge), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Float_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledFloat(env, &sarah, &field, &fieldAge);
+
+    ani_float age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Float(sarah, fieldAge, &age), ANI_OK);
+    ASSERT_EQ(age, 24.0F);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Float_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledFloat(env, &sarah, &field, &fieldAge);
+
+    ani_float age = 0.0F;
+    ASSERT_EQ(env->c_api->Object_GetField_Float(nullptr, sarah, fieldAge, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Float_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledFloat(env, &sarah, &field, &fieldAge);
+
+    ani_float age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Float(sarah, field, &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Float_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledFloat(env, &sarah, &field, &fieldAge);
+
+    ani_float age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Float(nullptr, field, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Float_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledFloat(env, &sarah, &field, &fieldAge);
+
+    ani_float age = 0.0F;
+    ASSERT_EQ(env->Object_GetField_Float(sarah, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Float_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledFloat(env, &sarah, &field, &fieldAge);
+
+    ASSERT_EQ(env->Object_GetField_Float(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledInt(ani_env *env,
+                            ani_object *objectResult,
+                            ani_field *fieldNameResult,
+                            ani_field *fieldAgeResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject6");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman6", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldAge;
+    ASSERT_EQ(env->Class_FindField(cls, "age", &fieldAge), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Int_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledInt(env, &sarah, &field, &fieldAge);
+
+    ani_int age = 0U;
+    ASSERT_EQ(env->Object_GetField_Int(sarah, fieldAge, &age), ANI_OK);
+    ASSERT_EQ(age, 24U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Int_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledInt(env, &sarah, &field, &fieldAge);
+
+    ani_int age = 0U;
+    ASSERT_EQ(env->c_api->Object_GetField_Int(nullptr, sarah, fieldAge, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Int_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledInt(env, &sarah, &field, &fieldAge);
+
+    ani_int age = 0U;
+    ASSERT_EQ(env->Object_GetField_Int(sarah, field, &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Int_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledInt(env, &sarah, &field, &fieldAge);
+
+    ani_int age = 0U;
+    ASSERT_EQ(env->Object_GetField_Int(nullptr, field, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Int_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledInt(env, &sarah, &field, &fieldAge);
+
+    ani_int age = 0U;
+    ASSERT_EQ(env->Object_GetField_Int(sarah, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Int_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledInt(env, &sarah, &field, &fieldAge);
+
+    ASSERT_EQ(env->Object_GetField_Int(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledLong(ani_env *env,
+                             ani_object *objectResult,
+                             ani_field *fieldNameResult,
+                             ani_field *fieldAgeResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject7");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman7", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldAge;
+    ASSERT_EQ(env->Class_FindField(cls, "age", &fieldAge), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Long_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledLong(env, &sarah, &field, &fieldAge);
+
+    ani_long age = 0L;
+    ASSERT_EQ(env->Object_GetField_Long(sarah, fieldAge, &age), ANI_OK);
+    ASSERT_EQ(age, 24L);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Long_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledLong(env, &sarah, &field, &fieldAge);
+
+    ani_long age = 0L;
+    ASSERT_EQ(env->c_api->Object_GetField_Long(nullptr, sarah, fieldAge, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Long_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledLong(env, &sarah, &field, &fieldAge);
+
+    ani_long age = 0L;
+    ASSERT_EQ(env->Object_GetField_Long(sarah, field, &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Long_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledLong(env, &sarah, &field, &fieldAge);
+
+    ani_long age = 0L;
+    ASSERT_EQ(env->Object_GetField_Long(nullptr, field, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Long_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledLong(env, &sarah, &field, &fieldAge);
+
+    ani_long age = 0L;
+    ASSERT_EQ(env->Object_GetField_Long(sarah, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Long_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledLong(env, &sarah, &field, &fieldAge);
+
+    ASSERT_EQ(env->Object_GetField_Long(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int GetTestDataFiledShort(ani_env *env,
+                              ani_object *objectResult,
+                              ani_field *fieldNameResult,
+                              ani_field *fieldAgeResult)
+{
+    auto sarahRef = CallEtsFunctionV<ani_ref>(env, "entry.src.main.src.ets.ObjectOperations", "newSarahObject8");
+    auto sarah = static_cast<ani_object>(sarahRef);
+
+    ani_class cls;
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperations.Woman8", &cls), ANI_OK);
+
+    ani_field fieldName;
+    ASSERT_EQ(env->Class_FindField(cls, "name", &fieldName), ANI_OK);
+
+    ani_field fieldAge;
+    ASSERT_EQ(env->Class_FindField(cls, "age", &fieldAge), ANI_OK);
+
+    *objectResult = sarah;
+    *fieldNameResult = fieldName;
+    *fieldAgeResult = fieldAge;
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Short_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledShort(env, &sarah, &field, &fieldAge);
+
+    ani_short age = 0U;
+    ASSERT_EQ(env->Object_GetField_Short(sarah, fieldAge, &age), ANI_OK);
+    ASSERT_EQ(age, 24U);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Short_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledShort(env, &sarah, &field, &fieldAge);
+
+    ani_short age = 0U;
+    ASSERT_EQ(env->c_api->Object_GetField_Short(nullptr, sarah, fieldAge, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Short_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledShort(env, &sarah, &field, &fieldAge);
+
+    ani_short age = 0U;
+    ASSERT_EQ(env->Object_GetField_Short(sarah, field, &age), ANI_INVALID_TYPE);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Short_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledShort(env, &sarah, &field, &fieldAge);
+
+    ani_short age = 0U;
+    ASSERT_EQ(env->Object_GetField_Short(nullptr, field, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Short_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledShort(env, &sarah, &field, &fieldAge);
+
+    ani_short age = 0U;
+    ASSERT_EQ(env->Object_GetField_Short(sarah, nullptr, &age), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Get_Field_Short_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object sarah {};
+    ani_field field {};
+    ani_field fieldAge {};
+    GetTestDataFiledShort(env, &sarah, &field, &fieldAge);
+
+    ASSERT_EQ(env->Object_GetField_Short(sarah, field, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
 #endif //ARKTS_ANI_TEST_OBJECTOPERATIONS_H
