@@ -60,6 +60,16 @@ const uint64_t COST_TIME_200 = 200;
 const uint64_t COST_TIME_300 = 300;
 const uint64_t COST_TIME_500 = 500;
 const uint64_t COST_TIME_600 = 600;
+const int TASK_STORAGE_SIZE = 128;
+const int STORAGE_SIZE = 64;
+#if defined(__aarch64__)
+const int FIBER_STORAGE_SIZE = 22;
+#elif defined(__arm__)
+const int FIBER_STORAGE_SIZE = 64;
+#elif defined(__x86_64__)
+const int FIBER_STORAGE_SIZE = 8;
+#endif
+const int FUNCTION_STORAGE_SIZE = 96;
 
 void OnePlusForTest(void* arg)
 {
@@ -555,7 +565,7 @@ static napi_value ConditionVariableApiTest001(napi_env env, napi_callback_info i
     if (ret != ffrt_error_inval) {
         resultEnd = 7;
     }
-    ffrt_condattr_t attr;
+    ffrt_condattr_t attr = {0};
     ret = ffrt_cond_init(&cond, &attr);
     if (ret != ffrt_success) {
         resultEnd = 8;
@@ -828,10 +838,30 @@ static napi_value RecursiveMutexAbnormalParamTest001(napi_env env, napi_callback
     return flag;
 }
 
+static napi_value SharedMutexAbnormalParamTest001(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    int type = 0;
+    ffrt_rwlockattr_t attr = {0};
+    ffrt_rwlock_t mtx = {0};
+    int ret = ffrt_rwlock_init(&mtx, nullptr);
+    if (ret != ffrt_success) {
+        result = ERR_CODE_1;
+    }
+    ret = ffrt_mutexattr_settype(NULL, ffrt_mutex_normal);
+    ret = ffrt_mutexattr_settype(NULL, ffrt_mutex_default);
+    if (ret != ffrt_error_inval) {
+        result = ERR_CODE_2;
+    }
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
 static napi_value RecursiveMutexAbnormalInvalidParamTest001(napi_env env, napi_callback_info info)
 {
     int result = 0;
-    ffrt_mutexattr_t attr;
+    ffrt_mutexattr_t attr = {0};
     int ret = ffrt_mutexattr_init(NULL);
     if (ret != ffrt_error_inval) {
         result = ERR_CODE_1;
@@ -4003,6 +4033,92 @@ static napi_value ffrt_alloc_function_0001(napi_env env, napi_callback_info info
     return flag;
 }
 
+static napi_value ffrtStorageSizeCheck(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    ffrt_storage_size_t ret = ffrt_task_attr_storage_size;
+    if (ret != TASK_STORAGE_SIZE) {
+        result = ERR_CODE_1;
+    }
+    ret = ffrt_auto_managed_function_storage_size;
+    if (ret != STORAGE_SIZE + sizeof(ffrt_function_header_t)) {
+        result = ERR_CODE_2;
+    }
+    ret = ffrt_mutex_storage_size;
+    if (ret != STORAGE_SIZE) {
+        result = ERR_CODE_3;
+    }
+    ret = ffrt_cond_storage_size;
+    if (ret != STORAGE_SIZE) {
+        result = ERR_CODE_4;
+    }
+    ret = ffrt_queue_attr_storage_size;
+    if (ret != TASK_STORAGE_SIZE) {
+        result = ERR_CODE_5;
+    }
+    ret = ffrt_rwlock_storage_size;
+    if (ret != STORAGE_SIZE) {
+        result = ERR_CODE_6;
+    }
+    ret = ffrt_fiber_storage_size;
+    if (ret != FIBER_STORAGE_SIZE) {
+        result = ERR_CODE_7;
+    }
+
+    ffrt_error_t ero = ffrt_error_timedout;
+    if (ero != ETIMEDOUT) {
+        result = ERR_CODE_8;
+    }
+    ero = ffrt_error;
+    if (ero != -1) {
+        result = ERR_CODE_9;
+    }
+    ero = ffrt_error_nomem;
+    if (ero != ENOMEM) {
+        result = -1;
+    }
+
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
+static napi_value ffrtQueueQosCheck(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    ffrt_task_attr_t* attr = (ffrt_task_attr_t *) malloc(sizeof(ffrt_task_attr_t));
+    ffrt_queue_attr_t queue_attr;
+    (void)ffrt_queue_attr_init(&queue_attr);
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_inherit));
+    ffrt_qos_t queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_inherit)) {
+        result = ERR_CODE_1;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_background));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_background)) {
+        result = ERR_CODE_2;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_utility));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_utility)) {
+        result = ERR_CODE_3;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_user_initiated));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_user_initiated)) {
+        result = ERR_CODE_4;
+    }
+    ffrt_mutex_t mutex = {0};
+    ffrt_fiber_t fiber = {0};
+    ffrt_cond_t cond = {0};
+    free(attr);
+
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
 napi_property_descriptor desc[] = {
     {"conditionVariableTest001", nullptr, ConditionVariableTest001, nullptr, nullptr, nullptr,
         napi_default, nullptr },
@@ -4023,6 +4139,8 @@ napi_property_descriptor desc[] = {
     {"delayCTest001", nullptr, DelayCTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"ffrtYieldC0001", nullptr, FfrtYieldC0001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"recursiveMutexAbnormalParamTest001", nullptr, RecursiveMutexAbnormalParamTest001, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
+    {"sharedMutexAbnormalParamTest001", nullptr, SharedMutexAbnormalParamTest001, nullptr,
         nullptr, nullptr, napi_default, nullptr },
     {"recursiveMutexAbnormalInvalidParamTest001", nullptr, RecursiveMutexAbnormalInvalidParamTest001, nullptr,
         nullptr, nullptr, napi_default, nullptr },
@@ -4137,6 +4255,8 @@ napi_property_descriptor desc[] = {
     {"sharedMutexTest001", nullptr, SharedMutexTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"ffrt_fiber_001", nullptr, ffrt_fiber_001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"ffrt_alloc_function_0001", nullptr, ffrt_alloc_function_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrtStorageSizeCheck", nullptr, ffrtStorageSizeCheck, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrtQueueQosCheck", nullptr, ffrtQueueQosCheck, nullptr, nullptr, nullptr, napi_default, nullptr },
 };
 
 EXTERN_C_START
