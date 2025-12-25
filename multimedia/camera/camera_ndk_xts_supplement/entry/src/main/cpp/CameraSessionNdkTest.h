@@ -47,6 +47,8 @@ napi_value captureSessionEmu(napi_env env, napi_callback_info info);
 napi_value OHCameraInputOpenConcurrentCameras(napi_env env, napi_callback_info info);
 napi_value OHCaptureSessionDeleteSupportedEffectTypes(napi_env env, napi_callback_info info);
 napi_value OHCaptureSessionGetSupportedEffectTypesSupp(napi_env env, napi_callback_info info);
+napi_value captureSessionRegisterIsoChangeCallback(napi_env env, napi_callback_info info);
+napi_value captureSessionUnregisterIsoChangeCallback(napi_env env, napi_callback_info info);
 #ifdef __cplusplus
 }
 #endif
