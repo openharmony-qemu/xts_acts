@@ -58,7 +58,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_CloseAllMediaPresentations_0100
-    * @tc.name        testCloseAllMediaPresentations0100
+    * @tc.name        CloseAllMediaPresentations0100
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -77,7 +77,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_CloseAllMediaPresentations_0200
-    * @tc.name        testCloseAllMediaPresentations0200
+    * @tc.name        CloseAllMediaPresentations0200
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -96,7 +96,7 @@ export default function webViewControllerVideoMedia() {
 
     /**
     * @tc.number      Acts_CloseAllMediaPresentations_0300
-    * @tc.name        testCloseAllMediaPresentations0300
+    * @tc.name        CloseAllMediaPresentations0300
     * @tc.desc        test WebViewControllerVideoMedia
     * @tc.size        MediumTest
     * @tc.type        Function
