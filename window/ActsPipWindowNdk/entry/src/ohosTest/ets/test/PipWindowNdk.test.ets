@@ -19,15 +19,26 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import pipWindow from '@ohos.PiPWindow';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function PipWindowNdkTest() {
   describe('ActsPipWindowNdkTest', () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let context: common.UIAbilityContext;
     let windowStage: window.WindowStage;
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.

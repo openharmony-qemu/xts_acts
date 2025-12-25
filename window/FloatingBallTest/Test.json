@@ -25,8 +25,12 @@
                 "uinput -T -m 300 2600 280 200",
                 "power-shell setmode 602",
                 "power-shell timeout -o 864000000",
-                "uitest dumpLayout"
-            ]
+                "uitest dumpLayout",
+                "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
+            ],
+            "teardown-command": [
+              "param set persist.sys.abilityms.support.ecologicalrulemgrservice true"
+          ]
         }
     ]
 }

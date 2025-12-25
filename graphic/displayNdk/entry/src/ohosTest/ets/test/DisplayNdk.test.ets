@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Leve
 import testNapi from 'libentry.so';
 import { display, window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 interface Capability{
   foldStatus:string;
@@ -37,7 +38,7 @@ export default function DisplayNdkTest() {
     let orientation:string[];
     let code:number;
     let displayFoldStatus:number;
-    beforeAll(() => {
+    beforeAll(async () => {
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
@@ -64,6 +65,16 @@ export default function DisplayNdkTest() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
