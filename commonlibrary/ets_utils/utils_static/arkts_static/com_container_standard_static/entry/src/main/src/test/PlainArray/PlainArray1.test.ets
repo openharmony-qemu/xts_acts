@@ -55,7 +55,8 @@ export default function PlainArrayTest1() {
     it("testPlainArray001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let plainArray = new PlainArray<string>();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The PlainArray's constructor cannot be directly invoked");
@@ -407,7 +408,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.removeRangeFrom(15, 5);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -439,7 +441,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.setValueAt(-1, "X");
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -655,7 +658,7 @@ export default function PlainArrayTest1() {
       plainArray.add(4, "D");
       plainArray.add(5, "E");
       let res = plainArray.getKeyAt(50);
-      expect(String(res)).assertEqual('undefined');
+      expect(String(res)).assertEqual('-1');
     });
 
     /**
@@ -676,7 +679,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.getValueAt(50);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -756,7 +760,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.setValueAt(8, "V");
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)

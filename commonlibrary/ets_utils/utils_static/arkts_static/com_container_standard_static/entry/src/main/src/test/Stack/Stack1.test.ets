@@ -53,7 +53,8 @@ export default function StackTest1() {
         let stack: Stack<number> = new Stack<number>();
         let result = stack.push(1)
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -73,7 +74,8 @@ export default function StackTest1() {
         let stack: Stack<string> = new Stack<string>();
         let result = stack.push("a")
         expect(result).assertEqual("a");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -96,7 +98,8 @@ export default function StackTest1() {
         };
         let result = stack.push(a)
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(a));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -125,7 +128,8 @@ export default function StackTest1() {
         expect(JSON.stringify(result1)).assertEqual(JSON.stringify(a));
         expect(JSON.stringify(result2)).assertEqual(JSON.stringify(b));
         expect(JSON.stringify(result3)).assertEqual(JSON.stringify(c));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -146,7 +150,8 @@ export default function StackTest1() {
     //     stack.push(undefined)
     //     let result = stack.pop()
     //     expect(result).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     console.error(`${TAG} failed, error: ${err}`);
     //     expect(false).assertFail()
     //   }
@@ -175,7 +180,8 @@ export default function StackTest1() {
         stack.pop()
         let result = stack.pop()
         expect(result).assertEqual(b);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -194,10 +200,11 @@ export default function StackTest1() {
       try {
         let stack: Stack<number | string | object> = new Stack<number | string | object>();
         let result = stack.pop()
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        console.error(`${TAG} failed, error`);
         expect(false).assertFail()
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -214,10 +221,11 @@ export default function StackTest1() {
       try {
         let stack: Stack<number | string | object> = new Stack<number | string | object>();
         let result = stack.pop();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        console.error(`${TAG} failed, error`);
         expect(false).assertFail()
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -243,7 +251,8 @@ export default function StackTest1() {
         stack.push(c)
         let result = stack.peek();
         expect(String(result)).assertEqual(String(c));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -263,10 +272,11 @@ export default function StackTest1() {
       try {
         let stack: Stack<number | string | object> = new Stack<number | string | object>();
         let result = stack.peek();
-        expect(result).assertEqual(undefined);
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err}`);
+        console.error(`${TAG} failed, error`);
         expect(false).assertFail()
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -292,7 +302,8 @@ export default function StackTest1() {
         stack.push(c)
         let result = stack.locate(a);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -316,7 +327,8 @@ export default function StackTest1() {
         stack.push(3)
         let result = stack.locate(4);
         expect(String(result)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -340,7 +352,8 @@ export default function StackTest1() {
         stack.push(3)
         let result = stack.locate(3);
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -368,7 +381,8 @@ export default function StackTest1() {
           expect(String(result1)).assertEqual(String(item));
           expect(String(result2)).assertEqual(String(index));
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -392,7 +406,8 @@ export default function StackTest1() {
         stack.push(3)
         let result = stack.isEmpty()
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -416,7 +431,8 @@ export default function StackTest1() {
         stack.push(3);
         let result = stack.length;
         expect(String(result)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -440,7 +456,8 @@ export default function StackTest1() {
         stack.forEach(() => {
           expect(String(stack.length)).assertEqual('3');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -462,7 +479,8 @@ export default function StackTest1() {
         stack.forEach((value) => {
           expect(String(stack.locate(value))).assertEqual('0');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -484,7 +502,8 @@ export default function StackTest1() {
         stack.forEach((value, index, stack: Stack<number>) => {
           expect(String(stack.locate(value))).assertEqual('0');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -507,7 +526,8 @@ export default function StackTest1() {
           expect(String(stack.locate(value))).assertEqual('0');
         });
         expect(String(stack.locate(1))).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail()
       }
@@ -533,9 +553,28 @@ export default function StackTest1() {
           flag++;
         }
         expect(flag).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(false).assertFail()
       }
+    });
+
+    /**
+     * @tc.name   testUtil3_013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_013
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUtil3_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let stack: Stack<int> = new Stack<int>();
+      expect(stack.length).assertEqual(0);
+      stack.push(2);
+      stack.push(4);
+      stack.push(5);
+      stack.push(4);
+      expect(stack.length).assertEqual(4);
     });
   })
 }

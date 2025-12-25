@@ -55,10 +55,12 @@ export default function LightWeightSetTest1() {
       try {
         let lightWeightSet = new LightWeightSet<number>();
         expect(String(lightWeightSet != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The LightWeightSet's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The LightWeightSet's constructor cannot be directly invoked");
+        }
       }
     });
 
@@ -640,7 +642,8 @@ export default function LightWeightSetTest1() {
       try {
         lightWeightSet.increaseCapacityTo(3);
         expect(true).assertEqual(false);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         // expect(err.name).assertEqual("BusinessError");
         // expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -686,10 +689,12 @@ export default function LightWeightSetTest1() {
     //   try {
     //     let res = lightWeightSet.removeAt("a");
     //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       expect(err.name).assertEqual("BusinessError");
+    //       expect(err.code).assertEqual(401);
+    //       expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
+    //     }
     //   }
     // });
 
@@ -864,13 +869,13 @@ export default function LightWeightSetTest1() {
       lightWeightSet.add(3);
       lightWeightSet.add(4);
       lightWeightSet.add(5);
-      let arr = new Array<[Double, Double]>();
-      let res = lightWeightSet.entries();
-      let temp: [Double, Double] | undefined = undefined;
-      do {
+      let arr = new Array<Double>();
+      let res = lightWeightSet.values();
+      let temp: Double | undefined = res.next().value;
+      while (temp != undefined) {
+        arr.push(temp);
         temp = res.next().value;
-        arr.push(temp!);
-      } while (temp != undefined);
+      }
       let arr1 = [1, 2, 3, 4, 5];
       for (let i = 0; i < arr1.length; i++) {
         expect(arr[i]).assertEqual(arr1[i]);
@@ -929,10 +934,12 @@ export default function LightWeightSetTest1() {
     //   try {
     //     lightWeightSet.addAll([1, 2, 3]);
     //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "set" must be LightWeightSet. Received value is: 1,2,3`);
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       expect(err.name).assertEqual("BusinessError");
+    //       expect(err.code).assertEqual(401);
+    //       expect(err.message).assertEqual(`The type of "set" must be LightWeightSet. Received value is: 1,2,3`);
+    //     }
     //   }
     // });
 

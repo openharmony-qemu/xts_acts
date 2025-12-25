@@ -75,7 +75,7 @@ export default function DecimalTest019() {
       test_negate_002('-1', 1);
       test_negate_002('1', -1);
       test_negate_002('-0', 0);
-      test_negate_002('0', -0);
+      test_negate_002('0', -0.0);
       test_negate_001('-0', '0');
       test_negate_001('0', '-0');
       test_negate_002('NaN', NaN);

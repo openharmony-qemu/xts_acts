@@ -75,7 +75,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<number | string> = new LightWeightSet<number | string>();
         let result = lightWeightSet.isEmpty()
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -98,7 +99,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(3)
         let result = lightWeightSet.isEmpty()
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -120,7 +122,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.remove(3)
         let result = lightWeightSet.isEmpty()
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -144,7 +147,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.clear()
         let result = lightWeightSet.isEmpty()
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -165,7 +169,8 @@ export default function LightWeightSetTest2() {
         const MY_MAX: number = 10240;
         let result = lightWeightSet.add(MY_MAX);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -185,7 +190,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         let result = lightWeightSet.add("squirrel");
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -208,7 +214,8 @@ export default function LightWeightSetTest2() {
         let set: LightWeightSet<number> = new LightWeightSet<number>();
         let result = set.addAll(set);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -232,7 +239,8 @@ export default function LightWeightSetTest2() {
         set.add("sparrow");
         let result = lightWeightSet.hasAll(set);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -253,7 +261,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(123);
         let result = lightWeightSet.has(123);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -322,7 +331,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(str);
         let result = lightWeightSet.has(str);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -499,7 +509,8 @@ export default function LightWeightSetTest2() {
       try {
         let lightWeightSet: LightWeightSet<number> = new LightWeightSet<number>();
         lightWeightSet.increaseCapacityTo(10);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -521,7 +532,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.getIndexOf("sparrow");
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -545,7 +557,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(a);
         let result = lightWeightSet.getIndexOf(a);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -567,7 +580,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(age);
         let result = lightWeightSet.getIndexOf(age);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -634,7 +648,8 @@ export default function LightWeightSetTest2() {
         expect(String(result)).assertEqual('1');
         expect(String(result1)).assertEqual('0');
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -656,7 +671,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.remove("sparrow");
         expect(result).assertEqual("sparrow");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -718,7 +734,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         let result = lightWeightSet.remove("88");
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -740,7 +757,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(MY_MAX);
         let result = lightWeightSet.remove(MY_MAX);
         expect(String(result)).assertEqual(String(MY_MAX));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -762,7 +780,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.removeAt(1);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -784,7 +803,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.removeAt(-1);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -806,7 +826,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.removeAt(3);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -828,7 +849,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.getValueAt(1);
         expect(result).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -850,7 +872,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.getValueAt(3);
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -874,7 +897,8 @@ export default function LightWeightSetTest2() {
         let result1 = lightWeightSet.getIndexOf("sparrow");
         expect(result).assertEqual("squirrel");
         expect(String(result1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -897,7 +921,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.clear();
         let result = lightWeightSet.length;
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -920,7 +945,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.clear();
         let result = lightWeightSet.add("squirrel");
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -965,7 +991,8 @@ export default function LightWeightSetTest2() {
         let result = lightWeightSet.toString(); // "sparrow,squirrel"
         console.log(JSON.stringify(result), 'result---toString----')
         expect(result).assertEqual("sparrow,squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -985,7 +1012,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         let result = lightWeightSet.toString();
         expect(result).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1005,7 +1033,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet = "null";
         let result = lightWeightSet.toString();
         expect(result).assertEqual("null");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1025,7 +1054,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet = "undefined";
         let result = lightWeightSet.toString();
         expect(result).assertEqual("undefined");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1047,7 +1077,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("squirrel");
         let result = lightWeightSet.toString();
         expect(result).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1072,7 +1103,8 @@ export default function LightWeightSetTest2() {
         let result = lightWeightSet.toString();
         console.log(JSON.stringify(result), 'result-------')
         expect(JSON.stringify(lightWeightSet)).assertEqual('{"0":{"name":"Dylon","age":"Dylon"}}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1095,7 +1127,8 @@ export default function LightWeightSetTest2() {
         let result = lightWeightSet.toString();
         console.log(JSON.stringify(result), 'result-------')
         expect(result).assertEqual(MY_MAX + '');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1117,7 +1150,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("sparrow");
         let result = lightWeightSet.toArray();
         console.log(JSON.stringify(result), 'result-------') // ["sparrow","squirrel"]
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1137,7 +1171,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         let result = lightWeightSet.toArray().length;
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1159,7 +1194,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add("squirrel");
         let result = lightWeightSet.toArray();
         console.log(JSON.stringify(result), 'result-------') // ["squirrel"]
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1183,7 +1219,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(a);
         let result = lightWeightSet.toArray();
         console.log(JSON.stringify(result), 'result-------') // [{"name":"Dylon","age":"Dylon"}]
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1209,7 +1246,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.add(element);
         let result = lightWeightSet.toArray();
         console.log(JSON.stringify(result), 'result-------') //[523776]
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1235,7 +1273,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.next().value), 'next----------');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1255,7 +1294,8 @@ export default function LightWeightSetTest2() {
         let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
         let iter = lightWeightSet.values();
         console.log(JSON.stringify(iter.next().value), 'next----------');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1285,7 +1325,8 @@ export default function LightWeightSetTest2() {
           index++;
         }
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1312,7 +1353,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.next().value), 'next----------');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1337,7 +1379,8 @@ export default function LightWeightSetTest2() {
           lightWeightSet.remove(item as string);
         });
         console.log(JSON.stringify(lightWeightSet), 'lightWeightSet-')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1361,7 +1404,8 @@ export default function LightWeightSetTest2() {
           console.log("value:" + value, "key:" + key);
         });
         console.log(JSON.stringify(lightWeightSet), 'lightWeightSet-')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1383,7 +1427,8 @@ export default function LightWeightSetTest2() {
           console.log("value:" + value, "key:" + key);
         });
         console.log(JSON.stringify(lightWeightSet), 'lightWeightSet-')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1409,7 +1454,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.next().value), 'iter.next====');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1435,7 +1481,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.next().value), 'iter.next====');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1460,7 +1507,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.next().value), 'iter.next====');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1486,7 +1534,8 @@ export default function LightWeightSetTest2() {
           console.log("value:" + item);
         }
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1514,7 +1563,8 @@ export default function LightWeightSetTest2() {
           temp = iter.next();
         }
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1540,7 +1590,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.value), 'iter.next====');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1564,7 +1615,8 @@ export default function LightWeightSetTest2() {
           console.log(JSON.stringify(iter.value), 'iter.next====');
           index++;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1588,7 +1640,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.forEach(() => {
           expect(String(lightWeightSet.length)).assertEqual('10');
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1612,7 +1665,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.forEach((value) => {
           expect(lightWeightSet.has(value)).assertTrue();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1636,7 +1690,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.forEach((value, index: number) => {
           expect(String(lightWeightSet.getIndexOf(value))).assertEqual(String(index));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1660,7 +1715,8 @@ export default function LightWeightSetTest2() {
         lightWeightSet.forEach((value, index: number, lightWeightSet: LightWeightSet<number>) => {
           expect(String(lightWeightSet.getIndexOf(value))).assertEqual(String(index));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1691,6 +1747,24 @@ export default function LightWeightSetTest2() {
     //     expect(false).assertFail();
     //   }
     // })
+
+    /**
+     * @tc.name   testLightWeightSet0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1710
+     * @tc.desc   Test the function of the interface isEmpty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightSet0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lightWeightSet: LightWeightSet<string> = new LightWeightSet<string>();
+      expect(lightWeightSet.length).assertEqual(0);
+      lightWeightSet.add("squirrel");
+      lightWeightSet.add("squirrel");
+      expect(lightWeightSet.length).assertEqual(1);
+      lightWeightSet.add("sparrow");
+      expect(lightWeightSet.length).assertEqual(2);
+    });
 
   })
 }
