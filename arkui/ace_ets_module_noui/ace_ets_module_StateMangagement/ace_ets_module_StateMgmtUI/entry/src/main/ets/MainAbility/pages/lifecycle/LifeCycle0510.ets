@@ -23,13 +23,13 @@ struct LifeCycle0510 {
         .id('btnGoToV1')
         .height('5%')
         .onClick(() => {
-          router.pushUrl({ url: 'MainAbility/lifecycle/pages/LifeCycle0510ChildV1' })
+          router.pushUrl({ url: 'MainAbility/pages/lifecycle/LifeCycle0510ChildV1' })
         })
       Button('GoToV2')
         .id('btnGoToV2')
         .height('5%')
         .onClick(() => {
-          router.pushUrl({ url: 'MainAbility/lifecycle/pages/LifeCycle0510ChildV2' })
+          router.pushUrl({ url: 'MainAbility/pages/lifecycle/pages/LifeCycle0510ChildV2' })
         })
     }
   }

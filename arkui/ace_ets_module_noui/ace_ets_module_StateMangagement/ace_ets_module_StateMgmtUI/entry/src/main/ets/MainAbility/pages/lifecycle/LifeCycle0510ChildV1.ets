@@ -73,7 +73,7 @@ struct Child {
         .id('btnChildV1Go')
         .height('5%')
         .onClick(() => {
-          router.pushUrl({ url: 'MainAbility/lifecycle/pages/LifeCycle0510ChildV11' })
+          router.pushUrl({ url: 'MainAbility/pages/lifecycle/LifeCycle0510ChildV11' })
         })
     }
     .justifyContent(FlexAlign.Start)
