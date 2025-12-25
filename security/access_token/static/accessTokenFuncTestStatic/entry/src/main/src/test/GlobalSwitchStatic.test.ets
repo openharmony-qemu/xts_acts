@@ -121,6 +121,7 @@ export default function GlobalSwitchStaticTest() {
         let flag = false;
         atManager.requestGlobalSwitch(testAbilityContext, type).then((data: Boolean): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_002 data");
+          expect(data).assertFalse();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, tag, "Test_requestGlobalSwitch_002 err.code:" + JSON.stringify(err));
           if (flag = err.code == ERR_SWITCH_OPEN || err.code == ERR_PARAM_INVALID) {
