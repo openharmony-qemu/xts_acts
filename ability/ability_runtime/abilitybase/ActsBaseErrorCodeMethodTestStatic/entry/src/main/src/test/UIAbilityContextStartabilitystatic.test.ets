@@ -536,6 +536,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2200`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -570,6 +576,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2300`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -608,6 +620,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2400`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -648,6 +666,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2500`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
