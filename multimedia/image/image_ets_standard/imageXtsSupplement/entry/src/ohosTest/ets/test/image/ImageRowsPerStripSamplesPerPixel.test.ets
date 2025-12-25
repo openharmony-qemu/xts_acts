@@ -326,9 +326,6 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
       }
       done();
     })
-
-
-
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SAMPLES_PER_PIXEL_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SAMPLES_PER_PIXEL_001
