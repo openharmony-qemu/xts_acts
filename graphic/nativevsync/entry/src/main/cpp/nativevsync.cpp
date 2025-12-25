@@ -690,18 +690,18 @@ static napi_value OHNativeVSyncSetExpectedFrameRateRange002(napi_env env, napi_c
     range = {0, 0, 0};
     if (OH_NativeVSync_SetExpectedFrameRateRange(vsync, &range) != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
-        return result;        
+        return result;
     }
     range = {144, 144, 144};
     if (OH_NativeVSync_SetExpectedFrameRateRange(vsync, &range) != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
-        return result;        
+        return result;
     }
     range = {145, 145, 145};
     if (OH_NativeVSync_SetExpectedFrameRateRange(vsync, &range) != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
-        return result;        
-    }    
+        return result;
+    }
     OH_NativeVSync_Destroy(vsync);
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -731,7 +731,6 @@ static napi_value OHNativeVSyncSetExpectedFrameRateRange003(napi_env env, napi_c
         napi_create_int32(env, FAIL, &result2);
     }
     napi_set_element(env, result, ARR_NUMBER_1, result2);
-
     range = {60, 30, 30};
     if (OH_NativeVSync_SetExpectedFrameRateRange(vsync, &range) == NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, SUCCESS, &result3);
@@ -739,7 +738,6 @@ static napi_value OHNativeVSyncSetExpectedFrameRateRange003(napi_env env, napi_c
         napi_create_int32(env, FAIL, &result3);
     }
     napi_set_element(env, result, ARR_NUMBER_2, result3);
-
     range = {0, 60, 120};
     if (OH_NativeVSync_SetExpectedFrameRateRange(vsync, &range) == NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, SUCCESS, &result4);
