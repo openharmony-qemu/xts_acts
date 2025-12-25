@@ -109,7 +109,7 @@ import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMap
 import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
-
+import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
@@ -135,6 +135,17 @@ import ImageCreatePixelMapPicture from './image/ImageCreatePixelMapPicture.test'
 import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.test';
 import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
+import ImageGPSProcessingMethodSupp from './image/ImageExifGPSProcessingMethod.test';
+import ImageGPSDestDistanceRefSupp from './image/ImageExifGPSDestDistanceRef.test';
+import ImageGPSAreaInformationSupp from './image/ImageExifGPSAreaInformation.test';
+import ImageGPSDateStampSupp from './image/ImageExifGPSDateStamp.test';
+import ImageGPSDifferentialSupp from './image/ImageExifGPSDifferential.test';
+import ImageGPSHPositioningErrorSupp from './image/ImageExifGPSHPositioningError.test';
+import ImageISOSpeedRatingsSupp from './image/ImageExifISOSpeedRatings.test';
+import ImageSensitivityTypeSupp from './image/ImageExifSensitivityType.test';
+import ImageStandardOutputSensitivitySupp from './image/ImageExifStandardOutputSensitivity.test';
+import ImageRecommendedExposureIndexSupp from './image/ImageExifRecommendedExposureIndex.test';
+import ImageISOSpeedLatitudeSupp from './image/ImageExifISOSpeedLatitude.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
@@ -150,7 +161,6 @@ import ImageContrastTypeSupp from './image/ImageExifContrast.test';
 import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
-import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 
 
 export default function testsuite() {
@@ -277,6 +287,17 @@ export default function testsuite() {
   sendablePixelMapWriteBufferToPixelsTest();
   sendableWritePixelsSyncTest();
   sendableWritePixelsTest();
+  ImageGPSDestDistanceRefSupp();
+  ImageGPSProcessingMethodSupp();
+  ImageGPSAreaInformationSupp();
+  ImageGPSDateStampSupp();
+  ImageGPSDifferentialSupp();
+  ImageGPSHPositioningErrorSupp();
+  ImageISOSpeedRatingsSupp();
+  ImageSensitivityTypeSupp();
+  ImageStandardOutputSensitivitySupp();
+  ImageRecommendedExposureIndexSupp();
+  ImageISOSpeedLatitudeSupp();
   UpdateDataTest();
   SendableImageTest();
   ImageSourceCreatePixelMapUsingAllocatorTest();
