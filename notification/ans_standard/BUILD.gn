@@ -26,6 +26,7 @@ group("ans_standard") {
       "actsNotificationBadgeTest:ActsNotificationBadgeTest",
       "actsNotificationBadgeTestStatic:ActsNotificationBadgeStaticTest",
       "actsNotificationClassEmitterTest:ActsNotificationClassEmitterTest",
+      "actsNotificationClassEmitterTestStatic:ActsNotificationClassEmitterTestStatic",
       "actsNotificationDistributedTest:ActsNotificationDistributedTest",
       "actsNotificationDistributedTestStatic:ActsNotificationDistributedStaticTest",
       "actsNotificationEmitterNewTest:ActsNotificationEmitterNewTest",
