@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1396,6 +1396,21 @@ export default function fontTest() {
     it('testOHDrawingSetTextStyleAttributeInt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = nativeFontNdk.oHDrawingSetTextStyleAttributeInt001();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHDrawingGetFontFullDescriptorsFromPath001
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetFontFullDescriptorsFromPath001
+     * @tc.desc   test OHDrawingGetFontFullDescriptorsFromPath001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHDrawingGetFontFullDescriptorsFromPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      let result: number = nativeFontNdk.oHDrawingGetFontFullDescriptorsFromPath001();
       expect(result).assertEqual(0);
       done();
     });
