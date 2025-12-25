@@ -149,12 +149,12 @@ export default function proxyChannelMgr() {
     })
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr结构错误
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr结构错误
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0100----------------");
@@ -184,12 +184,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr长度为空
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr长度为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0300----------------");
@@ -219,12 +219,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr为空格
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr为空格
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400----------------");
@@ -253,13 +253,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_0400----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr为特殊字符
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr为特殊字符
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500----------------");
@@ -291,13 +291,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_0500----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerUuid长度为空
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid长度为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600----------------");
@@ -327,13 +327,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_0600----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerUuid为空格
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid为空格
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700----------------");
@@ -363,13 +363,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_0700----------------");
     });
 
-   /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerUuid超max
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid超max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_0900----------------");
@@ -401,12 +401,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerUuid为特殊字符
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid为特殊字符
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000----------------");
@@ -436,13 +436,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1000----------------");
     });
 
-   /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerUuid格式错误
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerUuid格式错误
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1100----------------");
@@ -480,12 +480,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr格式错误
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr格式错误
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1200----------------");
@@ -516,12 +516,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
-     * @tc.desc       : closeProxyChannel接口入参channelId为无效值
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300
+     * @tc.desc   closeProxyChannel接口入参channelId为无效值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300----------------");
@@ -542,13 +542,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1300----------------");
     });
 
-   /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400
-     * @tc.desc       : closeProxyChannel接口入参channelId为0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400
+     * @tc.desc   closeProxyChannel接口入参channelId为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400----------------");
@@ -569,13 +569,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1400----------------");
     });
 
-   /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500
-     * @tc.desc       : closeProxyChannel接口入参channelId为 -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500
+     * @tc.desc   closeProxyChannel接口入参channelId为 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1500----------------");
@@ -597,12 +597,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600
-     * @tc.desc       : closeProxyChannel接口入参channelId为 1.0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600
+     * @tc.desc   closeProxyChannel接口入参channelId为 1.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600----------------");
@@ -623,13 +623,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1600----------------");
     });
 
-   /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700
-     * @tc.desc       : closeProxyChannel接口入参channelId为 null
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700
+     * @tc.desc   closeProxyChannel接口入参channelId为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700----------------");
@@ -650,13 +650,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1700----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800
-     * @tc.desc       : closeProxyChannel接口入参channelId为 undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800
+     * @tc.desc   closeProxyChannel接口入参channelId为 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1800----------------");
@@ -678,12 +678,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900
-     * @tc.desc       : sendData接口入参channelId为无效值
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900
+     * @tc.desc   sendData接口入参channelId为无效值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900----------------");
@@ -714,13 +714,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_1900----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000
-     * @tc.desc       : sendData接口入参channelId为 null
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000
+     * @tc.desc   sendData接口入参channelId为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2000----------------");
@@ -748,12 +748,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100
-     * @tc.desc       : sendData接口入参channelId为 undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100
+     * @tc.desc   sendData接口入参channelId为 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100----------------");
@@ -780,13 +780,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_2100----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200
-     * @tc.desc       : sendData接口入参channelId为 -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200
+     * @tc.desc   sendData接口入参channelId为 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2200----------------");
@@ -819,12 +819,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300
-     * @tc.desc       : sendData接口入参channelId为 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300
+     * @tc.desc   sendData接口入参channelId为 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300----------------");
@@ -857,13 +857,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_2300----------------");
     });
 
-   /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400
-     * @tc.desc       : sendData接口入参channelId为 1.1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400
+     * @tc.desc   sendData接口入参channelId为 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2400----------------");
@@ -890,12 +890,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500
-     * @tc.desc       : proxyChannelManager.on("receiveData")接口入参channelId为 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2500----------------");
@@ -918,12 +918,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600
-     * @tc.desc       : proxyChannelManager.on("receiveData")接口入参channelId为 null
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600----------------");
@@ -945,13 +945,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_2600----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700
-     * @tc.desc       : proxyChannelManager.on("receiveData")接口入参channelId为 undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2700----------------");
@@ -974,12 +974,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800
-     * @tc.desc       : proxyChannelManager.on("receiveData")接口入参channelId为 -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2800----------------");
@@ -1002,12 +1002,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900
-     * @tc.desc       : proxyChannelManager.on("receiveData")接口入参channelId为 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_2900----------------");
@@ -1030,12 +1030,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000
-     * @tc.desc       : proxyChannelManager.on("receiveData")接口入参channelId为 1.1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3000----------------");
@@ -1058,17 +1058,73 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100
-     * @tc.desc       : proxyChannelManager.off("receiveData")接口入参channelId为 无效值
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010----------------");
+      let flag = false;
+      let channelId: number = 2147483647;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010 channelId is " + channelId);
+        await proxyChannelManager.on("receiveData", channelId, receivedDataCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010 error.message is " + error.message);
+        expect(error.code == 32390004).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_3010----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020
+     * @tc.desc   proxyChannelManager.on("receiveData")接口入参channelId为 max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020----------------");
+      let flag = false;
+      let channelId: number = 2147483648;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020 channelId is " + channelId);
+        await proxyChannelManager.on("receiveData", channelId, receivedDataCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_3020----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100----------------");
       let flag = false;
-      let channelId: number = 2;
+      let channelId: number = 1;
       try {
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3100 channelId is " + channelId);
         await proxyChannelManager.off("receiveData", channelId, receivedDataCallback);
@@ -1086,12 +1142,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200
-     * @tc.desc       : proxyChannelManager.off("receiveData")接口入参channelId为 null
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3200----------------");
@@ -1114,12 +1170,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300
-     * @tc.desc       : proxyChannelManager.off("receiveData")接口入参channelId为 undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3300----------------");
@@ -1142,12 +1198,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400
-     * @tc.desc       : proxyChannelManager.off("receiveData")接口入参channelId为 -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400----------------");
@@ -1169,13 +1225,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_3400----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500
-     * @tc.desc       : proxyChannelManager.off("receiveData")接口入参channelId为 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3500----------------");
@@ -1198,12 +1254,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600
-     * @tc.desc       : proxyChannelManager.off("receiveData")接口入参channelId为 1.1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3600----------------");
@@ -1226,12 +1282,68 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700
-     * @tc.desc       : proxyChannelManager.on("channelStateChange")接口入参channelId为 1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610----------------");
+      let flag = false;
+      let channelId = 2147483647;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610 channelId is " + channelId);
+        await proxyChannelManager.off("receiveData", channelId, receivedDataCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610 error.message is " + error.message);
+        expect(error.code == 32390004).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_3610----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620
+     * @tc.desc   proxyChannelManager.off("receiveData")接口入参channelId为 max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620----------------");
+      let flag = false;
+      let channelId = 2147483648;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620 channelId is " + channelId);
+        await proxyChannelManager.off("receiveData", channelId, receivedDataCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_3620----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3700----------------");
@@ -1254,12 +1366,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800
-     * @tc.desc       : proxyChannelManager.on("channelStateChange")接口入参channelId为 null
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800----------------");
@@ -1281,13 +1393,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_3800----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900
-     * @tc.desc       : proxyChannelManager.on("channelStateChange")接口入参channelId为 undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_3900----------------");
@@ -1310,12 +1422,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000
-     * @tc.desc       : proxyChannelManager.on("channelStateChange")接口入参channelId为 -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4000----------------");
@@ -1338,12 +1450,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100
-     * @tc.desc       : proxyChannelManager.on("channelStateChange")接口入参channelId为 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4100----------------");
@@ -1366,12 +1478,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200
-     * @tc.desc       : proxyChannelManager.on("channelStateChange")接口入参channelId为 1.1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4200----------------");
@@ -1394,17 +1506,73 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300
-     * @tc.desc       : proxyChannelManager.off("channelStateChange")接口入参channelId为 无效值
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210----------------");
+      let flag = false;
+      let channelId: number = 2147483647;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210 channelId is " + channelId);
+        await proxyChannelManager.on("channelStateChange", channelId, receivedStatusCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210 error.message is " + error.message);
+        expect(error.code == 32390004).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4210----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220
+     * @tc.desc   proxyChannelManager.on("channelStateChange")接口入参channelId为 max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220----------------");
+      let flag = false;
+      let channelId: number = 2147483648;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220 channelId is " + channelId);
+        await proxyChannelManager.on("channelStateChange", channelId, receivedStatusCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4220----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 无效值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300----------------");
       let flag = false;
-      let channelId: number = 2;
+      let channelId: number = 1;
       try {
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4300 channelId is " + channelId);
         await proxyChannelManager.off("channelStateChange", channelId, receivedStatusCallback);
@@ -1422,12 +1590,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400
-     * @tc.desc       : proxyChannelManager.off("channelStateChange")接口入参channelId为 null
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4400----------------");
@@ -1450,12 +1618,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500
-     * @tc.desc       : proxyChannelManager.off("channelStateChange")接口入参channelId为 undefined
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4500----------------");
@@ -1478,12 +1646,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600
-     * @tc.desc       : proxyChannelManager.off("channelStateChange")接口入参channelId为 -1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600----------------");
@@ -1505,13 +1673,13 @@ export default function proxyChannelMgr() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4600----------------");
     });
 
-     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700
-     * @tc.desc       : proxyChannelManager.off("channelStateChange")接口入参channelId为 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4700----------------");
@@ -1534,12 +1702,12 @@ export default function proxyChannelMgr() {
     });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800
-     * @tc.desc       : proxyChannelManager.off("channelStateChange")接口入参channelId为 1.1
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 1.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800----------------");
@@ -1560,14 +1728,69 @@ export default function proxyChannelMgr() {
       await sleep(1000);
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4800----------------");
     });
+    
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 max值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810----------------");
+      let flag = false;
+      let channelId = 2147483647;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810 channelId is " + channelId);
+        await proxyChannelManager.off("channelStateChange", channelId, receivedStatusCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810 error.message is " + error.message);
+        expect(error.code == 32390004).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4810----------------");
+    });
 
     /**
-     * @tc.number     : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900
-     * @tc.name       : SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900
-     * @tc.desc       : openProxyChannel接口入参channelInfo中peerDevAddr失效
-     * @tc.size       : MediumTest
-     * @tc.type       : Compatibility
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820
+     * @tc.desc   proxyChannelManager.off("channelStateChange")接口入参channelId为 max+1值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820----------------");
+      let flag = false;
+      let channelId = 2147483648;
+      try {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820 channelId is " + channelId);
+        await proxyChannelManager.off("channelStateChange", channelId, receivedStatusCallback);
+      } catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      } finally {
+        expect(flag).assertTrue();
+      }
+      await sleep(1000);
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4820----------------");
+    });
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr失效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900----------------");
@@ -1600,6 +1823,82 @@ export default function proxyChannelMgr() {
         console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900 error.message is " + error.message);
       }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_4900----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr使用macHash失效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100----------------");
+      let flag = false;
+      let chlId: number = -1;
+      let channelInfo: proxyChannelManager.ChannelInfo = {
+        linkType: 0,
+        peerDevAddr: "00000000000000000000000000000000",
+        peerUuid: "00000000-0000-0000-0000-000000000000",
+      }
+      try {
+       await proxyChannelManager.openProxyChannel(channelInfo)
+          .then((channelId: number) => {
+            chlId = channelId;
+            console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 openProxyChannel chlId:" + chlId);
+          })
+          .catch((error: BusinessError) => {
+            flag = true;
+            console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.code is " + error.code);
+            console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.message is " + error.message);
+            expect(error.code == 32390101).assertTrue();
+            expect(error.message != null).assertTrue();
+          })
+          .finally(() => {
+            expect(flag).assertTrue();
+          })
+          await sleep(3000);
+      }catch (error) {
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100 error.message is " + error.message);
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_5100----------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200
+     * @tc.number SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200
+     * @tc.desc   openProxyChannel接口入参channelInfo中peerDevAddr的长度超过限制
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200----------------");
+      let flag = false;
+      let chlId: number = -1;
+      let channelInfo: proxyChannelManager.ChannelInfo = {
+        linkType: proxyChannelManager.LinkType.LINK_BR,
+        peerDevAddr: "000000000000000000000000000000000",
+        peerUuid: "00000000-0000-0000-0000-000000000000",
+      }
+      try {
+        await proxyChannelManager.openProxyChannel(channelInfo)
+          .then((channelId: number) => {
+            chlId = channelId;
+            console.info(logTag+"SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200 openProxyChannel chlId:" + chlId);
+          })
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200 error.message is " + error.message);
+        expect(error.code == 32390006).assertTrue();
+        expect(error.message != null).assertTrue();
+      }finally {
+        expect(flag).assertTrue();
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_proxyChannelMgrAPI_5200----------------");
     });
   })
 }
