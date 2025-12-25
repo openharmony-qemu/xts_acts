@@ -23,6 +23,9 @@ group("ActsWebMultiMediaTest") {
       "internet_video_playback_six:ActsAceWebInternetVideoPlaybackSixTest",
       "internet_video_playback_ten:ActsAceWebInternetVideoPlaybackTenTest",
       "internet_video_playback_twelve:ActsAceWebInternetVideoPlaybackTwelveTest",
+      "internet_video_playback_one:ActsAceWebInternetVideoPlaybackOneTest",
+      "internet_video_playback_two:ActsAceWebInternetVideoPlaybackTwoTest",
+      "internet_video_playback_three:ActsAceWebInternetVideoPlaybackThreeTest",
     ]
   }
 }
