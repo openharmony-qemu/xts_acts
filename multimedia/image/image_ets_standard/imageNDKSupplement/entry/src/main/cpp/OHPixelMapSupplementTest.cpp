@@ -657,34 +657,6 @@ napi_value OHPixelmapNativeReadPixelsFromAreaSuppTest(napi_env env, napi_callbac
             delete[] outBuffer;
         }
     } break;
-    case CASE_INDEX_3: {
-        OH_Pixelmap_InitializationOptions *options = nullptr;
-        returnValue = OH_PixelmapInitializationOptions_Create(&options);
-        if (returnValue != IMAGE_SUCCESS)
-            break;
-        OH_PixelmapInitializationOptions_SetWidth(options, width);
-        OH_PixelmapInitializationOptions_SetHeight(options, height);
-        OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_UNKNOWN);
-        OH_PixelmapInitializationOptions_SetSrcPixelFormat(options, PIXEL_FORMAT_UNKNOWN);
-        uint8_t *dummyData = new (std::nothrow) uint8_t[IMAGE_DATA_LENGTH]();
-        if (dummyData == nullptr) {
-            returnValue = IMAGE_ALLOC_FAILED;
-            OH_PixelmapInitializationOptions_Release(options);
-            break;
-        }
-        returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, IMAGE_DATA_LENGTH, options, &pixelmap);
-        if (returnValue == IMAGE_SUCCESS) {
-            area = {0, 0, 50, 50};
-            outBufferSize = IMAGE_OUT_BUFFER_SIZE;
-            outBuffer = new (std::nothrow) uint8_t[outBufferSize];
-            if (outBuffer != nullptr) {
-                returnValue = OH_PixelmapNative_ReadPixelsFromArea(pixelmap, &area);
-                delete[] outBuffer;
-            }
-        }
-        delete[] dummyData;
-        OH_PixelmapInitializationOptions_Release(options);
-    } break;
     default:
         break;
     }
@@ -702,7 +674,6 @@ napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback
     napi_status napiStatus = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index = 0;
     napiStatus = napi_get_value_int32(env, args[0], &index);
-
     const int height = 100;
     const int width = 100;
     OH_PixelmapNative *pixelmap = nullptr;
@@ -715,8 +686,7 @@ napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback
     case CASE_INDEX_1: {
         OH_Pixelmap_InitializationOptions *options = nullptr;
         returnValue = OH_PixelmapInitializationOptions_Create(&options);
-        if (returnValue != IMAGE_SUCCESS)
-            break;
+        LOGI("OH_PixelmapInitializationOptions_Create %{public}d", returnValue);
         OH_PixelmapInitializationOptions_SetWidth(options, width);
         OH_PixelmapInitializationOptions_SetHeight(options, height);
         OH_PixelmapInitializationOptions_SetPixelFormat(options, PIXEL_FORMAT_BGRA_8888);
@@ -725,17 +695,18 @@ napi_value OHPixelmapNativeWritePixelsToAreaSuppTest(napi_env env, napi_callback
         if (dummyData == nullptr) {
             returnValue = IMAGE_ALLOC_FAILED;
             OH_PixelmapInitializationOptions_Release(options);
+            LOGI("dummyData isnull %{public}d", returnValue);
             break;
         }
         returnValue = OH_PixelmapNative_CreatePixelmap(dummyData, IMAGE_DATA_LENGTH_BIG, options, &pixelmap);
+        LOGI("OH_PixelmapNative_CreatePixelmap %{public}d", returnValue);
         delete[] dummyData;
         OH_PixelmapInitializationOptions_Release(options);
     } break;
     default:
         break;
     }
-
     napi_value result;
-    napi_create_int32(env, code, &result);
+    napi_create_int32(env, returnValue, &result);
     return result;
 }

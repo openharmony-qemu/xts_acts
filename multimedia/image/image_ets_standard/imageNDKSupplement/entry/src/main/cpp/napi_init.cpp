@@ -221,6 +221,8 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHDecodingOptionsCreateTest", OHDecodingOptionsCreateTest),
     DESCRIPTOR("OH_PixelmapNative_GetImageInfoTest", OH_PixelmapNative_GetImageInfoTest),
     DESCRIPTOR("OH_PixelmapNative_ConvertAlphaFormatTest", OH_PixelmapNative_ConvertAlphaFormatTest),
+    DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
+    DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

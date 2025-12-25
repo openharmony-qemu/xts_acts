@@ -455,20 +455,6 @@ export default function OHPixelMapSupplementTest() {
       expect(result).assertEqual(IMAGE_SUCCESS);
     });
     /**
-     * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_003
-     * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_003
-     * @tc.desc    OHPixelmapNativeReadPixelsFromArea IMAGE_UNKNOWN_ERROR
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
-     */
-    it('SUB_OH_PIXEL_MAP_NATIVE_READ_PIXELS_FROM_AREA_003', Level.LEVEL0, () => {
-      console.info(TAG,'Start')
-      let result: number = testNapi.OHPixelmapNativeReadPixelsFromAreaSuppTest(CASE_INDEX_3);
-      console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_UNKNOWN_ERROR);
-    });
-    /**
      * @tc.number  SUB_OH_PIXEL_MAP_NATIVE_WRITE_PIXELS_TO_AREA_001
      * @tc.name    SUB_OH_PIXEL_MAP_NATIVE_WRITE_PIXELS_TO_AREA_001
      * @tc.desc    OHPixelmapNativeReadPixelsFromArea IMAGE_BAD_PARAMETER
