@@ -2447,9 +2447,30 @@ export default function TextPicker() {
       }
 
       await routeToUrl(options);
+      await CommonFunc.sleep(1000);
+      let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
+      let button: Component = await driver.findComponent(ON.text('select photo'));
+      if (button !== undefined && chooostModeButton !== undefined) {
+        await chooostModeButton.click();
+        await button.click();
+      } else {
+        console.error("can not find button");
+        expect(false).assertTrue();
+      }
+
+      const checkboxs = driver.findComponents(ON.type('Checkbox'));
+      if (checkboxs?.length) {
+        await checkboxs[0].click();
+        await CommonFunc.sleep(1000);
+        const finishBtn = await driver.findComponent(ON.text('完成'));
+        await finishBtn.click();
+      }
+
+      await CommonFunc.sleep(1000);
+      router.back();
 
       expect(testFinished).assertTrue();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       router.back();
       console.info("testPicker51 finish");
       done();
