@@ -3479,7 +3479,7 @@ function testGetDisallowedForAccountPolicy() {
   /**
    * @tc.name   test_get_disallowed_policy_for_account_0603
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0603
-   * @tc.desc   test restrictions getDisallowedPolicyForAccount with INVALID_WANT
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with invalid admin
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -4938,7 +4938,7 @@ function testGetUserRestrictedPolicy() {
   /**
    * @tc.name   test_get_user_restricted_0302
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0302
-   * @tc.desc   test restrictions getUserRestricted with setting item 'setDeviceName' with invalid admin
+   * @tc.desc   test restrictions getUserRestricted with setting item 'setDeviceName' with INVALID_WANT
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
