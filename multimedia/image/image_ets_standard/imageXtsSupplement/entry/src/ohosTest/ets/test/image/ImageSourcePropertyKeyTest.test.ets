@@ -76,7 +76,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(72);
@@ -102,7 +102,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(0);
@@ -128,7 +128,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(5);
@@ -154,17 +154,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -184,13 +184,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(72);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -210,13 +210,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(0);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -236,13 +236,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(5);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -262,17 +262,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -292,13 +292,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(72);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -318,13 +318,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(0);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -344,13 +344,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(5);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -370,17 +370,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -400,7 +400,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(72);
@@ -426,7 +426,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(0);
@@ -452,7 +452,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(5);
@@ -478,17 +478,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -508,13 +508,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(72);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -534,13 +534,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(0);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -560,13 +560,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(5);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -586,17 +586,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -616,13 +616,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(72);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -642,13 +642,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(0);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -668,13 +668,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(5);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -694,17 +694,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -724,7 +724,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(1);
@@ -750,17 +750,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -780,17 +780,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -810,17 +810,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -840,13 +840,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(1);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -866,17 +866,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -896,17 +896,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');;
       }
       done();
     })
@@ -926,17 +926,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -956,13 +956,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(1);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -982,17 +982,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1012,17 +1012,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1042,17 +1042,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);;
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1072,7 +1072,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(2);
@@ -1098,17 +1098,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1128,17 +1128,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1158,17 +1158,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1188,13 +1188,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(2);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1214,17 +1214,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1244,17 +1244,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1274,17 +1274,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1304,13 +1304,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(2);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1330,17 +1330,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1360,17 +1360,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1390,17 +1390,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1420,13 +1420,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(1);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1446,17 +1446,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1476,17 +1476,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1506,17 +1506,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1536,17 +1536,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1566,17 +1566,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1596,7 +1596,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(1);
@@ -1622,17 +1622,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1652,11 +1652,11 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
@@ -1682,17 +1682,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1712,11 +1712,11 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
@@ -1742,17 +1742,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1772,13 +1772,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(1);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1798,17 +1798,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1828,17 +1828,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1858,17 +1858,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1888,17 +1888,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1918,17 +1918,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -1948,7 +1948,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(1);
@@ -1974,17 +1974,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2004,17 +2004,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2034,17 +2034,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2064,17 +2064,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2094,17 +2094,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2124,13 +2124,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(1);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2150,17 +2150,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2180,17 +2180,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2210,17 +2210,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2240,17 +2240,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2270,17 +2270,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2300,13 +2300,13 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(1);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2326,17 +2326,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2356,17 +2356,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2386,17 +2386,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2416,17 +2416,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2446,17 +2446,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yCbCrPositioning);
         let firType = resultFir.exifMetadata?.yCbCrPositioning;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yCbCrPositioning);
         expect(result.exifMetadata?.yCbCrPositioning).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2476,17 +2476,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2506,17 +2506,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2536,17 +2536,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2566,17 +2566,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2596,17 +2596,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2626,17 +2626,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2656,17 +2656,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2686,17 +2686,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2716,17 +2716,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2746,17 +2746,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2776,17 +2776,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2806,17 +2806,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2836,17 +2836,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2866,17 +2866,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -2896,17 +2896,17 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(firType);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
