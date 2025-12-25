@@ -536,5 +536,188 @@ export default function UdsNdkTest() {
       console.info(TAG + 'OH_UdsAppItem_GetAbilityName_001 data= ' + JSON.stringify(data));
       expect(data).assertEqual(1);
     });
+    
+    //=====OH_UdsDetails=======================================
+    /**
+     * @tc.name   OH_UdsDetails_HasKey_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3700
+     * @tc.desc   OH_UdsDetails_HasKey_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsDetails_HasKey_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsDetails_HasKey_001');
+      let data = testNapi.OH_UdsDetails_HasKey_001();
+      console.info(TAG + 'OH_UdsDetails_HasKey_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsDetails_Remove_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsDetails_Remove_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsDetails_Remove_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsDetails_Remove_001');
+      let data = testNapi.OH_UdsDetails_Remove_001();
+      console.info(TAG + 'OH_UdsDetails_Remove_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsDetails_Clear_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsDetails_Clear_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsDetails_Clear_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsDetails_Clear_001');
+      let data = testNapi.OH_UdsDetails_Clear_001();
+      console.info(TAG + 'OH_UdsDetails_Clear_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsDetails_SetValue_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsDetails_SetValue_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsDetails_SetValue_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsDetails_SetValue_001');
+      let data = testNapi.OH_UdsDetails_SetValue_001();
+      console.info(TAG + 'OH_UdsDetails_SetValue_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsDetails_GetValue_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsDetails_GetValue_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsDetails_GetValue_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsDetails_GetValue_001');
+      let data = testNapi.OH_UdsDetails_GetValue_001();
+      console.info(TAG + 'OH_UdsDetails_GetValue_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsDetails_GetAllKeys_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsDetails_GetAllKeys_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsDetails_GetAllKeys_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsDetails_GetAllKeys_001');
+      let data = testNapi.OH_UdsDetails_GetAllKeys_001();
+      console.info(TAG + 'OH_UdsDetails_GetAllKeys_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    
+    /**
+     * @tc.name   OH_UdsPlainText_SetDetails_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsPlainText_SetDetails_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsPlainText_SetDetails_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsPlainText_SetDetails_001');
+      let data = testNapi.OH_UdsPlainText_SetDetails_001();
+      console.info(TAG + 'OH_UdsPlainText_SetDetails_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+
+    /**
+     * @tc.name   OH_UdsHyperlink_SetDetails_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsHyperlink_SetDetails_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHyperlink_SetDetails_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHyperlink_SetDetails_001');
+      let data = testNapi.OH_UdsHyperlink_SetDetails_001();
+      console.info(TAG + 'OH_UdsHyperlink_SetDetails_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetDetails_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsHtml_SetDetails_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetDetails_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetDetails_001');
+      let data = testNapi.OH_UdsHtml_SetDetails_001();
+      console.info(TAG + 'OH_UdsHtml_SetDetails_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+    /**
+     * @tc.name   OH_UdsAppItem_SetDetails_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsAppItem_SetDetails_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsAppItem_SetDetails_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsAppItem_SetDetails_001');
+      let data = testNapi.OH_UdsAppItem_SetDetails_001();
+      console.info(TAG + 'OH_UdsAppItem_SetDetails_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetDetails_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsFileUri_SetDetails_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetDetails_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetDetails_001');
+      let data = testNapi.OH_UdsFileUri_SetDetails_001();
+      console.info(TAG + 'OH_UdsFileUri_SetDetails_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsPixelMap_SetDetails_001
+     * @tc.number SUB_DistributedData_UDS_SDK_NdkApiTest_3800
+     * @tc.desc   OH_UdsPixelMap_SetDetails_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsPixelMap_SetDetails_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsPixelMap_SetDetails_001');
+      let data = testNapi.OH_UdsPixelMap_SetDetails_001();
+      console.info(TAG + 'OH_UdsPixelMap_SetDetails_001 data= ' + JSON.stringify(data));
+      expect(data).assertEqual(1);
+    });
+
   })
 }

@@ -1225,8 +1225,13 @@ napi_value OH_AVDemuxer_SeekToTimeTestNotPermit(napi_env env, napi_callback_info
 napi_value OH_AVMuxer_SetRotationNotPermit(napi_env env, napi_callback_info info)
 {
     int audioTrackId = -1;
+    napi_value retValue;
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(trackFormat, OH_MD_KEY_CODEC_MIME, OH_AVCODEC_MIMETYPE_AUDIO_AAC);
     OH_AVFormat_SetIntValue(trackFormat, OH_MD_KEY_AUD_SAMPLE_RATE, SMAPLE_RATE);
@@ -1240,7 +1245,6 @@ napi_value OH_AVMuxer_SetRotationNotPermit(napi_env env, napi_callback_info info
     close(fileDescribe);
     OH_AVMuxer_Destroy(muxer);
     OH_AVFormat_Destroy(trackFormat);
-    napi_value retValue;
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }
@@ -1249,6 +1253,11 @@ napi_value OH_AVMuxer_SetFormatNotPermit(napi_env env, napi_callback_info info)
 {
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    napi_value retValue;
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
@@ -1266,7 +1275,7 @@ napi_value OH_AVMuxer_SetFormatNotPermit(napi_env env, napi_callback_info info)
     OH_AVMuxer_Destroy(muxer);
     OH_AVFormat_Destroy(trackFormat);
     OH_AVFormat_Destroy(fileFormat);
-    napi_value retValue;
+
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }
@@ -1275,6 +1284,11 @@ napi_value OH_AVMuxer_AddTrackNotPermit(napi_env env, napi_callback_info info)
 {
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    napi_value retValue;
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
@@ -1297,7 +1311,6 @@ napi_value OH_AVMuxer_AddTrackNotPermit(napi_env env, napi_callback_info info)
     OH_AVMuxer_Destroy(muxer);
     OH_AVFormat_Destroy(trackFormat);
     OH_AVFormat_Destroy(fileFormat);
-    napi_value retValue;
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }
@@ -1306,11 +1319,15 @@ napi_value OH_AVMuxer_StartNotPermit(napi_env env, napi_callback_info info)
 {
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    napi_value retValue;
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVErrCode result = OH_AVMuxer_Start(muxer);
 
     close(fileDescribe);
     OH_AVMuxer_Destroy(muxer);
-    napi_value retValue;
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }
@@ -1319,6 +1336,11 @@ napi_value OH_AVMuxer_WriteSampleNotPermit(napi_env env, napi_callback_info info
 {
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    napi_value retValue;
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
@@ -1342,7 +1364,6 @@ napi_value OH_AVMuxer_WriteSampleNotPermit(napi_env env, napi_callback_info info
     OH_AVFormat_Destroy(trackFormat);
     OH_AVFormat_Destroy(fileFormat);
     OH_AVMemory_Destroy(sample);
-    napi_value retValue;
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }
@@ -1351,6 +1372,11 @@ napi_value OH_AVMuxer_WriteSampleBufferNotPermit(napi_env env, napi_callback_inf
 {
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    napi_value retValue;
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVFormat *trackFormat = OH_AVFormat_Create();
     OH_AVFormat *fileFormat = OH_AVFormat_Create();
     OH_AVFormat_SetStringValue(fileFormat, OH_MD_KEY_CREATION_TIME, "This is abnormal case");
@@ -1374,7 +1400,6 @@ napi_value OH_AVMuxer_WriteSampleBufferNotPermit(napi_env env, napi_callback_inf
     OH_AVFormat_Destroy(trackFormat);
     OH_AVFormat_Destroy(fileFormat);
     OH_AVBuffer_Destroy(sample);
-    napi_value retValue;
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }
@@ -1383,10 +1408,14 @@ napi_value OH_AVMuxer_StopNotPermit(napi_env env, napi_callback_info info)
 {
     int fileDescribe = open(MP4_FILE, O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
     OH_AVMuxer *muxer = OH_AVMuxer_Create(fileDescribe, AV_OUTPUT_FORMAT_MPEG_4);
+    napi_value retValue;
+    if (muxer == nullptr) {
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
     OH_AVErrCode result = OH_AVMuxer_Stop(muxer);
     close(fileDescribe);
     OH_AVMuxer_Destroy(muxer);
-    napi_value retValue;
     napi_create_int32(env, result == AV_ERR_OPERATE_NOT_PERMIT ? 1 : 0, &retValue);
     return retValue;
 }

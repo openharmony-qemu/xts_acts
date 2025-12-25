@@ -14,7 +14,7 @@
  */
 
 #include "common.h"
-#include "oh_commonevent.h"
+#include "BasicServicesKit/oh_commonevent.h"
 #include "napi/native_api.h"
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
@@ -40,8 +40,8 @@ static napi_value testCommonEventInvalidParameter(napi_env env, napi_callback_in
     g_subscribeInfo = OH_CommonEvent_CreateSubscribeInfo(events, eventsNum);
     g_subscriber = OH_CommonEvent_CreateSubscriber(nullptr, IsOrderedCallback001);
     int32_t retResult = OH_CommonEvent_Subscribe(g_subscriber);
-    napi_create_int32(env,  retResult == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
-    return result;
+    ASSERT_EQ(retResult, COMMONEVENT_ERR_INVALID_PARAMETER);
+    NAPI_END;
 }
 
 static napi_value SetPublisherPermissionSuccess(napi_env env, napi_callback_info info)
@@ -125,6 +125,18 @@ static napi_value SetPublishInfoPermissionError(napi_env env, napi_callback_info
     int32_t ret = OH_CommonEvent_SetPublishInfoPermissions(nullptr, permissions, num);
     napi_create_int32(env, ret == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
+}
+
+static napi_value SetPublishInfoWithoutPermission(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    const char* permissions[] = {""};
+    bool ordered = true;
+    auto publishInfo = OH_CommonEvent_CreatePublishInfo(ordered);
+    int32_t num = PARAM_1;
+    int32_t ret = OH_CommonEvent_SetPublishInfoPermissions(publishInfo, permissions, num);
+    ASSERT_EQ(ret, COMMONEVENT_ERR_PERMISSION_ERROR);
+    NAPI_END;
 }
 
 static napi_value SetPublishInfoCodeSuccess(napi_env env, napi_callback_info info)
@@ -525,6 +537,24 @@ static napi_value UnSubscribeInvalidParameter(napi_env env, napi_callback_info i
     int32_t retResult = OH_CommonEvent_UnSubscribe(g_subscriber);
     napi_create_int32(env,  retResult == COMMONEVENT_ERR_INVALID_PARAMETER ? 0 : -1, &result);
     return result;
+}
+static napi_value PublisherLimitExceeded(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t lastErr = COMMONEVENT_ERR_OK;
+    int32_t successCount = 0;
+    const char* event = CesCapiTest::COMMON_EVENT_TEST;
+    bool ordered = false;
+    auto publishInfo = OH_CommonEvent_CreatePublishInfo(ordered);
+    for (int i = 0; i <= MAX_SUBSCRIBER_LIMIT; ++i) {
+        lastErr = OH_CommonEvent_PublishWithInfo(event, publishInfo);
+        if (lastErr == COMMONEVENT_ERR_OK) {
+            successCount++;     }else if (lastErr == COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED) {
+            break;
+        }
+    }
+    ASSERT_EQ(lastErr, COMMONEVENT_ERR_SENDING_LIMIT_EXCEEDED);
+    NAPI_END;
 }
 
 napi_property_descriptor desc[] = {

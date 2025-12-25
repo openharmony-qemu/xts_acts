@@ -83,11 +83,12 @@ static void OnReceive(const CommonEvent_RcvData *data) {
     
     bool exists = OH_CommonEvent_HasKeyInParameters(parameters, "wh4");
     if (parameters) {
-        ASSERT_TRUE(exists);
-    } else {
-        ASSERT_FALSE(exists);
+        ASSERT_EA(exists, true);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "exists = %{public}ld", exists);
     }
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "exists = %{public}d", exists);
+    bool exist = OH_CommonEvent_HasKeyInParameters(parameters, "wh11");
+        ASSERT_EA(exist, false);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "exist = %{public}d", exist);
     
     long longValue = OH_CommonEvent_GetLongFromParameters(parameters, "wh9", 2147483650);
     OH_LOG_Print(LOG_APP, LOG_INFO, 1, "ces_test", "longValue = %{public}ld", longValue);

@@ -23,7 +23,6 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from '@ohos.app.ability.contextConstant';
-import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -39,9 +38,6 @@ class AbilityStartCallbackExt implements common.AbilityStartCallback {
   onResult?: (abilityResult: common.AbilityResult) => void = (parameter: common.AbilityResult) => {
     console.log(`startAbilityByType resultCode:` + parameter.resultCode + `bundleName:` + parameter.want?.bundleName);
   }
-
-  completionHandler?: CompletionHandlerForAbilityStartCallback = undefined
-
 }
 
 export default function UiAbilityContextStartAbilityStatic() {
@@ -540,6 +536,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2200`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -574,6 +576,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2300`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -612,6 +620,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2400`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',
@@ -652,6 +666,12 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2500`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
+      .catch((err: BusinessError<void>): void => {
+        hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(err?.code == 16000061) {
+            done();
+          }
+        });
       await Utils.msSleep(2000);
       let want: Want = {
         bundleName: 'com.acts.ability.baseerrorrely.static',

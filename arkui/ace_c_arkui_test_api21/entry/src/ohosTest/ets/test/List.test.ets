@@ -24,10 +24,19 @@ import ColumnMatchParentTest from './Column/ColumnMatchParentTest'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest'
 import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
 import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
+import ScrollEventTypeTest from './scroll/ScrollEventTypeTest.test'
+import ListEventTypeTest from './list/ListEventTypeTest.test'
+import RefreshEventTypeTest from './refresh/RefreshEventTypeTest.test'
+import WaterFlowEventTypeTest from './waterFlow/WaterFlowEventTypeTest.test'
+import GridEventTypeTest from './grid/GridEventTypeTest.test'
 import ListDraggingEventTest from './list/ListDraggingEventTest.test'
 import ListFlingEventTest from './list/ListFlingEventTest.test'
 import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
 import SourceTypeTest from './sourceType/SourceTypeTest.test'
+import SourceFlingEdgeTest from './list/SourceFlingEdgeTest.test'
+import SourceScrollBarTest from './list/SourceScrollBarTest.test'
+import SourceBtnScrollerTest from './list/SourceBtnScrollerTest.test'
+import CustomNodeEventTest from './custom/CustomNodeEventTest.test'
 
 export default function testsuite() {
   NodeUtilsMethodTest(); // 此条特殊用例请放在首行，勿动
@@ -42,8 +51,17 @@ export default function testsuite() {
   ColumnWrapContentTest();
   ColumnFixAtiDealSizeTest();
   ImageContentTransitionEffectTest();
+  ScrollEventTypeTest();
+  ListEventTypeTest();
+  RefreshEventTypeTest();
+  WaterFlowEventTypeTest();
+  GridEventTypeTest();
   ListDraggingEventTest();
   ListFlingEventTest();
   ImageSupportSvg2Test();
   SourceTypeTest();
+  SourceFlingEdgeTest();
+  SourceScrollBarTest();
+  SourceBtnScrollerTest();
+  CustomNodeEventTest();
 }

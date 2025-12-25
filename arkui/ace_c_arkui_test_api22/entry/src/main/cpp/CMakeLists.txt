@@ -16,6 +16,7 @@ add_library(nativerender SHARED
     image/ImageAltTest.cpp
     textMinLines/MinLinesTest.cpp
     hasAxisTest/HasAxisTest.cpp
+    InteractiveFramework/RegionListTest.cpp
     list/CoastingAxisTest.cpp
     component/ButtonComponentTest.cpp
     component/ComponentTest.cpp
@@ -39,6 +40,9 @@ add_library(nativerender SHARED
     component/GridComponentTest.cpp
     grid/GridFillPolicyTest.cpp
     grid/GridEventTest.cpp
+    clipShape/ClipShapeTest.cpp
+    CustomComponent/CustomMarkDirtyTest.cpp
+    LayoutManager/LayoutManagerTest.cpp
 )
 
 add_library(nativefunc SHARED
@@ -54,6 +58,8 @@ add_library(nativefunc SHARED
     component/ComponentTest.cpp
     component/GridComponentTest.cpp
     component/TextComponentTest.cpp
+    BindSelectionMenu/BindSelectionMenuTest.cpp
+    TextEditMenuOptions/TextEditMenuOptionsTest.cpp
 )
 
 find_library(

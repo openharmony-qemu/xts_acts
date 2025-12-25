@@ -48,8 +48,10 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
     this.builderNode = new BuilderNode(uiContext, { selfIdealSize: { width: 100, height: 100 } });
+    console.info('builderNodeIsDisposed before build:' + this.builderNode.isDisposed());
+    AppStorage.SetOrCreate('builderNodeIsDisposedBeforeBuild',this.builderNode.isDisposed());
     this.builderNode.build(new WrappedBuilder(buildComponent));
-
+    AppStorage.SetOrCreate('builderNodeIsDisposedAfterBuild',this.builderNode.isDisposed());
     const rootRenderNode = this.rootNode!.getRenderNode();
     if (rootRenderNode !== null) {
       rootRenderNode.size = { width: 100, height: 100 };
@@ -61,9 +63,14 @@ class MyNodeController extends NodeController {
 
   isDisposed() {
     if (this.builderNode !== null) {
-
       console.info('aboutToDisappear1:' + this.builderNode.isDisposed());
       AppStorage.SetOrCreate('builderNodeIsDisposed1',this.builderNode.isDisposed());
+    }
+  }
+
+  buildAgain() {
+    if (this.builderNode !== null) {
+      this.builderNode.build(new WrappedBuilder(buildComponent));
     }
   }
 
@@ -101,6 +108,11 @@ struct Index {
         .id('btn_BuilderNode_isDisposed')
         .onClick(() => {
           this.myNodeController.isDisposed();
+        })
+      Button('BuilderNode build again').height('10%')
+        .id('btn_BuilderNode_isDisposed_build_again')
+        .onClick(() => {
+          this.myNodeController.buildAgain();
         })
     }
     .width('100%')

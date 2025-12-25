@@ -7,6 +7,7 @@
     "MainAbility/pages/list/lanesValueTest",
     "MainAbility/pages/textMinLines/TextMinLinesTest",
     "MainAbility/pages/hasAxisTest/HasAxisTest",
+    "MainAbility/pages/RegionListTest/RegionListTest",
     "MainAbility/pages/list/coastingAxisTest",
     "MainAbility/pages/waterFlow/WaterFlowFillPolicyTest",
     "MainAbility/pages/image/imageDrawableDescriptorTest",
@@ -23,6 +24,16 @@
     "MainAbility/pages/grid/GridOnWillScrollTest",
     "MainAbility/pages/grid/GridOnScrollBarUpdateTest",
     "MainAbility/pages/grid/GridOnDidScrollTest",
-    "MainAbility/pages/grid/GridOnScrollIndexTest"
+    "MainAbility/pages/grid/GridOnScrollIndexTest",
+    "MainAbility/pages/clipShape/ClipShapeTest",
+    "MainAbility/pages/CustomComponent/CustomMarkDirty",
+    "MainAbility/pages/LayoutManager/LayoutManager1Test",
+    "MainAbility/pages/LayoutManager/LayoutManager2Test",
+    "MainAbility/pages/LayoutManager/LayoutManager3Test",
+    "MainAbility/pages/LayoutManager/LayoutManager4Test",
+    "MainAbility/pages/LayoutManager/LayoutManager5Test",
+    "MainAbility/pages/LayoutManager/LayoutManager6Test",
+    "MainAbility/pages/LayoutManager/LayoutManager7Test",
+    "MainAbility/pages/LayoutManager/LayoutManager8Test"
   ]
 }

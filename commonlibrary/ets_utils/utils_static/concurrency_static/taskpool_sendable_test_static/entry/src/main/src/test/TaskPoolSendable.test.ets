@@ -143,10 +143,10 @@ export default function taskPoolSendableTest() {
         let sendAble: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleAddFunc, sendAble);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 then ${JSON.stringify(e)}`);
             expect(String(sendAble.numberItem1)).assertEqual(String('40'));
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -175,10 +175,10 @@ export default function taskPoolSendableTest() {
         let sendAble: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleStringFunc, sendAble);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 then ${JSON.stringify(sendAble)}`);
             expect(String(sendAble.stringItem)).assertEqual(String('修改SendAble'));
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(sendAble)}}`);
             expect(false).assertTrue();
           });
@@ -206,10 +206,10 @@ export default function taskPoolSendableTest() {
         let sendAble: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleBooleanFunc, sendAble);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 then ${JSON.stringify(e)}${JSON.stringify(sendAble)}`);
             expect(String(sendAble.booleanItem)).assertEqual(String('false'));
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -237,10 +237,10 @@ export default function taskPoolSendableTest() {
         let sendAble: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleBigintEditFunc, sendAble);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 then ${JSON.stringify(e)}${JSON.stringify(sendAble)}`);
             expect(String(sendAble.bigint1)).assertEqual(String(BigInt('22222222')));
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -270,9 +270,9 @@ export default function taskPoolSendableTest() {
         arr1.push(num)
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAblearrFun, arr1);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             expect(arr1.length).assertEqual(2);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -304,10 +304,10 @@ export default function taskPoolSendableTest() {
         ]);
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleMapFun, myMap);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             hilog.info(0x0000, caseName, '%{public}s', `========${myMap.size}`);
             expect(myMap.size).assertEqual(2);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             hilog.info(0x0000, caseName, '%{public}s', `e========${e}`);
             expect(false).assertTrue();
@@ -338,11 +338,11 @@ export default function taskPoolSendableTest() {
         mySet.add("foo")
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleSetFun, mySet);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             // console.info(`${caseName} task1 ${mySet} then ${JSON.stringify(e)}`);
             hilog.info(0x0000, caseName, '%{public}s', `========${mySet.size}`);
             expect(mySet.size).assertEqual(2);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             hilog.info(0x0000, caseName, '%{public}s', `e========${e}`);
             expect(false).assertTrue();
@@ -372,9 +372,9 @@ export default function taskPoolSendableTest() {
         let num1: ClassB = new ClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(AddFunc, num1);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 ${JSON.stringify(num1)} then ${JSON.stringify(e)}`);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -402,10 +402,10 @@ export default function taskPoolSendableTest() {
         let sendableA1: SendableA = new SendableA();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendableAFunc, sendableA1);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 ${JSON.stringify(sendableA1)} then ${JSON.stringify(e)}`);
             expect(sendableA1.state).assertEqual(40);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -433,10 +433,10 @@ export default function taskPoolSendableTest() {
         let a1: A = new A();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendableAsAFunc, a1);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 ${JSON.stringify(a1)} then ${JSON.stringify(e)}`);
             expect(a1.state).assertEqual(20);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -464,17 +464,17 @@ export default function taskPoolSendableTest() {
         let sendAble: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleAddFunc, sendAble);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 then ${JSON.stringify(e)}`);
             let task2: taskpool.Task = new taskpool.Task(sendAbleAddFunc, sendAble);
-            taskpool.execute(task2).then((e: NullishType) => {
+            taskpool.execute(task2).then((e: Any) => {
               console.info(`${caseName} task2 then ${JSON.stringify(e)}`);
               expect(sendAble.numberItem1).assertEqual(60);
-            }).catch((e: NullishType) => {
+            }).catch((e: Any) => {
               console.info(`${caseName} task2 catch ${JSON.stringify(e)}`);
               expect(false).assertTrue();
             });
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -502,18 +502,18 @@ export default function taskPoolSendableTest() {
         let sendAble1: SendAbleClassB = new SendAbleClassB();
         try {
           let task1: taskpool.Task = new taskpool.Task(sendAbleAddFunc, sendAble1);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1bb then ${typeof JSON.stringify(sendAble1.numberItem1)}`);
             // expectAssertEqual(sendAble1.numberItem1, '40');
             console.info(`${caseName} hahahah`);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
           let task2: taskpool.Task = new taskpool.Task(sendAbleBooleanFunc, sendAble1);
-          taskpool.execute(task2).then((e: NullishType) => {
+          taskpool.execute(task2).then((e: Any) => {
             console.info(`${caseName} task2 then ${JSON.stringify(e)}`);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task2 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });
@@ -541,10 +541,10 @@ export default function taskPoolSendableTest() {
         let num1: ClassB2 = new ClassB2();
         try {
           let task1: taskpool.Task = new taskpool.Task(AddFunc2, num1);
-          taskpool.execute(task1).then((e: NullishType) => {
+          taskpool.execute(task1).then((e: Any) => {
             console.info(`${caseName} task1 ${JSON.stringify(num1)} then ${JSON.stringify(e)}`);
             expect(num1.array2.length).assertEqual(3);
-          }).catch((e: NullishType) => {
+          }).catch((e: Any) => {
             console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
             expect(false).assertTrue();
           });

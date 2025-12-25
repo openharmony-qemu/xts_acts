@@ -410,4 +410,140 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_F
     OH_NNModel_Destroy(&model);
     OH_NNCompilation_Destroy(&compilation);
 }
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_001
+ * @tc.number nnrt_config_set_focus_mode_001
+ * @tc.desc   OH_NN_MEMORY_ERROR断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_001,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_MEMORY_ERROR;
+    ASSERT_EQ(OH_NN_MEMORY_ERROR, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_002
+ * @tc.number nnrt_config_set_focus_mode_002
+ * @tc.desc   OH_NN_NULL_PTR断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_002,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_NULL_PTR;
+    ASSERT_EQ(OH_NN_NULL_PTR, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_003
+ * @tc.number nnrt_config_set_focus_mode_003
+ * @tc.desc   OH_NN_INVALID_FILE断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_003,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_INVALID_FILE;
+    ASSERT_EQ(OH_NN_INVALID_FILE, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_004
+ * @tc.number nnrt_config_set_focus_mode_004
+ * @tc.desc   OH_NN_UNAVALIDABLE_DEVICE断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_004,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_UNAVALIDABLE_DEVICE;
+    ASSERT_EQ(OH_NN_UNAVALIDABLE_DEVICE, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_005
+ * @tc.number nnrt_config_set_focus_mode_005
+ * @tc.desc   OH_NN_INVALID_PATH断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_005,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_INVALID_PATH;
+    ASSERT_EQ(OH_NN_INVALID_PATH, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_006
+ * @tc.number nnrt_config_set_focus_mode_006
+ * @tc.desc   OH_NN_TIMEOUT断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_006,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_TIMEOUT;
+    ASSERT_EQ(OH_NN_TIMEOUT, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_007
+ * @tc.number nnrt_config_set_focus_mode_007
+ * @tc.desc   OH_NN_CONNECTION_EXCEPTION断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_007,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_CONNECTION_EXCEPTION;
+    ASSERT_EQ(OH_NN_CONNECTION_EXCEPTION, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_008
+ * @tc.number nnrt_config_set_focus_mode_008
+ * @tc.desc   OH_NN_SAVE_CACHE_EXCEPTION断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_008,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_SAVE_CACHE_EXCEPTION;
+    ASSERT_EQ(OH_NN_SAVE_CACHE_EXCEPTION, focusMode);
+}
+
+/**
+ * @tc.name   nnrt_config_set_focus_mode_009
+ * @tc.number nnrt_config_set_focus_mode_009
+ * @tc.desc   OH_NN_UNAVAILABLE_DEVICE断言
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+HWTEST_F(CompilationTest, nnrt_config_set_focus_mode_009,
+         Function | MediumTest | Level1)
+{
+    OH_NN_ReturnCode focusMode = OH_NN_UNAVAILABLE_DEVICE;
+    ASSERT_EQ(OH_NN_UNAVAILABLE_DEVICE, focusMode);
+}
+
 }

@@ -61,3 +61,4 @@ export const OHAudioDecoderAmrwb: () => number;
 export const OHAudioDecoderOpus: () => number;
 export const OHAudioDecoderG711Mu: () => number;
 export const OHAudioDecoderViVid: () => number;
+export const OHAudioDecoderOutputFormatChangeSync: () => number;

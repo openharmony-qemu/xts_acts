@@ -263,7 +263,7 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
         console.info(TAG, testName,'come in',);
         let isExposureModeSupported: boolean = mCaptureSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
         console.info(TAG, testName,'isExposureModeSupported', isExposureModeSupported);
-        expect(isExposureModeSupported).assertTrue();
+        expect(isEmpty(isExposureModeSupported)).assertFalse();
       })
       done();
     })
@@ -280,7 +280,7 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       captureSessionIsExposureMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_EXPOSURE_MODE_SUPPORT_AB_002', () => {
         let isExposureModeSupported: boolean = mCaptureSession.isExposureModeSupported(camera.ExposureMode.EXPOSURE_MODE_CONTINUOUS_AUTO);
         console.info(TAG, testName,'isExposureModeSupported', isExposureModeSupported);
-        expect(isExposureModeSupported).assertTrue();
+        expect(isEmpty(isExposureModeSupported)).assertFalse();
       })
       done();
     })
@@ -298,7 +298,7 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       captureSessionIsFocusMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_001', () => {
         let isFocusModeSupported: boolean = mCaptureSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_AUTO);
         console.info(TAG, testName +'isFlashModeSupported'+ isFocusModeSupported);
-        expect(isFocusModeSupported).assertTrue();
+        expect(isEmpty(isFocusModeSupported)).assertFalse();
       })
       done();
     })
@@ -315,7 +315,7 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       captureSessionIsFocusMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_002', () => {
         let isFocusModeSupported: boolean = mCaptureSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_LOCKED);
         console.info(TAG, testName +'isFlashModeSupported'+ isFocusModeSupported);
-        expect(isFocusModeSupported).assertTrue();
+        expect(isEmpty(isFocusModeSupported)).assertFalse();
       })
       done();
     })
@@ -332,7 +332,7 @@ export default function cameraCaptureSessionIsExposureModeAndIsFocusModeAb() {
       captureSessionIsFocusMode('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_IS_FOCUS_MODE_SUPPORT_AB_003', () => {
         let isFocusModeSupported: boolean = mCaptureSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_MANUAL);
         console.info(TAG, testName +'isFlashModeSupported'+ isFocusModeSupported);
-        expect(isFocusModeSupported).assertTrue();
+        expect(isEmpty(isFocusModeSupported)).assertFalse();
       })
       done();
     })

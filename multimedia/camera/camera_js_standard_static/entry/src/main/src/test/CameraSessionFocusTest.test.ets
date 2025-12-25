@@ -202,7 +202,7 @@ export default function cameraSessionFocusTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsFocusModeSupportedArray = new Array<boolean>(mCameraNum);
+    mIsFocusModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
 
     console.info('Exit getCameraSupportDevicesArray');
 

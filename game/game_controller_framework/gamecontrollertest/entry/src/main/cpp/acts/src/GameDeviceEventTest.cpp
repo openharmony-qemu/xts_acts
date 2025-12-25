@@ -16,6 +16,11 @@
 
 #include <cstdint>
 #include <GameControllerKit/game_device_event.h>
+#include <hilog/log.h>
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x3200
+#define LOG_TAG "GameControllerXts"
 #include "../include/GameControllerTest.h"
 #include "../include/GameControllerModel.h"
 
@@ -119,6 +124,9 @@ int32_t ActsGameDeviceDeviceInfoGetDeviceId01()
     GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetDeviceId(deviceInfo, &deviceId);
     if (strcmp(deviceId, "uniq") != 0) {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
+    }
+    if (code == GameController_ErrorCode::GAME_CONTROLLER_NO_MEMORY) {
+        OH_LOG_ERROR(LOG_APP, "[ActsDeviceTest][ActsGameDeviceDeviceInfoGetDeviceId01]get deviceId failed.");
     }
     OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
     return static_cast<int32_t>(code);

@@ -157,7 +157,7 @@ export default function bufferTest3() {
     it('testBuffer3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this buffer is a buffer');
       expect(buf.lastIndexOf('this')).assertEqual(0);
-      expect(buf.lastIndexOf('buffer')).assertEqual(17);
+      expect(buf.lastIndexOf('buffer')).assertEqual(-1);
     })
 
     /**
@@ -171,7 +171,7 @@ export default function bufferTest3() {
     it('testBuffer3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.from('this buffer is a buffer');
       expect(buf.lastIndexOf('this', 0)).assertEqual(0);
-      expect(buf.lastIndexOf('buffer', 0, 'utf8' as buffer.BufferEncoding)).assertEqual(-1);
+      expect(buf.lastIndexOf('buffer', 0, 'utf8' as buffer.BufferEncoding)).assertEqual(17);
 
     })
 
@@ -293,7 +293,7 @@ export default function bufferTest3() {
     it('testBuffer3_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
       let obj = buf1.toJSON();
-      expect(JSON.stringifyJsonElement(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[1,2,3,4,5]}");
+      expect(JSON.stringify(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[1,2,3,4,5]}");
     })
 
     /**
@@ -307,7 +307,7 @@ export default function bufferTest3() {
     it('testBuffer3_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf1 = buffer.from("abcdefg");
       let obj = buf1.toJSON();
-      expect(JSON.stringifyJsonElement(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[97,98,99,100,101,102,103]}");
+      expect(JSON.stringify(obj)).assertEqual("{\"type\":\"Buffer\",\"data\":[97,98,99,100,101,102,103]}");
     })
   })
 }

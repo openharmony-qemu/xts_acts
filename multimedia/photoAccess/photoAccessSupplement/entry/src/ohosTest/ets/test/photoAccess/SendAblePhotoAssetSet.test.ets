@@ -502,7 +502,114 @@ export default function sendAbleSetTest() {
       })
     });
 
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0030
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0030
+     * @tc.desc   member min length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0030', Level.LEVEL0, async (done: Function) => {
+      let member = 'a';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
 
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0031
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0031
+     * @tc.desc   member max length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0031', Level.LEVEL0, async (done: Function) => {
+      let member = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0032
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0032
+     * @tc.desc   member max length + 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0032', Level.LEVEL0, async (done: Function) => {
+      let member = 'a1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member,'newTitle',(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0033
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0033
+     * @tc.desc   value min length -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0033', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = '';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0034
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0034
+     * @tc.desc   value min length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0034', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = 'q';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0035
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0035
+     * @tc.desc   value max length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0035', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = '1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
+
+    /**
+     * @tc.name   SEND_ABLE_PHOTO_ASSET_HELPER_SET_0036
+     * @tc.number SEND_ABLE_PHOTO_ASSET_HELPER_SET_0036
+     * @tc.desc   value max length + 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SEND_ABLE_PHOTO_ASSET_HELPER_SET_0036', Level.LEVEL0, async (done: Function) => {
+      let member = photoAccessHelper.PhotoKeys.TITLE;
+      let value = 'a1bcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstadfereuvwxyzabcdefghijdddddklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij';
+      await sendAblePhotoAssetSetTest(done, 'SEND_ABLE_PHOTO_ASSET_HELPER_SET_0029',member, value,(errCode) => {
+        expect(errCode == 14000014 ).assertTrue();
+      })
+    });
 
   })
 }

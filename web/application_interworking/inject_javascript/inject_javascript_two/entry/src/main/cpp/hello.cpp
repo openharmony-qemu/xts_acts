@@ -28,6 +28,10 @@ constexpr unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 ArkWeb_ControllerAPI *controller = nullptr;
 ArkWeb_JavaScriptValueAPI *javaScriptValueApi = nullptr;
 std::shared_ptr<JSBridgeObject> jsbridge_object_ptr = nullptr;
+std::string g_ndkJsBridge = "";
+std::string g_ndkAsyncJsBridge = "";
+std::string g_ndkJsBridgeEx = "";
+std::string g_ndkAsyncJsBridgeEx = "";
 
 std::chrono::time_point<std::chrono::high_resolution_clock> start;
 
@@ -320,6 +324,73 @@ static napi_value RegisterAsyncThreadJavaScriptProxy(napi_env env, napi_callback
     return output;
 }
 
+static void NdkJsBridge(const char *webTag,
+    const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData)
+{
+    g_ndkJsBridge += "NdkJsBridge;";
+}
+
+static void NdkAsyncJsBridge(const char *webTag,
+    const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData)
+{
+    g_ndkAsyncJsBridge += "NdkAsyncJsBridge;";
+}
+
+ArkWeb_JavaScriptValuePtr NdkJsBridgeEx(const char *webTag,
+    const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData)
+{
+    g_ndkJsBridgeEx += "NdkJsBridgeEx;";
+    bool boolValue = false;
+    return javaScriptValueApi->createJavaScriptValue(ArkWeb_JavaScriptValueType::ARKWEB_JAVASCRIPT_BOOL,
+        (void *)(&boolValue), 1);
+}
+
+static void NdkAsyncJsBridgeEx(const char *webTag,
+    const ArkWeb_JavaScriptBridgeData *dataArray, size_t arraySize, void *userData)
+{
+    g_ndkAsyncJsBridgeEx += "NdkAsyncJsBridgeEx;";
+}
+
+static napi_value RegisterForHeadReady(napi_env env, napi_callback_info info)
+{
+    ArkWeb_ProxyMethod method = {"NdkJsBridge", NdkJsBridge,
+        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    ArkWeb_ProxyMethod methodList[1] = { method };
+    ArkWeb_ProxyObject proxyObject = {"SyncObj", methodList, 1};
+
+    controller->registerJavaScriptProxy("ArkWeb", &proxyObject);
+
+    ArkWeb_ProxyMethod methodAsync = {"NdkAsyncJsBridge", NdkAsyncJsBridge,
+        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    ArkWeb_ProxyMethod methodListAsync[1] = { methodAsync };
+    ArkWeb_ProxyObject proxyObjectAsync = {"ASyncObj", methodListAsync, 1};
+
+    controller->registerAsyncJavaScriptProxy("ArkWeb", &proxyObjectAsync);
+
+    ArkWeb_ProxyMethodWithResult methodEx = {"NdkJsBridgeEx", NdkJsBridgeEx,
+        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    ArkWeb_ProxyMethodWithResult methodListEx[1] = { methodEx };
+    ArkWeb_ProxyObjectWithResult proxyObjectEx = {"SyncObjEx", methodListEx, 1};
+
+    const char* str1 = "{\"javascriptProxyPermission\":{\"urlPermissionList\":[{\"scheme\":\"https\",";
+    const char* str2 = "\"host\":\"www.baidu.com\",\"port\":\"\",\"path\":\"\"}]}}";
+    std::string str3 = std::string(str1) + str2;
+    const char *permission = str3.c_str();
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "permission :%{public}s", permission);
+    controller->registerJavaScriptProxyEx("ArkWeb", &proxyObjectEx, permission);
+
+    ArkWeb_ProxyMethod methodAsyncEx = {"NdkAsyncJsBridgeEx", NdkAsyncJsBridgeEx,
+        static_cast<void *>(jsbridge_object_ptr->GetWeakPtr())};
+    ArkWeb_ProxyMethod methodListAsyncEx[1] = { methodAsyncEx };
+    ArkWeb_ProxyObject proxyObjectAsyncEx = {"ASyncObjEx", methodListAsyncEx, 1};
+
+    controller->registerAsyncJavaScriptProxyEx("ArkWeb", &proxyObjectAsyncEx, permission);
+
+    napi_value output;
+    NAPI_CALL(env, napi_create_string_utf8(env, "success", NAPI_AUTO_LENGTH, &output));
+    return output;
+}
+
 static napi_value GetPidResult(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -334,7 +405,50 @@ static napi_value GetPidResult(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetResultOne(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    std::string param = g_ndkJsBridge;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetResultOne:%{public}s", param.c_str());
+    napi_create_string_utf8(env, param.c_str(), param.length(), &result);
+    return result;
+}
 
+static napi_value GetResultTwo(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    std::string param = g_ndkAsyncJsBridge;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetResultTwo:%{public}s", param.c_str());
+    napi_create_string_utf8(env, param.c_str(), param.length(), &result);
+    return result;
+}
+
+static napi_value GetResultThree(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    std::string param = g_ndkJsBridgeEx;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetResultThree:%{public}s", param.c_str());
+    napi_create_string_utf8(env, param.c_str(), param.length(), &result);
+    return result;
+}
+
+static napi_value GetResultFour(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    std::string param = g_ndkAsyncJsBridgeEx;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ArkWeb", "GetResultFour:%{public}s", param.c_str());
+    napi_create_string_utf8(env, param.c_str(), param.length(), &result);
+    return result;
+}
+
+static napi_value ResetResult(napi_env env, napi_callback_info info)
+{
+    g_ndkJsBridge = "";
+    g_ndkAsyncJsBridge = "";
+    g_ndkJsBridgeEx = "";
+    g_ndkAsyncJsBridgeEx = "";
+    return nullptr;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -349,6 +463,12 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default,
             nullptr},
         {"getPidResult", nullptr, GetPidResult, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"registerForHeadReady", nullptr, RegisterForHeadReady, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getResultOne", nullptr, GetResultOne, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getResultTwo", nullptr, GetResultTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getResultThree", nullptr, GetResultThree, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getResultFour", nullptr, GetResultFour, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"resetResult", nullptr, ResetResult, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

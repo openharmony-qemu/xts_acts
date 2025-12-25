@@ -554,14 +554,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndIterateParams0001
-     * @tc.number testParseAndIterateParams0001
-     * @tc.desc   testParseAndIterateParams0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndIterateParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndIterateParams0001";
     //   try {
@@ -584,14 +576,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndIterateParams0002
-     * @tc.number testParseAndIterateParams0002
-     * @tc.desc   testParseAndIterateParams0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndIterateParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndIterateParams0002";
     //   try {
@@ -612,14 +596,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndIterateParams0003
-     * @tc.number testParseAndIterateParams0003
-     * @tc.desc   testParseAndIterateParams0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndIterateParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndIterateParams0003";
     //   try {
@@ -652,14 +628,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndForeachParams0001
-     * @tc.number testParseAndForeachParams0001
-     * @tc.desc   testParseAndForeachParams0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndForeachParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndForeachParams0001";
     //   try {
@@ -684,14 +652,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndForeachParams0002
-     * @tc.number testParseAndForeachParams0002
-     * @tc.desc   testParseAndForeachParams0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndForeachParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndForeachParams0002";
     //   try {
@@ -721,14 +681,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndForeachParams0003
-     * @tc.number testParseAndForeachParams0003
-     * @tc.desc   testParseAndForeachParams0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndForeachParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndForeachParams0003";
     //   try {
@@ -758,14 +710,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndIterateParamsSymbol0001
-     * @tc.number testParseAndIterateParamsSymbol0001
-     * @tc.desc   testParseAndIterateParamsSymbol0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndIterateParamsSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndIterateParamsSymbol0001";
     //   try {
@@ -790,14 +734,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndIterateParamsSymbol0002
-     * @tc.number testParseAndIterateParamsSymbol0002
-     * @tc.desc   testParseAndIterateParamsSymbol0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndIterateParamsSymbol0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndIterateParamsSymbol0002";
     //   try {
@@ -829,14 +765,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testParseAndIterateParamsSymbol0003
-     * @tc.number testParseAndIterateParamsSymbol0003
-     * @tc.desc   testParseAndIterateParamsSymbol0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testParseAndIterateParamsSymbol0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testParseAndIterateParamsSymbol0003";
     //   try {
@@ -1611,14 +1539,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testKeysIterableIterator0001
-     * @tc.number testKeysIterableIterator0001
-     * @tc.desc   testKeysIterableIterator0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testKeysIterableIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testKeysIterableIterator0001";
     //   try {
@@ -1655,14 +1575,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testKeysIterableIterator0002
-     * @tc.number testKeysIterableIterator0002
-     * @tc.desc   testKeysIterableIterator0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testKeysIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testKeysIterableIterator0002";
     //   try {
@@ -1691,14 +1603,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testKeysIterableIterator0003
-     * @tc.number testKeysIterableIterator0003
-     * @tc.desc   testKeysIterableIterator0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testKeysIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testKeysIterableIterator0003";
     //   try {
@@ -1729,14 +1633,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testValuesIterableIterator0001
-     * @tc.number testValuesIterableIterator0001
-     * @tc.desc   testValuesIterableIterator0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testValuesIterableIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testValuesIterableIterator0001";
     //   try {
@@ -1763,14 +1659,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testValuesIterableIterator0002
-     * @tc.number testValuesIterableIterator0002
-     * @tc.desc   testValuesIterableIterator0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testValuesIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testValuesIterableIterator0002";
     //   try {
@@ -1799,14 +1687,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testValuesIterableIterator0003
-     * @tc.number testValuesIterableIterator0003
-     * @tc.desc   testValuesIterableIterator0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testValuesIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testValuesIterableIterator0003";
     //   try {
@@ -1951,8 +1831,9 @@ export default function urlTest1() {
         params.append('fod', "!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`{|}~");
         params.append('fod', 'Another special value: %^&*()_+|');
         params.append('fod', 'More special characters: ~`!@#$%^&*()-_=+');
-        let resultValues = params.values();
-        expect(String(resultValues)).assertEqual("2,!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`" +
+        let arr = Array.from<string>(params.values())
+        let str = arr.join(',');
+        expect(str).assertEqual("2,!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`" +
           "{|}~,Another special value: %^&*()_+|,More special characters: " +
           "~`!@#$%^&*()-_=+");
       } catch (err: BusinessError) {
@@ -1969,14 +1850,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testSpecial0006
-     * @tc.number testSpecial0006
-     * @tc.desc   testSpecial0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testSpecial0006";
     //   try {
@@ -2109,14 +1982,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testSpecial0010
-     * @tc.number testSpecial0010
-     * @tc.desc   testSpecial0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testSpecial0010";
     //   try {
@@ -2213,14 +2078,6 @@ export default function urlTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testSpecial0013
-     * @tc.number testSpecial0013
-     * @tc.desc   testSpecial0013
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testSpecial0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testSpecial0013";
     //   try {

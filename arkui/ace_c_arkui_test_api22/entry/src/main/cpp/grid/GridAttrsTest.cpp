@@ -194,6 +194,7 @@ napi_value TestGridLayoutOptions001(napi_env env, napi_callback_info info)
     auto grid = nodeAPI->createNode(ARKUI_NODE_GRID);
     
     auto option = OH_ArkUI_GridLayoutOptions_Create();
+    ASSERT_OBJ_NE(option, nullptr);
     uint32_t irregularIndexes2[] = {PARAM_3, PARAM_6};
     OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option, irregularIndexes2, PARAM_2);
     ArkUI_AttributeItem item = { .object = option };
@@ -217,6 +218,7 @@ napi_value TestGridLayoutOptions002(napi_env env, napi_callback_info info)
     auto grid = nodeAPI->createNode(ARKUI_NODE_GRID);
     
     auto option = OH_ArkUI_GridLayoutOptions_Create();
+    ASSERT_OBJ_NE(option, nullptr);
     uint32_t irregularIndexes2[] = {PARAM_4, PARAM_7};
     OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option, irregularIndexes2, PARAM_4);
     ArkUI_AttributeItem item = { .object = option };
@@ -235,14 +237,31 @@ napi_value TestGridLayoutOptions003(napi_env env, napi_callback_info info)
     auto grid = nodeAPI->createNode(ARKUI_NODE_GRID);
     
     auto option = OH_ArkUI_GridLayoutOptions_Create();
+    ASSERT_OBJ_NE(option, nullptr);
     uint32_t irregularIndexes2[] = {PARAM_3, PARAM_6};
     OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option, irregularIndexes2, PARAM_2);
     ArkUI_AttributeItem item = { .object = option };
     auto ret = nodeAPI->setAttribute(grid, NODE_GRID_LAYOUT_OPTIONS, &item);
     ASSERT_EQ(ret, SUCCESS);
-    int32_t size = PARAM_1;
-    auto  getValue = OH_ArkUI_GridLayoutOptions_GetIrregularIndexes(option, irregularIndexes2, &size);
-    ASSERT_EQ(getValue, ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR);
+
+    int32_t size1 = PARAM_4;
+    auto getValue1 = OH_ArkUI_GridLayoutOptions_GetIrregularIndexes(option, irregularIndexes2, &size1);
+    ASSERT_EQ(getValue1, ARKUI_ERROR_CODE_NO_ERROR);
+
+    auto getValue2 = OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option, irregularIndexes2, size1);
+    ASSERT_EQ(getValue2, ARKUI_ERROR_CODE_NO_ERROR);
+
+    int32_t size2 = PARAM_1;
+    auto getValue3 = OH_ArkUI_GridLayoutOptions_GetIrregularIndexes(option, irregularIndexes2, &size2);
+    ASSERT_EQ(getValue3, ARKUI_ERROR_CODE_BUFFER_SIZE_ERROR);
+
+    auto option1 = nullptr;
+    auto getValue4 = OH_ArkUI_GridLayoutOptions_GetIrregularIndexes(option1, irregularIndexes2, &size2);
+    ASSERT_EQ(getValue4, ARKUI_ERROR_CODE_PARAM_INVALID);
+    
+    auto option2 = nullptr;
+    auto getValue5 = OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option2, irregularIndexes2, size2);
+    ASSERT_EQ(getValue5, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 
@@ -253,6 +272,7 @@ napi_value TestGridLayoutOptions004(napi_env env, napi_callback_info info)
     auto grid = nodeAPI->createNode(ARKUI_NODE_GRID);
     
     auto option = OH_ArkUI_GridLayoutOptions_Create();
+    ASSERT_OBJ_NE(option, nullptr);
     uint32_t irregularIndexes2[] = {PARAM_3, PARAM_6};
     auto  getValue = OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option, irregularIndexes2, PARAM_NEGATIVE_1);
     ASSERT_EQ(getValue, INVALID_PARAM);
@@ -298,6 +318,7 @@ napi_value TestRegisterGetIrregularSizeByIndexCallback001(napi_env env, napi_cal
     }
     
     auto option = OH_ArkUI_GridLayoutOptions_Create();
+    ASSERT_OBJ_NE(option, nullptr);
     uint32_t irregularIndexes[] = {0, 7};
     auto ret1 = OH_ArkUI_GridLayoutOptions_SetIrregularIndexes(option, irregularIndexes, 2);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GridTest", "CreatGrid2 ret:%{public}d", ret1);
@@ -361,6 +382,7 @@ napi_value TestRegisterGetRectByIndexCallback001(napi_env env, napi_callback_inf
     }
     
     auto option = OH_ArkUI_GridLayoutOptions_Create();
+    ASSERT_OBJ_NE(option, nullptr);
     std::string* str = new std::string("CreatGrid3");
     void* userDataWorld = static_cast<void*>(str);
     OH_ArkUI_GridLayoutOptions_RegisterGetRectByIndexCallback(option, userDataWorld,

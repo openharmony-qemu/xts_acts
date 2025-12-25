@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
-import util from '@ohos.util';
+import util from "@ohos.util";
 
 interface Person {
   name: string,
@@ -53,15 +53,23 @@ function fnThree(val: Any, callback: (err: Error | null, ...value: FixedArray<An
 }
 
 function fnFour(val: Any, callback: (err: Error | null, ...value: FixedArray<Any>) => void) {
-  if (typeof val === 'number') {
+  if (typeof val === 'int') {
     callback(null, val);
   } else {
     callback(new Error('type err'));
   }
 }
 
+const promiseFnOne = async (): Promise<string> => {
+  return 'value';
+};
+
+const promiseFnTwo = async (): Promise<int> => {
+  return 42;
+};
+
 export default function UtilTest() {
-  describe('UtilTest', (): void => {
+  describe('UtilTest',(): void =>  {
     /**
      * @tc.name   testUtilGetHash001
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_HASH_001

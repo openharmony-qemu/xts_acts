@@ -110,7 +110,8 @@ export default function addProcessorTest() {
                         name: 'testEvent',
                         isRealTime: false
                     }
-                ]
+                ],
+               configName:  'SDK_OCG'
             }
             try {
                 let processorId = hiAppEvent.addProcessor(processor);

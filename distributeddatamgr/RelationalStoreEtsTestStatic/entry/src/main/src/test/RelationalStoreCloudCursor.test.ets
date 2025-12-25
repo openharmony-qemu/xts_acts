@@ -107,6 +107,34 @@ export default function relationalStoreCloudCursor() {
         })
         console.log(TAG + "*************Unit Test Begin*************");
 
+      /**
+       * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
+       * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
+       * @tc.desc   clean retain data with specified cursor promise.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+          rdbStore = await relationalStore.getRdbStore(context, config);
+          if (rdbStore != undefined) {
+            try {
+              rdbStore.cleanDirtyData("wrongTest", 100, async (err: BusinessError) => {
+              })
+              rdbStore.cleanDirtyData("test", 100, async (err: BusinessError) => {
+              })
+              await rdbStore.cleanDirtyData("test");
+              expect().assertFail();
+            } catch (err: BusinessError) {
+              console.error(TAG + 'Failed to cleanDirtyData: ' + err.code + ',message:' + err.message);
+              expect(err.code).assertEqual(14800000)
+            }
+          }
+          done();
+          console.info(TAG + "-----SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100 end-----")
+        })
+
          /**
           * @tc.name   testRdbCleanDirtyData0001
           * @tc.number SUB_DistributedData_RelationalStore_SDK_CloudCursorJsAPITest_0600

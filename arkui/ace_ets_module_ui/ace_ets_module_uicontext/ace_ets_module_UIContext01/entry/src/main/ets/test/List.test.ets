@@ -20,6 +20,8 @@ import atomicServiceBarTest from "./UIContext/autoservice/atomicServiceBar.test"
 import UIContextApi1 from './UIContext/UIContextApi1.test';
 import UIContextTestCase from './UIContext/UIContextTestCase.test';
 import GetUIContextMethodTest from './getUIContext/GetUIContextMethodTest.test';
+import CacheMaxCountForHSPParamTest from './CacheMaxCountTest/CacheMaxCountForHSPParamTest.test';
+import WidthBreakpointEnumsTest from './getUIContext/WidthBreakpointEnumsTest.test';
 
 import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
 import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
@@ -41,7 +43,9 @@ export default function testsuite() {
   IsAvailableTest();
   IsFollowingSystemFontScaleFalseTest();
   GetUIContextMethodTest();
-
+  CacheMaxCountForHSPParamTest();
+  WidthBreakpointEnumsTest();
+  
   APIgetFrameNodeByUniqueId();
   UIContextOnIdle();
   GetWindowWidthAndHeight();

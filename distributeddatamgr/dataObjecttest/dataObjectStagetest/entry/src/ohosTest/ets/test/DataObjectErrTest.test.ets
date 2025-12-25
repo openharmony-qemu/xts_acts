@@ -1743,5 +1743,159 @@ export default function DataObjectErrTest() {
       expect(result).assertEqual(false);
       console.info(TAG + '************ DataObjectErrTest71 end ************');
     })
+
+    /**
+     * @tc.name   DataObjectErrTest72
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7200
+     * @tc.desc   Test DistributedObject SetSessionId 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest72 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let str = "a".repeat(128);
+      let result = g_object.setSessionId(str);
+      expect(result).assertEqual(true);
+      console.info(TAG + '************ DataObjectErrTest72 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest73
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7300
+     * @tc.desc   Test DistributedObject SetSessionId 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest73', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest73 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let str = "b".repeat(129);
+      let result = g_object.setSessionId(str);
+      expect(result).assertEqual(false);
+      console.info(TAG + '************ DataObjectErrTest73 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest74
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7400
+     * @tc.desc   Test Object SetSessionId callback 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      console.info(TAG + '************ DataObjectErrTest74 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "c".repeat(128);
+      g_object.setSessionId(str, (err) => {
+        if(err){
+          console.error(TAG + 'err' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        expect(err).assertNull();
+        console.info(TAG + '************ DataObjectErrTest74 end ************');
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest75
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7500
+     * @tc.desc   Test Object SetSessionId callback 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      console.info(TAG + '************ DataObjectErrTest75 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "d".repeat(129);
+      try {
+        g_object.setSessionId(str, (err) => {
+          if(err){
+            console.error(TAG + 'err' + JSON.stringify(err));
+          }
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error(TAG + 'catchErr' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        console.info(TAG + '************ DataObjectErrTest75 end ************');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest76
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7600
+     * @tc.desc   Test Object SetSessionId promise 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest76', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ DataObjectErrTest76 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "e".repeat(128);
+      try {
+        let count = 0;
+        await g_object.setSessionId(str);
+        count += 1;
+        expect(count).assertEqual(1);
+      } catch (err) {
+        console.error(TAG + 'catchErr' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest76 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest77
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7700
+     * @tc.desc   Test Object SetSessionId promise 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest77', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ DataObjectErrTest77 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "e".repeat(129);
+      try {
+        await g_object.setSessionId(str);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + 'catchErr' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+      }
+      console.info(TAG + '************ DataObjectErrTest77 end ************');
+    })
   })
 }

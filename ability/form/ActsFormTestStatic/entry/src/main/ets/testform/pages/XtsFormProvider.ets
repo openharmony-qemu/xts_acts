@@ -305,36 +305,6 @@ struct XtsFormProvider {
             }
           })
 
-          Button('getPublishedFormInfos').onClick((e: ClickEvent) => {
-            hilog.info(DOMAIN, TAG, 'getPublishedFormInfos triggered.');
-            try {
-              formProvider.getPublishedFormInfos().then((result: Array<formInfo.FormInfo>) => {
-                hilog.info(DOMAIN, TAG, `formProvider getPublishedFormInfos success`);
-              }).catch((error: Error) => {
-                hilog.error(DOMAIN, TAG,
-                  `formProvider getPublishedFormInfos error, code: ${error?.code}, message: ${error?.message}`);
-              });
-            } catch (error: Error) {
-              hilog.error(DOMAIN, TAG,
-                `formProvider getPublishedFormInfos error, code: ${error?.code}, message: ${error?.message}`);
-            }
-          })
-
-          Button('getPublishedFormInfoById').onClick((e: ClickEvent) => {
-            hilog.info(DOMAIN, TAG, 'getPublishedFormInfoById triggered.');
-            try {
-              formProvider.getPublishedFormInfoById(this.formId).then((result: formInfo.FormInfo) => {
-                hilog.info(DOMAIN, TAG, `formProvider getPublishedFormInfoById success`);
-              }).catch((error: Error) => {
-                hilog.error(DOMAIN, TAG,
-                  `formProvider getPublishedFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
-              });
-            } catch (error: Error) {
-              hilog.error(DOMAIN, TAG,
-                `formProvider getPublishedFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
-            }
-          })
-
           Button('getPublishedRunningFormInfos').onClick((e: ClickEvent) => {
             hilog.info(DOMAIN, TAG, 'getPublishedRunningFormInfos triggered.');
             try {

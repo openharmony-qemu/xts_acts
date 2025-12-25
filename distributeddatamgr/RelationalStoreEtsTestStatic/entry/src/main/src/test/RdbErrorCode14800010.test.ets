@@ -47,9 +47,9 @@ async function attachBatchInsert(store:data_relationalStore.RdbStore, tableName:
   await store.batchInsert(tableName, valueBucketArray);
 }
 
-export default function rdbErrorCode1480011() {
+export default function RdbErrorCode1480011() {
 
-  describe("rdbErrorCode1480010", (): void => {
+  describe("RdbErrorCode1480010", (): void => {
     beforeAll(async(): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '[RELATIONAL_STORE_JSKITS_TEST] beforeAll');
       await abilityDelegator.startAbility({

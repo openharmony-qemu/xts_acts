@@ -26,7 +26,13 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_datePicker:ActsAceEtsModulePickerDatePickerTest",
       "ace_ets_module_picker_timePicker:ActsAceEtsModulePickerTimePickerTest",
       "ace_ets_module_picker_textPicker:ActsAceEtsModulePickerTextPickerTest",
+      "ace_ets_module_picker_api11_static:ActsAceEtsModulePickerApi11StaticTest",
+      "ace_ets_module_picker_api12_static:ActsAceEtsModulePickerApi12StaticTest",
       "ace_ets_module_picker_api13_static:ActsAceEtsModulePickerApi13StaticTest",
+      "ace_ets_module_picker_api15_static:ActsAceEtsModulePickerApi15StaticTest",
+      "ace_ets_module_picker_api16_static:ActsAceEtsModulePickerApi16StaticTest",
+      "ace_ets_module_picker_api20_static:ActsAceEtsModulePickerApi20StaticTest",
+      "ace_ets_module_picker_api18_static:ActsAceEtsModulePickerApi18StaticTest",
     ]
   } else {
     deps = [
@@ -53,7 +59,18 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_nowear_api19:ActsAceEtsModulePickerNoWearApi19Test",
       "ace_ets_module_picker_nowear_api20:ActsAceEtsModulePickerNoWearApi20Test",
       "ace_ets_module_picker_pickerContainer:ActsAceEtsModulePickerPickerContainerTest",
+      "ace_ets_module_picker_nowear_api16_static:ActsAceEtsModulePickerNoWearApi16StaticTest",
+      "ace_ets_module_picker_api11_static:ActsAceEtsModulePickerApi11StaticTest",
+      "ace_ets_module_picker_api12_static:ActsAceEtsModulePickerApi12StaticTest",
       "ace_ets_module_picker_api13_static:ActsAceEtsModulePickerApi13StaticTest",
+      "ace_ets_module_picker_api15_static:ActsAceEtsModulePickerApi15StaticTest",
+      "ace_ets_module_picker_api16_static:ActsAceEtsModulePickerApi16StaticTest",
+      "ace_ets_module_picker_api20_static:ActsAceEtsModulePickerApi20StaticTest",
+      "ace_ets_module_picker_nowear_api11_static:ActsAceEtsModulePickerNoWearApi11StaticTest",
+      "ace_ets_module_picker_nowear_api12_static:ActsAceEtsModulePickerNoWearApi12StaticTest",
+      "ace_ets_module_picker_nowear_api18_static:ActsAceEtsModulePickerNoWearApi18StaticTest",
+      "ace_ets_module_picker_nowear_api19_static:ActsAceEtsModulePickerNoWearApi19StaticTest",
+      "ace_ets_module_picker_api14_static:ActsAceEtsModulePickerApi14StaticTest",
     ]
   }
 }

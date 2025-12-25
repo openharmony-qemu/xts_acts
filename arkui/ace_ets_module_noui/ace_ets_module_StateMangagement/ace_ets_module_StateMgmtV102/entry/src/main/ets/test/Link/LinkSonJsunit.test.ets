@@ -72,7 +72,7 @@ export default function LinkSonJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkSonJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('LinkSonJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkSonJsunit_0100 START');
       let driver = await UiDriver.create()
@@ -127,7 +127,7 @@ export default function LinkSonJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkSonJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('LinkSonJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkSonJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -182,7 +182,7 @@ export default function LinkSonJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkSonJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('LinkSonJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkSonJsunit_0300 START');
       let driver = await UiDriver.create()
@@ -237,7 +237,7 @@ export default function LinkSonJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkSonJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('LinkSonJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkSonJsunit_0400 START');
       let driver = await UiDriver.create()
@@ -291,7 +291,7 @@ export default function LinkSonJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkSonJsunit_0500', Level.LEVEL0, async (done: Function) => {
+    it('LinkSonJsunit_0500', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkSonJsunit_0500 START');
       let driver = await UiDriver.create()
@@ -346,7 +346,7 @@ export default function LinkSonJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkSonJsunit_0600', Level.LEVEL0, async (done: Function) => {
+    it('LinkSonJsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkSonJsunit_0600 START');
       let driver = await UiDriver.create()

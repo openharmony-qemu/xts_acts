@@ -168,8 +168,8 @@ export default function cameraSessionFlashTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mHasFlashArray = new Array<boolean>(mCameraNum);
-    mIsFlashModeSupportedArray = new Array<boolean>(mCameraNum);
+    mHasFlashArray = new Array<boolean>(mCameraNum.toInt());
+    mIsFlashModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
 
     console.info('Exit getCameraSupportDevicesArray');
 

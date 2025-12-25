@@ -172,5 +172,59 @@ export default function showDialogLevelOrder() {
       console.info('showDialogLevelOrder_0400 END');
       done();
     });
+    /**
+     * @tc.number SUB_ACE_showDialogLevelOrder_0500
+     * @tc.name showDialogLevelOrder_0500
+     * @tc.desc To test the LevelOrder attribute of showDialog,LevelOrder.clamp(100000)
+     * @tc.level: Level 1
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it('showDialogLevelOrder_0500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
+      console.info('showDialogLevelOrder_0500 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('100000'));
+      await button.click();
+      await CommonFunc.sleep(500);
+      let button1 = await driver.findComponent(ON.id('myOrder'));
+      await button1.click();
+      await CommonFunc.sleep(500);
+      let top = AppStorage.get('showDialogOrder') as number
+      expect(top).assertEqual(100000)
+      await CommonFunc.sleep(500);
+      let button2 = await driver.findComponent(ON.text('button1'));
+      await button2.click();
+      await CommonFunc.sleep(500);
+      console.info('showDialogLevelOrder_0500 END');
+      done();
+    });
+    /**
+     * @tc.number SUB_ACE_showDialogLevelOrder_0600
+     * @tc.name showDialogLevelOrder_0600
+     * @tc.desc To test the LevelOrder attribute of showDialog,LevelOrder.clamp(-100000)
+     * @tc.level: Level 1
+     * @tc.type : Function
+     * @tc.size : MEDIUMTEST
+     */
+    it('showDialogLevelOrder_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
+      console.info('showDialogLevelOrder_0600 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('-100000'));
+      await button.click();
+      await CommonFunc.sleep(500);
+      let button1 = await driver.findComponent(ON.id('myOrder'));
+      await button1.click();
+      await CommonFunc.sleep(500);
+      let top = AppStorage.get('showDialogOrder') as number
+      expect(top).assertEqual(-100000)
+      await CommonFunc.sleep(500);
+      let button2 = await driver.findComponent(ON.text('button1'));
+      await button2.click();
+      await CommonFunc.sleep(500);
+      console.info('showDialogLevelOrder_0600 END');
+      done();
+    });
   })
 }

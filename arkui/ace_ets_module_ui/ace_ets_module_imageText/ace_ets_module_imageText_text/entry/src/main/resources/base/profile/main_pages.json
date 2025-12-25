@@ -86,10 +86,12 @@
         "MainAbility/pages/Text/TextVerticalAlign",
         "MainAbility/pages/Text/TextVerticalAlignModifier",
         "MainAbility/pages/Text/lineHeight",
+	"MainAbility/pages/Text/TextEnableSelectedDataDetector",
         "MainAbility/pages/CustomKeyboard/search",
         "MainAbility/pages/CustomKeyboard/textArea",
         "MainAbility/pages/CustomKeyboard/textInput",
         "MainAbility/pages/Text/TextCompressLeadingPunctuation",
-        "MainAbility/pages/Text/TextCompressLeadingPunctuationModifier"
+        "MainAbility/pages/Text/TextCompressLeadingPunctuationModifier",
+        "MainAbility/pages/Text/TextFontWeightTest"
     ]
 }

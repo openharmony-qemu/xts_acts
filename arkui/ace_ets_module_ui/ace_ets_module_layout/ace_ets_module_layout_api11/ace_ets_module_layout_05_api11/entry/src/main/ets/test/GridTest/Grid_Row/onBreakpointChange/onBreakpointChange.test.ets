@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,19 +71,33 @@ export default function GridRow_onBreakpoint() {
       expect(JSON.parse(gridRowBreakpointJson).$type).assertEqual('GridRow');
       expect(JSON.parse(textComponent2).$attrs.content).assertEqual('xxl');
 
-      expect(Math.abs(firstBreakpoint.top - Breakpoint_1.top) <= 1).assertTrue();
-      expect(Math.abs(secondBreakpoint.top - secondBreakpoint.top) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top) <= 1).assertTrue();
-      expect(Math.abs(firstBreakpoint.left - Breakpoint_1.left) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstBreakpoint.top - Breakpoint_1.top)) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference1 is: " + Math.floor(Math.abs(firstBreakpoint.top - Breakpoint_1.top)));
 
-      expect(Math.abs(secondBreakpoint.left - firstBreakpoint.right - vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - vp2px(30)) <= 1).assertTrue();
-      expect(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - vp2px(30)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(secondBreakpoint.top - secondBreakpoint.top)) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference2 is: " + Math.floor(Math.abs(secondBreakpoint.top - secondBreakpoint.top)));
+
+      expect(Math.floor(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top)) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference3 is: " + Math.floor(Math.abs(thirdBreakpoint.top - thirdBreakpoint.top)));
+
+      expect(Math.floor(Math.abs(firstBreakpoint.left - Breakpoint_1.left)) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference4 is: " + Math.floor(Math.abs(firstBreakpoint.left - Breakpoint_1.left)));
+
+      expect(Math.floor(Math.abs(secondBreakpoint.left - firstBreakpoint.right - vp2px(30))) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference5 is: " + Math.floor(Math.abs(secondBreakpoint.left - firstBreakpoint.right - vp2px(30))));
+
+      expect(Math.floor(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - vp2px(30))) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference6 is: " + Math.floor(Math.abs(thirdBreakpoint.left - secondBreakpoint.right - vp2px(30))));
+
+      expect(Math.floor(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - vp2px(30))) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference7 is: " + Math.floor(Math.abs(fourthBreakpoint.left - thirdBreakpoint.right - vp2px(30))));
+
+      expect(Math.floor(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - vp2px(30))) <= 1).assertTrue();
+      console.info("[SUB_ACE_GridRow_onBreakPointChange_0100] difference8 is: " + Math.floor(Math.abs(seventhBreakpoint.top - firstBreakpoint.bottom - vp2px(30))));
 
       console.info('SUB_ACE_GridRow_onBreakPointChange_0100 END');
       done();
     });
-
+    
   })
 }

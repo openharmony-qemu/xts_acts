@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../MainAbility/common/Common';
 import { EventType } from '../MainAbility/common/Common';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON, MatchPattern } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import {
   PhotoPickerComponent,
@@ -53,7 +53,14 @@ import { fileUri } from '@kit.CoreFileKit';
 const SEEK_START = 3;
 const SEEK_FINISH = 4;
 const SELECTED_STATUS = 0;
-const MEDIA_TYPE_OF_VIDEO = '2';
+
+async function driveFn() {
+  let dr = Driver.create();
+  await CommonFunc.sleep(100);
+  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
+  await power?.click();
+  await CommonFunc.sleep(1000);
+}
 
 async function routeToUrl(options: router.RouterOptions) {
   try {
@@ -76,6 +83,7 @@ function getSheetPickerOptions(): photoAccessHelper.PhotoSelectOptions {
   sheetPickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
   sheetPickerOptions.isPhotoTakingSupported = false;
   sheetPickerOptions.maxSelectNumber = 10;
+  sheetPickerOptions.isDestroyedWithNavigation = true;
   return sheetPickerOptions;
 }
 
@@ -91,6 +99,7 @@ function getDefaultPickerOptions(): PickerOptions {
   pickerOptions.maxVideoSelectNumber = 500;
   pickerOptions.photoBrowserBackgroundColorMode = PickerColorMode.AUTO;
   pickerOptions.orientation = PickerOrientation.HORIZONTAL;
+  pickerOptions.edgeEffect = EdgeEffect.Spring;
   return pickerOptions;
 }
 
@@ -864,11 +873,6 @@ export default function TextPicker() {
         expect(result.duration).not().assertUndefined();
         expect(result.photoSubType).not().assertUndefined();
         expect(result.dynamicRangeType).not().assertUndefined();
-        expect(result.orientation).not().assertUndefined();
-        if (result.mimeType === MEDIA_TYPE_OF_VIDEO) { //如果是 视频 则有返回值
-          expect(result.videoMode).not().assertUndefined();
-        }
-        
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -2735,6 +2739,13 @@ export default function TextPicker() {
         let expectedBrowserColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedUiComponentColorMode: PickerColorMode = PickerColorMode.DARK;
         let expectedIsSlidingSupported: boolean = true;
+        let expectedEdgeEffect: EdgeEffect = EdgeEffect.None;
+        let expectedMimeType: photoAccessHelper.PhotoViewMIMETypes = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+        let expectedMimeTypeFilter: photoAccessHelper.MimeTypeFilter = { mimeTypeArray: ['*/*'] }
+        let expectedRepeatSelectSupported: boolean = true;
+        let expectedSelectMode: number = 0;
+        let expectedSingleSelectionMode: number = 2;
+        let expectedPreselectedUris: Array<string> = ['file:img//sample'];
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
@@ -2747,6 +2758,13 @@ export default function TextPicker() {
         expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
         expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
         expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
+        expect(expectedEdgeEffect).assertEqual(msg.edgeEffect);
+        expect(expectedMimeType).assertEqual(msg.mimeType);
+        expect(expectedMimeTypeFilter).assertDeepEquals(msg.mimeTypeFilter);
+        expect(expectedRepeatSelectSupported).assertEqual(msg.isRepeatSelectSupported);
+        expect(expectedSelectMode).assertEqual(msg.selectMode);
+        expect(expectedSingleSelectionMode).assertEqual(msg.singleSelectionMode);
+        expect(expectedPreselectedUris).assertDeepEquals(msg.preselectedUris);
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -2919,6 +2937,171 @@ export default function TextPicker() {
       await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker58 finish");
+      done();
+    });
+
+    /**
+      * @tc.number      testPicker59
+      * @tc.name        testPicker59
+      * @tc.desc        Testing ItemInfo's videoMode
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
+      */
+    it('testPicker59', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+        title: 'test',
+        fileNameExtension: 'png',
+        photoType: photoAccessHelper.PhotoType.IMAGE,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+      };
+      let boxPath = fileUri.getUriFromPath(getContext().filesDir + "/image.png").toString();
+      photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog([boxPath],
+        [photoCreationConfig]).then((result) => {
+        console.log(`result = ${JSON.stringify(result)}`);
+      });
+      await driveFn();
+      let code: number = EventType.SELECT_ITEM_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let callback = (event: events_emitter.EventData) => {
+        let result: ItemInfo = event?.data?.msg;
+        console.info('testPicker59 select ItemInfo=:' + JSON.stringify(result));
+        expect(result.videoMode).assertUndefined();
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker59 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+
+      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      if (checkBoxs === null || checkBoxs.length <= 0) {
+        console.info("testPicker59 findComponent checkbox fail");
+      } else {
+        console.info("testPicker59 findComponent checkbox success");
+        await checkBoxs[0].click();
+        await CommonFunc.sleep(2000);
+        console.info("testPicker59 btn click finish");
+      }
+      router.back();
+      console.info("testPicker59 finish");
+      events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+      * @tc.number      testPicker60
+      * @tc.name        testPicker60
+      * @tc.desc        Testing EdgeEffect
+      * @tc.size        MediumTest
+      * @tc.type        Function
+      * @tc.level       Level 0
+      */
+    it('testPicker60', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.edgeEffect = EdgeEffect.None;
+      let callback = (event: events_emitter.EventData) => {
+        let expectResult: EdgeEffect = EdgeEffect.None;
+        let result: PhotoPickerResult = event?.data?.msg.edgeEffect ?? EdgeEffect.Spring;
+        console.info('testPicker60 result event.data.msg=:' + result);
+        console.info('testPicker60 result expect =:' + expectResult);
+        expect(result).assertEqual(expectResult);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("testPicker60 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await clickResultButton(driver);
+      router.back();
+      console.info("testPicker60 finish");
+      events_emitter.off(event.eventId);
+      done();
+    });
+    
+    /**
+     * @tc.number     testPicker61
+     * @tc.name       testPicker61
+     * @tc.desc       Testing maxVideoSelectNumber and maxPhotoSelectNumber
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testPicker61', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      console.info('testPicker61 started');
+      let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+      sheetPickerOptions.maxVideoSelectNumber = 5;
+      sheetPickerOptions.maxPhotoSelectNumber = 7;
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let callback = (eventData: events_emitter.EventData) => {
+        let result: PhotoPickerResult = eventData?.data?.msg;
+        console.info(
+          `testPicker61 result maxVideo=${result.maxVideoSelectNumber}, maxPhoto=${result.maxPhotoSelectNumber}`
+        );
+        expect(result.maxVideoSelectNumber)
+          .assertEqual(sheetPickerOptions.maxVideoSelectNumber);
+        expect(result.maxPhotoSelectNumber)
+          .assertEqual(sheetPickerOptions.maxPhotoSelectNumber);
+        done();
+      };
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/BindSheetPicker',
+        params: {
+          eventId: code,
+          pickerOptions: sheetPickerOptions,
+        }
+      };
+      await routeToUrl(options);
+      await CommonFunc.sleep(2000);
+      let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
+      await CommonFunc.sleep(1000);
+      await button.click();
+      console.info('testPicker61 Clicked select button');
+      await CommonFunc.sleep(2000);
+      router.back();
+      events_emitter.off(event.eventId);
+      console.info('testPicker61 finished');
       done();
     });
   })

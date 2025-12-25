@@ -51,6 +51,7 @@ export default function abilityTest() {
       try {
         let userId = USER_ID100;
         let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME100, USER_ID100);
+        expect(data.length>0).assertTrue();
         expect(data![0].userId).assertEqual(userId);
         expect(data![0].applicationInfo.name).assertEqual(BUNDLE_NAME100);
         expect(data![0].applicationInfo.description).assertEqual("$string:module_desc");

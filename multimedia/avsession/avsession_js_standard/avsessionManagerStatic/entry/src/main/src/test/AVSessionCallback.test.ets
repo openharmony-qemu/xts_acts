@@ -461,7 +461,7 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let time0: double = 2021;
+            let time0: long = 2021;
             let metadata9: avSession.AVMetadata = {
                 assetId: '121278',
                 publishDate: new Date(time0),

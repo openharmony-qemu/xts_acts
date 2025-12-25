@@ -139,14 +139,6 @@ export default function StackTest1() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testStackpop0005
-     * @tc.number testStackpop0005
-     * @tc.desc   testStackpop0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testStackpop0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testStackpop0005";
     //   try {
@@ -522,28 +514,28 @@ export default function StackTest1() {
     });
 
     /**
-     * @tc.name   testUtil3_012
+     * @tc.name   testStackForEach0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_012
      * @tc.desc   Test the util
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let res = 0;
-      let stack: Stack<int> = new Stack<int>();
-      stack.push(2);
-      stack.push(4);
-      stack.push(5);
-      stack.push(4);
-
-      let iter = stack.$_iterator();
-      let temp = iter.next().value;
-      while (temp != undefined) {
-        res = res + temp;
-        temp = iter.next().value;
+    it('testStackForEach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      try {
+        let stack: Stack<number> = new Stack<number>();
+        stack.push(1);
+        let iter = stack.$_iterator();
+        let temp = iter.next().value;
+        let flag = 0;
+        while (temp != undefined) {
+          temp = iter.next().value;
+          flag++;
+        }
+        expect(flag).assertEqual(1);
+      } catch (err: BusinessError) {
+        expect(false).assertFail()
       }
-      expect(res).assertEqual(15);
-    })
+    });
   })
 }

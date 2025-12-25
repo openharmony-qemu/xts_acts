@@ -27,6 +27,10 @@ group("ActsAceEtsModuleAnimationTest") {
       "ace_ets_component_AlphabetIndexer:ActsAceEtsComponentAlphabetIndexerTest",
       "ace_ets_component_ArcAlphabetindexer:ActsAceEtsComponentArcAlphabetIndexer1Test",
       "ace_ets_module_animation_api18_static:ActsAceEtsModuleAnimationApi18StaticTest",
+      "ace_ets_module_animation_api20_static:ActsAceEtsModuleAnimationApi20StaticTest",
+      "ace_ets_module_animation_api11_static:ActsAceEtsModuleAnimationApi11StaticTest",
+      "ace_ets_module_animation_api12_static:ActsAceEtsModuleAnimationApi12StaticTest",
+
     ]
   } else {
     deps = [
@@ -41,6 +45,10 @@ group("ActsAceEtsModuleAnimationTest") {
       "ace_ets_component_AlphabetIndexer:ActsAceEtsComponentAlphabetIndexerTest",
       "ace_ets_component_ArcAlphabetindexer:ActsAceEtsComponentArcAlphabetIndexer1Test",
       "ace_ets_module_animation_api18_static:ActsAceEtsModuleAnimationApi18StaticTest",
+      "ace_ets_module_animation_api20_static:ActsAceEtsModuleAnimationApi20StaticTest",
+      "ace_ets_module_animation_api11_static:ActsAceEtsModuleAnimationApi11StaticTest",
+      "ace_ets_module_animation_api12_static:ActsAceEtsModuleAnimationApi12StaticTest",
+
     ]
   }
 }

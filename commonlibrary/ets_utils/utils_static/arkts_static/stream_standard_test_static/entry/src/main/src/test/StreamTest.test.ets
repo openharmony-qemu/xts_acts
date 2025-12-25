@@ -1371,6 +1371,30 @@ class Encoding057 extends stream.Duplex {
   }
 }
 
+class WriteProperty extends stream.Writable {
+  constructor() {
+    super();
+  }
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+  }
+}
+
+class ReadableProperty extends stream.Readable {
+  constructor() {
+    super();
+  }
+  doRead(size: int): void {
+  }
+}
+
+class DuplexProperty extends stream.Duplex {
+  constructor() {
+    super();
+  }
+  doRead(size: int): void {
+  }
+}
+
 export default function streamTest() {
   describe('streamTest',(): void =>  {
     afterEach(async () => {
@@ -3077,12 +3101,12 @@ export default function streamTest() {
 
     // Check the StreamTransformFlushData.
     /**
-     * @tc.name   testStreamTransformFlushData001
-     * @tc.number SUB_IBRARY_ETSUTILS_STREAM_10500
-     * @tc.desc   Transform uses the doFlush method to push data.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name    testStreamTransformFlushData001
+     * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_10500
+     * @tc.desc    Transform uses the doFlush method to push data.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
      */
     it('testStreamTransformFlushData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let transform = new MyTransformFlushData001();
@@ -4673,6 +4697,66 @@ export default function streamTest() {
       myDuplex.write('你好');
       expect(result).assertEqual(true);
     });
+
+    // Check the Writable Stream Property.
+    /**
+     * @tc.name    WriteProperty
+     * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_23900
+     * @tc.desc    SetDefaultEncoding method encoding.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('WriteProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let writableStream = new WriteProperty();
+      expect(writableStream.writableObjectMode).assertEqual(false);
+      expect(writableStream.writableHighWatermark).assertEqual(16384);
+      expect(writableStream.writable).assertEqual(true);
+      expect(writableStream.writableLength).assertEqual(0);
+      expect(writableStream.writableCorked).assertEqual(0);
+      expect(writableStream.writableEnded).assertEqual(false);
+      expect(writableStream.writableFinished).assertEqual(false);
+    });
+
+    // Check the Readable Stream Property.
+    /**
+     * @tc.name    ReadableProperty
+     * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_24000
+     * @tc.desc    SetDefaultEncoding method encoding.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('ReadableProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let readableStream = new ReadableProperty();
+      expect(readableStream.readableObjectMode).assertEqual(false);
+      expect(readableStream.readableHighWatermark).assertEqual(16384);
+      expect(readableStream.readable).assertEqual(true);
+      expect(readableStream.readableFlowing).assertEqual(null);
+      expect(readableStream.readableLength).assertEqual(0);
+      expect(readableStream.readableEncoding).assertEqual(null);
+      expect(readableStream.readableEnded).assertEqual(false);
+    });
+
+    // Check the Duplex Stream Property.
+    /**
+     * @tc.name    DuplexProperty
+     * @tc.number  SUB_IBRARY_ETSUTILS_STREAM_24100
+     * @tc.desc    SetDefaultEncoding method encoding.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('DuplexProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let duplexStream = new DuplexProperty();
+      expect(duplexStream.writableObjectMode).assertEqual(false);
+      expect(duplexStream.writableHighWatermark).assertEqual(16384);
+      expect(duplexStream.writable).assertEqual(true);
+      expect(duplexStream.writableLength).assertEqual(0);
+      expect(duplexStream.writableCorked).assertEqual(0);
+      expect(duplexStream.writableEnded).assertEqual(false);
+      expect(duplexStream.writableFinished).assertEqual(false);
+    });
   })}
 
 class StringDecoderReadable extends stream.Readable {
@@ -4762,9 +4846,9 @@ function mustCall(fn?: Function, times: number = 1) {
     throw new Error("times Parameter error")
   }
   let callCount = 0;
-  let wrappedFn: Function = (...args: NullishType[]) => {
+  let wrappedFn: Function = (...args: Any[]) => {
     callCount ++;
-    return fn!.unsafeCall(args);
+    return fn!.unsafeCall(...[...args]);
   }
   mustChecks.push((): void => {
     if (callCount !== times) {

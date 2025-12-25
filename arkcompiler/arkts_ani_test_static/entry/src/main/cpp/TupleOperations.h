@@ -1767,7 +1767,7 @@ ani_int CheckDoubleValue(ani_env *env, ani_tuple_value tupleValue, const ani_siz
     ASSERT_EQ(env->FindClass("std.core.Double", &doubleClass), ANI_OK);
     ASSERT_EQ(doubleClass != nullptr, ANI_OK);
     ani_method doubleUnbox;
-    env->Class_FindMethod(doubleClass, "unboxed", ":d", &doubleUnbox);
+    env->Class_FindMethod(doubleClass, "toDouble", ":d", &doubleUnbox);
     ASSERT_EQ(doubleClass != nullptr, ANI_OK);
 
     ani_ref result {};

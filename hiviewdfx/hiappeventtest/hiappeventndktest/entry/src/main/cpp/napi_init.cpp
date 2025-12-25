@@ -756,6 +756,273 @@ napi_value SetConfigName(napi_env env, napi_callback_info info) {
     return napiResult;
 }
 
+static napi_value OHHiAppEventAddBoolParamReturn(napi_env env, napi_callback_info info) 
+{
+    napi_value result;
+    ParamList list = OH_HiAppEvent_AddBoolParam(nullptr, "bool_key", true);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddBoolArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool nums[] = {true};
+    ParamList list = OH_HiAppEvent_AddBoolArrayParam(nullptr, "bool_arr_key", nums, sizeof(nums) / sizeof(nums[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt8ParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int8_t num = PARAM_1;
+    ParamList list = OH_HiAppEvent_AddInt8Param(nullptr, "int8_key", num);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt8ArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int8_t num[] = {PARAM_1, INT8_MAX, INT8_MIN};
+    ParamList list = OH_HiAppEvent_AddInt8ArrayParam(nullptr, "int8_key", num, sizeof(num) / sizeof(num[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt16ParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int16_t num = PARAM_1;
+    ParamList list = OH_HiAppEvent_AddInt16Param(nullptr, "int16_key", num);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt16ArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;    
+    int16_t num[] = {PARAM_1, INT16_MAX, INT16_MIN};
+    ParamList list = OH_HiAppEvent_AddInt16ArrayParam(nullptr, "int16_key", num, sizeof(num) / sizeof(num[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt32ParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;   
+    int32_t num = PARAM_1;
+    ParamList list = OH_HiAppEvent_AddInt32Param(nullptr, "int32_key", num);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt32ArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result; 
+    int32_t num[] = {PARAM_1, INT32_MAX, INT32_MIN};
+    ParamList list = OH_HiAppEvent_AddInt32ArrayParam(nullptr, "int32_key", num, sizeof(num) / sizeof(num[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt64ParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result; 
+    int64_t num = PARAM_1;
+    ParamList list = OH_HiAppEvent_AddInt64Param(nullptr, "int64_key", num);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddInt64ArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int64_t num[] = {PARAM_1, INT64_MAX, INT64_MIN};
+    ParamList list = OH_HiAppEvent_AddInt64ArrayParam(nullptr, "int64_key", num, sizeof(num) / sizeof(num[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddFloatParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    float num = FLOAT_234_5;
+    ParamList list = OH_HiAppEvent_AddFloatParam(nullptr, "float_key", num);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddFloatArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    float num[] = {FLOAT_123_22, FLOAT_234_5, FLOAT_131312_46464};
+    ParamList list = OH_HiAppEvent_AddFloatArrayParam(nullptr, "float_key", num, sizeof(num) / sizeof(num[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddDoubleParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    double num = DOUBLE_30949_374;
+    ParamList list = OH_HiAppEvent_AddDoubleParam(nullptr, "double_key", num);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddDoubleArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    double nums[] = {DOUBLE_123_22, DOUBLE_30949_374, DOUBLE_131312_46464};
+    ParamList list = OH_HiAppEvent_AddDoubleArrayParam(nullptr, "double_arr_key", nums, sizeof(nums) / sizeof(nums[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddStringParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    char str[] = "hello";
+    ParamList list = OH_HiAppEvent_AddStringParam(nullptr, "string_key", str);
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventAddStringArrayParamReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    char str[] = "hello";
+    char par[] = "world";
+    char *strs[] = {str, par};
+    ParamList list = OH_HiAppEvent_AddStringArrayParam(nullptr, "string_arr_key", strs, sizeof(strs) / sizeof(strs[0]));
+    if(list == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventCreateWatcherReturn(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    g_watcher = OH_HiAppEvent_CreateWatcher(NULL);
+    if(g_watcher == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventConfigureReturnTrue(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    ParamList list = OH_HiAppEvent_CreateParamList();
+    int32_t num = PARAM_1;
+    OH_HiAppEvent_AddInt32Param(list, "int32_key", num);
+    bool configure = OH_HiAppEvent_Configure(DISABLE, "true");
+    if (configure) {
+      napi_create_int32(env, 0, &result);
+      return result;
+    }
+}
+
+static napi_value OHHiAppEventConfigureReturnFalse(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    ParamList list = OH_HiAppEvent_CreateParamList();
+    int32_t num = PARAM_1;
+    OH_HiAppEvent_AddInt32Param(list, "int32_key", num);
+    bool configure = OH_HiAppEvent_Configure(DISABLE, "123");
+    if (configure) {
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
 static napi_value Add(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -862,6 +1129,25 @@ static napi_value Init(napi_env env, napi_value exports)
         { "RemoveProcessor", nullptr, RemoveProcessor, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "DestroyProcessor", nullptr, DestroyProcessor, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "SetConfigName", nullptr, SetConfigName, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"OHHiAppEventAddBoolParamReturn", nullptr, OHHiAppEventAddBoolParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddBoolArrayParamReturn", nullptr, OHHiAppEventAddBoolArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt8ParamReturn", nullptr, OHHiAppEventAddInt8ParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt8ArrayParamReturn", nullptr, OHHiAppEventAddInt8ArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt16ParamReturn", nullptr, OHHiAppEventAddInt16ParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt16ArrayParamReturn", nullptr, OHHiAppEventAddInt16ArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt32ParamReturn", nullptr, OHHiAppEventAddInt32ParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt32ArrayParamReturn", nullptr, OHHiAppEventAddInt32ArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt64ParamReturn", nullptr, OHHiAppEventAddInt64ParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddInt64ArrayParamReturn", nullptr, OHHiAppEventAddInt64ArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddFloatParamReturn", nullptr, OHHiAppEventAddFloatParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddFloatArrayParamReturn", nullptr, OHHiAppEventAddFloatArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddDoubleParamReturn", nullptr, OHHiAppEventAddDoubleParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddDoubleArrayParamReturn", nullptr, OHHiAppEventAddDoubleArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddStringParamReturn", nullptr, OHHiAppEventAddStringParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventAddStringArrayParamReturn", nullptr, OHHiAppEventAddStringArrayParamReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventCreateWatcherReturn", nullptr, OHHiAppEventCreateWatcherReturn, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventConfigureReturnTrue", nullptr, OHHiAppEventConfigureReturnTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHHiAppEventConfigureReturnFalse", nullptr, OHHiAppEventConfigureReturnFalse, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

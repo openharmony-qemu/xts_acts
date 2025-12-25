@@ -72,6 +72,13 @@
                 "usedScene": {
                     "when": "always"
                 }
+            },
+            {
+                "name": "ohos.permission.MANAGE_PRIVATE_PHOTOS",
+                "reason": "$string:reason",
+                "usedScene": {
+                    "when": "always"
+                }
             }
         ]
     }

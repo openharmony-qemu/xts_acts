@@ -137,7 +137,8 @@ struct webViewController {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("https://www.example.com/");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
-                Utils.emitEvent(this.enterPageEnd, 330030)
+                console.log("title of this page: " + this.controller.getTitle());
+                Utils.emitEvent(this.controller.getTitle(), 330030);
                 this.enterPageEnd = true
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

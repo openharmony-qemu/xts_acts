@@ -14,6 +14,8 @@
  */
 
 #include "window/Window.h"
+#include <cmath>
+#include <cstdint>
 
 namespace Window {
 
@@ -92,7 +94,7 @@ napi_value SetWindowStatusBarEnabledInvalidParam(napi_env env, napi_callback_inf
     bool flag1 = mt() % 2;
     bool flag2 = mt() % 2;
     napi_value retValue = 0;
-    g_result = OH_WindowManager_SetWindowStatusBarEnabled(g_mainWindowId-1, flag1, flag2);
+    g_result = OH_WindowManager_SetWindowStatusBarEnabled(g_mainWindowId - 1, flag1, flag2);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "SetWindowStatusBarEnabledInvalidParam: %{public}d", g_result);
     napi_create_int32(env, g_result, &retValue);
@@ -279,7 +281,7 @@ napi_value GetAllWindowLayoutInfoListParameterOverride(napi_env env, napi_callba
     OH_WindowManager_ReleaseAllWindowLayoutInfoList(windowLayoutInfo);
     windowLayoutInfo = NULL;
     free(windowLayoutInfoSize);
-    windowLayoutInfoSize = NULL;
+    windowLayoutInfoSize = nullptr;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -296,7 +298,7 @@ napi_value GetAllWindowLayoutInfoListOkOrDeviceNotSupported(napi_env env, napi_c
     OH_WindowManager_ReleaseAllWindowLayoutInfoList(windowLayoutInfo);
     windowLayoutInfo = NULL;
     free(windowLayoutInfoSize);
-    windowLayoutInfoSize = NULL;
+    windowLayoutInfoSize = nullptr;
     napi_create_int32(env, result, &retValue);
     return retValue;
 }
@@ -551,7 +553,7 @@ napi_value RegisterMouseEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterMouseEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -593,7 +595,7 @@ napi_value UnregisterMouseEventFilterOkOrServiceError(napi_env env, napi_callbac
 napi_value UnregisterMouseEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "UnregisterMouseEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -627,7 +629,7 @@ napi_value RegisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "RegisterTouchEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -669,7 +671,7 @@ napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callbac
 napi_value UnregisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info)
 {
     napi_value retValue = 0;
-    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId+999);
+    int32_t result = OH_NativeWindowManager_UnregisterTouchEventFilter(g_mainWindowId + 999);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "UnregisterTouchEventFilterInvaildWindowId: %{public}d", result);
     if (result == INVAILD_WINDOW_ID) {
@@ -1004,6 +1006,348 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_c
         return retValue;
     }
     napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    return retValue;
+}
+
+napi_value TestLockCursorwithOutofRange(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    int32_t result1 = OH_WindowManager_LockCursor(0, false);
+    int32_t result2 = OH_WindowManager_LockCursor(-1, false);
+    int32_t result3 = OH_WindowManager_LockCursor(PARAM_100, false);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestLockCursorwithOutofRange: %{public}d", result1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestLockCursorwithOutofRange: %{public}d", result2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestLockCursorwithOutofRange: %{public}d", result3);
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_3] = {result1, result2, result3};
+    for (int i = 0; i < PARAM_3; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestLockCursorwithoutPermission(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (argc != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    int32_t result1 = OH_WindowManager_LockCursor(windowId, false);
+ 
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestLockCursorwithoutPermission: %{public}d", result1);
+    
+    napi_create_int32(env, result1, &retValue);
+    return retValue;
+}
+
+napi_value TestUnLockCursorwithOutofRange(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode napi_get_cb_info failed");
+    }
+    if (argCnt != PARAM_1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    int32_t result1 = OH_WindowManager_UnlockCursor(0);
+    int32_t result2 = OH_WindowManager_UnlockCursor(-1);
+    int32_t result3 = OH_WindowManager_UnlockCursor(PARAM_100);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestUnLockCursorwithOutofRange: %{public}d", result1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestUnLockCursorwithOutofRange: %{public}d", result2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestUnLockCursorwithOutofRange: %{public}d", result3);
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_3] = {result1, result2, result3};
+    for (int i = 0; i < PARAM_3; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnLockCursorwithoutPermission(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    
+    int32_t result1 = OH_WindowManager_UnlockCursor(windowId);
+ 
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestUnLockCursorwithoutPermission: %{public}d", result1);
+    
+    napi_create_int32(env, result1, &retValue);
+    return retValue;
+}
+
+napi_value TestSetWindowBrightness(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = PARAM_2;
+    napi_value args[PARAM_2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+    if (valuetype0 != napi_number || valuetype1 != napi_number) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    double brightness;
+    napi_get_value_double(env, args[1], &brightness);
+    
+    int32_t result1 = OH_WindowManager_SetWindowBrightness(windowId, brightness);
+ 
+    napi_value retValue;
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestSetWindowBrightness: %{public}d", result1);
+    
+    napi_create_int32(env, result1, &retValue);
+    return retValue;
+}
+
+napi_value TestInjectTouchEvent(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (valuetype0 != napi_number) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+   
+    Input_TouchEvent* touchEvent = OH_Input_CreateTouchEvent();
+    int32_t result1 = OH_WindowManager_InjectTouchEvent(windowId, touchEvent, PARAM_NEGATIVE_2147483648, 1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestInjectTouchEvent 1: %{public}d", result1);
+    
+    int32_t result2 = OH_WindowManager_InjectTouchEvent(windowId, touchEvent, PARAM_2147483647, 1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestInjectTouchEvent 2: %{public}d", result2);
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result1, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestGetMainWindowSnapshot(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (valuetype0 != napi_number) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = true;
+    
+    int32_t result1 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        0, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 1: %{public}d", result1);
+    int32_t result2 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        PARAM_4294967295, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 2: %{public}d", result2);
+    int32_t result3 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        PARAM_NEGATIVE_1, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 3: %{public}d", result3);
+    int32_t result4 = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
+        PARAM_4294967296, config, OnWindowSnapshotCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestGetMainWindowSnapshot 4: %{public}d", result4);
+    
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_4] = {result1, result2, result3, result4};
+    for (int i = 0; i < PARAM_4; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestLockCursor(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (valuetype0 != napi_number) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+
+    int32_t result1 = OH_WindowManager_LockCursor(0, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestLockCursor 1: %{public}d", result1);
+    int32_t result2 = OH_WindowManager_LockCursor(PARAM_4294967295, true);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+                 "TestLockCursor 2: %{public}d", result2);
+    
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result1, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnlockCursor(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
+            "CreateNativeNode env or info is null");
+            return nullptr;
+    }
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    if (valuetype0 != napi_number) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "ValueType is false");
+        return nullptr;
+    }
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+   
+    int32_t result1 = OH_WindowManager_UnlockCursor(0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "TestUnlockCursor 1: %{public}d", result1);
+    int32_t result2 = OH_WindowManager_UnlockCursor(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "TestUnlockCursor 2: %{public}d", result2);
+    
+    napi_value retValue;
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result1, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
     return retValue;
 }
 }

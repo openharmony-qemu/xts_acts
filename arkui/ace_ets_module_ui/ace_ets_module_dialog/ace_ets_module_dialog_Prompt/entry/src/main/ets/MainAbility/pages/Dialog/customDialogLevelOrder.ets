@@ -108,6 +108,32 @@ struct customDialogLevelOrder {
             this.dialogController.open()
           }
         })
+      Button('100000')
+        .id('100000')
+        .height('10%')
+        .onClick(() => {
+          this.dialogController = new CustomDialogController({
+            builder: CustomDialogExampleD(),
+            levelOrder: LevelOrder.clamp(100000),
+            alignment: DialogAlignment.Center
+          })
+          if ( this.dialogController != null) {
+            this.dialogController.open()
+          }
+        })
+      Button('-100000')
+        .id('-100000')
+        .height('10%')
+        .onClick(() => {
+          this.dialogController = new CustomDialogController({
+            builder: CustomDialogExampleD(),
+            levelOrder: LevelOrder.clamp(-100000),
+            alignment: DialogAlignment.Center
+          })
+          if ( this.dialogController != null) {
+            this.dialogController.open()
+          }
+        })
     }
     .height('100%')
     .width('100%')

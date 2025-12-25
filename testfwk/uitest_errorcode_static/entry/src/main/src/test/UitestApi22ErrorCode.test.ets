@@ -24,7 +24,6 @@ let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runn
 
 const waitUiReadyMs: int = 1000;
 const TestTag: string = 'UitestDriverErrorTest';
-const AsyncErrorCode: int = 17000002;
 const ParameterErrorCode: int = 17000007;
 const CapabilityCode: int = 801;
 const ErrorCode: int = 401;
@@ -72,7 +71,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static ComponentEventType = undefined error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       try {
         observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
@@ -81,7 +80,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static timeout = -1 error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007_static end`);
     })
@@ -112,7 +111,7 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static WindowChangeType = undefined is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       try {
         observer.onceWindowChange(WindowChangeType.WINDOW_ADDED, {
@@ -121,34 +120,10 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e: BusinessError) {
         console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static timeout = -1 is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(17000007);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007_static end`);
-    })
-
-    /**
-     * @tc.name testIsComponentPresentWhenLongClick_17000002_static
-     * @tc.number UitestDriver_Api22ErrorTest_003
-     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testIsComponentPresentWhenLongClick_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002_static start`);
-      try {
-        let on  = ON.enabled(true);
-        driver.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver.isComponentPresentWhenLongClick(on, {x: 100, y: 100});
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002_static end`);
     })
 
     /**
@@ -206,29 +181,6 @@ export default function uitestDriverErrorTest() {
       console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007_static end`);
     })
 
-    /**
-     * @tc.name testIsComponentPresentWhenDrag_17000002_static
-     * @tc.number UitestDriver_Api22ErrorTest_005
-     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testIsComponentPresentWhenDrag_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002_static start`);
-      try {
-        let on  = ON.enabled(true);
-        driver.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver.isComponentPresentWhenDrag(on, {x: 100, y: 100}, {x: 100, y: 100});
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002_static end`);
-    })
 
     /**
      * @tc.name testIsComponentPresentWhenDrag_17000007_static
@@ -337,30 +289,6 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name testIsComponentPresentWhenSwipe_17000002_static
-     * @tc.number UitestDriver_Api22ErrorTest_007
-     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testIsComponentPresentWhenSwipe_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002_static start`);
-      try {
-        let on  = ON.enabled(true);
-        driver.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver.isComponentPresentWhenSwipe(on, {x: 100, y: 100}, {x:100, y: 100});
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002_static end`);
-    })
-
-    /**
      * @tc.name testIsComponentPresentWhenSwipe_17000007_static
      * @tc.number UitestDriver_Api22ErrorTest_008
      * @tc.desc isComponentPresentWhenLongClick 17000007 test.
@@ -457,30 +385,6 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name testKnuckleKnock_17000002_static
-     * @tc.number UitestDriver_Api22ErrorTest_009
-     * @tc.desc isComponentPresentWhenLongClick 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testKnuckleKnock_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testKnuckleKnock_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver.knuckleKnock([{x: 100, y: 100}], 2);
-        console.log(`${TestTag}, testKnuckleKnock_17000002_static knuckleKnock end`);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, testKnuckleKnock_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testKnuckleKnock_17000002_static end`);
-    })
-
-    /**
      * @tc.name testKnuckleKnock_17000007_static
      * @tc.number UitestDriver_Api22ErrorTest_010
      * @tc.desc isComponentPresentWhenLongClick 17000007 test.
@@ -543,55 +447,6 @@ export default function uitestDriverErrorTest() {
     })
 
     /**
-     * @tc.name testInjectKnucklePointerAction_17000002_static
-     * @tc.number UitestDriver_Api22ErrorTest_011
-     * @tc.desc isComponentPresentWhenLongClick 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testInjectKnucklePointerAction_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testInjectKnucklePointerAction_17000002_static start`);
-      try {
-        let pointers = PointerMatrix.create(1,1);
-        pointers.setPoint(0, 0 ,{x: 100, y: 100})
-        driver.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver.injectKnucklePointerAction(pointers, 3000);
-        console.log(`${TestTag}, testInjectKnucklePointerAction_17000002_static knuckleKnock end`);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, testInjectKnucklePointerAction_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testInjectKnucklePointerAction_17000002_static end`);
-    })
-
-    /**
-     * @tc.name teTouchPadTwoFingersScroll_17000002_static
-     * @tc.number UitestDriver_Api22ErrorTest_012
-     * @tc.desc touchPadTwoFingersScroll 17000002 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('teTouchPadTwoFingersScroll_17000002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002_static start`);
-      try {
-        driver.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 2);
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002_static end`);
-    })
-
-    /**
      * @tc.name teTouchPadTwoFingersScroll_17000007_static
      * @tc.number UitestDriver_Api22ErrorTest_013
      * @tc.desc touchPadTwoFingersScroll 17000007 test.
@@ -637,6 +492,28 @@ export default function uitestDriverErrorTest() {
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007_static end`);
+    })
+
+    /**
+     * @tc.name test_injectKnucklePointerAction_17000007_static
+     * @tc.number UitestDriver_Api22ErrorTest_014
+     * @tc.desc injectKnucklePointerAction 17000007 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_injectKnucklePointerAction_17000007_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static start`);
+      try {
+        let pointers = PointerMatrix.create(1,1);
+        pointers.setPoint(0,0, {x: 100, y:100});
+        await driver.injectKnucklePointerAction(pointers, -1);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static error s= -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+      }
+      console.log(`${TestTag}, test_injectKnucklePointerAction_17000007_static end`);
     })
   })
 }

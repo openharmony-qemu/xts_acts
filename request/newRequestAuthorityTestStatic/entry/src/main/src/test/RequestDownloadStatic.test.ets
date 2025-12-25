@@ -385,23 +385,17 @@ export default function RequestDownloadStaticTest() {
         url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
         saveas: '/data/storage/el2/base',
       };
-      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
-        hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_1100 downloadTask: " + task);
-        try {
-          if (err?.code !== 0) {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create err: " + err?.code + JSON.stringify(err));
-            expect(err?.code).assertEqual(13400001);
-            done();
-          } else {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create success: " + task);
-            expect().assertFail();
-            done();
-          }
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_1100 Succeeded in create a download task.` + err.code + JSON.stringify(err));
+      try {
+        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+          hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_1100 downloadTask: " + task);
+          expect().assertFail();
           done();
-        }
-      });
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1100 create catch err: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(13400001);
+        done();
+      };
     });
 
     /**
@@ -446,23 +440,17 @@ export default function RequestDownloadStaticTest() {
         url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
         saveas: '/ request/SUB_Request_Agent_TaskSaveas_Static_0600',
       };
-      request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
-        hilog.info(domain, tag, '%{public}s', "====>SUB_Request_Agent_TaskSaveas_Static_0600 downloadTask: " + task);
-        try {
-          if (err?.code !== 0) {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create err: " + err?.code + JSON.stringify(err));
-            expect(err?.code).assertEqual(401);
-            done();
-          } else {
-            hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create success: " + task);
-            expect().assertFail();
-            done();
-          }
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_0600 Succeeded in create a download task.` + err.code + JSON.stringify(err));
+      try {
+        request.agent.create(baseContext, config, (err : BusinessError | null, task : request.agent.Task | undefined) : void => {
+          hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create callback");
+          expect().assertFail();
           done();
-        }
-      });
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0600 create catch err: " + err.code + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
     });
 
     /**

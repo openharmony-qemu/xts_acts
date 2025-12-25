@@ -163,6 +163,63 @@ struct openCustomDialogLevelOrder {
               })
           })
       }
+      Row() {
+        Button('100000')
+          .id('100000')
+          .height('8%')
+          .onClick(() => {
+            promptAction.openCustomDialog({
+              builder: () => {
+                this.customDialogComponent()
+              },
+              levelOrder: LevelOrder.clamp(100000),
+              alignment: DialogAlignment.Center,
+              onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+                console.info('reason' + JSON.stringify(dismissDialogAction.reason))
+                console.log('dialog onWillDismiss')
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss()
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss()
+                }
+              }
+            }).then((dialogId: number) => {
+              this.customDialogComponentId = dialogId
+            })
+              .catch((error: BusinessError) => {
+                console.error(`openCustomDialog error code is ${error.code}, message is ${error.message}`)
+              })
+          })
+        Button('-100000')
+          .id('-100000')
+          .height('8%')
+          .onClick(() => {
+            promptAction.openCustomDialog({
+              builder: () => {
+                this.customDialogComponent()
+              },
+              levelOrder: LevelOrder.clamp(-100000),
+              alignment: DialogAlignment.Center,
+              onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
+                console.info('reason' + JSON.stringify(dismissDialogAction.reason))
+                console.log('dialog onWillDismiss')
+                if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
+                  dismissDialogAction.dismiss()
+                }
+                if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
+                  dismissDialogAction.dismiss()
+                }
+              }
+            }).then((dialogId: number) => {
+              this.customDialogComponentId = dialogId
+            })
+              .catch((error: BusinessError) => {
+                console.error(`openCustomDialog error code is ${error.code}, message is ${error.message}`)
+              })
+          })
+
+      }
     }
     .width('100%')
     .height('100%')

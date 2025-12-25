@@ -200,14 +200,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 0
     //  */
-    /**
-     * @tc.name   testBufferAlloc0008
-     * @tc.number testBufferAlloc0008
-     * @tc.desc   testBufferAlloc0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
     // it('testBufferAlloc0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     //   const TAG = 'testBufferAlloc0008';
     //   try {
@@ -261,14 +253,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 0
     //  */
-    /**
-     * @tc.name   testBufferAlloc0010
-     * @tc.number testBufferAlloc0010
-     * @tc.desc   testBufferAlloc0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
     // it('testBufferAlloc0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     //   const TAG = 'testBufferAlloc0010';
     //   try {
@@ -984,14 +968,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10008
-     * @tc.number testBufferFrom10008
-     * @tc.desc   testBufferFrom10008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10008';
     //   try {
@@ -1011,14 +987,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10009
-     * @tc.number testBufferFrom10009
-     * @tc.desc   testBufferFrom10009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10009';
     //   try {
@@ -1039,14 +1007,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10010
-     * @tc.number testBufferFrom10010
-     * @tc.desc   testBufferFrom10010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10010';
     //   try {
@@ -1068,14 +1028,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10011
-     * @tc.number testBufferFrom10011
-     * @tc.desc   testBufferFrom10011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10011';
     //   try {
@@ -1096,14 +1048,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10012
-     * @tc.number testBufferFrom10012
-     * @tc.desc   testBufferFrom10012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10012';
     //   try {
@@ -1124,14 +1068,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10013
-     * @tc.number testBufferFrom10013
-     * @tc.desc   testBufferFrom10013
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10013';
     //   try {
@@ -1154,14 +1090,6 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testBufferFrom10014
-     * @tc.number testBufferFrom10014
-     * @tc.desc   testBufferFrom10014
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testBufferFrom10014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10014';
     //   try {
@@ -1190,7 +1118,7 @@ export default function bufferTest2() {
         const buf1 = buffer.from('test');
         const buf2 = buffer.from(buf1);
         expect(buf2.toString()).assertEqual('test');
-        buf1[0] = 'T'.charCodeAt(0).toInt();
+        buf1[0] = 'T'.charCodeAt(0).toLong();
         expect(buf2.toString()).assertEqual('test');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -4725,7 +4653,7 @@ export default function bufferTest2() {
         const value = 'World';
         const index = buf.lastIndexOf(value, 1, 'base64');
         expect(String(index)).assertEqual('-1');
-      } catch (err:Exception) {
+      } catch (err: Error) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

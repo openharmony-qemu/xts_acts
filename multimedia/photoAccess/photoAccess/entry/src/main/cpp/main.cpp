@@ -482,6 +482,23 @@ static napi_value TestManagerRequestImage(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value TestManagerQuickRequestImage(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    MediaLibrary_ErrorCode code = ndkMediaLibrary->ManagerQuickRequestImage(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value TestManagerRequestMovingPhoto(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -887,6 +904,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testChangeRequestRelease", nullptr, TestChangeRequestRelease, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"testManagerRequestImage", nullptr, TestManagerRequestImage, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testManagerQuickRequestImage", nullptr, TestManagerQuickRequestImage, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
         {"testMediaAccessHelperApplyChanges", nullptr, TestMediaAccessHelperApplyChanges, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"testManagerRequestMovingPhoto", nullptr, TestManagerRequestMovingPhoto, nullptr, nullptr, nullptr,

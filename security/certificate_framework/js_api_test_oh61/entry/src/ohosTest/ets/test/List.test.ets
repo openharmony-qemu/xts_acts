@@ -12,12 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import certFrameworkCertAllowDownloadInterCaTestUnit from './AllowDownloadIntermediateCaCert.test';
 import certFrameworkCertReinforcementOfStringTestUnit from './CertframeworkReinforcement.test';
+import certFrameworkCertIgnoreNetworkIssuesTestUnit from './CertIgnoreNetworkIssues.test';
 import certFrameworkCertCheckOnlineCaTestUnit from './CertOnlineVerification.test';
 
 
 export default function testsuite() {
   /* Networking is required and latest system time */
   certFrameworkCertCheckOnlineCaTestUnit();
+  certFrameworkCertIgnoreNetworkIssuesTestUnit();
+  certFrameworkCertAllowDownloadInterCaTestUnit();
   certFrameworkCertReinforcementOfStringTestUnit();
 }

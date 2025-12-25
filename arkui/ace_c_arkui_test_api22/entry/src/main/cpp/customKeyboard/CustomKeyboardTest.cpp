@@ -41,14 +41,6 @@ namespace ArkUICapiTest {
         OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
 
         auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-        auto spaceColumn = nodeAPI->createNode(ARKUI_NODE_ROW);
-        ArkUI_NumberValue columnHeightValue[] = {{.f32 = 30}};
-        ArkUI_AttributeItem columnHeightItem = {.value = columnHeightValue, .size = sizeof(columnHeightValue) / sizeof(ArkUI_NumberValue)};
-        nodeAPI->setAttribute(spaceColumn, NODE_HEIGHT, &columnHeightItem);
-        auto spaceText = nodeAPI->createNode(ARKUI_NODE_TEXT);
-        ArkUI_AttributeItem spaceItem = {.string = "                            "};
-        nodeAPI->setAttribute(spaceText, NODE_TEXT_CONTENT, &spaceItem);
-        nodeAPI->addChild(spaceColumn, spaceText);
 
         auto text = nodeAPI->createNode(ARKUI_NODE_TEXT);
         ArkUI_AttributeItem textItem = {.string = "TextArea"};
@@ -68,11 +60,8 @@ namespace ArkUICapiTest {
         ArkUI_AttributeItem buttonTextItem = {.string = "get"};
         nodeAPI->setAttribute(buttonText, NODE_TEXT_CONTENT, &buttonTextItem);
         nodeAPI->addChild(button, buttonText);
-        ArkUI_NumberValue buttonHeightValue[] = {{.f32 = 300}};
-        ArkUI_AttributeItem buttonHeightItem = {.value = buttonHeightValue, .size = sizeof(buttonHeightValue) / sizeof(ArkUI_NumberValue)};
-        nodeAPI->setAttribute(button, NODE_HEIGHT, &buttonHeightItem);
 
-        ArkUI_NumberValue colorValue[] = {{.u32 = 0xFFFFFFFF}};
+        ArkUI_NumberValue colorValue[] = {{.u32 = false}};
         ArkUI_AttributeItem customKeyboard = {.value = colorValue, .size = sizeof(colorValue) / sizeof(ArkUI_NumberValue), .object = button};
         auto ret = nodeAPI->setAttribute(textArea, NODE_TEXT_AREA_CUSTOM_KEYBOARD, &customKeyboard);
 
@@ -81,7 +70,6 @@ namespace ArkUICapiTest {
         nodeAPI->setAttribute(textArea, NODE_DEFAULT_FOCUS, &focusItem);
 
         nodeAPI->addChild(column, text);
-        nodeAPI->addChild(column, spaceColumn);
         nodeAPI->addChild(column, textArea);
     
         std::string id(xComponentID);
