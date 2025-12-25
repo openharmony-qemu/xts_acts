@@ -152,6 +152,8 @@ import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 import ImageFlashEnergySupp from './image/ImageFlashEnergySupp.test';
+import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
+import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
 
 
 export default function testsuite() {
@@ -290,4 +292,6 @@ export default function testsuite() {
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
   ImageFlashEnergySupp();
+  ImageWidthLengthSupp();
+  ImageDescriptionSupp();
 }
