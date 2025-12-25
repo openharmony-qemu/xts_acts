@@ -147,6 +147,8 @@ import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
+import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -279,4 +281,6 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
+  ImageWidthLengthSupp();
+  ImageDescriptionSupp();
 }
