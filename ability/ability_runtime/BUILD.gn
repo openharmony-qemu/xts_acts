@@ -101,6 +101,7 @@ group("ability_runtime") {
       "actsspecifiedprocess:actsspecifiedprocess",
       "actsstartAndTerminatetest:ActsStartAndTerminate",
       "actsstartabilityforresult:actsstartabilityforresulttest",
+      "actsstartselfuiabilityteststatic:actsStartSelfUIAbilityStaticTest",
       "actsstartabilitygetdisplayidtest:actsstartabilitygetdisplayidtest",
       "actsstartabilityinnewprocesstest:actsstartabilityinnewprocesstest",
       "actsstartabilitywantparamtest:ActsStartAbilityWantParamTest",
