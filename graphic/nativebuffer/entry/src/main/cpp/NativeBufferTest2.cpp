@@ -679,9 +679,10 @@ napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info)
         // 平面1：UV分量
         const int width = 1920;
         const int height = 1080;
+        const int column = 540;
         outPlanes->planes[1].offset = width * height; // 偏移量为Y分量大小
         outPlanes->planes[1].rowStride = width;     // UV行步长与Y相同
-        outPlanes->planes[1].columnStride = 540;   //UV列步长
+        outPlanes->planes[1].columnStride = column;   //UV列步长
         int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, outPlanes);
         if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, NUMBER_1000 * (i + 1) + NUMBER_1, &result);
