@@ -1560,7 +1560,7 @@ static napi_value InitNativeRsMgrOpenRawDirRawFile64Null(napi_env env, napi_call
     RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, "test");
     RawFile64 *rawFile64 = OH_ResourceManager_OpenRawFile64(mNativeResMgr, "test");
 
-    bool flag = ((NativeResourceManager == nullptr) && (rawDir == nullptr)
+    bool flag = ((mNativeResMgr == nullptr) && (rawDir == nullptr)
         && (rawFile == nullptr) && (rawFile64 == nullptr));
     napi_value value = nullptr;
     napi_get_boolean(env, flag, &value);
