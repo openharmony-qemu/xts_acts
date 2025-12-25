@@ -703,9 +703,7 @@ export default function UiTest() {
          */
         it('tesKnuckleKnockS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
             console.log(`${TestTag}, tesKnuckleKnockS start`);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-            await driver.delayMs(waitUiReadyMs);
-            let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+            let window = await driver.findWindow({ bundleName: 'com.uitest.acts' });
             console.log(`${TestTag}, tesKnuckleKnockS window,${JSON.stringify(window)}`);
             if (window != null) {
                 try {
@@ -718,7 +716,7 @@ export default function UiTest() {
                     console.log(`${TestTag}, tesKnuckleKnockS maximize error,${JSON.stringify(error)}`);
                 }
             }
-            await driver.delayMs(waitUiReadyMs);
+            await driver.delayMs(3000);
             try {
                 let play = display.getDefaultDisplaySync();
                 let centerX = play.width / 2;
