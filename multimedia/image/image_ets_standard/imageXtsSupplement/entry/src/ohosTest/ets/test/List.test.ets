@@ -143,6 +143,7 @@ import ImagePixmapSetColorSpaceTest from './image/ImagePixmapSetColorSpace.test'
 import GetImagePropertyJPGNullTest from './image/GetImagePropertyJPGNull.test';
 import GetImagePropertyPNGNullTest from './image/GetImagePropertyPNGNull.test';
 import createUnpremultipliedPixelMapSyncTest from './image/createUnpremultipliedPixelMap.test';
+import ImageContrastTypeSupp from './image/ImageExifContrast.test';
 import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
@@ -276,6 +277,7 @@ export default function testsuite() {
   SendableImageTest();
   ImageSourceCreatePixelMapUsingAllocatorTest();
   ImagePixmapSetColorSpaceTest();
+  ImageContrastTypeSupp();
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
