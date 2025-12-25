@@ -3479,7 +3479,7 @@ function testGetDisallowedForAccountPolicy() {
   /**
    * @tc.name   test_get_disallowed_policy_for_account_0603
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0603
-   * @tc.desc   test restrictions getDisallowedPolicyForAccount with invalid admin
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with INVALID_WANT
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -4608,7 +4608,7 @@ function testSetUserRestrictionPolicy() {
   /**
    * @tc.name   test_set_user_restriction_0503
    * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0503
-   * @tc.desc   test setUserRestriction with super admin
+   * @tc.desc   test setUserRestriction with INVALID_WANT
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
@@ -4694,7 +4694,7 @@ function testSetUserRestrictionPolicy() {
   /**
    * @tc.name   test_set_user_restriction_0603
    * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0603
-   * @tc.desc   test setUserRestriction with super admin
+   * @tc.desc   test setUserRestriction with INVALID_WANT
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
