@@ -1477,7 +1477,6 @@ napi_value OHNativeImageReleaseNativeWindowBufferAbnormal01(napi_env env, napi_c
     int32_t ret = OH_NativeImage_ReleaseNativeWindowBuffer(image, windowBuffer, fenceFd);
     OH_NativeWindow_NativeWindowDetachBuffer(window, windowBuffer);
     int32_t ret1 = OH_NativeImage_ReleaseNativeWindowBuffer(image, windowBuffer, fenceFd);
-    
     if (ret == NATIVE_ERROR_BUFFER_STATE_INVALID && ret1 == NATIVE_ERROR_BUFFER_NOT_IN_CACHE) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
