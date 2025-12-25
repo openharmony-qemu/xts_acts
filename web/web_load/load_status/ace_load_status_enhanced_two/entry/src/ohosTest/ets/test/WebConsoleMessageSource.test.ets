@@ -198,7 +198,7 @@ export default function WebConsoleMessageSource() {
      * @tc.level  LEVEL0
      */
     it('testWebConsoleMessageSourceWORKER0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      expect(ConsoleMessageSource.DEPRECATION).assertEqual(9);
+      expect(ConsoleMessageSource.WORKER).assertEqual(9);
       done()
     })
 
