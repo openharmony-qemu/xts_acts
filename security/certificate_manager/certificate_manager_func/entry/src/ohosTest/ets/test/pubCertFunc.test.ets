@@ -361,6 +361,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       expect(certManagerDialog.CertificateType.CREDENTIAL_USER).assertEqual(2);
       expect(certManagerDialog.CertificateType.CREDENTIAL_APP).assertEqual(3);
       expect(certManagerDialog.CertificateType.CREDENTIAL_UKEY).assertEqual(4);
+      expect(certManagerDialog.CertificateType.CREDENTIAL_SYSTEM).assertEqual(5);
       expect(certManagerDialog.CertificateScope.NOT_SPECIFIED).assertEqual(0);
       expect(certManagerDialog.CertificateScope.CURRENT_USER).assertEqual(1);
       expect(certManagerDialog.CertificateScope.GLOBAL_USER).assertEqual(2);
