@@ -1102,18 +1102,21 @@ HWTEST_F(DrawingNativeMatrixTest, testMatrixSetRectToRectNull, Function | SmallT
     EXPECT_NE(rectDst, nullptr);
     // 2. OH_Drawing_MatrixSetRectToRect, the first parameter is null, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixSetRectToRect(nullptr, rectSrc, rectDst, SCALE_TO_FIT_FILL);
+    bool isSuccess = OH_Drawing_MatrixSetRectToRect(nullptr, rectSrc, rectDst, SCALE_TO_FIT_FILL);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(isSuccess, false);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_MatrixSetRectToRect, the second parameter is null, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixSetRectToRect(matrix, nullptr, rectDst, SCALE_TO_FIT_FILL);
+    isSuccess = OH_Drawing_MatrixSetRectToRect(matrix, nullptr, rectDst, SCALE_TO_FIT_FILL);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(isSuccess, false);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_MatrixSetRectToRect, the third parameter is null, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixSetRectToRect(matrix, rectSrc, nullptr, SCALE_TO_FIT_FILL);
+    isSuccess = OH_Drawing_MatrixSetRectToRect(matrix, rectSrc, nullptr, SCALE_TO_FIT_FILL);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(isSuccess, false);
     // 5. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_RectDestroy(rectSrc);

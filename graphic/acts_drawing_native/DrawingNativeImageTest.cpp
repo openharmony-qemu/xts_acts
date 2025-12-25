@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -120,16 +120,18 @@ HWTEST_F(DrawingNativeImageTest, testImageBuildFromBitmapNormal, Function | Smal
     EXPECT_NE(image, nullptr);
     // 2. OH_Drawing_BitmapCreate
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    EXPECT_NE(bitmap, nullptr);
+    OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    uint32_t width = 200;
+    uint32_t height = 200;
+    OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     // 3. OH_Drawing_ImageBuildFromBitmap successfully constructs the image content
-    OH_Drawing_ImageBuildFromBitmap(image, bitmap);
+    bool ret = OH_Drawing_ImageBuildFromBitmap(image, bitmap);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     EXPECT_NE(bitmap, nullptr);
-    // 4. OH_Drawing_ImageBuildFromBitmap fails to construct the image content
-    OH_Drawing_ImageBuildFromBitmap(image, nullptr);
-    // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 5. Free memory
+    EXPECT_EQ(ret, true);
+    // 4. Free memory
     OH_Drawing_ImageDestroy(image);
     OH_Drawing_BitmapDestroy(bitmap);
 }
@@ -152,12 +154,14 @@ HWTEST_F(DrawingNativeImageTest, testImageBuildFromBitmapNULL, Function | SmallT
     // add assert
     EXPECT_NE(bitmap, nullptr);
     // 3. OH_Drawing_ImageBuildFromBitmap with a null parameter, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_ImageBuildFromBitmap(nullptr, bitmap);
+    bool ret = OH_Drawing_ImageBuildFromBitmap(nullptr, bitmap);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_ImageBuildFromBitmap with a null parameter, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_ImageBuildFromBitmap(image, nullptr);
+    ret = OH_Drawing_ImageBuildFromBitmap(image, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_ImageDestroy(image);
     OH_Drawing_BitmapDestroy(bitmap);
@@ -183,7 +187,8 @@ HWTEST_F(DrawingNativeImageTest, testImageBuildFromBitmapMultipleCalls, Function
         uint32_t width = 200 + i * 10;
         uint32_t height = 200 + i * 10;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
-        OH_Drawing_ImageBuildFromBitmap(image, bitmap);
+        bool ret = OH_Drawing_ImageBuildFromBitmap(image, bitmap);
+        EXPECT_EQ(ret, true);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }

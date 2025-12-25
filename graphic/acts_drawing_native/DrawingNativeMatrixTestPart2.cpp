@@ -350,10 +350,12 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixInvertNormal, Function | SmallT
     OH_Drawing_Matrix *inverse = OH_Drawing_MatrixCreate();
     // add assert
     EXPECT_NE(inverse, nullptr);
-    OH_Drawing_MatrixInvert(matrix, inverse);
+    bool ret = OH_Drawing_MatrixInvert(matrix, inverse);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
-    OH_Drawing_MatrixInvert(inverse, matrix);
+    EXPECT_EQ(ret, true);
+    ret = OH_Drawing_MatrixInvert(inverse, matrix);
+    EXPECT_EQ(ret, true);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     OH_Drawing_MatrixDestroy(matrix);
@@ -374,13 +376,15 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixInvertNull, Function | SmallTes
     // add assert
     EXPECT_NE(matrix, nullptr);
     // 2. OH_Drawing_MatrixInvert with the first parameter as nullptr, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixInvert(nullptr, matrix);
+    bool ret = OH_Drawing_MatrixInvert(nullptr, matrix);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_MatrixInvert with the second parameter as nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixInvert(matrix, nullptr);
+    ret = OH_Drawing_MatrixInvert(matrix, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix);
 }
@@ -438,9 +442,11 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetPolyToPolyNormal, Function |
     OH_Drawing_MatrixSetMatrix(matrix, 1, 0, 0, 0, -1, 0, 0, 0, 1);
     OH_Drawing_Point2D src[] = {{0, 0}, {100, 0}, {100, 100}, {0, 100}, {0, 100}};
     OH_Drawing_Point2D dst[] = {{0, 0}, {100, 30}, {100, 70}, {0, 100}, {0, 100}};
-    OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, 1);
+    bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, 1);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
+
     // 3. OH_Drawing_MatrixSetPolyToPoly, iterate count from 0 to 4, keeping the length of the array consistent with
     // count
     std::random_device rd;
@@ -455,9 +461,10 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetPolyToPolyNormal, Function |
             src[j] = {dis(gen), dis(gen)};
             dst[j] = {dis(gen), dis(gen)};
         }
-        OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, i);
+        ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, i);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(ret, true);
     }
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -480,16 +487,19 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetPolyToPolyNull, Function | S
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_Point2D src[] = {{0, 0}, {100, 0}, {100, 100}, {0, 100}, {0, 100}};
     OH_Drawing_Point2D dst[] = {{0, 0}, {100, 30}, {100, 70}, {0, 100}, {0, 100}};
-    OH_Drawing_MatrixSetPolyToPoly(nullptr, src, dst, 5);
+    bool ret = OH_Drawing_MatrixSetPolyToPoly(nullptr, src, dst, 5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 3. OH_Drawing_MatrixSetPolyToPoly, the second parameter is nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixSetPolyToPoly(matrix, nullptr, dst, 5);
+    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, nullptr, dst, 5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    EXPECT_EQ(ret, false);
     // 4. OH_Drawing_MatrixSetPolyToPoly, the third parameter is nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixSetPolyToPoly(matrix, src, nullptr, 5);
+    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, nullptr, 5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_MatrixDestroy(matrix);
 }
@@ -510,11 +520,13 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetPolyToPolyAbnormal, Function
     // 2. OH_Drawing_MatrixSetPolyToPoly, pass -1 as count, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_Point2D src[] = {{0, 0}, {100, 0}, {100, 100}, {0, 100}};
     OH_Drawing_Point2D dst[] = {{0, 0}, {100, 30}, {100, 70}, {0, 100}};
-    OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, -1);
+    bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, -1);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    EXPECT_EQ(ret, false);
     // 3. OH_Drawing_MatrixSetPolyToPoly, pass 5 as count, check the error code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, 5);
+    ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, 5);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    EXPECT_EQ(ret, false);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix);
 }
@@ -539,7 +551,8 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixSetPolyToPolyMultipleCalls, Fun
     for (int i = 0; i < 10; i++) {
         OH_Drawing_Point2D src[2] = {{dis(gen), dis(gen)}, {dis(gen), dis(gen)}};
         OH_Drawing_Point2D dst[2] = {{dis(gen), dis(gen)}, {dis(gen), dis(gen)}};
-        OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, 2);
+        bool ret = OH_Drawing_MatrixSetPolyToPoly(matrix, src, dst, 2);
+        EXPECT_EQ(ret, true);
     }
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
@@ -672,9 +685,10 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixMapRectNormal, Function | Small
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, 100, 100);
     // add assert
     EXPECT_NE(dst, nullptr);
-    OH_Drawing_MatrixMapRect(matrix, src, dst);
+    bool ret = OH_Drawing_MatrixMapRect(matrix, src, dst);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
     // 3. OH_Drawing_MatrixMapRect, src and dst are different
     OH_Drawing_Rect *src2 = OH_Drawing_RectCreate(0, 0, 100, 100);
     // add assert
@@ -682,9 +696,10 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixMapRectNormal, Function | Small
     OH_Drawing_Rect *dst2 = OH_Drawing_RectCreate(0, 0, 200, 200);
     // add assert
     EXPECT_NE(dst2, nullptr);
-    OH_Drawing_MatrixMapRect(matrix, src2, dst2);
+    ret = OH_Drawing_MatrixMapRect(matrix, src2, dst2);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, true);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_RectDestroy(src);
@@ -713,16 +728,19 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixMapRectNull, Function | SmallTe
     OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, 100, 100);
     // add assert
     EXPECT_NE(dst, nullptr);
-    OH_Drawing_MatrixMapRect(nullptr, src, dst);
+    bool ret = OH_Drawing_MatrixMapRect(nullptr, src, dst);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_MatrixMapRect, the second parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_MatrixMapRect(matrix, nullptr, dst);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_MatrixMapRect, the third parameter is nullptr, check the error code with OH_Drawing_ErrorCodeGet
     OH_Drawing_MatrixMapRect(matrix, src, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_RectDestroy(src);
@@ -754,9 +772,10 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixMapRectMultipleCalls, Function 
         OH_Drawing_Rect *dst = OH_Drawing_RectCreate(0, 0, dis(gen), dis(gen));
         // add assert
         EXPECT_NE(dst, nullptr);
-        OH_Drawing_MatrixMapRect(matrix, src, dst);
+        bool ret = OH_Drawing_MatrixMapRect(matrix, src, dst);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+        EXPECT_EQ(ret, true);
         OH_Drawing_RectDestroy(src);
         OH_Drawing_RectDestroy(dst);
     }
