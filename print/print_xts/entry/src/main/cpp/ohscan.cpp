@@ -125,8 +125,7 @@ static napi_value OHScanExit(napi_env env, napi_callback_info info)
 
 static napi_value CreateScanEnumType()
 {
-    Scan_ErrorCode errorCode;
-    errorCode = Scan_ErrorCode::SCAN_ERROR_NONE;
+    Scan_ErrorCode errorCode = Scan_ErrorCode::SCAN_ERROR_NONE;
     errorCode = Scan_ErrorCode::SCAN_ERROR_NO_PERMISSION;
     errorCode = Scan_ErrorCode::SCAN_ERROR_INVALID_PARAMETER;
     errorCode = Scan_ErrorCode::SCAN_ERROR_GENERIC_FAILURE;
