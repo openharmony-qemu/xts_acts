@@ -27,13 +27,13 @@ export default function webViewNativeMediaPlayerHandlerEnhancedHandleVolume() {
   describe('ActsAceWebViewNativeMediaPlayerHandlerEnhancedHandleVolume', () => {
     beforeAll(async (done: Function) => {
         let options : router.RouterOptions = {
-            url: 'testability/pages/webViewNativeMediaPlayerHandlerEnhanced',
+            url: 'testability/pages/WebViewNativeMediaPlayerHandlerEnhanced',
         }
         try {
             router.clear();
             let pages = router.getState();
             console.info("get webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(pages));
-            if (!("webViewNativeMediaPlayerHandlerEnhanced" == pages.name)) {
+            if (!("WebViewNativeMediaPlayerHandlerEnhanced" == pages.name)) {
                 console.info("get webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(pages.name));
                 let result = await router.pushUrl(options);
                 console.info("push webViewNativeMediaPlayerHandlerEnhanced state success " + JSON.stringify(result));
