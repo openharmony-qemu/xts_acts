@@ -22,7 +22,7 @@ import {waitForExist} from '../../test/WaitTest.test';
 @Component
 struct WebConsoleMessageSource {
   controller: webView.WebviewController = new webView.WebviewController();
-  @State str: string = ""
+  @State str: string = ''
   @State testConsole: boolean = false
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -46,7 +46,7 @@ struct WebConsoleMessageSource {
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         try {
-          this.controller.loadUrl("resource://rawfile/index.html");
+          this.controller.loadUrl('resource://rawfile/index.html');
         } catch (error) {
           console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
         }
@@ -58,7 +58,7 @@ struct WebConsoleMessageSource {
   build() {
     Row() {
       Column() {
-        Button("web click")
+        Button('web click')
           .key('WebConsoleMessageGetSourceButton')
           .focusable(true)
           .onClick(async () => {
@@ -71,9 +71,9 @@ struct WebConsoleMessageSource {
                 try {
                   this.testConsole = true
                   this.isPageEnd = -1;
-                  this.controller.loadUrl("resource://rawfile/index.html");
+                  this.controller.loadUrl('resource://rawfile/index.html');
                   await waitForExist(()=>this.isPageEnd, 'WebConsoleMessageGetSourceButtonIsPageEnd', 0);
-                  this.controller.runJavaScript("consoleTest()")
+                  this.controller.runJavaScript('consoleTest()')
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
