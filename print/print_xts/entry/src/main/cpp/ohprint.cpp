@@ -172,10 +172,9 @@ static napi_value OHPrintStartPrintByNative(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value CreateEnumType()
+static napi_value CreateEnumType1()
 {
-    Print_ErrorCode errorCode;
-    errorCode = Print_ErrorCode::PRINT_ERROR_NONE;
+    Print_ErrorCode errorCode = Print_ErrorCode::PRINT_ERROR_NONE;
     errorCode = Print_ErrorCode::PRINT_ERROR_NO_PERMISSION;
     errorCode = Print_ErrorCode::PRINT_ERROR_INVALID_PARAMETER;
     errorCode = Print_ErrorCode::PRINT_ERROR_GENERIC_FAILURE;
@@ -187,54 +186,48 @@ static napi_value CreateEnumType()
     errorCode = Print_ErrorCode::PRINT_ERROR_FILE_IO;
     errorCode = Print_ErrorCode::PRINT_ERROR_UNKNOWN;
     
-    Print_PrinterState printerState;
-    printerState = Print_PrinterState::PRINTER_IDLE;
+    Print_PrinterState printerState = Print_PrinterState::PRINTER_IDLE;
     printerState = Print_PrinterState::PRINTER_BUSY;
     printerState = Print_PrinterState::PRINTER_UNAVAILABLE;
     
-    Print_DiscoveryEvent discoveryEvent;
-    discoveryEvent = Print_DiscoveryEvent::PRINTER_DISCOVERED;
+    Print_DiscoveryEvent discoveryEvent = Print_DiscoveryEvent::PRINTER_DISCOVERED;
     discoveryEvent = Print_DiscoveryEvent::PRINTER_LOST;
     discoveryEvent = Print_DiscoveryEvent::PRINTER_CONNECTING;
     discoveryEvent = Print_DiscoveryEvent::PRINTER_CONNECTED;
     
-    Print_PrinterEvent printerEvent;
-    printerEvent = Print_PrinterEvent::PRINTER_ADDED;
+    Print_PrinterEvent printerEvent = Print_PrinterEvent::PRINTER_ADDED;
     printerEvent = Print_PrinterEvent::PRINTER_DELETED;
     printerEvent = Print_PrinterEvent::PRINTER_STATE_CHANGED;
     printerEvent = Print_PrinterEvent::PRINTER_INFO_CHANGED;
     
-    Print_DuplexMode duplexMode;
-    duplexMode = Print_DuplexMode::DUPLEX_MODE_ONE_SIDED;
+    Print_DuplexMode duplexMode = Print_DuplexMode::DUPLEX_MODE_ONE_SIDED;
     duplexMode = Print_DuplexMode::DUPLEX_MODE_TWO_SIDED_LONG_EDGE;
     duplexMode = Print_DuplexMode::DUPLEX_MODE_TWO_SIDED_SHORT_EDGE;
     
-    Print_ColorMode colorMode;
-    colorMode = Print_ColorMode::COLOR_MODE_MONOCHROME;
+    Print_ColorMode colorMode = Print_ColorMode::COLOR_MODE_MONOCHROME;
     colorMode = Print_ColorMode::COLOR_MODE_COLOR;
     colorMode = Print_ColorMode::COLOR_MODE_AUTO;
     
-    Print_OrientationMode orientationMode;
-    orientationMode = Print_OrientationMode::ORIENTATION_MODE_PORTRAIT;
+    Print_OrientationMode orientationMode = Print_OrientationMode::ORIENTATION_MODE_PORTRAIT;
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_LANDSCAPE;
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_REVERSE_LANDSCAPE;
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_REVERSE_PORTRAIT;
     orientationMode = Print_OrientationMode::ORIENTATION_MODE_NONE;
-    
-    Print_Quality quality;
-    quality = Print_Quality::PRINT_QUALITY_DRAFT;
+}
+
+static napi_value CreateEnumType2()
+{
+    Print_Quality quality = Print_Quality::PRINT_QUALITY_DRAFT;
     quality = Print_Quality::PRINT_QUALITY_NORMAL;
     quality = Print_Quality::PRINT_QUALITY_HIGH;
     
-    Print_DocumentFormat documentFormat;
-    documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
+    Print_DocumentFormat documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_AUTO;
     documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_JPEG;
     documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_PDF;
     documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_POSTSCRIPT;
     documentFormat = Print_DocumentFormat::DOCUMENT_FORMAT_TEXT;
     
-    Print_JobDocAdapterState jobDocAdapterState;
-    jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY;
+    Print_JobDocAdapterState jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PREVIEW_ABILITY_DESTROY;
     jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_SUCCEED;
     jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_FAIL;
     jobDocAdapterState = Print_JobDocAdapterState::PRINT_DOC_ADAPTER_PRINT_TASK_CANCEL;
@@ -247,7 +240,7 @@ static napi_value CreateStruct()
 {
     char* str = "test";
     auto printerInfo = new Print_PrinterInfo;
-    memset(printerInfo, 0, sizeof(Print_PrinterInfo));
+    std::fill_n(reinterpret_cast<char*>(printerInfo), sizeof(Print_PrinterInfo), 0);
     printerInfo->printerState = Print_PrinterState::PRINTER_IDLE;
     Print_PrinterCapability capability;
     printerInfo->capability = capability;
@@ -263,7 +256,7 @@ static napi_value CreateStruct()
     printerInfo->detailInfo = str;
     
     auto printJob = new Print_PrintJob;
-    memset(printJob, 0, sizeof(Print_PrintJob));
+    std::fill_n(reinterpret_cast<char*>(printJob), sizeof(Print_PrintJob), 0);
     printJob->jobName = str;
     uint32_t fdList[] = {1, 2};
     printJob->fdList = fdList;

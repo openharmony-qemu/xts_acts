@@ -17,18 +17,6 @@
 #include <BasicServicesKit/ohscan.h>
 
 #define SCANNER_ID "12"
-#define ASSERT_EQ(env, ret, equal) \
-    do {\
-     if (ret == equal) {\
-        napi_value result;\
-        napi_create_int32(env, 0, &result);\
-        return result;\
-     } else {\
-        napi_value result;\
-        napi_create_int32(env, -1, &result);\
-        return result;\
-     }\
-} while(0)
 
 static void ScannerDiscoveryCallback(Scan_ScannerDevice **devices, int32_t length)
 {
@@ -80,7 +68,8 @@ static napi_value OHScanGetScannerParameter(napi_env env, napi_callback_info inf
     int32_t paraErrorCode;
     auto scannerOptions = OH_Scan_GetScannerParameter(SCANNER_ID, &paraErrorCode);
     errorCode = OH_Scan_Exit();
-    ASSERT_EQ(env, scannerOptions, nullptr);
+    napi_create_int32(env, scannerOptions == nullptr ? 0 : -1, &result);
+    return result;
 }
 
 static napi_value OHScanSetScannerParameter(napi_env env, napi_callback_info info)
