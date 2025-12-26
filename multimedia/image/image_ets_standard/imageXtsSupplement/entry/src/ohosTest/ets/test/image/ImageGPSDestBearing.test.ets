@@ -365,7 +365,7 @@ export default function ImageGPSDestBearing() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsDestBearing);
-        expect(result.exifMetadata?.gpsDestBearing).assertEqual(resultFir.exifMetadata?.gpsDestBearing);
+        expect(result.exifMetadata?.gpsDestBearing).assertEqual(testExifMetadata.gpsDestBearing);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();

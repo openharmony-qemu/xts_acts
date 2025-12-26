@@ -259,7 +259,7 @@ export default function ImageGPSMapDatum() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsMapDatum);
-        expect(result.exifMetadata?.gpsMapDatum).assertEqual(resultFir.exifMetadata?.gpsMapDatum);
+        expect(result.exifMetadata?.gpsMapDatum).assertEqual(testExifMetadata.gpsMapDatum);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -339,7 +339,7 @@ export default function ImageGPSMapDatum() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsMapDatum);
-        expect(result.exifMetadata?.gpsMapDatum).assertEqual(resultFir.exifMetadata?.gpsMapDatum);
+        expect(result.exifMetadata?.gpsMapDatum).assertEqual(testExifMetadata.gpsMapDatum);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -367,7 +367,7 @@ export default function ImageGPSMapDatum() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsMapDatum);
-        expect(result.exifMetadata?.gpsMapDatum).assertEqual(resultFir.exifMetadata?.gpsMapDatum);
+        expect(result.exifMetadata?.gpsMapDatum).assertEqual(testExifMetadata.gpsMapDatum);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();

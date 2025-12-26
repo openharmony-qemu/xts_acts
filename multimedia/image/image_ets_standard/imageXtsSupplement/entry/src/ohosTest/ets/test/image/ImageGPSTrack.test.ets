@@ -365,7 +365,7 @@ export default function ImageGPSTrack() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTrack);
-        expect(result.exifMetadata?.gpsTrack).assertEqual(resultFir.exifMetadata?.gpsTrack);
+        expect(result.exifMetadata?.gpsTrack).assertEqual(testExifMetadata.gpsTrack);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
