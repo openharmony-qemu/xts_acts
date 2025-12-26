@@ -72,7 +72,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(5);
@@ -100,7 +100,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(0);
@@ -131,13 +131,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -160,17 +160,16 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -192,8 +191,10 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        let resultFir = await imageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
+        let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(1);
@@ -216,19 +217,22 @@ export default function ImageNewSubFileTypeSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_NEW_SUB_FILE_TYPE_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_NEW_SUB_FILE_TYPE_006';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.newSubfileType = 5;
+      testExifMetadata.newSubfileType = 3;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        let resultFir = await imageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`firReadImageMetadata Result is:`,resultFir.exifMetadata?.newSubfileType);
+        let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(5);
+        console.info(TAG,testName,`secReadImageMetadata result is:`,result.exifMetadata?.newSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -250,13 +254,16 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        let resultFir = await imageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
+        let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(0);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -281,13 +288,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -313,13 +320,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -341,13 +348,13 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -370,13 +377,13 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
-        expect(result.exifMetadata?.newSubfileType).assertEqual(2);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -398,7 +405,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(2);
@@ -429,8 +436,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(1);
@@ -459,13 +465,13 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(2);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -491,13 +497,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -522,13 +528,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -553,13 +559,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -582,17 +588,16 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -615,13 +620,16 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        let resultFir = await imageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
+        let firNSubfileType = resultFir.exifMetadata?.subfileType;
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -644,7 +652,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(2);
@@ -676,13 +684,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -707,13 +715,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -738,13 +746,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -770,13 +778,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -801,13 +809,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();;
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();
@@ -832,13 +840,13 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
-        expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       await imageSourceApi.release();
       done();

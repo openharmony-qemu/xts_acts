@@ -102,13 +102,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
-        expect(result.exifMetadata?.rowsPerStrip).assertEqual(0);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -128,13 +128,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
-        expect(result.exifMetadata?.rowsPerStrip).assertEqual(1);
+        expect().assertFail();;
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -154,13 +154,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
-        expect(result.exifMetadata?.rowsPerStrip).assertEqual(0);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -209,13 +209,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
-        expect(result.exifMetadata?.rowsPerStrip).assertEqual(123);
+        expect().assertFail();;
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -262,7 +262,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
         expect(result.exifMetadata?.rowsPerStrip).assertEqual(1);
@@ -326,6 +326,9 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
       }
       done();
     })
+
+
+
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SAMPLES_PER_PIXEL_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SAMPLES_PER_PIXEL_001
@@ -342,13 +345,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await  webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
-        expect(result.exifMetadata?.samplesPerPixel).assertEqual(23);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -368,13 +371,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
-        expect(result.exifMetadata?.samplesPerPixel).assertEqual(0);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -394,13 +397,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
-        expect(result.exifMetadata?.samplesPerPixel).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -420,13 +423,13 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
-        expect(result.exifMetadata?.samplesPerPixel).assertEqual(0);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
