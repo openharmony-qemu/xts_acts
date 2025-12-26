@@ -365,7 +365,7 @@ export default function ImageGPSSpeed() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsSpeed);
-        expect(result.exifMetadata?.gpsSpeed).assertEqual(result.exifMetadata?.gpsSpeed);
+        expect(result.exifMetadata?.gpsSpeed).assertEqual(resultFir.exifMetadata?.gpsSpeed);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();

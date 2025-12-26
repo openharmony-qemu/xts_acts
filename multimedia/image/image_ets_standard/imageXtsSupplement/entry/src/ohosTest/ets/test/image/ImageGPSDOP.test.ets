@@ -364,7 +364,7 @@ export default function ImageGPSDOP() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsDop);
-        expect(result.exifMetadata?.gpsDop).assertEqual(result.exifMetadata?.gpsDop);
+        expect(result.exifMetadata?.gpsDop).assertEqual(resultFir.exifMetadata?.gpsDop);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();

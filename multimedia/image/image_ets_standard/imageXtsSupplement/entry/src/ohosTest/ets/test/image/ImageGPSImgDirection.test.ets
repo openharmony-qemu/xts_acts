@@ -365,7 +365,7 @@ export default function ImageGPSIMGDirection() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsImgDirection);
-        expect(result.exifMetadata?.gpsImgDirection).assertEqual(result.exifMetadata?.gpsImgDirection);
+        expect(result.exifMetadata?.gpsImgDirection).assertEqual(resultFir.exifMetadata?.gpsImgDirection);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
