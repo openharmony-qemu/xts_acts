@@ -52,6 +52,7 @@ group("ans_standard") {
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriTestStatic",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
+      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
     ]
   }
 }
