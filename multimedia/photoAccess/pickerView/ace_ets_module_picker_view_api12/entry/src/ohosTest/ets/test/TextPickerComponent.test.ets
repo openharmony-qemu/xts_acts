@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { fileIo } from '@kit.CoreFileKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../MainAbility/common/Common';
@@ -38,7 +38,8 @@ import {
   ItemDisplayRatio,
   BadgeConfig,
   BadgeType,
-  PreselectedInfo
+  PreselectedInfo,
+  VideoPlayerState
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo,
   AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
@@ -209,6 +210,48 @@ async function testCompleteButton(driver: Driver, options: router.RouterOptions,
   }
   await CommonFunc.sleep(1000);
   router.back();
+}
+
+async function saveMovingPhoto() {
+  let photoCreationConfig: photoAccessHelper.PhotoCreationConfig = {
+    fileNameExtension: 'jpg',
+    photoType: photoAccessHelper.PhotoType.IMAGE,
+    subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO,
+  };
+  const context = getContext();
+  let resultUri = '';
+  const fileToSavePath = context.filesDir + '/01.jpg';
+  const fileToSaveUri = fileUri.getUriFromPath(fileToSavePath).toString();
+  console.log('saveMovingPhoto fileToSaveUri', fileToSaveUri, 'fileToSavePath', fileToSavePath);
+  photoAccessHelper
+    .getPhotoAccessHelper(context)
+    .showAssetsCreationDialog([fileToSaveUri], [photoCreationConfig])
+    .then(uri => {
+      console.log(`saveMovingPhoto result = ${JSON.stringify(uri)}`);
+      resultUri = uri[0];
+    })
+  await driveFn();
+  if (!resultUri.startsWith('file')) {
+    throw new Error(resultUri);
+  }
+  let resultFile: fileIo.File = fileIo.openSync(resultUri, fileIo.OpenMode.READ_WRITE);
+  console.log('saveMovingPhoto fileToSaveUri', fileToSaveUri)
+  let srcFile: fileIo.File = fileIo.openSync(fileToSavePath, fileIo.OpenMode.READ_ONLY);
+  console.log('saveMovingPhoto srcFile')
+  let bufSize: number = 200000;
+  let readSize: number = 0;
+  let buf = new ArrayBuffer(bufSize);
+  let readLen = fileIo.readSync(srcFile.fd, buf, {
+    offset: readSize,
+    length: bufSize
+  });
+  console.log('saveMovingPhoto readLen', readLen)
+  if (readLen > 0) {
+    readSize += readLen;
+    fileIo.writeSync(resultFile.fd, buf, { length: readLen });
+  }
+  fileIo.closeSync(srcFile);
+  fileIo.closeSync(resultFile);
 }
 
 export default function TextPicker() {
@@ -1479,6 +1522,13 @@ export default function TextPicker() {
         done();
         return;
       }
+
+      expect(VideoPlayerState.PLAYING == 0).assertTrue();
+      expect(VideoPlayerState.PAUSED == 1).assertTrue();
+      expect(VideoPlayerState.STOPPED == 2).assertTrue();
+      expect(VideoPlayerState.SEEK_START == 3).assertTrue();
+      expect(VideoPlayerState.SEEK_FINISH == 4).assertTrue();
+
       let code: number = EventType.VIDEO_PLAY_STATE;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       let callback = (event: events_emitter.EventData) => {
@@ -2447,7 +2497,6 @@ export default function TextPicker() {
       }
 
       await routeToUrl(options);
-      await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
       let button: Component = await driver.findComponent(ON.text('select photo'));
       if (button !== undefined && chooostModeButton !== undefined) {
@@ -2458,20 +2507,18 @@ export default function TextPicker() {
         expect(false).assertTrue();
       }
 
-      const checkboxs = driver.findComponents(ON.type('Checkbox'));
+      const checkboxs = await driver.findComponents(ON.type('Checkbox'));
       if (checkboxs?.length) {
         await checkboxs[0].click();
         await CommonFunc.sleep(1000);
-        const finishBtn = await driver.findComponent(ON.id('Complete));
+        const finishBtn: Component = await driver.findComponent(ON.id('Complete'));
         await finishBtn.click();
+        await CommonFunc.sleep(1000);
       }
 
-      await CommonFunc.sleep(1000);
       router.back();
-
+      await CommonFunc.sleep(1000);
       expect(testFinished).assertTrue();
-      await CommonFunc.sleep(1000);
-      router.back();
       console.info("testPicker51 finish");
       done();
     });
@@ -2685,6 +2732,11 @@ export default function TextPicker() {
       };
       await routeToUrl(options);
 
+      try {
+        await saveMovingPhoto();
+      } catch (e) {
+        console.error('saveMovingPhoto fail', e)
+      }
 
       const strJson: string = getInspectorByKey('PhotoPickerComponent');
 
@@ -2706,7 +2758,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(500);
 
 
-      let movingBtn: Component | null = await driver.findComponent(ON.text('Moving picture'));
+      let movingBtn: Component | null = await driver.findComponent(ON.id('PickerMovingPhotoToggle'));
       if (movingBtn === null) {
         console.log("Any button found! Fail!");
         await clickExitBrowserButton(driver);
@@ -2729,6 +2781,10 @@ export default function TextPicker() {
         console.info('testPicker55: movingPhotoBadgeState -> ' + JSON.stringify(selectedItem.movingPhotoBadgeState));
         expect(selectedItem.movingPhotoBadgeState).assertEqual(2);
       }
+
+      expect(photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO).assertEqual(0);
+      expect(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED).assertEqual(1);
+      expect(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_DISABLED).assertEqual(2);
 
       router.back();
       console.info('testPicker55 finish');
