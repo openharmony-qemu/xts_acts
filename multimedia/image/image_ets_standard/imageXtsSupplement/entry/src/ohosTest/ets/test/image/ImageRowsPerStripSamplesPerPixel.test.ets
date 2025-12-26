@@ -102,7 +102,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
         expect(result.exifMetadata?.rowsPerStrip).assertEqual(0);
@@ -128,7 +128,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
         expect(result.exifMetadata?.rowsPerStrip).assertEqual(1);
@@ -154,7 +154,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
         expect(result.exifMetadata?.rowsPerStrip).assertEqual(0);
@@ -209,7 +209,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
         expect(result.exifMetadata?.rowsPerStrip).assertEqual(123);
@@ -262,7 +262,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.rowsPerStrip);
         expect(result.exifMetadata?.rowsPerStrip).assertEqual(1);
@@ -342,7 +342,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
         expect(result.exifMetadata?.samplesPerPixel).assertEqual(23);
@@ -368,7 +368,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
         expect(result.exifMetadata?.samplesPerPixel).assertEqual(0);
@@ -394,7 +394,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
         expect(result.exifMetadata?.samplesPerPixel).assertEqual(1);
@@ -420,7 +420,7 @@ export default function ImageRowsPerStripSamplesPerPixelSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.samplesPerPixel);
         expect(result.exifMetadata?.samplesPerPixel).assertEqual(0);

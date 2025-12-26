@@ -72,7 +72,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(5);
@@ -100,7 +100,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(0);
@@ -131,7 +131,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
@@ -164,7 +164,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
@@ -192,8 +192,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(1);
@@ -222,7 +221,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(5);
@@ -250,7 +249,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(0);
@@ -281,7 +280,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
@@ -313,7 +312,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.newSubfileType);
         let firNSubfileType = resultFir.exifMetadata?.newSubfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(firNSubfileType);
@@ -341,7 +340,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(1);
@@ -370,7 +369,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(2);
@@ -398,7 +397,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.newSubfileType);
         expect(result.exifMetadata?.newSubfileType).assertEqual(2);
@@ -429,8 +428,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(1);
@@ -459,7 +457,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(2);
@@ -491,7 +489,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -522,7 +520,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -553,7 +551,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -586,7 +584,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -615,7 +613,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.webp');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(1);
@@ -644,7 +642,7 @@ export default function ImageNewSubFileTypeSupp() {
       };
       const imageSourceApi = await getImageSource('test_exif_v2.jpg');
       try {
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(2);
@@ -676,7 +674,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -707,7 +705,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -738,7 +736,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -770,7 +768,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -801,7 +799,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
@@ -832,7 +830,7 @@ export default function ImageNewSubFileTypeSupp() {
         let resultFir = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.subfileType);
         let firNSubfileType = resultFir.exifMetadata?.subfileType;
-        imageSourceApi.writeImageMetadata(imageMetadata);
+        await imageSourceApi.writeImageMetadata(imageMetadata);
         let result = await imageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.subfileType);
         expect(result.exifMetadata?.subfileType).assertEqual(firNSubfileType);
