@@ -14,7 +14,15 @@
  */
 
 import DeviceTest from './DeviceTest.test';
+import ModelTest from './ModelTest.test';
+import CompileTest from './CompileTest.test';
+import MemoryTest from './MemoryTest.test';
+import ExecutorTest from './ExecutorTest.test';
 
 export default function testsuite() {
   DeviceTest();
+  ModelTest();
+  CompileTest();
+  MemoryTest();
+  ExecutorTest();
 }
