@@ -109,15 +109,15 @@ export default function ImageGPSTrack() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_003
-     * @tc.name       SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_003
+     * @tc.number     SUB_MEDIA_IMAGE_GPS_TRACK_SUPP_003
+     * @tc.name       SUB_MEDIA_IMAGE_GPS_TRACK_SUPP_003
      * @tc.desc       ImageGPSTrack cover abnormal gpsTrack
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_003', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_003';
+    it('SUB_MEDIA_IMAGE_GPS_TRACK_SUPP_003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_GPS_TRACK_SUPP_003';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.gpsTrack = undefined;
       const imageMetadata: image.ImageMetadata = {
