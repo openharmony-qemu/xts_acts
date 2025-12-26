@@ -2954,6 +2954,23 @@ static void GetIntValue(struct OH_AVFormat *format, napi_env env, napi_value &Js
     }
 }
 
+static void GetUintValue(struct OH_AVFormat *format, napi_env env, napi_value &JsObject, const char* &key)
+{
+    const char* out = nullptr;
+    bool ret = false;
+    uint32_t value = 0;
+    ret = OH_AVFormat_GetUintValue(format, key, &value);
+    LOG("GetUintValue key:%{public}s value:%{public}d", key, ret);
+    std::string result = std::string(key) + " : %{public}d";
+    LOG(result.c_str(), value);
+    if (ret) {
+        out = std::to_string(value).c_str();
+        napi_value valueNapi = nullptr;
+        napi_create_uint32(env, value, &valueNapi);
+        napi_set_named_property(env, JsObject, key, valueNapi);
+    }
+}
+
 static void GetLongValue(struct OH_AVFormat *format, napi_env env, napi_value &JsObject, const char* &key)
 {
     const char* out = nullptr;
@@ -3005,15 +3022,15 @@ static napi_value NAPI_Global_GetPlaybackStatisticMetrics(napi_env env, napi_cal
         delete ndkAVPlayerUser;
         return result;
     }
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_PREPARE_DURATION);
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_RESOURCE_CONNECTION_DURATION);
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_FIRST_FRAME_DECAPSULATION_DURATION);
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_PLAYING_TIME);
-    GetIntValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_REQUESTS_COUNT);
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_DOWNLOAD_TIME);
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_DOWNLOAD_SIZE);
-    GetIntValue(metrics, env, result, OH_MEDIA_EVENT_INFO_STALLING_COUNT);
-    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_STALLING_TIME);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_PREPARE_DURATION);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_RESOURCE_CONNECTION_DURATION);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_FIRST_FRAME_DECAPSULATION_DURATION);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_PLAYING_TIME);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_REQUEST_COUNT);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_TIME);
+    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_SIZE);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_STALLING_COUNT);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_STALLING_TIME);
     OH_AVFormat_Destroy(metrics);
     OH_AVPlayer_ReleaseSync(player);
     delete ndkAVPlayerUser;
