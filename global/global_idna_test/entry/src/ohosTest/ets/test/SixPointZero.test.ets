@@ -1442,14 +1442,14 @@ export default function SixPointZeroTest() {
 
     /**
      * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_1600
-     * @tc.name      testOH_i18n_GetFirstStartFromTimeAnnualTimeZoneRule_1600
+     * @tc.name      testOH_i18n_GetFirstStartFromAnnualTimeZoneRule_1600
      * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOH_i18n_GetFirstStartFromTimeAnnualTimeZoneRule_1600', Level.LEVEL2, () => {
-      expect(testNapi.testOH_i18n_GetFirstStartFromTimeAnnualTimeZoneRule_1600()).assertTrue();
+    it('testOH_i18n_GetFirstStartFromAnnualTimeZoneRule_1600', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetFirstStartFromAnnualTimeZoneRule_1600()).assertTrue();
     })
 
     /**
@@ -1568,7 +1568,7 @@ export default function SixPointZeroTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOH_i18n_GetTimeZoneRules_2800', Level.LEVEL2, () => {
+    it('testOH_i18n_GetTimeZoneRules_2700', Level.LEVEL2, () => {
       expect(testNapi.testOH_i18n_GetTimeZoneRules_2700()).assertTrue();
     })
 

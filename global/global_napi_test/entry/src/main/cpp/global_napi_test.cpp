@@ -1485,8 +1485,8 @@ static napi_value GetRawFileDescriptorFalseOrTrue(napi_env env, napi_callback_in
     
     OH_ResourceManager_CloseRawFile(rawFile);
     OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-    bool flag = (resultTrue == true && resultFalse == false
-        && resultTrueRelease == true && resultFalseRelease == false);
+    bool flag = (resultTrue == true && resultFalse == false &&
+                resultTrueRelease == true && resultFalseRelease == false);
     napi_value value = nullptr;
     napi_get_boolean(env, flag, &value);
     return value;
@@ -1514,8 +1514,8 @@ static napi_value GetRawFileDescriptorDataFalseOrTrue(napi_env env, napi_callbac
     
     OH_ResourceManager_CloseRawFile(rawFile);
     OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-    bool flag = (resultTrue == true && resultFalse == false
-        && resultTrueRelease == true && resultFalseRelease == false);
+    bool flag = (resultTrue == true && resultFalse == false &&
+                resultTrueRelease == true && resultFalseRelease == false);
     napi_value value = nullptr;
     napi_get_boolean(env, flag, &value);
     return value;
@@ -1543,8 +1543,8 @@ static napi_value GetRawFileDescriptor64FalseOrTrue(napi_env env, napi_callback_
     
     OH_ResourceManager_CloseRawFile64(rawFile);
     OH_ResourceManager_ReleaseNativeResourceManager(mNativeResMgr);
-    bool flag = (resultTrue == true && resultFalse == false
-        && resultTrueRelease == true && resultFalseRelease == false);
+    bool flag = (resultTrue == true && resultFalse == false &&
+                resultTrueRelease == true && resultFalseRelease == false);
     napi_value value = nullptr;
     napi_get_boolean(env, flag, &value);
     return value;
@@ -1560,8 +1560,8 @@ static napi_value InitNativeRsMgrOpenRawDirRawFile64Null(napi_env env, napi_call
     RawFile *rawFile = OH_ResourceManager_OpenRawFile(mNativeResMgr, "test");
     RawFile64 *rawFile64 = OH_ResourceManager_OpenRawFile64(mNativeResMgr, "test");
 
-    bool flag = ((mNativeResMgr == nullptr) && (rawDir == nullptr)
-        && (rawFile == nullptr) && (rawFile64 == nullptr));
+    bool flag = ((mNativeResMgr == nullptr) && (rawDir == nullptr) &&
+                (rawFile == nullptr) && (rawFile64 == nullptr));
     napi_value value = nullptr;
     napi_get_boolean(env, flag, &value);
     return value;
