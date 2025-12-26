@@ -88,7 +88,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })
@@ -107,7 +107,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })
@@ -128,7 +128,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })
@@ -147,7 +147,7 @@ struct presentCustomDialogOrder {
               .then((dialogId: int) => {
                 this.customDialogComponentId = dialogId
               })
-              .catch((err: BusinessError): void => {
+              .catch((err: Error): void => {
                 console.error('presentCustomDialog error: ' + err.code + '' + err.message)
               })
           })

@@ -52,7 +52,7 @@ export default function formObserverTest() {
                         done();
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest001 catch error');
                 expect().assertFail();
                 done();
@@ -85,7 +85,7 @@ export default function formObserverTest() {
                     done();
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest002 getRunningFormInfoById success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest002 catch error');
                 expect().assertFail();
                 done();
@@ -118,7 +118,7 @@ export default function formObserverTest() {
                     }
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest003 getRunningFormInfoById  success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest003 catch error');
                 expect().assertFail();
                 done();
@@ -151,7 +151,7 @@ export default function formObserverTest() {
                     done();
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest004 getRunningFormInfoById success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest004 catch error');
                 expect().assertFail();
                 done();
@@ -184,7 +184,7 @@ export default function formObserverTest() {
                     }
                 }, true, hostBundleName);
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest005 getRunningFormInfos success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest005 catch error');
                 expect().assertFail();
                 done();
@@ -217,7 +217,7 @@ export default function formObserverTest() {
                     done();
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest006 getRunningFormInfos success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest006 catch error');
                 expect().assertFail();
                 done();
@@ -250,7 +250,7 @@ export default function formObserverTest() {
                     }
                 }, hostBundleName);
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest007 getRunningFormInfos success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest007 catch error');
                 expect().assertFail();
                 done();
@@ -283,7 +283,7 @@ export default function formObserverTest() {
                     done();
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest008 getRunningFormInfos success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest008 catch error');
                 expect().assertFail();
                 done();
@@ -321,7 +321,7 @@ export default function formObserverTest() {
                     done();
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest009 getRunningFormInfosByFilter success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest009 catch error');
                 expect().assertFail();
                 done();
@@ -359,7 +359,7 @@ export default function formObserverTest() {
                     }
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest010 getRunningFormInfosByFilter success');
-            } catch (error: BusinessError) {
+            } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest010 catch error');
                 expect().assertFail();
                 done();
@@ -389,7 +389,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest011 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest011 catch error, code: ${code}, message: ${message})`);
@@ -421,7 +421,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest012 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest012 catch error, code: ${code}, message: ${message})`);
@@ -452,7 +452,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest013 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest013 catch error, code: ${code}, message: ${message})`);
@@ -484,7 +484,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest014 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest014 catch error, code: ${code}, message: ${message})`);
@@ -516,7 +516,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest015 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest015 catch error, code: ${code}, message: ${message})`);
@@ -548,7 +548,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest016 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest016 catch error, code: ${code}, message: ${message})`);
@@ -580,7 +580,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest017 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest017 catch error, code: ${code}, message: ${message})`);
@@ -612,7 +612,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest018 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest018 catch error, code: ${code}, message: ${message})`);
@@ -644,7 +644,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest019 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest019 catch error, code: ${code}, message: ${message})`);
@@ -676,7 +676,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest020 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest020 catch error, code: ${code}, message: ${message})`);
@@ -708,7 +708,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest021 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest021 catch error, code: ${code}, message: ${message})`);
@@ -740,7 +740,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest022 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest022 catch error, code: ${code}, message: ${message})`);
@@ -772,7 +772,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest023 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest023 catch error, code: ${code}, message: ${message})`);
@@ -804,7 +804,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest024 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest024 catch error, code: ${code}, message: ${message})`);
@@ -836,7 +836,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest025 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest025 catch error, code: ${code}, message: ${message})`);
@@ -868,7 +868,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest026 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest026 catch error, code: ${code}, message: ${message})`);
@@ -900,7 +900,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest027 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest027 catch error, code: ${code}, message: ${message})`);
@@ -932,7 +932,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest028 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest028 catch error, code: ${code}, message: ${message})`);
@@ -964,7 +964,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest029 formObserver off success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest029 catch error, code: ${code}, message: ${message})`);
@@ -996,7 +996,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest030 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest030 catch error, code: ${code}, message: ${message})`);
@@ -1028,7 +1028,7 @@ export default function formObserverTest() {
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest031 formObserver on success');
                 expect().assertFail();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
                 let code = (error as BusinessError).code;
                 let message = (error as BusinessError).message;
                 hilog.error(DOMAIN, TAG, `formObserverStaticTest031 catch error, code: ${code}, message: ${message})`);

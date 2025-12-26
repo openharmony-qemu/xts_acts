@@ -60,7 +60,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -92,7 +92,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -127,7 +127,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -162,7 +162,7 @@ export default function startAbilityForResultTestStatic() {
           hilog.info(domain, tag, `startAbilityForResult success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbilityForResult error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -201,7 +201,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -235,7 +235,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -272,7 +272,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -309,7 +309,7 @@ export default function startAbilityForResultTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `startAbilityForResult fail: ` + JSON.stringify(err));
         expect().assertFail();
         done();

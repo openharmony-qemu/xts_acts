@@ -271,7 +271,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 ${err.code}`);
               expect(err.code).assertEqual(16000004);
               done();
@@ -310,7 +310,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 ${err.code}`);
               expect(err.code).assertEqual(16000019);
               done();
@@ -357,7 +357,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 ${err.code}`);
               expect(err.code).assertEqual(16000050);
               done();
@@ -394,7 +394,7 @@ export default function UIAbilityContextteststatic() {
               hilog.info(domain, tag, '%{public}s', `startAbilityByCall succeed`);
               expect().assertFail();
               done();
-            }).catch((err: BusinessError): void => {
+            }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 ${err.code}`);
             expect(err.code).assertEqual(16000001);
             done();
@@ -439,7 +439,7 @@ export default function UIAbilityContextteststatic() {
               hilog.info(domain, tag, '%{public}s', `startAbilityByCall succeed`);
               expect().assertFail();
               done();
-            }).catch((err: BusinessError): void => {
+            }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 ${err.code}`);
             expect(err.code).assertEqual(16000050);
             done();
@@ -539,7 +539,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
               expect(err.code).assertEqual(16000005);
               done();
@@ -564,7 +564,7 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
-        .catch((err: BusinessError<void>): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
               done();
@@ -604,7 +604,7 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
-        .catch((err: BusinessError<void>): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
               done();
@@ -641,7 +641,7 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
-        .catch((err: BusinessError<void>): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
               done();
@@ -663,7 +663,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
               expect(err?.code).assertEqual(201);
               done();
@@ -744,7 +744,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
               if (err.code !== 0) {
                 if(err.code==801) {

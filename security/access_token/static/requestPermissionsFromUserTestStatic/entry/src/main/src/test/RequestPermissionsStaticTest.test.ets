@@ -228,7 +228,7 @@ export default function requestPermissionsStaticTest() {
               expect(false).assertFail();
               done();
             });
-          }).catch((error: BusinessError): void => {
+          }).catch((error: Error): void => {
             hilog.info(domain, tag,
               "Test_requestPermissionsFromUser_005 error2" + JSON.stringify(error));
             expect(false).assertFail();
@@ -275,12 +275,12 @@ export default function requestPermissionsStaticTest() {
               expect(data.authResults[1]).assertEqual(-1); // -1: not granted
               expect(data.dialogShownResults?.[1]).assertEqual(false);
               done();
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
               hilog.info(domain, tag, "Test_requestPermissionsFromUser_006 error2" + JSON.stringify(error));
               expect(false).assertFail();
               done();
             });
-          }).catch((error: BusinessError): void => {
+          }).catch((error: Error): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_007 error1" + JSON.stringify(error));
             expect(false).assertFail();
             done();
@@ -324,7 +324,7 @@ export default function requestPermissionsStaticTest() {
             expect(data.authResults[0]).assertEqual(2); // 2: invalid
             expect(data.dialogShownResults?.[0]).assertEqual(false);
             done();
-          }).catch((error: BusinessError): void => {
+          }).catch((error: Error): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_007 error" + JSON.stringify(error));
             expect(false).assertFail();
             done();

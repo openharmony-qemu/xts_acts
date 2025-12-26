@@ -55,7 +55,7 @@ export default function ActsNotificationBadgeTest() {
       }
       notificationManager.requestEnableNotification(testAbilityContext).then(() => {
         console.info(`${TAG} requestEnableNotification succeeded`);
-      }).catch((err: BusinessError) :void=> {
+      }).catch((err: Error) :void=> {
         console.info(`${TAG} requestEnableNotification err: `+ JSON.stringify(err));
         expect(err).assertNull()
       });
@@ -154,7 +154,7 @@ export default function ActsNotificationBadgeTest() {
           count++;
           expect(count).assertEqual(1);
           done();
-        }).catch((err: BusinessError) :void => {
+        }).catch((err: Error) :void => {
           console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_1000 failed, error code: ${err.code}, message: ${err.message}`)
           if(err.code == 801){
             expect(err.code == 801).assertTrue()

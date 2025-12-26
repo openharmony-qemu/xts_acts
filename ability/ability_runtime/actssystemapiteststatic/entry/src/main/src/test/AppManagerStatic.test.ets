@@ -76,7 +76,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1700 killProcessesByBundleName success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(201);
           done();
@@ -105,7 +105,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, 'System_API_Test_App_Manager_Static_1800 killProcessesByBundleName success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(201);
           done();
@@ -152,7 +152,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, 'isRunningInStabilityTest success, pid: ' + data);
           expect(data).assertFalse();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, ' isRunningInStabilityTest error, err: ' + err?.code);
           expect().assertFail();
           done();
@@ -204,7 +204,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
           expect(data).assertFalse();
           done();
-        }).catch((err: BusinessError): void=>{
+        }).catch((err: Error): void=>{
           hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
           expect(err?.code).assertEqual(201);
           done();
@@ -232,7 +232,7 @@ export default function appManagerStaticTest() {
           hilog.info(domain, tag, `isAppRunning success, data: ${data}`);
           expect(data).assertFalse();
           done();
-        }).catch((err: BusinessError): void=>{
+        }).catch((err: Error): void=>{
           hilog.info(domain, tag, `isAppRunning error, err: ${err?.code}`);
           expect(err?.code).assertEqual(201);
           done();
@@ -282,7 +282,7 @@ export default function appManagerStaticTest() {
         appManager.isRamConstrainedDevice().then((data: boolean)=>{
           expect(typeof data).assertEqual('boolean');
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           expect().assertFail();
           done();
         })
@@ -310,7 +310,7 @@ export default function appManagerStaticTest() {
           expect(typeof (data)).assertEqual("int");
           expect(data).assertLarger(0);
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           expect().assertFail();
           done();
         })

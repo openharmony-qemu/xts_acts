@@ -128,7 +128,7 @@ export default function WindowTitleTest() {
                         }
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -165,7 +165,7 @@ export default function WindowTitleTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -300,7 +300,7 @@ export default function WindowTitleTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -349,7 +349,7 @@ export default function WindowTitleTest() {
                         done();
                     }
                 })
-                .catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                .catch((err: Error) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -390,7 +390,7 @@ export default function WindowTitleTest() {
                         done()
                     }
                 })
-                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                .catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -665,7 +665,7 @@ export default function WindowTitleTest() {
                 await (subWin! as window.Window).setWindowTitle("titleName").then(async () => {
                     console.info(msgStr + 'Succeeded in calling setWindowTitle.');
                     expect(false).assertTrue();
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
                 });
@@ -704,7 +704,7 @@ export default function WindowTitleTest() {
             try {
                 await (subWin! as window.Window).setWindowTitle("titleName").then(async () => {
                     console.info(msgStr + 'Succeeded in calling setWindowTitle.');
-                }).catch(async (err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
                     if(err.code == 801){
                         done();

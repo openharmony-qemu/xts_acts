@@ -156,7 +156,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>(invalidPermission);
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_003 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -182,7 +182,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.APP_TRACKING_CONSENT");
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_004 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -208,7 +208,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.USE_BLUETOOTH");
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_005 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -234,7 +234,7 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA", "ohos.permission.MICROPHONE");
       if (testAbilityContext) {
         try {
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_006 error" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
@@ -261,7 +261,7 @@ export default function requestPermissionOnSettingStaticTest() {
       if (testAbilityContext) {
         try {
           // 1. 申请的权限未被操作过
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_007 error1" + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
@@ -278,7 +278,7 @@ export default function requestPermissionOnSettingStaticTest() {
               hilog.info(domain, tag, "requestPermissionsFromUser expect ");
 
               // 3. 申请已经被用户授予的权限
-              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
                 hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_007 error2" + JSON.stringify(error));
                 expect(error.code).assertEqual(ERR_ALL_PERM_GRANTED);
                 done();
@@ -310,7 +310,7 @@ export default function requestPermissionOnSettingStaticTest() {
       if (testAbilityContext) {
         try {
           // 1. 申请的权限未被操作过
-          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+          atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 error1 " + JSON.stringify(error));
             expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
@@ -323,7 +323,7 @@ export default function requestPermissionOnSettingStaticTest() {
               expect(data.dialogShownResults?.[0]).assertEqual(true);
 
               // 2. 申请权限，禁止一个权限，另外一个未操作, throw 12100012
-              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+              atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
                 hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 error2 " + JSON.stringify(error));
                 expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
@@ -344,7 +344,7 @@ export default function requestPermissionOnSettingStaticTest() {
                     expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
                     expect(data[1]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
 
-                    atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: BusinessError): void => {
+                    atManager.requestPermissionOnSetting(testAbilityContext, permissionList).catch((error: Error): void => {
                       hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 error3 " + JSON.stringify(error));
                       expect(error.code).assertEqual(ERR_ALL_PERM_GRANTED);
 

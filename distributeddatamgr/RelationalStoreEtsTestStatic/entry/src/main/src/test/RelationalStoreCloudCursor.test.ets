@@ -55,7 +55,7 @@ export default function relationalStoreCloudCursor() {
               await rdbStore!.setDistributedTables(
                 ["query_tb"], relationalStore.DistributedType.DISTRIBUTED_CLOUD, setConfig);
                 console.log(TAG + "setDistributedTables table query_tb success");
-            } catch (err: BusinessError) {
+            } catch (err) {
               console.log(TAG + `failed, err: ${JSON.stringify(err)}`)
               expect().assertFail()
             }
@@ -76,7 +76,7 @@ export default function relationalStoreCloudCursor() {
                 }
                 await rdbStore!.batchInsert("query_tb", vBucketArray1);
                 console.log(TAG + "batchInsert query_tb success");
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.log(TAG + `insert failed, err: ${JSON.stringify(err)}`)
                 expect().assertFail()
             }
@@ -89,7 +89,7 @@ export default function relationalStoreCloudCursor() {
                 predicates.equalTo("data", "cloud_cursor_insert");
                 await rdbStore!.delete(predicates);
                 console.log(TAG + "delete table query_tb success");
-            } catch (err: BusinessError) {
+            } catch (err) {
                 console.log(TAG + `delete failed, err: ${JSON.stringify(err)}`)
                 expect().assertFail()
             }
@@ -120,13 +120,13 @@ export default function relationalStoreCloudCursor() {
           rdbStore = await relationalStore.getRdbStore(context, config);
           if (rdbStore != undefined) {
             try {
-              rdbStore.cleanDirtyData("wrongTest", 100, async (err: BusinessError) => {
+              rdbStore.cleanDirtyData("wrongTest", 100, (err: BusinessError | null) => {
               })
-              rdbStore.cleanDirtyData("test", 100, async (err: BusinessError) => {
+              rdbStore.cleanDirtyData("test", 100, (err: BusinessError | null) => {
               })
               await rdbStore.cleanDirtyData("test");
               expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
               console.error(TAG + 'Failed to cleanDirtyData: ' + err.code + ',message:' + err.message);
               expect(err.code).assertEqual(14800000)
             }

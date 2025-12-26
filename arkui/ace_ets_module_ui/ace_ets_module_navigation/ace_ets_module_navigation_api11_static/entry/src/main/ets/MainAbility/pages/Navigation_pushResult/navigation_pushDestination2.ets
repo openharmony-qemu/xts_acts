@@ -61,7 +61,7 @@ struct navigation_pushDestination2 {
               .then(()=>{
                 this.str = 'success'
               })
-              .catch((error: BusinessError): void=>{
+              .catch((error: Error): void=>{
                 this.code = String(error.code) + error.message
               })
           })

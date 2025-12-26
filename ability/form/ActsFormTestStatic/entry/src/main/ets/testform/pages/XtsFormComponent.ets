@@ -80,10 +80,10 @@ struct XtsFormComponent {
             };
             formProvider.requestOverflow(this.formId, overflowInfo).then(() => {
               hilog.info(DOMAIN, TAG, 'requestOverflow succeed');
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
               hilog.info(DOMAIN, TAG, `requestOverflow err: code is ${error.code}, message ${error.message}`);
             })
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG, `requestOverflow err: code is ${(error as BusinessError).code}, message ${(error as BusinessError).message}`);
           }
         })
@@ -94,10 +94,10 @@ struct XtsFormComponent {
           try {
             formProvider.cancelOverflow(this.formId).then(() => {
               hilog.info(DOMAIN, TAG, 'cancelOverflow succeed');
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
               hilog.info(DOMAIN, TAG, `cancelOverflow err: code is ${error.code}, message ${error.message}`);
             })
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG, `cancelOverflow err: code is ${(error as BusinessError).code}, message ${(error as BusinessError).message}`);
           }
         })
@@ -108,10 +108,10 @@ struct XtsFormComponent {
           try {
             formProvider.activateSceneAnimation(this.formId).then(() => {
               hilog.info(DOMAIN, TAG, 'activateSceneAnimation succeed');
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
               hilog.info(DOMAIN, TAG, `activateSceneAnimation err: code is ${error.code}, message ${error.message}`);
             })
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG, `activateSceneAnimation err: code is ${(error as BusinessError).code}, message ${(error as BusinessError).message}`);
           }
         })
@@ -122,10 +122,10 @@ struct XtsFormComponent {
           try {
             formProvider.deactivateSceneAnimation(this.formId).then(() => {
               hilog.info(DOMAIN, TAG, 'deactivateSceneAnimation succeed');
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
               hilog.info(DOMAIN, TAG, `deactivateSceneAnimation err: code is ${error.code}, message ${error.message}`);
             })
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG, `deactivateSceneAnimation err: code is ${(error as BusinessError).code}, message ${(error as BusinessError).message}`);
           }
         })
@@ -137,10 +137,10 @@ struct XtsFormComponent {
           try {
             formProvider.getFormRect(this.formId).then((data: formInfo.Rect) => {
               hilog.info(DOMAIN, TAG, `getFormRect succeed, data: ${JSON.stringify(data)}`);
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
               hilog.info(DOMAIN, TAG, `getFormRect err: code is ${error.code}, message ${error.message}`);
             })
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG, `getFormRect err: code is ${(error as BusinessError).code}, message ${(error as BusinessError).message}`);
           }
         })
@@ -157,7 +157,7 @@ struct XtsFormComponent {
           try {
             formHost.onFormOverflow(callback);
             hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow success');
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(0x0000, 'testTag EntryFormAbility', `formOverflow catch error ${error.code}, ${error.message}`);
           }
         })
@@ -174,7 +174,7 @@ struct XtsFormComponent {
           try {
             formHost.offFormOverflow(callback);
             hilog.info(0x0000, 'testTag EntryFormAbility', 'formOverflow success');
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(0x0000, 'testTag EntryFormAbility', `formOverflow catch error ${error.code}, ${error.message}`);
           }
         })
@@ -190,7 +190,7 @@ struct XtsFormComponent {
           try {
             formHost.onChangeSceneAnimationState(callback);
             hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState on success');
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(0x0000, 'testTag EntryFormAbility', `changeSceneAnimationState on catch error ${error.code}, ${error.message}`);
           }
         })
@@ -206,7 +206,7 @@ struct XtsFormComponent {
           try {
             formHost.offChangeSceneAnimationState(callback);
             hilog.info(0x0000, 'testTag EntryFormAbility', 'changeSceneAnimationState off success');
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.info(0x0000, 'testTag EntryFormAbility', `changeSceneAnimationState off catch error ${error.code}, ${error.message}`);
           }
         })

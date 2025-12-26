@@ -75,7 +75,7 @@ export default function ActsNotificationPublishTest() {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       wantAgent.getWantAgent(wantAgentInfo).then((data) => {
         wantAgentData = data;
-      }).catch((err: BusinessError) :void => {
+      }).catch((err: Error) :void => {
         console.error('getWantAgent failed! ${err.code} ${err.message}');
       });
       await Utils.msSleep(1000)
@@ -169,7 +169,7 @@ export default function ActsNotificationPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} requestEnableNotification Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -291,7 +291,7 @@ export default function ActsNotificationPublishTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
         expect(false).assertTrue()
         done()
@@ -426,7 +426,7 @@ export default function ActsNotificationPublishTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
         expect(false).assertTrue()
         done()
@@ -560,7 +560,7 @@ export default function ActsNotificationPublishTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err:BusinessError):void  => {
+      }).catch((err:Error):void  => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
         expect(false).assertTrue()
         done()
@@ -700,7 +700,7 @@ export default function ActsNotificationPublishTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err:BusinessError):void  => {
+      }).catch((err:Error):void  => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
         expect(false).assertTrue()
         done()
@@ -761,7 +761,7 @@ export default function ActsNotificationPublishTest() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err:BusinessError):void  => {
+      }).catch((err:Error):void  => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
         expect(false).assertTrue()
         done()
@@ -816,7 +816,7 @@ export default function ActsNotificationPublishTest() {
           console.info(`${TAG} cancel Promise success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancel Promise err: ${err.code}`)
           expect(err.code).assertEqual(1600007)
           done()
@@ -826,7 +826,7 @@ export default function ActsNotificationPublishTest() {
           console.info(`${TAG} cancel Promise success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancel Promise_2 err: ${err.code}`)
           expect(err.code).assertEqual(1600007)
           done()
@@ -879,7 +879,7 @@ export default function ActsNotificationPublishTest() {
           console.info(`${TAG} cancel Promise success`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancel Promise err: ${err.code}`)
           expect(err.code).assertEqual(1600007)
           done()
@@ -960,7 +960,7 @@ export default function ActsNotificationPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancelAll Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1016,7 +1016,7 @@ export default function ActsNotificationPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1042,7 +1042,7 @@ export default function ActsNotificationPublishTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1093,7 +1093,7 @@ export default function ActsNotificationPublishTest() {
           console.info(`${TAG} getActiveNotificationCount Promise success :${data}`)
           expect(data !== null).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1151,7 +1151,7 @@ export default function ActsNotificationPublishTest() {
             expect(data.length == 0).assertTrue()
             done()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getActiveNotifications Promise err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -1210,7 +1210,7 @@ export default function ActsNotificationPublishTest() {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
           expect(data).assertFalse()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1235,7 +1235,7 @@ export default function ActsNotificationPublishTest() {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
           expect(data).assertFalse()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()

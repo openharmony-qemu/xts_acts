@@ -121,7 +121,7 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
             const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
             await context.moveAbilityToBackground()
-              .catch((err: BusinessError<void>): void => {
+              .catch((err: Error): void => {
                 hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
                 if(err?.code == 16000061) {
                   done();

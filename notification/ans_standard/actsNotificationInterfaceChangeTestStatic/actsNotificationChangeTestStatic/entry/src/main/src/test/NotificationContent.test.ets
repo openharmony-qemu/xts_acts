@@ -167,7 +167,7 @@ export default function ActsNotificationContentTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} =====size: ====  ${imageInfo.size}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
         })
         let notificationRequest: notificationManager.NotificationRequest = {

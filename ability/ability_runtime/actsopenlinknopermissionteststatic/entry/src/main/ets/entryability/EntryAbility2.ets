@@ -37,7 +37,7 @@ class EntryAbility2 extends UIAbility {
         }
         hilog.info(0x0000, 'testTag EntryAbility2', 'loadContent2 ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag EntryAbility2', 'loadContent2 catch error：-----------' + e.message);
     }
   }
@@ -64,7 +64,7 @@ class EntryAbility2 extends UIAbility {
     setTimeout(async () => {
       await this.context.terminateSelfWithResult(abilityResult).then(() => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf sucess');
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.info(0x0000, 'testTag', '%{public}s', 'secondAbility terminateSelf errCode:' + JSON.stringify(err.code) +
           'errMessage:' + JSON.stringify(err.message));
       })

@@ -66,7 +66,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -98,7 +98,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -187,7 +187,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -222,7 +222,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
