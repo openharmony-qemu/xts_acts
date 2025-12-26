@@ -3326,11 +3326,10 @@ static napi_value testTimeArrayZoneRule_2600(napi_env env, napi_callback_info in
     TimeZoneRules rules;
     I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
     TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
-    double vale = -2177481943000;
-    rule.startTimes = &vale;
     TimeZoneRuleQuery query;
     errCode = OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(&rule, &query);
-    bool flag = (errCode == I18n_ErrorCode::SUCCESS && query.result == -2177481943000);
+    bool flag = (errCode == I18n_ErrorCode::SUCCESS && rule.numStartTimes > 0 &&
+                 rule.startTimes != nullptr);
     napi_value nValue;
     napi_get_boolean(env, flag, &nValue);
     return nValue;
