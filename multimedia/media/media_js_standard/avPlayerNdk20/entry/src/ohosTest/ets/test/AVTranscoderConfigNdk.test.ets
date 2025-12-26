@@ -450,6 +450,72 @@ export default function AVTranscoderConfigNdkTest() {
           done()
         }
       })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_Create0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_Create0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_Create0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVTranscoderConfig_Create0100 start====");
+          let result: number = avtranscoderconfig.Create100();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_AVTranscoderConfig_Create100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0200
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0200
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0200 start====");
+          let result: number = avtranscoderconfig.Release200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0200
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0200
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0200 start====");
+          let result: number = avtranscoderconfig.SetDstFD200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
 
 
   })
