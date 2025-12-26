@@ -3186,6 +3186,182 @@ static napi_value testOH_i18n_GetStartInYear_1300(napi_env env, napi_callback_in
     return nValue;
 }
 
+static napi_value testOH_i18n_GetTimeZoneRules_1400(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("", &rules);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRule_1500(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetFirstStartFromAnnualTimeZoneRule_1600(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetFirstStartFromAnnualTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRule_1700(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetFinalStartFromTimeArrayTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetNextStartFromTimeArrayTimeZoneRule_1900(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetNextStartFromTimeArrayTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetNextStartFromAnnualTimeZoneRule_2000(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetNextStartFromAnnualTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRule_2100(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetPrevStartFromTimeArrayTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetPrevStartFromAnnualTimeZoneRule_2200(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetPrevStartFromAnnualTimeZoneRule(nullptr, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetStartTimeAt_2300(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    double result;
+    errCode = OH_i18n_GetStartTimeAt(nullptr, 0, &result);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetStartInYear_2400(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeZoneRuleQuery query;
+    const int32_t year = 2024;
+    errCode = OH_i18n_GetStartInYear(nullptr, year, &query);
+    bool flag = (errCode == I18n_ErrorCode::ERROR_INVALID_PARAMETER);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+
+static napi_value testOH_i18n_TimeZoneRuleQuery_2500(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
+    TimeZoneRuleQuery query;
+    query.prevRawOffset = 0;
+    query.prevDSTSavings = 0;
+    errCode = OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(&rule, &query);
+    bool flag = (errCode == I18n_ErrorCode::SUCCESS);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testTimeArrayZoneRule_2600(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Asia/Shanghai", &rules);
+    TimeArrayTimeZoneRule rule = rules.timeArrayRules[0];
+    TimeZoneRuleQuery query;
+    errCode = OH_i18n_GetFirstStartFromTimeArrayTimeZoneRule(&rule, &query);
+    bool flag = (errCode == I18n_ErrorCode::SUCCESS && rule.numStartTimes > 0 &&
+                 rule.startTimes != nullptr);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetTimeZoneRules_2700(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Africa/Cairo", &rules);
+    bool ec = (errCode == I18n_ErrorCode::SUCCESS);
+    AnnualTimeZoneRule rule = rules.annualRules[0];
+    bool dateRuleType = (rule.dateTimeRule.dateRuleType == DateRuleType::DOW_LEQ_DOM);
+    bool timeRuleType = (rule.dateTimeRule.timeRuleType == TimeRuleType::WALL_TIME);
+    bool flag = (ec && dateRuleType && timeRuleType);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
+static napi_value testOH_i18n_GetTimeZoneRules_2800(napi_env env, napi_callback_info info)
+{
+    TimeZoneRules rules;
+    I18n_ErrorCode errCode = OH_i18n_GetTimeZoneRules("Australia/Adelaide", &rules);
+    bool ec = (errCode == I18n_ErrorCode::SUCCESS);
+    AnnualTimeZoneRule rule = rules.annualRules[0];
+    bool timeRuleType = (rule.dateTimeRule.timeRuleType == TimeRuleType::STANDARD_TIME);
+    bool flag = (ec && timeRuleType);
+    napi_value nValue;
+    napi_get_boolean(env, flag, &nValue);
+    return nValue;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3573,7 +3749,35 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200", nullptr,
          testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testOH_i18n_GetStartInYear_1300", nullptr, testOH_i18n_GetStartInYear_1300, nullptr, nullptr, nullptr,
-         napi_default, nullptr}
+         napi_default, nullptr},
+        {"testOH_i18n_GetTimeZoneRules_1400", nullptr, testOH_i18n_GetTimeZoneRules_1400, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRule_1500", nullptr,
+         testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRule_1500, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetFirstStartFromAnnualTimeZoneRule_1600", nullptr,
+         testOH_i18n_GetFirstStartFromAnnualTimeZoneRule_1600, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRule_1700", nullptr,
+         testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRule_1700, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetNextStartFromTimeArrayTimeZoneRule_1900", nullptr,
+         testOH_i18n_GetNextStartFromTimeArrayTimeZoneRule_1900, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetNextStartFromAnnualTimeZoneRule_2000", nullptr,
+         testOH_i18n_GetNextStartFromAnnualTimeZoneRule_2000, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRule_2100", nullptr,
+         testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRule_2100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetPrevStartFromAnnualTimeZoneRule_2200", nullptr,
+         testOH_i18n_GetPrevStartFromAnnualTimeZoneRule_2200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testOH_i18n_GetStartTimeAt_2300", nullptr, testOH_i18n_GetStartTimeAt_2300, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testOH_i18n_GetStartInYear_2400", nullptr, testOH_i18n_GetStartInYear_2400, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testOH_i18n_TimeZoneRuleQuery_2500", nullptr, testOH_i18n_TimeZoneRuleQuery_2500, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testTimeArrayZoneRule_2600", nullptr, testTimeArrayZoneRule_2600, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testOH_i18n_GetTimeZoneRules_2700", nullptr, testOH_i18n_GetTimeZoneRules_2700, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testOH_i18n_GetTimeZoneRules_2800", nullptr, testOH_i18n_GetTimeZoneRules_2800, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
