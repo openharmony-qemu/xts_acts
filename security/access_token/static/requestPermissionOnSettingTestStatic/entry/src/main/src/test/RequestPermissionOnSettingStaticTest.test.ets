@@ -525,10 +525,8 @@ export default function requestPermissionOnSettingStaticTest() {
               }
             });
             await Utils.msSleep(2000);
-            if (!clickRequest(driver2, '允许')) {
-              if (clickRequest(driver2, '仅使用期间允许')) {
-                clickRequest(driver2, '确定');
-              }
+            if (clickRequest(driver2, '始终允许') || clickRequest(driver2, '仅使用期间允许')) {
+              clickRequest(driver2, '确定');
             }
           });
           await Utils.msSleep(2000);
@@ -593,6 +591,12 @@ export default function requestPermissionOnSettingStaticTest() {
               clickRequest(driver2, '确定');
             }
           });
+          await Utils.msSleep(2000);
+          if(!clickRequest(driver1, '禁止')) {
+            if(!clickRequest(driver1, '不允许')) {
+              clickRequest(driver1, '取消');
+            }
+          }
           await Utils.msSleep(2000);
           if(!clickRequest(driver1, '禁止')) {
             if(!clickRequest(driver1, '不允许')) {
