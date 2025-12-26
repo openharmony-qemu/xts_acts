@@ -162,6 +162,7 @@ import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+import ImageExifSuppTest from './image/ImageExifSupp.Test.test';
 import ImageFlashEnergySupp from './image/ImageFlashEnergySupp.test';
 import ImageSourceMeteringModeSupp from './image/ImageSourceMeteringMode.test';
 import ImageSourceLightSourceSupp from './image/ImageSourceLightSource.test';
@@ -180,6 +181,7 @@ import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.t
 import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
 import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
 import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
+
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -327,6 +329,7 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
+  ImageExifSuppTest();
   ImageFlashEnergySupp();
   ImageSourceMeteringModeSupp();
   ImageSourceLightSourceSupp();
