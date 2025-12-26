@@ -562,7 +562,7 @@ export default function StringTest() {
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
+          expect(err.name).assertEqual('StringIndexOutOfBoundsError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -608,7 +608,7 @@ export default function StringTest() {
         let flag1 = sentence.charAt(index);
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
+          expect(err.name).assertEqual('StringIndexOutOfBoundsError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -631,7 +631,7 @@ export default function StringTest() {
         let flag1 = sentence.charAt(index);
       } catch (err) {
         if (err instanceof RangeError) {
-          expect(err.name).assertEqual('RangeError');
+          expect(err.name).assertEqual('StringIndexOutOfBoundsError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
@@ -3707,7 +3707,7 @@ export default function StringTest() {
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof OutOfMemoryError) {
-          expect(err.name).assertEqual('RangeError');
+          expect(err.name).assertEqual('OutOfMemoryError');
         } else {
           console.error(`Unexpected error: ${err}`);
           expect(false).assertFail();
