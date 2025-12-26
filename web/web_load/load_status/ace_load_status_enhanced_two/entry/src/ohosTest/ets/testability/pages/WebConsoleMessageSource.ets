@@ -42,7 +42,7 @@ struct WebConsoleMessageSource {
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
         try {
