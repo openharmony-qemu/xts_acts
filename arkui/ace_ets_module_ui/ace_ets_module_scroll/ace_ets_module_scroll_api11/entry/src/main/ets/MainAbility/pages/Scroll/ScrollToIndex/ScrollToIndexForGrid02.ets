@@ -142,6 +142,7 @@ struct ScrollToIndexForGrid02 {
                 .columnsTemplate(!this.moreItem ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr")
                 .columnsGap(10)
                 .rowsGap(10)
+                .cachedCount(0)
                 .width('95%')
                 .backgroundColor(0xFAEEE0)
                 .height('20%')

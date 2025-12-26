@@ -168,65 +168,66 @@ struct audioNew {
 
   build() {
     Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back')).width('20vp').height('18vp')
-        }.backgroundColor(Color.Black).size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/Player/Player_index',
-            params: { result: 'None', }
-          })
-        })
-
-        Row() {
-          Text('Player Audio')
-            .fontColor(Color.White)
-            .fontSize('22fp')
-        }.justifyContent(FlexAlign.SpaceAround).backgroundColor(Color.Black)
-
-        Row() {
+      Scroll(){
+        Row({space:20}) {
           Button() {
-            Image($r('app.media.ic_public_delete'))
-              .width('30vp')
-              .height('30vp')
-          }.backgroundColor(Color.Black)
+            Image($r('app.media.ic_public_back')).width('20vp').height('18vp')
+          }.backgroundColor(Color.Black).size({ width: '40vp', height: '30vp' })
           .onClick(() => {
-            AlertDialog.show(
-              {
-                message: "是否删除所有记录",
-                primaryButton: {
-                  value: 'Yes',
-                  action: () => {
-                    this.ClearAll = true;
-                    this.ColorObject.forEach((value, index) => {
-                      this.ColorObject[index] = '#ff808080';
-                    });
-                    this.ClearText();
-                    promptAction.showToast({
-                      message: '结果已删除', duration: 1000
-                    });
-                  }
-                },
-                secondaryButton: {
-                  value: 'No',
-                  action: () => {
-
-                  }
-                },
-                cancel: () => {
-
-                }
-              }
-            )
+            router.back({
+              url: 'pages/Player/Player_index',
+              params: { result: 'None', }
+            })
           })
+
+          Row() {
+            Text('Player Audio')
+              .fontColor(Color.White)
+              .fontSize('18fp')
+          }.justifyContent(FlexAlign.SpaceAround).backgroundColor(Color.Black)
+
+          Row() {
+            Button() {
+              Image($r('app.media.ic_public_delete'))
+                .width('30vp')
+                .height('30vp')
+            }.backgroundColor(Color.Black)
+            .onClick(() => {
+              AlertDialog.show(
+                {
+                  message: "是否删除所有记录",
+                  primaryButton: {
+                    value: 'Yes',
+                    action: () => {
+                      this.ClearAll = true;
+                      this.ColorObject.forEach((value, index) => {
+                        this.ColorObject[index] = '#ff808080';
+                      });
+                      this.ClearText();
+                      promptAction.showToast({
+                        message: '结果已删除', duration: 1000
+                      });
+                    }
+                  },
+                  secondaryButton: {
+                    value: 'No',
+                    action: () => {
+
+                    }
+                  },
+                  cancel: () => {
+
+                  }
+                }
+              )
+            })
+          }
         }
-      }
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceAround)
-      .margin({ top: '15vp' })
-      .height('6%')
-      .backgroundColor(Color.Black)
+        .height('20%')
+        .width('160%')
+        .justifyContent(FlexAlign.Center)
+        .backgroundColor(Color.Black)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
       List({ space: 5 }) {
         ForEach(this.TestCaseList, (item: TestCase, index) => {
@@ -252,7 +253,7 @@ struct audioNew {
             })
           }
         }, (item: TestCase) => item.displayName)
-      }.width('100%').height('80%')
+      }.width('100%').height('60%')
 
       Row() {
         Blank()

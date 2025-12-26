@@ -306,7 +306,8 @@ export default function DecimalTest004() {
       try {
         test_tanh_001('e', 17, 6, '0.72589581132601256');
         expect(true).assertEqual(false);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

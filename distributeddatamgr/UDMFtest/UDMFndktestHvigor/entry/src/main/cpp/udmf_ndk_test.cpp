@@ -2683,6 +2683,158 @@ static napi_value OH_UdmfDataLoadParams_SetLoadHandler001(napi_env env, napi_cal
     return result;
 }
 
+static napi_value OH_UdmfOptions_GetKey_004(napi_env env, napi_callback_info info)
+{
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    int strMax = 256;
+    std::string str(strMax, 'A');
+    const char* testKey = str.c_str();
+    int result = OH_UdmfOptions_SetKey(options, testKey);
+    NAPI_ASSERT(env, result == UDMF_E_OK, "OH_UdmfOptions_SetKey is fail.");
+    const char* getKey = OH_UdmfOptions_GetKey(options);
+    NAPI_ASSERT(env, strcmp(getKey, str.c_str()) == 0, "OH_UdmfOptions_GetKey is fail.");
+    NAPI_ASSERT(env, std::strlen(getKey) == strMax, "OH_UdmfOptions_GetKey is fail.");
+    OH_UdmfOptions_Destroy(options);
+    napi_value res;
+    napi_create_int32(env, 1, &res);
+    return res;
+}
+
+static napi_value OH_UdmfOptions_GetIntention_003(napi_env env, napi_callback_info info)
+{
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+
+    Udmf_Intention testIntentionDrag = UDMF_INTENTION_DRAG;
+    int setResultDrag = OH_UdmfOptions_SetIntention(options, testIntentionDrag);
+    NAPI_ASSERT(env, setResultDrag == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    Udmf_Intention getIntentionDrag = OH_UdmfOptions_GetIntention(options);
+    NAPI_ASSERT(env, getIntentionDrag == testIntentionDrag, "OH_UdmfOptions_GetIntention is fail.");
+    int resetResultDrag = OH_UdmfOptions_Reset(options);
+    NAPI_ASSERT(env, resetResultDrag == UDMF_E_OK, "OH_UdmfOptions_Reset is fail.");
+
+    Udmf_Intention testIntentionPasteboard = UDMF_INTENTION_PASTEBOARD;
+    int setResultPasteboard = OH_UdmfOptions_SetIntention(options, testIntentionPasteboard);
+    NAPI_ASSERT(env, setResultPasteboard == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    Udmf_Intention getIntentionPasteboard = OH_UdmfOptions_GetIntention(options);
+    NAPI_ASSERT(env, getIntentionPasteboard == testIntentionPasteboard, "OH_UdmfOptions_GetIntention is fail.");
+    int resetResultPasteboard = OH_UdmfOptions_Reset(options);
+    NAPI_ASSERT(env, resetResultPasteboard == UDMF_E_OK, "OH_UdmfOptions_Reset is fail.");
+
+    Udmf_Intention testIntentionDataHub = UDMF_INTENTION_DATA_HUB;
+    int setResultDataHub = OH_UdmfOptions_SetIntention(options, testIntentionDataHub);
+    NAPI_ASSERT(env, setResultDataHub == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    Udmf_Intention getIntentionDataHub = OH_UdmfOptions_GetIntention(options);
+    NAPI_ASSERT(env, getIntentionDataHub == testIntentionDataHub, "OH_UdmfOptions_GetIntention is fail.");
+    int resetResultDataHub = OH_UdmfOptions_Reset(options);
+    NAPI_ASSERT(env, resetResultDataHub == UDMF_E_OK, "OH_UdmfOptions_Reset is fail.");
+
+    Udmf_Intention testIntentionSystemShare = UDMF_INTENTION_SYSTEM_SHARE;
+    int setResultSystemShare = OH_UdmfOptions_SetIntention(options, testIntentionSystemShare);
+    NAPI_ASSERT(env, setResultSystemShare == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    Udmf_Intention getIntentionSystemShare = OH_UdmfOptions_GetIntention(options);
+    NAPI_ASSERT(env, getIntentionSystemShare == testIntentionSystemShare, "OH_UdmfOptions_GetIntention is fail.");
+    int resetResultSystemShare = OH_UdmfOptions_Reset(options);
+    NAPI_ASSERT(env, resetResultSystemShare == UDMF_E_OK, "OH_UdmfOptions_Reset is fail.");
+
+    Udmf_Intention testIntentionPicker = UDMF_INTENTION_PICKER;
+    int setResultPicker = OH_UdmfOptions_SetIntention(options, testIntentionPicker);
+    NAPI_ASSERT(env, setResultPicker == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    Udmf_Intention getIntentionPicker = OH_UdmfOptions_GetIntention(options);
+    NAPI_ASSERT(env, getIntentionPicker == testIntentionPicker, "OH_UdmfOptions_GetIntention is fail.");
+    int resetResultPicker = OH_UdmfOptions_Reset(options);
+    NAPI_ASSERT(env, resetResultPicker == UDMF_E_OK, "OH_UdmfOptions_Reset is fail.");
+
+    Udmf_Intention testIntentionMenu = UDMF_INTENTION_MENU;
+    int setResultMenu = OH_UdmfOptions_SetIntention(options, testIntentionMenu);
+    NAPI_ASSERT(env, setResultMenu == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    Udmf_Intention getIntentionMenu = OH_UdmfOptions_GetIntention(options);
+    NAPI_ASSERT(env, getIntentionMenu == testIntentionMenu, "OH_UdmfOptions_GetIntention is fail.");
+    int resetResultMenu = OH_UdmfOptions_Reset(options);
+    NAPI_ASSERT(env, resetResultMenu == UDMF_E_OK, "OH_UdmfOptions_Reset is fail.");
+
+    napi_value res;
+    OH_UdmfOptions_Destroy(options);
+    napi_create_int32(env, 1, &res);
+    return res;
+}
+
+static napi_value OH_Udmf_SetUnifiedDataByOptions_013(napi_env env, napi_callback_info info)
+{
+    OH_UdmfData *udmfUnifiedData = OH_UdmfData_Create();
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    Udmf_Intention testIntention = UDMF_INTENTION_DATA_HUB;
+    int setResult = OH_UdmfOptions_SetIntention(options, testIntention);
+    char key[UDMF_KEY_BUFFER_LEN] = "";
+
+    int setRes = OH_Udmf_SetUnifiedDataByOptions(options, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
+    NAPI_ASSERT(env, setRes == UDMF_ERR, "OH_Udmf_SetUnifiedDataByOptions is fail.");
+    OH_UdmfData_Destroy(udmfUnifiedData);
+    OH_UdmfOptions_Destroy(options);
+    napi_value res;
+    napi_create_int32(env, setRes == UDMF_ERR, &res);
+    return res;
+}
+
+static napi_value OH_Udmf_GetDataElementAt_001(napi_env env, napi_callback_info info)
+{
+    OH_UdsPlainText* plain_text = OH_UdsPlainText_Create();
+    NAPI_ASSERT(env, plain_text != nullptr, "OH_UdsPlainText_Create is fail.");
+    OH_UdsHyperlink* hyperlink = OH_UdsHyperlink_Create();
+    NAPI_ASSERT(env, hyperlink != nullptr, "OH_UdsHyperlink_Create is fail.");
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    int addPlainText = OH_UdmfRecord_AddPlainText(record, plain_text);
+    NAPI_ASSERT(env, addPlainText == UDMF_E_OK, "OH_UdmfRecord_AddPlainText is fail.");
+    OH_UdmfRecord* hyRecord = OH_UdmfRecord_Create();
+    int addHyperlink = OH_UdmfRecord_AddHyperlink(hyRecord, hyperlink);
+    NAPI_ASSERT(env, addHyperlink == UDMF_E_OK, "OH_UdmfRecord_AddHyperlink is fail.");
+    OH_UdmfData* udmfUnifiedData = OH_UdmfData_Create();
+    int addRecord = OH_UdmfData_AddRecord(udmfUnifiedData, record);
+    NAPI_ASSERT(env, addRecord == UDMF_E_OK, "OH_UdmfData_AddRecord is fail.");
+    OH_UdmfData* udmfUnifiedData1 = OH_UdmfData_Create();
+    int addRecord1 = OH_UdmfData_AddRecord(udmfUnifiedData1, hyRecord);
+    NAPI_ASSERT(env, addRecord1 == UDMF_E_OK, "OH_UdmfData_AddRecord1 is fail.");
+    OH_UdmfOptions* options = OH_UdmfOptions_Create();
+    Udmf_Intention testIntention = UDMF_INTENTION_DATA_HUB;
+    char key[UDMF_KEY_BUFFER_LEN];
+    int setResult = OH_UdmfOptions_SetIntention(options, testIntention);
+    NAPI_ASSERT(env, setResult == UDMF_E_OK, "OH_UdmfOptions_SetIntention is fail.");
+    int setRes = OH_Udmf_SetUnifiedDataByOptions(options, udmfUnifiedData, key, UDMF_KEY_BUFFER_LEN);
+    NAPI_ASSERT(env, setRes == UDMF_E_OK, "OH_Udmf_SetUnifiedDataByOptions is fail.");
+    setRes = OH_Udmf_SetUnifiedDataByOptions(options, udmfUnifiedData1, key, UDMF_KEY_BUFFER_LEN);
+    NAPI_ASSERT(env, setRes == UDMF_E_OK, "OH_Udmf_SetUnifiedDataByOptions1 is fail.");
+    unsigned int dataSize = 0;
+    OH_UdmfData* dataArray = nullptr;
+    int getRes = OH_Udmf_GetUnifiedDataByOptions(options, &dataArray, &dataSize);
+    NAPI_ASSERT(env, getRes == UDMF_E_OK, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+    NAPI_ASSERT(env, dataArray != nullptr, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+    int sizeNum = 2;
+    NAPI_ASSERT(env, dataSize == sizeNum, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+    NAPI_ASSERT(env, OH_UDMF_GetDataElementAt(nullptr, 0) == nullptr, "OH_Udmf_GetUnifiedDataByOptions is fail.");
+    auto readData = OH_UDMF_GetDataElementAt(&dataArray, 0);
+    NAPI_ASSERT(env, readData != nullptr, "OH_UDMF_GetDataElementAt is fail.");
+    NAPI_ASSERT(env, OH_UdmfData_HasType(readData, UDMF_META_PLAIN_TEXT) == true, "OH_UDMF_GetDataElementAt is fail.");
+    readData = OH_UDMF_GetDataElementAt(&dataArray, 1);
+    NAPI_ASSERT(env, readData != nullptr, "OH_UDMF_GetDataElementAt is fail.");
+    NAPI_ASSERT(env, OH_UdmfData_HasType(readData, UDMF_META_HYPERLINK) == true, "OH_UDMF_GetDataElementAt is fail.");
+    unsigned int dataSize1 = 0;
+    OH_UdmfData* dataArray1 = nullptr;
+    int deleteRes = OH_Udmf_DeleteUnifiedData(options, &dataArray1, &dataSize1);
+    NAPI_ASSERT(env, deleteRes == UDMF_E_OK, "OH_Udmf_DeleteUnifiedData is fail.");
+    NAPI_ASSERT(env, dataArray1 != nullptr, "OH_Udmf_DeleteUnifiedData is fail.");
+    OH_Udmf_DestroyDataArray(&dataArray, dataSize);
+    OH_Udmf_DestroyDataArray(&dataArray1, dataSize1);
+    OH_UdmfOptions_Destroy(options);
+    OH_UdsPlainText_Destroy(plain_text);
+    OH_UdsHyperlink_Destroy(hyperlink);
+    OH_UdmfRecord_Destroy(record);
+    OH_UdmfRecord_Destroy(hyRecord);
+    OH_UdmfData_Destroy(udmfUnifiedData);
+    OH_UdmfData_Destroy(udmfUnifiedData1);
+    napi_value res;
+    napi_create_int32(env, deleteRes == UDMF_E_OK, &res);
+    return res;
+}
+
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -2908,6 +3060,14 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, napi_default, nullptr},
         {"OH_UdmfDataLoadParams_SetLoadHandler001", nullptr, OH_UdmfDataLoadParams_SetLoadHandler001, nullptr,
          nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfOptions_GetKey_004", nullptr, OH_UdmfOptions_GetKey_004, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfOptions_GetIntention_003", nullptr, OH_UdmfOptions_GetIntention_003, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_SetUnifiedDataByOptions_013", nullptr, OH_Udmf_SetUnifiedDataByOptions_013, 
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_Udmf_GetDataElementAt_001", nullptr, OH_Udmf_GetDataElementAt_001, nullptr, 
+        nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

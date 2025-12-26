@@ -125,7 +125,7 @@ export default function nativeVsyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testNativeVSyncGetPeriodNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL00,
+    it('testNativeVSyncGetPeriodNullptr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = vsync.oHNativeVSyncGetPeriodNullptr();
       console.info("testNativeVSyncGetPeriodNullptr result:" + result);
@@ -279,7 +279,7 @@ export default function nativeVsyncTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOHNativeVSyncGetPeriod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL00,
+    it('testOHNativeVSyncGetPeriod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       let result: number = vsync.oHNativeVSyncGetPeriodFOne();
       expect(result).assertEqual(0);

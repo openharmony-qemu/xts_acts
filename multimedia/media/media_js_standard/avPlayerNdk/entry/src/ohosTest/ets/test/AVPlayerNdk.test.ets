@@ -2153,5 +2153,103 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(-1);
       done();
     });
+
+    /**
+     * @tc.name   testOhAvPlayerSetLoudness012
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0120
+     * @tc.desc   test OH_AVPlayer_SetLoudnessGain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetLoudness012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain1(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetLoudness013
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0130
+     * @tc.desc   test OH_AVPlayer_SetLoudnessGain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetLoudness013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain2(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerGetMediaDescription001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_MEDIA_DESCRIPTION001
+     * @tc.desc   test OH_AVPlayer_GetMediaDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerGetMediaDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.getMediaDescription();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerGetMediaDescription002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_MEDIA_DESCRIPTION002
+     * @tc.desc   test OH_AVPlayer_GetMediaDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerGetMediaDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.getMediaDescriptionOne();
+      expect(result).assertEqual(-1);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerGetTrackDescription001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_TRACK_DESCRIPTION001
+     * @tc.desc   test OH_AVPlayer_GetTrackDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerGetTrackDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.getTrackDescription(0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerGetTrackDescription002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_TRACK_DESCRIPTION002
+     * @tc.desc   test OH_AVPlayer_GetTrackDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerGetTrackDescription002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.getTrackDescription(10);
+      expect(result).assertEqual(-1);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerGetTrackDescription003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_TRACK_DESCRIPTION003
+     * @tc.desc   test OH_AVPlayer_GetTrackDescription
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerGetTrackDescription003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.getTrackDescriptionOne(0);
+      expect(result).assertEqual(-1);
+      done();
+    });
   })
 }

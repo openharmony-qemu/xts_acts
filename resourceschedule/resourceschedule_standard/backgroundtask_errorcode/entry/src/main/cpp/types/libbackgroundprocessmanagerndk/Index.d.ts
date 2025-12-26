@@ -27,3 +27,5 @@ export const TransientTaskOK: ()=> number;
 export const TransientTaskInvalidParam: ()=> number;
 export const TransientTaskCIVerificationFailed: ()=> number;
 export const TransientTaskSVFailed: ()=> number;
+export const OH_TransientTask_ErrorCode: ()=> number;
+export const OH_BackgroundProcessManager_ErrorCode: ()=> number;

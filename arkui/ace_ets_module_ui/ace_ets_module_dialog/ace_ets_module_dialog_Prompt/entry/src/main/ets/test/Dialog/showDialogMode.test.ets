@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { LevelMode } from '@kit.ArkUI';
 
 export default function showDialogMode() {
   describe('showDialogMode', () => {
@@ -372,6 +373,21 @@ export default function showDialogMode() {
       expect(btn4 != null).assertTrue();
       await btn4.click();
       console.info('[showDialogMode_0800] END');
+      done();
+    });
+
+    /**
+     * @tc.number    showDialogMode_0900
+     * @tc.name      showDialogMode_0900
+     * @tc.desc      showDialogMode
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
+     */
+    it('showDialogMode_0900', Level.LEVEL3, async (done: Function) => {
+      console.info('showDialogMode_0900 START');
+      expect(LevelMode.OVERLAY+'').assertEqual('0');
+      console.info("[showDialogMode_0900] end");
       done();
     });
   })

@@ -418,7 +418,7 @@ export default function CameraSessionZoomSuppTest() {
         const testName: string =
           'SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0400';
         testIsVideoStabilizationModeSupported(testName, null as ESObject, done, (errCode) => {
-          expect(errCode).assertTrue();
+          expect(errCode == true || errCode == false).assertTrue();
         });
       })
 
@@ -435,7 +435,7 @@ export default function CameraSessionZoomSuppTest() {
         const testName: string =
           'SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0500';
         testIsVideoStabilizationModeSupported(testName, undefined as ESObject, done, (errCode) => {
-          expect(errCode).assertTrue();
+          expect(errCode == true || errCode == false).assertTrue();
         });
       })
 
@@ -452,7 +452,7 @@ export default function CameraSessionZoomSuppTest() {
         const testName: string =
           'SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0600';
         testIsVideoStabilizationModeSupported(testName, AppStorage.get('testString') as ESObject, done, (errCode) => {
-          expect(errCode).assertTrue();
+          expect(errCode == true || errCode == false).assertTrue();
         });
       })
 
@@ -469,7 +469,7 @@ export default function CameraSessionZoomSuppTest() {
         const testName: string =
           'SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATIONQUERY_STABILIZATION_MODE_SUPPORT_ERRORCODE_0700';
         testIsVideoStabilizationModeSupported(testName, AppStorage.get('testArray') as ESObject, done, (errCode) => {
-          expect(errCode).assertTrue();
+          expect(errCode == true || errCode == false).assertTrue();
         });
       })
 

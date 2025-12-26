@@ -48,6 +48,7 @@ ohos_moduletest_suite("ActsDrawingNativeTest") {
     "DrawingNativeMatrixTestPart2.cpp",
     "DrawingNativeMemoryStreamTest.cpp",
     "DrawingNativePathEffectTest.cpp",
+    "DrawingNativePathIteratorTest.cpp",
     "DrawingNativePathTest.cpp",
     "DrawingNativePathTestPart2.cpp",
     "DrawingNativePathTestPart3.cpp",

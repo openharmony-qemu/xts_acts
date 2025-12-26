@@ -318,6 +318,67 @@ export default function LinkEnhanceAPI() {
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0600----------------");
     });
 
+
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700
+     * @tc.desc   linkEnhance.createConnection接口入参name为min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700----------------");
+      let flag = false;
+      try {
+        let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", "a");
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 is" + connection);
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 error.message is " + error.message);
+      }finally {
+        if(flag == true){
+          console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700 createConnection success" +
+            ",ecpect fail");
+        }
+        expect(flag == false).assertTrue();
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0700----------------");
+    });
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800
+     * @tc.desc   linkEnhance.createConnection接口入参name为max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800----------------");
+      let flag = false;
+      let name = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvw" +
+        "xyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabc" +
+        "defghijklmnopqrstuvwxyzabcdefghijklmnopqrstu";
+      try {
+        let connection: linkEnhance.Connection = linkEnhance.createConnection("11:22:33:44:55:66", name);
+        console.info(logTag+"SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 is" + connection);
+      }catch (error) {
+        flag = true;
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 error.code is " + error.code);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 error.message is " + error.message);
+      }finally {
+        if(flag == true){
+          console.error(logTag + "[ERROR] SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800 createConnection success" +
+            ",ecpect fail");
+        }
+        expect(flag == false).assertTrue();
+      }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createConnection_0800----------------");
+    });
+
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_connect_0100
      * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_connect_0100
@@ -1076,6 +1137,61 @@ export default function LinkEnhanceAPI() {
           console.info(logTag + "reclaim done");
         }
       console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0400----------------");
+    });
+     /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500
+     * @tc.desc   linkEnhance.createServer接口入参name长度为min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500----------------");
+      let flag = false;
+      try {
+        let server: linkEnhance.Server = linkEnhance.createServer("a");
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500 server is" + server);
+        }catch (error) {
+          flag = true;
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500 error.code is:" + error.code);
+        }finally {
+          if(flag == true){
+            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500 createServer success,expect faile");
+          }
+          expect(flag == false).assertTrue();
+          console.info(logTag + "reclaim done");
+        }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0500----------------");
+    });
+    /**
+     * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600
+     * @tc.number SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600
+     * @tc.desc   linkEnhance.createServer接口入参name长度为max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info(logTag + "----------start SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600----------------");
+      let flag = false;
+      let name = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvw" +
+        "xyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabc" +
+        "defghijklmnopqrstuvwxyzabcdefghijklmnopqrstu";
+      try {
+        let server: linkEnhance.Server = linkEnhance.createServer(name);
+        console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600 server is" + server);
+        }catch (error) {
+          flag = true;
+          console.info(logTag + "SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600 error.code is:" + error.code);
+        }finally {
+          if(flag == true){
+            console.info(logTag + "[ERROR]SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600 createServer success,expect faile");
+          }
+          expect(flag == false).assertTrue();
+          console.info(logTag + "reclaim done");
+        }
+      console.info(logTag + "----------end SUB_DSoftbus_Trans_linkEnhance_API_createServer_0600----------------");
     });
     /**
      * @tc.name   SUB_DSoftbus_Trans_linkEnhance_API_serverOn_0100

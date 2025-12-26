@@ -69,6 +69,12 @@ export default class Utils {
     }
   }
 
+  static async scrollToBottomComponent(id: string) {
+    let driver = Driver.create();
+    let component = await driver.findComponent(ON.id(id));
+    await component.scrollToBottom();
+  }
+  
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
     let rect = Utils.getComponentRect(key);

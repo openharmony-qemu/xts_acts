@@ -199,7 +199,7 @@ class AVPlayerDemo {
     // 创建avPlayer实例对象
     this.avPlayer = await media.createAVPlayer();
     // 创建状态机变化回调函数
-    this.setAVPlayerCallback(this?.avPlayer!, listener);
+    this.setAVPlayerCallback(this.avPlayer!, listener);
     this.isSeek = true; // 不支持seek操作
     let av_player = this.avPlayer
     if(av_player){

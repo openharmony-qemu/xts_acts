@@ -14,11 +14,11 @@
 import("//test/xts/tools/build/suite.gni")
 
 # xts_acts_arkts1.2/ability/ability_runtime/actsAbilitytest2
-ohos_js_app_static_suite("ActsbundlemanagermultiAppmodetype1test") {
+ohos_js_app_static_suite("ActsbundlemanagermultiAppmodetype1StaticTest") {
 #   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsbundlemanagermultiAppmodetype1test"
+  hap_name = "ActsbundlemanagermultiAppmodetype1StaticTest"
   part_name = "bundle_framework"
   subsystem_name = "bundlemanager"
 }

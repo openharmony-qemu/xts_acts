@@ -14,6 +14,8 @@ add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
     NapiRenderInitTest.cpp
     touchTestInfo/TouchTestInfoTest.cpp
+    node/NodeAdoptedTest.cpp
+    focusScope/FocusScopeTest.cpp
 )
 
 add_library(nativefunc SHARED

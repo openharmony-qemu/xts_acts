@@ -79,3 +79,7 @@ export const OH_UdmfRecordProvider_SetData0100: () => number;
 export const OH_UdmfRecordProvider_SetData0200: () => number;
 export const OH_UdmfRecord_SetProvider0100: () => number;
 export const OH_UdmfRecord_SetProvider0200: () => number;
+export const OH_UdmfOptions_GetKey_004: () => number;
+export const OH_UdmfOptions_GetIntention_003: () => number;
+export const OH_Udmf_SetUnifiedDataByOptions_013: () => number;
+export const OH_Udmf_GetDataElementAt_001: () => number;

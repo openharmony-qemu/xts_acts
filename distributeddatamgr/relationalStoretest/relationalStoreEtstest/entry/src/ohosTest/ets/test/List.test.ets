@@ -55,6 +55,13 @@ import PerfStatEtsTest from './RelationalStorePerfStatEtsTest.test'
 import rdbstoreRekeyEtsTest from './RelationalStoreRekeyEtsTest.test'
 import rdbStoreSqliteErrorOccurredTest from './RelationalStoreSqliteErrorOccurredTest.test'
 import rdbStoreRekeyExEtsTest from './RelationalStoreRekeyExEtsTest.test'
+import RdbGetColumnNames from './RdbGetColumnNamesJs.test';
+import RdbGetCurrentRowData from './RdbGetCurrentRowDataJS.test';
+import RdbGetRowsData from './RdbGetRowsDataJs.test'
+import rdbQueryWithoutRowCount from './RdbQueryWithoutRowCount.test'
+import rdbQueryWithoutRowCountSync from './RdbQueryWithoutRowCountSync.test'
+import transQueryWithoutRowCount from './TranQueryWithoutRowCount.test'
+import transQuerySqlWithoutRowCountSync from  './TranQueryWithoutRowCountSync.test'
 
 export default function testsuite() {
   relationalStoreEncryptTest()
@@ -100,5 +107,12 @@ export default function testsuite() {
   rdbstoreRekeyEtsTest()
   rdbStoreSqliteErrorOccurredTest()
   rdbStoreRekeyExEtsTest()
+  RdbGetColumnNames();
+  RdbGetCurrentRowData();
+  RdbGetRowsData();
+  rdbQueryWithoutRowCount()
+  rdbQueryWithoutRowCountSync()
+  transQueryWithoutRowCount()
+  transQuerySqlWithoutRowCountSync()
 }
 

@@ -26,8 +26,26 @@ export const TestImageContentTransitionEffect001: () => number;
 
 export const TestImageContentTransitionEffect002: () => number;
 
+export const enum_GetEventType_Scroll: () => number;
+export const enum_GetEventType_List: () => number;
+export const enum_GetEventType_Refresh: () => number;
+export const enum_GetEventType_WaterFlow: () => number;
+export const enum_GetEventType_Grid: () => number;
+
 export const TestMethodReturnValue001: () => number;
 export const TestMethodReturnValue002: () => number;
 export const TestMethodReturnValue003: () => number;
 export const TestMethodReturnValue004: () => number;
 export const TestMethodReturnValue005: () => number;
+export const TestMethodReturnValue006: () => number;
+export const TestNodeErrorCode001: () => number;
+export const TestNodeErrorCode002: () => number;
+export const TestNodeErrorCode003: () => number;
+export const TestNodeErrorCode004: () => number;
+export const TestNodeErrorCode005: () => number;
+export const TestNodeErrorCode006: () => number;
+export const TestNodeErrorCode007: () => number;
+export const TestNodeErrorCode008: () => number;
+export const TestNodeErrorCode009: () => number;
+export const TestNodeErrorCode010: () => number;
+export const TestNodeErrorCode011: () => number;

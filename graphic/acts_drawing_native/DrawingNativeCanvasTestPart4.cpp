@@ -1683,9 +1683,10 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsNormal, Function | Sm
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     void *pixels = OH_Drawing_BitmapGetPixels(bitmap);
     OH_Drawing_Image_Info imageInfo;
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 0);
+    bool ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, false);
     // 3. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1713,19 +1714,22 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsNull, Function | Smal
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     void *pixels = OH_Drawing_BitmapGetPixels(bitmap);
     OH_Drawing_Image_Info imageInfo;
-    OH_Drawing_CanvasReadPixels(nullptr, &imageInfo, pixels, 0, 0, 0);
+    bool ret = OH_Drawing_CanvasReadPixels(nullptr, &imageInfo, pixels, 0, 0, 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 2. Call OH_Drawing_CanvasReadPixels with the second parameter as nullptr
-    OH_Drawing_CanvasReadPixels(canvas, nullptr, pixels, 0, 0, 0);
+    ret = OH_Drawing_CanvasReadPixels(canvas, nullptr, pixels, 0, 0, 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_CanvasReadPixels with the third parameter as nullptr
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, nullptr, 0, 0, 0);
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, nullptr, 0, 0, 0);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 4. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1766,12 +1770,16 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsAbnormal, Function | 
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     void *pixels = OH_Drawing_BitmapGetPixels(bitmap);
     OH_Drawing_Image_Info imageInfo;
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, -1, 0, 0);
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 1.0f, 0, 0);
+    bool ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, -1, 0, 0);
+    EXPECT_EQ(ret, false);
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 1.0f, 0, 0);
+    EXPECT_EQ(ret, false);
     // 3. Call OH_Drawing_CanvasReadPixels with the fifth parameter as a floating-point number
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 1.0f, 0);
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 1.0f, 0);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_CanvasReadPixels with the sixth parameter as a floating-point number
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 1.0f);
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 1.0f);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1800,11 +1808,14 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsMaximum, Function | S
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     void *pixels = OH_Drawing_BitmapGetPixels(bitmap);
     OH_Drawing_Image_Info imageInfo;
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0xFFFFFFFF, 0, 0);
+    bool ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0xFFFFFFFF, 0, 0);
+    EXPECT_EQ(ret, false);
     // 3. Call OH_Drawing_CanvasReadPixels with the fifth parameter as the maximum value 0x7FFFFFFF
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0x7FFFFFFF, 0);
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0x7FFFFFFF, 0);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_CanvasReadPixels with the sixth parameter as the maximum value 0x7FFFFFFF
-    OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 0x7FFFFFFF);
+    ret = OH_Drawing_CanvasReadPixels(canvas, &imageInfo, pixels, 0, 0, 0x7FFFFFFF);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1856,10 +1867,15 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsToBitmapNormal, Funct
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     // add assert
     EXPECT_NE(bitmap, nullptr);
+    uint32_t width = 200;
+    uint32_t height = 200;
+    OH_Drawing_BitmapFormat format{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapBuild(bitmap, width, height, &format);
     // 3. Call OH_Drawing_CanvasReadPixelsToBitmap
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 1);
+    bool ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 100, 100);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, false);
     // 4. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1881,18 +1897,22 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsToBitmapNull, Functio
     // add assert
     EXPECT_NE(bitmap, nullptr);
     // 1. Call OH_Drawing_CanvasReadPixelsToBitmap with the first parameter as null
-    OH_Drawing_CanvasReadPixelsToBitmap(nullptr, bitmap, 1, 1);
+    bool ret = OH_Drawing_CanvasReadPixelsToBitmap(nullptr, bitmap, 1, 1);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     OH_Drawing_ErrorCodeReset();
     // 2. Call OH_Drawing_CanvasReadPixelsToBitmap with the second parameter as null
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, nullptr, 1, 1);
+    ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, nullptr, 1, 1);
+    EXPECT_EQ(ret, false);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_CanvasReadPixelsToBitmap with the third parameter as 0
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 0, 1);
+    ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 0, 1);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_CanvasReadPixelsToBitmap with the fourth parameter as 0
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 0);
+    ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 0);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1916,9 +1936,11 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsToBitmapAbnormal, Fun
     // add assert
     EXPECT_NE(bitmap, nullptr);
     // 3. Call OH_Drawing_CanvasReadPixelsToBitmap with the third parameter as a floating-point number
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1.0f, 0);
+    bool ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1.0f, 0);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_CanvasReadPixelsToBitmap with the fourth parameter as a floating-point number
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 1.0f);
+    ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 1.0f);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);
@@ -1942,9 +1964,11 @@ HWTEST_F(DrawingNativeCanvasPart4Test, testCanvasReadPixelsToBitmapMaximum, Func
     // add assert
     EXPECT_NE(bitmap, nullptr);
     // 3. Call OH_Drawing_CanvasReadPixelsToBitmap with the third parameter set to the maximum value 0x7FFFFFFF
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 0x7FFFFFFF, 0);
+    bool ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 0x7FFFFFFF, 0);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_CanvasReadPixelsToBitmap with the fourth parameter set to the maximum value 0x7FFFFFFF
-    OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 0x7FFFFFFF);
+    ret = OH_Drawing_CanvasReadPixelsToBitmap(canvas, bitmap, 1, 0x7FFFFFFF);
+    EXPECT_EQ(ret, false);
     // 5. Free memory
     OH_Drawing_BitmapDestroy(bitmap);
     OH_Drawing_CanvasDestroy(canvas);

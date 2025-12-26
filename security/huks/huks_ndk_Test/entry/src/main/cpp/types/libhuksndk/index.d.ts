@@ -62,3 +62,6 @@ export const oHHuksListAliases: () => number;
 export const oHHuksFreeKeyAliasSet: () => number;
 export const oHHuksWrapKey: () => number;
 export const oHHuksUnwrapKey: () => number;
+export const huksNativeApi22Type0300: () => number;
+export const huksNativeApi22Type0400: () => number;
+export const huksNativeApi22Type0500: () => number;

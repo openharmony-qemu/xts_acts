@@ -67,6 +67,7 @@ namespace ArkUICapiTest {
 #define PARAM_101_POINT_5 101.5
 #define PARAM_90 90
 #define PARAM_100 100
+#define PARAM_150 150
 #define PARAM_200 200
 #define PARAM_10000 10000
 #define PARAM_NEGATIVE_1 (-1)
@@ -78,6 +79,7 @@ namespace ArkUICapiTest {
 #define PARAM_NEGATIVE_100 (-100)
 #define PARAM_64 64
 #define DEFAULT_MARGIN 10
+#define SIZE_3 3
 #define SIZE_4 4
 #define SIZE_5 5
 #define SIZE_10 10
@@ -90,6 +92,7 @@ namespace ArkUICapiTest {
 #define SIZE_80 80
 #define SIZE_90 90
 #define SIZE_100 100
+#define SIZE_110 110
 #define SIZE_180 180
 #define SIZE_150 150
 #define SIZE_200 200
@@ -97,6 +100,7 @@ namespace ArkUICapiTest {
 #define SIZE_300 300
 #define SIZE_350 350
 #define SIZE_400 400
+#define SIZE_450 450
 #define SIZE_500 500
 #define SIZE_600 600
 #define SIZE_10000 10000
@@ -142,11 +146,24 @@ namespace ArkUICapiTest {
 #define PARAM_270_POINT_0 270.0
 #define PARAM_960000 960000
 #define PARAM_255 255
+#define PARAM_500 500
+#define PARAM_25 25
+#define PARAM_50 50
+#define PARAM_75 75
+#define PARAM_55 55
 
 /**
  * Log print domain.
  */
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
+
+#define ASSERT_NOTNULL(result)                                                                                         \
+    do {                                                                                                               \
+        if ((result) == nullptr) {                                                                                     \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
 
 #define ASSERT_EQ(result, expect)                                                                                      \
     do {                                                                                                               \
@@ -229,6 +246,28 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         if ((env == nullptr) || (info == nullptr)) {                                                                   \
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NAPI_CHECK_PARAMS", "GetContext env or info is null"); \
             return nullptr;                                                                                            \
+        }                                                                                                              \
+    } while (0)
+
+#define ASSERT_EQ_INT(result, expect)                                                                                      \
+    do {                                                                                                               \
+        if ((result) != (expect)) {                                                                                    \
+            std::string assertStr = "assert equal failed, expect is " + std::to_string(reinterpret_cast<uintptr_t>(expect)) + \
+                                    " and result is " + std::to_string(reinterpret_cast<uintptr_t>(result));            \
+            char assertChars[assertStr.size() + PARAM_1];                                                              \
+            strcpy(assertChars, assertStr.c_str());                                                                    \
+            napi_throw_error((env), nullptr, assertChars);                                                             \
+            napi_value errorResult = nullptr;                                                                          \
+            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
+#define ASSERT_OBJ_NE(result, expect)                                                                                     \
+    do {                                                                                                               \
+        if ((result) == (expect)) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
         }                                                                                                              \
     } while (0)
 

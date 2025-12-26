@@ -44,6 +44,10 @@ function fullZero(num: string, digitalNum: number = 2){
 }
 
 function validateType(track: media.MediaDescription, key: string, type: string, composedKeys: string): void{
+  if (track[key] === undefined) {
+    console.log(`key ${key} is undefined, skip validation`);
+    return;
+  }
   const trackType = Math.pow(2,track[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] as number).toString(2)
   const composedKeysFirstPart = Number(`0b${composedKeys.split('.')[0]}`)
   const composedKeysSecondPart = Number(`0b${fullZero(composedKeys.split('.')[1] || '0')}`)
@@ -104,6 +108,8 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_DEPTH, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH, 'number', composeKeys([BinaryKeys.get("VID")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS, 'string', composeKeys([BinaryKeys.get("ALL")!]))
 }
 
 export default function AVMetadata() {
@@ -982,6 +988,30 @@ export default function AVMetadata() {
         console.error(`fetchAlbumCover catchCallback, error message:${error.message}`);
       });
       await mediaTestBase.msleepAsync(SLEEP_TIME)
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      await avMetadataExtractor.fetchMetadata().then((metadata) => {
+        console.info(TAG, `fetchMetadata callback success video description :${metadata.description}}`);
+        expect(metadata.description).assertEqual("Test");
+        avMetadataExtractor.release();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
       done();
     });
     /**

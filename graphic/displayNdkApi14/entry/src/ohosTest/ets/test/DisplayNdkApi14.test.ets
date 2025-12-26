@@ -113,6 +113,16 @@ export default function ActsDisplayNdkApi14Test() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
       await getPermision();
       await sleep(300);
       await ClickButtonDriver();

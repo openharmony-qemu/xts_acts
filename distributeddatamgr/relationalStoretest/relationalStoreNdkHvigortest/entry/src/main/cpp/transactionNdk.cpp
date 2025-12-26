@@ -674,10 +674,43 @@ static napi_value OH_RdbTrans_InsertWithConflictResolution0100(napi_env env, nap
     ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, RDB_CONFLICT_REPLACE, &changes);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_UpdateWithConflictResolution is fail.");
     NAPI_ASSERT(env, changes == 1, "OH_RdbTrans_UpdateWithConflictResolution is fail.");
+
+
+    int64_t changes1 = -1;
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, table, valueBucket,
+        RDB_CONFLICT_NONE, nullptr);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution1 is fail.");
+
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, nullptr, valueBucket,
+        RDB_CONFLICT_ROLLBACK, nullptr); 
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution2 is fail.");
+
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, table, nullptr,
+        RDB_CONFLICT_ABORT, &changes1); 
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution3 is fail.");
+
+    const char *table1 = "";
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, table1, valueBucket,
+        RDB_CONFLICT_FAIL, &changes1);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution4 is fail.");
+
+    Rdb_ConflictResolution resolution = static_cast<Rdb_ConflictResolution>(7);
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, table, valueBucket,
+        resolution, &changes1);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution5 is fail.");
+
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, table, valueBucket,
+        RDB_CONFLICT_IGNORE, &changes1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution6 is fail.");
+
+    ret = OH_RdbTrans_InsertWithConflictResolution(trans, table, valueBucket,
+        RDB_CONFLICT_REPLACE, &changes1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution7 is fail.");
+
     valueObject->destroy(valueObject);
     valueBucket->destroy(valueBucket);
     ret = OH_RdbTrans_Destroy(trans);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_Destroy is fail.");
     
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
@@ -688,18 +721,22 @@ static napi_value OH_Rdb_SetCustomDir0100(napi_env env, napi_callback_info)
 {
     const char *customDir = "test";
     auto ret =  OH_Rdb_SetCustomDir(nullptr, customDir);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetCustomDi is fail.");
     ret =  OH_Rdb_SetCustomDir(nullptr, "12345678901234567890123456789012345678901234567890"
         "12345678901234567890123456789012345678901234567890123456789012345678901234567890");
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetCustomDi is fail.");
     OH_Rdb_ConfigV2 *confg = OH_Rdb_CreateConfig();
-    NAPI_ASSERT(env, confg != nullptr, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, confg != nullptr, "OH_Rdb_SetCustomDi is fail.");
     ret =  OH_Rdb_SetCustomDir(confg, nullptr);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetCustomDi is fail.");
     ret = OH_Rdb_SetCustomDir(confg, customDir);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetCustomDi is fail.");
+    const char *customDir1 = "";
+    ret = OH_Rdb_SetCustomDir(confg, customDir1);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetCustomDi1 is fail.");
+
     ret = OH_Rdb_DestroyConfig(confg);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyConfig is fail.");
 
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
@@ -727,23 +764,26 @@ static napi_value OH_Rdb_SetReadOnly0100(napi_env env, napi_callback_info)
 static napi_value OH_Rdb_SetPlugins0100(napi_env env, napi_callback_info)
 {
     OH_Rdb_ConfigV2 *confg = OH_Rdb_CreateConfig();
-    NAPI_ASSERT(env, confg != nullptr, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, confg != nullptr, "OH_Rdb_CreateConfig is fail.");
     const char *plugins[] = {"1"};
     auto ret =  OH_Rdb_SetPlugins(nullptr, plugins, 1);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetPlugins is fail.");
     ret = OH_Rdb_SetPlugins(confg, nullptr, 1);
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetPlugins is fail.");
     ret = OH_Rdb_SetPlugins(confg, plugins, 0);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetPlugins is fail.");
     ret = OH_Rdb_SetPlugins(confg, plugins, 1);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetPlugins is fail.");
     const char *pluginsNew[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "0", "x"};
     ret = OH_Rdb_SetPlugins(confg, pluginsNew, sizeof(pluginsNew) / sizeof(pluginsNew[0]) - 1);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetPlugins is fail.");
     ret = OH_Rdb_SetPlugins(confg, pluginsNew, sizeof(pluginsNew) / sizeof(pluginsNew[0]));
-    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_SetPlugins is fail.");
+    const char *pluginsNew1[] = {"", ""};
+    ret = OH_Rdb_SetPlugins(confg, pluginsNew1, 0);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_SetPlugins1 is fail.");
     ret = OH_Rdb_DestroyConfig(confg);
-    NAPI_ASSERT(env, ret == RDB_OK, "OH_RdbTrans_InsertWithConflictResolution is fail.");
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyConfig is fail.");
     
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);

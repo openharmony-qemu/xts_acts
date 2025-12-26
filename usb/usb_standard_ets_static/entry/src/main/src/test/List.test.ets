@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import UsbManagerNormalHapTest from "./UsbManagerNormalHap.test";
-import AddUsbManagerTest from "./AddUsbManagerTest.test";
 import SerialBaseTest from "./SerialBaseTest.test";
+import SerialTest from "./SerialTest.test";
+import SerialSingleTest from "./SerialSingleTest.test";
+import SerialEnumTest from "./SerialEnumTest.test";
 export default function testsuite() {
-  UsbManagerNormalHapTest();
-  AddUsbManagerTest();
   SerialBaseTest();
+  SerialTest();
+  SerialSingleTest();
+  SerialEnumTest();
 }

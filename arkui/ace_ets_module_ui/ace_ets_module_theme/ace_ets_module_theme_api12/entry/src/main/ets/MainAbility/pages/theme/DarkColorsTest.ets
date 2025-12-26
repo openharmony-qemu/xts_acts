@@ -21,7 +21,7 @@ class AppDarkColors implements CustomDarkColors {
   public fontPrimary?: ResourceColor | undefined = '#FFEEAAFF'
 }
 
-class AppTheme implements CustomTheme{
+class AppTheme implements CustomTheme {
   public colors: AppColors = new AppColors()
   public darkColors?: AppDarkColors = new AppDarkColors()
 }

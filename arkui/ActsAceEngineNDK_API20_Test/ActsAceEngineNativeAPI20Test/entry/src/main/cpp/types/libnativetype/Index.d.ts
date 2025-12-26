@@ -131,3 +131,15 @@ export const ErrorCodePostCloned: () => number;
 export const GetRouterStateOnShow: () => number;
 export const GetRouterStateOnHide: () => number;
 export const GetRouterStateOnBackPressed: () => number;
+export const GetRouterStatAboutToAppear: () => number;
+export const GetRouterStateAboutToDisApper: () => number;
+
+export const GetNavDestinationStateOnShow: () => number;
+export const GetNavDestinationStateOnHidden: () => number;
+export const GetNavDestinationStateOnAppear: () => number;
+export const GetNavDestinationStateOnDisAppear: () => number;
+export const GetNavDestinationStateOnWillShow: () => number;
+export const GetNavDestinationStateOnWillHide: () => number;
+export const GetNavDestinationStateOnWillAppear: () => number;
+export const GetNavDestinationStateOnWillDisappear: () => number;
+export const GetNavDestinationStateOnBackPressed: () => number;

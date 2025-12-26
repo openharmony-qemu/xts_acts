@@ -14,6 +14,7 @@
 group("ActsAceEtsModuleGaugeContentModifierTest") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "ace_ets_module_gauge_contentModifier_api12:ActsAceEtsModuleGaugeContentModifierApi12Test" ]
+    deps = [ "ace_ets_module_gauge_contentModifier_api12:ActsAceEtsModuleGaugeContentModifierApi12Test",
+    "ace_ets_module_gauge_contentModifier_api12_static:ActsAceEtsModuleGaugeContentModifierApi12StaticTest" ]
   }
 }

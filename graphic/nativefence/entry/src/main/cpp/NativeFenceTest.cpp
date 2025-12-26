@@ -41,12 +41,12 @@ static napi_value NativeFenceWaitIs0(napi_env env, napi_callback_info info)
     napi_value res = nullptr;
     bool result = OH_NativeFence_Wait(INVALID_FD, TIMEOUT_FT);
     if (result) {
-        napi_create_int32(env, 1, &res); // 1 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 1 Mark the incorrect location
         return res;
     }
     bool isValid = OH_NativeFence_IsValid(INVALID_FD);
     if (isValid) {
-        napi_create_int32(env, 2, &res); // 2 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 2 Mark the incorrect location
         return res;
     }
     sigset_t mask;
@@ -61,17 +61,17 @@ static napi_value NativeFenceWaitIs0(napi_env env, napi_callback_info info)
     }
     isValid = OH_NativeFence_IsValid(sfd);
     if (!isValid) {
-        napi_create_int32(env, 3, &res); // 3 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 3 Mark the incorrect location
         return res;
     }
     bool result2 = false;
     result2 = OH_NativeFence_Wait(sfd, TIMEOUT_ZE);
     if (result2) {
-        napi_create_int32(env, 4, &res); // 4 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 4 Mark the incorrect location
         return res;
     }
     OH_NativeFence_Close(sfd);
-    napi_create_int32(env, SUCCESS, &res);
+    napi_create_int32(env, true, &res);
     return res;
 }
 
@@ -90,17 +90,17 @@ static napi_value NativeFenceWaitIs500(napi_env env, napi_callback_info info)
     }
     bool isValid = OH_NativeFence_IsValid(sfd);
     if (!isValid) {
-        napi_create_int32(env, 1, &res); // 1 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 1 Mark the incorrect location
         return res;
     }
     bool result2 = false;
     result2 = OH_NativeFence_Wait(sfd, TIMEOUT_FH);
     if (result2) {
-        napi_create_int32(env, 2, &res); // 2 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 2 Mark the incorrect location
         return res;
     }
     OH_NativeFence_Close(sfd);
-    napi_create_int32(env, SUCCESS, &res);
+    napi_create_int32(env, true, &res);
     return res;
 }
 
@@ -119,17 +119,17 @@ static napi_value NativeFenceWaitIs5000(napi_env env, napi_callback_info info)
     }
     bool isValid = OH_NativeFence_IsValid(sfd);
     if (!isValid) {
-        napi_create_int32(env, 1, &res); // 1 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 1 Mark the incorrect location
         return res;
     }
     bool result2 = false;
     result2 = OH_NativeFence_Wait(sfd, TIMEOUT_FT);
     if (result2) {
-        napi_create_int32(env, 2, &res); // 2 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 2 Mark the incorrect location
         return res;
     }
     OH_NativeFence_Close(sfd);
-    napi_create_int32(env, SUCCESS, &res);
+    napi_create_int32(env, true, &res);
     return res;
 }
 
@@ -158,11 +158,11 @@ static napi_value NativeFenceWaitKill(napi_env env, napi_callback_info info)
     waitThread.join();
     bool isValid = OH_NativeFence_IsValid(sfd);
     if (!isValid) {
-        napi_create_int32(env, 1, &res); // 1 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 1 Mark the incorrect location
         return res;
     }
     if (!result) {
-        napi_create_int32(env, 2, &res); // 2 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 2 Mark the incorrect location
         return res;
     }
     // checks the signaled variable to ensure that OH_NativeFence_Wait has returned
@@ -171,7 +171,7 @@ static napi_value NativeFenceWaitKill(napi_env env, napi_callback_info info)
         return res;
     }
     OH_NativeFence_Close(sfd);
-    napi_create_int32(env, SUCCESS, &res);
+    napi_create_int32(env, true, &res);
     return res;
 }
 
@@ -180,7 +180,7 @@ static napi_value NativeFenceWaitForeverKill(napi_env env, napi_callback_info in
     napi_value res = nullptr;
     bool result = OH_NativeFence_WaitForever(INVALID_FD);
     if (result) {
-        napi_create_int32(env, 1, &res); // 1 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 1 Mark the incorrect location
         return res;
     }
     std::atomic<bool> signaled(false);
@@ -204,12 +204,12 @@ static napi_value NativeFenceWaitForeverKill(napi_env env, napi_callback_info in
     // Waiting for waitThread to complete
     waitThread.join();
     if (!result2) {
-        napi_create_int32(env, 1, &res); // 1 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 1 Mark the incorrect location
         return res;
         }
     bool isValid = OH_NativeFence_IsValid(sfd);
     if (!isValid) {
-        napi_create_int32(env, 2, &res); // 2 Mark the incorrect location
+        napi_create_int32(env, FAIL, &res); // 2 Mark the incorrect location
         return res;
     }
     // checks the signaled variable to ensure that OH_NativeFence_Wait has returned
@@ -218,7 +218,7 @@ static napi_value NativeFenceWaitForeverKill(napi_env env, napi_callback_info in
         return res;
     }
     OH_NativeFence_Close(sfd);
-    napi_create_int32(env, SUCCESS, &res);
+    napi_create_int32(env, true, &res);
     return res;
 }
 

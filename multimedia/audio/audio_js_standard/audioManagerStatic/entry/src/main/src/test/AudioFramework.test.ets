@@ -70,7 +70,7 @@ async function getVolumeGroupManager() {
   }
 }
 
-function displayDeviceProp(value: audio.AudioDeviceDescriptor, index: number, array: audio.AudioDeviceDescriptors) {
+function displayDeviceProp(value: audio.AudioDeviceDescriptor, index: int, array: audio.AudioDeviceDescriptors) {
   let devRoleName: string;
   let devTypeName: string;
   if (value.deviceRole == 1) {
@@ -352,7 +352,7 @@ export default function audioFramework() {
         capturerInfo: audioCapturerInfo
       };
 
-      let audioCapturer: audio.AudioCapturer;
+      let audioCapturer: audio.AudioCapturer | null;
 
       audio.createAudioCapturer(audioCapturerOptions).then((data) => {
         audioCapturer = data;
@@ -399,7 +399,7 @@ export default function audioFramework() {
         data!.release().then(() => {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
-          console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer.state}`);
+          console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer!.state}`);
         }).catch(async(err: BusinessError) => {
           console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
           expect(true).assertFalse();

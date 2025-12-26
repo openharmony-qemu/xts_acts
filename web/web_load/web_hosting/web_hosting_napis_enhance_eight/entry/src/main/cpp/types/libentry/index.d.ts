@@ -26,3 +26,6 @@ export const asyncReadCallback: () => number;
 export const readBufferValue: () => string;
 export const threadIdEqual: () => number;
 export const requestStop: () => number;
+export const arkWebHttpBodyStreamAsyncReadBufLenMinValue: () => number;
+export const arkWebHttpBodyStreamAsyncReadBufLenMinBoundary: () => number;
+export const arkWebHttpBodyStreamAsyncReadBufLenMaxBoundary: () => number;

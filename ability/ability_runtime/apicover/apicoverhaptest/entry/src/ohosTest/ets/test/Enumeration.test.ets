@@ -20,6 +20,7 @@ import { Driver } from '@ohos.UiTest';
 import errorCode from '@ohos.ability.errorCode';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import { ConfigurationConstant } from '@kit.AbilityKit';
+import application from '@ohos.app.ability.application';
 
 function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -541,6 +542,20 @@ export default function ApiCoverTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_wantConstant_1700
+     * @tc.number SUB_Ability_AbilityBase_wantConstant_1700
+     * @tc.desc   Test wantConstant Params.APP_CLONE_INDEX_KEY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_wantConstant_1700', Level.LEVEL0, async (done: Function) => {
+      expect('ohos.extra.param.key.appCloneIndex').assertEqual(wantConstant.Params.APP_CLONE_INDEX_KEY);
+      done();
+    })
+
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_WantAgent_0100
      * @tc.number SUB_Ability_AbilityBase_WantAgent_0100
      * @tc.desc   Test wantAgent OperationType.UNKNOWN_TYPE.
@@ -693,6 +708,58 @@ export default function ApiCoverTest() {
      */
     it('SUB_Ability_AbilityBase_wantConstant_1600', Level.LEVEL0, async (done: Function) => {
       expect('ReasonMessage_DesktopShortcut').assertEqual(abilityConstant.REASON_MESSAGE_DESKTOP_SHORTCUT);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0100
+     * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0100
+     * @tc.desc   Test AppPreloadType UNSPECIFIED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AppPreloadType_0100', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(application.AppPreloadType.UNSPECIFIED);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0200
+     * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0200
+     * @tc.desc   Test AppPreloadType TYPE_CREATE_PROCESS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AppPreloadType_0200', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(application.AppPreloadType.TYPE_CREATE_PROCESS);
+      done();
+    })
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0300
+     * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0300
+     * @tc.desc   Test AppPreloadType TYPE_CREATE_ABILITY_STAGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AppPreloadType_0300', Level.LEVEL0, async (done: Function) => {
+      expect(2).assertEqual(application.AppPreloadType.TYPE_CREATE_ABILITY_STAGE);
+      done();
+    })
+        
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AppPreloadType_0400
+     * @tc.number SUB_Ability_AbilityBase_AppPreloadType_0400
+     * @tc.desc   Test AppPreloadType TYPE_CREATE_WINDOW_STAGE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AppPreloadType_0400', Level.LEVEL0, async (done: Function) => {
+      expect(3).assertEqual(application.AppPreloadType.TYPE_CREATE_WINDOW_STAGE);
       done();
     })
   })

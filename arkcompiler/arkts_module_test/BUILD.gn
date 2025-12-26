@@ -25,6 +25,7 @@ group("ActsArktsModuleTest") {
       "worker_path_load:ActsArkTsWorkerPathLoadTest",
       "lazy_load:ActsArkTsLazyLoadTest",
       "execute_promise_after_module_load:ActsArkTsExecutePromiseAfterModuleLoadTest",
+      "arkts_module_static:arkts_module_static",
     ]
   }
 }

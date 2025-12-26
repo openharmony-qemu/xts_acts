@@ -46,6 +46,11 @@ struct MaxLinesOptionsTest {
         .fontSize(10)
         .textOverflow(TextOverflow.Clip)
         .id('TextAreaMaxLinesModeUndefined')
+      TextArea({text:this.testText})
+        .maxLines(-1,{overflowMode:undefined})
+        .fontSize(10)
+        .textOverflow(TextOverflow.Clip)
+        .id('TextAreaMaxLinesNegative')
     }
   }
 }

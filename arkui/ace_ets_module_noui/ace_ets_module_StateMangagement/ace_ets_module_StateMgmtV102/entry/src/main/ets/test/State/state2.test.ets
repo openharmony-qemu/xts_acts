@@ -67,7 +67,7 @@ export default function state2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('state2_0100', Level.LEVEL0, async (done: Function) => {
+    it('state2_0100', Level.LEVEL1, async (done: Function) => {
       console.info('state2_0100 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('stBtn1'));
@@ -91,7 +91,7 @@ export default function state2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('state2_0200', Level.LEVEL0, async (done: Function) => {
+    it('state2_0200', Level.LEVEL1, async (done: Function) => {
       console.info('state2_0200 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('stBtn2'));
@@ -115,7 +115,7 @@ export default function state2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('state2_0300', Level.LEVEL0, async (done: Function) => {
+    it('state2_0300', Level.LEVEL1, async (done: Function) => {
       console.info('state2_0300 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('stBtn3'));
@@ -143,7 +143,7 @@ export default function state2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('state2_0400', Level.LEVEL0, async (done: Function) => {
+    it('state2_0400', Level.LEVEL1, async (done: Function) => {
       console.info('state2_0400 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('stBtn4'));

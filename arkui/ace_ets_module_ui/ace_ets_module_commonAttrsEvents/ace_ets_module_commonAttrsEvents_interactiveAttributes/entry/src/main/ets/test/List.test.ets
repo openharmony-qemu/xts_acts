@@ -14,8 +14,10 @@
  */
 import enableJsunit from './enabledTest/EnableJsunit.test';
 import monopolizeTest from './TouchInteractionControl/monopolizeEventsTest/monopolizeTest.test';
+import responseRegionListTest from "./responseRegion/responseRegionList.test";
 
 export default function testsuite() {
     enableJsunit();
     monopolizeTest();
+    responseRegionListTest();
 }

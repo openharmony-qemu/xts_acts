@@ -17,3 +17,4 @@ export const GetPathFromUri: () => number;
 export const GetFullDirectoryUri: () => number;
 export const IsValidUri: () => number;
 export const GetFileName: () => string;
+export const IsValidUriInvalid: () => number;

@@ -93,5 +93,27 @@ export default function TransitionEdgeTest() {
       await driver.assertComponentExist(ON.id('imageId'));
       done();
     });
+
+    /**
+     * @tc.name   SlideEffect_002
+     * @tc.number SlideEffect_002
+     * @tc.desc   Test Enumerated value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SlideEffect_002',  Level.LEVEL0, async (done: Function) => {
+      console.info('SlideEffect_002 START');
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      expect(SlideEffect.Left).assertEqual(1);
+      expect(SlideEffect.Right).assertEqual(2);
+      expect(SlideEffect.Top).assertEqual(3);
+      expect(SlideEffect.Bottom).assertEqual(4);
+      expect(SlideEffect.START).assertEqual(5);
+      expect(SlideEffect.END).assertEqual(6);
+      console.log('[SlideEffect_002] END');
+      done();
+    });
   })
 }

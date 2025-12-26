@@ -18,4 +18,10 @@ group("ActsHdfNncoreTest") {
     "nncoretest:ActsNncoreTest",
     "opstest:ActsNnrtOpsTest",
   ]
+  if (is_standard_system) {
+    deps += [
+      "ActsNNCoreOpsTest:ActsNNCoreOptTest",
+      "ActsNnrtE2ETest:ActsNnrtE2EHapTest",
+    ]
+  }
 }

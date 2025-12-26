@@ -42,3 +42,4 @@ export const SetProcessName: (processName: String) => number;
 export const SetProcessNameConfigsNullptr: () => number;
 export const DestroyChildProcessConfigs: () => number;
 export const DestroyChildProcessConfigsNullptr: () => number;
+export const KillChildProcessWithPid: (pid: number) => number;

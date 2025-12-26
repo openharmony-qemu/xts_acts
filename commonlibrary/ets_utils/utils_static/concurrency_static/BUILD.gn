@@ -17,7 +17,22 @@ group("concurrency_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "asynclock_test_static:ActsAsyncLockStaticTest",
+      "atomics_test_static:ActsAtomicsStaticTest",
+      "eaworker_test_static:ActsEAWorkerStaticTest",
+      "message_test_static:ActsMessageHandlerStaticTest",
+      "process_test_static:ActsProcessStaticTest",
+      "promise_test_static:ActsPromiseStaticTest",
+      "promise_second_test_static:ActsPromiseSecondStaticTest",
+      "sequenceRunner_test_static:ActsSequenceRunnerStaticTest",
+      "sharedarraybuffer_test_static:ActsSharedArrayBufferStaticTest",
+      "taskDelayed_test_static:ActsTaskDelayedStaticTest",
+      "taskgroup_test_static:ActsTaskgroupStaticTest",
+      "taskpool_base_test_static:ActsTaskpoolBaseStaticTest",
       "taskpool_sendable_test_static:ActsTaskpoolSendableStaticTest",
+      "thread_safe_container_test_static:ActsThreadSafeContainerStaticTest",
+      "timer_test_static:ActsTimerStaticTest",
     ]
+
   }
 }

@@ -23,11 +23,17 @@ import {
   TEST_BUNDLENAME,
   INVALID_BUNDLE_NAME,
   DEFAULT_APP_INDEX,
-  INVALID_APP_INDEX
+  INVALID_APP_INDEX,
+  BLUETOOTH_STATE,
+  WIFI_STATE,
+  getBluetoothState,
+  getWifiState
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import applicationManager from '@ohos.enterprise.applicationManager';
+import bluetoothManager from '@ohos.enterprise.bluetoothManager';
+import wifiManager from '@ohos.enterprise.wifiManager';
 
 export default function afterAllTest() {
   describe('afterAll_test', () => {
@@ -152,5 +158,54 @@ export default function afterAllTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_restore_bluetooth_state_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_RESTORE_BLUETOOTH_STATE_0100
+     * @tc.desc   test restore bluetooth state with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_restore_bluetooth_state_0100', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      const STATE_ON = 2;
+      try {
+        if(getBluetoothState() == STATE_ON) {
+          bluetoothManager.turnOnBluetooth(SELFWANT);
+        } else {
+          bluetoothManager.turnOffBluetooth(SELFWANT);
+        }
+      } catch(error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_restore_wifi_state_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_RESTORE_WIFI_STATE_0200
+     * @tc.desc   test restore wifi state with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_restore_wifi_state_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if(getWifiState()) {
+          wifiManager.turnOnWifi(SELFWANT, false);
+        } else {
+          wifiManager.turnOffWifi(SELFWANT);
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   })
 }

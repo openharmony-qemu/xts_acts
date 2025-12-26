@@ -25,7 +25,7 @@ async function getTypeTest(done: Function, testName: string, path: string,
   AuxiliaryPictureType: image.AuxiliaryPictureType, callback: (type: image.AuxiliaryPictureType) => void) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(299700600);
+    let array = new ArrayBuffer(20000000);
     let pathUri = 'file://' + testContext.filesDir + "/" + path;
     const fd = await fs.open(pathUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, array);

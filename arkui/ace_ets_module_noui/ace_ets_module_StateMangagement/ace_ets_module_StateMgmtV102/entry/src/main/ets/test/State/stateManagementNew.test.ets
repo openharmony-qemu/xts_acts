@@ -53,7 +53,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('teststateManagementGetShared0001', Level.LEVEL0, async () => {
+    it('teststateManagementGetShared0001', Level.LEVEL1, async () => {
       console.info('stateManagementGetShared teststateManagementGetShared0001 START');
       await CommonFunc.sleep(2000);
       try {
@@ -82,7 +82,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('teststateManagementsetAndLink0001', Level.LEVEL0, async () => {
+    it('teststateManagementsetAndLink0001', Level.LEVEL1, async () => {
       console.info('stateManagementsetAndLink teststateManagementsetAndLink0001 START');
       await CommonFunc.sleep(1000);
       try {
@@ -111,7 +111,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('teststateManagementsetOrCreate0001', Level.LEVEL0, async () => {
+    it('teststateManagementsetOrCreate0001', Level.LEVEL1, async () => {
       console.info('stateManagementsetOrCreate teststateManagementsetOrCreate0001 START');
       await CommonFunc.sleep(1000);
       try {
@@ -141,7 +141,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('teststateManagementsetAndProp0001', Level.LEVEL0, async () => {
+    it('teststateManagementsetAndProp0001', Level.LEVEL1, async () => {
       console.info('stateManagementsetAndProp teststateManagementsetAndProp0001 START');
       await CommonFunc.sleep(1000);
       try {
@@ -170,7 +170,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_staticClear_0001', Level.LEVEL0, async () => {
+    it('test_staticClear_0001', Level.LEVEL1, async () => {
       console.info('test_staticClear_0001 Register a customized font in the FontManagerSTART');
       await CommonFunc.sleep(2000);
       try {
@@ -192,7 +192,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_setAndLink_0001', Level.LEVEL0, async () => {
+    it('test_setAndLink_0001', Level.LEVEL1, async () => {
       console.info('test_setAndLink_0001 START');
       await CommonFunc.sleep(2000);
       try {
@@ -216,7 +216,7 @@ export default function stateManagementGetSharedJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_setAndProp_0002', Level.LEVEL0, async () => {
+    it('test_setAndProp_0002', Level.LEVEL1, async () => {
       console.info('test_setAndProp_0002 START');
       await CommonFunc.sleep(2000);
       try {

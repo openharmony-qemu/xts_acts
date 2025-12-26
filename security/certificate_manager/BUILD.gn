@@ -22,6 +22,8 @@ group("certificate_manager") {
       "certificate_manager_func_static:ActsCertificateManagerJsFuncStaticTest",
       "certificate_manager_permission_static:ActsCertificateManagerJsPermissionStaticTest",
       "certificate_manager_notsystem_app_static:ActsCertificateManagerJsNotSystemAppStaticTest",
+      "certificate_manager_ndk_test:ActsCertManagerNdkTest",
+      "certificate_manager_ndk_permission_test:ActsCertManagerNdkPermissonTest",
     ]
   }
 }

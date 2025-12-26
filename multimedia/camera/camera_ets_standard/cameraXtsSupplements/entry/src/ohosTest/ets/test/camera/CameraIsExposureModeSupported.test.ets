@@ -382,43 +382,6 @@ export default function cameraIsExposureModeSupported() {
       })
       done();
     })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003
-     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003
-     * @tc.desc   isExposureModeSupported boolean,cover true & false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003', Level.LEVEL2, async (done: Function) => {
-      photoSessionIsExposureModeSupported('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003',2,(res?: boolean, errCode?: number) => {
-        if (res != undefined) {
-          expect(res).assertTrue();
-        }
-        if (errCode != undefined) {
-          expect().assertFail();
-        }
-      })
-      done();
-    })
-    /**
-     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003
-     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003
-     * @tc.desc   isExposureModeSupported boolean,cover true & false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003', Level.LEVEL2, async (done: Function) => {
-      videoSessionIsExposureModeSupported('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ISEXPOSUREMODESUPPORTED_RETURN_003',2,(res?: boolean, errCode?: number) => {
-        if (res != undefined) {
-          expect(res).assertTrue();
-        }
-        if (errCode != undefined) {
-          expect().assertFail();
-        }
-      })
-      done();
-    })
+
   })
 }

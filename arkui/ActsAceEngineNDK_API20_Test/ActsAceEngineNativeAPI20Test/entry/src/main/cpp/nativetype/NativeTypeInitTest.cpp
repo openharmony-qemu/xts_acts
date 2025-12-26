@@ -75,6 +75,17 @@ static void InitPush1(std::vector<napi_property_descriptor>& desc)
     desc.push_back(XL("GetRouterStateOnShow", GetRouterStateOnShow));
     desc.push_back(XL("GetRouterStateOnHide", GetRouterStateOnHide));
     desc.push_back(XL("GetRouterStateOnBackPressed", GetRouterStateOnBackPressed));
+    desc.push_back(XL("GetRouterStatAboutToAppear", GetRouterStatAboutToAppear));
+    desc.push_back(XL("GetRouterStateAboutToDisApper", GetRouterStateAboutToDisApper));
+    desc.push_back(XL("GetNavDestinationStateOnShow", GetNavDestinationStateOnShow));
+    desc.push_back(XL("GetNavDestinationStateOnHidden", GetNavDestinationStateOnHidden));
+    desc.push_back(XL("GetNavDestinationStateOnAppear", GetNavDestinationStateOnAppear));
+    desc.push_back(XL("GetNavDestinationStateOnDisAppear", GetNavDestinationStateOnDisAppear));
+    desc.push_back(XL("GetNavDestinationStateOnWillShow", GetNavDestinationStateOnWillShow));
+    desc.push_back(XL("GetNavDestinationStateOnWillHide", GetNavDestinationStateOnWillHide));
+    desc.push_back(XL("GetNavDestinationStateOnWillAppear", GetNavDestinationStateOnWillAppear));
+    desc.push_back(XL("GetNavDestinationStateOnWillDisappear", GetNavDestinationStateOnWillDisappear));
+    desc.push_back(XL("GetNavDestinationStateOnBackPressed", GetNavDestinationStateOnBackPressed));
 }
 static void InitPush2(std::vector<napi_property_descriptor>& desc)
 {

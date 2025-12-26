@@ -21,6 +21,7 @@ group("usb") {
       "usb_standard:ActsUsbJSApiTest",
       "usb_standard_ets:ActsUsbETSApiTest",
       "usb_standard_ets_static:ActsUsbETSApiStaticTest",
+      "usb_standard_serial:ActsUsbSerialApiTest",
     ]
   }
 }

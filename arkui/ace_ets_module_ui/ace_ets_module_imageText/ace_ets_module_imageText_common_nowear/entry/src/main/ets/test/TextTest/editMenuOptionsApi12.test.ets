@@ -29,11 +29,11 @@ export default function editMenuOptionsApi12Test() {
         router.clear();
         let pages = router.getState();
         console.info("get editMenuOptionsApi12Test state pages:" + JSON.stringify(pages));
+        let result = await router.replaceUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push editMenuOptionsApi12Test page result:" + JSON.stringify(result));
         if (!("editMenuOptionsApi12" == pages.name)) {
           console.info("get editMenuOptionsApi12Test pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push editMenuOptionsApi12Test page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push editMenuOptionsApi12Test page error:" + err);

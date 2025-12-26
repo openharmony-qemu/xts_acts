@@ -39,6 +39,8 @@ export default function textInputOnInsertTest() {
       await Utils.sleep(1000)
       await Utils.triggerKey(2040)
       await Utils.sleep(1000)
+      await Utils.triggerKey(2047)
+      await Utils.sleep(1000)
       let dataArray: number[][] = nativeRender.getTextInputInsertData();
       let textInputInsertData: number[] = dataArray[0];
       expect(textInputInsertData[0] == 4 && textInputInsertData[1] == 5).assertEqual(true)

@@ -56,7 +56,8 @@ export default function ArrayListTest2() {
       try {
         const arrayList = new ArrayList<number>();
         expect(String(arrayList.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -80,7 +81,8 @@ export default function ArrayListTest2() {
           Int16Array | Int32Array | undefined | null | Uint8Array | Uint16Array | Uint32Array |
           BigInt64Array | BigUint64Array>();
         expect(String(arrayList.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -110,7 +112,8 @@ export default function ArrayListTest2() {
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult)
           .assertEqual(`{"0":"zhang san","1":1,"3":null,"4":true}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -137,7 +140,8 @@ export default function ArrayListTest2() {
         let jsonResult = JSON.stringify(arrayList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult).assertEqual(`{"0":"","1":"\`","2":"%","3":"\\""}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -166,7 +170,8 @@ export default function ArrayListTest2() {
         expect(String(arrayList.has("end"))).assertEqual('false');
         // expect(arrayList.has("start")).assertEqual(false);
         // expect(arrayList.has("end")).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err){
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -199,7 +204,8 @@ export default function ArrayListTest2() {
         // expect(arrayList.has("`")).assertEqual(false);
         // expect(arrayList.has("%")).assertEqual(false);
         // expect(arrayList.has(`"`)).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -270,7 +276,8 @@ export default function ArrayListTest2() {
         expect(String(arrayList.has("`"))).assertEqual('false');
         expect(String(arrayList.has("%"))).assertEqual('false');
         expect(String(arrayList.has(`"`))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -318,7 +325,8 @@ export default function ArrayListTest2() {
 
         expect(String(arrayList.has("zhang san"))).assertEqual('true');
         expect(String(arrayList.has(1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -366,7 +374,8 @@ export default function ArrayListTest2() {
 
         expect(String(arrayList.has("zhang san"))).assertEqual('true');
         expect(String(arrayList.has(1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -410,7 +419,8 @@ export default function ArrayListTest2() {
         let result2 = arrayList.removeByIndex(index2);
         let result3 = arrayList.removeByIndex(index2);
         expect(String(result2 != result3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -449,7 +459,8 @@ export default function ArrayListTest2() {
         arrayList.removeByIndex(-2);
         arrayList.removeByIndex(arrayList.length);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -487,7 +498,8 @@ export default function ArrayListTest2() {
 
         arrayList.removeByIndex(arrayList.length);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -544,7 +556,8 @@ export default function ArrayListTest2() {
         arrayList.remove("zhang san");
         let index1 = arrayList.getIndexOf("zhang san");
         expect(String(index1 === 0)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -601,7 +614,8 @@ export default function ArrayListTest2() {
         arrayList.removeByIndex(index);
         let index1 = arrayList.getIndexOf("zhang san");
         expect(String(index1 === 0)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -639,7 +653,8 @@ export default function ArrayListTest2() {
 
         arrayList.removeByRange(1, 1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -678,7 +693,8 @@ export default function ArrayListTest2() {
         let fromIndex = Math.floor(1.5);
         arrayList.removeByRange(fromIndex as int, Math.floor(arrayList.length) as int);
         expect(String(arrayList.length)).assertEqual(String(fromIndex));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -692,27 +708,28 @@ export default function ArrayListTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testArrayListReplaceAllElement0001';
-    //   try {
-    //     let arrayList: ArrayList<string> = new ArrayList<string>();
-    //     arrayList.add("zhang san");
-    //     arrayList.add("");
-    //     arrayList.add("`");
-    //     arrayList.add("%");
-    //     arrayList.add(`"`);
-    //     arrayList.replaceAllElements((value: string, index: number) => {
-    //       let tmp = value;
-    //       value = tmp + value;
-    //       let result = arrayList[index];
-    //       expect(String(value)).assertEqual(String(result + result))
-    //       return value;
-    //     })
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testArrayListReplaceAllElement0001';
+      try {
+        let arrayList: ArrayList<string> = new ArrayList<string>();
+        arrayList.add("zhang san");
+        arrayList.add("");
+        arrayList.add("`");
+        arrayList.add("%");
+        arrayList.add(`"`);
+        arrayList.replaceAllElements((value: string, index: int) => {
+          let tmp = value;
+          value = tmp + value;
+          let result = arrayList[index];
+          expect(String(value)).assertEqual(String(result + result))
+          return value;
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testArrayListReplaceAllElement0002
@@ -722,43 +739,44 @@ export default function ArrayListTest2() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testArrayListReplaceAllElement0002';
-    //   try {
-    //     let arrayList: ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     arrayList.add("zhang san");
-    //     arrayList.add(1);
-    //     let temp: Temp = {
-    //       age: 10, name: "zhang"
-    //     };
-    //     arrayList.add(temp);
-    //     arrayList.add(undefined);
-    //     arrayList.add(null);
-    //     arrayList.add(true);
-    //     let array = [0, 1, 2, undefined];
-    //     arrayList.add(array);
-    //     arrayList.add("");
-    //     arrayList.add("`");
-    //     arrayList.add("%");
-    //     arrayList.add(`"`);
-    //
-    //     arrayList.replaceAllElements((value, index, tempList) => {
-    //       let indexValue = (index == null) ? 0 : index;
-    //       let length = tempList ? tempList.length - 1 : 0;
-    //       if (indexValue === length) {
-    //         let tmp = value as string;
-    //         value = tmp + "add last index";
-    //       }
-    //       return value;
-    //     })
-    //     expect(String(arrayList.has(`"add last index`))).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testArrayListReplaceAllElement0002';
+      try {
+        let arrayList: ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        arrayList.add("zhang san");
+        arrayList.add(1);
+        let temp: Temp = {
+          age: 10, name: "zhang"
+        };
+        arrayList.add(temp);
+        arrayList.add(undefined);
+        arrayList.add(null);
+        arrayList.add(true);
+        let array = [0, 1, 2, undefined];
+        arrayList.add(array);
+        arrayList.add("");
+        arrayList.add("`");
+        arrayList.add("%");
+        arrayList.add(`"`);
+
+        arrayList.replaceAllElements((value, index, tempList) => {
+          let indexValue = (index == null) ? 0 : index;
+          let length = tempList ? tempList.length - 1 : 0;
+          if (indexValue === length) {
+            let tmp = value as string;
+            value = tmp + "add last index";
+          }
+          return value;
+        })
+        expect(String(arrayList.has(`"add last index`))).assertEqual('true');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testArrayListForEach0001
@@ -793,7 +811,8 @@ export default function ArrayListTest2() {
         arrayList.forEach((value) => {
           expect(String(arrayList.has(value))).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -821,7 +840,8 @@ export default function ArrayListTest2() {
         arrayList.sort((firstValue, secondValue) => firstValue - secondValue);
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList)).assertEqual(`{"0":0,"1":1,"2":3,"3":5,"4":8,"5":22,"6":24,"7":51}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -850,7 +870,8 @@ export default function ArrayListTest2() {
         arrayList.sort((firstValue, secondValue) => secondValue - firstValue);
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList)).assertEqual(`{"0":51,"1":24,"2":22,"3":8,"4":5,"5":3,"6":1,"7":0}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -881,7 +902,8 @@ export default function ArrayListTest2() {
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":0,"1":1,"2":22,"3":24,"4":3,"5":5,"6":51,"7":8,"8":"zhang san"}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -912,7 +934,8 @@ export default function ArrayListTest2() {
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":0,"1":1,"2":22,"3":24,"4":3,"5":5,"6":51,"7":8,"8":"A"}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -942,7 +965,8 @@ export default function ArrayListTest2() {
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":1,"1":22,"2":3,"3":24,"4":5,"5":51,"6":8,"7":0}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -966,7 +990,8 @@ export default function ArrayListTest2() {
         arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         arrayList.clear();
         expect(String(arrayList.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -990,7 +1015,8 @@ export default function ArrayListTest2() {
         arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         let result = arrayList.clone();
         expect(String(arrayList.length)).assertEqual(String(result.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1015,7 +1041,8 @@ export default function ArrayListTest2() {
         arrayList.clear();
         let result = arrayList.clone();
         expect(String(result.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1042,7 +1069,8 @@ export default function ArrayListTest2() {
         arrayList.trimToCurrentLength();
         let result = arrayList.getCapacity();
         expect(String(result)).assertEqual(String(arrayList.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1070,7 +1098,8 @@ export default function ArrayListTest2() {
         expect(arrayList.getCapacity()).assertEqual(0);
         arrayList.increaseCapacityTo(1)
         expect(String(arrayList.getCapacity())).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1091,7 +1120,8 @@ export default function ArrayListTest2() {
         arrayList.add(dog);
         let array = arrayList.convertToArray();
         expect(array[0] instanceof Dog).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1115,7 +1145,8 @@ export default function ArrayListTest2() {
         let cat = new Cat(2, "li li");
         array.fill(cat);
         expect(array[0] instanceof Dog).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1134,7 +1165,8 @@ export default function ArrayListTest2() {
       try {
         let arrayList: ArrayList<number> = new ArrayList<number>();
         expect(String(arrayList.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1171,7 +1203,8 @@ export default function ArrayListTest2() {
         arrayList.add(`"`);
 
         expect(String(arrayList.isEmpty())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1208,7 +1241,8 @@ export default function ArrayListTest2() {
         arrayList.add(`"`);
         arrayList.clear();
         expect(String(arrayList.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1249,7 +1283,8 @@ export default function ArrayListTest2() {
             expect(String(arrayList.has(value))).assertEqual('true');
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1274,7 +1309,8 @@ export default function ArrayListTest2() {
           return value + 1;
         });
         expect(arrayList.convertToArray().toString()).assertEqual("3,5,6,5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1300,7 +1336,8 @@ export default function ArrayListTest2() {
           return value - 1;
         });
         expect(arrayList.convertToArray().toString()).assertEqual("1,3,4,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1329,7 +1366,8 @@ export default function ArrayListTest2() {
         });
         expect(arrayList.convertToArray().toString()).assertEqual("1,3,4,3");
         expect(newArrayList.convertToArray().toString()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1360,7 +1398,8 @@ export default function ArrayListTest2() {
         });
         expect(arrayList.convertToArray().toString()).assertEqual("1,3,4,3");
         expect(newArrayList.convertToArray().toString()).assertEqual("3,5,7");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1392,7 +1431,8 @@ export default function ArrayListTest2() {
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(newArrayList.convertToArray().toString()).assertEqual("");
         expect(result.convertToArray().toString()).assertEqual("2,0,4,1,5,2,4,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1423,7 +1463,8 @@ export default function ArrayListTest2() {
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(newArrayList.convertToArray().toString()).assertEqual("4");
         expect(result.convertToArray().toString()).assertEqual("2,0,4,1,5,2,4,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1453,10 +1494,31 @@ export default function ArrayListTest2() {
         }
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(result.convertToArray().toString()).assertEqual("2,4,5,4");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
+    });
+
+    /**
+     * @tc.name   testArrayListForEach0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0700
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListForEach0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<int> = new ArrayList<int>();
+      expect(arrayList.length).assertEqual(0);
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(5);
+      arrayList.add(4);
+      expect(arrayList.length).assertEqual(4);
+      expect(arrayList[0]).assertEqual(2);
+      expect(arrayList[3]).assertEqual(4);
     });
   });
 }

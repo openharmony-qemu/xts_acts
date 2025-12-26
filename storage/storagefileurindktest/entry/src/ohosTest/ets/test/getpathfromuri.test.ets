@@ -136,5 +136,27 @@ export default function ActsStorageFileUriNdkTest(){
             expect(false).assertTrue();
          }
       });
+
+    /**
+     * @tc.name   isvaliduri_ndktest_002
+     * @tc.number SUB_BASIC_FM_FileAPI_getfileuri_0600
+     * @tc.desc   function of API, Test IsValidUri, normal function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('isvaliduri_ndktest_002', Level.LEVEL0, async (done: Function) => {
+      try{
+        let ret = fileuri.IsValidUriInvalid();
+        console.info("isvaliduri_ndktest_002 test napi ret = "+ JSON.stringify(ret));
+        expect(ret).assertEqual(0);
+        console.info("isvaliduri_ndktest_002 test successfull!");
+        done();
+      }catch(e){
+        console.info('isvaliduri_ndktest_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
   });
 }

@@ -23,6 +23,7 @@ import { BusinessError, Callback } from '@ohos.base';
 import { UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
+import {Driver} from '@ohos.UiTest'
 
 function unexpectedError(error: BusinessError, caseName: string, apiName: string, TRUE_FLAG: boolean, done: Function) {
   let msgStr: string = 'jsUnittest ' + caseName + ' ' + apiName + ' failed, err: ';
@@ -51,14 +52,23 @@ export default function windowInterfaceOptionalParameterTest() {
     // let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     const TRUE_FLAG: boolean = true;
     let currentDeviceIsPC = false;
-    beforeAll(() => {
+    beforeAll(async () => {
        context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
        windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       // let deviceTypeInfo = deviceInfo.deviceType
       // currentDeviceIsPC = deviceTypeInfo === '2in1' ? true : false;
       // console.info('the value of the deviceType is :' + deviceInfo.deviceType);
-
+      try {
+        let driver = Driver.create();
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        console.log('findComponent allowed: ' + JSON.stringify(allowed));
+        if(allowed){
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent allowed failed: ' + JSON.stringify(err));
+      }
     })
 
     /**

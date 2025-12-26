@@ -15,9 +15,13 @@
 import NDKXComponentSurfaceConfigTest from './XComponent/NDKXComponentSurfaceConfigTest.test'
 import SetXComponentSurfaceConfigTest from './XComponent/SetXComponentSurfaceConfigTest.test'
 import XComponentKeyMouseEventTest from './XComponent/XComponentKeyMouseEventTest.test'
+import NodeXComponentTest from './XComponent/NodeXComponentTest.test'
+import NodeContentTest from './XComponent/NodeContentTest.test'
 
 export default function testsuite() {
   SetXComponentSurfaceConfigTest()
   NDKXComponentSurfaceConfigTest()
   XComponentKeyMouseEventTest()
+  NodeXComponentTest()
+  NodeContentTest()
 }

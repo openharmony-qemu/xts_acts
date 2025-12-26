@@ -1260,5 +1260,161 @@ export default function SixPointZeroTest() {
       expect(testNapi.testutf8_prevCharSafeBody()).assertTrue();
     })
 
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0100
+     * @tc.name      testOH_i18n_GetTimeZoneRules_0100
+     * @tc.desc      OH_i18n_GetTimeZoneRules with Asia/Shanghai
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('testOH_i18n_GetTimeZoneRules_0100', Level.LEVEL0, () => {
+      expect(testNapi.testOH_i18n_GetTimeZoneRules_0100()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0200
+     * @tc.name      testOH_i18n_GetTimeZoneRules_0200
+     * @tc.desc      OH_i18n_GetTimeZoneRules with aaa
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetTimeZoneRules_0200', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetTimeZoneRules_0200()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0300
+     * @tc.name      testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRules_0300
+     * @tc.desc      OH_i18n_GetTimeZoneRules with Asia/Shanghai
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRules_0300', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetFirstStartFromTimeArrayTimeZoneRules_0300()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0400
+     * @tc.name      testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRules_0400
+     * @tc.desc      OH_i18n_GetTimeZoneRules with Asia/Shanghai
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRules_0400', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetFinalStartFromTimeArrayTimeZoneRules_0400()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0500
+     * @tc.name      testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500
+     * @tc.desc      OH_i18n_GetTimeZoneRules with Asia/Shanghai
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetNextStartFromTimeArrayTimeZoneRules_0500()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0600
+     * @tc.name      testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600
+     * @tc.desc      OH_i18n_GetTimeZoneRules with Asia/Shanghai
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetPrevStartFromTimeArrayTimeZoneRules_0600()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0700
+     * @tc.name      testOH_i18n_GetStartTimeAt_0700
+     * @tc.desc      OH_i18n_GetTimeZoneRules with Asia/Shanghai
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetStartTimeAt_0700', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetStartTimeAt_0700()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0800
+     * @tc.name      testOH_i18n_GetTimeZoneRules_0800
+     * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetTimeZoneRules_0800', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetTimeZoneRules_0800()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_0900
+     * @tc.name      testOH_i18n_GetFirstStartFromAnnualTimeZoneRules_0900
+     * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetFirstStartFromAnnualTimeZoneRules_0900', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetFirstStartFromAnnualTimeZoneRules_0900()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_1000
+     * @tc.name      testOH_i18n_GetFinalStartFromAnnualTimeZoneRules_1000
+     * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetFinalStartFromAnnualTimeZoneRules_1000', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetFinalStartFromAnnualTimeZoneRules_1000()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_1100
+     * @tc.name      testOH_i18n_GetNextStartFromAnnualTimeZoneRules_1100
+     * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetNextStartFromAnnualTimeZoneRules_1100', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetNextStartFromAnnualTimeZoneRules_1100()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_1200
+     * @tc.name      testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200
+     * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetPrevStartFromAnnualTimeZoneRules_1200()).assertTrue();
+    })
+
+    /**
+     * @tc.number    SUB_GLOBAL_I18n_C_API_GetTimeZoneInformation_1300
+     * @tc.name      testOH_i18n_GetStartInYear_1300
+     * @tc.desc      OH_i18n_GetTimeZoneRules with America/Santiago
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testOH_i18n_GetStartInYear_1300', Level.LEVEL2, () => {
+      expect(testNapi.testOH_i18n_GetStartInYear_1300()).assertTrue();
+    })
+
   })
 }

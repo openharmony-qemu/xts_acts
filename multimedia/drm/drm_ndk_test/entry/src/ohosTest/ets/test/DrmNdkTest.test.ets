@@ -2637,5 +2637,40 @@ export default function abilityTest() {
       let c = testNapi.Test_MediaKeySession_SetCallback("ptr", " ");
       expect(c).assertEqual(Drm_ErrorCode.DRM_ERR_INVALID_VAL);
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_DRM_C_API_188
+     * @tc.number SUB_MULTIMEDIA_DRM_C_API_188
+     * @tc.desc   system_set 错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_DRM_C_API_188', Level.LEVEL0, () => {
+      expect(Drm_ErrorCode.DRM_CAPI_ERR_BASE == 24700500).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_CAPI_ERR_BASE: ${Drm_ErrorCode.DRM_CAPI_ERR_BASE}`);
+      expect(Drm_ErrorCode.DRM_ERR_NO_MEMORY == 24700501).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_NO_MEMORY: ${Drm_ErrorCode.DRM_ERR_NO_MEMORY}`);
+      expect(Drm_ErrorCode.DRM_ERR_OPERATION_NOT_PERMITTED == 24700502).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_OPERATION_NOT_PERMITTED: ${Drm_ErrorCode.DRM_ERR_OPERATION_NOT_PERMITTED}`);
+      expect(Drm_ErrorCode.DRM_ERR_IO == 24700504).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_IO: ${Drm_ErrorCode.DRM_ERR_IO}`);
+      expect(Drm_ErrorCode.DRM_ERR_TIMEOUT == 24700505).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_TIMEOUT: ${Drm_ErrorCode.DRM_ERR_TIMEOUT}`);
+      expect(Drm_ErrorCode.DRM_ERR_UNKNOWN == 24700506).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_UNKNOWN: ${Drm_ErrorCode.DRM_ERR_UNKNOWN}`);
+      expect(Drm_ErrorCode.DRM_ERR_SERVICE_DIED == 24700507).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_SERVICE_DIED: ${Drm_ErrorCode.DRM_ERR_SERVICE_DIED}`);
+      expect(Drm_ErrorCode.DRM_ERR_INVALID_STATE == 24700508).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_INVALID_STATE: ${Drm_ErrorCode.DRM_ERR_INVALID_STATE}`);
+      expect(Drm_ErrorCode.DRM_ERR_UNSUPPORTED == 24700509).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_UNSUPPORTED: ${Drm_ErrorCode.DRM_ERR_UNSUPPORTED}`);
+      expect(Drm_ErrorCode.DRM_ERR_MAX_SYSTEM_NUM_REACHED == 24700510).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_MAX_SYSTEM_NUM_REACHED: ${Drm_ErrorCode.DRM_ERR_MAX_SYSTEM_NUM_REACHED}`);
+      expect(Drm_ErrorCode.DRM_ERR_MAX_SESSION_NUM_REACHED == 24700511).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_MAX_SESSION_NUM_REACHED: ${Drm_ErrorCode.DRM_ERR_MAX_SESSION_NUM_REACHED}`);
+      expect(Drm_ErrorCode.DRM_ERR_EXTEND_START == 24700600).assertTrue();
+      console.log(`Drm_ErrorCode.DRM_ERR_EXTEND_START: ${Drm_ErrorCode.DRM_ERR_EXTEND_START}`);
+    })
   })
 }
