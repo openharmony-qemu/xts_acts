@@ -16,6 +16,10 @@ group("ans_standard") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsNotificationAnsPriorityTest:ActsNotificationPriorityTest",
+      "actsNotificationAnsPriorityTestStatic:ActsNotificationAnsPriorityStaticTest",
+      "actsNotificationAnsReduceAlertsTest:ActsNotificationAnsReduceAlertsTest",
+      "actsNotificationAnsReduceAlertsTestStatic:ActsNotificationAnsReduceAlertsStaticTest",
       "actsNotificationAnsThreePartyWatchTest:ActsNotificationThreePartyWatchTest",
       "actsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest:ActsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest",
       "actsNotificationAnsThreePartyWatchThirdPartyTest:ActsNotificationAnsThreePartyWatchThirdPartyTest",
@@ -52,10 +56,7 @@ group("ans_standard") {
       "actsNotificationWantUriTestStatic:ActsNotificationWantUriTestStatic",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
-      "actsNotificationAnsPriorityTest:ActsNotificationPriorityTest",
-      "actsNotificationAnsPriorityTestStatic:ActsNotificationAnsPriorityStaticTest",
-      "actsNotificationAnsReduceAlertsTest:ActsNotificationAnsReduceAlertsTest",
-      "actsNotificationAnsReduceAlertsTestStatic:ActsNotificationAnsReduceAlertsStaticTest"
+      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest"
     ]
   }
 }
