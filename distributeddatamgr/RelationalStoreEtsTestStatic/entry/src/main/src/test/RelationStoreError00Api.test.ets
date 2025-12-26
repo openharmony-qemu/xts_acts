@@ -41,6 +41,8 @@ const STORE_CONFIG: data_relationalStore.StoreConfig = {
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "data1 text," + "data2 long, " + "data3 double," + "data4 blob," + "data5 ASSET," + "data6 ASSETS," +
   "data7 float32Array," + "data8 UNLIMITED INT" + ")";
+const CREATE_TABLE_TEST1 = "CREATE TABLE IF NOT EXISTS test1 (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " + "name TEXT, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
+
 
 const DROP_TABLE_TEST = "DROP TABLE IF EXISTS test";
 
@@ -83,7 +85,10 @@ export default function RelationStoreError00Test() {
     beforeAll(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '[RELATIONAL_STORE_JSKITS_TEST] beforeAll');
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+      await abilityDelegator.startAbility({
+        bundleName: 'com.example.relationalstore',
+        abilityName: 'EntryAbility'
+      });
       await Utils.msSleep(2000)
       context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       dbPath = context.databaseDir + "/rdb/" + dbName;
@@ -780,6 +785,61 @@ export default function RelationStoreError00Test() {
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* RelationStoreError00Test0030 end *************');
+    })
+
+    /**
+     * @tc.name   testCleanDirtyDataErrcode0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CleanDirtyDataTest_1000
+     * @tc.desc   cleanDirtyData errcode is 14800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testCleanDirtyDataErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testCleanDirtyDataErrcode0100 start *************");
+      try {
+        await rdbStore!.setDistributedTables(['test'])
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testCleanDirtyDataErrcode0100 end CreateCorruptDb');
+        await rdbStore!.cleanDirtyData("test");
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testCleanDirtyDataErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800000).assertEqual(err.code);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetModifyTimeErrcode0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTimeTest_1000
+     * @tc.desc   getModifyTime errcode is 14800011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testGetModifyTimeErrcode0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "************* testGetModifyTimeErrcode0100 start *************");
+      rdbStore!.executeSync(CREATE_TABLE_TEST1);
+      const u8 = new Uint8Array([1, 2, 3]);
+      const valueBucket: data_relationalStore.ValuesBucket = {
+        "name": "zhangsan",
+        "age": 20 as long,
+        "salary": 220.5,
+        "blobType": u8,
+      };
+      await rdbStore!.insert("test1", valueBucket);
+      let PRIKey: data_relationalStore.PRIKeyType[] = [0 as long];
+      try {
+        await CreateCorruptDb();
+        hilog.info(domain, tag, '%{public}s', 'testGetModifyTimeErrcode0100 end CreateCorruptDb');
+        await rdbStore!.getModifyTime("test1", "NAME", PRIKey);
+        done();
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', `testGetModifyTimeErrcode0100 + ${err.code} + ${err.message}`);
+        expect(14800000).assertEqual(err.code);;
+        done();
+      }
     })
   })
 }
