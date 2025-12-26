@@ -2155,6 +2155,34 @@ export default function AVPlayerNdkTest() {
     });
 
     /**
+     * @tc.name   testOhAvPlayerSetLoudness012
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0120
+     * @tc.desc   test OH_AVPlayer_SetLoudnessGain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetLoudness012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain1(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetLoudness013
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_SETLOUDNESS_0130
+     * @tc.desc   test OH_AVPlayer_SetLoudnessGain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvPlayerSetLoudness013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = avplayer.setLoudnessGain2(2.0);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   testOhAvPlayerGetMediaDescription001
      * @tc.number SUB_MULTIMEIDA_AVPLAYER_GET_MEDIA_DESCRIPTION001
      * @tc.desc   test OH_AVPlayer_GetMediaDescription
