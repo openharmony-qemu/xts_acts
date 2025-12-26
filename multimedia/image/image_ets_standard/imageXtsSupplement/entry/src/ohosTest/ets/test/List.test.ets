@@ -112,7 +112,6 @@ import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMap
 import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
-
 import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
@@ -196,6 +195,10 @@ import ImageGPSDestLatitudeRef from './image/ImageGPSDestLatitudeRef.test';
 import ImageGPSDestLongitudeRef from './image/ImageGPSDestLongitudeRef.test';
 import ImageGPSDestBearingRef from './image/ImageGPSDestBearingRef.test';
 import ImageGPSDestBearing from './image/ImageGPSDestBearing.test';
+import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
+import ImageExifVersionSupp from './image/ImageExifVersion.test';
+import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
+import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -356,6 +359,10 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
+  ImageExifDateTimeSupp();
+  ImageExifVersionSupp();
+  ImageExifComponentsConfiguration();
+  ImageExifShutterSpeedValue();
   ImageExifSuppTest();
   ImageFlashEnergySupp();
   ImageSourceMeteringModeSupp();
