@@ -135,6 +135,17 @@ import ImageCreatePixelMapPicture from './image/ImageCreatePixelMapPicture.test'
 import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.test';
 import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
+import ImageGPSProcessingMethodSupp from './image/ImageExifGPSProcessingMethod.test';
+import ImageGPSDestDistanceRefSupp from './image/ImageExifGPSDestDistanceRef.test';
+import ImageGPSAreaInformationSupp from './image/ImageExifGPSAreaInformation.test';
+import ImageGPSDateStampSupp from './image/ImageExifGPSDateStamp.test';
+import ImageGPSDifferentialSupp from './image/ImageExifGPSDifferential.test';
+import ImageGPSHPositioningErrorSupp from './image/ImageExifGPSHPositioningError.test';
+import ImageISOSpeedRatingsSupp from './image/ImageExifISOSpeedRatings.test';
+import ImageSensitivityTypeSupp from './image/ImageExifSensitivityType.test';
+import ImageStandardOutputSensitivitySupp from './image/ImageExifStandardOutputSensitivity.test';
+import ImageRecommendedExposureIndexSupp from './image/ImageExifRecommendedExposureIndex.test';
+import ImageISOSpeedLatitudeSupp from './image/ImageExifISOSpeedLatitude.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
@@ -152,6 +163,7 @@ import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 import ImageExifSuppTest from './image/ImageExifSupp.Test.test';
+import ImageFlashEnergySupp from './image/ImageFlashEnergySupp.test';
 import ImageSourceMeteringModeSupp from './image/ImageSourceMeteringMode.test';
 import ImageSourceLightSourceSupp from './image/ImageSourceLightSource.test';
 import ImageSourceFlashSupp from './image/ImageSourceFlash.test';
@@ -169,7 +181,6 @@ import ImageSourcePixelYDimensionSupp from './image/ImageSourcePixelYDimension.t
 import ImageSourceRelatedSoundFileSupp from './image/ImageSourceRelatedSoundFile.test';
 import ImageWidthLengthSupp from './image/ImageExifWidthLength.test';
 import ImageDescriptionSupp from './image/ImageDescriptionPhotometricInterpretation.test';
-
 
 
 export default function testsuite() {
@@ -296,6 +307,17 @@ export default function testsuite() {
   sendablePixelMapWriteBufferToPixelsTest();
   sendableWritePixelsSyncTest();
   sendableWritePixelsTest();
+  ImageGPSDestDistanceRefSupp();
+  ImageGPSProcessingMethodSupp();
+  ImageGPSAreaInformationSupp();
+  ImageGPSDateStampSupp();
+  ImageGPSDifferentialSupp();
+  ImageGPSHPositioningErrorSupp();
+  ImageISOSpeedRatingsSupp();
+  ImageSensitivityTypeSupp();
+  ImageStandardOutputSensitivitySupp();
+  ImageRecommendedExposureIndexSupp();
+  ImageISOSpeedLatitudeSupp();
   UpdateDataTest();
   SendableImageTest();
   ImageSourceCreatePixelMapUsingAllocatorTest();
@@ -308,6 +330,7 @@ export default function testsuite() {
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
   ImageExifSuppTest();
+  ImageFlashEnergySupp();
   ImageSourceMeteringModeSupp();
   ImageSourceLightSourceSupp();
   ImageSourceFlashSupp();
