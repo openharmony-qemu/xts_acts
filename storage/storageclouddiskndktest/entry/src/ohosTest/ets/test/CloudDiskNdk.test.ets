@@ -377,7 +377,7 @@ export default function CloudDiskNdkTest(){
     it('CloudDisk_ErrorCode_ENUM_001', Level.LEVEL0, async () => {
       try {
         let ret = clouddisk.Tset_CloudDisk_ErrorCode_ENUM();
-        console.info("CloudDisk_GetFileSyncStates_001 Test NAPI ret= " + JSON.stringify(ret));
+        console.info("CloudDisk_ErrorCode_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
         expect(ret).assertEqual(1);
       } catch (e) {
         console.log('CloudDisk_ErrorCode_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
