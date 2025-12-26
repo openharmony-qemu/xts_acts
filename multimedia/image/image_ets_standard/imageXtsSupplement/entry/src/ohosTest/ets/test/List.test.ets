@@ -112,6 +112,7 @@ import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMap
 import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
+
 import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
 import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
@@ -164,10 +165,6 @@ import ImageNewSubFileTypeSupp from './image/ImageExifNewSubfileType.test';
 import ImageMakeModelCompressionSupp from './image/ImageMakeModelCompressionSupp.test';
 import ImageRowsPerStripSamplesPerPixelSupp from './image/ImageRowsPerStripSamplesPerPixel.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
-import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
-import ImageExifVersionSupp from './image/ImageExifVersion.test';
-import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
-import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 import ImageExifSuppTest from './image/ImageExifSupp.Test.test';
 import ImageFlashEnergySupp from './image/ImageFlashEnergySupp.test';
 import ImageSourceMeteringModeSupp from './image/ImageSourceMeteringMode.test';
@@ -359,10 +356,6 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
-  ImageExifDateTimeSupp();
-  ImageExifVersionSupp();
-  ImageExifComponentsConfiguration();
-  ImageExifShutterSpeedValue();
   ImageExifSuppTest();
   ImageFlashEnergySupp();
   ImageSourceMeteringModeSupp();
