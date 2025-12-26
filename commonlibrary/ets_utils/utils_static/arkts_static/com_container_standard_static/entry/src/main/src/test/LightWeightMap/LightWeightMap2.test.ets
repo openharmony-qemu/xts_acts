@@ -59,7 +59,8 @@ export default function LightWeightMapTest2() {
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         expect(!!lightWeightMap).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -78,7 +79,8 @@ export default function LightWeightMapTest2() {
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         expect(lightWeightMap.isEmpty()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -98,7 +100,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.isEmpty()).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -119,7 +122,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.remove("squirrel");
         expect(lightWeightMap.isEmpty()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -186,7 +190,8 @@ export default function LightWeightMapTest2() {
         let map: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         map.set("sparrow", 356);
         expect(lightWeightMap.hasAll(map)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -250,7 +255,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.hasKey("squirrel")).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -270,7 +276,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.hasKey('sparrow')).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -290,7 +297,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.hasKey(' squirrel ')).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -331,7 +339,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.hasValue(123)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -351,7 +360,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.hasValue(124)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -371,7 +381,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set('squirrel', 'sparrow');
         expect(lightWeightMap.hasValue(' sparrow ')).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -417,7 +428,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, ComplexValue> = new LightWeightMap<string, ComplexValue>();
         lightWeightMap.set('key', value);
         expect(lightWeightMap.hasValue(value)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -438,7 +450,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set('key', value);
         expect(lightWeightMap.hasValue(value)).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -458,7 +471,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.increaseCapacityTo(10);
         expect(String(lightWeightMap.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -478,7 +492,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.increaseCapacityTo(0);
         expect(String(lightWeightMap.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -498,7 +513,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.increaseCapacityTo(-1);
         expect(String(lightWeightMap.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -519,7 +535,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
         expect(String(lightWeightMap.get("sparrow"))).assertEqual('356');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -539,7 +556,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.get("sparrow")).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -559,7 +577,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.get(" squirrel ")).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -605,7 +624,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, ComplexValue> = new LightWeightMap<string, ComplexValue>();
         lightWeightMap.set("squirrel", value);
         expect(JSON.stringify(lightWeightMap.get("squirrel"))).assertEqual(JSON.stringify(value));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -626,7 +646,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, string> = new LightWeightMap<string, string>();
         lightWeightMap.set("squirrel", value);
         expect(lightWeightMap.get("squirrel")).assertEqual(value);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -651,7 +672,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<ComplexKey, number> = new LightWeightMap<ComplexKey, number>();
         lightWeightMap.set(key, 123);
         expect(String(lightWeightMap.get(key))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -672,7 +694,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set(key, 123);
         expect(String(lightWeightMap.get(key))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -692,7 +715,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set('鸿蒙', 123);
         expect(String(lightWeightMap.get('鸿蒙'))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -713,7 +737,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("squirrel", 456);
         expect(String(lightWeightMap.get("squirrel"))).assertEqual('456');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -733,7 +758,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set('', 123);
         expect(String(lightWeightMap.get(''))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -760,7 +786,8 @@ export default function LightWeightMapTest2() {
           console.log(`${TAG}, key=${key}, vaue=${value}`);
         });
         expect(lightWeightMap.getIndexOfKey("squirrel") !== -1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -780,7 +807,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(String(lightWeightMap.getIndexOfKey("a"))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -805,7 +833,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<ComplexKey, number> = new LightWeightMap<ComplexKey, number>();
         lightWeightMap.set(key, 123);
         expect(lightWeightMap.getIndexOfKey(key) !== -1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -848,7 +877,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
         expect(lightWeightMap.getIndexOfKey("sparrow") !== -1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -875,7 +905,8 @@ export default function LightWeightMapTest2() {
           console.log(`${TAG} key=${key}, vaue=${value}`);
         });
         expect(lightWeightMap.getIndexOfValue(123) !== -1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -916,7 +947,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(String(lightWeightMap.getIndexOfValue(124))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -937,7 +969,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
         expect(lightWeightMap.getIndexOfValue(123) !== -1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -960,7 +993,8 @@ export default function LightWeightMapTest2() {
         let index = lightWeightMap.getIndexOfKey("squirrel");
         expect(index !== -1).assertTrue();
         expect(lightWeightMap.getKeyAt(index)).assertEqual("squirrel");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1004,7 +1038,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("sparrow", 356);
         lightWeightMap.getKeyAt(10);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -1027,7 +1062,8 @@ export default function LightWeightMapTest2() {
         let map: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         map.setAll(lightWeightMap);
         expect(String(map.length)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1048,7 +1084,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.setAll(new LightWeightMap<string, number>());
         expect(String(lightWeightMap.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1090,7 +1127,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", Number.MAX_VALUE);
         expect(String(lightWeightMap.get("squirrel"))).assertEqual(String(Number.MAX_VALUE));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1111,7 +1149,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set(key, 123);
         expect(String(lightWeightMap.get(key))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1153,7 +1192,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(String(lightWeightMap.get("squirrel"))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1175,7 +1215,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("sparrow", 356);
         expect(String(lightWeightMap.remove("sparrow"))).assertEqual('356');
         expect(lightWeightMap.hasKey("sparrow")).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1217,7 +1258,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.remove("sparrow")).assertUndefined();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1239,7 +1281,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set(key, 123);
         expect(String(lightWeightMap.remove(key))).assertEqual('123');
         expect(lightWeightMap.hasKey(key)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1260,7 +1303,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set(Number.MAX_VALUE, "squirrel");
         expect(lightWeightMap.remove(Number.MAX_VALUE)).assertEqual("squirrel");
         expect(lightWeightMap.hasKey(Number.MAX_VALUE)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1284,7 +1328,8 @@ export default function LightWeightMapTest2() {
         expect(index !== -1).assertTrue();
         expect(lightWeightMap.removeAt(index)).assertTrue();
         expect(lightWeightMap.hasKey("squirrel")).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1305,7 +1350,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
         expect(lightWeightMap.removeAt(-1)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1326,7 +1372,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
         expect(lightWeightMap.removeAt(10)).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1350,7 +1397,8 @@ export default function LightWeightMapTest2() {
         expect(index !== -1).assertTrue();
         expect(lightWeightMap.setValueAt(index, 3546)).assertTrue();
         expect(String(lightWeightMap.getValueAt(index))).assertEqual('3546');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1392,7 +1440,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.setValueAt(-1, 356);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -1435,7 +1484,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         expect(lightWeightMap.setValueAt(0, Number.MAX_VALUE)).assertTrue();
         expect(String(lightWeightMap.getValueAt(0))).assertEqual(String(Number.MAX_VALUE));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1457,7 +1507,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", "sparrow");
         expect(lightWeightMap.setValueAt(0, value)).assertTrue();
         expect(lightWeightMap.getValueAt(0)).assertEqual(value);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1480,7 +1531,8 @@ export default function LightWeightMapTest2() {
         let index = lightWeightMap.getIndexOfKey("squirrel");
         expect(index !== -1).assertTrue();
         expect(String(lightWeightMap.getValueAt(index))).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1525,7 +1577,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("sparrow", 356);
         lightWeightMap.getValueAt(10);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(10200001);
       }
@@ -1547,7 +1600,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("sparrow", 356);
         lightWeightMap.clear();
         expect(lightWeightMap.isEmpty()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1570,7 +1624,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("a", 123);
         lightWeightMap.set("b", 356);
         expect(String(lightWeightMap.length)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1590,7 +1645,8 @@ export default function LightWeightMapTest2() {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         lightWeightMap.clear();
         expect(lightWeightMap.isEmpty()).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1619,7 +1675,8 @@ export default function LightWeightMapTest2() {
           temp = iter.next();
         }
         expect(arr.sort()).assertDeepEquals(["sparrow", "squirrel"]);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1640,7 +1697,8 @@ export default function LightWeightMapTest2() {
         let iter: IterableIterator<string> = lightWeightMap.keys();
         let temp: IteratorResult<string> = iter.next();
         expect(temp.done).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1664,7 +1722,8 @@ export default function LightWeightMapTest2() {
         let temp: IteratorResult<string> = iter.next();
         expect(temp.done).assertFalse();
         expect(temp.value).assertEqual(key);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1680,20 +1739,21 @@ export default function LightWeightMapTest2() {
      */
     it('testLightWeightMapValues0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testLightWeightMapValues0001';
-      let arr: Array<number> = new Array<number>();
+      let arr: Array<Int> = new Array<Int>();
       try {
-        let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
+        let lightWeightMap: LightWeightMap<string, Int> = new LightWeightMap<string, Int>();
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
-        let iter: IterableIterator<Number> = lightWeightMap.values();
-        let temp: IteratorResult<Number> = iter.next();
+        let iter: IterableIterator<Int> = lightWeightMap.values();
+        let temp: IteratorResult<Int> = iter.next();
         while (!temp.done) {
           console.log(`${TAG} value: ${temp.value}`);
-          arr.push(temp.value as Number);
+          arr.push(temp.value as Int);
           temp = iter.next();
         }
-        expect(arr.sort()).assertDeepEquals([123, 356]);
-      } catch (err: BusinessError) {
+        expect(arr.sort().toString()).assertDeepEquals("123,356");
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1714,7 +1774,8 @@ export default function LightWeightMapTest2() {
         let iter: IterableIterator<Number> = lightWeightMap.values();
         let temp: IteratorResult<Number> = iter.next();
         expect(temp.done).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1738,7 +1799,8 @@ export default function LightWeightMapTest2() {
         let temp: IteratorResult<string> = iter.next();
         expect(temp.done).assertFalse();
         expect(temp.value).assertEqual(value);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1766,7 +1828,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.forEach((value: number, key: number): void => {
           console.log(`${TAG}, key: ${key}, value: ${value}`);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1796,7 +1859,8 @@ export default function LightWeightMapTest2() {
             expect(false).assertFail();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1822,7 +1886,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.forEach((value: Number): void => {
           expect(String(value)).assertEqual(String(VALUE));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1843,7 +1908,8 @@ export default function LightWeightMapTest2() {
         let tmp = 0;
         lightWeightMap.forEach((): void => tmp++);
         expect(String(tmp)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1871,7 +1937,8 @@ export default function LightWeightMapTest2() {
           expect(String(lightWeightMap.length)).assertEqual('10');
         });
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1935,7 +2002,8 @@ export default function LightWeightMapTest2() {
           console.log(`${TAG}, key: ${temp.value?.[0]}, value: ${temp.value?.[1]}`);
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1968,7 +2036,8 @@ export default function LightWeightMapTest2() {
           }
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1998,7 +2067,8 @@ export default function LightWeightMapTest2() {
           expect(String(temp.value?.[1])).assertEqual(String(VALUE));
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2019,7 +2089,8 @@ export default function LightWeightMapTest2() {
         let iter: IterableIterator<[string, Number]> = lightWeightMap.entries();
         let temp: IteratorResult<[string, Number]> = iter.next();
         expect(temp.done).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2040,7 +2111,8 @@ export default function LightWeightMapTest2() {
         lightWeightMap.set("squirrel", 123);
         lightWeightMap.set("sparrow", 356);
         expect(lightWeightMap.toString()).assertEqual('sparrow:356,squirrel:123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2059,7 +2131,8 @@ export default function LightWeightMapTest2() {
       try {
         let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
         expect(lightWeightMap.toString()).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2082,7 +2155,8 @@ export default function LightWeightMapTest2() {
           lightWeightMap.set(i, VALUE);
         }
         expect(lightWeightMap.toString()).assertEqual('0:VALUE,1:VALUE,2:VALUE,3:VALUE,4:VALUE');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2116,7 +2190,8 @@ export default function LightWeightMapTest2() {
           console.log(`${TAG}, key: ${temp.value?.[0]}, value: ${temp.value?.[1]}`);
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2149,7 +2224,8 @@ export default function LightWeightMapTest2() {
           }
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2178,7 +2254,8 @@ export default function LightWeightMapTest2() {
           expect(temp.value?.[1]).assertEqual(VALUE);
           temp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2199,11 +2276,30 @@ export default function LightWeightMapTest2() {
         let iter = lightWeightMap.$_iterator();
         let temp: IteratorResult<[string, Number]> = iter.next();
         expect(temp.done).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
+    /**
+     * @tc.name   testLightWeightMapIsEmpty0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0600
+     * @tc.desc   Testing LightWeightMap has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testLightWeightMapIsEmpty0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lightWeightMap: LightWeightMap<string, number> = new LightWeightMap<string, number>();
+      expect(lightWeightMap.length).assertEqual(0);
+      lightWeightMap.set("squirrel1", 123);
+      lightWeightMap.set("squirrel2", 456);
+      lightWeightMap.set("squirrel2", 786);
+      expect(lightWeightMap.length).assertEqual(2);
+      lightWeightMap.set("squirrel3", 786);
+      expect(lightWeightMap.length).assertEqual(3);
+    });
   });
 }

@@ -215,7 +215,8 @@ export default function UtilTest() {
     it('testUtilParseUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       try {
         const result = util.parseUUID('84df796-66cc-4655-9b89-d6218d100f9c');
-      } catch (e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         expect(e.message).assertEqual('Syntax Error.Invalid 84df796-66cc-4655-9b89-d6218d100f9c string');
       }
     })
@@ -231,7 +232,8 @@ export default function UtilTest() {
     it('testUtilParseUUID003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (): Promise<void> => {
       try {
         const result = util.parseUUID('84Wdf796-66cc-4655-9b89-d6218d100f9c');
-      } catch (e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         expect(e.message).assertEqual('Syntax Error.Invalid 84Wdf796-66cc-4655-9b89-d6218d100f9c string');
       }
     })
@@ -312,6 +314,96 @@ export default function UtilTest() {
       const value = util.promisify(fnFour);
       let res = await value(100);
       expect(new String(res)).assertEqual('100');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_iS_ASYNC_FUNCTION_001
+     * @tc.name testUtilIsAsyncFunction001
+     * @tc.desc Check whether the value entered is an asynchronous function type.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtilIsAsyncFunction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let proc = new util.types();
+      let result = proc.isAsyncFunction(false);
+      expect(result).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_iS_ASYNC_FUNCTION_002
+     * @tc.name testUtilIsAsyncFunction002
+     * @tc.desc Check whether the value entered is an asynchronous function type.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtilIsAsyncFunction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let proc = new util.types();
+      let result = proc.isAsyncFunction(new Int8Array());
+      expect(result).assertEqual(false);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACK_WRAPPER_001
+     * @tc.name testUtilCallbackWrapper001
+     * @tc.desc Wrap a promise-based function to support error-first callback style.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtilCallbackWrapper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (): Promise<void> => {
+        let cb = util.callbackWrapper(promiseFnOne);
+        cb.unsafeCall((err: Error | null, ret: string) => {
+          expect(err).assertEqual(null);
+          expect(ret).assertEqual('value');
+        })
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CALLBACK_WRAPPER_002
+     * @tc.name testUtilCallbackWrapper002
+     * @tc.desc Wrap a promise-based function to support error-first callback style.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtilCallbackWrapper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (): Promise<void> => {
+        let cb = util.callbackWrapper(promiseFnTwo);
+        cb.unsafeCall((err: Error | null, ret: number) => {
+          expect(err).assertEqual(null);
+          expect(ret).assertEqual(42);
+        })
+      })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRNO_TO_STRING_001
+     * @tc.name testUtilErrnoToString001
+     * @tc.desc Convert error number to string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtilErrnoToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const errnum = 10;
+      const result = util.errnoToString(errnum);
+      expect(result).assertEqual('Unknown system error 10');
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ERRNO_TO_STRING_002
+     * @tc.name testUtilErrnoToString002
+     * @tc.desc Convert error number to string.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtilErrnoToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const errnum = -1;
+      const result = util.errnoToString(errnum);
+      expect(result).assertEqual('operation not permitted');
     })
   });
 }

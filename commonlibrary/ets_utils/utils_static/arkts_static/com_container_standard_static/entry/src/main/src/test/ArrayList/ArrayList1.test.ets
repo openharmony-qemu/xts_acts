@@ -56,7 +56,8 @@ export default function ArraylistTest1() {
       try {
         let arrayList = new ArrayList<String>();
         expect(String(arrayList != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200012');
         expect(err.message).assertEqual("The ArrayList's constructor cannot be directly invoked");
@@ -626,7 +627,8 @@ export default function ArraylistTest1() {
       try {
         arrayList.insert(8, -1);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: -1`);
@@ -650,7 +652,8 @@ export default function ArraylistTest1() {
       try {
         arrayList.insert(8, 10);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as Error;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 10`);
@@ -674,7 +677,8 @@ export default function ArraylistTest1() {
       try {
         arrayList.insert(8, 11);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as Error;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message).assertEqual(`The value of "index" is out of range. It must be >= 0 && <= 4. Received value is: 11`);
@@ -825,7 +829,8 @@ export default function ArraylistTest1() {
       try {
         let res = arrayList.removeByIndex(5);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as Error;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message)
@@ -854,7 +859,8 @@ export default function ArraylistTest1() {
       try {
         arrayList.removeByRange(3, 1);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as Error;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message).assertEqual(`The value of "fromIndex" is out of range. It must be >= 0 && <= 0. Received value is: 3`);
@@ -879,7 +885,8 @@ export default function ArraylistTest1() {
       try {
         arrayList.removeByRange(6, 8);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message).assertEqual(`The value of "fromIndex" is out of range. It must be >= 0 && <= 4. Received value is: 6`);
@@ -929,7 +936,8 @@ export default function ArraylistTest1() {
       try {
         let subArr = arrayList.subArrayList(4, 2);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message)
@@ -981,7 +989,8 @@ export default function ArraylistTest1() {
       try {
         let subArr = arrayList.subArrayList(6, 9);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message)
@@ -1027,7 +1036,8 @@ export default function ArraylistTest1() {
     //   try {
     //     let res = arrayList.increaseCapacityTo();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "newCapacity" must be number. Received value is: undefined`);
@@ -1202,7 +1212,8 @@ export default function ArraylistTest1() {
       try {
         arrayList.removeByRange(0, 9);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(String(err.code)).assertEqual('10200001');
         expect(err.message)
@@ -1223,7 +1234,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.add.bind({}, "a")()
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The add method cannot be bound`);
@@ -1244,7 +1256,8 @@ export default function ArraylistTest1() {
     //   try {
     //     let res = arrayList.insert("a", "b");
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: b`);
@@ -1269,7 +1282,8 @@ export default function ArraylistTest1() {
     //   try {
     //     let res = arrayList.removeByIndex("a");
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
@@ -1291,7 +1305,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.removeByRange("a", 9);
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "fromIndex" must be number. Received value is: a`);
@@ -1313,7 +1328,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.replaceAllElements(123);
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "callbackfn" must be callable. Received value is: 123`);
@@ -1338,7 +1354,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.subArrayList("a", 2);
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "fromIndex" must be number. Received value is: a`);
@@ -1358,7 +1375,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.has.bind({}, "a")();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The has method cannot be bound`);
@@ -1378,7 +1396,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.removeByIndex.bind({}, "a")();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The removeByIndex method cannot be bound`);
@@ -1398,7 +1417,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.remove.bind({}, "a")();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The remove method cannot be bound`);
@@ -1418,7 +1438,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.forEach.bind({}, "a")();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The forEach method cannot be bound`);
@@ -1438,7 +1459,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.forEach(11);
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('401');
     //     expect(err.message).assertEqual(`The type of "callbackfn" must be callable. Received value is: 11`);
@@ -1458,7 +1480,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.clear.bind({}, "a")();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The clear method cannot be bound`);
@@ -1478,7 +1501,8 @@ export default function ArraylistTest1() {
     //   try {
     //     arrayList.isEmpty.bind({}, "a")();
     //     expect('true').assertEqual('false')
-    //   } catch (err: BusinessError) {
+    //   } catch (err) {
+    //     err = err as BusinessError;
     //     expect(err.name).assertEqual("BusinessError");
     //     expect(String(err.code)).assertEqual('10200011');
     //     expect(err.message).assertEqual(`The isEmpty method cannot be bound`);
@@ -1498,9 +1522,10 @@ export default function ArraylistTest1() {
       try {
         let res = arrayList.removeByIndex(0);
         expect('true').assertEqual('false')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
-        expect(String(err.code)).assertEqual('10200001');
+        expect(String(err.code)).assertEqual('10200010');
         expect(err.message).assertEqual("Container is empty");
       }
     });

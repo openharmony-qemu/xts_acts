@@ -55,7 +55,8 @@ export default function TreemapTest3() {
         treeMap.set(333, 777)
         let length = treeMap.length
         expect(String(length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -81,7 +82,8 @@ export default function TreemapTest3() {
         treeMap.set("CCC", "333")
         let length = treeMap.length
         expect(String(length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -115,7 +117,8 @@ export default function TreemapTest3() {
         ts1.set(entry1, "0");
         ts1.set(entry2, "1");
         expect(String(ts1.length)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -142,7 +145,8 @@ export default function TreemapTest3() {
         ts1.set(entry1, "0");
         ts1.set(entry2, "1");
         expect(String(ts1.length)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -162,7 +166,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<number, number> = new TreeMap<number, number>();
         let result = treeMap.isEmpty();
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -183,7 +188,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.isEmpty();
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -207,7 +213,8 @@ export default function TreemapTest3() {
         treeMap.remove("squirrel");
         let result1 = treeMap.isEmpty();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -227,7 +234,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.hasKey("");
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -303,7 +311,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.hasKey("squirrel");
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -324,7 +333,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.hasKey("squirrel");
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -345,7 +355,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.hasKey('goose');
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -366,7 +377,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.hasKey('123');
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -483,7 +495,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.hasValue(123);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -504,7 +517,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.hasValue(333);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -526,7 +540,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 356);
         let result = treeMap.hasValue(356);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -546,7 +561,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.get('');
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -622,7 +638,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.get("key");
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -643,7 +660,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.get("squirrel");
         expect(String(result)).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -664,7 +682,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.get("sparrow");
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -683,10 +702,10 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getFirstKey();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -705,7 +724,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 356);
         let result = treeMap.getFirstKey();
         expect(String(result)).assertEqual('sparrow');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -727,7 +747,8 @@ export default function TreemapTest3() {
         treeMap.set("ABC", 356);
         let result = treeMap.getFirstKey();
         expect(String(result)).assertEqual('ABC');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -754,7 +775,8 @@ export default function TreemapTest3() {
         treeMap.set("bb", "4");
         let result = treeMap.getFirstKey();
         expect(String(result)).assertEqual('dd');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -781,7 +803,8 @@ export default function TreemapTest3() {
         treeMap.set("bb", "4");
         let result = treeMap.getFirstKey();
         expect(String(result)).assertEqual('aa');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -800,10 +823,10 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getLastKey();
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -822,7 +845,8 @@ export default function TreemapTest3() {
         treeMap.set("DEF", 123);
         let result = treeMap.getLastKey();
         expect(String(result)).assertEqual('DEF');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -844,7 +868,8 @@ export default function TreemapTest3() {
         treeMap.set("DEF", 123);
         let result = treeMap.getLastKey();
         expect(String(result)).assertEqual('HIG');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -872,7 +897,8 @@ export default function TreemapTest3() {
         expect(String(result)).assertEqual('XYZ');
         let result1 = treeMap.length;
         expect(String(result1)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -907,7 +933,8 @@ export default function TreemapTest3() {
         treeMap.set("JKL", '222');
         result = treeMap.getLastKey();
         expect(String(result)).assertEqual('JKL');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -927,7 +954,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.length;
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -948,7 +976,8 @@ export default function TreemapTest3() {
         treeMap.set("HIG", 123);
         let result = treeMap.length;
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -973,7 +1002,8 @@ export default function TreemapTest3() {
         treeMap.set("MNP", 333);
         let result = treeMap.length;
         expect(String(result)).assertEqual('5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1003,7 +1033,8 @@ export default function TreemapTest3() {
         let value2 = treeMap.getLastKey();
         expect(value1).assertEqual('DEF');
         expect(value2).assertEqual('XYZ');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1035,7 +1066,8 @@ export default function TreemapTest3() {
         newMap.setAll(treeMap);
         let result = newMap.length;
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1067,7 +1099,8 @@ export default function TreemapTest3() {
         newMap.setAll(treeMap);
         let result = newMap.length;
         expect(String(result)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1090,7 +1123,8 @@ export default function TreemapTest3() {
         expect(String(length)).assertEqual('1');
         let result = treeMap.get("");
         expect(String(result)).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1113,7 +1147,8 @@ export default function TreemapTest3() {
         expect(String(length)).assertEqual('1');
         let result = treeMap.get("a");
         expect(String(result)).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1229,7 +1264,8 @@ export default function TreemapTest3() {
         expect(String(length)).assertEqual('1');
         let result = treeMap.get("a");
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1288,7 +1324,8 @@ export default function TreemapTest3() {
           let result = treeMap.get(arr + k);
           expect(String(result)).assertEqual('123');
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1310,7 +1347,8 @@ export default function TreemapTest3() {
         // treeMap.set("sparrow", 456);
         let result = treeMap.remove("");
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1386,7 +1424,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.remove('key');
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1408,7 +1447,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 456);
         let result = treeMap.remove("sparrow");
         expect(String(result)).assertEqual('456');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1430,7 +1470,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 456);
         let result = treeMap.remove("tiger");
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1449,10 +1490,10 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getLowerKey("");
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1525,10 +1566,10 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getLowerKey("key");
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1547,7 +1588,8 @@ export default function TreemapTest3() {
         treeMap.set("squirrel", 123);
         let result = treeMap.getLowerKey("squirrel");
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1570,7 +1612,8 @@ export default function TreemapTest3() {
         treeMap.set("CCC", 789);
         let result = treeMap.getLowerKey("CCC");
         expect(String(result)).assertEqual("BBB");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1593,7 +1636,8 @@ export default function TreemapTest3() {
         treeMap.set("CCC", 789);
         let result = treeMap.getLowerKey("AAA" + "1");
         expect(String(result)).assertEqual("AAA");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1612,10 +1656,10 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getHigherKey("");
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1688,10 +1732,10 @@ export default function TreemapTest3() {
       try {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.getHigherKey('key');
-        expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
-        console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -1710,7 +1754,8 @@ export default function TreemapTest3() {
         treeMap.set("AAA", 123);
         let result = treeMap.getHigherKey('AAA');
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1733,7 +1778,8 @@ export default function TreemapTest3() {
         treeMap.set("CCC", 789);
         let result = treeMap.getHigherKey("BBB");
         expect(String(result)).assertEqual("CCC");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1756,7 +1802,8 @@ export default function TreemapTest3() {
         treeMap.set("CCC", 789);
         let result = treeMap.getHigherKey("BBB" + "1");
         expect(String(result)).assertEqual("CCC");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1776,7 +1823,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.replace("", 123);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1852,7 +1900,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, number> = new TreeMap<string, number>();
         let result = treeMap.replace('key', 123);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1873,7 +1922,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 123);
         let result = treeMap.replace("sparrow", 123);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1894,7 +1944,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 123);
         let result = treeMap.replace("sparrow", 456);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1915,7 +1966,8 @@ export default function TreemapTest3() {
         treeMap.set("sparrow", 123);
         let result = treeMap.replace("sparrow1", 456);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1939,7 +1991,8 @@ export default function TreemapTest3() {
         expect(String(result)).assertEqual('undefined');
         let result1 = treeMap.hasKey('');
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1971,7 +2024,8 @@ export default function TreemapTest3() {
 
         result1 = treeMap.hasKey('sparrow');
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2007,7 +2061,8 @@ export default function TreemapTest3() {
         expect(String(result1)).assertEqual('false');
         result1 = treeMap.hasKey('dd');
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2042,7 +2097,8 @@ export default function TreemapTest3() {
         expect(String(result)).assertEqual("CCC");
         result = treeMap.getLastKey();
         expect(String(result)).assertEqual("AAA");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2062,7 +2118,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, string> = new TreeMap<string, string>();
         let res = treeMap.keys();
         expect(String(res.next().done)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2089,7 +2146,8 @@ export default function TreemapTest3() {
         expect(String(res.next().value)).assertEqual('BBB');
         expect(String(res.next().value)).assertEqual('CCC');
         expect(String(res.next().value)).assertEqual('DDD');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2120,7 +2178,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual('CCC');
         expect(res.next().value).assertEqual('BBB');
         expect(res.next().value).assertEqual('AAA');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2140,7 +2199,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, string> = new TreeMap<string, string>();
         let res = treeMap.values();
         expect(String(res.next().done)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2167,7 +2227,8 @@ export default function TreemapTest3() {
         expect(String(res.next().value)).assertEqual('456');
         expect(String(res.next().value)).assertEqual('789');
         expect(String(res.next().value)).assertEqual('666');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2197,7 +2258,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual('789');
         expect(res.next().value).assertEqual('456');
         expect(res.next().value).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2219,7 +2281,8 @@ export default function TreemapTest3() {
           let length = treeMap.length
           expect(length).assertEqual(0)
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2250,7 +2313,8 @@ export default function TreemapTest3() {
         expect(String(res.next().value)).assertEqual('666');
         let length = treeMap.length
         expect(String(length)).assertEqual('4')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2284,7 +2348,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual('123');
         let length = treeMap.length
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2315,7 +2380,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual(666);
         let length = treeMap.length
         expect(length).assertEqual(3)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2347,7 +2413,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual(666);
         let length = treeMap.length
         expect(length).assertEqual(4)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2374,7 +2441,8 @@ export default function TreemapTest3() {
         treeMap.clear();
         let length = treeMap.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2394,7 +2462,8 @@ export default function TreemapTest3() {
         let treeMap: TreeMap<string, string> = new TreeMap<string, string>();
         let res = treeMap.entries();
         expect(String(res.next().done)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2424,7 +2493,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual(666);
         let length = treeMap.length;
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2457,7 +2527,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual('123');
         let length = treeMap.length;
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2486,7 +2557,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual(666);
         let length = treeMap.length;
         expect(String(length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2517,7 +2589,8 @@ export default function TreemapTest3() {
         expect(res.next().value).assertEqual(666);
         let length = treeMap.length;
         expect(String(length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2543,7 +2616,8 @@ export default function TreemapTest3() {
         treeMap.clear();
         let length = treeMap.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2570,7 +2644,8 @@ export default function TreemapTest3() {
         treeMap.clear();
         let length = treeMap.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2595,7 +2670,8 @@ export default function TreemapTest3() {
         treeMap.clear();
         let length = treeMap.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2620,7 +2696,8 @@ export default function TreemapTest3() {
         treeMap.clear();
         let length = treeMap.length;
         expect(String(length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2643,11 +2720,28 @@ export default function TreemapTest3() {
           expect(treeMap.hasValue(value)).assertTrue();
         });
         expect(treeMap.get('AAA')).assertEqual(123);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
     });
 
+    /**
+     * @tc.name   testConstructor0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1710
+     * @tc.desc   Test the function of the constructor function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testConstructor0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap: TreeMap<number, number> = new TreeMap<number, number>();
+      expect(treeMap.length).assertEqual(0);
+      treeMap.set(111, 999)
+      treeMap.set(222, 888)
+      treeMap.set(333, 777)
+      expect(treeMap.length).assertEqual(3);
+    });
   })
 }
