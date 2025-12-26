@@ -5,7 +5,7 @@ import { common } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';
 
 let ctx = getContext(this) as common.UIAbilityContext;
-let TEST_SUITE_NAME: string = 'Notification';
+let TAG: string = 'Notification';
 function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
 }
