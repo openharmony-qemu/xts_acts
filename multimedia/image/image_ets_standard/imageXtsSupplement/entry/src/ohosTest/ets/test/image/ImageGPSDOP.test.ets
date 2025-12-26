@@ -65,8 +65,8 @@ export default function ImageGPSDOP() {
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_GPS_MEASURE_MODE_001', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_GPS_MEASURE_MODE_001';
+    it('SUB_MEDIA_IMAGE_GPS_DOP_SUPP_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_GPS_DOP_SUPP_001';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.gpsDop = 5;
       const imageMetadata: image.ImageMetadata = {
