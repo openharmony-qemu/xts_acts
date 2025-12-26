@@ -13,16 +13,16 @@
 * limitations under the License.
 */
 import {
-  describe,
+  afterAll,
+  afterEach,
   beforeAll,
   beforeEach,
-  afterEach,
-  afterAll,
-  it,
+  describe,
   expect,
-  TestType,
+  it,
   Level,
-  Size
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import LinkedList from '@ohos.util.LinkedList';
 import { BusinessError } from '@ohos.base';
@@ -83,7 +83,8 @@ export default function LinkedListTest1() {
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult)
           .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true,"6":[0,1,2,null]}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -108,7 +109,8 @@ export default function LinkedListTest1() {
         let jsonResult = JSON.stringify(linkList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(linkList.get(0)).assertEqual(param);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -139,7 +141,8 @@ export default function LinkedListTest1() {
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult)
           .assertEqual(`{"0":[0,1,2,null],"1":true,"2":null,"4":{"age":10,"name":"zhang"},"5":1,"6":"zhang san"}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -164,7 +167,8 @@ export default function LinkedListTest1() {
         let jsonResult = JSON.stringify(linkList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(linkList.get(0)).assertEqual(param);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -193,7 +197,8 @@ export default function LinkedListTest1() {
         let removeResult = linkList.removeByIndex(index);
         console.log(`${TAG} removeResult: ${removeResult}`);
         expect(String(linkList.has(param))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -222,7 +227,8 @@ export default function LinkedListTest1() {
         let removeResult = linkList.removeByIndex(index);
         console.log(`${TAG} removeResult: ${removeResult}`);
         expect(String(linkList.has(param))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -265,7 +271,8 @@ export default function LinkedListTest1() {
         expect(String(linkList.has(true))).assertEqual('true');
         expect(String(linkList.has(arr))).assertEqual('true');
         expect(String(linkList.has(param))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -302,7 +309,8 @@ export default function LinkedListTest1() {
         linkList.forEach((value, index) => {
           expect(String(linkList.get(index))).assertEqual(String(value));
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -328,7 +336,8 @@ export default function LinkedListTest1() {
         linkList.add(2);
         let index3 = linkList.getIndexOf(2);
         expect(String(index1 === index2 && index2 === index3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -357,7 +366,8 @@ export default function LinkedListTest1() {
         let index103 = linkList.removeByIndex(linkList.getIndexOf(3));
         let index104 = linkList.removeByIndex(linkList.getIndexOf(3));
         expect(String(index103 == index104)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -383,7 +393,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeFirst() as Number;
         linkList.add(index);
         expect(String(linkList.getIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -409,7 +420,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeLast() as Number;
         linkList.add(index);
         expect(String(linkList.getIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -435,7 +447,8 @@ export default function LinkedListTest1() {
         linkList.add(2);
         let index3 = linkList.getLastIndexOf(2);
         expect(String(index1 !== index2 && index2 !== index3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -464,7 +477,8 @@ export default function LinkedListTest1() {
         let index103 = linkList.removeByIndex(linkList.getLastIndexOf(3));
         let index104 = linkList.removeByIndex(linkList.getLastIndexOf(3));
         expect(String(index103 == index104)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -490,7 +504,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeFirst() as Number;
         linkList.add(index);
         expect(String(linkList.getLastIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -516,7 +531,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeLast() as Number;
         linkList.add(index);
         expect(String(linkList.getLastIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -542,7 +558,8 @@ export default function LinkedListTest1() {
         let old: Number = linkList.get(0) as Number;
         linkList.removeFirstFound(old);
         expect(String(old != linkList.get(0))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -570,7 +587,8 @@ export default function LinkedListTest1() {
         expect(String(index1 !== index2 && index2 !== index3)).assertEqual('true');
         linkList.removeLastFound(2);
         expect(String(linkList.getLastIndexOf(2))).assertEqual(String(index2));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -595,7 +613,8 @@ export default function LinkedListTest1() {
         linkList.forEach((value, index) => {
           expect(String(value == newLinkList.get(index))).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -622,7 +641,8 @@ export default function LinkedListTest1() {
         newLinkList.insert(0, 1);
         expect(String(length == linkList.length)).assertEqual('true');
         expect(String(newLength != newLinkList.length)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -649,7 +669,8 @@ export default function LinkedListTest1() {
         newLinkList.removeFirstFound(3);
         expect(String(length == linkList.length)).assertEqual('true');
         expect(String(newLength != newLinkList.length)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -676,7 +697,8 @@ export default function LinkedListTest1() {
         newLinkList.addFirst(3);
         expect(String(length == linkList.length)).assertEqual('true');
         expect(String(newLength != newLinkList.length)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -701,7 +723,8 @@ export default function LinkedListTest1() {
         newLinkList.forEach((value, index) => {
           expect(String(value == linkList.get(index))).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -727,7 +750,8 @@ export default function LinkedListTest1() {
         newLinkList.add(1);
         expect(String(newLinkList.length)).assertEqual('1');
         expect(String(linkList.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -753,7 +777,8 @@ export default function LinkedListTest1() {
         linkList.add(1);
         expect(String(linkList.length)).assertEqual('1');
         expect(String(newLinkList.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -936,7 +961,8 @@ export default function LinkedListTest1() {
         let setParam = linkList.set(0, "li si");
         let firstParam = linkList.getFirst();
         expect(String(setParam == firstParam)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -968,7 +994,8 @@ export default function LinkedListTest1() {
         let setParam = linkList.set(linkList.length - 1, "li si");
         let lastParam = linkList.getLast();
         expect(String(setParam == lastParam)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -993,7 +1020,8 @@ export default function LinkedListTest1() {
         for (let tmp of iter) {
           expect(String(linkList.has(tmp))).assertEqual('true');
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1023,7 +1051,8 @@ export default function LinkedListTest1() {
           }
           tmp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1049,7 +1078,8 @@ export default function LinkedListTest1() {
           console.log("value:" + value, "index:" + index);
           expect(linkedList.get(index)).assertEqual(value);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1079,7 +1109,8 @@ export default function LinkedListTest1() {
         });
         expect(linkedListNew.length).assertEqual(1);
         expect(linkedListNew.get(0)).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1104,9 +1135,10 @@ export default function LinkedListTest1() {
         let index = 0;
         linkedList.forEach((value: number) => {
           expect(String(linkedList.get(index))).assertEqual(String(value));
-          index ++;
+          index++;
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1131,7 +1163,8 @@ export default function LinkedListTest1() {
         linkedList.forEach((value: number, index: int, linkedList: LinkedList<number>) => {
           expect(linkedList.get(index)).assertEqual(value);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1150,7 +1183,8 @@ export default function LinkedListTest1() {
       try {
         let linkList: LinkedList<number> = new LinkedList<number>();
         linkList.removeLastFound(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(10200017)
       }
@@ -1265,5 +1299,23 @@ export default function LinkedListTest1() {
         }
       }
     });
+
+    /**
+     * @tc.name   testUtil3_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_010
+     * @tc.desc   Test the util
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUtil3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int> = new LinkedList<int>();
+      expect(linkedList.length).assertEqual(0);
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      expect(linkedList.length).assertEqual(4);
+    })
   });
 }

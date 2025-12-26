@@ -2198,7 +2198,8 @@ export default function DecimalTest001() {
       try {
         test_toDecimalPlaces_006('50', '50.5', 1e10, 8);
         expect(true).assertEqual(false);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -3527,7 +3528,8 @@ export default function DecimalTest001() {
       try {
         test_toExponential_009('1e+2', '123', 1e10);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -3813,7 +3815,8 @@ export default function DecimalTest001() {
       try {
         test_exp_011('e', '111', 2, 1);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -4058,7 +4061,7 @@ export default function DecimalTest001() {
       test_min_012(1, Decimal.min(1, '1e+9000000000000001', 1e200).valueOf());
       test_min_012(-Infinity, Decimal.min(1, '-1e+9000000000000001', -1e200).valueOf());
       test_min_012(0, Decimal.min(1, '1e-9000000000000001', 1e-200).valueOf());
-      test_min_012(-0, Decimal.min(1, '-1e-9000000000000001', 1e-200).valueOf());
+      test_min_012(-0.0, Decimal.min(1, '-1e-9000000000000001', 1e-200).valueOf());
       test_min_012(-3, Decimal.min(1, '2', 3, '-1', -2, '-3').valueOf());
     });
 
@@ -4083,7 +4086,8 @@ export default function DecimalTest001() {
         Decimal.min('-9.99998e+9000000000000000', '-9.999999e+9000000000000000', '9e+8999999999999999',
           '1.01e+9000000000000000', 'e1');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e1`);

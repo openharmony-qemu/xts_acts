@@ -406,24 +406,28 @@ export default function requestPermissionOnSettingStaticTest() {
             atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data1 " + JSON.stringify(data));
               expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
+              expect(data[0] != null).assertTrue();
 
               let driver3: Driver = Driver.create();
               await Utils.msSleep(1000);
               atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                 // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data2 " + JSON.stringify(data));
                 expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
+                expect(data[0] != null).assertTrue();
 
                 let driver4: Driver = Driver.create();
                 await Utils.msSleep(1000);
                 atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                   // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data3 " + JSON.stringify(data));
                   expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
+                  expect(data[0] != null).assertTrue();
 
                   let driver5: Driver = Driver.create();
                   await Utils.msSleep(1000);
                   atManager.requestPermissionOnSetting(testAbilityContext, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                     // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data4 " + JSON.stringify(data));
                     expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
+                    expect(data[0] != null).assertTrue();
                     done();
                   });
                   // click second permission

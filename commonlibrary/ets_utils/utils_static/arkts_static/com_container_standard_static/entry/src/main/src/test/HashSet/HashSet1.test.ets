@@ -55,7 +55,8 @@ export default function HashSetTest1() {
     it("testHashSet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let hashSet = new HashSet<number>();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The HashSet's constructor cannot be directly invoked");

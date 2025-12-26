@@ -782,7 +782,7 @@ export default function  ImageSourcePropertyKeyStringTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.dateTime);
         expect(result.exifMetadata?.dateTime).assertEqual('2024:07:07 13:45:59');
@@ -1126,7 +1126,7 @@ export default function  ImageSourcePropertyKeyStringTest() {
           exifMetadata: testExifMetadata
         };
         try {
-          await await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+          await jpgImageSourceApi.writeImageMetadata(imageMetadata);
           let result = await jpgImageSourceApi.readImageMetadata()
           console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.artist);
           expect(result.exifMetadata?.artist).assertEqual('name');
@@ -1152,7 +1152,7 @@ export default function  ImageSourcePropertyKeyStringTest() {
           exifMetadata: testExifMetadata
         };
         try {
-          await await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+          await jpgImageSourceApi.writeImageMetadata(imageMetadata);
           let result = await jpgImageSourceApi.readImageMetadata()
           console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.artist);
           expect(result.exifMetadata?.artist).assertEqual('NANAMI');

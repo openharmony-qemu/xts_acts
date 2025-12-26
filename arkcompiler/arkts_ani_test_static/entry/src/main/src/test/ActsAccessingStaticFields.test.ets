@@ -26,17 +26,17 @@ export default function accessingStaticFieldsTest() {
   describe("ActsAccessingStaticFieldsTest", (): void => {
     try {
       loadLibrary("entry")
-    } catch(e: Error) {
+    } catch (e) {
       console.log('loadFailed', e.message);
     }
 
     /**
-     * @tc.name   Class_GetStaticField_Boolean_0100
-     * @tc.number Class_GetStaticField_Boolean_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number      Class_GetStaticField_Boolean_0100
+     * @tc.name        Class_GetStaticField_Boolean_0100
+     * @tc.desc        MediumTest
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
      */
     it("Class_GetStaticField_Boolean_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,13 +50,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Char_0100
-     * @tc.number Class_GetStaticField_Char_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Char_0100
+    * @tc.name        Class_GetStaticField_Char_0100
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Char_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Char_0100 start');
@@ -69,13 +69,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Byte_0100
-     * @tc.number Class_GetStaticField_Byte_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Byte_0100
+    * @tc.name        Class_GetStaticField_Byte_0100
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Byte_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Byte_0100 start');
@@ -88,13 +88,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Short_0100
-     * @tc.number Class_GetStaticField_Short_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Short_0100
+    * @tc.name        Class_GetStaticField_Short_0100
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Short_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Short_0100 start');
@@ -107,13 +107,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Int_0100
-     * @tc.number Class_GetStaticField_Int_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Int_0100
+    * @tc.name        Class_GetStaticField_Int_0100
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Int_0100 start');
@@ -126,13 +126,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Long_0100
-     * @tc.number Class_GetStaticField_Long_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Long_0100
+    * @tc.name        Class_GetStaticField_Long_0100
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Long_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Long_0100 start');
@@ -145,13 +145,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Float_0100
-     * @tc.number Class_GetStaticField_Float_0100
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Float_0100
+    * @tc.name        Class_GetStaticField_Float_0100
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Float_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Float_0100 start');
@@ -164,13 +164,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Double
-     * @tc.number Class_GetStaticField_Double
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Double
+    * @tc.name        Class_GetStaticField_Double
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Double start');
@@ -183,13 +183,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticField_Ref
-     * @tc.number Class_GetStaticField_Ref
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticField_Ref
+    * @tc.name        Class_GetStaticField_Ref
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticField_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticField_Ref start');
@@ -202,13 +202,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Boolean
-     * @tc.number Class_SetStaticField_Boolean
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Boolean
+    * @tc.name        Class_SetStaticField_Boolean
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Boolean start');
@@ -221,13 +221,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Char
-     * @tc.number Class_SetStaticField_Char
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Char
+    * @tc.name        Class_SetStaticField_Char
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Char start');
@@ -240,13 +240,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Byte
-     * @tc.number Class_SetStaticField_Byte
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Byte
+    * @tc.name        Class_SetStaticField_Byte
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Byte start');
@@ -259,13 +259,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Short
-     * @tc.number Class_SetStaticField_Short
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Short
+    * @tc.name        Class_SetStaticField_Short
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Short start');
@@ -278,13 +278,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Int
-     * @tc.number Class_SetStaticField_Int
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Int
+    * @tc.name        Class_SetStaticField_Int
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Int start');
@@ -297,13 +297,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Long
-     * @tc.number Class_SetStaticField_Long
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Long
+    * @tc.name        Class_SetStaticField_Long
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Long start');
@@ -316,13 +316,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Float
-     * @tc.number Class_SetStaticField_Float
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Float
+    * @tc.name        Class_SetStaticField_Float
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Float start');
@@ -335,13 +335,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Double
-     * @tc.number Class_SetStaticField_Double
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Double
+    * @tc.name        Class_SetStaticField_Double
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Double start');
@@ -354,13 +354,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticField_Ref
-     * @tc.number Class_SetStaticField_Ref
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticField_Ref
+    * @tc.name        Class_SetStaticField_Ref
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticField_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticField_Ref start');
@@ -373,13 +373,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Boolean
-     * @tc.number Class_GetStaticFieldByName_Boolean
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Boolean
+    * @tc.name        Class_GetStaticFieldByName_Boolean
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Boolean start');
@@ -392,13 +392,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Char
-     * @tc.number Class_GetStaticFieldByName_Char
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Char
+    * @tc.name        Class_GetStaticFieldByName_Char
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Char start');
@@ -411,13 +411,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Byte
-     * @tc.number Class_GetStaticFieldByName_Byte
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Byte
+    * @tc.name        Class_GetStaticFieldByName_Byte
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Byte start');
@@ -430,13 +430,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Short
-     * @tc.number Class_GetStaticFieldByName_Short
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Short
+    * @tc.name        Class_GetStaticFieldByName_Short
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Short start');
@@ -449,13 +449,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Int
-     * @tc.number Class_GetStaticFieldByName_Int
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Int
+    * @tc.name        Class_GetStaticFieldByName_Int
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Int start');
@@ -468,13 +468,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Long
-     * @tc.number Class_GetStaticFieldByName_Long
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Long
+    * @tc.name        Class_GetStaticFieldByName_Long
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Long start');
@@ -487,13 +487,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Float
-     * @tc.number Class_GetStaticFieldByName_Float
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Float
+    * @tc.name        Class_GetStaticFieldByName_Float
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Float start');
@@ -506,13 +506,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Double
-     * @tc.number Class_GetStaticFieldByName_Double
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Double
+    * @tc.name        Class_GetStaticFieldByName_Double
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Double start');
@@ -525,13 +525,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_GetStaticFieldByName_Ref
-     * @tc.number Class_GetStaticFieldByName_Ref
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_GetStaticFieldByName_Ref
+    * @tc.name        Class_GetStaticFieldByName_Ref
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_GetStaticFieldByName_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_GetStaticFieldByName_Ref start');
@@ -544,13 +544,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Boolean
-     * @tc.number Class_SetStaticFieldByName_Boolean
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Boolean
+    * @tc.name        Class_SetStaticFieldByName_Boolean
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Boolean", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Boolean start');
@@ -563,13 +563,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Char
-     * @tc.number Class_SetStaticFieldByName_Char
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Char
+    * @tc.name        Class_SetStaticFieldByName_Char
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Char", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Char start');
@@ -582,13 +582,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Byte
-     * @tc.number Class_SetStaticFieldByName_Byte
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Byte
+    * @tc.name        Class_SetStaticFieldByName_Byte
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Byte", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Byte start');
@@ -601,13 +601,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Short
-     * @tc.number Class_SetStaticFieldByName_Short
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Short
+    * @tc.name        Class_SetStaticFieldByName_Short
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Short", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Short start');
@@ -620,13 +620,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Int
-     * @tc.number Class_SetStaticFieldByName_Int
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Int
+    * @tc.name        Class_SetStaticFieldByName_Int
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Int start');
@@ -639,13 +639,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Long
-     * @tc.number Class_SetStaticFieldByName_Long
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Long
+    * @tc.name        Class_SetStaticFieldByName_Long
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Long", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Long start');
@@ -658,13 +658,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Float
-     * @tc.number Class_SetStaticFieldByName_Float
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Float
+    * @tc.name        Class_SetStaticFieldByName_Float
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Float", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Float start');
@@ -677,13 +677,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Double
-     * @tc.number Class_SetStaticFieldByName_Double
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Double
+    * @tc.name        Class_SetStaticFieldByName_Double
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Double", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Double start');
@@ -696,13 +696,13 @@ export default function accessingStaticFieldsTest() {
       })
 
     /**
-     * @tc.name   Class_SetStaticFieldByName_Ref
-     * @tc.number Class_SetStaticFieldByName_Ref
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
+    * @tc.number      Class_SetStaticFieldByName_Ref
+    * @tc.name        Class_SetStaticFieldByName_Ref
+    * @tc.desc        MediumTest
+    * @tc.size        Function
+    * @tc.type        Function test
+    * @tc.level       Level 0
+    */
     it("Class_SetStaticFieldByName_Ref", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log('Class_SetStaticFieldByName_Ref start');

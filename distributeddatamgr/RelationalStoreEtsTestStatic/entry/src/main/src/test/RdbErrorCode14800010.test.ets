@@ -57,6 +57,7 @@ export default function RdbErrorCode1480011() {
         abilityName: 'EntryAbility'
       });
       await Utils.msSleep(5000)
+      context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
     });
 
     /**
@@ -69,7 +70,6 @@ export default function RdbErrorCode1480011() {
      */
     it('testRdbStoreAttach00013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testRdbStoreAttach00013 start *************");
-      context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST);
       await attachBatchInsert(store, "test");
@@ -95,7 +95,6 @@ export default function RdbErrorCode1480011() {
      */
     it('testRdbStoreAttach00012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async  (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* testRdbStoreAttach00012 start *************");
-      context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST);
       await attachBatchInsert(store, "test");
@@ -121,7 +120,6 @@ export default function RdbErrorCode1480011() {
      */
     it('RdbBackupRestoreTest_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', "************* RdbBackupRestoreTest_0110 start *************");
-      context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
       let store = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
       await store.executeSql(CREATE_TABLE_TEST);
       await attachBatchInsert(store, "test");

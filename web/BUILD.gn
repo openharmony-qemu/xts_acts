@@ -21,6 +21,7 @@ group("web") {
     "web_connectNative:webConnectNative",
     "web_content_processing:WebContentProcessing",
     "web_device:WebDeviceService",
+    "web_dfx:WebDFXTest",
     "web_engine_version:WebEngineVersion",
     "web_jump:WebJump",
     "web_life_cycle:webLifeCycle",

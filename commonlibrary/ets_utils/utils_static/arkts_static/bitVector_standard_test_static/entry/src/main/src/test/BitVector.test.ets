@@ -226,7 +226,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.has(0, 8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -255,7 +256,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.has(0, -3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -284,7 +286,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.has(0, -3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -400,7 +403,8 @@ export default function BitVectorTest() {
         try {
           bitVector.setBitsByRange(0, 8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -429,7 +433,8 @@ export default function BitVectorTest() {
         try {
           bitVector.setBitsByRange(0, -3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -458,7 +463,8 @@ export default function BitVectorTest() {
         try {
           bitVector.setBitsByRange(0, -3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -570,7 +576,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getBitsByRange(8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -599,7 +606,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getBitsByRange(-3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -628,7 +636,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getBitsByRange(-3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -766,7 +775,8 @@ export default function BitVectorTest() {
         try {
           bitVector.resize(-4);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -895,7 +905,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getBitCountByRange(0, 8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -924,7 +935,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getBitCountByRange(0, -3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -953,7 +965,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getBitCountByRange(0, -3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1057,7 +1070,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getIndexOf(0, 8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1086,7 +1100,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getIndexOf(0, -3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1115,7 +1130,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getIndexOf(0, -3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+        err = err as BusinessError;
         }
     });
 
@@ -1215,7 +1231,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getLastIndexOf(0, 8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1244,7 +1261,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getLastIndexOf(0, -3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1273,7 +1291,8 @@ export default function BitVectorTest() {
         try {
           let res = bitVector.getLastIndexOf(0, -3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1383,7 +1402,8 @@ export default function BitVectorTest() {
         try {
           bitVector.flipBitByIndex(20);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1500,7 +1520,8 @@ export default function BitVectorTest() {
         try {
           bitVector.flipBitsByRange(8, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1529,7 +1550,8 @@ export default function BitVectorTest() {
         try {
           bitVector.flipBitsByRange(-3, -3);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1558,7 +1580,8 @@ export default function BitVectorTest() {
         try {
           bitVector.flipBitsByRange(-3, 8);
           expect(true).assertEqual(false);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err instanceof BusinessError).assertEqual(true);
           expect(err.code).assertEqual(10200001);
           expect(err.message)
@@ -1847,6 +1870,25 @@ export default function BitVectorTest() {
         temp = iter.next()
       }
       expect(flag).assertEqual(5);
+    });
+
+    /**
+     * @tc.name   BitVector_push_Func_079
+     * @tc.number BITVECTOR_TEST_079
+     * @tc.desc   Appends the bit element to the end of this bit vector.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("BitVector_push_Func_079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let bitVector = new collections.BitVector(0);
+      expect(bitVector.length).assertEqual(0);
+      let res0 = bitVector.push(0);
+      let res1 = bitVector.push(1);
+      let res2 = bitVector.push(0);
+      expect(bitVector.length).assertEqual(3);
+      expect(bitVector[0]).assertEqual(0);
+      expect(bitVector[2]).assertEqual(0);
     });
   });
 }

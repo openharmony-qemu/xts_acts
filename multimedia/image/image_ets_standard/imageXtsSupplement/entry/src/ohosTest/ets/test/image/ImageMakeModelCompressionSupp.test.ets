@@ -76,13 +76,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
-        expect(result.exifMetadata?.make).assertEqual('华为');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -102,13 +102,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
-        expect(result.exifMetadata?.make).assertEqual('1024');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -128,13 +128,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
-        expect(result.exifMetadata?.make).assertEqual('test');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -154,13 +154,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
-        expect(result.exifMetadata?.make).assertEqual('100000000000000000000000000000000000000000000000000000000000000');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -206,13 +206,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
-        expect(result.exifMetadata?.make).assertEqual('华为');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -232,7 +232,7 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
         expect(result.exifMetadata?.make).assertEqual('1024');
@@ -259,7 +259,7 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
         expect(result.exifMetadata?.make).assertEqual('test');
@@ -290,7 +290,6 @@ export default function ImageMakeModelCompressionSupp() {
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
         expect(result.exifMetadata?.make).assertEqual('100000000000000000000000000000000000000000000000000000000000000');
-        // expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -314,7 +313,7 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.make);
         expect(result.exifMetadata?.make).assertEqual('10000000000000000000000000000000000000000000000000000000000000');
@@ -324,6 +323,7 @@ export default function ImageMakeModelCompressionSupp() {
       }
       done();
     })
+
 
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_Make_Model_001
@@ -341,13 +341,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
-        expect(result.exifMetadata?.model).assertUndefined();
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -368,13 +368,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
-        expect(result.exifMetadata?.model).assertEqual('1024');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -423,13 +423,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
-        expect(result.exifMetadata?.model).assertEqual('100000000000000000000000000000000000000000000000000000000000000');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -450,13 +450,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
-        expect(result.exifMetadata?.model).assertEqual('10000000000000000000000000000000000000000000000000000000000000');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -476,13 +476,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
-        expect(result.exifMetadata?.model).assertEqual('TNY-AL00');
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202')
       }
       done();
     })
@@ -530,7 +530,7 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
         expect(result.exifMetadata?.model).assertEqual('test');
@@ -557,7 +557,7 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
         expect(result.exifMetadata?.model).assertEqual('100000000000000000000000000000000000000000000000000000000000000');
@@ -584,7 +584,7 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.model);
         expect(result.exifMetadata?.model).assertEqual('10000000000000000000000000000000000000000000000000000000000000');
@@ -594,6 +594,8 @@ export default function ImageMakeModelCompressionSupp() {
       }
       done();
     })
+
+
 
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_compression_001
@@ -617,7 +619,6 @@ export default function ImageMakeModelCompressionSupp() {
         console.info(TAG,testName,`testReadImageMetadata writeResult  is:`,resultFirWrite);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        // expect(result.exifMetadata?.compression).assertEqual(1);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -723,13 +724,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -751,16 +752,19 @@ export default function ImageMakeModelCompressionSupp() {
       try {
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.compression);
-        webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();;
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
+
+
+
 
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_compression_007
@@ -780,13 +784,13 @@ export default function ImageMakeModelCompressionSupp() {
       try {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.compression);
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -808,13 +812,13 @@ export default function ImageMakeModelCompressionSupp() {
       try {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.compression);
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -836,13 +840,13 @@ export default function ImageMakeModelCompressionSupp() {
       try {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.compression);
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -862,13 +866,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -888,13 +892,13 @@ export default function ImageMakeModelCompressionSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
-        expect(result.exifMetadata?.compression).assertEqual(1);
+        expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
+        expect(err.code).assertEqual('7700202');
       }
       done();
     })
@@ -916,7 +920,7 @@ export default function ImageMakeModelCompressionSupp() {
       try {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata FirResult  is:`,resultFir.exifMetadata?.compression);
-        jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testReadImageMetadata result is:`,result.exifMetadata?.compression);
         expect(result.exifMetadata?.compression).assertEqual(1);
@@ -926,5 +930,9 @@ export default function ImageMakeModelCompressionSupp() {
       }
       done();
     })
+
+
+
+
   });
 }

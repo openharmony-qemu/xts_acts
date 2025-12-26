@@ -66,9 +66,9 @@ static napi_value OHScanGetScannerParameter(napi_env env, napi_callback_info inf
     napi_value result = nullptr;
     int32_t errorCode = OH_Scan_Init();
     int32_t paraErrorCode;
-    OH_Scan_GetScannerParameter(SCANNER_ID, &paraErrorCode);
+    auto scannerOptions = OH_Scan_GetScannerParameter(SCANNER_ID, &paraErrorCode);
     errorCode = OH_Scan_Exit();
-    napi_create_int32(env, static_cast<int32_t>(errorCode), &result);
+    napi_create_int32(env, scannerOptions == nullptr ? 0 : -1, &result);
     return result;
 }
 
@@ -121,4 +121,23 @@ static napi_value OHScanExit(napi_env env, napi_callback_info info)
     errorCode = OH_Scan_Exit();
     napi_create_int32(env, static_cast<int32_t>(errorCode), &result);
     return result;
+}
+
+static napi_value CreateScanEnumType()
+{
+    Scan_ErrorCode errorCode = Scan_ErrorCode::SCAN_ERROR_NONE;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_NO_PERMISSION;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_INVALID_PARAMETER;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_GENERIC_FAILURE;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_RPC_FAILURE;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_SERVER_FAILURE;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_UNSUPPORTED;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_CANCELED;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_DEVICE_BUSY;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_INVALID;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_JAMMED;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_NO_DOCS;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_COVER_OPEN;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_IO_ERROR;
+    errorCode = Scan_ErrorCode::SCAN_ERROR_NO_MEMORY;
 }

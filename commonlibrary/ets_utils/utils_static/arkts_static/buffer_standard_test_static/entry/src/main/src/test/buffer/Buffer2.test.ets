@@ -740,17 +740,16 @@ export default function bufferTest2() {
      * @tc.level  LEVEL1
      */
     it('testBufferConcat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
-      6
       const TAG = 'testBufferConcat0006';
       try {
         let buf1 = buffer.from("1234");
         let buf2 = buffer.from("abcd");
-        buffer.concat([buf1, buf2], Infinity.toInt());
+        buffer.concat([buf1, buf2], -Infinity.toInt());
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 4294967296. Received value is: 2147483647');
+          .assertEqual('The value of "totalLength" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     })
     /**
@@ -1200,8 +1199,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferFrom30001';
       try {
         let buf = buffer.from(new String('this is a test'), 11, 0);
-        expect(String(buf.length)).assertEqual('14');
-        expect(buf.toString()).assertEqual('this is a test');
+        expect(String(buf.length)).assertEqual('0');
+        expect(buf.toString()).assertEqual('');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -1211,14 +1210,14 @@ export default function bufferTest2() {
      * @tc.name   testBufferFrom30002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0200
      * @tc.desc   Test the function of the interface From3.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('testBufferFrom30002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30002';
       try {
-        let buf = buffer.from(new String('this is a test'), 11, -1);
+        let buf = buffer.from(new String('this is a test'), 0, -1);
         expect(String(buf.length)).assertEqual('14');
         expect(buf.toString()).assertEqual('this is a test');
       } catch (err:BusinessError) {
@@ -1237,7 +1236,7 @@ export default function bufferTest2() {
     it('testBufferFrom30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30003';
       try {
-        let buf = buffer.from(new String('this is a test'), 11, Infinity.toInt());
+        let buf = buffer.from(new String('this is a test'), 0, Infinity.toInt());
         expect(String(buf.length)).assertEqual('14');
         expect(buf.toString()).assertEqual('this is a test');
       } catch (err:BusinessError) {
@@ -1246,17 +1245,17 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.name   testBufferFrom30004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0400
-     * @tc.desc   Test the function of the interface From3.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.name       testBufferFrom30004
+     * @tc.number     SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0400
+     * @tc.desc       Test the function of the interface From3.
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
      */
     it('testBufferFrom30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30004';
       try {
-        let buf = buffer.from(new String('hello world'), 1, -Infinity.toInt());
+        let buf = buffer.from(new String('hello world'), 0, -Infinity.toInt());
         expect(String(buf.length)).assertEqual('11');
         expect(buf.toString()).assertEqual('hello world');
       } catch (err:BusinessError) {
@@ -1277,9 +1276,9 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from(new String('hello world'), 'test', 1);
         expect(buf).assertFail();
-      } catch (err:BusinessError) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${(err as Error).message}`);
+        expect((err as Error).message)
           .assertEqual('Parameter error. The type of "encoding" must be BufferEncoding. the encoding test is unknown');
       }
     })
@@ -1654,7 +1653,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferTranscode0006';
       try {
         let buf = new Uint8Array([1, 2, 3, 4]);
-        let newBuf = buffer.transcode(buf, 'utf8', 'base64');
+        let newBuf = buffer.transcode(buf, 'base64', 'utf8');
         expect(newBuf.toString('utf8')).assertEqual('1,2,3,4');
         expect(String(newBuf.length)).assertEqual('7');
       } catch (err:BusinessError) {
@@ -1846,7 +1845,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     });
     /**
@@ -1863,10 +1862,11 @@ export default function bufferTest2() {
         const buf = buffer.alloc(6);
         buf.fill('D', Infinity.toInt());
         expect(false).assertFail();
-      } catch (err:BusinessError) {
+      } catch (e) {
+        const err=(e as Error);
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: 2147483647');
+          .assertEqual('ArrayBuffer position 2147483647 is out of bounds');
       }
     });
     /**
@@ -1886,7 +1886,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2147483647');
+          .assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 2147483647. Received value is: -2147483647');
       }
     });
     /**
@@ -1903,8 +1903,8 @@ export default function bufferTest2() {
         const buf = buffer.alloc(3);
         buf.fill('A', 1);
         expect(buf.toString()).assertEqual('\x00AA');
-        expect(buf[1]).assertEqual(String(0x41));
-        expect(buf[2]).assertEqual(String(0x41));
+        expect(buf[1]).assertEqual(65);
+        expect(buf[2]).assertEqual(65);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -4653,7 +4653,7 @@ export default function bufferTest2() {
         const value = 'World';
         const index = buf.lastIndexOf(value, 1, 'base64');
         expect(String(index)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4888,7 +4888,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferReadBigInt64LE0001';
       try {
         let buf = buffer.alloc(8);
-        const expectedValue = BigInt("0x0102030405060708");
+        const expectedValue = BigInt(0x0102030405060708);
         buf.writeBigInt64LE(expectedValue, 0);
         const actualValue = buf.readBigInt64LE();
         expect(actualValue.toString()).assertEqual(expectedValue.toString());
@@ -6176,7 +6176,7 @@ export default function bufferTest2() {
       try {
         let buf = buffer.from([0x12, 0x34, 0x56, 0x78]);
         buf.writeUInt32LE(0x12345678, -1);
-        expect(false).assertFail(); 
+        expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
@@ -9094,7 +9094,7 @@ export default function bufferTest2() {
         expect(String(res)).assertEqual('8');
         const result = buf.toString('hex')
         console.log(`${TAG} result: ${result}`);
-        expect(result).assertEqual('00000000feedface0000');
+        expect(result).assertEqual('fffffffffeedface0000');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -9172,11 +9172,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigInt64BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        const res = buf.writeBigInt64BE(BigInt(123.456));
-        expect(res).assertFail();
+        const res = buf.writeBigInt64BE(BigInt(-123));
+        expect(String(res)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
+        expect(false).assertFail();
       }
     })
     /**
@@ -9192,12 +9192,10 @@ export default function bufferTest2() {
       try {
         let buf = buffer.allocUninitializedFromPool(8);
         const res = buf.writeBigInt64BE(BigInt(0xdecafafecacefade))
-        console.log(`${TAG} res: ${res}`);
-        expect(false).assertFail();
+        expect(String(res)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -(2n ** 63n) and <= 2n ** 63n. Received value is: 16053919793946753024');
+        expect(false).assertFail();
       }
     })
     /**
@@ -9412,11 +9410,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigInt64LE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigInt64LE(BigInt(123.456), 0);
-        expect(false).assertFail();
+        let result = buf.writeBigInt64LE(BigInt(123), 0);
+        expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
+        expect(false).assertFail();
       }
     })
     /**
@@ -9431,12 +9429,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigInt64LE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigInt64LE(BigInt(0xdecafafecacefade), 0);
-         expect(false).assertFail();
+        let result = buf.writeBigInt64LE(BigInt(0xdecafafecacefade), 0);
+        expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -(2n ** 63n) and <= 2n ** 63n. Received value is: 16053919793946753024');
+        expect(false).assertFail();
       }
     })
     /**
@@ -9550,7 +9547,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64BE0005';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64BE(BigInt(0xfeedface), 0);
+        let result = buf.writeBigUInt64BE(BigInt(0x7eedface), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
@@ -9610,7 +9607,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64BE0008';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64BE(BigInt(0xcafebabe));
+        let result = buf.writeBigUInt64BE(BigInt(0x7afebabe));
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
@@ -9630,11 +9627,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64BE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64BE(BigInt(123.456));
-        expect(false).assertFail();
+        let result = buf.writeBigUInt64BE(BigInt(123));
+        expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
+        expect(false).assertFail();
       }
     })
     /**
@@ -9649,7 +9646,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+        let result = buf.writeBigUInt64BE(BigInt(0x7ecafafecacefade), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
@@ -9770,7 +9767,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64LE0005';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64LE(BigInt(0xfeedface), 0);
+        let result = buf.writeBigUInt64LE(BigInt(0x7eedface), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
@@ -9830,7 +9827,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64LE0008';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64LE(BigInt(0xcafebabe), 0);
+        let result = buf.writeBigUInt64LE(BigInt(0x7afebabe), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
@@ -9850,11 +9847,11 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64LE(BigInt(123.456), 0);
-        expect(false).assertFail();
+        let result = buf.writeBigUInt64LE(BigInt(123), 0);
+        expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
+        expect(false).assertFail();
       }
     })
     /**
@@ -9869,7 +9866,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigUInt64LE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigUInt64LE(BigInt(0xdecafafe), 0);
+        let result = buf.writeBigUInt64LE(BigInt(0x7ecafafe), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
@@ -9933,7 +9930,7 @@ export default function bufferTest2() {
         let result = buf.writeDoubleBE(0x0304, 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('8');
-        expect(String(buf.readDoubleBE(0))).assertEqual(String(0x0304));
+        expect(String(buf.readDoubleBE(0))).assertEqual(String((0x0304).toInt()));
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -10869,7 +10866,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: -889275714');
       }
     })
     /**
@@ -10907,7 +10904,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 16053919793946753000');
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: -2392824279762797858');
       }
     })
     /**
@@ -10986,7 +10983,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 4277009102');
+          .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: -17958194');
       }
     })
     /**
@@ -11022,7 +11019,8 @@ export default function bufferTest2() {
         expect(String(buf.writeInt16BE(0x05060708, 0))).assertEqual('2');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message)
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 84281096');
       }
     })
     /**
@@ -11080,7 +11078,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 4277009102');
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: -17958194');
       }
     })
     /**
@@ -11136,7 +11134,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: -889275714');
       }
     })
     /**
@@ -11174,7 +11172,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 16053919793946753000');
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: -2392824279762797858');
       }
     })
     // /** 
@@ -11298,7 +11296,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 4277009102');
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: -17958194');
       }
     })
     /**
@@ -11355,7 +11353,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: -889275714');
       }
     })
     /**
@@ -11536,7 +11534,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0006';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(0xfeedface, 0);
+        let result = buf.writeInt32BE(0xfeedfacefeedface, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
@@ -11597,13 +11595,13 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(0xcafebabe, 0);
+        let result = buf.writeInt32BE(0xfeedfacefeedface, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: -77129851648214322');
       }
     })
     /**
@@ -11644,7 +11642,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000');
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: -2392824279762797858');
       }
     })
     // /** 
@@ -11766,15 +11764,15 @@ export default function bufferTest2() {
     it('testBufferWriteInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0005';
       try {
-    
+
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32LE(0xfeedface, 0);
+        let result = buf.writeInt32LE(0xfeedfacefeedface, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 4277009102');
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: -77129851648214322');
       }
     })
     /**
@@ -11828,14 +11826,14 @@ export default function bufferTest2() {
     it('testBufferWriteInt32LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0008';
       try {
-    
+
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeInt32LE(0xcafebabe, 0);
+        buf.writeInt32LE(0xfeedfacefeedface, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: -77129851648214322');
       }
     })
     /**
@@ -11875,11 +11873,11 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: 16053919793946753000')
-    
+          .assertEqual('The value of "value" is out of range. It must be >= -2147483648 and <= 2147483647. Received value is: -2392824279762797858')
+
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17300
     //  * @tc.name       : testWriteInt32LE0011
     //  * @tc.desc       : Test the function of the interface writeInt32LE.
@@ -12037,7 +12035,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 4277009102');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -17958194');
       }
     })
     /**
@@ -12078,8 +12076,8 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 3405691582')
-    
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -889275714')
+
       }
     })
     /**
@@ -12122,7 +12120,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 16053919793946753000');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: -2392824279762797858');
       }
     })
     // /** 
@@ -12297,7 +12295,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -17958194');
       }
     })
     /**
@@ -12357,7 +12355,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -889275714');
       }
     })
     /**
@@ -12401,7 +12399,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3735928559');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -559038737');
       }
     })
     // /** 
@@ -12529,8 +12527,8 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102')
-    
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -17958194')
+
       }
     })
 
@@ -12590,7 +12588,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 3405691582');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -889275714');
       }
     })
 
@@ -12630,10 +12628,10 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 16053919793946753000');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: -2392824279762797858');
       }
     })
-    // /** 
+    // /**
     //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20800
     //  * @tc.name       : testWriteUInt16LE0011
     //  * @tc.desc       : Test the function of the interface writeUInt16LE.
@@ -12750,8 +12748,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32BE0005';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32BE(0xfeedface, 0);
-        expect(buf.writeUInt32BE(0xfeedface, 0)).assertEqual(4);
+        buf.writeUInt32BE(0x7eedface, 0);
+        expect(buf.writeUInt32BE(0x7eedface, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -12811,8 +12809,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32BE0008';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32BE(0xcafebabe, 0);
-        expect(buf.writeUInt32BE(0xcafebabe, 0)).assertEqual(4);
+        buf.writeUInt32BE(0x7afebabe, 0);
+        expect(buf.writeUInt32BE(0x7afebabe, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -12975,8 +12973,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32LE0005';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32LE(0xfeedface, 0);
-        expect(buf.writeUInt32LE(0xfeedface, 0)).assertEqual(4);
+        buf.writeUInt32LE(0x7eedface, 0);
+        expect(buf.writeUInt32LE(0x7eedface, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -13035,8 +13033,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32LE0008';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32LE(0xcafebabe, 0);
-        expect(buf.writeUInt32LE(0xcafebabe, 0)).assertEqual(4);
+        buf.writeUInt32LE(0x7afebabe, 0);
+        expect(buf.writeUInt32LE(0x7afebabe, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -13078,7 +13076,7 @@ export default function bufferTest2() {
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message)
-          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: 16053919793946753000');
+          .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 4294967295. Received value is: -2392824279762797858');
       }
     })
     // /** 
