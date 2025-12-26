@@ -184,7 +184,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(72);
@@ -210,7 +210,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(0);
@@ -236,7 +236,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(5);
@@ -262,7 +262,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
@@ -292,7 +292,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(72);
@@ -318,7 +318,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(0);
@@ -344,7 +344,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.xResolution);
         expect(result.exifMetadata?.xResolution).assertEqual(5);
@@ -370,7 +370,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.xResolution);
         let firType = resultFir.exifMetadata?.xResolution;
@@ -508,7 +508,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(72);
@@ -534,7 +534,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(0);
@@ -560,7 +560,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(5);
@@ -586,7 +586,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
@@ -616,7 +616,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(72);
@@ -642,7 +642,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(0);
@@ -668,7 +668,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.yResolution);
         expect(result.exifMetadata?.yResolution).assertEqual(5);
@@ -694,7 +694,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.yResolution);
         let firType = resultFir.exifMetadata?.yResolution;
@@ -840,7 +840,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(1);
@@ -866,7 +866,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
@@ -896,7 +896,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
@@ -926,7 +926,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
@@ -956,7 +956,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.planarConfiguration);
         expect(result.exifMetadata?.planarConfiguration).assertEqual(1);
@@ -982,7 +982,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
@@ -1012,7 +1012,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
@@ -1042,7 +1042,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.planarConfiguration);
         let firType = resultFir.exifMetadata?.planarConfiguration;
@@ -1188,7 +1188,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(2);
@@ -1214,7 +1214,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
@@ -1244,7 +1244,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
@@ -1274,7 +1274,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
@@ -1304,7 +1304,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.resolutionUnit);
         expect(result.exifMetadata?.resolutionUnit).assertEqual(2);
@@ -1330,7 +1330,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
@@ -1360,7 +1360,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
@@ -1390,7 +1390,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await webpImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.resolutionUnit);
         let firType = resultFir.exifMetadata?.resolutionUnit;
@@ -1420,7 +1420,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.photoMode);
         expect(result.exifMetadata?.photoMode).assertEqual(1);
@@ -1446,7 +1446,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
@@ -1476,7 +1476,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
@@ -1506,7 +1506,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
@@ -1536,7 +1536,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
@@ -1566,7 +1566,7 @@ export default function  ImageSourcePropertyKeyTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        await await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.photoMode);
         let firType = resultFir.exifMetadata?.photoMode;
