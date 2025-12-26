@@ -44,7 +44,7 @@ export default function powerManagerTest() {
             hilog.info(domain, tag, `${TAG} isReboot:${isReboot}`);
           });
           expect().assertFail();
-        } catch (error) {
+        } catch (error: BusinessError) {
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4900101);
         } finally {
@@ -70,7 +70,7 @@ export default function powerManagerTest() {
             hilog.info(domain, tag, `${TAG} unregisterShutdownCallback`);
           });
           expect().assertFail();
-        } catch (error) {
+        } catch (error: BusinessError) {
           hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(4900101);
         } finally {
