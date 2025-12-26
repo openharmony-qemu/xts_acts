@@ -71,13 +71,12 @@ async function getPixelMap(context:common.UIAbilityContext,resource:Resource,siz
 
 export default function abilityTest() {
   describe('FloatingBallTest', (): void => {
-    let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let isFloatingBallEnabled: boolean = false;
     let context : common.UIAbilityContext;
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
     let windowStage:window.WindowStage;
-    beforeAll((): void => {
+    beforeAll(async (): Promise<void> => {
       isFloatingBallEnabled = floatingBall.isFloatingBallEnabled();
       console.info('beforeAll Floating ball enabled is: ' + isFloatingBallEnabled);
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
@@ -94,7 +93,7 @@ export default function abilityTest() {
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       await getPermision();
-      await sleep(300);
+      await Utils.msSleep(300);
       await clickButtonDriver();
     })
     beforeEach(() => {
@@ -103,7 +102,7 @@ export default function abilityTest() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      await sleep(800)
+      await Utils.msSleep(800)
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -456,7 +455,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -502,7 +501,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: '',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -549,7 +548,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -596,7 +595,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         content:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       };
       try {
@@ -644,7 +643,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         content:'',
       };
       try {
@@ -689,7 +688,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#80FFFFFF'
       };
       try {
@@ -736,7 +735,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'123'
       };
       try {
@@ -784,7 +783,7 @@ export default function abilityTest() {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#008EF5',
       };
       try {
@@ -832,7 +831,7 @@ export default function abilityTest() {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -877,7 +876,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -968,7 +967,7 @@ export default function abilityTest() {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#008EF5',
       };
       try {
@@ -1016,7 +1015,7 @@ export default function abilityTest() {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -1061,7 +1060,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
@@ -1151,7 +1150,7 @@ export default function abilityTest() {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#008EF5',
       };
       try {
@@ -1334,7 +1333,7 @@ export default function abilityTest() {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title',
         content: 'content',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#008EF5',
       };
       try {
@@ -1381,7 +1380,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#008EF5',
       };
       try {
@@ -1619,7 +1618,7 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap()
+        icon:await getPixelMap(context, $r('app.media.icon'))
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
@@ -1731,12 +1730,12 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.STATIC,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008EF5',
         content:'content'
       };
@@ -1790,14 +1789,14 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008E',
         content:'content'
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.NORMAL,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008EF5',
       };
       try {
@@ -1850,14 +1849,14 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008E',
         content:'content'
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.EMPHATIC,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008EF5',
         content:'content1'
       };
@@ -1911,14 +1910,14 @@ export default function abilityTest() {
       let startParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008EF5',
         content:'content'
       };
       let updateParams: floatingBall.FloatingBallParams = {
         template: floatingBall.FloatingBallTemplate.SIMPLE,
         title: 'title2',
-        icon:await getPixelMap(),
+        icon:await getPixelMap(context, $r('app.media.icon')),
         backgroundColor:'#FF008EF5',
         content:'content1'
       };
