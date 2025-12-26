@@ -53,6 +53,7 @@ group("ans_standard") {
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
       "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
+      "actsNotificationGeofenceLiveViewTest:ActsNotificationGeofenceLiveViewTest"
     ]
   }
 }
