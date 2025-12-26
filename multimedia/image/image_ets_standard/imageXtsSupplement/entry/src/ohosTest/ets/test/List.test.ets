@@ -307,9 +307,7 @@ export default function testsuite() {
   ImageNewSubFileTypeSupp();
   ImageMakeModelCompressionSupp();
   ImageRowsPerStripSamplesPerPixelSupp();
-<<<<<<< xts_image
   ImageExifSuppTest();
-=======
   ImageSourceMeteringModeSupp();
   ImageSourceLightSourceSupp();
   ImageSourceFlashSupp();
@@ -327,5 +325,4 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
->>>>>>> xts_image
 }
