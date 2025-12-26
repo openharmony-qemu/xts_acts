@@ -28,15 +28,15 @@ interface Flag {
   flag: boolean
 }
 interface Params {
-  pid: string
-  num: number
+  pid: int
+  num: int
 }
 interface ParametersObj  {
   acts_bundleName: string
   acts_abilityName: string
-  acts_processMode: number | undefined
-  isDone: number
-  acts_startupVisibility: number | undefined
+  acts_processMode: Double | undefined
+  isDone: Double
+  acts_startupVisibility: Double | undefined
   targetPid: string
 }
 let domain: int = 0x0000;
@@ -77,64 +77,60 @@ let commonEventData: commonEvent.CommonEventPublishData = {
   parameters: parametersObj
 };
 let commonEventDataParams = commonEventData?.parameters
-let pids = new Array<string>()
-let subscribeCallBack = async (err:BusinessError<void> | null, data: commonEvent.CommonEventData | undefined, done:()=> void, tag:string, obj:Flag):Promise<void> => {
-  hilog.info(domain, testTag, '%{public}s', `${tag} subscribeCallBack err: ${JSON.stringify(err)}, data: ${JSON.stringify(data)}`);
-  let parametersPid = data?.parameters as Params
-  switch (data!.event) {
-    case START_ABILITY_IN_NEW_PROCESS_EVENT: {
-      let numStr = parametersPid!.num
+let pids = new Array<int>()
+let subscribeCallBack =
+  async (err: BusinessError<void> | null, data: commonEvent.CommonEventData | undefined, done: () => void, tag: string,
+    obj: Flag): Promise<void> => {
+    hilog.info(domain, testTag, '%{public}s',
+      `${tag} subscribeCallBack err: ${JSON.stringify(err)}, data: ${JSON.stringify(data)}`);
+    hilog.info(domain, testTag, '%{public}s', `${tag} subscribeCallBack data: ${JSON.stringify(data!.event)}`);
+    let DataParams: Record<string, RecordData> = data?.parameters as Record<string, RecordData>
+    let DataNum:int = DataParams["num"] as int
+    let DataPid:int = DataParams["pid"] as int
+    if (data!.event == "start_ability_in_new_process_event") {
+      let numStr = DataNum
       expect(numStr).assertEqual(expectErrorCode);
       if (expectErrorCode !== 0) {
         done();
       }
-    }
-      break;
-    case ON_WINDOW_STAGE_CREATE:
+    } else if (data!.event == "on_window_stage_create") {
       onWindowStageFlag = true;
       hilog.info(domain, testTag, '%{public}s', `${tag} subscribeCallBack onWindowStageFlag: ${onWindowStageFlag}`);
-      break;
-    case ON_FOREGROUND:
+    } else if (data!.event == "on_foreground") {
       onForegroundFlag = true;
       hilog.info(domain, testTag, '%{public}s', `${tag} subscribeCallBack onForegroundFlag: ${onForegroundFlag}`);
-      break;
-    case ON_DESTROY:
+    } else if (data!.event == "on_destroy") {
       onDestroyFlag = true;
       hilog.info(domain, testTag, '%{public}s', `${tag} subscribeCallBack onDestroyFlag: ${onDestroyFlag}`);
-      break;
-    case FOREGROUND_EVENT: {
+    } else if (data!.event == "foreground_event") {
       obj.flag = true;
       await Utils.msSleep(500);
-      (commonEventDataParams as ParametersObj)!.targetPid = parametersPid!.pid;
-      commonEvent.publish(START_ABILITY_EVENT, commonEventData, (err: BusinessError<void> | null) => {
-        hilog.info(domain, testTag, '%{public}s', `${tag} publish START_ABILITY_EVENT err: ${JSON.stringify(err)}`);
-      });
-    }
-      break;
-    case NOTIFY_PID_EVENT: {
-      let pidPush = parametersPid!.pid
+      hilog.info(domain, testTag, '%{public}s', `${tag} parametersPid!.num: ${DataNum}`);
+      expect(DataNum).assertEqual(0);
+      done();
+    } else if (data!.event == "notify_pid_event") {
+      let pidPush = DataPid
       pids.push(pidPush);
     }
-      break;
   }
-}
 
 let startAssistAbility = async (tag:string, done: ()=> void):Promise<void> => {
   let obj: Flag = { flag: false };
   subscriber = await commonEvent.createSubscriber(subscribeInfo) as commonEvent.CommonEventSubscriber;
-  commonEvent.subscribe(subscriber, (err: BusinessError<void> | null, data: commonEvent.CommonEventData | undefined) => {
+  commonEvent.subscribe(subscriber, (err: BusinessError<void> | null, 
+    data: commonEvent.CommonEventData | undefined) => {
     subscribeCallBack(err, data, done, tag, obj);
   });
   let want: Want = {
     deviceId: '',
-    bundleName: 'com.example.com.example.startabilityinnewprocesstest.static',
+    bundleName: 'com.example.startabilityinnewprocesstest.static',
     abilityName: 'EntryAbility',
   };
   try {
     hilog.info(domain, testTag, '%{public}s', `${tag} startAssistAbility, ${JSON.stringify(want)}`);
     context.startAbility(want, (err: BusinessError<void> | null) => {
       if (err?.code) {
-        hilog.info(domain, testTag, '%{public}s', `${tag} startAbility failed, code is ${err?.code}, message is ${err?.message}`);
+        hilog.info(domain, testTag, `${tag} startAbility failed, code is ${err?.code}, message is ${err?.message}`);
         expect().assertFail();
         done();
       }
@@ -179,7 +175,8 @@ export default function abilitystaticTest() {
       await Utils.msSleep(2000)
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static beforeAll]';
       try {
-        functionEnable = systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option', 'false');
+        functionEnable = 
+        systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option', 'false');
       } catch (err: BusinessError) {
         hilog.info(domain, testTag, '%{public}s', `${tag} err is ${JSON.stringify(functionEnable)}`);
       }
@@ -194,10 +191,10 @@ export default function abilitystaticTest() {
       onWindowStageFlag = false;
       onForegroundFlag = false;
       expectErrorCode = -1;
-      commonEventData ={
+      commonEventData = {
         parameters: paramsObj
       };
-      pids = new Array<string>();
+      pids = new Array<int>();
     })
 
     /**
@@ -208,7 +205,8 @@ export default function abilitystaticTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400', Level.LEVEL0, async (done: ()=> void): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400', Level.LEVEL0, 
+      async (done: () => void): Promise<void> => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400]';
       expect(String(contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_PARENT)).assertEqual("1");
       expect(String(contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM)).assertEqual("2");
@@ -217,11 +215,7 @@ export default function abilitystaticTest() {
       expect(String(contextConstant.StartupVisibility.STARTUP_SHOW)).assertEqual("1");
       if (functionEnable === 'true') {
         expectErrorCode = 401;
-        (commonEventDataParams as ParametersObj)!.acts_bundleName = 'com.example.com.example.startabilityinnewprocesstest.static';
-        (commonEventDataParams as ParametersObj)!.acts_abilityName = 'MainAbility2';
-        (commonEventDataParams as ParametersObj)!.acts_processMode = contextConstant.ProcessMode.NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM;
-        (commonEventDataParams as ParametersObj)!.isDone = 1;
-
+        commonEventDataParams!["isDone"] = 1;
         startAssistAbility(tag, done);
       } else if (functionEnable === 'false') {
         hilog.info(domain, testTag, '%{public}s', `${tag} function not enable.`);
