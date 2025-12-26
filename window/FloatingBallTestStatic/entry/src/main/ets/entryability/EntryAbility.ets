@@ -47,8 +47,7 @@ class EntryAbility extends UIAbility {
         AppStorage.setOrCreate('context', this.context);
 
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni windowStage = '+JSON.stringify(windowStage) + '  mainWindow'+JSON.stringify(mainWindow));
-      }catch(e) {
-        e = e as BusinessError;
+      }catch(e: BusinessError){
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'getAni'+e.message);
       }
       });
