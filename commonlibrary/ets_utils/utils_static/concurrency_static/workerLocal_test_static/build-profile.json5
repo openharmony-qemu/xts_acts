@@ -1,0 +1,71 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_workerLocal_test_static_Ujpksqnw3vESHxk4TOUggKoU9A8ta7anNXce4vmv0xQ=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B4B705B5B03AD5B37B494CF360ACCCBC1AE02E56AE14988A760F1DE5409FDC92EEE728567180479",
+          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_workerLocal_test_static_Ujpksqnw3vESHxk4TOUggKoU9A8ta7anNXce4vmv0xQ=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_workerLocal_test_static_Ujpksqnw3vESHxk4TOUggKoU9A8ta7anNXce4vmv0xQ=.p12",
+          "storePassword": "0000001B4E96AEF73C8FE23D4D27B8A9CCDBD9D06BC73BC4AFD11A5A11C74681E124F95DD08D2D5F9EBE73"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": 20,
+        "compileSdkVersion": 22,
+        "arkTSVersion": "1.2",
+        "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
