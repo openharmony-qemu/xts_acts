@@ -986,11 +986,6 @@ export default function ImageExifSuppTest() {
       }
       done();
     })
-
-
-
-
-
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_EXPOSURE_PROGRAM_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_EXPOSURE_PROGRAM_001
