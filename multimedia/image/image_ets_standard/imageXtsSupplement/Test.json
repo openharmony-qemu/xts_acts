@@ -99,7 +99,8 @@
                 "./resource/image/test_aisr.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/bluesky.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/test.9.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
-                "./resource/image/pixel_bmp_480x360.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
+                "./resource/image/pixel_bmp_480x360.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif_v3.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
             ]
         },
         {
