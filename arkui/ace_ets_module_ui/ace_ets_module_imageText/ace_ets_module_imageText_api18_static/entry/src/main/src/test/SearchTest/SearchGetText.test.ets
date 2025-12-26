@@ -20,7 +20,6 @@ import {
   Text,
   TextAttribute,
   Column,
-  Component,
   Button,
   ButtonAttribute,
   ClickEvent,

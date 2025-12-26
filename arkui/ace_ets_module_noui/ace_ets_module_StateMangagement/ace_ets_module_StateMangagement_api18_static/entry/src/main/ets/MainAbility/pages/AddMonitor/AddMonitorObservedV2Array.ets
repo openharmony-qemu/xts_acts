@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import { UIUtils, Local, Trace, ObservedV2, IMonitor, IMonitorDecoratedVariable } from '@ohos.arkui.stateManagement';
-import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, Set, DatePicker, TextAlign, Color } from '@ohos.arkui.component';
+import { ComponentV2, Entry, Column, Row, Button, Scroll, ForEach, Text, Divider, DatePicker, TextAlign, Color } from '@ohos.arkui.component';
 
 //array数组类型
 @ObservedV2

@@ -19,9 +19,11 @@ import {
   Entry, Component, Flex, FlexDirection, ItemAlign, FlexAlign,
   Alignment, TextAlign, TextOverflow, PluginErrorData,
   Column, ColumnOptions, Row, Builder, TouchEvent,Color,
-  WrappedBuilder, NodeContainer, ForEach, PluginComponent, PluginComponentTemplate, RecordData, PluginComponentOptions,
+  WrappedBuilder, NodeContainer, ForEach, PluginComponent, PluginComponentTemplate, PluginComponentOptions,
   Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT
 } from '@ohos.arkui.component'
+
+import { RecordData } from '@ohos.base';
 import { StorageLink } from '@ohos.arkui.stateManagement';
 
 interface plugincountObj {

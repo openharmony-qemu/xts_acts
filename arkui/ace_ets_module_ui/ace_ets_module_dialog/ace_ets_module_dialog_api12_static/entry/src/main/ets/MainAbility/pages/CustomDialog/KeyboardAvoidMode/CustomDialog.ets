@@ -32,7 +32,7 @@ import {
   FontWeight,
   Axis, CustomDialog, DialogAlignment,
   Margin,TextInput,KeyboardAvoidMode,CustomDialogControllerOptions, CustomDialogController,
-  PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
+  PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,ComponentContent,DismissDialogAction,DismissReason
 } from '@ohos.arkui.component';
 import {
@@ -138,9 +138,9 @@ struct CustomDialogUser {
     customStyle: false,
     cornerRadius: 10,
   } as CustomDialogControllerOptions)
-  
+
   aboutToDisappear() {
-    this.dialogController = null 
+    this.dialogController = null
   }
 
   onCancel() {
