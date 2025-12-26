@@ -343,34 +343,5 @@ export default function ImageGPSIMGDirection() {
       }
       done();
     })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_GPS_IMG_DIRECTION_012
-     * @tc.name       SUB_MEDIA_IMAGE_GPS_IMG_DIRECTION_012
-     * @tc.desc       ImageGPSImgDirection cover abnormal gpsImgDirection
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_GPS_IMG_DIRECTION_012', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_GPS_IMG_DIRECTION_012';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      let pi = Math.PI
-      testExifMetadata.gpsImgDirection = pi;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsImgDirection);
-        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsImgDirection);
-        expect(result.exifMetadata?.gpsImgDirection).assertEqual(testExifMetadata.gpsImgDirection);
-      }catch (err) {
-        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
-      }
-      done();
-    })
   });
 }

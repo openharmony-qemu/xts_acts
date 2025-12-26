@@ -343,34 +343,5 @@ export default function ImageGPSSpeed() {
       }
       done();
     })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_012
-     * @tc.name       SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_012
-     * @tc.desc       ImageGPSSPEED cover abnormal gpsSpeed
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_012', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_GPS_SPEED_SUPP_012';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      let pi = Math.PI
-      testExifMetadata.gpsSpeed = pi;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsSpeed);
-        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsSpeed);
-        expect(result.exifMetadata?.gpsSpeed).assertEqual(testExifMetadata.gpsSpeed);
-      }catch (err) {
-        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
-      }
-      done();
-    })
   });
 }

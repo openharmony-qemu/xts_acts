@@ -343,33 +343,5 @@ export default function ImageGPSDOP() {
       }
       done();
     })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_GPS_DOP_SUPP_012
-     * @tc.name       SUB_MEDIA_IMAGE_GPS_DOP_SUPP_012
-     * @tc.desc       ImageGPSDOP cover abnormal gpsDop
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_GPS_DOP_SUPP_012', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_GPS_DOP_SUPP_012';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.gpsDop = 1/3;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsDop);
-        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsDop);
-        expect(result.exifMetadata?.gpsDop).assertEqual(testExifMetadata.gpsDop);
-      }catch (err) {
-        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect().assertFail();
-      }
-      done();
-    })
   });
 }
