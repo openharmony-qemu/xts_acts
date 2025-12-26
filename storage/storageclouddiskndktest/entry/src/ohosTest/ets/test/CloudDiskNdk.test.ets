@@ -365,6 +365,64 @@ export default function CloudDiskNdkTest(){
       done();
     });
 
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_ErrorCode_0100
+     * @tc.name CloudDisk_ErrorCode_ENUM_001
+     * @tc.desc Test ErrorCode_ENUM() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_ErrorCode_ENUM_001', Level.LEVEL0, async () => {
+      try {
+        let ret = clouddisk.Tset_CloudDisk_ErrorCode_ENUM();
+        console.info("CloudDisk_ErrorCode_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
+        expect(ret).assertEqual(1);
+      } catch (e) {
+        console.log('CloudDisk_ErrorCode_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
 
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_OperationType_0100
+     * @tc.name CloudDisk_OperationType_ENUM_001
+     * @tc.desc Test OperationType_ENUM() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_OperationType_ENUM_001', Level.LEVEL0, async () => {
+      try {
+        let ret = clouddisk.Tset_CloudDisk_OperationType_ENUM();
+        console.info("CloudDisk_OperationType_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
+        expect(ret).assertEqual(1);
+      } catch (e) {
+        console.log('CloudDisk_OperationType_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_ErrorReason_0100
+     * @tc.name CloudDisk_ErrorReason_ENUM_001
+     * @tc.desc Test ErrorReason_ENUM() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_ErrorReason_ENUM_001', Level.LEVEL0, async () => {
+      try {
+        let ret = clouddisk.Tset_CloudDisk_ErrorReason_ENUM();
+        console.info("CloudDisk_ErrorReason_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
+        expect(ret).assertEqual(1);
+      } catch (e) {
+        console.log('CloudDisk_ErrorReason_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+      }
+    });
   });
 }
