@@ -52,6 +52,12 @@
             ],
             "actions": [
               "ohos.want.action.home"
+            ],
+            "uris": [
+              {
+                "host": "urigetabilityinfotest",
+                "scheme": "abcde"
+              }
             ]
           }
         ]
