@@ -1219,6 +1219,62 @@ static napi_value OH_Preferences_IsStorageTypeSupported0500(napi_env env, napi_c
     napi_create_int32(env, returnCode, &result);
     return result;
 }
+static napi_value OH_PreferencesValue_GetValueType0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, "------------- func OH_PreferencesValue_GetValueType0100 ------------- ");
+    int result = 0;
+    OH_Preferences_ErrCode errcode = PREFERENCES_OK;
+    NAPI_ASSERT(env, errcode == 0, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_INVALID_PARAM;
+    NAPI_ASSERT(env, errcode == 401, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_NOT_SUPPORTED;
+    NAPI_ASSERT(env, errcode == 801, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_BASE;
+    NAPI_ASSERT(env, errcode == 15500000, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_DELETE_FILE;
+    NAPI_ASSERT(env, errcode == 15500010, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_STORAGE;
+    NAPI_ASSERT(env, errcode == 15500011, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_MALLOC;
+    NAPI_ASSERT(env, errcode == 15500012, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_KEY_NOT_FOUND;
+    NAPI_ASSERT(env, errcode == 15500013, "PREFERENCES_OK is fail.");
+    errcode = PREFERENCES_ERROR_GET_DATAOBSMGRCLIENT;
+    NAPI_ASSERT(env, errcode == 15500019, "PREFERENCES_OK is fail.");
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, "------------- func OH_Preferences_RegisterDataObserver_0200 end------------- ");
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+
+}
+
+
+static napi_value OH_PreferencesValue_GetValueType0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, "------------- func OH_PreferencesValue_GetValueType0100 start------------- ");
+    int result = 0;
+    Preference_ValueType type = OH_PreferencesValue_GetValueType(nullptr);
+    if (type = Preference_ValueType::PREFERENCE_TYPE_INT) {
+        NAPI_ASSERT(env, type == PREFERENCE_TYPE_INT, "type is PREFERENCE_TYPE_INT.");
+    }
+    if (type = Preference_ValueType::PREFERENCE_TYPE_BOOL) {
+        NAPI_ASSERT(env, type == PREFERENCE_TYPE_BOOL, "type is PREFERENCE_TYPE_BOOL.");
+    }
+    if(type = Preference_ValueType::PREFERENCE_TYPE_STRING) {
+        NAPI_ASSERT(env, type == PREFERENCE_TYPE_STRING, "type is PREFERENCE_TYPE_STRING.");
+    }
+    if(type = Preference_ValueType::PREFERENCE_TYPE_NULL) {
+        NAPI_ASSERT(env, type == PREFERENCE_TYPE_NULL, "type is PREFERENCE_TYPE_NULL.");
+    }
+    if(type = Preference_ValueType::PREFERENCE_TYPE_BUTT) {
+        NAPI_ASSERT(env, type == PREFERENCE_TYPE_BUTT, "type is PREFERENCE_TYPE_BUTT.");
+    }
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0, TAG, "------------- func OH_PreferencesValue_GetValueType0100 end------------- ");
+    napi_value ret;
+    napi_create_int32(env, result, &ret);
+    return ret;
+}
+
 
 
 EXTERN_C_START
@@ -1281,6 +1337,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_PreferencesPair_0200", nullptr, OH_PreferencesPair_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Preferences_ErrCode_0100", nullptr, OH_Preferences_ErrCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_Preferences_IsStorageTypeSupported0500", nullptr, OH_Preferences_IsStorageTypeSupported0500, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_PreferencesValue_GetValueType0100", nullptr, OH_PreferencesValue_GetValueType0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
