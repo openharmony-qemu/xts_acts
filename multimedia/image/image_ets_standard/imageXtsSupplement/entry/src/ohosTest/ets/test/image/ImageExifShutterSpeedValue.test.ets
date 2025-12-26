@@ -60,7 +60,7 @@ export default function ImageExifShutterSpeedValue() {
       await heifImageSourceApi.release();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_001
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_001
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_001
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -114,7 +114,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_003
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_003
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_003
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -142,7 +142,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_004
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_004
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_004
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -170,7 +170,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_005
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_005
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_005
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -196,7 +196,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_006
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_006
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_006
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -222,7 +222,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_007
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_007
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_007
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -248,7 +248,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_008
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_008
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_008
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -276,7 +276,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_009
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_009
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_009
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -304,7 +304,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_010
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_010
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_010
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -330,7 +330,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_011
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_011
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_011
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -356,7 +356,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_012
+     * @tc.number     SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_012
      * @tc.name       SUB_IMAGE_SHUTTER_SPEED_VALUE_TEST_012
      * @tc.desc       Test ImageWriteImageMetadata cover shutterSpeedValue
      * @tc.size       MEDIUM
@@ -384,7 +384,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_001
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_001
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_001
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.type       Function
@@ -409,7 +409,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_002
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_002
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_002
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -437,7 +437,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_003
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_003
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_003
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -465,7 +465,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_004
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_004
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_004
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -493,7 +493,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_005
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_005
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_005
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -519,7 +519,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_006
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_006
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_006
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -545,7 +545,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_007
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_007
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_007
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -571,7 +571,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_008
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_008
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_008
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -599,7 +599,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_009
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_009
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_009
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -627,7 +627,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_010
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_010
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_010
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -653,7 +653,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_011
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_011
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_011
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -679,7 +679,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_APERTURE_VALUE_TEST_012
+     * @tc.number     SUB_IMAGE_APERTURE_VALUE_TEST_012
      * @tc.name       SUB_IMAGE_APERTURE_VALUE_TEST_012
      * @tc.desc       Test ImageWriteImageMetadata cover apertureValue
      * @tc.size       MEDIUM
@@ -707,7 +707,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_001
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_001
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_001
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -733,7 +733,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_002
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_002
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_002
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -761,7 +761,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_003
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_003
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_003
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -789,7 +789,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_004
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_004
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_004
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -817,7 +817,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_005
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_005
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_005
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -843,7 +843,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_006
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_006
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_006
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -869,7 +869,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_007
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_007
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_007
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -895,7 +895,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_008
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_008
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_008
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -923,7 +923,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_009
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_009
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_009
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -951,7 +951,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_010
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_010
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_010
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -977,7 +977,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_011
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_011
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_011
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -1003,7 +1003,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_012
+     * @tc.number     SUB_IMAGE_BRIGHTNESS_VALUE_TEST_012
      * @tc.name       SUB_IMAGE_BRIGHTNESS_VALUE_TEST_012
      * @tc.desc       Test ImageWriteImageMetadata cover brightnessValue
      * @tc.size       MEDIUM
@@ -1031,7 +1031,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_001
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_001
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_001
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1057,7 +1057,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_002
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_002
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_002
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1085,7 +1085,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_003
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_003
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_003
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1113,7 +1113,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_004
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_004
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_004
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1141,7 +1141,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_005
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_005
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_005
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1167,7 +1167,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_006
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_006
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_006
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1193,7 +1193,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_007
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_007
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_007
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1219,7 +1219,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_008
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_008
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_008
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1247,7 +1247,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_009
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_009
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_009
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1275,7 +1275,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_010
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_010
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_010
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1301,7 +1301,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_011
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_011
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_011
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1327,7 +1327,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_012
+     * @tc.number     SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_012
      * @tc.name       SUB_IMAGE_EXPOSURE_BIAS_VALUE_TEST_012
      * @tc.desc       Test ImageWriteImageMetadata cover exposureBiasValue
      * @tc.size       MEDIUM
@@ -1355,7 +1355,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_001
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_001
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_001
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1381,7 +1381,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_002
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_002
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_002
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1409,7 +1409,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_003
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_003
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_003
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1437,7 +1437,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_004
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_004
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_004
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1465,7 +1465,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_005
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_005
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_005
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1491,7 +1491,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_006
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_006
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_006
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1517,7 +1517,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_007
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_007
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_007
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1543,7 +1543,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_008
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_008
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_008
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1571,7 +1571,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_009
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_009
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_009
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1599,7 +1599,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_010
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_010
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_010
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1626,7 +1626,7 @@ export default function ImageExifShutterSpeedValue() {
     });
 
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_011
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_011
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_011
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue
      * @tc.size       MEDIUM
@@ -1652,7 +1652,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_012
+     * @tc.number     SUB_IMAGE_MAX_APERTURE_VALUE_TEST_012
      * @tc.name       SUB_IMAGE_MAX_APERTURE_VALUE_TEST_012
      * @tc.desc       Test ImageWriteImageMetadata cover maxApertureValue (abnormal: exceed max value 1000000)
      * @tc.size       MEDIUM
@@ -1680,7 +1680,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_001
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_001
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_001
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (normal value: 100 m)
      * @tc.size       MEDIUM
@@ -1706,7 +1706,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_002
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_002
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_002
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (abnormal: undefined)
      * @tc.size       MEDIUM
@@ -1734,7 +1734,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_003
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_003
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_003
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (abnormal: exceed max value 1000000)
      * @tc.size       MEDIUM
@@ -1762,7 +1762,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_004
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_004
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_004
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (abnormal: negative value -1)
      * @tc.size       MEDIUM
@@ -1790,7 +1790,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_005
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_005
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_005
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (normal value: 999999 m)
      * @tc.size       MEDIUM
@@ -1816,7 +1816,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_006
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_006
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_006
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (normal value: 0 m)
      * @tc.size       MEDIUM
@@ -1842,7 +1842,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_007
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_007
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_007
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (normal value: 100 m)
      * @tc.size       MEDIUM
@@ -1868,7 +1868,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_008
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_008
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_008
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (abnormal: undefined)
      * @tc.size       MEDIUM
@@ -1896,7 +1896,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_009
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_009
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_009
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (abnormal: negative value -1)
      * @tc.size       MEDIUM
@@ -1924,7 +1924,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_010
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_010
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_010
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (normal value: 0 m)
      * @tc.size       MEDIUM
@@ -1950,7 +1950,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_011
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_011
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_011
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (normal value: 999999 m)
      * @tc.size       MEDIUM
@@ -1976,7 +1976,7 @@ export default function ImageExifShutterSpeedValue() {
       done();
     });
     /**
-     * @TC.NUMBER     SUB_IMAGE_SUBJECT_DISTANCE_TEST_012
+     * @tc.number     SUB_IMAGE_SUBJECT_DISTANCE_TEST_012
      * @tc.name       SUB_IMAGE_SUBJECT_DISTANCE_TEST_012
      * @tc.desc       Test ImageWriteImageMetadata cover subjectDistance (abnormal: exceed max value 1000000)
      * @tc.size       MEDIUM
