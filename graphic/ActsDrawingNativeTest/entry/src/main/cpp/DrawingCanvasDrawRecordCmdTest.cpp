@@ -82,7 +82,8 @@ OH_Drawing_RecordCmd *threadFunctionTest6()
     OH_Drawing_CanvasAttachPen(canvas, cPen);
     // 创建一个画刷Brush对象，Brush对象用于形状的填充
     OH_Drawing_Brush *cBrush = OH_Drawing_BrushCreate();
-    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(COLOR_GREEN_A, COLOR_GREEN_R, COLOR_GREEN_G, COLOR_GREEN_B));
+    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(
+        COLOR_GREEN_A, COLOR_GREEN_R, COLOR_GREEN_G_GREEN_B));
     // 将Brush画刷设置到canvas中
     OH_Drawing_CanvasAttachBrush(canvas, cBrush);
     drawCircle1(canvas, width);

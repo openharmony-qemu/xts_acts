@@ -70,7 +70,7 @@ using std::stringstream;
 using std::to_string;
 using std::vector;
 
-static constexpr int RESULT_ERROR = -1;
+constexpr int RESULT_ERROR = -1;
 void OHPrintf(const char* fmt, ...);
 
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);

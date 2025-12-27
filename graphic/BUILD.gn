@@ -70,7 +70,7 @@ group("graphic") {
       "windowStage:ActsWindowStageTest",
       "windowStageTwo:ActsWindowStageTwoTest",
       "windowstandard:window_hap_test",
-      "ActsDrawingNativeTest:ActsDrawingNativeTest"
+      "ActsDrawingNativeTest:ActsNewDrawingNativeTest"
     ]
     if (!(product_name == "ohcore")) {
       deps += [
