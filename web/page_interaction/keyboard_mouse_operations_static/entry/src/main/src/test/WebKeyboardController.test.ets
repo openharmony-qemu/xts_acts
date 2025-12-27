@@ -92,7 +92,7 @@ export default function webHitTestTypeEnumTest() {
         }
         text = await testInput.getText();
         expect(text).assertEqual('OriginalInsertTe');
-        let textRst = await driver.findComponent(ON.type('Text'));
+        let textRst = await driver.findComponent(ON.id('ResultShow'));
         expect(textRst != null).assertTrue();
         if (textRst != null) {
           let rst = await textRst.getText();
