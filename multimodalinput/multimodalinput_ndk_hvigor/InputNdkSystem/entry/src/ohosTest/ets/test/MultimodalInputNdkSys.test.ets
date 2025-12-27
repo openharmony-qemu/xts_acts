@@ -2688,11 +2688,11 @@ export default function MultimodalInputNdkSysTest() {
       try {
         let data = input.AddKeyEventHook2();
         console.info(`${caseName} Test NAPI data= ${JSON.stringify(data)}`);
-        ExpectTrue(data == 1);
+        expect(data).assertEqual(1);
         done();
       } catch (err) {
         console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
-        ExpectFalse(true);
+        expect().assertFail();
         done();
       }
       console.info(`${caseName} end to test`);

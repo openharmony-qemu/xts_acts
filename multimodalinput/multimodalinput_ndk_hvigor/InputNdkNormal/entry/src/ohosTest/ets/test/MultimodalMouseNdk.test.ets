@@ -1318,7 +1318,7 @@ export default function MultimodalMouseNdkTest() {
       let caseName = 'SUB_MMI_Input_GetIntervalSinceLastInput_0100';
       console.info(`${caseName} start to test`);
       try {
-        let data = mouse.GetIntervalSinceLastInput1();
+        let data = mouse.GetInterSinceLastInput1();
         console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
         expect(data).assertEqual(1);
         done();

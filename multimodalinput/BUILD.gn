@@ -30,7 +30,10 @@ group("multimodalinput") {
       "multimodalinput_ets_hvigor/InputDevice/InputDeviceTest_static:ActsMultimodalInputDeviceStaticTest",
       "multimodalinput_ets_hvigor/KeyCode/KeyCodeTest_static:ActsMultimodalKeyCodeStaticTest",
       "multimodalinput_ets_hvigor/Pointer/PointerTest_static:ActsMultimodalPointerStaticTest",
-      "multimodalinput_ets_hvigor/NoPermission/NoPermissionTest_static:ActsMultimodalNoPermissionStaticTest",      "multimodalinput_ets_hvigor/InfraredEmitter/InfraredEmitterTest_static:ActsMultimodalInfraredEmitterStaticTest",
+      "multimodalinput_ets_hvigor/NoPermission/NoPermissionTest_static:ActsMultimodalNoPermissionStaticTest",    
+      "multimodalinput_ets_hvigor/InfraredEmitter/InfraredEmitterTest_static:ActsMultimodalInfraredEmitterStaticTest",
+      "multimodalinput_ndk_hvigor/InputInjectKeyEvent:ActsInputInjectKeyEventTest",	
+      "multimodalinput_ndk_hvigor/InputInjectKeyEventNoPermission:ActsInputInjectNoPermissionTest",
     ]
   }
 }
