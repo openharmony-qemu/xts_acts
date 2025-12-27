@@ -435,7 +435,7 @@ static napi_value CustomCursor13(napi_env env, napi_callback_info info)
     Input_Result retResult1 = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
     int32_t pointerStyle = -1;
     Input_Result retResult2 = OH_Input_GetPointerStyle(windowId, &pointerStyle);
-    napi_create_int32(env, ((retResult1 == INPUT_INVALID_WINDOWID || INPUT_DEVICE_NOT_SUPPORTED) &&
+    napi_create_int32(env, ((retResult1 == INPUT_INVALID_WINDOWID || retResult1 == INPUT_DEVICE_NOT_SUPPORTED) &&
         retResult2 == INPUT_SUCCESS && pointerStyle == 0) ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
@@ -613,7 +613,7 @@ static napi_value CursorInfo13(napi_env env, napi_callback_info info)
     Input_Result retResult2 = OH_Input_CursorInfo_GetStyle(cursorInfo, &pointerStyle);
     Input_Result retResult3 = OH_Input_CursorInfo_GetSizeLevel(cursorInfo, &sizeLevel);
     Input_Result retResult4 = OH_Input_CursorInfo_GetColor(cursorInfo, &color);
-    if (visible == fasle) {
+    if (visible == false) {
         napi_create_int32(env, retResult1 == INPUT_SUCCESS && retResult2 == INPUT_PARAMETER_ERROR &&
                       retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
     } else {
@@ -704,7 +704,7 @@ static napi_value CustomCursor18(napi_env env, napi_callback_info info)
     OH_PixelmapInitializationOptions_SetHeight(options, LENGTH);
     OH_PixelmapNative_CreateEmptyPixelmap(options, &pixelmap1);
     Input_CustomCursor *customCursor = OH_Input_CustomCursor_Create(pixelmap1, 0, 0);
-    Input_Result retResult = OH_Input_CustomCursor_GetPixelMap(customCursor, pixelmap1);
+    Input_Result retResult = OH_Input_CustomCursor_GetPixelMap(customCursor, &pixelmap1);
     napi_create_int32(env, retResult == INPUT_SUCCESS ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     return result;
@@ -763,7 +763,6 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
         (retResult3 == INPUT_PARAMETER_ERROR || retResult3 == INPUT_SERVICE_EXCEPTION) &&
         (retResult4 == INPUT_PARAMETER_ERROR || retResult4 == INPUT_SERVICE_EXCEPTION)
          ? 1 : 0, &result);
-    OH_Input_DestroyKeyEvent(&keyEvent);
     return result;
 }
 
@@ -830,6 +829,7 @@ static napi_property_descriptor desc_part3[] = {
     {"CreateHotkey1", nullptr, CreateHotkey1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"GetInterSinceLastInput1", nullptr, GetInterSinceLastInput1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 static napi_value Init(napi_env env, napi_value exports)
