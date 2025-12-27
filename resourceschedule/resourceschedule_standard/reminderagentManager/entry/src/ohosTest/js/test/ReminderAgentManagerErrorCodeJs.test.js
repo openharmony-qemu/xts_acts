@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-// @ts-nocheck tag
+// @ts-nocheck
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import reminderAgent from '@ohos.reminderAgentManager'
 import notificationManager from '@ohos.notificationManager';
@@ -376,7 +376,62 @@ export default function ReminderAgentManagerErrorCodeTest() {
                 expect(error.code == 1700007).assertTrue();
                 done();
             }
-        })     
+        })
 
+        /**
+         * @tc.name   reminderErrorCode_1000
+         * @tc.number reminderErrorCode_1000
+         * @tc.desc   test cancelReminderOnDisplay promise function with reminderId is -1 and errCode is 1700007
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1000", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1000---------------------------');
+            reminderAgent.cancelAllReminders().then((err, data) => {
+                console.info('reminderErrorCode_1000 cancelAllReminders success');
+
+                const reminderId = -1;
+                try {
+                    reminderAgent.cancelReminderOnDisplay(reminderId).then(() => {
+                        console.log("reminderErrorCode_1000 update reminder succeed");
+                    }).catch((err) => {
+                        console.error("reminderErrorCode_1000 promise err code:" + err.code + " message:" + err.message);
+                    });
+                } catch (error) {
+                    console.log("reminderErrorCode_1000 cancelReminderOnDisplay error.code:" + error.code);
+                    expect(error.code == 1700007).assertTrue();
+                    done();
+                }
+            });
+        })
+        
+        /**
+         * @tc.name   reminderErrorCode_1100
+         * @tc.number reminderErrorCode_1100
+         * @tc.desc   test cancelReminderOnDisplay promise function with reminderId is 1221 and errCode is 1700003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("reminderErrorCode_1100", Level.LEVEL3, async function (done) {
+            console.info('----------------------reminderErrorCode_1100---------------------------');
+            reminderAgent.cancelAllReminders().then((err, data) => {
+                console.info('reminderErrorCode_1100 cancelAllReminders success');
+
+                const reminderId = 1221;
+                try {
+                    reminderAgent.cancelReminderOnDisplay(reminderId).then(() => {
+                        console.log("reminderErrorCode_1100 update reminder succeed");
+                    }).catch((err) => {
+                        console.error("reminderErrorCode_1100 promise err code:" + err.code + " message:" + err.message);
+                    });
+                } catch (error) {
+                    console.log("reminderErrorCode_1100 cancelReminderOnDisplay error.code:" + error.code);
+                    expect(error.code == 1700003).assertTrue();
+                    done();
+                }
+            });
+        })
     })
 }
