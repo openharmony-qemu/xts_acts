@@ -15,6 +15,7 @@
 
 #include "common/native_common.h"
 #include "napi/native_api.h"
+#include "hilog/log.h"
 #include <securec.h>
 #include <pthread.h>
 #include <stdint.h>
@@ -68,6 +69,7 @@ const int NAPI_UTF8_MAX = 255;
 const int NAPI_ARGS_LENGTH = 2;
 const uint32_t NAPI_NATIVE_VALUE1 = 11;
 const uint32_t NAPI_NATIVE_VALUE2 = 22;
+static constexpr int INT_ARG_100 = 100;
 
 
 struct CallbackData {
@@ -17936,6 +17938,53 @@ static napi_value NapiDelStrongSendableRef(napi_env env, napi_callback_info info
     return rst;
 }
 
+// napi_throw_business_error
+// 1.Normal function
+static napi_value NapiThrowBusinessError(napi_env env,napi_callback_info info)
+{
+    NAPI_CALL(env, napi_throw_business_error(env, INT_ARG_100, "Error Message"));
+    napi_value result;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
+
+// 2. Error parameter test
+static napi_value NapiThrowBusinessErrorPar(napi_env env, napi_callback_info info)
+{
+    // env is nullptr
+    napi_status status = napi_throw_business_error(nullptr, INT_ARG_100, "napi_throw_business_error env is nullptr");
+    NAPI_ASSERT(env, status == napi_invalid_arg, "env is nullptr, napi_throw_business_error failed.");
+
+    // msg is nullptr
+    status = napi_throw_business_error(env, INT_ARG_100, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "msg is nullptr, napi_throw_business_error failed.");
+    napi_value result;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
+
+// 3. Pending exception test
+static napi_value NapiThrowBusinessErrorPendingError(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "first call: %{puiblic}d", napi_throw_business_error(env, INT_ARG_100, "This is a pre-existing exception"));
+    napi_status status = napi_throw_business_error(env, INT_ARG_100, "error message");
+    NAPI_ASSERT(env, status == napi_pending_exception, "napi_throw_business_error not napi_pending_exception");
+
+    napi_value error;
+    status = napi_get_and_clear_last_exception(env, &error);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_and_clear_last_exception failed.");
+
+    status = napi_throw_business_error(env, INT_ARG_100, "error message after clear");
+    NAPI_ASSERT(env, status == napi_ok, "napi_throw_business_error after clear failed.");
+
+    status = napi_get_and_clear_last_exception(env, &error);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_and_clear_last_exception failed.");
+
+    napi_value result;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -18699,6 +18748,9 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiCreateStrongSendableRef", NapiCreateStrongSendableRef),
         DECLARE_NAPI_FUNCTION("NapiGetStrongSendableRef", NapiGetStrongSendableRef),
         DECLARE_NAPI_FUNCTION("NapiDelStrongSendableRef", NapiDelStrongSendableRef),
+        DECLARE_NAPI_FUNCTION("NapiThrowBusinessError", NapiThrowBusinessError),
+        DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPar", NapiThrowBusinessErrorPar),
+        DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPendingError", NapiThrowBusinessErrorPendingError),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 
