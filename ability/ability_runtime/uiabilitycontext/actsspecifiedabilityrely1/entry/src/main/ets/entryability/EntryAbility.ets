@@ -23,7 +23,7 @@ export default class EntryAbility extends UIAbility {
   private exitTask: number = 0;
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely1 EntryAbility onCreate');
 
     commonEventManager.publish('StartSpecifiedAbility_OnCreate', {}, () => {});
   }
@@ -34,12 +34,12 @@ export default class EntryAbility extends UIAbility {
   }
 
   onDestroy(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely1 EntryAbility onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely1 EntryAbility onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
@@ -52,12 +52,12 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely1 EntryAbility onWindowStageDestroy');
   }
 
   onForeground(): void {
     // Ability has brought to foreground
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'demo1 entry onForeground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely1 EntryAbility entry onForeground');
     if (this.exitTask !== 0) {
       return;
     }
@@ -72,6 +72,6 @@ export default class EntryAbility extends UIAbility {
 
   onBackground(): void {
     // Ability has back to background
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely1 EntryAbility onBackground');
   }
 }
