@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-#include "include/OhosCommonTest.h"
 #include "include/DrawingCanvasDrawRecordCmdTest.h"
-#include <random>
-#include <thread>
 #include <iomanip>
+#include <random>
 #include <sstream>
+#include <thread>
+#include "include/OhosCommonTest.h"
 
 namespace OHOS {
 namespace Rosen {
@@ -56,24 +56,24 @@ void DrawingCanvasDrawRecordCmdTestTearDown()
     std::cout << "DrawingCanvasDrawRecordCmdTest errorCodeReset after each test case." << std::endl;
 }
 
-void drawCircle1(OH_Drawing_Canvas *canvas, int position)
+void drawCircle1(OH_Drawing_Canvas* canvas, int position)
 {
     int x = CIRCLE_X_OFFSET;
     int radius = CIRCLE_RADIUS;
-    OH_Drawing_Point *point = OH_Drawing_PointCreate(x * position + radius, x + radius);
+    OH_Drawing_Point* point = OH_Drawing_PointCreate(x * position + radius, x + radius);
     OH_Drawing_CanvasDrawCircle(canvas, point, radius);
     OH_Drawing_PointDestroy(point);
 }
-OH_Drawing_RecordCmd *threadFunctionTest6()
+OH_Drawing_RecordCmd* threadFunctionTest6()
 {
     int32_t width = THREAD_TEST_WIDTH;
     int32_t height = THREAD_TEST_HEIGHT;
-    OH_Drawing_RecordCmd *recordCmd = nullptr;
-    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
-    OH_Drawing_RecordCmdUtils *recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_RecordCmd* recordCmd = nullptr;
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
     OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
     // 创建一个画笔Pen对象，Pen对象用于形状的边框线绘制
-    OH_Drawing_Pen *cPen = OH_Drawing_PenCreate();
+    OH_Drawing_Pen* cPen = OH_Drawing_PenCreate();
     OH_Drawing_PenSetAntiAlias(cPen, true);
     OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(COLOR_RED_A, COLOR_RED_R, COLOR_RED_G, COLOR_RED_B));
     OH_Drawing_PenSetWidth(cPen, PEN_WIDTH);
@@ -81,9 +81,9 @@ OH_Drawing_RecordCmd *threadFunctionTest6()
     // 将Pen画笔设置到canvas中
     OH_Drawing_CanvasAttachPen(canvas, cPen);
     // 创建一个画刷Brush对象，Brush对象用于形状的填充
-    OH_Drawing_Brush *cBrush = OH_Drawing_BrushCreate();
-    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(
-        COLOR_GREEN_A, COLOR_GREEN_R, COLOR_GREEN_G_GREEN_B));
+    OH_Drawing_Brush* cBrush = OH_Drawing_BrushCreate();
+    OH_Drawing_BrushSetColor(cBrush,
+                             OH_Drawing_ColorSetArgb(COLOR_GREEN_A, COLOR_GREEN_R, COLOR_GREEN_G, COLOR_GREEN_B));
     // 将Brush画刷设置到canvas中
     OH_Drawing_CanvasAttachBrush(canvas, cBrush);
     drawCircle1(canvas, width);
@@ -107,20 +107,20 @@ OH_Drawing_RecordCmd *threadFunctionTest6()
 int TestCanvasDrawRecordCmdNormal()
 {
     DrawingCanvasDrawRecordCmdTestSetUp();
-    
-    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
+
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     // add assert
     EXPECT_NE(canvas, nullptr);
-    OH_Drawing_RecordCmd *picture = nullptr;
+    OH_Drawing_RecordCmd* picture = nullptr;
     std::thread thread([&picture]() { picture = threadFunctionTest6(); });
     thread.join();
     if (picture != nullptr) {
         OH_Drawing_ErrorCode result = OH_Drawing_CanvasDrawRecordCmd(canvas, picture);
         EXPECT_EQ(result, OH_DRAWING_SUCCESS);
     }
-    
+
     DrawingCanvasDrawRecordCmdTestTearDown();
-    
+
     return OH_DRAWING_SUCCESS;
 }
 } // namespace Drawing
