@@ -70,7 +70,7 @@ export default function taskPoolAsyncRunnerMultipleGCTest() {
         }
         if (j == (2 || 4 || 7)) {
           setTimeout(() => {
-            // ArkTools.forceFullGC();
+            // gc
           }, 10)
         }
       }

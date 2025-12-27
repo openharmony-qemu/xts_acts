@@ -44,7 +44,7 @@ export declare class ArkTools {
 }
 
 export function gc() {
-  // ArkTools.forceFullGC()
+  // gc
 }
 
 
