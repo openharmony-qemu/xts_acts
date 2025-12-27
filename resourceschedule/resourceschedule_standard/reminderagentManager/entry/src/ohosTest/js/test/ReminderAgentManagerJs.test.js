@@ -1265,6 +1265,7 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
+         * tag
          * @tc.name   reminderRequestAttribute_0037
          * @tc.number reminderRequestAttribute_0037
          * @tc.desc   test getValidReminders callback function res is null
