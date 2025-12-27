@@ -25,7 +25,7 @@ export default class EntryAbility extends UIAbility {
   private exitTask: number = 0;
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely2 EntryAbility onCreate');
 
     if (want?.parameters?.exitTime) {
       exitTime = want.parameters.exitTime as number;
@@ -34,12 +34,12 @@ export default class EntryAbility extends UIAbility {
   }
 
   onDestroy(): void {
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely2 EntryAbility onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely2 EntryAbility onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
@@ -52,7 +52,7 @@ export default class EntryAbility extends UIAbility {
 
   onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely2 EntryAbility onWindowStageDestroy');
   }
 
   onForeground(): void {
@@ -62,7 +62,7 @@ export default class EntryAbility extends UIAbility {
       return;
     }
     this.exitTask = setTimeout(() => {
-      hilog.info(DOMAIN, 'testTag', '%{public}s', 'demo2 publish exit');
+      hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely2 EntryAbility demo2 publish exit');
       commonEventManager.publish('StartSpecifiedAbility_Exit', {}, () => {
         hilog.info(DOMAIN, 'testTag', '%{public}s', 'demo2 exit');
         this.context.terminateSelf();
@@ -72,6 +72,6 @@ export default class EntryAbility extends UIAbility {
 
   onBackground(): void {
     // Ability has back to background
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'rely2 EntryAbility onBackground');
   }
 }
