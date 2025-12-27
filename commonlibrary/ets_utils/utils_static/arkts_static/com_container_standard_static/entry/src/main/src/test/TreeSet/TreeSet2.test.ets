@@ -977,11 +977,10 @@ export default function TreeSetTest2() {
       try {
         let treeSet: TreeSet<string> = new TreeSet<string>();
         let result = treeSet.getLowerValue("");
-        expect(result).assertEqual(undefined);
+        expect(false).assertFail();
       } catch (err) {
         err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Container is empty");
       }
     });
     // /**

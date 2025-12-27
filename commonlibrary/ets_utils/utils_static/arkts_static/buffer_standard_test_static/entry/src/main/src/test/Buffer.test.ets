@@ -2383,12 +2383,11 @@ export default function BufferTest() {
     it("testWriteInt32BE0314", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.alloc(4);
       try {
-        let ref = buf.writeInt32BE(0, 1);
+        let ref = buf.writeInt32BE(0, -1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('Parameter error. The type of "value" must be number. Received value is: ' +
-          'string');
+        expect(err.message).assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 0. Received value is: -1');
       }
     });
 
@@ -2814,7 +2813,7 @@ export default function BufferTest() {
      */
     it("testWriteUInt32BE0380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(4);
-      let ref = buf.writeUInt32BE(0xfeedface, 0);
+      let ref = buf.writeUInt32BE(0x7eedface, 0);
       expect(String(ref)).assertEqual('4');
     });
 

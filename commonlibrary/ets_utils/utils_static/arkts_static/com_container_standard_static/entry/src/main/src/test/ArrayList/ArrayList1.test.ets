@@ -1180,11 +1180,11 @@ export default function ArraylistTest1() {
       arrayList.add("李四");
       let arr: Array<String | Number> = new Array<String | Number>();
       let itr = arrayList.$_iterator();
-      let tmp: String | Number | undefined = undefined;
-      do {
-        tmp = itr.next().value;
+      let tmp: String | Number | undefined = itr.next().value;
+      while (tmp != undefined) {
         arr.push(tmp as String | Number);
-      } while (tmp != undefined);
+        tmp = itr.next().value;
+      }
       let a: Array<String | Number> = new Array<String | Number>("刘", "张三", 1, 2, "李四");
       for (let i = 0; i < a.length; i++) {
         expect(String(arr[i])).assertEqual(String(a[i]));
