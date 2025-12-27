@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// tag
+
 import { BusinessError } from '@kit.BasicServicesKit'
 import { WantAgent, wantAgent, UIAbility } from '@kit.AbilityKit'
 import ohosWantAgent from '@ohos.wantAgent'
@@ -447,6 +447,32 @@ export default function ActsApi22LongTimeTaskManagerTest() {
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015 end---');
       })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_WORK_OUT_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: Function) => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016 begin---');
+
+      try {
+        let type: number = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_WORK_OUT_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(11);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016 end---');
+    })
     
   })
 }
