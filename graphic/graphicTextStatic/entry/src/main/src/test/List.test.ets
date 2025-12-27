@@ -25,6 +25,7 @@ import TextGetFontDescTest from './TextGetFontDescTest.test';
 import TextRunTest from './TextRunTest.test';
 import TextTextLineTest from './TextTextLineTest.test';
 import GraphicTextNewAPI from './GraphicTextNewAPI.test';
+import GraphicTextAPI23 from './GraphicTextAPI23.test';
 export default function testsuite() {
   GraphicTextInterface();
   GraphicTextParagraphBuilder();
@@ -39,4 +40,5 @@ export default function testsuite() {
   TextRunTest();
   TextTextLineTest();
   GraphicTextNewAPI();
+  GraphicTextAPI23();
 }

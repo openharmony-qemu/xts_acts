@@ -201,13 +201,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(START_STATE, ERROR_STATE, PRE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.start();
+      try {
+        audioRecorder?.start();
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0300
@@ -215,13 +221,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, PRE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0400
@@ -229,14 +241,20 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, PRE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0500
@@ -244,13 +262,20 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, RESET_STATE, PRE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0600
@@ -258,13 +283,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, PRE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0800
@@ -272,15 +303,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0800', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, PRE_STATE, ERROR_STATE, STOP_STATE, PRE_STATE, RESET_STATE, PRE_STATE,
           RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0900
@@ -288,13 +325,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_0900', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, PRE_STATE, ERROR_STATE, PRE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1000
@@ -302,16 +345,22 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1000', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1000', Level.LEVEL2, async (done: Function) => {
       audioConfig.numberOfChannels = -1;
       audioConfig.audioSampleRate = 22050;
       audioConfig.audioEncodeBitRate = 22050;
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1100
@@ -319,16 +368,22 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1100', Level.LEVEL2, async (done: Function) => {
       audioConfig.numberOfChannels = CHANNEL_TWO;
       audioConfig.audioSampleRate = -1;
       audioConfig.audioEncodeBitRate = 22050;
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1200
@@ -336,16 +391,22 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PREPARE_API_1200', Level.LEVEL2, async (done: Function) => {
       audioConfig.numberOfChannels = CHANNEL_TWO;
       audioConfig.audioSampleRate = 22050;
       audioConfig.audioEncodeBitRate = -1;
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0100
@@ -353,16 +414,22 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0100', Level.LEVEL2, async (done: Function) => {
       audioConfig.numberOfChannels = CHANNEL_TWO;
       audioConfig.audioSampleRate = 22050;
       audioConfig.audioEncodeBitRate = 22050;
       initAudioRecorder();
       let mySteps = new Array(START_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.start();
+      try {
+        audioRecorder?.start();
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0200
@@ -370,13 +437,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0300
@@ -384,13 +457,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, START_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0400
@@ -398,15 +477,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, START_STATE, ERROR_STATE, RELEASE_STATE,
           END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0500
@@ -414,13 +499,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, START_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0600
@@ -428,13 +519,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, START_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0800
@@ -442,15 +539,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0800', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, STOP_STATE, START_STATE, ERROR_STATE, PRE_STATE, START_STATE, RESET_STATE,
           START_STATE, ERROR_STATE, PRE_STATE, START_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0900
@@ -458,14 +561,20 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_START_API_0900', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, START_STATE, ERROR_STATE, START_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0100
@@ -473,13 +582,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0100', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PAUSE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.pause();
+      try {
+        audioRecorder?.pause();
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0200
@@ -487,13 +602,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, PAUSE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0300
@@ -501,13 +622,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0400
@@ -515,13 +642,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, PAUSE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0500
@@ -529,13 +662,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, PAUSE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0600
@@ -543,13 +682,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, PAUSE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0800
@@ -557,15 +702,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0800', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, PAUSE_STATE, STOP_STATE, PAUSE_STATE, ERROR_STATE,
           RESET_STATE, PAUSE_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0900
@@ -573,14 +724,20 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_PAUSE_API_0900', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, PAUSE_STATE, ERROR_STATE, PAUSE_STATE, ERROR_STATE,
         RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0100
@@ -588,13 +745,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0100', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(RESUME_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.resume();
+      try {
+        audioRecorder?.resume();
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0200
@@ -602,13 +765,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, RESUME_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0300
@@ -616,13 +785,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESUME_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0400
@@ -630,13 +805,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0500
@@ -644,13 +825,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, RESUME_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0600
@@ -658,13 +845,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RESUME_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0800
@@ -672,14 +865,20 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0800', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESUME_STATE, ERROR_STATE, PAUSE_STATE, RESUME_STATE, STOP_STATE,
         RESUME_STATE, ERROR_STATE, RESET_STATE, RESUME_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0900
@@ -687,15 +886,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESUME_API_0900', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, RESUME_STATE, ERROR_STATE, RESUME_STATE,
           ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0100
@@ -703,13 +908,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0100', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(STOP_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.stop();
+      try {
+        audioRecorder?.stop();
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0200
@@ -717,13 +928,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, STOP_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0300
@@ -731,13 +948,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0400
@@ -745,13 +968,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, STOP_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0500
@@ -759,13 +988,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, STOP_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0600
@@ -773,13 +1008,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, STOP_STATE, ERROR_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0800
@@ -787,15 +1028,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0800', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, STOP_STATE, ERROR_STATE, RESET_STATE, PRE_STATE, START_STATE, STOP_STATE, RESET_STATE,
           PRE_STATE, RESET_STATE, STOP_STATE, ERROR_STATE, PRE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0900
@@ -803,15 +1050,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_STOP_API_0900', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, START_STATE, STOP_STATE, STOP_STATE, ERROR_STATE, STOP_STATE, ERROR_STATE, RELEASE_STATE,
           END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0100
@@ -819,13 +1072,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0100', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.reset();
+      try {
+        audioRecorder?.reset();
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0200
@@ -833,13 +1092,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0300
@@ -847,13 +1112,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0400
@@ -861,13 +1132,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0500
@@ -875,13 +1152,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0600
@@ -889,13 +1172,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0800
@@ -903,15 +1192,21 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0800', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0800', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps =
         new Array(PRE_STATE, RESET_STATE, PRE_STATE, START_STATE, RESET_STATE, PRE_STATE, START_STATE, STOP_STATE,
           RESET_STATE, PRE_STATE, START_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0900
@@ -919,13 +1214,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0900', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RESET_API_0900', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RESET_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0100
@@ -933,14 +1234,20 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0100', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0100', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.release();
-      audioRecorder = null;
+      try {
+        audioRecorder?.release();
+        audioRecorder = null;
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0200
@@ -948,13 +1255,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0200', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0200', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0300
@@ -962,13 +1275,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0300', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0300', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0400
@@ -976,13 +1295,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0400', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0400', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0500
@@ -990,13 +1315,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0500', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0500', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, PAUSE_STATE, RESUME_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0600
@@ -1004,13 +1335,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0600', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0600', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, STOP_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0700
@@ -1018,13 +1355,19 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0700', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_RECORDER_RELEASE_API_0700', Level.LEVEL2, async (done: Function) => {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder?.prepare(audioConfig);
+      try {
+        audioRecorder?.prepare(audioConfig);
+      } catch (error) {
+        expect().assertFail();
+        done();
+        console.info(`test error end: `+ error);
+      }
     });
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
@@ -1032,9 +1375,9 @@ export default function RecorderLocalTestAudioAPI() {
      * @tc.desc   Reliability Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL0,async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL2, async (done: Function) => {
       let AVRecorder = await media.createAVRecorder();
       if(AVRecorder) {
         AVRecorder?.prepare(avConfig);

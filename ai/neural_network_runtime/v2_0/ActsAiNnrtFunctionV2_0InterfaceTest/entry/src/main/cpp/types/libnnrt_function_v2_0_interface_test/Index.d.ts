@@ -26,6 +26,35 @@ declare namespace testNapi {
    * @returns 0 for success, -1 for failure
    */
   export function nnrtDeviceTest(caseNum: number): number;
+
+  /**
+   * Run Model test case
+   * @param caseNum - Test case number (0 to 47)
+   * @returns 0 for success, -1 for failure
+   */
+  export function nnrtModelTest(caseNum: number): number;
+
+  /**
+   * Run Compile test case
+   * @param caseNum - Test case number (0 to 43)
+   * @returns 0 for success, -1 for failure
+   */
+  export function nnrtCompileTest(caseNum: number): number;
+
+  /**
+   * Run Memory test case
+   * @param caseNum - Test case number (0 to 35)
+   * @returns 0 for success, -1 for failure
+   */
+   export function nnrtMemoryTest(caseNum: number): number;
+
+  /**
+   * Run Executor test case
+   * @param caseNum - Test case number (0 to 38)
+   * @returns 0 for success, -1 for failure
+   */
+   export function nnrtExecutorTest(caseNum: number): number;
+
 }
 
 export default testNapi;

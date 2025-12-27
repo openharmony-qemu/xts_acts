@@ -4604,6 +4604,27 @@ function testSetUserRestrictionPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_user_restriction_0503
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0503
+   * @tc.desc   test setUserRestriction with INVALID_WANT
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_0503", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setUserRestriction(INVALID_WANT, LABEL_SET_BIOMETRICS_AND_SCREENLOCK, true);
+    } catch (error) {
+      console.info(' --- test_set_user_restriction_0503 error 801 is expected, actually catch: ' + error.code);
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
   
   /**
    * @tc.name   test_set_user_restriction_0600
@@ -4664,6 +4685,27 @@ function testSetUserRestrictionPolicy() {
     } catch (error) {
       console.info(' --- test_set_user_restriction_0602 error 801 is expected, actually catch: ' + error.code);
       expect(error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_user_restriction_0603
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0603
+   * @tc.desc   test setUserRestriction with INVALID_WANT
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_0603", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setUserRestriction(INVALID_WANT, LABEL_SET_DEVICE_NAME, true);
+    } catch (error) {
+      console.info(' --- test_set_user_restriction_0603 error 801 is expected, actually catch: ' + error.code);
+      expect(error.code == 401).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -4896,7 +4938,7 @@ function testGetUserRestrictedPolicy() {
   /**
    * @tc.name   test_get_user_restricted_0302
    * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0302
-   * @tc.desc   test restrictions getUserRestricted with setting item 'setDeviceName' with invalid admin
+   * @tc.desc   test restrictions getUserRestricted with setting item 'setDeviceName' with INVALID_WANT
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL2
