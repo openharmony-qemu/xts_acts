@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for ActsDrawingNativeTest Tests",
+    "description": "Configuration for ActsNewDrawingNativeTest Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsDrawingNativeTest.hap",
+                "ActsNewDrawingNativeTest.hap",
                 "ActsDrawingNativeMainTest.hap"
             ],
             "type": "AppInstallKit",

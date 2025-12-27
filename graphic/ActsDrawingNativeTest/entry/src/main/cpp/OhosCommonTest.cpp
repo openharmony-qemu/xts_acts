@@ -38,7 +38,7 @@
 #include <vector>
 
 namespace ActsDrawingNativeConstants {
-const std::string DEFAULT_TAG = "ActsDrawingNativeTest";
+const std::string DEFAULT_TAG = "ActsNewDrawingNativeTest";
 } // namespace ActsDrawingNativeConstants
 
 namespace {

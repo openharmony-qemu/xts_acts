@@ -25,7 +25,7 @@ ohos_js_app_suite("ActsNewDrawingNativeTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsDrawingNativeTest"
+  hap_name = "ActsNewDrawingNativeTest"
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   deps = [ ":ActsDrawingNativeMainTest" ]

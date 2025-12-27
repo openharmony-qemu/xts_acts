@@ -18,7 +18,7 @@ import Utils, { Log } from './Utils.test';
 
 
 export default function DrawingNativeTest() {
-  describe('ActsDrawingNativeTest', () => {
+  describe('ActsNewDrawingNativeTest', () => {
     beforeAll(async () => {
     })
 

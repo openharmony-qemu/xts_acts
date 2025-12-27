@@ -16,7 +16,7 @@ import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
-const DEFAULT_TAG = 'ActsDrawingNativeTest';
+const DEFAULT_TAG = 'ActsNewDrawingNativeTest';
 
 export default class Utils {
   static sleep(time: number) {
