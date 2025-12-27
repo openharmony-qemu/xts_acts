@@ -287,7 +287,9 @@ export default function requestPermissionsStaticTest() {
           });
           await Utils.msSleep(2000);
           // click first permission
-          clickRequest(driver, '仅使用期间允许');
+          if(!clickRequest(driver, '仅使用期间允许')) {
+              clickRequest(driver, '始终允许');
+            }
 
           // click second permission
           if(!clickRequest(driver, '禁止')) {
