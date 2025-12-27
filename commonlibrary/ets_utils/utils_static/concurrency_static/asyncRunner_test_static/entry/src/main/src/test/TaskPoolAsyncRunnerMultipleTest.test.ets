@@ -91,7 +91,7 @@ export default function taskPoolAsyncRunnerMultipleTest() {
               count++;
               if (i === 2 || i === 4 || i === 9) {
                 setTimeout(() => {
-                  ArkTools.forceFullGC();
+                  // ArkTools.forceFullGC();
                 }, 10);
               }
             }).catch((e: Error) => { // 改为通用Error类型
