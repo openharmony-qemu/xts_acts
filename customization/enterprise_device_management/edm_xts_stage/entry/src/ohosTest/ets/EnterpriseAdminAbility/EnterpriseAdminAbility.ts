@@ -63,15 +63,14 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
     console.log(`onMarketAppInstallResult bundleName : ${bundleName}, result : ${installResult.message}`);
     console.log(`onMarketAppInstallResult bundleName : ${bundleName}, result is FAIL? : ${installResult.result === common.Result.FAIL}`);
     console.log(`onMarketAppInstallResult bundleName : ${bundleName}, result is SUCCESS? : ${installResult.result === common.Result.SUCCESS}`);
-  onKeyEvent(keyEvent: systemManager.KeyEvent) {
-    console.log(`EnterpriseAdminExtensionAbility onKeyEvent:
-      keyCode: ${keyEvent.keyCode},
-      keyAction: ${keyEvent.keyAction === systemManager.KeyAction.UNKNOWN},
-                 ${keyEvent.keyAction === systemManager.KeyAction.DOWN},
-                 ${keyEvent.keyAction === systemManager.KeyAction.UP},
-      actionTime: ${keyEvent.actionTime},
-      keyItems: ${keyEvent.keyItems[0].keyCode},
-                ${keyEvent.keyItems[0].pressed},
-                ${keyEvent.keyItems[0].downTime},`);
+  onKeyEvent(keyEvent: systemManager.KeyEvent): void {
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyCode: ${keyEvent.keyCode}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyAction: ${keyEvent.keyAction === systemManager.KeyAction.UNKNOWN}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyAction: ${keyEvent.keyAction === systemManager.KeyAction.DOWN}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyAction: ${keyEvent.keyAction === systemManager.KeyAction.UP}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: actionTime: ${keyEvent.actionTime}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.keyCode: ${keyEvent.keyItems[0].keyCode}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.pressed: ${keyEvent.keyItems[0].pressed}`);
+    console.log(`EnterpriseAdminExtensionAbility onKeyEvent: keyItem.downTime: ${keyEvent.keyItems[0].downTime}`);
   }
 }
