@@ -23,6 +23,10 @@ group("WebDFXTest") {
       "log_point_nine:ActsAceWebInternetLogsEventsBreakpointTraceNineTest",
       "log_point_nineteen:ActsAceWebInternetLogsEventsBreakpointTraceNineteenTest",
       "log_point_seventeen:ActsAceWebInternetLogsEventsBreakpointTraceSeventeenTest",
+      "log_point_sixteen:ActsAceWebInternetLogsEventsBreakpointTraceSixteenTest",
+      "log_point_ten:ActsAceWebInternetLogsEventsBreakpointTraceTenTest",
+      "log_point_thirteen:ActsAceWebInternetLogsEventsBreakpointTraceThirteenTest",
+      "log_point_twelve:ActsAceWebInternetLogsEventsBreakpointTraceTwelveTest",
     ]
   }
 }
