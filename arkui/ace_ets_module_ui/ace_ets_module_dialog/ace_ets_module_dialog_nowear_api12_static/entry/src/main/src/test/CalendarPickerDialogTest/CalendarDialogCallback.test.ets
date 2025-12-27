@@ -63,7 +63,8 @@ export default function CalendarDialogCallback() {
 
     
     
-    /**
+    
+/**
      * @tc.number   CalendarPickerDialogCallback_static_0100
      * @tc.name     CalendarPickerDialogCallback_static_0100
      * @tc.desc     CalendarPickerDialogCallback_static_0100
@@ -73,8 +74,9 @@ it('CalendarPickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => 
       try{
         let driver1 = Driver.create();
         let callback = (event: events_emitter.EventData) => {
-          expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onWillAppear');
-          console.info('CalendarPickerDialogCallback_static_0100 event01: ' + ((event.data) as ESObject)?.getProperty('action'));
+          const data = event.data as Record<String,undefined|null|Object>
+          expect(data['action']).assertEqual('onWillAppear');
+          console.info('CalendarPickerDialogCallback_static_0100 event01: ' + data['action']);
         }
         let event: events_emitter.InnerEvent = {
           eventId: 50001,
@@ -87,8 +89,9 @@ it('CalendarPickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => 
         await CommonFunc.sleep(3000);
 
         let callback1 = (event: events_emitter.EventData) => {
-          expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onDidAppear');
-          console.info('CalendarPickerDialogCallback_static_0100 event02: ' + ((event.data) as ESObject)?.getProperty('action'));
+          const data = event.data as Record<String,undefined|null|Object>
+          expect(data['action']).assertEqual('onDidAppear');
+          console.info('CalendarPickerDialogCallback_static_0100 event02: ' + data['action']);
         }
         let event1: events_emitter.InnerEvent = {
           eventId: 50002,
@@ -98,8 +101,9 @@ it('CalendarPickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => 
         console.info('CalendarPickerDialogCallback_static_0100 START');
 
         let callback2 = (event: events_emitter.EventData) => {
-          expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onWillDisappear');
-          console.info('CalendarPickerDialogCallback_static_0100 event03: ' + ((event.data) as ESObject)?.getProperty('action'));
+          const data = event.data as Record<String,undefined|null|Object>
+          expect(data['action']).assertEqual('onWillDisappear');
+          console.info('CalendarPickerDialogCallback_static_0100 event03: ' + data['action']);
         }
         let event2: events_emitter.InnerEvent = {
           eventId: 50003,
@@ -109,8 +113,9 @@ it('CalendarPickerDialogCallback_static_0100', Level.LEVEL0, async (done: () => 
         console.info('CalendarPickerDialogCallback_static_0100 START');
 
         let callback3 = (event: events_emitter.EventData) => {
-          expect(((event.data) as ESObject)?.getProperty('action')).assertEqual('onDidDisappear');
-          console.info('CalendarPickerDialogCallback_static_0100 event04: ' + ((event.data) as ESObject)?.getProperty('action'));
+          const data = event.data as Record<String,undefined|null|Object>
+          expect(data['action']).assertEqual('onDidDisappear');
+          console.info('CalendarPickerDialogCallback_static_0100 event04: ' + data['action']);
           done();
         }
         let event3: events_emitter.InnerEvent = {

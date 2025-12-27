@@ -64,7 +64,8 @@ export default function DismissReasonTest() {
 
     
     
-    /**
+    
+/**
      * @tc.number   DismissReasonTest_static_0010
      * @tc.name     DismissReasonTest_static_0010
      * @tc.desc     DismissReasonTest_static_0010

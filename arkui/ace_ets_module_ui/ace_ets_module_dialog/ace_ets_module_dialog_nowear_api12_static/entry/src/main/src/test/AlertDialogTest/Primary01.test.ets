@@ -59,7 +59,8 @@ export default function primary() {
 
     
     
-    /**
+    
+/**
      * @tc.number   primary_static_0100
      * @tc.name     primary_static_0100
      * @tc.desc     primary_static_0100
@@ -89,7 +90,8 @@ it('primary_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, as
 
     
     
-    /**
+    
+/**
      * @tc.number   primary_static_0200
      * @tc.name     primary_static_0200
      * @tc.desc     primary_static_0200

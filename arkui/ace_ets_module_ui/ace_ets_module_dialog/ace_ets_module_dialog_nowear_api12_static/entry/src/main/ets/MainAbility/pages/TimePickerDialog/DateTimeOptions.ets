@@ -15,7 +15,7 @@
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
   Row, ClickEvent, Margin, ButtonType, ShadowStyle,  RowOptions} from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { State,UIUtils } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
 import intl from '@ohos.intl';
 
@@ -32,7 +32,7 @@ struct TimerPickerDialogExample {
     { hour: 'numeric', minute: 'null' },
     { hour: 'numeric', minute: '' },
   )
-  private selectTime: Date = new Date("2025-05-6T08:30:01")
+  private selectTime: Date = new Date("2025-05-06T08:30:01")
   selectedDate: Date = new Date("2010-1-1")
 
   showdatepicker() {
@@ -78,7 +78,7 @@ struct TimerPickerDialogExample {
           })
       }
       Text(`${this.indexNumber1 + 1} / ${this.opt.length}`)
-      Text(`${JSON.stringify(this.opt[this.indexNumber1.toInt()])} / ${this.isMilitaryTime}`)
+      Text(`${JSON.stringify(UIUtils.getTarget(this.opt[this.indexNumber1.toInt()]))} / ${this.isMilitaryTime}`)
         .id("DateTimeOptionsValue")
         .margin({ top: 15 } as Margin)
         .shadow(ShadowStyle.OUTER_DEFAULT_XS)

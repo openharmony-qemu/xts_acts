@@ -84,6 +84,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_api12_static:ActsAceEtsModuleCommonEventsApi12StaticTest",
       "ace_ets_module_commonEvents_api12None_static:ActsAceEtsModuleCommonEventsApi12NoneStaticTest",
       "ace_ets_module_commonEvents_api15_static:ActsAceEtsModuleCommonEventsApi15StaticTest",
+      "ace_ets_module_commonEvents_api17_static:ActsAceEtsModuleCommonEventsApi17StaticTest",
       "ace_ets_module_commonEvents_api18_static:ActsAceEtsModuleCommonEventsApi18StaticTest",
       "ace_ets_module_commonEvents_api20_static:ActsAceEtsModuleCommonEventsApi20StaticTest",
       "ace_ets_module_commonEvents_noware_api14_static:ActsAceEtsModuleCommonEventsNoWearApi14StaticTest",
