@@ -89,12 +89,12 @@ export default function webInitTest() {
       Utils.waitAndClickComponent(driver, "WebSchemeHandlerResponse");
     })
     /*
-       * @tc.number     : SUB_WEB_WEBNETERRORLIST_021500
-       * @tc.name       : WebNetErrorList_021500
-       * @tc.desc       : test WebSchemeHandlerResponse
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
+       * @tc.number     SUB_WEB_WEBNETERRORLIST_021500
+       * @tc.name       WebNetErrorList_021500
+       * @tc.desc       test WebSchemeHandlerResponse
+       * @tc.size       MediumTest
+       * @tc.type       Function
+       * @tc.level      Level 1
        */
     it('WebNetErrorList_021500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_021500", EVENT_ID_SET_EIMIT_KEY)
@@ -349,12 +349,12 @@ export default function webInitTest() {
       Utils.waitAndClickComponent(driver, "WebSchemeHandlerResponse");
     })
     /**
-       * @tc.number     : SUB_WEB_WEBNETERRORLIST_023500
-       * @tc.name       : WebNetErrorList_023500
-       * @tc.desc       : test WebSchemeHandlerResponse
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
+       * @tc.number     SUB_WEB_WEBNETERRORLIST_023500
+       * @tc.name       WebNetErrorList_023500
+       * @tc.desc       test WebSchemeHandlerResponse
+       * @tc.size       MediumTest
+       * @tc.type       Function
+       * @tc.level      Level 1
        */
     it('WebNetErrorList_023500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_023500", EVENT_ID_SET_EIMIT_KEY)
@@ -362,12 +362,12 @@ export default function webInitTest() {
       Utils.waitAndClickComponent(driver, "WebSchemeHandlerResponse");
     })
     /*
-       * @tc.number     : SUB_WEB_WEBNETERRORLIST_023600
-       * @tc.name       : WebNetErrorList_023600
-       * @tc.desc       : test WebSchemeHandlerResponse
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
+       * @tc.number     SUB_WEB_WEBNETERRORLIST_023600
+       * @tc.name       WebNetErrorList_023600
+       * @tc.desc       test WebSchemeHandlerResponse
+       * @tc.size       MediumTest
+       * @tc.type       Function
+       * @tc.level      Level 1
        */
     it('WebNetErrorList_023600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("WebNetErrorList_023600", EVENT_ID_SET_EIMIT_KEY)
