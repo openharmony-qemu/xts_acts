@@ -8417,5 +8417,43 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+
+      /**
+    * @tc.name   testNetworkMgrConnectionGetIpNeighTable0100
+    * @tc.number SUB_NetworkMgr_Connection_GetIpNeighTable_0100
+    * @tc.desc   Test GetIpNeighTable Success
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+      it("testNetworkMgrConnectionGetIpNeighTable0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetworkMgrConnectionGetIpNeighTable0100";
+        console.info(`${caseName}---Start`);
+        try{
+          connection.getIpNeighTable().then((data: connection.NetIpMacInfo[])=>{
+            if (data.length != 0) {
+              console.info(`${caseName}ipAddress:${data[0].ipAddress}`)
+              console.info(`${caseName}ifaceName:${data[0].iface}`)
+              console.info(`${caseName}macAddress:${data[0].macAddress}`)
+              expect(data.length>0).assertTrue();
+            }else{
+              expect(data.length == 0).assertTrue();
+              console.info(`${caseName} error  fetching ip neigh table errorCode:${data}`);
+              ExpectTrue(false);
+            }
+            done();
+          }).catch((error: BusinessError)=>{
+            console.info(`${caseName} error  fetching ip neigh table errorCode:${error.code}`+ JSON.stringify(error));
+            ExpectTrue(false)
+            console.info(`${caseName}---End`);
+            done();
+          })
+        }catch (err){
+          console.info(`${caseName} catch err is `+JSON.stringify(err));
+          ExpectTrue(err.code == 201);
+          console.info(`${caseName}---End`);
+          done();
+        }
+      });
   });
 }
