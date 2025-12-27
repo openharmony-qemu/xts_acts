@@ -618,7 +618,7 @@ static napi_value CursorInfo13(napi_env env, napi_callback_info info)
                       retResult3 == INPUT_PARAMETER_ERROR && retResult4 == INPUT_PARAMETER_ERROR ? 1 : 0, &result);
     } else {
         napi_create_int32(env, retResult1 == INPUT_SUCCESS && retResult2 == INPUT_SUCCESS &&
-                      retResult3 == INPUT_SUCCESS && retResult4 == INPUT_SUCCESS ? 1 : 0, &result);       
+                      retResult3 == INPUT_SUCCESS && retResult4 == INPUT_SUCCESS ? 1 : 0, &result);
     }
     OH_PixelmapInitializationOptions_Release(options);
     OH_PixelmapNative_Release(pixelmap1);
@@ -728,11 +728,12 @@ static napi_value CreateHotkey1(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetIntervalSinceLastInput1(napi_env env, napi_callback_info info)
+static napi_value GetInterSinceLastInput1(napi_env env, napi_callback_info info)
 {
     napi_value result;
     int64_t retResult = OH_Input_GetIntervalSinceLastInput(nullptr);
-    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||  retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
+    retResult == INPUT_SERVICE_EXCEPTION ? 1 : 0, &result);
     return result;
 }
 
@@ -827,7 +828,7 @@ static napi_property_descriptor desc_part3[] = {
     {"CustomCursor18", nullptr, CustomCursor18, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"CreateDeviceInfo1", nullptr, CreateDeviceInfo1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"CreateHotkey1", nullptr, CreateHotkey1, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"GetIntervalSinceLastInput1", nullptr, GetIntervalSinceLastInput1, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"GetInterSinceLastInput1", nullptr, GetInterSinceLastInput1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 

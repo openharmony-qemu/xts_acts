@@ -65,5 +65,5 @@ export const CustomCursor17: () => number;
 export const CustomCursor18: () => number;
 export const CreateDeviceInfo1: () => number;
 export const CreateHotkey1: () => number;
-export const GetIntervalSinceLastInput1: () => number;
+export const GetInterSinceLastInput1: () => number;
 export const RemoveKeyEventHook1: () => number;
