@@ -413,7 +413,8 @@ static napi_value CustomCursor12(napi_env env, napi_callback_info info)
     Input_CursorConfig *cursorConfig = OH_Input_CursorConfig_Create(isfollowSystem);
     int32_t windowId = -1;
     Input_Result retResult = OH_Input_SetCustomCursor(windowId, customCursor, cursorConfig);
-    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR || INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
+    napi_create_int32(env, retResult == INPUT_PARAMETER_ERROR ||
+    retResult == INPUT_DEVICE_NOT_SUPPORTED ? 1 : 0, &result);
     OH_Input_CustomCursor_Destroy(&customCursor);
     OH_Input_CursorConfig_Destroy(&cursorConfig);
     return result;
