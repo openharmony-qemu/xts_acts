@@ -88,7 +88,7 @@ export default function webInitTest() {
       Utils.registerEvent("WebNetErrorList_021400", -606, 103140, done);
       Utils.waitAndClickComponent(driver, "WebSchemeHandlerResponse");
     })
-    /*
+    /**
        * @tc.number     SUB_WEB_WEBNETERRORLIST_021500
        * @tc.name       WebNetErrorList_021500
        * @tc.desc       test WebSchemeHandlerResponse
@@ -361,7 +361,7 @@ export default function webInitTest() {
       Utils.registerEvent("WebNetErrorList_023500", -805, 103350, done);
       Utils.waitAndClickComponent(driver, "WebSchemeHandlerResponse");
     })
-    /*
+    /**
        * @tc.number     SUB_WEB_WEBNETERRORLIST_023600
        * @tc.name       WebNetErrorList_023600
        * @tc.desc       test WebSchemeHandlerResponse
