@@ -39,4 +39,5 @@ export class PhotoPickerResult {
   public singleSelectionMode: photoAccessHelper.SingleSelectionMode = 
     photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE;
   public preselectedUris: Array<string> = [];
+  public movingPhotoBadgeState?: number[];
 }

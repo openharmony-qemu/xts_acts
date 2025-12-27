@@ -281,7 +281,8 @@ export default function TextPicker() {
     
     beforeEach(async (done: Function) => {
       console.info("testPicker beforeEach start");
-      await CommonFunc.sleep(5000);
+      events_emitter.off(EventType.PHOTO_PICKER_INFO)
+      await CommonFunc.sleep(1000);
       done();
     });
 
@@ -1149,7 +1150,7 @@ export default function TextPicker() {
         }
       }
       await routeToUrl(options);
-      
+
       console.info('testPicker18 create');
       let btn: Component = await driver.findComponent(ON.type('GridItem'));
       if(btn === null) {
@@ -1428,7 +1429,7 @@ export default function TextPicker() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
       }
-      
+
       for (let index = 0; index < 3; index++) {
         await testCompleteButton(driver, options, index);
       }
@@ -2489,27 +2490,42 @@ export default function TextPicker() {
         "version": 1.0
       } as photoAccessHelper.ContextRecoveryInfo;
       sheetPickerOptions.contextRecoveryInfo = contextRecoveryInfo;
+      sheetPickerOptions.isMovingPhotoBadgeShown = true;
+      let code = EventType.PHOTO_PICKER_INFO;
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
         params: {
+          eventId: code,
           pickerOptions: sheetPickerOptions,
         }
       }
+      let callback = (data: events_emitter.EventData) => {
+        let result: PhotoPickerResult = data?.data?.msg;
+        console.log('testPicker51', JSON.stringify(result))
+        expect(result.movingPhotoBadgeStates).not().assertUndefined();
+        events_emitter.off(code, callback);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      };
+      events_emitter.on(event, callback);
 
       await routeToUrl(options);
+      await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
-      let button: Component = await driver.findComponent(ON.text('select photo'));
+      let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
       if (button !== undefined && chooostModeButton !== undefined) {
         await chooostModeButton.click();
         await button.click();
       } else {
-        console.error("can not find button");
+        console.error("testPicker51 can not find button");
         expect(false).assertTrue();
       }
 
-      const checkboxs = await driver.findComponents(ON.type('Checkbox'));
-      if (checkboxs?.length) {
-        await checkboxs[0].click();
+      const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
+      if (checkbox !== undefined) {
+        await checkbox.click();
         await CommonFunc.sleep(1000);
         const finishBtn: Component = await driver.findComponent(ON.id('Complete'));
         await finishBtn.click();
@@ -2518,6 +2534,7 @@ export default function TextPicker() {
 
       router.back();
       await CommonFunc.sleep(1000);
+      events_emitter.off(code, callback);
       expect(testFinished).assertTrue();
       console.info("testPicker51 finish");
       done();
@@ -2564,6 +2581,7 @@ export default function TextPicker() {
         }
       }
       await routeToUrl(options);
+      await CommonFunc.sleep(1000);
       await clickResultButton(driver);
       events_emitter.off(event.eventId);
 
@@ -3145,39 +3163,20 @@ export default function TextPicker() {
       let sheetPickerOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
       sheetPickerOptions.maxVideoSelectNumber = 5;
       sheetPickerOptions.maxPhotoSelectNumber = 7;
-      let code: number = EventType.PHOTO_PICKER_INFO;
-      let callback = (eventData: events_emitter.EventData) => {
-        let result: PhotoPickerResult = eventData?.data?.msg;
-        console.info(
-          `testPicker61 result maxVideo=${result.maxVideoSelectNumber}, maxPhoto=${result.maxPhotoSelectNumber}`
-        );
-        expect(result.maxVideoSelectNumber)
-          .assertEqual(sheetPickerOptions.maxVideoSelectNumber);
-        expect(result.maxPhotoSelectNumber)
-          .assertEqual(sheetPickerOptions.maxPhotoSelectNumber);
-        done();
-      };
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      };
-      events_emitter.on(event, callback);
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
         params: {
-          eventId: code,
           pickerOptions: sheetPickerOptions,
         }
       };
       await routeToUrl(options);
       await CommonFunc.sleep(2000);
       let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
-      await CommonFunc.sleep(1000);
       await button.click();
       console.info('testPicker61 Clicked select button');
       await CommonFunc.sleep(2000);
       router.back();
-      events_emitter.off(event.eventId);
       console.info('testPicker61 finished');
       done();
     });

@@ -9,7 +9,7 @@ const topMargin: number = 20;
 @Component
 struct BindSheetPicker {
   private photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
-  private eventId: number = 0;
+  private eventId: number = EventType.PHOTO_PICKER_INFO;
 
   sendEvent(message: Object, eventId: number) {
     let eventData: events_emitter.EventData = {
@@ -34,10 +34,6 @@ struct BindSheetPicker {
     if (parameter && parameter['pickerOptions'] != undefined) {
       this.photoSelectOptions = parameter['pickerOptions'];
     }
-  }
-
-  aboutToDisappear(): void {
-    this.sendEvent(this.photoSelectOptions as photoAccessHelper.PhotoViewPicker, this.eventId);
   }
 
   build() {
@@ -68,6 +64,7 @@ struct BindSheetPicker {
             .then((photoSelectResult: photoAccessHelper.PhotoSelectResult) => {
               console.info('PhotoViewPicker.select success, PhotoPickerResult uri: ' +
                 JSON.stringify(photoSelectResult));
+              this.sendEvent(photoSelectResult, this.eventId);
             }).catch((err: BusinessError) => {
               console.error('PhotoViewPicker.select failed with err: ' + JSON.stringify(err));
             });
