@@ -179,7 +179,7 @@ function generateRandom(len: int): cryptoFramework.DataBlob {
 
 function genGcmParamsSpec(): cryptoFramework.GcmParamsSpec {
   let ivBlob = generateRandom(12);
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  let arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
   let dataAad = new Uint8Array(arr);
   let aadBlob: cryptoFramework.DataBlob = { data: dataAad };
   arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];

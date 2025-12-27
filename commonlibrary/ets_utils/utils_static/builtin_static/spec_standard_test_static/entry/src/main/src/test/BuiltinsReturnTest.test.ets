@@ -90,7 +90,7 @@ export default function builtinsReturnTest() {
      */
     it('builtinsStatementReturnTest_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         const oddNumbers = filterOddNumbers(numbers);
         expect('1,3,5,7,9').assertEqual(oddNumbers.toString());
         done();
@@ -105,7 +105,7 @@ export default function builtinsReturnTest() {
      */
     it('builtinsStatementReturnTest_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         const oddNumbers = filterOddNumbersWithNestedLoop(numbers);
         expect('1,3,5,7,9').assertEqual(oddNumbers.toString());
         done();

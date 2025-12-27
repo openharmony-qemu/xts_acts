@@ -155,7 +155,7 @@ function genGcmParamsSpec(): cryptoFramework.GcmParamsSpec {
 }
 
 function genCcmParamsSpec(): cryptoFramework.CcmParamsSpec {
-  let arr = [0, 0, 0, 0, 0, 0, 0];
+  let arr: number[] = [0, 0, 0, 0, 0, 0, 0];
   let dataIv = new Uint8Array(arr);
   let ivBlob: cryptoFramework.DataBlob = { data: dataIv };
   arr = [0, 0, 0, 0, 0, 0, 0, 0];

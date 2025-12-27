@@ -1693,8 +1693,8 @@ export default function ArrayPushTest() {
      */
     it('testArrayPush0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
-      const sub1 = [1, 2];
-      const sub2 = [3, 4];
+      const sub1: number[] = [1, 2];
+      const sub2: number[] = [3, 4];
       arr.push(...sub1);
       arr.push(...sub2);
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([1, 2, 3, 4]));
@@ -1709,7 +1709,7 @@ export default function ArrayPushTest() {
      * @tc.level Level 1
      */
     it('testArrayPush0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr1 = [1, 2, 3, 4];
+      const arr1: number[] = [1, 2, 3, 4];
       const arr2: number[] = [];
       arr2.push(...arr1.filter(x => x % 2 === 0));
       expect(JSON.stringify(arr2)).assertEqual(JSON.stringify([2, 4]));
@@ -2065,7 +2065,7 @@ export default function ArrayPushTest() {
      */
     it('testArrayPush0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Obj115[] = [];
-      const inner = [1, 2];
+      const inner: number[] = [1, 2];
       arr.push({ nums: inner });
       inner.push(3);
       expect(JSON.stringify(arr[0].nums)).assertEqual(JSON.stringify([1, 2, 3]));

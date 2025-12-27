@@ -1751,7 +1751,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0001";
       try {
-        let array = [1, 2, 3];
+        let array: number[] = [1, 2, 3];
         let value = new Uint8Array(array).fill(4);
         expect(JSON.stringify(value)).assertEqual("{\"0\":4,\"1\":4,\"2\":4}");
       } catch (err) {
@@ -1772,7 +1772,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0002";
       try {
-        let array = [1, 2, 3];
+        let array: number[] = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, 1);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":4,\"2\":4}");
       } catch (err) {
@@ -1793,7 +1793,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0003";
       try {
-        let array = [1, 2, 3];
+        let array: number[] = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, 1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":4,\"2\":3}");
       } catch (err) {
@@ -1814,7 +1814,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0004";
       try {
-        let array = [1, 2, 3];
+        let array: number[] = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, 1, 1);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":3}");
       } catch (err) {
@@ -1834,7 +1834,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0005";
       try {
-        let array = [1, 2, 3];
+        let array: number[] = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, -3, -2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":4,\"1\":2,\"2\":3}");
       } catch (err) {
@@ -1855,7 +1855,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0006";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Uint8Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -1876,7 +1876,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0007";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Uint8Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -1897,7 +1897,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0008";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Int8Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -1918,7 +1918,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0009";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Int16Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -1939,7 +1939,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0010";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Uint16Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -1960,7 +1960,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0011";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Int32Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -1981,7 +1981,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0012";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Uint32Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -2002,7 +2002,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0013";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Float32Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -2023,7 +2023,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFill0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFill0014";
       try {
-        let array = [1, 2, 3, 4];
+        let array: number[] = [1, 2, 3, 4];
         let value = new Float64Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
       } catch (err) {
@@ -2086,7 +2086,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0001";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Uint8Array(array).filter((elem) => elem >= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":12,"1":130,"2":44}');
       } catch (err) {
@@ -2107,7 +2107,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0002";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Int8Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8,"2":-126}');
       } catch (err) {
@@ -2128,7 +2128,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0003";
       try {
-        let array = [12, 5, 8, 130, 44];
+        let array: number[] = [12, 5, 8, 130, 44];
         // let array = new Array<Int>(12, 5, 8, 130, 44);
         let value = new Uint8ClampedArray(array).filter((elem) => elem == 10);
         expect(JSON.stringify(value)).assertEqual('{}');
@@ -2150,7 +2150,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0004";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Int16Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
       } catch (err) {
@@ -2171,7 +2171,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0005";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Uint16Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
       } catch (err) {
@@ -2192,7 +2192,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0006";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Int32Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
       } catch (err) {
@@ -2213,7 +2213,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0007";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Uint32Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
       } catch (err) {
@@ -2234,7 +2234,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0008";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Float32Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
       } catch (err) {
@@ -2255,7 +2255,7 @@ export default function typedArray() {
     it('testTypedArrayPrototypeFilter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testTypedArrayPrototypeFilter0009";
       try {
-        let array = [12, 5, 8, 130, 44]
+        let array: number[] = [12, 5, 8, 130, 44]
         let value = new Float64Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
       } catch (err) {
