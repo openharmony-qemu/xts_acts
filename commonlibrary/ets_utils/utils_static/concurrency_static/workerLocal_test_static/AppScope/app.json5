@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.workerLocal.standard.static",
+    "bundleName": "com.workerlocal.standard.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
