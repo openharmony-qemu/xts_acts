@@ -31,7 +31,7 @@ static TestFunction g_testFunctions[] = {
 };
 
 // 自动计算测试用例总数
-static const int g_testFunctionCount = sizeof(g_testFunctions) / sizeof(g_testFunctions[0]);
+static const int g_testFunctionCount = static_cast<int>(sizeof(g_testFunctions) / sizeof(g_testFunctions[0]));
 
 /**
  * 创建结果值的辅助函数
