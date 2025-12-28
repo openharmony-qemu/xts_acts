@@ -215,6 +215,7 @@ export default function ObjectInterfaceTest() {
           return;
         }
         console.info("contactsApi_queryMyCard_test_100  data = " + JSON.stringify(data));
+        expect(data === undefined).assertTrue();
         done();
       });
       sleep(500);
@@ -237,6 +238,7 @@ export default function ObjectInterfaceTest() {
           return;
         }
         console.info("contactsApi_queryMyCard_test_200  data = " + JSON.stringify(data));
+        expect(data === undefined).assertTrue();
         done();
       });
       sleep(500);
@@ -254,6 +256,7 @@ export default function ObjectInterfaceTest() {
       let promise = contact.queryMyCard(context,attr);
       promise.then((data) => {
         console.info("contactsApi_queryMyCard_test_200  data = " + JSON.stringify(data));
+        expect(data === undefined).assertTrue();
         done();
       }).catch((err:BusinessError) => {
         console.info("contactsApi_queryMyCard_test_200  err = " + JSON.stringify(err));
@@ -290,6 +293,7 @@ export default function ObjectInterfaceTest() {
             return;
           }
           console.info("contactsApi_isMyCard_test_100  data = " + JSON.stringify(data));
+          expect(data === false).assertTrue();
           done();
         });
       });
@@ -318,6 +322,7 @@ export default function ObjectInterfaceTest() {
         let promise = contact.isMyCard(context,data);
         promise.then((data) => {
           console.info("contactsApi_isMyCard_test_100  data = " + JSON.stringify(data));
+          expect(data === false).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("contactsApi_isMyCard_test_100  err = " + JSON.stringify(err));
@@ -674,6 +679,7 @@ export default function ObjectInterfaceTest() {
         done();
       } catch (error) {
         console.info("contactsApi_query_key_test_2300 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
@@ -700,6 +706,7 @@ export default function ObjectInterfaceTest() {
         done();
       } catch (error) {
         console.info("contactsApi_query_key_test_2400 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
@@ -719,10 +726,11 @@ export default function ObjectInterfaceTest() {
         sleep(500);
         let rawContactId = await contact.addContact(context,contactDataError);
         console.info("abnormal_contactsApi_insert_test_2800 : rawContactId = " + rawContactId);
-        expect(rawContactId == -1).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("contactsApi_insert_test_100 : raw_contact insert error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
@@ -751,6 +759,7 @@ export default function ObjectInterfaceTest() {
         done();
       } catch (error) {
         console.info("abnormal_contactsApi_query_contact_test_3100 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
@@ -769,10 +778,11 @@ export default function ObjectInterfaceTest() {
       try {
         let resultSet = await contact.queryContactsByEmail(context,email);
         console.info("abnormal_contactsApi_query_email_test_3300 : query resultSet = " + JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("abnormal_contactsApi_query_email_test_3300 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
@@ -792,10 +802,11 @@ export default function ObjectInterfaceTest() {
         let resultSet = await contact.queryContactsByPhoneNumber(context,phoneNumber);
         console.info("abnormal_contactsApi_query_phoneNumber_test_3400 : query resultSet = " +
         JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("abnormal_contactsApi_query_phoneNumber_test_3400 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
@@ -814,10 +825,11 @@ export default function ObjectInterfaceTest() {
       try {
         let resultSet = await contact.queryKey(context,idtest);
         console.info("abnormal_contactsApi_query_key_test_3600 : query resultSet = " + JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("abnormal_contactsApi_query_key_test_3600 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
@@ -861,6 +873,7 @@ export default function ObjectInterfaceTest() {
                 return;
               }
               console.log('deleteContact success');
+              expect(true).assertTrue();
               done();
             });
           }else {done()}
@@ -897,6 +910,7 @@ export default function ObjectInterfaceTest() {
             let promise = contact.deleteContact(context,keyData);
             promise.then(() => {
               console.log(`deleteContact success`);
+              expect(true).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("contactsApi_addContact_test_200  err = " + JSON.stringify(err));
@@ -1011,6 +1025,7 @@ export default function ObjectInterfaceTest() {
                 return;
               }
               console.info("contactsApi_queryContact_test_200  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             });
           }else {done()}
@@ -1109,6 +1124,7 @@ export default function ObjectInterfaceTest() {
                 return;
               }
               console.info("contactsApi_queryContact_test_400  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             });
           }else {done()}
@@ -1149,6 +1165,7 @@ export default function ObjectInterfaceTest() {
             let promise = contact.queryContact(context,keyData, holder, attr);
             promise.then((data) => {
               console.info("contactsApi_queryContact_test_500  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("contactsApi_queryContact_test_500  err = " + JSON.stringify(err));
@@ -2212,6 +2229,7 @@ export default function ObjectInterfaceTest() {
             return;
           }
           console.info("contactsApi_isLocalContact_test_100  data = " + JSON.stringify(data));
+          expect(data === true).assertTrue();
           done();
         });
       });
@@ -2241,6 +2259,7 @@ export default function ObjectInterfaceTest() {
         let promise = contact.isLocalContact(context,data);
         promise.then((data) => {
           console.info("contactsApi_isLocalContact_test_200  data = " + JSON.stringify(data));
+          expect(data === true).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("contactsApi_isLocalContact_test_200  err = " + JSON.stringify(err));
@@ -2317,6 +2336,7 @@ export default function ObjectInterfaceTest() {
             return;
           }
           console.info("contactsApi_selectContact_test_100  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         });
       });
@@ -2343,6 +2363,7 @@ export default function ObjectInterfaceTest() {
         let promise = contact.selectContact();
         promise.then((data) => {
           console.info("contactsApi_selectContact_test_200  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("contactsApi_selectContact_test_200  err = " + JSON.stringify(err));

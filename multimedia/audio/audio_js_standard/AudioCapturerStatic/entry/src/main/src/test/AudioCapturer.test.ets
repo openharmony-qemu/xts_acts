@@ -466,12 +466,12 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
           audioCapPromise = data;
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
-          audioCapPromise.setWillMuteWhenInterrupted(true);
+          audioCapPromise!.setWillMuteWhenInterrupted(true);
           expect(true).assertTrue();
         }).catch(async(err: BusinessError) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
@@ -481,7 +481,7 @@ export default function audioCapturer() {
         console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
         expect(false).assertTrue();
       }
-      await audioCapPromise.release();
+      await audioCapPromise!.release();
       done();
     })
 
@@ -508,13 +508,13 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
           audioCapPromise = data;
-          audioCapPromise.start();
+          audioCapPromise!.start();
           console.info('AudioCapturer start : Success : Stream Type: SUCCESS');
-          audioCapPromise.setWillMuteWhenInterrupted(true);
+          audioCapPromise!.setWillMuteWhenInterrupted(true);
         }).catch(async(err: BusinessError) => {
           console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
           expect(err.code).assertEqual(6800103);
@@ -523,7 +523,7 @@ export default function audioCapturer() {
         console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
         expect(false).assertTrue();
       }
-      await audioCapPromise.release();
+      await audioCapPromise!.release();
       done();
     })
 

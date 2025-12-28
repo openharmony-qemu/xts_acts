@@ -22,6 +22,7 @@ group("concurrent_builtin_test") {
       "concurrent_builtins_test:ActsConcurrentBuiltinsTest",
       "builtins_atomics_test:ActsBuiltinsAtomicsTest",
       "builtins_async_test:ActsBuiltinsAsyncTest",
+      "builtins_promise_test:ActsBuiltinsPromiseTest",
     ]
   }
 }

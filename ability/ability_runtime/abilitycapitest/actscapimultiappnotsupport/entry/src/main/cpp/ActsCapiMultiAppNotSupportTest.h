@@ -20,6 +20,7 @@
 
 napi_value StartSelfUIAbilityWithStartOptionsMultiAppNotSupport(napi_env env, napi_callback_info info);
 napi_value AbilityRuntimeErrorCodeMultiAppNotSupportCode(napi_env env, napi_callback_info info);
+napi_value StartSelfUIAbilityWithPidMultiAppNotSupport(napi_env env, napi_callback_info info);
 
 
 #endif //ACTSCAPISTARTSELFUIABILITYTEST20_ACTSCAPISTARTSELFUIABILITYTEST20TEST_H

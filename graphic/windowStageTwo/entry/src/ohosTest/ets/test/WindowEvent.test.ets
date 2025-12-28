@@ -61,6 +61,7 @@ export default function windowEventTest() {
     let windowClass: window.Window;
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
+    let isFreeWindowMode:boolean = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -76,6 +77,10 @@ export default function windowEventTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`beforeall isFreeWindowMode: ${JSON.stringify(isFreeWindowMode)}`);
     })
     afterAll(async () => {
       
@@ -161,6 +166,9 @@ export default function windowEventTest() {
         console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
         await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number);
         await subWindowClass.moveWindowTo(200, 0);
+        if(isFreeWindowMode){
+          await subWindowClass.moveWindowTo(200, 200);
+        }
         await subWindowClass.showWindow();
         await sleep(1000);
         
@@ -177,7 +185,7 @@ export default function windowEventTest() {
         let driver: Driver = Driver.create();
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), 0);
+        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), (windowProperties.windowRect.top as number+10));
         await sleep(300);
         console.log(`${caseName} timer1: ${timer}`);
         expect(timer).assertEqual(0);

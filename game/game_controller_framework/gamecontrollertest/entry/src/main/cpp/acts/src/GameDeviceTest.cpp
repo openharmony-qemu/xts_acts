@@ -18,6 +18,11 @@
 #include <GameControllerKit/game_device.h>
 #include "../include/GameControllerTest.h"
 #include "../include/GameControllerModel.h"
+#include <hilog/log.h>
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x3200
+#define LOG_TAG "GameControllerXts"
 
 namespace OHOS {
 namespace GameController {
@@ -39,7 +44,9 @@ int32_t ActsGameDeviceGetAllDeviceInfos01()
     GameDevice_AllDeviceInfos *allDeviceInfos = nullptr;
 
     GameController_ErrorCode code = OH_GameDevice_GetAllDeviceInfos(&allDeviceInfos);
-
+    if (code == GameController_ErrorCode::GAME_CONTROLLER_MULTIMODAL_INPUT_ERROR) {
+        OH_LOG_ERROR(LOG_APP, "[ActsDeviceTest][ActsGameDeviceGetAllDeviceInfos01]get all deviceInfos failed.");
+    }
     OH_GameDevice_DestroyAllDeviceInfos(&allDeviceInfos);
     return static_cast<int32_t>(code);
 }

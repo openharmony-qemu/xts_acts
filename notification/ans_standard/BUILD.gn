@@ -16,8 +16,16 @@ group("ans_standard") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsNotificationAnsPriorityTest:ActsNotificationPriorityTest",
+      "actsNotificationAnsPriorityTestStatic:ActsNotificationAnsPriorityStaticTest",
+      "actsNotificationAnsReduceAlertsTest:ActsNotificationAnsReduceAlertsTest",
+      "actsNotificationAnsReduceAlertsTestStatic:ActsNotificationAnsReduceAlertsStaticTest",
+      "actsNotificationAnsThreePartyWatchTest:ActsNotificationThreePartyWatchTest",
+      "actsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest:ActsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest",
+      "actsNotificationAnsThreePartyWatchThirdPartyTest:ActsNotificationAnsThreePartyWatchThirdPartyTest",
       "actsNotificationBadgeTest:ActsNotificationBadgeTest",
       "actsNotificationBadgeTestStatic:ActsNotificationBadgeStaticTest",
+      "actsNotificationClassEmitterTest:ActsNotificationClassEmitterTest",
       "actsNotificationDistributedTest:ActsNotificationDistributedTest",
       "actsNotificationDistributedTestStatic:ActsNotificationDistributedStaticTest",
       "actsNotificationEmitterNewTest:ActsNotificationEmitterNewTest",
@@ -44,11 +52,12 @@ group("ans_standard") {
       "actsNotificationSystemLiveViewTestStatic:ActsNotificationSystemLiveViewStaticTest",
       "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
+      "actsNotificationWantUriTest:ActsNotificationWantUriTest",
+      "actsNotificationWantUriTestStatic:ActsNotificationWantUriTestStatic",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
-      "actsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest:ActsNotificationAnsThreePartyWatchThirdPartyNoAbilityTest",
-      "actsNotificationAnsThreePartyWatchThirdPartyTest:ActsNotificationAnsThreePartyWatchThirdPartyTest",
-      "actsNotificationAnsThreePartyWatchTest:ActsNotificationThreePartyWatchTest"
+      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
+      "actsNotificationGeofenceLiveViewTest:ActsNotificationGeofenceLiveViewTest"
     ]
   }
 }

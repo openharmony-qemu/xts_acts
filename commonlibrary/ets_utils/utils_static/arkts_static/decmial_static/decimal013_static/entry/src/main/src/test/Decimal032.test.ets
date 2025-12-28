@@ -97,8 +97,8 @@ export default function DecimalTest032() {
       test_mod_003(-1, '-Infinity', '-1');
       test_mod_001(0, 1, '0');
       test_mod_001(0, -1, '0');
-      test_mod_001(-0, 1, '-0');
-      test_mod_001(-0, -1, '-0');
+      test_mod_001(-0.0, 1, '-0');
+      test_mod_001(-0.0, -1, '-0');
       test_mod_001(0, 0, 'NaN');
       test_mod_001(0, -0, 'NaN');
       test_mod_001(-0, 0, 'NaN');
@@ -107,8 +107,8 @@ export default function DecimalTest032() {
       test_mod_001(-0, NaN, 'NaN');
       test_mod_001(0, Infinity, '0');
       test_mod_001(0, -Infinity, '0');
-      test_mod_001(-0, Infinity, '-0');
-      test_mod_001(-0, -Infinity, '-0');
+      test_mod_001(-0.0, Infinity, '-0');
+      test_mod_001(-0.0, -Infinity, '-0');
     });
 
     /**
@@ -179,8 +179,8 @@ export default function DecimalTest032() {
       test_mod_003(-999.99, '3.01', '-0.67');
       test_mod_003(1, '0.09', '0.01');
       test_mod_003(1, '-0.0001', '0');
-      test_mod_001(-0, 1, '-0');
-      test_mod_001(-0, 0.1, '-0');
+      test_mod_001(-0.0, 1, '-0');
+      test_mod_001(-0.0, 0.1, '-0');
       test_mod_004('-0', Infinity, '-0');
       test_mod_003(1, '1e-14', '0');
       test_mod_003(1, '8e5', '1');

@@ -69,9 +69,9 @@ export default function ReachStartAndEnd() {
       let driver = Driver.create()
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.2 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
         1000);
       await CommonFunc.sleep(2000);
 
@@ -84,7 +84,7 @@ export default function ReachStartAndEnd() {
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
         Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
         1000);
       await CommonFunc.sleep(2000);
 
@@ -111,11 +111,11 @@ export default function ReachStartAndEnd() {
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)
         }, 5, 4000);
       await CommonFunc.sleep(2000);
 

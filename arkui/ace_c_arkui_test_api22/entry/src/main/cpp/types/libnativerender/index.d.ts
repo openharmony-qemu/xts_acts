@@ -30,6 +30,8 @@ export const CoastingAxisTest: (a: string) => void;
 
 export const hasAxisTest: (a: string) => void;
 
+export const RegionListTest: (a: string) => void;
+
 export const WaterFlowFillPolicyTest: (a: string) => void;
 
 export const snapSpeedTest: (a: string) => void;
@@ -57,3 +59,31 @@ export const customKeyboardTest: (a: string) => void;
 export const animationControllerTest: (a: string) => void;
 
 export const GridFillPolicyTest: (a: string) => void;
+
+export const gridOnScrollIndexTest: (a: string) => void;
+
+export const gridOnDidScrollTest: (a: string) => void;
+
+export const gridOnScrollBarUpdateTest: (a: string) => void;
+
+export const gridOnWillScrollTest: (a: string) => void;
+
+export const clipShapeTest: (a: string) => void;
+
+export const CreateCustomMarkDirtyNativeRoot: (content: NodeContent, tag: string) => void;
+
+export const LayoutManagerTest001: (a: string) => void;
+
+export const LayoutManagerTest002: (a: string) => void;
+
+export const LayoutManagerTest003: (a: string) => void;
+
+export const LayoutManagerTest004: (a: string) => void;
+
+export const LayoutManagerTest005: (a: string) => void;
+
+export const LayoutManagerTest006: (a: string) => void;
+
+export const LayoutManagerTest007: (a: string) => void;
+
+export const LayoutManagerTest008: (a: string) => void;

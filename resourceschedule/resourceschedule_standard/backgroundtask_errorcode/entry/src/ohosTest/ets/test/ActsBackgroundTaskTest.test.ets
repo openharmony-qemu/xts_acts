@@ -333,5 +333,47 @@ export default function ActsBackgroundTaskErrorTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_Resourceschedule_TransientTaskSVFailed_1300
+     * @tc.number SUB_Resourceschedule_TransientTaskSVFailed_1300
+     * @tc.desc   Test TransientTask_ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Resourceschedule_TransientTaskSVFailed_1300', Level.LEVEL3, async (done: Function) => {
+      try {
+        console.info("====>SUB_Resourceschedule_TransientTaskSVFailed_1300 start====");
+        let res: number = backgroundtaskerror.OH_TransientTask_ErrorCode();
+        console.log("SUB_Resourceschedule_TransientTaskSVFailed_1300 res: " + res);
+        expect(res).assertEqual(Success);
+        done();
+      } catch (err) {
+        console.error("SUB_Resourceschedule_TransientTaskSVFailed_1300 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Resourceschedule_TransientTaskSVFailed_1400
+     * @tc.number SUB_Resourceschedule_TransientTaskSVFailed_1400
+     * @tc.desc   Test BackgroundProcessManager_ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Resourceschedule_TransientTaskSVFailed_1400', Level.LEVEL3, async (done: Function) => {
+      try {
+        console.info("====>SUB_Resourceschedule_TransientTaskSVFailed_1400 start====");
+        let res: number = backgroundtaskerror.OH_BackgroundProcessManager_ErrorCode();
+        console.log("SUB_Resourceschedule_TransientTaskSVFailed_1400 res: " + res);
+        expect(res).assertEqual(Success);
+        done();
+      } catch (err) {
+        console.error("SUB_Resourceschedule_TransientTaskSVFailed_1400 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
   })
 }

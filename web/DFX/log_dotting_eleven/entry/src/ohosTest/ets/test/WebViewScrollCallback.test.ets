@@ -89,7 +89,33 @@ export default function WebViewScrollCallbackTest() {
       Utils.registerEvent('testWebViewScrollCallback002', true, 20251223, done);
       sendEventByKey('WebViewScrollCallbackButton', 10, '');
     })
+    /**
+     * @tc.number     SUB_WEB_REGISTERSCROLLCALLBACK_0300
+     * @tc.name       testWebViewNativeWebInitFalse003
+     * @tc.desc       OH_ArkWeb_RegisterScrollCallback
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testWebViewNativeWebInitFalse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitWebViewNativeWebInitFalse003', 10)
+      Utils.registerEvent('testWebViewNativeWebInitFalse003', false, 20251227, done);
+      sendEventByKey('WebViewScrollCallbackButton', 10, '');
+    })
 
+    /**
+     * @tc.number     SUB_WEB_REGISTERSCROLLCALLBACK_0400
+     * @tc.name       testWebViewNativeWebInitTrue004
+     * @tc.desc       OH_ArkWeb_RegisterScrollCallback
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testWebViewNativeWebInitTrue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitWebViewNativeWebInitTrue004', 10)
+      Utils.registerEvent('testWebViewNativeWebInitTrue004', true, 20251228, done);
+      sendEventByKey('WebViewScrollCallbackButton', 10, '');
+    })
 
   })
 }

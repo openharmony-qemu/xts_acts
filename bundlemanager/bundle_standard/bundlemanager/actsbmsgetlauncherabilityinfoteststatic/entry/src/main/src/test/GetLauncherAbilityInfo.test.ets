@@ -31,6 +31,7 @@ let tag: string = 'testtag';
 const BUNDLE_NAME2 = 'ohos.acts.bms.getlauncherabilityinfo.test.static';
 const TEST_SUITE_NAME = 'launcherBundleManagerTest'
 const PARAM_0: int = 0;
+const URI_0100 = "abcde://urigetabilityinfotest";
 
 export default function actsGetLauncherAbilityInfoTest() {
 
@@ -52,6 +53,7 @@ export default function actsGetLauncherAbilityInfoTest() {
         let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 100);
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync success, result is: %{public}s', JSON.stringify(data));
         console.log('getLauncherAbilityInfoSync success');
+        expect(data.length>0).assertTrue();
         expect(data[0].labelId).assertLarger(0.0);
         expect(data[0].iconId).assertLarger(0.0);
         expect(data[0].userId).assertEqual(100);
@@ -155,7 +157,7 @@ export default function actsGetLauncherAbilityInfoTest() {
      * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getAbilityInfo_static_00', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let uri = "https://www.example.com";
+      let uri = URI_0100;
       let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION;
       bundleManager.getAbilityInfo(uri, abilityFlags).then((abilityInfos: Array<bundleManager.AbilityInfo>) => {
         expect(abilityInfos.length).assertLarger(PARAM_0);
@@ -167,7 +169,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].labelId).assertLarger(PARAM_0);
           expect(abilityInfos[index].description).assertEqual("$string:EntryAbility_desc");
           expect(abilityInfos[index].descriptionId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].icon).assertEqual("$media:icon");
+          expect(abilityInfos[index].icon).assertEqual("$media:layered_image");
           expect(abilityInfos[index].iconId).assertLarger(PARAM_0);
           expect(abilityInfos[index].process).assertEqual("");
           expect(abilityInfos[index].exported).assertEqual(true);
@@ -175,7 +177,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].launchType).assertEqual(PARAM_0);
           expect(abilityInfos[index].permissions.length).assertEqual(PARAM_0);
           expect(abilityInfos[index].deviceTypes.length).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo).assertEqual(null);
+          expect(abilityInfos[index].applicationInfo).not().assertNull();
           expect(abilityInfos[index].metadata.length).assertEqual(PARAM_0);
           expect(abilityInfos[index].enabled).assertEqual(true);
           expect(abilityInfos[index].supportWindowModes.length).assertLarger(PARAM_0);

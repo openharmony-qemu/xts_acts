@@ -256,7 +256,7 @@ export default function RunningLockTest() {
         } catch (e) {
           e = e as Error;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
-          expect(e.message).assertContain('No enum RunningLockType');
+          expect().assertFail();
           done();
         }
       })
@@ -302,7 +302,242 @@ export default function RunningLockTest() {
         try {
           let isSupported: boolean = runningLock.isSupported(3 as runningLock.RunningLockType);
           hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          expect().assertFail();
+          done();
+        } catch (e) {
+          e = e as Error;
+          hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+          expect(e.message).assertContain('No enum RunningLockType');
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1000
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0100
+     * @tc.desc   The lock type is PROXIMITY_SCREEN_CONTROL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1000';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          hilog.info(domain, tag,
+            `${TAG} BACKGROUND: ${runningLock.RunningLockType.BACKGROUND}`);
+          let runningLockType: number = runningLock.RunningLockType.BACKGROUND;
+          hilog.info(domain, tag, `${TAG} runningLockType: ${runningLockType}`);
+          expect(runningLockType).assertEqual(1);
+          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1100
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0110
+     * @tc.desc   Create lock promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRunningLockTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1100';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND)
+            .then((lock: runningLock.RunningLock) => {
+              hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+              expect(lock).not().assertUndefined();
+              done();
+            })
+            .catch((error: Error): void => {
+              hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+              expect().assertFail();
+              done();
+            })
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1200
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0120
+     * @tc.desc   Create lock promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1200';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND)
+            .then((lock: runningLock.RunningLock) => {
+              hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+              expect(lock).not().assertUndefined();
+              let isHold: boolean = lock.isHolding();
+              hilog.info(domain, tag, `${TAG} before hold isHold: ${JSON.stringify(isHold)}`);
+              expect(isHold).assertFalse();
+              lock.hold(5000);
+              isHold = lock.isHolding();
+              hilog.info(domain, tag, `${TAG} after hold isHold: ${JSON.stringify(isHold)}`);
+              expect(isHold).assertTrue();
+              lock.unhold();
+              isHold = lock.isHolding();
+              hilog.info(domain, tag, `${TAG} after unhold isHold: ${JSON.stringify(isHold)}`);
+              expect(isHold).assertFalse();
+              done();
+            })
+            .catch((error: BusinessError): void => {
+              hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+              expect().assertFail();
+              done();
+            })
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1300
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0130
+     * @tc.desc   Create lock callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1300';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND,
+            (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+              if (lock !== null && lock !== undefined) {
+                hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                expect(lock).not().assertUndefined();
+                done();
+              } else {
+                hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(error)}`);
+                expect().assertFail();
+                done();
+              }
+            })
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1400
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0140
+     * @tc.desc   Create lock callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1400';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND,
+            (error: BusinessError | null, lock: runningLock.RunningLock | undefined) => {
+              if (lock !== null && lock !== undefined) {
+                hilog.info(domain, tag, `${TAG} lock: ${JSON.stringify(lock)}`);
+                expect(lock).not().assertUndefined();
+                let isHold: boolean = lock.isHolding();
+                hilog.info(domain, tag, `${TAG} before hold isHold: ${JSON.stringify(isHold)}`);
+                expect(isHold).assertFalse();
+                lock.hold(5000);
+                isHold = lock.isHolding();
+                hilog.info(domain, tag, `${TAG} after hold isHold: ${JSON.stringify(isHold)}`);
+                expect(isHold).assertTrue();
+                lock.unhold();
+                isHold = lock.isHolding();
+                hilog.info(domain, tag, `${TAG} after unhold isHold: ${JSON.stringify(isHold)}`);
+                expect(isHold).assertFalse();
+                done();
+              } else {
+                hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(error)}`);
+                expect().assertFail();
+                done();
+              }
+            })
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1500
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0150
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testRunningLockTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1500';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
           expect(isSupported).assertTrue();
+          done();
+        } catch (e) {
+          if (e instanceof BusinessError) {
+            hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
+            expect().assertFail();
+            done();
+          }
+        }
+      })
+
+    /**
+     * @tc.name   testRunningLockTest_static_1600
+     * @tc.number SUB_PowerSystem_RunningLock_ETSTest_0160
+     * @tc.desc   RunningLock isSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testRunningLockTest_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testRunningLockTest_static_1600';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let isSupported: boolean = runningLock.isSupported(0 as runningLock.RunningLockType);
+          hilog.info(domain, tag, `${TAG} isSupported: ${isSupported}`);
+          expect().assertFail();
           done();
         } catch (e) {
           e = e as Error;

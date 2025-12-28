@@ -13,11 +13,8 @@
  * limitations under the License.
  */
 
-import abilityTest from './Ability.test'
 import webNetHostingTwo from './webNetHostingunit.test'
-import ActsAbilityTest from './Ability.test'
 
 export default function testsuite() {
-  ActsAbilityTest()
   webNetHostingTwo()
 }

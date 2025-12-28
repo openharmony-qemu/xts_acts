@@ -474,8 +474,8 @@ export default function uitestEnumTest() {
     })
 
     /**
-     * @tc.number UitestTest_Api20_009
      * @tc.name testScreenCaptureWithId_static
+     * @tc.number UitestTest_Api20_009
      * @tc.desc capture the specified area of current screen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -888,6 +888,27 @@ export default function uitestEnumTest() {
         expect(bounds.displayId == disPlay.id).assertTrue();
       }
       await stopApplication('com.uitestScene.acts');
+    })
+
+    /**
+     * @tc.name testScreenCapId_static
+     * @tc.desc capture the specified area of current screen.
+     * @tc.number UitestTest_Api20_017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testScreenCapId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testScreenCapId_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs)
+      let disPlay = display.getDefaultDisplaySync();
+      let savePath = '/data/storage/el2/base/cache/testScreenCapId_static.png';
+      let success = await driver.screenCap(savePath, disPlay.id.toInt());
+      console.log(`${TestTag}, testScreenCapId_static success: ${JSON.stringify(success)}`);
+      expect(success).assertTrue();
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testScreenCapId_static end`);
     })
   })
 }

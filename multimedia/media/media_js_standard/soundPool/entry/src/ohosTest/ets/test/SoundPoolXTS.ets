@@ -5061,6 +5061,90 @@ export default function soundPoolTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0100
+     * @tc.desc   Function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0100 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        let mode: media.SoundInterruptMode = media.SoundInterruptMode.NO_INTERRUPT;
+        soundPool.setInterruptMode(mode);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0200
+     * @tc.desc   Function test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0200', Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_SETINTERRUPTMODE_0200 in`);
+      try {
+        let streamId = 0;
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        let mode: media.SoundInterruptMode = media.SoundInterruptMode.SAME_SOUND_INTERRUPT;
+        soundPool.setInterruptMode(mode);
+        streamId = await soundPool.play(soundId);
+        await sleep(2000);
+        await soundPool.stop(streamId);
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_0100
      * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_ON_0100
      * @tc.desc   Function test

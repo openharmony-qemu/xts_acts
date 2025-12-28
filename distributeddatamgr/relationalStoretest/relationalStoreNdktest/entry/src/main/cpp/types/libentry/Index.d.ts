@@ -76,6 +76,7 @@ export const SetVersionTwo: () => number;
 export const LockRowOne: () => number;
 export const UnLockRowOne: () => number;
 export const QueryLockRowOne: () => number;
+export const async: () => Promise<number>;
 export const RdbStoreCorruptHandlerTest_0100:() => number;
 export const RdbStoreCorruptHandlerTest_0200:() => number;
 export const RdbStoreCorruptHandlerTest_0300:() => number;

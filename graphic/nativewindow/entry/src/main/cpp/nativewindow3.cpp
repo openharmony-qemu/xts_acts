@@ -100,7 +100,8 @@ napi_value testNativeWindowNativeWindowSetSetScalingMode(napi_env env, napi_call
     int32_t flag2 =
         OH_NativeWindow_NativeWindowSetScalingMode(nativeWindow, sequence, static_cast<OHScalingMode>(CONSTANT_100));
     int32_t flag3 = OH_NativeWindow_NativeWindowSetScalingMode(nativeWindow, 0, OH_SCALING_MODE_FREEZE);
-    if (flag1 != CONSTANT_40001000 && flag2 != CONSTANT_40001000 && flag3 != CONSTANT_40001000) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS &&
+        flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -125,7 +126,8 @@ napi_value testNativeWindowNativeWindowSetMetaData(napi_env env, napi_callback_i
     int32_t flag1 = OH_NativeWindow_NativeWindowSetMetaData(nullptr, sequence, sizeof(metaData), metaData);
     int32_t flag2 = OH_NativeWindow_NativeWindowSetMetaData(nativeWindow, sequence, sizeof(metaData), nullptr);
     int32_t flag3 = OH_NativeWindow_NativeWindowSetMetaData(nativeWindow, 0, sizeof(metaData), metaData);
-    if (flag1 != CONSTANT_40001000 && flag2 != CONSTANT_40001000 && flag3 != CONSTANT_40001000) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS &&
+        flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -152,7 +154,8 @@ napi_value testNativeWindowNativeWindowSetMetaDataSet(napi_env env, napi_callbac
     int32_t flag2 = OH_NativeWindow_NativeWindowSetMetaDataSet(nativeWindow, sequence, key, sizeof(metaData), nullptr);
     int32_t flag3 = OH_NativeWindow_NativeWindowSetMetaDataSet(
         nativeWindow, sequence, static_cast<OHHDRMetadataKey>(CONSTANT_100), sizeof(metaData), metaData);
-    if (flag1 != CONSTANT_40001000 && flag2 != CONSTANT_40001000 && flag3 != CONSTANT_40001000) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS &&
+        flag3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1000, &result);
         return result;
     }
@@ -190,7 +193,7 @@ napi_value testNativeWindowNativeWindowSetTunnelHandle(napi_env env, napi_callba
     OHExtDataHandle *handle = AllocOHExtDataHandle(reserveInts);
     int32_t flag1 = OH_NativeWindow_NativeWindowSetTunnelHandle(nullptr, handle);
     int32_t flag2 = OH_NativeWindow_NativeWindowSetTunnelHandle(nativeWindow, nullptr);
-    if (flag1 != CONSTANT_40001000 && flag2 != CONSTANT_40001000) {
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1000, &result);
         return result;
     }
@@ -218,10 +221,15 @@ napi_value testNativeWindowCleanCacheBeforeBufferRequested(napi_env env, napi_ca
     }
     
     // 2. cleancache 2 times
+    int32_t flag0 = OH_NativeWindow_CleanCache(nullptr);
+    if (flag0 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
     int32_t flag = OH_NativeWindow_CleanCache(nativeWindow);
     flag = OH_NativeWindow_CleanCache(nativeWindow);
     napi_create_int32(env, flag, &result);
-    if (flag != CONSTANT_41211000) {
+    if (flag != NATIVE_ERROR_CONSUMER_DISCONNECTED) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -248,7 +256,7 @@ napi_value testNativeWindowCleanCacheWhenBufferRequested(napi_env env, napi_call
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int fenceFd = -1;
     int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
-    if (ret != 0) {
+    if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -256,7 +264,7 @@ napi_value testNativeWindowCleanCacheWhenBufferRequested(napi_env env, napi_call
     // 3. invoke 2 times cleancache
     int32_t flag = OH_NativeWindow_CleanCache(nativeWindow);
     flag = OH_NativeWindow_CleanCache(nativeWindow);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -270,7 +278,7 @@ napi_value testNativeWindowCleanCacheWhenBufferRequested(napi_env env, napi_call
     };
     Region region{.rects = &rect};
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
-    if (ret != CONSTANT_40001000) {
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, ret, &result);
         return result;
     }
@@ -319,7 +327,7 @@ napi_value testNativeWindowCleanCacheWhenBufferFlushed(napi_env env, napi_callba
     // 4. invoke 2 times cleancache
     int32_t flag = OH_NativeWindow_CleanCache(nativeWindow);
     flag = OH_NativeWindow_CleanCache(nativeWindow);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -332,7 +340,7 @@ napi_value testNativeWindowCleanCacheWhenBufferFlushed(napi_env env, napi_callba
         return result;
     }
     ret = OH_NativeImage_AcquireNativeWindowBuffer(nativeImage, &nativeWindowBuffer, &fenceFd);
-    if (ret != CONSTANT_40601000) {
+    if (ret != NATIVE_ERROR_NO_BUFFER) {
         napi_create_int32(env, ret, &result);
         return result;
     }
@@ -379,14 +387,14 @@ napi_value testNativeWindowCleanCacheWhenBufferAcquired(napi_env env, napi_callb
     // 5. invoke 2 times cleancache
     int32_t flag = OH_NativeWindow_CleanCache(nativeWindow);
     flag = OH_NativeWindow_CleanCache(nativeWindow);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     
     // 6. release buffer
     ret = windowBuffer->ReleaseBuffer();
-    if (ret != CONSTANT_41210000) {
+    if (ret != NATIVE_ERROR_BUFFER_NOT_IN_CACHE) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -429,7 +437,7 @@ napi_value testNativeWindowCleanCacheWhenBufferReleased(napi_env env, napi_callb
     // invoke 2 times cleancache
     int32_t flag = OH_NativeWindow_CleanCache(nativeWindow);
     flag = OH_NativeWindow_CleanCache(nativeWindow);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -465,7 +473,7 @@ napi_value testNativeWindowCleanCacheLoopWhenBufferRequested(napi_env env, napi_
     int32_t flag = 0;
     for (int i = 0; i < CONSTANT_10000; i++) {
         flag = OH_NativeWindow_CleanCache(nativeWindow);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
@@ -515,7 +523,7 @@ napi_value testNativeWindowCleanCacheLoopWhenBufferFlushed(napi_env env, napi_ca
     int32_t flag = 0;
     for (int i = 0; i < CONSTANT_10000; i++) {
         flag = OH_NativeWindow_CleanCache(nativeWindow);
-        if (flag != 0) {
+        if (flag != NATIVE_ERROR_OK) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
@@ -543,7 +551,7 @@ napi_value testNativeWindowPreAllocBufferAbNormalPra(napi_env env, napi_callback
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int32_t ret1 = OH_NativeWindow_PreAllocBuffers(nullptr, 3);
     int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, NULL);
-    if (ret1 != CONSTANT_40001000 || ret2 != CONSTANT_40001000) {
+    if (ret1 != NATIVE_ERROR_INVALID_ARGUMENTS || ret2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -574,7 +582,7 @@ napi_value testNativeWindowPreAllocBufferAbNormalPra2(napi_env env, napi_callbac
         }
         // buffer的width或height为0
         int32_t ret3 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
-        if (ret3 != CONSTANT_40001000) {
+        if (ret3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
             napi_create_int32(env, CONSTANT_2, &result);
             return result;
         }
@@ -585,7 +593,7 @@ napi_value testNativeWindowPreAllocBufferAbNormalPra2(napi_env env, napi_callbac
     OH_NativeImage *image = OH_ConsumerSurface_Create();
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
     int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
-    if (ret != CONSTANT_40001000) {
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
@@ -610,7 +618,7 @@ napi_value testNativeWindowPreAllocBufferBufferCnt(napi_env env, napi_callback_i
             return result;
         }
         int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, errBufferCnt[i]);
-        if (ret != CONSTANT_40001000) {
+        if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
             napi_create_int32(env, CONSTANT_2, &result);
             return result;
         }
@@ -671,7 +679,8 @@ napi_value testNativeWindowPreAllocBufferAbnormal(napi_env env, napi_callback_in
     ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_1]);
     ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_2]);
     int32_t ret4 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
-    if (ret2 != CONSTANT_41209000 || ret3 != CONSTANT_41209000 || ret4 != CONSTANT_41209000) {
+    if (ret2 != NATIVE_ERROR_BUFFER_QUEUE_FULL || ret3 != NATIVE_ERROR_BUFFER_QUEUE_FULL ||
+        ret4 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
@@ -719,7 +728,8 @@ napi_value testNativeWindowPreAllocBufferDetachAttach(napi_env env, napi_callbac
     int32_t ret6 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
     // buffer队列已满再次PreAlloc
     int32_t ret7 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_1);
-    if (ret4 != 0 || ret5 != 0 || ret6 != 0 || ret7 != CONSTANT_41209000) {
+    if (ret4 != NATIVE_ERROR_OK || ret5 != NATIVE_ERROR_OK || ret6 != NATIVE_ERROR_OK ||
+        ret7 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
         napi_create_int32(env, CONSTANT_4, &result);
         return result;
     }
@@ -761,7 +771,7 @@ napi_value testNativeWindowPreAllocBufferDetachAttach02(napi_env env, napi_callb
     OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, WindowBufferArr[CONSTANT_1]);
     OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, WindowBufferArr[CONSTANT_2]);
     int32_t ret8 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
-    if (ret8 != CONSTANT_41209000) {
+    if (ret8 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
@@ -787,7 +797,7 @@ napi_value testNativeWindowPreAllocBufferNormal(napi_env env, napi_callback_info
     int32_t ret1 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_1);
     int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_2);
     int32_t ret3 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
-    if (ret1 != 0 || ret2 != 0 || ret3 != CONSTANT_41209000) {
+    if (ret1 != NATIVE_ERROR_OK || ret2 != NATIVE_ERROR_OK || ret3 != NATIVE_ERROR_BUFFER_QUEUE_FULL) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -1065,13 +1075,13 @@ napi_value testNativeWindowLockBufferNull(napi_env env, napi_callback_info info)
     };
     Region region{.rects = &rect, .rectNumber = CONSTANT_1};
     int32_t ret = OH_NativeWindow_LockBuffer(nullptr, region, &buffer);
-    if (ret != CONSTANT_40001000) {
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     OH_NativeWindow_UnlockAndFlushBuffer(nativeWindow);
     ret = OH_NativeWindow_LockBuffer(nativeWindow, region, nullptr);
-    if (ret != CONSTANT_40001000) {
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1163,7 +1173,7 @@ napi_value testNativeWindowLockBufferUpperLimit(napi_env env, napi_callback_info
     }
     OH_NativeWindow_UnlockAndFlushBuffer(nativeWindow);
     ret = OH_NativeWindow_LockBuffer(nativeWindow, region, &buffer4);
-    if (ret != CONSTANT_40601000) {
+    if (ret != NATIVE_ERROR_NO_BUFFER) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }

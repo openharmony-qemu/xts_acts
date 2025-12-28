@@ -260,7 +260,7 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal(n
     int32_t ret1 = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
     int32_t ret2 = OH_NativeImage_AcquireNativeWindowBuffer(nativeImage, &buffer, &fenceFd);
     int32_t ret3 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-    if (ret1 != 0 || ret2 != 0 || ret3 != ERRCODE_40601000) {
+    if (ret1 != NATIVE_ERROR_OK || ret2 != NATIVE_ERROR_OK || ret3 != NATIVE_ERROR_NO_BUFFER) {
         napi_create_int32(env, FAIL, &result2);
     } else {
         napi_create_int32(env, SUCCESS, &result2);
@@ -268,7 +268,7 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageAbnormal(n
     napi_set_element(env, result, ARR_NUMBER_1, result2);
     int32_t ret4 = OH_NativeImage_ReleaseNativeWindowBuffer(nativeImage, buffer, fenceFd);
     int32_t ret5 = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-    if (ret4 != 0 || ret5 != 0) {
+    if (ret4 != NATIVE_ERROR_OK || ret5 != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result3);
     } else {
         napi_create_int32(env, SUCCESS, &result3);
@@ -330,7 +330,7 @@ napi_value OHNativeImageReleaseTextImageNormal(napi_env env, napi_callback_info 
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
     OH_NativeImage_UpdateSurfaceImage(nativeImage);
     int32_t ret = OH_NativeImage_ReleaseTextImage(nativeImage);
-    if (ret != 0) {
+    if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, ret, &result);
         return result;
     }
@@ -345,7 +345,7 @@ napi_value OHNativeImageReleaseTextImageNull(napi_env env, napi_callback_info in
 {
     napi_value result = nullptr;
     int32_t ret = OH_NativeImage_ReleaseTextImage(nullptr);
-    if (ret == 0) {
+    if (ret == NATIVE_ERROR_OK) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
@@ -435,7 +435,7 @@ napi_value OHNativeImageGetColorSpaceNormal(napi_env env, napi_callback_info inf
     OH_NativeImage *image = OH_ConsumerSurface_CreateWithSingleBufferMode(true);
     OH_NativeBuffer_ColorSpace colorSpace;
     int32_t ret = OH_NativeImage_GetColorSpace(image, &colorSpace);
-    if (ret == 0) {
+    if (ret == NATIVE_ERROR_OK) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
@@ -449,7 +449,7 @@ napi_value OHNativeImageGetColorSpaceNull(napi_env env, napi_callback_info info)
     napi_value result = nullptr;
     OH_NativeBuffer_ColorSpace colorSpace;
     int32_t ret = OH_NativeImage_GetColorSpace(nullptr, &colorSpace);
-    if (ret == 0) {
+    if (ret == NATIVE_ERROR_OK) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
@@ -471,7 +471,7 @@ napi_value OHNativeImageGetColorSpaceMultipleCalls(napi_env env, napi_callback_i
             return result;
         }
         int32_t ret = OH_NativeImage_GetColorSpace(imageArray[i], &colorSpace);
-        if (ret != 0) {
+        if (ret != NATIVE_ERROR_OK) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
@@ -503,7 +503,7 @@ napi_value OHNativeImageGetColorSpaceDestoryImage(napi_env env, napi_callback_in
     }
     OH_NativeImage_Destroy(&image);
     int32_t ret = OH_NativeImage_GetColorSpace(image, &colorSpace);
-    if (ret == 0) {
+    if (ret == NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
     } else {
         napi_create_int32(env, SUCCESS, &result);
@@ -544,7 +544,7 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest1(napi_env env, napi_callb
     OH_NativeImage_ReleaseTextImage(image);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeBuffer_Reference(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
 }
@@ -580,14 +580,14 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callb
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer2, fenceFd, region);
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer3, fenceFd, region);
     int32_t errorCode1 = OH_NativeImage_UpdateSurfaceImage(image);
-    if (errorCode1 != 0) {
+    if (errorCode1 != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     OH_NativeBuffer_ColorSpace colorSpace1;
     OH_NativeImage_GetColorSpace(image, &colorSpace1);
     int32_t errorCode2 = OH_NativeImage_ReleaseTextImage(image);
-    if (errorCode2 != 0) {
+    if (errorCode2 != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -596,7 +596,7 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest2(napi_env env, napi_callb
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer2);
     OH_NativeWindow_DestroyNativeWindowBuffer(buffer3);
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);
-    OH_NativeBuffer_Reference(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
     OH_NativeImage_Destroy(&image);
     return result;
 }
@@ -636,7 +636,7 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest(napi_env env, napi_ca
     }
     OH_NativeImage_AcquireNativeWindowBuffer(image, &nativeWindowBuffer, &fenceFd);
     int32_t ret = OH_NativeImage_ReleaseNativeWindowBuffer(image, nativeWindowBuffer, fenceFd);
-    if (ret == 0) {
+    if (ret == NATIVE_ERROR_OK) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
@@ -655,7 +655,8 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal(napi_env env, na
     int32_t ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(nullptr, &NativeWindowBuffer, &fenceFd);
     int32_t ret2 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, nullptr, &fenceFd);
     int32_t ret3 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, NULL);
-    if (ret1 != ERRCODE_40001000 || ret2 != ERRCODE_40001000 || ret3 != ERRCODE_40001000) {
+    if (ret1 != NATIVE_ERROR_INVALID_ARGUMENTS || ret2 != NATIVE_ERROR_INVALID_ARGUMENTS ||
+        ret3 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, ARR_NUMBER_1, &result);
         return result;
     }
@@ -680,7 +681,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
     // 消费端请求buffer，保留最新的buffer
     int32_t ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
     BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret != 0 || ret1 != 0 || handle1 != handle2) {
+    if (ret != 0 || ret1 != NATIVE_ERROR_OK || handle1 != handle2) {
         napi_create_int32(env, ARR_NUMBER_1, &result);
         return result;
     }
@@ -691,7 +692,8 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
     int32_t ret2 = initNative->OH_FlushBuffer();
     int32_t ret3 = initNative->OH_FlushBuffer();
     int32_t ret4 = initNative->OH_FlushBuffer();
-    if (ret != ERRCODE_40601000 || ret1 != ERRCODE_40601000 || ret2 != 0 || ret3 != 0 || ret4 != ERRCODE_40001000) {
+    if (ret != NATIVE_ERROR_NO_BUFFER || ret1 != NATIVE_ERROR_NO_BUFFER ||
+        ret2 != 0 || ret3 != 0 || ret4 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, ARR_NUMBER_2, &result);
         return result;
     }
@@ -699,7 +701,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
     int32_t ret5 = OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
     // 生产端再去生产buffer
     int32_t ret6 = initNative->OH_FlushBuffer();
-    if (ret5 != 0 || ret6 != 0) {
+    if (ret5 != NATIVE_ERROR_OK || ret6 != 0) {
         napi_create_int32(env, ARR_NUMBER_3, &result);
         return result;
     }
@@ -708,7 +710,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
     int32_t ret8 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer1, &fenceFd);
     int32_t ret9 = OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
     int32_t ret10 = OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer1, fenceFd);
-    if (ret7 != 0 || ret8 != 0 || ret9 != 0 || ret10 != 0) {
+    if (ret7 != NATIVE_ERROR_OK || ret8 != NATIVE_ERROR_OK || ret9 != NATIVE_ERROR_OK || ret10 != NATIVE_ERROR_OK) {
         napi_create_int32(env, ARR_NUMBER_4, &result);
         return result;
     }
@@ -735,7 +737,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal02(napi_env env, 
     // 消费端请求buffer，保留最新的buffer
     int32_t ret1 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
     BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-    if (ret1 != 0 || ret != 0 || handle1 != handle2) {
+    if (ret1 != NATIVE_ERROR_OK || ret != 0 || handle1 != handle2) {
         napi_create_int32(env, ARR_NUMBER_1, &result);
         return result;
     }
@@ -782,7 +784,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, 
     int fenceFd = -1;
     // 未生产buffer直接，消费端直接请求
     int32_t ret = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
-    if (ret != ERRCODE_40601000) {
+    if (ret != NATIVE_ERROR_NO_BUFFER) {
         napi_create_int32(env, ARR_NUMBER_1, &result);
         return result;
     }
@@ -796,7 +798,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, 
     // releaseBuffer后调用AcquireLatestNativeWindowBuffer
     int32_t ret2 = OH_NativeImage_ReleaseNativeWindowBuffer(image, NativeWindowBuffer, fenceFd);
     ret = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
-    if (ret2 != 0 || ret != ERRCODE_40601000) {
+    if (ret2 != 0 || ret != NATIVE_ERROR_NO_BUFFER) {
         napi_create_int32(env, ARR_NUMBER_3, &result);
         return result;
     }
@@ -822,7 +824,7 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_c
         int32_t ret1 = initNative->OH_FlushBuffer1(&handle1);
         int32_t ret2 = OH_NativeImage_AcquireLatestNativeWindowBuffer(image, &NativeWindowBuffer, &fenceFd);
         BufferHandle *handle2 = OH_NativeWindow_GetBufferHandleFromNative(NativeWindowBuffer);
-        if (ret1 != 0 || ret2 != 0 || handle1 != handle2) {
+        if (ret1 != NATIVE_ERROR_OK || ret2 != NATIVE_ERROR_OK || handle1 != handle2) {
             napi_create_int32(env, ARR_NUMBER_1, &result);
             return result;
         }
@@ -855,23 +857,23 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
     OHNativeWindowBuffer *buffer = nullptr;
     int fenceFd;
     int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
-    if (ret != 0) {
+    if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     Region region{nullptr, PARAM_0};
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
-    if (ret != 0) {
+    if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
-    if (ret != 0) {
+    if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
     ret = OH_NativeImage_ReleaseTextImage(nativeImage);
-    if (ret != 0) {
+    if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -879,5 +881,311 @@ napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env e
     OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     OH_NativeImage_Destroy(&nativeImage);
     napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHNativeImageIsReleasedNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeImage* image = nullptr;
+    bool isReleased = false;
+    int32_t ret = OH_NativeImage_IsReleased(image, &isReleased);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeImage_Destroy(&image);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHNativeImageIsReleasedNull1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    uint32_t textureId = 1;
+    uint32_t textureTarget = 1;
+    bool singleBufferMode = true;
+    OH_NativeImage* nativeImage =
+        OH_NativeImage_CreateWithSingleBufferMode(textureId, textureTarget, singleBufferMode);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t ret = OH_NativeImage_IsReleased(nativeImage, nullptr);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeImage_Destroy(&nativeImage);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHNativeImageIsReleasedNormal0(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitEGLEnv();
+    GLuint textureId;
+    glGenTextures(PARAM_1, &textureId);
+    OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    int code = SET_BUFFER_GEOMETRY;
+    int32_t width = PARAM_800;
+    int32_t height = PARAM_600;
+    OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, code, width, height);
+    OHNativeWindowBuffer *buffer = nullptr;
+    int fenceFd;
+    int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    Region region{nullptr, PARAM_0};
+    ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    ret = OH_NativeImage_ReleaseTextImage(nativeImage);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    bool isReleased = false;
+    ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+    if (ret == NATIVE_ERROR_OK && isReleased == true) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    OH_NativeImage_Destroy(&nativeImage);
+    return result;
+}
+napi_value OHNativeImageIsReleasedNormal1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool isReleased = false;
+    InitEGLEnv();
+    GLuint textureId;
+    glGenTextures(PARAM_1, &textureId);
+    OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    int code = SET_BUFFER_GEOMETRY;
+    int32_t width = PARAM_800;
+    int32_t height = PARAM_600;
+    OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, code, width, height);
+    OHNativeWindowBuffer *buffer = nullptr;
+    int fenceFd;
+    int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &buffer, &fenceFd);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    Region region{nullptr, PARAM_0};
+    ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    ret = OH_NativeImage_Release(nativeImage);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    isReleased = false;
+    ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+    if (ret == NATIVE_ERROR_OK && isReleased == false) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    OH_NativeWindow_DestroyNativeWindowBuffer(buffer);
+    OH_NativeImage_Destroy(&nativeImage);
+    return result;
+}
+
+napi_value OHNativeImageReleasedNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeImage* image = nullptr;
+    int32_t ret = OH_NativeImage_Release(image);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeImage_Destroy(&image);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+napi_value OHNativeImageReleasedNormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitEGLEnv();
+    GLuint textureId;
+    glGenTextures(PARAM_1, &textureId);
+    OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    InitNativeWindow *initNative = new InitNativeWindow(nativeImage);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t ret = initNative->OH_FlushBuffer();
+    ret = OH_NativeImage_Release(nativeImage);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeImage_Destroy(&nativeImage);
+    napi_create_int32(env, SUCCESS, &result);
+    delete initNative;
+    return result;
+}
+napi_value OHNativeImageReleasedNormal1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value result1 = nullptr;
+    napi_value result2 = nullptr;
+    napi_value result3 = nullptr;
+    napi_create_array_with_length(env, ARR_NUMBER_3, &result);
+    uint32_t textureId = 1;
+    OH_NativeImage* nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_2D, true);
+    OHNativeWindow* nativeWindow = OH_NativeImage_AcquireNativeWindow(nativeImage);
+    InitNativeWindow *initNative = new InitNativeWindow(nativeImage);
+    if (nativeImage == nullptr || nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    BufferHandle *handle1 = nullptr;
+    int32_t ret = initNative->OH_FlushBuffer1(&handle1);
+    bool isReleased = false;
+    ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+    if (ret == NATIVE_ERROR_OK && isReleased == false) {
+        napi_create_int32(env, SUCCESS, &result1);
+    } else {
+        napi_create_int32(env, FAIL, &result1);
+        return result;
+    }
+    napi_set_element(env, result, ARR_NUMBER_0, result1);
+    ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
+    isReleased = false;
+    ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+    if (ret == NATIVE_ERROR_OK && isReleased == false) {
+        napi_create_int32(env, SUCCESS, &result2);
+    } else {
+        napi_create_int32(env, FAIL, &result2);
+    }
+    napi_set_element(env, result, ARR_NUMBER_1, result2);
+    ret = OH_NativeImage_Release(nativeImage);
+    isReleased = false;
+    ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+    if (ret == NATIVE_ERROR_OK && isReleased == false) {
+        napi_create_int32(env, SUCCESS, &result3);
+    } else {
+        napi_create_int32(env, FAIL, &result3);
+    }
+    napi_set_element(env, result, ARR_NUMBER_2, result3);
+    OH_NativeImage_Destroy(&nativeImage);
+    delete initNative;
+    return result;
+}
+napi_value OHNativeImageIsReleasedCalls(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    uint32_t textureId = 1;
+    uint32_t textureTarget = 1;
+    bool singleBufferMode = true;
+    bool isReleased = false;
+    OH_NativeImage* nativeImage =
+    OH_NativeImage_CreateWithSingleBufferMode(textureId, textureTarget, singleBufferMode);
+    InitNativeWindow *initNative = new InitNativeWindow(nativeImage);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t ret = initNative->OH_FlushBuffer();
+    ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
+    ret = OH_NativeImage_UnsetOnFrameAvailableListener(nativeImage);
+    ret = OH_NativeImage_ReleaseTextImage(nativeImage);
+    for (int i = 0; i < NUMBER_100; ++i) {
+        ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+        if (ret != NATIVE_ERROR_OK) {
+            napi_create_int32(env, FAIL, &result);
+            return result;
+        }
+    }
+    OH_NativeImage_Destroy(&nativeImage);
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+napi_value OHNativeImageReleasedCalls(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitEGLEnv();
+    GLuint textureId;
+    glGenTextures(PARAM_1, &textureId);
+    OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    InitNativeWindow *initNative = new InitNativeWindow(nativeImage);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t ret = initNative->OH_FlushBuffer();
+    ret = OH_NativeImage_UpdateSurfaceImage(nativeImage);
+    ret = OH_NativeImage_UnsetOnFrameAvailableListener(nativeImage);
+    ret = OH_NativeImage_ReleaseTextImage(nativeImage);
+    for (int i = 0; i < NUMBER_100; i++) {
+        ret = OH_NativeImage_Release(nativeImage);
+        if (ret != NATIVE_ERROR_OK) {
+            napi_create_int32(env, FAIL, &result);
+            return result;
+        }
+    }
+    OH_NativeImage_Destroy(&nativeImage);
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+napi_value OHNativeImageReleaseAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitEGLEnv();
+    GLuint textureId;
+    glGenTextures(PARAM_1, &textureId);
+    OH_NativeImage *nativeImage = OH_NativeImage_CreateWithSingleBufferMode(textureId, GL_TEXTURE_EXTERNAL_OES, true);
+    InitNativeWindow *initNative = new InitNativeWindow(nativeImage);
+    if (nativeImage == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t ret = initNative->OH_FlushBuffer();
+    ret = OH_NativeImage_Release(nativeImage);
+    ret = OH_NativeImage_ReleaseTextImage(nativeImage);
+    if (ret == NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    bool isReleased = false;
+    ret = OH_NativeImage_IsReleased(nativeImage, &isReleased);
+    if (ret == NATIVE_ERROR_OK && isReleased == false) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_NativeImage_Destroy(&nativeImage);
+    delete initNative;
     return result;
 }

@@ -62,6 +62,20 @@ export default function GetUIContextTest() {
       let button = await driver.findComponent(ON.id('btn_resolvedUIContext'));
       await button.click();
       await CommonFunc.sleep(1000);
+
+      console.info('ResolveStrategy.CALLING_SCOPE :' + ResolveStrategy.CALLING_SCOPE);
+      console.info('ResolveStrategy.LAST_FOCUS :' + ResolveStrategy.LAST_FOCUS);
+      console.info('ResolveStrategy.MAX_INSTANCE_ID :' + ResolveStrategy.MAX_INSTANCE_ID);
+      console.info('ResolveStrategy.UNIQUE :' + ResolveStrategy.UNIQUE);
+      console.info('ResolveStrategy.LAST_FOREGROUND :' + ResolveStrategy.LAST_FOREGROUND);
+      console.info('ResolveStrategy.UNDEFINED :' + ResolveStrategy.UNDEFINED);
+      expect(ResolveStrategy.CALLING_SCOPE).assertEqual(0);
+      expect(ResolveStrategy.LAST_FOCUS).assertEqual(1);
+      expect(ResolveStrategy.MAX_INSTANCE_ID).assertEqual(2);
+      expect(ResolveStrategy.UNIQUE).assertEqual(3);
+      expect(ResolveStrategy.LAST_FOREGROUND).assertEqual(4);
+      expect(ResolveStrategy.UNDEFINED).assertEqual(5);
+      
       expect(AppStorage.get('getAllUIContextsNull')).assertEqual(0);
       expect(AppStorage.get('getCallingScopeUIContextUndefined')).assertEqual(undefined);
       expect(AppStorage.get('getLastFocusedUIContextUndefined')).assertEqual(undefined);

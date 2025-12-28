@@ -18,6 +18,11 @@
 #include "allowForceDark/AllowForceDarkTest.cpp"
 #include "Image/ImageContentTransitionEffectTest.cpp"
 #include "nodeUtil/NodeUtilsMethodTest.cpp"
+#include "scroll/ScrollEventTypeTest.cpp"
+#include "list/ListEventTypeTest.cpp"
+#include "refresh/RefreshEventTypeTest.cpp"
+#include "waterFlow/WaterFlowEventTypeTest.cpp"
+#include "grid/GridEventTypeTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -45,6 +50,16 @@ namespace ArkUICapiTest
                 napi_default, nullptr},
             {"TestImageContentTransitionEffect002", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"enum_GetEventType_Scroll", nullptr, Enum_GetEventType_Scroll, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_List", nullptr, Enum_GetEventType_List, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_Refresh", nullptr, Enum_GetEventType_Refresh, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_WaterFlow", nullptr, Enum_GetEventType_WaterFlow, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"enum_GetEventType_Grid", nullptr, Enum_GetEventType_Grid, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
             {"TestMethodReturnValue001", nullptr, TestMethodReturnValue001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
             {"TestMethodReturnValue002", nullptr, TestMethodReturnValue002, nullptr, nullptr, nullptr,
@@ -55,6 +70,30 @@ namespace ArkUICapiTest
                 napi_default, nullptr},
             {"TestMethodReturnValue005", nullptr, TestMethodReturnValue005, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"TestMethodReturnValue006", nullptr, TestMethodReturnValue006, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode001", nullptr, TestNodeErrorCode001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode002", nullptr, TestNodeErrorCode002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode003", nullptr, TestNodeErrorCode003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode004", nullptr, TestNodeErrorCode004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode005", nullptr, TestNodeErrorCode005, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode006", nullptr, TestNodeErrorCode006, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode007", nullptr, TestNodeErrorCode007, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode008", nullptr, TestNodeErrorCode008, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode009", nullptr, TestNodeErrorCode009, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode010", nullptr, TestNodeErrorCode010, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestNodeErrorCode011", nullptr, TestNodeErrorCode011, nullptr, nullptr, nullptr,
+                napi_default, nullptr}, 
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {

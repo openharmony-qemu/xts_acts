@@ -764,3 +764,6 @@ export const NapiCreateExternalStringAscii: () => boolean;
 export const NapiCreateStrongSendableRef: () => boolean;
 export const NapiGetStrongSendableRef: () => boolean;
 export const NapiDelStrongSendableRef: () => boolean;
+export const NapiThrowBusinessError: () => number;
+export const NapiThrowBusinessErrorPar: () => number;
+export const NapiThrowBusinessErrorPendingError: () => number;

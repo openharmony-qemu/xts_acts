@@ -35,6 +35,7 @@ group("pageInteraction") {
       "picture_text_selectionTwo_static:ActsWebPictureTextSelectionTwoStaticTest",
       "picture_text_selection_static:ActsWebPictureTextSelectionStaticTest",
       "soft_keyboard_avoidance:ActsWebSoftKeyboardAvoidanceTest",
+      "page_interaction_static:ActsWebInteractionStaticTest",
     ]
   }
 }

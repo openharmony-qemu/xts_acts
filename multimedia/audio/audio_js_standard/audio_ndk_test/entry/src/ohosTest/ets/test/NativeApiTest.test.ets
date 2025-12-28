@@ -4697,5 +4697,19 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001
+     * @tc.number SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001
+     * @tc.desc   Audiocommon_Result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.AudioCommonResult_001();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })    
   })
 }

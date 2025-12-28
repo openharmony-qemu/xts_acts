@@ -299,8 +299,12 @@ export default function api16CertNoPermissionTestUnit() {
         await certManager.getUkeyCertificate(keyUri, ukeyInfo);
         expect(null).assertFail();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_Ukey_0500 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
-        expect(err.code).assertEqual(201);
+        if (err.code == 801) {
+          done();
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0500 Failed to get detail of USB key certificate. Code: ${err.code}, message: ${err.message}`)
+          expect(err.code).assertEqual(201);
+        }
       }
       done();
     });

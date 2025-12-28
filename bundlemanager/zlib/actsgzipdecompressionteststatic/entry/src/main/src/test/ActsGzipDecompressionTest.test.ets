@@ -2676,6 +2676,10 @@ export default function ActsGzipDecompressionTest() {
         try {
           await gzip.gzflush(zlib.CompressFlushMode.NO_FLUSH).then((num) => {
             expect(num).assertEqual(zlib.ReturnStatus.OK);
+            expect(-1).assertEqual(zlib.ReturnStatus.ERRNO);
+            expect(-2).assertEqual(zlib.ReturnStatus.STREAM_ERROR);
+            expect(-4).assertEqual(zlib.ReturnStatus.MEM_ERROR);
+            expect(-5).assertEqual(zlib.ReturnStatus.BUF_ERROR);
             done();
           })
           await gzip.gzflush(zlib.CompressFlushMode.PARTIAL_FLUSH).then((num) => {

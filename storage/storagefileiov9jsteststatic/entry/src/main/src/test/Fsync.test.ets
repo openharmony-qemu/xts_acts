@@ -45,7 +45,7 @@ export default function fileIOFsync() {
         fs.fsyncSync(file.fd);
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fsync_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

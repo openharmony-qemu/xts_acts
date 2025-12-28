@@ -617,6 +617,54 @@ export default function PowerTest() {
       })
 
     /**
+     * @tc.name   testSystem_API_Test_Power_Manager_1400
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0200
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSystem_API_Test_Power_Manager_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testSystem_API_Test_Power_Manager_1400';
+      try {
+        power.registerShutdownCallback((isReboot) => {
+          console.info(`${TAG} isReboot:${isReboot}`);
+        });
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSystem_API_Test_Power_Manager_1500
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0210
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSystem_API_Test_Power_Manager_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+      let TAG = 'testSystem_API_Test_Power_Manager_1500';
+      try {
+        power.unregisterShutdownCallback(() => {
+          console.info(`${TAG} unregisterShutdownCallback`);
+        });
+        expect().assertFail();
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(202);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   PowerKeyFilteringStrategy_DISABLE_LONG_PRESS_FILTERING_Test
      * @tc.number SUB_PowerSystem_PowerTest_JSTest_0200
      * @tc.desc   Power Key Filtering Strategy

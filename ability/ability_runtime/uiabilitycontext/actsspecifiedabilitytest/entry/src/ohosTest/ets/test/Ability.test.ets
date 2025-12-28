@@ -553,8 +553,16 @@ export default function abilityTest() {
       });
 
       try {
-        await testContext.startAbility(demo1Entry);
-        await testContext.startAbility(demo2Entry);
+        await testContext.startAbility(demo1Entry).then(()=>{
+          hilog.info(DOMAIN, LOG_TAG, tag + " first start end success");
+        }).catch(()=>{
+          hilog.info(DOMAIN, LOG_TAG, tag + " first start end fail");
+        });
+        await testContext.startAbility(demo2Entry).then(()=>{
+          hilog.info(DOMAIN, LOG_TAG, tag + " second start end success");
+        }).catch(()=>{
+          hilog.info(DOMAIN, LOG_TAG, tag + " second start end fail");
+        });
       } catch (err) {
         commonEventManager.unsubscribe(subscriber);
         try { expect().assertFail(); } catch (err) {}

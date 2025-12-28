@@ -98,7 +98,9 @@ struct WebHitTestTypeEnumTest {
 
   build() {
       Column() {
-        Text(this.rst).fontSize(20)
+        Text(this.rst)
+          .key('ResultShow')
+          .fontSize(20)
         Button('WebwebKeyboardControllerButton').key('WebwebKeyboardControllerButton')
           .onClick((e: ClickEvent) => {
             console.info('key==>' + this.str)

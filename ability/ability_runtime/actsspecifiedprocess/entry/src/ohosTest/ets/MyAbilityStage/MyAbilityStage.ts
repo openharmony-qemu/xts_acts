@@ -43,7 +43,7 @@ export default class MyAbilityStage extends AbilityStage {
   onCreate(): void {
     console.log('MyAbilityStage.onCreate is called');
   }
-  onNewProcessRequest(want: Want): string {
+  async onNewProcessRequestAsync(want: Want): Promise<string> {
     console.log('MyAbilityStage.onNewProcessRequest is called');
     let resultCode: BusinessError = {
       code: 0,
@@ -52,7 +52,7 @@ export default class MyAbilityStage extends AbilityStage {
     };
     if (want.parameters?.isOnNewProcessRequest === true) {
         try {
-          application.exitMasterProcessRole()
+          await application.exitMasterProcessRole()
             .then(() => {
               console.info('exit succeed');
               publishEvent(resultCode);

@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Leve
 import testNapi from 'libentry.so';
 import { display, window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 interface Capability{
   foldStatus:string;
@@ -37,7 +38,7 @@ export default function DisplayNdkTest() {
     let orientation:string[];
     let code:number;
     let displayFoldStatus:number;
-    beforeAll(() => {
+    beforeAll(async () => {
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
@@ -64,6 +65,16 @@ export default function DisplayNdkTest() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -1002,6 +1013,77 @@ export default function DisplayNdkTest() {
       }
     })
 
+    /**
+     * @tc.name   testNativeDisplayManager_ErrorCode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_ERRORCODE_0100
+     * @tc.desc   testNativeDisplayManager_ErrorCode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_ErrorCode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_ErrorCode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_ErrorCode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
+     * @tc.desc   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_FoldDisplayMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_FoldDisplayMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_FoldDisplayMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testNativeDisplayManager_SourceMode_enum
+     * @tc.number SUB_DISPLAY_SOURCE_MODE_0100
+     * @tc.desc   testNativeDisplayManager_SourceMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_SourceMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_SourceMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_SourceMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
 
   })
 }

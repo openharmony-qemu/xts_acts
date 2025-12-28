@@ -13,27 +13,38 @@
 * limitations under the License.
 */
 import {
-  describe,
+  afterAll,
+  afterEach,
   beforeAll,
   beforeEach,
-  afterEach,
-  afterAll,
-  it,
+  describe,
   expect,
-  TestType,
+  it,
   Level,
-  Size
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import LinkedList from '@ohos.util.LinkedList';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import Utils from '../Util.test';
+import ArrayList from '@ohos.util.ArrayList';
 
 class Temp {
   age: number;
   name: string;
 
   constructor(age: number = 0, name: string = "") {
+    this.age = age;
+    this.name = name;
+  }
+}
+
+class Temp1 {
+  age: number = 0
+  name: string = ""
+
+  constructor(age: number, name: string) {
     this.age = age;
     this.name = name;
   }
@@ -52,31 +63,32 @@ export default function LinkedListTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testLinkedListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListAdd0001';
-    //   try {
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     // linkList.add({
-    //     //   age: 10, name: "zhang"
-    //     // });
-    //     linkList.add(new C1(10, "zhang"));
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //     let jsonResult = JSON.stringify(linkList);
-    //     console.log(`${TAG} jsonResult: ${jsonResult}`);
-    //     expect(jsonResult)
-    //       .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true,"6":[0,1,2,null]}`);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListAdd0001';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.add("zhang san");
+        linkList.add(1);
+        // linkList.add({
+        //   age: 10, name: "zhang"
+        // });
+        linkList.add(new Temp(10, "zhang"));
+        linkList.add(undefined);
+        linkList.add(null);
+        linkList.add(true);
+        linkList.add([0, 1, 2, undefined]);
+        let jsonResult = JSON.stringify(linkList);
+        console.log(`${TAG} jsonResult: ${jsonResult}`);
+        expect(jsonResult)
+          .assertEqual(`{"0":"zhang san","1":1,"2":{"age":10,"name":"zhang"},"4":null,"5":true,"6":[0,1,2,null]}`);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testLinkedListAdd0002
@@ -97,7 +109,8 @@ export default function LinkedListTest1() {
         let jsonResult = JSON.stringify(linkList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(linkList.get(0)).assertEqual(param);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -111,30 +124,29 @@ export default function LinkedListTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testLinkedListAddFirst0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListAddFirst0001';
-    //   try {
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.addFirst("zhang san");
-    //     linkList.addFirst(1);
-    //     linkList.addFirst({
-    //       age: 10, name: "zhang"
-    //     });
-    //     linkList.addFirst(undefined);
-    //     linkList.addFirst(null);
-    //     linkList.addFirst(true);
-    //     linkList.addFirst([0, 1, 2, undefined]);
-    //     let jsonResult = JSON.stringify(linkList);
-    //     console.log(`${TAG} jsonResult: ${jsonResult}`);
-    //     expect(jsonResult)
-    //       .assertEqual(`{"0":[0,1,2,null],"1":true,"2":null,"4":{"age":10,"name":"zhang"},"5":1,"6":"zhang san"}`);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListAddFirst0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListAddFirst0001';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.addFirst("zhang san");
+        linkList.addFirst(1);
+        linkList.addFirst(new Temp(10, "zhang"));
+        linkList.addFirst(undefined);
+        linkList.addFirst(null);
+        linkList.addFirst(true);
+        linkList.addFirst([0, 1, 2, undefined]);
+        let jsonResult = JSON.stringify(linkList);
+        console.log(`${TAG} jsonResult: ${jsonResult}`);
+        expect(jsonResult)
+          .assertEqual(`{"0":[0,1,2,null],"1":true,"2":null,"4":{"age":10,"name":"zhang"},"5":1,"6":"zhang san"}`);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testLinkedListAddFirst0002
@@ -155,7 +167,8 @@ export default function LinkedListTest1() {
         let jsonResult = JSON.stringify(linkList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(linkList.get(0)).assertEqual(param);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -184,7 +197,8 @@ export default function LinkedListTest1() {
         let removeResult = linkList.removeByIndex(index);
         console.log(`${TAG} removeResult: ${removeResult}`);
         expect(String(linkList.has(param))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -213,7 +227,8 @@ export default function LinkedListTest1() {
         let removeResult = linkList.removeByIndex(index);
         console.log(`${TAG} removeResult: ${removeResult}`);
         expect(String(linkList.has(param))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -256,7 +271,8 @@ export default function LinkedListTest1() {
         expect(String(linkList.has(true))).assertEqual('true');
         expect(String(linkList.has(arr))).assertEqual('true');
         expect(String(linkList.has(param))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -293,7 +309,8 @@ export default function LinkedListTest1() {
         linkList.forEach((value, index) => {
           expect(String(linkList.get(index))).assertEqual(String(value));
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -319,7 +336,8 @@ export default function LinkedListTest1() {
         linkList.add(2);
         let index3 = linkList.getIndexOf(2);
         expect(String(index1 === index2 && index2 === index3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -348,7 +366,8 @@ export default function LinkedListTest1() {
         let index103 = linkList.removeByIndex(linkList.getIndexOf(3));
         let index104 = linkList.removeByIndex(linkList.getIndexOf(3));
         expect(String(index103 == index104)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -374,7 +393,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeFirst() as Number;
         linkList.add(index);
         expect(String(linkList.getIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -400,7 +420,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeLast() as Number;
         linkList.add(index);
         expect(String(linkList.getIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -426,7 +447,8 @@ export default function LinkedListTest1() {
         linkList.add(2);
         let index3 = linkList.getLastIndexOf(2);
         expect(String(index1 !== index2 && index2 !== index3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -455,7 +477,8 @@ export default function LinkedListTest1() {
         let index103 = linkList.removeByIndex(linkList.getLastIndexOf(3));
         let index104 = linkList.removeByIndex(linkList.getLastIndexOf(3));
         expect(String(index103 == index104)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -481,7 +504,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeFirst() as Number;
         linkList.add(index);
         expect(String(linkList.getLastIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -507,7 +531,8 @@ export default function LinkedListTest1() {
         let index: Number = linkList.removeLast() as Number;
         linkList.add(index);
         expect(String(linkList.getLastIndexOf(index))).assertEqual(String(linkList.length - 1));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -533,7 +558,8 @@ export default function LinkedListTest1() {
         let old: Number = linkList.get(0) as Number;
         linkList.removeFirstFound(old);
         expect(String(old != linkList.get(0))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -561,7 +587,8 @@ export default function LinkedListTest1() {
         expect(String(index1 !== index2 && index2 !== index3)).assertEqual('true');
         linkList.removeLastFound(2);
         expect(String(linkList.getLastIndexOf(2))).assertEqual(String(index2));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -586,7 +613,8 @@ export default function LinkedListTest1() {
         linkList.forEach((value, index) => {
           expect(String(value == newLinkList.get(index))).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -613,7 +641,8 @@ export default function LinkedListTest1() {
         newLinkList.insert(0, 1);
         expect(String(length == linkList.length)).assertEqual('true');
         expect(String(newLength != newLinkList.length)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -640,7 +669,8 @@ export default function LinkedListTest1() {
         newLinkList.removeFirstFound(3);
         expect(String(length == linkList.length)).assertEqual('true');
         expect(String(newLength != newLinkList.length)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -667,7 +697,8 @@ export default function LinkedListTest1() {
         newLinkList.addFirst(3);
         expect(String(length == linkList.length)).assertEqual('true');
         expect(String(newLength != newLinkList.length)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -692,7 +723,8 @@ export default function LinkedListTest1() {
         newLinkList.forEach((value, index) => {
           expect(String(value == linkList.get(index))).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -718,7 +750,8 @@ export default function LinkedListTest1() {
         newLinkList.add(1);
         expect(String(newLinkList.length)).assertEqual('1');
         expect(String(linkList.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -744,7 +777,8 @@ export default function LinkedListTest1() {
         linkList.add(1);
         expect(String(linkList.length)).assertEqual('1');
         expect(String(newLinkList.length)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -909,39 +943,30 @@ export default function LinkedListTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testLinkedListSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0005';
-    //   try {
-    //     class Temp {
-    //       age: number = 0;
-    //       name: string = "";
-    //
-    //       constructor(age: number, name: string) {
-    //         this.age = age;
-    //         this.name = name;
-    //       }
-    //     }
-    //
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp = new Temp(10, "zhang");
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     let setParam = linkList.set(0, "li si");
-    //     let firstParam = linkList.getFirst();
-    //     expect(String(setParam == firstParam)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListSet0005';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.add("zhang san");
+        linkList.add(1);
+        let param: Temp = new Temp(10, "zhang");
+        linkList.add(param);
+        linkList.add(undefined);
+        linkList.add(null);
+        linkList.add(true);
+        linkList.add([0, 1, 2, undefined]);
+
+        let setParam = linkList.set(0, "li si");
+        let firstParam = linkList.getFirst();
+        expect(String(setParam == firstParam)).assertEqual('true');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testLinkedListSet0006
@@ -951,40 +976,30 @@ export default function LinkedListTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testLinkedListSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testLinkedListSet0006';
-    //   try {
-    //     class Temp1 {
-    //       age: number = 0
-    //       name: string = ""
-    //
-    //       constructor(age: number, name: string) {
-    //         this.age = age;
-    //         this.name = name;
-    //       }
-    //     }
-    //
-    //     let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     linkList.add("zhang san");
-    //     linkList.add(1);
-    //     let param: Temp1 = new Temp1(10, "zhang");
-    //     linkList.add(param);
-    //     linkList.add(undefined);
-    //     linkList.add(null);
-    //     linkList.add(true);
-    //     linkList.add([0, 1, 2, undefined]);
-    //
-    //     let setParam = linkList.set(linkList.length - 1, "li si");
-    //     let lastParam = linkList.getLast();
-    //     expect(String(setParam == lastParam)).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testLinkedListSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testLinkedListSet0006';
+      try {
+        let linkList: LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new LinkedList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        linkList.add("zhang san");
+        linkList.add(1);
+        let param: Temp1 = new Temp1(10, "zhang");
+        linkList.add(param);
+        linkList.add(undefined);
+        linkList.add(null);
+        linkList.add(true);
+        linkList.add([0, 1, 2, undefined]);
 
+        let setParam = linkList.set(linkList.length - 1, "li si");
+        let lastParam = linkList.getLast();
+        expect(String(setParam == lastParam)).assertEqual('true');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.name   testLinkedListSymbolIterator0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0100
@@ -1005,7 +1020,8 @@ export default function LinkedListTest1() {
         for (let tmp of iter) {
           expect(String(linkList.has(tmp))).assertEqual('true');
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1035,7 +1051,8 @@ export default function LinkedListTest1() {
           }
           tmp = iter.next();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1061,7 +1078,8 @@ export default function LinkedListTest1() {
           console.log("value:" + value, "index:" + index);
           expect(linkedList.get(index)).assertEqual(value);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1089,8 +1107,10 @@ export default function LinkedListTest1() {
           console.log("value:" + value, "index:" + index);
           expect(linkedList.get(index)).assertEqual(value)
         });
-        expect(linkedListNew.convertToArray()).assertEqual(0);
-      } catch (err: BusinessError) {
+        expect(linkedListNew.length).assertEqual(1);
+        expect(linkedListNew.get(0)).assertEqual(0);
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1115,9 +1135,10 @@ export default function LinkedListTest1() {
         let index = 0;
         linkedList.forEach((value: number) => {
           expect(String(linkedList.get(index))).assertEqual(String(value));
-          index ++;
+          index++;
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1142,7 +1163,8 @@ export default function LinkedListTest1() {
         linkedList.forEach((value: number, index: int, linkedList: LinkedList<number>) => {
           expect(linkedList.get(index)).assertEqual(value);
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1161,7 +1183,8 @@ export default function LinkedListTest1() {
       try {
         let linkList: LinkedList<number> = new LinkedList<number>();
         linkList.removeLastFound(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(err.code).assertEqual(10200017)
       }
@@ -1278,118 +1301,21 @@ export default function LinkedListTest1() {
     });
 
     /**
-     * @tc.name   testUtil3_004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_004
+     * @tc.name   testUtil3_010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_010
      * @tc.desc   Test the util
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testUtil3_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testUtil3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let linkedList: LinkedList<int> = new LinkedList<int>();
+      expect(linkedList.length).assertEqual(0);
       linkedList.add(2);
       linkedList.add(4);
       linkedList.add(5);
       linkedList.add(4);
-      let result = linkedList.remove(2);
-      expect(result).assertEqual(true);
-      expect(linkedList.length).assertEqual(3);
-    })
-
-    /**
-     * @tc.name   testUtil3_005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_005
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let linkedList: LinkedList<int> = new LinkedList<int>();
-      linkedList.add(2);
-      linkedList.add(4);
-      linkedList.add(5);
-      linkedList.add(4);
-      let result = linkedList.getFirst();
-      expect(result).assertEqual(2);
-    })
-
-    /**
-     * @tc.name   testUtil3_006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_006
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let linkedList: LinkedList<int> = new LinkedList<int>();
-      linkedList.add(2);
-      linkedList.add(4);
-      linkedList.add(5);
-      linkedList.add(4);
-      let result = linkedList.getLast();
-      expect(result).assertEqual(4);
-    })
-
-    /**
-     * @tc.name   testUtil3_007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_007
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let linkedList: LinkedList<int> = new LinkedList<int>();
-      try {
-         linkedList.getFirst();
-      } catch (e) {
-        if (e instanceof BusinessError) {
-          expect(e.code).assertEqual(10200010);
-        }else{
-          expect().assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   testUtil3_008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_008
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let linkedList: LinkedList<int> = new LinkedList<int>();
-      try {
-        linkedList.getLast();
-      } catch (e) {
-        if (e instanceof BusinessError) {
-          expect(e.code).assertEqual(10200010);
-        }else{
-          expect().assertFail();
-        }
-      }
-    })
-
-    /**
-     * @tc.name   testUtil3_009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_009
-     * @tc.desc   Test the util
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testUtil3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let linkedList: LinkedList<int | string> = new LinkedList<int | string>();
-      linkedList.add(2);
-      linkedList.add(4);
-      linkedList.add(5);
-      linkedList.add(4);
-      let result = linkedList.set(2, "b");
-      expect(result).assertEqual("b");
+      expect(linkedList.length).assertEqual(4);
     })
   });
 }

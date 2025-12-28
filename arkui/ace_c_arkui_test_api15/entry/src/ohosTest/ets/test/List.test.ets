@@ -31,6 +31,7 @@ import gesturecancelTest from "./gesturecancelTest/gesturecancelTest.test"
 import gestureRecognizerTest from './gestureRecognizer/GestureRecognizerTest.test'
 import EventInfoTest from "./eventInfo/EventInfoTest.test"
 import snapShotTest from './snapShot/snapShotTest.test'
+import ProgressLinearStyleOptionTest from "./progress/ProgressLinearStyleOption.test"
 import SwiperChangeIndexTest from "./swiper/SwiperChangeIndex.test"
 
 export default function testsuite() {
@@ -53,5 +54,6 @@ export default function testsuite() {
    gestureRecognizerTest();
    EventInfoTest();
    snapShotTest();
+   ProgressLinearStyleOptionTest();
    SwiperChangeIndexTest();
 }

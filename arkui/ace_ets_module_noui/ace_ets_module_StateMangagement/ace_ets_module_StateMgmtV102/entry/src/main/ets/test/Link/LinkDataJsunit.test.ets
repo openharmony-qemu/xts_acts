@@ -64,7 +64,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0100', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0100 START');
       let strJson = getInspectorByKey('link_str');
@@ -84,7 +84,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -108,7 +108,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0300', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0300 START');
       let strJson = getInspectorByKey('link_num');
@@ -128,7 +128,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0400', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0400', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0400 START');
       let driver = await UiDriver.create()
@@ -152,7 +152,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0500', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0500', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0500 START');
       let strJson = getInspectorByKey('link_bon');
@@ -172,7 +172,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0600', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0600', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0600 START');
       let driver = await UiDriver.create()
@@ -196,7 +196,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0700', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0700', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0700 START');
       let strJson = getInspectorByKey('link_enum');
@@ -216,7 +216,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0800', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0800', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0800 START');
       let driver = await UiDriver.create()
@@ -240,7 +240,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_0900', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_0900', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_0900 START');
       let strJson = getInspectorByKey('link_cla');
@@ -260,7 +260,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_1000', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_1000', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_1000 START');
       let driver = await UiDriver.create()
@@ -284,7 +284,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_1100', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_1100', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_1100 START');
       let strJson = getInspectorByKey('link_strArr');
@@ -304,7 +304,7 @@ export default function LinkDataJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('LinkDataJsunit_1200', Level.LEVEL0, async (done: Function) => {
+    it('LinkDataJsunit_1200', Level.LEVEL1, async (done: Function) => {
 
       console.info('LinkDataJsunit_1200 START');
       let driver = await UiDriver.create()

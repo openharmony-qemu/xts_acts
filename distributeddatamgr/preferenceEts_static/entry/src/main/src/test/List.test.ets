@@ -14,6 +14,8 @@
  */
 
 import preferenceTest from "./Preferences.test";
+import PreferencesInterfaceTest from "./PreferencesInterfaceTest.test";
 export default function testsuite() {
     preferenceTest();
+    PreferencesInterfaceTest();
 }

@@ -197,6 +197,10 @@ struct Index {
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .zoomAccess(false)
+        .onSslErrorEventReceive((e) => {
+          // 忽略ssl证书错误，便于测试一些证书过期的网站，如：https://expired.badssl.com
+          e.handler.handleConfirm();
+        })
         .onSslErrorEvent((event: SslErrorEvent) => {
           if (event) {
             console.log('onSslErrorEvent url: ' + event.url);

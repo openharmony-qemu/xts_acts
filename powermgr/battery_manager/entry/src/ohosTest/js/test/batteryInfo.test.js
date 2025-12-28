@@ -503,7 +503,7 @@ export default function BatteryInfoTest() {
         let batteryLevel = batteryInfo.batteryCapacityLevel;
         console.info(`${TAG} batteryLevel: ${batteryLevel}`);
         console.info(`${TAG} batteryLevel type: ${typeof batteryLevel}`);
-        expect(batteryLevel).assertLargerOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_FULL);
+        expect(batteryLevel).assertLargerOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_NONE);
         expect(batteryLevel).assertLessOrEqual(batteryInfo.BatteryCapacityLevel.LEVEL_SHUTDOWN);
       } catch (error) {
         console.error(`${TAG} error: ${error.code} ${error.message}}`);
@@ -857,6 +857,26 @@ export default function BatteryInfoTest() {
         expect(typeof nowCurrent).assertEqual('number');
         expect(nowCurrent).assertLargerOrEqual(-10000);
         expect(nowCurrent).assertLessOrEqual(10000);
+      } catch (error) {
+        console.error(`${TAG} error: ${error.code} ${error.message}}`);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   enum_level_state_JSTest_none
+     * @tc.number SUB_PowerSystem_BatteryInfo_JSTest_0410
+     * @tc.desc   Battery Present Interface Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('enum_level_state_JSTest_none', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
+      let TAG = 'enum_level_state_JSTest_none';
+      try {
+        let batteryLevelState = batteryInfo.BatteryCapacityLevel.LEVEL_NONE;
+        console.info(`${TAG} batteryLevelState: ${batteryLevelState}`);
+        expect(batteryLevelState).assertEqual(0);
       } catch (error) {
         console.error(`${TAG} error: ${error.code} ${error.message}}`);
         expect().assertFail();

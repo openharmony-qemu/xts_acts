@@ -70,6 +70,8 @@ import StorageDeprecatedTest from './Environment/StorageDeprecatedTest.test';
 import getSharedLocalStorageTest from './GetSharedLocalTest/getSharedLocalStorage.test';
 import useSharedStorageTest from './GetSharedLocalTest/useSharedStorage.test';
 import persistStorageATest from './GetSharedLocalTest/persistStorageA.test';
+import Enum001 from './enum/Enum001.test';
+
 export default function testsuite() {
     ApplySync001();
     FlushUpdates001();
@@ -129,4 +131,5 @@ export default function testsuite() {
     getSharedLocalStorageTest();
     useSharedStorageTest();
     persistStorageATest();
+    Enum001();
 }

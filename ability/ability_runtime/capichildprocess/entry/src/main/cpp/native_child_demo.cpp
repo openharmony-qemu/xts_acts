@@ -62,4 +62,33 @@ void Main(NativeChildProcess_Args args)
     delay_ms(200);
     OH_LOG_INFO(LOG_APP, "=================== end");
 }
+
+void MainLoop(NativeChildProcess_Args args)
+{
+    // 子进程的入口函数，实现子进程的业务逻辑
+    // 函数返回后子进程随即退出
+    OH_LOG_INFO(LOG_APP, "NativeChildProcess Main Enter ===================");
+    OH_LOG_INFO(LOG_APP, "entryParams:%{public}s", args.entryParams);
+    auto successMsg = "SUCC";
+
+    OH_LOG_INFO(LOG_APP, "=================== start read fd");
+    NativeChildProcess_Fd *current = args.fdList.head;
+    if (current != nullptr) {
+        auto fdName = current->fdName;
+        auto fd = current->fd;
+        OH_LOG_INFO(LOG_APP, "=================== fd:%{public}d", fd);
+        int32_t bufferLen = 5;
+        std::vector<char> buffer(bufferLen);
+        ssize_t bytesRead = read(fd, buffer.data(), buffer.size());
+        OH_LOG_INFO(LOG_APP, "read Result:%{public}s", buffer.data());
+        write(fd, successMsg, strlen(successMsg));
+        current = current->next;
+        close(fd);
+    }
+    OH_LOG_INFO(LOG_APP, "=================== start loop");
+    while (true) {
+        ;
+    }
+    OH_LOG_INFO(LOG_APP, "=================== end");
+}
 }

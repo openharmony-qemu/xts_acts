@@ -47,9 +47,9 @@ export default function handleCameraPhotoTest() {
           let flag: number = 2;
           let photoAsset: photoAccessHelper.PhotoAsset | undefined = undefined;
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined = undefined;
-          let date_added_before: int | long | number | string | boolean | undefined = 0;
-          let date_modified_before: int | long | number | string | boolean | undefined = 0;
-          let size_before: int | long | number | string | boolean | undefined = 0;
+          let date_added_before: int | long | number | string | boolean | undefined = 0 as Int;
+          let date_modified_before: int | long | number | string | boolean | undefined = 0 as Int;
+          let size_before: int | long | number | string | boolean | undefined = 0 as Int;
           let assetCount: int | undefined = 0;
           while (flag > 0) {
             fetchResult = await helper.getAssets(fetchOptions);

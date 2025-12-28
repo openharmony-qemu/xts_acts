@@ -15,8 +15,9 @@
 
 import webConfigCookieSync from './WebConfigCookieSync.test'
 import webArkWebCookieManagerSaveCookie from './WebArkWebCookieManagerSaveCookie.test'
+import lazyInitializeWebEngineInCookieManager from './LazyInitializeWebEngineInCookieManager.test'
 
 export default function testsuite() {
   webConfigCookieSync()
-  webArkWebCookieManagerSaveCookie()
+  lazyInitializeWebEngineInCookieManager()
 }

@@ -14,8 +14,10 @@
  */
 import DialogXComponent from "./nativexcomponent/DialogXComponent.test"
 import DragAndDrogXComponent from "./nativexcomponent/DragAndDrogXComponent.test"
+import NodeEventTest from './NodeEventTest/NodeEventTest.test'
 
 export default function testsuite() {
   DragAndDrogXComponent()
   DialogXComponent()
+  NodeEventTest()
 }

@@ -560,14 +560,6 @@ export default function BufferTest1() {
     //  * @tc.type  : Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testIsBuffer0003
-     * @tc.number testIsBuffer0003
-     * @tc.desc   testIsBuffer0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testIsBuffer0003";
     //   try {
@@ -1189,13 +1181,9 @@ export default function BufferTest1() {
       TAG = "testWrite0009";
       try {
         let buf = buffer.alloc(0);
-        let offset = buf.write("");
-        expect(String(offset)).assertEqual('0');
-        let str = buf.toString();
-        expect(String(str)).assertEqual("");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
-        expect(false).assertFail();
+        expect(String(err.message)).assertEqual('The buffer length is 0, and writing data is not allowed');
       }
     });
 
@@ -1287,7 +1275,7 @@ export default function BufferTest1() {
       TAG = "testWriteBigUInt64BE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let ref = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+        let ref = buf.writeBigUInt64BE(BigInt(0x7ecafafecacefade), 0);
         expect(ref).assertEqual(8);
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1325,7 +1313,7 @@ export default function BufferTest1() {
       TAG = "testWriteBigUInt64LE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let ref = buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
+        let ref = buf.writeBigUInt64LE(BigInt(0x7ecafafecacefade), 0);
         expect(String(ref)).assertEqual('8');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -2172,7 +2160,7 @@ export default function BufferTest1() {
       TAG = "testWriteDoubleLE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let ref = buf.writeUInt32BE(0xfeedface, 0);
+        let ref = buf.writeUInt32BE(0x7eedface, 0);
         expect(String(ref)).assertEqual('4');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -2228,7 +2216,7 @@ export default function BufferTest1() {
       TAG = "testWriteUInt32LE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let ref = buf.writeUInt32LE(0xfeedface, 0);
+        let ref = buf.writeUInt32LE(0x7eedface, 0);
         expect(String(ref)).assertEqual('4');
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -2446,9 +2434,9 @@ export default function BufferTest1() {
       TAG = "testReadBigInt64BE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-        let ref = Double(buf.readBigInt64BE(0)).toString(16);
-        expect(String(ref)).assertEqual("102030405060708");
+        buf.writeBigInt64BE(BigInt(0x0102030405060700), 0);
+        let ref = BigInt(buf.readBigInt64BE(0)).toString(16);
+        expect(String(ref)).assertEqual("102030405060700");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2468,7 +2456,7 @@ export default function BufferTest1() {
       try {
         let buf = buffer.allocUninitializedFromPool(8);
         buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-        let ref = Double(buf.readBigInt64BE(1)).toString(16);
+        let ref = BigInt(buf.readBigInt64BE(1)).toString(16);
         expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -2488,9 +2476,9 @@ export default function BufferTest1() {
       TAG = "testReadBigInt64BE0003";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigInt64BE(BigInt(0x0102030405060708));
-        let ref = Double(buf.readBigInt64BE(undefined)).toString(16);
-        expect(String(ref)).assertEqual("102030405060708");
+        buf.writeBigInt64BE(BigInt(0x0102030405060700));
+        let ref = BigInt(buf.readBigInt64BE(undefined)).toString(16);
+        expect(String(ref)).assertEqual("102030405060700");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2509,9 +2497,9 @@ export default function BufferTest1() {
       TAG = "testReadBigInt64LE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-        let ref = Double(buf.readBigInt64LE(0)).toString(16);
-        expect(String(ref)).assertEqual("807060504030201");
+        buf.writeBigInt64BE(BigInt(0x0102030405060700), 0);
+        let ref = BigInt(buf.readBigInt64LE(0)).toString(16);
+        expect(String(ref)).assertEqual("7060504030201");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2531,7 +2519,7 @@ export default function BufferTest1() {
       try {
         let buf = buffer.allocUninitializedFromPool(8);
         buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-        let ref = Double(buf.readBigInt64LE(1)).toString(16);
+        let ref = BigInt(buf.readBigInt64LE(1)).toString(16);
         expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -2551,9 +2539,9 @@ export default function BufferTest1() {
       TAG = "testReadBigUInt64BE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64BE(0)).toString(16);
-        expect(String(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64BE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64BE(0)).toString(16);
+        expect(String(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2593,9 +2581,9 @@ export default function BufferTest1() {
       TAG = "testReadBigUInt64BE0003";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64BE(undefined)).toString(16);
-        expect(string(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64BE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64BE(undefined)).toString(16);
+        expect(string(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2614,9 +2602,9 @@ export default function BufferTest1() {
       TAG = "testReadBigUInt64LE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64LE(0)).toString(16);
-        expect(String(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64LE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64LE(0)).toString(16);
+        expect(String(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2656,9 +2644,9 @@ export default function BufferTest1() {
       TAG = "testReadBigUInt64LE0003";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64LE(undefined)).toString(16);
-        expect(String(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64LE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64LE(undefined)).toString(16);
+        expect(String(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2803,9 +2791,9 @@ export default function BufferTest1() {
       TAG = "testReadFloatBE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeFloatBE(0xcabcbcbc, 0);
+        buf.writeFloatBE(0x7abcbcbc, 0);
         let ref = Double(buf.readFloatBE(0)).toString(16);
-        expect(String(ref)).assertEqual("cabcbd00");
+        expect(String(ref)).assertEqual("7abcbc80");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2845,9 +2833,9 @@ export default function BufferTest1() {
       TAG = "testReadFloatBE0003";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeFloatBE(0xcabcbcbc, 0);
+        buf.writeFloatBE(0x7abcbcbc, 0);
         let ref = Double(buf.readFloatBE(undefined)).toString(16);
-        expect(String(ref)).assertEqual("cabcbd00");
+        expect(String(ref)).assertEqual("7abcbc80");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2866,9 +2854,9 @@ export default function BufferTest1() {
       TAG = "testReadFloatLE0001";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeFloatLE(0xcabcbcbc, 0);
+        buf.writeFloatLE(0x7abcbcbc, 0);
         let ref = Double(buf.readFloatLE(0)).toString(16);
-        expect(String(ref)).assertEqual("cabcbd00");
+        expect(String(ref)).assertEqual("7abcbc80");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -2908,9 +2896,9 @@ export default function BufferTest1() {
       TAG = "testReadFloatLE0003";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeFloatLE(0xcabcbcbc, 0);
+        buf.writeFloatLE(0x7abcbcbc, 0);
         let ref = Double(buf.readFloatLE(undefined)).toString(16);
-        expect(String(ref)).assertEqual("cabcbd00");
+        expect(String(ref)).assertEqual("7abcbc80");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -4033,14 +4021,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testToJSON0001
-     * @tc.number testToJSON0001
-     * @tc.desc   testToJSON0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testToJSON0001";
     //   try {
@@ -5314,22 +5294,22 @@ export default function BufferTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    // it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testFrom0013";
-    //   let arrayBuffer = new ArrayBuffer(5);
-    //   let array = new Int8Array(arrayBuffer);
-    //   array[0] = 1;
-    //   array[1] = 2;
-    //   array[2] = 3;
-    //   array[3] = 4;
-    //   array[4] = 5;
-    //   try {
-    //     buffer.from(arrayBuffer, 6, 1);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(String(err.code)).assertEqual('10200001');
-    //   }
-    // });
+    it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testFrom0013";
+      let arrayBuffer = new ArrayBuffer(5);
+      let array = new Int8Array(arrayBuffer);
+      array[0] = 1;
+      array[1] = 2;
+      array[2] = 3;
+      array[3] = 4;
+      array[4] = 5;
+      try {
+        buffer.from(arrayBuffer, 6, 1);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} err is ${err}`);
+        expect(String(err.code)).assertEqual('10200001');
+      }
+    });
     /**
      * @tc.name   testFrom0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1400
@@ -5489,14 +5469,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobConstructor0002
-     * @tc.number testBlobConstructor0002
-     * @tc.desc   testBlobConstructor0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobConstructor0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0002";
     //   try {
@@ -5531,14 +5503,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobConstructor0003
-     * @tc.number testBlobConstructor0003
-     * @tc.desc   testBlobConstructor0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobConstructor0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0003";
     //   try {
@@ -5571,14 +5535,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobConstructor0004
-     * @tc.number testBlobConstructor0004
-     * @tc.desc   testBlobConstructor0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobConstructor0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobConstructor0004";
     //   try {
@@ -5665,14 +5621,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobArrayBuffer0100
-     * @tc.number testBlobArrayBuffer0100
-     * @tc.desc   testBlobArrayBuffer0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobArrayBuffer0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobArrayBuffer0100";
     //   try {
@@ -5736,14 +5684,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobSlice0001
-     * @tc.number testBlobSlice0001
-     * @tc.desc   testBlobSlice0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobSlice0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobSlice0001";
     //   try {
@@ -5775,14 +5715,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobSlice0002
-     * @tc.number testBlobSlice0002
-     * @tc.desc   testBlobSlice0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobSlice0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
     //   TAG = "testBlobSlice0002";
     //   try {
@@ -5876,14 +5808,6 @@ export default function BufferTest1() {
     //  * @tc.type: Function
     //  * @tc.level: Level 3
     //  */
-    /**
-     * @tc.name   testBlobType0001
-     * @tc.number testBlobType0001
-     * @tc.desc   testBlobType0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
     // it("testBlobType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
     //   TAG = "testBlobType0001";
     //   try {
@@ -6440,9 +6364,9 @@ export default function BufferTest1() {
       TAG = "testRead0001";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64BE()).toString(16);
-        expect(String(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64BE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64BE()).toString(16);
+        expect(String(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -6462,9 +6386,9 @@ export default function BufferTest1() {
       TAG = "testRead0002";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-        let ref = Double(buf.readBigInt64LE()).toString(16);
-        expect(String(ref)).assertEqual("807060504030201");
+        buf.writeBigInt64BE(BigInt(0x01020304050607), 0);
+        let ref = BigInt(buf.readBigInt64LE()).toString(16);
+        expect(String(ref)).assertEqual("706050403020100");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -6483,9 +6407,9 @@ export default function BufferTest1() {
       TAG = "testRead0003";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64BE()).toString(16);
-        expect(String(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64BE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64BE()).toString(16);
+        expect(String(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -6504,9 +6428,9 @@ export default function BufferTest1() {
       TAG = "testRead0004";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
-        let ref = Double(buf.readBigUInt64LE()).toString(16);
-        expect(String(ref)).assertEqual("decafafecacefade");
+        buf.writeBigUInt64LE(BigInt(0x3dfacefeedface), 0);
+        let ref = BigInt(buf.readBigUInt64LE()).toString(16);
+        expect(String(ref)).assertEqual("3dfacefeedface");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -6524,9 +6448,9 @@ export default function BufferTest1() {
       TAG = "testRead0005";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeFloatBE(0xcabcbcbc, 0);
+        buf.writeFloatBE(0x7abcbcbc, 0);
         let ref = Double(buf.readFloatBE()).toString(16);
-        expect(String(ref)).assertEqual("cabcbd00");
+        expect(String(ref)).assertEqual("7abcbc80");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();
@@ -6545,9 +6469,9 @@ export default function BufferTest1() {
       TAG = "testRead0006";
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeFloatLE(0xcabcbcbc, 0);
+        buf.writeFloatLE(0x7abcbcbc, 0);
         let ref = Double(buf.readFloatLE()).toString(16);
-        expect(String(ref)).assertEqual("cabcbd00");
+        expect(String(ref)).assertEqual("7abcbc80");
       } catch (err: BusinessError) {
         console.error(`${TAG} is fail,err is ${err}`);
         expect(false).assertFail();

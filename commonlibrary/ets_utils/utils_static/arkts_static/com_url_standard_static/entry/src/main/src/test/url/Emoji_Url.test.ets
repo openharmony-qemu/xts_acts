@@ -51,7 +51,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\ude0a', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%98%8A=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -72,7 +73,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\udc64', '2');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%91%A4=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -93,7 +95,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\udc6b', '3');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%91%AB=3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -114,7 +117,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\u260e', '4');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%E2%98%8E=4");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -135,7 +139,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\udc79', '5');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%91%B9=5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -156,7 +161,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\udd5b', '6');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%95%9B=6");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -177,7 +183,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83c\udf4f', '7');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%8D%8F=7");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -198,7 +205,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\udd03', '8');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%94%83=8");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -219,7 +227,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83c\udf41', '9');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%8D%81=9");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -240,7 +249,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\u2666', '10');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%E2%99%A6=10");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -261,7 +271,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83d\udc48', '11');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%91%88=11");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -282,7 +293,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.append('\ud83e\udd3c\u200d\u2642\ufe0f', '12');
         expect(paramsObject.toString()).assertEqual("fod=1&bard=2&%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F=12");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -303,7 +315,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\ude0a');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -324,7 +337,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\udc64');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -345,7 +359,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\udc6b');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -366,7 +381,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\u260e');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -387,7 +403,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\udc79');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -408,7 +425,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\udd5b');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -429,7 +447,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83c\udf4f');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -450,7 +469,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\udd03');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -471,7 +491,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83c\udf41');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -492,7 +513,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\u2666');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -513,7 +535,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83d\udc48');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -534,7 +557,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.delete('\ud83e\udd3c\u200d\u2642\ufe0f');
         expect(paramsObject.toString()).assertEqual("bard=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -555,7 +579,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\ude0a', '3');
         expect(params.getAll('\ud83d\ude0a').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -576,7 +601,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc64', '3');
         expect(params.getAll('\ud83d\udc64').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -597,7 +623,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc6b', '3');
         expect(params.getAll('\ud83d\udc6b').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -618,7 +645,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\u260e', '3');
         expect(params.getAll('\u260e').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -639,7 +667,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc79', '3');
         expect(params.getAll('\ud83d\udc79').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -660,7 +689,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udd5b', '3');
         expect(params.getAll('\ud83d\udd5b').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -681,7 +711,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83c\udf4f', '3');
         expect(params.getAll('\ud83c\udf4f').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -702,7 +733,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udd03', '3');
         expect(params.getAll('\ud83d\udd03').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -723,7 +755,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83c\udf41', '3');
         expect(params.getAll('\ud83c\udf41').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -744,7 +777,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\u2666', '3');
         expect(params.getAll('\u2666').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -765,7 +799,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc48', '3');
         expect(params.getAll('\ud83d\udc48').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -786,7 +821,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83e\udd3c\u200d\u2642\ufe0f', '3');
         expect(params.getAll('\ud83e\udd3c\u200d\u2642\ufe0f').toString()).assertEqual("1,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -823,14 +859,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0002
-     * @tc.number testUrLEntries9Emoji0002
-     * @tc.desc   testUrLEntries9Emoji0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0002";
     //   try {
@@ -854,14 +882,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0003
-     * @tc.number testUrLEntries9Emoji0003
-     * @tc.desc   testUrLEntries9Emoji0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0003";
     //   try {
@@ -885,14 +905,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0004
-     * @tc.number testUrLEntries9Emoji0004
-     * @tc.desc   testUrLEntries9Emoji0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0004";
     //   try {
@@ -916,14 +928,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0005
-     * @tc.number testUrLEntries9Emoji0005
-     * @tc.desc   testUrLEntries9Emoji0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0005";
     //   try {
@@ -947,14 +951,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0006
-     * @tc.number testUrLEntries9Emoji0006
-     * @tc.desc   testUrLEntries9Emoji0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0006";
     //   try {
@@ -978,14 +974,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0007
-     * @tc.number testUrLEntries9Emoji0007
-     * @tc.desc   testUrLEntries9Emoji0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0007";
     //   try {
@@ -1009,14 +997,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0008
-     * @tc.number testUrLEntries9Emoji0008
-     * @tc.desc   testUrLEntries9Emoji0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0008";
     //   try {
@@ -1040,14 +1020,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0009
-     * @tc.number testUrLEntries9Emoji0009
-     * @tc.desc   testUrLEntries9Emoji0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0009";
     //   try {
@@ -1071,14 +1043,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0010
-     * @tc.number testUrLEntries9Emoji0010
-     * @tc.desc   testUrLEntries9Emoji0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0010";
     //   try {
@@ -1102,14 +1066,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0011
-     * @tc.number testUrLEntries9Emoji0011
-     * @tc.desc   testUrLEntries9Emoji0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0011";
     //   try {
@@ -1133,14 +1089,6 @@ export default function Url_Emoji() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testUrLEntries9Emoji0012
-     * @tc.number testUrLEntries9Emoji0012
-     * @tc.desc   testUrLEntries9Emoji0012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testUrLEntries9Emoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testUrLEntries9Emoji0012";
     //   try {
@@ -1179,7 +1127,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1207,7 +1156,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1235,7 +1185,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1263,7 +1214,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1291,7 +1243,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1319,7 +1272,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1347,7 +1301,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1375,7 +1330,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1403,7 +1359,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1431,7 +1388,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1459,7 +1417,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1487,7 +1446,8 @@ export default function Url_Emoji() {
           callbackInvoked = true;
         });
         expect(String(callbackInvoked)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1506,7 +1466,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\ude0a');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\ude0a");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1525,7 +1486,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\udc64');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\udc64");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1544,7 +1506,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\udc6b');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\udc6b");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1563,7 +1526,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\u260e');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\u260e");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1582,7 +1546,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\udc79');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\udc79");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1601,7 +1566,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\udd5b');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\udd5b");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1620,7 +1586,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83c\udf4f');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83c\udf4f");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1639,7 +1606,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\udd03');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\udd03");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1658,7 +1626,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83c\udf41');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83c\udf41");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1677,7 +1646,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\u2666');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\u2666");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1696,7 +1666,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83d\udc48');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83d\udc48");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1715,7 +1686,8 @@ export default function Url_Emoji() {
       try {
         let paramsObject = new Url.URLParams('emoji=\ud83e\udd3c\u200d\u2642\ufe0f');
         expect(paramsObject.get("emoji")?.toString()).assertEqual("\ud83e\udd3c\u200d\u2642\ufe0f");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1723,7 +1695,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0100
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1738,7 +1710,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1746,7 +1719,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0200
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1761,7 +1734,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1769,7 +1743,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0300
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1784,7 +1758,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1792,7 +1767,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0400
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1807,7 +1782,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1815,7 +1791,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0500
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1830,7 +1806,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1838,7 +1815,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0600
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1853,7 +1830,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1861,7 +1839,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0700
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1876,7 +1854,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1884,7 +1863,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_000
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1899,7 +1878,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1907,7 +1887,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_0900
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1922,7 +1902,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1930,7 +1911,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_1000
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1945,7 +1926,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(String(result1)).assertEqual('true');
         expect(String(result2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1953,7 +1935,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_1100
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1968,7 +1950,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1976,7 +1959,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_HAS_1200
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1991,7 +1974,8 @@ export default function Url_Emoji() {
         let result2 = paramsObject.has('fod');
         expect(result1).assertEqual(true);
         expect(result2).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2000,7 +1984,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0100
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2014,7 +1998,8 @@ export default function Url_Emoji() {
         paramsObject.set('\ud83d\ude0a', '😊');
         hilog.info(1, TAG, '%{public}s', 'testURLParamsSet9Emoji0001 jzl flag1 is:' + paramsObject);
         expect(paramsObject.get('\ud83d\ude0a')).assertEqual('😊');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2023,7 +2008,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0200
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2036,7 +2021,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83d\udc64', '👤');
         expect(paramsObject.get('\ud83d\udc64')).assertEqual('👤');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2044,7 +2030,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0300
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2057,7 +2043,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83d\udc6b', '👫');
         expect(paramsObject.get('\ud83d\udc6b')).assertEqual('👫');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2065,7 +2052,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0400
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2078,7 +2065,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\u260e', '☎');
         expect(paramsObject.get('\u260e')).assertEqual('☎');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2086,7 +2074,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0500
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2099,7 +2087,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83d\udc79', '👹');
         expect(paramsObject.get('\ud83d\udc79')).assertEqual('👹');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2107,7 +2096,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0600
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2120,7 +2109,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83d\udd5b', '🕛');
         expect(paramsObject.get('\ud83d\udd5b')).assertEqual('🕛');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2128,7 +2118,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0700
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2141,7 +2131,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83c\udf4f', '🍏');
         expect(paramsObject.get('\ud83c\udf4f')).assertEqual('🍏');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2149,7 +2140,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0800
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2162,7 +2153,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83d\udd03', '🔃');
         expect(paramsObject.get('\ud83d\udd03')).assertEqual('🔃');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2170,7 +2162,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_0900
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2183,7 +2175,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83c\udf41', '🍁');
         expect(paramsObject.get('\ud83c\udf41')).assertEqual('🍁');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2191,7 +2184,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_1000
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2204,7 +2197,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\u2666', '♦');
         expect(paramsObject.get('\u2666')).assertEqual('♦');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2212,7 +2206,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_1100
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2225,7 +2219,8 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83d\udc48', '👈');
         expect(paramsObject.get('\ud83d\udc48')).assertEqual('👈');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2233,7 +2228,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsSet9Emoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_SET_1200
      * @tc.desc   Testing the Uri interface ParamsSet with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2246,20 +2241,21 @@ export default function Url_Emoji() {
         let paramsObject = new Url.URLParams(urlObject.search.slice(1));
         paramsObject.set('\ud83e\udd3c\u200d\u2642\ufe0f', '🤼‍♂️');
         expect(paramsObject.get('\ud83e\udd3c\u200d\u2642\ufe0f')).assertEqual('🤼‍♂️');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
     });
 
 
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0100
-     * @tc.desc   Testing the Uri interface ParamsKeys with input emoji \ud83d\ude0a
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+    /** Array.from的编译报错，已上报
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0100
+     * @tc.name       : testURLParamsKeys9Emoji0001
+     * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\ude0a
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
     // it('testURLParamsKeys9Emoji0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0001";
@@ -2275,21 +2271,13 @@ export default function Url_Emoji() {
     // });
 
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0200
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0200
     //  * @tc.name       : testURLParamsKeys9Emoji0002
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\udc64
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0002
-     * @tc.number testURLParamsKeys9Emoji0002
-     * @tc.desc   testURLParamsKeys9Emoji0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0002";
     //   try {
@@ -2304,21 +2292,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0300
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0300
     //  * @tc.name       : testURLParamsKeys9Emoji0003
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\udc6b
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0003
-     * @tc.number testURLParamsKeys9Emoji0003
-     * @tc.desc   testURLParamsKeys9Emoji0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0003";
     //   try {
@@ -2333,21 +2313,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0400
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0400
     //  * @tc.name       : testURLParamsKeys9Emoji0004
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \u260e
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0004
-     * @tc.number testURLParamsKeys9Emoji0004
-     * @tc.desc   testURLParamsKeys9Emoji0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0004";
     //   try {
@@ -2362,21 +2334,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0500
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0500
     //  * @tc.name       : testURLParamsKeys9Emoji0005
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\udc79
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0005
-     * @tc.number testURLParamsKeys9Emoji0005
-     * @tc.desc   testURLParamsKeys9Emoji0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0005";
     //   try {
@@ -2391,21 +2355,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0600
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0600
     //  * @tc.name       : testURLParamsKeys9Emoji0006
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\udd5b
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0006
-     * @tc.number testURLParamsKeys9Emoji0006
-     * @tc.desc   testURLParamsKeys9Emoji0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0006";
     //   try {
@@ -2420,21 +2376,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0700
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0700
     //  * @tc.name       : testURLParamsKeys9Emoji0007
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83c\udf4f
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0007
-     * @tc.number testURLParamsKeys9Emoji0007
-     * @tc.desc   testURLParamsKeys9Emoji0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0007";
     //   try {
@@ -2449,21 +2397,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0800
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0800
     //  * @tc.name       : testURLParamsKeys9Emoji0008
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\udd03
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0008
-     * @tc.number testURLParamsKeys9Emoji0008
-     * @tc.desc   testURLParamsKeys9Emoji0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0008";
     //   try {
@@ -2478,21 +2418,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0900
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_0900
     //  * @tc.name       : testURLParamsKeys9Emoji0009
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83c\udf41
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0009
-     * @tc.number testURLParamsKeys9Emoji0009
-     * @tc.desc   testURLParamsKeys9Emoji0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0009";
     //   try {
@@ -2507,21 +2439,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1000
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_1000
     //  * @tc.name       : testURLParamsKeys9Emoji0010
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \u2666
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0010
-     * @tc.number testURLParamsKeys9Emoji0010
-     * @tc.desc   testURLParamsKeys9Emoji0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0010";
     //   try {
@@ -2536,21 +2460,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1100
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_1100
     //  * @tc.name       : testURLParamsKeys9Emoji0011
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83d\udc48
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0011
-     * @tc.number testURLParamsKeys9Emoji0011
-     * @tc.desc   testURLParamsKeys9Emoji0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0011";
     //   try {
@@ -2566,21 +2482,13 @@ export default function Url_Emoji() {
     //
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1200
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_KEYS_1200
     //  * @tc.name       : testURLParamsKeys9Emoji0012
     //  * @tc.desc       : Testing the Uri interface ParamsKeys with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsKeys9Emoji0012
-     * @tc.number testURLParamsKeys9Emoji0012
-     * @tc.desc   testURLParamsKeys9Emoji0012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsKeys9Emoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsKeys9Emoji0012";
     //   try {
@@ -2596,21 +2504,13 @@ export default function Url_Emoji() {
     //
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0100
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0100
     //  * @tc.name       : testURLParamsValues9Emoji0001
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\ude0a
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0001
-     * @tc.number testURLParamsValues9Emoji0001
-     * @tc.desc   testURLParamsValues9Emoji0001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0001";
     //   try {
@@ -2625,21 +2525,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0200
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0200
     //  * @tc.name       : testURLParamsValues9Emoji0002
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\udc64
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0002
-     * @tc.number testURLParamsValues9Emoji0002
-     * @tc.desc   testURLParamsValues9Emoji0002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0002";
     //   try {
@@ -2654,21 +2546,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0300
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0300
     //  * @tc.name       : testURLParamsValues9Emoji0003
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\udc6b
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0003
-     * @tc.number testURLParamsValues9Emoji0003
-     * @tc.desc   testURLParamsValues9Emoji0003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0003";
     //   try {
@@ -2683,21 +2567,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0400
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0400
     //  * @tc.name       : testURLParamsValues9Emoji0004
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \u260e
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0004
-     * @tc.number testURLParamsValues9Emoji0004
-     * @tc.desc   testURLParamsValues9Emoji0004
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0004";
     //   try {
@@ -2712,21 +2588,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0500
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0500
     //  * @tc.name       : testURLParamsValues9Emoji0005
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\udc79
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0005
-     * @tc.number testURLParamsValues9Emoji0005
-     * @tc.desc   testURLParamsValues9Emoji0005
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0005";
     //   try {
@@ -2741,21 +2609,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0600
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0600
     //  * @tc.name       : testURLParamsValues9Emoji0006
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\udd5b
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0006
-     * @tc.number testURLParamsValues9Emoji0006
-     * @tc.desc   testURLParamsValues9Emoji0006
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0006";
     //   try {
@@ -2770,21 +2630,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0700
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0700
     //  * @tc.name       : testURLParamsValues9Emoji0007
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83c\udf4f
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0007
-     * @tc.number testURLParamsValues9Emoji0007
-     * @tc.desc   testURLParamsValues9Emoji0007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0007";
     //   try {
@@ -2799,21 +2651,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0800
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0800
     //  * @tc.name       : testURLParamsValues9Emoji0008
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\udd03
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0008
-     * @tc.number testURLParamsValues9Emoji0008
-     * @tc.desc   testURLParamsValues9Emoji0008
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0008";
     //   try {
@@ -2828,21 +2672,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0900
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_0900
     //  * @tc.name       : testURLParamsValues9Emoji0009
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83c\udf41
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0009
-     * @tc.number testURLParamsValues9Emoji0009
-     * @tc.desc   testURLParamsValues9Emoji0009
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0009";
     //   try {
@@ -2857,21 +2693,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1000
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_1000
     //  * @tc.name       : testURLParamsValues9Emoji0010
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \u2666
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0010
-     * @tc.number testURLParamsValues9Emoji0010
-     * @tc.desc   testURLParamsValues9Emoji0010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0010";
     //   try {
@@ -2886,21 +2714,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1100
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_1100
     //  * @tc.name       : testURLParamsValues9Emoji0011
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83d\udc48
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0011
-     * @tc.number testURLParamsValues9Emoji0011
-     * @tc.desc   testURLParamsValues9Emoji0011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0011";
     //   try {
@@ -2915,21 +2735,13 @@ export default function Url_Emoji() {
     // });
     //
     // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1200
+    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_VALUES_1200
     //  * @tc.name       : testURLParamsValues9Emoji0012
     //  * @tc.desc       : Testing the Uri interface ParamsValues with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
     //  * @tc.size       : MediumTest
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
-    /**
-     * @tc.name   testURLParamsValues9Emoji0012
-     * @tc.number testURLParamsValues9Emoji0012
-     * @tc.desc   testURLParamsValues9Emoji0012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
     // it('testURLParamsValues9Emoji0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = "testURLParamsValues9Emoji0012";
     //   try {
@@ -2946,7 +2758,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0100
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\ude0a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2959,7 +2771,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\ude0a', '😊');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%98%8A=%F0%9F%98%8A');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2968,7 +2781,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0200
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\udc64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2982,7 +2795,8 @@ export default function Url_Emoji() {
         params.append('\ud83d\udc64', '👤');
         console.log(`===(${params.toString()})`)
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%91%A4=%F0%9F%91%A4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2991,7 +2805,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0300
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\udc6b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3004,7 +2818,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc6b', '👫');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%91%AB=%F0%9F%91%AB');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3013,7 +2828,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0400
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \u260e
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3026,7 +2841,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\u260e', '☎');
         expect(params.toString()).assertEqual('fod=1&bard=2&%E2%98%8E=%E2%98%8E');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3035,7 +2851,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0500
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\udc79
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3048,7 +2864,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc79', '👹');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%91%B9=%F0%9F%91%B9');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3057,7 +2874,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0600
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\udd5b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3070,7 +2887,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udd5b', '🕛');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%95%9B=%F0%9F%95%9B');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3078,7 +2896,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0700
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83c\udf4f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3091,7 +2909,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83c\udf4f', '🍏');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%8D%8F=%F0%9F%8D%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3100,7 +2919,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0800
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3113,7 +2932,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udd03', '🔃');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%94%83=%F0%9F%94%83');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3122,7 +2942,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_0900
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83c\udf41
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3135,7 +2955,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83c\udf41', '🍁');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%8D%81=%F0%9F%8D%81');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3143,7 +2964,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_1000
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \u2666
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3156,7 +2977,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\u2666', '♦');
         expect(params.toString()).assertEqual('fod=1&bard=2&%E2%99%A6=%E2%99%A6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3164,7 +2986,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_1100
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83d\udc48
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3177,7 +2999,8 @@ export default function Url_Emoji() {
         let params = new Url.URLParams(urlObject.search.slice(1));
         params.append('\ud83d\udc48', '👈️');
         expect(params.toString()).assertEqual('fod=1&bard=2&%F0%9F%91%88=%F0%9F%91%88%EF%B8%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3185,7 +3008,7 @@ export default function Url_Emoji() {
 
     /**
      * @tc.name   testURLParamsToString9Emoji0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_TOSTRING_1200
      * @tc.desc   Testing the Uri interface ParamsToString9 with input emoji \ud83e\udd3c\u200d\u2642\ufe0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3199,7 +3022,8 @@ export default function Url_Emoji() {
         params.append('\ud83e\udd3c\u200d\u2642\ufe0f', '🤼‍♂️');
         expect(params.toString())
           .assertEqual('fod=1&bard=2&%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F=%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3226,7 +3050,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3245,7 +3070,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\ude0a/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3272,7 +3098,8 @@ export default function Url_Emoji() {
 
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3291,7 +3118,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\udc64/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3319,7 +3147,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3338,7 +3167,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\udc6b/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3365,7 +3195,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3384,7 +3215,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\u260e/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3409,7 +3241,8 @@ export default function Url_Emoji() {
         let temp = '%F0%9F%91%B9/path2';
         expect(url1.toString()).assertEqual('https://www.example.com/test/' + temp);
         expect(url2.toString()).assertEqual('https://www.example.com/' + temp);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3428,7 +3261,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\udc79/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3455,7 +3289,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3474,7 +3309,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\udd5b/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3499,7 +3335,8 @@ export default function Url_Emoji() {
         let temp = '%F0%9F%8D%8F/path2';
         expect(url1.toString()).assertEqual('https://www.example.com/test/' + temp);
         expect(url2.toString()).assertEqual('https://www.example.com/' + temp);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3518,7 +3355,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83c\udf4f/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3545,7 +3383,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3564,7 +3403,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\udd03/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3591,7 +3431,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3610,7 +3451,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83c\udf41/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3637,7 +3479,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3656,7 +3499,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\u2666/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3683,7 +3527,8 @@ export default function Url_Emoji() {
         let rstUrl2 = 'https://www.example.com/' + temp;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3702,7 +3547,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83d\udc48/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3724,13 +3570,12 @@ export default function Url_Emoji() {
         let url1 = Url.URL.parseURL(urlString1, 'https://www.example.com/test/test1');
         let url2 = Url.URL.parseURL(urlString2, 'https://www.example.com/test/test1');
 
-        let temp1 = 'path2?emoji=🤼‍♂️';
-        let rstUrl1 = 'https://www.example.com/' + temp1;
-        let temp2 = '%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F/path2';
-        let rstUrl2 = 'https://www.example.com/' + temp2;
+        let rstUrl1 = 'https://www.example.com/path2?emoji=%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F';
+        let rstUrl2 = 'https://www.example.com/%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F/path2' ;
         expect(url1.toString()).assertEqual(rstUrl1);
         expect(url2.toString()).assertEqual(rstUrl2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3749,7 +3594,8 @@ export default function Url_Emoji() {
       try {
         let url3 = Url.URL.parseURL('/\ud83e\udd3c\u200d\u2642\ufe0f/path2', '');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("Parameter error. The type of  must be string");
       }
@@ -3770,7 +3616,8 @@ export default function Url_Emoji() {
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%98%8A');
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3789,7 +3636,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83d\udc64');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%91%A4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3808,7 +3656,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83d\udc6b');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%91%AB');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3827,7 +3676,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\u260e');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%E2%98%8E');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3846,7 +3696,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83d\udc79');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%91%B9');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3865,7 +3716,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83d\udd5b ');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%95%9B');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3884,7 +3736,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83c\udf4f');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%8D%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3903,7 +3756,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83d\udd03');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%94%83');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3922,7 +3776,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\ud83c\udf41');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%F0%9F%8D%81');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3941,7 +3796,8 @@ export default function Url_Emoji() {
         const urlObject = Url.URL.parseURL('https://username:password@host:8080/directory/\u2666');
         let result = urlObject.toString();
         expect(result).assertEqual('https://username:password@host:8080/directory/%E2%99%A6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3964,7 +3820,8 @@ export default function Url_Emoji() {
         let result = urlObject.toString();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3986,7 +3843,8 @@ export default function Url_Emoji() {
         let result = urlObject.toString();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4008,7 +3866,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%98%8A');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4030,7 +3889,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%91%A4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4052,7 +3912,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%91%AB');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4074,7 +3935,8 @@ export default function Url_Emoji() {
           Url.URL.parseURL('https://username:password@host:8080/directory/file?query=pppppp#qwer=da\u260e');
         let result = urlObject.toJSON();
         expect(result).assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%E2%98%8E');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4096,7 +3958,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%91%B9');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4118,7 +3981,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%95%9B');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4140,7 +4004,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%8D%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4163,7 +4028,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%94%83');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4185,7 +4051,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%8D%81');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4207,7 +4074,8 @@ export default function Url_Emoji() {
           Url.URL.parseURL('https://username:password@host:8080/directory/file?query=pppppp#qwer=da\u2666');
         let result = urlObject.toJSON();
         expect(result).assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%E2%99%A6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4230,7 +4098,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%91%88');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4252,7 +4121,8 @@ export default function Url_Emoji() {
         let result = urlObject.toJSON();
         expect(result)
           .assertEqual('https://username:password@host:8080/directory/file?query=pppppp#qwer=da%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

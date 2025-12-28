@@ -811,6 +811,21 @@ describe('HilogJsTest', function () {
         console.info('testHilogJsApi44 end');
     })
 
+    /**
+     * @tc.name   testHilogJsApi44_1
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5800
+     * @tc.desc   hilog ohIsLoggableTestFalse begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogJsApi44_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+      console.info('testHilogJsApi44_1 start');
+      const res = hilogndk.ohIsLoggableTestFalse();
+      expect(res).assertEqual(false);
+      console.info('testHilogJsApi44_1 end');
+    })
+
      /**
       * @tc.name   testHilogJsApi45
       * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_JS_5900

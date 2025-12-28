@@ -63,6 +63,7 @@ export default function bindSheetHoverMode(){
         console.info('col is'+ height.y)
         let btn1 = await driver.findComponent(ON.id('sheet'));
         await btn1.click()
+        await CommonFunc.sleep(1000);
         let btn2 = await driver.findComponent(ON.id('changeEnableHoverMode'));
         await btn2.click()
         await CommonFunc.sleep(1000);
@@ -95,6 +96,7 @@ export default function bindSheetHoverMode(){
         console.info('col is'+ height.y)
         let btn1 = await driver.findComponent(ON.id('sheet'));
         await btn1.click()
+        await CommonFunc.sleep(1000);
         let btn2 = await driver.findComponent(ON.id('changeHoverModeArea'));
         await btn2.click()
         await CommonFunc.sleep(1000);

@@ -472,7 +472,7 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           let t: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz";
           for (let i = 0; i < 350; i++) {
-            globalText += t.charAt(Math.floor(Math.random() * t.length));
+            globalText += t.charAt(Math.floor(Math.random() * t.length).toInt());
           }
           let input: cryptoFramework.DataBlob = {
             data: stringTouInt8Array(globalText)

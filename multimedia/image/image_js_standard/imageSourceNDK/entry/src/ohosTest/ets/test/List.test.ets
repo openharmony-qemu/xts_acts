@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import ImageSourceNDKTest from './ImageSourceNDKTest.test';
+import ImageExifGetModifyByTypeNDK from './ImageExifGetModifyByTypeNDK.test';
 export default function testsuite() {
     ImageSourceNDKTest();
+    ImageExifGetModifyByTypeNDK();
 }

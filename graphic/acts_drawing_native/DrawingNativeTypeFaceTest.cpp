@@ -508,6 +508,131 @@ HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceCreateFromCurrentMultipleCalls, 
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
+/**
+ * @tc.name   testTypefaceIsBoldNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0700
+ * @tc.desc   test for testTypefaceIsBoldNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsBoldNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isBold = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface1, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isBold, true);
+    errorCode = OH_Drawing_TypefaceIsBold(typeface2, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isBold, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsBoldNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0701
+ * @tc.desc   test for testTypefaceIsBoldNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsBoldNull, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isBold = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(nullptr, &isBold);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isBold, false);
+    errorCode = OH_Drawing_TypefaceIsBold(typeface2, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isBold, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsBoldMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0702
+ * @tc.desc   test for testTypefaceIsBoldMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsBoldMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    bool isBold = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsBold(typeface, &isBold);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isBold, true);
+    }
+    OH_Drawing_TypefaceDestroy(typeface);
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0800
+ * @tc.desc   test for testTypefaceIsItalicNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsItalicNormal, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface1, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isItalic, false);
+    errorCode = OH_Drawing_TypefaceIsItalic(typeface2, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isItalic, true);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0801
+ * @tc.desc   test for testTypefaceIsItalicNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsItalicNull, Function | SmallTest | Level0) {
+    OH_Drawing_Typeface *typeface1 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/NotoSansBengaliUI-Bold.ttf", 0);
+    OH_Drawing_Typeface *typeface2 = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(nullptr, &isItalic);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isItalic, false);
+    errorCode = OH_Drawing_TypefaceIsItalic(typeface2, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isItalic, false);
+    OH_Drawing_TypefaceDestroy(typeface1);
+    OH_Drawing_TypefaceDestroy(typeface2);
+}
+
+/**
+ * @tc.name   testTypefaceIsItalicMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TYPEFACE_0802
+ * @tc.desc   test for testTypefaceIsItalicMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeTypeFaceTest, testTypefaceIsItalicMultipleCalls, Function | SmallTest | Level3) {
+    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateFromFile("/system/fonts/HarmonyOS_Sans_Italic.ttf", 0);
+    bool isItalic = false;
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_TypefaceIsItalic(typeface, &isItalic);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isItalic, true);
+    }
+    OH_Drawing_TypefaceDestroy(typeface);
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

@@ -29,6 +29,15 @@ using OnGridWillScroll = std::function<void(float, int32_t, int32_t)>;
 using OnGridDidScroll = std::function<void(float, int32_t)>;
 using OnGridWillStopDragging =  std::function<void(float)>;
 using OnGridScrollIndex = std::function<void(int32_t, int32_t)>;
+using OnWillScroll = std::function<void(float, int32_t, int32_t)>;
+using OnReachStart = std::function<void()>;
+using OnReachEnd = std::function<void()>;
+using OnScrollStop = std::function<void()>;
+using OnScrollStart = std::function<void()>;
+using OnDidScroll = std::function<void(float, int32_t)>;
+using OnScrollFrameBegin = std::function<void(float, int32_t)>;
+using OnScrollIndex = std::function<void(int32_t, int32_t)>;
+using OnScrollBarUpdate = std::function<void()>;
 
 class GridItemComponent : public Component {
 public:
@@ -57,7 +66,33 @@ public:
     void SetGridColumnsGap(float val);
     void SetGridRowsGap(float val);
     void SetGridCachedCount(int32_t cachedCount);
-    
+
+    void SetGridNestedScroll(int32_t forward, int32_t backward);
+    void SetOnScrollIndex(OnScrollIndex onScrollIndex);
+    void SetColumnsTemplate(const std::string& str);
+    void SetRowsTemplate(const std::string& str);
+
+    void SetGridScrollToIndex(int32_t index);
+    void SetGridScrollToIndex(int32_t index, int32_t animation);
+    void SetGridScrollToIndex(int32_t index, int32_t animation, int32_t alignment);
+    void SetItemConstraintSize(float minWidth, float maxWidth, float minHeight, float maxHeight);
+
+    void SetGridScrollBar(int32_t barState);
+    void SetGridScrollBarWidth(float width);
+    void SetGridScrollBarColor(uint32_t color);
+    void SetGridEnableScrollInteraction(bool enableScrollInteraction);
+    void SetGridFriction(float friction);
+    void SetGridEdgeEffect(int32_t edgeEffect, bool alwaysEnabled);
+    void SetScrollEdge(int32_t type);
+    void SetScrollPage(bool next);
+    void SetScrollPage(bool next, bool animation);
+    void SetScrollBy(float hDistance, float vDistance);
+    void SetOnWillScroll(OnWillScroll onWillScroll);
+    void SetOnReachStart(OnReachStart onReachStart);
+    void SetOnReachEnd(OnReachEnd onReachEnd);
+    void SetOnScrollStart(OnScrollStart onScrollStart);
+    void SetOnScrollStop(OnScrollStop onScrollStop);
+    void SetOnDidScroll(OnDidScroll onDidScroll);
     /**
      * @brief Set the scroll position to the specified offset.
      * @param hOffset horizontal scrolling offset

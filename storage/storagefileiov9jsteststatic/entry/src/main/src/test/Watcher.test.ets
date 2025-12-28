@@ -50,12 +50,13 @@ const callback = (data: WatchEvent) => {
 
 interface TestWatcher {
   flag: boolean,
-  watcher: Watcher
+  watcher: fs.Watcher|undefined
 }
 
 function startWatcher(testNum: string, eventCode: int|undefined , watchPath: string): TestWatcher {
   let ret: TestWatcher = {
     flag: false,
+    watcher: undefined
   }
   if(eventCode == undefined){
     hilog.info(domain, tag, '%{public}s', 'eventCode get fail');
@@ -72,7 +73,7 @@ function startWatcher(testNum: string, eventCode: int|undefined , watchPath: str
     hilog.info(domain, tag, '%{public}s', testNum + ' startWatcher failed for ' + e.message + ', code: ' + e.code);
     return ret;
   }
-  ret.watcher.start();
+  ret.watcher?.start();
   return ret;
 }
 
@@ -101,7 +102,7 @@ export default function fileIOWatcher() {
         fs.readSync(file.fd, new ArrayBuffer(4096));
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -133,7 +134,7 @@ export default function fileIOWatcher() {
         fs.writeSync(file.fd, FILE_CONTENT);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -165,7 +166,7 @@ export default function fileIOWatcher() {
         fs.utimes(fpath,time);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -196,7 +197,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file.fd);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -226,7 +227,7 @@ export default function fileIOWatcher() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_ONLY);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -296,7 +297,7 @@ export default function fileIOWatcher() {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -325,7 +326,7 @@ export default function fileIOWatcher() {
         fs.mkdirSync(ddpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -355,7 +356,7 @@ export default function fileIOWatcher() {
         fs.unlinkSync(fpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -384,7 +385,7 @@ export default function fileIOWatcher() {
         fs.rmdirSync(ddpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -411,7 +412,7 @@ export default function fileIOWatcher() {
         fs.rmdirSync(dpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         done();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
@@ -437,7 +438,7 @@ export default function fileIOWatcher() {
         fs.renameSync(dpath, dpath + 'newd');
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath + 'newd');
         done();
       } catch (e: BusinessError) {
@@ -465,7 +466,7 @@ export default function fileIOWatcher() {
         fs.renameSync(fpath, fpath + 'newd');
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.unlinkSync(fpath + 'newd');
         done();
       } catch (e: BusinessError) {
@@ -496,7 +497,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file.fd);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {

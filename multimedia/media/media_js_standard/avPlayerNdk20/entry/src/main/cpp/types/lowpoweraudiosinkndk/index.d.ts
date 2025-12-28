@@ -67,4 +67,11 @@ export const OH_LowPowerVideoSinkCallback_SetStreamChangedListener0100: () => nu
 export const OH_LowPowerVideoSinkCallback_SetFirstFrameDecodedListener0100: () => number;
 export const OH_LowPowerVideoSinkCallback_SetEosListener0100: () => number;
 export const OH_AVSamplesBuffer_AppendOneBuffer0100: () => number;
+export const OH_LowPowerAudioSink_SetLoudnessGain0100: () => number;
+export const OH_LowPowerAudioSinkCallback_Create0100: () => number;
+export const OH_LowPowerVideoSink_GetLatestPts0100: () => number;
+export const OH_LowPowerAVSink_GetCapability0100: () => number;
+export const OH_LowPowerVideoSink_CreateByMime0100: () => number;
+export const OH_LowPowerVideoSinkCallback_Create0100: () => number;
+export const OH_LowPowerAudioSink_CreateByMime0100: () => number;
 

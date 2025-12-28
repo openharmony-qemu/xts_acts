@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+#include "nativeFontNdk.h"
 #include <cmath>
 #include <vector>
-#include "nativeFontNdk.h"
 
 #define SUCCESS 0
 #define FAIL (-1)
@@ -963,5 +963,23 @@ napi_value OHDrawingSetTextStyleAttributeInt001(napi_env env, napi_callback_info
     NAPI_ASSERT(env, isEqual == true, "TEXT_LINE_HEIGHT_BY_FONT_HEIGHT get != TEXT_LINE_HEIGHT_BY_FONT_HEIGHT set");
     napi_create_int32(env, SUCCESS, &result);
     OH_Drawing_DestroyTextStyle(txtStyle);
+    return result;
+}
+
+napi_value OHDrawingGetFontFullDescriptorsFromPath001(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    char *invalidPath = strdup("");
+    OH_Drawing_Array* fontFullDescArr = OH_Drawing_GetFontFullDescriptorsFromPath(invalidPath);
+    NAPI_ASSERT(env, fontFullDescArr == nullptr, "trans invalidPath, fontFullDescArr != nullptr, has error");
+    size_t num = OH_Drawing_GetDrawingArraySize(fontFullDescArr);
+    NAPI_ASSERT(env, num == 0, "num != 0, has error");
+    int index = 1;
+    const OH_Drawing_FontFullDescriptor *desc1 = OH_Drawing_GetFontFullDescriptorByIndex(fontFullDescArr, index);
+    NAPI_ASSERT(env, desc1 == nullptr, "desc1 != nullptr, has error");
+    OH_Drawing_DestroyFontFullDescriptors(fontFullDescArr);
+    OH_Drawing_DestroyFontFullDescriptors(nullptr);
+    free(invalidPath);
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }

@@ -352,6 +352,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED).assertEqual(29700004);
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY).assertEqual(29700005);
       expect(certManagerDialog.CertificateDialogErrorCode.ERROR_PARAMETER_VALIDATION_FAILED).assertEqual(29700006);
+      expect(certManagerDialog.CertificateDialogErrorCode.ERROR_NO_AVAILABLE_CERTIFICATE).assertEqual(29700007);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_MAIN).assertEqual(1);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_CA_CERTIFICATE).assertEqual(2);
       expect(certManagerDialog.CertificateDialogPageType.PAGE_CREDENTIAL).assertEqual(3);
@@ -360,6 +361,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       expect(certManagerDialog.CertificateType.CREDENTIAL_USER).assertEqual(2);
       expect(certManagerDialog.CertificateType.CREDENTIAL_APP).assertEqual(3);
       expect(certManagerDialog.CertificateType.CREDENTIAL_UKEY).assertEqual(4);
+      expect(certManagerDialog.CertificateType.CREDENTIAL_SYSTEM).assertEqual(5);
       expect(certManagerDialog.CertificateScope.NOT_SPECIFIED).assertEqual(0);
       expect(certManagerDialog.CertificateScope.CURRENT_USER).assertEqual(1);
       expect(certManagerDialog.CertificateScope.GLOBAL_USER).assertEqual(2);
@@ -405,7 +407,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
 
       try {
-        await certManagerDialog.openInstallCertificateDialog(context, 2, certificateScope, caCert)
+        await certManagerDialog.openInstallCertificateDialog(context, 999, certificateScope, caCert)
         expect(null).assertFail()
       } catch (err) {
         if (err.code == 29700004) {

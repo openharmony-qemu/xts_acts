@@ -288,5 +288,35 @@ export default function displaySyncTest() {
                     done();
                 }
             })
+
+        /**
+         * @tc.name   testOnFrame_static_0200
+         * @tc.number testOnFrame_static_0200
+         * @tc.desc   Subscribe to changes per frame
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testOnFrame_static_0200',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+                let msg = "====testOnFrame_static_0200===="
+                console.log(msg + ' begin')
+                try {
+                    let backDisplaySync: displaySync.DisplaySync = displaySync.create();
+                    let callback = (frameInfo: displaySync.IntervalInfo) => {
+                        console.info("www data data DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
+                            ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
+                        expect(frameInfo != null).assertTrue();
+                    }
+                    backDisplaySync?.onFrame(callback);
+                    console.info(msg + 'Succeeded in on.');
+                    backDisplaySync?.offFrame();
+                    done()
+                } catch (exception) {
+                    console.error(msg + 'Failed to on. Cause:' + JSON.stringify(exception));
+                    expect().assertFail()
+                    done()
+                }
+            })
     })
 }

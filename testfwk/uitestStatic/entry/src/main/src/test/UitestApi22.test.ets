@@ -1065,7 +1065,7 @@ export default function uitestDriverTestApi22() {
       if (longClickBtn != null) {
         let center = await longClickBtn.getBoundsCenter();
         await driver.delayMs(waitUiReadyMs);
-        let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 6000)
+        let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 6000)
         expect(result).assertTrue();
         await driver.delayMs(waitUiReadyMs);
         let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -1106,7 +1106,7 @@ export default function uitestDriverTestApi22() {
         await driver.delayMs(waitUiReadyMs);
         let disPlay = display.getDefaultDisplaySync();
         console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom disPlay is: ${JSON.stringify(disPlay)}`);
-        let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
+        let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
           x: center.x,
           y: center.y,
           displayId: disPlay.id.toInt()
@@ -1153,7 +1153,7 @@ export default function uitestDriverTestApi22() {
         if (dragResultTextCom != null) {
           await driver.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+          let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1192,7 +1192,7 @@ export default function uitestDriverTestApi22() {
         if (dragResultTextCom != null) {
           await driver.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
+          let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1233,7 +1233,7 @@ export default function uitestDriverTestApi22() {
           let center2 = await dragResultTextCom.getBoundsCenter();
           let disPlay = display.getDefaultDisplaySync();
           console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse_static disPlay is: ${JSON.stringify(disPlay)}`);
-          let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
+          let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
             x: center1.x,
             y: center1.y,
             displayId: disPlay.id.toInt()
@@ -1269,7 +1269,7 @@ export default function uitestDriverTestApi22() {
       if (scrollBar != null) {
         let rect = await scrollBar.getBounds()
         let center = await scrollBar.getBoundsCenter()
-        let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+        let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
           {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
           {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 9000)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static result, ${JSON.stringify(result)}`);
@@ -1300,7 +1300,7 @@ export default function uitestDriverTestApi22() {
         let center = await scrollBar.getBoundsCenter()
         let disPlay = display.getDefaultDisplaySync();
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse_static disPlay is: ${JSON.stringify(disPlay)}`);
-        let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
+        let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
           {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
           {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()})
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse_static result, ${JSON.stringify(result)}`);
@@ -1467,12 +1467,15 @@ export default function uitestDriverTestApi22() {
         pointers.setPoint(0,8, ninePoint);
         await driver.injectKnucklePointerAction(pointers, 3000);
         await driver.delayMs(waitUiReadyMs * 8)
-        let screenPng = await driver.findComponent(ON.text('保存'));
-        expect(screenPng != null).assertTrue();
-        await driver.pressBack();
+        let isTantWindow = driver.findWindow({bundleName: 'com.huawei.hmos.vassistant'});
+        await Utils.msSleep(1000);
+        console.log(`${TestTag}, tesKnuckleKnockRect_static isTantWindow, ${JSON.stringify(isTantWindow)}`);
+        expect(isTantWindow != null).assertTrue();
+        await stopApplication('com.huawei.hmos.vassistant');
         await Utils.msSleep(2000)
       } catch (error: BusinessError) {
         console.log(`${TestTag}, tesKnuckleKnockRect_static error, ${JSON.stringify(error)}`);
+        await stopApplication('com.huawei.hmos.vassistant');
         expect(error.code).assertEqual(17000005);
       }
       await Utils.msSleep(3000)
@@ -1564,5 +1567,6 @@ export default function uitestDriverTestApi22() {
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static end`);
     })
+
   })
 }

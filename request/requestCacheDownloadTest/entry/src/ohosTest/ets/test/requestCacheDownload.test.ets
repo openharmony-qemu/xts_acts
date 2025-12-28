@@ -676,5 +676,77 @@ export default function requestCacheDownloadUnitTest() {
       }
     });
 
+    /**
+     * @tc.number SUB_Request_cacheDownload_maintenance_1700
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1700
+     * @tc.desc   url of downloadInfo is 0.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1700 is starting-----------------------");
+      try {
+        let downloadInfo: cacheDownload.DownloadInfo | undefined = cacheDownload.getDownloadInfo('');
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1700 getDownloadInfo success ${downloadInfo}`);
+        expect(downloadInfo === undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_maintenance_1700 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_maintenance_1800
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1800
+     * @tc.desc   url of downloadInfo is 8192.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1800 is starting-----------------------");
+      try {
+        let text: string = ''.padEnd(8175, 'cacheDownload');
+        let url: string = 'https://gitee' + text + '.com';
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1800 getDownloadInfo url length: ${url.length}`);
+        let downloadInfo: cacheDownload.DownloadInfo | undefined = cacheDownload.getDownloadInfo(url);
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1800 getDownloadInfo success ${downloadInfo}`);
+        expect(downloadInfo === undefined).assertTrue();
+        expect(url.length === 8192).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_maintenance_1800 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_maintenance_1900
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1900
+     * @tc.desc   url of downloadInfo is 8193.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1900 is starting-----------------------");
+      try {
+        let text: string = ''.padEnd(8176, 'cacheDownload');
+        let url: string = 'https://gitee' + text + '.com';
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1900 getDownloadInfo url length: ${url.length}`);
+        cacheDownload.getDownloadInfo(url);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_maintenance_1900 catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
   });
 }

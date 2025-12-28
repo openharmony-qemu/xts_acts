@@ -96,6 +96,8 @@ export default function preferenceTest() {
     beforeEach(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach, stagemode is ' + context.stageMode)
       mPreferences = await dataPreferences.getPreferences(context, NAME);
+      mPreferences.clearSync();
+      mPreferences.flush();
     })
 
     afterEach(() => {
@@ -404,20 +406,21 @@ export default function preferenceTest() {
      */
     it('testPreferencesPutInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await mPreferences.clear();
-      mPreferences.put(KEY_TEST_INT_ELEMENT, 4, (err: BusinessError | null) :void => {
-        hilog.info(domain, tag, '%{public}s', TAG + "12");
+      let val: long = 4;
+      mPreferences.put(KEY_TEST_INT_ELEMENT, val, (err: BusinessError | null) :void => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put end");
         await mPreferences.flush(); // del
-        hilog.info(domain, tag, '%{public}s', TAG + "123");
+        hilog.info(domain, tag, '%{public}s', TAG + "flush end");
         let pre = await mPreferences.get(KEY_TEST_INT_ELEMENT, 0);
-        hilog.info(domain, tag, '%{public}s', TAG + "1234");
-        expect(4).assertEqual(pre);
-        hilog.info(domain, tag, '%{public}s', TAG + "12345");
+        hilog.info(domain, tag, '%{public}s', TAG + "get end, value:" + pre);
+        expect(val).assertEqual(pre);
+        hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
         await mPreferences.flush();
-        hilog.info(domain, tag, '%{public}s', TAG + "123456");
+        hilog.info(domain, tag, '%{public}s', TAG + "flush end");
         let pre2 = await mPreferences.get(KEY_TEST_INT_ELEMENT, 0);
-        hilog.info(domain, tag, '%{public}s', TAG + "1234567");
-        expect(4).assertEqual(pre2);
-        hilog.info(domain, tag, '%{public}s', TAG + "12345678");
+        hilog.info(domain, tag, '%{public}s', TAG + "get pre2 is:" + pre2);
+        expect(val).assertEqual(pre2);
+        hilog.info(domain, tag, '%{public}s', TAG + "assertTrue success");
         done();
       });
     })
@@ -799,7 +802,7 @@ export default function preferenceTest() {
       });
       done();
     });
-    
+
     
     /**
      * @tc.name   testPreferencesGetAllCallBackTest0001
@@ -925,9 +928,8 @@ export default function preferenceTest() {
         await mPreferences.clear();
         await mPreferences.flush();
         const testObserver = (key : string): void => {
-            hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnChangePromiseTest0001 key:" + key);
-            expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
-            done();
+          hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnChangePromiseTest0001 key:" + key);
+          expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
         }
         mPreferences.onChange(testObserver);
         hilog.info(domain, tag, '%{public}s', TAG + "start on2");
@@ -941,9 +943,10 @@ export default function preferenceTest() {
         hilog.info(domain, tag, '%{public}s', TAG + "start sleep");
 
         await Utils.msSleep(1000);
-        done();
+        mPreferences.offChange(testObserver);
       } catch (err : BusinessError) {
         expect().assertFail();
+      } finally {
         done();
       }
     })
@@ -965,16 +968,15 @@ export default function preferenceTest() {
         const testObserver = (key : string): void => {
           hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOffChangePromiseTest0001 key:" + key);
           expect(null).assertFail();
-          done();
         }
         mPreferences.onChange(testObserver);
         mPreferences.offChange(testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         await mPreferences.flush();
         await Utils.msSleep(1000);
-        done();
       } catch (err : BusinessError) {
         expect().assertFail();
+      } finally {
         done();
       }
     })
@@ -996,7 +998,6 @@ export default function preferenceTest() {
         const testObserver = (key : string): void => {
           hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessPromiseTest0001 key:" + key);
           expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
-          done();
         }
         mPreferences.onMultiProcessChange(testObserver);
         mPreferences.onMultiProcessChange(testObserver);
@@ -1005,9 +1006,9 @@ export default function preferenceTest() {
 
         await Utils.msSleep(100);
         mPreferences.offMultiProcessChange(testObserver);
-        done();
       } catch (err : BusinessError) {
         expect().assertFail();
+      } finally {
         done();
       }
     })
@@ -1029,16 +1030,15 @@ export default function preferenceTest() {
         const testObserver = (key : string): void => {
           hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOffMultiprocessPromiseTest0001 key:" + key);
           expect(null).assertFail();
-          done();
         }
         mPreferences.onMultiProcessChange(testObserver);
         mPreferences.offMultiProcessChange(testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
         await Utils.msSleep(1000);
-        done();
       } catch (err : BusinessError) {
         expect().assertFail();
+      } finally {
         done();
       }
     })
@@ -1060,15 +1060,17 @@ export default function preferenceTest() {
         const testObserver = (obj: Record<string, dataPreferences.ValueType>): void => {
           hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnDatachangePromiseTest0001 value:" + obj.get(KEY_TEST_STRING_ELEMENT));
           expect("abc").assertEqual(obj.get(KEY_TEST_STRING_ELEMENT));
-          done();
         }
         let keys = new Array<string>(KEY_TEST_STRING_ELEMENT);
         mPreferences.onDataChange(keys, testObserver);
         mPreferences.onDataChange(keys, testObserver);
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
+        await Utils.msSleep(100);
+        mPreferences.offDataChange(keys, testObserver);
       } catch (err : BusinessError) {
         expect().assertFail();
+      } finally {
         done();
       }
     })
@@ -1089,7 +1091,6 @@ export default function preferenceTest() {
         const testObserver = (key : string): void => {
           hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 key:" + key);
           expect(null).assertFail();
-          done();
         }
         for (let index = 0; index < 80; index++) {
           mPreferences.onMultiProcessChange(testObserver);
@@ -1098,24 +1099,24 @@ export default function preferenceTest() {
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
         await Utils.msSleep(1000);
-        done();
       } catch (err : BusinessError) {
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 :" + err.code + err.message );
         expect(err.code).assertEqual(15500019);
+      } finally {
         done();
       }
     })
 
 
-     /**
-      * @tc.name   testPreferencesMxaKeyLengthPromiseTest0001
-      * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
-      * @tc.desc   MxaKeyLength promise interface test
-      * @tc.type   FUNCTION
-      * @tc.size   MEDIUMTEST
-      * @tc.level  LEVEL2
-      */
-     it('testPreferencesMxaKeyLengthPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.name   testPreferencesMxaKeyLengthPromiseTest0001
+     * @tc.number SUB_DistributedData_Preference_SDK_MxaKeyLength_basis_EtsApiTest_3200
+     * @tc.desc   MxaKeyLength promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesMxaKeyLengthPromiseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try{
         await mPreferences.clear();
         await mPreferences.put(MAX_KEY_LENGTH, "abc");
@@ -1242,13 +1243,13 @@ export default function preferenceTest() {
      */
     it('PreferencesBaseDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let preferences = await dataPreferences.getPreferences(context, 'test_preferences_base_int');
-      let baseInt: int = 123;
+      let baseInt: long = 123;
       await preferences.put('base_int', baseInt);
       await preferences.flush();
       let ret = preferences.getSync("base_int", 0);
       expect(baseInt).assertEqual(ret);
-      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret instanceof int:" + (ret instanceof int));
-      expect(true).assertEqual(ret instanceof int);
+      hilog.info(domain, tag, '%{public}s', TAG + "PreferencesBaseDataType001 key base_int, ret instanceof int:" + (ret instanceof long));
+      expect(true).assertEqual(ret instanceof long);
       await dataPreferences.deletePreferences(context, 'test_preferences_base_int');
       done();
     })
@@ -1300,5 +1301,551 @@ export default function preferenceTest() {
       await dataPreferences.deletePreferences(context, 'test_preferences_base_long');
       done();
     })
+
+    /**
+     * @tc.name   testPreferencesPutFlushRemoveGet_0100
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutFlushRemoveGet0100_basis_EtsApiTest_3800
+     * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesPutFlushRemoveGet_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(TAG + "start_test_0100");
+      await mPreferences.clear();
+      await mPreferences.flush();
+      let val: long = 1;
+      await mPreferences.put(KEY_TEST_LONG_ELEMENT, val).then(async () : Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
+      })
+
+      await mPreferences.get(KEY_TEST_LONG_ELEMENT, val).then((res1 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res1 as Long);
+        hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res1 failed error message = " + err);
+      })
+
+      await mPreferences.flush().then(() => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
+      })
+
+      await dataPreferences.removePreferencesFromCache(context, NAME).then(() :  Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
+      })
+
+      mPreferences = await dataPreferences.getPreferences(context, NAME);
+
+      await mPreferences.get(KEY_TEST_LONG_ELEMENT, val).then((res2 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res2 as Long);
+        hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
+        done();
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res2 failed error message = " + err);
+      })
+      done();
+    })
+
+    /**
+     * @tc.name   testPreferencesPutFlushRemoveGet_0200
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutFlushRemoveGet0200_basis_EtsApiTest_3900
+     * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesPutFlushRemoveGet_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(TAG + "start_test_0200");
+      await mPreferences.clear();
+      await mPreferences.flush();
+      let val: double = 111.1;
+
+      await mPreferences.put(KEY_TEST_FLOAT_ELEMENT, val).then(async () : Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
+      })
+
+      await mPreferences.get(KEY_TEST_FLOAT_ELEMENT, val).then((res1 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res1 as Double);
+        hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res1 failed error message = " + err);
+      })
+
+      await mPreferences.flush().then(() => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
+      })
+
+      await dataPreferences.removePreferencesFromCache(context, NAME).then(() :  Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
+      })
+
+      mPreferences = await dataPreferences.getPreferences(context, NAME);
+
+      await mPreferences.get(KEY_TEST_FLOAT_ELEMENT, val).then((res2 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res2 as Double);
+        hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
+        done();
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res2 failed error message = " + err);
+      })
+      done();
+    })
+
+    /**
+     * @tc.name   testPreferencesPutFlushRemoveGet_0500
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutFlushRemoveGet0500_basis_EtsApiTest_4000
+     * @tc.desc   put get flush removePreferencesFromCache get promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesPutFlushRemoveGet_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(TAG + "start_test_0300");
+      await mPreferences.clear();
+      let val: boolean = true;
+      await mPreferences.put(KEY_TEST_BOOLEAN_ELEMENT, val).then(async () : Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
+      })
+
+      await mPreferences.get(KEY_TEST_BOOLEAN_ELEMENT, val).then((res1 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res1);
+        hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res1 failed error message = " + err);
+      })
+
+      await mPreferences.flush().then(() => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
+      })
+
+      await dataPreferences.removePreferencesFromCache(context, NAME).then(() :  Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
+      })
+
+      mPreferences = await dataPreferences.getPreferences(context, NAME);
+
+      await mPreferences.get(KEY_TEST_BOOLEAN_ELEMENT, val).then((res2 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res2);
+        hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
+        done();
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res2 failed error message = " + err);
+      })
+    })
+
+    /**
+     * @tc.name   testPreferencesPutFlushRemoveGet_0400
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutFlushRemoveGet0400_basis_EtsApiTest_4100
+     * @tc.desc   put get flush removePreferencesFromCacheget get promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesPutFlushRemoveGet_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.log(TAG + "start_test_0400");
+      await mPreferences.clear();
+      let val: string = "abc";
+      await mPreferences.put(KEY_TEST_STRING_ELEMENT, val).then(async () : Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "put failed error message = " + err);
+      })
+
+      await mPreferences.get(KEY_TEST_STRING_ELEMENT, val).then((res1 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res1);
+        hilog.info(domain, tag, '%{public}s', TAG + "res1 = " + res1 + "get res1 succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res1 failed error message = " + err);
+      })
+
+      await mPreferences.flush().then(() => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "flush failed error message = " + err);
+      })
+
+      await dataPreferences.removePreferencesFromCache(context, NAME).then(() :  Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove succeed");
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "remove failed error message = " + err);
+      })
+
+      mPreferences = await dataPreferences.getPreferences(context, NAME);
+
+      await mPreferences.get(KEY_TEST_STRING_ELEMENT, val).then((res2 : Object) :  Promise<void> => {
+        expect(val).assertEqual(res2);
+        hilog.info(domain, tag, '%{public}s', TAG + "res2 = " + res2 + "get res2 succeed. test0300end");
+        done();
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', TAG + "get res2 failed error message = " + err);
+      })
+    })
+
+    /**
+     * @tc.name   testPreferenceClearErrTest0100
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferenceClearErrTest0100_basis_EtsApiTest_4200
+     * @tc.desc   mPreference.clear()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferenceClearErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await mPreferences.clear();
+      await mPreferences.flush();
+      console.log("testPreferenceClearErrTest0100 begin.");
+      try {
+        mPreferences.clear((err : BusinessError | null) : void => {
+          if (err) {
+            console.log();
+            hilog.info(domain, tag, '%{public}s', "clear err =" + err + ", code =" + err.code + ", message =" + err.message)
+            expect(401).assertEqual(err.code);
+            expect(false).assertTrue();
+            done();
+          }
+          hilog.info(domain, tag, '%{public}s', "testPreferenceClearErrTest0100 end");
+          done();
+        });
+      } catch (err : BusinessError) {
+        hilog.info(domain, tag, '%{public}s', "trycatch err =" + err + ", code =" + err.code + ", message =" + err.message);
+        expect(false).assertTrue();
+      }
+      done()
+    })
+    /**
+     * @tc.name   testPreferenceOnErrTest0100
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferenceOnErrTest0100_basis_EtsApiTest_4300
+     * @tc.desc   mPreference.onMultiProcessChange() interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferenceOnErrTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await mPreferences.clear();
+      await mPreferences.flush();
+      let observer = (key: string) => {
+        hilog.info(domain, tag, '%{public}s', 'testPreferenceOnErrTest0100 keyValue' + mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+        done();
+        expect('abc').assertEqual(mPreferences.getSync(KEY_TEST_STRING_ELEMENT, "aaa"));
+        mPreferences.offMultiProcessChange();
+      };
+      try {
+        let func = (p1: String) => {};
+        mPreferences.onMultiProcessChange(func);
+        mPreferences.putSync(KEY_TEST_STRING_ELEMENT, 'abc');
+        await mPreferences.flush();
+        await Utils.msSleep(100);
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', "clear err =" + err + ", code =" + err.code + ", message =" + err.message);
+        expect('401').assertEqual(err.code);
+      } finally {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetPreferencesHelper001
+     * @tc.number SUB_DistributedData_Preference_SDK_testGetPreferencesHelper001_basis_EtsApiTest_4400
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetPreferencesHelper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      mPreferences = await dataPreferences.getPreferences(context, NAME);
+      let val: long = 2;
+      await mPreferences.put('test', val);
+      await mPreferences.flush();
+      let value = await mPreferences.get('test', 0);
+      expect(value).assertEqual(val);
+      done();
+    });
+    /**
+     * @tc.name   testGetPreferencesHelper002
+     * @tc.number SUB_DistributedData_Preference_SDK_testGetPreferencesHelper002_basis_EtsApiTest_4500
+     * @tc.desc   getPreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetPreferencesHelper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const promise = dataPreferences.getPreferences(context, NAME);
+      await promise.then(async (pref : dataPreferences.Preferences) :  Promise<void> => {
+        let val: long = 2;
+        await pref.put('test', val);
+        await pref.flush();
+        let value = await mPreferences.get('test', 0);
+        expect(value).assertEqual(val);
+        done();
+      }).catch((err: Object|null|undefined) => {
+        expect(null).assertFail();
+      });
+      done();
+    });
+    /**
+     * @tc.name   testRemovePreferencesFromCache001
+     * @tc.number SUB_DistributedData_Preference_SDK_testRemovePreferencesFromCache001_basis_EtsApiTest_4600
+     * @tc.desc   removePreferencesFromCache interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRemovePreferencesFromCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let perf: dataPreferences.Preferences | null = await dataPreferences.getPreferences(context, NAME);
+      perf = null;
+      const promise = dataPreferences.removePreferencesFromCache(context, NAME);
+      await promise.then(() :  Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', `removePreferencesFromCache successfully.`);
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', "removePreferencesFromCache err =" + err);
+        expect(null).assertFail();
+      });
+      done();
+    });
+    /**
+     * @tc.name   testDeletePreferencesHelper002
+     * @tc.number SUB_DistributedData_Preference_SDK_testDeletePreferencesHelper002_basis_EtsApiTest_4700
+     * @tc.desc   deletePreferences interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testDeletePreferencesHelper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let perf: dataPreferences.Preferences | null = await dataPreferences.getPreferences(context, NAME);
+      perf = null;
+      const promise = dataPreferences.deletePreferences(context, NAME);
+      await promise.then(() :  Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', `deletePreferences successfully.`);
+      }).catch((err : Object|null|undefined) => {
+        hilog.info(domain, tag, '%{public}s', "deletePreferences err " + err);
+        expect(null).assertFail();
+      });
+      done();
+    });
+    /**
+     * @tc.name   testPreferencesRegisterObserver001
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesRegisterObserver001_basis_EtsApiTest_4800
+     * @tc.desc   put interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesRegisterObserver001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesRegisterObserver001 start");
+      try {
+        await mPreferences.clear();
+        await mPreferences.flush();
+        const testObserver = (key : string): void => {
+          hilog.info(domain, tag, '%{public}s', `Register001.`);
+          expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
+        }
+        mPreferences.onChange(testObserver);
+        hilog.info(domain, tag, '%{public}s', TAG + "start on2");
+
+        await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
+        hilog.info(domain, tag, '%{public}s', TAG + "start flush");
+
+        await mPreferences.flush();
+        hilog.info(domain, tag, '%{public}s', TAG + "start sleep");
+
+        await Utils.msSleep(100);
+        mPreferences.offChange(testObserver);
+      } catch (err : BusinessError) {
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    })
+    /**
+     * @tc.name   testPreferencesRegisterObserver002
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesRegisterObserver002_basis_EtsApiTest_4900
+     * @tc.desc   repeat on interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesRegisterObserver002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await mPreferences.clear();
+      await mPreferences.flush();
+      const observer = (key : string): void => {
+        hilog.info(domain, tag, '%{public}s', `Register002.`);
+        expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
+      };
+      mPreferences.onChange(observer);
+      mPreferences.onChange(observer);
+      await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
+      await mPreferences.flush();
+      hilog.info(domain, tag, '%{public}s', `Register002. flush sync`);
+
+      await Utils.msSleep(100);
+      mPreferences.offChange(observer);
+      done();
+    });
+    /**
+     * @tc.name   testPreferencesUnRegisterObserver001
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesUnRegisterObserver001_basis_EtsApiTest_5000
+     * @tc.desc   off interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testPreferencesUnRegisterObserver001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const observer = (key : string): void => {
+        hilog.info(domain, tag, '%{public}s', `UnRegister001.`);
+        expect(KEY_TEST_STRING_ELEMENT).assertEqual(key);
+      }
+      mPreferences.onChange(observer);
+      await Utils.msSleep(100);
+      await mPreferences.put(KEY_TEST_STRING_ELEMENT, "");
+      await mPreferences.flush();
+      hilog.info(domain, tag, '%{public}s', `UnRegister001. flush sync`);
+
+      await Utils.msSleep(100);
+      mPreferences.offChange(observer);
+      done();
+    });
+    /**
+     * @tc.name   testGetPreferencesSyncinterface001
+     * @tc.number SUB_DistributedData_Preference_SDK_testGetPreferencesSyncinterface001_basis_EtsApiTest_5100
+     * @tc.desc   getPreferencesSync interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetPreferencesSyncinterface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      mPreferences = dataPreferences.getPreferencesSync(context, {
+        name: 'test_preferences_helper'
+      });
+      let val: long = 2;
+      mPreferences.putSync("test", val);
+      mPreferences.flushSync();
+      let value = mPreferences.getSync('test', 0);
+      expect(value).assertEqual(val);
+      done();
+    });
+
+    /**
+     * @tc.name   testPreferencesPutStringArray0131
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutStringArray0131_basis_EtsApiTest_5200
+     * @tc.desc   put StringArray promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPreferencesPutStringArray0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        await mPreferences.flush();
+        const stringArr = new Array<string>('1', '2', '3');
+        await mPreferences.put(KEY_TEST_STRING_ARRAY_ELEMENT, stringArr);
+        await mPreferences.get(KEY_TEST_STRING_ARRAY_ELEMENT, ['123', '321']).then((pre : Object) :  Promise<void> => {
+          let preTemp = pre as Array<string>;
+          for (let i = 0; i < stringArr.length; i++) {
+            expect(stringArr[i]).assertEqual(preTemp[i]);
+          }
+        }).catch((err) => {
+          expect(null).assertFail();
+        })
+      } catch (err : BusinessError) {
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPreferencesPutNumberArray0132
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutNumberArray0132_basis_EtsApiTest_5300
+     * @tc.desc   put NumberArray promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPreferencesPutNumberArray0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        await mPreferences.flush();
+        let numberArr = new Array<double>(11.1, 22.2, 33.3, 44.4, 55.5);
+        await mPreferences.put(KEY_TEST_NUMBER_ARRAY_ELEMENT, numberArr);
+        let nArrObj = mPreferences.getSync(KEY_TEST_NUMBER_ARRAY_ELEMENT, new Array<double>()) as Array<double>;
+        expect(nArrObj != null).assertEqual(true);
+        for (let i = 0; i < nArrObj.length; i++) {
+          expect(nArrObj[i]).assertEqual(numberArr[i]);
+        }
+      } catch (err : BusinessError) {
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPreferencesPutLongArray0132
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutLongArray0132_basis_EtsApiTest_5400
+     * @tc.desc   put NumberArray promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPreferencesPutLongArray0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        await mPreferences.flush();
+        let longArr = new Array<long>(1111, 2222, 3333, 4444, 5555);
+        await mPreferences.put(KEY_TEST_NUMBER_ARRAY_ELEMENT, longArr);
+        let nArrObj = mPreferences.getSync(KEY_TEST_NUMBER_ARRAY_ELEMENT, new Array<long>()) as Array<long>;
+        expect(nArrObj != null).assertEqual(true);
+        for (let i = 0; i < nArrObj.length; i++) {
+          expect(nArrObj[i]).assertEqual(longArr[i]);
+        }
+      } catch (err : BusinessError) {
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPreferencesPutBoolArray0133
+     * @tc.number SUB_DistributedData_Preference_SDK_testPreferencesPutNumberArray0132_basis_EtsApiTest_5500
+     * @tc.desc   put BoolArray promise interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPreferencesPutBoolArray0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        await mPreferences.clear();
+        await mPreferences.flush();
+        let boolArr = new Array<boolean>(true, false, false, true);
+        await mPreferences.put(KEY_TEST_BOOL_ARRAY_ELEMENT, boolArr);
+        let nArrObj = mPreferences.getSync(KEY_TEST_BOOL_ARRAY_ELEMENT, new Array<boolean>()) as Array<boolean>;
+        expect(nArrObj != null).assertEqual(true);
+        for (let i = 0; i < nArrObj.length; i++) {
+          expect(nArrObj[i]).assertEqual(boolArr[i]);
+        }
+      } catch (err : BusinessError) {
+        expect().assertFail();
+      } finally {
+        done();
+      }
+    });
   })
 }

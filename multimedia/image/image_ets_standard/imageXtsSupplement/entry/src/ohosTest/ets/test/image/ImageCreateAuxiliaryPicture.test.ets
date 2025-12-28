@@ -24,7 +24,7 @@ async function createAuxiliaryPictureAbnormalTest(done: Function, testName: stri
   auxType: image.AuxiliaryPictureType, callback: (errorCode: string) => void) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(299700600);
+    let array = new ArrayBuffer(3000);
     let pathUri = 'file://' + testContext.filesDir + "/" + path;
     const fd = await fs.open(pathUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, array);

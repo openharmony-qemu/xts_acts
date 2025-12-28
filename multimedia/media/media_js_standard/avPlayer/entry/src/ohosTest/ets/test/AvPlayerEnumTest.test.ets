@@ -146,6 +146,8 @@ export default function AvPlayerEnumTest() {
       expect(media.MediaDescriptionKey.MD_KEY_HDR_TYPE).assertEqual("hdr_type");
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH).assertEqual("original_width");
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT).assertEqual("original_height");
+      expect(media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS).assertEqual("ref_track_ids");
+      expect(media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE).assertEqual("track_ref_type");
       done();
     });
     /**

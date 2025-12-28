@@ -64,7 +64,8 @@ export default function LightWeightMapTest1() {
       try {
         let lightWeightMap = new LightWeightMap<string, number>();
         expect(String(lightWeightMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The LightWeightMap's constructor cannot be directly invoked");
@@ -519,19 +520,19 @@ export default function LightWeightMapTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testLightWeightMap0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let lightWeightMap = new LightWeightMap<number, string>();
-    //   lightWeightMap.set(1, "A");
-    //   lightWeightMap.set(2, "B");
-    //   lightWeightMap.set(3, "C");
-    //   lightWeightMap.set(4, "D");
-    //   lightWeightMap.set(5, "E");
-    //   lightWeightMap.clear();
-    //   let res = lightWeightMap.length;
-    //   expect(String(res)).assertEqual(0);
-    //   let isEmpty = lightWeightMap.isEmpty();
-    //   expect(String(isEmpty)).assertEqual('true');
-    // });
+    it("testLightWeightMap0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let lightWeightMap = new LightWeightMap<number, string>();
+      lightWeightMap.set(1, "A");
+      lightWeightMap.set(2, "B");
+      lightWeightMap.set(3, "C");
+      lightWeightMap.set(4, "D");
+      lightWeightMap.set(5, "E");
+      lightWeightMap.clear();
+      let res = lightWeightMap.length;
+      expect(String(res)).assertEqual('0');
+      let isEmpty = lightWeightMap.isEmpty();
+      expect(String(isEmpty)).assertEqual('true');
+    });
 
     /**
      * @tc.name   testLightWeightMap0025
@@ -982,6 +983,7 @@ export default function LightWeightMapTest1() {
      * @tc.level  LEVEL1
      */
     // it("testLightWeightMap0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    //   hilog.info(domain, tag,'testSet044')
     //   let lightWeightMap = new LightWeightMap<number, number>();
     //   for (let i = 0; i < 10000; i++) {
     //     lightWeightMap.set(i, i);
@@ -1160,7 +1162,8 @@ export default function LightWeightMapTest1() {
       try {
         let res = lightWeightMap.getKeyAt(6);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -1227,7 +1230,8 @@ export default function LightWeightMapTest1() {
       try {
         lightWeightMap.setValueAt(3, "a");
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -1253,7 +1257,8 @@ export default function LightWeightMapTest1() {
       try {
         lightWeightMap.getValueAt(6);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)

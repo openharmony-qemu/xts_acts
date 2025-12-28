@@ -34,14 +34,13 @@ export default class EntryAbility extends UIAbility {
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
     windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError, data) => {
-      if (err.code) {
+      if (err?.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError, data) => {
-        let errCode: number = err.code;
-        if (errCode) {
+        if (err && err.code) {
           console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           return;
         }

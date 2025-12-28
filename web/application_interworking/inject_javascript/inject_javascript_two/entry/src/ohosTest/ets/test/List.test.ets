@@ -15,8 +15,14 @@
 
 import webRegisterJavaScriptProxyJsunit from './webRegisterJavaScriptProxyJsunit.test'
 import webRegisterAsyncThreadJavaScriptProxy from './WebRegisterAsyncThreadJavaScriptProxy.test'
+import webUrlRegexRules from './WebUrlRegexRules.test'
+import webUrlRegexRulesSetNull from './WebUrlRegexRulesSetNull.test'
+import webUrlRegexRulesSetUndefined from './WebUrlRegexRulesSetUndefined.test'
 
 export default function testsuite() {
   webRegisterJavaScriptProxyJsunit()
   webRegisterAsyncThreadJavaScriptProxy()
+  webUrlRegexRules()
+  webUrlRegexRulesSetNull()
+  webUrlRegexRulesSetUndefined()
 }

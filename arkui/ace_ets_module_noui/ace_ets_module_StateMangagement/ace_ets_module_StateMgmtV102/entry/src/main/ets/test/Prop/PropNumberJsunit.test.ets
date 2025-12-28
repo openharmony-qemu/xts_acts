@@ -68,7 +68,7 @@ export default function PropNumberJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropNumberJsunit_0200', Level.LEVEL0, async (done: Function) => {
+    it('PropNumberJsunit_0200', Level.LEVEL1, async (done: Function) => {
 
       console.info('PropNumberJsunit_0200 START');
       let driver = await UiDriver.create()
@@ -98,7 +98,7 @@ export default function PropNumberJsunit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PropNumberJsunit_0300', Level.LEVEL0, async (done: Function) => {
+    it('PropNumberJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('PropNumberJsunit_0300 START');
       let driver = await UiDriver.create()
       let button = await driver.findComponent(BY.key('ChildPropNumber_A'));

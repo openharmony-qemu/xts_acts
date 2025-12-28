@@ -39,13 +39,14 @@ static napi_value TextTextStyleGraphic001(napi_env env, napi_callback_info info)
     OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
     OH_Drawing_SetTypographyTextMaxLines(typoStyle, PARAM_5);
     ArkUI_StyledString *styledString = OH_ArkUI_StyledString_Create(typoStyle, OH_Drawing_CreateFontCollection());
-    
+    ASSERT_EQ(styledString == nullptr, false);
     OH_Drawing_TextStyle *styled1 = OH_Drawing_CreateTextStyle();
     OH_ArkUI_StyledString_PushTextStyle(styledString, styled1);
     OH_ArkUI_StyledString_AddText(styledString, "test2");
     OH_ArkUI_StyledString_PopTextStyle(styledString);
 
     OH_Drawing_Typography *tyPo = OH_ArkUI_StyledString_CreateTypography(styledString);
+    ASSERT_EQ(tyPo == nullptr, false);
     OH_ArkUI_StyledString_Destroy(styledString);
     napi_value result = nullptr;  
     napi_create_int32(env, 0, &result);                                                                                 
