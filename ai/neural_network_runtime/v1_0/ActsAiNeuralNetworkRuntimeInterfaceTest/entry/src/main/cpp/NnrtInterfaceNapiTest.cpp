@@ -27,7 +27,7 @@ using TestFunction = int (*)();
 
 // 测试函数注册表（静态数组）
 static TestFunction g_testFunctions[] = {
-    
+
 };
 
 // 自动计算测试用例总数
@@ -62,7 +62,7 @@ static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
         napi_throw_error(env, nullptr, "NAPI call failed");
         return createResultValue(env, false);
     }
-    
+
     // 2. 验证参数类型
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
@@ -70,7 +70,7 @@ static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
         napi_throw_type_error(env, nullptr, "Argument must be a number");
         return createResultValue(env, false);
     }
-    
+
     // 3. 获取测试用例编号
     int32_t caseNum = -1;
     status = napi_get_value_int32(env, args[0], &caseNum);
@@ -78,18 +78,18 @@ static napi_value nnrtInterfaceTest(napi_env env, napi_callback_info info)
         napi_throw_error(env, nullptr, "Failed to get case number");
         return createResultValue(env, false);
     }
-    
+
     // 4. 验证范围并调用对应测试函数
     if (caseNum < 0 || caseNum >= g_testFunctionCount) {
         char errorMsg[64];
-        snprintf(errorMsg, sizeof(errorMsg), "The range of case must be 0 to %d", g_testFunctionCount - 1);
+        snprintf_s(errorMsg, sizeof(errorMsg), _TRUNCATE, "The range of case must be 0 to %d", g_testFunctionCount - 1);
         napi_throw_type_error(env, nullptr, errorMsg);
         return createResultValue(env, false);
     }
-    
+
     // 直接通过数组索引调用
     int result = g_testFunctions[caseNum]();
-    
+
     // 5. 返回测试结果
     napi_value resultValue;
     napi_create_int32(env, result, &resultValue);
@@ -103,8 +103,7 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        { "nnrtInterfaceTest", nullptr, nnrtInterfaceTest, 
-          nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "nnrtInterfaceTest", nullptr, nnrtInterfaceTest, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
