@@ -357,8 +357,11 @@ export default function imageNdkTest() {
         size: { width: 10, height: 10 },
         editable: true
       };
+      const pixels = new ArrayBuffer(5 * 5 * 4);
+      const view = new Uint8Array(pixels);
+      view.fill(255);
       const pixelMap = image.createPixelMapSync(options);
-      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, false);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, pixels, false);
       let msg = 'testNativeWritePixelsToArea result: '
       console.info(msg + result);
       expect(result).assertEqual(0);
@@ -379,8 +382,9 @@ export default function imageNdkTest() {
         size: { width: 10, height: 10 },
         editable: true
       };
+      const pixels = new ArrayBuffer(5 * 5 * 4);
       const pixelMap = image.createPixelMapSync(options);
-      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, -1, 0, 11, 100, false);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, -1, 0, 11, 100, pixels, false);
       let msg = 'testNativeWritePixelsToAreaInvalidRegion result: '
       console.info(msg + result);
       expect(result).assertEqual(401);
@@ -401,8 +405,9 @@ export default function imageNdkTest() {
         size: { width: 10, height: 10 },
         editable: false
       };
+      const pixels = new ArrayBuffer(5 * 5 * 4);
       const pixelMap = image.createPixelMapSync(options);
-      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, false);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, pixels, false);
       let msg = 'testNativeWritePixelsToAreaUneditable result: '
       console.info(msg + result);
       expect(result).assertEqual(7600201);
@@ -423,8 +428,9 @@ export default function imageNdkTest() {
         size: { width: 10, height: 10 },
         editable: true
       };
+      const pixels = new ArrayBuffer(5 * 5 * 4);
       const pixelMap = image.createPixelMapSync(options);
-      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, true);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, pixels, true);
       let msg = 'testNativeWritePixelsToAreaNull result: '
       console.info(msg + result);
       expect(result).assertEqual(401);

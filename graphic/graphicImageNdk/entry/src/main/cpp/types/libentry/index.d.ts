@@ -32,7 +32,7 @@ export const testNativeConvertAlphaFormat: () => number;
 export const testNativeReadPixelsFromArea: (pixelMap: image.PixelMap, x: number, y: number, width: number,
   height: number, useNull: boolean) => number;
 export const testNativeWritePixelsToArea: (pixelMap: image.PixelMap, x: number, y: number, width: number,
-  height: number, useNull: boolean) => number;
+  height: number, pixels: ArrayBuffer, useNull: boolean) => number;
 export const testNativeCreateAlphaPixelmap: (pixelMap: image.PixelMap, useNull: boolean) => number;
 export const testNativeClone: (pixelMap: image.PixelMap, useNull: boolean) => number;
 export const testNativeCreateCroppedAndScaledPixelMap: (pixelMap: image.PixelMap, x: number, y: number, width: number,

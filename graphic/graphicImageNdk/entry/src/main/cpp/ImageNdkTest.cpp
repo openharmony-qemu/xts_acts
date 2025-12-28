@@ -394,6 +394,10 @@ static napi_value TestNativeWritePixelsToArea(napi_env env, napi_callback_info i
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_WritePixelsToArea failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
     }
+    if (reinterpret_cast<uint8_t*>(data)[0] != 255) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_WritePixelsToArea did not work as expected.");
+        return getJsResult(env, -1);
+    }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeWritePixelsToArea success.");
     return getJsResult(env, IMAGE_SUCCESS);
@@ -425,6 +429,10 @@ static napi_value TestNativeCreateAlphaPixelmap(napi_env env, napi_callback_info
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreateAlphaPixelmap failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
     }
+    if (dstPixelmap == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreateAlphaPixelmap did not work as expected.");
+        return getJsResult(env, -1);
+    }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreateAlphaPixelmap success.");
     return getJsResult(env, IMAGE_SUCCESS);
@@ -455,6 +463,10 @@ static napi_value TestNativeClone(napi_env env, napi_callback_info info)
     if (errCode != IMAGE_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_Clone failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
+    }
+    if (dstPixelmap == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_Clone did not work as expected.");
+        return getJsResult(env, -1);
     }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeClone success.");
@@ -507,6 +519,10 @@ static napi_value TestNativeCreateCroppedAndScaledPixelMap(napi_env env, napi_ca
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreateCroppedAndScaledPixelMap failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
     }
+    if (dstPixelmap == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreateCroppedAndScaledPixelMap did not work as expected.");
+        return getJsResult(env, -1);
+    }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreateCroppedAndScaledPixelMap success.");
     return getJsResult(env, IMAGE_SUCCESS);
@@ -544,6 +560,10 @@ static napi_value TestNativeCreatePixelMapFromNativeBuffer(napi_env env, napi_ca
     if (errCode != IMAGE_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelmapFromNativeBuffer failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
+    }
+    if (dstPixelmap == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelmapFromNativeBuffer did not work as expected.");
+        return getJsResult(env, -1);
     }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreatePixelMapFromNativeBuffer success.");
@@ -592,6 +612,10 @@ static napi_value TestNativeCreatePixelMapFromSurface(napi_env env, napi_callbac
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelMapFromSurface failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
     }
+    if (dstPixelmap == nullptr) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_CreatePixelMapFromSurface did not work as expected.");
+        return getJsResult(env, -1);
+    }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeCreatePixelMapFromSurface success.");
     return getJsResult(env, IMAGE_SUCCESS);
@@ -622,6 +646,10 @@ static napi_value TestNativeGetUniqueId(napi_env env, napi_callback_info info)
     if (errCode != IMAGE_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_GetUniqueId failed, errCode: %{public}d.", errCode);
         return getJsResult(env, errCode);
+    }
+    if (uniqueId == 0) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_GetUniqueId did not work as expected.");
+        return getJsResult(env, -1);
     }
 
     OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeGetUniqueId success.");
