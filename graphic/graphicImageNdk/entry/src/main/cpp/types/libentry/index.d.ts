@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import image from '@ohos.multimedia.image';
+
 export const testInitializationOptionsSetRowStrideNormal: (rowStride: number) => number;
 export const testCreatePixelMapWithStrideAbnormal: () => number;
 export const testNativeScaleWithAntiAliasingAbnormal: () => number;
@@ -27,3 +29,15 @@ export const testNativeSetColorSpaceNative: () => number;
 export const testNativeSetGetSrcPixelFormat: () => number;
 export const testNativeCreateEmptyPixelmap: () => number;
 export const testNativeConvertAlphaFormat: () => number;
+export const testNativeReadPixelsFromArea: (pixelMap: image.PixelMap, x: number, y: number, width: number,
+  height: number, useNull: boolean) => number;
+export const testNativeWritePixelsToArea: (pixelMap: image.PixelMap, x: number, y: number, width: number,
+  height: number, useNull: boolean) => number;
+export const testNativeCreateAlphaPixelmap: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeClone: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeCreateCroppedAndScaledPixelMap: (pixelMap: image.PixelMap, x: number, y: number, width: number,
+  height: number, scaleX: number, scaleY: number, level: number, useNull: boolean) => number;
+export const testNativeCreatePixelMapFromNativeBuffer: (pixelMap: image.PixelMap, useNull: boolean) => number;
+export const testNativeCreatePixelMapFromSurface: (surfaceId: string, useNull: boolean) => number;
+export const testNativeGetUniqueId: (pixelMap: image.PixelMa, useNull: boolean) => number;
+export const testNativeIsReleased: (pixelMap: image.PixelMap, callAfterRelease: boolean, useNull: boolean) => number;

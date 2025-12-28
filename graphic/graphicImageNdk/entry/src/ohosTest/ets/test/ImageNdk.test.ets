@@ -280,5 +280,542 @@ export default function imageNdkTest() {
       done();
     })
 
+    /**
+     * @tc.name   testNativeReadPixelsFromArea
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeReadPixelsFromArea_1600
+     * @tc.desc   1.testNativeReadPixelsFromArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeReadPixelsFromArea',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeReadPixelsFromArea(pixelMap, 0, 0, 5, 5, false);
+      let msg = 'testNativeReadPixelsFromArea result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeReadPixelsFromAreaInvalidRegion
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeReadPixelsFromArea_1700
+     * @tc.desc   1.testNativeReadPixelsFromAreaInvalidRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeReadPixelsFromAreaInvalidRegion',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeReadPixelsFromArea(pixelMap, -1, 0, 11, 100, false);
+      let msg = 'testNativeReadPixelsFromAreaInvalidRegion result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeReadPixelsFromAreaNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeReadPixelsFromArea_1800
+     * @tc.desc   1.testNativeReadPixelsFromAreaNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeReadPixelsFromAreaNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeReadPixelsFromArea(pixelMap, 0, 0, 5, 5, true);
+      let msg = 'testNativeReadPixelsFromAreaNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeWritePixelsToArea
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeWritePixelsToArea_1900
+     * @tc.desc   1.testNativeWritePixelsToArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeWritePixelsToArea',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, false);
+      let msg = 'testNativeWritePixelsToArea result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeWritePixelsToAreaInvalidRegion
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeWritePixelsToArea_2000
+     * @tc.desc   1.testNativeWritePixelsToAreaInvalidRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeWritePixelsToAreaInvalidRegion',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, -1, 0, 11, 100, false);
+      let msg = 'testNativeWritePixelsToAreaInvalidRegion result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeWritePixelsToAreaUneditable
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeWritePixelsToArea_2100
+     * @tc.desc   1.testNativeWritePixelsToAreaUneditable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeWritePixelsToAreaUneditable',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: false
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, false);
+      let msg = 'testNativeWritePixelsToAreaUneditable result: '
+      console.info(msg + result);
+      expect(result).assertEqual(7600201);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeWritePixelsToAreaNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeWritePixelsToArea_2200
+     * @tc.desc   1.testNativeWritePixelsToAreaNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeWritePixelsToAreaNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 },
+        editable: true
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeWritePixelsToArea(pixelMap, 0, 0, 5, 5, true);
+      let msg = 'testNativeWritePixelsToAreaNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreateAlphaPixelmap
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateAlphaPixelmap_2300
+     * @tc.desc   1.testNativeCreateAlphaPixelmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreateAlphaPixelmap',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeCreateAlphaPixelmap(pixelMap, false);
+      let msg = 'testNativeCreateAlphaPixelmap result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreateAlphaPixelmapNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateAlphaPixelmap_2400
+     * @tc.desc   1.testNativeCreateAlphaPixelmapNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreateAlphaPixelmapNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeCreateAlphaPixelmap(pixelMap, true);
+      let msg = 'testNativeCreateAlphaPixelmapNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeClone
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeClone_2500
+     * @tc.desc   1.testNativeClone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeClone',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeClone(pixelMap, false);
+      let msg = 'testNativeClone result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCloneNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeClone_2500
+     * @tc.desc   1.testNativeCloneNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCloneNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeClone(pixelMap, true);
+      let msg = 'testNativeCloneNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreateCroppedAndScaledPixelMap
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2600
+     * @tc.desc   1.testNativeCreateCroppedAndScaledPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreateCroppedAndScaledPixelMap',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeCreateCroppedAndScaledPixelMap(pixelMap, 0, 0, 5, 5, 1.5, -2, 0, false);
+      let msg = 'testNativeCreateCroppedAndScaledPixelMap result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreateCroppedAndScaledPixelMapInvalidRegion
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2700
+     * @tc.desc   1.testNativeCreateCroppedAndScaledPixelMapInvalidRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreateCroppedAndScaledPixelMapInvalidRegion',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeCreateCroppedAndScaledPixelMap(pixelMap, -1, 0, 11, 100, 1, -2, 0, false);
+      let msg = 'testNativeCreateCroppedAndScaledPixelMapInvalidRegion result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreateCroppedAndScaledPixelMapNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreateCroppedAndScaledPixelMap_2800
+     * @tc.desc   1.testNativeCreateCroppedAndScaledPixelMapNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreateCroppedAndScaledPixelMapNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeCreateCroppedAndScaledPixelMap(pixelMap, 0, 0, 5, 5, 1.5, -2, 0, true);
+      let msg = 'testNativeCreateCroppedAndScaledPixelMapNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreatePixelMapFromNativeBuffer
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_2900
+     * @tc.desc   1.testNativeCreatePixelMapFromNativeBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreatePixelMapFromNativeBuffer',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.DMA);
+      let result: number = ndkTest.testNativeCreatePixelMapFromNativeBuffer(pixelMap, false);
+      let msg = 'testNativeCreatePixelMapFromNativeBuffer result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreatePixelMapFromNativeBufferNotDMA
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_2900
+     * @tc.desc   1.testNativeCreatePixelMapFromNativeBufferNotDMA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreatePixelMapFromNativeBufferNotDMA',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.SHARE_MEMORY);
+      let result: number = ndkTest.testNativeCreatePixelMapFromNativeBuffer(pixelMap, false);
+      let msg = 'testNativeCreatePixelMapFromNativeBufferNotDMA result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreatePixelMapFromNativeBufferNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromNativeBuffer_3000
+     * @tc.desc   1.testNativeCreatePixelMapFromNativeBufferNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreatePixelMapFromNativeBufferNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapUsingAllocatorSync(options, image.AllocatorType.DMA);
+      let result: number = ndkTest.testNativeCreatePixelMapFromNativeBuffer(pixelMap, true);
+      let msg = 'testNativeCreatePixelMapFromNativeBufferNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreatePixelMapFromSurface
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3100
+     * @tc.desc   1.testNativeCreatePixelMapFromSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreatePixelMapFromSurface',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeCreatePixelMapFromSurface('123', false);
+      let msg = 'testNativeCreatePixelMapFromSurface result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreatePixelMapFromSurfaceInvalidId
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3200
+     * @tc.desc   1.testNativeCreatePixelMapFromSurfaceInvalidId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreatePixelMapFromSurfaceInvalidId',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeCreatePixelMapFromSurface('ABC', false);
+      let msg = 'testNativeCreatePixelMapFromSurfaceInvalidId result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeCreatePixelMapFromSurfaceNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeCreatePixelMapFromSurface_3300
+     * @tc.desc   1.testNativeCreatePixelMapFromSurfaceNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeCreatePixelMapFromSurfaceNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testNativeCreatePixelMapFromSurface('123', true);
+      let msg = 'testNativeCreatePixelMapFromSurfaceNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeGetUniqueId
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeGetUniqueId_3400
+     * @tc.desc   1.testNativeGetUniqueId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeGetUniqueId',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeGetUniqueId(pixelMap, false);
+      let msg = 'testNativeGetUniqueId result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeGetUniqueIdNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeGetUniqueId_3500
+     * @tc.desc   1.testNativeGetUniqueIdNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeGetUniqueIdNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeGetUniqueId(pixelMap, true);
+      let msg = 'testNativeGetUniqueIdNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeIsReleased
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3600
+     * @tc.desc   1.testNativeIsReleased
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeIsReleased',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeIsReleased(pixelMap, false, false);
+      let msg = 'testNativeIsReleased result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeIsReleased
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3600
+     * @tc.desc   1.testNativeIsReleased
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeIsReleased',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeIsReleased(pixelMap, false, false);
+      let msg = 'testNativeIsReleased result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+    
+    /**
+     * @tc.name   testNativeIsReleasedAfterRelease
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3700
+     * @tc.desc   1.testNativeIsReleasedAfterRelease
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeIsReleasedAfterRelease',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeIsReleased(pixelMap, true, false);
+      let msg = 'testNativeIsReleasedAfterRelease result: '
+      console.info(msg + result);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   testNativeIsReleasedNull
+     * @tc.number SUB_MULTIMEDIA_PIXELMAPCAPI_NativeIsReleased_3600
+     * @tc.desc   1.testNativeIsReleasedNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeIsReleasedNull',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const options: image.InitializationOptions = {
+        size: { width: 10, height: 10 }
+      };
+      const pixelMap = image.createPixelMapSync(options);
+      let result: number = ndkTest.testNativeIsReleased(pixelMap, false, true);
+      let msg = 'testNativeIsReleasedNull result: '
+      console.info(msg + result);
+      expect(result).assertEqual(401);
+      done();
+    })
   })
 }
