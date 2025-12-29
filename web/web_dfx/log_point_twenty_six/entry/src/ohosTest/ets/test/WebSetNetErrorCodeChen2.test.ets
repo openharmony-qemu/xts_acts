@@ -313,7 +313,7 @@ export default function ActsAceWebSetNetErrorCodeChen2() {
     })
     /**
     *@tc.number SUB_ACE_WEB_SET_NET_ERROR_CODE_API_TWO_PART_0108
-    *@tc.name   testWebSetNetErrorCode_ERR_ERR_MSG_TOO_BIG
+    *@tc.name   testWebSetNetErrorCode_ERR_MSG_TOO_BIG
     *@tc.desc   test WebSetNetErrorCode_ERR_ERR_MSG_TOO_BIG (-142)
     *@tc.size   MediumTest
     *@tc.type   Function
