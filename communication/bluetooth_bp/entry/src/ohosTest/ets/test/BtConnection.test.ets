@@ -1474,7 +1474,7 @@ describe('btConnectionTest', () => {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             bluetooth.setLocalName('A');
             await sleep(1000);
