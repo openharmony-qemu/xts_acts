@@ -112,15 +112,22 @@ static bool ReadDataFromFile(void *buffer, int32_t size)
     return true;
 }
 
-// Callback function for writing audio data with metadata
-static int32_t AudioRendererWriteDataWithMetadataCallback(OH_AudioRenderer *renderer,
-    void *userData, void *audioData, int32_t audioDataSize, void *metadata, int32_t metadataSize)
+// Helper function to write audio data with metadata
+static int32_t WriteData(OH_AudioRenderer *renderer, void *audioData, int32_t audioDataSize,
+    void *metadata, int32_t metadataSize)
 {
     if (!ReadDataFromFile(audioData, audioDataSize)) {
         return 0;
     }
     ReadDataFromFile(metadata, metadataSize);
     return 0;
+}
+
+// Callback function for writing audio data with metadata
+static int32_t AudioRendererWriteDataWithMetadataCallback(OH_AudioRenderer *renderer,
+    void *userData, void *audioData, int32_t audioDataSize, void *metadata, int32_t metadataSize)
+{
+    return WriteData(renderer, audioData, audioDataSize, metadata, metadataSize);
 }
 
 static int32_t AudioCapturerOnReadData(
