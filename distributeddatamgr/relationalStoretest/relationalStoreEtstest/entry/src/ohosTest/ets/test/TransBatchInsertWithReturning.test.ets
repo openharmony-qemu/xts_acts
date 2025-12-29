@@ -1168,7 +1168,7 @@ export default function TransBatchInsertWithReturning() {
     it('transBatchInsertWithReturning023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       console.log(TAG + "************* transBatchInsertWithReturning023 start *************");
       let trans = await rdbStore?.createTransaction(options);
-      let maxPageCount:number = await trans?.execute("PRAGMA max_page_count = 256;");
+      let maxPageCount:string = await trans?.execute("PRAGMA max_page_count = 256;");
       expect(maxPageCount).assertEqual(256);
       let u8 = new Uint8Array(Array(1024 * 1024).fill(1));
       let valueBuckets = new Array<relationalStore.ValuesBucket>();
