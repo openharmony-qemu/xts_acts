@@ -105,9 +105,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0150', Level.LEVEL0,
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(30))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(40))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(40))).toInt()
       );
       await CommonFunc.sleep(5000);
       
@@ -150,9 +150,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0160', Level.LEVEL0,
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(100))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(100))).toInt()
       );
       await CommonFunc.sleep(4000);
       
@@ -196,9 +196,9 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170', Level.LEVEL0, async 
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(2))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(2))).toInt(),
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(230))).toInt()
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(230))).toInt()
       );
       await CommonFunc.sleep(4000);
       

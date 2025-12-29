@@ -49,12 +49,10 @@ export default function rotationGestureTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get RotationGesture state pages:' + JSON.stringify(pages));
-        if (!('RotationGesture' == pages.name)) {
+        if (!('RotationGesture1' == pages.name)) {
           console.info('get RotationGesture state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info('push RotationGesture page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push RotationGesture page error:' + err);

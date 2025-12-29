@@ -77,7 +77,7 @@ export default function ListItem_aspectRatio_all2() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItem_aspectRatio_all2 after each called");
     });
 

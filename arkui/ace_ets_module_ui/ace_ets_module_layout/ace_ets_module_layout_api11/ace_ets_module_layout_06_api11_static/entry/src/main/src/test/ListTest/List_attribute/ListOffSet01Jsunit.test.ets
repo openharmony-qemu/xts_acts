@@ -63,7 +63,7 @@ export default function ListOffSet01Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get ListOffSet01Jsunit state pages:" + JSON.stringify(pages));
         if (!("ListOffSet01" == pages.name)) {

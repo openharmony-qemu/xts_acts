@@ -78,7 +78,7 @@ export default function ListItemGroup_aspectRatio_width() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItemGroup_aspectRatio_width after each called");
     });
 
@@ -103,8 +103,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0100', Level.LEVEL0, async (d
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width_0100] END');
       done();
@@ -130,8 +130,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0200', Level.LEVEL0, async (d
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width_0200] END');
       done();
@@ -157,8 +157,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0300', Level.LEVEL0, async (d
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width_0300] END');
       done();
@@ -184,8 +184,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_width_static_0400', Level.LEVEL0, async (d
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_width_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_width_0400] END');
       done();

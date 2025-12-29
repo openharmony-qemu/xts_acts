@@ -66,21 +66,14 @@ export default function setXComponentSurfaceRotationJsunit() {
 it('setXComponentSurfaceRotationTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('setXComponentSurfaceRotationTest_static_0010 START');
       let strJson = inspector.getInspectorByKey('setXComponentSurfaceRotation_text');
-      // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is:00 " +
-      // JSON.parseJsonElement(strJson).$attrs.);
-      // // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: " + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).lock))
-      // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: " +
-      // JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).$attrs))
-
-      // console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is:11 " +
-      // JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')))
-      //
       console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: 12  " +
-      JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')[0])
+      JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
 
       const strJson2 = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')
-      expect(JSON.parseJsonElement(strJson2).getString('lock'))
-        .assertEqual('{"lock":false}');
+      console.info("[setXComponentSurfaceRotationTest_static_0010] component obj is: 12  " +
+      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
+      expect(strJson2)
+        .assertEqual('false');
       console.info('[setXComponentSurfaceRotationTest_static_0010] END');
       done();
     });

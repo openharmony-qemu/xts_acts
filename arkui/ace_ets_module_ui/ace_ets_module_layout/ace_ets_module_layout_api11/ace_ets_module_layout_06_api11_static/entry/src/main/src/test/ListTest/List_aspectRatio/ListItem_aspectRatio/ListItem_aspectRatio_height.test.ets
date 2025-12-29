@@ -65,7 +65,7 @@ export default function ListItem_aspectRatio_height() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItem_aspectRatio_height after each called");
     });
 
@@ -89,8 +89,8 @@ it('SUB_ACE_ListItem_aspectRatio_height_static_0100', Level.LEVEL0, async (done:
       });
       await CommonFunc.sleep(1000);
       let ListItem01: RectValue = CommonFunc.getComponentRect('ListItem_aspectRatio_height_01');
-      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
       console.info('[SUB_ACE_ListItem_aspectRatio_height_0100] END');
       done();
     });
@@ -115,8 +115,8 @@ it('SUB_ACE_ListItem_aspectRatio_height_static_0200', Level.LEVEL0, async (done:
       await CommonFunc.sleep(1000);
       let ListItem01: RectValue = CommonFunc.getComponentRect('ListItem_aspectRatio_height_01');
 
-      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 
 
       console.info('[SUB_ACE_ListItem_aspectRatio_height_0200] END');
@@ -143,8 +143,8 @@ it('SUB_ACE_ListItem_aspectRatio_height_static_0300', Level.LEVEL0, async (done:
       await CommonFunc.sleep(1000);
       let ListItem01: RectValue = CommonFunc.getComponentRect('ListItem_aspectRatio_height_01');
 
-      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(600))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(600))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItem_aspectRatio_height_0300] END');
       done();
@@ -170,8 +170,8 @@ it('SUB_ACE_ListItem_aspectRatio_height_static_0400', Level.LEVEL0, async (done:
       await CommonFunc.sleep(1000);
       let ListItem01: RectValue = CommonFunc.getComponentRect('ListItem_aspectRatio_height_01');
 
-      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItem_aspectRatio_height_0400] END');
       done();

@@ -77,24 +77,16 @@ export default function ImageOnErrorTest() {
       let strJson1 = inspector.getInspectorByKey('componentWidth');
       let obj1 = JSON.parseJsonElement(strJson1);
       Utils.sleep(1000);
-      console.info("[ImageOnErrorTest_001] obj.getElement('$attrs').getString('width') is: " +
-      JSON.stringify(obj.getElement('$attrs').getString('width')));
-      console.info("[ImageOnErrorTest_001] UIContext.getFocusedUIContext()!.vp2px(obj1.getElement('$attrs').getString('content')) is: " +
-      UIContext.getFocusedUIContext()!.px2vp(parseFloat(obj1.getElement('$attrs').getString('content'))));
-      let componentWidth =
-        Math.round(UIContext.getFocusedUIContext()!.px2vp(parseFloat(obj1.getElement('$attrs').getString('content')))) +
-          '.00vp'
+      console.info("[ImageOnErrorTest_001] obj.getElement('$attrs').getString('width') is: " + JSON.stringify(obj.getElement('$attrs').getString('width')));
+      console.info("[ImageOnErrorTest_001] UIContext.resolveUIContext()!.vp2px(obj1.getElement('$attrs').getString('content')) is: " + UIContext.resolveUIContext()!.px2vp(parseFloat(obj1.getElement('$attrs').getString('content'))));
+      let componentWidth = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(obj1.getElement('$attrs').getString('content')))) + '.00vp'
       expect(obj.getElement('$attrs').getString('width')).assertEqual(componentWidth);
       let strJson2 = inspector.getInspectorByKey('componentHeight');
       let obj2 = JSON.parseJsonElement(strJson2);
       await Utils.sleep(1000);
-      console.info("[ImageOnErrorTest_001] obj.getElement('$attrs').getString('height') is: " +
-      JSON.stringify(obj.getElement('$attrs').getString('height')));
-      console.info("[ImageOnErrorTest_001] UIContext.getFocusedUIContext()!.vp2px(parseFloat(obj2.getElement('$attrs').getString('content'))) is: " +
-      UIContext.getFocusedUIContext()!.px2vp(parseFloat(obj2.getElement('$attrs').getString('content'))));
-      let componentHeight =
-        Math.round(UIContext.getFocusedUIContext()!.px2vp(parseFloat(obj2.getElement('$attrs').getString('content')))) +
-          '.00vp'
+      console.info("[ImageOnErrorTest_001] obj.getElement('$attrs').getString('height') is: " + JSON.stringify(obj.getElement('$attrs').getString('height')));
+      console.info("[ImageOnErrorTest_001] UIContext.resolveUIContext()!.vp2px(parseFloat(obj2.getElement('$attrs').getString('content'))) is: " + UIContext.resolveUIContext()!.px2vp(parseFloat(obj2.getElement('$attrs').getString('content'))));
+      let componentHeight = Math.round(UIContext.resolveUIContext()!.px2vp(parseFloat(obj2.getElement('$attrs').getString('content')))) + '.00vp'
       expect(obj.getElement('$attrs').getString('height')).assertEqual(componentHeight);
       console.info('[ImageOnErrorTest_001] END');
       done();

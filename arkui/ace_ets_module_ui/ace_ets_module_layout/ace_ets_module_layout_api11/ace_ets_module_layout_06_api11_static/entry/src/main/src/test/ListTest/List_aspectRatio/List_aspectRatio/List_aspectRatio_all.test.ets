@@ -77,7 +77,7 @@ export default function List_aspectRatio_all() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("ListItem_Delete_End after each called");
     });
 
@@ -102,8 +102,8 @@ it('SUB_ACE_List_aspectRatio_all_static_0100', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_all_01');
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(700))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(700))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_all_0100] END');
       done();
@@ -129,8 +129,8 @@ it('SUB_ACE_List_aspectRatio_all_static_0200', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_all_01');
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(700))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(700))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_all_0200] END');
       done();
@@ -156,8 +156,8 @@ it('SUB_ACE_List_aspectRatio_all_static_0300', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_all_01');
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(175))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(175))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_all_0300] END');
       done();
@@ -183,8 +183,8 @@ it('SUB_ACE_List_aspectRatio_all_static_0400', Level.LEVEL0, async (done: () => 
       await CommonFunc.sleep(1000);
       let List01: RectValue = CommonFunc.getComponentRect('List_aspectRatio_all_01');
 
-	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
-	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(700))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.right - List01.left) - Math.round(UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
+	  expect(Math.abs(Math.round(List01.bottom - List01.top) - Math.round(UIContext.resolveUIContext()!.vp2px(700))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_List_aspectRatio_all_0400] END');
       done();
