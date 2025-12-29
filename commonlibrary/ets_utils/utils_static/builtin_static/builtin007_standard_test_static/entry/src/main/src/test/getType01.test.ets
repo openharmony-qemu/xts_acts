@@ -714,5 +714,646 @@ export default function getType01Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_TOLOCALESTRING_0200
+     * @tc.name    testValueLocaleString10002
+     * @tc.desc    Verify consistent return value across multiple calls
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueLocaleString10002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueLocaleString10002';
+      try {
+        const undefinedValue = UndefinedValue.INSTANCE;
+        const result1 = undefinedValue.toLocaleString();
+        const result2 = undefinedValue.toLocaleString();
+        expect(result1).assertEqual(result2);
+        expect(result1).assertEqual(UndefinedType.REF.toString());
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_TOLOCALESTRING_0300
+     * @tc.name    testValueLocaleString10003
+     * @tc.desc    Verify return value contains expected content
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueLocaleString10003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueLocaleString10003';
+      try {
+        const result = UndefinedValue.INSTANCE.toLocaleString();
+        expect(result.toLowerCase().includes('undefined')).assertTrue();
+        expect(result.length > 0).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_TOLOCALESTRING_0600
+     * @tc.name    testValueLocaleString10006
+     * @tc.desc    Verify toLocaleString() returns the same string reference
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueLocaleString10006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueLocaleString10006';
+      try {
+        const undefinedValue = UndefinedValue.INSTANCE;
+        const result1 = undefinedValue.toLocaleString();
+        const result2 = undefinedValue.toLocaleString();
+        expect(result1 === result2).assertTrue();
+        expect(result1 === UndefinedType.REF.toString()).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_TOLOCALESTRING_0700
+     * @tc.name    testValueLocaleString10007
+     * @tc.desc    Verify return value format matches expected pattern
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueLocaleString10007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueLocaleString10007';
+      try {
+        const result = UndefinedValue.INSTANCE.toLocaleString();
+        expect(typeof result === 'string').assertTrue();
+        const lowerResult = result.toLowerCase();
+        expect(lowerResult.includes('undefined')).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+    * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_BASIC_0100
+    * @tc.name    testValueReadonlyINSTANCE10001
+    * @tc.desc    Verify INSTANCE is instance of UndefinedValue
+    * @tc.size    MEDIUMTEST
+    * @tc.type    FUNCTION
+    * @tc.level   Level 1
+    */
+    it('testValueReadonlyINSTANCE10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10001';
+      try {
+        expect(UndefinedValue.INSTANCE instanceof UndefinedValue).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_SINGLETON_0200
+     * @tc.name    testValueReadonlyINSTANCE10002
+     * @tc.desc    Verify INSTANCE follows singleton pattern
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10002';
+      try {
+        const instance1 = UndefinedValue.INSTANCE;
+        const instance2 = UndefinedValue.INSTANCE;
+        expect(instance1 === instance2).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_TYPE_0300
+     * @tc.name    testValueReadonlyINSTANCE10003
+     * @tc.desc    Verify getType() returns UndefinedType
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTIONV
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10003';
+      try {
+        expect(UndefinedValue.INSTANCE.getType()).assertEqual(UndefinedType.REF);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_DATA_0400
+     * @tc.name    testValueReadonlyINSTANCE10004
+     * @tc.desc    Verify getData() returns undefined
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10004';
+      try {
+        expect(UndefinedValue.INSTANCE.getData() === undefined).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_STRING_0500
+     * @tc.name    testValueReadonlyINSTANCE10005
+     * @tc.desc    Verify toString() returns expected format
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10005';
+      try {
+        expect(UndefinedValue.INSTANCE.toString()).assertEqual("undefined");
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_LOCALE_0600
+     * @tc.name    testValueReadonlyINSTANCE10006
+     * @tc.desc    Verify toLocaleString() returns expected format
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10006';
+      try {
+        expect(UndefinedValue.INSTANCE.toLocaleString()).assertEqual("undefined");
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_PRINT_0700
+     * @tc.name    testValueReadonlyINSTANCE10007
+     * @tc.desc    Verify toPrint() returns expected format
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10007';
+      try {
+        expect(UndefinedValue.INSTANCE.toPrint(0)).assertEqual("undefined");
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_COMPARE_0800
+     * @tc.name    testValueReadonlyINSTANCE10008
+     * @tc.desc    Verify equals() with other values
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10008';
+      try {
+        expect(UndefinedValue.INSTANCE === UndefinedValue.INSTANCE).assertTrue();
+        expect(undefined === undefined).assertTrue();
+        expect(null === null).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UNDEFINEDVALUE_VALUEOF_0900
+     * @tc.name    testValueReadonlyINSTANCE10009
+     * @tc.desc    Verify valueOf() returns undefined
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueReadonlyINSTANCE10009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueReadonlyINSTANCE10009';
+      try {
+        expect(UndefinedValue.INSTANCE.toString() === 'undefined').assertTrue();
+        expect(typeof UndefinedValue.INSTANCE === 'object').assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0100
+     * @tc.name    testValueGetType30001
+     * @tc.desc    Verify getType() returns correct ShortType instance
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType30001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType30001';
+      try {
+        const shortType: ShortType;
+        const shortValue = new ShortValue(shortType, 42);
+        const resultType = shortValue.getType();
+        expect(typeof resultType).assertEqual(typeof shortType);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0200
+     * @tc.name    testValueGetType30002
+     * @tc.desc    Verify ShortValue works with normal positive value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType30002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType30002';
+      try {
+        const shortType: ShortType;
+        const testValue = 42;
+        const shortValue = new ShortValue(shortType, testValue);
+        const resultType = shortValue.getType();
+        expect(resultType === shortType).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0300
+     * @tc.name   testValueGetType30003
+     * @tc.desc   Verify ShortValue works with negative value
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  Level 1
+     */
+    it('testValueGetType30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType30003';
+      try {
+        const shortType: ShortType;
+        const testValue = -42;
+        const shortValue = new ShortValue(shortType, testValue);
+        const actualType = shortValue.getType();
+        expect(typeof actualType).assertEqual(typeof shortType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0400
+     * @tc.name    testValueGetType30004
+     * @tc.desc    Verify ShortValue works with maximum boundary value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType30004';
+      try {
+        const shortType: ShortType;
+        const shortValue = new ShortValue(shortType, 32767);
+        const actualType = shortValue.getType();
+        expect(typeof actualType).assertEqual(typeof shortType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0500
+     * @tc.name    testValueGetType30005
+     * @tc.desc    Verify ShortValue works with minimum boundary value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType30005';
+      try {
+        const shortType: ShortType;
+        const shortValue = new ShortValue(shortType, -32768);
+        const actualType = shortValue.getType();
+        expect(typeof actualType).assertEqual(typeof shortType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_SHORTVALUE_GETTYPE_0600
+     * @tc.name    testValueGetType30006
+     * @tc.desc    Verify ShortValue works with zero value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType30006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType30006';
+      try {
+        const shortType: ShortType;
+        const shortValue = new ShortValue(shortType, 0);
+        const actualType = shortValue.getType();
+        expect(typeof actualType).assertEqual(typeof shortType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_LONGVALUE_GETTYPE_0100
+     * @tc.name    testValueGetType50001
+     * @tc.desc    Verify getType() returns correct LongType with normal value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType50001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType50001';
+      try {
+        const longType: LongType;
+        const longValue = new LongValue(longType, 123456789);
+        const result = longValue.getType();
+        expect(typeof result).assertEqual(typeof longType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_LONGVALUE_GETTYPE_0200
+     * @tc.name    testValueGetType50002
+     * @tc.desc    Verify getType() with maximum long value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType50002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType50002';
+      try {
+        const longType: LongType;
+        const maxValue = new LongValue(longType, 9223372036854775807);
+        const result = maxValue.getType();
+        expect(typeof result).assertEqual(typeof longType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_LONGVALUE_GETTYPE_0300
+     * @tc.name    testValueGetType50003
+     * @tc.desc    Verify getType() with minimum long value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType50003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType50003';
+      try {
+        const longType: LongType;
+        const minValue = new LongValue(longType, -9223372036854775808);
+        const result = minValue.getType();
+        expect(typeof result).assertEqual(typeof longType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_LONGVALUE_GETTYPE_0400
+     * @tc.name    testValueGetType50004
+     * @tc.desc    Verify getType() with zero value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType50004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType50004';
+      try {
+        const longType: LongType;
+        const zeroValue = new LongValue(longType, 0);
+        const result = zeroValue.getType();
+        expect(typeof result).assertEqual(typeof longType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_LONGVALUE_GETTYPE_0500
+     * @tc.name    testValueGetType50005
+     * @tc.desc    Verify getType() returns same instance on multiple calls
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType50005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType50005';
+      try {
+        const longType: LongType;
+        const longValue = new LongValue(longType, 123456789);
+        const firstCall = longValue.getType();
+        const secondCall = longValue.getType();
+        expect(typeof firstCall).assertEqual(typeof secondCall);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_LONGVALUE_GETTYPE_0600
+     * @tc.name    testValueGetType50006
+     * @tc.desc    Verify type instance caching
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType50006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType50006';
+      try {
+        const longType1: LongType;
+        const longType2: LongType;
+        const value1 = new LongValue(longType1, 100);
+        const value2 = new LongValue(longType2, 200);
+        const resultType1 = value1.getType();
+        const resultType2 = value2.getType();
+        expect(typeof resultType1).assertEqual(typeof longType1);
+        expect(typeof resultType2).assertEqual(typeof longType2);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_INTVALUE_GETTYPE_0100
+     * @tc.name    testValueGetType70001
+     * @tc.desc    Verify getType() returns correct IntType with normal value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType70001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType70001';
+      try {
+        const intType: IntType;
+        const intValue = new IntValue(intType, 42);
+        const result = intValue.getType();
+        expect(typeof result).assertEqual(typeof intType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_INTVALUE_GETTYPE_0200
+     * @tc.name    testValueGetType70002
+     * @tc.desc    Verify getType() with maximum int value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType70002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType70002';
+      try {
+        const intType: IntType;
+        const maxValue = new IntValue(intType, 2147483647);
+        const result = maxValue.getType();
+        expect(typeof result).assertEqual(typeof intType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_INTVALUE_GETTYPE_0300
+     * @tc.name    testValueGetType70003
+     * @tc.desc    Verify getType() with minimum int value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType70003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType70003';
+      try {
+        const intType: IntType;
+        const minValue = new IntValue(intType, -2147483648);
+        const result = minValue.getType();
+        expect(typeof result).assertEqual(typeof intType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_INTVALUE_GETTYPE_0400
+     * @tc.name    testValueGetType70004
+     * @tc.desc    Verify getType() with zero value
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType70004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType70004';
+      try {
+        const intType: IntType;
+        const zeroValue = new IntValue(intType, 0);
+        const result = zeroValue.getType();
+        expect(typeof result).assertEqual(typeof intType);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_INTVALUE_GETTYPE_0500
+     * @tc.name    testValueGetType70005
+     * @tc.desc    Verify getType() returns same instance on multiple calls
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType70005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType70005';
+      try {
+        const intType: IntType;
+        const intValue = new IntValue(intType, 42);
+        const firstCall = intValue.getType();
+        const secondCall = intValue.getType();
+        expect(typeof firstCall).assertEqual(typeof secondCall);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_INTVALUE_GETTYPE_0600
+     * @tc.name    testValueGetType70006
+     * @tc.desc    Verify type instance reusability
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   Level 1
+     */
+    it('testValueGetType70006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testValueGetType70006';
+      try {
+        const intType1: IntType;
+        const intType2: IntType;
+        const value1 = new IntValue(intType1, 100);
+        const value2 = new IntValue(intType2, 200);
+        const resultType1 = value1.getType();
+        const resultType2 = value2.getType();
+        expect(typeof resultType1).assertEqual(typeof intType1);
+        expect(typeof resultType2).assertEqual(typeof intType2);
+      } catch (err) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
     });
 }
