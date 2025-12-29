@@ -590,7 +590,7 @@ export default function TransDeleteWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.deleteWithReturningSync(predicates, config);
+        trans?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transDeleteWithReturningSync011 failed1. code is ${e.code}, message is ${e.message}`);
