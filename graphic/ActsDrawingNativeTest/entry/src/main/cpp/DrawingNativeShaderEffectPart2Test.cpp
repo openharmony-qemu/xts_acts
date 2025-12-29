@@ -53,9 +53,10 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal()
     uint32_t size = TEST_COLOR_COUNT_2;            // colors' number
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1);
+    OH_Drawing_MatrixSetMatrix(matrix, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1);
     // 1. OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix enumeration traversal and sets the unit matrix.
     OH_Drawing_ShaderEffect* shaderEffect1 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
         centerPt, colors, pos, size, OH_Drawing_TileMode::CLAMP, matrix);
@@ -70,7 +71,7 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal()
         centerPt, colors, pos, size, OH_Drawing_TileMode::DECAL, matrix);
     EXPECT_NE(shaderEffect4, nullptr);
     // 2. OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix sets the non-identity matrix.
-    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_2, TEST_MATRIX_VALUE_3,
+    OH_Drawing_MatrixSetMatrix(matrix, SHADER_TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_2, TEST_MATRIX_VALUE_3,
                                TEST_MATRIX_VALUE_4, TEST_MATRIX_VALUE_5, TEST_MATRIX_VALUE_6,
                                TEST_MATRIX_VALUE_7, TEST_MATRIX_VALUE_8, TEST_MATRIX_VALUE_9);
     OH_Drawing_ShaderEffect* shaderEffect5 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
@@ -113,9 +114,10 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNull()
     uint32_t size = TEST_COLOR_COUNT_2;            // colors' number
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1);
+    OH_Drawing_MatrixSetMatrix(matrix, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1);
     // 1.The first parameter of the interface passes to nullptr.
     OH_Drawing_ShaderEffect* shaderEffect1 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
         nullptr, colors, pos, size, OH_Drawing_TileMode::CLAMP, matrix);
@@ -177,9 +179,10 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal()
     uint32_t size = TEST_COLOR_COUNT_2; // colors' number
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1);
+    OH_Drawing_MatrixSetMatrix(matrix, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1);
     // 1.The second parameter of the interface passes to maximum value.
     OH_Drawing_ShaderEffect* shaderEffect1 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
         centerPt, colors2, pos1, size, OH_Drawing_TileMode::CLAMP, matrix);
@@ -227,11 +230,12 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls()
     uint32_t size = TEST_COLOR_COUNT_2;            // colors' number
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     EXPECT_NE(matrix, nullptr);
-    OH_Drawing_MatrixSetMatrix(matrix, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1,
-                               TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1, TEST_MATRIX_VALUE_1);
+    OH_Drawing_MatrixSetMatrix(matrix, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1,
+                               SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1, SHADER_TEST_MATRIX_VALUE_1);
     // 1.OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix is called multiple times.
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < SHADER_TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_ShaderEffect* shaderEffect = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
             centerPt, colors, pos, size, OH_Drawing_TileMode::CLAMP, matrix);
         EXPECT_NE(shaderEffect, nullptr);
@@ -333,7 +337,7 @@ int TestShaderEffectCreateComposeMultipleCalls()
     OH_Drawing_ShaderEffect* src = OH_Drawing_ShaderEffectCreateColorShader(TEST_SHADER_COLOR_GREEN);
     OH_Drawing_ShaderEffect* dst = OH_Drawing_ShaderEffectCreateColorShader(TEST_SHADER_COLOR_BLUE);
     // 1. The interface is called multiple times.
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < SHADER_TEST_LOOP_COUNT_10; i++) {
         OH_Drawing_ShaderEffect* shaderEffect =
             OH_Drawing_ShaderEffectCreateCompose(dst, src, OH_Drawing_BlendMode::BLEND_MODE_SRC);
         EXPECT_NE(shaderEffect, nullptr);
@@ -366,9 +370,9 @@ int TestShaderEffectCreatePixelMapShaderNormal()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, SHADER_TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, SHADER_TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, SHADER_TEST_PIXELMAP_ALPHA_PREMUL);
     size_t bufferSize = imageWidth * imageHeight * TEST_BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
@@ -419,9 +423,9 @@ int TestShaderEffectCreatePixelMapShaderNull()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, SHADER_TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, SHADER_TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, SHADER_TEST_PIXELMAP_ALPHA_PREMUL);
     size_t bufferSize = imageWidth * imageHeight * TEST_BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
@@ -478,9 +482,9 @@ int TestShaderEffectCreatePixelMapShaderMultiCalls()
     auto ret = OH_PixelmapInitializationOptions_Create(&createOps);
     OH_PixelmapInitializationOptions_SetWidth(createOps, imageWidth);
     OH_PixelmapInitializationOptions_SetHeight(createOps, imageHeight);
-    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, TEST_PIXELMAP_FORMAT_RGBA);
-    OH_PixelmapInitializationOptions_SetAlphaType(createOps, TEST_PIXELMAP_ALPHA_PREMUL);
+    OH_PixelmapInitializationOptions_SetPixelFormat(createOps, SHADER_TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetSrcPixelFormat(createOps, SHADER_TEST_PIXELMAP_FORMAT_RGBA);
+    OH_PixelmapInitializationOptions_SetAlphaType(createOps, SHADER_TEST_PIXELMAP_ALPHA_PREMUL);
     size_t bufferSize = imageWidth * imageHeight * TEST_BYTES_PER_PIXEL;
     void* buffer = malloc(bufferSize);
     if (buffer == nullptr) {
@@ -497,7 +501,7 @@ int TestShaderEffectCreatePixelMapShaderMultiCalls()
     OH_Drawing_Matrix* matrix = OH_Drawing_MatrixCreate();
     // 1. The interface of OH_Drawing_ShaderEffectCreatePixelMapShader is called 10 times.
     OH_Drawing_ShaderEffect* shaderEffect = nullptr;
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < SHADER_TEST_LOOP_COUNT_10; i++) {
         shaderEffect = OH_Drawing_ShaderEffectCreatePixelMapShader(
             pixelMap, OH_Drawing_TileMode::CLAMP, OH_Drawing_TileMode::CLAMP, samplingOptions, matrix);
         EXPECT_NE(shaderEffect, nullptr);
