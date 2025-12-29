@@ -16,16 +16,15 @@
 #ifndef DEMO_LOG_H
 #define DEMO_LOG_H
 
-#include <cstdio>
+
+void OHPrintf(const char* fmt, ...);
 
 namespace OHOS {
-#define LOG_MAX_SIZE 200
+
 #define DEMO_CHECK_AND_RETURN_RET_LOG(cond, ret, fmt, ...)                                                             \
     do {                                                                                                               \
         if (!(cond)) {                                                                                                 \
-            char ch[LOG_MAX_SIZE];                                                                                     \
-            (void)snprintf(ch, LOG_MAX_SIZE, fmt, ##__VA_ARGS__);                                                     \
-            (void)printf("%s\n", ch);                                                                                  \
+            OHPrintf(fmt, ##__VA_ARGS__);                                                                              \
             return ret;                                                                                                \
         }                                                                                                              \
     } while (0)
@@ -33,26 +32,20 @@ namespace OHOS {
 #define DEMO_CHECK_AND_RETURN_LOG(cond, fmt, ...)                                                                      \
     do {                                                                                                               \
         if (!(cond)) {                                                                                                 \
-            char ch[LOG_MAX_SIZE];                                                                                     \
-            (void)snprintf(ch, LOG_MAX_SIZE, fmt, ##__VA_ARGS__);                                                     \
-            (void)printf("%s\n", ch);                                                                                  \
+            OHPrintf(fmt, ##__VA_ARGS__);                                                                              \
             return;                                                                                                    \
         }                                                                                                              \
     } while (0)
 
 #define DEMO_CHECK_AND_BREAK_LOG(cond, fmt, ...)                                                                       \
     if (!(cond)) {                                                                                                     \
-        char ch[LOG_MAX_SIZE];                                                                                         \
-        (void)snprintf(ch, LOG_MAX_SIZE, fmt, ##__VA_ARGS__);                                                         \
-        (void)printf("%s\n", ch);                                                                                      \
+        OHPrintf(fmt, ##__VA_ARGS__);                                                                                  \
         break;                                                                                                         \
     }
 
 #define DEMO_CHECK_AND_CONTINUE_LOG(cond, fmt, ...)                                                                    \
     if (!(cond)) {                                                                                                     \
-        char ch[LOG_MAX_SIZE];                                                                                         \
-        (void)snprintf(ch, LOG_MAX_SIZE, fmt, ##__VA_ARGS__);                                                         \
-        (void)printf("%s\n", ch);                                                                                      \
+        OHPrintf(fmt, ##__VA_ARGS__);                                                                                  \
         continue;                                                                                                      \
     }
 } // namespace OHOS

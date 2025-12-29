@@ -18,38 +18,18 @@
 
 namespace OHOS {
 
-/**
- * @brief Disables the copy and move construct/assignment method.
- */
-#define DISALLOW_COPY_AND_MOVE(className) \
-    DISALLOW_COPY(className); \
-    DISALLOW_MOVE(className)
-
-/**
- * @brief Disables the copy construct/assignment method.
- */
-#define DISALLOW_COPY(className) \
-    className(const className&) = delete; \
-    className& operator= (const _NoCopyableType&) = delete
-
-/**
- * @brief Disables the move construct/assignment method.
- */
-#define DISALLOW_MOVE(className) \
-    className(className&&) = delete; \
-    className& operator= (_NoCopyableType&&) = delete
-
-
 class NoCopyable {
 protected:
-    NoCopyable() {}
-    virtual ~NoCopyable() {}
+    NoCopyable() = default;
+    virtual ~NoCopyable() = default;
 
-private:
-    using _NoCopyableType = NoCopyable;
-    DISALLOW_COPY_AND_MOVE(NoCopyable);
+    NoCopyable(const NoCopyable&) = delete;
+    NoCopyable& operator=(const NoCopyable&) = delete;
+
+    NoCopyable(NoCopyable&&) = delete;
+    NoCopyable& operator=(NoCopyable&&) = delete;
 };
 
-}
+} // namespace OHOS
 
-#endif
+#endif // UTILS_BASE_NOCOPYABLE_H
