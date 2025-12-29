@@ -1860,5 +1860,1501 @@ export default function ArrayCopyWithinTest() {
         }
     });
 
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0140
+     * @tc.name    ARRAY_COPY_WITHIN_END_EQUALS_LENGTH_140
+     * @tc.desc    Test copyWithin when end index equals array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_END_EQUALS_LENGTH_140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_END_EQUALS_LENGTH_140";
+        try {
+            let self: FixedArray<byte> = [10, 20, 30, 40, 50] as FixedArray<byte>;
+            let result = copyWithin(self, 0, 1, self.length);
+            expect(result[0]).assertEqual(20);
+            expect(result[1]).assertEqual(30);
+            expect(result[2]).assertEqual(40);
+            expect(result[3]).assertEqual(50);
+            expect(result[4]).assertEqual(50);
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0141
+     * @tc.name    ARRAY_COPY_WITHIN_START_EQUALS_LENGTH_141
+     * @tc.desc    Test copyWithin when start index equals array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_EQUALS_LENGTH_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_EQUALS_LENGTH_141";
+        try {
+            let self: FixedArray<byte> = [10, 20, 30, 40, 50] as FixedArray<byte>;
+            let original = [...self];
+            let result = copyWithin(self, 0, self.length, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0142
+     * @tc.name    ARRAY_COPY_WITHIN_EMPTY_ARRAY_142
+     * @tc.desc    Test copyWithin with an empty array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_EMPTY_ARRAY_142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_EMPTY_ARRAY_142";
+        try {
+            let self: FixedArray<byte> = [] as FixedArray<byte>;
+            let original = [...self];
+            let result = copyWithin(self, 0, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0143
+     * @tc.name    ARRAY_COPY_WITHIN_SINGLE_ELEMENT_143
+     * @tc.desc    Test copyWithin with a single-element array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_SINGLE_ELEMENT_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_SINGLE_ELEMENT_143";
+        try {
+            let self: FixedArray<byte> = [42] as FixedArray<byte>;
+            let original = [...self];
+            let result = copyWithin(self, 0, 0, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0144
+     * @tc.name    ARRAY_COPY_WITHIN_TARGET_BEYOND_END_144
+     * @tc.desc    Test copyWithin with target index beyond the array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_TARGET_BEYOND_END_144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_TARGET_BEYOND_END_144";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4];
+            let original = [...self];
+            let result = copyWithin(self, 10);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0145
+     * @tc.name    ARRAY_COPY_WITHIN_EMPTY_ARRAY_145
+     * @tc.desc    Test copyWithin with an empty array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_EMPTY_ARRAY_145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_EMPTY_ARRAY_145";
+        try {
+            let self: FixedArray<char> = [];
+            let original = [...self];
+            let result = copyWithin(self, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0146
+     * @tc.name    ARRAY_COPY_WITHIN_START_BEYOND_LENGTH_146
+     * @tc.desc    Test copyWithin with start index beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_BEYOND_LENGTH_146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_BEYOND_LENGTH_146";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 10);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0147
+     * @tc.name    ARRAY_COPY_WITHIN_EMPTY_ARRAY_147
+     * @tc.desc    Test copyWithin with an empty array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_EMPTY_ARRAY_147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_EMPTY_ARRAY_147";
+        try {
+            let self: FixedArray<char> = [];
+            let original = [...self];
+            let result = copyWithin(self, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0148
+     * @tc.name    ARRAY_COPY_WITHIN_START_EQUAL_LENGTH_148
+     * @tc.desc    Test copyWithin with start index equal to array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_EQUAL_LENGTH_148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_EQUAL_LENGTH_148";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0149
+     * @tc.name    ARRAY_COPY_WITHIN_SINGLE_ELEMENT_149
+     * @tc.desc    Test copyWithin with a single-element array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_SINGLE_ELEMENT_149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_SINGLE_ELEMENT_149";
+        try {
+            let self: FixedArray<char> = [1];
+            let original = [...self];
+            let result = copyWithin(self, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0150
+     * @tc.name    ARRAY_COPY_WITHIN_ZERO_LENGTH_150
+     * @tc.desc    Test copyWithin with zero-length copy (start equals end).
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_ZERO_LENGTH_150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_ZERO_LENGTH_150";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 2, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0151
+     * @tc.name    ARRAY_COPY_WITHIN_START_BEYOND_END_151
+     * @tc.desc    Test copyWithin with start index beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_BEYOND_END_151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_BEYOND_END_151";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 5);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0152
+     * @tc.name    ARRAY_COPY_WITHIN_START_GT_LENGTH_152
+     * @tc.desc    Test copyWithin with start index greater than array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_GT_LENGTH_152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_GT_LENGTH_152";
+        try {
+            let self: FixedArray<char> = [1, 2, 3];
+            let original = [...self];
+            let result = copyWithin(self, 1, 10);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0153
+     * @tc.name    ARRAY_COPY_WITHIN_START_BEYOND_LENGTH_153
+     * @tc.desc    Test copyWithin with start index beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_BEYOND_LENGTH_153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_BEYOND_LENGTH_153";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 10, 15);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0154
+     * @tc.name    ARRAY_COPY_WITHIN_EMPTY_ARRAY_154
+     * @tc.desc    Test copyWithin with an empty array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_EMPTY_ARRAY_154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_EMPTY_ARRAY_154";
+        try {
+            let self: FixedArray<char> = [];
+            let original = [...self];
+            let result = copyWithin(self, 0, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_KERNEL_UTIL_ARRAY_COPY_WITHIN_0155
+     * @tc.name    ARRAY_COPY_WITHIN_START_EQ_LENGTH_155
+     * @tc.desc    Test copyWithin with start index equal to array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('ARRAY_COPY_WITHIN_START_EQ_LENGTH_155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "ARRAY_COPY_WITHIN_START_EQ_LENGTH_155";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, self.length, self.length + 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_156
+     * @tc.name   test_copy_within_156
+     * @tc.desc   Test copyWithin with a single-element array.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('test_copy_within_156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_156";
+        try {
+            let self: FixedArray<char> = [1];
+            let original = [...self];
+            let result = copyWithin(self, 0, 0, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_157
+     * @tc.name    test_copy_within_157
+     * @tc.desc    Test copyWithin with zero-length copy (start equals end).
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_157";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 2, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_158
+     * @tc.name    test_copy_within_158
+     * @tc.desc    Test copyWithin with negative end less than start.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_158";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 2, -4);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_159
+     * @tc.name    test_copy_within_159
+     * @tc.desc    Test copyWithin with target index equal to array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_159";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, self.length, 0, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_160
+     * @tc.name    test_copy_within_160
+     * @tc.desc    Test copyWithin with negative start and end indices.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_160";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, -5, -2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_161
+     * @tc.name    test_copy_within_161
+     * @tc.desc    Test copyWithin with target index beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_161";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 10, 0, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_162
+     * @tc.name    test_copy_within_162
+     * @tc.desc    Test copyWithin with start index greater than end index.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_162";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 3, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_163
+     * @tc.name    test_copy_within_163
+     * @tc.desc    Test copyWithin without specifying end parameter.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_163";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4, 5];
+            let original = [...self];
+            let result = copyWithin(self, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_164
+     * @tc.name    test_copy_within_164
+     * @tc.desc    Test copyWithin without end parameter and start beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_164";
+        try {
+            let self: FixedArray<char> = [1, 2, 3];
+            let original = [...self];
+            let result = copyWithin(self, 0, 5);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_165
+     * @tc.name    test_copy_within_165
+     * @tc.desc    Test copyWithoutEnd with start equal to array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_165";
+        try {
+            let self: FixedArray<char> = [1, 2, 3];
+            let original = [...self];
+            let result = copyWithin(self, 0, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_166
+     * @tc.name    test_copy_within_166
+     * @tc.desc    Test copyWithoutEnd with target and start at same position.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_166";
+        try {
+            let self: FixedArray<char> = [1, 2, 3, 4];
+            let original = [...self];
+            let result = copyWithin(self, 2, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(original));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_167
+     * @tc.name    test_copy_within_167
+     * @tc.desc    Test copyWithin with full array copy.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_167";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_168
+     * @tc.name    test_copy_within_168
+     * @tc.desc    Test copyWithin with overlapping regions when copying backward.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_168";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_169
+     * @tc.name    test_copy_within_169
+     * @tc.desc    Test copyWithin with target index beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_169";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_170
+     * @tc.name    test_copy_within_170
+     * @tc.desc    Test copyWithin with zero-length array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_170";
+        try {
+            let self: FixedArray<double> = [] as FixedArray<double>;
+            let expected: FixedArray<double> = [] as FixedArray<double>;
+            let result = copyWithin(self, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_171
+     * @tc.name    test_copy_within_171
+     * @tc.desc    Test copyWithin with single-element array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_171";
+        try {
+            let self: FixedArray<double> = [1.1] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1] as FixedArray<double>;
+            let result = copyWithin(self, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_172
+     * @tc.name    test_copy_within_172
+     * @tc.desc    Test copyWithin with negative target index (relative to end).
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_172";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 1.1, 2.2, 3.3] as FixedArray<double>;
+            let result = copyWithin(self, -3);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_173
+     * @tc.name    test_copy_within_173
+     * @tc.desc    Test copyWith with target index exceeding negative bounds.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_173";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3] as FixedArray<double>;
+            let result = copyWithin(self, -10);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_174
+     * @tc.name    test_copy_within_174
+     * @tc.desc    Test partial overwrite when target is in middle.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_174";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 1.1, 2.2, 3.3, 4.4] as FixedArray<double>;
+            let result = copyWithin(self, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_175
+     * @tc.name    test_copy_within_175
+     * @tc.desc    Test forward copying with overlapping regions.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_175";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_176
+     * @tc.name    test_copy_within_176
+     * @tc.desc    Test copying to last element position.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_176";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 1.1] as FixedArray<double>;
+            let result = copyWithin(self, -1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_177
+     * @tc.name    test_copy_within_177
+     * @tc.desc    Test with integer values in double array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_177";
+        try {
+            let self: FixedArray<double> = [1, 2, 3, 4] as FixedArray<double>;
+            let expected: FixedArray<double> = [1, 1, 2, 3] as FixedArray<double>;
+            let result = copyWithin(self, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_WITHIN_178
+     * @tc.name    test_copy_within_178
+     * @tc.desc    Test with max/min double values.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_178";
+        try {
+            let maxVal = Number.MAX_VALUE;
+            let minVal = Number.MIN_VALUE;
+            let self: FixedArray<double> = [maxVal, minVal, 0.0] as FixedArray<double>;
+            let expected: FixedArray<double> = [maxVal, maxVal, minVal] as FixedArray<double>;
+            let result = copyWithin(self, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_179
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_179
+     * @tc.desc    Test handling of NaN in array
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_179";
+        try {
+            let nan = Number.NaN;
+            let self: FixedArray<double> = [nan, 2.2, 3.3] as FixedArray<double>;
+            let result = copyWithin(self, 1);
+            expect(isNaN(result[1])).assertTrue();
+            expect(result[2]).assertEqual(2.2);
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_180
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_180
+     * @tc.desc    Test copyWithin with target index equal to start index
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_180";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_181
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_181
+     * @tc.desc    Test copyWithin with start index beyond array length
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_181";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 10);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_182
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_182
+     * @tc.desc    Test copyWithin with negative start index
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_182";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [4.4, 5.5, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, -2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_183
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_183
+     * @tc.desc    Test target beyond length with valid start
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_183";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3] as FixedArray<double>;
+            let result = copyWithin(self, 5, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_184
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_184
+     * @tc.desc    Test partial copy when target is near end
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_184";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 3.3, 4.4] as FixedArray<double>;
+            let result = copyWithin(self, 3, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_185
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_185
+     * @tc.desc    Test with large negative indices
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_185";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [4.4, 5.5, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, -10, -2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_186
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_186
+     * @tc.desc    Test copyWithin with target and start overlapping
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_186";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 3.3, 4.4, 5.5, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 1, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_187
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_187
+     * @tc.desc    Test copying from beginning to end position
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_187";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 1.1] as FixedArray<double>;
+            let result = copyWithin(self, -1, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_188
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_188
+     * @tc.desc    Test when start index is after target index
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_188";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_189
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_189
+     * @tc.desc    Test copyWithin with normal cases
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_189";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2, 5);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_190
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_190
+     * @tc.desc    Test copyWithin with overlapping regions when copying forward
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_190";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2, 5);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_191
+     * @tc.name    SUB_Commonlibrary_Util_Array_Copy_191
+     * @tc.desc    Test copyWithin with target index at array boundary
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it('SUB_Commonlibrary_Util_Array_Copy_191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "SUB_Commonlibrary_Util_Array_Copy_191";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, self.length - 1, self.length - 1, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_192
+     * @tc.name    test_copy_within_192
+     * @tc.desc    Test copyWithin with start and end indices beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_192";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, self.length, self.length + 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_193
+     * @tc.name    test_copy_within_193
+     * @tc.desc    Test copyWithin with single element copy.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_193";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [2.2, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 1, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_194
+     * @tc.name    test_copy_within_194
+     * @tc.desc    Test copyWithin with zero-length array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_194";
+        try {
+            let self: FixedArray<double> = [] as FixedArray<double>;
+            let expected: FixedArray<double> = [] as FixedArray<double>;
+            let result = copyWithin(self, 0, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_195
+     * @tc.name    test_copy_within_195
+     * @tc.desc    Test copyWithin with single-element array.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_195";
+        try {
+            let self: FixedArray<double> = [1.1] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1] as FixedArray<double>;
+            let result = copyWithin(self, 0, 0, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_196
+     * @tc.name    test_copy_within_196
+     * @tc.desc    Test copyWithin with negative indices and zero-length copy.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_196";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, -1, -1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_197
+     * @tc.name    test_copy_within_197
+     * @tc.desc    Test copyWithin with target index beyond array length.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_197";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, self.length + 1, 0, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_198
+     * @tc.name    test_copy_within_198
+     * @tc.desc    Test copyWithin with full array copy (start=0, end=length).
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_198";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 1.1, 2.2, 3.3, 4.4] as FixedArray<double>;
+            let result = copyWithin(self, 1, 0, 4);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_199
+     * @tc.name    test_copy_within_199
+     * @tc.desc    Test copyWithin when start index is greater than end index.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_199";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 3, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_200
+     * @tc.name    test_copy_within_200
+     * @tc.desc    Test copyWithin when source and target range fully overlap.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_200";
+        try {
+            let self: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
+            let expected: FixedArray<int> = [1, 2, 3, 4, 5] as FixedArray<int>;
+            let result = copyWithin(self, 0, 0, self.length);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_201
+     * @tc.name    test_copy_within_201
+     * @tc.desc    Test copyWithin with normal copy operation.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_201";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_202
+     * @tc.name    test_copy_within_202
+     * @tc.desc    Test copyWithin with explicit start and end indices.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_202";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2, 5);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  AA_MATH_ARRAY_203
+     * @tc.name    test_copy_within_203
+     * @tc.desc    Test copyWithin with overlapping regions when copying forward.
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_203";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [3.3, 4.4, 5.5, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_204
+     * @tc.name    test_copy_within_204
+     * @tc.desc    Test copyWithin with target index at array boundary
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_204";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, self.length - 1, self.length - 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_205
+     * @tc.name    test_copy_within_205
+     * @tc.desc    Test copyWithin with start and end indices beyond array length
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_205";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, self.length, self.length + 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_206
+     * @tc.name    test_copy_within_206
+     * @tc.desc    Test copyWithin with single element copy
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_206";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [2.2, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 1, 2);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_207
+     * @tc.name    test_copy_within_207
+     * @tc.desc    Test copyWithin with zero-length array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_207";
+        try {
+            let self: FixedArray<double> = [] as FixedArray<double>;
+            let expected: FixedArray<double> = [] as FixedArray<double>;
+            let result = copyWithin(self, 0, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_208
+     * @tc.name    test_copy_within_208
+     * @tc.desc    Test copyWithin with single-element array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_208";
+        try {
+            let self: FixedArray<double> = [1.1] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1] as FixedArray<double>;
+            let result = copyWithin(self, 0, 0, 1);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_209
+     * @tc.name    test_copy_within_209
+     * @tc.desc    Test copyWithin with negative indices conversion
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_209";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 1.1, 2.2, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, -3, -5, -3);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_COPY_210
+     * @tc.name    test_copy_within_210
+     * @tc.desc    Test copying entire array to beginning
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('test_copy_within_210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let TAG = "test_copy_within_210";
+        try {
+            let self: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5] as FixedArray<double>;
+            let result = copyWithin(self, 0, 0);
+            expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
+        } catch (err: BusinessError) {
+            console.error(`${TAG} failed, error: ${err}`);
+            expect().assertFail();
+        }
+    });
   });
 }
