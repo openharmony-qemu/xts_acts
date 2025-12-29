@@ -982,7 +982,6 @@ export default function TransUpdateWithReturning() {
         console.error(TAG + `updateWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.rollback();
       console.log(TAG + "************* updateWithReturning017 end *************");
       done();
     })
