@@ -695,7 +695,6 @@ export default function TransDeleteWithReturning() {
         console.error(TAG + `transDeleteWithReturningSync017 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.rollback();
       console.log(TAG + "************* transDeleteWithReturning017 end *************");
       done();
     })
