@@ -1633,7 +1633,292 @@ export default function NnrtInterfaceTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-   
+    it('SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(96);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400
+     * @tc.desc   测试从内存设置输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(97);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Memory_Run 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100
+     * @tc.desc   测试使用内存运行功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(98);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200
+     * @tc.desc   测试使用内存运行功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(99);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300
+     * @tc.desc   测试使用内存运行功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300', Level.LEVEL1, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(100);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400
+     * @tc.desc   测试使用内存运行功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400', Level.LEVEL1, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(101);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_CreateModel 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_CreateModel_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_CreateModel_0100
+     * @tc.desc   测试模型创建功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_CreateModel_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(102);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_CreateModel_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_CreateModel_0200
+     * @tc.desc   测试模型创建功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Model_CreateModel_0200', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(103);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_AddOperand 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperand_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperand_0100
+     * @tc.desc   测试模型添加操作数功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperand_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(104);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperand_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperand_0200
+     * @tc.desc   测试模型添加操作数功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperand_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(105);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperand_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperand_0300
+     * @tc.desc   测试模型添加操作数功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperand_0300', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(106);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperand_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperand_0400
+     * @tc.desc   测试模型添加操作数功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperand_0400', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(107);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_SetOperandValue 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SetOperandValue_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SetOperandValue_0100
+     * @tc.desc   测试模型设置操作数值功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SetOperandValue_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(108);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SetOperandValue_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SetOperandValue_0200
+     * @tc.desc   测试模型设置操作数值功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SetOperandValue_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(109);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SetOperandValue_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SetOperandValue_0300
+     * @tc.desc   测试模型设置操作数值功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SetOperandValue_0300', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(110);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SetOperandValue_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SetOperandValue_0400
+     * @tc.desc   测试模型设置操作数值功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SetOperandValue_0400', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(111);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_AddOperation 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0100
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(112);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
     /**
      * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0200
      * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0200
@@ -1685,7 +1970,452 @@ export default function NnrtInterfaceTest() {
         }
     })
 
-   
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0500
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0500
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_0500', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(116);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0600
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0600
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_0600', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(117);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0700
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0700
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_0700', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(118);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0800
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0800
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_0800', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(119);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_0900
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_0900
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_0900', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(120);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_1000
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_1000
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_1000', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(121);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_1100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_1100
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_1100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(122);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_1200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_1200
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_1200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(123);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_AddOperation_1300
+     * @tc.number SUB_AI_NNRt_Func_North_Model_AddOperation_1300
+     * @tc.desc   测试模型添加操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_AddOperation_1300', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(124);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_SpecifyInputsAndOutputs 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0100
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(125);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0200
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(126);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0300
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0300', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(127);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0400
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0400', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(128);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0500
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0500
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0500', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(129);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0600
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0600
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0600', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(130);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0700
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0700
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0700', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(131);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0800
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0800
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0800', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(132);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0900
+     * @tc.number SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0900
+     * @tc.desc   测试模型指定输入输出功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_SpecifyInputsAndOutputs_0900', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(133);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_Finish 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_Finish_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_Finish_0100
+     * @tc.desc   测试模型完成功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_Finish_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(134);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_Finish_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_Finish_0200
+     * @tc.desc   测试模型完成功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_Finish_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(135);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_Finish_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Model_Finish_0300
+     * @tc.desc   测试模型完成功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_Finish_0300', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(136);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_Finish_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Model_Finish_0400
+     * @tc.desc   测试模型完成功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_AI_NNRt_Func_North_Model_Finish_0400', Level.LEVEL1, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(137);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_Destroy 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_Destroy_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_Destroy_0100
+     * @tc.desc   测试模型销毁功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_Destroy_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(138);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_Destroy_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_Destroy_0200
+     * @tc.desc   测试模型销毁功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_Destroy_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(139);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Model_GetSupportedOperation 系列
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0100
+     * @tc.number SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0100
+     * @tc.desc   测试模型获取支持操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0100', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(140);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0200
+     * @tc.desc   测试模型获取支持操作功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0200', Level.LEVEL0, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(141);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
     /**
      * @tc.name   SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0300
      * @tc.number SUB_AI_NNRt_Func_North_Model_GetSupportedOperation_0300
@@ -1861,7 +2591,58 @@ export default function NnrtInterfaceTest() {
         }
     })
 
-  
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400
+     * @tc.desc   测试编译器Float16使能功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_EnableFloat16_0400', Level.LEVEL3, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(155);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Compilation_SetCache 补充测试
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0500
+     * @tc.desc   测试编译器缓存设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetCache_0500', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(156);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0600
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0600
+     * @tc.desc   测试编译器缓存设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetCache_0600', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(157);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
     /**
      * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0700
      * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0700
@@ -1879,7 +2660,246 @@ export default function NnrtInterfaceTest() {
         }
     })
 
-  
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetCache_0800
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetCache_0800
+     * @tc.desc   测试编译器缓存设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetCache_0800', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(159);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Compilation_SetPerformanceMode 补充测试
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_Mock_0200
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_Mock_0200
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_Mock_0200', Level.LEVEL3, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(160);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0300', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(148);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0400', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(149);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0500', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(150);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0600', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(151);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0700', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(152);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0800', Level.LEVEL3, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(153);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900
+     * @tc.desc   测试编译器性能模式设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPerformanceMode_0900', Level.LEVEL3, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(154);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    // Compilation_SetPriority 补充测试
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300
+     * @tc.desc   测试编译器优先级设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPriority_0300', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(155);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400
+     * @tc.desc   测试编译器优先级设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPriority_0400', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(156);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500
+     * @tc.desc   测试编译器优先级设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPriority_0500', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(157);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600
+     * @tc.desc   测试编译器优先级设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPriority_0600', Level.LEVEL2, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(158);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700
+     * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700
+     * @tc.desc   测试编译器优先级设置功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AI_NNRt_Func_North_Compilation_SetPriority_0700', Level.LEVEL3, async () => {
+        try {
+          let result: number = await ai_nnrt_interface_test.nnrtInterfaceTest(159);
+          expect(result).assertEqual(0);
+        } catch (error) {
+        expect().assertFail();
+        }
+    })
+
     /**
      * @tc.name   SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800
      * @tc.number SUB_AI_NNRt_Func_North_Compilation_SetPriority_0800
