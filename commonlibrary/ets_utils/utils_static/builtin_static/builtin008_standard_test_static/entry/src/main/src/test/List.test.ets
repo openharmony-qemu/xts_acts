@@ -1,0 +1,47 @@
+import arrayCopyWithin from "./arrayCopyWithin.test";
+import arrayIncludes from "./arrayIncludes.test";
+import builtinArrayAt from "./builtinArrayAt.test";
+import builtinArrayAt02 from "./builtinArrayAt02.test";
+import builtinArrayconcat from "./builtinArrayconcat.test";
+import builtinArrayCopyWithin from "./builtinArrayCopyWithin.test";
+import builtinArrayEvery from "./builtinArrayEvery.test";
+import builtinArrayFill from "./builtinArrayFill.test";
+import builtinArrayFill02 from "./builtinArrayFill02.test";
+import builtinArrayFilter from "./builtinArrayFilter.test";
+import builtinArrayFindIndex from "./builtinArrayFindIndex.test";
+import builtinArrayFindLast from "./builtinArrayFindLast.test";
+import builtinArrayindexOf from "./builtinArrayindexOf.test";
+import Array01 from "./Array_01.test";
+import Array02 from "./Array_02.test";
+import Array03 from "./Array_03.test";
+import Array04 from "./Array_04.test";
+import Array05 from "./Array_05.test";
+import Array06 from "./Array_06.test";
+import Array07 from "./Array_07.test";
+import Array08 from "./Array_08.test";
+import Array09 from "./Array_09.test";
+
+export default function testsuite() {
+  arrayCopyWithin();
+  arrayIncludes();
+  builtinArrayAt();
+  builtinArrayAt02();
+  builtinArrayconcat();
+  builtinArrayCopyWithin();
+  builtinArrayEvery();
+  builtinArrayFill();
+  builtinArrayFill02();
+  builtinArrayFilter();
+  builtinArrayFindIndex();
+  builtinArrayFindLast();
+  builtinArrayindexOf();
+  Array01();
+  Array02();
+  Array03();
+  Array04();
+  Array05();
+  Array06();
+  Array07();
+  Array08();
+  Array09();
+}
