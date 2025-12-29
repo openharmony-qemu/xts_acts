@@ -1899,8 +1899,7 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
         OH_IMAGE_HDR_VIVID_DUAL,
         OH_IMAGE_HDR_VIVID_SINGLE,
         OH_IMAGE_HDR_ISO_DUAL,
-        OH_IMAGE_HDR_ISO_SINGLE,
-        OH_VIDEO_NONE
+        OH_IMAGE_HDR_ISO_SINGLE
     };
     for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]) - 1; i++) {
         int32_t bufferSize;
@@ -1909,14 +1908,20 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
         int32_t errorCode = OH_NativeBuffer_SetMetadataValue(
             nativeBuffer, OH_HDR_METADATA_TYPE, sizeof(OH_NativeBuffer_MetadataType), &type);
         if (errorCode != NATIVE_ERROR_OK) {
-            napi_create_int32(env, FAIL, &result);
+            napi_create_int32(env, 1, &result);
             return result;
         }
         OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, &bufferSize, &metadata);
         if (*metadata != type) {
-            napi_create_int32(env, FAIL, &result);
+            napi_create_int32(env, 2, &result);
             return result;
         }
+    }
+    uint8_t type = OH_NativeBuffer_MetadataType::OH_VIDEO_NONE;
+    int32_t errorCode = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &type);
+    if (errorCode != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, 3, &result);
+        return result;
     }
     OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, NATIVE_ERROR_OK, &result);
