@@ -4109,6 +4109,11 @@ static napi_value ffrtQueueQosCheck(napi_env env, napi_callback_info info)
     if (queueqos != static_cast<int>(ffrt::qos_user_initiated)) {
         result = ERR_CODE_4;
     }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_default));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_default)) {
+        result = ERR_CODE_5;
+    }
     ffrt_mutex_t mutex = {0};
     ffrt_fiber_t fiber = {0};
     ffrt_cond_t cond = {0};
