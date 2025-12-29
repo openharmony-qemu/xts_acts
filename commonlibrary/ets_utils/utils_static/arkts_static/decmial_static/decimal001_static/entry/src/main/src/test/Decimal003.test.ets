@@ -77,7 +77,7 @@ export default function DecimalTest003() {
       test_sqrt_002('2', 4, 20, 4);
       test_sqrt_002('0.1', 0.01, 20, 4);
       test_sqrt_002('0', 0, 20, 4);
-      test_sqrt_002('-0', -0, 20, 4);
+      test_sqrt_002('-0', -0.0, 20, 4);
       test_sqrt_001('0', '0', 20, 4);
       test_sqrt_001('-0', '-0', 20, 4);
       test_sqrt_002('Infinity', Infinity, 20, 4);
