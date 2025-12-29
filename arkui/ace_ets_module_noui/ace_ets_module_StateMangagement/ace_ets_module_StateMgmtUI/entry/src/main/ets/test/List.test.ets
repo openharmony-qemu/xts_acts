@@ -42,6 +42,8 @@ import WrapBuilder0020Test from './wrap_builder/WrapBuilder0020Test.test';
 import EntryParamsTest from './entryTest/EntryParamsTest.test';
 import Styles0010TestJsunit from './styles/Styles0010TestJsunit.test';
 import LifeCycleTest0510 from './lifecycle/LifeCycleTest0510.test';
+import LifeCycleTest0100 from './lifecycle/LifeCycleTest0100.test';
+
 
 export default function testsuite() {
     MutableBuilder001();
@@ -73,4 +75,5 @@ export default function testsuite() {
     EntryParamsTest();
     Styles0010TestJsunit();
     LifeCycleTest0510();
+    LifeCycleTest0100();
 }
