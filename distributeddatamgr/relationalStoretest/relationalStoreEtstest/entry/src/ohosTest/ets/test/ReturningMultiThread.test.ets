@@ -65,7 +65,8 @@ export default function ReturningMultiThread() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await rdbStore?.close();
+      await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
       console.info(TAG + 'afterAll');
@@ -138,6 +139,7 @@ export default function ReturningMultiThread() {
             expect(true).assertFail();
         });
       }
+      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningMultiThread001 end *************");
     })
 
@@ -208,6 +210,7 @@ export default function ReturningMultiThread() {
           expect(true).assertFail();
         });
       }
+      await trans?.commit();
       console.log(TAG + "************* transStoreDeleteWithReturningMultiThread001 end *************");
     })
     /**
@@ -287,6 +290,7 @@ export default function ReturningMultiThread() {
           expect(true).assertFail();
         });
       }
+      await trans?.commit();
       console.log(TAG + "************* transStoreUpdateWithReturningMultiThread001 end *************");
     })
   })
