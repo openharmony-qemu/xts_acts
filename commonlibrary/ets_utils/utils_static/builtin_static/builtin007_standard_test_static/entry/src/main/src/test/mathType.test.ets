@@ -1979,5 +1979,877 @@ export default function mathTypeTest() {
       hilog.info(domain, tag, 'Test 0008 completed');
     });
 
+   /**
+    * @tc.number     MATH_LOG10_0001
+    * @tc.name       testmathlog100001
+    * @tc.desc       Test log10 with positive infinity
+    * @tc.level      LEVEL1
+    * @tc.size       MEDIUMTEST
+    * @tc.type       FUNCTION
+    */
+    it("testmathlog100001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100001 start');
+      let v: double = Number.POSITIVE_INFINITY;
+      let result: double = log10(v);
+      expect(result).assertEqual(Number.POSITIVE_INFINITY);
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100001 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG10_0002
+     * @tc.name      testmathlog100002
+     * @tc.desc      Test log10 with negative infinity
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog100002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100002 start');
+      let v: double = Number.NEGATIVE_INFINITY;
+      let result: double = log10(v);
+      expect(Number.isNaN(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100002 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG10_0003
+     * @tc.name      testmathlog100003
+     * @tc.desc      Test log10 with NaN
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog100003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100003 start');
+      let v: double = Number.NaN;
+      let result: double = log10(v);
+      expect(Number.isNaN(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100003 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG10_0004
+     * @tc.name      testmathlog100004
+     * @tc.desc      Test log10 with 0
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog100004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100004 start');
+      let v: double = 0.0;
+      let result: double = log10(v);
+      expect(result).assertEqual(Number.NEGATIVE_INFINITY);
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100004 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG10_0008
+     * @tc.name      testmathlog100008
+     * @tc.desc      Test log10 with negative number
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog100008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100008 start');
+      let v: double = -1.0;
+      let result: double = log10(v);
+      expect(Number.isNaN(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100008 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0009
+     * @tc.name      testmathlog20009
+     * @tc.desc      Test log2 with input 1 (should be 0)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0009 started');
+      const result: number = log2(1);
+      expect(result).assertEqual(0);
+      done();
+      hilog.info(domain, tag, 'Test 0009 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0010
+     * @tc.name      testmathlog20010
+     * @tc.desc      Test log2 with large input value
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0010 started');
+      const result: number = log2(1024);
+      expect(result).assertEqual(10);
+      done();
+      hilog.info(domain, tag, 'Test 0010 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0011
+     * @tc.name      testmathlog20011
+     * @tc.desc      Test log2 with very small positive number
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0011 started');
+      const result: number = log2(0.0009765625);
+      expect(result).assertEqual(-10);
+      done();
+      hilog.info(domain, tag, 'Test 0011 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0012
+     * @tc.name      testmathlog20012
+     * @tc.desc      Test log2 with non-power-of-two input
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0012 started');
+      const result: number = log2(12);
+      expect(result > 3.58 && result < 3.59).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0012 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0013
+     * @tc.name      testmathlog20013
+     * @tc.desc      Test log2 with negative fraction input
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0013 started');
+      const result: number = log2(-0.5);
+      expect(Number.isNaN(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0013 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0014
+     * @tc.name      testmathlog20014
+     * @tc.desc      Test log2 with input 2 (should be 1)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0014 started');
+      const result: number = log2(2);
+      expect(result).assertEqual(1);
+      done();
+      hilog.info(domain, tag, 'Test 0014 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0015
+     * @tc.name      testmathlog20015
+     * @tc.desc      Test log2 identity property (log2(2^x) = x)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0015 started');
+      const exponent: number = 7;
+      const value: number = Math.pow(2, exponent);
+      const result: number = log2(value);
+      expect(result).assertEqual(exponent);
+      done();
+      hilog.info(domain, tag, 'Test 0015 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG10_0019
+     * @tc.name      testmathlog100019
+     * @tc.desc      Test log10 with Number.MIN_VALUE (smallest positive number)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog100019", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100019 start');
+      let v: double = Number.MIN_VALUE;
+      let result: double = log10(v);
+      expect(result < 0).assertTrue();
+      expect(Number.isFinite(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100019 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG10_0020
+     * @tc.name      testmathlog100020
+     * @tc.desc      Test log10 with Number.MAX_VALUE (largest finite number)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog100020", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100020 start');
+      let v: double = Number.MAX_VALUE;
+      let result: double = log10(v);
+      expect(result > 0).assertTrue();
+      expect(Number.isFinite(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, '%{public}s', 'testmathlog100020 end');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0016
+     * @tc.name      testmathlog20016
+     * @tc.desc      Test log2 with Number.MAX_SAFE_INTEGER
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0016 started');
+      const result: number = log2(Number.MAX_SAFE_INTEGER);
+      expect(Number.isFinite(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0016 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0017
+     * @tc.name      testmathlog20017
+     * @tc.desc      Test log2 with Number.MIN_SAFE_INTEGER
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0017 started');
+      const result: number = log2(Number.MIN_SAFE_INTEGER);
+      expect(Number.isNaN(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0017 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0018
+     * @tc.name      testmathlog20018
+     * @tc.desc      Test log2 with Number.MAX_VALUE
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0018 started');
+      const result: number = log2(Number.MAX_VALUE);
+      expect(Number.isFinite(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0018 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0019
+     * @tc.name      testmathlog20019
+     * @tc.desc      Test log2 with Number.MIN_VALUE
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0019 started');
+      const result: number = log2(Number.MIN_VALUE);
+      expect(result < -1000).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0019 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0020
+     * @tc.name      testmathlog20020
+     * @tc.desc      Test log2 with Number.EPSILON
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0020 started');
+      const result: number = log2(Number.EPSILON);
+      expect(result < 0).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0020 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0021
+     * @tc.name      testmathlog20021
+     * @tc.desc      Test log2 precision with fractional value
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0021 started');
+      const result: number = log2(1.5);
+      expect(result > 0.584 && result < 0.585).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0021 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0022
+     * @tc.name      testmathlog20022
+     * @tc.desc      Test log2 with -1 input
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0022 started');
+      const result: number = log2(-1);
+      expect(Number.isNaN(result)).assertTrue();
+      done();
+      hilog.info(domain, tag, 'Test 0022 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0024
+     * @tc.name      testmathlog20024
+     * @tc.desc      Test log2 with very large exponent value
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0024 started');
+      const exponent: number = 100;
+      const value: number = Math.pow(2, exponent);
+      const result: number = log2(value);
+      expect(result).assertEqual(exponent);
+      done();
+      hilog.info(domain, tag, 'Test 0024 completed');
+    });
+
+    /**
+     * @tc.number    MATH_LOG2_0025
+     * @tc.name      testmathlog20025
+     * @tc.desc      Test log2 with very small exponent value
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathlog20025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
+      hilog.info(domain, tag, 'Test 0025 started');
+      const exponent: number = -100;
+      const value: number = Math.pow(2, exponent);
+      const result: number = log2(value);
+      expect(result).assertEqual(exponent);
+      done();
+      hilog.info(domain, tag, 'Test 0025 completed');
+    });
+
+    /**
+     * @tc.number    MATH_MAX_0000
+     * @tc.name      testmathmax0000
+     * @tc.desc      Verify max returns larger value when first is greater
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0000",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        hilog.info(domain, tag, '%{public}s', 'testmathmax0000 started');
+        const v: number = 15;
+        const u: number = 10;
+        const result: number = max(v, u);
+        expect(result).assertEqual(v);
+        done();
+        hilog.info(domain, tag, '%{public}s', 'testmathmax0000 completed');
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0006
+     * @tc.name      testmathmax0006
+     * @tc.desc      Verify max with negative values (both negative)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0006",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const v: number = -5;
+        const u: number = -10;
+        const result: number = max(v, u);
+        expect(result).assertEqual(-5);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0007
+     * @tc.name      testmathmax0007
+     * @tc.desc      Verify max with mixed positive/negative values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0007",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const v: number = -15;
+        const u: number = 5;
+        const result: number = max(v, u);
+        expect(result).assertEqual(5);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0008
+     * @tc.name      testmathmax0008
+     * @tc.desc      Verify max at byte overflow boundary (255+1)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0008",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const v: number = 256;
+        const u: number = 255;
+        const result: number = max(v, u);
+        expect(result).assertEqual(256);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0009
+     * @tc.name      testmathmax0009
+     * @tc.desc      Verify max with minimum byte values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0009",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const v: number = Number.MIN_VALUE;
+        const u: number = 0;
+        const result: number = max(v, u);
+        expect(result).assertEqual(Number.MIN_VALUE);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0010
+     * @tc.name      testmathmax0010
+     * @tc.desc      Verify max when same value passed in reverse order
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0010",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const value: number = 100;
+        const result1: number = max(value, value);
+        const result2: number = max(value, value);
+        expect(result1).assertEqual(result2);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_002
+     * @tc.name      testmathmax1002
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testmathmax1002 started');
+        const result: number = max(2, 8);
+        expect(result).assertEqual(8);
+        done();
+        hilog.info(domain, tag, 'testmathmax1002 completed');
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0011
+     * @tc.name      testmathmax0011
+     * @tc.desc      Verify max with decimal values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0011",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const result: number = max(3.14, 3.1416);
+        expect(result).assertEqual(3.1416);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0012
+     * @tc.name      testmathmax0012
+     * @tc.desc      Verify max with negative decimal values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0012",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const result: number = max(-2.5, -1.8);
+        expect(result).assertEqual(-1.8);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0013
+     * @tc.name      testmathmax0013
+     * @tc.desc      Verify max with extremely large values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0013",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const largeVal = Number.MAX_VALUE;
+        const result: number = max(largeVal, largeVal / 2);
+        expect(result).assertEqual(largeVal);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0014
+     * @tc.name      testmathmax0014
+     * @tc.desc      Verify max with extremely small negative values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0014",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const smallVal = Number.MIN_VALUE;
+        const result: number = max(smallVal, -1 * Number.MAX_VALUE);
+        expect(result).assertEqual(smallVal);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0015
+     * @tc.name      testmathmax0015
+     * @tc.desc      Verify max with different numeric representations
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0015",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const hexVal: number = 0xFF;
+        const octalVal: number = 0o377;
+        const result1: number = max(hexVal, 254);
+        const result2: number = max(octalVal, 254);
+        expect(result1).assertEqual(255);
+        expect(result2).assertEqual(255);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_001
+     * @tc.name      testmathmax1001
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testmathmax1001 started');
+        const result: number = max(5, 3);
+        expect(result).assertEqual(5);
+        done();
+        hilog.info(domain, tag, 'testmathmax1001 completed');
+      });
+
+    /**
+     * @tc.number    MATH_MAX1_002
+     * @tc.name      testmathmax1002_01
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax1002_01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testmathmax1002_01 started');
+        const result: number = max(2, 8);
+        expect(result).assertEqual(8);
+        done();
+        hilog.info(domain, tag, 'testmathmax1002_01 completed');
+      });
+
+    /**
+     * @tc.number    MATH_MAX_003
+     * @tc.name      testmathmax1003
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax1003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testmathmax1003 started');
+        const result: number = max(4, 4);
+        expect(result).assertEqual(4);
+        done();
+        hilog.info(domain, tag, 'testmathmax1003 completed');
+      });
+
+    /**
+     * @tc.number    MATH_MAX1_004
+     * @tc.name      testmathmax1004
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax1004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testmathmax1004 started');
+        const result: number = max(-5, -2);
+        expect(result).assertEqual(-2);
+        done();
+        hilog.info(domain, tag, 'testmathmax1004 completed');
+      });
+
+    /**
+     * @tc.number    MATH_MAX1_005
+     * @tc.name      testmathmax1005
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax1005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'testmathmax1005 started');
+        const result: number = max(-10, 10);
+        expect(result).assertEqual(10);
+        done();
+        hilog.info(domain, tag, 'testmathmax1005 completed');
+      });
+
+    /**
+     * @tc.number  MATH_MAX_0026
+     * @tc.name    testmathmax0026
+     * @tc.desc    Verify max with exponent notation values
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     */
+    it("testmathmax0026",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const a: number = 1e3;
+        const b: number = 2000;
+        const result: number = max(a, b);
+        expect(result).assertEqual(b);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0027
+     * @tc.name      testmathmax0027
+     * @tc.desc      Verify max with negative exponent notation
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0027",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const a: number = -2e3;
+        const b: number = -1500;
+        const result: number = max(a, b);
+        expect(result).assertEqual(b);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0028
+     * @tc.name      testmathmax0028
+     * @tc.desc      Verify max comparison of different exponent notations
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0028",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const a: number = 5e4;
+        const b: number = 50000;
+        const result: number = max(a, b);
+        expect(result).assertEqual(a);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0029
+     * @tc.name      testmathmax0029
+     * @tc.desc      Verify max with values after arithmetic operations
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0029",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const x: number = 100;
+        const y: number = 200;
+        const z: number = 150;
+        const result1: number = max(x + y, y + z);
+        const result2: number = max(x * y, y * z);
+        expect(result1).assertEqual(y + z);
+        expect(result2).assertEqual(y * z);
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX_0030
+     * @tc.name      testmathmax0030
+     * @tc.desc      Verify max in real-world scenario (sensor values)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax0030",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (done: () => void): void => {
+        const sensorA: number = 245;
+        const sensorB: number = 230;
+        const maxReading: number = max(sensorA, sensorB);
+        expect(maxReading).assertEqual(sensorA);
+        const threshold: number = 240;
+        expect(maxReading > threshold).assertTrue();
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX2_001
+     * @tc.name      testmathmax2001
+     * @tc.desc      Test max with positive numbers (v > u)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax2001",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathmax2001 started');
+        const result: number = max(10.5, 5.2);
+        expect(result).assertEqual(10.5);
+        hilog.info(domain, tag, '%{public}s', 'Assertion: 10.5 > 5.2');
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX2_002
+     * @tc.name      testmathmax2002
+     * @tc.desc      Test max with positive numbers (u > v)
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax2002",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathmax2002 started');
+        const result: number = max(3.1, 7.8);
+        expect(result).assertEqual(7.8);
+        hilog.info(domain, tag, '%{public}s', 'Assertion: 7.8 > 3.1');
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX2_003
+     * @tc.name      testmathmax2003
+     * @tc.desc      Test max with negative numbers
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax2003",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathmax2003 started');
+        const result: number = max(-15.3, -8.6);
+        expect(result).assertEqual(-8.6);
+        hilog.info(domain, tag, '%{public}s', 'Assertion: -8.6 > -15.3');
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX2_004
+     * @tc.name      testmathmax2004
+     * @tc.desc      Test max with equal values
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax2004",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathmax2004 started');
+        const result: number = max(100.0, 100.0);
+        expect(result).assertEqual(100.0);
+        hilog.info(domain, tag, '%{public}s', 'Assertion: 100 == 100');
+        done();
+      });
+
+    /**
+     * @tc.number    MATH_MAX2_005
+     * @tc.name      testmathmax2005
+     * @tc.desc      Test max with mixed signs
+     * @tc.level     LEVEL1
+     * @tc.size      MEDIUMTEST
+     * @tc.type      FUNCTION
+     */
+    it("testmathmax2005",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'testmathmax2005 started');
+        const result: number = max(-5.5, 3.2);
+        expect(result).assertEqual(3.2);
+        hilog.info(domain, tag, '%{public}s', 'Assertion: 3.2 > -5.5');
+        done();
+      });
     });
 }

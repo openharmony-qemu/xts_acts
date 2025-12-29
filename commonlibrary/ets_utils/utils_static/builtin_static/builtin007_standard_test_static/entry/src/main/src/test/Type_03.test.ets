@@ -1984,5 +1984,688 @@ export default function type_03Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETOWNFIELDSNUM_0100
+     * @tc.name    testGetOwnFieldsNum0001
+     * @tc.desc    Testing getOwnFieldsNum with class that has own fields.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testGetOwnFieldsNum0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testGetOwnFieldsNum0001";
+      try {
+        const classType = Type.of(new TestClass1()) as ClassType;
+        const fieldsNum = classType.getOwnFieldsNum();
+        expect(fieldsNum).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETOWNFIELDSNUM_0200
+     * @tc.name    testGetOwnFieldsNum0002
+     * @tc.desc    Testing getOwnFieldsNum with class that has no own fields.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testGetOwnFieldsNum0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testGetOwnFieldsNum0002";
+      try {
+        const classType = Type.of(new EmptyClass()) as ClassType;
+        const fieldsNum = classType.getOwnFieldsNum();
+        expect(fieldsNum).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETOWNFIELDSNUM_0300
+     * @tc.name    testGetOwnFieldsNum0003
+     * @tc.desc    Testing getOwnFieldsNum with inherited fields.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testGetOwnFieldsNum0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let TAG = "testGetOwnFieldsNum0003";
+      try {
+        const classType = Type.of(new ChildClass()) as ClassType;
+        const fieldsNum = classType.getOwnFieldsNum();
+        expect(fieldsNum).assertEqual(1);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISFINAL_0100
+     * @tc.name    testIsFinal0001
+     * @tc.desc    Testing isFinal with a non-final class.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsFinal0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testIsFinal0001";
+      try {
+        const classType = Type.of(new TestClass4()) as ClassType;
+        expect(classType.isFinal()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_ISFINAL_0200
+     * @tc.name    testIsFinal0002
+     * @tc.desc    Testing isFinal with built-in final classes.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testIsFinal0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let TAG = "testIsFinal0002";
+      try {
+        const stringType = Type.of("") as ClassType;
+        expect(stringType.isFinal()).assertTrue();
+        const numberType = Type.of(123) as ClassType;
+        expect(numberType.isFinal()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASEMPTYCONSTRUCTOR_0100
+     * @tc.name    testHasEmptyConstructor0001
+     * @tc.desc    Testing hasEmptyConstructor with a class that has an empty constructor.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testHasEmptyConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testHasEmptyConstructor0001";
+      try {
+        const classType = Type.of(new TestClass5()) as ClassType;
+        expect(classType.hasEmptyConstructor()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASEMPTYCONSTRUCTOR_0200
+     * @tc.name    testHasEmptyConstructor0002
+     * @tc.desc    Testing hasEmptyConstructor with a class that has no empty constructor.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testHasEmptyConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testHasEmptyConstructor0002";
+      try {
+        const classType = Type.of(new ClassWithoutEmptyConstructor("test")) as ClassType;
+        expect(classType.hasEmptyConstructor()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASFIELD_0100
+     * @tc.name    testHasField0001
+     * @tc.desc    Testing hasField with a class that contains the specified field.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testHasField0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testHasField0001";
+      try {
+        const classType = Type.of(new TestClass2()) as ClassType;
+        expect(classType.hasField("field1")).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASFIELD_0200
+     * @tc.name    testHasField0002
+     * @tc.desc    Testing hasField with a class that does not contain the specified field.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testHasField0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testHasField0002";
+      try {
+        const classType = Type.of(new TestClass4()) as ClassType;
+        expect(classType.hasField("nonExistentField")).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_HASFIELD_0300
+     * @tc.name    testHasField0003
+     * @tc.desc    Testing hasField with inherited fields from parent class.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testHasField0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testHasField0003";
+      try {
+        const classType = Type.of(new ChildClass()) as ClassType;
+        expect(classType.hasField("parentField")).assertTrue();
+        expect(classType.hasField("childField")).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0100
+     * @tc.name    testMake0001
+     * @tc.desc    Testing make() with a class that has an empty constructor.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMake0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMake0001";
+      try {
+        const classType = Type.of(new TestClass5()) as ClassType;
+        const instance = classType.make();
+        expect(instance instanceof TestClass5).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0200
+     * @tc.name    testMake0002
+     * @tc.desc    Testing make() with a class that doesn't have an empty constructor.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMake0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMake0002";
+      try {
+        const classType = Type.of(new ClassWithoutEmptyConstructor("test")) as ClassType;
+        classType.make();
+        expect(true).assertFalse();
+      } catch (err: BusinessError) {
+        expect(err.message).assertContain("empty constructor");
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0300
+     * @tc.name    testMake0003
+     * @tc.desc    Testing make() with a class that inherits from another class.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMake0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMake0003";
+      try {
+        const classType = Type.of(new ChildClass2()) as ClassType;
+        const instance = classType.make();
+        expect(instance instanceof ChildClass2).assertTrue();
+        expect(instance instanceof ParentClass2).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0100
+     * @tc.name    testMakeWithArgs0001
+     * @tc.desc    Testing make(args) with a class that has a single matching constructor.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMakeWithArgs0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMakeWithArgs0001";
+      try {
+        const classType = Type.of(new TestClassWithArgs("test", 10)) as ClassType;
+        const instance = classType.make([new String("test"), new Number(10)]);
+        expect(instance instanceof TestClassWithArgs).assertTrue();
+        expect((instance as TestClassWithArgs).name).assertEqual("test");
+        expect((instance as TestClassWithArgs).age).assertEqual(10);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0200
+     * @tc.name    testMakeWithArgs0002
+     * @tc.desc    Testing make(args) with multiple constructors and selecting the most specific one.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMakeWithArgs0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMakeWithArgs0002";
+      try {
+        const classType = Type.of(new TestClassMultipleCtors("test")) as ClassType;
+        const instance = classType.make([new String("specific")]);
+        expect(instance instanceof TestClassMultipleCtors).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0300
+     * @tc.name    testMakeWithArgs0003
+     * @tc.desc    Testing make(args) with no matching constructor.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMakeWithArgs0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMakeWithArgs0003";
+      try {
+        const classType = Type.of(new ClassWithoutEmptyConstructor("test")) as ClassType;
+        classType.make([new Number(10)]); // Should throw error
+        expect(true).assertFalse(); // Should not reach here
+      } catch (err: BusinessError) {
+        expect(err.message).assertContain("can't select consturctor");
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_MAKE_0400
+     * @tc.name    testMakeWithArgs0004
+     * @tc.desc    Testing make(args) with ambiguous constructors.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testMakeWithArgs0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testMakeWithArgs0004";
+      try {
+        const classType = Type.of(new TestClassAmbiguousCtors("test", 10)) as ClassType;
+        classType.make([new String("test"), new Number(10)]);
+        classType.make([new String("test"), new String("10")]);
+        classType.make([new String("test"), new Boolean(true)]); // Should throw error
+        expect(true).assertFalse(); // Should not reach here
+      } catch (err: BusinessError) {
+        expect(err.message).assertContain("can't select consturctor");
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0100
+     * @tc.name    testClassTypeEquals0001
+     * @tc.desc    Testing equals() with same class types.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeEquals0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeEquals0001";
+      try {
+        const classType1 = Type.of(new TestClass4()) as ClassType;
+        const classType2 = Type.of(new TestClass4()) as ClassType;
+        expect(classType1.equals(classType2)).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0200
+     * @tc.name    testClassTypeEquals0002
+     * @tc.desc    Testing equals() with different class types.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeEquals0002";
+      try {
+        const classType1 = Type.of(new TestClass4()) as ClassType;
+        const classType2 = Type.of(new EmptyClass()) as ClassType;
+        expect(classType1.equals(classType2)).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_EQUALS_0300
+     * @tc.name    testClassTypeEquals0003
+     * @tc.desc    Testing equals() with non-ClassType type.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeEquals0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeEquals0003";
+      try {
+        const classType = Type.of(new TestClass4()) as ClassType;
+        const stringType = Type.of("test") as StringType;
+        expect(classType.equals(stringType)).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0100
+     * @tc.name    testGetLiteralForClassType0001
+     * @tc.desc    Testing getLiteral() for basic class type returns expected format.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testGetLiteralForClassType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testGetLiteralForClassType0001";
+      try {
+        const classType = Type.of(new TestClass4()) as ClassType;
+        const literal = classType.getLiteral();
+        expect(literal).assertEqual("class{...}");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0200
+     * @tc.name    testGetLiteralForClassType0002
+     * @tc.desc    Testing getLiteral() for built-in Object class type.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testGetLiteralForClassType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testGetLiteralForClassType0002";
+      try {
+        const classType = Type.of(new Object()) as ClassType;
+        const literal = classType.getLiteral();
+        expect(literal).assertEqual("class{...}");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_GETLITERAL_0300
+     * @tc.name    testGetLiteralForClassType0003
+     * @tc.desc    Testing getLiteral() consistency across multiple calls.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testGetLiteralForClassType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testGetLiteralForClassType0003";
+      try {
+        const classType = Type.of(new TestClass4()) as ClassType;
+        const literal1 = classType.getLiteral();
+        const literal2 = classType.getLiteral();
+        expect(literal1).assertEqual(literal2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_GETNAME_0100
+     * @tc.name    testClassTypeGetName0001
+     * @tc.desc    Testing getName method returns expected name for ClassType.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeGetName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeGetName0001";
+      try {
+        let testObj = new TestClass4();
+        let type = Type.of(testObj);
+        let className = Class.of(testObj).getName();
+        expect(type.getName()).assertEqual(className);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_GETNAME_0200
+     * @tc.name    testClassTypeGetName0002
+     * @tc.desc    Testing getName method consistency for same ClassType.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeGetName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeGetName0002";
+      try {
+        let type1 = Type.of(new TestClass4());
+        let type2 = Type.of(new TestClass4());
+        expect(type1.getName()).assertEqual(type2.getName());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_GETNAME_0300
+     * @tc.name    testClassTypeGetName0003
+     * @tc.desc    Testing getName method for different ClassTypes returns different names.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeGetName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeGetName0003";
+      try {
+        let firstType = Type.of(new EmptyClass());
+        let secondType = Type.of(new TestClass4());
+        expect(firstType.getName() === secondType.getName()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_HASNAME_0100
+     * @tc.name    testClassTypeHasName0001
+     * @tc.desc    Testing hasName method always returns true for ClassType.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeHasName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeHasName0001";
+      try {
+        let testObj = new TestClass4();
+        let type = Type.of(testObj);
+        expect(type.hasName()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_HASNAME_0200
+     * @tc.name    testClassTypeHasName0002
+     * @tc.desc    Testing hasName method consistency for different ClassTypes.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeHasName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeHasName0002";
+      try {
+        let firstType = Type.of(new EmptyClass());
+        let secondType = Type.of(new TestClass4());
+        expect(firstType.hasName()).assertTrue();
+        expect(secondType.hasName()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_ISPRIMITIVE_0100
+     * @tc.name    testClassTypeIsPrimitive0001
+     * @tc.desc    Testing isPrimitive method always returns false for ClassType.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeIsPrimitive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeIsPrimitive0001";
+      try {
+        let testObj = new TestClass4();
+        let type = Type.of(testObj);
+        expect(type.isPrimitive()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_ISPRIMITIVE_0200
+     * @tc.name    testClassTypeIsPrimitive0002
+     * @tc.desc    Testing isPrimitive consistency for different ClassTypes.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeIsPrimitive0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeIsPrimitive0002";
+      try {
+        let firstType = Type.of(new EmptyClass());
+        let secondType = Type.of(new TestClass4());
+        expect(firstType.isPrimitive()).assertFalse();
+        expect(secondType.isPrimitive()).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_ISPRIMITIVE_0300
+     * @tc.name    testClassTypeIsPrimitive0003
+     * @tc.desc    Testing isPrimitive returns false compared to primitive type.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeIsPrimitive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeIsPrimitive0003";
+      try {
+        let classType = Type.of(new TestClass4());
+        let primitiveType = Type.of(123);
+        expect(classType.isPrimitive()).assertFalse();
+        expect(primitiveType.isPrimitive()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_ISREFERENCE_0100
+     * @tc.name    testClassTypeIsReference0001
+     * @tc.desc    Testing isReference method returns true for ClassType.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeIsReference0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeIsReference0001";
+      try {
+        let testObj = new Object();
+        let type = Type.of(testObj);
+        expect(type.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_ISREFERENCE_0200
+     * @tc.name    testClassTypeIsReference0002
+     * @tc.desc    Testing isReference method consistency for different ClassTypes.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeIsReference0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeIsReference0002";
+      try {
+        let type1 = Type.of(new EmptyClass());
+        let type2 = Type.of(new TestClass4());
+        expect(type1.isReference()).assertEqual(type2.isReference());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_TYPE_CLASSTYPE_ISREFERENCE_0300
+     * @tc.name    testClassTypeIsReference0003
+     * @tc.desc    Testing isReference method returns true for built-in ClassTypes.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testClassTypeIsReference0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testClassTypeIsReference0003";
+      try {
+        let arrayType = Type.of(new Array<number>());
+        let dateType = Type.of(new Date());
+        expect(arrayType.isReference()).assertTrue();
+        expect(dateType.isReference()).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
   });
 }
