@@ -72,7 +72,8 @@ it('ArkuiContext_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('ArkuiContext_static_0100 START');
       setTimeout(()=>{
         // try{
-        console.log('++++++++++++++++1')
+        let uiContext = AppStorage.get<UIContext>('uiContext')
+        console.log('++++++++++++++++1',uiContext)
           let atomicServiceBar: Nullable<AtomicServiceBar> = uiContext!.getAtomicServiceBar(); //appDied
         console.log('++++++++++++++++2')
           await CommonFunc.sleep(2000);

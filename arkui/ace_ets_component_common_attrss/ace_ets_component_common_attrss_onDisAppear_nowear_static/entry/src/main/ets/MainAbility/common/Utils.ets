@@ -142,7 +142,7 @@ export default class Utils {
 
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
-    if (!('MainAbility/pages/index/Index' == router.getState().name)) {//正确写法'Index' == router.getState().name
+    if (!('Index' == router.getState().name)) {//正确写法'Index' == router.getState().name
       router.back()
     }
     await Utils.sleep(1000);

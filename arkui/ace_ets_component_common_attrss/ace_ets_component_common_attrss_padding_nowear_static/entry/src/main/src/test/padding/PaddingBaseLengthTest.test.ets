@@ -43,7 +43,7 @@ export default function paddingTest2() {
     'Select',
     'Stepper',
     'StepperItem',
-    // 'Web'  // app died
+    // 'Web'  // 外领域 app died
   )
 
   //Called from the parent class when setting the background color.
