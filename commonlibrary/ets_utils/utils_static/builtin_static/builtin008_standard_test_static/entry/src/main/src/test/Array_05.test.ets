@@ -1624,5 +1624,1386 @@ export default function Array_05Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7000
+     * @tc.name    testSliceFunctionWithEndOutOfBounds0070
+     * @tc.desc    Testing slice function with end index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEndOutOfBounds0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEndOutOfBounds0070";
+      try {
+        const array: FixedArray<char> = [0x61, 0x62, 0x63, 0x64, 0x65];
+        const start: int = 2;
+        const end: int = 10;
+        const result = slice(array, start, end);
+        const expected: FixedArray<char> = [0x63, 0x64, 0x65];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7100
+     * @tc.name    testSliceFunctionWithEndOutOfBounds0071
+     * @tc.desc    Testing slice function with start index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEndOutOfBounds0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEndOutOfBounds0071";
+      try {
+        const array: FixedArray<char> = [0x61, 0x62, 0x63, 0x64, 0x65];
+        const start: int = 10;
+        const end: int = 3;
+        const result = slice(array, start, end);
+        const expected: FixedArray<char> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7200
+     * @tc.name    testSliceFunctionWithEmptyArray0072
+     * @tc.desc    Testing slice function on an empty FixedArray<char>.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEmptyArray0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEmptyArray0072";
+      try {
+        const array: FixedArray<char> = [];
+        const start: int = 0;
+        const end: int = 0;
+        const result = slice(array, start, end);
+        const expected: FixedArray<char> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7300
+     * @tc.name    testSliceFunctionWithNormalStart0073
+     * @tc.desc    Testing slice function with valid start index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNormalStart0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNormalStart0073";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 2;
+        const result = slice(array, start);
+        const expected: FixedArray<double> = [3.3, 4.4, 5.5];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7400
+     * @tc.name    testSliceFunctionWithNegativeStart0074
+     * @tc.desc    Testing slice function with negative start index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNegativeStart0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNegativeStart0074";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = -3;
+        const result = slice(array, start);
+        const expected: FixedArray<double> = [3.3, 4.4, 5.5];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7500
+     * @tc.name    testSliceFunctionWithStartEqualsLength0075
+     * @tc.desc    Testing slice function with start index equal to array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithStartEqualsLength0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithStartEqualsLength0075";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = array.length;
+        const result = slice(array, start);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7600
+     * @tc.name    testSliceFunctionWithStartOutOfBounds0076
+     * @tc.desc    Testing slice function with start index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithStartOutOfBounds0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithStartOutOfBounds0076";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = array.length + 1;
+        const result = slice(array, start);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7700
+     * @tc.name    testSliceFunctionWithEmptyArray0077
+     * @tc.desc    Testing slice function on an empty FixedArray<double>.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEmptyArray0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEmptyArray0077";
+      try {
+        const array: FixedArray<double> = [];
+        const start: int = 0;
+        const result = slice(array, start);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7800
+     * @tc.name    testSliceFunctionWithNormalRange0078
+     * @tc.desc    Testing slice function with valid start and end indices.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNormalRange0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNormalRange0078";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 1;
+        const end: int = 4;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [2.2, 3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_7900
+     * @tc.name    testSliceFunctionWithNegativeStart0079
+     * @tc.desc    Testing slice function with negative start index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNegativeStart0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNegativeStart0079";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = -4;
+        const end: int = 4;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [2.2, 3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8000
+     * @tc.name    testSliceFunctionWithNegativeEnd0080
+     * @tc.desc    Testing slice function with negative end index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNegativeEnd0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNegativeEnd0080";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 1;
+        const end: int = -1;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [2.2, 3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8100
+     * @tc.name    testSliceFunctionWithStartEqualsEnd0081
+     * @tc.desc    Testing slice function with start index equal to end index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithStartEqualsEnd0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithStartEqualsEnd0081";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 2;
+        const end: int = 2;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8200
+     * @tc.name    testSliceFunctionWithStartOutOfBounds0082
+     * @tc.desc    Testing slice function with start index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithStartOutOfBounds0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithStartOutOfBounds0082";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 10;
+        const end: int = 12;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8300
+     * @tc.name    testSliceFunctionWithEndOutOfBounds0083
+     * @tc.desc    Testing slice function with end index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEndOutOfBounds0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEndOutOfBounds0083";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 2;
+        const end: int = 10;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [3.3, 4.4, 5.5];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8400
+     * @tc.name    testSliceFunctionWithEndOutOfBounds0084
+     * @tc.desc    Testing slice function with start index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEndOutOfBounds0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEndOutOfBounds0084";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 10;
+        const end: int = 2;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8500
+     * @tc.name    testSliceFunctionWithEmptyArray0085
+     * @tc.desc    Testing slice function on an empty FixedArray<double>.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEmptyArray0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEmptyArray0085";
+      try {
+        const array: FixedArray<double> = [];
+        const start: int = 0;
+        const end: int = 0;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8600
+     * @tc.name    testSliceFunctionWithNormalRange0086
+     * @tc.desc    Testing slice function with valid start and end indices.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNormalRange0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNormalRange0086";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 1;
+        const end: int = 4;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [2.2, 3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8700
+     * @tc.name    testSliceFunctionWithDefaultParams0087
+     * @tc.desc    Testing slice function with default start and end indices.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithDefaultParams0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithDefaultParams0087";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const result = slice(array); //start,endΪĬ  ֵ
+        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8800
+     * @tc.name    testSliceFunctionWithNegativeStart0088
+     * @tc.desc    Testing slice function with negative start index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNegativeStart0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNegativeStart0088";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = -3;
+        const end: int = 4;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_8900
+     * @tc.name    testSliceFunctionWithNegativeStart0089
+     * @tc.desc    Testing slice function with negative start and end index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNegativeStart0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNegativeStart0089";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = -3;
+        const end: int = -1;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9000
+     * @tc.name    testSliceFunctionWithNegativeEnd0090
+     * @tc.desc    Testing slice function with negative end index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithNegativeEnd0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithNegativeEnd0090";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 1;
+        const end: int = -1;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [2.2, 3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9100
+     * @tc.name    testSliceFunctionWithStartEqualsEnd0091
+     * @tc.desc    Testing slice function with start index equal to end index.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithStartEqualsEnd0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithStartEqualsEnd0091";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 2;
+        const end: int = 2;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9200
+     * @tc.name    testSliceFunctionWithStartOutOfBounds0092
+     * @tc.desc    Testing slice function with start index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithStartOutOfBounds0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithStartOutOfBounds0092";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 10;
+        const end: int = 12;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9300
+     * @tc.name    testSliceFunctionWithEndOutOfBounds0093
+     * @tc.desc    Testing slice function with end index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEndOutOfBounds0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEndOutOfBounds0093";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 2;
+        const end: int = 10;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [3.3, 4.4, 5.5];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9400
+     * @tc.name    testSliceFunctionWithEndOutOfBounds0094
+     * @tc.desc    Testing slice function with start index greater than array length.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEndOutOfBounds0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEndOutOfBounds0094";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 15;
+        const end: int = 3;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9500
+     * @tc.name    testSliceFunctionWithEmptyArray0095
+     * @tc.desc    Testing slice function on an empty FixedArray<double>.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithEmptyArray0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithEmptyArray0095";
+      try {
+        const array: FixedArray<double> = [];
+        const start: int = 0;
+        const end: int = 0;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9600
+     * @tc.name    testSliceFunctionWithInvalidNegativeStart0096
+     * @tc.desc    Testing slice function with negative start index out of range.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithInvalidNegativeStart0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithInvalidNegativeStart0096";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = -10; //      ҳ     Χ
+        const end: int = 4;
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_SLICE_9700
+     * @tc.name    testSliceFunctionWithInvalidNegativeEnd0097
+     * @tc.desc    Testing slice function with negative end index out of range.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testSliceFunctionWithInvalidNegativeEnd0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testSliceFunctionWithInvalidNegativeEnd0097";
+      try {
+        const array: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
+        const start: int = 1;
+        const end: int = -10; //
+        const result = slice(array, start, end);
+        const expected: FixedArray<double> = [];
+        expect(result.toString()).assertEqual(expected.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0100
+     * @tc.name    testReduceFunctionWithBooleanArray0001
+     * @tc.desc    Testing reduce function to sum all elements in a boolean array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithBooleanArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithBooleanArray0001";
+      try {
+        const array: FixedArray<boolean> = [true, false, true, false, true];
+        const callbackfn =
+          (previousValue: number, currentValue: boolean, index: number, array: FixedArray<boolean>): number => {
+            return previousValue + (currentValue ? 1 : 0);
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(3);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0200
+     * @tc.name    testReduceFunctionWithBooleanArray0002
+     * @tc.desc    Testing reduce function to perform logical AND on all elements in a boolean array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithBooleanArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithBooleanArray0002";
+      try {
+        const array: FixedArray<boolean> = [true, false, true, false, true];
+        const callbackfn =
+          (previousValue: boolean, currentValue: boolean, index: number, array: FixedArray<boolean>): boolean => {
+            return previousValue && currentValue;
+          };
+        const initialValue: boolean = true;
+        const result = reduce<boolean>(array, callbackfn, initialValue);
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0300
+     * @tc.name    testReduceFunctionWithBooleanArray0003
+     * @tc.desc    Testing reduce function on an empty boolean array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithBooleanArray0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithBooleanArray0003";
+      try {
+        const array: FixedArray<boolean> = [];
+        const callbackfn =
+          (previousValue: number, currentValue: boolean, index: number, array: FixedArray<boolean>): number => {
+            return previousValue + (currentValue ? 1 : 0);
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0400
+     * @tc.name    testReduceFunctionWithBooleanArray0004
+     * @tc.desc    Testing reduce function to perform logical AND on all elements in a boolean array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithBooleanArray0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithBooleanArray0004";
+      try {
+        const array: FixedArray<boolean> = [true, false, true, false, true];
+        const callbackfn =
+          (previousValue: boolean, currentValue: boolean, index: number, array: FixedArray<boolean>): boolean => {
+            return previousValue || currentValue;
+          };
+        const initialValue: boolean = true;
+        const result = reduce<boolean>(array, callbackfn, initialValue);
+        expect(result).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0500
+     * @tc.name    testReduceFunctionWithByteArray0005
+     * @tc.desc    Testing reduce function to sum all elements in a byte array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithByteArray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithByteArray0005";
+      try {
+        const array: FixedArray<byte> = [1, 2, 3, 4];
+        const callbackfn =
+          (previousValue: number, currentValue: byte, index: number, array: FixedArray<byte>): number => {
+            return previousValue + currentValue;
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(10);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0600
+     * @tc.name    testReduceFunctionWithByteArray0006
+     * @tc.desc    Testing reduce function to multiply all elements in a byte array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithByteArray0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithByteArray0006";
+      try {
+        const array: FixedArray<byte> = [1, 2, 3, 4];
+        const callbackfn =
+          (previousValue: number, currentValue: byte, index: number, array: FixedArray<byte>): number => {
+            return previousValue * currentValue;
+          };
+        const initialValue: number = 1;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(24);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0700
+     * @tc.name    testReduceFunctionWithEmptyByteArray0007
+     * @tc.desc    Testing reduce function on an empty byte array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyByteArray0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyByteArray0007";
+      try {
+        const array: FixedArray<byte> = [];
+        const callbackfn =
+          (previousValue: number, currentValue: byte, index: number, array: FixedArray<byte>): number => {
+            return previousValue + currentValue;
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0800
+     * @tc.name    testReduceFunctionWithEmptyByteArray0008
+     * @tc.desc    Testing reduce function to count elements greater than a specific value.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyByteArray0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyByteArray0008";
+      try {
+        const array: FixedArray<byte> = [1, 2, 3, 4, 5];
+        const callbackfn =
+          (previousValue: number, currentValue: byte, index: number, array: FixedArray<byte>): number => {
+            return previousValue + (currentValue > 3 ? 1 : 0);
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_0900
+     * @tc.name    testReduceFunctionWithCharArray0009
+     * @tc.desc    Testing reduce function to concatenate all characters in a char array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithCharArray0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithCharArray0009";
+      try {
+        const array: FixedArray<char> = [0x68, 0x65, 0x6C, 0x6C, 0x6F];
+        const callbackfn =
+          (previousValue: string, currentValue: char, index: number, array: FixedArray<char>): string => {
+            return previousValue + currentValue;
+          };
+        const initialValue: string = "";
+        const result = reduce<string>(array, callbackfn, initialValue);
+        expect(result).assertEqual("hello");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1000
+     * @tc.name    testReduceFunctionWithEmptyCharArray0010
+     * @tc.desc    Testing reduce function on an empty char array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyCharArray0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyCharArray0010";
+      try {
+        const array: FixedArray<char> = [];
+        const callbackfn =
+          (previousValue: string, currentValue: char, index: number, array: FixedArray<char>): string => {
+            return previousValue + currentValue;
+          };
+        const initialValue: string = "";
+        const result = reduce<string>(array, callbackfn, initialValue);
+        expect(result).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1100
+     * @tc.name    testReduceFunctionWithDoubleArray0011
+     * @tc.desc    Testing reduce function to sum all elements in a double array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithDoubleArray0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithDoubleArray0011";
+      try {
+        const array: FixedArray<double> = [1.5, 2.5, 3.5, 4.5];
+        const callbackfn =
+          (previousValue: double, currentValue: double, index: number, array: FixedArray<double>): double => {
+            return previousValue + currentValue;
+          };
+        const initialValue: double = 0.0;
+        const result = reduce<double>(array, callbackfn, initialValue);
+        expect(result).assertEqual(12.0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1200
+     * @tc.name    testReduceFunctionWithDoubleArray0012
+     * @tc.desc    Testing reduce function to multiply all elements in a double array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithDoubleArray0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithDoubleArray0012";
+      try {
+        const array: FixedArray<double> = [1.5, 2.5, 3.5, 4.5];
+        const callbackfn =
+          (previousValue: double, currentValue: double, index: number, array: FixedArray<double>): double => {
+            return previousValue * currentValue;
+          };
+        const initialValue: double = 1.0;
+        const result = reduce<double>(array, callbackfn, initialValue);
+        expect(result).assertEqual(59.0625);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1300
+     * @tc.name    testReduceFunctionWithDoubleArray0013
+     * @tc.desc    Testing reduce function to count elements greater than a specific value.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithDoubleArray0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithDoubleArray0013";
+      try {
+        const array: FixedArray<double> = [1.5, 2.5, 3.5, 4.5];
+        const callbackfn =
+          (previousValue: number, currentValue: double, index: number, array: FixedArray<double>): number => {
+            return previousValue + (currentValue > 3.0 ? 1 : 0);
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1400
+     * @tc.name    testReduceFunctionWithEmptyDoubleArray0014
+     * @tc.desc    Testing reduce function on an empty double array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyDoubleArray0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyDoubleArray0014";
+      try {
+        const array: FixedArray<double> = [];
+        const callbackfn =
+          (previousValue: double, currentValue: double, index: number, array: FixedArray<double>): double => {
+            return previousValue + currentValue;
+          };
+        const initialValue: double = 0.0;
+        const result = reduce<double>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0.0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1500
+     * @tc.name    testReduceFunctionWithFloatArray0015
+     * @tc.desc    Testing reduce function to sum all elements in a float array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithFloatArray0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithFloatArray0015";
+      try {
+        const array: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float, 4.5 as float];
+        const callbackfn =
+          (previousValue: float, currentValue: float, index: number, array: FixedArray<float>): float => {
+            return previousValue + currentValue;
+          };
+        const initialValue: float = 0.0 as float;
+        const result = reduce(array, callbackfn, initialValue);
+        expect(result).assertEqual(12.0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1600
+     * @tc.name    testReduceFunctionWithFloatArray0016
+     * @tc.desc    Testing reduce function to multiply all elements in a float array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithFloatArray0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithFloatArray0016";
+      try {
+        const array: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float, 4.5 as float];
+        const callbackfn =
+          (previousValue: float, currentValue: float, index: number, array: FixedArray<float>): float => {
+            return previousValue * currentValue;
+          };
+        const initialValue: float = 1.0 as float;
+        const result = reduce<float>(array, callbackfn, initialValue);
+        expect(result).assertEqual(59.0625);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1700
+     * @tc.name    testReduceFunctionWithFloatArray0017
+     * @tc.desc    Testing reduce function to count elements greater than a specific value.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithFloatArray0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithFloatArray0017";
+      try {
+        const array: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float, 4.5 as float];
+        const callbackfn =
+          (previousValue: number, currentValue: float, index: number, array: FixedArray<float>): number => {
+            return previousValue + (currentValue > 3.0 ? 1 : 0);
+          };
+        const initialValue: number = 0 as float;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1800
+     * @tc.name    testReduceFunctionWithEmptyFloatArray0018
+     * @tc.desc    Testing reduce function on an empty float array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyFloatArray0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyFloatArray0018";
+      try {
+        const array: FixedArray<float> = [];
+        const callbackfn =
+          (previousValue: float, currentValue: float, index: number, array: FixedArray<float>): float => {
+            return previousValue + currentValue;
+          };
+        const initialValue: float = 0.0 as float;
+        const result = reduce<float>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0.0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_1900
+     * @tc.name    testReduceFunctionWithIntArray0019
+     * @tc.desc    Testing reduce function to sum all elements in an int array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithIntArray0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithIntArray0019";
+      try {
+        const array: FixedArray<int> = [1, 2, 3, 4];
+        const callbackfn = (previousValue: int, currentValue: int, index: number, array: FixedArray<int>): int => {
+          return previousValue + currentValue;
+        };
+        const initialValue: int = 0;
+        const result = reduce<int>(array, callbackfn, initialValue);
+        expect(result).assertEqual(10);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2000
+     * @tc.name    testReduceFunctionWithIntArray0020
+     * @tc.desc    Testing reduce function to multiply all elements in an int array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithIntArray0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithIntArray0020";
+      try {
+        const array: FixedArray<int> = [1, 2, 3, 4];
+        const callbackfn = (previousValue: int, currentValue: int, index: number, array: FixedArray<int>): int => {
+          return previousValue * currentValue;
+        };
+        const initialValue: int = 1;
+        const result = reduce<int>(array, callbackfn, initialValue);
+        expect(result).assertEqual(24);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2100
+     * @tc.name    testReduceFunctionWithIntArray0021
+     * @tc.desc    Testing reduce function to count elements greater than a specific value.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithIntArray0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithIntArray0021";
+      try {
+        const array: FixedArray<int> = [1, 2, 3, 4];
+        const callbackfn = (previousValue: int, currentValue: int, index: number, array: FixedArray<int>): int => {
+          return previousValue + (currentValue > 2 ? 1 : 0);
+        };
+        const initialValue: int = 0;
+        const result = reduce<int>(array, callbackfn, initialValue);
+        expect(result).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2200
+     * @tc.name    testReduceFunctionWithEmptyIntArray0022
+     * @tc.desc    Testing reduce function on an empty int array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyIntArray0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyIntArray0022";
+      try {
+        const array: FixedArray<int> = [];
+        const callbackfn = (previousValue: int, currentValue: int, index: number, array: FixedArray<int>): int => {
+          return previousValue + currentValue;
+        };
+        const initialValue: int = 0;
+        const result = reduce<int>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2300
+     * @tc.name    testReduceFunctionWithLongArray0023
+     * @tc.desc    Testing reduce function to sum all elements in a long array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithLongArray0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithLongArray0023";
+      try {
+        const array: FixedArray<long> = [-9223372036854775808, 99, 9223372036854775807];
+        const callbackfn = (previousValue: long, currentValue: long, index: number, array: FixedArray<long>): long => {
+          return previousValue + currentValue;
+        };
+        const initialValue: long = 0;
+        const result = reduce<long>(array, callbackfn, initialValue);
+        expect(result).assertEqual(98);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_240
+     * @tc.name    testReduceFunctionWithLongArray0024
+     * @tc.desc    Testing reduce function to multiply all elements in a long array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithLongArray0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithLongArray0024";
+      try {
+        const array: FixedArray<long> = [-10000, 9223, 111]
+        const callbackfn =
+          (previousValue: number, currentValue: long, index: number, array: FixedArray<long>): number => {
+            return previousValue * currentValue;
+          };
+        const initialValue: number = 1;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(-10237530000);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2500
+     * @tc.name    testReduceFunctionWithLongArray0025
+     * @tc.desc    Testing reduce function to count elements greater than a specific value.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithLongArray0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithLongArray0025";
+      try {
+        const array: FixedArray<long> = [-9223372036854775808, 99, 9223372036854775807];
+        const callbackfn =
+          (previousValue: number, currentValue: long, index: number, array: FixedArray<long>): number => {
+            return previousValue + (currentValue > 90 ? 1 : 0);
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2600
+     * @tc.name    testReduceFunctionWithEmptyLongArray0026
+     * @tc.desc    Testing reduce function on an empty long array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyLongArray0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyLongArray0026";
+      try {
+        const array: FixedArray<long> = [];
+        const callbackfn =
+          (previousValue: number, currentValue: long, index: number, array: FixedArray<long>): number => {
+            return previousValue + currentValue;
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2700
+     * @tc.name    testReduceFunctionWithShortArray0027
+     * @tc.desc    Testing reduce function to sum all elements in a short array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithShortArray0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithShortArray0027";
+      try {
+        const array: FixedArray<short> = [-32768, 100, 32767];
+        const callbackfn =
+          (previousValue: number, currentValue: short, index: number, array: FixedArray<short>): number => {
+            return previousValue + currentValue;
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(99);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2800
+     * @tc.name    testReduceFunctionWithShortArray0028
+     * @tc.desc    Testing reduce function to multiply all elements in a short array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithShortArray0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithShortArray0028";
+      try {
+        const array: FixedArray<short> = [-327, 100, 327];
+        const callbackfn =
+          (previousValue: number, currentValue: short, index: number, array: FixedArray<short>): number => {
+            return previousValue * currentValue;
+          };
+        const initialValue: number = 1;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(-10692900);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_2900
+     * @tc.name    testReduceFunctionWithShortArray0029
+     * @tc.desc    Testing reduce function to count elements greater than a specific value.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithShortArray0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithShortArray0029";
+      try {
+        const array: FixedArray<short> = [-327, 100, 327];
+        const callbackfn =
+          (previousValue: number, currentValue: short, index: number, array: FixedArray<short>): number => {
+            return previousValue + (currentValue > 100 ? 1 : 0);
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(1);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMON_LIBRARY_UTIL_BASE_REDUCE_3000
+     * @tc.name    testReduceFunctionWithEmptyShortArray0030
+     * @tc.desc    Testing reduce function on an empty short array.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testReduceFunctionWithEmptyShortArray0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = "testReduceFunctionWithEmptyShortArray0030";
+      try {
+        const array: FixedArray<short> = [];
+        const callbackfn =
+          (previousValue: number, currentValue: short, index: number, array: FixedArray<short>): number => {
+            return previousValue + currentValue;
+          };
+        const initialValue: number = 0;
+        const result = reduce<number>(array, callbackfn, initialValue);
+        expect(result).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+    });
   });
 }
