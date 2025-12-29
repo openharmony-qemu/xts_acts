@@ -78,7 +78,7 @@ export default function List_aspectRatio_height() {
     afterEach(async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
-      routerInstance.clear()
+      // routerInstance.clear()
       console.info("List_aspectRatio_height after each called");
     });
 

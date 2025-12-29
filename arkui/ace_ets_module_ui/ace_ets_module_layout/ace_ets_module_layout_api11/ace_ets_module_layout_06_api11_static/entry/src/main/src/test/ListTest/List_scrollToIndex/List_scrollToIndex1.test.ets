@@ -93,7 +93,7 @@ it('List_scrollToIndex1_static_0100', Level.LEVEL0, async (done: () => void): Pr
   console.info('[List_scrollToIndex1_0100] ListItem.top = ' + ListItem.top + ", List.top = " + List.top);
       expect(Math.abs(ListItem.top - List.top) <= 1).assertTrue();
   console.info('[List_scrollToIndex1_0100] ListItem.bottom = ' + ListItem.bottom + ", List.top = " + List.top);
-      expect(Math.abs(Math.round(ListItem.bottom) - Math.round(List.top + UIContext.getFocusedUIContext()!.vp2px(40))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(ListItem.bottom) - Math.round(List.top + UIContext.resolveUIContext()!.vp2px(40))) <= 1).assertTrue();
       console.info('[List_scrollToIndex1_0100] END');
       done();
     });

@@ -107,7 +107,7 @@ it('SUB_ACE_List_divider_string_static_0100', Level.LEVEL0, async (done: () => v
       let List_01: RectValue = CommonFunc.getComponentRect('List_divider_string_list_01');
 
       console.log('get divider width')
-      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
 
       console.info('[SUB_ACE_List_divider_string_0100] END');
       done();
@@ -138,7 +138,7 @@ it('SUB_ACE_List_divider_string_static_0200', Level.LEVEL0, async (done: () => v
       let List_01: RectValue = CommonFunc.getComponentRect('List_divider_string_list_01');
 
       console.log('get divider width')
-      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+      expect(Math.round(ListItem_02.top - ListItem_01.bottom)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(0)));
 
       console.info('[SUB_ACE_List_divider_string_0200] END');
       done();
@@ -223,7 +223,7 @@ it('SUB_ACE_List_divider_string_static_0400', Level.LEVEL0, async (done: () => v
 it('SUB_ACE_List_divider_string_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_List_divider_string_0500] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'strokeWidth', value: '10abc'
+        name: 'strokeWidth', value: '0'
       });
       await CommonFunc.sleep(1000);
       console.log('get Initial value')

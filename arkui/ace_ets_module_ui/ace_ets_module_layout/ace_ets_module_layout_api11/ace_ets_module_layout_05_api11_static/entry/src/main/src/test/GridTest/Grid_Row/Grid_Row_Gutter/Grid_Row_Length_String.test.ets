@@ -79,7 +79,7 @@ export default function Grid_Row_Length_String() {
 it('SUB_ACE_Grid_Row_GutterStr_TEST_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Row_GutterStr_TEST_static_0100] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'addLength', value: '30%'
+        name: 'addLength', value: '30%' as String
       });
 
       await CommonFunc.sleep(3000);
@@ -95,21 +95,21 @@ it('SUB_ACE_Grid_Row_GutterStr_TEST_static_0100', Level.LEVEL0, async (done: () 
       let Length_String_07: RectValue = CommonFunc.getComponentRect('Length_String_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Length_String_01.left - Length_String_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Length_String_01.left - Length_String_00.right) - Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Length_String_02.left - Length_String_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Length_String_02.left - Length_String_01.right) - Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Length_String_03.left - Length_String_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Length_String_03.left - Length_String_02.right) - Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Length_String_04.left - Length_String_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Length_String_04.left - Length_String_03.right) - Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Length_String_05.left - Length_String_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Length_String_05.left - Length_String_04.right) - Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Length_String_07.left - Length_String_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Length_String_07.left - Length_String_06.right) - Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Length_String_06.top - Length_String_00.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
-      expect(Math.abs(Length_String_07.top - Length_String_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Length_String_06.top - Length_String_00.bottom - UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
+      expect(Math.abs(Length_String_07.top - Length_String_01.bottom - UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
 
 
       console.info('[SUB_ACE_Grid_Row_GutterStr_TEST_static_0100] END');
@@ -130,7 +130,7 @@ it('SUB_ACE_Grid_Row_GutterStr_TEST_static_0100', Level.LEVEL0, async (done: () 
 it('SUB_ACE_Grid_Row_GutterStr_TEST_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Row_GutterStr_TEST_static_0200] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'addLength', value: '50px'
+        name: 'addLength', value: '50px' as String
       });
 
       await CommonFunc.sleep(3000);
@@ -153,9 +153,9 @@ it('SUB_ACE_Grid_Row_GutterStr_TEST_static_0200', Level.LEVEL0, async (done: () 
       expect(Math.abs(Math.round(Length_String_05.left - Length_String_04.right) - Math.round(50)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Length_String_07.left - Length_String_06.right) - Math.round(50)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(Length_String_06.top - Length_String_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Length_String_06.top - Length_String_00.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Length_String_07.top - Length_String_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Length_String_07.top - Length_String_01.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_GutterStr_TEST_static_0200] END');

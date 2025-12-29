@@ -62,8 +62,8 @@ export default function ListItemGroup_aspectRatio_all2() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
-        let pages:router.RouterState = routerInstance.getState();
+        routerInstance.clear();
+        let pages: router.RouterState = routerInstance.getState();
         console.info("get ListItemGroup_aspectRatio_all2 state pages:" + JSON.stringify(pages));
         if (!("ListItemGroup_aspectRatio_all2" == pages.name)) {
           console.info("get ListItemGroup_aspectRatio_all2 pages.name:" + JSON.stringify(pages.name));
@@ -103,8 +103,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all2_static_0100', Level.LEVEL0, async (do
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_all2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_all2_0100] END');
       done();
@@ -130,8 +130,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all2_static_0200', Level.LEVEL0, async (do
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_all2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_all2_0200] END');
       done();
@@ -157,8 +157,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all2_static_0300', Level.LEVEL0, async (do
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_all2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_all2_0300] END');
       done();
@@ -184,8 +184,8 @@ it('SUB_ACE_ListItemGroup_aspectRatio_all2_static_0400', Level.LEVEL0, async (do
       await CommonFunc.sleep(1000);
       let ListItemGroup01: RectValue = CommonFunc.getComponentRect('ListItemGroup_aspectRatio_all2_01');
 
-      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(300)));
-      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(420)));
+      expect(Math.round(ListItemGroup01.right - ListItemGroup01.left)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(300)));
+      expect(Math.round(ListItemGroup01.bottom - ListItemGroup01.top)).assertEqual(Math.round(UIContext.resolveUIContext()!.vp2px(420)));
 
       console.info('[SUB_ACE_ListItemGroup_aspectRatio_all2_0400] END');
       done();

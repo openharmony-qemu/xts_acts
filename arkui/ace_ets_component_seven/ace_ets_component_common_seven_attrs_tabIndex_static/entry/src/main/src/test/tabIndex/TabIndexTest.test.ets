@@ -67,6 +67,7 @@ export default function tabIndexTest() {
     beforeAll(() => {
       
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+      await UtilsTest.msSleep(4000);
       
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

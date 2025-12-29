@@ -165,11 +165,11 @@ it('testListInitialIndexToTwelveWithTwoLane_static', Level.LEVEL0, async (done: 
       expect(Math.abs(Math.round(tenthListItem.right - tenthListItem.left) - Math.round(listContainer_width*0.3)) <= 1).assertTrue();
       expect(Math.abs(Math.round(tenthListItem.bottom - tenthListItem.top) - Math.round(listContainer_height*0.12)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(eleventhListItem.right - eleventhListItem.left) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(eleventhListItem.bottom - eleventhListItem.top) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(eleventhListItem.right - eleventhListItem.left) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(eleventhListItem.bottom - eleventhListItem.top) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(twelfthListItem.right - twelfthListItem.left) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(twelfthListItem.bottom - twelfthListItem.top) - UIContext.getFocusedUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(twelfthListItem.right - twelfthListItem.left) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
+      expect(Math.abs(Math.round(twelfthListItem.bottom - twelfthListItem.top) - UIContext.resolveUIContext()!.vp2px(0)) <= 1).assertTrue();
 
 
       let driver = Driver.create();

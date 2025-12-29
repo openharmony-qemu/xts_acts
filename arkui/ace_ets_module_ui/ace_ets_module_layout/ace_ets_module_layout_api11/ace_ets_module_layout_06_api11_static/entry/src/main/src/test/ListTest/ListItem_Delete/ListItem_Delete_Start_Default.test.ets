@@ -99,10 +99,10 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_002', Level.LEVEL0, async (done
       console.info("SUB_ACE_ListItem_Delete_Start_Default_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.getFocusedUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt()
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
       );
       await CommonFunc.sleep(3000);
 
@@ -157,10 +157,10 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_003', Level.LEVEL0, async (done
       console.info("SUB_ACE_ListItem_Delete_Start_Default_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.getFocusedUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.getFocusedUIContext()!.vp2px(50))).toInt()
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
+        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
       );
       await CommonFunc.sleep(3000);
 

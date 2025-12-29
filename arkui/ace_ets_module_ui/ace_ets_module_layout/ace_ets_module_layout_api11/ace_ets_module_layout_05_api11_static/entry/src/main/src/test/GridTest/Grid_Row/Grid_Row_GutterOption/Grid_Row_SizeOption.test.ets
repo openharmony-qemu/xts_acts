@@ -79,7 +79,7 @@ export default function Grid_Row_SizeOption() {
 it('SUB_ACE_GridRowSizeOption_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowSizeOption_static_0100 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'size', value: '30vp'
+        name: 'size', value: '30vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -92,7 +92,7 @@ it('SUB_ACE_GridRowSizeOption_static_0100', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
 
-      expect(Math.abs(Math.round(secondSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0100 END');
@@ -112,7 +112,7 @@ it('SUB_ACE_GridRowSizeOption_static_0100', Level.LEVEL0, async (done: () => voi
 it('SUB_ACE_GridRowSizeOption_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowSizeOption_static_0200 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'size', value: '70vp'
+        name: 'size', value: '70vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -124,9 +124,9 @@ it('SUB_ACE_GridRowSizeOption_static_0200', Level.LEVEL0, async (done: () => voi
       let sixthSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption5');
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(thirdSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(thirdSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0200 END');
@@ -146,7 +146,7 @@ it('SUB_ACE_GridRowSizeOption_static_0200', Level.LEVEL0, async (done: () => voi
 it('SUB_ACE_GridRowSizeOption_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowSizeOption_static_0300 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'size', value: '120vp'
+        name: 'size', value: '120vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -159,9 +159,9 @@ it('SUB_ACE_GridRowSizeOption_static_0300', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
 
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(fourthSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(fourthSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0300 END');
@@ -180,7 +180,7 @@ it('SUB_ACE_GridRowSizeOption_static_0300', Level.LEVEL0, async (done: () => voi
 it('SUB_ACE_GridRowSizeOption_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowSizeOption_static_0400 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'size', value: '170vp'
+        name: 'size', value: '170vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -193,9 +193,9 @@ it('SUB_ACE_GridRowSizeOption_static_0400', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
 
-      expect(Math.abs((Math.round(secondSizeOption.left - firstSizeOption.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
+      expect(Math.abs((Math.round(secondSizeOption.left - firstSizeOption.right)) - (Math.round(UIContext.resolveUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(fifthSizeOption.top - firstSizeOption.bottom)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
+      expect(Math.abs((Math.round(fifthSizeOption.top - firstSizeOption.bottom)) - (Math.round(UIContext.resolveUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0400 END');
@@ -214,7 +214,7 @@ it('SUB_ACE_GridRowSizeOption_static_0400', Level.LEVEL0, async (done: () => voi
 it('SUB_ACE_GridRowSizeOption_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowSizeOption_static_0500 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'size', value: '220vp'
+        name: 'size', value: '220vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -226,9 +226,9 @@ it('SUB_ACE_GridRowSizeOption_static_0500', Level.LEVEL0, async (done: () => voi
       let sixthSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption5');
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(sixthSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(sixthSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0500 END');
@@ -247,7 +247,7 @@ it('SUB_ACE_GridRowSizeOption_static_0500', Level.LEVEL0, async (done: () => voi
 it('SUB_ACE_GridRowSizeOption_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowSizeOption_static_0600 START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
-        name: 'size', value: '320vp'
+        name: 'size', value: '320vp' as String
       })
       await CommonFunc.sleep(2000)
 
@@ -260,9 +260,9 @@ it('SUB_ACE_GridRowSizeOption_static_0600', Level.LEVEL0, async (done: () => voi
       let seventhSizeOption: RectValue = CommonFunc.getComponentRect('Grid_Row_SizeOption6');
 
 
-      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(secondSizeOption.left - firstSizeOption.right) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(seventhSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(seventhSizeOption.top - firstSizeOption.bottom) - Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       console.info('SUB_ACE_GridRowSizeOption_static_0600 END');

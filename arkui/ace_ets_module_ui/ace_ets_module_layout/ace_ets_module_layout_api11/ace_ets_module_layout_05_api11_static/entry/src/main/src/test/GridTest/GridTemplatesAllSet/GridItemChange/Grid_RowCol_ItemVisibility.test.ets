@@ -101,14 +101,14 @@ it('testGridRowColItemVisibilityNone_static_01', Level.LEVEL0, async (done: () =
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - thirdGridItem.top) <= 1).assertTrue();
 
-      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       console.info('[testGridRowColItemVisibilityNone_static_01] END');
       done();
@@ -147,17 +147,17 @@ it('testGridRowColItemVisibilityHidden_static_02', Level.LEVEL0, async (done: ()
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
 
-      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(secondGridItem.right - secondGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.bottom - secondGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.right - secondGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.bottom - secondGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       console.info('[testGridRowColItemVisibilityHidden_static_02] END');
       done();
@@ -198,17 +198,17 @@ it('testGridRowColItemVisibilityVisible_static_03', Level.LEVEL0, async (done: (
       expect(Math.abs(fourthGridItem.left - thirdGridItem.right) <= 1).assertTrue();
       expect(Math.abs(fourthGridItem.top - firstGridItem.bottom) <= 1).assertTrue();
 
-      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.right - firstGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(firstGridItem.bottom - firstGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(secondGridItem.right - secondGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(secondGridItem.bottom - secondGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.right - secondGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(secondGridItem.bottom - secondGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.right - thirdGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(thirdGridItem.bottom - thirdGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
-      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.right - fourthGridItem.left - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(fourthGridItem.bottom - fourthGridItem.top - UIContext.resolveUIContext()!.vp2px(150)) <= 1).assertTrue();
 
       console.info('[testGridRowColItemVisibilityVisible_static_03] END');
       done();

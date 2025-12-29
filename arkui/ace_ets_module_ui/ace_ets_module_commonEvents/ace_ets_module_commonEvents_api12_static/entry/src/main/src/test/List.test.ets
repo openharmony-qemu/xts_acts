@@ -71,53 +71,49 @@ import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
 
 export default function testsuite() {
   APIPreDragStatusTest(); // 6 pass 6 //expect start equals PREVIEW_LIFT_FINISHED
-  // APIshouldBuiltInRecognizerParallelWith(); // 4 pass 4
-  // addGestureApplyGesture(); // 1 pass 1
-  // ShortcutKeyTABTest(); // 1 pass 1
-  // ShortcutKeyDPADUPTest(); // 1 pass 1
-  // ShortcutKeyDPADDOWNTest(); // 1 pass 1
-  // ShortcutKeyDPADLEFTTest(); // 1 pass 1
-  // ShortcutKeyDPADRIGHTTest(); // 1 pass 1
-  // TapGestureHandlerTest(); // 1 pass 1
-  // PanGestureHandlerTest(); // 1 pass 1
-  // PinchGestureHandlerTest(); // 1 pass 1
-  // RotationGestureHandlerTest(); // 1 pass 1
-  // LongPressGestureHandlerTest(); // 1 pass 1
-  // DragInteractionOptionsTest(); // 2 pass 2
-  // SourceToolTest(); // 5 pass 5
-  // addParallelGestureTest1(); // 1 pass 1
-  // clearGestureTest(); // 1 pass 1
-  //
-  // getModifierKeyStateTest(); // 2 pass 2
-  TapGestureBasicClickTest(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  TapGestureBasicDoubleClickTest(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  LongPressGestureLongClickTest(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  // TapGestureBasicClickMouseTest(); // 1 pass 1
-  // TapGestureBasicDoubleClickMouseTest(); // 1 pass 1
-  // LongPressGestureLongClickMouseTest(); // 1 pass 1
-  PanGestureExample01Test(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  PanGestureExample02Test(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  PanGestureExample03Test(); // 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  RotationGestureBasic01Test(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  RotationGestureBasic02Test(); // 1 pass 1 //expect sourceTool:FINGER equals sourceTool:Finger
-  PinchGestureBasic01Test(); // 1  expect true, actualValue is false PanGesture //expect sourceTool:FINGER equals sourceTool:Finger
-  PinchGestureBasic02Test(); // 1 expect true, actualValue is false PanGesture //expect sourceTool:FINGER equals sourceTool:Finger
+  APIshouldBuiltInRecognizerParallelWith();
+  addGestureApplyGesture();
+  ShortcutKeyTABTest();
+  ShortcutKeyDPADUPTest();
+  ShortcutKeyDPADDOWNTest(); 
+  ShortcutKeyDPADLEFTTest();
+  ShortcutKeyDPADRIGHTTest();
+  TapGestureHandlerTest();
+  PanGestureHandlerTest();
+  PinchGestureHandlerTest();
+  RotationGestureHandlerTest();
+  LongPressGestureHandlerTest();
+  DragInteractionOptionsTest();
+  SourceToolTest();
+  addParallelGestureTest1();
+  clearGestureTest();
+  getModifierKeyStateTest();
+  TapGestureBasicClickTest();
+  TapGestureBasicDoubleClickTest();
+  LongPressGestureLongClickTest();
+  TapGestureBasicClickMouseTest();
+  TapGestureBasicDoubleClickMouseTest();
+  LongPressGestureLongClickMouseTest();
+  PanGestureExample01Test();
+  PanGestureExample02Test();
+  PanGestureExample03Test();
+  RotationGestureBasic01Test();
+  RotationGestureBasic02Test();
+  PinchGestureBasic01Test();
+  PinchGestureBasic02Test();
   TapGestureTemplateTest(); // 1 expect true, actualValue is false TapGesture //expect true, actualValue is false
-  // PanGestureExampleTemplateTest(); // 1 pass 1
-  // LongPressGestureTemplateTest(); // 1 pass 1
-  //
-  //
-  // onAttachTest(); // 2 pass 2
-  // GestureRecognizerState(); // 1 pass 1
-  // typeNodeGestureTest(); // 1 pass 1
-  // btnMonoLongPress(); // 1 pass 1
-  // btnMonoTouch(); // 1 pass 1
-  // gestureDefine1(); //  1 pass 1
-  // gestureDefine2(); // 1 pass 1
-  // gestureDefine3(); // 1 pass 1
-  // gestureDefine4(); // 1 pass 1
-  // gestureDefine10(); // 1 pass 1
-  //
-  // initializeModifierTest(); // 2 pass 2
+  PanGestureExampleTemplateTest();
+  LongPressGestureTemplateTest();
+  onAttachTest(); 
+  GestureRecognizerState(); 
+  typeNodeGestureTest(); 
+  btnMonoLongPress();
+  btnMonoTouch();
+  gestureDefine1();
+  gestureDefine2();
+  gestureDefine3();
+  gestureDefine4();
+  gestureDefine10();
+  initializeModifierTest();
 
 }

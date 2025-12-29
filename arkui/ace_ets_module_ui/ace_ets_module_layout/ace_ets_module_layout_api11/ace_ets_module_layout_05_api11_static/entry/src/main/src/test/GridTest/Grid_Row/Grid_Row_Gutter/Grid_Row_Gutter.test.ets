@@ -78,7 +78,7 @@ export default function Grid_Row_Gutter() {
 it('SUB_ACE_Grid_Row_Gutter_TEST_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0100] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'addLength', value: -10
+        name: 'addLength', value: -10.0
       });
 
       await CommonFunc.sleep(3000);
@@ -94,24 +94,32 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0100', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
 
       console.log('assert space')
-  console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
-  console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
-      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
+      console.log('----- ' + Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right))
+      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
 
 
@@ -133,7 +141,7 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0100', Level.LEVEL0, async (done: () => 
 it('SUB_ACE_Grid_Row_Gutter_TEST_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0200] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'addLength', value: 0
+        name: 'addLength', value: 0.0
       });
 
       await CommonFunc.sleep(3000);
@@ -149,22 +157,30 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0200', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(0))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(0))) <= 1)
         .assertTrue();
 
-      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0200] END');
@@ -184,7 +200,7 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0200', Level.LEVEL0, async (done: () => 
 it('SUB_ACE_Grid_Row_Gutter_TEST_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0300] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'addLength', value: 5
+        name: 'addLength', value: 5.0
       });
 
       await CommonFunc.sleep(3000);
@@ -200,21 +216,29 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0300', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0300] END');
@@ -234,7 +258,7 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0300', Level.LEVEL0, async (done: () => 
 it('SUB_ACE_Grid_Row_Gutter_TEST_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0400] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'addLength', value: 10
+        name: 'addLength', value: 10.0
       });
 
       await CommonFunc.sleep(3000);
@@ -250,21 +274,29 @@ it('SUB_ACE_Grid_Row_Gutter_TEST_static_0400', Level.LEVEL0, async (done: () => 
       let Grid_Row_Gutter_07: RectValue = CommonFunc.getComponentRect('Grid_Row_Gutter_07');
 
       console.log('assert space')
-      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_01.left - Grid_Row_Gutter_00.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_02.left - Grid_Row_Gutter_01.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_03.left - Grid_Row_Gutter_02.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_04.left - Grid_Row_Gutter_03.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_05.left - Grid_Row_Gutter_04.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.left - Grid_Row_Gutter_06.right) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_06.top - Grid_Row_Gutter_00.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) - Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.abs(Math.round(Grid_Row_Gutter_07.top - Grid_Row_Gutter_01.bottom) -
+      Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_Grid_Row_Gutter_TEST_static_0400] END');

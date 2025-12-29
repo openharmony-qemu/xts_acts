@@ -90,13 +90,13 @@ it('SUB_ACE_Grid_Col_Span_Default_TEST_static_0100', Level.LEVEL0, async (done: 
       let Grid_Col_Span_Default_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Span_Default_07');
 
       console.log('assert space')
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_01.left - Grid_Col_Span_Default_00.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_02.left - Grid_Col_Span_Default_01.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_03.left - Grid_Col_Span_Default_02.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_04.left - Grid_Col_Span_Default_03.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_05.left - Grid_Col_Span_Default_04.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_06.top - Grid_Col_Span_Default_00.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((Grid_Col_Span_Default_07.top - Grid_Col_Span_Default_01.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_01.left - Grid_Col_Span_Default_00.right) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_02.left - Grid_Col_Span_Default_01.right) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_03.left - Grid_Col_Span_Default_02.right) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_04.left - Grid_Col_Span_Default_03.right) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_05.left - Grid_Col_Span_Default_04.right) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_06.top - Grid_Col_Span_Default_00.bottom) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Span_Default_07.top - Grid_Col_Span_Default_01.bottom) - UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
 
       console.info('[SUB_ACE_Grid_Col_Span_Default_TEST_static_0100] END');
       done();

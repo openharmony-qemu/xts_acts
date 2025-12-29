@@ -49,9 +49,9 @@ export default function setKeyProcessingModeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get setKeyProcessingModeTest state pages:" + JSON.stringify(pages));
-        if (!("setKeyProcessingModeTest" == pages.name)) {
+        if (!("setKeyProcessingModeTest11" == pages.name)) {
           console.info("get setKeyProcessingModeTest pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
