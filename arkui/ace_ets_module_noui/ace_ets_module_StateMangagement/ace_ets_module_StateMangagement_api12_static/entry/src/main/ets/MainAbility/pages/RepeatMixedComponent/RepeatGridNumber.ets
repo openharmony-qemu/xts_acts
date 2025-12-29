@@ -82,6 +82,7 @@ struct RepeatGridNumber {
         Button('next2 page').id('Button2_GN')
           .onClick(():void => {
             this.scroller1.scrollToIndex(28);
+            this.tmp2 = 100
           })
       }
 
@@ -109,7 +110,7 @@ struct RepeatGridNumber {
           })
           .template('number', (r) => {
             GridItem() {
-              Text(r.item.toString() + ' index:' + r.index.toString() + ':' + (this.tmp2 = 100).toString())
+              Text(r.item.toString() + ' index:' + r.index.toString() + ':' + this.tmp2.toString())
                 .id('Text2_GN' + r.index.toString())
                 .fontSize(20)
                 .height('17%')

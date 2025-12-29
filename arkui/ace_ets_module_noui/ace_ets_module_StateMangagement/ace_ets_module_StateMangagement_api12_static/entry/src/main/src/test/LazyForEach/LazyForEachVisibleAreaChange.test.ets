@@ -94,7 +94,7 @@ it('LazyForEachVisibleAreaChange_static_001', Level.LEVEL0, async (done: () => v
       let scroll_to_800_btn = await driver.findComponent(ON.id('scroll_to_800'))
       let scroll_to_1800_btn = await driver.findComponent(ON.id('scroll_to_1800'));
       await (scroll_to_800_btn?.click() as Promise<void>);
-      await (scroll_to_800_btn?.click() as Promise<void>);
+      await (scroll_to_1800_btn?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       let count_text = await driver.findComponent(ON.id('text_visible_area_change_count'));
       expect(await (count_text?.getText() as Promise<string>)).assertEqual('2');

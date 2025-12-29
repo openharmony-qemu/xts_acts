@@ -61,9 +61,9 @@ export default function responseTypeJsunit() {
   describe('responseTypeTest', () => {
     beforeAll(() => {
       console.info("responseTypeTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("responseTypeTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

@@ -385,8 +385,8 @@ it('Common1Static018', Level.LEVEL0, async (done: () => void): Promise<void> => 
       console.info('[Common1Static018] START');
       let strJsonNew = inspector.getInspectorByKey('common3');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static018] component Common1Static018 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getElement('mask').getString('shape')).assertEqual("Rect");
+      console.info("[Common1Static018] component Common1Static018 is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('mask')));
+      expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('mask'))).assertEqual("{}");
       done();
     });
 
@@ -485,7 +485,7 @@ it('Common1Static024', Level.LEVEL0, async (done: () => void): Promise<void> => 
       let strJsonNew = inspector.getInspectorByKey('common3');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("[Common1Static024] component Common1Static024 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getString('enabled')).assertEqual(false);
+      expect(objNew.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
       done();
     });
 

@@ -119,7 +119,7 @@ import SpanTextShadowTest from './textTest/SpanTextShadowTest.test';
 
 export default function testsuite() {
     spanUIJsunit() // pass 7
-    ActsRichEditorTest(); // pass 15,其余用例非法场景 // 12.9 复测  all fail
+    ActsRichEditorTest(); // pass 15
     textAreaInputTest() // pass 1
     stageFontTest(); // pass 5
     stageMediaquery(); // pass 13

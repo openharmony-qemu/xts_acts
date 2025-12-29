@@ -34,7 +34,7 @@ import DateTimeOptions from './TimePickerDialogTest/DateTimeOptions.test';
 import primary from './AlertDialogTest/Primary01.test';
 
 export default function testsuite() {
-  ButtonStyle()  // app died
+  ButtonStyle() 
   primary()
   TextPickerDialog();
   DatePickerDialog();
@@ -48,8 +48,8 @@ export default function testsuite() {
   TimePickerDialog_Cancel_Test();
   TextPickerDialog_Accept_Test();
   TextPickerDialog_Cancel_Test();
-  PopupOptionsTest() // 0702 未转测注释
-  DateButtonStyle(); // app died
+  PopupOptionsTest() 
+  DateButtonStyle();
   DismissReasonTest();
   DateTimeOptions();
 }

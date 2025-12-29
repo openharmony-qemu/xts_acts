@@ -63,9 +63,9 @@ export default function promptShowDialogJsunit() {
   describe('promptShowDialogTest', () => {
     beforeAll(() => {
       console.info("promptShowDialogTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("promptShowDialogTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -101,12 +101,12 @@ export default function promptShowDialogJsunit() {
     
     
 /**
-     * @tc.number   testpromptShowDialog001
-     * @tc.name     testpromptShowDialog001
-     * @tc.desc     testpromptShowDialog001
+     * @tc.number   testpromptShowDialog_static_001
+     * @tc.name     testpromptShowDialog_static_001
+     * @tc.desc     testpromptShowDialog_static_001
      * @tc.level    Level.LEVEL2
      */
-it('testpromptShowDialog001', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testpromptShowDialog_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptShowDialog testpromptShowDialog001 START');
       await Utils.sleep(1000);
       try {
@@ -132,12 +132,12 @@ it('testpromptShowDialog001', Level.LEVEL2, async (done: () => void): Promise<vo
     
     
 /**
-     * @tc.number   testshowActionMenu0001_static
-     * @tc.name     testshowActionMenu0001_static
-     * @tc.desc     testshowActionMenu0001_static
+     * @tc.number   testpromptShowDialog_static_002
+     * @tc.name     testpromptShowDialog_static_002
+     * @tc.desc     testpromptShowDialog_static_002
      * @tc.level    Level.LEVEL2
      */
-it('testshowActionMenu0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('testpromptShowDialog_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptShowDialog testshowActionMenu0001_static START');
       await Utils.sleep(1000);
       try {
