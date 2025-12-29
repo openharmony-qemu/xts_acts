@@ -2673,7 +2673,7 @@ export default function btManagerError003Test() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             if (!closeUnsupport) {
                 try {
                     connection.setLocalName('1111111111111111111111');
