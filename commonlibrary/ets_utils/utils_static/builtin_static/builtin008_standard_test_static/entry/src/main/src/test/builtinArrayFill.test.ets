@@ -1658,5 +1658,465 @@ export default function BuiltinArrayFillTest() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_8200
+     * @tc.name    testBuiltinArrayFill0217
+     * @tc.desc    Test multiple fill operations on same array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0217";
+      try {
+        const arr = [false, false, false, false, false];
+        arr.fill(true, 0, 2);
+        arr.fill(false, 2, 4);
+        arr.fill(true, 4);
+        expect(arr.join(',')).assertEqual('true,true,false,false,true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_6600
+     * @tc.name    testBuiltinArrayFill0109
+     * @tc.desc    Test fill with start=0, end=0 (no change)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0109";
+      try {
+        let arr: boolean[] = [true, false, true];
+        let original = [...arr];
+        arr.fill(false, 0, 0);
+        expect(arr.toString()).assertEqual(original.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_6700
+     * @tc.name    testBuiltinArrayFill0110
+     * @tc.desc    Test fill with negative start and end
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0110";
+      try {
+        let arr: boolean[] = [false, false, false, false];
+        arr.fill(true, -3, -1);
+        expect(arr.toString()).assertEqual('false,true,true,false');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_6800
+     * @tc.name    testBuiltinArrayFill0111
+     * @tc.desc    Test fill with start > array length (no change)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0111";
+      try {
+        let arr: boolean[] = [true, false];
+        let original = arr.toString();
+        arr.fill(false, 3, 4);
+        expect(arr.toString()).assertEqual(original);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_6900
+     * @tc.name    testBuiltinArrayFill0112
+     * @tc.desc    Test fill with start=end (no change)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0112";
+      try {
+        let arr: boolean[] = [false, true, false];
+        let original = arr.toString();
+        arr.fill(true, 1, 1);
+        expect(arr.toString()).assertEqual(original);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_7000
+     * @tc.name    testBuiltinArrayFill0113
+     * @tc.desc    Test fill with large negative start (treated as 0)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0113";
+      try {
+        let arr: boolean[] = [false, false, false];
+        arr.fill(true, -10, 2);
+        expect(arr.toString()).assertEqual('true,true,false');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_7100
+     * @tc.name    testBuiltinArrayFill0114
+     * @tc.desc    Test fill with large negative end (treated as 0)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0114";
+      try {
+        let arr: boolean[] = [true, true, true];
+        let original = arr.toString();
+        arr.fill(false, 0, -10);
+        expect(arr.toString()).assertEqual(original);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_7200
+     * @tc.name    testBuiltinArrayFill0115
+     * @tc.desc    Test fill with start=length-1, end=length
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0115";
+      try {
+        let arr: boolean[] = [false, false, false];
+        arr.fill(true, 2, 3);
+        expect(arr.toString()).assertEqual('false,false,true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_7300
+     * @tc.name    testBuiltinArrayFill0116
+     * @tc.desc    Test fill with start=-1, end=length (last element)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0116";
+      try {
+        let arr: boolean[] = [false, false, false];
+        arr.fill(true, -1, 3);
+        expect(arr.toString()).assertEqual('false,false,true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_7400
+     * @tc.name    testBuiltinArrayFill0117
+     * @tc.desc    Test fill with multiple operations on same array
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0117";
+      try {
+        let arr: boolean[] = [false, false, false, false, false];
+        arr.fill(true, 0, 2);
+        arr.fill(true, 3, 5);
+        arr.fill(false, 2, 3);
+        expect(arr.toString()).assertEqual('true,true,false,true,true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FILL_7500
+     * @tc.name    testBuiltinArrayFill0118
+     * @tc.desc    Test fill with start=0, end=length (full fill)
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     */
+    it('testBuiltinArrayFill0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0118";
+      try {
+        let arr: boolean[] = [false, false, false];
+        arr.fill(true, 0, 3);
+        expect(arr.toString()).assertEqual('true,true,true');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err}`);
+        expect().assertFail();
+      }
+    });
+	
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_12600
+     * @tc.name   testBuiltinArrayFill0126
+     * @tc.desc   Test every() with empty array (base case for empty collection)
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0126";
+      try {
+        let arr: FixedArray<int> = [];
+        let result = every(arr, (value) => value > 0);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_12700
+     * @tc.name   testBuiltinArrayFill0127
+     * @tc.desc   Test every() with all boolean elements matching condition
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0127";
+      try {
+        let arr: FixedArray<boolean> = [true, true, true];
+        let result = every(arr, (value) => value === true);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_12800
+     * @tc.name   testBuiltinArrayFill0128
+     * @tc.desc   Test every() with partial int elements not matching condition
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0128";
+      try {
+        let arr: FixedArray<int> = [1, 2, 3, 4, 5];
+        let result = every(arr, (value) => value < 4);
+        expect(result).assertEqual(false);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_12900
+     * @tc.name   testBuiltinArrayFill0129
+     * @tc.desc   Test fill() to set all boolean elements to false
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0129";
+      try {
+        let arr: FixedArray<boolean> = [true, true, false, true];
+        let filledArr = fill(arr, false, 0, arr.length);
+        let result = every(filledArr, (value) => value === false);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13000
+     * @tc.name   testBuiltinArrayFill0130
+     * @tc.desc   Test fill() with partial range (start=1, end=3) for boolean array
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0130";
+      try {
+        let arr: FixedArray<boolean> = [false, false, false, false];
+        let filledArr = fill(arr, true, 1, 3);
+        let result = filledArr[0] === false &&
+          filledArr[1] === true &&
+          filledArr[2] === true &&
+          filledArr[3] === false;
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13100
+     * @tc.name   testBuiltinArrayFill0131
+     * @tc.desc   Test fill() with negative start index (-2) for boolean array
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0131";
+      try {
+        let arr: FixedArray<boolean> = [true, false, true, false];
+        let filledArr = fill(arr, true, -2, arr.length);
+        let result = filledArr[2] === true && filledArr[3] === true;
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13200
+     * @tc.name   testBuiltinArrayFill0132
+     * @tc.desc   Test fill() with start equal to end (no fill) for boolean array
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0132";
+      try {
+        let arr: FixedArray<boolean> = [true, false, true];
+        let original = [...arr];
+        let filledArr = fill(arr, false, 2, 2);
+        let result = every(filledArr, (val, idx) => val === original[idx]);
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13300
+     * @tc.name   testBuiltinArrayFill0133
+     * @tc.desc   Test fill() with end exceeding length for boolean array
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0133";
+      try {
+        let arr: FixedArray<boolean> = [false, false, false];
+        let filledArr = fill(arr, true, 1, 10);
+        let result = filledArr[1] === true && filledArr[2] === true;
+        expect(result).assertEqual(true);
+      } catch (err) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13400
+     * @tc.name   testBuiltinArrayFill0134
+     * @tc.desc   Testing Array.fill() with partial range.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0134";
+      try {
+        const arr = [true, false, false, true];
+        const filled = [...arr];
+        filled.fill(true, 0, 1);
+        expect(filled.join(',')).assertEqual(arr.join(','));
+      } catch (err) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13500
+     * @tc.name   testBuiltinArrayFill0135
+     * @tc.desc   Testing Array.fill() with partial range.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0135";
+      try {
+        const arr = [false, false, false];
+        arr.fill(true, 0, 1);
+        arr.fill(true, 2);
+        const expected = [true, false, true];
+        expect(arr.join(',')).assertEqual(expected.join(','));
+      } catch (err) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number COMMONLIBRARY_UTIL_BASE_FILL_13600
+     * @tc.name   testBuiltinArrayFill0136
+     * @tc.desc   Testing Array.fill() with partial range.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL1
+     */
+    it('testBuiltinArrayFill0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let TAG = "testBuiltinArrayFill0136";
+      try {
+        const arr = [false, false, false];
+        arr.fill(true, 1);
+        const expected = [false, true, true];
+        expect(arr.join(',')).assertEqual(expected.join(','));
+      } catch (err) {
+        console.error(`${TAG} is fail, err is ${err}`);
+        expect().assertFail();
+      }
+    });
   });
 }
