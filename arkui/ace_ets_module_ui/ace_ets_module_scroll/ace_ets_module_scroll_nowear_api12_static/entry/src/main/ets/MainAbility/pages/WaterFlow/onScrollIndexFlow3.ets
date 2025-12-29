@@ -60,7 +60,7 @@ struct onScrollIndexFlow3 {
           .id('onScrollIndex_scroller')
           .onClick((e: ClickEvent) => { // 通过控制器滑动FlowItem
             const yOffset: number = this.scroller.currentOffset()?.yOffset!;
-            this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + UIContext.getFocusedUIContext()!.vp2px(200) })
+            this.scroller.scrollTo({ xOffset: 0, yOffset: yOffset + UIContext.resolveUIContext()!.vp2px(200) })
           })
       }.height('20%')
 

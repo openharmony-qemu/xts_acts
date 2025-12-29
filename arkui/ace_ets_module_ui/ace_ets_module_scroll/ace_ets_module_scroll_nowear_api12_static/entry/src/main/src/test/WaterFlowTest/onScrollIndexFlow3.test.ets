@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector'
 export default function onScrollIndexFlow3() {
   describe('onScrollIndexFlow3', () => {
     beforeAll(() => {
-      await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("onScrollIndexFlow3 beforeEach start");

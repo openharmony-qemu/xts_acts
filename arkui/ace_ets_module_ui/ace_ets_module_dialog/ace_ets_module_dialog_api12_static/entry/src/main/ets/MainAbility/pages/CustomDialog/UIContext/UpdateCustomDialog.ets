@@ -32,14 +32,14 @@ import {
   Week,
   FontWeight,
   Axis,
-  Margin,DialogAlignment,
+  Margin,DialogAlignment, CustomBuilderT, wrapBuilder,
   PickerTextStyle, CalendarAlign, Date, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,DialogAlignment
 } from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 
 class Params {
@@ -68,20 +68,20 @@ struct updateCustomDialog {
   build() {
     Row() {
       Column({ space: 12 } as ColumnOptions) {
-        Text(this.change) // CenterEnd = 7
+        Text(this.change) 
           .id('UpdateCustomDialog')
         Button("click me")
           .id('btn')
-          .onClick(():void => {
+          .onClick((e:ClickEvent):void => {
             let uiContext = this.getUIContext();
             let promptAction = uiContext.getPromptAction();
-            // let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText), new Params(this.message));
-            // promptAction.openCustomDialog(contentNode, { alignment: this.alignmentStatus });
+            let contentNode = new ComponentContent<Params>(uiContext, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message));
+            promptAction.openCustomDialog(contentNode, { alignment: this.alignmentStatus });
             this.alignmentStatus = DialogAlignment.CenterEnd
             setTimeout(():void => {
-              // promptAction.updateCustomDialog(contentNode, { alignment: this.alignmentStatus });
+              promptAction.updateCustomDialog(contentNode, { alignment: this.alignmentStatus });
               this.change = this.alignmentStatus + ''
-            }, 1000);   //2秒后自动更新弹窗位置
+            }, 1000);   
           })
       }
       .width('100%')

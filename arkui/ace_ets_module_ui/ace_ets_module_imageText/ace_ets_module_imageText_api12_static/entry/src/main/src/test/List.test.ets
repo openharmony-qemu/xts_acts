@@ -519,7 +519,7 @@ export default function testsuite() {
   RichEditorShortCutKeys017();
   RichEditorShortCutKeys018();
   RichEditorShortCutKeys019();
-  RichEditorShortCutKeys020();// died
+  RichEditorShortCutKeys020();
   RichEditorShortCutKeys021();
   RichEditorShortCutKeys022();
   RichEditorShortCutKeys023();
@@ -532,7 +532,7 @@ export default function testsuite() {
   RichEditorShortCutKeys007();
   RichEditorShortCutKeys008();
 
-  RichEditorUxConFormance001();// died
+  RichEditorUxConFormance001();
   RichEditorUxConFormance002();
   RichEditorUxConFormance004();
   RichEditorUxConFormance005();
@@ -557,11 +557,11 @@ export default function testsuite() {
   RichEditorQueryLayout017();
   RichEditorQueryLayout018();
   RichEditorQueryLayout019();
-  RichEditorQueryLayout020();// died
-  RichEditorQueryLayout021();// died
-  RichEditorQueryLayout022();// died
-  RichEditorQueryLayout023();// died
-  RichEditorQueryLayout024();// died
+  RichEditorQueryLayout020();
+  RichEditorQueryLayout021();
+  RichEditorQueryLayout022();
+  RichEditorQueryLayout023();
+  RichEditorQueryLayout024();
 
   RichEditorBreak002();
   RichEditorBreak003();
@@ -787,7 +787,7 @@ export default function testsuite() {
   RichEditor9();
   RichEditor10();
   TextInputTextAreaSearch();
-  SelectionMenuApi();// died
+  SelectionMenuApi();
   menuPolicyHIDE();
   menuPolicySHOW();
   RichEditorGetLayoutManagerTest1();
@@ -802,26 +802,26 @@ export default function testsuite() {
   RichEditorApi12();
   RichEditorAddApi();
   RichEditorApi13();
-  RichEditor001();// died
-  RichEditor002();// died
-  RichEditor003();// died
-  RichEditor004();// died
-  RichEditor005();// died
-  RichEditor006();// died
-  RichEditor007();// died
-  RichEditor008();// died
-  RichEditor009();// died
-  RichEditor010();// died
-  RichEditor011();// died
-  RichEditor012();// died
-  RichEditor013();// died
-  RichEditor014();// died
-  RichEditor015();// died
-  RichEditor016();// died
-  RichEditor017();// died
-  RichEditor018();// died
-  RichEditor019();// died
-  RichEditor024();// died
+  RichEditor001();
+  RichEditor002();
+  RichEditor003();
+  RichEditor004();
+  RichEditor005();
+  RichEditor006();
+  RichEditor007();
+  RichEditor008();
+  RichEditor009();
+  RichEditor010();
+  RichEditor011();
+  RichEditor012();
+  RichEditor013();
+  RichEditor014();
+  RichEditor015();
+  RichEditor016();
+  RichEditor017();
+  RichEditor018();
+  RichEditor019();
+  RichEditor024();
   RichEditorCustomColors001();
   RichEditorCustomColors002();
   RichEditorInterFace001();

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,6 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CustomDialogBorderColor() {
   describe('CustomDialogBorderColor', () => {
     beforeAll(() => {
-
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
     })
 
@@ -51,10 +50,10 @@ export default function CustomDialogBorderColor() {
         console.info("get CustomDialogBorderColor state pages: " + JSON.stringify(pages));
         if (!("CustomDialogBorderColor" == pages.name)) {
           console.info("get CustomDialogBorderColor state pages.name: " + JSON.stringify(pages.name));
-          // let result = await CustomDialogBorderColor.pushUrl(options);
+          
           CustomDialogBorderColor.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CustomDialogBorderColor success: " + JSON.stringify(result));
+          
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
@@ -83,7 +82,7 @@ it('CustomDialogBorderColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.info('CustomDialogBorderColor_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('color'));
+      let button:Component = await driver.findComponent(ON.id('color')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -91,9 +90,9 @@ it('CustomDialogBorderColor_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       await CommonFunc.sleep(1000);
       console.info("[CustomDialogBorderColor_static_0100] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[CustomDialogBorderColor_static_0100] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[CustomDialogBorderColor_static_0100] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getString('borderColor')));
-      let borderColor:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getString('borderColor') as string
+      console.info("[CustomDialogBorderColor_static_0100] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[CustomDialogBorderColor_static_0100] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderColor')));
+      let borderColor:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderColor')
 
       expect(borderColor).assertEqual('#FF0000FF');
       let btn2: Component|null = (await driver.findComponent(ON.id('close'))) ;
@@ -115,7 +114,7 @@ it('CustomDialogBorderColor_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.info('CustomDialogBorderColor_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('color1'));
+      let button:Component = await driver.findComponent(ON.id('color1')) as Component;
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -123,9 +122,9 @@ it('CustomDialogBorderColor_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | 
       await CommonFunc.sleep(1000);
       console.info("[CustomDialogBorderColor_static_0200] obj2 is: " + JSON.stringify(obj2));
 
-      console.info("[CustomDialogBorderColor_static_0200] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getString('$attrs')));
-      console.info("[CustomDialogBorderColor_static_0200] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getString('borderColor')));
-      let borderColor:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')?.getString('borderColor') as string
+      console.info("[CustomDialogBorderColor_static_0200] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs')));
+      console.info("[CustomDialogBorderColor_static_0200] obj2.getArray('$children')[1].getArray('$children')[0] borderColor is: " + JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderColor')));
+      let borderColor:string = obj2.getArray('$children')[1].getArray('$children')[0].getElement('$attrs').getString('borderColor')
 
       expect(borderColor).assertEqual('#FF6582F8');
       let btn2: Component|null = (await driver.findComponent(ON.id('close'))) ;

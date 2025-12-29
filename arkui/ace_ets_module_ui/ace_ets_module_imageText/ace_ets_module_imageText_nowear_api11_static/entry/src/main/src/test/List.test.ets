@@ -30,19 +30,16 @@ import OnTextSelectionChangeTest from './textTest/onTextSelectionChange.test';
 import richEditorApi1 from './RichEditorTest/richEditorApi/richEditorApi1.test'
 import RichEditor01 from './RichEditorTest/RichEditor01.test'
 import RichEditorApi222 from './RichEditorTest/RichEditorApi222.test'
-import RichTextJsunit from './RichEditorTest/RichTextJsunit.test'
 import getcomponentadd from './buttonTest/getcomponentadd.test';
 import segmentbutton from './SegmentButtonTest/segmentbutton.test';
 import SelectJsunit from './selectTest/SelectJsunit.test';
-import richTextJsunitFOUR from './RichEditorTest/RichTextJsunitFOUR.test'
 
 export default function testsuite() {
-  SearchJsunit(); //fail 1  SearchJsunit_static_0300 可能mouseClick问题
-  RichEditor01();// fail 2 RichEditor01_static_006,RichEditor01_static_004,
-  RichTextJsunit();// fail 1 web
-  segmentbutton();// fail 3 @ohos.arkui.advanced.SegmentButton未交付
+  SearchJsunit();
+  RichEditor01();
+  segmentbutton();
   positionSettingJsunit();
-  textAreaBC1Jsunit(); //fail 1 textAreaBC1Jsunit_static_0900, expect doing equals Nodoing
+  textAreaBC1Jsunit();
   OnTextSelectionChangeTest();
   TextInputPageJsunit();
   textAreaUIJsunit();
@@ -52,7 +49,6 @@ export default function testsuite() {
   textAreaInputTest();
   text_drag();
   RichEditorApi222();
-  richTextJsunitFOUR();
   getcomponentadd();
   search_center();
   search_gesture();

@@ -37,9 +37,8 @@ import {
 import {
   State,
   Link,
-  PropRef,AppStorage
+  Prop,AppStorage
 } from '@ohos.arkui.stateManagement';
-import { LevelOrder } from '@ohos.promptAction';
 @Entry
 @Component
 struct SubMenuExpandingMode_EMBEDDED_Index {
