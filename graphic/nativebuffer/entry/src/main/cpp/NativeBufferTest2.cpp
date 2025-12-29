@@ -663,11 +663,11 @@ napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info)
     void *virAddr = nullptr;
     OH_NativeBuffer_Planes outPlanes;
     int32_t ret = OH_NativeBuffer_MapPlanes(nativeBuffer, &virAddr, &outPlanes);
-    if (outPlanes.planeCount == NUMBER_3 && outPlanes.planes[0].offset == NUMBER_0 &&
-        outPlanes.planes[0].rowStride == NUMBER_1 && outPlanes.planes[0].columnStride == NUMBER_256 &&
-        outPlanes.planes[1].offset == NUMBER_65536 && outPlanes.planes[1].rowStride == NUMBER_2 &&
-        outPlanes.planes[1].columnStride == NUMBER_256 && outPlanes.planes[2].offset == NUMBER_65537 &&
-        outPlanes.planes[2].rowStride == NUMBER_2 && outPlanes.planes[2].columnStride  == NUMBER_256) {
+    if (outPlanes.planeCount == NUMBER_3 && outPlanes.planes[NUMBER_0].offset == NUMBER_0 &&
+        outPlanes.planes[NUMBER_0].rowStride == NUMBER_1 && outPlanes.planes[NUMBER_0].columnStride == NUMBER_256 &&
+        outPlanes.planes[NUMBER_1].offset == NUMBER_65536 && outPlanes.planes[NUMBER_1].rowStride == NUMBER_2 &&
+        outPlanes.planes[NUMBER_1].columnStride == NUMBER_256 && outPlanes.planes[NUMBER_2].offset == NUMBER_65537 &&
+        outPlanes.planes[NUMBER_2].rowStride == NUMBER_2 && outPlanes.planes[NUMBER_2].columnStride  == NUMBER_256) {
         napi_create_int32(env, NATIVE_ERROR_OK, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
