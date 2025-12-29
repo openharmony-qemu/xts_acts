@@ -28,10 +28,10 @@ CommonTool::CommonTool()
 string CommonTool::GetRandString()
 {
     string str;
-    int32_t len = rand() % STRING_LEN;
+    int32_t len = arc4random() % STRING_LEN;
     char c;
     for (int32_t idx = 0; idx < len; idx++) {
-        c = rand() % CONSTASNTS;
+        c = arc4random() % CONSTASNTS;
         str.push_back(c);
     }
     return str;
@@ -39,20 +39,20 @@ string CommonTool::GetRandString()
 
 int32_t CommonTool::GetRandInt()
 {
-    return RAND_INT_MIN + rand() % (RAND_INT_MAX - RAND_INT_MIN + 1);
+    return RAND_INT_MIN + arc4random() % (RAND_INT_MAX - RAND_INT_MIN + 1);
 }
 
 int64_t CommonTool::GetRandLong()
 {
-    return RAND_INT_MIN + rand() % (RAND_INT_MAX - RAND_INT_MIN + 1);
+    return RAND_INT_MIN + arc4random() % (RAND_INT_MAX - RAND_INT_MIN + 1);
 }
 
 float CommonTool::GetRandFloat()
 {
-    return (float)rand() / RAND_MAX * (DOUBLE_MAX - DOUBLE_MIN) + DOUBLE_MIN;
+    return (float)arc4random() / RAND_MAX * (DOUBLE_MAX - DOUBLE_MIN) + DOUBLE_MIN;
 }
 
 double CommonTool::GetRandDouble()
 {
-    return (double)rand() / RAND_MAX * (DOUBLE_MAX - DOUBLE_MIN) + DOUBLE_MIN;
+    return (double)arc4random() / RAND_MAX * (DOUBLE_MAX - DOUBLE_MIN) + DOUBLE_MIN;
 }

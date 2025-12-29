@@ -698,8 +698,7 @@ int NULL_CHECK_021()
     ASSERT_EQ(result0, AV_ERR_OK);
     buffer = OH_AudioCodec_GetInputBuffer(codec, index);
     ASSERT_NE(buffer, nullptr);
-    OH_AVCodecBufferAttr attr;
-    memset(&attr, 0, sizeof(attr));
+    OH_AVCodecBufferAttr attr = {0};
     attr.size = 0;
     attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
     result0 = OH_AVBuffer_SetBufferAttr(buffer, &attr);
@@ -752,8 +751,7 @@ int NULL_CHECK_022()
     ASSERT_EQ(result0, AV_ERR_OK);
     buffer = OH_AudioCodec_GetInputBuffer(codec, index);
     ASSERT_NE(buffer, nullptr);
-    OH_AVCodecBufferAttr attr;
-    memset(&attr, 0, sizeof(attr));
+    OH_AVCodecBufferAttr attr = {0};
     attr.size = 0;
     attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
     result0 = OH_AVBuffer_SetBufferAttr(buffer, &attr);
@@ -806,8 +804,7 @@ int NULL_CHECK_023()
     ASSERT_EQ(result0, AV_ERR_OK);
     buffer = OH_AudioCodec_GetInputBuffer(codec, index);
     ASSERT_NE(buffer, nullptr);
-    OH_AVCodecBufferAttr attr;
-    memset(&attr, 0, sizeof(attr));
+    OH_AVCodecBufferAttr attr = {0};
     attr.size = 0;
     attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
     result0 = OH_AVBuffer_SetBufferAttr(buffer, &attr);
