@@ -562,7 +562,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error) {
-        let err = error as BusinessError;
+        let error = error as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -617,7 +617,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error) {
-        let err = error as BusinessError;
+        let error = error as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -670,7 +670,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error) {
-        let err = error as BusinessError;
+        let error = error as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -741,7 +741,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error) {
-        let err = error as BusinessError;
+        let error = error as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -811,7 +811,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error) {
-        let err = error as BusinessError;
+        let error = error as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
@@ -882,7 +882,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         }
       } catch (error) {
-        let err = error as BusinessError;
+        let error = error as BusinessError;
         if (isAvailable) {
           hilog.info(domain, tag, TAG + ` startVibration  error: ${JSON.stringify(error.code)}`);
           expect(false).assertTrue();
