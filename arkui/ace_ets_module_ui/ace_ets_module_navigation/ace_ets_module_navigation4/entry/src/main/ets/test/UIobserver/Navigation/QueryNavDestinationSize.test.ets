@@ -43,29 +43,29 @@ export default function QueryNavDestinationSize() {
     });
 
     /**
-     * @tc.name   QueryNavDestinationSize_0100
-     * @tc.number QueryNavDestinationSize_0100
-     * @tc.desc   test onNavDestinationSizeChange and offNavDestinationSizeChange23
+     * @tc.name   QueryNavDestinationSize_0010
+     * @tc.number QueryNavDestinationSize_0010
+     * @tc.desc   test onNavDestinationSizeChange and offNavDestinationSizeChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('QueryNavDestinationSize_0100', Level.LEVEL3, async (done: Function) => {
-      console.info('[QueryNavDestinationSize_0100] START');
+    it('QueryNavDestinationSize_0010', Level.LEVEL3, async (done: Function) => {
+      console.info('[QueryNavDestinationSize_0010] START');
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let btn: Component = await driver.findComponent(ON.id('onId1'));
       await btn.click();
-      console.info('[QueryNavDestinationSize_0100] btn click');
+      console.info('[QueryNavDestinationSize_0010] btn click');
       await CommonFunc.sleep(1000);
       let btn2: Component = await driver.findComponent(ON.id('pushId1'));
       await btn2.click();
       await CommonFunc.sleep(3000);
-      console.info('[QueryNavDestinationSize_0100] btn2 click');
+      console.info('[QueryNavDestinationSize_0010] btn2 click');
       let info2: NavDestinationInfo | undefined = AppStorage.get('navDestinationInfo');
-      console.log('QueryNavDestinationSize_0100 get info2: ' + JSON.stringify(info2));
+      console.log('QueryNavDestinationSize_0010 get info2: ' + JSON.stringify(info2));
       let size2: Size | undefined = info2?.size;
       let width2: number | undefined = size2?.width;
       let height2: number | undefined = size2?.height;
@@ -75,21 +75,21 @@ export default function QueryNavDestinationSize() {
       await CommonFunc.sleep(1000);
       let btn3: Component = await driver.findComponent(ON.id('popId1'));
       await btn3.click();
-      console.info('[QueryNavDestinationSize_0100] btn3 click');
+      console.info('[QueryNavDestinationSize_0010] btn3 click');
       await CommonFunc.sleep(1000);
 
       let btn4: Component = await driver.findComponent(ON.id('offId1'));
       await btn4.click();
-      console.info('[QueryNavDestinationSize_0100] btn4 click');
+      console.info('[QueryNavDestinationSize_0010] btn4 click');
       await CommonFunc.sleep(1000);
       let btn5: Component = await driver.findComponent(ON.id('pushId1'));
       await btn5.click();
       await CommonFunc.sleep(3000);
-      console.info('[QueryNavDestinationSize_0100] btn5 click');
+      console.info('[QueryNavDestinationSize_0010] btn5 click');
       let info3: NavDestinationInfo | undefined = AppStorage.get('navDestinationInfo');
       expect(info3 == undefined).assertTrue();
       AppStorage.delete('navDestinationInfo');
-      console.info('[QueryNavDestinationSize_0100] END');
+      console.info('[QueryNavDestinationSize_0010] END');
       done();
     });
  })

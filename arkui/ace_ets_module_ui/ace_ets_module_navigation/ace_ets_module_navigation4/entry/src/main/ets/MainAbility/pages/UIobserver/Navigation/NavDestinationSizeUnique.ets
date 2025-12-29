@@ -22,34 +22,40 @@ struct SizeUniquePageOne {
 
   build() {
     NavDestination() {
-      Column() {
+      Column({space: 2}) {
         Button('on').onClick(() => {
           this.getUIContext().getUIObserver().onNavDestinationSizeChangeByUniqueId(this.navUniqueId, destSizeCallback);
         }).height('5%').id('onId')
+
         Button('off').onClick(() => {
           this.getUIContext().getUIObserver().offNavDestinationSizeChangeByUniqueId(this.navUniqueId, destSizeCallback);
         }).height('5%').id('offId')
+
         Button('onUn').onClick(() => {
           this.getUIContext().getUIObserver().onNavDestinationSizeChangeByUniqueId(undefined, destSizeCallback);
         }).height('5%').id('onUnId')
+
         Button('offUn').onClick(() => {
           this.getUIContext().getUIObserver().offNavDestinationSizeChangeByUniqueId(undefined, destSizeCallback);
         }).height('5%').id('offUnId')
+
         Button('onNull').onClick(() => {
           this.getUIContext().getUIObserver().onNavDestinationSizeChangeByUniqueId(null, destSizeCallback);
         }).height('5%').id('onNullId')
+
         Button('offNUll').onClick(() => {
           this.getUIContext().getUIObserver().offNavDestinationSizeChangeByUniqueId(null, destSizeCallback);
         }).height('5%').id('offNullId')
+
         Button('pop').onClick(() => {
           this.stack.pop();
         }).height('5%').id('popId')
+
         Button('changeSize')
-          .height('5%').id('changeSizeId')
           .onClick(() => {
             this.pageOneWidth='50%';
             this.pageOneHeight='50%';
-          }).height('10%').id('popId')
+          }).height('5%').id('changeSizeId')
       }
     }
     .title('pageOne')

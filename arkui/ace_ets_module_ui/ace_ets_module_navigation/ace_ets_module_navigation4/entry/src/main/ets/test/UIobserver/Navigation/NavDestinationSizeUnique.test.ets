@@ -50,29 +50,29 @@ export default function NavDestinationSizeUnique() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('NavDestinationSizeUnique_0100', Level.LEVEL3, async (done: Function) => {
-      console.info('[NavDestinationSizeUnique_0100] START');
+    it('NavDestinationSizeUnique_0010', Level.LEVEL3, async (done: Function) => {
+      console.info('[NavDestinationSizeUnique_0010] START');
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
 
       let btn1: Component = await driver.findComponent(ON.id('pushId'));
       await btn1.click();
-      console.info('[NavDestinationSizeUnique_0100] btn1 click');
+      console.info('[NavDestinationSizeUnique_0010] btn1 click');
       await CommonFunc.sleep(1000);
 
       let offBtn: Component = await driver.findComponent(ON.id('onId'));
       await offBtn.click();
-      console.info('[NavDestinationSizeUnique_0100] offBtn click');
+      console.info('[NavDestinationSizeUnique_0010] offBtn click');
       await CommonFunc.sleep(1000);
 
       let changeBtn: Component = await driver.findComponent(ON.id('changeSizeId'));
       await changeBtn.click();
-      console.info('[NavDestinationSizeUnique_0100] changeBtn click');
+      console.info('[NavDestinationSizeUnique_0010] changeBtn click');
       await CommonFunc.sleep(1000);
 
       let info: NavDestinationInfo | undefined = AppStorage.get('uniqueNavDestinationInfo');
-      console.log('NavDestinationSizeUnique_0100 get info: ' + JSON.stringify(info));
+      console.log('NavDestinationSizeUnique_0010 get info: ' + JSON.stringify(info));
       let size: Size | undefined = info?.size;
       let width: number | undefined = size?.width;
       let height: number | undefined = size?.height;
@@ -82,9 +82,9 @@ export default function NavDestinationSizeUnique() {
       await CommonFunc.sleep(1000);
       let popBtn: Component = await driver.findComponent(ON.id('popId'));
       await popBtn.click();
-      console.info('[NavDestinationSizeUnique_0100] popBtn click');
+      console.info('[NavDestinationSizeUnique_0010] popBtn click');
       await CommonFunc.sleep(1000);
-      console.info('[NavDestinationSizeUnique_0100] END');
+      console.info('[NavDestinationSizeUnique_0010] END');
       done();
     });
 

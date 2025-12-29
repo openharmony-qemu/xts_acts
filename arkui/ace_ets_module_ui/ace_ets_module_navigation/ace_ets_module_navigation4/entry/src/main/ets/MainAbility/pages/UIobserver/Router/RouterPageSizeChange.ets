@@ -27,7 +27,7 @@ struct RouterPageSizeChange {
         this.getUIContext().getUIObserver().offRouterPageSizeChange(myPageRouterPageSizeCallback);
       }).id('offId').height('10%');
       Button('push').onClick(() => {
-        this.getUIContext().getRouter().pushUrl({url:'MainAbility/pages/RouterPage/ChangePage'})
+        this.getUIContext().getRouter().pushUrl({url:'MainAbility/pages/UIobserver/Router/ChangePage'})
       }).id('pushId').height('10%');
       Button('querySize').onClick(() => {
         // 也可以主动获取页面大小信息
