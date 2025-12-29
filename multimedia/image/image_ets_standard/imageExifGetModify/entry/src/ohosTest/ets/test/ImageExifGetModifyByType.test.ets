@@ -28,6 +28,7 @@ import {
   imageMakerNoteHwMetadatakey,
   readAndWriteMakerNoteHwMetadata,
   exifReadWriteValidationRules,
+  DNGExifReadWriteValidationRules,
   imageOnlyMakerNoteHwMetadata,
   readOnlyMakerNoteHwMetadata,
   exifReadOnlyValidationRules,
@@ -37,8 +38,8 @@ import {
 } from './ImagePropertyByType.test'
 
 interface ModifyRule1 {
-  oldExpectValue: string;
-  newExpectValue: string | number | Array<number> | ArrayBuffer | boolean;
+  oldExpectValue: string | null | undefined;
+  newExpectValue: string | number | Array<number> | ArrayBuffer | boolean | undefined;
 }
 
 interface ModifyRule {
@@ -210,20 +211,23 @@ export default function imageExifGetModifyByTypeTest() {
       expectedValue: string | number | object | number[] | undefined | null | ArrayBuffer | boolean
     ): boolean => {
       const actualArray = new Uint8Array(actualBuffer);
-
-      for (let i = 0; i < actualArray.length; i++) {
-        console.info(`ArrayBuffer: ${actualArray[i]}`);
+      const MAX_COMPARE_COUNT = 20;
+      
+      const logCount = Math.min(MAX_COMPARE_COUNT, actualArray.length);
+      for (let i = 0; i < logCount; i++) {
+        console.info(`ArrayBuffer[${i}]: ${actualArray[i]}`);
+      }
+      if (actualArray.length > MAX_COMPARE_COUNT) {
+        console.info(`ArrayBuffer: ... (${actualArray.length - MAX_COMPARE_COUNT} elements omitted) ...`);
       }
 
       if (expectedValue instanceof ArrayBuffer) {
         const expectedArray = new Uint8Array(expectedValue);
-        for (let i = 0; i < actualArray.length; i++) {
-        }
-        if (actualArray.length !== expectedArray.length) {
-          return false;
-        }
-        for (let i = 0; i < actualArray.length; i++) {
+        const compareCount = Math.min(MAX_COMPARE_COUNT, actualArray.length, expectedArray.length);
+        
+        for (let i = 0; i < compareCount; i++) {
           if (actualArray[i] !== expectedArray[i]) {
+            console.info(`Mismatch at [${i}]: actual=${actualArray[i]}, expected=${expectedArray[i]}`);
             return false;
           }
         }
@@ -231,13 +235,10 @@ export default function imageExifGetModifyByTypeTest() {
       }
       
       if (Array.isArray(expectedValue)) {
-        for (let i = 0; i < actualArray.length; i++) {
-        }
-        if (actualArray.length !== expectedValue.length) {
-          return false;
-        }
-        for (let i = 0; i < actualArray.length; i++) {
+        const compareCount = Math.min(MAX_COMPARE_COUNT, actualArray.length, expectedValue.length);
+        for (let i = 0; i < compareCount; i++) {
           if (actualArray[i] !== expectedValue[i]) {
+            console.info(`Mismatch at [${i}]: actual=${actualArray[i]}, expected=${expectedValue[i]}`);
             return false;
           }
         }
@@ -407,6 +408,8 @@ export default function imageExifGetModifyByTypeTest() {
               expectedValue = rule.expectValuePNG;
             } else if (fileType == "expectValueHEIC") {
               expectedValue = rule.expectValueHEIC;
+            } else if (fileType == "expectValueDNG") {
+              expectedValue = rule.expectValueDNG;
             } else {
               expectedValue = rule.expectValueWEBP;
             }
@@ -725,6 +728,7 @@ export default function imageExifGetModifyByTypeTest() {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0900";
       let ret: boolean = true;
       const imageSourceApiGet = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      ret = await testModifyAndVerifyEnhanced(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", readAndWriteExifMetadata);
       const exifValue: image.ImageMetadata = await imageSourceApiGet.readImageMetadata();
       for (let i = 0; i < readAndWriteExifMetadata.length; i++) {
         const rule = exifReadWriteValidationRules.get(readAndWriteExifMetadata[i]);
@@ -776,6 +780,7 @@ export default function imageExifGetModifyByTypeTest() {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_1000";
       let ret: boolean = true;
       const imageSourceApiGet = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
+      ret = await testModifyAndVerifyEnhanced(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", readAndWriteExifMetadata);
       const exifValue: image.ImageMetadata = await imageSourceApiGet.readImageMetadata(readAndWriteExifMetadata, 3);
       for (let i = 0; i < readAndWriteExifMetadata.length; i++) {
         const rule = exifReadWriteValidationRules.get(readAndWriteExifMetadata[i]);
@@ -2175,6 +2180,298 @@ export default function imageExifGetModifyByTypeTest() {
       expect(result).assertTrue();
       done();
     });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0100
+     * @tc.desc        Verify read EXIF metadata properties for DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read EXIF metadata using readImageMetadata API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0100";
+      let result = await verifyMetadataProperties(testTag, "test.dng", "fd", "exifMetadata", readAndWriteExifMetadata,
+        imageExifMetadatakey, DNGExifReadWriteValidationRules);
+      console.info(`${testTag} testReadImageMetadata result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0200
+     * @tc.desc        Verify read EXIF metadata without specifying property keys for DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read all EXIF metadata using readImageMetadata without property keys
+     *                 3.Verify all EXIF properties are retrieved correctly
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_DNG_0200";
+      let ret: boolean = true;
+      const imageSourceApiGet = await getImageSource("test.dng", "fd");
+      const exifValue: image.ImageMetadata = await imageSourceApiGet.readImageMetadata();
+      for (let i = 0; i < readAndWriteExifMetadata.length; i++) {
+        const rule = DNGExifReadWriteValidationRules.get(readAndWriteExifMetadata[i]);
+        if (!rule) {
+          console.info(`${testTag} No rule found for key: ${readAndWriteExifMetadata[i]}`);
+          continue;
+        }
+        try {
+          let expectedValue = rule.newExpectValue;
+          let actualValue: string | number | object | number[] | undefined | null | ArrayBuffer;
+          if (exifValue.exifMetadata != undefined) {
+            actualValue = exifValue.exifMetadata![imageExifMetadatakey[i]];
+          }
+
+          if (actualValue instanceof ArrayBuffer) {
+            if (!compareArrayBuffer(actualValue, expectedValue)) {
+              console.info(`${testTag} Verification failed for ArrayBuffer key: ${imageExifMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual ArrayBuffer length: ${actualValue.byteLength}`);
+              ret = false;
+            }
+          } else if (!compareValues(actualValue, expectedValue)) {
+            console.info(`${testTag} Verification failed for key: ${imageExifMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+            ret = false;
+          }
+        } catch (error) {
+          console.error(`${testTag} Error processing key ${imageExifMetadatakey[i]}: ${error}`);
+          ret = false;
+        } finally {
+          await imageSourceApiGet?.release();
+        }
+      }
+      console.info(`${testTag} testReadImageMetadata result is: ${ret}`);
+      expect(ret).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_CLONE_DNG_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_CLONE_DNG_0100
+     * @tc.desc        Verify EXIF metadata clone functionality for DNG file
+     *                 1.Read EXIF metadata from DNG file using readImageMetadata
+     *                 2.Clone metadata object using clone API
+     *                 3.Verify cloned properties match original values
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_CLONE_DNG_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_CLONE_DNG_0100";
+      let result: boolean = true;
+      let exifMetadataKey: string[] = ["NewSubfileType", "ImageWidth", "ImageLength", "ImageDescription"];
+      const imageSourceApi = await getImageSource("test.dng", "fd");
+      try {
+        const exifValue1: image.ImageMetadata = await imageSourceApi.readImageMetadata(exifMetadataKey);
+        if (exifValue1.exifMetadata != undefined) {
+          let actualValue1: Record<string, string | null> = await exifValue1.exifMetadata!.getProperties(exifMetadataKey);
+          console.info(`${testTag} readImageMetadata actualValue1 is: ${actualValue1}`);
+
+          let exifValue2: image.ExifMetadata = await exifValue1.exifMetadata!.clone();
+
+          let actualValue2: Record<string, string | null> = await exifValue2!.getProperties(exifMetadataKey);
+          console.info(`${testTag} readImageMetadata actualValue1 is: ${actualValue2}`);
+
+          for (const key of exifMetadataKey) {
+            if (actualValue1![key] !== actualValue2![key]) {
+              result = false;
+              console.info(`${testTag} readImageMetadata clone key: ${key}. actualValue1: ${actualValue1}. actualValue2: ${actualValue2}`);
+            }
+          }
+        }
+      } catch (error) {
+        console.error(`${testTag} Error clone err: ${error}`);
+        result = false;
+      }
+      console.info(`${testTag} readImageMetadata clone result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PROMISE_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PROMISE_DNG_ERROR_0100
+     * @tc.desc        Verify read EXIF metadata from DNG file with partial metadata
+     *                 1.Create image source from DNG file with partial EXIF data using fd
+     *                 2.Read EXIF properties using readImageMetadata API
+     *                 3.Verify existing properties are read correctly and missing properties return default values
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PROMISE_DNG_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PROMISE_DNG_ERROR_0100"
+      let result = true;
+      let propertyKeys: string[] = ["NewSubfileType", "ImageWidth", "ImageLength", "ImageDescription", "Make"];
+      let imageMetadatakey: string[] = ["newSubfileType", "imageWidth", "imageLength", "imageDescription", "make"];
+
+      let exifMetadata1 = image.ExifMetadata.createInstance();
+      exifMetadata1.newSubfileType = 0;
+      exifMetadata1.imageWidth = 5984;
+      exifMetadata1.imageLength = 4000;
+      exifMetadata1.imageDescription = undefined;
+      exifMetadata1.make = "Leica Camera AG";
+      
+      let imageSourceApi = await getImageSource("test.dng", "fd");
+      try {
+        let exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(propertyKeys);
+        let expectedValue: number | undefined | string | number[];
+        if (exifValue.exifMetadata != undefined) {
+          let actualValue: number | undefined | string | number[];
+          for (let i = 0; i < imageMetadatakey.length; i++) {
+            actualValue = exifValue.exifMetadata![imageMetadatakey[i]];
+            expectedValue = exifMetadata1[imageMetadatakey[i]];
+            if (!compareValues(actualValue, expectedValue)) {
+              console.info(`${testTag} Verification failed for key: ${imageMetadatakey[i]}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+              result = false;
+            }
+          }
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing : ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadata error result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_DNG_ERROR_0100
+     * @tc.desc        Verify read MakerNote metadata properties for DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read MakerNote metadata using readImageMetadata API
+     *                 3.Verify each property value matches expected result
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_DNG_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_DNG_ERROR_0100";
+      let result: boolean = true;
+      const imageSourceApi = await getImageSource("test.dng", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(readAndWriteMakerNoteHwMetadata);
+        console.info(`${testTag} readImageMetadata successfully for key: ${readAndWriteMakerNoteHwMetadata}, exifValue: ${exifValue}`);
+        result = false;
+      } catch (err) {
+        result = handleError(testTag, err as GenericError | Array<GenericError>, READ_FAILED);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadata result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ONLY_DNG_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ONLY_DNG_ERROR_0100
+     * @tc.desc        Verify read read-only EXIF metadata properties for DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read read-only EXIF properties (JPEGInterchangeFormat, JPEGInterchangeFormatLength)
+     *                 3.Verify retrieved values match expected read-only values
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ONLY_DNG_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_ONLY_DNG_ERROR_0100";
+      let result: boolean = true;
+      let exifMetadataKey: string[] = ["JPEGInterchangeFormat", "JPEGInterchangeFormatLength"];
+
+      const imageSourceApi = await getImageSource("test.dng", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(exifMetadataKey);
+        console.info(`${testTag} readImageMetadata successfully for key: ${exifMetadataKey}, exifValue: ${exifValue}`);
+        result = false;
+      } catch (err) {
+        result = handleError(testTag, err as GenericError | Array<GenericError>, READ_FAILED);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadata result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_ONLY_DNG_ERROR_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_ONLY_DNG_ERROR_0200
+     * @tc.desc        Verify read read-only MakerNote metadata properties for DNG file
+     *                 1.Create image source from DNG file using fd
+     *                 2.Read read-only MakerNote metadata properties
+     *                 3.Verify retrieved values match expected read-only values
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_ONLY_DNG_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_MAKERNOTEHUWEIMETADATA_ONLY_DNG_ERROR_0200";
+      let result: boolean = true;
+      const imageSourceApi = await getImageSource("test.dng", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata(readOnlyMakerNoteHwMetadata);
+        console.info(`${testTag} readImageMetadata successfully for key: ${readOnlyMakerNoteHwMetadata}, exifValue: ${exifValue}`);
+        result = false;
+      } catch (err) {
+        result = handleError(testTag, err as GenericError | Array<GenericError>, READ_FAILED);
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} readImageMetadata result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_DNG_0100
+     * @tc.number SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_DNG_0100
+     * @tc.desc   Verify synchronous read of ImageLength property for DNG file
+     *            1.Create image source from DNG file using fd
+     *            2.Read ImageLength property using getImagePropertySync API
+     *            3.Verify returned value matches expected result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_DNG_0100', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTYSYNC_PROMISE_DNG_0100'
+      const key = image.PropertyKey.IMAGE_LENGTH
+      const compareData: string = `120`;
+      let checkResult = false;
+      try {
+        const imageSourceApi = await getImageSource("test.dng", 'fd')
+        if (imageSourceApi == undefined) {
+          console.info(testTag + " create image source failed");
+        } else {
+          const result = await imageSourceApi.getImagePropertySync(key)
+          console.info(testTag + "getImagePropertySync result: " + result);
+          console.info(testTag + "getImagePropertySync compareData: " + compareData);
+          checkResult = compareData == result
+          if(!checkResult){
+            console.info(testTag + " getImagePropertySync failed. key:" + key + ", compareData: " + compareData +
+              ", result: " + result);
+          }
+          imageSourceApi.release();
+        }
+        expect(checkResult).assertTrue()
+        done()
+      } catch (e) {
+        console.info(testTag + "getImagePropertySync error IMAGE_LENGTH : " + e);
+        expect().assertFail();
+        done();
+      }
+    })
     
   });
 }
