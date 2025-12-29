@@ -166,9 +166,9 @@ OH_Drawing_RecordCmd* CreateRecordCmd(int32_t width, int32_t height)
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
     OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, width, height, &canvas);
-    
+
     drawCircle1(canvas, width);
-    
+
     OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
     OH_Drawing_RecordCmdUtilsDestroy(recordCmdUtils);
     canvas = nullptr; // Canvas is managed by RecordCmdUtils

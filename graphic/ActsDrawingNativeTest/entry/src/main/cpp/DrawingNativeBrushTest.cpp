@@ -542,7 +542,7 @@ int TestBrushSetColorAbnormal()
     // Ignoring the test for passing a floating-point number, as it will result in an error
     // 3. Call OH_Drawing_BrushGetColor to get the brush color
     uint32_t color = OH_Drawing_BrushGetColor(brush);
-    EXPECT_EQ(color, std::pow(2, 32) - 1);
+    EXPECT_EQ(color, TEST_COLOR_MAX_UINT32);
     // 4. Free memory
     OH_Drawing_BrushDestroy(brush);
 
@@ -816,8 +816,8 @@ int TestBrushSetShaderEffectNull()
     OH_Drawing_Point* endPt = OH_Drawing_PointCreate(TEST_POINT_X2, TEST_POINT_Y2);
     uint32_t color[] = { TEST_COLOR_RED, TEST_COLOR_GREEN };
     float pos[] = { TEST_POS_START, TEST_POS_END };
-    OH_Drawing_ShaderEffect* linearGradient =
-        OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, color, pos, TEST_COLOR_COUNT, OH_Drawing_TileMode::CLAMP);
+    OH_Drawing_ShaderEffect* linearGradient = OH_Drawing_ShaderEffectCreateLinearGradient(
+        startPt, endPt, color, pos, TEST_COLOR_COUNT, OH_Drawing_TileMode::CLAMP);
     // add assert
     EXPECT_NE(linearGradient, nullptr);
     // 2. Call OH_Drawing_BrushSetShaderEffect with nullptr as the first parameter
@@ -888,8 +888,8 @@ int TestBrushSetShadowLayerNull()
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     // add assert
     EXPECT_NE(brush, nullptr);
-    OH_Drawing_ShadowLayer* shadowLayer = OH_Drawing_ShadowLayerCreate(
-        TEST_SHADOW_OFFSET_X, TEST_SHADOW_OFFSET_Y, TEST_SHADOW_BLUR_RADIUS, TEST_COLOR_1);
+    OH_Drawing_ShadowLayer* shadowLayer =
+        OH_Drawing_ShadowLayerCreate(TEST_SHADOW_OFFSET_X, TEST_SHADOW_OFFSET_Y, TEST_SHADOW_BLUR_RADIUS, TEST_COLOR_1);
     // add assert
     EXPECT_NE(shadowLayer, nullptr);
     // 2. Call OH_Drawing_BrushSetShadowLayer with nullptr as the first parameter
@@ -1486,7 +1486,6 @@ int TestBrushSetColor4fNull()
 int TestBrushSetColor4fAbnormal()
 {
     DrawingNativeBrushTestSetUp();
-
     OH_Drawing_Brush* brush = OH_Drawing_BrushCreate();
     float a = TEST_COLOR_FLOAT_ZERO;
     float r = TEST_COLOR_FLOAT_ZERO;
@@ -1533,9 +1532,7 @@ int TestBrushSetColor4fAbnormal()
     EXPECT_EQ(errorCode7, OH_DRAWING_SUCCESS);
     EXPECT_EQ(errorCode8, OH_DRAWING_SUCCESS);
     OH_Drawing_BrushDestroy(brush);
-
     DrawingNativeBrushTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 } // namespace Drawing

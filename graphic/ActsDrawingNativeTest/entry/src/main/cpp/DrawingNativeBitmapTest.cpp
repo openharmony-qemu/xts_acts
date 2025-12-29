@@ -463,7 +463,7 @@ int TestBitmapBuildNormal()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
 
     // step 2
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
         OH_Drawing_BitmapFormat bitmapFormat = { formats[3], alphaFormats[i] };
         OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
         if (bitmap == nullptr) {
@@ -562,7 +562,7 @@ int TestBitmapBuildMultipleCalls()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
 
     // step 2
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
         OH_Drawing_BitmapFormat bitmapFormat = { formats[3], alphaFormats[i] };
         OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
         if (bitmap == nullptr) {
@@ -588,7 +588,7 @@ int TestBitmapBuildMultipleCalls()
     OH_Drawing_Bitmap* bitmap3 = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels, rowBytes);
 
     // step 5
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
         OH_Drawing_BitmapFormat bitmapFormat = { formats[3], alphaFormats[i] };
         OH_Drawing_BitmapBuild(bitmap3, width, height, &bitmapFormat);
         alphaFormat_ = OH_Drawing_BitmapGetAlphaFormat(bitmap3);
@@ -632,7 +632,7 @@ int TestBitmapBuildBoundary()
     OH_Drawing_Bitmap* bitmap = OH_Drawing_BitmapCreate();
 
     // step 2
-    for (int i = 1; i < 4; i++) {
+    for (int i = 1; i < sizeof(alphaFormats) / sizeof(alphaFormats[0]); i++) {
         OH_Drawing_BitmapFormat bitmapFormat = { formats[3], alphaFormats[i] };
         OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
         if (bitmap == nullptr) {
@@ -923,7 +923,7 @@ int TestBitmapReadPixelsNull()
     EXPECT_EQ(res, false);
 
     // step 5
-    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, nullptr, width * 4, 0, 0);
+    res = OH_Drawing_BitmapReadPixels(bitmap, &imageInfo, nullptr, width * BYTES_PER_PIXEL, 0, 0);
     EXPECT_EQ(res, false);
 
     // step 6
@@ -1094,8 +1094,8 @@ int TestBitmapBuildMaximum()
     OH_Drawing_Canvas* imageCanvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(imageCanvas, nullptr);
     OH_Drawing_CanvasBind(imageCanvas, bitmap);
-    OH_Drawing_Rect* imageRect = OH_Drawing_RectCreate(TEST_RECT_POS_START, TEST_RECT_POS_START,
-        TEST_RECT_SIZE_SMALL, TEST_RECT_SIZE_SMALL);
+    OH_Drawing_Rect* imageRect =
+        OH_Drawing_RectCreate(TEST_RECT_POS_START, TEST_RECT_POS_START, TEST_RECT_SIZE_SMALL, TEST_RECT_SIZE_SMALL);
     OH_Drawing_CanvasDrawRect(imageCanvas, imageRect);
 
     // Create a picture object
@@ -1106,8 +1106,8 @@ int TestBitmapBuildMaximum()
     // Draws the image onto the specified area of the canvas.
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
     EXPECT_NE(canvas, nullptr);
-    OH_Drawing_Rect* dstRect = OH_Drawing_RectCreate(TEST_RECT_POS_END, TEST_RECT_POS_END,
-        TEST_RECT_SIZE_LARGE, TEST_RECT_SIZE_LARGE);
+    OH_Drawing_Rect* dstRect =
+        OH_Drawing_RectCreate(TEST_RECT_POS_END, TEST_RECT_POS_END, TEST_RECT_SIZE_LARGE, TEST_RECT_SIZE_LARGE);
     OH_Drawing_SamplingOptions* samplingOptions = OH_Drawing_SamplingOptionsCreate(
         OH_Drawing_FilterMode::FILTER_MODE_NEAREST, OH_Drawing_MipmapMode::MIPMAP_MODE_NEAREST);
     EXPECT_NE(samplingOptions, nullptr);
