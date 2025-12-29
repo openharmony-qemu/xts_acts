@@ -55,7 +55,7 @@ export default function WebAttributeTest() {
         await Utils.msSleep(1500);
         Utils.emitEvent("emitInitialScale001", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testInitialScale001", 'oldScale=100,newScale=500', 70001, done);
+        Utils.registerEvent("testInitialScale001", 'oldScale=100,newScale=300', 70001, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebAttributeTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -77,7 +77,7 @@ export default function WebAttributeTest() {
         await Utils.msSleep(1000);
         Utils.emitEvent("emitInitialScale002", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testInitialScale002", 'oldScale=500,newScale=100', 70003, done);
+        Utils.registerEvent("testInitialScale002", 'oldScale=300,newScale=100', 70003, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebAttributeTestButton', 10, '');
         await Utils.msSleep(2000);
