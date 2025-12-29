@@ -785,7 +785,7 @@ export default function TransUpdateWithReturning() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_29000
-     * @tc.name  updateWithReturningSync013
+     * @tc.name  updateWithReturning014
      * @tc.desc   Conflict is undefined, handle according to the default conflict resolution mode
      * @tc.size  MediumTest
      * @tc.type  Function
@@ -1494,6 +1494,7 @@ export default function TransUpdateWithReturning() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_30600
+     * @tc.name   updateWithReturningSync034
      * @tc.desc   maxReturningCount < valueBuckets.size < 0x7FFF
      * @tc.size   MediumTest
      * @tc.type   Function
