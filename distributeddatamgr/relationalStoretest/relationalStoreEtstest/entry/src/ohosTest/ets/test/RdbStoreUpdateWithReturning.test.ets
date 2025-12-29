@@ -542,7 +542,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_8900
-     * @tc.name  updateWithReturning009
+     * @tc.name  updateWithReturningSync009
      * @tc.desc  1 < columns.size <= 4, Return the results of the specified field
      * @tc.size  MediumTest
      * @tc.type  Function
@@ -1450,7 +1450,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_11100
-     * @tc.name  updateWithReturningSync026
+     * @tc.name  updateWithReturning027
      * @tc.desc  error columns
      * @tc.size  MediumTest
      * @tc.type  Function
@@ -1579,7 +1579,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_returningJsAPITest_11400
-     * @tc.name  updateWithReturningSync032
+     * @tc.name  updateWithReturning032
      * @tc.desc  valueBucket is null/undefined
      * @tc.size  MediumTest
      * @tc.type  Function
