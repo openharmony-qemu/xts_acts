@@ -123,13 +123,6 @@ static int32_t WriteData(OH_AudioRenderer *renderer, void *audioData, int32_t au
     return 0;
 }
 
-// Callback function for writing audio data with metadata
-static int32_t AudioRendererWriteDataWithMetadataCallback(OH_AudioRenderer *renderer,
-    void *userData, void *audioData, int32_t audioDataSize, void *metadata, int32_t metadataSize)
-{
-    return WriteData(renderer, audioData, audioDataSize, metadata, metadataSize);
-}
-
 static int32_t AudioCapturerOnReadData(
     OH_AudioCapturer* capturer,
     void* userData,
@@ -1060,8 +1053,11 @@ int OhAudioStreamBuilderSetWriteDataWithMetadataCallback001()
         return -1;
     }
 
-    OH_AudioRenderer_WriteDataWithMetadataCallback callback = AudioRendererWriteDataWithMetadataCallback;
-    result = OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback(builder, callback, nullptr);
+    result = OH_AudioStreamBuilder_SetWriteDataWithMetadataCallback(builder,
+        [](OH_AudioRenderer *renderer, void *userData, void *audioData, int32_t audioDataSize,
+           void *metadata, int32_t metadataSize) -> int32_t {
+            return WriteData(renderer, audioData, audioDataSize, metadata, metadataSize);
+        }, nullptr);
     if (result != AUDIOSTREAM_SUCCESS) {
         OH_AudioStreamBuilder_Destroy(builder);
         return -1;
