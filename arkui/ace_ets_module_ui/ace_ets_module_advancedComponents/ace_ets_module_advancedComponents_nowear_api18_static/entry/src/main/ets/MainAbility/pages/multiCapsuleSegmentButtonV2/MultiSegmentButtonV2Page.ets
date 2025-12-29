@@ -16,7 +16,7 @@
 
 
 // import { MultiCapsuleSegmentButtonV2, SegmentButtonV2Items } from '@kit.ArkUI';
-import { LengthMetrics, ColorMetrics } from '@ohos.arkui.node';
+import { LengthMetrics, ColorMetrics, SizeT } from '@ohos.arkui.node';
 import {
   Entry,
   ComponentV2,
@@ -35,22 +35,27 @@ import {
   Button,
   FlexAlign,
   FlexWrap,
-  ClickEvent
+  ClickEvent,
+  FontWeight,
+  LocalizedPadding,
+  Direction,
+  $r
 } from '@ohos.arkui.component';
 import { Local } from '@ohos.arkui.stateManagement';
+import { SegmentButtonV2Items, MultiCapsuleSegmentButtonV2, SegmentButtonV2ItemOptions } from '@ohos.arkui.advanced.SegmentButtonV2'
 
 @Entry
 @ComponentV2
 struct MultiCapsuleSegmentButtonV2Example {
-  // @Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([
-  //   { text: 'a' },
-  //   { text: 'b' },
-  //   { text: 'c' },
-  //   { text: 'd' },
-  //   { icon: $r('sys.media.ohos_ic_public_device_phone') },
-  //   { symbol: $r('sys.symbol.phone') },
-  // ]);
-  @Local selectedIndexes: number[] = [];
+  @Local textItems: SegmentButtonV2Items = new SegmentButtonV2Items([
+    { text: 'a' } as SegmentButtonV2ItemOptions,
+    { text: 'b' } as SegmentButtonV2ItemOptions,
+    { text: 'c' } as SegmentButtonV2ItemOptions,
+    { text: 'd' } as SegmentButtonV2ItemOptions,
+    { icon: $r('sys.media.ohos_ic_public_device_phone') } as SegmentButtonV2ItemOptions,
+    { symbol: $r('sys.symbol.phone') } as SegmentButtonV2ItemOptions,
+  ]);
+  @Local selectedIndexes: Int[] = [];
   @Local itemBackgroundColor: ColorMetrics = ColorMetrics.resourceColor(Color.Red);
   @Local itemBackgroundEffect: BackgroundEffectOptions = {
     radius: 10,
@@ -72,45 +77,45 @@ struct MultiCapsuleSegmentButtonV2Example {
       Column({ space: 12 } as ColumnOptions) {
         Text('' + this.selectedIndexes)
           .key('selectedIndexesTest001')
-        // MultiCapsuleSegmentButtonV2({
-        //   items: this.textItems,
-        //   selectedIndexes: this.selectedIndexes,
-        //   $selectedIndexes: (selectedIndexes) => {
-        //     this.selectedIndexes = selectedIndexes
-        //     console.log('selectIndex---' + selectedIndexes)
-        //   },
-        //   onItemClicked: (num: number) => {
-        //     num = 666
-        //     console.log('onItemClicked---' + num)
-        //   },
-        //   itemMinFontScale: 0.85,
-        //   itemMaxFontScale: 3.2,
-        //   itemSpace: LengthMetrics.vp(2),
-        //   itemFontColor: ColorMetrics.resourceColor(Color.Orange),
-        //   itemSelectedFontColor: ColorMetrics.rgba(255, 0, 0),
-        //   itemFontSize: LengthMetrics.fp(0),
-        //   itemSelectedFontSize: LengthMetrics.fp(18),
-        //   itemFontWeight: FontWeight.Medium,
-        //   itemSelectedFontWeight: FontWeight.Bolder,
-        //   itemBorderRadius: LengthMetrics.vp(20),
-        //   itemBackgroundColor: this.itemBackgroundColor,
-        //   itemBackgroundEffect: this.itemBackgroundEffect,
-        //   itemSelectedBackgroundColor: ColorMetrics.resourceColor(Color.Red),
-        //   itemIconSize: { width: LengthMetrics.vp(18), height: LengthMetrics.vp(18) } as SizeT<LengthMetrics>,
-        //   itemIconFillColor: ColorMetrics.resourceColor(Color.Pink),
-        //   itemSelectedIconFillColor: ColorMetrics.resourceColor(Color.Blue),
-        //   itemSymbolFontSize: LengthMetrics.vp(20),
-        //   itemSymbolFontColor: ColorMetrics.resourceColor(Color.Brown),
-        //   itemSelectedSymbolFontColor: ColorMetrics.resourceColor(Color.Black),
-        //   itemMinHeight: LengthMetrics.vp(50),
-        //   itemPadding: LengthMetrics.vp(0) as LocalizedPadding,
-        //   languageDirection: Direction.Auto
-        // })
-        //   .backgroundColor(Color.White)
-        //   .borderRadius(8)
-        //   .padding(8)
-        //   .width('100%')
-        //   .key('MCSegmentButtonSelectedIndexesId001')
+        MultiCapsuleSegmentButtonV2({
+          items: this.textItems,
+          selectedIndexes: this.selectedIndexes,
+          $selectedIndexes: (selectedIndexes:Int[]) => {
+            this.selectedIndexes = selectedIndexes
+            console.log('selectIndex---' + selectedIndexes)
+          },
+          onItemClicked: (num: Int) => {
+            num = 666
+            console.log('onItemClicked---' + num)
+          },
+          itemMinFontScale: 0.85,
+          itemMaxFontScale: 3.2,
+          itemSpace: LengthMetrics.vp(2),
+          itemFontColor: ColorMetrics.resourceColor(Color.Orange),
+          itemSelectedFontColor: ColorMetrics.rgba(255, 0, 0),
+          itemFontSize: LengthMetrics.fp(0),
+          itemSelectedFontSize: LengthMetrics.fp(18),
+          itemFontWeight: FontWeight.Medium,
+          itemSelectedFontWeight: FontWeight.Bolder,
+          itemBorderRadius: LengthMetrics.vp(20),
+          itemBackgroundColor: this.itemBackgroundColor,
+          itemBackgroundEffect: this.itemBackgroundEffect,
+          itemSelectedBackgroundColor: ColorMetrics.resourceColor(Color.Red),
+          itemIconSize: { width: LengthMetrics.vp(18), height: LengthMetrics.vp(18) } as SizeT<LengthMetrics>,
+          itemIconFillColor: ColorMetrics.resourceColor(Color.Pink),
+          itemSelectedIconFillColor: ColorMetrics.resourceColor(Color.Blue),
+          itemSymbolFontSize: LengthMetrics.vp(20),
+          itemSymbolFontColor: ColorMetrics.resourceColor(Color.Brown),
+          itemSelectedSymbolFontColor: ColorMetrics.resourceColor(Color.Black),
+          itemMinHeight: LengthMetrics.vp(50),
+          itemPadding: LengthMetrics.vp(0) as LocalizedPadding,
+          languageDirection: Direction.Auto
+        })
+          .backgroundColor(Color.White)
+          .borderRadius(8)
+          .padding(8)
+          .width('100%')
+          .key('MCSegmentButtonSelectedIndexesId001')
 
         Flex({ wrap: FlexWrap.Wrap } as FlexOptions) {
           Button('[0]')
@@ -150,18 +155,18 @@ struct MultiCapsuleSegmentButtonV2Example {
             .id('SelectedIndexesId005')
         }
 
-        // MultiCapsuleSegmentButtonV2({
-        //   items: this.textItems,
-        //   selectedIndexes: [0, 2],
-        //   itemBackgroundColor: this.itemBackgroundColor,
-        //   itemBackgroundBlurStyle: this.itemBackgroundBlurStyle,
-        //   itemBackgroundBlurStyleOptions: this.itemBackgroundBlurStyleOptions
-        // })
-        //   .backgroundColor(Color.White)
-        //   .borderRadius(8)
-        //   .padding(8)
-        //   .width('100%')
-        //   .key('MCSegmentButtonBlurStyleId001')
+        MultiCapsuleSegmentButtonV2({
+          items: this.textItems,
+          selectedIndexes: [0, 2],
+          itemBackgroundColor: this.itemBackgroundColor,
+          itemBackgroundBlurStyle: this.itemBackgroundBlurStyle,
+          itemBackgroundBlurStyleOptions: this.itemBackgroundBlurStyleOptions
+        })
+          .backgroundColor(Color.White)
+          .borderRadius(8)
+          .padding(8)
+          .width('100%')
+          .key('MCSegmentButtonBlurStyleId001')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

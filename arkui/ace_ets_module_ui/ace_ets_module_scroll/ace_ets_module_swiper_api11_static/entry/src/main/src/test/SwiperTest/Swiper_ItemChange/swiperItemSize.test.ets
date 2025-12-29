@@ -113,7 +113,7 @@ it('testSwiperItemSize_static', Level.LEVEL0, async (done: () => void): Promise<
       let driver = Driver.create();
       //  await driver.swipe(250, 230, 200, 230); 原代码注释
       await CommonFunc.sleep(2500);
-      //   await driver.swipe(UIContext.getFocusedUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
+      //   await driver.swipe(UIContext.resolveUIContext()!.vp2px(180), vp2px(100), vp2px(20), vp2px(100));原代码注释
       // await CommonFunc.sleep(1000);原代码注释
       await CommonFunc.sleep(1000);
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('itemSizekey')

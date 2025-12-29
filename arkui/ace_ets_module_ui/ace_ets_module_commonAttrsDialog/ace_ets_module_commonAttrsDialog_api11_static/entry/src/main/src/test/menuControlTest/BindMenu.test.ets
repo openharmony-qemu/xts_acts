@@ -49,7 +49,7 @@ export default function BindMenuTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get BindMenuTest state pages:" + JSON.stringify(pages));
-        if (pages == null || !("BindMenu" == pages.name)) {
+        if (!("BindMenu" == pages.name)) {
           console.info("get BindMenuTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -71,7 +71,9 @@ it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let CASE: string = 'ArkUI_Menu_0100'
       console.info(`${SUITE} ${CASE} START`);
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject)?.getProperty("action")).assertEqual('onAppear');
+        const data = event.data as Record<string, Object | undefined | null>
+        const action = data['action'] as Record<string, Object | undefined | null>
+        expect(action).assertEqual('onAppear');
       }
       let event: events_emitter.InnerEvent = {
         eventId: 50000,
@@ -102,7 +104,9 @@ it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       let CASE: string = 'ArkUI_Menu_0200'
       console.info(`${SUITE} ${CASE} START`);
       let callback = (event: events_emitter.EventData) => {
-        expect(((event.data) as ESObject)?.getProperty("action")).assertEqual('onAppear');
+        const data = event.data as Record<string, Object | undefined | null>
+        const action = data['action'] as Record<string, Object | undefined | null>
+        expect(action).assertEqual('onAppear');
       }
       let event: events_emitter.InnerEvent = {
         eventId: 60002,

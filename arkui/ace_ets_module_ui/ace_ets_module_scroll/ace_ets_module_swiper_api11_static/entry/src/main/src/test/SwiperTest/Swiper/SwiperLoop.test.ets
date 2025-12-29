@@ -114,7 +114,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0270', Level.LEVEL0, async (don
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
       await driver.swipe(Math.round(winLeft + btRight) as Int, Math.round(winTop + btBottom / 2) as Int,
-        (Math.round(winLeft + btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int) as Int),
+        (Math.round(winLeft + btLeft) as Int + Math.round(UIContext.resolveUIContext()!.vp2px(27) as Int) as Int),
         Math.round(btBottom / 2) as Int + winTop as Int as Int);
       await CommonFunc.sleep(3500);
 
@@ -156,7 +156,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0280', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((winLeft as Int + Math.round(btLeft) as Int + Math.round(UIContext.getFocusedUIContext()!.vp2px(27) as Int) as Int),
+      await driver.swipe((winLeft as Int + Math.round(btLeft) as Int + Math.round(UIContext.resolveUIContext()!.vp2px(27) as Int) as Int),
         Math.round(winTop + btBottom / 2) as Int, Math.round(winLeft + btRight) as Int,
         Math.round(winTop + btBottom / 2) as Int);
       await CommonFunc.sleep(3500);
@@ -199,9 +199,9 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0340', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((Math.round(winLeft + btRight - UIContext.getFocusedUIContext()!.vp2px(50)) as Int),
+      await driver.swipe((Math.round(winLeft + btRight - UIContext.resolveUIContext()!.vp2px(50)) as Int),
         Math.round(winTop + btBottom / 2) as Int,
-        (Math.round(winLeft + btLeft + Math.round(UIContext.getFocusedUIContext()!.vp2px(27))) as Int),
+        (Math.round(winLeft + btLeft + Math.round(UIContext.resolveUIContext()!.vp2px(27))) as Int),
         Math.round(winTop + btBottom / 2) as Int);
       await CommonFunc.sleep(3500);
 
@@ -240,7 +240,7 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0350', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((Math.round(winLeft + btLeft) + Math.round(UIContext.getFocusedUIContext()!.vp2px(27)) as Int),
+      await driver.swipe((Math.round(winLeft + btLeft) + Math.round(UIContext.resolveUIContext()!.vp2px(27)) as Int),
         Math.round(winTop + btBottom / 2) as Int, Math.round(winLeft + btRight) as Int,
         Math.round(winTop + btBottom / 2) as Int);
       await CommonFunc.sleep(3500);

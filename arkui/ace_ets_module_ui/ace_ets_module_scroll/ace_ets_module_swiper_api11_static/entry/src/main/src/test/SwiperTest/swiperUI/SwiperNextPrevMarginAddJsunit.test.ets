@@ -1253,7 +1253,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0076', Level.LEVEL0, async (done: () =>
       let right = subcomponment.right;
       let left = subcomponment.left;
       const uiContex = new UIContext();
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(4 + 2 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1304,7 +1304,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0078', Level.LEVEL0, async (done: () =>
       let right = subcomponment.right;
       let left = subcomponment.left;
       const uiContext = new UIContext()
-      expect(Math.abs(Math.floor((right - left + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
+      expect(Math.abs(Math.floor((right - left + UIContext.resolveUIContext()!.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
     });
@@ -1363,7 +1363,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0077', Level.LEVEL0, async (done: () =>
       let right = subcomponment.right;
       let left = subcomponment.left;
 
-      expect(Math.floor(Math.abs((2 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) -
+      expect(Math.floor(Math.abs((2 * (right - left) + UIContext.resolveUIContext()!.vp2px(4 + 2 + 2 * 10)) -
         (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
@@ -1417,7 +1417,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0081', Level.LEVEL0, async (done: () =>
       let right = subcomponment.right;
       let left = subcomponment.left;
 
-      expect(Math.abs(Math.floor((right - left + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
+      expect(Math.abs(Math.floor((right - left + UIContext.resolveUIContext()!.vp2px(4 + 2 + 2 * 10)) - (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
     });
@@ -1476,7 +1476,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0080', Level.LEVEL0, async (done: () =>
       expect(nextMargin).assertEqual("4.00vp");
       expect(prevMargin).assertEqual("2.00vp");
 
-      expect(Math.abs(Math.floor((2 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(4 + 2 + 2 * 10)) -
+      expect(Math.abs(Math.floor((2 * (right - left) + UIContext.resolveUIContext()!.vp2px(4 + 2 + 2 * 10)) -
         (swiperRight - swiperLeft))) <= 1)
         .assertTrue();
       done();
@@ -1532,7 +1532,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0079', Level.LEVEL0, async (done: () =>
       expect(nextMargin).assertEqual("4.00vp");
       expect(prevMargin).assertEqual("2.00vp");
 
-      expect(Math.abs(Math.floor((right - left) - (swiperRight - swiperLeft - UIContext.getFocusedUIContext()!.vp2px(2 * 10 + 2 + 4)))) <= 1)
+      expect(Math.abs(Math.floor((right - left) - (swiperRight - swiperLeft - UIContext.resolveUIContext()!.vp2px(2 * 10 + 2 + 4)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1586,7 +1586,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0082', Level.LEVEL0, async (done: () =>
 
 
       expect(padding).assertEqual('10.00vp');
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(20 + 40)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(20 + 40)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1641,7 +1641,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0083', Level.LEVEL0, async (done: () =>
       expect(nextMargin).assertEqual("30.00vp");
       expect(prevMargin).assertEqual("30.00vp");
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(2 * 3 + 2 * 30)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(2 * 3 + 2 * 30)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1796,7 +1796,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0063', Level.LEVEL0, async (done: () =>
 
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1850,7 +1850,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0062', Level.LEVEL0, async (done: () =>
       let prevMargin: string = obj.getElement('$attrs').getString('prevMargin');
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1902,7 +1902,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0061', Level.LEVEL0, async (done: () =>
       let prevMargin: string = obj.getElement('$attrs').getString('prevMargin');
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -1960,10 +1960,10 @@ it('SwiperNextPrevMarginAddJsunit_static_0060', Level.LEVEL0, async (done: () =>
       let bottom3 = subcomponment3.bottom;
       console.info(`[SwiperNextPrevMarginAddJsunit_static_0060] swiperTop - swiperbottom=
       ${(swiperTop - swiperbottom)}`);
-      console.info(`[SwiperNextPrevMarginAddJsunit_static_0060] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))=
-      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))}`);
+      console.info(`[SwiperNextPrevMarginAddJsunit_static_0060] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.resolveUIContext()!.vp2px(15 + 6))=
+      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.resolveUIContext()!.vp2px(15 + 6))}`);
       expect(Math.abs(Math.floor((swiperTop - swiperbottom) -
-        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1).assertTrue();
+        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1).assertTrue();
       done();
     });
 
@@ -2021,7 +2021,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0067', Level.LEVEL0, async (done: () =>
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2079,7 +2079,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0066', Level.LEVEL0, async (done: () =>
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(2 * 10 + 15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.resolveUIContext()!.vp2px(2 * 10 + 15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2139,7 +2139,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0065', Level.LEVEL0, async (done: () =>
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round((swiperRight - swiperLeft) -
-        (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 4 * 10)))) <= 1)
+        (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(15 + 6 + 4 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2198,7 +2198,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0064', Level.LEVEL0, async (done: () =>
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round(swiperTop - swiperbottom) -
-      Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(4 * 10 + 15 + 6))) <= 1).assertTrue();
+      Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(4 * 10 + 15 + 6))) <= 1).assertTrue();
       done();
     });
 
@@ -2255,7 +2255,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0055', Level.LEVEL0, async (done: () =>
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("0.00vp");
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2311,7 +2311,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0054', Level.LEVEL0, async (done: () =>
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2367,7 +2367,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0053', Level.LEVEL0, async (done: () =>
       expect(nextMargin).assertEqual("15.00vp");
       expect(prevMargin).assertEqual("6.00vp");
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2430,10 +2430,10 @@ it('SwiperNextPrevMarginAddJsunit_static_0052', Level.LEVEL0, async (done: () =>
 
       console.info(`[SwiperNextPrevMarginAddJsunit_static_0052] swiperTop - swiperbottom=
       ${(swiperTop - swiperbottom)}`);
-      console.info(`[SwiperNextPrevMarginAddJsunit_static_0052] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))=
-      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6))}`);
+      console.info(`[SwiperNextPrevMarginAddJsunit_static_0052] ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.resolveUIContext()!.vp2px(15 + 6))=
+      ${((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.resolveUIContext()!.vp2px(15 + 6))}`);
       expect(Math.abs(Math.floor((swiperTop - swiperbottom) -
-        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.getFocusedUIContext()!.vp2px(15 + 6)))) <= 1).assertTrue();
+        ((top - bottom) + (top2 - bottom2) + (top3 - bottom3) - UIContext.resolveUIContext()!.vp2px(15 + 6)))) <= 1).assertTrue();
       done();
     });
 
@@ -2491,7 +2491,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0059', Level.LEVEL0, async (done: () =>
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2549,7 +2549,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0058', Level.LEVEL0, async (done: () =>
       expect(prevMargin).assertEqual("6.00vp");
       expect(itemspace).assertEqual("10.00vp");
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.resolveUIContext()!.vp2px(15 + 6 + 2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2609,7 +2609,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0057', Level.LEVEL0, async (done: () =>
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round((swiperRight - swiperLeft) -
-        (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 4 * 10)))) <= 1)
+        (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(15 + 6 + 4 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -2668,7 +2668,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0056', Level.LEVEL0, async (done: () =>
       expect(itemspace).assertEqual("10.00vp");
 
       expect(Math.abs(Math.round(swiperTop - swiperbottom) -
-      Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(15 + 6 + 4 * 10))) <= 1).assertTrue();
+      Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(15 + 6 + 4 * 10))) <= 1).assertTrue();
       done();
     });
 
@@ -3275,7 +3275,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0048', Level.LEVEL0, async (done: () =>
       let itemspace: string = obj.getElement('$attrs').getString('itemSpace');
       expect(itemspace).assertEqual('10.00vp');
 
-      expect(Math.abs(Math.floor((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(2 * 10)))) <= 1)
+      expect(Math.abs(Math.floor((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(2 * 10)))) <= 1)
         .assertTrue();
       done();
     });
@@ -3422,7 +3422,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0072', Level.LEVEL0, async (done: () =>
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3496,7 +3496,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0073', Level.LEVEL0, async (done: () =>
       let obj = JSON.parseJsonElement(strJson);
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.resolveUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3570,7 +3570,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0074', Level.LEVEL0, async (done: () =>
       let obj = JSON.parseJsonElement(strJson);
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
-      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperRight - swiperLeft) - (right - left + UIContext.resolveUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3645,7 +3645,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0075', Level.LEVEL0, async (done: () =>
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round((swiperTop - swiperbottom) - (top - bottom - UIContext.resolveUIContext()!.vp2px(5)))) <= 1).assertTrue();
       done();
     });
 
@@ -3720,7 +3720,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0068', Level.LEVEL0, async (done: () =>
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
       done();
     });
@@ -3796,7 +3796,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0069', Level.LEVEL0, async (done: () =>
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       done();
     });
@@ -3872,7 +3872,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0070', Level.LEVEL0, async (done: () =>
       let nextMargin: string = obj.getElement('$attrs').getString('nextMargin');
       expect(nextMargin).assertEqual('5.00vp');
 
-      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.getFocusedUIContext()!.vp2px(5)))) <= 1)
+      expect(Math.floor(Math.abs((swiperRight - swiperLeft) - (3 * (right - left) + UIContext.resolveUIContext()!.vp2px(5)))) <= 1)
         .assertTrue();
       done();
     });
@@ -3947,7 +3947,7 @@ it('SwiperNextPrevMarginAddJsunit_static_0071', Level.LEVEL0, async (done: () =>
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('5.00vp');
 
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       done();
     });
@@ -4020,12 +4020,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0041', Level.LEVEL0, async (done: () =>
       let strJson = inspector.getInspectorByKey('swiperNextPrevMargin50');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('5.00vp');
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       // CommonFunc.setScreenOrientation(window.Orientation.PORTRAIT);
       await CommonFunc.sleep(3000);
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       await CommonFunc.sleep(3000);
       done();
@@ -4100,12 +4100,12 @@ it('SwiperNextPrevMarginAddJsunit_static_0040', Level.LEVEL0, async (done: () =>
       let obj = JSON.parseJsonElement(strJson);
       const uiContext = new UIContext();
       expect(obj.getElement('$attrs').getString('nextMargin')).assertEqual('5.00vp');
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
 
       // CommonFunc.setScreenOrientation(window.Orientation.LANDSCAPE);
       await CommonFunc.sleep(3000);
-      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.getFocusedUIContext()!.vp2px(5))) <= 1)
+      expect(Math.abs(Math.round(swiperTop - swiperbottom) - Math.round(3 * (top - bottom) - UIContext.resolveUIContext()!.vp2px(5))) <= 1)
         .assertTrue();
       await CommonFunc.sleep(3000);
       done();

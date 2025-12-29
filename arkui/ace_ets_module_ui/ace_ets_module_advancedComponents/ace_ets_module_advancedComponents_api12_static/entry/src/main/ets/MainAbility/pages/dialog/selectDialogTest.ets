@@ -15,7 +15,7 @@
  */
 
 import { SelectDialog } from '@ohos.arkui.advanced.Dialog';
-import { CustomColors, CustomDarkColors, CustomTheme } from '@ohos.arkui.theme';
+import { CustomColors, CustomTheme, CustomDarkColors } from '@ohos.arkui.theme';
 import {
   Button,
   Column,

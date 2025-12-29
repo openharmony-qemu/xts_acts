@@ -71,7 +71,7 @@ it('columnWidthsText_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         let strJson = inspector.getInspectorByKey('columnWidths_001');
         let obj = JSON.parseJsonElement(strJson);
         console.info("[columnWidthsText_static_0100]:" + JSON.stringify(obj.getElement('$attrs').getString('columnWidths')));
-        expect(obj.getElement('$attrs').getString('columnWidths')).assertEqual(UIContext.getFocusedUIContext()!.vp2px(100).toFixed(2).toString() + 'px');
+        expect(obj.getElement('$attrs').getString('columnWidths')).assertEqual(UIContext.resolveUIContext()!.vp2px(100).toFixed(2).toString() + 'px');
         await Utils.sleep(1000);
         console.info('columnWidthsText_static_0100 END');
         done();
@@ -92,8 +92,8 @@ it('columnWidthsText_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         let obj = JSON.parseJsonElement(strJson);
         console.info("[Testsjh_0101]:" + JSON.stringify(obj.getElement('$attrs')));
         console.info("[columnWitchTest_static_0101]:" + JSON.stringify(obj.getElement('$attrs').getString('columnWidths')));
-        let str = UIContext.getFocusedUIContext()!.vp2px(20).toFixed(2).toString() + 'px,' + UIContext.getFocusedUIContext()!.vp2px(40).toFixed(2).toString() + 'px,'
-        + UIContext.getFocusedUIContext()!.vp2px(60).toFixed(2).toString() + 'px';
+        let str = UIContext.resolveUIContext()!.vp2px(20).toFixed(2).toString() + 'px,' + UIContext.resolveUIContext()!.vp2px(40).toFixed(2).toString() + 'px,'
+        + UIContext.resolveUIContext()!.vp2px(60).toFixed(2).toString() + 'px';
         expect(obj.getElement('$attrs').getString('columnWidths')).assertEqual(str);
         await Utils.sleep(1000);
         console.info('columnWidthsText_static_0101 END');
@@ -115,8 +115,8 @@ it('columnWidthsText_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         let obj = JSON.parseJsonElement(strJson);
         console.info("[Testsjh_0102]:" + JSON.stringify(obj.getElement('$attrs')));
         console.info("[columnWitchTest_static_0102]:" + JSON.stringify(obj.getElement('$attrs').getString('columnWidths')));
-        let str = UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px,' + UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px,'
-        + UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px';
+        let str = UIContext.resolveUIContext()!.vp2px(112).toFixed(2).toString() + 'px,' + UIContext.resolveUIContext()!.vp2px(112).toFixed(2).toString() + 'px,'
+        + UIContext.resolveUIContext()!.vp2px(112).toFixed(2).toString() + 'px';
         expect(obj.getElement('$attrs').getString('columnWidths')).assertEqual(str);
         await Utils.sleep(1000);
         console.info('columnWidthsText_static_0102 END');
@@ -137,8 +137,8 @@ it('columnWidthsText_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         let strJson = inspector.getInspectorByKey('columnWidths_004');
         let obj = JSON.parseJsonElement(strJson);
         console.info("[columnWitchTest_static_0103]:" + JSON.stringify(obj.getElement('$attrs').getString('columnWidths')));
-        let str = UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px,' + UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px,'
-        + UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px';
+        let str = UIContext.resolveUIContext()!.vp2px(112).toFixed(2).toString() + 'px,' + UIContext.resolveUIContext()!.vp2px(112).toFixed(2).toString() + 'px,'
+        + UIContext.resolveUIContext()!.vp2px(112).toFixed(2).toString() + 'px';
         expect(obj.getElement('$attrs').getString('columnWidths')).assertEqual(str);
         await Utils.sleep(1000);
         console.info('columnWidthsText_static_0103 END');

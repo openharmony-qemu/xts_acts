@@ -146,10 +146,10 @@ it('CustomLayoutUniqueidTest_static_0200', Level.LEVEL1, async (done: () => void
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_0_height is:' + Child_0_height);
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_1_width is:' + Child_1_width);
       console.log('[CustomLayoutUniqueidTest_static_0200] Child_1_height is:' + Child_1_height);
-      expect(Math.floor(Math.abs(Child_0_width - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_0_height - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_1_width - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Child_1_height - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_0_width - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_0_height - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_1_width - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Child_1_height - UIContext.resolveUIContext()!.vp2px(100))) <= 1).assertTrue();
 
       console.info('[CustomLayoutUniqueidTest_static_0200] END');
       done();

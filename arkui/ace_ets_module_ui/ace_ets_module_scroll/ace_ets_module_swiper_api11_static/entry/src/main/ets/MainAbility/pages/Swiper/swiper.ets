@@ -235,7 +235,7 @@ struct SwiperExample {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.log('stateChangCallBack eventData = ',eventData)
-    if (eventData != null) {
+    if (eventData != null && eventData.data != null) {
       const data = eventData.data as Record<String,undefined|null|Object>
       if(data['index'] != null) {
         this.index = data['index'] as int;
