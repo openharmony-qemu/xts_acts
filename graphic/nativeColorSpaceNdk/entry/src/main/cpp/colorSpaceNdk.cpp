@@ -37,7 +37,7 @@ static napi_value OHCreateColorSpaceFromName(napi_env env, napi_callback_info in
     nativeColorSpace = OH_NativeColorSpaceManager_CreateFromName(colorSpaceName);
     if (nativeColorSpace != nullptr) {
         napi_create_int32(env, SUCCESS, &result);
-    } else { 
+    } else {
         napi_create_int32(env, FAIL, &result);
     }
     OH_NativeColorSpaceManager_Destroy(nativeColorSpace);
