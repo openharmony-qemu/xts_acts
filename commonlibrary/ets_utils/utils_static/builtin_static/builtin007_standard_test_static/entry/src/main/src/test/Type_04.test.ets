@@ -1969,6 +1969,1303 @@ export default function type_04Test() {
       }
     });
 
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0100
+     * @tc.name    testFunctionTypeGetParameter_0001
+     * @tc.desc    Get first parameter from function with one parameter
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+
+    it('testFunctionTypeGetParameter_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0001";
+      try {
+
+        const functionType: FunctionType = Type.of(voidReturningFunction) as FunctionType;
+        const parameter = functionType.getParameter(0);
+        expect(parameter !== null).assertTrue();
+
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0200
+     * @tc.name    testFunctionTypeGetParameter_0002
+     * @tc.desc    Get parameters from function with multiple parameters
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0002";
+      try {
+
+        const functionType: FunctionType = Type.of(FuncMult) as FunctionType;
+        const param1: Parameter = functionType.getParameter(0);
+        const param2: Parameter = functionType.getParameter(1);
+        const param3: Parameter = functionType.getParameter(2);
+
+        expect(param1 !== null).assertTrue();
+
+        expect(param2 !== null).assertTrue();
+
+        expect(param3 !== null).assertTrue();
+
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0300
+     * @tc.name    testFunctionTypeGetParameter_0003
+     * @tc.desc    Get parameter from lambda function
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0003";
+      try {
+        let lambda = (value: number): number => {
+          return value * 2;
+        };
+        const lambdaType: LambdaType = Type.of(lambda) as LambdaType;
+        const parameter: Parameter = lambdaType.getParameter(0);
+        expect(parameter !== null).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0400
+     * @tc.name    testFunctionTypeGetParameter_0004
+     * @tc.desc    Get parameter with negative index
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0004";
+      try {
+
+        const functionType: FunctionType = Type.of(FuncX) as FunctionType;
+        const parameter: Parameter = functionType.getParameter(-1);
+        expect(parameter === null).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0500
+     * @tc.name    testFunctionTypeGetParameter_0005
+     * @tc.desc    Get parameter with index equal to parameter count
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0005";
+      try {
+
+        const functionType: FunctionType = Type.of(FuncAdd) as FunctionType;
+        const parameter: Parameter = functionType.getParameter(2);
+        expect(parameter === null).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0600
+     * @tc.name    testFunctionTypeGetParameter_0006
+     * @tc.desc    Get parameter from function with no parameters
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0006";
+      try {
+
+        const functionType: FunctionType = Type.of(stringReturningFunction) as FunctionType;
+        const parameter: Parameter = functionType.getParameter(0);
+        expect(parameter === null).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0700
+     * @tc.name    testFunctionTypeGetParameter_0007
+     * @tc.desc    Get parameter type from function parameter
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0007";
+      try {
+
+        const functionType: FunctionType = Type.of(FuncTestClass) as FunctionType;
+        const parameter: Parameter = functionType.getParameter(0);
+        expect(parameter !== null).assertTrue();
+
+
+        const paramType: Type = parameter.getType();
+        expect(paramType instanceof ClassType).assertTrue();
+        expect((paramType as ClassType).getName()).assertEqual("entry.src.main.src.test.Type_04.test.TestClass");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETER_0800
+     * @tc.name    testFunctionTypeGetParameter_0008
+     * @tc.desc    Get parameter from generic function
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParameter_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParameter_0008";
+      try {
+        const functionType: FunctionType = Type.of(genericIdentityFunction) as FunctionType;
+        const parameter: Parameter = functionType.getParameter(0);
+        expect(parameter !== null).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0100
+     * @tc.name    testFunctionTypeGetResultType_0001
+     * @tc.desc    Get result type from function returning number
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0001";
+      try {
+
+        const functionType: FunctionType = Type.of(stringReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getLiteral()).assertEqual("string");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0200
+     * @tc.name    testFunctionTypeGetResultType_0002
+     * @tc.desc    Get result type from function returning string
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0002";
+      try {
+
+        const functionType: FunctionType = Type.of(numberReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0300
+     * @tc.name    testFunctionTypeGetResultType_0003
+     * @tc.desc    Get result type from function returning boolean
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+
+    it('testFunctionTypeGetResultType_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0003";
+      try {
+        const functionType: FunctionType = Type.of(booleanReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0400
+     * @tc.name    testFunctionTypeGetResultType_0004
+     * @tc.desc    Get result type from function returning custom class instance
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0004";
+      try {
+        const functionType: FunctionType = Type.of(classInstanceReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("entry.src.main.src.test.Type_04.test.TestClass");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0500
+     * @tc.name    testFunctionTypeGetResultType_0005
+     * @tc.desc    Get result type from void function
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0005";
+      try {
+        const functionType: FunctionType = Type.of(voidReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("void");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0600
+     * @tc.name    testFunctionTypeGetResultType_0006
+     * @tc.desc    Get result type from lambda function
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0006";
+      try {
+        let lambda = (a: number, b: number): number => {
+          return a + b;
+        };
+        const lambdaType: LambdaType = Type.of(lambda) as LambdaType;
+        const resultType: Type = lambdaType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0700
+     * @tc.name    testFunctionTypeGetResultType_0007
+     * @tc.desc    Get result type from generic function
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0007";
+      try {
+        const stringInstance = genericIdentityFunction<string>("test");
+        const functionType: FunctionType = Type.of(genericIdentityFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0800
+     * @tc.name    testFunctionTypeGetResultType_0008
+     * @tc.desc    Get result type from function returning array
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0008";
+      try {
+        const functionType: FunctionType = Type.of(arrayReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("escompat.Array");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_0900
+     * @tc.name    testFunctionTypeGetResultType_0009
+     * @tc.desc    Get result type from function returning interface type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0009";
+      try {
+        const functionType: FunctionType = Type.of(interfaceReturningFunction) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("entry.src.main.src.test.Type_04.test.TestInterfacef");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETRESULTTYPE_1000
+     * @tc.name    testFunctionTypeGetResultType_0010
+     * @tc.desc    Get result type from function returning generic class instance
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetResultType_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetResultType_0010";
+      try {
+        const func = (): GenericClass<number> => {
+          return new GenericClass<number>(100);
+        };
+        const functionType: FunctionType = Type.of(func) as FunctionType;
+        const resultType: Type = functionType.getResultType();
+        expect(resultType !== null).assertTrue();
+        expect(resultType.getName()).assertEqual("entry.src.main.src.test.Type_04.test.GenericClass");
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0100
+     * @tc.name    testFunctionTypeIsAsync_0001
+     * @tc.desc    Check if basic synchronous function returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0001";
+      try {
+        const functionType: FunctionType = Type.of(basicSyncFunction) as FunctionType;
+        const result: boolean = functionType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0200
+     * @tc.name    testFunctionTypeIsAsync_0002
+     * @tc.desc    Check if parameterized synchronous function returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0002";
+      try {
+        const functionType: FunctionType = Type.of(parameterizedSyncFunction) as FunctionType;
+        const result: boolean = functionType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0300
+     * @tc.name    testFunctionTypeIsAsync_0003
+     * @tc.desc    Check if void synchronous function returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0003";
+      try {
+        const functionType: FunctionType = Type.of(voidSyncFunction) as FunctionType;
+        const result: boolean = functionType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0400
+     * @tc.name    testFunctionTypeIsAsync_0004
+     * @tc.desc    Check if basic synchronous lambda returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0004";
+      try {
+        let basicSyncLambda = (x: number): number => {
+          return x * 2;
+        };
+        const lambdaType: LambdaType = Type.of(basicSyncLambda) as LambdaType;
+        const result: boolean = lambdaType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0500
+     * @tc.name    testFunctionTypeIsAsync_0005
+     * @tc.desc    Check if multi-parameter synchronous lambda returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0005";
+      try {
+        let multiParamSyncLambda = (name: string, age: number): string => {
+          return `${name} is ${age} years old`;
+        };
+        const lambdaType: LambdaType = Type.of(multiParamSyncLambda) as LambdaType;
+        const result: boolean = lambdaType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0600
+     * @tc.name    testFunctionTypeIsAsync_0006
+     * @tc.desc    Check if class instance method returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0006";
+      try {
+        const instance = new TestClass("test");
+        const functionType: FunctionType = Type.of(instance.defaultSyncMethod) as FunctionType;
+        const result: boolean = functionType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0700
+     * @tc.name    testFunctionTypeIsAsync_0007
+     * @tc.desc    Check if class static method returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0007";
+      try {
+        const functionType: FunctionType = Type.of(TestClass.staticSyncMethod) as FunctionType;
+        const result: boolean = functionType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISASYNC_0800
+     * @tc.name    testFunctionTypeIsAsync_0008
+     * @tc.desc    Check if generic synchronous function returns false for isAsync()
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsAsync_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsAsync_0008";
+      try {
+        const functionType: FunctionType = Type.of(genericSyncFunction) as FunctionType;
+        const result: boolean = functionType.isAsync();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0100
+     * @tc.name    testFunctionTypeIsNative_0001
+     * @tc.desc    Check if basic user-defined function is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0001";
+      try {
+        const functionType: FunctionType = Type.of(basicUserFunction) as FunctionType;
+        const result: boolean = functionType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0200
+     * @tc.name    testFunctionTypeIsNative_0002
+     * @tc.desc    Check if parameterized user-defined function is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0002";
+      try {
+        const functionType: FunctionType = Type.of(parameterizedUserFunction) as FunctionType;
+        const result: boolean = functionType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0300
+     * @tc.name    testFunctionTypeIsNative_0003
+     * @tc.desc    Check if basic arrow function is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0003";
+      try {
+        let basicArrowFunction = (x: number): number => {
+          return x * x;
+        };
+        const lambdaType: LambdaType = Type.of(basicArrowFunction) as LambdaType;
+        const result: boolean = lambdaType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0400
+     * @tc.name    testFunctionTypeIsNative_0004
+     * @tc.desc    Check if multi-parameter arrow function is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0004";
+      try {
+        let multiParamArrowFunction = (name: string, age: number): string => {
+          return `${name} is ${age} years old`;
+        };
+        const lambdaType: LambdaType = Type.of(multiParamArrowFunction) as LambdaType;
+        const result: boolean = lambdaType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0500
+     * @tc.name    testFunctionTypeIsNative_0005
+     * @tc.desc    Check if class instance method is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0005";
+      try {
+        const instance = new UserClass();
+        const functionType: FunctionType = Type.of(instance.instanceMethod) as FunctionType;
+        const result: boolean = functionType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0600
+     * @tc.name    testFunctionTypeIsNative_0006
+     * @tc.desc    Check if class static method is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0006";
+      try {
+        const functionType: FunctionType = Type.of(UserClass.staticMethod) as FunctionType;
+        const result: boolean = functionType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0700
+     * @tc.name    testFunctionTypeIsNative_0007
+     * @tc.desc    Check if class private method is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0007";
+      try {
+        const instance = new UserClass();
+        const functionType: FunctionType = Type.of(instance.callPrivateMethod) as FunctionType;
+        const result: boolean = functionType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNATIVE_0800
+     * @tc.name    testFunctionTypeIsNative_0008
+     * @tc.desc    Check if generic function is identified as non-native
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNative_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNative_0008";
+      try {
+        const functionType: FunctionType = Type.of(genericUserFunction) as FunctionType;
+        const result: boolean = functionType.isNative();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0100
+     * @tc.name    testFunctionTypeIsNeverResult_0001
+     * @tc.desc    Check if function throwing error is identified as having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0001";
+      try {
+        const functionType: FunctionType = Type.of(neverFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0200
+     * @tc.name    testFunctionTypeIsNeverResult_0002
+     * @tc.desc    Check if function with infinite loop is identified as having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0002";
+      try {
+        const functionType: FunctionType = Type.of(infiniteLoopFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0300
+     * @tc.name    testFunctionTypeIsNeverResult_0003
+     * @tc.desc    Check if function returning number is identified as not having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0003";
+      try {
+        const functionType: FunctionType = Type.of(numberReturningFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0400
+     * @tc.name    testFunctionTypeIsNeverResult_0004
+     * @tc.desc    Check if function returning string is identified as not having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0004";
+      try {
+        const functionType: FunctionType = Type.of(stringReturningFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0500
+     * @tc.name    testFunctionTypeIsNeverResult_0005
+     * @tc.desc    Check if function returning boolean is identified as not having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0005";
+      try {
+        const functionType: FunctionType = Type.of(booleanReturningFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0600
+     * @tc.name    testFunctionTypeIsNeverResult_0006
+     * @tc.desc    Check if void function is identified as not having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0006";
+      try {
+        const functionType: FunctionType = Type.of(voidReturningFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0700
+     * @tc.name    testFunctionTypeIsNeverResult_0007
+     * @tc.desc    Check if arrow function throwing error is identified as having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0007";
+      try {
+        const neverArrowFunction = (): never => {
+          throw new Error("Arrow function never returns");
+        };
+        const lambdaType: LambdaType = Type.of(neverArrowFunction) as LambdaType;
+        const result: boolean = lambdaType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: Error) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0800
+     * @tc.name    testFunctionTypeIsNeverResult_0008
+     * @tc.desc    Check if arrow function returning string is identified as not having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0008";
+      try {
+        const stringArrowFunction = (): string => {
+          return "arrow function";
+        };
+        const lambdaType: LambdaType = Type.of(stringArrowFunction) as LambdaType;
+        const result: boolean = lambdaType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_0900
+     * @tc.name    testFunctionTypeIsNeverResult_0009
+     * @tc.desc    Check if class method throwing error is identified as having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0009";
+      try {
+        const instance = new TestClass("test");
+        const functionType: FunctionType = Type.of(instance.neverMethod) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_1000
+     * @tc.name    testFunctionTypeIsNeverResult_0010
+     * @tc.desc    Check if function with conditional never return type is identified correctly
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0010";
+      try {
+        const functionType: FunctionType = Type.of(conditionalNeverFunction) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_1100
+     * @tc.name    testFunctionTypeIsNeverResult_0011
+     * @tc.desc    Check if class static method throwing error is identified as having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0011";
+      try {
+        const functionType: FunctionType = Type.of(TestClass.staticNeverMethod) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISNEVERRESULT_1200
+     * @tc.name    testFunctionTypeIsNeverResult_0012
+     * @tc.desc    Check if normal class method is identified as not having never result type
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsNeverResult_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsNeverResult_0012";
+      try {
+        const instance = new TestClass();
+        const functionType: FunctionType = Type.of(instance.stringMethod) as FunctionType;
+        const result: boolean = functionType.isNeverResult();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0100
+     * @tc.name    testFunctionTypeIsThrowing_0001
+     * @tc.desc    Check if function that always throws is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0001";
+      try {
+        const functionType: FunctionType = Type.of(alwaysThrowingFunction) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0200
+     * @tc.name    testFunctionTypeIsThrowing_0002
+     * @tc.desc    Check if function that conditionally throws is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0002";
+      try {
+        const functionType: FunctionType = Type.of(conditionallyThrowingFunction) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0300
+     * @tc.name    testFunctionTypeIsThrowing_0003
+     * @tc.desc    Check if function that never throws is identified as non-throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0003";
+      try {
+        const functionType: FunctionType = Type.of(neverThrowingFunction) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0400
+     * @tc.name    testFunctionTypeIsThrowing_0004
+     * @tc.desc    Check if function that throws in loop is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0004";
+      try {
+        const functionType: FunctionType = Type.of(throwingInLoopFunction) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0500
+     * @tc.name    testFunctionTypeIsThrowing_0005
+     * @tc.desc    Check if arrow function that throws is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0005";
+      try {
+        const throwingArrowFunction = (): void => {
+          throw new Error("Arrow function throws error");
+        };
+        const lambdaType: LambdaType = Type.of(throwingArrowFunction) as LambdaType;
+        const result: boolean = lambdaType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: Error) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0600
+     * @tc.name    testFunctionTypeIsThrowing_0006
+     * @tc.desc    Check if arrow function that never throws is identified as non-throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0006";
+      try {
+        const nonThrowingArrowFunction = (a: number, b: number): number => {
+          return a + b;
+        };
+        const lambdaType: LambdaType = Type.of(nonThrowingArrowFunction) as LambdaType;
+        const result: boolean = lambdaType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0700
+     * @tc.name    testFunctionTypeIsThrowing_0007
+     * @tc.desc    Check if class method that always throws is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0007";
+      try {
+        const instance = new ExceptionTestClass();
+        const functionType: FunctionType = Type.of(instance.alwaysThrow) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0800
+     * @tc.name    testFunctionTypeIsThrowing_0008
+     * @tc.desc    Check if class method that conditionally throws is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0008";
+      try {
+        const instance = new ExceptionTestClass();
+        const functionType: FunctionType = Type.of(instance.conditionalThrow) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_0900
+     * @tc.name    testFunctionTypeIsThrowing_0009
+     * @tc.desc    Check if class method that never throws is identified as non-throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0009";
+      try {
+        const instance = new ExceptionTestClass();
+        const functionType: FunctionType = Type.of(instance.neverThrow) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_1000
+     * @tc.name    testFunctionTypeIsThrowing_0010
+     * @tc.desc    Check if static class method that throws is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0010";
+      try {
+        const functionType: FunctionType = Type.of(ExceptionTestClass.staticThrow) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_ISTHROWING_1100
+     * @tc.name    testFunctionTypeIsThrowing_0011
+     * @tc.desc    Check if function that throws and catches exception is identified as throwing
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeIsThrowing_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeIsThrowing_0011";
+      try {
+        const functionType: FunctionType = Type.of(throwingWithTryCatch) as FunctionType;
+        const result: boolean = functionType.isThrowing();
+        expect(result).assertFalse();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0100
+     * @tc.name    testFunctionTypeGetParametersNum_0001
+     * @tc.desc    Check parameter count for function with no parameters
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParametersNum_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParametersNum_0001";
+      try {
+        const functionType: FunctionType = Type.of(noParamFunction) as FunctionType;
+        const result: number = functionType.getParametersNum();
+        expect(result).assertEqual(0);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0200
+     * @tc.name    testFunctionTypeGetParametersNum_0002
+     * @tc.desc    Check parameter count for function with one parameter
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParametersNum_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParametersNum_0002";
+      try {
+        const functionType: FunctionType = Type.of(oneParamFunction) as FunctionType;
+        const result: number = functionType.getParametersNum();
+        expect(result).assertEqual(1);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0300
+     * @tc.name    testFunctionTypeGetParametersNum_0003
+     * @tc.desc    Check parameter count for function with two parameters
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParametersNum_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParametersNum_0003";
+      try {
+        const functionType: FunctionType = Type.of(twoParamsFunction) as FunctionType;
+        const result: number = functionType.getParametersNum();
+        expect(result).assertEqual(2);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_BASE_FUNCTIONTYPE_GETPARAMETERSNUM_0400
+     * @tc.name    testFunctionTypeGetParametersNum_0004
+     * @tc.desc    Check parameter count for function with three parameters
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('testFunctionTypeGetParametersNum_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG: string = "testFunctionTypeGetParametersNum_0004";
+      try {
+        const functionType: FunctionType = Type.of(threeParamsFunction) as FunctionType;
+        const result: number = functionType.getParametersNum();
+        expect(result).assertEqual(3);
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed: ${err.message}`);
+        expect().assertFail();
+      }
+    });
 
 
   });
