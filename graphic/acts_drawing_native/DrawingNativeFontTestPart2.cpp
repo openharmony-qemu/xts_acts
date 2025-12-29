@@ -246,6 +246,7 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryMultiplieCalls, Fun
         EXPECT_EQ(drawingErrorCode1, OH_DRAWING_SUCCESS);
     }
 }
+
 /**
  * @tc.name   testFontSetThemeFontFollowedNormal
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2300
@@ -267,6 +268,7 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNormal, Functio
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
+
 /**
  * @tc.name   testFontSetThemeFontFollowedMuitipleCalls
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2301
@@ -288,6 +290,7 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedMuitipleCalls, 
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
+
 /**
  * @tc.name   testFontSetThemeFontFollowedNull
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2302
@@ -307,65 +310,7 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNull, Function 
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
-/**
- * @tc.name   testFontIsThemeFontFollowedNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2100
- * @tc.desc   test for testFontIsThemeFontFollowedNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNormal, Function | SmallTest | Level0) {
-    // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    // add assert
-    EXPECT_NE(font, nullptr);
-    bool followed = true;
-    OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_ERROR_INVALID_PARAMETER;
-    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
-    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(followed, false);
-    drawingErrorCode = OH_Drawing_FontSetThemeFontFollowed(font, true);
-    EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
-    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(followed, true);
-    drawingErrorCode = OH_Drawing_FontSetThemeFontFollowed(font, false);
-    EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
-    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
-    EXPECT_EQ(followed, false);
-    // 2. OH_Drawing_FontDestroy
-    OH_Drawing_FontDestroy(font);
-}
-/**
- * @tc.name   testFontIsThemeFontFollowedMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2101
- * @tc.desc   test for testFontIsThemeFontFollowedMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
-HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, Function | SmallTest | Level0) {
-    // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    // add assert
-    EXPECT_NE(font, nullptr);
-    bool followed = true;
-    bool isFollowed[] = {true, false, false, true, true, true, false, false, true, false};
-    for (int i = 0; i < 10; i++) {
-        OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
-        OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_ERROR_INVALID_PARAMETER;
-        drawingErrorCode = OH_Drawing_FontSetThemeFontFollowed(font, isFollowed[i]);
-        EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-        drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
-        EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
-        EXPECT_EQ(followed, isFollowed[i]);
-    }
-    // 2. OH_Drawing_FontDestroy
-    OH_Drawing_FontDestroy(font);
-}
+
 /**
  * @tc.name   testFontIsThemeFontFollowedNull
  * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2400
@@ -1396,6 +1341,66 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesandFeatureDestroyNULL, Func
         EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_FontFeaturesDestroy(features);
+}
+
+/**
+ * @tc.name   testFontIsThemeFontFollowedNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3300
+ * @tc.desc   test for testFontIsThemeFontFollowedNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNormal, Function | SmallTest | Level0) {
+    // 1. OH_Drawing_FontCreate
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    // add assert
+    EXPECT_NE(font, nullptr);
+    bool followed = true;
+    OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
+    OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_ERROR_INVALID_PARAMETER;
+    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
+    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(followed, false);
+    drawingErrorCode = OH_Drawing_FontSetThemeFontFollowed(font, true);
+    EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
+    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
+    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(followed, true);
+    drawingErrorCode = OH_Drawing_FontSetThemeFontFollowed(font, false);
+    EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
+    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
+    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(followed, false);
+    // 2. OH_Drawing_FontDestroy
+    OH_Drawing_FontDestroy(font);
+}
+/**
+ * @tc.name   testFontIsThemeFontFollowedMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3301
+ * @tc.desc   test for testFontIsThemeFontFollowedMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, Function | SmallTest | Level0) {
+    // 1. OH_Drawing_FontCreate
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    // add assert
+    EXPECT_NE(font, nullptr);
+    bool followed = true;
+    bool isFollowed[] = {true, false, false, true, true, true, false, false, true, false};
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
+        OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_ERROR_INVALID_PARAMETER;
+        drawingErrorCode = OH_Drawing_FontSetThemeFontFollowed(font, isFollowed[i]);
+        EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
+        drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, &followed);
+        EXPECT_EQ(drawingErrorCode2, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(followed, isFollowed[i]);
+    }
+    // 2. OH_Drawing_FontDestroy
+    OH_Drawing_FontDestroy(font);
 }
 } // namespace Drawing
 } // namespace Rosen

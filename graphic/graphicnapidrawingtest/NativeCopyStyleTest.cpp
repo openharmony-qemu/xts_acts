@@ -295,11 +295,12 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
 {
     typoStyle_ = OH_Drawing_CreateTypographyStyle();
     ASSERT_NE(typoStyle_, nullptr);
-
     OH_Drawing_SetTypographyTextFontHeight(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextUseLineStyle(typoStyle_, true);
     OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_600);
+    OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_NORMAL);
     OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_ITALIC);
+    OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_OBLIQUE);
     const char* fontFamilies[] = { "Text1", "Text2" };
     int fontFamiliesNumBefore = 2;
     OH_Drawing_SetTypographyTextLineStyleFontFamilies(typoStyle_, fontFamiliesNumBefore, fontFamilies);
@@ -308,19 +309,18 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     OH_Drawing_SetTypographyTextLineStyleHalfLeading(typoStyle_, true);
     OH_Drawing_SetTypographyTextLineStyleSpacingScale(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextLineStyleOnly(typoStyle_, true);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_CENTER);
     OH_Drawing_SetTypographyTextDirection(typoStyle_, TEXT_DIRECTION_RTL);
     OH_Drawing_SetTypographyTextMaxLines(typoStyle_, INT_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextEllipsis(typoStyle_, "...");
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle_, TEXT_HEIGHT_DISABLE_LAST_ASCENT);
     OH_Drawing_TypographyStyleSetHintsEnabled(typoStyle_, true);
-
     typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
     ASSERT_NE(typoStyleCopy_, nullptr);
-
     EXPECT_TRUE(OH_Drawing_TypographyTextGetLineStyle(typoStyleCopy_));
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_600);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_NORMAL);
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_ITALIC);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_OBLIQUE);
     size_t num;
     char** fontFamiliesList = OH_Drawing_TypographyTextlineStyleGetFontFamilies(typoStyleCopy_, &num);
     EXPECT_EQ(num, fontFamiliesNumBefore);
@@ -331,7 +331,6 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     EXPECT_TRUE(OH_Drawing_TypographyTextlineStyleGetHalfLeading(typoStyleCopy_));
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetSpacingScale(typoStyleCopy_), DOUBLE_TEST_SIZE_NOT_DEFAULT);
     EXPECT_TRUE(OH_Drawing_TypographyTextlineGetStyleOnly(typoStyleCopy_));
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_CENTER);
     EXPECT_EQ(OH_Drawing_TypographyGetTextDirection(typoStyleCopy_), TEXT_DIRECTION_RTL);
     EXPECT_EQ(OH_Drawing_TypographyGetTextMaxLines(typoStyleCopy_), INT_TEST_SIZE_NOT_DEFAULT);
     EXPECT_EQ(std::strcmp(OH_Drawing_TypographyGetTextEllipsis(typoStyleCopy_), "..."), 0);
@@ -358,6 +357,12 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle002, Function | Medium
     OH_Drawing_SetTypographyTextFontFamily(typoStyle_, "Test");
     OH_Drawing_SetTypographyTextFontSize(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextFontHeight(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
+    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_LEFT);
+    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_RIGHT);
+    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_CENTER);
+    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_JUSTIFY);
+    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_START);
+    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_END);
 
     OH_Drawing_CopyTypographyStyle(nullptr);
     typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
@@ -370,6 +375,12 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle002, Function | Medium
     size_t fontFamiliesNumAfter;
     char** fontFamiliesList = OH_Drawing_TextStyleGetFontFamilies(txtStyleCopy_, &fontFamiliesNumAfter);
     EXPECT_EQ(fontFamiliesNumAfter, 1);
+    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_LEFT);
+    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_RIGHT);
+    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_CENTER);
+    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_JUSTIFY);
+    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_START);
+    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_END);
     EXPECT_NEAR(OH_Drawing_TextStyleGetFontSize(txtStyleCopy_), DOUBLE_TEST_SIZE_NOT_DEFAULT, FLOAT_DATA_EPSILON);
     EXPECT_NEAR(OH_Drawing_TextStyleGetFontHeight(txtStyleCopy_), DOUBLE_TEST_SIZE_NOT_DEFAULT, FLOAT_DATA_EPSILON);
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, fontFamiliesNumAfter);
@@ -442,5 +453,42 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle004, Function | Medium
     OH_Drawing_DestroyTextShadow(shadow);
     OH_Drawing_DestroyTextShadow(shadowCopy);
     OH_Drawing_DestroyTextShadows(shadowsCopy);
+}
+
+/**
+ * @tc.name   OHDrawingCopyTypographyStyle005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_005
+ * @tc.desc   test for copy typography style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle005, Function | MediumTest | Level0)
+{
+    typoStyle_ = OH_Drawing_CreateTypographyStyle();
+    ASSERT_NE(typoStyle_, nullptr);
+    
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_100);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_200);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_300);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_400);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_500);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_600);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_700);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_800);
+    OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_900);
+    
+    typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+    ASSERT_NE(typoStyleCopy_, nullptr);
+    
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_100);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_200);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_300);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_400);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_500);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_600);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_700);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_800);
+    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_900);
 }
 } // namespace OHOS

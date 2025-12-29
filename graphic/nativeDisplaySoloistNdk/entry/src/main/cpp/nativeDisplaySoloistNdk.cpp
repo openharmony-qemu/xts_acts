@@ -65,6 +65,11 @@ static napi_value OHDisplaySoloistStart002(napi_env env, napi_callback_info info
     OH_DisplaySoloist *nativeDisplaySoloist = nullptr;
     OH_DisplaySoloist_FrameCallback callback = OnVSync;
     nativeDisplaySoloist = OH_DisplaySoloist_Create(false);
+    if (nativeDisplaySoloist != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     int32_t resultStart = OH_DisplaySoloist_Start(nativeDisplaySoloist, callback, nullptr);
     if (resultStart == EXEC_SUCCESS) {
         napi_create_int32(env, SUCCESS, &result);
@@ -81,6 +86,11 @@ static napi_value OHDisplaySoloistSetExpectedFrameRateRange001(napi_env env, nap
     OH_DisplaySoloist *nativeDisplaySoloist = nullptr;
     DisplaySoloist_ExpectedRateRange validRange = { FRAME_RATE_30_HZ, FRAME_RATE_120_HZ, FRAME_RATE_60_HZ };
     nativeDisplaySoloist = OH_DisplaySoloist_Create(false);
+    if (nativeDisplaySoloist != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     if ((OH_DisplaySoloist_SetExpectedFrameRateRange(nullptr, &validRange) == SOLOIST_ERROR) ||
         (OH_DisplaySoloist_SetExpectedFrameRateRange(nativeDisplaySoloist, nullptr) == SOLOIST_ERROR)) {
         napi_create_int32(env, SUCCESS, &result);
@@ -110,6 +120,11 @@ static napi_value OHDisplaySoloistSetExpectedFrameRateRange003(napi_env env, nap
     OH_DisplaySoloist *nativeDisplaySoloist = nullptr;
     DisplaySoloist_ExpectedRateRange validRange = { FRAME_RATE_30_HZ, FRAME_RATE_120_HZ, FRAME_RATE_60_HZ };
     nativeDisplaySoloist = OH_DisplaySoloist_Create(false);
+    if (nativeDisplaySoloist != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     int32_t resultRange = OH_DisplaySoloist_SetExpectedFrameRateRange(nativeDisplaySoloist, &validRange);
     if (resultRange == EXEC_SUCCESS) {
         napi_create_int32(env, SUCCESS, &result);
@@ -137,6 +152,11 @@ static napi_value OHDisplaySoloistStop002(napi_env env, napi_callback_info info)
     napi_value result = nullptr;
     OH_DisplaySoloist *nativeDisplaySoloist = nullptr;
     nativeDisplaySoloist = OH_DisplaySoloist_Create(false);
+    if (nativeDisplaySoloist != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     int32_t resultStop = OH_DisplaySoloist_Stop(nativeDisplaySoloist);
     if (resultStop == EXEC_SUCCESS) {
         napi_create_int32(env, SUCCESS, &result);
@@ -164,6 +184,11 @@ static napi_value OHDisplaySoloistDestroy002(napi_env env, napi_callback_info in
     napi_value result = nullptr;
     OH_DisplaySoloist *nativeDisplaySoloist = nullptr;
     nativeDisplaySoloist = OH_DisplaySoloist_Create(false);
+    if (nativeDisplaySoloist != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     int32_t resultDestroy = OH_DisplaySoloist_Destroy(nativeDisplaySoloist);
     if (resultDestroy == EXEC_SUCCESS) {
         napi_create_int32(env, SUCCESS, &result);
