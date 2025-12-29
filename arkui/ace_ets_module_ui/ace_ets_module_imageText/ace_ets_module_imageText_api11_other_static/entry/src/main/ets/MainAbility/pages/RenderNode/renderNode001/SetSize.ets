@@ -49,7 +49,7 @@ let renderNode = new RenderNode();
 renderNode.size = { width: 300, height: 300 };
 let nodeWidth = renderNode.size.width
 let nodeHeight = renderNode.size.height
-renderNode.backgroundColor = 0XFF00FF00
+renderNode.backgroundColor = 0XFF00FF00.toInt()
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;

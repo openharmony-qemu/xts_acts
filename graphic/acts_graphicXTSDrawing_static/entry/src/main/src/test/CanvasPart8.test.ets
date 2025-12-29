@@ -74,7 +74,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs1);
       texsArray.push(texs2);
       texsArray.push(texs3);
-      const colors:Array<int> = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int> = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 3, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -134,7 +134,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -202,7 +202,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2, 10, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors, 0, null,drawing.BlendMode.SRC);
@@ -262,7 +262,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2, 10, 2];
       let itemList: drawing.BlendMode[] = [
         drawing.BlendMode.CLEAR,
@@ -332,7 +332,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs1);
       texsArray.push(texs2);
       texsArray.push(texs3);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       let itemList: drawing.BlendMode[] = [
         drawing.BlendMode.CLEAR,
@@ -409,7 +409,7 @@ export default function drawingTsCanvasPart8Test() {
       const texs3: common2D.Point = { x: 0.5, y: 1.0 };
       texsArray.push(texs1);
       texsArray.push(texs2);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLES_VERTEXMODE, -1, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -482,7 +482,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -508,7 +508,7 @@ export default function drawingTsCanvasPart8Test() {
         console.info(msg + `drawVertices 2 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
         expect(e.code).assertEqual(25900001);
       }
-      const colors1:Array<int> = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00];
+      const colors1:Array<int> = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt()];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors1, 3, indices,drawing.BlendMode.SRC);
         console.log(msg + "drawVertices 3 success ")
@@ -544,7 +544,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs1);
       texsArray.push(texs2);
       texsArray.push(texs3);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 3, pointsArray, texsArray, colors, -1, null,drawing.BlendMode.SRC);

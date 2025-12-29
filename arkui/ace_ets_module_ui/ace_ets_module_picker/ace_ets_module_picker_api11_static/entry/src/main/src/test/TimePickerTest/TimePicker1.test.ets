@@ -466,7 +466,7 @@ it('ArkUI_Stage_timepicker_textStyle_static_0200', Level.LEVEL1, async (done: ()
      */
 it('ArkUI_Stage_timepicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: PickerTextStyle = {
-        color: 0xFF808080, font: {
+        color: 0xFF808080.toInt(), font: {
           size: '10px', weight: 100
         }
       }
@@ -793,7 +793,7 @@ it('ArkUI_Stage_timepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (
      */
 it('ArkUI_Stage_timepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let value: PickerTextStyle = {
-        color: 0xFF808080, font: {
+        color: 0xFF808080.toInt(), font: {
           size: '20px', weight: 100
         }
       }

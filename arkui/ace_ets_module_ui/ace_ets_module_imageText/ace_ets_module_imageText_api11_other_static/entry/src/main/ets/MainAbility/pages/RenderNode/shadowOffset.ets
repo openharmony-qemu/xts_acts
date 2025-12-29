@@ -45,7 +45,7 @@ import { ClickEvent } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 
 const renderNode = new RenderNode();
-renderNode.backgroundColor = 0XFF00FF00
+renderNode.backgroundColor = 0XFF00FF00.toInt()
 renderNode.size = { width: 200, height: 200 };
 renderNode.shadowAlpha = 0.7;
 renderNode.shadowOffset = { x: 10, y: 10 };

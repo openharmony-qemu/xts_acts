@@ -1294,7 +1294,7 @@ export default function BufferTest1() {
     it("testWriteBigUInt64BE0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
       try {
-        let ref = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 1);
+        let ref = buf.writeBigUInt64BE(BigInt(-0x2135050135310522), 1);
         expect(false).assertFail();
       } catch (err: BusinessError) {
         expect(err.code).assertEqual(10200001);
@@ -1332,7 +1332,7 @@ export default function BufferTest1() {
     it("testWriteBigUInt64LE0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
       try {
-        let ref = buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 1);
+        let ref = buf.writeBigUInt64LE(BigInt(-0x2135050135310522), 1);
         expect(false).assertFail();
       } catch (err: BusinessError) {
         expect(String(err.code)).assertEqual('10200001');
@@ -2560,7 +2560,7 @@ export default function BufferTest1() {
       TAG = "testReadBigUInt64BE0002";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+        buf.writeBigUInt64BE(BigInt(-0x2135050135310522), 0);
         let ref = Double(buf.readBigUInt64BE(1)).toString(16);
         expect(false).assertFail();
       } catch (err: BusinessError) {
@@ -2623,7 +2623,7 @@ export default function BufferTest1() {
       TAG = "testReadBigUInt64LE0002";
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeBigUInt64LE(BigInt(0xdecafafecacefade), 0);
+        buf.writeBigUInt64LE(BigInt(-0x2135050135310522), 0);
         let ref = Double(buf.readBigUInt64LE(1)).toString(16);
         expect(false).assertFail();
       } catch (err: BusinessError) {

@@ -39,7 +39,7 @@ class MyNodeController extends NodeController {
     if (renderNode !== null) {
       const renderChildNode: RenderNode = new RenderNode();
       renderChildNode.frame = { x: 0, y: 0, width: 100, height: 100 };
-      renderChildNode.backgroundColor = 0xffff0000;
+      renderChildNode.backgroundColor = 0xffff0000.toInt();
       renderChildNode.label = 'customRenderChildNode';
       storage.set('renderNode_label', renderChildNode.label);
       console.log('label:', renderChildNode.label);

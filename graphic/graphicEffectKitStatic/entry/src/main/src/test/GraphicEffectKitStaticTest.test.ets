@@ -427,7 +427,7 @@ export default function GraphicEffectKitStaticTest() {
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap).then((colorPicker: effectKit.ColorPicker) => {
           try {
-            let bJudge = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
+            let bJudge = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF.toInt());
             console.info('www data effectKitTest_static_1400 Succeeded in isBlackOrWhiteOrGrayColor.', bJudge);
             expect(bJudge).assertTrue();
             done();
@@ -654,9 +654,9 @@ export default function GraphicEffectKitStaticTest() {
         };
         let pixelMap = (await imageSource.createPixelMap()) as image.PixelMap;
         let colorPicker = (await effectKit.createColorPicker(pixelMap)) as effectKit.ColorPicker;
-        let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF);
+        let color_white = colorPicker.isBlackOrWhiteOrGrayColor(0xFFFFFFFF.toInt());
         expect(color_white == true).assertTrue();
-        let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF);
+        let color_blue = colorPicker.isBlackOrWhiteOrGrayColor(0xFF0000FF.toInt());
         expect(color_blue == false).assertTrue();
         console.info(msgStr + '  ' + color_white + ' ' + color_blue);
         done();

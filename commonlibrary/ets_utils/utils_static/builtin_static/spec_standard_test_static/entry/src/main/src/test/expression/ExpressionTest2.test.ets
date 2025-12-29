@@ -1238,8 +1238,8 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0x80000000; // Negative in 32-bit
-      let b: number = 0xFFFFFF00;
+      let a: number = 0x80000000.toInt(); // Negative in 32-bit
+      let b: number = 0xFFFFFF00.toInt();
       let result: number = a & b;
       let expected: number = -2147483648;
       expect(result).assertEqual(expected);
@@ -1254,7 +1254,7 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0x80000000; // -2147483648
+      let a: number = 0x80000000.toInt(); // -2147483648
       let b: number = 0x000000FF; // 255
       let result: number = a | b;
       let expected: number = -2147483393;
@@ -1270,8 +1270,8 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0x80000000; // Negative in 32-bit
-      let b: number = 0xFFFFFFFF;
+      let a: number = 0x80000000.toInt(); // Negative in 32-bit
+      let b: number = 0xFFFFFFFF.toInt();
       let result: number = a ^ b;
       let expected: number = 0x7FFFFFFF;
       expect(result).assertEqual(expected);
@@ -1303,7 +1303,7 @@ export default function expressionTest2() {
     it('ExpressionTest0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let a: int = 0x40000000;
       let result: int = (a << 1) >>> 0;
-      let expected: int = 0x80000000;
+      let expected: int = 0x80000000.toInt();
       expect(result).assertEqual(expected);
     });
 
@@ -1316,7 +1316,7 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0x80000000;
+      let a: number = 0x80000000.toInt();
       let result: number = a >> 1;
       let expected: number = -1073741824;
       expect(result).assertEqual(expected);
@@ -1331,7 +1331,7 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: int = 0x80000000;
+      let a: int = 0x80000000.toInt();
       let result: int = a >>> 2;
       let expected: int = 0x20000000;
       expect(result).assertEqual(expected);
