@@ -658,26 +658,33 @@ export default function RdbStoreDeleteWithReturning() {
      */
     it('deleteWithReturning013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* deleteWithReturning013 start *************");
-      await rdbStore?.close();
+      let rdbStore1: relationalStore.RdbStore | undefined = undefined;
+      const STORE_CONFIG: relationalStore.StoreConfig = {
+        name: "rdbtest.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+      }
+      rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      await rdbStore1?.close();
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo('name', 'zhangsan5');
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
       }
       try {
-        await rdbStore?.deleteWithReturning(predicates, config);
+        await rdbStore1?.deleteWithReturning(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning013 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
       try {
-        rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore1?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync013 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
+      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* deleteWithReturning013 end *************");
       done();
     })
@@ -692,26 +699,33 @@ export default function RdbStoreDeleteWithReturning() {
      */
     it('deleteWithReturning014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* deleteWithReturning014 start *************");
-      await rdbStore?.close();
+      let rdbStore1: relationalStore.RdbStore | undefined = undefined;
+      const STORE_CONFIG: relationalStore.StoreConfig = {
+        name: "rdbtest.db",
+        securityLevel: relationalStore.SecurityLevel.S1,
+      }
+      rdbStore1 = await relationalStore.getRdbStore(context, STORE_CONFIG);
+      await rdbStore1?.close();
       let predicates = new relationalStore.RdbPredicates("test");
       predicates.equalTo('name', 'zhangsan5');
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age', '*'],
       }
       try {
-        await rdbStore?.deleteWithReturning(predicates, config);
+        await rdbStore1?.deleteWithReturning(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning014 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
       try {
-        rdbStore?.deleteWithReturningSync(predicates, config);
+        rdbStore1?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync014 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800014");
       }
+      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* deleteWithReturning014 end *************");
       done();
     })
