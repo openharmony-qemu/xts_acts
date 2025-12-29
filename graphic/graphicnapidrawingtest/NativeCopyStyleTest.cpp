@@ -463,7 +463,7 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle005, Function | Medium
             EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[i]);
         }
     }
-     std::vector<OH_Drawing_TextAlign> textAlign = {
+    std::vector<OH_Drawing_TextAlign> textAlign = {
         TEXT_ALIGN_LEFT, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER, TEXT_ALIGN_JUSTIFY, TEXT_ALIGN_START, TEXT_ALIGN_END
     };
     for (int i = 0; i < textAlign.size(); i++) {
