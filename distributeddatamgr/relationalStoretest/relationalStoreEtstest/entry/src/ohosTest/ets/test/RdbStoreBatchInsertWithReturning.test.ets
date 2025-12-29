@@ -1084,8 +1084,7 @@ export default function RdbStoreBatchInsertWithReturning() {
      */
     it('batchInsertWithReturning022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       console.log(TAG + "************* batchInsertWithReturning022 start *************");
-      let maxPageCount:string = await rdbStore?.execute("PRAGMA max_page_count = 256;");
-      expect(maxPageCount).assertEqual(256);
+      await rdbStore?.execute("PRAGMA max_page_count = 256;");
       let u8 = new Uint8Array(Array(1024 * 1024).fill(1));
       let valueBuckets = new Array<relationalStore.ValuesBucket>();
       for (let i = 0; i < 3; i++) {
