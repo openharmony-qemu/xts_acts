@@ -101,19 +101,25 @@ static void HandleFileReadError()
     }
 }
 
+// Helper function to read data from file with error handling
+static bool ReadDataFromFile(void *buffer, int32_t size)
+{
+    size_t readCount = fread(buffer, size, 1, g_file);
+    if (!readCount) {
+        HandleFileReadError();
+        return false;
+    }
+    return true;
+}
+
+// Callback function for writing audio data with metadata
 static int32_t AudioRendererWriteDataWithMetadataCallback(OH_AudioRenderer *renderer,
     void *userData, void *audioData, int32_t audioDataSize, void *metadata, int32_t metadataSize)
 {
-    size_t readCount = fread(audioData, audioDataSize, 1, g_file);
-    if (!readCount) {
-        HandleFileReadError();
+    if (!ReadDataFromFile(audioData, audioDataSize)) {
         return 0;
     }
-    
-    readCount = fread(metadata, metadataSize, 1, g_file);
-    if (!readCount) {
-        HandleFileReadError();
-    }
+    ReadDataFromFile(metadata, metadataSize);
     return 0;
 }
 

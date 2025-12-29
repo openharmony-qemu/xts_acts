@@ -82,59 +82,59 @@ static napi_value CreateResultValue(napi_env env, int result)
 typedef int (*TestFunction)();
 
 // Test function lookup table
-static const TestFunction g_testFunctions[] = {
-    OhAudioStreamBuilderCreate001,                          // 0
-    OhAudioStreamBuilderCreate002,                          // 1
-    OhAudioStreamBuilderDestroy001,                         // 2
-    OhAudioStreamBuilderSetParameter001,                    // 3
-    OhAudioStreamBuilderSetParameter002,                    // 4
-    OhAudioStreamBuilderSetParameter003,                    // 5
-    OhAudioStreamBuilderSetParameter004,                    // 6
-    OhAudioStreamBuilderSetParameter005,                    // 7
-    OhAudioStreamBuilderSetParameter006,                    // 8
-    OhAudioStreamBuilderSetParameter007,                    // 9
-    OhAudioStreamBuilderSetParameter008,                    // 10
-    OhAudioStreamBuilderSetParameter009,                    // 11
-    OhAudioStreamBuilderSetParameter010,                    // 12
-    OhAudioStreamBuilderSetParameter011,                    // 13
-    OhAudioStreamBuilderSetParameter012,                    // 14
-    OhAudioStreamBuilderSetParameter013,                    // 15
-    OhAudioStreamBuilderSetParameter014,                    // 16
-    OhAudioStreamBuilderSetParameter015,                    // 17
-    OhAudioStreamBuilderSetParameter016,                    // 18
-    OhAudioStreamBuilderSetParameter017,                    // 19
-    OhAudioStreamBuilderSetParameter018,                    // 20
-    OhAudioStreamBuilderSetParameter019,                    // 21
-    OhAudioStreamBuilderSetParameter020,                    // 22
-    OhAudioStreamBuilderSetRendererPrivacy001,              // 23
-    OhAudioStreamBuilderSetRendererPrivacy002,              // 24
-    OhAudioStreamBuilderSetRendererPrivacy003,              // 25
-    OhAudioStreamBuilderSetSampleFormat001,                 // 26
-    OhAudioStreamBuilderSetSampleFormat002,                 // 27
-    OhAudioStreamBuilderSetSampleFormat003,                 // 28
-    OhAudioStreamBuilderSetSampleFormat004,                 // 29
-    OhAudioStreamBuilderSetSampleFormat005,                 // 30
-    OhAudioStreamBuilderSetLatencyMode001,                  // 31
-    OhAudioStreamBuilderSetCapturerInfo001,                 // 32
-    OhAudioStreamBuilderSetCapturerInfo002,                 // 33
-    OhAudioStreamBuilderSetRendererInfo001,                 // 34
-    OhAudioStreamBuilderSetRendererInfo002,                 // 35
-    OhAudioStreamBuilderSetRendererInfo003,                 // 36
-    OhAudioStreamBuilderSetChannelLayout001,                // 37
-    OhAudioStreamBuilderSetWriteDataWithMetadataCallback001,// 38
-    OhAudioStreamBuilderSetInterruptMode001,                // 39
-    OhAudioStreamBuilderSetInterruptMode002,                // 40
-    OhAudioStreamBuilderSetInterruptMode003,                // 41
-    OhAudioStreamBuilderSetInterruptMode006,                // 42
-    OhAudioStreamBuilderSetRendererInterruptMode004,        // 43
-    OhAudioStreamBuilderSetRendererInterruptMode005,        // 44
-    OhAudioStreamBuilderSetRendererWriteDataCallback001,    // 45
-    OhAudioStreamBuilderSetRendererWriteDataCallback002,    // 46
-    OhAudioStreamBuilderSetRendererWriteDataCallback003,    // 47
-    OhAudioStreamBuilderSetRendererWriteDataCallback004     // 48
+static const TestFunction TEST_FUNCTIONS[] = {
+    OhAudioStreamBuilderCreate001,  // 0
+    OhAudioStreamBuilderCreate002,  // 1
+    OhAudioStreamBuilderDestroy001,  // 2
+    OhAudioStreamBuilderSetParameter001,  // 3
+    OhAudioStreamBuilderSetParameter002,  // 4
+    OhAudioStreamBuilderSetParameter003,  // 5
+    OhAudioStreamBuilderSetParameter004,  // 6
+    OhAudioStreamBuilderSetParameter005,  // 7
+    OhAudioStreamBuilderSetParameter006,  // 8
+    OhAudioStreamBuilderSetParameter007,  // 9
+    OhAudioStreamBuilderSetParameter008,  // 10
+    OhAudioStreamBuilderSetParameter009,  // 11
+    OhAudioStreamBuilderSetParameter010,  // 12
+    OhAudioStreamBuilderSetParameter011,  // 13
+    OhAudioStreamBuilderSetParameter012,  // 14
+    OhAudioStreamBuilderSetParameter013,  // 15
+    OhAudioStreamBuilderSetParameter014,  // 16
+    OhAudioStreamBuilderSetParameter015,  // 17
+    OhAudioStreamBuilderSetParameter016,  // 18
+    OhAudioStreamBuilderSetParameter017,  // 19
+    OhAudioStreamBuilderSetParameter018,  // 20
+    OhAudioStreamBuilderSetParameter019,  // 21
+    OhAudioStreamBuilderSetParameter020,  // 22
+    OhAudioStreamBuilderSetRendererPrivacy001,  // 23
+    OhAudioStreamBuilderSetRendererPrivacy002,  // 24
+    OhAudioStreamBuilderSetRendererPrivacy003,  // 25
+    OhAudioStreamBuilderSetSampleFormat001,  // 26
+    OhAudioStreamBuilderSetSampleFormat002,  // 27
+    OhAudioStreamBuilderSetSampleFormat003,  // 28
+    OhAudioStreamBuilderSetSampleFormat004,  // 29
+    OhAudioStreamBuilderSetSampleFormat005,  // 30
+    OhAudioStreamBuilderSetLatencyMode001,  // 31
+    OhAudioStreamBuilderSetCapturerInfo001,  // 32
+    OhAudioStreamBuilderSetCapturerInfo002,  // 33
+    OhAudioStreamBuilderSetRendererInfo001,  // 34
+    OhAudioStreamBuilderSetRendererInfo002,  // 35
+    OhAudioStreamBuilderSetRendererInfo003,  // 36
+    OhAudioStreamBuilderSetChannelLayout001,  // 37
+    OhAudioStreamBuilderSetWriteDataWithMetadataCallback001,  // 38
+    OhAudioStreamBuilderSetInterruptMode001,  // 39
+    OhAudioStreamBuilderSetInterruptMode002,  // 40
+    OhAudioStreamBuilderSetInterruptMode003,  // 41
+    OhAudioStreamBuilderSetInterruptMode006,  // 42
+    OhAudioStreamBuilderSetRendererInterruptMode004,  // 43
+    OhAudioStreamBuilderSetRendererInterruptMode005,  // 44
+    OhAudioStreamBuilderSetRendererWriteDataCallback001,  // 45
+    OhAudioStreamBuilderSetRendererWriteDataCallback002,  // 46
+    OhAudioStreamBuilderSetRendererWriteDataCallback003,  // 47
+    OhAudioStreamBuilderSetRendererWriteDataCallback004  // 48
 };
 
-static const int32_t g_testFunctionCount = sizeof(g_testFunctions) / sizeof(g_testFunctions[0]);
+static const int32_t TEST_FUNCTION_COUNT = sizeof(TEST_FUNCTIONS) / sizeof(TEST_FUNCTIONS[0]);
 
 static napi_value AudioStreamBuilderTest(napi_env env, napi_callback_info info)
 {
@@ -159,12 +159,12 @@ static napi_value AudioStreamBuilderTest(napi_env env, napi_callback_info info)
     }
 
     // Validate test case number and execute corresponding test function
-    if (caseNum < 0 || caseNum >= g_testFunctionCount) {
+    if (caseNum < 0 || caseNum >= TEST_FUNCTION_COUNT) {
         napi_throw_type_error(env, nullptr, "Invalid test case number");
         return CreateResultValue(env, -1);
     }
 
-    int result = g_testFunctions[caseNum]();
+    int result = TEST_FUNCTIONS[caseNum]();
     return CreateResultValue(env, result);
 }
 
