@@ -83,7 +83,8 @@ export default function TransBatchInsertWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      await relationalStore.deleteRdbStore(context, STORE_CONFIG);
+      await rdbStore?.close();
+      await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
       console.info(TAG + 'afterAll');
@@ -258,12 +259,12 @@ export default function TransBatchInsertWithReturning() {
         results?.resultSet.goToNextRow();
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan");
         expect(results?.resultSet.getRow().age).assertEqual(18);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning005 failed. code is ${e.code}, message is ${e.message}`);
         await trans?.rollback();
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning005 end *************");
       done();
     })
@@ -292,12 +293,12 @@ export default function TransBatchInsertWithReturning() {
         results?.resultSet.goToNextRow();
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan");
         expect(results?.resultSet.getRow().age).assertEqual(18);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync005 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync005 end *************");
       done();
     })
@@ -372,12 +373,12 @@ export default function TransBatchInsertWithReturning() {
         let results = await trans?.batchInsertWithReturning("test", valueBuckets, config);
         expect(results?.changed).assertEqual(1024);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning007 failed. code is ${e.code}, message is ${e.message}`);
         await trans?.rollback();
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning007 end *************");
       done();
     })
@@ -408,12 +409,12 @@ export default function TransBatchInsertWithReturning() {
         let results = trans?.batchInsertWithReturningSync("test", valueBuckets, config);
         expect(results?.changed).assertEqual(1024);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync007 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync007 end *************");
       done();
     })
@@ -445,12 +446,12 @@ export default function TransBatchInsertWithReturning() {
         let results = await trans?.batchInsertWithReturning("test", valueBuckets, config);
         expect(results?.changed).assertEqual(1100);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturning008 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning008 end *************");
       done();
     })
@@ -481,12 +482,12 @@ export default function TransBatchInsertWithReturning() {
         let results = trans?.batchInsertWithReturningSync("test", valueBuckets, config);
         expect(results?.changed).assertEqual(1100);
         expect(getRowCount(results?.resultSet)).assertEqual(1024);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync008 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync008 end *************");
       done();
     })
@@ -514,12 +515,12 @@ export default function TransBatchInsertWithReturning() {
         results?.resultSet.goToNextRow();
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan");
         expect(results?.resultSet.getRow().age).assertEqual(18);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturning009 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning009 end *************");
       done();
     })
@@ -546,12 +547,12 @@ export default function TransBatchInsertWithReturning() {
         results?.resultSet.goToNextRow();
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan");
         expect(results?.resultSet.getRow().age).assertEqual(18);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync009 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync009 end *************");
       done();
     })
@@ -650,7 +651,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.batchInsertWithReturningSync("test", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning012 failed 1. code is ${e.code}, message is ${e.message}`);
@@ -665,7 +666,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.batchInsertWithReturning("test", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync012 failed 2. code is ${e.code}, message is ${e.message}`);
@@ -680,13 +681,13 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.batchInsertWithReturning("test", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync012 failed 3. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning012 end *************");
       done();
     })
@@ -705,7 +706,7 @@ export default function TransBatchInsertWithReturning() {
         name: 'zhangsan',
         age: 18,
       };
-      rdbStore?.insert("test", valueBucket);
+      await rdbStore?.insert("test", valueBucket);
       valueBucket.name = "lisi";
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
@@ -745,7 +746,7 @@ export default function TransBatchInsertWithReturning() {
         'name': 'zhangsan',
         'age': 18,
       };
-      rdbStore?.insert("test", valueBucket);
+      await rdbStore?.insert("test", valueBucket);
       valueBucket.name = "lisi";
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
@@ -784,7 +785,7 @@ export default function TransBatchInsertWithReturning() {
         'name': 'zhangsan',
         'age': 18,
       };
-      rdbStore?.insert("test", valueBucket);
+      await rdbStore?.insert("test", valueBucket);
       valueBucket.name = "lisi";
       const config: relationalStore.ReturningConfig = {
         columns: ['name', 'age'],
@@ -855,12 +856,12 @@ export default function TransBatchInsertWithReturning() {
         res?.goToNextRow();
         const name3 = res?.getString(res.getColumnIndex('name'));
         expect(name3).assertEqual("lisi");
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturning016 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning016 end *************");
       done();
     })
@@ -902,12 +903,12 @@ export default function TransBatchInsertWithReturning() {
         expect(results?.resultSet.getRow().name).assertEqual("zhangsan");
         expect(results?.resultSet.getRow().age).assertEqual(18);
         expect(results?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync016 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync016 end *************");
       done();
     })
@@ -977,7 +978,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual(14800014);
       }
       try {
-        await trans?.batchInsertWithReturningSync("test1", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test1", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync018 failed. code is ${e.code}, message is ${e.message}`);
@@ -1052,7 +1053,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        trans?.batchInsertWithReturning("test test1", [valueBucket], config);
+        await trans?.batchInsertWithReturning("test test1", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning020 failed. code is ${e.code}, message is ${e.message}`);
@@ -1102,6 +1103,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual(14800024);
       }
       await deferredTrans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning021 end *************");
       done();
     })
@@ -1154,6 +1156,7 @@ export default function TransBatchInsertWithReturning() {
       }
       await deferredTrans?.rollback();
       await trans?.rollback();
+      await rdb?.close();
       console.log(TAG + "************* transBatchInsertWithReturning022 end *************");
       done();
     })
@@ -1320,12 +1323,12 @@ export default function TransBatchInsertWithReturning() {
         expect(results2?.resultSet.getRow().name).assertEqual("lisi");
         expect(results2?.resultSet.getRow().age).assertEqual(20);
         expect(results2?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturning027 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning027 end *************");
       done();
     })
@@ -1371,12 +1374,12 @@ export default function TransBatchInsertWithReturning() {
         expect(results2?.resultSet.getRow().name).assertEqual("lisi");
         expect(results2?.resultSet.getRow().age).assertEqual(20);6
         expect(results2?.resultSet.goToNextRow()).assertFalse();
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync027 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync027 end *************");
       done();
     })
@@ -1455,7 +1458,7 @@ export default function TransBatchInsertWithReturning() {
         console.error(TAG + `transBatchInsertWithReturning028 8 failed. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning028 end *************");
       done();
     })
@@ -1488,7 +1491,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.batchInsertWithReturningSync("test", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync029 failed1. code is ${e.code}, message is ${e.message}`);
@@ -1503,7 +1506,7 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.batchInsertWithReturningSync("test", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync029 failed2. code is ${e.code}, message is ${e.message}`);
@@ -1518,13 +1521,13 @@ export default function TransBatchInsertWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await trans?.batchInsertWithReturningSync("test", [valueBucket], config);
+        trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync029 failed3. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("14800001");
       }
-      await trans?.commit();
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning029 end *************");
       done();
     })
@@ -1553,13 +1556,13 @@ export default function TransBatchInsertWithReturning() {
       try {
         let results = await trans?.batchInsertWithReturning("test", valueBuckets, config);
         expect(results?.changed).assertEqual(2);
+        await trans?.commit();
         expect(getRowCount(results?.resultSet)).assertEqual(2);
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturning030 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning030 end *************");
       done();
     })
@@ -1589,12 +1592,12 @@ export default function TransBatchInsertWithReturning() {
         let results = trans?.batchInsertWithReturningSync("test", valueBuckets, config);
         expect(results?.changed).assertEqual(2);
         expect(getRowCount(results?.resultSet)).assertEqual(2);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync030 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync030 end *************");
       done();
     })
@@ -1625,12 +1628,12 @@ export default function TransBatchInsertWithReturning() {
         let results = await trans?.batchInsertWithReturning("test", valueBuckets, config);
         expect(results?.changed).assertEqual(10);
         expect(getRowCount(results?.resultSet)).assertEqual(5);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturning031 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturning031 end *************");
       done();
     })
@@ -1660,12 +1663,12 @@ export default function TransBatchInsertWithReturning() {
         let results = trans?.batchInsertWithReturningSync("test", valueBuckets, config);
         expect(results?.changed).assertEqual(10);
         expect(getRowCount(results?.resultSet)).assertEqual(5);
+        await trans?.commit();
       } catch (e) {
         await trans?.rollback();
         console.error(TAG + `transBatchInsertWithReturningSync031 failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
       console.log(TAG + "************* transBatchInsertWithReturningSync031 end *************");
       done();
     })
@@ -1803,11 +1806,11 @@ export default function TransBatchInsertWithReturning() {
       try {
         await trans?.batchInsertWithReturning("test", [valueBucket], undefined);
         expect(true).assertFail();
-      } catch (e) {
-        await trans?.rollback();
+      } catch (e) {;
         console.error(TAG + `transBatchInsertWithReturningSync032 failed8. code is ${e.code}, message is ${e.message}`);
         expect(e.code).assertEqual("401");
       }
+      await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturningSync032 end *************");
       done();
     })
