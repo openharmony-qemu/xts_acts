@@ -1077,7 +1077,7 @@ export default function RdbStoreUpdateWithReturning() {
      */
     it('updateWithReturning021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* updateWithReturning021 start *************");
-      let maxPageCount:number = await rdbStore?.execute("PRAGMA max_page_count = 256;");
+      let maxPageCount:string = await rdbStore?.execute("PRAGMA max_page_count = 256;");
       expect(maxPageCount).assertEqual(256);
       let u8 = new Uint8Array(Array(1024 * 1024).fill(1));
       const valueBucket: relationalStore.ValuesBucket = {
