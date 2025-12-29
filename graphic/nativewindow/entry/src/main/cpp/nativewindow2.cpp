@@ -2116,7 +2116,8 @@ napi_value testNativeWindowSetMetadataValue_metadata_type(napi_env env, napi_cal
     uint8_t *metadata;
     for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]) - 1; i++) {
         uint8_t type = hdr_type[i];
-        int32_t errorCode = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &type);
+        int32_t errorCode =
+            OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &type);
         if (errorCode != SUCCESS) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_1, &result);
             return result;
