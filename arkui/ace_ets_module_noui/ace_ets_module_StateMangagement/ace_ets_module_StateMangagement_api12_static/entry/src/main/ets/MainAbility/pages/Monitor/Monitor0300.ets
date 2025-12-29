@@ -53,7 +53,7 @@ class Monitor0300Class {
 
   @Monitor(['person.name'])
   onNameChange(monitor: IMonitor) {
-    this.nameChange = String(monitor.value<int>()?.now)
+    this.nameChange = String(monitor.value<string>()?.now)
     console.log('person.name: ' + this.nameChange)
   }
 

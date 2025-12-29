@@ -112,10 +112,10 @@ export default function EnableToolBarAdaptation() {
         let driver = Driver.create();
         await driver.delayMs(500);
 
-        let btn1: Component = await driver.findComponent(ON.id('pushOneId')) as Component;
-        await btn1.click()
-        console.info('[EnableToolBarAdaptation_static_0200] btn1 click');
-        await driver.delayMs(500);
+      let btn1: Component = await driver.findComponent(ON.id('pushOneId')) as Component;
+      await btn1.click()
+      console.info('[EnableToolBarAdaptation_static_0200] btn1 click');
+      await driver.delayMs(3000);
 
         await driver.assertComponentExist(ON.text('a1'));
         await driver.delayMs(500);
@@ -225,20 +225,20 @@ export default function EnableToolBarAdaptation() {
         console.info('[EnableToolBarAdaptation_static_0400] landscapeBtn click');
         await driver.delayMs(1000);
 
-        let toolBar1: Component | null = await driver.findComponent(ON.type('ToolBar')) as Component;
+      let toolBar1: Component | null = await driver.findComponent(ON.type('ToolBar'));
+      await driver.delayMs(500);
+      if (toolBar1 == null) {
+        expect(toolBar1).assertEqual(null)
+        console.info('[EnableToolBarAdaptation_static_0400] Navigation ToolBar is not exist');
         await driver.delayMs(500);
-        if (toolBar1 == null) {
-          expect(toolBar1).assertEqual(null)
-          console.info('[EnableToolBarAdaptation_static_0400] Navigation ToolBar is not exist');
-          await driver.delayMs(500);
-          await driver.assertComponentExist(ON.type('NavigationMenu'));
-          console.info('[EnableToolBarAdaptation_static_0400] ROTATION_90 ToolBar is exist');
-        }
-
-        let btn2: Component = await driver.findComponent(ON.id('pushOneId')) as Component;
-        await btn2.click();
-        console.info('[EnableToolBarAdaptation_static_0400] btn2 click');
-        await driver.delayMs(500);
+        await driver.assertComponentExist(ON.type('NavigationMenu'));
+        console.info('[EnableToolBarAdaptation_static_0400] ROTATION_90 ToolBar is exist');
+      }
+      await CommonFunc.sleep(5000);
+      let btn2: Component = await driver.findComponent(ON.id('pushOneId')) as Component;
+      await btn2.click();
+      console.info('[EnableToolBarAdaptation_static_0400] btn2 click');
+      await driver.delayMs(500);
 
         let toolBar2: Component | null = await driver.findComponent(ON.type('ToolBar'));
         await driver.delayMs(500);

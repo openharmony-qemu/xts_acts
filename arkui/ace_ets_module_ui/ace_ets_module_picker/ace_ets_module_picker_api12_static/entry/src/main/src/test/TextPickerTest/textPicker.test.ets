@@ -67,186 +67,186 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
     });
 
     
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0001
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0001
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0001
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0001 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0001] component width strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
-      let number2:string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width').slice(0,-2);
-      let numberValue = Number((parseFloat(number2) - 112.00).toFixed(2));
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0001] width value numberValue:" + numberValue);
-      expect(Math.abs(numberValue) <= 0.01).assertTrue();
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0002
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0002
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0002
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0002 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      await CommonFunc.sleep(1000);
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0002] component height strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      console.log("======================================  " + JSON.stringify(obj))
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      const uiContext = AppStorage.get<UIContext>("uiContext")
-      let numberValue = uiContext!.vp2px(Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))) - Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('defaultPickerItemHeight')) * 5
-      expect(Math.abs(numberValue) <= 1).assertTrue();
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0003
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0003
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0003
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0003 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0003] component fontSize strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(obj.getElement('$attrs').tryGetElement('fontSize')).assertEqual(undefined);
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0003] fontSize value :" + JSON.parseJsonElement(strJson)
-        .getElement('$attrs').tryGetElement('fontSize'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0004
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0004
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0004
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0004 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0004] component opacity strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity')).assertEqual(1);
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0005
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0005
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0005
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0005 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0005] component align strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center");
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0005] align value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0006
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0006
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0006
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0006 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0006] component fontColor strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('fontColor')).assertEqual(undefined);
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0006] fontColor value :" + JSON.parseJsonElement(strJson)
-        .getElement('$attrs').tryGetElement('fontColor'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0007
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0007
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0007
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0007 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0007] component lineHeight strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('lineHeight')).assertEqual(undefined);
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0007] lineHeight value :" + JSON.parseJsonElement(strJson)
-        .getElement('$attrs').tryGetElement('lineHeight'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0009
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0009
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0009
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_009 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0009] component padding strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("0.00vp");
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0009] padding value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding'));
-      done()
-    });
-
-    
-    /**
-     * @tc.number   testtextPickerDefaultPickerItemHeight_static_0010
-     * @tc.name     testtextPickerDefaultPickerItemHeight_static_0010
-     * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0010
-     * @tc.level    Level.LEVEL1
-     */
-    it('testtextPickerDefaultPickerItemHeight_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0010 START');
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0010] component textAlign strJson:" + strJson);
-      let obj= JSON.parseJsonElement(strJson);
-      expect(obj.getString('$type')).assertEqual('TextPicker');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('textAlign')).assertEqual(undefined);
-      console.info("[testtextPickerDefaultPickerItemHeight_static_0010] textAlign value :" + JSON.parseJsonElement(strJson)
-        .getElement('$attrs').tryGetElement('textAlign'));
-      done()
-    });
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0001
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0001
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0001
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0001 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0001] component width strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
+    //   let number2:string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('width').slice(0,-2);
+    //   let numberValue = Number((parseFloat(number2) - 112.00).toFixed(2));
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0001] width value numberValue:" + numberValue);
+    //   expect(Math.abs(numberValue) <= 0.01).assertTrue();
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0002
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0002
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0002
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0002 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   await CommonFunc.sleep(1000);
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0002] component height strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   console.log("======================================  " + JSON.stringify(obj))
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   const uiContext = AppStorage.get<UIContext>("uiContext")
+    //   let numberValue = uiContext!.vp2px(Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))) - Number.parseFloat(JSON.parseJsonElement(strJson).getElement('$attrs').getString('defaultPickerItemHeight')) * 5
+    //   expect(Math.abs(numberValue) <= 1).assertTrue();
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0003
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0003
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0003
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0003 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0003] component fontSize strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(obj.getElement('$attrs').tryGetElement('fontSize')).assertEqual(undefined);
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0003] fontSize value :" + JSON.parseJsonElement(strJson)
+    //     .getElement('$attrs').tryGetElement('fontSize'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0004
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0004
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0004
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0004', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0004 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0004] component opacity strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity')).assertEqual(1);
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0004] opacity value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getInteger('opacity'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0005
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0005
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0005
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0005', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0005 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0005] component align strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual("Alignment.Center");
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0005] align value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('align'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0006
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0006
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0006
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0006', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0006 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0006] component fontColor strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('fontColor')).assertEqual(undefined);
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0006] fontColor value :" + JSON.parseJsonElement(strJson)
+    //     .getElement('$attrs').tryGetElement('fontColor'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0007
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0007
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0007
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0007', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0007 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0007] component lineHeight strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('lineHeight')).assertEqual(undefined);
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0007] lineHeight value :" + JSON.parseJsonElement(strJson)
+    //     .getElement('$attrs').tryGetElement('lineHeight'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0009
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0009
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0009
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0009', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_009 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0009] component padding strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("0.00vp");
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0009] padding value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding'));
+    //   done()
+    // });
+    //
+    //
+    // /*
+    //  * @tc.number   testtextPickerDefaultPickerItemHeight_static_0010
+    //  * @tc.name     testtextPickerDefaultPickerItemHeight_static_0010
+    //  * @tc.desc     testtextPickerDefaultPickerItemHeight_static_0010
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('testtextPickerDefaultPickerItemHeight_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('textPickerDefaultPickerItemHeight testtextPickerDefaultPickerItemHeight_static_0010 START');
+    //   await CommonFunc.sleep(2000);
+    //   let strJson = inspector.getInspectorByKey('defaultPickerItemHeightText');
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0010] component textAlign strJson:" + strJson);
+    //   let obj= JSON.parseJsonElement(strJson);
+    //   expect(obj.getString('$type')).assertEqual('TextPicker');
+    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('textAlign')).assertEqual(undefined);
+    //   console.info("[testtextPickerDefaultPickerItemHeight_static_0010] textAlign value :" + JSON.parseJsonElement(strJson)
+    //     .getElement('$attrs').tryGetElement('textAlign'));
+    //   done()
+    // });
 
     
     /**

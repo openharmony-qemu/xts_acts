@@ -106,9 +106,8 @@ export default function testsuite() {
   navDestinationJsunit(); // pass 2
   navigationJsunit() // pass 12 fail 1 (onchange 未修改)
   stackJsunit(); // pass 2
-  // // tabsFirstJsunit(); // fail 5 编译失败  Cannot find imported element 'TabsModifier'
+  tabsFirstJsunit(); // fail 5  master
   gridJsunit(); // pass 19
-  //
   gridItemJsunit(); // pass 7
   listJsunit(); // pass 17
   listNestedScrollJsunit();  // pass 1
@@ -133,7 +132,7 @@ export default function testsuite() {
   toggleJsunit();  // pass 3
   imageSpanJsunit();// pass 3
   patternLockJsunit(); // pass 9
-  // // richEditorJsunit(); //fail 2 Cannot find imported element 'RichEditorModifier'
+  richEditorJsunit(); //fail 2 master
   searchJsunit();// pass 12 // fail 1 (onchange 未修改)
   spanJsunit(); //pass 11，
   textJsunit(); // pass 22 // fail 1 (onchange 未修改)
@@ -159,7 +158,7 @@ export default function testsuite() {
 
   rectJsunit(); // pass 4
   shapeJsunit(); // pass 14
-  // alphabetIndexerJsunit(); //fail 18  Cannot find imported element 'AlphabetIndexerModifier'
+  alphabetIndexerJsunit();
   hyperLinkJsunit(); // pass 2
   menuItemJsunit(); // pass 7
   menuJsunit(); // pass 4

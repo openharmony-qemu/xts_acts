@@ -23,6 +23,7 @@ import {
 import inspector from '@ohos.arkui.inspector';
 import { NavigationModifier } from "@ohos.arkui.modifier";
 
+
 class CustomModifier extends NavigationModifier {
   applyNavigatorAttribute(instance: NavigationAttribute): void {
     // super.applyNormalAttribute?.(instance);

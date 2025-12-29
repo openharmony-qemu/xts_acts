@@ -62,9 +62,9 @@ export default function DialogTest() {
   describe('DialogTest', () => {
     beforeAll(() => {
       console.info("DialogTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("DialogTest beforeAll end")
     })
     beforeEach(async (): Promise<void> => {
@@ -106,10 +106,13 @@ it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Pr
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_0060');
+          await CommonFunc.sleep(500);
           console.info('ArkUX_Dialog_Visual_static_0060 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
+          await CommonFunc.sleep(500);
           console.info("ArkUX_Dialog_Visual_static_0060 obj is: " + JSON.stringify(obj));
           let fontSize = obj.getElement('$attrs').getString("fontSize");
+          await CommonFunc.sleep(500);
           expect(fontSize).assertEqual("20.00fp");
           console.info('ArkUX_Dialog_Visual_static_0060 END ');
         } catch (err) {

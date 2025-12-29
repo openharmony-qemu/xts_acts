@@ -43,10 +43,10 @@ struct makeObserved0080 {
   listChildrenSize: ChildrenMainSize = UIUtils.makeObserved(new ChildrenMainSize(30))
   @Local count: number = 0
 
-  getColor(): Color {
-    this.count++
-    return Color.Pink
-  }
+  // getColor(): Color {
+  //   this.count++
+  //   return Color.Pink
+  // }
 
   build() {
     Column() {
@@ -80,7 +80,7 @@ struct makeObserved0080 {
         })
       }.id('listTest')
       .childrenMainSize(this.listChildrenSize) // 10
-      .backgroundColor(this.getColor())
+      .backgroundColor(Color.Pink)
     }
   }
 }

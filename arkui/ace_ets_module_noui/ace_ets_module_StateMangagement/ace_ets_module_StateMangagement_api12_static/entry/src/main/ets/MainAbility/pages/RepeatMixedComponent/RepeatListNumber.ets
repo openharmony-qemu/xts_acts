@@ -81,6 +81,7 @@ struct RepeatListNumber {
         Button('next2 page').id('Button2_LN')
           .onClick(():void => {
             this.scroller1.scrollToIndex(15);
+            this.tmp2 = 100
           })
       }
 
@@ -107,7 +108,7 @@ struct RepeatListNumber {
           })
           .template('number', (r) => {
             ListItem() {
-              Text('has vs ' + r.item + ' index:' + r.index.toString() + ':' + (this.tmp2 = 100).toString())
+              Text('has vs ' + r.item + ' index:' + r.index.toString() + ':' + this.tmp2.toString())
                 .id('Text2_LN' + r.index.toString())
                 .fontSize(20)
                 .height('20%')

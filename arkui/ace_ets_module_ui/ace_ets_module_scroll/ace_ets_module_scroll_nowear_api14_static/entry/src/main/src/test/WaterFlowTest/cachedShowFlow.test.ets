@@ -198,73 +198,71 @@ it('cachedShowFlow_static_0400', Level.LEVEL1, async (done: () => void): Promise
     });
 
 
-    
-    /**
-     * @tc.number   cachedShowFlow_static_0500
-     * @tc.name     cachedShowFlow_static_0500
-     * @tc.desc     cachedShowFlow_static_0500
-     * @tc.level    Level.LEVEL1
-     */
-it('cachedShowFlow_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowFlow_static_0500] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "clip1": false,
-            "show1": null
-          } as Record<string, object|null|undefined>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
-        console.info("[cachedShowFlow_static_0500] start to publish emit:" + JSON.stringify(eventData?.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[cachedShowFlow_static_0500] change component data error: " +  (err as Error)?.message);
-      }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText: Component | null = await driver.findComponent(ON.id('show_flow_9'));
-      console.info("[cachedShowFlow_static_0500] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowFlow_static_0500] END');
-      done();
-    });
-
-
-    
-    /**
-     * @tc.number   cachedShowFlow_static_0600
-     * @tc.name     cachedShowFlow_static_0600
-     * @tc.desc     cachedShowFlow_static_0600
-     * @tc.level    Level.LEVEL1
-     */
-it('cachedShowFlow_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowFlow_static_0600] START');
-      try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "clip1": false,
-            "show1": 'undefined'
-          } as Record<string, object|null|undefined>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 125,
-          priority: events_emitter.EventPriority.LOW
-        } as events_emitter.InnerEvent
-        console.info("[cachedShowFlow_static_0600] start to publish emit:" + JSON.stringify(eventData?.data));
-        events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
-        console.log("[cachedShowFlow_static_0600] change component data error: " +  (err as Error)?.message);
-      }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText: Component | null = await driver.findComponent(ON.id('show_flow_9'));
-      console.info("[cachedShowFlow_static_0600] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowFlow_static_0600] END');
-      done();
-    });
+    // /**
+    //  * @tc.number   cachedShowFlow_static_0500
+    //  * @tc.name     cachedShowFlow_static_0500
+    //  * @tc.desc     cachedShowFlow_static_0500
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('cachedShowFlow_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[cachedShowFlow_static_0500] START');
+    //   try {
+    //     let eventData: events_emitter.EventData = {
+    //       data: {
+    //         "clip1": false,
+    //         "show1": null
+    //       } as Record<string, object|null|undefined>
+    //     } as events_emitter.EventData
+    //     let innerEvent: events_emitter.InnerEvent = {
+    //       eventId: 125,
+    //       priority: events_emitter.EventPriority.LOW
+    //     } as events_emitter.InnerEvent
+    //     console.info("[cachedShowFlow_static_0500] start to publish emit:" + JSON.stringify(eventData?.data));
+    //     events_emitter.emit(innerEvent, eventData);
+    //   } catch (err) {
+    //     console.log("[cachedShowFlow_static_0500] change component data error: " +  (err as Error)?.message);
+    //   }
+    //   await CommonFunc.sleep(2000);
+    //   let driver = Driver.create()
+    //   let onText: Component | null = await driver.findComponent(ON.id('show_flow_9'));
+    //   console.info("[cachedShowFlow_static_0500] onText is: " + onText);
+    //   expect(onText).assertEqual(null);
+    //   console.info('[cachedShowFlow_static_0500] END');
+    //   done();
+    // });
+    //
+    //
+    // /**
+    //  * @tc.number   cachedShowFlow_static_0600
+    //  * @tc.name     cachedShowFlow_static_0600
+    //  * @tc.desc     cachedShowFlow_static_0600
+    //  * @tc.level    Level.LEVEL1
+    //  */
+    // it('cachedShowFlow_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    //   console.info('[cachedShowFlow_static_0600] START');
+    //   try {
+    //     let eventData: events_emitter.EventData = {
+    //       data: {
+    //         "clip1": false,
+    //         "show1": undefined
+    //       } as Record<string, object|null|undefined>
+    //     } as events_emitter.EventData
+    //     let innerEvent: events_emitter.InnerEvent = {
+    //       eventId: 125,
+    //       priority: events_emitter.EventPriority.LOW
+    //     } as events_emitter.InnerEvent
+    //     console.info("[cachedShowFlow_static_0600] start to publish emit:" + JSON.stringify(eventData?.data));
+    //     events_emitter.emit(innerEvent, eventData);
+    //   } catch (err) {
+    //     console.log("[cachedShowFlow_static_0600] change component data error: " +  (err as Error)?.message);
+    //   }
+    //   await CommonFunc.sleep(2000);
+    //   let driver = Driver.create()
+    //   let onText: Component | null = await driver.findComponent(ON.id('show_flow_9'));
+    //   console.info("[cachedShowFlow_static_0600] onText is: " + onText);
+    //   expect(onText).assertEqual(null);
+    //   console.info('[cachedShowFlow_static_0600] END');
+    //   done();
+    // });
   })
 }

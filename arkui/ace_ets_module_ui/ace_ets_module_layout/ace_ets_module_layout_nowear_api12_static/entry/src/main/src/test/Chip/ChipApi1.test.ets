@@ -91,12 +91,12 @@ export default function ChipApi1() {
 
     
     /**
-     * @tc.number   ChipApi1_0100
-     * @tc.name     ChipApi1_0100
-     * @tc.desc     ChipApi1_0100
+     * @tc.number   ChipApi1_static_0100
+     * @tc.name     ChipApi1_static_0100
+     * @tc.desc     ChipApi1_static_0100
      * @tc.level    Level.LEVEL0
      */
-    it('ChipApi1_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ChipApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ChipApi1_static_0100 START');
       await CommonFunc.sleep(1000);
 
