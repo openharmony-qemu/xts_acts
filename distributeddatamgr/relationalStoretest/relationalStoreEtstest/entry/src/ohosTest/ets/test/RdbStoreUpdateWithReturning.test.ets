@@ -683,7 +683,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync012 failed1. code is ${e.code}, message is ${e.message}`);
@@ -698,7 +698,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync012 failed2. code is ${e.code}, message is ${e.message}`);
@@ -713,7 +713,7 @@ export default function RdbStoreUpdateWithReturning() {
         expect(e.code).assertEqual("14800001");
       }
       try {
-        await rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
+        rdbStore?.updateWithReturningSync(valueBucket, predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `updateWithReturningSync012 failed3. code is ${e.code}, message is ${e.message}`);
